@@ -1,1 +1,15 @@
 .DS_Store
+
+# Local agent-harness setup (personal tooling, not part of RECS Replay).
+# Keep parent directories trackable: the curator skill and its adapters live in
+# .agents/skills/, .claude/skills/, and .opencode/skills/.
+.claude/settings.local.json
+.codex/hooks.json
+
+# Impeccable design skill, hooks, and agents
+.impeccable/
+.agents/skills/impeccable/
+.claude/skills/impeccable/
+.claude/agents/impeccable-*
+.opencode/skills/impeccable/
+.opencode/commands/impeccable.md
