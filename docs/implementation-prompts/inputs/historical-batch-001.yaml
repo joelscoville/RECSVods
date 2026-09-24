@@ -1,0 +1,29 @@
+# First approved historical backfill batch (Milestone 4).
+#
+# Operator-maintained. The implementation agent reads this file but never adds,
+# removes, or reorders entries. Only list recordings from the RECS channel
+# (@recsing, UCLjwcZaIkiFEed1VgQYSsrw) that RECS is authorized to process.
+#
+# Keep the batch to roughly 20 logical services or fewer; use fewer when
+# recordings are long or irregular. Leave `services` empty to defer the live
+# batch; Milestone 4 then records `pending_operator_input`.
+#
+# Each service groups the physical uploads that belong to one logical service.
+# `known` holds trusted human metadata to preserve; omit anything uncertain.
+#
+# Example entry:
+#
+#   - date: 2020-09-27
+#     title: Authority
+#     videos:
+#       - youtube_id: W2IZ6MUX-Yk
+#     known:
+#       speaker: Rev. Yong Teck Meng
+#       scripture: [Luke 20:19-26, Romans 13:1-7]
+#     notes: Pre-trimmed sermon upload.
+
+schema_version: 1
+batch_id: historical-001
+approved_by: ""
+approved_at: ""
+services: []

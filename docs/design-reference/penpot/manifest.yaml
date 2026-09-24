@@ -1,0 +1,151 @@
+schema_version: 1
+source:
+  application: Penpot
+  file_name: RECVods
+  file_id: d8ac01df-6646-81d2-8008-a541da18e21b
+  page_name: Page 1
+  page_id: 18fa6d94-c385-80af-8008-a5415672a126
+captured_at: 2026-09-23T14:54:19Z
+capture_status: complete
+notes:
+  - Frame IDs, names, dimensions, and rendered exports were inspected from the connected Penpot file.
+  - Exports are uncropped 1x WebP files generated from the stable shape IDs below.
+  - The home frames named Mobile - Landscape are 844 by 1367 in the source design, despite the orientation label.
+  - A missing image is a visual-verification blocker, not permission to improvise.
+frames:
+  - key: home-desktop-returning
+    shape_id: b2c9ceb5-f0e9-5d6b-b95f-5a1275a567cd
+    shape_name: Home / Desktop - Returning User
+    width: 1728
+    height: 1470
+    file: frames/home-desktop-returning.webp
+    format: webp
+    byte_size: 37802
+    status: exported
+    sha256: 35e7255ebbc5db274a1925b0862d2dba562336925514945aa707249de3b587ab
+  - key: home-desktop-new
+    shape_id: 55888863-4675-8006-8008-a5e3f99c9577
+    shape_name: Home / Desktop - New User
+    width: 1728
+    height: 1470
+    file: frames/home-desktop-new.webp
+    format: webp
+    byte_size: 37894
+    status: exported
+    sha256: b187751227c2f690bf7ddf07d58ed238dd313f3f537160c8a84733804603586a
+  - key: home-mobile-portrait-returning
+    shape_id: 88049aca-346e-50bb-a7b9-6f3a52558e7d
+    shape_name: Home / Mobile - Returning User
+    width: 390
+    height: 2320
+    file: frames/home-mobile-portrait-returning.webp
+    format: webp
+    byte_size: 15060
+    status: exported
+    sha256: c11936df436edc275a7888edebe6625df1109a9be11c3e2ac21d0af5c660bd9a
+  - key: home-mobile-portrait-new
+    shape_id: 7bcecdaf-67b6-80d9-8008-a70e786c821b
+    shape_name: Home / Mobile - New User
+    width: 390
+    height: 2320
+    file: frames/home-mobile-portrait-new.webp
+    format: webp
+    byte_size: 15466
+    status: exported
+    sha256: b7f1a61d5e3a9e47a1acf5621c6b09914197ce6d59aff9cc3ed26fc3d4a9250e
+  - key: home-mobile-landscape-returning
+    shape_id: 7bcecdaf-67b6-80d9-8008-a70f4eaf02d2
+    shape_name: Home / Mobile - Landscape - Returning User
+    width: 844
+    height: 1367
+    file: frames/home-mobile-landscape-returning.webp
+    format: webp
+    byte_size: 18326
+    status: exported
+    sha256: 2701b30d660db448acb738e20be0cefd53270f601331f9f9fd717f0a382ab33a
+    notes:
+      - The source frame is taller than a landscape viewport; preserve its complete uncropped export.
+  - key: home-mobile-landscape-new
+    shape_id: a8acd6cb-e23f-8012-8008-a7f5208582e1
+    shape_name: Home / Mobile - Landscape - New User
+    width: 844
+    height: 1367
+    file: frames/home-mobile-landscape-new.webp
+    format: webp
+    byte_size: 19336
+    status: exported
+    sha256: 40a9e6a3ac0d379887791454499a06d4ea7b3e6566c31d084339dd6a3494679d
+    notes:
+      - The source frame is taller than a landscape viewport; preserve its complete uncropped export.
+  - key: search-mobile-portrait-browse
+    shape_id: e32dcc5b-b27c-807d-8008-a723c5d4dc38
+    shape_name: Search / Mobile - Portrait - Browse
+    width: 390
+    height: 844
+    file: frames/search-mobile-portrait-browse.webp
+    format: webp
+    byte_size: 16514
+    status: exported
+    sha256: eb57ff0f2b2f1c1d4dc942b244cdb10a93953825c27cd06554174c1e3de50d9c
+  - key: search-mobile-landscape-browse
+    shape_id: e32dcc5b-b27c-807d-8008-a72695758aa7
+    shape_name: Search / Mobile - Landscape - Browse
+    width: 844
+    height: 390
+    file: frames/search-mobile-landscape-browse.webp
+    format: webp
+    byte_size: 16456
+    status: exported
+    sha256: 2bd9a30700dcc06e0c29e94ca8c8520bed4a3f8df5bc6c9df21d098ae90e1fcf
+  - key: search-mobile-portrait-keyboard-demo
+    shape_id: e32dcc5b-b27c-807d-8008-a7244553be1c
+    shape_name: Search / Mobile - Portrait - Keyboard Demo
+    width: 390
+    height: 844
+    file: frames/search-mobile-portrait-keyboard-demo.webp
+    format: webp
+    byte_size: 20354
+    status: exported
+    sha256: 5275aea54f6ec3215883f52160ab45ecf560f91e0061094f21bc6f3546ea306e
+  - key: search-mobile-landscape-keyboard-demo
+    shape_id: 85acc997-f6ae-808a-8008-a73732baab94
+    shape_name: Search / Mobile - Landscape - Results
+    width: 844
+    height: 390
+    file: frames/search-mobile-landscape-keyboard-demo.webp
+    format: webp
+    byte_size: 12028
+    status: exported
+    sha256: 2319559e96063dd71295e8d2a98f1e6036a399fce2447fb6af0dee88a7cbf315
+    notes:
+      - Despite the layer name, the inspected frame contains the browse layout with keyboard demonstration artwork.
+  - key: playback-desktop
+    shape_id: 85acc997-f6ae-808a-8008-a7384efacd1b
+    shape_name: Watching Video / Desktop - Any User
+    width: 1728
+    height: 1331
+    file: frames/playback-desktop.webp
+    format: webp
+    byte_size: 49762
+    status: exported
+    sha256: a0dd2756b5e42da867b4b881b889154809e2ecfbbac4d1ec9f2894cf56f50694
+  - key: playback-mobile-portrait
+    shape_id: e2e985d2-8411-8025-8008-a8747a84ba01
+    shape_name: Watching Video / Mobile - Portrait
+    width: 390
+    height: 844
+    file: frames/playback-mobile-portrait.webp
+    format: webp
+    byte_size: 23562
+    status: exported
+    sha256: 0b2a0a5b26e3aa385b6366c396621d7eee4578790b2be68b81e37ae18d747caf
+  - key: playback-mobile-landscape
+    shape_id: e2e985d2-8411-8025-8008-a8762ff945b6
+    shape_name: Watching Video / Mobile - Landscape
+    width: 844
+    height: 390
+    file: frames/playback-mobile-landscape.webp
+    format: webp
+    byte_size: 5028
+    status: exported
+    sha256: e64b92c58529f48f76799949789dbac287ce526fd01dc46c44abb27cc62b9dfe

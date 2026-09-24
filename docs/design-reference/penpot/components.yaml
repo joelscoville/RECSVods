@@ -1,0 +1,80 @@
+schema_version: 1
+source_file_id: d8ac01df-6646-81d2-8008-a541da18e21b
+components:
+  - name: NAV
+    component_id: 7bcecdaf-67b6-80d9-8008-a6ac19625a0b
+    main_instance_id: 7bcecdaf-67b6-80d9-8008-a6abe860c985
+    width: 1728
+    height: 151
+    layout: row
+    gap: 61
+    padding: [37, 53, 37, 53]
+    content: [RECS REPLAY, Search for sermons dates or Bible passages]
+  - name: Video
+    component_id: 440c7b5b-e4fc-5bd8-84ac-71a1be89ca04
+    main_instance_id: 5e0b3b34-d7b9-5977-a797-936f996d9d9b
+    width: 387
+    height: 350
+    roles: [thumbnail, title, metadata]
+  - name: Categories
+    component_id: 55888863-4675-8006-8008-a5bbd6c30f7a
+    main_instance_id: 55888863-4675-8006-8008-a5b7c3b1390d
+    width: 387
+    height: 252
+  - name: Search Bar
+    penpot_name: Seach Bar
+    component_id: ecbdfb6e-0214-546a-9d41-d77ccf146ef4
+    main_instance_id: 1c243150-2040-57aa-b63d-757428f06371
+    width: 1033
+    height: 66
+  - name: Mobile Search Field
+    component_id: e32dcc5b-b27c-807d-8008-a7234cbce515
+    main_instance_id: e32dcc5b-b27c-807d-8008-a72348588eb3
+    width: 358
+    height: 35
+    fill: "#6C0000"
+    radius: 24
+  - name: Search Chip
+    component_id: e32dcc5b-b27c-807d-8008-a723374df487
+    main_instance_id: e32dcc5b-b27c-807d-8008-a723219f6d28
+    width: 110
+    height: 38
+    fill: "#E4D9FF"
+    radius: 14
+  - name: Back Button
+    component_id: e32dcc5b-b27c-807d-8008-a72f5111d93f
+    main_instance_id: e32dcc5b-b27c-807d-8008-a723c82e00c1
+    width: 44
+    height: 44
+  - name: Mobile Chapter Row
+    component_id: e2e985d2-8411-8025-8008-a8743fab677e
+    main_instance_id: e2e985d2-8411-8025-8008-a874332cf379
+    width: 358
+    height: 88
+    fill: "#FAFAFF"
+    radius: 12
+    roles: [timestamp, title, summary]
+  - name: Call To Action
+    component_id: 24cecc6d-db52-5810-aaef-17d0d7225381
+    main_instance_id: 4c7cf0de-3bbd-5cd7-8f1e-7575bab55625
+    width: 1125
+    height: 412
+    fill: "#273469"
+    layout: row-reverse
+    padding: [50, 50, 18, 50]
+  - name: Bottom Bar
+    component_id: 55888863-4675-8006-8008-a5e2b841f74d
+    main_instance_id: 55888863-4675-8006-8008-a5e2b8410b3d
+    width: 1737
+    height: 140
+  - name: Bottom Bar Mobile
+    component_id: 7bcecdaf-67b6-80d9-8008-a70671d91f72
+    main_instance_id: 7bcecdaf-67b6-80d9-8008-a705e8e426f9
+    width: 390
+    height: 173
+implementation_rules:
+  - Reuse one implementation component for repeated visual roles rather than copying markup.
+  - Preserve a minimum 44 by 44 pixel hit target even where the drawn control is visually smaller.
+  - Use semantic buttons, links, inputs, headings, lists, and landmarks.
+  - Treat keyboard-demo components as documentation, not production components.
+  - Keep chapter rows distinct from smaller search-result passages.
