@@ -35,4 +35,6 @@ jobs:
           SITE_BASE_PATH: /replay-check/
         run: pnpm build && pnpm build:preview
       - run: pnpm test:e2e
+      - name: Verify real core-corpus acceptance
+        run: pnpm evaluate:core
 # No deployment in this milestone. In particular, preview output must never deploy.

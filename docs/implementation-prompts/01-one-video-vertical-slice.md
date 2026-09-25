@@ -119,7 +119,7 @@ The skill is an agent operating procedure, not executable application logic and 
 
 ## First Recording
 
-Use the skill and authorized pipeline to process `ZTDYIJUDb0M`. Download to the approved temporary root, verify duration, sample coarsely to locate the programme, transcribe the programme span with whisper.cpp, and extract timestamped frames at coarse intervals and around suspected transitions. Use transcript, audio timing, frames, adjacent context, and trusted metadata together to identify waiting/setup material, the actual programme beginning within a target tolerance of 30 seconds, supported major sections, coherent searchable passages, and uncertain decisions requiring review.
+Use the skill and authorized pipeline to process `ZTDYIJUDb0M`. Download to the approved temporary root, verify duration, sample coarsely to locate the programme, transcribe the programme span with the primary whisper.cpp engine, and extract timestamped frames at coarse intervals and around suspected transitions. This first recording retains its original whisper.cpp provenance; the later operator-approved Colab batch does not require reprocessing it. Use transcript, audio timing, frames, adjacent context, and trusted metadata together to identify waiting/setup material, the actual programme beginning within a target tolerance of 30 seconds, supported major sections, coherent searchable passages, and uncertain decisions requiring review.
 
 Never commit recordings, extracted audio, frames, large raw outputs, or caches. Add targeted ignore rules without hiding reviewed content.
 

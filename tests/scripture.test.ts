@@ -1,0 +1,98 @@
+import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { stringify } from 'yaml';
+import { describe, expect, it } from 'vitest';
+import { BOOKS } from '../bible/books';
+import counts from '../bible/verse-counts.json';
+import { enrichPassages, verseTextForReferences } from '../bible/enrich';
+import { generateBibleCounts, loadBible, verifyBibleSource } from '../scripts/bible';
+import { buildIndex } from '../scripts/archive';
+import { archiveFromFiles, flattenArchive, PassageSchema, SOURCE_CHANNEL_ID } from '../site/lib/archive';
+import { normalizeScriptureReference, parseScriptureReference, scriptureUrl } from '../site/lib/scripture';
+
+const bible = loadBible();
+describe('scripture reference metadata', () => {
+  it('covers all 66 canonical books and every declared alias with sourced chapter bounds', () => {
+    expect(BOOKS).toHaveLength(66);
+    expect(Object.keys(counts)).toEqual(BOOKS.map(([book]) => book));
+    for (const [book, ...aliases] of BOOKS) for (const alias of [book, ...aliases]) {
+      expect(normalizeScriptureReference(`${alias} 1:1`)).toBe(`${book} 1:1`);
+    }
+  });
+  it.each([
+    ['Rom13', 'Romans 13'], ['ROM. 13:1–7', 'Romans 13:1-7'], ['II Tim. 3:16', '2 Timothy 3:16'],
+    ['IICor 1:1', '2 Corinthians 1:1'], ['III Jn 1:14', '3 John 1:14'], ['1Jn1:1', '1 John 1:1'],
+    ['Ps 23', 'Psalms 23'], ['Song of Songs 2:1', 'Song of Solomon 2:1'],
+    ['Jn 3:36 — 4:2', 'John 3:36-4:2'], ['Gen 1 - 2', 'Genesis 1-2'],
+    ['Romans 12:1-12:2', 'Romans 12:1-2'], ['John 3:16-16', 'John 3:16'],
+  ])('normalizes %s and preserves entered display', (input, canonical) => {
+    expect(parseScriptureReference(input)).toMatchObject({ display: input, canonical });
+  });
+  it.each(['Romans 17', 'Romans 13:15', 'Romans 0', 'John 3:0', 'John 3:37', 'John 3:16-4:55',
+    'John 4:2-3:16', 'Romans 12:2-1', 'Genesis 1-51', 'John 3-4:2', 'Jude 2', '4 John 1:1',
+    'Rom 13 extra text', 'Unknown 1', 'John 3:16; Romans 1:1', 'Romans 99999999999999999999'])('rejects invalid reference %s', (input) => {
+    expect(parseScriptureReference(input)).toBeUndefined();
+    expect(() => scriptureUrl(input)).toThrow('Invalid scripture reference');
+  });
+  it('generates canonical ESV reference links without requesting verse text', () => {
+    expect(scriptureUrl('Rom13:1–7')).toBe('https://www.esv.org/Romans%2013%3A1-7/');
+    expect(scriptureUrl('II Tim 3:16')).toBe('https://www.esv.org/2%20Timothy%203%3A16/');
+  });
+});
+
+// Entirely synthetic archive metadata, never written into the project archive.
+const service = {
+  id: 'bible-fixture', date: '2026-01-04', title: 'Synthetic fixture gathering', type: 'service',
+  workflow_status: 'complete', editorial_status: 'needs_review',
+  videos: [{ id: 'AAAAAAAAAAA', channel_id: SOURCE_CHANNEL_ID, duration: 100, sequence: 1, workflow_status: 'complete', media_disposition: 'playable' }],
+  sections: [{ id: 'bible-section', video_id: 'AAAAAAAAAAA', start: 0, end: 100, type: 'address', title: 'Synthetic section', confidence: 1 }],
+  passages: [{ id: 'bible-passage', video_id: 'AAAAAAAAAAA', section_id: 'bible-section', start: 10, end: 60,
+    type: 'address', title: 'Synthetic address', summary: 'A synthetic test summary.', transcript: 'A synthetic test transcript.',
+    confidence: 1, questions: [], topics: [], scripture: ['Rom. 12:1', 'II Tim 3:16'] }],
+};
+const filename = 'services/2026/bible-fixture/service.yaml';
+describe('offline BSB enrichment boundary', () => {
+  it('verifies pinned bytes, reproducible verse counts and complete source structure', () => {
+    expect(() => generateBibleCounts(true)).not.toThrow();
+    expect(Object.keys(bible)).toHaveLength(66);
+    expect(Object.values(bible).reduce((sum, chapters) => sum + chapters.length, 0)).toBe(1189);
+    expect(Object.values(bible).flat().reduce((sum, verses) => sum + verses.length, 0)).toBe(31102);
+    expect(() => verifyBibleSource(Buffer.from('not the pinned source'))).toThrow('integrity');
+  });
+  it('selects actual sourced verses, expands chapters/ranges and deduplicates overlap', () => {
+    expect(verseTextForReferences(['Rom12:1'], bible)).toBe(bible.Romans[11][0]);
+    expect(bible.Romans[11][0]).toContain('living sacrifices');
+    expect(verseTextForReferences(['John 3:36-4:2'], bible)).toBe([bible.John[2][35], ...bible.John[3].slice(0, 2)].join('\n'));
+    expect(verseTextForReferences(['Rom12', 'Romans 12:1'], bible)).toBe(bible.Romans[11].join('\n'));
+    expect(verseTextForReferences(['Gen1-2'], bible)).toBe(bible.Genesis.slice(0, 2).flat().join('\n'));
+    expect(verseTextForReferences(['Matthew 17:21'], bible)).toBe('');
+    expect(() => verseTextForReferences(['Romans 12:1'], {})).toThrow('Missing BSB chapter');
+  });
+  it('normalizes the loader, preserves aligned originals, and keeps BSB out of display projections', () => {
+    const archive = archiveFromFiles(new Map([[filename, stringify(service)]]));
+    expect(archive[0].passages[0].scripture).toEqual(['Romans 12:1', '2 Timothy 3:16']);
+    const display = flattenArchive(archive, 'preview');
+    expect(display[0].scriptureDisplay).toEqual(service.passages[0].scripture);
+    expect(display[0]).not.toHaveProperty('verseText');
+    const enriched = enrichPassages(display, bible);
+    expect(enriched[0].verseText).toBe([bible.Romans[11][0], bible['2 Timothy'][2][15]].join('\n'));
+    const { verseText: _verseText, ...unchanged } = enriched[0];
+    expect(unchanged).toEqual(display[0]);
+    expect(display[0]).not.toHaveProperty('verseText');
+    expect(PassageSchema.safeParse({ ...archive[0].passages[0], scriptureDisplay: ['Romans 1'] }).success).toBe(false);
+    expect(enrichPassages([{ ...display[0], scripture: [], verseText: 'stale' }], bible)[0]).not.toHaveProperty('verseText');
+  });
+  it('adds BSB only after publication filtering and produces deterministic generated JSON', () => {
+    const root = mkdtempSync(path.join(tmpdir(), 'recs-bible-test-'));
+    try {
+      mkdirSync(path.dirname(path.join(root, filename)), { recursive: true });
+      writeFileSync(path.join(root, filename), stringify(service));
+      expect(JSON.parse(readFileSync(buildIndex(root), 'utf8'))).toEqual([]);
+      const first = readFileSync(buildIndex(root, 'preview'), 'utf8');
+      expect(JSON.parse(first)[0].verseText).toContain(bible.Romans[11][0]);
+      expect(readFileSync(buildIndex(root, 'preview'), 'utf8')).toBe(first);
+      expect(JSON.parse(readFileSync(buildIndex(root), 'utf8'))).toEqual([]);
+    } finally { rmSync(root, { recursive: true, force: true }); }
+  });
+});

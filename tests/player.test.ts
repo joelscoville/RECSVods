@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { createPassageController, type PlayerAdapter } from '../site/lib/player';
 import { basePath, formatTime, readWatchTarget, searchUrl, serviceUrl, siteUrl, watchUrl, youtubeUrl } from '../site/lib/urls';
 import { clearLocalState, getSavedPlayback, getSearchHistory, savePlayback, saveSearch } from '../site/lib/local-state';
+import { clearSearchHistory } from '../site/lib/local-state';
 
 function setup() {
   let time = 0;
@@ -157,6 +158,32 @@ describe('base-aware shareable URLs', () => {
 });
 
 describe('local-only history and resume state', () => {
+  it('clears search history explicitly while preserving playback and unrelated storage', () => {
+    const values = new Map<string, string>([['another-site-key', 'keep']]);
+    const dispatchEvent = vi.fn();
+    vi.stubGlobal('window', { localStorage: { getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => values.set(key, value), removeItem: (key: string) => values.delete(key) }, dispatchEvent });
+    try {
+      saveSearch('Romans 13');
+      savePlayback({ serviceId: 's1', videoId: 'abcdefghijk', time: 40 });
+      expect(clearSearchHistory()).toBe(true);
+      expect(getSearchHistory()).toEqual([]);
+      expect(getSavedPlayback()).toEqual({ serviceId: 's1', videoId: 'abcdefghijk', time: 40 });
+      expect(values.get('another-site-key')).toBe('keep');
+      expect(dispatchEvent.mock.calls[0][0].type).toBe('recs-search-history-cleared');
+      expect(clearSearchHistory()).toBe(true);
+      expect(clearLocalState()).toBe(true);
+      expect(getSavedPlayback()).toBeNull();
+    } finally { vi.unstubAllGlobals(); }
+  });
+  it('reports a failed history removal without pretending the history was cleared', () => {
+    const dispatchEvent = vi.fn();
+    vi.stubGlobal('window', { localStorage: { getItem: () => '["Romans 13"]', removeItem: () => { throw new Error('denied'); } }, dispatchEvent });
+    try {
+      expect(clearSearchHistory()).toBe(false);
+      expect(getSearchHistory()).toEqual(['Romans 13']);
+      expect(dispatchEvent).not.toHaveBeenCalled();
+    } finally { vi.unstubAllGlobals(); }
+  });
   it('deduplicates history, persists playback and clears only RECS data', () => {
     const values = new Map<string, string>([['another-site-key', 'keep']]);
     vi.stubGlobal('window', { localStorage: { getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => values.set(key, value), removeItem: (key: string) => values.delete(key) }, dispatchEvent: vi.fn() });

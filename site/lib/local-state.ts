@@ -18,6 +18,13 @@ export function saveSearch(query: string): string[] {
   write(HISTORY_KEY, history);
   return history;
 }
+export function clearSearchHistory(): boolean {
+  try {
+    window.localStorage.removeItem(HISTORY_KEY);
+    window.dispatchEvent(new Event('recs-search-history-cleared'));
+    return true;
+  } catch { return false; }
+}
 export function getSavedPlayback(): SavedPlayback | null {
   const value = read(RESUME_KEY) as Partial<SavedPlayback> | null;
   if (!value || typeof value.serviceId !== 'string' || typeof value.videoId !== 'string' || typeof value.time !== 'number' || !Number.isFinite(value.time) || value.time < 0) return null;

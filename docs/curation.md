@@ -4,7 +4,9 @@ The authoritative procedure is
 [`.agents/skills/recs-archive-curator/SKILL.md`](../.agents/skills/recs-archive-curator/SKILL.md).
 It produces evidence-grounded archive interpretation for human review. The
 application and CI do not call an agent or LLM API to curate recordings. Native
-whisper.cpp transcription is local evidence gathering, not editorial approval.
+whisper.cpp remains the primary local transcription engine, including weekly
+single-service operation. The operator-approved Colab large-batch exception below
+also supplies evidence, not editorial approval.
 
 ## Invoke it in the repository
 
@@ -68,14 +70,11 @@ Verify the external parent exists before creating directories.
 ### pnpm separator compatibility
 
 Current package scripts map `media:*` directly to `python3 scripts/media.py
-<subcommand>`. **Use `pnpm media:acquire --youtube-id …`, without an extra `--`,
-with the current parser.** pnpm forwards the extra separator in `pnpm
-media:acquire -- --youtube-id …`; Python argparse treats it as the end of options
-and does not parse the required arguments. The same applies to other media scripts.
-The direct Python form below is also valid. The milestone prompt's separator form
-requires the pending parser normalization; verify it with a help-only command
-after that change, before adopting it. This is different from `editorial:*`, whose
-TypeScript CLI explicitly filters the separator.
+<subcommand>`. The current Python entry point normalizes pnpm's forwarded `--`
+after the subcommand, so **`pnpm media:acquire -- --youtube-id …` is supported**.
+Passing options directly without that separator also works. The package examples
+below use the milestone's separator convention; direct Python calls need no extra
+separator. The previous parser incompatibility is resolved.
 
 | Package script | Backend | Required options |
 | --- | --- | --- |
@@ -88,24 +87,24 @@ TypeScript CLI explicitly filters the separator.
 
 ```sh
 # Provision only if needed; do not change the model revision mid-batch.
-RECS_DEVENV_TIMEOUT_SECONDS=900 scripts/devenv-run pnpm media:model \
+RECS_DEVENV_TIMEOUT_SECONDS=900 scripts/devenv-run pnpm media:model -- \
   --cache-dir "$MODEL_CACHE" --timeout 900
 
 # Includes the authorized MZr169xBwrU first-60-seconds smoke download.
-RECS_DEVENV_TIMEOUT_SECONDS=900 scripts/devenv-run pnpm media:preflight \
+RECS_DEVENV_TIMEOUT_SECONDS=900 scripts/devenv-run pnpm media:preflight -- \
   --authorization-file "$AUTHORIZATION_FILE" \
   --work-dir "$PREFLIGHT_WORK" --cache-dir "$MODEL_CACHE" --timeout 900
 
-RECS_DEVENV_TIMEOUT_SECONDS=900 scripts/devenv-run pnpm media:acquire \
+RECS_DEVENV_TIMEOUT_SECONDS=900 scripts/devenv-run pnpm media:acquire -- \
   --authorization-file "$AUTHORIZATION_FILE" \
   --youtube-id ZTDYIJUDb0M --work-dir "$WORK" --timeout 900
 
-RECS_DEVENV_TIMEOUT_SECONDS=900 scripts/devenv-run pnpm media:sample \
+RECS_DEVENV_TIMEOUT_SECONDS=900 scripts/devenv-run pnpm media:sample -- \
   --authorization-file "$AUTHORIZATION_FILE" --work-dir "$WORK" --timeout 900
 
 # Inspect samples and refine boundaries before setting START and END.
 # 13260/1200 are the measured-host full-baseline bounds, not universal defaults.
-RECS_DEVENV_TIMEOUT_SECONDS=13260 scripts/devenv-run pnpm media:transcribe \
+RECS_DEVENV_TIMEOUT_SECONDS=13260 scripts/devenv-run pnpm media:transcribe -- \
   --authorization-file "$AUTHORIZATION_FILE" --work-dir "$WORK" \
   --cache-dir "$MODEL_CACHE" --start "$START" --end "$END" \
   --language en --timeout 1200
@@ -131,6 +130,10 @@ clean owned processing workspaces; a crash/SIGKILL requires cleanup after restar
 Keep the verified model cache separate and retained. If devenv becomes unavailable
 during cleanup, the documented standard-library Python cleanup operation needs no
 native tools; still use a finite bound and validate ownership.
+
+These unconditional workspace traps do **not** apply to the designated source
+audio for an imported batch. Preserve that audio until its recording's import is
+verified, including on failure/interruption; use the separate cleanup gate below.
 
 Before milestone 1 real content, also run the full `wh4mCRKRJ-4` acquisition as
 the expected near-empty rejection and acquire/sample/transcribe all of
@@ -158,13 +161,120 @@ and 13,260 seconds for the complete transcription operation. Recalculate for
 different programme spans/platforms, accounting for overlaps and startup, keeping
 approximately three-times expected time and the 900-second floor.
 
+## Operator-run Colab batch exception — 2026-09-25
+
+Local whisper.cpp remains the weekly single-service standard. For a large agreed
+batch, roughly three or more full services taking many CPU hours, the operator may
+run faster-whisper in Colab. This is not application/CI infrastructure, a hosted
+model API, or an automatically dispatched VM. Keep batches small and obtain
+operator agreement before staging a future batch.
+
+### Supplied M2/M3 recordings
+
+The operator has already approved using supplied transcripts for these eight IDs:
+
+```text
+k27dmsPvmG8  W2IZ6MUX-Yk  94fynFHtreg  GkmB_KeBlBw
+D-FyolbxJgk  OrsN83j3qxE  MZr169xBwrU  Z-vRVB-WucA
+```
+
+**Do not transcribe these recordings locally.** Read the operator's
+`$TRANSCRIPT_BUNDLE/README.md` and `SHA256SUMS`, verify and import their JSON instead.
+The configuration is faster-whisper **1.2.1**, CTranslate2 **4.8.2**,
+`large-v3-turbo`, float16 on Tesla T4, beam size 5, word timestamps enabled, VAD
+disabled, and `condition_on_previous_text=False`. Keep engine/settings consistent
+within each processing batch and provenance explicit per recording. Retain prior
+whisper.cpp records as such; do not retranscribe them or rewrite the whole batch
+to erase the approved engine difference. Importing these files does not require
+another local ASR run; retain applicable preflight evidence and verify tools needed
+for source inspection.
+
+Use portable placeholders in instructions and safe reports:
+
+| Placeholder | Meaning |
+| --- | --- |
+| `$TRANSCRIPT_BUNDLE` | External local bundle containing operator README, checksum manifest and raw JSON |
+| `$BATCH_AUDIO_ROOT` | Operator-designated local temporary batch-audio folder |
+| `$DRIVE_AUDIO_ROOT` | Operator-designated Drive `audio/` folder |
+| `$WORK` | Separate external owned per-recording curation/import workspace |
+
+Do not copy private absolute paths, Drive account emails, or authorization data
+from the operator README into repository documentation or PRs.
+
+### Verify, import, then clean matching audio
+
+1. Verify each JSON's full SHA-256 against `SHA256SUMS`; the README's abbreviated
+   audio hashes are not usable checksums. Validate `video_id`, `audio_file`,
+   `audio_sha256`, `duration_seconds`, `language`, `engine`, `elapsed_seconds`,
+   `real_time_factor`, `transcribed_at`, and `segments`, including word timestamps.
+   Require finite, ordered, nonnegative absolute-upload timestamps within duration
+   and consistent word/segment ranges. Retain the original JSON unchanged.
+2. Compare duration and source identity with verified ffprobe/yt-dlp evidence.
+   Hash the actual original audio bytes in each designated location where present
+   against `audio_sha256`; a filename or re-encoded copy is not verification of the
+   source bytes. Record missing audio as a verification limitation, not a successful
+   match. Investigate discrepancies rather than silently rescaling timestamps or
+   regenerating the transcript locally. On checksum, format, identity or duration
+   failure, stop that recording's import and preserve its source audio; report the
+   objective blocker before any cleanup.
+3. Import to canonical local pipeline evidence under an external owned root. Check
+   converted text/segments, absolute timestamps, language, video ID and transcribed
+   span against the verified JSON. Record per recording: engine/version, model,
+   settings/compute, audio and transcript hashes, elapsed time/RTF, import source
+   (safe bundle identifier and relative filename), and verification outcomes for
+   checksums, format, duration, identity, source bytes and converted evidence.
+   Preserve unknowns explicitly. Raw JSON, imported evidence and detailed local
+   receipts remain local-only, never committed or published; safe provenance
+   summaries may enter the run log.
+4. Once that recording's import is verified and its receipt retained, delete its
+   matching audio from **both** `$DRIVE_AUDIO_ROOT` and `$BATCH_AUDIO_ROOT`. Confirm
+   the bytes match before deletion; restrict cleanup to that recording, never sweep
+   either root. Do not delete before verification or on any hash mismatch. On
+   failure/interruption, preserve unverified source audio for diagnosis/resumption.
+   Record each location's cleanup result; inaccessible roots mean cleanup pending.
+   Keep the supplied transcript bundle out of audio cleanup. Normal audio/frame
+   inspection can use a separate owned curation workspace, cleaned after curation.
+
+The importer is being integrated separately as `scripts/import_transcript.py`,
+with `verify-bundle`, `import`, and `cleanup-audio` stages. Follow its current
+documentation and subcommand help for exact flags once available, through bounded
+`scripts/devenv-run`; this runbook intentionally specifies the procedure rather
+than unverified CLI arguments or package-script names. Tool integration or a JSON
+file's presence does not prove a successful import. Keep operations/retries bounded,
+report per-recording failures and preserve verification receipts for resumption.
+
+### Future agreed batches
+
+1. Propose a bounded list of logical services and get the operator's agreement to
+   use Colab before staging. Existing batch approval does not cover future batches.
+2. Verify media authorization, RECS source identity and audio integrity. Stage
+   **audio only** in the designated Drive `audio/` folder, with matching local
+   batch audio under `$BATCH_AUDIO_ROOT`; keep unrelated media and credentials out.
+3. Ask the operator to click **Run all** manually in their notebook. Do not execute
+   Colab or dispatch a VM automatically. The notebook skips already-completed
+   outputs; verify those outputs instead of blindly rerunning completed recordings.
+4. Collect resulting JSON into `$TRANSCRIPT_BUNDLE` in small batches. Bound waits
+   and retries, report failures, then apply the per-recording verification/import
+   and two-location audio-cleanup gate above.
+
+Imported full-recording transcripts do not establish programme boundaries or
+upload usability. Preserve their actual full span, then perform the same metadata,
+30-second sampling/five-minute cadence, frame inspection, boundary refinement,
+programme-margin/context selection and competing-upload comparisons. Do not
+retranscribe supplied full spans simply to enforce local chunking. Review with
+overlapping ten-minute windows, preserving original timestamps. The operator notes
+30–60-second gaps that may be music/quiet and repetitions that may be hymn lyrics;
+verify against samples before calling gaps missing speech or removing repetitions.
+All agent-written interpretation still requires `editorial_status: needs_review`.
+
 ## What the curator delivers
 
 Follow the canonical skill for the full procedure: sample 30 seconds every five
 minutes plus frames, refine suspected boundaries, identify legitimate prelude,
 choose the programme with clipped two-minute margins, and inspect approximately
-ten-minute chunks with overlap. Current tools use 600-second chunks and 45-second
-overlaps; their merged transcript is evidence, not a fully reconciled editorial
+ten-minute review windows with overlap. Local transcription uses 600-second chunks
+and 45-second overlaps; do not assign those inference settings to imported full
+recordings. The merged transcript is evidence, not a fully reconciled editorial
 transcript. Remove seam duplication against raw audio while preserving absolute
 timestamps and genuine repetitions.
 
@@ -235,19 +345,16 @@ The deterministic guard is a **process safeguard, not a security boundary**:
 an agent using an operator's credentials could technically bypass it. Separate
 bot credentials without bypass rights are an optional operator decision.
 
-## Interface differences observed while adding this skill
+## Current interface notes
 
-- Milestone 1 shows `pnpm media:* -- …`; the inspected Python entry point does
-  not yet normalize that separator. Working no-separator/direct commands are
-  documented above; the main implementation owns the parser correction.
+- `pnpm media:* -- …` now works: `scripts/media.py` normalizes the forwarded
+  separator. Both separator and direct-option examples are valid.
 - The milestone's abbreviated `media:preflight` example omits `--work-dir`, which
   the actual parser requires. It also requires an already-provisioned verified
   model; preflight does not download the model itself.
-- `docs/media-tooling.md` still describes native acceptance as pending and does
-  not mention the Intel CPU workaround. The later `docs/preflight-evidence.md`
-  supplies live acceptance/provenance and `scripts/media.py` implements the
-  recorded workaround. Reconcile those docs with current evidence when updating
-  tooling; offline tests alone still do not establish live acceptance.
+- `docs/media-tooling.md` documents live preflight evidence and the Intel CPU
+  workaround. Its whisper.cpp model section describes the local pipeline; the
+  shared README's approved Colab exception governs imported batch provenance.
 - `docs/archive-format.md` calls its script mappings suggested, but `package.json`
   already wires validation and editorial scripts. Its optional `build:index`
   package mappings are not present: current `pnpm build`/`pnpm build:preview`

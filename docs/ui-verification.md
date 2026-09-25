@@ -55,3 +55,26 @@ YouTube touch-control testing remain manual checks. The returning-user appearanc
 is implemented and its saved-state logic unit-tested; final visual captures focus
 on the new-user state. Editorial confidence and word-level transcript accuracy are
 separate from these interface checks.
+
+## Milestone 2 extension — 2026-09-25
+
+Compared new/returning home, search, results, static browse and playback captures
+with the same unchanged offline references at 1728×1000, 390×844 and 844×390.
+Captures are in `.local/ui-review-m2/`; the reproducible command is:
+
+```sh
+scripts/devenv-run pnpm exec tsx scripts/capture-ui.ts --milestone2
+```
+
+All 15 measured route/viewport combinations had matching document and viewport
+widths. Returning-home captures verified the indigo feature and saved progress;
+new-user captures retained burgundy. A fresh bounded visual review returned ship
+with no high-/medium-impact fixes. Variable catalogue and category counts, long
+scrollable result lists, and the mandatory preview notice are legitimate content
+differences from static mockups. Some empty-query captures include the actual
+archive-loading state; passing browser tests separately establish completed loads.
+
+Milestone 2's 27 browser executions also verify real-worker hybrid search,
+multipart video selection, static browse routes, local history clearing without
+erasing resume state, and production/failed-media exclusion. See
+`docs/milestone2-checks.md` for exact acceptance queries and evidence scope.

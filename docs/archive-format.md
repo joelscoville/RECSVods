@@ -86,6 +86,11 @@ passages:
   are errors, not silently ignored content.
 - Video `channel_id` must equal the source channel above; this validates the
   supplied metadata, not remote ownership. Media tooling must verify ownership.
+- Optional video `transcription_provenance` stores the importer's safe
+  `archive_provenance` projection for operator-approved batch evidence: exact engine,
+  settings, hashes, source/transcript durations, timing and verification state. Raw
+  receipts and transcripts stay external; display projections omit provenance. See
+  [transcript import](transcript-import.md) for the approved recipe and validation.
 - Videos carry independent workflow and media axes. Every physical upload needs
   a positive finite duration and sequence. Duration is measured, never inferred
   from transcript length. `transcribed_span` has absolute recording seconds and
@@ -110,8 +115,10 @@ passages:
 - Scripture is reference-only: canonical book names from `BIBLE_BOOKS`, positive
   chapter/verse numbers, ASCII hyphens, and forward ranges, for example
   `Romans 13:1-7`, `John 3:16-4:2`, `Psalms 23`, or `Genesis 1-2`. Split disjoint
-  ranges into separate strings. Aliases and verse text are rejected; this
-  schema checks reference syntax/order, not every book's verse inventory.
+  ranges into separate strings. Source aliases are accepted and normalized, with
+  original strings retained in the display projection. Bounds are validated against
+  sourced BSB verse counts. Authored verse-text fields are rejected; only the
+  generated search index receives hidden BSB enrichment. See `docs/bible.md`.
 - All objects are strict. Unknown keys, duplicate YAML keys, non-finite numbers,
   and archive symlinks are rejected. Errors identify the file and field. Markdown
   is source text for rendering as text or through a separately sanitized renderer;

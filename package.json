@@ -12,7 +12,8 @@
     "typecheck": "astro check && tsc --noEmit",
     "test": "vitest run && python3 -m unittest discover -s tests -p 'test_*.py'",
     "validate:archive": "tsx scripts/archive.ts validate",
-    "test:search": "vitest run tests/search.test.ts",
+    "test:search": "vitest run tests/search.test.ts tests/scripture.test.ts",
+    "evaluate:core": "tsx scripts/evaluate-core.ts",
     "test:e2e": "playwright test",
     "build": "tsx scripts/build.ts production",
     "build:preview": "tsx scripts/build.ts preview",
@@ -25,7 +26,13 @@
     "media:transcribe": "python3 scripts/media.py transcribe",
     "media:cleanup": "python3 scripts/media.py cleanup",
     "media:model": "python3 scripts/media.py model",
-    "model:prepare": "tsx scripts/embeddings.ts prepare"
+    "model:prepare": "tsx scripts/embeddings.ts prepare",
+    "bible:verify": "tsx scripts/bible.ts verify",
+    "bible:download": "tsx scripts/bible.ts download",
+    "bible:generate": "tsx scripts/bible.ts generate",
+    "transcripts:verify": "python3 scripts/import_transcript.py verify-bundle",
+    "transcripts:import": "python3 scripts/import_transcript.py import",
+    "transcripts:cleanup-audio": "python3 scripts/import_transcript.py cleanup-audio"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.1",

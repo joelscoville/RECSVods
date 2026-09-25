@@ -3,10 +3,11 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { flattenArchive, loadArchive, type BuildMode } from '../site/lib/archive';
 import type { SearchPassage } from '../site/lib/types';
+import { enrichPassages } from '../bible/enrich';
 
 export async function verifyOutput(root: string, output: string, mode: BuildMode) {
   const actual = JSON.parse(await readFile(path.join(output, 'generated/passages.json'), 'utf8')) as SearchPassage[];
-  const expected = flattenArchive(loadArchive(root), mode);
+  const expected = enrichPassages(flattenArchive(loadArchive(root), mode));
   if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error('Built index differs from publication-filtered source');
   const vectors = JSON.parse(await readFile(path.join(output, 'generated/vectors.json'), 'utf8'));
   if (JSON.stringify(Object.keys(vectors.vectors).sort()) !== JSON.stringify(expected.map((p) => p.id).sort())) throw new Error('Vector index passage IDs differ from published index');

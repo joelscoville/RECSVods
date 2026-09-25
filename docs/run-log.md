@@ -67,3 +67,73 @@ Milestones 1–5 remain incomplete. The empty historical batch input permits too
 
 - Confirmed code checkpoint `ce86100` (`milestone 1: build one-video vertical slice`). The operator returned the shell; private signing interaction was not inspected.
 - Next: commit the separate needs_review archive content and review notes, run the editorial guard over both checkpoints, then push and open the single draft PR before Milestone 2.
+
+## 2026-09-25 — Milestone 1 delivered; Milestone 2 begun
+
+- The operator completed content checkpoint `5b22aa9`; code checkpoint is `ce86100`. Working tree was clean. Editorial guard passed across both commits from `d328f00`.
+- Pushed `feat/recs-replay-implementation` and opened the single evolving draft PR: https://github.com/joelscoville/RECSVods/pull/1. Remote CI was pending on first inspection. No merge, editorial approval, or deployment occurred.
+- Loaded Prompt 2. Process one logical media case at a time, beginning with the three-upload 16 August service; in parallel, implement deterministic Bible enrichment and static browse/navigation improvements. Preserve the established Penpot components and palette.
+- Hardware signing requires operator participation. Future checkpoints must retain normal signing, separate code/content commits, and the same PR.
+- Remote Milestone 1 CI passed. Milestone 2 Bible enrichment/reference parsing and browse/local-state/context code are implemented and passed focused tests; integrated build verification remains pending.
+- August part 1 was processed and cleaned (7 sections, 8 passages). Part 2 acquisition/sampling verified the displayed sermon title, Hadi Wijaya, and 1 Corinthians 3:1-9, but the new agent-shell version lost acknowledgement of its long-running command. The owned process was terminated and its workspace cleaned; partial service explicitly marked blocked. No denial or unavailable media was observed. Next attempt will use a single ordinary non-interactive command through the existing finite process-group wrapper, with the outer tool wait longer than its deadline; no session approval gate will be bypassed.
+
+## 2026-09-25 — August multipart case completed
+
+- Ordinary bounded non-interactive commands resolved the session-supervision issue. All three 16 August uploads are now processed and playable, in one needs_review service: 41 sections / 72 passages. Part-2 span 0–1802.801s took 2175.501s; part-3 span 0–3003s took 4412.586s. Finite native/wrapper/tool waits and evidence are recorded in `docs/august-multipart-review.md`.
+- Verified displayed title From Infant to Instrument, Hadi Wijaya, 1 Corinthians 3:1-9. Restart gaps and uncertain words remain explicit; no reconstructed missing speech or editorial approval.
+- Schema checks and 138 focused archive/browse/player tests passed. One exact candidate per upload ranked first with the correct physical ID/timestamps. All owned media workspaces/helpers cleaned; fixed model cache retained. No other logical case was processed concurrently.
+- Next: the 28 June failed/full-upload case, followed sequentially by Authority and Sacrifice; complete Milestone 2 acceptance against all five services before its checkpoint.
+
+## 2026-09-25 — June transcription timeout; operator-approved retry
+
+- June's failed upload again measured 6.561s and was rejected cleanly as near-empty. The full upload was verified at 6090s and sampled throughout; no access failure occurred.
+- A native invocation exceeded 1200s during the full transcription, after 3193.915s total elapsed. The 27000s outer bound did not expire. Failure cleanup removed partial evidence; no June interpretation was fabricated. Details: `docs/june-stream-review.md`.
+- The operator explicitly selected “Increase timeout and retry”: increase the per-native limit to 2400s, retain the 27000s whole-operation bound and the same model/engine. Reacquire only the full upload and retry once; retain verified failed-upload and programme-boundary evidence. Do not repeat previously successful services or remove finite limits.
+
+## 2026-09-25 — Operator supersedes CPU retry with supplied GPU transcripts
+
+- Latest operator decision supersedes both the June CPU retry and all earlier second-worker instructions. No VM dispatch or VM infrastructure is to be added. Local whisper.cpp remains primary, especially for the weekly single-service workflow. Operator-run Colab is an explicitly agreed large-batch exception only, never automated in CI or the app.
+- Read the operator bundle README and verified SHA256SUMS for all eight supplied JSON files: June full, Authority, Sacrifice, 13 September, both 5 July uploads, 12 July, and Tripping. The README resolves the garbled IDs in earlier messages; exact IDs match the implementation prompts.
+- Supplied engine: faster-whisper 1.2.1 / CTranslate2 4.8.2, large-v3-turbo, float16, Tesla T4, beam 5, word timestamps, no VAD, condition_on_previous_text false. Preserve the distinct original whisper.cpp provenance for September 6 and August 16. No local retranscription of the eight supplied recordings.
+- Process inventory found no June media/whisper/ffmpeg job; its retry workspace was absent. Removed the unused retry helper. Earlier timed-out partial evidence had already been cleaned. No active job required termination.
+- Next: add strict local-only transcript import/verification and per-recording provenance, verify duration and audio hashes against source, then delete each imported recording's matching audio from both operator-designated storage locations. Retain raw JSON as local evidence only. Continue June curation, then Authority and Sacrifice, followed by the normal Milestone 2 gate. M3 source inspection and competing-upload comparison are still required.
+- Import tooling now verifies all eight checksums/engine recipes and scans all 8,473 segments / 89,109 words. Authentic internal word/segment alignment differences are retained and flagged rather than silently repaired. The September 13 file includes a 2.82-second segment-start backtrack requiring regional curation review. Numeric bounds, checksums, source identity and duration/audio checks remain enforced. No source audio has been deleted yet; deletion follows each verified import.
+
+## 2026-09-25 — June completed using verified operator batch evidence
+
+- June now has one complete/needs_review logical service, 42 sections / 87 passages. Both physical uploads are retained: failed `wh4mCRKRJ-4` (6.561s, no passages) followed by playable `k27dmsPvmG8` (6090.161s), selected for ordinary playback. Displayed sermon title Teaching us all things… and references are documented in `docs/june-stream-review.md`.
+- Imported the supplied faster-whisper evidence without running inference. Transcript/audio hashes verified; duration delta −0.0080625s. Operator-recorded GPU elapsed 195.947s, RTF 0.03217. Per-video provenance preserves exact engine/settings/hashes and verification results.
+- Audio cleanup after successful import removed one matching Drive file; its local batch copy was already absent. Both locations rechecked absent. Owned acquired video, frames, converted evidence and helper were cleaned; original local JSON bundle retained.
+- Schema, 159 archive/browse/player tests and 38 importer tests passed. Preview now has 236 passages across three services; production has zero. Failed upload excluded. Next logical case: Authority, then Sacrifice; no local retranscription of supplied inputs.
+
+## 2026-09-25 — Supplied batch audio already removed
+
+- Before Authority import, both operator-designated batch-audio roots were found empty. The externally maintained bundle README now records deletion of the original audio after checking the transcripts. No Authority download or curation had begun; no files were removed by that attempt.
+- The shared contract requires verifying original audio hashes where bytes are present, not inventing verification when absent. Continue with the importer's explicit `--allow-missing-audio` path for already-deleted source audio: verify raw JSON checksum, approved engine/schema/timestamps, and independently acquired source identity/duration; preserve the supplied audio SHA-256 with `audio_hash_verified: false`. Do not reconstruct or retranscribe evidence merely to manufacture a matching hash. Future batch audio still must remain until its import is verified.
+- The bundle now also lists advance historical transcripts; do not curate those before Milestone 4 verifies the operator input manifest. Preserve operator changes to that input.
+
+## 2026-09-25 — Authority completed
+
+- Authority now has 32 chapters / 63 needs_review passages, with trusted title, date, Rev. Yong Teck Meng, Luke 20:19-26 and Romans 13:1-7 preserved. Fresh source channel/ID and ffprobe duration 3906.841s verified; imported 696 supplied segments / 11,344 words.
+- JSON checksum, engine/settings, timestamp bounds and source-duration checks passed. Operator GPU elapsed 128.254s / RTF 0.03283. Original batch audio was already absent, so exact provenance explicitly records audio_hash_verified false. No inference or replacement audio-hash claim.
+- Romans 13 / Rom 13 and the government question returned relevant Authority passages at rank 1 in deterministic search. Focused tests passed. Current projections: 0 production / 299 preview passages; semantic/browser milestone acceptance still pending.
+- Owned acquired media, samples, frames and imported evidence/receipts/helpers cleaned. Both batch-audio roots remain empty; raw bundle retained. Next: Sacrifice, then integrated Milestone 2 verification and checkpoint.
+
+## 2026-09-25 — Milestone 2 corpus ready for integrated verification
+
+- Sacrifice completed as a pre-trimmed sermon: 21 chapters / 47 needs_review passages, trusted full title/date and Genesis 22:1-19 / Romans 12:1-2 preserved. No invented service portions. Source ffprobe 3104.181s; imported transcript duration 3104.1706875s (delta −0.0103125s), supplied GPU RTF 0.03149. Original audio already absent, explicitly audio_hash_verified false. Source/JSON integrity and other import checks passed; no inference.
+- Both named Sacrifice queries ranked first in deterministic search. Schema/focused tests passed. All owned samples/video/frames/import artifacts/helpers cleaned, raw bundle retained.
+- All five M2 logical services and eight required physical uploads are now represented. Current preview projection has 346 unreviewed passages; production has zero. Next: full production/preview builds, hybrid and browser acceptance, responsive screenshots, separate M2 code/content commits and PR update.
+- The operator has modified `docs/implementation-prompts/inputs/historical-batch-001.yaml`. Preserve that change separately from the M2 checkpoint; validate it when Milestone 4 begins.
+
+## 2026-09-25 — Milestone 2 integrated checks passed
+
+- Both final build modes at `/replay-check/` passed: five services / eight physical videos, seven playable and one failed; 346 labelled preview passages / zero production passages. Public artifacts contain no media or private provenance/authorization records.
+- Actual-model core evaluation passed 27/27 checks; all named query targets ranked first in exact and hybrid modes, including the government question. All 27 browser executions passed across desktop, portrait and landscape, including multipart IDs/timestamps, static browse URLs, history/progress, and real-worker search.
+- Lint/typecheck/archive/Bible integrity passed. Full default tests: 253 TypeScript passed (3 optional model checks skipped), 77 Python passed. Actual-model evaluation and browser tests independently exercised the model against the full core corpus.
+- Final M2 screenshots and fresh scoped Penpot-reference review returned ship. No source frames or reference images changed. Evidence: `docs/milestone2-checks.md`, `docs/ui-verification.md`.
+- Next: inspect and stage only intended M2 code/docs/tests, retaining archive content as a second checkpoint and leaving the operator's historical-input edit unstaged. Signed commits, editorial guard and PR update precede Milestone 3.
+- All 50 staged code files and the four upcoming service/review pairs received a fresh read-only checkpoint review; no M2 blockers found. Staged BSB bytes match the documented source hash. Only the operator's historical input remains an unstaged tracked edit; M2 content remains untracked for its separate commit.
+- Real-model focused search/scripture tests passed 65/65, including all optional Node/browser embedding checks. No app or archive changes followed the passing builds/browser evaluation; later edits only recorded verification and prepared the checkpoint.
+- **Signing handoff:** code checkpoint is staged. The gitignored `.local/checkpoint-milestone2.sh` performs the normal signed code commit, stages only the four reviewed M2 service/review pairs, checks their diff, then performs the signed content commit. It does not stage the historical input or push. The operator can run `sh .local/checkpoint-milestone2.sh` from the repository, completing both hardware-key prompts in their own terminal. Do not bypass signing or treat the milestone delivery as complete before verifying both commits.
+- **Resume after signing:** inspect status/log and both new commits, run editorial guard from `d328f00`, push the existing branch, update draft PR #1 (Code review / Editorial review), then load Prompt 3. Expand M3 evaluation beyond the current exact five-service/eight-upload inventory. Preserve the operator's historical-input change for M4.

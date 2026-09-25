@@ -175,9 +175,40 @@ Real archive milestones require an explicit authorization confirmation and a wor
 
 ### Transcription settings
 
-- Model: `ggml-large-v3-turbo-q5_0.bin` for all archive transcription. Download it once into a model cache outside the repository, verify its SHA-256 against the value published by the model source, and record the file name, source URL, and hash in documentation.
+- Primary local model: `ggml-large-v3-turbo-q5_0.bin` with whisper.cpp. Download it once into a model cache outside the repository, verify its SHA-256 against the value published by the model source, and record the file name, source URL, and hash in documentation.
 - Language: `--language en` by default. If coarse sampling shows a recording is substantially in another language, transcribe that recording with the detected language and record it on the video. Never silently translate.
-- Do not change the model or engine within a corpus batch. If a change becomes necessary, record it and re-transcribe the whole batch.
+- Keep engine/settings consistent within a processing batch. An explicitly operator-approved imported batch may use the Colab exception below; record the engine per recording and retain the provenance of earlier whisper.cpp recordings. Do not re-transcribe those earlier recordings solely to erase this approved engine difference.
+
+### Operator-run batch exception (approved 2026-09-25)
+
+Local whisper.cpp remains the primary supported engine, including Milestone 5's
+weekly single-service job. Colab faster-whisper is an operator-run option for large
+batches only (roughly three or more full services) when CPU transcription would
+take many hours. It is not application infrastructure, an automatic pipeline, a CI
+job, or a hosted API integration. Propose its use for a future batch and obtain
+operator agreement before staging audio. Keep each batch small.
+
+The operator approved a precomputed batch for `k27dmsPvmG8`, `W2IZ6MUX-Yk`,
+`94fynFHtreg`, `GkmB_KeBlBw`, `D-FyolbxJgk`, `OrsN83j3qxE`, `MZr169xBwrU`, and
+`Z-vRVB-WucA`. Do not transcribe those recordings locally. Its configuration is
+faster-whisper 1.2.1 / CTranslate2 4.8.2, `large-v3-turbo`, float16 on Tesla T4,
+beam size 5, word timestamps enabled, VAD disabled, and
+`condition_on_previous_text=False`. Validate supplied JSON checksums, schema and
+timestamps; compare duration with verified source media; verify supplied source
+audio hashes where the audio is present. Convert to local pipeline evidence and
+record engine/settings, source audio and transcript hashes, timing and RTF per
+recording. Importing evidence does not approve interpretation; all agent-written
+services remain `needs_review`.
+
+For an agreed future large batch, stage only authorized, verified audio in the
+operator-designated Drive `audio/` folder, ask the operator to click **Run all** in
+their notebook, then collect the resulting transcript JSON. Do not execute Colab
+or dispatch to a VM automatically. Both the Drive audio folder and the operator's
+local batch-audio folder are temporary media storage. After each transcript is
+imported and verified, delete that recording's matching audio from both locations.
+Keep raw/imported transcripts local-only; they are evidence, not committed or
+published archive content. Preserve the normal metadata, sampling/frame inspection,
+programme-boundary, competing-upload, curation and cleanup requirements.
 
 ### Keeping transcription short
 

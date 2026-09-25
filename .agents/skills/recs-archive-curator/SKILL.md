@@ -25,6 +25,9 @@ evidence and validate files; a human alone approves archive interpretation.
   existing service/corpus examples, and taxonomy before editing. If `taxonomy/`
   or `services/` is absent, use the schema and documented fictional example for
   structure only; do not invent a taxonomy or recording content to fill the gap.
+- For operator-supplied transcripts, also read `$TRANSCRIPT_BUNDLE/README.md`
+  and its checksum manifest. Follow the approved import exception below; keep
+  private absolute paths and email addresses out of repository documentation.
 - Resolve one logical service or an explicitly bounded batch. Treat operator
   input manifests as read-only. A date is a lookup key, not proof that all its
   uploads form one service. A manifest's approval fields do not grant media
@@ -114,15 +117,23 @@ blocked     -> registered | in_progress
    Keep model cache separate. Install cleanup handling before acquisition; the
    validated sentinel-owned workspace must be removed on success, failure, and
    interruption. Clean surviving owned workspaces after a crash/restart too.
+   Imported-batch source audio is a separate lifecycle: preserve it until that
+   recording's import is verified, as specified below; never include those source
+   roots in an unconditional failure-cleanup trap.
 5. Verify `yt-dlp`, `ffmpeg`, `ffprobe`, and whisper.cpp versions inside devenv.
-   Use only `ggml-large-v3-turbo-q5_0.bin`, from `ggerganov/whisper.cpp`, with its
-   authoritative SHA-256/size and commit-pinned source URL. The `media:model`
+   Local whisper.cpp remains the primary engine and weekly single-service
+   standard. For local transcription use `ggml-large-v3-turbo-q5_0.bin`, from
+   `ggerganov/whisper.cpp`, with its authoritative SHA-256/size and commit-pinned
+   source URL. The `media:model`
    command fetches authoritative metadata when provisioning; preflight and
    transcription rehash cached bytes. Record actual provenance, not a guessed
-   checksum. Keep the engine/model revision fixed throughout a batch; a necessary
-   change requires documenting it and retranscribing the whole batch.
-6. Run `media:preflight` with its required work directory and verified cache. It
-   downloads/transcribes only the first 60 seconds of `MZr169xBwrU` and removes the
+   checksum. Keep engine/settings consistent within a processing batch. The
+   operator-approved Colab exception uses per-recording provenance; retain earlier
+   whisper.cpp provenance and do not retranscribe earlier recordings or rewrite
+   the whole batch solely to erase that approved engine difference.
+6. For the local transcription pipeline, run `media:preflight` with its required
+   work directory and verified cache. It downloads/transcribes only the first
+   60 seconds of `MZr169xBwrU` and removes the
    nested smoke workspace. Also remove the outer evidence workspace after saving
    safe results. Before the first real milestone-1 recording, verify the full
    `wh4mCRKRJ-4` failure-path test and full `mw4SAoJRZgo` calibration, with cleanup
@@ -142,6 +153,81 @@ blocked     -> registered | in_progress
    also verify live Penpot or complete checked-in exports as the shared contract
    requires; a curator-only invocation need not redesign the application.
 
+### Operator-run Colab exception — decision of 2026-09-25
+
+Colab faster-whisper is an operator-run option for an agreed large batch, roughly
+three or more full services whose CPU transcription would take many hours. It is
+not the weekly single-service path, application infrastructure, a CI job, a hosted
+API, or an automatically dispatched VM. Importing existing evidence does not
+trigger local ASR: reuse applicable toolchain evidence and verify the native tools
+needed for authorized source inspection.
+
+**Use the supplied M2/M3 transcripts instead of local retranscription** for
+`k27dmsPvmG8`, `W2IZ6MUX-Yk`, `94fynFHtreg`, `GkmB_KeBlBw`, `D-FyolbxJgk`,
+`OrsN83j3qxE`, `MZr169xBwrU`, and `Z-vRVB-WucA`. The approved configuration is
+faster-whisper 1.2.1 / CTranslate2 4.8.2, `large-v3-turbo`, float16 on Tesla T4,
+beam size 5, word timestamps enabled, VAD disabled, and
+`condition_on_previous_text=False`. Preserve these facts per recording; do not
+label imports as whisper.cpp or fabricate local chunk/model provenance.
+
+For each recording:
+
+1. Verify the JSON's full SHA-256 against `$TRANSCRIPT_BUNDLE/SHA256SUMS`; abbreviated
+   hashes in its README are not checksums. Validate its video ID, engine/settings,
+   language, duration, elapsed time/RTF, transcription date, segments and words.
+   Timestamps must be finite, ordered, nonnegative original-upload seconds and
+   within verified duration; validate word timing against its segment. Compare
+   duration with verified source ffprobe/yt-dlp evidence and investigate differences
+   rather than silently scaling timestamps. Retain the source JSON unchanged.
+2. Hash the actual original source-audio bytes wherever present, including the
+   designated `$BATCH_AUDIO_ROOT` and `$DRIVE_AUDIO_ROOT`, against the JSON's
+   `audio_sha256`. Check identity/channel and measured duration too. A filename,
+   checksum string, transcript duration, or re-encoded audio is not proof of the
+   original bytes. If audio is unavailable, record that verification limitation;
+   never claim a match. On checksum, format, identity, or duration failure, stop
+   that recording's import, preserve source audio and report the objective blocker.
+3. Convert validated JSON into canonical local pipeline evidence in an external
+   owned work root. Use `scripts/import_transcript.py` when integrated: its planned
+   stages are `verify-bundle`, `import`, and `cleanup-audio`. Read the current tool
+   documentation/help for exact arguments; do not invent flags or package scripts
+   or claim a pending importer has run. Keep failures/retries bounded and isolate
+   each recording's verification result.
+4. Verify the converted evidence against the JSON: recording identity, absolute
+   timestamps, text/segment correspondence, language and transcribed span. Record
+   per-recording engine/version, model, compute/settings, source-audio and transcript
+   SHA-256 hashes, elapsed time, RTF, import source (safe bundle identifier and
+   relative filename), and each verification outcome. Missing provenance remains
+   an explicit gap, not a fabricated value. Keep raw JSON, imported evidence and
+   local verification receipts external and local-only, never committed/published;
+   only safe provenance summaries belong in repository notes.
+5. After that recording's import is verified and its receipt retained, delete only
+   its matching source audio from **both** designated batch-audio roots. Verify
+   matching bytes before deletion and record completion for each location. Never
+   delete before verification, on a hash mismatch, or by sweeping a whole Drive
+   folder. If either root is inaccessible, record cleanup pending. Preserve media
+   needed for normal sampling/frame/boundary review in a separate owned curation
+   workspace; clean that workspace after curation. Do not delete the supplied
+   transcript bundle as part of source-audio cleanup.
+
+For a future batch, propose the bounded service list and obtain operator agreement
+before staging. Stage **only authorized, verified audio** in the operator-designated
+Drive `audio/` folder (`$DRIVE_AUDIO_ROOT`); keep the corresponding local batch audio
+under `$BATCH_AUDIO_ROOT`. Ask the operator to click **Run all** manually in their
+notebook. It skips already-completed outputs: collect and verify those too rather
+than rerunning them blindly. Collect resulting JSON into `$TRANSCRIPT_BUNDLE` in
+small batches, bound waits/retries and report failures; never execute Colab or
+dispatch a VM automatically. Apply the same per-recording import and two-location
+cleanup gate. Do not infer approval for a future batch from the eight-file exception.
+
+Imported evidence still requires trusted metadata, audio samples, timestamped
+frames, refined programme boundaries, competing-upload comparisons and the same
+human-review workflow. Supplied files cover full recordings: record their actual
+span rather than pretending they were trimmed or locally chunked. Select editorial
+programme boundaries with the usual margins/context without retranscribing them.
+Check 30–60-second ASR gaps against audio (they may be music/quiet) and repeated
+lines against performance (they may be hymn lyrics), not automatic deletion rules.
+All resulting interpretation stays `needs_review`.
+
 ## 4. Inspect, group, and transcribe evidence
 
 - Acquire through the authorized media command, including `--sections` only when
@@ -160,21 +246,27 @@ blocked     -> registered | in_progress
   recordings into one logical service only with evidence; retain ordered physical
   IDs and explain restarts, gaps, duplicates, and exclusions. Neither shortness,
   length, naming, nor matching dates alone determines grouping or disposition.
-  Fully transcribe competing uploads only if they will carry searchable passages.
-- Choose the programme interval from evidence, then transcribe with two-minute
-  margins on both sides, clipped to the acquired recording bounds. Record the
+  For new transcription, fully transcribe competing uploads only if they will
+  carry searchable passages; inspect approved imports without retranscribing.
+- For new transcription, choose the programme interval from evidence, then use
+  two-minute margins on both sides, clipped to the acquired recording bounds. Record the
   requested `transcribed_span` separately from editorial programme boundaries.
-  Full-span transcription is justified only when samples support it.
-- Use whisper.cpp with `--language en` by default. If samples show substantial
-  other-language speech, select the detected original language and record it on
+  New full-span transcription is justified only when samples support it; preserve
+  the true full span of already-approved imports under the exception above.
+- For local transcription use whisper.cpp with `--language en` by default. If
+  samples show substantial other-language speech, select the detected original
+  language and record it on
   the video; never silently translate. Captions may supplement evidence, but are
   neither assumed present nor authoritative/complete.
-- Analyze roughly ten-minute chunks with 30–60 seconds of adjacent overlap. The
-  tool currently uses 600 seconds with a 555-second advance (45-second overlap).
+- Analyze roughly ten-minute windows with 30–60 seconds of adjacent overlap,
+  including when reviewing imported transcripts. The local transcription tool
+  uses 600-second chunks with a 555-second advance (45-second overlap); do not
+  claim those inference settings for imported full-recording evidence.
   Preserve original-video absolute timestamps, including acquisition and chunk
   offsets. Do not concatenate multipart videos into a fabricated common clock.
 - Review `evidence.json`, `evidence.txt`, raw chunk segments, audio and frames
-  together. The merged ASR uses midpoint ownership, not editorial reconciliation.
+  together. The local merged ASR uses midpoint ownership, not editorial
+  reconciliation.
   Reconcile seam wording/timing against raw overlapping audio, remove duplicated
   overlap text without dropping words or genuine repeated speech, and preserve
   adjacent context. Mark inaudible/uncertain speech rather than completing it
@@ -235,8 +327,11 @@ blocked     -> registered | in_progress
 4. Save safe evidence/uncertainty and update `docs/run-log.md` after each recording:
    milestone, service/video IDs, completed/next steps, provenance, spans, grouping
    and boundary decisions, cleanup result, checks and objective blockers. Remove
-   owned workspaces in finally/traps even on failure/interruption. Keep only the
-   separate verified model cache; confirm no native children remain after timeout.
+   curation workspaces in finally/traps even on failure/interruption. For imported
+   batches, apply the verification-gated two-location source-audio cleanup above;
+   preserve unverified/mismatching source audio and local-only import receipts or
+   supplied JSON needed for resumption. Keep the separate verified model cache;
+   confirm no native children remain after timeout.
 5. When the person has authorized Git delivery (including an implementation-run
    instruction), inspect status, full diff and recent history; stage only intended
    files. Keep code/tests/docs and editorial content (`services/`, `corpus/`,

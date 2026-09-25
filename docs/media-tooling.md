@@ -9,6 +9,12 @@ This tool produces local evidence, not archive interpretations or editorial
 approval. Live preflight, the model hash, and calibration measurements are recorded
 in [preflight-evidence.md](preflight-evidence.md); offline tests are separate evidence.
 
+Local whisper.cpp remains primary. For an explicitly operator-approved large batch,
+the manual [Colab transcript importer](transcript-import.md) verifies supplied JSON,
+source duration and audio hashes, records per-recording provenance, and cleans the
+matching batch audio after import. It does not run Colab or replace weekly local
+transcription. Do not locally retranscribe the eight supplied M2/M3 recordings.
+
 ## Command interface
 
 Options follow the subcommand. All commands accept an explicit

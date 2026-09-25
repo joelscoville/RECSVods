@@ -1,8 +1,10 @@
 import type { SearchPassage } from './types';
 import { EMBEDDING_CONFIG, isCompatibleEmbeddingConfig, isEmbeddingVector, preprocessEmbedding } from './embedding-config';
+import { parseScriptureReference, scriptureOverlaps } from './scripture';
 
 export const SEARCH_WEIGHTS = Object.freeze({
-  date: 16, speaker: 14, scripture: 14, topic: 7, title: 6,
+  date: 16, speaker: 14, scripture: 14, verseText: 8, topic: 7, title: 6,
+  referenceBonus: 32,
   service: 4, question: 4, summary: 3, transcript: 2, type: 2,
   phraseBonus: 0.5, semantic: 3, semanticThreshold: 0.45, minimumTermCoverage: 0.6,
 });
@@ -25,7 +27,7 @@ export interface SearchResult { passage: SearchPassage; score: number; reasons: 
 export function buildEmbeddingDocument(passage: SearchPassage): string {
   return preprocessEmbedding([
     passage.title, passage.summary, ...passage.questions, ...passage.topics,
-    ...passage.scripture, passage.transcript,
+    ...passage.scripture.map((reference) => parseScriptureReference(reference)?.canonical ?? reference), passage.verseText ?? '', passage.transcript,
   ].join('\n'));
 }
 
@@ -34,6 +36,10 @@ function words(text: string): string[] {
   return preprocessEmbedding(text).toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [];
 }
 function lexical(text: string): string { return words(text).join(' '); }
+// Conservative English plural folding for verse-text recall, not substring matching.
+function verseTerm(word: string): string {
+  return word.length > 3 && word.endsWith('s') && !/(ss|us|is)$/.test(word) ? word.slice(0, -1) : word;
+}
 function containsPhrase(field: string, query: string): boolean { return ` ${field} `.includes(` ${query} `); }
 function compare(a: string, b: string): number { return a < b ? -1 : a > b ? 1 : 0; }
 
@@ -45,16 +51,21 @@ function dateTerms(date: string): string[] {
 
 /** Exact field scores plus a bounded cosine contribution. No model is needed for lexical search. */
 export function search(passages: readonly SearchPassage[], query: string, options: SearchOptions = {}): SearchResult[] {
-  const phrase = lexical(query);
-  const terms = [...new Set(words(query).filter((word) => !STOP_WORDS.has(word)))];
+  const referenceQuery = parseScriptureReference(query);
+  const lexicalQuery = referenceQuery?.canonical ?? query;
+  const phrase = lexical(lexicalQuery);
+  const terms = [...new Set(words(lexicalQuery).filter((word) => !STOP_WORDS.has(word)))];
   if (!phrase || !terms.length) return [];
   const semanticAvailable = isEmbeddingVector(options.queryVector) && options.vectors?.schemaVersion === 1 && isCompatibleEmbeddingConfig(options.vectors.model);
   const threshold = Math.max(0, Math.min(1, Number.isFinite(options.semanticThreshold) ? options.semanticThreshold! : SEARCH_WEIGHTS.semanticThreshold));
   const results: SearchResult[] = [];
   for (const passage of passages) {
-    const fields: [keyof Pick<typeof SEARCH_WEIGHTS, 'date' | 'speaker' | 'scripture' | 'topic' | 'title' | 'service' | 'question' | 'summary' | 'transcript' | 'type'>, string[]][] = [
+    const references = passage.scripture.map((value) => parseScriptureReference(value));
+    const referenceMatch = referenceQuery && references.some((reference) => reference && scriptureOverlaps(referenceQuery, reference));
+    const fields: [keyof Pick<typeof SEARCH_WEIGHTS, 'date' | 'speaker' | 'scripture' | 'verseText' | 'topic' | 'title' | 'service' | 'question' | 'summary' | 'transcript' | 'type'>, string[]][] = [
       ['date', dateTerms(passage.date)], ['speaker', passage.speaker ? [passage.speaker] : []],
-      ['scripture', passage.scripture], ['topic', passage.topics], ['title', [passage.title]],
+      ['scripture', references.flatMap((reference) => reference ? [reference.canonical] : [])],
+      ['verseText', passage.verseText ? [passage.verseText] : []], ['topic', passage.topics], ['title', [passage.title]],
       ['service', [passage.serviceTitle]], ['question', passage.questions], ['summary', [passage.summary]],
       ['transcript', [passage.transcript]], ['type', [passage.type]],
     ];
@@ -62,13 +73,23 @@ export function search(passages: readonly SearchPassage[], query: string, option
     const reasons: string[] = [];
     const covered = new Set<string>();
     for (const [name, values] of fields) {
-      const normalized = values.map(lexical);
-      const found = terms.filter((term) => normalized.some((value) => containsPhrase(value, term)));
+      if (name === 'scripture' && referenceQuery) {
+        if (referenceMatch) {
+          terms.forEach((term) => covered.add(term));
+          score += SEARCH_WEIGHTS.referenceBonus + SEARCH_WEIGHTS.scripture * (1 + SEARCH_WEIGHTS.phraseBonus);
+          reasons.push('Scripture match (reference)');
+        }
+        continue;
+      }
+      const normalized = values.map((value) => name === 'verseText' ? words(value).map(verseTerm).join(' ') : lexical(value));
+      const found = terms.filter((term) => normalized.some((value) => containsPhrase(value, name === 'verseText' ? verseTerm(term) : term)));
       if (!found.length) continue;
       found.forEach((term) => covered.add(term));
-      const fullPhrase = normalized.some((value) => containsPhrase(value, phrase));
+      const fieldPhrase = name === 'verseText' ? words(lexicalQuery).map(verseTerm).join(' ') : phrase;
+      const fullPhrase = normalized.some((value) => containsPhrase(value, fieldPhrase));
       score += SEARCH_WEIGHTS[name] * (found.length / terms.length + (fullPhrase ? SEARCH_WEIGHTS.phraseBonus : 0));
-      reasons.push(`${name[0].toUpperCase()}${name.slice(1)} match${fullPhrase && words(query).length > 1 ? ' (exact phrase)' : ''}`);
+      reasons.push(name === 'verseText' ? 'Verse-text match (BSB)'
+        : `${name[0].toUpperCase()}${name.slice(1)} match${fullPhrase && words(lexicalQuery).length > 1 ? ' (exact phrase)' : ''}`);
     }
     const lexicalMatch = covered.size / terms.length >= SEARCH_WEIGHTS.minimumTermCoverage;
     if (!lexicalMatch) { score = 0; reasons.length = 0; }

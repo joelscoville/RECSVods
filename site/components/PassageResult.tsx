@@ -10,7 +10,7 @@ export default function PassageResult({ passage, reasons, base }: { passage: Sea
       <h2><a href={watchUrl(base, { id: passage.id })}>{passage.title}</a></h2>
       <p className="metadata"><time dateTime={passage.date}>{formatDate(passage.date)}</time> · {displayType(passage.type)}{passage.speaker && <> · {passage.speaker}</>}</p>
       <p className="service-context">{passage.serviceTitle}</p>
-      {passage.scripture.length > 0 && <p className="scripture"><ScriptureLinks references={passage.scripture} /></p>}
+      {passage.scripture.length > 0 && <p className="scripture"><ScriptureLinks references={passage.scripture} displayReferences={passage.scriptureDisplay} /></p>}
       <p>{passage.summary}</p>
       {passage.preview && <p className="preview-label">Unreviewed preview</p>}
       {reasons && reasons.length > 0 && <p className="match-reasons"><strong>Matched:</strong> {reasons.join(' · ')}</p>}

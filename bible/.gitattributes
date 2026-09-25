@@ -1,0 +1,2 @@
+# Preserve publisher bytes, including CRLF and intentionally empty verse rows.
+bsb.txt -text whitespace=-blank-at-eol,cr-at-eol

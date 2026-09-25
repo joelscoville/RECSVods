@@ -9,6 +9,7 @@ import { buildEmbeddingDocument, search, SEARCH_WEIGHTS, type VectorIndex } from
 import { createSemanticClient, type SemanticRequest, type SemanticResponse, type SemanticStatus } from '../site/lib/semantic';
 import type { SearchPassage } from '../site/lib/types';
 import { buildVectors, embedTexts, prepare, sha256, verifyModelFile } from '../scripts/embeddings';
+import { enrichPassages } from '../bible/enrich';
 
 // Fictional test data only; never emitted into an archive or public build.
 const fixture: SearchPassage = {
@@ -57,6 +58,24 @@ describe('embedding contract', () => {
 });
 
 describe('transparent hybrid ranking', () => {
+  it('finds singular living sacrifice through actual BSB enrichment, with an honest hidden-text reason', () => {
+    const [enriched] = enrichPassages([{ ...fixture, scripture: ['Romans 12:1'] }]);
+    expect(search([fixture], 'living sacrifice')).toEqual([]);
+    const result = search([enriched], 'living sacrifice')[0];
+    expect(result.reasons).toEqual(['Verse-text match (BSB)']);
+    expect(result.score).toBe(SEARCH_WEIGHTS.verseText * (1 + SEARCH_WEIGHTS.phraseBonus));
+    expect(enriched.transcript).toBe(fixture.transcript);
+    expect(buildEmbeddingDocument(enriched)).toContain(enriched.verseText);
+    expect(search([enriched], 'unrelated', { vectors: vectorIndex(), queryVector: unit() })).toEqual([]);
+  });
+  it.each(['Romans 13', 'Rom 13', 'Rom13', 'ROM.13:3', 'Romans 12:21-13:2'])('finds overlapping canonical scripture for %s ahead of hidden text and semantics', (query) => {
+    const referenced = { ...fixture, id: 'referenced', scripture: ['Romans 13:1-7'] };
+    const other = { ...fixture, id: 'other', scripture: [], verseText: 'Romans 13', transcript: 'Romans 13' };
+    const results = search([other, referenced], query, { vectors: vectorIndex([other]), queryVector: unit() });
+    expect(results[0].passage.id).toBe('referenced');
+    expect(results[0].reasons).toContain('Scripture match (reference)');
+    expect(search([referenced], 'Romans 13:8')).toEqual([]);
+  });
   it('reports only fields containing the query, and works without embeddings', () => {
     const result = search([fixture], 'quiet generosity')[0];
     expect(result.reasons).toEqual(['Transcript match (exact phrase)']);
@@ -215,6 +234,24 @@ describe('generated index', () => {
 });
 
 describe.skipIf(process.env.RECS_TEST_EMBEDDINGS !== '1')('prepared real q8 model (opt-in)', () => {
+  it('ranks a government question against synthetic passages using real BSB-enriched embeddings', async () => {
+    vi.stubGlobal('fetch', () => { throw new Error('Offline check: network forbidden'); });
+    const passages = enrichPassages([
+      { ...fixture, id: 'civic-fixture', title: 'Synthetic civic discussion',
+        summary: 'The fictional speaker discusses Christian responsibilities toward governing authorities.',
+        questions: [], topics: [], scripture: ['Rom 13:1-7'], transcript: 'A synthetic discussion of civic responsibilities.' },
+      { ...fixture, id: 'care-fixture', scripture: ['Romans 12:1-2'] },
+      { ...fixture, id: 'creation-fixture', title: 'Synthetic creation discussion', summary: 'A fictional discussion about the natural world.', questions: [], topics: [], scripture: ['Genesis 1:1-5'], transcript: 'A synthetic discussion of creation.' },
+      { ...fixture, id: 'travel-fixture', title: 'Synthetic journey discussion', summary: 'A fictional discussion about journeys.', questions: [], topics: [], scripture: [], transcript: 'A synthetic discussion of travel logistics.' },
+    ]);
+    const query = 'How should Christians relate to government?';
+    const [queryVector, ...vectors] = await embedTexts([query, ...passages.map(buildEmbeddingDocument)]);
+    const index: VectorIndex = { schemaVersion: 1, model: EMBEDDING_CONFIG, passagesSha256: 'synthetic-only',
+      vectors: Object.fromEntries(passages.map((passage, i) => [passage.id, { document: buildEmbeddingDocument(passage), vector: vectors[i] }])) };
+    const results = search(passages, query, { queryVector, vectors: index });
+    expect(results.slice(0, 3).map((result) => result.passage.id)).toContain('civic-fixture');
+    expect(results.find((result) => result.passage.id === 'civic-fixture')?.reasons).toContain('Semantic similarity');
+  }, 60_000);
   it('reuses source-verified cached files offline and produces compatible normalized embeddings', async () => {
     vi.stubGlobal('fetch', () => { throw new Error('Offline check: network forbidden'); });
     const result = await prepare();

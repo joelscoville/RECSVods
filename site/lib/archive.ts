@@ -2,6 +2,8 @@ import { existsSync, readFileSync, readdirSync, realpathSync } from 'node:fs';
 import path from 'node:path';
 import { parseDocument } from 'yaml';
 import { z } from 'zod';
+import { normalizeScriptureReference, parseScriptureReference } from './scripture';
+export { BIBLE_BOOKS } from './scripture';
 
 export const SOURCE_CHANNEL_ID = 'UCLjwcZaIkiFEed1VgQYSsrw';
 export const WorkflowStatusSchema = z.enum(['discovered', 'registered', 'in_progress', 'complete', 'blocked']);
@@ -73,27 +75,42 @@ export const TopicSchema = z.object({ id: Id, name: Text, description: Text.opti
 export type Speaker = z.infer<typeof SpeakerSchema>;
 export type Topic = z.infer<typeof TopicSchema>;
 
-// Canonical names are factual reference metadata, never Bible verse text.
-export const BIBLE_BOOKS = [
-  'Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Ruth',
-  '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Ezra',
-  'Nehemiah', 'Esther', 'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon',
-  'Isaiah', 'Jeremiah', 'Lamentations', 'Ezekiel', 'Daniel', 'Hosea', 'Joel', 'Amos',
-  'Obadiah', 'Jonah', 'Micah', 'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah',
-  'Malachi', 'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans', '1 Corinthians',
-  '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1 Thessalonians',
-  '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus', 'Philemon', 'Hebrews', 'James',
-  '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation',
-] as const;
-export const ScriptureReferenceSchema = Text.refine((reference) => {
-  const match = /^(.*?) ([1-9]\d*)(?::([1-9]\d*))?(?:-([1-9]\d*)(?::([1-9]\d*))?)?$/.exec(reference);
-  if (!match || !(BIBLE_BOOKS as readonly string[]).includes(match[1])) return false;
-  const [, , chapter, verse, end, endVerse] = match;
-  if (endVerse && !verse) return false;
-  if (!end) return true;
-  if (endVerse) return +end > +chapter || (+end === +chapter && +endVerse >= +verse);
-  return +end >= +(verse ?? chapter);
-}, 'expected canonical reference, e.g. Romans 13:1-7 or John 3:16-4:2 (no verse text)');
+export const ScriptureInputSchema = z.string().min(1).refine((reference) => Boolean(parseScriptureReference(reference)),
+  'expected a valid scripture reference, e.g. Romans 13:1-7 or John 3:16-4:2 (no verse text)');
+/** Canonical-output validator retained for existing callers; editable inputs accept aliases. */
+export const ScriptureReferenceSchema = ScriptureInputSchema.refine((reference) => parseScriptureReference(reference)?.canonical === reference,
+  'expected a canonical scripture reference');
+
+/** Safe archive projection of the local manual-import receipt; no paths or transcript text. */
+export const TranscriptionProvenanceSchema = z.object({
+  engine: z.literal('faster-whisper'),
+  engine_version: z.literal('1.2.1'),
+  model: z.literal('large-v3-turbo'),
+  backend_version: z.literal('4.8.2'),
+  compute_type: z.literal('float16'),
+  device: z.literal('Tesla T4'),
+  settings: z.object({
+    beam_size: z.literal(5), word_timestamps: z.literal(true),
+    vad_filter: z.literal(false), condition_on_previous_text: z.literal(false),
+  }).strict(),
+  audio_sha256: z.string().regex(/^[0-9a-f]{64}$/),
+  transcript_sha256: z.string().regex(/^[0-9a-f]{64}$/),
+  duration_seconds: z.number().finite().positive(),
+  elapsed_seconds: z.number().finite().positive(),
+  real_time_factor: z.number().finite().positive(),
+  transcribed_at: z.string().datetime({ offset: true }),
+  source_duration_seconds: z.number().finite().positive(),
+  duration_delta_seconds: z.number().finite().min(-2).max(2),
+  audio_hash_verified: z.boolean(),
+}).strict().superRefine((v, ctx) => {
+  if (Math.abs(v.real_time_factor - v.elapsed_seconds / v.duration_seconds) > 0.0000051) {
+    ctx.addIssue({ code: 'custom', path: ['real_time_factor'], message: 'inconsistent with elapsed/duration (five-decimal rounding tolerance)' });
+  }
+  if (Math.abs(v.duration_delta_seconds - (v.duration_seconds - v.source_duration_seconds)) > 1e-9) {
+    ctx.addIssue({ code: 'custom', path: ['duration_delta_seconds'], message: 'must equal transcript duration minus ffprobe source duration' });
+  }
+});
+export type TranscriptionProvenance = z.infer<typeof TranscriptionProvenanceSchema>;
 
 export const VideoSchema = z.object({
   id: YoutubeIdSchema,
@@ -104,6 +121,7 @@ export const VideoSchema = z.object({
   ...mediaFields,
   transcription_language: z.string().regex(/^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/).optional(),
   transcribed_span: RangeSchema.optional(),
+  transcription_provenance: TranscriptionProvenanceSchema.optional(),
 }).strict().superRefine((v, ctx) => {
   axisChecks(v, ctx);
   if (v.transcribed_span && v.transcribed_span.end > v.duration) {
@@ -112,7 +130,10 @@ export const VideoSchema = z.object({
   if (v.transcribed_span && !v.transcription_language) {
     ctx.addIssue({ code: 'custom', path: ['transcription_language'], message: 'required with transcribed_span' });
   }
-  if (['discovered', 'registered'].includes(v.workflow_status) && (v.transcribed_span || v.transcription_language)) {
+  if (v.transcription_provenance && (!v.transcription_language || !v.transcribed_span)) {
+    ctx.addIssue({ code: 'custom', path: ['transcription_provenance'], message: 'requires original transcription language and transcribed span' });
+  }
+  if (['discovered', 'registered'].includes(v.workflow_status) && (v.transcribed_span || v.transcription_language || v.transcription_provenance)) {
     ctx.addIssue({ code: 'custom', path: ['workflow_status'], message: 'never-interpreted videos cannot contain transcription metadata' });
   }
 });
@@ -138,11 +159,18 @@ const passageFields = {
   summary: Text,
   questions: z.array(Text),
   topics: z.array(Id),
-  scripture: z.array(ScriptureReferenceSchema),
+  scripture: z.array(ScriptureInputSchema),
 };
-export const PassageSchema = z.object({ ...passageFields, transcript: Text }).strict().refine((v) => v.end > v.start, {
+export const PassageSchema = z.object({ ...passageFields, transcript: Text, scriptureDisplay: z.array(ScriptureInputSchema).optional() }).strict().refine((v) => v.end > v.start, {
   path: ['end'], message: 'must be greater than start',
-});
+}).refine((passage) => !passage.scriptureDisplay || (passage.scriptureDisplay.length === passage.scripture.length
+  && passage.scriptureDisplay.every((value, index) => parseScriptureReference(value)?.canonical === parseScriptureReference(passage.scripture[index])?.canonical)),
+{ path: ['scriptureDisplay'], message: 'must align with canonical scripture references' })
+  .transform((passage) => {
+    const scripture = passage.scripture.map(normalizeScriptureReference);
+    return { ...passage, scripture, ...(scripture.some((value, index) => value !== passage.scripture[index])
+      ? { scriptureDisplay: passage.scriptureDisplay ?? [...passage.scripture] } : {}) };
+  });
 const TranscriptFileSchema = z.string().regex(/^(?!\/)(?!.*(?:^|\/)\.\.?\/)[A-Za-z0-9_./-]+\.md$/, 'expected a relative Markdown path inside the service directory');
 export const PassageSourceSchema = z.object({
   ...passageFields,
@@ -231,6 +259,10 @@ export interface SearchPassage {
   questions: string[];
   topics: string[];
   scripture: string[];
+  /** Entered references, positionally aligned with canonical scripture. */
+  scriptureDisplay?: string[];
+  /** Public-domain BSB text for generated search input only; never render as ESV. */
+  verseText?: string;
   speaker?: string;
   date: string;
   type: string;
@@ -337,7 +369,10 @@ export function flattenArchive(services: readonly Service[], mode: BuildMode = '
       start: passage.start, end: passage.end, title: passage.title, summary: passage.summary,
       transcript: passage.transcript, questions: [...passage.questions],
       topics: passage.topics.map((id) => service.topics.find((t) => t.id === id)!.name),
-      scripture: [...passage.scripture], ...(speaker ? { speaker } : {}), date: service.date,
+      scripture: passage.scripture.map(normalizeScriptureReference),
+      ...(passage.scriptureDisplay || passage.scripture.some((value) => normalizeScriptureReference(value) !== value)
+        ? { scriptureDisplay: [...(passage.scriptureDisplay ?? passage.scripture)] } : {}),
+      ...(speaker ? { speaker } : {}), date: service.date,
       type: passage.type, preview: service.editorial_status !== 'reviewed',
     };
   })).sort((a, b) => compareText(b.date, a.date) || compareText(a.serviceId, b.serviceId)

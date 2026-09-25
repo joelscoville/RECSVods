@@ -2,9 +2,10 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { flattenArchive, loadArchive, type BuildMode } from '../site/lib/archive';
+import { enrichPassages } from '../bible/enrich';
 
 export function buildIndex(root = process.cwd(), mode: BuildMode = 'production'): string {
-  const passages = flattenArchive(loadArchive(root), mode);
+  const passages = enrichPassages(flattenArchive(loadArchive(root), mode));
   const directory = path.join(root, 'site/public/generated');
   mkdirSync(directory, { recursive: true });
   // One canonical output is replaced on every build, so a production rebuild cannot

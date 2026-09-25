@@ -21,7 +21,7 @@ The authoritative [Hugging Face model API metadata](https://huggingface.co/api/m
 
 `site/lib/embedding-config.ts` is the single source of these values. The pinned tokenizer lowercases text internally. FeatureExtractionPipeline always tokenizes with truncation; version 3.8.1 does **not** honor a `max_length` pipeline-call option. Both Node and worker therefore explicitly set `tokenizer.model_max_length = 256`.
 
-`buildEmbeddingDocument(passage)` concatenates title, summary, questions, topic display names, canonical scripture references, and transcript in that order, then applies the same preprocessing as a query. It preserves the separate original display fields. Service title, speaker, date, and type remain exact-search fields. No verse text is added in this milestone. Scripture aliases and licensed/public-domain verse-text integration belong to the later Bible-data work.
+`buildEmbeddingDocument(passage)` concatenates title, summary, questions, topic display names, canonical scripture references, hidden public-domain BSB verse text, and transcript in that order, then applies the same preprocessing as a query. It preserves the separate original display fields. Service title, speaker, date, and type remain exact-search fields. Milestone 2 adds sourced BSB enrichment and reference aliases; see `docs/bible.md` for provenance and normalization. ESV verse text is never indexed or displayed.
 
 ### Download and cache verification
 
@@ -122,16 +122,18 @@ All weights live in `SEARCH_WEIGHTS`:
 | --- | ---: |
 | Date | 16 |
 | Speaker, scripture | 14 each |
+| BSB verse text | 8 |
 | Topic | 7 |
 | Passage title | 6 |
 | Service title, question | 4 each |
 | Summary | 3 |
 | Transcript, type | 2 each |
 | Semantic cosine | 3 |
+| Valid overlapping scripture-reference bonus | 32 |
 
 Lexical comparison uses NFKC, case folding, Unicode letter/number token boundaries, and a small English stop-word list. A field contributes its weight multiplied by the fraction of distinct meaningful query terms present. An exact whole-query phrase adds half that field's weight. Repetition does not inflate scores. A candidate must cover at least 60% of meaningful query terms across its fields to retain lexical contributions. Reasons name only fields that contributed; an exact-phrase qualifier is emitted only when that phrase is present. Partial field reasons can coexist for mixed queries such as speaker plus topic.
 
-ISO dates and English long/short month forms are searchable. Canonical scripture reference tokens preserve verse-number boundaries (`1` does not substring-match `10`). Metadata weights prioritize speaker/date/scripture over incidental transcript mentions and the bounded semantic contribution. General aliases, verse-range intersection, stemming, and fuzzy spelling are not implemented.
+ISO dates and English long/short month forms are searchable. Scripture aliases normalize before matching; reference ranges support intersection and preserve verse-number boundaries (`1` does not substring-match `10`). Metadata weights prioritize speaker/date/scripture over incidental transcript mentions and the bounded semantic contribution. Hidden BSB text uses a distinct verse-text match reason and conservative plural matching; it is never presented as an ESV quotation. General fuzzy spelling is not implemented.
 
 Semantic scores are cosine similarity × 3, only at or above **0.45** by default. `semanticThreshold` optionally overrides that cutoff, clamped to [0, 1]. Below-cutoff vectors contribute neither score nor reason. This deliberately permits no results rather than always selecting the nearest vector. The cutoff is a conservative initial heuristic, not a relevance guarantee; tune it against human-reviewed archive queries. Blank and stop-word-only queries return no results even if a vector is supplied.
 

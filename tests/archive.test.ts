@@ -1,14 +1,16 @@
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { stringify } from 'yaml';
 import { afterEach, describe, expect, it } from 'vitest';
 import {
   archiveFromFiles, assertWorkflowTransition, canTransitionWorkflow, flattenArchive,
   IdentifierRecordSchema, loadArchive, parseYaml, publishedServices, ScriptureReferenceSchema,
-  ServiceSchema, SOURCE_CHANNEL_ID, WorkflowStatusSchema, type Service, type WorkflowStatus,
+  ServiceSchema, SOURCE_CHANNEL_ID, TranscriptionProvenanceSchema, WorkflowStatusSchema, type Service, type WorkflowStatus,
 } from '../site/lib/archive';
 import { archiveCli, buildIndex } from '../scripts/archive';
+import { displayServices } from '../site/components/archive-display';
 
 const roots: string[] = [];
 const filename = 'services/2026/fixture-service/service.yaml';
@@ -39,6 +41,73 @@ function put(directory: string, file: string, content: string) {
   writeFileSync(path.join(directory, file), content);
 }
 afterEach(() => roots.splice(0).forEach((directory) => rmSync(directory, { recursive: true, force: true })));
+
+describe('manual-import transcription provenance', () => {
+  // Exercise the Python receipt projection itself across the language boundary; synthetic metadata only.
+  const projection = JSON.parse(execFileSync('python3', ['-c', `
+import json
+from scripts.import_transcript import ENGINE, archive_provenance
+payload = {"engine": ENGINE, "audio_sha256": "a" * 64, "duration_seconds": 120.04,
+           "elapsed_seconds": 6, "real_time_factor": round(6 / 120.04, 5),
+           "transcribed_at": "2026-09-25T11:00:00.123456+00:00"}
+verification = {"transcript_sha256": "b" * 64, "source_duration_seconds": 120.06,
+                "duration_delta_seconds": 120.04 - 120.06}
+print(json.dumps(archive_provenance(payload, verification, True)))
+`], { encoding: 'utf8' }));
+
+  it('accepts the exact safe Python receipt projection and keeps old local evidence optional', () => {
+    expect(TranscriptionProvenanceSchema.parse(projection)).toEqual(projection);
+    expect(ServiceSchema.parse(fixture())).toEqual(fixture());
+    const service = fixture();
+    service.videos[0].transcription_provenance = projection;
+    expect(ServiceSchema.parse(service).videos[0].transcription_provenance).toEqual(projection);
+    expect(TranscriptionProvenanceSchema.parse({ ...projection, audio_hash_verified: false }).audio_hash_verified).toBe(false);
+  });
+
+  it.each([
+    ['engine', 'whisper.cpp'], ['engine_version', '1.2.0'], ['backend_version', '4.8.1'],
+    ['model', 'large-v3'], ['compute_type', 'int8'], ['device', 'CPU'], ['audio_sha256', 'bad'],
+    ['transcript_sha256', '../private'], ['duration_seconds', Infinity], ['elapsed_seconds', 0],
+    ['real_time_factor', 1], ['transcribed_at', 'yesterday'], ['source_duration_seconds', -1],
+    ['duration_delta_seconds', 2.1], ['duration_delta_seconds', 0], ['audio_hash_verified', 1],
+    ['audio_root', '/private/operator/audio'],
+  ])('rejects invalid or private provenance field %s', (key, value) => {
+    expect(TranscriptionProvenanceSchema.safeParse({ ...projection, [key]: value }).success).toBe(false);
+  });
+
+  it('requires exact approved settings and rejects missing and additional settings', () => {
+    for (const settings of [{}, { ...projection.settings, beam_size: 1 }, { ...projection.settings, word_timestamps: 1 },
+      { ...projection.settings, vad_filter: true }, { ...projection.settings, condition_on_previous_text: true },
+      { ...projection.settings, translate: false }]) {
+      expect(TranscriptionProvenanceSchema.safeParse({ ...projection, settings }).success).toBe(false);
+    }
+  });
+
+  it('requires transcription context and forbids provenance on never-interpreted videos', () => {
+    const service = fixture();
+    service.videos[0].transcription_provenance = projection;
+    delete service.videos[0].transcribed_span;
+    expect(ServiceSchema.safeParse(service).success).toBe(false);
+    service.videos[0].transcribed_span = { start: 0, end: 100 };
+    service.videos[0].workflow_status = 'registered';
+    expect(ServiceSchema.safeParse(service).success).toBe(false);
+  });
+
+  it('never serializes provenance through either UI allowlist', () => {
+    const service = fixture();
+    service.videos[0].transcription_provenance = projection;
+    const passages = flattenArchive([service], 'preview');
+    const displayed = displayServices(publishedServices([service], 'preview'), passages);
+    expect(displayed[0].videos).toEqual([{ id: 'AAAAAAAAAAA', duration: 120, sequence: 1 }]);
+    for (const serialized of [JSON.stringify(passages), JSON.stringify(displayed)]) {
+      expect(serialized).not.toContain('transcription_provenance');
+      expect(serialized).not.toContain('faster-whisper');
+      expect(serialized).not.toContain(projection.audio_sha256);
+      expect(serialized).not.toContain(projection.transcript_sha256);
+    }
+    expect(service.videos[0].transcription_provenance).toEqual(projection);
+  });
+});
 
 describe('workflow contract', () => {
   const edges = new Set(['discovered:registered', 'discovered:blocked', 'registered:in_progress', 'registered:blocked',

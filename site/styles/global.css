@@ -334,3 +334,16 @@ ul, ol { padding: 0; margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
 }
+
+/* Browse reuses the established tiles, chips, chapter rows and result typography. */
+.browse-navigation .chip { text-decoration: none; }
+.browse-navigation .chip:hover { text-decoration: underline; }
+.browse-navigation .chip[aria-current='page'] { background: var(--burgundy); color: var(--surface); }
+.browse-main .browse-service-list { display: flex; flex-direction: column; list-style: none; gap: 12px; }
+.browse-main .service-chapters { margin-top: 24px; }
+.browse-main .chapter-copy .preview-label { color: var(--burgundy); align-self: flex-start; }
+.browse-main .browse-navigation { margin-bottom: 24px; }
+@media (max-width: 1023px) {
+  .browse-main .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .search-browse .browse-navigation > a { min-height: 60px; font-size: 14px; }
+}
