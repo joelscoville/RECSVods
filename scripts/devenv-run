@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+"""Run a command inside devenv with a finite, portable process-group timeout."""
+
+import os
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from run_bounded import main
+
+os.chdir(Path(__file__).resolve().parent.parent)
+sys.argv[1:1] = ["devenv", "shell", "--"]
+sys.exit(main())

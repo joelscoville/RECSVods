@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import LocalDataControls from '../../components/LocalDataControls';
+---
+<SiteLayout title="Policies" route="policies-route">
+  <main id="main" class="prose page-width" tabindex="-1">
+    <h1>Policies</h1>
+    <section><h2>Playback and YouTube</h2><p>Recordings are played through YouTube. The player and its external scripts load only after you press Play. Loading a player shares connection information with YouTube; YouTube’s own privacy policy and terms apply to its service.</p><p><a href="https://policies.google.com/privacy">Google privacy policy</a> · <a href="https://www.youtube.com/t/terms">YouTube terms</a></p></section>
+    <section><h2>History on this device</h2><p>RECS Replay saves submitted searches and your most recent playback position in this browser’s local storage. This makes search history and Continue watching available on this device. There is no account, and this history does not sync to other devices. If storage is blocked, search and playback still work without saved history.</p><LocalDataControls client:load /><noscript><p>To clear saved history without JavaScript, remove this site’s data in your browser settings.</p></noscript></section>
+    <section><h2>Passage search</h2><p>Exact search runs in your browser. Meaning-based search downloads a model from this site and runs it on your device; search queries are not sent to an external model service. Your browser may cache these model files. Clear this site’s browser data to remove cached files.</p><p>Search links contain the query in their address. Sharing a search link shares that query with its recipient. Your hosting provider may receive page addresses as part of ordinary web requests.</p></section>
+    <section><h2>Archive content</h2><p>Published services and passages are selected through editorial review. Summaries and search matches help locate a recording; listen to the original recording for its full context. Preview builds are labelled and can include content awaiting review.</p></section>
+  </main>
+</SiteLayout>

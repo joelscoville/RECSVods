@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Watch from '../../components/Watch';
+import { loadArchive, publishedServices, flattenArchive } from '../../lib/archive';
+import { displayServices } from '../../components/archive-display';
+const mode = import.meta.env.ARCHIVE_MODE;
+const eligible = publishedServices(loadArchive(), mode);
+const services = displayServices(eligible, flattenArchive(eligible, mode));
+---
+<SiteLayout title="Watch" route="watch-route" noindex>
+  <Watch services={services} base={import.meta.env.BASE_URL} client:load />
+</SiteLayout>

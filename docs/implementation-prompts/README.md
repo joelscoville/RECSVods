@@ -214,7 +214,7 @@ If any Homebrew installation is used, create or update `docs/toolchain-fallback.
 
 ### Authorization
 
-Require the operator assertion `RECS_MEDIA_AUTHORIZED=1` before `yt-dlp` runs. Only the human operator may set it. The agent must never set, export, prepend, or suggest setting this variable in its own commands, and must never write it into scripts, configuration, `.env` files, or documentation examples that the agent then runs. If it is absent, stop and report the blocker.
+Require explicit operator permission before `yt-dlp` runs. Accept either the operator-set `RECS_MEDIA_AUTHORIZED=1` environment flag or explicit permission in the current conversation. For conversational permission, record its scope in a gitignored local authorization file and pass that file explicitly to the media tools; never treat a committed file or a previous run's log as authorization for a new run. The operator approved this alternative on 2026-09-25. The agent must never set the environment flag itself or infer permission from public availability. If neither authorization method is available, stop and report the blocker. Authorization records must never enter Git or build output. This permission covers media processing only, not editorial approval or publication.
 
 Authentication cookies or credentials must come from an operator-approved environment or local browser profile. They must never enter Git, logs, issue bodies, build artifacts, or the website.
 

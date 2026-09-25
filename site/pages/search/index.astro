@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import SearchApp from '../../components/SearchApp';
+import { loadArchive, flattenArchive } from '../../lib/archive';
+const passages = flattenArchive(loadArchive(), import.meta.env.ARCHIVE_MODE);
+---
+<SiteLayout title="Search" route="search-route" header={false}>
+  <SearchApp base={import.meta.env.BASE_URL} initialPassages={passages} client:load />
+</SiteLayout>

@@ -1,0 +1,38 @@
+name: Validate RECS Replay
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm lint && pnpm typecheck && pnpm test && pnpm validate:archive
+      - name: Check every PR commit for editorial approval
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: pnpm editorial:guard "$BASE_SHA" "$HEAD_SHA"
+      - name: Build production and local-review output with a project path
+        env:
+          SITE_BASE_PATH: /replay-check/
+        run: pnpm build && pnpm build:preview
+      - run: pnpm test:e2e
+# No deployment in this milestone. In particular, preview output must never deploy.

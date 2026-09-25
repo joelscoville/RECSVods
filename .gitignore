@@ -1,5 +1,25 @@
 .DS_Store
 
+# Local development, authorization, generated output, and caches
+.local/
+.devenv/
+.devenv.flake.nix
+__pycache__/
+*.pyc
+.direnv/
+node_modules/
+site/public/generated/
+site/public/models/
+site/public/onnx/
+dist/
+.astro/
+coverage/
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example
+
 # Local agent-harness setup (personal tooling, not part of RECS Replay).
 # Keep parent directories trackable: the curator skill and its adapters live in
 # .agents/skills/, .claude/skills/, and .opencode/skills/.

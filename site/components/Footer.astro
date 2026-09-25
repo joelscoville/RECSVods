@@ -1,0 +1,8 @@
+---
+import { siteUrl } from '../lib/urls';
+const base = import.meta.env.BASE_URL;
+---
+<footer class="site-footer">
+  <a class="wordmark" href={siteUrl(base)}>RECS REPLAY</a>
+  <nav aria-label="Footer"><a href={siteUrl(base)}>Home</a><a href={siteUrl(base, 'policies/')}>Policies</a></nav>
+</footer>

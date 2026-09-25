@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Home from '../components/Home';
+import { loadArchive, publishedServices, flattenArchive } from '../lib/archive';
+import { displayServices, homeItems } from '../components/archive-display';
+const mode = import.meta.env.ARCHIVE_MODE;
+const eligible = publishedServices(loadArchive(), mode);
+const items = homeItems(displayServices(eligible, flattenArchive(eligible, mode)), import.meta.env.BASE_URL);
+---
+<SiteLayout title="Home" route="home-route">
+  <Home items={items} base={import.meta.env.BASE_URL} client:load />
+</SiteLayout>

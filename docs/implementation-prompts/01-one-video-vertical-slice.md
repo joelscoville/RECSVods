@@ -18,7 +18,7 @@ Do not invent the sermon title, speaker, scripture, transcript, boundaries, or s
 
 Before building archive content:
 
-1. Confirm `RECS_MEDIA_AUTHORIZED=1` is present in the environment the operator started. Never set it yourself; if it is absent, stop and report.
+1. Confirm explicit operator authorization using either the operator-set `RECS_MEDIA_AUTHORIZED=1` flag or current-conversation permission recorded in a gitignored local file, as defined in the shared Authorization contract. Never set the flag yourself. If neither is available, stop and report.
 2. Create or verify the committed devenv and its lock file, then enter it through the shared bounded `scripts/devenv-run` wrapper. Do not test only the host `PATH`.
 3. From inside devenv, verify and record versions for `yt-dlp`, `ffmpeg`, `ffprobe`, and whisper.cpp. Download and hash-verify the shared transcription model into the external model cache.
 4. Verify temporary storage and model-cache paths are outside tracked repository content.
