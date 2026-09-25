@@ -55,3 +55,15 @@ Milestones 1–5 remain incomplete. The empty historical batch input permits too
 - Final visual review returned ship at its bounded scope; see `docs/ui-verification.md`. Real YouTube playback started correctly; after seeking the actual video near the endpoint, pause/continue/replay were observed. A prior uninterrupted-playback wait timed out; no full-duration network-playback guarantee is claimed.
 - Source Penpot frames and saved image assets remain unchanged. No unreviewed interpretation is published or approved.
 - Next: clean the owned baseline media workspace, inspect/stage intended code separately from archive interpretation, create the two milestone commits with agent trailers, push and open the draft PR. Hardware-key commit signing may require operator terminal handoff. Do not bypass signing. Milestone 2 begins after that checkpoint succeeds.
+
+## 2026-09-25 — Checkpoint waiting for operator signing
+
+- Removed the owned baseline workspace with `pnpm media:cleanup`; verified model cache retained externally. Staged only the code/test/documentation checkpoint. A read-only review of all 79 staged diffs found no blocking issues or private artifacts. Archive interpretation remains separate and unstaged.
+- Started `git commit -m "milestone 1: build one-video vertical slice" -m "Curated-by: agent"` in session `recs-dev`. Git requested hardware-key signing; handed the session to the operator. A bounded wait returned that the operator had not yet attached. Do not bypass signing, inspect the session while the operator owns it, or assume the commit succeeded.
+- **Resume:** wait for the operator to return `recs-dev`, then inspect commit result/status/log. If the code commit succeeded, include this run-log update with the separate archive-content checkpoint, stage only `services/`, `corpus/`, `docs/first-recording-review.md` and the run-log update, inspect the diff and commit with the content checkpoint message plus `Curated-by: agent`. Run the editorial guard across both commits, push, open the draft PR, then begin Milestone 2. If signing failed, preserve files and create a fresh commit after the operator resolves it; do not amend or disable signing.
+- Milestone 1 implementation/build/test evidence is ready; its delivery checkpoint is not yet confirmed. Milestones 2–5 have not begun. No archive approval or production deployment has occurred.
+
+## 2026-09-25 — Resumed after signing
+
+- Confirmed code checkpoint `ce86100` (`milestone 1: build one-video vertical slice`). The operator returned the shell; private signing interaction was not inspected.
+- Next: commit the separate needs_review archive content and review notes, run the editorial guard over both checkpoints, then push and open the single draft PR before Milestone 2.
