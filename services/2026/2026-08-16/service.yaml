@@ -1,0 +1,1218 @@
+id: '2026-08-16'
+date: '2026-08-16'
+title: RECS 16 August 2026 — From Infant to Instrument
+sermon_title: From Infant to Instrument
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - 'One logical service comprises mw4SAoJRZgo, XWAH9SWFcoo and IcIxBc--VvM in that order, all acquired and reviewed. Upload restarts leave unmeasured gaps; physical timestamps are never concatenated. Part 3 continues the same preacher, presentation and sermon, already discussing Eden/pride after part 2 ends on three categories of people. Missing intervening material is not reconstructed.'
+  - 'Part-2 frame 1200s verifies From Infant to Instrument, Hadi Wijaya, 16 August 2026 and 1 Corinthians 3:1-9. Part 2 opens with reflection on the same anthem heard at part-1 cutoff; intervening song material is missing between uploads, with unknown gap length. This supports ordered service continuity, not gapless playback or a duplicate claim.'
+  - 'Transcripts are ASR-derived review drafts, not directly listened-to or audio-verified verbatim transcripts. Punctuation normalized; timestamps are machine estimates. Human listening is required for quiet-prayer gaps, repeated-text artifacts and uncertain names.'
+  - 'Scripture quotations and sung lyrics are omitted with explicit markers. References are ESV-labelled links in the application, not a claim that every spoken quotation uses that translation. Unannounced quotation references are left unknown.'
+  - 'Part 1 programme begins with worship preparation in the first 30 seconds and ends during a music video. Full 0–776s transcription therefore includes legitimate programme throughout, with two-minute margins clipped to recording bounds.'
+  - 'Part 2 programme/transcribed span is 0–1802.801s. Part 3 programme is approximately 0–2991.12s; transcribed span 0–3003s includes clipped two-minute margins. Short final announcement slides remain available in playback. Human review is required for exact prayer/music/setup transitions.'
+  - 'Displayed title, preacher and 1 Corinthians 3:1-9 verified in part 2; ancillary references and quotation attributions checked against slides where available. Part 3 includes a recorded Nick Vujicic testimony, attributed separately from Hadi. Quoted authors and third-party factual claims are the recording’s claims, not independently authenticated facts.'
+speakers:
+  - { id: hadi-wijaya, name: Hadi Wijaya, role: Preacher }
+  - { id: nick-vujicic, name: Nick Vujicic, role: Recorded testimony speaker }
+topics:
+  - { id: prayer, name: Prayer }
+  - { id: service-life, name: Church life }
+videos:
+  - id: mw4SAoJRZgo
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 776
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: 'Verified channel/ID; ffprobe audio/video duration 776.281s, source metadata 776s. Coarse frames at 0/300/600s, targeted 485/700/770s frames and English ASR show prayer, worship and a music video continuing at the end. Quiet-prayer ASR defects do not indicate failed media.'
+    transcription_language: en
+    transcribed_span: { start: 0, end: 776 }
+  - id: XWAH9SWFcoo
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 1802.801
+    sequence: 2
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: 'Authorized acquisition verified channel/ID; ffprobe audio/video duration 1802.801s, source metadata 1803s. Seven coarse frames and sample-ASR windows show worship, reading and sermon, including title/speaker slide at 1200s and sermon continuing at 1800s. Processing interruption is not failed media.'
+    transcription_language: en
+    transcribed_span: { start: 0, end: 1802.801 }
+  - id: IcIxBc--VvM
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 3003
+    sequence: 3
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: 'Verified channel/ID; metadata 3003s and ffprobe audio/video duration 3003.381s. Eleven coarse frames/sample-ASR windows show the same sermon continuing, an embedded testimony, concluding worship and announcements. Targeted final 183s confirms announcements through about 2991s.'
+    transcription_language: en
+    transcribed_span: { start: 0, end: 3003 }
+sections:
+  - id: s0816-p1-preparation
+    video_id: mw4SAoJRZgo
+    start: 0
+    end: 368.48
+    type: prayer
+    title: Preparation for worship — A.C.T.S. prayer
+    confidence: 0.77
+    review_notes: ['300s slide confirms Adoration, Confession, Thanksgiving, Supplication. Repetitive ASR during quiet intervals is omitted; no claim that those intervals contain no speech. One 240–295s recovery restores the supplication lead-in but places its first phrase broadly across 240–268s.']
+  - id: s0816-p1-welcome
+    video_id: mw4SAoJRZgo
+    start: 368.48
+    end: 422.48
+    type: welcome
+    title: Welcome and congregational greeting
+    confidence: 0.69
+    review_notes: ['Unverified spoken worship-leader name omitted from metadata. Repeated prayer lead-in at 388–422s requires human timing review.']
+  - id: s0816-p1-invocation
+    video_id: mw4SAoJRZgo
+    start: 422.48
+    end: 476.48
+    type: prayer
+    title: Opening prayer for worship, preacher and children
+    confidence: 0.8
+  - id: s0816-p1-call
+    video_id: mw4SAoJRZgo
+    start: 476.48
+    end: 532.48
+    type: scripture-reading
+    title: Call to worship — Psalms 95:1-5
+    confidence: 0.93
+    review_notes: ['Reference confirmed on frame 485s. Reading omitted, surrounding commentary retained.']
+  - id: s0816-p1-hymn
+    video_id: mw4SAoJRZgo
+    start: 532.48
+    end: 680.52
+    type: worship
+    title: To God Be the Glory
+    confidence: 0.89
+    review_notes: ['Sung lyrics omitted. The 555–600s raw-chunk overlap contains singing; no searchable spoken passage crosses this seam.']
+  - id: s0816-p1-anthem-intro
+    video_id: mw4SAoJRZgo
+    start: 680.52
+    end: 714.34
+    type: worship
+    title: Introduction to My Labour Is Not In Vain
+    confidence: 0.9
+    review_notes: ['Title verified on frame 700s, correcting ASR title wording. Attribution to CityAlight is spoken ASR evidence.']
+  - id: s0816-p1-anthem
+    video_id: mw4SAoJRZgo
+    start: 714.34
+    end: 776
+    type: worship
+    title: My Labour Is Not In Vain — recording cuts off
+    confidence: 0.91
+    review_notes: ['770s frame shows music-video playback; last-30s sample and full ASR end during the song. Lyrics omitted. Part 2 resumes with reflection on the same song, then congregational singing; gap length unknown.']
+  - { id: s0816-p2-reflection, video_id: XWAH9SWFcoo, start: 0, end: 68.46, type: testimony, title: Media ministry and working before God, confidence: 0.88 }
+  - { id: s0816-p2-anthem, video_id: XWAH9SWFcoo, start: 68.46, end: 334.18, type: worship, title: My Labour Is Not In Vain — congregational singing, confidence: 0.83, review_notes: ['Lyrics omitted. Repetitive ASR around 309–323s makes the exact music-to-speech boundary uncertain.'] }
+  - { id: s0816-p2-responsive, video_id: XWAH9SWFcoo, start: 334.18, end: 660.12, type: scripture-reading, title: Responsive reading — Proverbs 3 and Ephesians 4, confidence: 0.9, review_notes: ['340s slide gives Proverbs 3:1-35 and Ephesians 4:1-16. At 530s Proverbs 3:35 is shown; at 550s Ephesians 4:1-2; at 650s Ephesians 4:15-16. ASR repeats false Proverbs references from 383s through the first chunk; exclude all reading text. Book transition approximately 540s, not audio-verified.'] }
+  - { id: s0816-p2-christlike, video_id: XWAH9SWFcoo, start: 660.12, end: 690.64, type: worship, title: Growing more Christ-like, confidence: 0.79 }
+  - { id: s0816-p2-hymn, video_id: XWAH9SWFcoo, start: 690.64, end: 803.4, type: worship, title: Hymn before the video anthem, confidence: 0.82, review_notes: ['Sung lyrics omitted; spoken title sounds like O to Be Like Thee, not independently verified on a title slide.'] }
+  - { id: s0816-p2-video-anthem, video_id: XWAH9SWFcoo, start: 803.4, end: 973.5, type: worship, title: His Grace Reaches Me — video anthem, confidence: 0.86, review_notes: ['Title announced at 806s; lyrics omitted. Includes introduction and invitation to scripture reader.'] }
+  - { id: s0816-p2-reading, video_id: XWAH9SWFcoo, start: 973.5, end: 1055.64, type: scripture-reading, title: Scripture reading — 1 Corinthians 3:1-9, confidence: 0.93 }
+  - { id: s0816-p2-setup, video_id: XWAH9SWFcoo, start: 1055.64, end: 1204.64, type: transition, title: Sermon presentation setup, confidence: 0.65, review_notes: ['Title/speaker card at 1080s; black frame at 1120s and 1205s, presentation visible at prior 1200s sample. ASR includes technical exchanges and unreliable thanks/greeting repetitions. No searchable passage or claim of silence; human review needed.'] }
+  - { id: s0816-p2-sermon-intro, video_id: XWAH9SWFcoo, start: 1204.64, end: 1349.2, type: sermon, title: From Infant to Instrument — purpose and questions, speaker_id: hadi-wijaya, confidence: 0.85 }
+  - { id: s0816-p2-sermon-prayer, video_id: XWAH9SWFcoo, start: 1349.2, end: 1410.7, type: prayer, title: Prayer before the exposition, speaker_id: hadi-wijaya, confidence: 0.81, review_notes: ['Prayer ends 1388.2s; microphone/clicker adjustment follows before 1410.7s.'] }
+  - { id: s0816-p2-context, video_id: XWAH9SWFcoo, start: 1410.7, end: 1665.2, type: sermon, title: The Corinthians and the need to grow, speaker_id: hadi-wijaya, confidence: 0.84 }
+  - { id: s0816-p2-corinth, video_id: XWAH9SWFcoo, start: 1665.2, end: 1743.44, type: sermon, title: Corinth and the sermon outline, speaker_id: hadi-wijaya, confidence: 0.88, review_notes: ['Raw overlapping chunks restore Perhaps Singapore to a certain degree, dropped by midpoint merge. Frame 1700s corroborates Corinth context.'] }
+  - { id: s0816-p2-categories, video_id: XWAH9SWFcoo, start: 1743.44, end: 1802.801, type: sermon, title: 'Spiritual, fleshly and natural people', speaker_id: hadi-wijaya, confidence: 0.89, review_notes: ['1800s slide verifies category labels; sermon continues at physical cutoff.'] }
+  - { id: s0816-p3-pride, video_id: IcIxBc--VvM, start: 0, end: 201.22, type: sermon, title: Pride and spiritual infancy, speaker_id: hadi-wijaya, confidence: 0.88, review_notes: ['Begins mid-sentence after recording gap; no invented bridge from part 2.'] }
+  - { id: s0816-p3-growth, video_id: IcIxBc--VvM, start: 201.22, end: 322.84, type: sermon, title: Ministry effort and growth given by God, speaker_id: hadi-wijaya, confidence: 0.9 }
+  - { id: s0816-p3-paradox, video_id: IcIxBc--VvM, start: 322.84, end: 536.7, type: sermon, title: Biblical examples of sovereignty and responsibility, speaker_id: hadi-wijaya, confidence: 0.89 }
+  - { id: s0816-p3-sovereignty, video_id: IcIxBc--VvM, start: 536.7, end: 810.68, type: sermon, title: Outcomes and the means used to reach them, speaker_id: hadi-wijaya, confidence: 0.88 }
+  - { id: s0816-p3-limits, video_id: IcIxBc--VvM, start: 810.68, end: 1067.94, type: sermon, title: 'Human limits, faith and understanding', speaker_id: hadi-wijaya, confidence: 0.87 }
+  - { id: s0816-p3-resources, video_id: IcIxBc--VvM, start: 1067.94, end: 1282.36, type: sermon, title: Further reading and responding with worship, speaker_id: hadi-wijaya, confidence: 0.91, review_notes: ['Frames 1080/1140/1200/1220s verify displayed attribution and book titles, not authenticity of the underlying quotations.'] }
+  - { id: s0816-p3-workers, video_id: IcIxBc--VvM, start: 1282.36, end: 1382.04, type: sermon, title: The privilege of serving under God, speaker_id: hadi-wijaya, confidence: 0.88 }
+  - { id: s0816-p3-testimony-intro, video_id: IcIxBc--VvM, start: 1382.04, end: 1496.86, type: sermon, title: Introduction to Nick Vujicic, speaker_id: hadi-wijaya, confidence: 0.83, review_notes: ['1420s slide identifies Nick. Slide/spoken age 44 and clip age 26 concern different contexts; do not date the clip from the introduction. Biographical details are attributed and not independently verified.'] }
+  - { id: s0816-p3-testimony, video_id: IcIxBc--VvM, start: 1496.86, end: 1710.34, type: testimony, title: 'Recorded testimony — identity, suffering and forgiveness', speaker_id: nick-vujicic, confidence: 0.86, review_notes: ['Embedded video is part of this RECS upload, not a separate acquired source. Serious third-party factual allegations at 1572–1625s are not verified; retain a marked gap pending human review. Hymn lyrics within testimony omitted.'] }
+  - { id: s0816-p3-willingness, video_id: IcIxBc--VvM, start: 1710.34, end: 1820.2, type: sermon, title: Unable or unwilling to serve, speaker_id: hadi-wijaya, confidence: 0.88 }
+  - { id: s0816-p3-prison, video_id: IcIxBc--VvM, start: 1820.2, end: 2034.48, type: testimony, title: Personal experience in prison ministry, speaker_id: hadi-wijaya, confidence: 0.86 }
+  - { id: s0816-p3-mission, video_id: IcIxBc--VvM, start: 2034.48, end: 2109.08, type: sermon, title: An invitation to serve beyond Singapore, speaker_id: hadi-wijaya, confidence: 0.89 }
+  - { id: s0816-p3-summary, video_id: IcIxBc--VvM, start: 2109.08, end: 2351.48, type: sermon, title: 'Humility, trust and practical willingness', speaker_id: hadi-wijaya, confidence: 0.89, review_notes: ['2195s slide labels Matthew 7:21 TLB; reference-only application link is ESV and must not imply the displayed quotation is ESV. Raw overlap restores nearest to us at 2242–2243s.'] }
+  - { id: s0816-p3-sermon-prayer, video_id: IcIxBc--VvM, start: 2351.48, end: 2419.52, type: prayer, title: Prayer after the sermon, speaker_id: hadi-wijaya, confidence: 0.89 }
+  - { id: s0816-p3-creed, video_id: IcIxBc--VvM, start: 2419.52, end: 2470.48, type: creed, title: Apostles’ Creed, speaker_id: hadi-wijaya, confidence: 0.88, review_notes: ['Recitation omitted; ASR contains errors and is not used to reconstruct liturgy.'] }
+  - { id: s0816-p3-pastoral, video_id: IcIxBc--VvM, start: 2470.48, end: 2615.14, type: prayer, title: Pastoral prayer for congregation and senior pastor, speaker_id: hadi-wijaya, confidence: 0.78, review_notes: ['Quiet-prayer ASR repeats phrases; onset of second prompt is approximate. 2600s frame shows pastoral prayer. No claim that omitted intervals are silent.'] }
+  - { id: s0816-p3-offering, video_id: IcIxBc--VvM, start: 2615.14, end: 2725, type: offering, title: Offertory, confidence: 0.8, review_notes: ['2700s slide confirms offering. Repetitive ASR after instruction at 2623.58s excluded; no banking details copied.'] }
+  - { id: s0816-p3-hymn-intro, video_id: IcIxBc--VvM, start: 2725, end: 2775.56, type: worship, title: Introduction to Work for the Night Is Coming, speaker_id: hadi-wijaya, confidence: 0.88, review_notes: ['Single 2695–2760s recovery restores 2725s lead-in; 2730s title slide verifies hymn title.'] }
+  - { id: s0816-p3-hymn, video_id: IcIxBc--VvM, start: 2775.56, end: 2885.06, type: worship, title: Work for the Night Is Coming, confidence: 0.9, review_notes: ['Lyrics omitted. Final chunk seam contains singing only; duplicated/incorrect sung ASR is not indexed.'] }
+  - { id: s0816-p3-dismissal, video_id: IcIxBc--VvM, start: 2885.06, end: 2917.02, type: prayer, title: Closing prayer and dismissal, speaker_id: hadi-wijaya, confidence: 0.87 }
+  - { id: s0816-p3-announcements, video_id: IcIxBc--VvM, start: 2917.02, end: 3003, type: announcements, title: Church announcements and fellowship lunch, speaker_id: hadi-wijaya, confidence: 0.82, review_notes: ['Boundary-window ASR places announcement onset at 2917s versus full ASR 2931s. 2980s slide gives 23 August lunch; spoken ASR says 26th, retained as uncertainty. Spoken programme ends about 2991s, followed by event slide.'] }
+passages:
+  - id: p0816-p1-adoration
+    video_id: mw4SAoJRZgo
+    section_id: s0816-p1-preparation
+    start: 0
+    end: 56.54
+    type: prayer
+    title: Preparing for worship through A.C.T.S. prayer
+    summary: The leader invites the congregation to prepare for worship through adoration, confession, thanksgiving and supplication, beginning with praise of God.
+    questions: ['How does the leader introduce the A.C.T.S. pattern of prayer?']
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      Good morning. Good morning everyone. As we prepare our hearts this morning for worship, let us come quietly before the Lord in prayer following the ACTS pattern: adoration, confession, thanksgiving and supplication. Let us begin with adoration, acknowledging God for who he is. He is our creator and Lord, full of goodness, holiness and mercy. Let us turn our heart to him and give him the praise and honor that he deserves. Let us pray in adoration.
+    confidence: 0.86
+    review_notes: ['Opening 30s sample corroborates full ASR. Broad first segment includes opening pause; no word-level timing guarantee.']
+  - id: p0816-p1-confession
+    video_id: mw4SAoJRZgo
+    section_id: s0816-p1-preparation
+    start: 112.92
+    end: 147.38
+    type: prayer
+    title: Invitation to confession
+    summary: The leader invites the congregation to acknowledge sins and seek mercy and forgiveness.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      We now come before God in confession. The Bible assures us that [scripture quotation omitted; reference not announced]. Let us humbly acknowledge our sins before him and seek his mercy and forgiveness.
+    confidence: 0.75
+    review_notes: ['Reference not supplied from memory. Adjacent repetitive quiet-prayer ASR discarded; human listening required.']
+  - id: p0816-p1-thanksgiving
+    video_id: mw4SAoJRZgo
+    section_id: s0816-p1-preparation
+    start: 183.84
+    end: 210.52
+    type: prayer
+    title: Giving thanks for daily provision and faith
+    summary: The leader names life, family, daily provisions, faith and salvation among the gifts for which the congregation gives thanks.
+    questions: ['What gifts does the leader mention in the thanksgiving prayer?']
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      [Opening scripture quotation omitted; reference not announced.] Indeed, our lives, our family, our daily provisions, and above all the gift of faith and salvation in Christ, all are gifts [wording uncertain] coming from God. Scripture calls us to [scripture quotation omitted; reference not announced]. Let us now express our gratitude to God.
+    confidence: 0.7
+    review_notes: ['Short passage preserves a complete prompt rather than adding quiet time to meet a duration target. Repetitions after 210.52s excluded as unreliable ASR.']
+  - id: p0816-p1-supplication
+    video_id: mw4SAoJRZgo
+    section_id: s0816-p1-preparation
+    start: 240
+    end: 295
+    type: prayer
+    title: Bringing personal needs and the needs of others
+    summary: The leader invites the congregation to bring its own needs and the needs of others before God.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      We now come to God with our supplications, bringing before him our needs and the needs of others. Scripture tells us [scripture quotation omitted; reference not announced]. Let us therefore bring our needs and burden before him.
+    confidence: 0.73
+    review_notes: ['Single same-model 240–295s recovery restores missing lead-in. First ASR segment spans 240–268s and may include silence; end also broad. Human boundary review required.']
+  - id: p0816-p1-collective-prayer
+    video_id: mw4SAoJRZgo
+    section_id: s0816-p1-preparation
+    start: 337.48
+    end: 368.48
+    type: prayer
+    title: Entrusting joys and burdens before worship
+    summary: The leader prays for worshippers with joys and burdens to entrust them to God and attend to worship.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      Our Heavenly Father, we thank you for gathering us today, this morning as your people. Some of us come with joys, while others come carrying burdens in our heart. Grant us your grace to entrust all these things into your hands so that our heart may be attentive to you and that we may worship you [biblical wording omitted; reference not announced]. May our worship today bring glory to your name. In Jesus' name we pray. Amen.
+    confidence: 0.79
+    review_notes: ['Onset follows an unreliable repetitive-ASR interval; verify against audio.']
+  - id: p0816-p1-opening-prayer
+    video_id: mw4SAoJRZgo
+    section_id: s0816-p1-invocation
+    start: 422.48
+    end: 476.48
+    type: prayer
+    title: Prayer for the sermon, children and an absent pastor
+    summary: The worship leader prays for the preacher, children attending Sunday school and a pastor serving elsewhere that morning.
+    questions: []
+    topics: [prayer, service-life]
+    scripture: []
+    transcript: |
+      Let's all bow down our heads, close our eyes and pray to God. Dear Father in heaven, we would like to thank you so much that you have gathered us this morning to enjoy your presence. Help us, O Lord, to understand your word. Please use Brother [name uncertain] who will be delivering the sermon today. May you use him and enable him to speak your word. May you edify and rebuke us through the sermon this morning, and may we all experience your grace and love and know you more after this worship service. We surrender also the children who will be going for Sunday school. May you please also help them to know you from tender age. And we ask, O Lord, that you be present with us from the beginning of this service to the very end. Thank you, [word uncertain]. We also like to surrender Pastor [name uncertain], who is serving somewhere else this morning. We like to pray that you also bless him and help him so that he become a blessing for those who listen to him this morning. In the name of Jesus Christ we pray. Amen.
+    confidence: 0.79
+    review_notes: ['ASR names sound like Hardy and Yong; neither expanded or asserted as verified speaker metadata. Repeated opening salutation normalized.']
+  - id: p0816-p1-call-to-worship
+    video_id: mw4SAoJRZgo
+    section_id: s0816-p1-call
+    start: 476.48
+    end: 532.48
+    type: scripture-reading
+    title: Psalms 95:1-5 and the invitation to sing
+    summary: The worship leader reads Psalms 95:1-5, describes God as creator and king, and invites the congregation to sing To God Be the Glory.
+    questions: ['Which passage introduces the opening hymn?']
+    topics: []
+    scripture: ['Psalms 95:1-5']
+    transcript: |
+      For the call to worship this morning, it will be taken from Psalm 95, verse 1 to 5. [Scripture reading omitted: Psalms 95:1-5; reference-only, ESV link.] As we have read from the psalms this morning, we can acknowledge that God is truly the creator, king above all and truly the Lord. So let us all stand up. Let us sing the first song, To God Be the Glory.
+    confidence: 0.92
+    review_notes: ['Frame 485s verifies reference. Repeated reference announcements condensed; this is a marked ASR review draft, not a verbatim edition.']
+  - id: p0816-p1-anthem-introduction
+    video_id: mw4SAoJRZgo
+    section_id: s0816-p1-anthem-intro
+    start: 680.52
+    end: 714.34
+    type: worship
+    title: Learning My Labour Is Not In Vain
+    summary: The worship leader introduces My Labour Is Not In Vain, attributes it to CityAlight, and suggests listening first to become familiar with the tune.
+    questions: ['Why does the leader suggest listening before singing the second anthem?']
+    topics: []
+    scripture: []
+    transcript: |
+      Our second anthem today is actually called My Labour Is Not In Vain. It's actually written and sung by CityAlight. Any of you familiar with CityAlight? Yeah, I listened to some of their songs, but this was the first time I listened to this song. So I had to familiarize myself with the tune. I would say, for me, it wasn't very melodious and catchy that I could pick it up the first or second time. So I think it's good for us to maybe listen first for the first half of the song to familiarize ourselves before we sing together. So let us listen first.
+    confidence: 0.87
+    review_notes: ['Title spelling verified on frame 700s. Subsequent sung lyrics omitted from the archive.']
+  - id: p0816-p2-media-ministry
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-reflection
+    start: 0
+    end: 68.46
+    type: testimony
+    title: Media ministry beyond likes and engagement
+    summary: The worship leader describes late-night media work and explains that serving before God matters more to her than online likes, shares or engagement.
+    questions: ['How does the worship leader think about social-media engagement in ministry?']
+    topics: [service-life]
+    scripture: []
+    transcript: |
+      [Recording begins during a reference to the anthem.] Just a quick sharing. Actually on the Bahasa side I do some ministry also, and one of the things I do is media. So I have to design Instagram, I have to do slides, I have to do pictures. And one of the struggles with media ministry is that you post online. If you work in a corporate, the objective is to get the likes, the engagement, the shares and things like that. But then I'm doing it at eleven p.m., like, what am I doing in my life? I should be asleep. When I was doing it I was reminded, Coram Deo. Coram Deo means living before God. I'm not doing this for people. I don't know, I do this, maybe I get zero likes, maybe ten likes. How this will impact people, how people who read it will be blessed [wording uncertain]. But I realized, bottom line is that God called me to do this. I should do this and I do this before him. That was something that I remembered when I was practicing this song, My Labour Is Not In Vain. [Song wording omitted.] So when we do ministry, everything is for God. Let us all sing together, My Labour Is Not In Vain.
+    confidence: 0.87
+    review_notes: ['Opening sample corroborates full ASR. Latin spelling normalized from ASR koram deo; phrase is explained by the speaker. No invented lead-in from previous upload.']
+  - id: p0816-p2-proverbs-reading
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-responsive
+    start: 334.18
+    end: 540
+    type: scripture-reading
+    title: Responsive reading — Proverbs 3:1-35
+    summary: The worship leader introduces alternating reading of Proverbs 3:1-35 with the congregation.
+    questions: []
+    topics: []
+    scripture: ['Proverbs 3:1-35']
+    transcript: |
+      Now we have come to the time for responsive reading. May I invite everyone to open to Proverbs 3:1-35. We will be taking turns to read. I will read the odd-numbered verses starting with the first, and the congregation will read the even-numbered verses until we end the entire passage. [Scripture reading omitted: Proverbs 3:1-35; reference-only, ESV link.]
+    confidence: 0.88
+    review_notes: ['Long reference-only reading retained as one passage rather than fabricated spoken thoughts. 340s title slide and 530s final-verse slide confirm range. 540s boundary is an estimate between frames 530/550; false repeated ASR references excluded.']
+  - id: p0816-p2-ephesians-reading
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-responsive
+    start: 540
+    end: 660.12
+    type: scripture-reading
+    title: Responsive reading — Ephesians 4:1-16
+    summary: The congregation continues responsive reading with Ephesians 4:1-16.
+    questions: []
+    topics: []
+    scripture: ['Ephesians 4:1-16']
+    transcript: '[Scripture reading omitted: Ephesians 4:1-16; reference-only, ESV link.]'
+    confidence: 0.89
+    review_notes: ['340s title slide verifies range, 550/650s verse slides confirm beginning/end. Start estimated within 530–550s. Raw chunk 1 restores reading evidence lost by chunk-0 repetitions at 555–600s; no verse text retained.']
+  - id: p0816-p2-christlike
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-christlike
+    start: 660.12
+    end: 690.64
+    type: worship
+    title: Church, devotion and becoming more Christ-like
+    summary: The worship leader connects the Ephesians reading with growing through sermons and daily devotion, describing becoming more Christ-like as the goal.
+    questions: ['What goal does the worship leader give for spiritual growth?']
+    topics: []
+    scripture: ['Ephesians 4:1-16']
+    transcript: |
+      We read just now, just in Ephesians, how [scripture wording omitted: Ephesians 4:11-13]. I think we can grow in so many ways. We go to church and we listen to the sermon. We do our daily devotion. But the ultimate goal is to be more Christ-like. So let us sing the third song as we meditate on the lyrics as well. [Hymn title uncertain in ASR.]
+    confidence: 0.79
+    review_notes: ['Opening sentence incomplete in merged ASR; do not invent missing words.']
+  - id: p0816-p2-sermon-reading
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-reading
+    start: 973.5
+    end: 1055.64
+    type: scripture-reading
+    title: Reading the sermon text — 1 Corinthians 3:1-9
+    summary: The reader introduces and reads 1 Corinthians 3:1-9 before the sermon.
+    questions: ['What is the scripture text for From Infant to Instrument?']
+    topics: []
+    scripture: ['1 Corinthians 3:1-9']
+    transcript: |
+      Today's scripture reading is taken from 1 Corinthians chapter 3, verse 1 to 9. [Scripture reading omitted: 1 Corinthians 3:1-9; reference-only, ESV link.] This is the word of the Lord.
+    confidence: 0.93
+    review_notes: ['Reference announced and corroborated by sermon title slide. Reader name not independently verified.']
+  - id: p0816-p2-standing-in
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-sermon-intro
+    start: 1204.64
+    end: 1248.2
+    type: sermon
+    title: Standing in to proclaim the word
+    summary: Hadi Wijaya explains that he is standing in for the pastor and describes a shared responsibility among followers of Christ to proclaim and witness.
+    questions: []
+    topics: [service-life]
+    scripture: []
+    transcript: |
+      Good morning, brothers and sisters in Christ. Pastor Yong has been called to minister elsewhere this morning and he asked me to stand in on his behalf. While I feel a little bit [word uncertain] this morning, it is also filled with a sense of gratitude and privilege. It reminds me that every one of us, including you and I, who are followers of Christ, has been given the same mandate. In fact we are to proclaim his word and bear witness to his truth. This is why I do what I do this morning. May the Lord help.
+    confidence: 0.81
+    review_notes: ['ASR uncertain colloquial word sounds like kanjong; retained as uncertainty. Repeated greetings removed. Speaker verified by frames 1080/1200s.']
+  - id: p0816-p2-infant-instrument
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-sermon-intro
+    start: 1248.2
+    end: 1285.7
+    type: sermon
+    title: From new birth toward maturity
+    summary: Hadi connects an earlier sermon on Ephesians 2:1-10 with this message about growing from spiritual infancy into maturity.
+    questions: ['How does From Infant to Instrument continue the earlier sermon?']
+    topics: []
+    scripture: ['Ephesians 2:1-10', '1 Corinthians 3:1-9']
+    transcript: |
+      In my sermon earlier on last year, I spoke from Ephesians 2:1-10. [Biblical wording omitted: Ephesians 2:1-10.] That was last year. So today we continue that journey. After we are born again, we are now called to grow, to grow from spiritual infancy into maturity, from infancy to instrument. So is the title of my message this morning.
+    confidence: 0.87
+    review_notes: ['Earlier reference is explicitly spoken; displayed title preserved independently of ASR title variation.']
+  - id: p0816-p2-questions
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-sermon-intro
+    start: 1285.7
+    end: 1349.2
+    type: sermon
+    title: Feeling stuck in faith and asking whether our actions matter
+    summary: Hadi introduces questions about growth beyond conversion, dryness in faith, assurance and the significance of prayer and action under God's control.
+    questions: ['Why might a Christian feel stuck in faith?', 'If God is in control, why pray or act?']
+    topics: []
+    scripture: []
+    transcript: |
+      When I met with my friends and we had some conversation, this type of question keeps coming up. At times we may also wonder: is becoming a Christian only about being saved? Is there a bigger picture beyond salvation itself? Secondly, why sometimes do I feel stuck in my faith? What happens is, my faith is dry and lacks excitement. Sometimes I do wonder whether I'm truly saved, in fact. Last but not least, if God is already in control, does what I do really matter? Why do I need to pray if he already knows what I'm supposed to pray on? So in the next one hour, we will try to address these questions together. I hope his word will directly minister to us all. Let us open with the opening prayer.
+    confidence: 0.87
+    review_notes: ['ASR safe normalized to saved from explicit salvation context; human speech review still required. Questions are introduced here, not yet answered.']
+  - id: p0816-p2-sermon-prayer
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-sermon-prayer
+    start: 1349.2
+    end: 1388.2
+    type: prayer
+    title: Prayer to hear, obey and grow
+    summary: Hadi prays for humility, obedience, growth in grace and willingness to serve, asking for mercy as he speaks.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      Heavenly Father, we give thanks for your word today. We ask that you humble our heart this morning. Open our eyes to your truth and help us not only to hear, but also to obey your word. Lord, teach us what it means to grow in your grace, to trust that you alone give the growth, and to offer ourselves as a willing instrument in your hands. Have a special mercy on me as I speak. [Biblical wording omitted; reference not announced.] At the end of the day, may only your word remain. In Jesus' name we pray. Amen.
+    confidence: 0.84
+    review_notes: []
+  - id: p0816-p2-outline
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-context
+    start: 1410.7
+    end: 1448.7
+    type: sermon
+    title: Context, problem, principle and privilege
+    summary: Hadi outlines an exposition of 1 Corinthians 3:1-9 covering spiritual immaturity, God's role in growth and the privilege of serving him.
+    questions: ['How is the sermon structured?']
+    topics: []
+    scripture: ['1 Corinthians 3:1-9']
+    transcript: |
+      This is the flow of the discussion or the sermon this morning. First we will talk about the context. The context is taken from the book of 1 Corinthians 3, verse 1 to 9, which Brother Matthew has just read for us. After that we will talk about the problem. The problem is spiritual immaturity. And then we are talking about the principles: God alone gives the growth, and the privilege, [scripture wording omitted: 1 Corinthians 3:9], and closing. Now let's talk about the context.
+    confidence: 0.84
+    review_notes: ['Repeated principles phrase normalized; wording and one-second-spaced machine timings need human review.']
+  - id: p0816-p2-context-reading
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-context
+    start: 1448.7
+    end: 1500.2
+    type: scripture-reading
+    title: Reading the context together
+    summary: Hadi invites the congregation to read the opening part of 1 Corinthians 3 together.
+    questions: []
+    topics: []
+    scripture: ['1 Corinthians 3:1-6']
+    transcript: 'May I invite all of you to read this verse together with me. [Scripture quotation omitted: 1 Corinthians 3:1-6; reference-only, ESV link.]'
+    confidence: 0.9
+    review_notes: ['1500s slide shows verses 1–6 under the broader 1 Corinthians 3:1-9 heading.']
+  - id: p0816-p2-babies
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-context
+    start: 1500.2
+    end: 1554.2
+    type: sermon
+    title: Believers who are still spiritual infants
+    summary: Hadi explains that Paul addresses believers and uses infancy as an analogy for their need to develop beyond basic nourishment.
+    questions: ['Why does Hadi say the Corinthians are believers rather than outsiders?']
+    topics: []
+    scripture: ['1 Corinthians 3:1-2']
+    transcript: |
+      The key verse here I highlighted in red. Paul actually, if you notice, began by addressing them as brothers. This means that Paul is not speaking to outsiders. He is speaking to the people he regards as believers, as brothers in Christ. [Quoted biblical wording omitted: 1 Corinthians 3:1-2.] What does it mean? It means it is an infant or baby in Christ. [Further quoted biblical wording omitted: 1 Corinthians 3:2.] Starting life as a baby is normal. Every one of us goes through that journey. We were once babies. If you see at the back there, there were babies also there. There were a couple of babies in the cry room as well. But babies need the basic nourishment, which is milk.
+    confidence: 0.85
+    review_notes: ['Scriptural wording omitted even where embedded in commentary; analogy retained.']
+  - id: p0816-p2-stopped-growing
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-context
+    start: 1554.2
+    end: 1597.2
+    type: sermon
+    title: When a baby stops growing
+    summary: Hadi compares persistent spiritual infancy to a baby whose failure to grow would worry its parents.
+    questions: ['What analogy illustrates the problem of spiritual immaturity?']
+    topics: []
+    scripture: ['1 Corinthians 3:2']
+    transcript: |
+      But then Paul says here, [scripture quotation omitted: 1 Corinthians 3:2]. So here is the problem that Paul tries to highlight. The baby stops growing. [Repeated scripture quotation omitted.] When the baby stops growing and drinks milk all the time, is that healthy, do you think? I think all of us had babies, or most of us. It's not, right? As parents we would probably be worried and rush them for medical checks and bring them to the specialist. Something is terribly wrong. And Paul says only the grace of God can give us that growth. So let's continue with the next verse here.
+    confidence: 0.86
+    review_notes: []
+  - id: p0816-p2-workers
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-context
+    start: 1597.2
+    end: 1665.2
+    type: sermon
+    title: Human work and growth given by God
+    summary: Hadi says human ministry work matters while attributing growth to God, explaining fellow workers as servants belonging to and serving under God.
+    questions: ['How does Hadi relate human ministry work to growth given by God?']
+    topics: []
+    scripture: ['1 Corinthians 3:7-9']
+    transcript: |
+      Let's read this together. [Scripture quotation omitted: 1 Corinthians 3:7-9.] Again I highlighted this in red. [Repeated scripture wording omitted.] Paul here does not deny the fact that human labor is important. [Biblical wording omitted; ASR also confuses the planter/waterer names.] The work of human hands indeed is very important. But only God alone gives the growth. And here verse 9 says, [scripture quotation omitted: 1 Corinthians 3:9]. We are built by God. In the original language, God's fellow worker means that we are servants who belong to him and who serve under God. So that's what it means by God's fellow workers.
+    confidence: 0.8
+    review_notes: ['The original-language explanation is the preacher’s claim, not independently verified. ASR Paul has watered is not silently corrected using Bible memory.']
+  - id: p0816-p2-corinth
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-corinth
+    start: 1665.2
+    end: 1743.44
+    type: sermon
+    title: Corinth as an international business hub
+    summary: Hadi describes Corinth as wealthy and cosmopolitan, compares it with modern cities, and summarizes the sermon around immaturity, growth and service.
+    questions: ['Why does Hadi compare Corinth with New York and Singapore?']
+    topics: []
+    scripture: ['1 Corinthians 3:1-9']
+    transcript: |
+      So in summary, Paul is addressing them as brothers. Paul went to the city of Corinth to establish Christian community there during his missionary work. The city of Corinth is an international business hub. It is wealthy, international, cosmopolitan. I can't help but think of a city like New York today, perhaps Singapore to a certain degree. There were a lot of people there: businessmen, travelers, workers, wealthy people, Greek, Romans and Jews mixed there. That's what the situation is during that time. Paul's message to them was: grow up in Christ. Human leaders merely plant and water; God alone gives the growth. If we summarize the context from verse 1 to 9 here, we can see that the first few verses, 1 to 4, talk about the problem, spiritual immaturity. Next Paul talks about the principles, which is God alone gives the growth. Lastly the privilege of a Christian, [scripture wording omitted: 1 Corinthians 3:9]. This is the flow that we are going to follow in the next subsequent discussion.
+    confidence: 0.86
+    review_notes: ['Raw chunks 2 and 3 both contain Perhaps Singapore to a certain degree at the 1665–1710s overlap; wording restored once, not duplicated. Raw ASR timing varies by about two seconds at this seam.']
+  - id: p0816-p2-categories
+    video_id: XWAH9SWFcoo
+    section_id: s0816-p2-categories
+    start: 1743.44
+    end: 1802.48
+    type: sermon
+    title: Spiritual, fleshly and natural — three categories
+    summary: Hadi distinguishes mature Christians, immature Christians and unbelievers using the categories spiritual, fleshly and natural.
+    questions: ['What does Hadi mean by spiritual, fleshly and natural people?']
+    topics: []
+    scripture: ['1 Corinthians 3:1-9']
+    transcript: |
+      Let's talk about the problem first, spiritual immaturity. Paul spoke about at least three Christians here, explicitly or implicitly. One is what he calls spiritual person. Second is what he calls fleshly. The third is what he calls natural. Spiritual Christians are mature Christians, discern and embrace deeper truth of God. That's what it means by spiritual Christian, spiritual person. Fleshly Christian, or immature Christian here that Paul talks about, has to do with a Christian. They have the Spirit of God but still think and behave in the worldly ways. [Biblical wording omitted.] Lastly is unbelievers who do not have the Spirit at all. So there are three categories of people that Paul addresses here. One is spiritual, second is fleshly, the third is natural.
+    confidence: 0.86
+    review_notes: ['Speaker initially says three Christians although his third category is unbelievers; retain the wording inconsistency for human review rather than silently harmonizing it. Frame 1800s confirms labels. No sentence extended into another upload.']
+  - id: p0816-p3-pride-loyalty
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-pride
+    start: 0
+    end: 73.02
+    type: sermon
+    title: Pride, control and loyalty to personalities
+    summary: Hadi links resistance to God with pride and warns that attachment to leaders or churches can displace loyalty to Christ.
+    questions: ['How can loyalty to a leader become an expression of pride?']
+    topics: []
+    scripture: []
+    transcript: |
+      [Recording resumes mid-sentence.] Own way here. Eden, so to speak, repeats itself in our heart. Our inclination to resist God is driven by our pride, by wanting to be in charge, by wanting to be God. We want to be in control. And pride can take so many shapes and forms here. I try to imagine what a person is like when he is a grown-up person physically, but he is an infant or baby in Christ, a baby spiritually. And I arrive at this picture, this gentleman. They look mature and grown up, but spiritually is infant. Pride can look like this: I follow this leader, I follow that pastor, I go to this church, I go to that church. They attach identity to personalities. They attach loyalty to human teachers. Loyalty to human teachers replaces deeper loyalty to Christ. So it is a kind of personal status and identity to them. If I follow this leader, I feel something special.
+    confidence: 0.88
+    review_notes: ['Opening slide and 0–30s sample corroborate continuation, not the words missing between uploads.']
+  - id: p0816-p3-preferences
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-pride
+    start: 73.02
+    end: 155.84
+    type: sermon
+    title: Recognition, personal preferences and resisting growth
+    summary: Hadi describes pride through resentment of others' recognition, conditional obedience and using salvation as an excuse not to grow.
+    questions: ['What everyday examples of spiritual pride does Hadi give?']
+    topics: []
+    scripture: []
+    transcript: |
+      It can also take a shape like this: why is everyone praising him or her? I've done more. Here recognition really matters for people. When others are affirmed, the proud and immature believer quietly feels overlooked sometimes. So let me give you two more examples of what pride may often be like. I'll follow the Lord when it aligns with my preferences. Pride can shift authority from God's word to personal preferences. I will follow the Lord as long as it aligns with what I want. We resist God and place ourselves, what we love and what we want, at the center instead of God, just like what happened in Eden. And lastly: I know about salvation, God saves me already and that's enough. Why go further? A fleshly believer here may [false start] rest in salvation but resist growth. Their inner voice says, I'm already in Christ, so why need I go deeper? Grace becomes an excuse for stagnation. Because of grace, quote-unquote, the person stopped growing.
+    confidence: 0.86
+    review_notes: ['Affirmed normalized from ASR are firm; false start marked rather than presenting resist salvation as settled wording.']
+  - id: p0816-p3-pride-source
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-pride
+    start: 155.84
+    end: 201.22
+    type: sermon
+    title: Pride as the soil for other sins
+    summary: Hadi cites William Barclay and describes pride as a source from which other sins grow before turning to the next sermon principle.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      Again, in summary, pride is not a usual sin. Pride is the ground in which all other sins grow, the [word uncertain] from which all other sins come. I quote this from William Barclay. So this quote reminds me that pride is not just one sin among many other sins. Pride is the mother of all sins. It's the parents of all sins. It is the source. It is the soil where many other sins grow because of this sin. So pride is a different sin altogether. So that's the problem. Now let's move to the next one, which is the principle.
+    confidence: 0.79
+    review_notes: ['Quotation attribution is spoken; exact quotation and uncertain noun require human checking. No independent Barclay-source verification.']
+  - id: p0816-p3-growth-work
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-growth
+    start: 201.22
+    end: 257.52
+    type: sermon
+    title: Teaching and helping while trusting God for change
+    summary: Hadi says parents, pastors and friends have real responsibilities while the outcome of their work belongs to God.
+    questions: ['What responsibilities remain when growth comes from God?']
+    topics: []
+    scripture: ['1 Corinthians 3:1-9']
+    transcript: |
+      Only God gives the growth. So the principle here that we have just read together: God alone gives the growth. Growth and transformation come from God alone. It means human labor is important, but only God produces true change. So Paul and Apollos are instruments that God uses. Their roles are different, but they're all assigned by the same boss, by the same master, the Lord himself. They are all a channel of his grace. So as a parent we can teach our children, as pastors we can preach sermons, as friends we can encourage and help one another. But only God can change hearts. Our role is to trust him. Our responsibility is to obey him. And the final outcome belongs to God.
+    confidence: 0.9
+    review_notes: ['True change corrected from ASR through change using 300s slide. Claims are the preacher’s exposition.']
+  - id: p0816-p3-effort-disappointment
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-growth
+    start: 259.86
+    end: 322.84
+    type: testimony
+    title: Disappointment when greater effort brings no visible change
+    summary: Hadi recounts feeling disappointed when counseling and helping others did not produce the visible change he expected from his effort.
+    questions: ['How does Hadi describe disappointment with ministry outcomes?']
+    topics: []
+    scripture: []
+    transcript: |
+      These two separate facts seem to be contradicting, isn't it? We humans need to work very hard, but only God can bring the change. In this moment I have a confession to make. This verse spoke to me very personally in my own life. Normally after walking with family members, with friends for some time to help them, counseling and things like that, I felt a bit disappointed because after efforts have been put, we didn't see a real change that we want to see. So I felt that the effort is really wasted here. The mathematic equation in my mind is: if I put in more effort, the outcome should be more apparent or bigger. But this is not the mathematic equation that God has. So my mathematics is different from God's mathematics here. This is what the paradox is. Accepting a paradox is indeed essential for our growth.
+    confidence: 0.89
+    review_notes: []
+  - id: p0816-p3-paradox-definition
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-paradox
+    start: 322.84
+    end: 385.7
+    type: sermon
+    title: Defining the paradox of divine control and human effort
+    summary: Hadi defines paradox and introduces the apparent tension between God's sovereignty and human responsibility.
+    questions: ['What does Hadi mean by a paradox?']
+    topics: []
+    scripture: []
+    transcript: |
+      So what is paradox? Many of you know, some of you may not. Paradox is a situation or statement here that seems impossible or difficult to understand because the two of them seem to be opposing to each other. It's not aligned. That's what paradox is. It contains two opposite facts or characteristics. In this case what I would like to highlight is human labor is important, human effort, but only God gives the growth. So we are talking about God's sovereignty, or divine control, so to speak, in the theological term. And we are also talking about human effort or human responsibility. So if God is in control of everything, where does the human effort fit into? If God is sovereign, why pray? Let's take a look at this. Bible is full of paradoxes like that. This is not the only one. I would like to highlight some of the paradoxes here in the Bible.
+    confidence: 0.86
+    review_notes: ['ASR suffering corrected to sovereign from repeated explicit topic and corroborating slides; aligned from not a line remains a contextual normalization for review.']
+  - id: p0816-p3-planning
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-paradox
+    start: 385.7
+    end: 458.16
+    type: sermon
+    title: Preparation, plans and outcomes in Proverbs
+    summary: Hadi cites Proverbs alongside 1 Corinthians to distinguish faithful human preparation from control over outcomes.
+    questions: ['How does Hadi use Proverbs to discuss planning and results?']
+    topics: []
+    scripture: ['1 Corinthians 3:6', 'Proverbs 21:31', 'Proverbs 16:9']
+    transcript: |
+      When we speak about God's sovereignty and human responsibility, this is what we have just read, isn't it? [Scripture quotation omitted: 1 Corinthians 3:6.] [Scripture quotation omitted: Proverbs 21:31.] Does this sound familiar to some of you? From Proverbs 21, verse 31. So we are called to teach, we are called to serve, we are called to help. But the change of the heart belongs to God. Humans are responsible to prepare. Humans are responsible to plan faithfully. But the final outcome is not dependent on human. It's not dependent on our effort. It is dependent on God. [Scripture quotation omitted: Proverbs 16:9.] From Proverbs 16, verse 9. We may plan carefully, but God directs the actual path. That's what it means. A few more, two more here.
+    confidence: 0.88
+    review_notes: ['Proverbs references explicitly announced. First quotation matches the previously displayed sermon passage; verse text omitted.']
+  - id: p0816-p3-work-out
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-paradox
+    start: 458.16
+    end: 535.7
+    type: sermon
+    title: Human effort enabled by God
+    summary: Hadi uses Proverbs 16:33 and Philippians 2:12-13 to explain his view that human effort and divine enablement coexist.
+    questions: ['How does Hadi explain Philippians 2:12-13?']
+    topics: []
+    scripture: ['Proverbs 16:33', 'Philippians 2:12-13']
+    transcript: |
+      This is my favorite as well. [Scripture wording omitted: Proverbs 16:33.] From Proverbs 16, verse 33. Even things that seem so random here, like tossing coins, or ordinary, are under God's control. Nothing falls outside his control. And last but not least, that relates to the sermon for today: [scripture quotation omitted: Philippians 2:12-13]. How do you reconcile this? On one side it says [quoted wording omitted]. We humans need to work out. That's the command for us, to work out, to spend our effort, to invest time. [Repeated scripture wording omitted.] But it is God actually who enables us to work out. [Repeated scripture wording omitted.] From Philippians 2, 12, 13. All right.
+    confidence: 0.86
+    review_notes: ['Both references announced in ASR. All embedded quotation wording omitted.']
+  - id: p0816-p3-ends-means
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-sovereignty
+    start: 536.7
+    end: 621.5
+    type: sermon
+    title: God ordains the ends and the means
+    summary: Hadi argues that divine sovereignty and human responsibility should both be received, describing God as ordaining outcomes and the means that lead to them.
+    questions: ['How does Hadi reconcile divine sovereignty and human responsibility?']
+    topics: []
+    scripture: []
+    transcript: |
+      So what is the lesson here? We have seen so many paradoxes. How to reconcile this? The Bible teaches that God is absolutely sovereign. Otherwise he is not God. The Bible also teaches that we are responsible. So the two are true, in fact. God is sovereign and we are responsible. The second one: God ordains both the ends and the means, the process and the outcome, the journey and the destination. He decides the final outcome and uses our labor in the process. God ordains the process and also the outcome. Everything is appointed by God. Everything is decided by God. Our inability to reconcile the two sides based on our own logic and finite mind does not change the fact that Scripture is true. If the Scripture is true, if you believe the Bible is true, the solution: we have to accept both facts. Both are not contradictory. Both are true. Just accept both. That's the solution.
+    confidence: 0.89
+    review_notes: ['Raw 555–600s overlap corroborates wording; sovereign retained from chunk 0 and slide at 600s rather than chunk-1 suffering error. Repeated overlap text included only once.']
+  - id: p0816-p3-health-question
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-sovereignty
+    start: 621.5
+    end: 669
+    type: sermon
+    title: If lifespan is determined, why care for health?
+    summary: Hadi recounts a friend's question about why exercise and nutrition matter if God has already determined a person's lifespan.
+    questions: ['What health-related question illustrates the sovereignty discussion?']
+    topics: []
+    scripture: []
+    transcript: |
+      A friend once asked me, in one of the casual meetings that we had, he says that if God has already determined how long I will live on earth, when I will die, so why should I bother going to the gym? Why should I bother having a good meal, protein and all this stuff, be conscious about muscle building and stuff like that? Anyway God already ordained how long I should live. So how would you respond to such a difficult question? That's a very good question. That was my question too.
+    confidence: 0.88
+    review_notes: ['This passage presents the question; the next passage gives the speaker’s response.']
+  - id: p0816-p3-health-stewardship
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-sovereignty
+    start: 669
+    end: 714.32
+    type: sermon
+    title: Responsibility for the life entrusted to us
+    summary: Hadi answers that care for one's life remains a responsibility alongside belief in God's sovereignty.
+    questions: ['Why does Hadi say people should still care for their health?']
+    topics: []
+    scripture: []
+    transcript: |
+      If God already knows, why bother? The Bible says that God determines our days, yes. The Bible says that God determines our lifespan, yes. But it also teaches us that we are responsible to care for our life he has entrusted to us. We are called to be faithful stewards to the life that he gives us. God is sovereign and we are responsible. So the summary here is: both are true and both can exist in our life. [Wording uncertain concerning contradiction.] So let me put all this thing into summary here.
+    confidence: 0.8
+    review_notes: ['ASR at 710.22–711.48s says both are contradictory, conflicting with nearby statements. Not silently changed to not contradictory; human listening required.']
+  - id: p0816-p3-exam
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-sovereignty
+    start: 714.32
+    end: 779.84
+    type: sermon
+    title: Passing an exam still requires studying and showing up
+    summary: Hadi uses an examination example to explain that believing in an ordained outcome does not remove the need to follow the process.
+    questions: ['How does the exam example illustrate ends and means?']
+    topics: []
+    scripture: []
+    transcript: |
+      I'm trying to portray the sovereign God who determines the process and also the outcome, the journey and also the destination. Perhaps it looks something like this, although it's not perfect. God determines the destination and he also determines the journey. God determines the ends and the means. He also determines the outcome and the process. God does not simply say this will happen, that will happen. He also appoints how it will happen. And he often uses people, faithful works, prayer, obedience, to accomplish his purposes. For example, if God ordains you and me to pass the exam, this means we have to follow the process. We have to attend classes, we have to study and prepare, and we must show up during the exam day. In my teaching work at local universities, I would immediately give my students zero on the final day of the exam if the person doesn't show up. The student needs to show up. You cannot say everything is determined by God; God ordains that I will pass the exam, let me sleep at home.
+    confidence: 0.89
+    review_notes: []
+  - id: p0816-p3-diligence
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-sovereignty
+    start: 779.84
+    end: 810.68
+    type: sermon
+    title: Work diligently and trust the outcome
+    summary: Hadi closes the example by urging diligence alongside trust, then introduces the difficulty of understanding this paradox.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      So the Bible teaches both. We have to work diligently and trust God with the outcome. God is sovereign and yet human is responsible. And when it doesn't make sense, what should I do? This paradox seems a bit difficult.
+    confidence: 0.86
+    review_notes: ['Includes a short reflective pause before the next point; no additional speech invented.']
+  - id: p0816-p3-creator
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-limits
+    start: 810.68
+    end: 885.66
+    type: sermon
+    title: The creature cannot fully grasp the creator
+    summary: Hadi cites Isaiah 55:8-9 and uses the pulpit and its carpenter as an analogy for the limits of human understanding.
+    questions: ['What analogy does Hadi use for the limits of understanding God?']
+    topics: []
+    scripture: ['Isaiah 55:8-9']
+    transcript: |
+      When it doesn't make sense, always remember Isaiah 55. It says, [scripture quotation omitted: Isaiah 55:8-9]. So this paradox is not very easy to understand. Always remember the verse from Isaiah, and perhaps this is how it looks like when he says that [biblical wording omitted]. The creature here cannot fully grasp the creator. We are the creator— we are the creature, right? God is the creator. This pulpit, the one that I'm standing on, cannot understand the mind of the carpenter who created and designed it. This one is the creation. The carpenter is the creator.
+    confidence: 0.87
+    review_notes: ['Speaker self-correction retained. Verse range verified on frame 965s, rather than supplied from memory.']
+  - id: p0816-p3-tomorrow
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-limits
+    start: 885.66
+    end: 937.58
+    type: sermon
+    title: Limited lives and an unknown tomorrow
+    summary: Hadi contrasts finite human lives and uncertainty about tomorrow with his description of God's eternal perspective.
+    questions: []
+    topics: []
+    scripture: ['Isaiah 55:8-9']
+    transcript: |
+      God is eternal and we are painfully limited. That's one of the reasons also. He exists before time and he exists beyond space. Our lives are confined between the date of birth and the date of death, perhaps eighty or ninety years. But God, he is everlasting. [Biblical title wording omitted; reference not announced.] And lastly God sees the whole story here. He's big, and we can only see the present moment. He knows every life from the beginning to the end, while we cannot say with certainty what will happen tomorrow. Does anyone know what will happen to us tomorrow? Nobody knows. But God knows from the beginning to the end of our life. That's from Isaiah 55.
+    confidence: 0.87
+    review_notes: []
+  - id: p0816-p3-enough
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-limits
+    start: 937.58
+    end: 996.28
+    type: sermon
+    title: Enough for faith and Christian living
+    summary: Hadi invokes the Westminster Confession and Hebrews 11:1 to explain his view that believers receive what they need for faith and life without understanding everything.
+    questions: ['What does Hadi mean by not the full answers, but enough?']
+    topics: []
+    scripture: ['Hebrews 11:1']
+    transcript: |
+      The second one: not the full answer, but just enough. Westminster here teaches us that we are given everything just enough for our salvation, just enough for faith, just enough to live our Christian life, either stated clearly or deduced from its teaching. So the Bible is enough for us to live our Christian life. And it is about faith. What is the definition of faith? [Scripture quotation omitted: Hebrews 11:1.] So here we are called as a Christian not to understand everything, seek to understand everything so that we may believe. We are called first to have faith and to believe first. We have to believe in order to understand. Augustine put it very clearly and beautifully here.
+    confidence: 0.85
+    review_notes: ['Frame 965s verifies Westminster Confession chapter 1 attribution and Hebrews 11:1 reference. This records the preacher’s summary, not an independently verified confessional quotation.']
+  - id: p0816-p3-faith-understanding
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-limits
+    start: 996.28
+    end: 1067.94
+    type: sermon
+    title: Believing, obeying and growing in understanding
+    summary: Hadi cites Augustine and argues that faith precedes fuller understanding without requiring the abandonment of logic.
+    questions: ['Does Hadi describe faith as abandoning logic?']
+    topics: []
+    scripture: []
+    transcript: |
+      This is one of the beautiful quotes that I like about Augustine: understanding is the reward of faith. Therefore do not seek to understand in order to believe, but we have to believe first so that we may understand. But guess what? I think many people have that in the order that is reversed, or terbalik. We say, Lord, let me try to understand everything so that I may come to you, so that I may have faith in you. Explain it all, then I will obey you. But the scripture calls us on a different path here. When God says trust me, obey me, as you do our understanding will eventually grow. Faith here does not mean that we are abandoning our logic. It does not mean that we are abandoning our logic. It means we are trusting God whose wisdom is greater than our logic. His wisdom is greater than our logic. Faith comes first. Understanding will surely follow. We do not reverse the order.
+    confidence: 0.87
+    review_notes: ['Spoken Augustine attribution not independently authenticated. Terbalik retained in original language; English is overwhelmingly dominant. Genuine repeated emphasis retained.']
+  - id: p0816-p3-packer
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-resources
+    start: 1067.94
+    end: 1110.5
+    type: sermon
+    title: Receiving sovereignty and responsibility with humility
+    summary: Hadi cites a quotation attributed to J. I. Packer and urges receiving both sovereignty and responsibility with humility.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      This is another quote that I like from Packer. In the Bible, divine sovereignty and human responsibility are not enemies. They are friends. They work together and they coexist. The Bible does not ask us to choose between God's sovereignty and human labor. It teaches both, in fact. God is completely sovereign and we are genuinely responsible. Our calling is not to resolve the tension. Our calling is to receive both with humility.
+    confidence: 0.9
+    review_notes: ['1080s frame identifies J. I. Packer, correcting ASR Pekah. Displayed attribution is verified, original quotation source is not.']
+  - id: p0816-p3-books
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-resources
+    start: 1110.5
+    end: 1176.22
+    type: sermon
+    title: Books for further study of sovereignty and responsibility
+    summary: Hadi acknowledges the limits of his brief explanation and recommends books by D. A. Carson, J. I. Packer and R. C. Sproul.
+    questions: ['Which books does Hadi recommend for studying divine sovereignty?']
+    topics: []
+    scripture: []
+    transcript: |
+      The question about God's sovereignty and human freedom is probably one of the most difficult subjects that we have, one of the mysterious subjects in the Christian faith. We certainly cannot unpack it fully in just ten minutes like today. So what I've shared today is a shortcut. What I shared today is a simplified answer. For the fuller exploration I would recommend these books. Please go and check it out. One is by Carson called Divine Sovereignty and Human Responsibility. Second is by Packer, Evangelism and the Sovereignty of God. Here Packer is talking about: if God already decides and predestines who will be saved and who will not be saved, why should I bother evangelizing? Why should I preach the gospel? Why should I share his word? And lastly is by Sproul, which is called Chosen by God. Feel free to check out the book from the library or from bookshops, from Amazon.
+    confidence: 0.92
+    review_notes: ['1140s frame verifies all three author/title pairs. Raw 1110–1155s overlap reviewed; no duplicated introduction.']
+  - id: p0816-p3-paradox-worship
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-resources
+    start: 1176.22
+    end: 1229.44
+    type: sermon
+    title: Quotations on paradox and worship
+    summary: Hadi cites Stephen Tong and Francis Chan while connecting acceptance of mystery with mature faith and worship.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      Accepting these paradoxes is important to grow our faith. Our senior pastor, Reverend Dr. Stephen Tong, said the same thing: if you cannot accept that Christianity or life has many paradoxes, your [life or faith — wording uncertain] will remain at a superficial level. Superficial level meaning at the infant stage, infant or baby Christian. This is what I like also about Francis Chan's quote. He spoke about the thing similar. The point is not to completely understand God but to worship him. Let the very fact that you cannot know him fully lead you to praise him for his infiniteness, for his grandeur.
+    confidence: 0.85
+    review_notes: ['1200s Tong slide says faith while full ASR says life; conflict marked. 1220s Chan slide corroborates wording and attribution. Original quotation sources not independently checked.']
+  - id: p0816-p3-mind-limits
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-resources
+    start: 1229.44
+    end: 1282.36
+    type: sermon
+    title: When understanding reaches its limits
+    summary: Hadi encourages continued study while saying that reaching the limits of understanding should lead to worship rather than abandoning faith.
+    questions: ['What response does Hadi encourage when understanding reaches its limits?']
+    topics: []
+    scripture: []
+    transcript: |
+      The point here, there is nothing wrong for us to try, trying to reconcile, trying to understand God's word. But there will come a point where our mind reaches its limit. We are human anyway. Our mind has a limit where our mind power hits the ceiling, so to speak. When that moment comes, don't walk away from the faith. In fact Francis Chan says this should lead us to realize how great our God is and how small indeed we are. And may this reality lead us to come and worship him. So that's the contradiction, that's the paradox, that's the principles. Now let's move to the next one, which is the privilege.
+    confidence: 0.89
+    review_notes: []
+  - id: p0816-p3-serving-under
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-workers
+    start: 1282.36
+    end: 1375.58
+    type: sermon
+    title: Fellow workers serve under God rather than as equals
+    summary: Hadi explains fellow workers as people belonging to and serving under God, describing participation in ministry as a privilege and part of sanctification.
+    questions: ['Does fellow workers mean being equal partners with God in this sermon?']
+    topics: []
+    scripture: ['1 Corinthians 3:9']
+    transcript: |
+      [Biblical wording omitted: 1 Corinthians 3:9.] From the pride, from the problems and the principle, we are moving to the privilege that God has given every Christian. [Repeated biblical wording omitted.] In the Greek word, the term fellow workers means that we are workers who belong to God and who serve under him. I know in modern English when we say fellow, we often think that the word fellow is we are equal, or we are peers. In this case we are equal and we are peers with God. That is not the case. In the original language this means we are under his control. We are his labor. We are his slave. We are God's instrument in the field. He owns the field. He gives the growth. He graciously lets us participate to be his channel of grace. God is able to bypass human participation. He is God anyway. But he primarily works through people, which is his instrument. He gives us the privilege to partake in his work and to lead us in the sanctification process. There is a process called sanctification through faith and obedience. So it is a privilege to be able to work for him, to work to be his means, to be his channel of grace.
+    confidence: 0.87
+    review_notes: ['93.22s retained to complete the thought. Original-language explanation is attributed, not independently verified. Hypothetical equals statement retained with its immediate rejection.']
+  - id: p0816-p3-nick-introduction
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-testimony-intro
+    start: 1382.04
+    end: 1448.14
+    type: sermon
+    title: Introducing an example of hope amid disability
+    summary: Hadi introduces Nick Vujicic as an inspiration and recounts biographical details about disability, bullying and finding hope.
+    questions: ['Why does Hadi introduce Nick Vujicic in the sermon?']
+    topics: []
+    scripture: []
+    transcript: |
+      Most of you have seen him, right? This is a gentleman from Australia called Nick Vujicic. Has a unique name. He is one of the most inspiring persons in my own life, this little gentleman. Pastor Yong also shared a little bit in the past about him. So I would like to share with you his short clip, short video. But before that let me introduce you his background. He was born forty-four years ago, so he was quite young still now. [Birth-date wording uncertain] in Australia, in Melbourne. He was born without arms and without legs because of a condition called tetra-amelia. He was raised by a Christian family. At ten he attempted suicide because there was a lot of bullying going around and he was being bullied because of who he is, without arms and without legs.
+    confidence: 0.8
+    review_notes: ['1420s slide identifies the person and medical term. All biographical statements are the preacher’s account; spoken date unclear, displayed age/date not independently reconciled. No method described.']
+  - id: p0816-p3-nick-hope
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-testimony-intro
+    start: 1448.14
+    end: 1486.08
+    type: sermon
+    title: Introducing the recorded testimony
+    summary: Hadi describes Nick finding hope in Christ and introduces a short recorded message about identity in Christ.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      But eventually he found hope in Christ and he realized that his life was not a mistake. He was not an accident. Now he is a Christian. You can find him, search him in Google, in YouTube. He's quite well known. He's an evangelist. He's a motivator. He's an author. He wrote a lot of books and speaks globally about Christ, faith and love. So let's enjoy his short video, around four minutes. This is when he preached more recently about identity in Christ.
+    confidence: 0.85
+    review_notes: ['More recently is the preacher’s wording, not verified clip chronology. The embedded speaker subsequently states age 26; do not silently align it with the introduction’s age 44.']
+  - id: p0816-p3-recorded-background
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-testimony
+    start: 1496.86
+    end: 1536.72
+    type: testimony
+    title: Recorded testimony — birth and family
+    summary: In the embedded clip, Nick Vujicic describes being born without limbs and growing up in a Christian family.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      Shall we? Let's get into it. I was born in Australia twenty-six years ago to Christian parents who started a church, who preached about God's love, and then their son was born without limbs. No medical reason why I was born this way. No warning either. My mom had three ultrasounds done, and God hid from them the fact that their firstborn son was going to be born without arms and legs. I have a brother and a sister born after me, both with arms and legs, and I have twenty-nine first cousins who also have limbs and no deficiencies at any point, physically speaking. I love my family.
+    confidence: 0.87
+    review_notes: ['Speaker is the embedded recording, not Hadi. 1500s frame corroborates age-26 statement. Medical and theological claims are attributed testimony, not independently established.']
+  - id: p0816-p3-recorded-question
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-testimony
+    start: 1536.72
+    end: 1569.42
+    type: testimony
+    title: Recorded testimony — questioning love amid suffering
+    summary: Nick recalls contrasting childhood church songs about love with questions prompted by his disability at school.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      I grew up in church singing [hymn lyrics omitted], and then singing the other song where it says [hymn lyrics omitted]. Then on Monday morning I went to school and I said, God, if you love me like you love the other children, then why do you give me less?
+    confidence: 0.87
+    review_notes: ['Two quoted/sung lyric excerpts omitted rather than reconstructed.']
+  - id: p0816-p3-recorded-suffering
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-testimony
+    start: 1572.42
+    end: 1625.36
+    type: testimony
+    title: Recorded testimony — questions about suffering in the world
+    summary: Nick raises questions about suffering and exploitation before asking where the God of miracles is amid these experiences.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      If you're this loving God, why do you let people die every day of malnutrition, poison water? [Third-party factual allegations in the embedded clip omitted pending human verification of wording and context.] If God is the God of miracles, then where is he?
+    confidence: 0.62
+    review_notes: ['1572–1625s contains serious claims about exploitation and treatment of disabled children; ASR alone does not verify those reports. Summary describes the speaker’s question, not the alleged incidents as facts. Explicit omission is not a verbatim transcript.']
+  - id: p0816-p3-recorded-forgiveness
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-testimony
+    start: 1627.92
+    end: 1679.98
+    type: testimony
+    title: Recorded testimony — forgiveness and human failure
+    summary: Nick describes forgiveness as the greatest miracle he has received and acknowledges his own failures.
+    questions: ['What does the recorded speaker call the greatest miracle he has received?']
+    topics: []
+    scripture: []
+    transcript: |
+      I am the richest man on earth. I know who my God is. And I've received the greatest miracle of all. It's forgiveness. I couldn't even forgive myself for the things I've done wrong. I couldn't forgive the hurt that people did to my family. If you believe you're good, you ain't holy. You'll fail yourself. You'll fail your friends. You'll fail your family. And you will fail God, like I do every single day.
+    confidence: 0.87
+    review_notes: ['Raw chunk 2/3 overlap confirms the repeated list is not duplicate seam content.']
+  - id: p0816-p3-recorded-construction
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-testimony
+    start: 1679.98
+    end: 1710.34
+    type: testimony
+    title: Recorded testimony — under construction every day
+    summary: Nick speaks of daily dependence on God and asking forgiveness, describing himself as under construction.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      But the difference is that God never fails, and I put my trust in him. I fail God every day and I ask for forgiveness every day. [Biblical wording omitted; reference not announced.] I am under construction every day. I need him every day.
+    confidence: 0.88
+    review_notes: ['Raw 1665–1710s overlap agrees on words, with a few seconds of timing variation around under construction. Recorded speaker ends at 1710.34s.']
+  - id: p0816-p3-life-sermon
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-willingness
+    start: 1710.34
+    end: 1763.08
+    type: sermon
+    title: A life that speaks through action
+    summary: Returning from the clip, Hadi says Nick's life and actions are what impress him, relating them to willingness to serve.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      All right, you can find him on YouTube to listen more. The point here is not about how good or how bad his preaching is. But what impresses me is how he lived his life faithfully. His greatest sermon is his own life. It's not from the word that he says. He preached first and foremost through his action. Actions speak louder than words. We have often heard that term, isn't it? He once tried to commit suicide and that suicide failed, and God's grace transformed his life. He surrendered his brokenness. He became a willing instrument in God's hand and brings hope to a million people.
+    confidence: 0.84
+    review_notes: ['Hadi resumes speaking; reach and biographical statements remain attributed to him, not independently verified.']
+  - id: p0816-p3-unwilling
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-willingness
+    start: 1763.08
+    end: 1820.2
+    type: sermon
+    title: Am I unable, or simply unwilling?
+    summary: Hadi applies the testimony to his own reluctance to serve, distinguishing lack of ability from unwillingness.
+    questions: ['How does Hadi challenge his own excuses for not serving?']
+    topics: []
+    scripture: []
+    transcript: |
+      One of his quotes that I remember: if God can use a man without arms and legs to be his hands and feet, then he will certainly use any willing heart. This quote speaks to me personally. There are times where I feel reluctant indeed to serve. I feel reluctant to reach out. I tell myself, I have my own problems already. I'm not ready. I'm not capable enough. I'm not being equipped. I'm not as resourceful, blah blah blah. But this guy tells me that I still have arms and legs. What is my excuse? And I have to ask myself honestly: am I being unable or am I being unwilling, simply?
+    confidence: 0.87
+    review_notes: ['1800s slide confirms quotation attribution to Nick. ASR repeated blah condensed; no speech-accuracy claim from direct listening.']
+  - id: p0816-p3-prison-start
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-prison
+    start: 1820.2
+    end: 1891.58
+    type: testimony
+    title: Starting prison ministry despite reluctance
+    summary: Hadi describes moving from banking work toward prison ministry because of concern for people hidden from public view.
+    questions: ['What prompted Hadi to begin prison ministry?']
+    topics: [service-life]
+    scripture: []
+    transcript: |
+      A little bit of a personal sharing here. I began my personal ministry in prison. At first I felt quite reluctant because I knew nothing about this world. At that time I worked in banking. I did a lot of business travel, negotiating deals, doing marketing programs, meeting with bankers and things like that. However, there was a burden in my heart to reach out to the people whom we do not see, hidden behind the wall. They live in Singapore but they are remotely hidden away somewhere, people who are overlooked and invisible from the public eyes. I took a small step of faith. I called for an opportunity to serve. I called prison ministry, Prison Fellowship, I think. After a few months I heard nothing from them, so I gave up. I decided, why don't I just go on my own?
+    confidence: 0.86
+    review_notes: ['Organization name includes the speaker’s own I think; not independently verified. Minor false starts normalized.']
+  - id: p0816-p3-prison-access
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-prison
+    start: 1891.58
+    end: 1937.5
+    type: testimony
+    title: Applying to serve and visiting Changi prison
+    summary: Hadi recounts the application process and the screening involved in reaching people he counseled in prison.
+    questions: []
+    topics: [service-life]
+    scripture: []
+    transcript: |
+      So I applied for a permit from the government. After three months' process of application, interview, background checks and everything, three months later they say yes, you can go in, and they gave me the access card. Going to prison, anyone have been to prison before? It was in Changi, but it wasn't easy. From the parking lot where I parked my car, it took me almost forty minutes to walk to the [word uncertain] itself, to see the person, to see my client, to see the person that I'm trying to counsel, because you have to go through a lot of screening.
+    confidence: 0.83
+    review_notes: ['ASR wall may be ward or another word; left uncertain. Historical personal account, not current access guidance.']
+  - id: p0816-p3-prison-isolation
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-prison
+    start: 1937.5
+    end: 1995.86
+    type: testimony
+    title: Reflecting on isolation in prison
+    summary: Hadi describes restrictions he encountered during visits and says these helped him appreciate the isolation experienced by inmates.
+    questions: []
+    topics: [service-life]
+    scripture: []
+    transcript: |
+      At one point the screener beeps and I knew that I had a ten-cent coin in my pocket. I couldn't even bring ten cents inside the prison. A pen, notebook, mobile phones, they are not allowed. Everything has to be left outside because they just don't want you to bring that thing and then it will be used by them to escape and to create something creative to do something else. It was quite sad because I saw the newspaper there being screened. The Straits Times that they read is not the same Straits Times that we see in the gas station. The government have already screened and censored the paper. Every day they get to read papers, but the papers that they read are different. The Straits Times version that they read is different from our Straits Times. It's much thinner. So you can imagine how isolated their life is, in fact.
+    confidence: 0.8
+    review_notes: ['ASR stretch times normalized to newspaper name from context; human confirmation required. Restrictions and censorship are the speaker’s account, not independently verified policy.']
+  - id: p0816-p3-prison-trust
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-prison
+    start: 1995.86
+    end: 2034.48
+    type: testimony
+    title: Taking the first step without feeling confident
+    summary: Hadi describes the joy of helping inmates prepare to return to society and says his ministry began with trust rather than confidence.
+    questions: ['Did Hadi feel confident when beginning prison ministry?']
+    topics: [service-life]
+    scripture: []
+    transcript: |
+      But over the years it's been such a joy to walk alongside my inmates and serve them, to prepare them to return to society and to reintegrate with the family. So when I look back, I realize this ministry didn't start with a feeling of confidence in me. In fact it's the other way around. I felt not confident at all. But there is a trust, trust that God will help me along the way if I do take the first step. This is just a picture of me and my clients. We address them as clients, during one of the training sessions that we had.
+    confidence: 0.88
+    review_notes: ['No participant identities or images copied from the referenced photograph.']
+  - id: p0816-p3-mission-invitation
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-mission
+    start: 2034.48
+    end: 2109.08
+    type: sermon
+    title: Serving beyond the usual circle
+    summary: Hadi invites others to consider serving beyond Singapore and presents the call to help others know Christ as belonging to every disciple.
+    questions: ['Who does Hadi say is called to serve beyond the church?']
+    topics: [service-life]
+    scripture: ['Matthew 28:19']
+    transcript: |
+      As we are speaking today, I look forward to a new opportunity to share God's word beyond Singapore, beyond the usual circle here. For this is exactly what the Lord says in Matthew 28: [scripture quotation omitted: Matthew 28:19]. In simple terms, the Lord is sending every one of us, you and I who call ourselves his followers, into the world to help others know him. This calling is not reserved only to Pak Tong. It's not only reserved to pastors, Pastor Yong, or to missionaries. It belongs to every disciple of Christ. Our church is a wonderful place where we learn a lot of things. So we have been equipped, then we have to give something back in return. Hence if you have a similar burden in your heart, I would love to hear from you. Perhaps there may be an opportunity for us to serve together in this new mission outside Singapore. All right, so that's the end of the sermon when we talk about God's fellow worker, which is a privilege.
+    confidence: 0.89
+    review_notes: ['2100s slide explicitly verifies Matthew 28:19. No unannounced destination or mission organization inferred.']
+  - id: p0816-p3-summary
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-summary
+    start: 2109.08
+    end: 2186
+    type: sermon
+    title: Humility, trust and active faith
+    summary: Hadi summarizes growth in terms of humility, trust in God's wisdom and good works as the fruit of an active faith.
+    questions: ['What three points summarize From Infant to Instrument?']
+    topics: []
+    scripture: ['1 Corinthians 3:1-9', 'Isaiah 55:8-9']
+    transcript: |
+      We are coming to the closing part of the sermon today, which is a summary. I'm trying to summarize this into one slide: how to grow from infancy to be his instrument. Number one, I think we spoke about pride. Paul spoke about pride. Pride keeps us as infants and drinking milk all the time. Humility gives us the ability to digest solid food, so that we can grow. Secondly, trust God's deeper ways. We always remember [scripture wording omitted: Isaiah 55:8-9]. We trust him so that he will give us the understanding. It's not we try to understand so that we can trust him, but we trust him so that we can understand him. And lastly, live as [scripture wording omitted: 1 Corinthians 3:9]. Good works are the fruit of our faith. Good works show that our faith is not dead. Good works show that our faith is alive. Our faith is active.
+    confidence: 0.87
+    review_notes: ['Minor repetition normalized. Spiritual nourishment language retained as the preacher’s application rather than reconstructed verse text.']
+  - id: p0816-p3-matthew-warning
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-summary
+    start: 2186
+    end: 2221.86
+    type: scripture-reading
+    title: A warning from Matthew 7:21
+    summary: Hadi reads Matthew 7:21 and describes it as a sobering warning about religious speech and obedience.
+    questions: []
+    topics: []
+    scripture: ['Matthew 7:21']
+    transcript: |
+      Finally this is the word of the Lord that reminds me every day, from Matthew 7:21. [Scripture quotation and closely repeated wording omitted: Matthew 7:21; reference-only link.] This is quite a sobering word from our Lord.
+    confidence: 0.92
+    review_notes: ['2195s slide labels translation TLB. The application’s ESV link is an alternate reference link, not identification of the spoken/displayed translation.']
+  - id: p0816-p3-near
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-summary
+    start: 2221.86
+    end: 2269.28
+    type: sermon
+    title: Greatness and personal nearness
+    summary: Hadi describes God as both greater than human understanding and near to those who seek him humbly, encouraging listeners not to think they are alone.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      God, who is infinitely greater than we can imagine, the good news is he chooses to be close to those who humbly seek him. This is another beautiful contradiction. The one who is highest is also the one who comes nearest to us. The one who is all-powerful is also deeply personal. No other religion has this kind of God. So whatever we are carrying today, don't walk away thinking you are alone. We are not alone. Because he is great, he is the great God of the universe [wording uncertain], who draws near to those who seek him in humility and honestly.
+    confidence: 0.86
+    review_notes: ['Nearest to us restored from raw chunk 4 at 2238.24–2243.3s; midpoint merge dropped its end. Religious comparison is the speaker’s claim. Great God phrase remains uncertain.']
+  - id: p0816-p3-reflection
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-summary
+    start: 2269.28
+    end: 2350.04
+    type: sermon
+    title: Am I willing, who needs help, and what can I offer?
+    summary: Hadi closes with questions about willingness, people needing help nearby and the gifts or experiences listeners can offer.
+    questions: ['What practical reflection questions close the sermon?']
+    topics: [service-life]
+    scripture: []
+    transcript: |
+      The question for ourselves then: am I willing to obey? What keeps us from obeying God? We often tell ourselves, I don't have the time, I'm not gifted enough. But remember Nick Vujicic. If God can use a man without arms and legs to bless millions of people, surely he can use any willing heart. The question is not, am I able? The question is, am I willing? The second question for us that I would like to reflect together: who needs help? Look around us, at home, at work, in our neighborhood. Who needs God's grace today, and how can we reach out to them? What can I offer? We can ask God for wisdom. He has entrusted us with a lot of gifts, experiences, opportunities. How can this become a blessing to someone else? With these three questions I would like to leave with us today for reflection. Now let me lead you in the closing prayer together as we close the sermon today.
+    confidence: 0.91
+    review_notes: []
+  - id: p0816-p3-sermon-prayer
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-sermon-prayer
+    start: 2351.48
+    end: 2419.52
+    type: prayer
+    title: Prayer for maturity, humility and those seeking faith
+    summary: Hadi prays for growth, humility and obedience, and for those seeking to know Christ.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      Our Father in heaven, we give thanks for your precious word today. Thank you for the privilege for calling us your fellow workers, your instrument, your channel of grace. Help us grow from spiritual infancy into maturity. Give us humble hearts that delight in your word, trust in your wisdom and obey your will. And when our earthly journey is complete, may we hear those precious words from our Savior: [scripture quotation omitted; reference not announced]. For those among us who are seeking, we pray that the Holy Spirit would open their heart. May they come to know the Lord Jesus Christ. [Biblical wording omitted; reference not announced.] We ask all these things in the precious name of our Lord and Savior Jesus Christ. Amen.
+    confidence: 0.88
+    review_notes: ['Unannounced embedded references not supplied from memory.']
+  - id: p0816-p3-creed
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-creed
+    start: 2419.52
+    end: 2465.36
+    type: creed
+    title: Affirming faith with the Apostles’ Creed
+    summary: Hadi invites the congregation to stand and affirm its faith by reciting the Apostles' Creed.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      Now let's rise together as we proclaim and affirm our faith by reciting the Apostles' Creed for today. [Congregational creed recitation omitted; not reconstructed from ASR or memory.]
+    confidence: 0.87
+    review_notes: ['ASR communion of sins is unreliable; no attempt to repair a standard text from memory.']
+  - id: p0816-p3-pray-congregation
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-pastoral
+    start: 2470.48
+    end: 2510.52
+    type: prayer
+    title: Prayer prompt for joy, strength and obedience
+    summary: Hadi invites the congregation to give thanks and pray for joy, strength, obedience and renewed closeness to God.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      Now comes pastoral prayer. We have two prayer items this morning. Number one, let's pray for ourselves. Second, we want to pray for our senior pastor, Dr. Tong. The first one, let's pray for ourselves this morning. We want to give thanks for his amazing grace, for his salvation, for calling us his fellow workers. We want to pray for joy, strength, and obedience in walking the path of good works. If we are still wandering, may God in his love draw us near and reveal the grace found in Jesus Christ. Let's pray together for ourselves.
+    confidence: 0.86
+    review_notes: ['Following quiet-prayer interval not filled with repetitive ASR.']
+  - id: p0816-p3-pray-pastor
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-pastoral
+    start: 2553.68
+    end: 2575.46
+    type: prayer
+    title: Prayer request for Stephen Tong’s health and travel
+    summary: Hadi relays a health update about Stephen Tong and asks the congregation to pray for him ahead of gospel-rally travel.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      We want to pray for our senior pastor, Reverend Dr. Stephen Tong. I received an update yesterday. He just did a medical check, and there is a stiffness in his legs that makes him hard to move. We want to pray for his health, especially during this time where he is supposed to travel for gospel rally. Let's pray for him together.
+    confidence: 0.79
+    review_notes: ['Brief complete prompt retained below 30s. Historical update as relayed by speaker, not a current medical assessment. Broad preceding ASR segment makes exact onset uncertain.']
+  - id: p0816-p3-hymn-introduction
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-hymn-intro
+    start: 2725
+    end: 2775.56
+    type: worship
+    title: Using limited time to serve faithfully
+    summary: Hadi introduces Work for the Night Is Coming, connecting the hymn with growth into service and the limited time available to use one's gifts.
+    questions: ['How does the closing hymn relate to the sermon?']
+    topics: [service-life]
+    scripture: []
+    transcript: |
+      Now let's sing together the last hymn of the day. It is entitled Work for the Night Is Coming. The message this morning reminds us indeed that God does not call us to remain spiritually infant. By his grace he grows and equips us to be useful instruments, serving faithfully wherever he has placed us. So this hymn actually speaks to that truth. It reminds us that the time God gave us to serve together is precious and very limited. So while we have the opportunity, may we also use our lives and our gifts and our strength for his purposes. Let's rise and sing the last hymn together, Work for the Night Is Coming.
+    confidence: 0.88
+    review_notes: ['2695–2760s same-model recovery supplies 2725–2735.64s lead-in. Remaining sentence completed from full ASR, not from memory. 2730s slide confirms title. Subsequent hymn lyrics omitted.']
+  - id: p0816-p3-dismissal
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-dismissal
+    start: 2885.06
+    end: 2917.02
+    type: prayer
+    title: Closing prayer before departure
+    summary: Hadi gives thanks and prays for the Spirit's guidance as the congregation leaves.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      To end the worship service this morning, may I lead you in a closing prayer. Gracious Father, we give thanks for your amazing grace in your Son Jesus Christ. As we go from this place, may your Spirit be with us, guiding us in our life. [Biblical wording omitted; reference not announced.] We pray all this in the name of Jesus, our Savior, our Shepherd, our strength. Amen. You may be seated.
+    confidence: 0.87
+    review_notes: ['Final boundary-window and full ASR agree on prayer with sub-second to few-second timing differences. All this remains a contextual normalization of all days.']
+  - id: p0816-p3-announcements
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-announcements
+    start: 2917.02
+    end: 2955.34
+    type: announcements
+    title: Visiting ministry and prayer for the Batam orphanage
+    summary: Hadi announces the pastor's visiting ministry and asks for continued prayer for the church-supported orphanage in Batam and its next development stage.
+    questions: ['What prayer request is made for the orphanage in Batam?']
+    topics: [service-life, prayer]
+    scripture: []
+    transcript: |
+      Before you leave, there is an announcement to make. Pastor Yong is preaching at the [church name uncertain] today. We want to continue to pray for Five Loaves and Two Fish orphanage in Batam that we are supporting, seeking God for wisdom as we go to the next stage of the development. So that's all.
+    confidence: 0.8
+    review_notes: ['Boundary-window onset 2917s used; full ASR begins the same sentence at 2931s. Church name sounds like Emmanuel Hainanese Church but is not visually verified. Organization spelling remains ASR-derived review metadata.']
+  - id: p0816-p3-lunch
+    video_id: IcIxBc--VvM
+    section_id: s0816-p3-announcements
+    start: 2971.74
+    end: 2991.26
+    type: announcements
+    title: Fellowship lunch registration reminder
+    summary: Hadi asks those available to register for fellowship lunch and is told that orders close that day; the slide lists 23 August at 11:30am.
+    questions: ['What fellowship lunch date is displayed in the announcement?']
+    topics: [service-life]
+    scripture: []
+    transcript: |
+      If anyone has not registered and you are available, please register this lunch together. On the [date uncertain]. Where's the date? When is the last day for this, Patrick? [Response:] Today. Today is the last day for order, please. Okay, thank you so much.
+    confidence: 0.78
+    review_notes: ['Short complete announcement retained. 2980s slide says 23 Aug (Sun), 11:30am, order by Sun 16 Aug. ASR says 26th; conflict left explicit rather than rewriting speech to match slide. Boundary-window onset 2971.74s preferred over full ASR 2955.26s; final thanks about 2991s.']

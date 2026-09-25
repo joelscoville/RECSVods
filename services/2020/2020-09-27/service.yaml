@@ -1,0 +1,1034 @@
+id: '2020-09-27'
+date: '2020-09-27'
+title: Authority
+sermon_title: Authority
+type: sermon
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - 'Trusted operator date, title, Rev. Yong Teck Meng and Luke 20:19-26 / Romans 13:1-7 preserved. Opening frames at 0/10/40s confirm title and both references. No date or preacher-name caption was observed; those fields remain operator-attributed, not independently identified from appearance.'
+  - 'This is a sermon-focused upload with an opening greeting, convention announcements, recap, prayers and exposition. References to earlier readings are not evidence that those readings occur in this upload. No missing worship, reading or creed sections are invented.'
+  - 'Programme begins at physical start with Happy Sunday and ends with closing prayer, whose last ASR endpoint is 3906s. Final frames at 3870/3900/3905.9s display an Apostles’ Creed slide while imported speech is still prayer. No creed recitation is inferred from the slide. Full imported span 0–3906.8154375s retained; actual ffprobe duration 3906.841s. Two-minute context margins clip to the recording.'
+  - 'All 696 imported segments were inspected. Passage transcripts are edited ASR-derived excerpts, with punctuation/capitalization normalized and explicit omission/uncertainty markers; they are not complete verbatim or listening-verified transcripts. Audio windows were extracted but not listened to. Ten word-boundary warnings, at most 0.19s, remain for human review; no segment overlap/backtracking or tail clamping. Boundaries follow source thoughts and absolute timestamps, with mixed-segment cuts approximate.'
+  - 'Original batch audio was already absent from both designated roots. Operator explicitly authorized --allow-missing-audio. Transcript byte checksum, source identity/duration and import validation passed; supplied audio SHA-256 is provenance only and was not independently reverified. Exact safe receipt projection is retained with audio_hash_verified false.'
+  - 'Scripture quotations, including brief embedded repetitions, are replaced by reference-only markers; no ESV verse text or reconstructed quotation is stored. Lyrics and longer third-party quotations are omitted explicitly. Original names are retained only when supplied or legible in evidence; garbled names/phrases remain marked rather than reconstructed.'
+  - 'The 400s slide and ASR label the quoted Psalm as 18:27; this may be an off-by-one reference. Preserve the displayed reference and flag for human verification. Historical, political, denominational and biographical assertions, reported Facebook stories, and quotation attributions remain the preacher’s claims, not independently verified facts.'
+  - 'Processing complete under the operator’s flag-and-continue instruction; all interpretation remains needs_review. See docs/authority-review.md for boundary evidence, verification, limitations and search candidates.'
+speakers:
+  - { id: yong-teck-meng, name: Rev. Yong Teck Meng, role: Preacher }
+topics:
+  - { id: church-life, name: Church life }
+  - { id: authority, name: Authority }
+  - { id: stewardship, name: Stewardship }
+  - { id: government, name: Government }
+  - { id: politics, name: Politics }
+  - { id: discernment, name: Discernment }
+  - { id: justice, name: Justice }
+  - { id: discipleship, name: Discipleship }
+  - { id: prayer, name: Prayer }
+videos:
+  - id: W2IZ6MUX-Yk
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 3906.841
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: 'Authorized full acquisition verified RECS channel/ID and usable audio/video streams; acquisition and repeat ffprobe measured 3906.841s (metadata 3907s). Fourteen coarse frame/audio windows and fifteen refined frames were extracted; all frames inspected, showing continuous sermon presentation, the expected title/references and closing prayer posture. Import matches all 696 source segments. Playability assessment is based on successful media decoding, visual inspection and matching transcript content, not direct listening or an original-audio hash match.'
+    transcription_language: en
+    transcribed_span: { start: 0, end: 3906.8154375 }
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings: { beam_size: 5, word_timestamps: true, vad_filter: false, condition_on_previous_text: false }
+      audio_sha256: 54ea3e82512cd92b57f5e50fccf089a464178586d9dc99113059964cb927984f
+      duration_seconds: 3906.8154375
+      elapsed_seconds: 128.254
+      real_time_factor: 0.03283
+      transcribed_at: '2026-09-25T11:23:33.536446+00:00'
+      transcript_sha256: ee87fa6fcb0336b7fc40f17d0ed2047b598df66f1013b9fd941f8154b5ffa97c
+      source_duration_seconds: 3906.841
+      duration_delta_seconds: -0.025562499999978172
+      audio_hash_verified: false
+sections:
+  - { id: s0927-welcome, video_id: W2IZ6MUX-Yk, start: 0, end: 41.22, type: welcome, title: Greeting the online congregation, speaker_id: yong-teck-meng, confidence: 0.87 }
+  - { id: s0927-convention, video_id: W2IZ6MUX-Yk, start: 41.22, end: 276.4, type: announcements, title: Online convention and next Sunday’s arrangements, speaker_id: yong-teck-meng, confidence: 0.86 }
+  - { id: s0927-word, video_id: W2IZ6MUX-Yk, start: 276.4, end: 428.46, type: sermon, title: Recap — authority and organized religion, speaker_id: yong-teck-meng, confidence: 0.86 }
+  - { id: s0927-vineyard, video_id: W2IZ6MUX-Yk, start: 428.46, end: 557.1, type: sermon, title: Recap — stewardship and generosity, speaker_id: yong-teck-meng, confidence: 0.85 }
+  - { id: s0927-warning, video_id: W2IZ6MUX-Yk, start: 557.1, end: 721.58, type: sermon, title: Recap — creation care and taking warnings seriously, speaker_id: yong-teck-meng, confidence: 0.85 }
+  - { id: s0927-opening-prayer, video_id: W2IZ6MUX-Yk, start: 721.58, end: 768.72, type: prayer, title: Prayer for humble attention, speaker_id: yong-teck-meng, confidence: 0.86 }
+  - { id: s0927-world-politics, video_id: W2IZ6MUX-Yk, start: 768.72, end: 915.06, type: sermon, title: Politics in everyday life — America and the region, speaker_id: yong-teck-meng, confidence: 0.84 }
+  - { id: s0927-singapore, video_id: W2IZ6MUX-Yk, start: 915.06, end: 1028.28, type: sermon, title: Singapore’s political culture, speaker_id: yong-teck-meng, confidence: 0.82 }
+  - { id: s0927-with-politics, video_id: W2IZ6MUX-Yk, start: 1028.28, end: 1255.28, type: sermon, title: The claim that God supports our politics, speaker_id: yong-teck-meng, confidence: 0.86 }
+  - { id: s0927-under-politics, video_id: W2IZ6MUX-Yk, start: 1255.28, end: 1447.34, type: sermon, title: Treating religion as subordinate to political power, speaker_id: yong-teck-meng, confidence: 0.82 }
+  - { id: s0927-above-politics, video_id: W2IZ6MUX-Yk, start: 1447.34, end: 1581.62, type: sermon, title: Does God’s supremacy excuse rejecting civil rules?, speaker_id: yong-teck-meng, confidence: 0.86 }
+  - { id: s0927-spies, video_id: W2IZ6MUX-Yk, start: 1581.62, end: 1720.38, type: sermon, title: Luke 20 — hostility and false sincerity, speaker_id: yong-teck-meng, confidence: 0.87 }
+  - { id: s0927-weeds, video_id: W2IZ6MUX-Yk, start: 1720.38, end: 1877.56, type: sermon, title: The weeds and the wheat — examine yourself, speaker_id: yong-teck-meng, confidence: 0.83, review_notes: ['ASR repeatedly confuses weed/wheat. Ambiguous clauses are omitted rather than reversed by guesswork.'] }
+  - { id: s0927-tax-trap, video_id: W2IZ6MUX-Yk, start: 1877.56, end: 1988.84, type: sermon, title: The tribute question as a trap, speaker_id: yong-teck-meng, confidence: 0.85 }
+  - { id: s0927-wise, video_id: W2IZ6MUX-Yk, start: 1988.84, end: 2043.82, type: sermon, title: Discernment without gullibility, speaker_id: yong-teck-meng, confidence: 0.86 }
+  - { id: s0927-denarius, video_id: W2IZ6MUX-Yk, start: 2043.82, end: 2091.48, type: sermon, title: The denarius illustration, speaker_id: yong-teck-meng, confidence: 0.78, review_notes: ['Coin-person identification in ASR is historically questionable; no independent numismatic verification or silent correction.'] }
+  - { id: s0927-fairness, video_id: W2IZ6MUX-Yk, start: 2091.48, end: 2190.52, type: sermon, title: Giving back and ordinary fairness, speaker_id: yong-teck-meng, confidence: 0.88 }
+  - { id: s0927-public-services, video_id: W2IZ6MUX-Yk, start: 2190.52, end: 2284.22, type: sermon, title: Taxes sustain the people who sustain society, speaker_id: yong-teck-meng, confidence: 0.87 }
+  - { id: s0927-romans-order, video_id: W2IZ6MUX-Yk, start: 2284.22, end: 2431.08, type: sermon, title: Romans 13 — government and public order, speaker_id: yong-teck-meng, confidence: 0.9 }
+  - { id: s0927-romans-conscience, video_id: W2IZ6MUX-Yk, start: 2431.08, end: 2619.3, type: sermon, title: Romans 13 — civil responsibility and conscience, speaker_id: yong-teck-meng, confidence: 0.88 }
+  - { id: s0927-expectations, video_id: W2IZ6MUX-Yk, start: 2619.3, end: 2698.44, type: sermon, title: The limits of idealizing political leaders, speaker_id: yong-teck-meng, confidence: 0.83 }
+  - { id: s0927-kuyper, video_id: W2IZ6MUX-Yk, start: 2698.44, end: 2792.1, type: sermon, title: Abraham Kuyper and meaningful political engagement, speaker_id: yong-teck-meng, confidence: 0.87 }
+  - { id: s0927-highest, video_id: W2IZ6MUX-Yk, start: 2792.1, end: 2867.42, type: sermon, title: Civil obligations under God’s highest authority, speaker_id: yong-teck-meng, confidence: 0.89 }
+  - { id: s0927-servant, video_id: W2IZ6MUX-Yk, start: 2867.42, end: 2944.74, type: sermon, title: Learning confidence as a servant of God, speaker_id: yong-teck-meng, confidence: 0.84 }
+  - { id: s0927-commission, video_id: W2IZ6MUX-Yk, start: 2944.74, end: 3073.92, type: sermon, title: Christ’s authority and the Great Commission, speaker_id: yong-teck-meng, confidence: 0.86 }
+  - { id: s0927-apathy, video_id: W2IZ6MUX-Yk, start: 3073.92, end: 3148.38, type: sermon, title: Apathy and ignorance are not options, speaker_id: yong-teck-meng, confidence: 0.86 }
+  - { id: s0927-sellout, video_id: W2IZ6MUX-Yk, start: 3148.38, end: 3373.56, type: sermon, title: Caution about political alliances and endorsements, speaker_id: yong-teck-meng, confidence: 0.83 }
+  - { id: s0927-spheres, video_id: W2IZ6MUX-Yk, start: 3373.56, end: 3497.22, type: sermon, title: 'Distinct responsibilities of church, state and education', speaker_id: yong-teck-meng, confidence: 0.83 }
+  - { id: s0927-distance, video_id: W2IZ6MUX-Yk, start: 3497.22, end: 3544, type: sermon, title: Institutional distance is not permanent silence, speaker_id: yong-teck-meng, confidence: 0.88 }
+  - { id: s0927-bonhoeffer, video_id: W2IZ6MUX-Yk, start: 3544, end: 3658.5, type: sermon, title: Bonhoeffer as an example of resisting grave evil, speaker_id: yong-teck-meng, confidence: 0.82 }
+  - { id: s0927-conclusion, video_id: W2IZ6MUX-Yk, start: 3658.5, end: 3820.34, type: sermon, title: 'Civil responsibility, allegiance and the need for wisdom', speaker_id: yong-teck-meng, confidence: 0.9 }
+  - { id: s0927-closing-prayer, video_id: W2IZ6MUX-Yk, start: 3820.34, end: 3906.8154375, type: prayer, title: Prayer for wise and active lives, speaker_id: yong-teck-meng, confidence: 0.86, review_notes: ['Prayer onset is an approximate cut within a mixed ASR segment. Creed slide is visible before the prayer ends; no creed speech is supplied.'] }
+passages:
+  - id: p0927-welcome
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-welcome
+    start: 0
+    end: 41.22
+    type: welcome
+    title: Greeting the congregation online
+    summary: Rev. Yong Teck Meng greets the online congregation and asks participants to turn on their cameras.
+    questions: ['How does the preacher greet online participants?']
+    topics: [church-life]
+    scripture: []
+    transcript: |
+      Happy Sunday. Can we see all our friends on cyberspace? Would you turn on your video so that I can take a look at you guys? [Personal greeting with uncertain name omitted.] Hello. Come on, turn on your video. Wave, wave, wave. Good to see some of you. Not loading fast enough; it's all right.
+    confidence: 0.84
+    review_notes: ['First imported segment starts at 0s; title slide visible at 0/10/40s. No waiting interval removed.']
+  - id: p0927-convention-registration
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-convention
+    start: 41.22
+    end: 126.92
+    type: announcements
+    title: An online global convention and translation work
+    summary: The preacher announces an October 1–6 online convention, describes its international participation and translation work, and encourages registration.
+    questions: ['What convention does the preacher encourage the congregation to attend?']
+    topics: [church-life]
+    scripture: []
+    transcript: |
+      Talking about that, I have a very important announcement I need to make. In the coming week, as you know, our global convention will begin October the first to six, and it's going to be completely via cyberspace. As of this morning, more than 17,000 people have registered for the global convention from 63 countries. [Unverified registration address omitted.] For the past many days, many, many people have been scrambling, including myself, to get ready for the convention. [Uncertain volunteer names omitted.] Translation work and all that stuff. Quite tough, because everything is moving very rapidly. This is like a six-day convention with speakers from all over the world, all very prominent speakers. All the sermons are going to be translated into three languages. [First language name unclear in ASR], Mandarin and English. The topics are great. I have translated, I think by now, about ten already, and learned a lot. When you translate you learn a lot from the speaker. I do encourage you to come on board, register and participate.
+    confidence: 0.83
+    review_notes: ['Attendance figures and arrangements are historical announcements, not current instructions or independently verified counts.']
+  - id: p0927-next-sunday
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-convention
+    start: 126.92
+    end: 178.5
+    type: announcements
+    title: Joining the convention instead of meeting next Sunday
+    summary: The preacher says the congregation will not hold its usual meeting the following Sunday and should join the convention’s worship service from Jakarta instead.
+    questions: ['Why will the congregation not meet the following Sunday?']
+    topics: [church-life]
+    scripture: []
+    transcript: |
+      Because of this, next Sunday will be the fourth day of the convention. [Timetable phrase unclear.] The convention timetable is the same as our worship service. Therefore we will be supporting the convention instead of having our worship service. To put it simply, we will not meet next Sunday, and I encourage you to then latch on to the convention, where they will have Sunday worship service from Jakarta and senior pastor will be speaking. So one more time, next week we will not be meeting for one week to support the convention, and you are to then go online to watch the convention live from Jakarta. Please do continue to pray for this, because it is a very big deal.
+    confidence: 0.86
+    review_notes: ['Next Sunday is relative to the trusted 2020 service date, not the current week.']
+  - id: p0927-online-reach
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-convention
+    start: 178.5
+    end: 241.64
+    type: announcements
+    title: Online ministry beyond geographical limits
+    summary: The preacher contrasts the potential reach of online ministry with the capacity and logistics of physical conventions, while questioning how view counts should be interpreted.
+    questions: ['What opportunities and uncertainties does the preacher see in online ministry?']
+    topics: [church-life]
+    scripture: []
+    transcript: |
+      Seventeen thousand; by next week I expect it to exceed twenty-over thousand people globally watching, these 63 countries. I didn't know there's so many countries who would tap into what we are watching. That's one of the flip sides of having cyberspace ministry, and it is the same with our preaching here as well. The highest hit rate for our sermons exceeded 630 people. I don't know whether they are real numbers or some guy just keeps pressing the button, or some kid somewhere is pressing a button. Whatever the case is, you see that cyberspace approach enables you to break out of the geographical kind of boundary. In the past all our big conventions in Jakarta can perhaps at max have six, seven thousand people because of the physical location. The amount of logistics involved in hosting so many people is just incredible. Now the work has shifted more to cyberspace, so all the cyberspace people are very busy.
+    confidence: 0.85
+    review_notes: []
+  - id: p0927-convention-support
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-convention
+    start: 241.64
+    end: 276.4
+    type: announcements
+    title: Volunteers supporting the convention broadcast
+    summary: The preacher explains that local volunteers will support the convention’s audiovisual and online work, another reason for suspending the usual meeting.
+    questions: ['How are local volunteers supporting the convention?']
+    topics: [church-life]
+    scripture: []
+    transcript: |
+      One of the other reasons why we will not meet next week is because a lot of our brothers and sisters are mobilized to support the convention from here. They need to go and man the AV and the Zoom and all that, because it's reaching out to so many places in the world. Especially for mainland China, there's always the challenge of the particular IP being blocked by the Chinese government. Then they have to do their thing to reroute and all that. So that's why it will be very strenuous to attempt a worship service at the same time. Again, next week we will not be here. We will be supporting this convention.
+    confidence: 0.85
+    review_notes: ['Network restrictions are the speaker’s account; no independent technical verification.']
+  - id: p0927-religious-credentials
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-word
+    start: 276.4
+    end: 340.18
+    type: sermon
+    title: Recapping the dangers of religious credentials
+    summary: The preacher reviews the previous lesson on Jesus’ authority and discusses dangers in organized religion and different church leadership structures.
+    questions: ['What danger does the preacher associate with organized religion?']
+    topics: [authority, discernment]
+    scripture: ['Luke 20:1-19']
+    transcript: |
+      Let's continue with our preaching today in the middle part of Luke chapter 20. Let's review what was taught in the last lesson. The last lesson was about whether it's the carrot or the stick, because it started off with our Lord Jesus Christ being challenged on his authority. [Scriptural question omitted; Luke 20.] I spoke a little bit about the dangers of organized religion. I didn't know that this struck a chord. Quite a few people wrote to me and talked about it too, because they agree with the idea that sometimes organized religion, which is what we are, by the way, carries its own danger. You have authority, you have a degree, then you get to be on the pulpit in an organized faith. Some churches don't do that, for example the house churches or the brethren churches. [Unclear title wording omitted.] At max, they have elders. It is a rotational kind of leadership style. Every church has a different kind of setup.
+    confidence: 0.86
+    review_notes: ['300s recap slide identifies previous passage Luke 20:1-19 and previous title Carrot or Stick. Denominational descriptions remain attributed.']
+  - id: p0927-word-authority
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-word
+    start: 340.18
+    end: 428.46
+    type: sermon
+    title: Scripture rather than credentials as the test of teaching
+    summary: The preacher says teaching must be assessed by scripture rather than academic or institutional status, then recalls Jesus’ response to insincere challengers.
+    questions: ['How should a teacher’s authority be assessed?', 'Why does the preacher contrast sincerity with religious status?']
+    topics: [authority, discernment]
+    scripture: ['Luke 20:1-19', 'Psalms 18:27']
+    transcript: |
+      Jesus was questioned about his authority, and the important thing for us to remember is that in the Reformed Evangelical movement we emphasize the supremacy of the Word of God. In this convention many of the speakers do that too. It is part of the Reformed understanding. We want you to understand that it is not about organized religion per se, but the authority at the end of the day for any one of us is the Word of God. I don't care whether you have ten PhDs or not. If you preach nonsense, then you preach nonsense. How do you know? The answer is the Word of God. Even if a person is not so-called officially recognized, so long as the person is operating upon the authority of the Word of God, then that should be the most important thing. [Recap of Jesus’ question about John and Psalm quotation omitted; Luke 20; displayed Psalms 18:27.] Our Lord Jesus Christ did not treat the Pharisees and the scribes with too much courtesy because they were deceptive people and hypocrites. One of the teachings is that if you are not sincere in your heart, then God will use strange methods or difficult methods to deal with you.
+    confidence: 0.85
+    review_notes: ['400s slide labels Psalm quotation 18:27, matching ASR; possible reference error retained for review, not silently corrected or quoted.']
+  - id: p0927-vineyard-stewards
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-vineyard
+    start: 428.46
+    end: 486.54
+    type: sermon
+    title: The vineyard as a picture of accountable stewardship
+    summary: The preacher retells the wicked-tenants illustration and interprets the vineyard as a reminder that people manage what belongs to God.
+    questions: ['What stewardship lesson does the preacher draw from the vineyard?']
+    topics: [stewardship]
+    scripture: ['Luke 20:9-19', 'Isaiah 5']
+    transcript: |
+      Last week's lesson was really about the parable of the wicked tenants. [Biblical narrative retelling omitted; Luke 20:9-19.] From there, there are a lot of lessons to be learned, because this was from the song of vineyard taken from Isaiah chapter 5. One of the key lessons is that the vineyard represents the whole world. It is a reminder to us all that everything we have belongs to God. For us, we are living in this world; we are like the tenants who are supposed to manage the vineyard for God and then pay the dues and to be accountable to God Almighty. This is a fact that very, very—may I emphasize again—very, very few people understand.
+    confidence: 0.85
+    review_notes: ['Narrative omitted conservatively as scripture-related material; interpretation retained as the preacher’s analogy.']
+  - id: p0927-generosity
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-vineyard
+    start: 486.54
+    end: 557.1
+    type: sermon
+    title: Chuck Feeney as an illustration of generosity
+    summary: The preacher admires Chuck Feeney’s giving and contrasts large-scale philanthropy with Christians’ responsibility to regard wealth as entrusted rather than owned.
+    questions: ['Why does the preacher bring up Chuck Feeney’s generosity?']
+    topics: [stewardship]
+    scripture: ['Luke 20:9-19']
+    transcript: |
+      I gave the example of Chuck Feeney, whom today I still continue to admire greatly. After the service we were discussing about this in my family. I've tried my best to find whether this guy is a Christian and all that. [Uncertain recollection about correspondence and another philanthropist’s parents omitted.] People like Bill Gates, Chuck Feeney, Warren Buffett, they are like the most generous persons in the history of mankind, and yet they are really honestly speaking not driven by any biblical kind of consideration. In a sense it puts us to shame. It also demonstrates that really very few people understand that what you have really doesn't belong to you. I think none understand more than Chuck Feeney, because he gave away eight billion dollars of his wealth, and finally he has two million left. Still a lot of money, but compared to eight billion, that's really crazy. This guy understood this, that the vineyard belongs to the Lord; it's not mine.
+    confidence: 0.81
+    review_notes: ['600s slide verifies Chuck Feeney spelling. Giving totals and religious identities are the preacher’s assertions, not independently established.']
+  - id: p0927-creation-care
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-warning
+    start: 557.1
+    end: 616.84
+    type: sermon
+    title: Stewardship includes care for creation
+    summary: The preacher connects rejection of God’s messengers with misuse of the world and explains why he calls environmental responsibility creation care.
+    questions: ['Why does the preacher use the term creation care?']
+    topics: [stewardship]
+    scripture: ['Luke 20:9-19']
+    transcript: |
+      The rejection of all the messengers is an indication and a repeat of the history of the Jews, where they forever and ever go after the prophets and kill them. It's also a rejection of God's warning. From there we learn the lesson that indeed we are people who mess up the whole world, the vineyard. Creation care actually is a very important aspect of a Christian's life as well, and I'm involved in creation care ministry as well. In other words, environmental care. We put creation care to remind you that it's created by God. [Aside about terminology omitted.] We use the word creation care for Christians to understand that the world belongs to God and we are the stewards of the world, so don't mess up the world.
+    confidence: 0.84
+    review_notes: ['Broad historical characterization is preserved as the preacher’s interpretation, not an archive assertion about Jewish people.']
+  - id: p0927-rejected-warning
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-warning
+    start: 616.84
+    end: 677.9
+    type: sermon
+    title: Ignoring warnings and presuming on God’s care
+    summary: The preacher reads the rejected son and judgment in the parable as warnings against assuming that divine love makes accountability unnecessary.
+    questions: ['What warning does the preacher draw from the tenants’ rejection of the son?']
+    topics: [authority, discipleship]
+    scripture: ['Luke 20:9-19']
+    transcript: |
+      At the same time there is a reflection of how the rejection of God's messenger is the same as us messing up our individual life despite the many, many warnings of God. [Parable retelling and embedded scripture quotations omitted; Luke 20:9-19.] It's a prophecy that Jesus Christ would be crucified and will die for us. [Further parable retelling omitted.] Because God will always love us, God will always care for us—how can it be that one day God will choose not to deal with us anymore? That's something that Jesus Christ would not agree with. [Cornerstone quotation/allusion omitted; Luke 20.] I ended the sermon by reminding you that God's attribute, God's existence, is a twin-track kind of idea.
+    confidence: 0.82
+    review_notes: ['Retelling contains extended scriptural speech; explicit omissions retain timing and prevent presenting a reconstructed reading.']
+  - id: p0927-love-righteousness
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-warning
+    start: 677.9
+    end: 721.58
+    type: sermon
+    title: Love and righteousness together
+    summary: The preacher concludes the recap by holding love and righteousness together and urging serious, active faith.
+    questions: ['Why does the preacher say faith must be taken seriously?']
+    topics: [discipleship]
+    scripture: ['Luke 20:9-19']
+    transcript: |
+      Like a twin track of a train, God is both love and righteousness at the same time. It's not the carrot or the stick, but the carrot and the stick at the same time. Do not ignore that. The sermon ended with this idea that we really ought to be very serious about faith. It's really not an option. I think I'm going to, in the future, start a series of preaching called not an option. It's about how really, if you call yourself a follower of Jesus Christ, there are many things in life, really, they are not options. Today actually we will come on to another passage that illustrates it quite well.
+    confidence: 0.86
+    review_notes: []
+  - id: p0927-prayer-before-exposition
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-opening-prayer
+    start: 721.58
+    end: 768.72
+    type: prayer
+    title: Asking for humility and attention to scripture
+    summary: The preacher prays that those present and online will listen with humility, set aside distractions and respond to God’s word.
+    questions: ['What does the preacher ask for before the exposition?']
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      Let's come before the Lord in a word of prayer and commit the time into his almighty hands. Let us pray. We thank you, God, that we are all here, whether physically or in cyberspace, to have an opportunity to listen to your word. Grant to us a heart that is humble and teachable, knowing that this is a privilege not given to many people in the world. Help us to focus. Help us to set aside all that has been bugging us in the past week so that we will hear your voice. [Scriptural shepherd allusion and closing biblical prayer wording omitted; references not independently established.] In Jesus' name we pray, amen.
+    confidence: 0.85
+    review_notes: ['725/765s frames show bowed reading/prayer posture. End includes the brief transition into today’s passage in a mixed segment.']
+  - id: p0927-american-elections
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-world-politics
+    start: 768.72
+    end: 856.5
+    type: sermon
+    title: Introducing the political question through American elections
+    summary: The preacher introduces the Caesar passage as an enduring practical question and discusses the approaching 2020 American election and electoral habits.
+    questions: ['Why does the preacher treat politics as relevant to the passage?']
+    topics: [politics]
+    scripture: ['Luke 20:19-26']
+    transcript: |
+      Today's passage, as you have read earlier in your second responsive reading, I'm going to be focusing only on that very familiar passage. [Scripture quotation omitted; Luke 20:25.] We have heard this, I hope, many times already, but I want to think a little bit deeper into it, because this is one of the topics that will not go away. It has to do with life. As we speak, you know that in the United States of America there is a huge hoo-ha going on because they are having their presidential election. [Election timing and Donald Trump aside omitted.] We are in a very strange time, because it's a very interesting and dramatic, almost like TV-show kind of development in the United States. Their political system is very vibrant. They not only have federal election, they have state election, even neighborhood election. Americans are very used to these sort of things. In their school system they will elect school president and student council leader. [School-system comparison omitted.] It's very much a part of their life.
+    confidence: 0.84
+    review_notes: ['Earlier responsive reading is referred to, not present in this upload. Political comments belong to September 2020.']
+  - id: p0927-regional-politics
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-world-politics
+    start: 856.5
+    end: 915.06
+    type: sermon
+    title: Regional tensions as another example of politics affecting life
+    summary: The preacher points to South China Sea and Taiwan tensions as examples of political developments affecting neighboring societies.
+    questions: ['What regional examples does the preacher use to show that politics affects daily life?']
+    topics: [politics]
+    scripture: []
+    transcript: |
+      Politics is something that we really cannot escape because it influences our life. In our region the thing that is hotting up is the involvement of China in many, many places, because they basically just plunk themselves into all these islands in the middle of nowhere and declare [unclear wording]. [Military-construction comparison omitted.] You take a look at the island: how come the shape has changed? Because the Chinese are involved. It's a very scary thing because they move very deep down into the South China Sea. For us in Singapore, we don't quite care because it got nothing to do with us. But the Filipino, the Vietnamese and the Taiwanese, they are pretty nervous. Recently mainland China sent many airplanes into the Taiwan territory. This is a very scary issue.
+    confidence: 0.8
+    review_notes: ['900s frame shows a regional protest image. Geopolitical descriptions and cultural generalizations are attributed, not independently fact-checked.']
+  - id: p0927-election-symbols
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-singapore
+    start: 915.06
+    end: 984.86
+    type: sermon
+    title: Comparing Singapore’s election culture
+    summary: The preacher contrasts Singapore’s recent election with more dramatic political environments, using campaign symbols and technocratic leadership as examples.
+    questions: ['How does the preacher characterize Singapore’s election culture?']
+    topics: [politics]
+    scripture: []
+    transcript: |
+      Coming back to home, we also had our election that happened, if you remember, just a while ago. In comparison, our political scene in Singapore is very boring, right? Look at the logo of the political party. Even the logo looks boring to me. I'm a graphic artist guy. It looks like it's designed in the 1960s. [Extended remarks on individual symbols and an uncertain candidate name omitted.] If you run as an independent, that's what happens. You say, I want to run for election, then the election department will give you a range of logos to pick from. The range includes a rooster, a pair of glasses, a book, all drawn in that kind of style, because we don't expect you to be very dramatic. That's the way politics are in Singapore. Our politicians are mainly technocrats, scholars.
+    confidence: 0.81
+    review_notes: ['Descriptions are the speaker’s humorous opinions. Candidate identity is not reconstructed.']
+  - id: p0927-political-complexity
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-singapore
+    start: 984.86
+    end: 1028.28
+    type: sermon
+    title: Political differences call for deeper Christian thought
+    summary: The preacher compares public-speaking styles and political cultures, then asks Christians to think more carefully about these complex questions.
+    questions: ['Why does the preacher ask Christians to think more deeply about politics?']
+    topics: [politics, discernment]
+    scripture: []
+    transcript: |
+      They are very bad at public speaking, you realize that? [Imitation of a politician’s speech omitted.] It's not in their blood. All of a sudden, once every couple of years, they are forced to speak publicly. You put that in Taiwan, they'll all be dead, because Taiwanese politicians are very sharp-tongued. [Further comparison omitted.] Our political system is very, very strange. These are very complex issues. It ranges from the most complex and colorful American system to our system that is a little bit strange. As Christians we really need to think a little bit deeper into it.
+    confidence: 0.81
+    review_notes: ['Colloquial hyperbole and national comparisons are the speaker’s rhetoric, not factual assessments adopted by the archive.']
+  - id: p0927-god-my-party
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-with-politics
+    start: 1028.28
+    end: 1103.88
+    type: sermon
+    title: Claiming God’s support for a nation or party
+    summary: The preacher describes a view that identifies God with one’s political party or national system, illustrating it with flags and patriotic ceremonies in churches.
+    questions: ['What does the preacher mean by the view that God is with politics?']
+    topics: [politics, discernment]
+    scripture: []
+    transcript: |
+      There are a couple of general ideas approaching this. I don't want to pretend that I can give all the answers this morning. First of all, the idea is that God is with politics and with politicians. This is a big stand. A lot of people think that Christians need to know about politics because God is with me, God is with my party, God is with my system. The Americans are especially big in this. In American churches typically you will see that they have the state flag and the federal flag at the pulpit. [Local flag analogy omitted.] Almost all American mainstream churches have this kind of phenomenon, that they have the state flag, the American flag, and another state flag. [Uncertain identification of pictured flag omitted.] They had things like, during Veterans Day, soldiers marching in during worship services carrying the flag as part of the worship service.
+    confidence: 0.84
+    review_notes: ['This passage describes a position the preacher will critique; it is not his endorsement of party identification. Generalizations are unverified.']
+  - id: p0927-patriotism-scripture
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-with-politics
+    start: 1103.88
+    end: 1181.4
+    type: sermon
+    title: Patriotic worship and partisan use of a Psalm
+    summary: The preacher discusses patriotic hymns and criticizes a campaign that used Psalms 109:8 against President Obama as an example of recruiting scripture for a political side.
+    questions: ['What concern does the preacher raise about using scripture for partisan purposes?']
+    topics: [politics, discernment]
+    scripture: ['Psalms 109:8']
+    transcript: |
+      If you turn to their hymnal you will find a lot of patriotic songs, like America the Beautiful, [uncertain title omitted], Star-Spangled Banner, The Battle Hymn of the Republic. [Illustrative song lyrics omitted.] To us it sounds very funny, but it's the same thing. A lot of Americans believe that God is on our side, on the side of my party, and they mix the faith with politics in a very creative and very strange way. Sometimes, during the time of President Obama, all of a sudden a campaign emerged that says pray for Obama, Psalm 109 verse 8. Sounds good, right? Pray for your president. The problem is that Psalm 109 verse 8 says this. [Scripture quotation and its repetition omitted; Psalms 109:8.] It is the idea that God is on my side, so we're going to use God to remove this guy. The idea that God is with politics is very complex and covers many, many different areas.
+    confidence: 0.84
+    review_notes: ['Historical campaign description remains attributed. Scripture and lyrics omitted, including repeated quotation fragments.']
+  - id: p0927-liberation-theology
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-with-politics
+    start: 1181.4
+    end: 1255.28
+    type: sermon
+    title: The preacher’s critique of liberation theology
+    summary: The preacher presents liberation theology as an example of claiming divine support for political struggle and gives his account of its treatment by the Catholic Church.
+    questions: ['Why does the preacher bring liberation theology into his comparison of political approaches?']
+    topics: [politics, authority]
+    scripture: []
+    transcript: |
+      Some will push it further to believe that God is on the side of the politicians to change the world. In the 1970s, when I was still relatively young, one of the key things is the idea of liberation theology, especially in South America. [Uncertain name in ideological comparison omitted.] You can't see very well: this Jesus is holding on to an M16 rifle in this particular thing. You take up arms against the authority because in South America, of course, a lot of corruption and a lot of things. Roman Catholic priests especially, many of them are liberal theologians in liberation theology. The idea is that God is going to be with us and we're going to take up arms against the government who is corrupted, and the purpose of Jesus Christ is to liberate us from poverty and from issues that are unjust. This is called liberation theology. Today, of course, it is no longer present among us because the Roman Catholic Church moved in during John Paul II's time very aggressively to root out liberation theology. That's the first group: God is with the politicians and with politics, and God is supporting us.
+    confidence: 0.8
+    review_notes: ['1200s slide confirms topic. The sweeping account, including its claimed disappearance, is not independently verified or endorsed.']
+  - id: p0927-chess-authority
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-under-politics
+    start: 1255.28
+    end: 1329.38
+    type: sermon
+    title: The chess bishop as an illustration of subordinated religion
+    summary: The preacher introduces a second view in which religion serves political rulers, using the relative value and role of chess pieces as an analogy.
+    questions: ['How does the preacher use a chess bishop to illustrate religion’s political role?']
+    topics: [politics, authority]
+    scripture: []
+    transcript: |
+      The second one is that God is subjected. He's not supporting us; he's subjected to the politics and the politicians. He's secondary to us. This is seen even in very subtle indications in our culture. How many of you play international chess? [Audience interaction omitted.] When I was very young I noted that in international chess there are the king, queen, bishop, knight, rook and pawn. You notice that the bishop is ranked far lower than everybody else. If the pawn is one point, how many points is the bishop? The answer is three. How many points is the queen? Nine. The knight is worth three points; the rook or castle is worth five. In international chess your bishop, which is the representation of the church, is very minor. His purpose is to support your queen and the king. It's like God is subjected to politics.
+    confidence: 0.85
+    review_notes: ['Chess-piece comparison is a rhetorical analogy, not proof of a historical church-state relationship.']
+  - id: p0927-religion-serving-state
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-under-politics
+    start: 1329.38
+    end: 1383.32
+    type: sermon
+    title: Reducing religious authority to a supporting role
+    summary: The preacher discusses changing church-state power and criticizes treating clergy or religion as useful only when they serve other interests.
+    questions: ['What concerns the preacher about religion being reduced to a supporting role?']
+    topics: [politics, authority]
+    scripture: []
+    transcript: |
+      All throughout the history of Europe the play is very confusing. Sometimes the church is very powerful, but most often your bishop's role is to just go and ordain the king or the queen, later on in the history of Europe. When the Roman Catholic was in charge for the longest time they held absolute power, and today it has become more like this. Your pastor and all that is more like [unclear term]. He does your funeral or your wedding, and he's not the most important person. He's a servant that you call upon when you need him. The bishop is in that role. Nowhere is this seen clearer than in China today, where the Communist Party has declared that all the religion is supposed to serve the purpose of socialism.
+    confidence: 0.8
+    review_notes: ['Historical and contemporary policy descriptions are attributed and unverified. Unclear colloquial term not reconstructed.']
+  - id: p0927-reported-bible-alteration
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-under-politics
+    start: 1383.32
+    end: 1447.34
+    type: sermon
+    title: A reported example of subordinating faith to politics
+    summary: The preacher cites reports he saw on Facebook about religious symbols and an altered biblical story in China to illustrate his concern about political control of religion.
+    questions: ['What kind of reported example does the preacher use to illustrate political control of religion?']
+    topics: [politics, discernment]
+    scripture: []
+    transcript: |
+      In China the idea is that the churches now are asked to put up the state flag, [names with uncertain ASR omitted], in front, right beside the crucifix. My friends on Facebook keep putting up all kinds of stories about how they changed the Bible and all kinds of nonsense theory coming out from the Chinese government. For example, the latest I've heard is that in the story of Jesus and the woman who committed adultery [biblical quotation and reported altered version omitted; reference not announced]. Apparently based on what I read in Facebook [reported story continues; omitted]. The idea is that God really is meant to be used for the people and to serve the people, and the politicians are above God.
+    confidence: 0.72
+    review_notes: ['Explicit secondhand Facebook attribution retained. Reported altered story is unverified; omission avoids presenting it as either Bible text or established government action.']
+  - id: p0927-masks-illustration
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-above-politics
+    start: 1447.34
+    end: 1525.26
+    type: sermon
+    title: Divine authority and pandemic restrictions
+    summary: The preacher examines using God’s supremacy to reject public-health rules, discusses John MacArthur, and explicitly says his hypothetical refusal to wear masks is an illustration rather than an instruction.
+    questions: ['Is the preacher telling the congregation to ignore mask rules?']
+    topics: [government, authority, discernment]
+    scripture: []
+    transcript: |
+      The third approach is that God is above politics and politicians, as our brother Michael was saying earlier. In this particular stand the idea is that God is more important than anything else, so we don't have to listen to you telling me to wear masks. One of the greatest examples in recent time is John MacArthur Jr. [Convention invitation recollection omitted.] He's very busy fighting the US government about social distancing and stuff like that. This is a screen grab from one of the interviews, because he goes against the government's idea of social distancing. It is like now I declare to you, no need to wear masks, this government talks nonsense. [Recording aside omitted.] This is just illustration. I'm not asking people to do that. We got shield, okay, so we follow the rules. It's like me telling you that, and then you ask why. Then I tell you, God is above everything else; why should we listen to secular people? John MacArthur Jr., a person whom I respect a lot, to my big surprise is taking that kind of role.
+    confidence: 0.85
+    review_notes: ['1500s slide verifies John MacArthur spelling. Claims about litigation and invitation are the preacher’s account. Hypothetical and explicit disclaimer kept together.']
+  - id: p0927-anarchist-claims
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-above-politics
+    start: 1525.26
+    end: 1581.62
+    type: sermon
+    title: Testing anti-government claims against scripture
+    summary: The preacher describes Christian anarchist arguments against taxes and civil rules, then says scripture must decide among the competing approaches.
+    questions: ['How does the preacher propose evaluating claims that divine allegiance cancels civil obligations?']
+    topics: [government, authority, discernment]
+    scripture: []
+    transcript: |
+      Fighting all the way to the Supreme Court. This idea of God is above the politicians and politics will also lead to the idea that you don't have to pay tax, you don't have to support government, anything. These people are called anarchist Christians. One of the symbols is an upside-down flag, and then the inscription there says [slogan and embedded scripture quotations omitted]. So I'm not going to pay your tax, I'm not going to follow your rules, I'm not going to do whatever you say, because I follow what God said. It sounds good, right? So many different types: God is with the politicians, God is under the politician, and here God is above the politician. How do we move forward? The answer, of course, is scripture.
+    confidence: 0.86
+    review_notes: ['1575s frame verifies quoted-slogan illustration. It is a position under examination, not the preacher’s final conclusion.']
+  - id: p0927-hostile-authorities
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-spies
+    start: 1581.62
+    end: 1655.48
+    type: sermon
+    title: Religious hostility and spies in Luke 20
+    summary: The preacher reads Luke 20:19-20 and connects the leaders’ hostility and deceptive spies with the danger of power being abused within religious institutions.
+    questions: ['What does the preacher learn from the leaders sending spies to Jesus?']
+    topics: [authority, discernment]
+    scripture: ['Luke 20:19-20']
+    transcript: |
+      Let's go to scripture, Luke 20. [Scripture reading omitted; Luke 20:19.] What is this parable? The parable of the wicked tenants. Very insulting. You use the parable of wicked tenants to insult us. Obviously it was about all these members of the established religion. Because of that they decided to go after Jesus Christ. It is again a demonstration that there is just no ending abuse of power, even within an ecclesiastical body like a church, because we are all fallen people. Note that the scribes and the chief priests, with plural, so there are many chief priests out there. [Scripture reading omitted; Luke 20:20.] Send spies. In almost every congregation there will be some spies of some sort who look very sincere, because there is always an ever-presence of fake believers. My dear brothers and sisters in Christ, one of the side lessons is that you should not be too surprised when you encounter people like that who are fake, who are not genuine. It should not rock your faith so much, because our Lord Jesus Christ could not escape, so let alone us.
+    confidence: 0.86
+    review_notes: ['Spies corrected from an obvious ASR homophone using the announced passage context; no actual congregant is identified or accused.']
+  - id: p0927-sincerity-and-weeds
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-spies
+    start: 1655.48
+    end: 1720.38
+    type: sermon
+    title: False sincerity and the parable of the weeds
+    summary: The preacher describes pastoral encounters with apparent sincerity and introduces Matthew 13 as a reason not to lose faith when religious appearances mislead.
+    questions: ['Why does the preacher turn to Matthew 13 when discussing false sincerity?']
+    topics: [discernment]
+    scripture: ['Matthew 13:24-26']
+    transcript: |
+      As pastor, I must tell you that I definitely, absolutely have more than my fair share of dealing with people who look very sincere, but they are lying right before my very presence. It happens so many times until it's like, oh, yawn, yawn, it has happened again. It's like so used to it. Why am I not so shocked? I'm not so shocked because our Lord Jesus Christ himself says so. In the parable of the weeds, Matthew 13, 24. [Scripture reading omitted; Matthew 13:24-26.]
+    confidence: 0.84
+    review_notes: ['Personal account remains attributed; no alleged individual is named. Reading interval retained without verse text.']
+  - id: p0927-religious-appearances
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-weeds
+    start: 1720.38
+    end: 1793.18
+    type: sermon
+    title: Religious mannerisms can conceal character
+    summary: The preacher uses the wheat-and-weeds image and a satirical account of church elections to warn that religious vocabulary and public manners do not establish sincerity.
+    questions: ['Why does the preacher warn against judging sincerity by religious language?']
+    topics: [discernment]
+    scripture: ['Matthew 13:24-30']
+    transcript: |
+      Every church you go to, every cell group you are in, almost like—I wouldn't say definitely—but big churches especially, everywhere you go there will be the presence of both [weed/wheat wording uncertain], the real stuff and the fake stuff. They all look the same, because they're all green in color. It's not like the weed is red in color, immediately you can see. They all look the same. [Repeated weed/wheat wording omitted.] They always know how to say the right thing. I was a Presbyterian for the longest time. I'll tell you the secret to being elected as a Presbyterian elder, quite simple: you must shake a lot of hands and kiss a lot of babies, and then say things like praise God, hallelujah, this is wonderful. You learn all these clichés and then you look very holy. Public-speaking skills are also very important. Add a few praise God, hallelujah, then people would think that you're very good, and then they will elect you.
+    confidence: 0.79
+    review_notes: ['ASR confuses wheat and weed repeatedly. Marked rather than supplying a potentially reversed claim. Church-election description is satire, not a factual rule for a denomination.']
+  - id: p0927-self-examination
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-weeds
+    start: 1793.18
+    end: 1877.56
+    type: sermon
+    title: The parable’s warning turns back on the listener
+    summary: After reading the rest of the parable, the preacher cautions against surprise at church scandals and urges listeners to examine their own sincerity.
+    questions: ['What question does the preacher say listeners should ask themselves?']
+    topics: [discernment, discipleship]
+    scripture: ['Matthew 13:27-30']
+    transcript: |
+      [Scripture reading and close retelling omitted; Matthew 13:27-30.] There's actually great mystery, you know. How does this work? [Ambiguous weed/wheat explanation omitted.] Therefore don't be overly surprised when you ever hear of, oh, this pastor got a scandal, that fellow is not a good person, that fellow is a [unclear expression] kind of person. Don't be overly surprised because our Lord Jesus Christ already says so. Don't be so anxious, how come we never get rid of all these people, because it's not so simple. After all, the most important question you need to ask yourself is, are you the weed or the wheat? [Ambiguous weed/wheat clause and scriptural judgment image omitted.] Back to Luke 20.
+    confidence: 0.79
+    review_notes: ['1800s frame confirms parable reading. The ASR reverses or conflates key words; no reconstructed reading or judgment clause.']
+  - id: p0927-tribute-question
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-tax-trap
+    start: 1877.56
+    end: 1940.86
+    type: sermon
+    title: Why the tribute question mattered
+    summary: The preacher explains the religious framing and symbolic significance of the tax question, describing tribute as a reminder of Roman domination.
+    questions: ['Why was the tribute to Caesar politically sensitive?']
+    topics: [government, authority]
+    scripture: ['Luke 20:21-22']
+    transcript: |
+      Those spies could ask Jesus with a very sincere face, right? [Scripture reading omitted; Luke 20:21-22.] Notice they use the word lawful. The word lawful means, is it in accordance to our religious laws that we will give money to this Caesar? This particular tribute is a kind of [ASR: poor tax] that is worth one denarius. One denarius is about an average day's wage for a common laborer, from every person from 14 to 65 years to pay. Some of you present don't need to pay anymore; you're more than 65. Once a year you've got to pay the Roman Empire just to be alive, the tax to be paid. The amount actually is not so big, but it's a symbolic amount, meaning people very unhappy because I have to pay tax, that means I'm subjected to the Roman Empire.
+    confidence: 0.82
+    review_notes: ['Tax terminology is unclear in ASR; poll tax is not silently substituted. Historical amounts and age range are the preacher’s account.']
+  - id: p0927-tax-dilemma
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-tax-trap
+    start: 1940.86
+    end: 1988.84
+    type: sermon
+    title: A trap between popular anger and Roman punishment
+    summary: The preacher says the question was designed so that either answer could turn people against Jesus, reversing his earlier question about John’s authority.
+    questions: ['How was the tax question intended to trap Jesus?']
+    topics: [government, discernment]
+    scripture: ['Luke 20:19-26']
+    transcript: |
+      There are many kinds of taxation, but they went after this particular tax because they knew that if Jesus answered yes, then the Jews will hate him, because this tax really reminds over and over again that we are subjected to this horrifying Roman Empire. But if you say no, then the Romans surely will come and arrest him. You may know that this is a reversal of the earlier authority situation. [Recap of scriptural question about John omitted; Luke 20.] These people turned it the other way around and used it to try to trap our Lord Jesus Christ. [Scripture quotation omitted; Luke 20:23.] Jesus was able to tell, this one looks very sincere but not real. Herein lies a side lesson.
+    confidence: 0.86
+    review_notes: []
+  - id: p0927-discernment
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-wise
+    start: 1988.84
+    end: 2043.82
+    type: sermon
+    title: Christian innocence does not mean gullibility
+    summary: The preacher connects Jesus’ discernment in the parallel accounts with Matthew 10:16, arguing that Christians should recognize deceptive appearances.
+    questions: ['How does the preacher distinguish innocence from gullibility?']
+    topics: [discernment]
+    scripture: ['Matthew 22:18', 'Mark 12', 'Matthew 10:16']
+    transcript: |
+      As Jesus Christ himself said in Matthew 22:18. [Scripture quotation omitted; Matthew 22:18.] This incident is found in Matthew 22 and also Mark 12. Jesus was able to tell that they are hypocrites because he was not stupid. He was very wise indeed, as he himself said in Matthew 10:16. [Scripture quotation omitted; Matthew 10:16.] Please, Christians are not stupid people. That's not [unclear colloquial expression], no, no, no. Jesus was able to tell that they look very sincere, but immediately he was able to tell that behind the sincerity is all hypocrisy. [Repeated scripture wording and inverted-wordplay joke omitted.]
+    confidence: 0.85
+    review_notes: ['Only Mark chapter is explicitly named in this segment; no verse range supplied by inference.']
+  - id: p0927-denarius
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-denarius
+    start: 2043.82
+    end: 2091.48
+    type: sermon
+    title: Looking at the denarius
+    summary: The preacher illustrates the coin in Jesus’ response, describing its image, material and irregular manufacture before returning to the answer about Caesar.
+    questions: ['How does the preacher illustrate the denarius in the passage?']
+    topics: [government]
+    scripture: ['Luke 20:24-25']
+    transcript: |
+      What did Jesus say? [Scripture quotation omitted; Luke 20:24.] This is what the actual denarius will look like in the time of our Lord Jesus Christ. [Coin-person identifications omitted pending review.] You notice the edge is not very round because back in those days technology was not so great. It's a silver kind of thing, and they press, press, press, so it's a bit [unclear word] on the edge. Till today, if you have one of these, it's going to be worth a bit of money because it's antique. Of course then Jesus Christ said to them [scripture quotation omitted; Luke 20:25].
+    confidence: 0.77
+    review_notes: ['ASR identifies Tiberius and describes Augustus as a regional governor on the other side; questionable historical claim left unresolved, not silently corrected.']
+  - id: p0927-give-back
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-fairness
+    start: 2091.48
+    end: 2160.46
+    type: sermon
+    title: Paying taxes as giving back fairly
+    summary: The preacher interprets Jesus’ answer as a matter of giving back and fairness, rather than making every ordinary obligation into a religious dispute.
+    questions: ['Why does the preacher describe paying taxes as a matter of fairness?']
+    topics: [government, justice]
+    scripture: ['Luke 20:22-25']
+    transcript: |
+      Notice that the people asked the question, is it lawful? But the answer of Jesus is [scripture wording omitted; Luke 20:25]. He didn't say it's lawful or not lawful. The people wanted to trap him and ask him to [unclear verb] everything; everything's got to be religion, but he did not. He tells them that you need to render. In the original word, render, [Greek term not independently verified] means to give back. What our Lord Jesus Christ was saying was that this has nothing to do with religion or religious law. Paying of taxes to Caesar was not a religious question. It was a simple matter of giving back, simple matter of fairness and truth. Herein lies one great lesson for us all: that you should not color everything with praise God and hallelujah and put religion into everything, because there are lots of things in the world that are a very simple principle that God has already instituted to us in an area of fairness. Paying tax to the authority is one of them.
+    confidence: 0.87
+    review_notes: ['2100s slide confirms Luke 20 comparison. Greek transcription not reconstructed from memory.']
+  - id: p0927-fair-trading
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-fairness
+    start: 2160.46
+    end: 2190.52
+    type: sermon
+    title: Fairness does not depend on a trader’s religion
+    summary: The preacher applies ordinary fairness to commerce, rejecting cheating or preferential dealing based simply on whether a seller is Christian.
+    questions: ['Does a seller’s religion justify treating them unfairly?']
+    topics: [justice]
+    scripture: ['Luke 20:25']
+    transcript: |
+      Buying and selling things fairly is one of them. You cannot tell me that the fishmonger is not a Christian, so therefore it's okay to cheat him. [Unclear local religious expression and item name omitted.] It's okay because she's not a Christian. Or the other way around: the butcher is a Christian, so therefore I must go and deal with the butcher more because he's our own people. There are many issues in life that are plainly about simple fairness.
+    confidence: 0.82
+    review_notes: ['Hypothetical unfair conduct is being rejected, not encouraged. Short complete example retained as its own passage.']
+  - id: p0927-public-services
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-public-services
+    start: 2190.52
+    end: 2284.22
+    type: sermon
+    title: Taxes and the diverse people sustaining public life
+    summary: The preacher argues that Christians benefit from public safety and services provided by people of many beliefs, and that taxation fairly sustains that shared system.
+    questions: ['Why should Christians contribute to services provided by people of different beliefs?']
+    topics: [government, justice]
+    scripture: ['Luke 20:25']
+    transcript: |
+      When we live in a society like Singapore there are many things happening behind us for us to all sit here very safely, enjoying air conditioning and safety. Many people out there are sustaining the country, including many people who are non-Christian, other races, [unclear ASR term], LGBTQ people, people who hate God, people who love God. Many different people will be out there doing their work. I actually like this picture very much. It's like everybody inside. At the back is our beautiful cityscape, except the left-hand side, that one is [unclear interjection] casino; I hate it. Firefighters, first-aid people, everything. It's not so simple for you guys, especially the ladies, to walk safe at night going home. [Family anecdote and national comparison omitted.] A lot of security, everything is all set up by many people. Many of them are godless people, and many of them do not even care for Jesus Christ. But what is fair is that they have to be sustained. What, you think it happened by magic? It does not. It happened because taxes have been paid. The system works, whether it's GST or whatever it is, all part of the system. Therefore what is fair is fair.
+    confidence: 0.86
+    review_notes: ['93.7s passage keeps public benefit and the tax conclusion together. Negative language about beliefs and the casino is the preacher’s wording.']
+  - id: p0927-romans-government
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-romans-order
+    start: 2284.22
+    end: 2358.42
+    type: sermon
+    title: Romans 13 — government preserves order
+    summary: Rev. Yong Teck Meng relates Romans 13 to Christians’ responsibilities toward government. He says Paul recognized civil authority even under a brutal Roman Empire because government maintains public order.
+    questions: ['Why does the preacher connect civil authority with public order?', 'What does Paul’s Roman setting contribute to this reading of Romans 13?']
+    topics: [government, authority]
+    scripture: ['Romans 13:1-7', '1 Peter 2']
+    transcript: |
+      The other passage that I picked for you, and there are a couple of passages in the Bible that deal specifically with political situations: First Peter 2, [Timothy reference unclear], and Romans 13 is also one of the more famous ones. The apostle Paul wrote this when he was living in the era where the Roman Empire was brutal. They're very scary people, all like Roman soldiers with sword and daggers and everything. [Violent illustration omitted.] Justice is not exactly a very big deal for them, especially towards the people who are not Roman citizens. Generally speaking it is still a lot more just than the other pagans and [unclear term] kind of system. Notice that Paul wrote [scripture quotation omitted; Romans 13:1]. Paul first affirmed that the Roman Empire, the system, God has allowed it to happen, God has instituted it, because the order is important. No matter how much you hate the Romans, at least they maintain a certain order there, and this is important for us to know.
+    confidence: 0.87
+    review_notes: ['Opening sentence continues a mixed-segment reference to an earlier reader; reader identity is not inferred. Romans 13:1-7 is the trusted announced exposition scope; verse 1 is quoted here. Historical comparison remains attributed.']
+  - id: p0927-order-and-life
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-romans-order
+    start: 2358.42
+    end: 2431.08
+    type: sermon
+    title: Public order and an orderly personal life
+    summary: The preacher connects 1 Corinthians 14:33 with both public administration and personal discipline, arguing against treating disorder as a Christian ideal.
+    questions: ['How does the preacher connect public order with personal habits?']
+    topics: [government, discipleship]
+    scripture: ['Romans 13:1', '1 Corinthians 14:33']
+    transcript: |
+      Paul also wrote in First Corinthians 14:33 [scripture quotation omitted]. All of us need to understand that God is not a God of chaos, anarchy, do whatever you feel like doing. No, God is a God of order. If in your personal life you have no order, [unclear colloquial phrase], you just live whatever way you want, ain't no way you can say that's the way God wants you to live. Life has changed a lot these days. All of you are sitting here very nicely. I don't know those of you watching in cyberspace, are you wearing your underwear, lying on a bed eating potato chips when you're listening to me? Many people quickly dress up because I said that. We think that it's okay, never mind, I sleep until 2 p.m., then I wake up. That's life. No, God is a God of order and the system is there. Can you imagine if government and everybody do the same thing? Anytime I feel like it, then I wake up, and when I feel like working I work; I don't feel like working I don't work. Everything will collapse.
+    confidence: 0.86
+    review_notes: ['2400s frame verifies Romans 13 and 1 Corinthians 14:33 references. Personal examples are the preacher’s applications.']
+  - id: p0927-rulers-as-servants
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-romans-conscience
+    start: 2431.08
+    end: 2486.56
+    type: sermon
+    title: Nonbelieving rulers within God’s purposes
+    summary: Reading Romans 13:2-4, the preacher says even nonbelieving rulers may serve within God’s purposes, while recalling a senior pastor’s distinction about a destructive ruler.
+    questions: ['How does the preacher understand Paul’s description of rulers as servants?']
+    topics: [government, authority]
+    scripture: ['Romans 13:2-4']
+    transcript: |
+      Verse 2. [Scripture reading omitted; Romans 13:2-4.] Even nonbelieving governor and emperor and all that is a kind of servant of God. Senior pastor said that [ruler’s name unclear in ASR] is a kind of servant of God, but he used the word [term not captured], which is a kind of negative, dark kind of servant of God, to some extent to fulfill God's overall perfect will. [Scripture reading continues; Romans 13:4, omitted.]
+    confidence: 0.78
+    review_notes: ['Source name and untranslated/uncaptured term not reconstructed. This is an attributed theological interpretation, not approval of any ruler’s actions.']
+  - id: p0927-rule-of-law
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-romans-conscience
+    start: 2486.56
+    end: 2532.92
+    type: sermon
+    title: Disagreement is not a blanket exemption from law
+    summary: The preacher says dissatisfaction with a governing party does not by itself excuse rejecting civil rules and turns to Paul’s appeal to conscience.
+    questions: ['Does disliking a governing party excuse disregarding the law in this sermon?']
+    topics: [government, justice]
+    scripture: ['Romans 13:4-5']
+    transcript: |
+      Especially in a place like Singapore, I know you get upset with the [party wording unclear] situation and all that, but definitely the rule of law is generally speaking very, very strong here. There's no excuse really for you to try to say that, oh, I do whatever I want because this government is corrupt, blah, blah, blah. I know a lot of you are conspiracy-theory people on Facebook, a lot of questions being dug out here and there, but fair is fair. You cannot simply declare that I'm not going to follow because God is above all things. Paul is very clear. [Scripture quotation omitted; Romans 13:5.]
+    confidence: 0.85
+    review_notes: ['Read with later qualifications at 3497.22–3544s and 3726.04–3787.16s; not a claim of unconditional obedience.']
+  - id: p0927-conscience-partisanship
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-romans-conscience
+    start: 2532.92
+    end: 2585.64
+    type: sermon
+    title: Conscience must judge beyond party loyalty
+    summary: The preacher argues that Christians should judge right and wrong fairly rather than approve everything their favored party does or condemn everything its opponents do.
+    questions: ['How should conscience challenge automatic loyalty to a political party?']
+    topics: [government, discernment, justice]
+    scripture: ['Romans 13:5-7']
+    transcript: |
+      When our conscience is restored by the salvation of our Lord Jesus Christ, we must have the capacity to tell what is fair and what is not fair. You must not have a situation where you say that because I like party A, don't care what party A does, must be right; because I hate party B, everything that party B would do absolutely must be wrong. That's not what the Bible is telling us to do. You must have the conscience and the ability to tell what is right and wrong. [Scripture quotation omitted; Romans 13:6.] You notice he keeps saying servants of God, ministers of God. [Scripture quotation omitted; Romans 13:7.]
+    confidence: 0.89
+    review_notes: ['2570s frame confirms Romans 13:5-6 slide. Repeated scriptural titles are discussed, not copied as a verse.']
+  - id: p0927-taxes-and-respect
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-romans-conscience
+    start: 2585.64
+    end: 2619.3
+    type: sermon
+    title: Giving back rather than following anti-establishment excitement
+    summary: Applying Romans 13:7, the preacher urges Christians to sustain the system from which they benefit instead of letting election excitement replace fairness.
+    questions: ['What practical obligation does the preacher draw from Romans 13:7?']
+    topics: [government, justice]
+    scripture: ['Romans 13:7']
+    transcript: |
+      My dear brothers and sisters in Christ, while it is very popular for us to sing an anti-establishment song, especially during election and everybody very excited, Christians need to do exactly as verse seven says. You've got to be fair. You need to pay and give back what you have benefited from, and sustain the system. Sometimes in the heat of the argument we like to point out that, oh, if only this and such person takes over, it will be great because this is so corrupt and blah, blah, blah.
+    confidence: 0.87
+    review_notes: ['Ends at the transition into the next political-leader example. No lyric or verse text reproduced.']
+  - id: p0927-political-expectations
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-expectations
+    start: 2619.3
+    end: 2698.44
+    type: sermon
+    title: Replacing leaders does not make governing simple
+    summary: The preacher discusses disappointment surrounding a Myanmar leader as a warning against assuming that a favored replacement can easily solve political problems, then calls for fair engagement.
+    questions: ['Why does the preacher caution against idealizing a replacement political leader?']
+    topics: [politics, discernment]
+    scripture: []
+    transcript: |
+      Not so simple, especially in the arena of politics. One of the nearest and greatest examples is [name rendered inconsistently in ASR]. This is an article that just came out two weeks ago, [headline omitted]. Especially when I was growing up, big news. She's always trapped in Myanmar somewhere; the military power always going after her. She's considered the salvation of Myanmar, received the Nobel Peace Prize. Then she made a deal with the army and all that, now she got released and she's part of the government. [Detailed claims about withdrawn accolades omitted.] Because of a lot of issues, a lot of problems that cannot be solved so easily. You think it's so simple, you take over, you see what happens. You look at Singapore, this is horrible, that's horrible, if only—not so simple. The world is a very complicated place. Therefore Christians need to know that there is a need for us to be fair and to be engaged as well.
+    confidence: 0.78
+    review_notes: ['ASR gives Aung Sang Suu Kyi; spelling not reconstructed without a reviewed name slide. Historical and article claims remain attributed.']
+  - id: p0927-kuyper-engagement
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-kuyper
+    start: 2698.44
+    end: 2759.16
+    type: sermon
+    title: Abraham Kuyper as a Christian involved in politics
+    summary: The preacher says Christians should engage meaningfully in politics and presents Abraham Kuyper’s combination of political leadership and theology as an example.
+    questions: ['Why is Abraham Kuyper offered as an example of political engagement?']
+    topics: [politics, discipleship]
+    scripture: []
+    transcript: |
+      Christians are not people who stay away from politics, but ought to be engaged in a meaningful manner. One of the best examples is a person by the name of Abraham Kuyper. Abraham Kuyper is a name for those theological students who should know a little bit, but most people have not quite heard of him. He was the prime minister of the Netherlands from 1901 to 1905. That's a big deal, to be prime minister of the Netherlands. That means you are able to climb the political ladder, you're able to mobilize people, convince people to vote for you and support you to be prime minister. The thing that's very, very unusual about Abraham Kuyper was that he was also a Calvinist theologian. He was the Reverend Dr. Abraham Kuyper, not just some guy who is a scholar, normal scholar kind of thing. He was a theologian. He's the Reverend Abraham Kuyper who got involved in politics as well.
+    confidence: 0.87
+    review_notes: ['2700s frame introduces the figure; 3400/3500s slides explicitly verify Abraham Kuyper spelling. Biographical claims not separately fact-checked.']
+  - id: p0927-kuyper-talents
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-kuyper
+    start: 2759.16
+    end: 2792.1
+    type: sermon
+    title: Theology and public leadership in one life
+    summary: The preacher expresses admiration for Kuyper’s varied abilities, church involvement and political leadership, and describes his own effort to read Kuyper.
+    questions: ['What does the preacher admire about Kuyper’s range of work?']
+    topics: [politics, discipleship]
+    scripture: []
+    transcript: |
+      He was a polymath, a person who has multiple talents. I'm always very fascinated with people with multiple abilities and talents. He founded the Reformed church in the Netherlands against the liberal Dutch Reformed Church and got involved in politics and was prime minister for four years. I have some of his books. Very tough reading, very difficult. I'm trying to really dig into his mind, and it's quite fascinating that this is a Christian person who was in politics and reached the highest apex of it all.
+    confidence: 0.85
+    review_notes: ['Brief complete continuation retained; institutional history is the preacher’s account.']
+  - id: p0927-civil-and-divine-authority
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-highest
+    start: 2792.1
+    end: 2867.42
+    type: sermon
+    title: Civil obligations and God’s higher claim
+    summary: Returning to Luke 20, the preacher argues that Jesus’ answer teaches fairness toward civil society while placing God above politicians and all other authorities.
+    questions: ['How does the preacher hold civil obligations together with God’s higher authority?']
+    topics: [government, authority]
+    scripture: ['Luke 20:24-26']
+    transcript: |
+      Jesus asked for a denarius, and then what he said to them was [scripture quotation omitted; Luke 20:25]. The Bible then said that the people were so amazed by his answer [scripture quotation omitted; Luke 20:26]. Jesus did not fall into the trap one way or the other. His answer was not just a simple answer that helped him get out of the situation, because he spoke the truth that you need to be fair in the system. [Repeated scripture wording omitted; Luke 20:25.] However, the emphasis is actually in the next [ASR: verse; reference remains Luke 20:25]. I started by telling you that there are people who think that God is with the politicians, God is under the politician, and God is above the politician. The answer is the last one is correct: that indeed God is above the politicians and all else. [Repeated scripture wording omitted.]
+    confidence: 0.88
+    review_notes: ['2800s frame confirms Luke 20:25. Distinguish this affirmation of divine supremacy from the earlier rejection of using it to evade all civil obligations.']
+  - id: p0927-servant-confidence
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-servant
+    start: 2867.42
+    end: 2944.74
+    type: sermon
+    title: Serving God without deference to wealth or office
+    summary: The preacher recalls working with his senior pastor and says confidence in serving Christ should prevent servility toward wealthy or powerful people.
+    questions: ['What lesson about serving God does the preacher draw from his senior pastor?']
+    topics: [authority, discipleship]
+    scripture: []
+    transcript: |
+      At the end of the day we are people who are followers of Jesus, the name above all names. The status of our Lord Jesus Christ is the name above all names, the authority above all authorities, the power above all powers. I have the privilege of working with senior pastor since 1997. [Unclear Hong Kong recollection omitted.] If you ask me to summarize some of the things I learned from him, one of the key things I would say is that [name as rendered by ASR not independently verified here] absolutely, completely, totally believes that he is a servant of God higher than the president of the Republic of Indonesia. It's not a bluff thing. He really believes that the servant of God is someone who serves the name above all names. In the way he conducts his ministry, in the way he does things, he never gives you face because he doesn't have to. He won't go and beg from the rich, he won't go and kowtow to anyone, because he is [Indonesian phrase omitted], he is servant of God. That's a very big inspiration for me.
+    confidence: 0.81
+    review_notes: ['ASR says Dr. Steven Tong; no additional speaker identity assigned. Foreign-language phrase and unclear historical aside not reconstructed.']
+  - id: p0927-great-commission
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-commission
+    start: 2944.74
+    end: 3003.66
+    type: sermon
+    title: Christ’s authority sends his followers into the world
+    summary: The preacher links the Great Commission to Christ’s comprehensive authority, saying that followers should respond by changing their lives and influencing the world rather than becoming arrogant.
+    questions: ['How does the preacher connect Christ’s authority with the Great Commission?']
+    topics: [authority, discipleship]
+    scripture: ['Matthew 28:18-20']
+    transcript: |
+      It's not that you should go around and strut around [unclear phrase] people or whatever, but you need to know that every single one of us who is a follower of Jesus Christ, you are a follower of the name above all names. Jesus Christ himself said that in the Great Commission. [Scripture quotation omitted; Matthew 28:18.] All, not a little bit here and there, all, and not just on earth or in heaven, but [unclear colloquial expression], all the authorities of the world has been given to him. You know this Great Commission, right? What does he say next? [Scripture phrase and repeated quotation omitted.] You go, you change your life, you go and impact the world. [Scripture quotation omitted; Matthew 28:19-20.]
+    confidence: 0.85
+    review_notes: ['3000s slide confirms Matthew 28:18-20. Biblical text omitted; surrounding commentary retained.']
+  - id: p0927-meeting-powerful-people
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-commission
+    start: 3003.66
+    end: 3073.92
+    type: sermon
+    title: Remembering whom Christians represent
+    summary: The preacher uses a hypothetical visit by a national leader to question excessive nervousness or deference toward human office when Christians serve Christ.
+    questions: ['What does the preacher’s hypothetical visit by a national leader illustrate?']
+    topics: [authority, discipleship]
+    scripture: ['Matthew 28:18-20']
+    transcript: |
+      My dear brothers and sisters in Christ, the Christian is a person who represents the highest of all authority. When you get to meet someone of high authority, what's your feeling? Will you feel very nervous, or will you feel very small, very scared? [Hypothetical political names and self-correction omitted; a visitor is imagined, not actually present.] Assuming he's alive, if he walked in, what would you do? [Hypothetical remarks about advance notice and clothing omitted.] Is that what you are thinking? Or would you do what senior pastor would do, and say, why did you come in late? You know what time we start. That's what he would do, right? Isn't it? Because we serve the one who is the name above all names. The idea that the name of God is above all names, absolutely, without a question.
+    confidence: 0.82
+    review_notes: ['No political visitor or extra speaker is inferred. Garbled names and dialogue are not reconstructed.']
+  - id: p0927-no-apathy
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-apathy
+    start: 3073.92
+    end: 3148.38
+    type: sermon
+    title: Faith calls for informed participation rather than apathy
+    summary: The preacher rejects both apathy and chosen ignorance, urging Christians to understand public obligations and take an active, informed role in society.
+    questions: ['Why does the preacher reject apathy and ignorance?', 'What does informed Christian participation require?']
+    topics: [discipleship, politics, government]
+    scripture: ['Matthew 28:18-20']
+    transcript: |
+      Apathy is not an option. That's why I say I need to preach a series of not-an-option sermons. Apathy means, I don't know, whatever, I don't care. It's not an option, because you serve the one who is the name above all names. [Scriptural phrase and unclear colloquial wording omitted.] Wherever the Christian missionaries go, they build schools, they build hospitals, they transform the society. [Unclear colloquial wording omitted.] Apathy is, I don't want to care, I don't know anything. I tell you, ignorance is also not an option. [Garbled imagined reply omitted.] When it comes to the world that we live in, we need to be active. We need to be involved. We need to be able to tell why we should pay tax and not pay tax, and not just [unclear expression] sing the song that everybody is singing just because you feel like it. You need to be an enlightened person.
+    confidence: 0.84
+    review_notes: ['Several local-language/colloquial phrases are not reliably captured; no CPU recovery or inferred reconstruction.']
+  - id: p0927-politics-caution
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-sellout
+    start: 3148.38
+    end: 3238.2
+    type: sermon
+    title: Political influence and the danger of compromising the church
+    summary: The preacher warns that electoral incentives and political influence make alliances risky, and that Christians should not compromise their calling by attaching it to powerful politicians.
+    questions: ['Why does the preacher urge special caution about political alliances?']
+    topics: [politics, discernment]
+    scripture: []
+    transcript: |
+      I must say that of all the arenas of life, politics in particular is especially tricky. One of the more naughty quotations by the famous American writer Mark Twain is this. [Quotation and punchline omitted; attribution not independently verified.] What Mark Twain was pointing out is that politics is a very tricky issue, because to be a politician the first order of the thing is you must be elected. If you're not elected, how to do anything? To be elected you must do whatever you can to be elected. Politics in itself as an arena is a very odd situation. Because politics is so public and so influential and so impactful, while we believe that God is above all things, remember that Christians must be very careful when you are dealing with politicians or dealing with political situations. Especially not to have a situation where you sell out your role as the firstborn, as the one who is representing the power above all powers. Throughout history we see many people making the mistake of buddying up with powerful politicians, only to have themselves or their movement disgraced.
+    confidence: 0.84
+    review_notes: ['The Mark Twain attribution is the speaker’s; exact quotation is not reconstructed or authenticated.']
+  - id: p0927-historical-alliances
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-sellout
+    start: 3238.2
+    end: 3307.42
+    type: sermon
+    title: Historical illustrations of risky church-state alliances
+    summary: The preacher cites church relationships with Hitler and Philippine political leaders as warnings about religious leaders becoming too close to political power.
+    questions: ['Which historical relationships does the preacher use to warn against political closeness?']
+    topics: [politics, discernment]
+    scripture: []
+    transcript: |
+      In the Second World War, for example, Adolf Hitler got the support of the Roman Catholic Church. There are many pictures of Roman Catholic bishops shaking his hand, doing the Nazi salute and all kinds of nonsense to pledge allegiance to the German [ASR term unclear]. Adolf Hitler then launched the Second World War, and there's massive killing. Till today people are still debating why the Roman Catholic Church never stood up against Adolf Hitler at that time. Closer to home, in the Philippines, when I was growing up, there was one guy in the Philippines that was very unusual: the Archbishop of Manila. His name was Cardinal Sin, S-I-N. That's because it's a Chinese surname, but so an ironic name. Cardinal Sin was seen with Marcos the dictator many times, attending his birthday party and all kinds of things. Later Marcos got [ASR: disposed], and Cardinal Sin was the power behind Corazon Aquino's rise as well. No doubt about it, there was a period of time where he was buddy-buddy with a dictator, because he's the power and so we get close to them.
+    confidence: 0.78
+    review_notes: ['3300s frame shows the Philippine illustration. Sweeping historical claims, chronology and institutional generalizations require human review; they are not independently established by an image.']
+  - id: p0927-endorsements
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-sellout
+    start: 3307.42
+    end: 3373.56
+    type: sermon
+    title: Prayer for a politician is not proof of divine endorsement
+    summary: The preacher discusses evangelical leaders praying for American candidates and warns that church endorsements can damage witness when the endorsed politician acts badly.
+    questions: ['Why is the preacher cautious about church leaders endorsing candidates?']
+    topics: [politics, discernment]
+    scripture: []
+    transcript: |
+      Especially in the United States of America, politics and religion are kind of mixed. They have a lot of pastors that will endorse the candidate, the senator and especially the president. You may have seen this picture of Donald Trump with a lot of evangelical leaders laying hands and praying for him. Some of my Christian friends on Facebook are very excited. Why, Donald Trump, people pray for him. Last time Obama also had a lot of pastors going and laying hands on him. [Repeated comparison and rhetorical joke about Joe Biden omitted.] Christians, especially Christian leaders, have to be very, very careful to not sell out. What will happen is that these people are not saints. If you are seen to endorse one leader who turns out to be rotten or some issues have happened, then you have sold out. People will say, how come this pastor goes and endorses so-and-such who is a pure politician and not a saint?
+    confidence: 0.85
+    review_notes: ['Discussion of public figures is the speaker’s illustration; the summary does not endorse any party or candidate.']
+  - id: p0927-distinct-spheres
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-spheres
+    start: 3373.56
+    end: 3418.8
+    type: sermon
+    title: Different institutions have different responsibilities
+    summary: The preacher presents a quotation attributed to Abraham Kuyper about distinct social spheres and applies it to the boundaries of church, state and education.
+    questions: ['What institutional distinction does the preacher draw from the quotation attributed to Kuyper?']
+    topics: [authority, politics, discernment]
+    scripture: []
+    transcript: |
+      Therefore Abraham Kuyper made this observation. [Extended quotation attributed to Abraham Kuyper omitted.] In other words, in our world there are many different spaces. Each has its own rule of engagement. [Quotation continues about distinct responsibilities and boundaries; omitted.]
+    confidence: 0.85
+    review_notes: ['3400s slide confirms Abraham Kuyper attribution and church/state/academic topics, not the quotation’s original authorship. Quotation is not reconstructed.']
+  - id: p0927-education-for-sale
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-spheres
+    start: 3418.8
+    end: 3497.22
+    type: sermon
+    title: Commercialized credentials as a boundary-crossing example
+    summary: The preacher illustrates institutional confusion with an account of purchasable academic credentials, arguing that turning education solely into a business violates its purpose.
+    questions: ['Why does the preacher use purchasable degrees as an illustration?']
+    topics: [authority, discernment]
+    scripture: []
+    transcript: |
+      For example, if you are running a university and all you're interested in is making money, so you sell degrees. It's quite easy to get a degree, do you know that? There's a university in the United States called [institution name uncertain in ASR], I think, and they will give you a PhD if you pay them. You pay the dean. First, I know this because I once was in a business that sort of almost did that. You need to pay the fellow to fly business class at least to Singapore. Then he must stay in a five-star hotel. Then you call your [local kinship terms unclear] and your relatives together for a big banquet, and he will give you a doctorate to acknowledge your experience in life. It costs about 48,000 US dollars only. [Hypothetical title and allegations about unnamed credential holders omitted.] If you can find this [institution] in the United States, you will find in a shopping mall one little unit, that's the university. If you try to do that, you break the pattern of education.
+    confidence: 0.76
+    review_notes: ['Institution identification, price, location and credential allegations are unverified. Hypothetical Rev. Dr. title does not change the trusted preacher metadata or establish an earned doctorate.']
+  - id: p0927-institutional-distance
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-distance
+    start: 3497.22
+    end: 3544
+    type: sermon
+    title: Keep institutional distance, but do not rule out action against evil
+    summary: The preacher distinguishes private political activity from endorsements in the church’s name. He recommends an arm’s-length institutional relationship while allowing that grave evil may require church action.
+    questions: ['How does the preacher distinguish private citizenship from speaking for the church?', 'Does institutional distance mean the church must always remain silent?']
+    topics: [government, politics, discernment]
+    scripture: []
+    transcript: |
+      In the same manner, in politics, you mix the church and the state together, possibly endorse here and there all over the place, you violate a certain rule. The wiser thing for the Christian to do is to have an arm's-length kind of relationship with politicians. As a private citizen you do whatever you want, but in the name of God, in the name of the church, in the name of your denomination, we need to be very careful with this. Does that mean that forever and ever you won't cross the line, you will always say that, okay, nothing to do with me, I don't get involved? The answer is no, because Jesus, the name above all names, means that by the wisdom that God has given to us, there may come a point in time where evil has triumphed so strongly that the church will then move up, or church leaders will be called by God to move into action.
+    confidence: 0.89
+    review_notes: ['3500s frame retains the spheres slide. Final sentence continues slightly beyond 3544s in a mixed source segment; cut is approximate and the next passage supplies the example.']
+  - id: p0927-bonhoeffer-example
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-bonhoeffer
+    start: 3544
+    end: 3619.84
+    type: sermon
+    title: Bonhoeffer as the preacher’s example of action against tyranny
+    summary: The preacher recounts Dietrich Bonhoeffer’s theology, opposition to Nazism and death as an example of exceptional action against grave evil.
+    questions: ['Why does the preacher invoke Dietrich Bonhoeffer after discussing institutional distance?']
+    topics: [government, justice, discipleship]
+    scripture: []
+    transcript: |
+      [Continuation of the preceding sentence about being called by God into action.] The classic example is Dietrich Bonhoeffer, who is considered one of the best thinkers in the last century. This guy is a German Lutheran pastor and very deep thinker. He wrote a lot of books and he specializes on this idea of cheap grace, whereby you think that the grace of Jesus Christ is so cheap, so you anyhow live your life. He wrote books that condemned things like that. At his time Adolf Hitler came into power. A lot of people were slaughtered; the Jews were gassed in all these concentration camps. Bonhoeffer joined the underground movement to fight against the Nazis during World War II, and he even participated in an assassination plot of Adolf Hitler. Sadly he was arrested, and right before the end of the Second World War the Nazis went into a killing spree and killed all the prisoners as fast as they can before the war was over. He was hanged 39 days before the surrender of Germany. He was only 39 years old. [The preacher’s explicitly described rumor about execution method omitted.]
+    confidence: 0.82
+    review_notes: ['3600s slide verifies Dietrich Bonhoeffer spelling and the subjects described. Biography and timing remain the preacher’s account; graphic hearsay is not adopted as fact.']
+  - id: p0927-silence-evil
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-bonhoeffer
+    start: 3619.84
+    end: 3658.5
+    type: sermon
+    title: Reflecting on action and silence in the face of evil
+    summary: The preacher expresses admiration for Bonhoeffer and uses an attributed quotation about silence and evil to lead into the sermon’s conclusion.
+    questions: ['How does the Bonhoeffer example lead into the preacher’s conclusion?']
+    topics: [justice, discipleship]
+    scripture: ['Luke 20:25']
+    transcript: |
+      Whenever I read the story I feel ashamed. Thirty-nine years old and he has such great profound thought in his writing, and we're very far away from him. He understood, and at that time God moved him to do that. One of his quotations is [quotation attributed to Bonhoeffer omitted]. My dear brothers and sisters in Christ, from this very simple incident of Jesus looking at the denarius and declaring [scripture quotation omitted; Luke 20:25], there are many lessons that we learn. In summary then.
+    confidence: 0.82
+    review_notes: ['3650s frame verifies that the slide attributes the quotation to Dietrich Bonhoeffer; original authorship not verified. No reconstruction of quotation.']
+  - id: p0927-government-allegiance
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-conclusion
+    start: 3658.5
+    end: 3726.04
+    type: sermon
+    title: Christian responsibility to government and highest allegiance to God
+    summary: Rev. Yong Teck Meng concludes that Christians should support government’s public-order role and give back fairly through taxes and civil obedience, while their highest allegiance remains to God. He rejects apathy and urges wisdom rather than automatic partisan reactions.
+    questions: ['How does the preacher balance civil obedience with allegiance to God?', 'Why does the sermon reject apathy toward public life?']
+    topics: [government, authority, discipleship]
+    scripture: ['Luke 20:19-26', 'Romans 13:1-7']
+    transcript: |
+      Remember that God is a God of order and he instituted governance to serve the people and maintain order. By this, a bad government is better than even no government. The system of civil obedience, including the paying of taxes, the following of rules, is part of a fair and right principle of the Bible, that we are to give back, to render back. Having said that, remember always that all authorities are from God, which meant of course that God is the highest authority, that the name of Jesus is the name above all names. The Christian's highest allegiance therefore must be to God and not to human government. Apathy is not an option. There is no such thing as a Christian who does not know anything, no opinion, no nothing; that's not what the Bible is telling us. The balancing act is very difficult. Earlier Michael is very smart; he said that I won't tell you whether you should wear masks or not. You need to seek God's wisdom in all things, and that remains still true.
+    confidence: 0.9
+    review_notes: ['Conclusion is directly supported by the 3790s summary slide and preceding Romans/Luke exposition. Continue into p0927-qualified-action for the express grave-evil qualification; this is not an unconditional-obedience rule.']
+  - id: p0927-qualified-action
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-conclusion
+    start: 3726.04
+    end: 3787.16
+    type: sermon
+    title: Discerning when injustice calls for action
+    summary: The preacher qualifies the general duty to support government by allowing that severe wrongdoing may call people to act. He urges careful discernment, rejects destructive reactions and again warns against apathy.
+    questions: ['How does the preacher qualify the general principle of supporting government?', 'What response to perceived injustice does he urge?']
+    topics: [government, justice, discernment]
+    scripture: ['Romans 13:1-7', 'Luke 20:25']
+    transcript: |
+      While the general principle of supporting government is there, [unclear reference to the earlier example] horrible situation, there may come a time where God will move individuals or even groups of people to do something. But you need to be very, very careful about that. This lesson is a lesson that's a little bit [ASR: great], not one or the other, but at the end of the day that's how we do live our life, isn't it? It's not just about politics. If you think about your workplace, Singapore, your country, there are many areas in life that's a bit [same unclear word]. In Singapore, for example, we have not one but two casinos, which I really hate. We also legalize things like abortion. We got all kinds of funny things happening in the government, transparency issues and all that. What do you do? Do you go to the street and start burning down buildings? You don't. You need to seek God's wisdom very carefully as to what it is that he has called you to do. What you shouldn't do is have a [unclear colloquial phrase] attitude, because apathy is not an option.
+    confidence: 0.85
+    review_notes: ['Likely grey/great ASR confusion is flagged, not silently resolved. Examples of objectionable policy are the preacher’s opinions. No blanket authorization for resistance is inferred.']
+  - id: p0927-faith-and-life
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-conclusion
+    start: 3787.16
+    end: 3820.34
+    type: sermon
+    title: Leaving with an active faith
+    summary: The preacher closes by describing scripture as guidance for faith and life and urges listeners to live actively as servants of Christ.
+    questions: ['What final response does the preacher seek from his listeners?']
+    topics: [discipleship]
+    scripture: []
+    transcript: |
+      I do pray that through the preaching you will see that the Bible has plentiful answers to many things in life. As the Westminster Confession of Faith says, [confessional wording omitted]. If anything, may we leave remembering that at the end of the day we are servants of him whose name is above all names, and be alive in him, for apathy is not an option.
+    confidence: 0.86
+    review_notes: ['3790s summary frame supports conclusion. Confessional wording not reconstructed from an external text.']
+  - id: p0927-prayer-responsibility
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-closing-prayer
+    start: 3820.34
+    end: 3863.86
+    type: prayer
+    title: Prayer for truthful lives and wisdom in public responsibilities
+    summary: The preacher thanks God for teaching about politics and secular government and asks for truthful, honorable lives guided by wisdom.
+    questions: ['What does the preacher pray for in relation to public responsibility?']
+    topics: [prayer, government]
+    scripture: []
+    transcript: |
+      Let us pray. We thank you, God, for teaching us through your word, even in arenas of politics and our responsibility towards the secular government. Help us, O God, to continue to understand that [scriptural quotation omitted; reference not announced], and that everything relating to the principles of life and faith we can find guidance through your word, the eternal truth. Help us therefore to live a life that is truthful, a life that is honorable, a life that brings glory to your name, and help us to always seek your wisdom in whatever circumstances we find ourselves in.
+    confidence: 0.86
+    review_notes: ['3820s frame shows prayer posture and Alive in Him slide. Prayer onset approximate within source segment; no listening-based precision claimed.']
+  - id: p0927-prayer-injustice
+    video_id: W2IZ6MUX-Yk
+    section_id: s0927-closing-prayer
+    start: 3863.86
+    end: 3906.8154375
+    type: prayer
+    title: Prayer for wisdom when confronting injustice
+    summary: The preacher asks for wisdom when responding to perceived injustice in government or society and closes by praying against passive inaction.
+    questions: ['How does the closing prayer approach perceived injustice?']
+    topics: [prayer, justice, discipleship]
+    scripture: ['Matthew 28:18-20']
+    transcript: |
+      Maybe we think that there are some social injustices we need to make right. Maybe we think that there are some issues in our government or in our system that are unjust. Whatever the case may be, may we always proceed seeking your wisdom, and help us remember that apathy is not an option. The idea that we know nothing, we do nothing, we just float along—because we are bearers of the name that is above all names. [Great Commission quotation/allusion omitted; Matthew 28:18-20.] We should go therefore and live our life, to be alive in him. [Repeated scripture phrase omitted.] Bless us, O Lord. In Jesus' name we pray, amen.
+    confidence: 0.85
+    review_notes: ['Last spoken ASR endpoint 3906s; passage retains recording-tail context to the imported span end. Frames at 3870/3900/3905.9s display Apostles’ Creed, but the supplied speech is closing prayer, not creed recitation.']

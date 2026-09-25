@@ -1,0 +1,783 @@
+id: '2025-11-02'
+date: '2025-11-02'
+title: 'The Death That Brings Life: Sacrifice'
+sermon_title: 'The Death That Brings Life: Sacrifice'
+type: sermon
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - 'Pre-trimmed sermon. Trusted title, date, Genesis 22:1-19 and Romans 12:1-2 preserved. Title and references confirmed by opening frames at 0/10/70s. The title is not shortened to Sacrifice in display metadata.'
+  - 'Speaker unknown: no name caption found in inspected slides. Opening speech says Reverend Yong is away and refers to Brother Hadi; neither is identified as this preacher. No identification from appearance.'
+  - 'Chapters describe the sermon itself, including its own opening and closing prayers. References to earlier responsive reading, worship songs and Romans reading do not establish those service sections in this upload. The Apostles’ Creed slide at 3103s is not evidence of a creed recitation; none is invented.'
+  - 'Full imported span 0–3104.1706875s retained; acquisition and repeat ffprobe measured 3104.181s. Programme starts with the greeting at 0s; closing Amen ends at 3100.14s in ASR. Context margins clip to this pre-trimmed recording.'
+  - 'All 758 segments / 6152 words reviewed in timestamped pipeline evidence with adjacent context. Transcripts below are edited ASR-derived excerpts, not complete verbatim or listening-verified transcripts. Audio samples decoded successfully but were not listened to. Punctuation is normalized; uncertain words and omitted material are marked without reconstruction or translation.'
+  - 'Source-alignment warning retained, including the region around 16 minutes: 14 outside-segment word warnings on source IDs 30, 87, 167, 210, 216, 227, 229, 432, 488, 490, 655, 658, 663, 749; maximum 0.36s. One zero-duration word; no segment overlaps, backward starts or tail clamps. Slides around 940–1000s corroborate topic progression, not word-level alignment. No timestamps shifted.'
+  - 'Additional source-alignment uncertainty: 1460.08–1477.46s has no ASR segment (17.38s, over 16s); frames show Genesis 22:5-6 reading slides. Do not invent the missing words or call this silence. The 2416.24–2435.92s segment spans 19.68s with few words; its timing needs listening review. See the affected passage notes.'
+  - 'At 2167.12–2181.44s the speaker introduces Sacrifice by Bob Fitts and returns to slides almost immediately. The 2175s slide confirms title/artist; no complete song performance or omitted duration is inferred. No lyrics retained.'
+  - 'Bible readings and embedded quotations are replaced by explicit reference-only markers. References come from supplied metadata, transcript announcements or inspected slides, never Bible memory. Historical, geographical, chronological and theological statements remain the speaker’s claims. Speculation about Abraham’s feelings, Isaac’s age and voluntary submission is not presented as established fact.'
+  - 'Original audio already absent from both designated roots. Explicit --allow-missing-audio import passed transcript checksum, approved engine/schema/timing, source identity and duration checks. Exact safe receipt projection copied below; supplied audio hash was not reverified. Processing complete, interpretation needs_review; see docs/sacrifice-review.md.'
+speakers: []
+topics:
+  - { id: sacrifice, name: Sacrifice }
+  - { id: faith, name: Faith }
+  - { id: discipleship, name: Discipleship }
+  - { id: prayer, name: Prayer }
+videos:
+  - id: 94fynFHtreg
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 3104.181
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: 'Authorized full acquisition verified RECS channel/ID and usable audio/video; acquisition and repeat ffprobe measured 3104.181s (metadata 3104s). Eleven coarse 30-second audio windows and frames at 0–3000s plus eighteen refined frames and five additional 30-second audio windows decoded. All twenty-nine frames inspected: expected title/references, sermon slides and closing prayer. Imported text matches expected content. Assessment is based on decoding, visual inspection and transcript correspondence, not direct listening, embedded-player testing or original-audio hash verification.'
+    transcription_language: en
+    transcribed_span: { start: 0, end: 3104.1706875 }
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings: { beam_size: 5, word_timestamps: true, vad_filter: false, condition_on_previous_text: false }
+      audio_sha256: 64d38620b9dd4da1be134cebd3c9ae51e3d067a27bf5624a864471459350f37a
+      duration_seconds: 3104.1706875
+      elapsed_seconds: 97.754
+      real_time_factor: 0.03149
+      transcribed_at: '2026-09-25T11:10:07.695862+00:00'
+      transcript_sha256: e3ef25792ddfea1f8cc53a277548f95a6da8e492e1b87e5473a0734a369942c0
+      source_duration_seconds: 3104.181
+      duration_delta_seconds: -0.01031250000005457
+      audio_hash_verified: false
+sections:
+  - { id: s1102-opening, video_id: 94fynFHtreg, start: 0, end: 86.6, type: sermon, title: 'Greeting, opening prayer and sermon title', confidence: 0.88 }
+  - { id: s1102-sacrifice, video_id: 94fynFHtreg, start: 86.6, end: 188.8, type: sermon, title: Distinguishing sacrifice from loss, confidence: 0.88 }
+  - { id: s1102-earlier-tests, video_id: 94fynFHtreg, start: 188.8, end: 461.52, type: sermon, title: Abraham’s earlier tests of faith, confidence: 0.86 }
+  - { id: s1102-promise, video_id: 94fynFHtreg, start: 461.52, end: 690.88, type: sermon, title: Isaac and the promise to Abraham, confidence: 0.85 }
+  - { id: s1102-joy, video_id: 94fynFHtreg, start: 690.88, end: 840.22, type: sermon, title: Isaac as Abraham’s joy and treasure, confidence: 0.87 }
+  - { id: s1102-moriah, video_id: 94fynFHtreg, start: 840.22, end: 976.66, type: sermon, title: Moriah and the child-sacrifice question, confidence: 0.85 }
+  - { id: s1102-heart, video_id: 94fynFHtreg, start: 976.66, end: 1031.56, type: sermon, title: Testing the heart rather than seeking Isaac’s death, confidence: 0.87 }
+  - { id: s1102-obedience, video_id: 94fynFHtreg, start: 1031.56, end: 1151, type: sermon, title: Immediate obedience contrasted with Sodom, confidence: 0.85 }
+  - { id: s1102-mature-faith, video_id: 94fynFHtreg, start: 1151, end: 1294.9, type: sermon, title: Trust matured through experience, confidence: 0.87 }
+  - { id: s1102-journey, video_id: 94fynFHtreg, start: 1294.9, end: 1458.94, type: sermon, title: The emotional cost of the journey, confidence: 0.81 }
+  - { id: s1102-age, video_id: 94fynFHtreg, start: 1458.94, end: 1640.72, type: sermon, title: How old might Isaac have been?, confidence: 0.8, review_notes: ['17.38-second source-ASR gap near the opening reading; age estimates and Josephus attribution are the speaker’s reasoning, not independently verified.'] }
+  - { id: s1102-trust, video_id: 94fynFHtreg, start: 1640.72, end: 1791.3, type: sermon, title: 'Abraham and Isaac — affection, trust and submission', confidence: 0.86 }
+  - { id: s1102-surrender, video_id: 94fynFHtreg, start: 1791.3, end: 1882.36, type: sermon, title: What the speaker says died on the mountain, confidence: 0.86 }
+  - { id: s1102-provision, video_id: 94fynFHtreg, start: 1882.36, end: 2023.62, type: sermon, title: 'Provision, substitution and blessing', confidence: 0.87 }
+  - { id: s1102-christ, video_id: 94fynFHtreg, start: 2023.62, end: 2165.94, type: sermon, title: Isaac and Christ — the speaker’s comparisons, confidence: 0.86 }
+  - { id: s1102-response, video_id: 94fynFHtreg, start: 2165.94, end: 2399.24, type: sermon, title: Responding to mercy and remembering commitment, confidence: 0.86 }
+  - { id: s1102-daily, video_id: 94fynFHtreg, start: 2399.24, end: 2616.64, type: sermon, title: Living sacrifice as daily surrender, confidence: 0.84 }
+  - { id: s1102-renewal, video_id: 94fynFHtreg, start: 2616.64, end: 2713.78, type: sermon, title: Renewed priorities and fruitful living, confidence: 0.86 }
+  - { id: s1102-training, video_id: 94fynFHtreg, start: 2713.78, end: 2947.64, type: sermon, title: Building spiritual muscles through ordinary obedience, confidence: 0.88 }
+  - { id: s1102-conclusion, video_id: 94fynFHtreg, start: 2947.64, end: 3045.02, type: sermon, title: Reflection questions and conclusion, confidence: 0.88 }
+  - { id: s1102-closing, video_id: 94fynFHtreg, start: 3045.02, end: 3104.181, type: sermon, title: Closing prayer for grateful surrender, confidence: 0.87 }
+passages:
+  - id: p1102-opening
+    video_id: 94fynFHtreg
+    section_id: s1102-opening
+    start: 0
+    end: 86.6
+    type: sermon
+    title: Opening prayer and the sermon’s subject
+    summary: The speaker greets the congregation, explains that Reverend Yong is away, prays for understanding and introduces the sermon on Abraham’s sacrifice of Isaac.
+    questions: ['What subject does the speaker introduce?', 'What does the opening prayer ask for?']
+    topics: [sacrifice, prayer]
+    scripture: ['Genesis 22:1-19', 'Romans 12:1-2']
+    transcript: |
+      Very good morning, Church. Happy Sunday. As Brother Hadi had shared, Reverend Yong is away, preaching at the Reformation Day Seminar in Cebu this weekend, and given the privilege to share the Word of God with you today. So let us commit the time to God in prayer. We pray for God to lead and guide us through his Word by his Holy Spirit.
+
+      Father God, we come before you today with humble hearts, seeking your wisdom and truth. As we listen to your word, teach us what true sacrifice means. Open our hearts to trust you like Abraham, to obey even when it is hard. Let your Holy Spirit speak clearly and draw us nearer to you. In our Lord Jesus Christ’s most precious name we pray. Amen.
+
+      As you have read in Genesis 22 in your responsive reading, today’s passage is titled The Death That Brings Life: Sacrifice. And we’ll be speaking on the sacrifice of Isaac by Abraham. [Brief slide-control exchange omitted.]
+    confidence: 0.87
+    review_notes: ['Opening sentence has an incomplete grammatical subject in ASR, retained without filling missing words. Both scripture references are trusted metadata confirmed by title slide; the earlier responsive reading is outside this upload.']
+  - id: p1102-loss-sacrifice
+    video_id: 94fynFHtreg
+    section_id: s1102-sacrifice
+    start: 86.6
+    end: 155.82
+    type: sermon
+    title: Loss and voluntary sacrifice
+    summary: The speaker distinguishes involuntary loss from a chosen sacrifice made for something valued more highly, contrasting despair with hope.
+    questions: ['How does the speaker distinguish loss from sacrifice?']
+    topics: [sacrifice]
+    scripture: []
+    transcript: |
+      The word sacrifice carries a lot of weight, usually weighing very heavily on our hearts. For some it means loss, for others it means love. But what is the difference between loss and sacrifice? Loss is involuntary. We do not choose to lose something. However, sacrifice is voluntary. We choose to sacrifice with eyes wide open. We have weighed the decisions and choose the path to sacrifice, and for a reason, which brings us to the next point. Loss is giving up something [unclear word; ASR says “without cost”]. Unlike sacrifice, we give up something we value for another thing that we value even more, more important, more worthy. And lastly, loss results in despair and sadness while sacrifice is looked upon with hope and promise.
+    confidence: 0.84
+    review_notes: ['Uncertain cost/cause wording at 128.66–135.98s not silently resolved.']
+  - id: p1102-education-parents
+    video_id: 94fynFHtreg
+    section_id: s1102-sacrifice
+    start: 155.82
+    end: 188.8
+    type: sermon
+    title: Education and parental sacrifice
+    summary: The speaker uses years of education and parents’ sacrifices of leisure, ambitions and sleep as examples of giving something up for a hoped-for good.
+    questions: ['What everyday examples of sacrifice does the speaker give?']
+    topics: [sacrifice]
+    scripture: []
+    transcript: |
+      Examples of sacrifice: our sacrifice for education. Generally our children will go through about fifteen years of education from primary school to university, in a hope for a brighter future. Parents, we make a lot of sacrifices for our children, be it leisure, career ambitions, your me time, your sleep, because we love our children and want the best for them and for their future.
+    confidence: 0.88
+    review_notes: ['Brief complete illustration; not padded to a word quota.']
+  - id: p1102-first-tests
+    video_id: 94fynFHtreg
+    section_id: s1102-earlier-tests
+    start: 188.8
+    end: 266.06
+    type: sermon
+    title: Earlier tests that built Abraham’s faith
+    summary: The speaker introduces Genesis 22 as a test revealing faith and contrasts it with earlier experiences, beginning with Abraham’s departure for an unknown destination.
+    questions: ['Why does the speaker distinguish this test from Abraham’s earlier trials?']
+    topics: [faith]
+    scripture: ['Genesis 22:1', 'Genesis 12']
+    transcript: |
+      Let us walk through Genesis 22, the test of sacrifice, verse 1. [Scripture quotation omitted; Genesis 22:1, ESV reference only.] Is this the first test of faith for Abraham? We know it is not. But this one is different. The many tests or trials that Abraham had gone through before, they were to build his faith in trusting God. This one is to reveal faith that we will touch on later. Let’s look at some of the tests that Abraham had gone through and how he had responded to them. [Narrative recap omitted; Genesis 12.] Would Abraham trust God without knowing the destination? So it’s not easy. Without knowing the destination, he’s just called to go. His response was he obeyed and departed, showing initial faith.
+    confidence: 0.86
+    review_notes: ['Narrative recap omitted conservatively; surrounding interpretation retained.']
+  - id: p1102-fear-promise
+    video_id: 94fynFHtreg
+    section_id: s1102-earlier-tests
+    start: 266.06
+    end: 346.16
+    type: sermon
+    title: Fear in Egypt and the promise of an heir
+    summary: The speaker contrasts Abraham’s fear-driven response in Egypt with his later belief in the promise of descendants despite Sarah’s barrenness.
+    questions: ['Which contrasting responses does the speaker identify in Abraham’s journey?']
+    topics: [faith]
+    scripture: ['Genesis 12', 'Genesis 15']
+    transcript: |
+      [Genesis 12 narrative recap omitted.] Would he rely on God or take matters into his own hands? Sadly, he [unclear verb] about Sarai being his sister. He showed fear, not faith. In Genesis 15, Abraham was into his eighties and Sarai was still barren, which means that she was unable to conceive or get pregnant to give birth to children. [Uncertain wording and servant’s name omitted.] Would Abraham believe despite Sarai’s barrenness? [Scripture-related wording omitted; Genesis 15.] As we can see in Genesis 15.
+    confidence: 0.8
+    review_notes: ['ASR has “liked”, “charlest” and “Eliza”; none silently reconstructed. 300s slide supports Genesis 15 topic, not the uncertain names.']
+  - id: p1102-waiting-intercession
+    video_id: 94fynFHtreg
+    section_id: s1102-earlier-tests
+    start: 346.16
+    end: 406.52
+    type: sermon
+    title: Waiting, impatience and intercession
+    summary: The speaker contrasts impatience in the Hagar episode with Abraham’s intercession for Sodom, which he presents as trust in God’s character.
+    questions: ['How does the speaker contrast Abraham’s impatience with his intercession?']
+    topics: [faith]
+    scripture: ['Genesis 16', 'Genesis 18']
+    transcript: |
+      However, in Genesis 16, [narrative recap omitted]. Would Abraham wait on God’s timing? He didn’t. He agreed to Sarai’s plan and showed impatience and human reasoning. In Genesis 18, [narrative recap with uncertain name omitted]. Would Abraham trust God’s justice and mercy? He boldly interceded for Sodom, showing faith in God’s character. We will touch upon it later, more on this.
+    confidence: 0.83
+    review_notes: ['ASR renders the nephew’s name as “Lord”; no name supplied from memory.']
+  - id: p1102-imperfect-faith
+    video_id: 94fynFHtreg
+    section_id: s1102-earlier-tests
+    start: 406.52
+    end: 454.74
+    type: sermon
+    title: Learning to trust despite repeated failure
+    summary: The speaker recalls Abraham repeating an earlier deception, then emphasizes that Abraham’s faith developed through imperfect responses rather than flawless obedience.
+    questions: ['What does the speaker emphasize about Abraham’s failures?']
+    topics: [faith]
+    scripture: ['Genesis 20']
+    transcript: |
+      And next, we look at Genesis 20. [Narrative recap omitted.] Would he trust God to protect them and his family? He repeated his earlier mistake, claiming Sarah as his sister, showing lingering fear in him. So we can see that Abraham was not perfect. He was a sinner like all of us. He tried to do the right things, but sometimes he failed. At times he lacked faith, but God still delivered him, and Abraham learned to trust God and his faithfulness. And next comes the greatest test of faith for Abraham.
+    confidence: 0.86
+    review_notes: []
+  - id: p1102-isaac-promise
+    video_id: 94fynFHtreg
+    section_id: s1102-promise
+    start: 461.52
+    end: 542.22
+    type: sermon
+    title: Why Isaac represented promise and joy
+    summary: The speaker introduces the command concerning Isaac and connects the cost of that test with the earlier promise that Abraham would become a great nation.
+    questions: ['Why does the speaker describe Isaac as Abraham’s promise and joy?']
+    topics: [sacrifice, faith]
+    scripture: ['Genesis 22:1-19', 'Genesis 12']
+    transcript: |
+      The test of sacrifice. As we can read in verse 2, [scripture quotation omitted; Genesis 22:2, ESV reference only]. The son of promise and his joy. And how was Isaac the son of promise and joy to Abraham? We can see this in Genesis 12, in God’s call to Abraham. [Scripture quotation omitted; Genesis 12.] This is the promise. A great nation cannot be made of Abraham alone, but through his sons and daughters and descendants, of which Isaac was his firstborn.
+    confidence: 0.82
+    review_notes: ['“Firstborn” is the speaker/ASR wording; it conflicts with the later discussion of Ishmael. Retained as an explicit review issue, not silently corrected or asserted in the summary.']
+  - id: p1102-covenant
+    video_id: 94fynFHtreg
+    section_id: s1102-promise
+    start: 542.22
+    end: 609
+    type: sermon
+    title: The covenant and a multitude of nations
+    summary: The speaker reads from Genesis 17 and emphasizes the scale of the promised descendants and nations.
+    questions: ['What aspect of the covenant does the speaker emphasize?']
+    topics: [faith]
+    scripture: ['Genesis 17:1-6']
+    transcript: |
+      God made a covenant with Abraham in Genesis 17. [Scripture reading omitted; Genesis 17:1-6, ESV reference only.] That is with many sons, daughters and descendants. [Reading continues; omitted.] Not one nation, but a multitude of nations. [Remainder of reading omitted.]
+    confidence: 0.85
+    review_notes: ['600s slide supplies exact reference range. ASR fails to distinguish the two names in the renaming quotation; no reconstructed quotation retained. Reading-dominant interval has deliberately sparse commentary.']
+  - id: p1102-sarah-isaac
+    video_id: 94fynFHtreg
+    section_id: s1102-promise
+    start: 609
+    end: 686.78
+    type: sermon
+    title: Sarah, Isaac and the seemingly impossible promise
+    summary: The speaker describes Abraham’s laughter and proposed alternative of Ishmael, then emphasizes the covenant’s connection with Isaac.
+    questions: ['How does the speaker describe Abraham’s initial reaction to the promise?']
+    topics: [faith]
+    scripture: ['Genesis 17']
+    transcript: |
+      Next God confirmed that the promised son will come from Sarah in Genesis 17. [Scripture reading omitted; Genesis 17, reference only.] Abraham thought that God was joking with him. [Reading omitted.] Abraham thought it was impossible and offered God a more realistic option of Ishmael. [Quoted exchange omitted.] The covenant was through Isaac. Abraham will be the father of a multitude of nations.
+    confidence: 0.85
+    review_notes: ['“Joking” and “more realistic” are the speaker’s characterization.']
+  - id: p1102-laughter
+    video_id: 94fynFHtreg
+    section_id: s1102-joy
+    start: 690.88
+    end: 768.5
+    type: sermon
+    title: Isaac’s name and the memory of joy
+    summary: The speaker connects Isaac’s name with laughter and says his presence would remind Abraham of the promise and joy associated with his birth.
+    questions: ['What significance does the speaker attach to Isaac’s name?']
+    topics: [faith]
+    scripture: ['Genesis 17', 'Genesis 18', 'Genesis 21']
+    transcript: |
+      Other than the fulfillment of God’s promise, Isaac was Abraham’s joy. Isaac’s name means he laughs. [Narrative recap and quotation omitted; Genesis 17, 18 and 21.] So every time Abraham called his son’s name Isaac, he remembered the joy and the miracle of God. In Isaac Abraham saw the future of his family line, the covenant fulfilled, as in Genesis 21. [Scripture quotation omitted.] He saw the [uncertain word] of God’s faithfulness in flesh and blood. God delivered on his promise, though impossible it may seem.
+    confidence: 0.84
+    review_notes: ['ASR “give” left uncertain; name explanation and imagined recollection are the speaker’s interpretation.']
+  - id: p1102-treasure
+    video_id: 94fynFHtreg
+    section_id: s1102-joy
+    start: 775.02
+    end: 836.44
+    type: sermon
+    title: Surrendering what is treasured
+    summary: The speaker imagines Isaac’s place in Abraham’s later life and argues that the test concerned his greatest delight rather than something easy to spare.
+    questions: ['Why does the speaker describe this test as a deep cut?', 'How does the speaker define costly surrender?']
+    topics: [sacrifice]
+    scripture: ['Genesis 22:1-19']
+    transcript: |
+      Isaac’s laughter, footsteps and presence must have filled Abraham’s old age with delight. He was not just Abraham’s son. He was Abraham’s joy and hope. And precisely because Isaac was such a joy, the test for Abraham to sacrifice Isaac at Moriah was a very, very deep cut. God was not asking for something that Abraham hated, but for the very thing he loved most. And what can we learn from here? Surrender is not measured by what we can spare, but by whether we will lay down what we treasure. God was not testing Abraham on the willingness to part with something cheap, but his readiness to trust God with his greatest delight.
+    confidence: 0.88
+    review_notes: ['The imagined family scene is not an independently attested historical description.']
+  - id: p1102-moriah
+    video_id: 94fynFHtreg
+    section_id: s1102-moriah
+    start: 840.22
+    end: 911.16
+    type: sermon
+    title: The speaker’s description of Mount Moriah
+    summary: The speaker describes Moriah’s religious and geographical significance and connects it with David’s altar and Solomon’s temple.
+    questions: ['What significance does the speaker attach to Mount Moriah?']
+    topics: [sacrifice]
+    scripture: ['Genesis 22:2', '2 Samuel 24']
+    transcript: |
+      Let us move on to verse 2, in the second part. [Scripture-related wording omitted; Genesis 22:2.] Mount Moriah is a hill in the old city, Jerusalem, in Israel. And on the top, it’s called the Temple Mount, which sits the Dome of the Rock. You can see the one with the golden roof. And around with it was [mosque name uncertain in ASR; slide reads Al-Aqsa Mosque]. And this is one of the most valuable pieces of real estate, and one of the most hotly contested pieces of real estate on earth. This is a very profound, sacred area to Christians, to the Jews and to the Muslims. [Narrative recap omitted; 2 Samuel 24.] And Mount Moriah is also where King Solomon built his first temple.
+    confidence: 0.83
+    review_notes: ['900s slide supports Al-Aqsa and Araunah spellings; geographical/history claims not independently verified. Bracket explicitly distinguishes slide evidence from ASR.']
+  - id: p1102-child-sacrifice
+    video_id: 94fynFHtreg
+    section_id: s1102-moriah
+    start: 911.16
+    end: 976.66
+    type: sermon
+    title: The prohibition of child sacrifice
+    summary: The speaker discusses Molech worship, reads Leviticus 20 and argues that God opposes child sacrifice; he says Abraham did not yet have these scriptures.
+    questions: ['Why does the speaker introduce Leviticus 20 here?']
+    topics: [sacrifice]
+    scripture: ['Leviticus 20:1-3']
+    transcript: |
+      For child sacrifice, it was not uncommon at that time. The Canaanites worshipped a god by the name Molech, to whom they sacrificed their children. But God said in Leviticus 20, verse 1: [Scripture reading omitted; Leviticus 20:1-3, ESV reference only.] So God detests child sacrifice. It’s just that Abraham didn’t know about it. He didn’t have the scriptures then.
+    confidence: 0.84
+    review_notes: ['940/960s frames confirm Leviticus 20:1-3. Preserve source-alignment caution around 16 minutes; slides do not verify exact spoken timing. Historical and theological explanations are attributed in summary.']
+  - id: p1102-gift-giver
+    video_id: 94fynFHtreg
+    section_id: s1102-heart
+    start: 976.66
+    end: 1031.56
+    type: sermon
+    title: Loving the gift more than the giver
+    summary: The speaker interprets the test as exposing Abraham’s priorities, asking whether Isaac had become an idol rather than describing the command as a desire for Isaac’s blood.
+    questions: ['What does the speaker say the test was intended to reveal?']
+    topics: [sacrifice, faith]
+    scripture: ['Genesis 22:1-19']
+    transcript: |
+      So when God asked Abraham to offer Isaac as a burnt offering, was God after Isaac’s blood? No. God was after Abraham’s heart. It was not about cruelty, but it’s about clarity. Has Isaac become Abraham’s idol? Unlike the other trials that Abraham had gone through to build his faith, this test was different. It was meant to reveal faith, to see where the heart of Abraham truly was. Did Abraham love the gift more than the giver?
+    confidence: 0.87
+    review_notes: ['980/1000s slides corroborate this interpretive contrast. The question of idolatry remains the preacher’s reading, not an archive doctrinal finding.']
+  - id: p1102-immediate-obedience
+    video_id: 94fynFHtreg
+    section_id: s1102-obedience
+    start: 1031.56
+    end: 1094.4
+    type: sermon
+    title: Immediate obedience and the contrast with Sodom
+    summary: The speaker contrasts Abraham’s prompt response in Genesis 22 with his earlier questioning and intercession concerning Sodom.
+    questions: ['Why does the speaker compare Genesis 22 with the intercession for Sodom?']
+    topics: [faith]
+    scripture: ['Genesis 22:3', 'Genesis 18']
+    transcript: |
+      Now we look at the faith of sacrifice. [Scripture reading omitted; Genesis 22:3.] Abraham obeyed immediately. No dialogue, no complaint, no hesitation, no delay, just obedience. And why did Abraham not protest, argue or even question God’s shocking command to sacrifice Isaac? Contrast that with Genesis 18 when Abraham interceded for Sodom. [Scripture quotation omitted; Genesis 18.] Abraham spoke to God like that. Then Abraham had bargained with God to spare Sodom.
+    confidence: 0.86
+    review_notes: []
+  - id: p1102-sodom-contrast
+    video_id: 94fynFHtreg
+    section_id: s1102-obedience
+    start: 1094.4
+    end: 1143.76
+    type: sermon
+    title: What changed between bargaining and obedience?
+    summary: After retelling Abraham’s bargaining over Sodom, the speaker asks what changed to account for his unhesitating response in the later test.
+    questions: ['What question does the Sodom comparison raise for the speaker?']
+    topics: [faith]
+    scripture: ['Genesis 18', 'Genesis 22:3']
+    transcript: |
+      [Retelling of the bargaining over Sodom omitted; Genesis 18, reference only. ASR repeats one number uncertainly.] But now Abraham obeyed immediately. He did not argue with God. No dialogue, no complaint, no delay, just obedience. So what has changed?
+    confidence: 0.83
+    review_notes: ['Narrative-dominant passage has a short retained interpretive conclusion; no missing quotation reconstructed.']
+  - id: p1102-experience
+    video_id: 94fynFHtreg
+    section_id: s1102-mature-faith
+    start: 1151
+    end: 1205.4
+    type: sermon
+    title: Experience and the birth of Isaac as grounds for trust
+    summary: The speaker says Abraham’s faith matured over decades and identifies Isaac’s birth as the clearest sign to Abraham that the promise could be trusted.
+    questions: ['What does the speaker identify as Abraham’s clearest experience of the promise?']
+    topics: [faith]
+    scripture: ['Genesis 22:1-19']
+    transcript: |
+      Abraham’s faith had matured through experience, through walking with God for decades. He had learned that the Lord is God who keeps his promise. What was the clearest sign to Abraham on this? What do you think? What is the clearest sign that God will deliver on his promise to Abraham? What was the clearest sign to him? Anybody? Isaac, right. So the clearest sign was the miraculous birth of Isaac at a hundred years old. Who thinks he can give birth at a hundred? [Brief aside unclear.] So Abraham learned God can be trusted, even when his command or promise seems impossible, which we do not understand. God will provide.
+    confidence: 0.87
+    review_notes: ['1200s slide corroborates the argument.']
+  - id: p1102-tested-faith
+    video_id: 94fynFHtreg
+    section_id: s1102-mature-faith
+    start: 1205.4
+    end: 1282.9
+    type: sermon
+    title: Tested faith rather than confidence in visible outcomes
+    summary: The speaker appeals to Hebrews 11 and interprets Abraham’s silence as trust shaped by past experience rather than blind confidence in a visible outcome.
+    questions: ['How does the speaker distinguish tested faith from blind faith?']
+    topics: [faith]
+    scripture: ['Hebrews 11']
+    transcript: |
+      In Hebrews 11, [scripture explanation and reading omitted; reference only]. Abraham learned that God could bring life from a dead womb, from a woman’s womb. If God can bring life from a dead womb, he trusted that God could bring life from a dead son. So we can see from Abraham, faith acts on God’s promise, not visible outcomes. Abraham’s silence shows absolute trust, not blind faith, but the confidence shaped by years of God’s faithfulness. And his silence was not [uncertain word; ASR says “witness”]. It was the strength of tested faith.
+    confidence: 0.84
+    review_notes: ['No guessed correction of witness/weakness. Hebrews chapter is spoken; exact range not inferred from remembered text.']
+  - id: p1102-fathers-heart
+    video_id: 94fynFHtreg
+    section_id: s1102-journey
+    start: 1294.9
+    end: 1367.78
+    type: sermon
+    title: Imagining the weight on a father’s heart
+    summary: The speaker imagines Abraham’s private distress during the journey and invites fathers in the congregation to consider its emotional cost.
+    questions: ['How does the speaker imagine the emotional cost of the journey?']
+    topics: [sacrifice, faith]
+    scripture: ['Genesis 22:4']
+    transcript: |
+      Verse 4. [Scripture quotation omitted; Genesis 22:4.] A total of three nights had passed. Scripture says nothing about the three nights that had passed, but we can feel the heavy weight upon the heart of Abraham, the father’s heart. Abraham had kept it all to himself and shared with no one, not even Sarah, on God’s shocking command to sacrifice Isaac. [Unclear conjunction] Sarah or anybody else would have definitely stopped him from going. Abraham was a father, and many of us here are fathers. The son he loved most was being asked of him to sacrifice him as a burnt offering to the Lord. He would have [uncertain word] in his heart in the silence of the night. We can imagine tears flowing down his face as he looked at Isaac sleeping. Isaac, his hope of the fulfillment of God’s promise and his joy. Abraham would be wondering how he could walk up that mountain with Isaac.
+    confidence: 0.79
+    review_notes: ['Three nights, secrecy, tears and Sarah’s hypothetical response are speculative expansions by the speaker. ASR “rested” not silently replaced by “wrestled”.']
+  - id: p1102-each-step
+    video_id: 94fynFHtreg
+    section_id: s1102-journey
+    start: 1372.08
+    end: 1453.24
+    type: sermon
+    title: Every step as a decision to trust
+    summary: The speaker stresses the time available to reconsider during the journey and describes Abraham’s persistence as costly, deliberate obedience.
+    questions: ['Why does the speaker emphasize the length of the journey?']
+    topics: [faith, sacrifice]
+    scripture: ['Genesis 22:4', 'Hebrews 11']
+    transcript: |
+      On the faith side is obedience. Abraham had learned that God can be trusted even when his command seems impossible. God will provide. [Hebrews 11 recap omitted.] If I were Isaac, I would not be able to sleep for the three nights itself. And this reflects the cost of faith. Surrender is never easy. It was a three-day journey, eighty kilometers, from Beersheba to Mount Moriah. Abraham, Isaac, the two young men and the donkey walked eighty kilometers, step by step, over three days to reach Mount Moriah. The three days gives weight to the test. It is not a rash decision. Abraham had time to turn back. He had time to reconsider. He had time to wrestle. And yet he pressed on. And this revealed the depth of his obedience. Every step was a decision to trust God.
+    confidence: 0.82
+    review_notes: ['Distance, nights and imagined sleeplessness are attributed claims; not independently established. ASR says Isaac in the personal comparison; not silently changed to Abraham.']
+  - id: p1102-isaac-age-question
+    video_id: 94fynFHtreg
+    section_id: s1102-age
+    start: 1458.94
+    end: 1528.24
+    type: sermon
+    title: Asking the congregation about Isaac’s age
+    summary: The speaker moves from the journey narrative to a question about Isaac’s age and polls the congregation on several possible age ranges.
+    questions: ['What question does the speaker ask about Isaac before discussing the wood?']
+    topics: [sacrifice]
+    scripture: ['Genesis 22:5-6']
+    transcript: |
+      Verse 5. [Source-ASR gap 1460.08–1477.46s; slides display Genesis 22:5-6. Missing words are not reconstructed. Remaining scripture reading omitted, reference only.] So we can imagine Isaac carrying the wood on his back. Question: how old do you think Isaac was then? Is it below ten years old, or is it above ten years old? Who thinks it’s below ten years old, less than ten? Oh, one, only one. More than ten years old? Okay, quite a lot. Let’s try again. Ten to twenty or twenty to thirty? [Audience poll responses abbreviated.] So most believe it’s about ten to twenty years old, right?
+    confidence: 0.78
+    review_notes: ['Explicit source-alignment warning: gap is 17.38s, not verified silence. 1460/1475s frames support the reading topic. Timing retained; no inference or translation used to fill the gap.']
+  - id: p1102-age-estimate
+    video_id: 94fynFHtreg
+    section_id: s1102-age
+    start: 1528.24
+    end: 1584.88
+    type: sermon
+    title: An age estimate with acknowledged uncertainty
+    summary: The speaker says the text does not specify Isaac’s age and offers a conditional calculation based on Sarah’s age, while acknowledging the unknown interval between chapters.
+    questions: ['Why does the speaker treat the age calculation as uncertain?']
+    topics: [sacrifice]
+    scripture: ['Genesis 22:5-6', 'Genesis 23']
+    transcript: |
+      Thirty plus? Okay, the Bible was not very definite about Isaac’s age then, but we can deduce it generally, and those who love mathematics can try that. Because if you read further in Genesis 23, [narrative age details omitted]. But we do not know how many years transpired between Genesis 22 to 23. So if it’s very close by, then you just use one hundred and twenty-seven minus ninety. Isaac can be as old as thirty-seven. And interestingly, in verse 5, the Hebrew word translated to young man is the same Hebrew word for Isaac, the boy. So Isaac could be as old as a young man.
+    confidence: 0.82
+    review_notes: ['Conditional arithmetic and Hebrew-word claim remain the speaker’s reasoning; no independent lexical or chronological verification.']
+  - id: p1102-stronger-son
+    video_id: 94fynFHtreg
+    section_id: s1102-age
+    start: 1584.88
+    end: 1636.1
+    type: sermon
+    title: A grown son still regarded as a boy
+    summary: The speaker jokes about parents continuing to see adult children as young, cites Josephus’s age estimate and argues that Isaac was physically stronger than Abraham.
+    questions: ['What conclusion does the speaker draw despite uncertainty about Isaac’s exact age?']
+    topics: [sacrifice]
+    scripture: ['Genesis 22:5-6']
+    transcript: |
+      But to Abraham, he will always be his boy. This is the same for all parents. Your very own children never seem to have really grown up. Your child could have been in his twenties or thirties, but you can still be picking up his socks on the floor, right? So they are always young children. We come to the historian Josephus, the first-century Jewish historian, [reported age estimate omitted]. But never mind his exact age. What is clear to us was that Isaac was definitely stronger than Abraham, for Abraham laid on Isaac the heavier wood for the burnt offering while he carried the lighter fire and knife. And later we’ll come back to that.
+    confidence: 0.83
+    review_notes: ['ASR reports Josephus’s estimate as 25; attribution not checked independently. Claim of relative strength is the speaker’s inference.']
+  - id: p1102-abraham-isaac
+    video_id: 94fynFHtreg
+    section_id: s1102-trust
+    start: 1640.72
+    end: 1706.96
+    type: sermon
+    title: Abraham and Isaac — affection and trust in provision
+    summary: The speaker reads the exchange between Abraham and Isaac, points to their affectionate relationship and interprets Abraham’s response as trust in God’s provision.
+    questions: ['What does the exchange between Abraham and Isaac show according to the speaker?']
+    topics: [sacrifice, faith]
+    scripture: ['Genesis 22:7-8']
+    transcript: |
+      Verse 7. [Scripture reading omitted; Genesis 22:7, ESV reference only.] Here we can sense their close affection of love. Oh, sorry, verse 8. [Scripture reading omitted; Genesis 22:8.] And I would say we can sense the very close affection between the father and the son as they address one another. And Isaac sensed something was amiss. Isaac was old enough to know what the proper sacrificial process was. The lamb for the burnt offering was missing. And we can see in verse 8, Abraham verbalized his conviction and trust in God’s faithfulness and provision. [Repeated scripture wording omitted; Genesis 22:8.]
+    confidence: 0.87
+    review_notes: ['Obvious ASR word forms “sent” and “a mist” normalized as “sensed” and “amiss”; no additional dialogue supplied.']
+  - id: p1102-isaac-submission
+    video_id: 94fynFHtreg
+    section_id: s1102-trust
+    start: 1710.4
+    end: 1784.8
+    type: sermon
+    title: Isaac’s submission as the speaker understands it
+    summary: The speaker interprets Isaac’s lack of resistance as voluntary trust in his father and compares that trust with Abraham’s obedience to God.
+    questions: ['How does the speaker interpret Isaac’s lack of resistance?']
+    topics: [sacrifice, faith]
+    scripture: ['Genesis 22:9']
+    transcript: |
+      Verse 9. [Scripture quotation omitted; Genesis 22:9.] This is a very interesting dimension to the event because we knew that Isaac was definitely stronger than Abraham. He could have fought back. He could have overcome Abraham if he wanted to, but he did not. Isaac allowed himself to be bound and placed on the altar. Just as Abraham obeyed and trusted God, Isaac obeyed and trusted his father Abraham. He knew that Abraham loved him deeply and would not resist Abraham. He trusted Abraham fully. He was willing to give up his life and submit to the will of his father. Isaac surrendered his life fully in his father Abraham’s hands.
+    confidence: 0.85
+    review_notes: ['Willingness, motives and ability to resist are the speaker’s interpretation; summary deliberately attributes them.']
+  - id: p1102-divided-loyalties
+    video_id: 94fynFHtreg
+    section_id: s1102-surrender
+    start: 1791.3
+    end: 1877.52
+    type: sermon
+    title: The death of divided loyalties
+    summary: The speaker says Isaac was not meant to die and interprets the event instead as the ending of Abraham’s divided allegiance, applying that image to possessions, ambitions and family.
+    questions: ['What does the speaker say died that day?', 'How does the speaker apply the story to divided loyalties?']
+    topics: [sacrifice, discipleship]
+    scripture: ['Genesis 22:10-12']
+    transcript: |
+      Verse 10. [Scripture reading omitted; Genesis 22:10-12, reference only.] God stopped Abraham before Isaac was slain. Isaac was never meant to die. So what died that day? It was Abraham’s divided attention. The idol of Isaac was slain. [Brief uncertain wording omitted.] Abraham demonstrated beyond question that God came first, even above his most precious treasure. And this is the heart of surrender. God is not after our possessions, not after our jobs, not after our children or our dreams. He is after our hearts. He is after us. What must die is not Isaac, but the rule of self, the grip of idols, the divided loyalties that keep us from wholehearted devotion to God.
+    confidence: 0.86
+    review_notes: ['ASR “Dad died” not silently repaired. Idolatry conclusion is attributed, not endorsed as an archive assertion.']
+  - id: p1102-provided-substitute
+    video_id: 94fynFHtreg
+    section_id: s1102-provision
+    start: 1882.36
+    end: 1950.56
+    type: sermon
+    title: The provided ram and the speaker’s connection with Christ
+    summary: The speaker describes the ram as a substitute for Isaac and connects that provision with Christ, referring to Romans 8.
+    questions: ['What connection does the speaker draw from the provided ram?']
+    topics: [sacrifice]
+    scripture: ['Genesis 22:13-14', 'Romans 8']
+    transcript: |
+      And now we look at the provision of sacrifice. [Scripture reading omitted; Genesis 22:13-14.] God provided a ram as a substitute for Isaac. The ram foreshadows Christ, [scriptural title omitted], he who is a substitute for us. [Scriptural wording omitted; Romans 8.] And we did see Isaac come back alive, that Abraham received Isaac back alive.
+    confidence: 0.86
+    review_notes: ['Substitution/foreshadowing is the speaker’s interpretation. ASR ticket/mouth errors occur inside omitted reading and are not reconstructed.']
+  - id: p1102-blessing
+    video_id: 94fynFHtreg
+    section_id: s1102-provision
+    start: 1950.56
+    end: 2023.62
+    type: sermon
+    title: Blessing and the speaker’s identification of the offspring
+    summary: The speaker reads the conclusion of Genesis 22, describes Abraham’s faith as strengthened and identifies the promised offspring with Christ.
+    questions: ['How does the speaker connect the concluding blessing with Christ?']
+    topics: [sacrifice, faith]
+    scripture: ['Genesis 22:15-19']
+    transcript: |
+      Lastly we look at the blessing of sacrifice. [Scripture reading omitted; Genesis 22:15-19, ESV reference only.] So we can see here that Abraham walked down Mount Moriah with Isaac alive and his faith stronger. Genesis 22 ended with blessings. [Scripture-related wording omitted.] And that offspring is Christ.
+    confidence: 0.85
+    review_notes: ['Reading-dominant passage preserves timing and explicit omission rather than filling with other translation text.']
+  - id: p1102-father-son-comparison
+    video_id: 94fynFHtreg
+    section_id: s1102-christ
+    start: 2023.62
+    end: 2077.44
+    type: sermon
+    title: Comparing the father’s love and the call to sacrifice
+    summary: The speaker begins a comparison between Isaac and Christ, relating the father-son relationship and the call to sacrifice to the salvation account.
+    questions: ['Which father-son parallels does the speaker draw?']
+    topics: [sacrifice]
+    scripture: ['Genesis 22:2', 'Matthew 3:17', 'John 3:16', 'Romans 8:32']
+    transcript: |
+      We can see Isaac foreshadows Christ in the fulfillment of the salvation plan of God. For the Father’s love, [scripture-related comparisons omitted; Genesis 22:2 and Matthew 3:17, reference only]. In the call to sacrifice, Abraham was commanded to offer his son Isaac, while God the Father willed to offer his son for the world. As we memorize in John 3:16, [scripture quotation omitted; John 3:16].
+    confidence: 0.85
+    review_notes: ['2100s comparison slide confirms the references in this portion; no slide verse text copied into archive.']
+  - id: p1102-shadow-fulfilment
+    video_id: 94fynFHtreg
+    section_id: s1102-christ
+    start: 2077.44
+    end: 2160.5
+    type: sermon
+    title: Obedience, burden, substitution and resurrection
+    summary: The speaker compares Isaac and Christ through obedience, the journey, the carried burden and the outcome, while distinguishing Isaac’s spared life from Jesus’ death and resurrection.
+    questions: ['What similarities and differences does the speaker identify between Isaac and Christ?']
+    topics: [sacrifice]
+    scripture: ['Genesis 22', 'Luke 22:42', 'Matthew 12:40', 'Hebrews 11:19', '1 Corinthians 15:3-4']
+    transcript: |
+      As the obedient son, Isaac followed silently, submitting to his father’s will, while Jesus obeyed. [Scripture quotation omitted; Luke 22:42.] For the journey, Isaac went through a three-day journey from Beersheba to Moriah, while Christ took three days from death to resurrection. Isaac carried the wood for his own sacrifice while Jesus carried his cross. Isaac was laid on the wood. Jesus was nailed to the cross. God provided the ram caught in the thicket, but there is no substitute for Christ. God provided his own lamb, our Lord Jesus Christ. [Scripture-related outcome comparison omitted; Hebrews 11:19 and 1 Corinthians 15:3-4.] And on a covenant result, Abraham’s faith was confirmed and blessing was promised to all nations, while a new covenant was sealed in Christ’s blood, offering salvation for all who believe.
+    confidence: 0.85
+    review_notes: ['References confirmed by comparison slides at 2100/2165s. Typological parallels remain attributed claims.']
+  - id: p1102-song-response
+    video_id: 94fynFHtreg
+    section_id: s1102-response
+    start: 2165.94
+    end: 2224.24
+    type: sermon
+    title: A song introduction and the turn to Romans 12
+    summary: The speaker introduces Sacrifice by Bob Fitts, returns to the slides and asks how listeners should respond to Christ’s sacrifice before reading Romans 12:1.
+    questions: ['What question introduces the application from Romans 12?']
+    topics: [sacrifice]
+    scripture: ['Romans 12:1-2']
+    transcript: |
+      Now I would like to share with all of you this very beautiful song, Sacrifice by Bob Fitts. Ask the AV team to play this song. [Song material not supplied; no lyrics transcribed or reconstructed.] Let us go back to the slides. It’s a very touching song. The Lord our God provided his son, [embedded scriptural wording omitted], our Lord Jesus Christ, crucified at Calvary, nailed to the cross to die for our sins, that we can receive salvation and eternal life. What should be our response to his sacrifice? As Brother [name uncertain in ASR] had read for us Romans 12, [scripture quotation omitted; Romans 12:1, ESV reference only].
+    confidence: 0.81
+    review_notes: ['2175s slide reads Sacrifice / By Bob Fitts. ASR “Fitz” corrected from slide, explicitly documented. Transition back to slides occurs within seconds; no full song section, performance or invented missing duration. Romans 12:1-2 retains the supplied reference range.']
+  - id: p1102-remembering-mercy
+    video_id: 94fynFHtreg
+    section_id: s1102-response
+    start: 2224.24
+    end: 2298.86
+    type: sermon
+    title: Mercy as the motivation for a living sacrifice
+    summary: The speaker says mercy motivates the response described in Romans 12 and recommends remembering past experiences through a thanksgiving journal when facing difficulties.
+    questions: ['What motivates a living sacrifice according to the speaker?', 'Why does the speaker suggest keeping a thanksgiving journal?']
+    topics: [sacrifice, faith]
+    scripture: ['Romans 12:1-2']
+    transcript: |
+      What is the reason, or why would we want to present our bodies as a living sacrifice? The key impetus or motivation is the mercies of God. Just like Abraham. Abraham knew that God had been merciful and gracious to him. Through the many tests and trials he had gone through in his spiritual journey with God, Abraham learned that God can be trusted, God will deliver on his promises, and God will provide. We need to reflect and remember always how good God has been to us through our lives. This will help us to overcome times of difficulties, or tests, or trials, to be able to trust God to overcome them. Any one of you keeps a journal to record all your thanksgiving or your answered prayers? Thanksgiving journal? Good. I think we should start doing that so that we can remember God’s mercy upon us. And as we are down, or whatever, going through trials, we can reflect back that God has been good. [False start omitted.] He delivered his promises to us.
+    confidence: 0.88
+    review_notes: ['Question and explanation are the speaker’s commentary; the preceding verse quotation is omitted separately.']
+  - id: p1102-once-for-all
+    video_id: 94fynFHtreg
+    section_id: s1102-response
+    start: 2298.86
+    end: 2355.06
+    type: sermon
+    title: A one-time offering and a continuing commitment
+    summary: The speaker contrasts an altar sacrifice with Christ’s offering and reminds listeners that their initial prayer of commitment included dedicating their lives to Christ.
+    questions: ['What commitment does the speaker ask listeners to remember?']
+    topics: [sacrifice, discipleship]
+    scripture: ['Hebrews 10:10', 'Romans 12:1-2']
+    transcript: |
+      In the Old Testament, sacrifice was dead, [uncertain wording] on the altar and consumed by fire, a one-time offering. We know Jesus Christ has offered himself on the cross on our behalf. As we read in Hebrews 10, [scripture quotation omitted; Hebrews 10:10]. We know that we had said the sinner’s prayer only once, confessing that we were sinners, we are still sinners, asking for God’s forgiveness and acknowledging Jesus Christ as our Savior and Lord. But if we remember, within the sinner’s prayer, we also dedicate our lives to Christ as our Lord and our Savior.
+    confidence: 0.85
+    review_notes: ['2400s slide confirms Hebrews 10:10. The account of the sinner’s prayer is the speaker’s pastoral formulation, not a universal claim made by the archive.']
+  - id: p1102-remember-commitment
+    video_id: 94fynFHtreg
+    section_id: s1102-response
+    start: 2355.06
+    end: 2393.02
+    type: sermon
+    title: Remembering an initial dedication each day
+    summary: The speaker gives an example of a commitment prayer and urges listeners to remember daily the surrender it expressed.
+    questions: ['How does the speaker relate an initial prayer to daily life?']
+    topics: [discipleship, prayer]
+    scripture: ['Romans 12:1-2']
+    transcript: |
+      You may read something like that: [Illustrative prayer quotation omitted; source unspecified.] We could have said something like that in our sinner’s prayer. We have surrendered all to Christ to take full control of our lives. That’s why he is our Lord. He’s our master. And we need to remember the first love for Christ when we said our sinner’s prayer. We need to remember daily that we have surrendered all to Christ as our Savior and Lord.
+    confidence: 0.86
+    review_notes: ['Illustrative prayer source unspecified; omitted rather than presented as scripture or an authoritative formula.']
+  - id: p1102-living-sacrifice
+    video_id: 94fynFHtreg
+    section_id: s1102-daily
+    start: 2399.24
+    end: 2444.22
+    type: sermon
+    title: Living sacrifice — continual daily surrender
+    summary: The speaker defines living sacrifice as a continual, conscious surrender rather than a one-time offering and connects it with being dead to self and alive in Christ.
+    questions: ['What does living sacrifice mean in the speaker’s application?']
+    topics: [sacrifice, discipleship]
+    scripture: ['Romans 12:1-2']
+    transcript: |
+      Living sacrifice. It is a continual daily conscious surrender, not a one-time offering. When we have surrendered all to Christ, [source timing uncertain: this short ASR clause spans 2416.24–2435.92s], we are supposed to be a living sacrifice, dead to self and alive in Christ.
+    confidence: 0.8
+    review_notes: ['Source-alignment warning retained: short clause has a 19.68s interval; no word times shifted or missing speech filled. 2416/2435s frames corroborate Romans 12 and the daily-surrender slide transition. Start/end require human listening verification.']
+  - id: p1102-everyday-worship
+    video_id: 94fynFHtreg
+    section_id: s1102-daily
+    start: 2444.22
+    end: 2496.08
+    type: sermon
+    title: Worship beyond the Sunday service
+    summary: The speaker describes everyday thoughts and choices as worship and urges listeners to live with the same awareness of God that they associate with the service.
+    questions: ['How does the speaker extend worship into everyday life?']
+    topics: [discipleship]
+    scripture: ['Romans 12:1-2']
+    transcript: |
+      Every breath, every thought, every choice becomes an act of worship. Just like we are here now, worshiping. God is foremost in our minds. The worship songs we sang, his word that we are going through now, we are conscious of God’s presence at every moment. And this is how we should be living every day, every moment, living in the presence of God. True worship is not confined to a Sunday service. It is daily living in the presence of God. God is [uncertain word; ASR says “only present”]. He is with each and every one of us all the time. He’s our God and our BFF, our best friend forever. He will always be with us at all times, and we need to live in reverence to God, in the presence of God every moment.
+    confidence: 0.84
+    review_notes: ['No silent replacement of “only present” with a theological term. Mentioned earlier worship songs do not create worship sections in this sermon upload.']
+  - id: p1102-denying-self
+    video_id: 94fynFHtreg
+    section_id: s1102-daily
+    start: 2501.16
+    end: 2549.06
+    type: sermon
+    title: Letting go of selfish desires and serving others
+    summary: The speaker interprets self-denial as giving up self-gratification and earthly security to focus on God, sharing the gospel and discipling others.
+    questions: ['What practical priorities does the speaker associate with self-denial?']
+    topics: [discipleship]
+    scripture: ['Matthew 16']
+    transcript: |
+      Daily surrender. As you read in Matthew 16, [scripture quotation omitted; reference only]. To deny oneself means letting go of the material things used to gratify or satisfy yourself. To deny oneself is to let go of selfish desires and earthly security and focus instead on God and what matters to God. So other than the personal relationship with God, [embedded scriptural phrase omitted; exact reference not announced], to focus our lives, to spread the good news, to disciple those who believe in our Lord Jesus Christ. This is truly kingdom living.
+    confidence: 0.86
+    review_notes: ['Unannounced embedded reference is flagged rather than supplied from Bible memory.']
+  - id: p1102-alive-in-christ
+    video_id: 94fynFHtreg
+    section_id: s1102-daily
+    start: 2549.06
+    end: 2616.64
+    type: sermon
+    title: Trust, surrender and the call to renewed living
+    summary: The speaker brings together readings from Galatians 2, Romans 6 and Romans 12, interpreting faith as trust and surrender and connecting it with renewed living.
+    questions: ['How does the speaker connect faith with surrender in this sequence of readings?']
+    topics: [discipleship, faith]
+    scripture: ['Galatians 2', 'Romans 6', 'Romans 12:1-2']
+    transcript: |
+      In Galatians 2, [scripture quotation omitted; reference only]. By faith, that is to trust and surrender to God. Our [uncertain word] sinful self was crucified with Christ, as in Romans 6. [Scripture quotation omitted; Romans 6.] So that we can be a living sacrifice, dead to self but alive in Christ. [Scripture quotation omitted; Romans 12:2, reference only.]
+    confidence: 0.83
+    review_notes: ['Chapter references follow announcements; Romans 12 is supplied metadata and the continuing application. No exact Galatians/Romans 6 verse ranges guessed.']
+  - id: p1102-renewed-priorities
+    video_id: 94fynFHtreg
+    section_id: s1102-renewal
+    start: 2616.64
+    end: 2666.76
+    type: sermon
+    title: From self-centered priorities to God-centered life
+    summary: The speaker contrasts pursuit of power, money and status with renewed priorities and connects self-denial with the discovery of life in Christ.
+    questions: ['What change of priorities does the speaker call for?']
+    topics: [discipleship]
+    scripture: ['Romans 12:1-2', 'John 12']
+    transcript: |
+      The world is all about I, me and myself. It’s about power, money, status, which are all temporal. Transformed by the renewal of our minds, from self-centered or world-centered to God-centered or kingdom-centered. Death to self leads to transformation, renewal and life aligned with God. The spiritual paradox is, only when we die to self do we discover the true life in Christ. As you can read in John 12, [scripture quotation omitted; reference only].
+    confidence: 0.86
+    review_notes: ['These claims are the speaker’s application, not independent conclusions of the curator.']
+  - id: p1102-fruitfulness
+    video_id: 94fynFHtreg
+    section_id: s1102-renewal
+    start: 2671.14
+    end: 2709.24
+    type: sermon
+    title: A warning about unfruitfulness and riches
+    summary: The speaker contrasts the good soil and thorny ground in Matthew 13 and warns listeners about concerns and riches that undermine fruitful response.
+    questions: ['What warning does the speaker draw from the sower illustration?']
+    topics: [discipleship]
+    scripture: ['Matthew 13:23', 'Matthew 13:22']
+    transcript: |
+      Jesus also said in the parable of the sower in Matthew 13, [scripture quotation omitted; Matthew 13:23]. Let us not be those who are sown among the thorns. [Scripture quotation omitted; Matthew 13:22.] So be careful of that.
+    confidence: 0.87
+    review_notes: ['2700s slide confirms both exact references and their order. Sparse text is intentional because this interval is chiefly quoted scripture.']
+  - id: p1102-trials
+    video_id: 94fynFHtreg
+    section_id: s1102-training
+    start: 2713.78
+    end: 2793.12
+    type: sermon
+    title: Preparing for trials rather than assuming they will not come
+    summary: The speaker returns to Abraham’s test, cites Stephen Tong and Romans 5, and urges listeners to prepare for difficulties as part of growth in faith.
+    questions: ['Why does the speaker say listeners should prepare for trials?']
+    topics: [faith, discipleship]
+    scripture: ['Genesis 22', 'Romans 5']
+    transcript: |
+      So as we can see in the test of Abraham in Genesis 22, Abraham denied himself to obey God, and Isaac returned to him alive. As we walk in the truth, we will be tested, but as we trust in God, we will triumph in life. God will deliver on his promise. As our senior pastor, Reverend Stephen Tong had said, [attributed third-party quotation omitted], and we can also see that in Romans 5, [scripture quotation omitted]. If we are serious about following Christ, which we should be, then for trials and sufferings it is not if, but when. Not if they will come, but when they will come. Therefore, we need to build our spiritual muscles.
+    confidence: 0.86
+    review_notes: ['Triumph language is the speaker’s claim, not a curator promise of outcomes. Quotation attribution not independently checked.']
+  - id: p1102-spiritual-muscles
+    video_id: 94fynFHtreg
+    section_id: s1102-training
+    start: 2793.12
+    end: 2860.08
+    type: sermon
+    title: Faith and the analogy of resistance training
+    summary: The speaker compares faith’s development through repeated tests with muscles strengthened by exercise and presents Abraham’s readiness as the result of years of practice.
+    questions: ['How does the speaker use muscle training to explain growth in faith?']
+    topics: [faith, discipleship]
+    scripture: ['Genesis 22']
+    transcript: |
+      Muscles don’t grow by being idle. They grow when they are stretched, strained and exercised repeatedly. And faith works the same way. Abraham’s faith was not built overnight. It was strengthened through every [false start] trial he faced. Each test, from leaving his homeland to waiting for Isaac to come, was a workout in trusting God. Each trial trained his heart. Faith matured one act of obedience at a time. Through years of trusting God, [uncertain word], learning, obeying again, through obedience, through disappointment, through surrender, Abraham built his spiritual muscles strong enough to face the ultimate test at Mount Moriah. Like resistance training builds muscles, trials and tests build faith. Without resistance, muscles weaken. Without testing, faith remains shallow.
+    confidence: 0.86
+    review_notes: ['ASR “feeling” is uncertain and is not silently changed to “failing”.']
+  - id: p1102-small-obedience
+    video_id: 94fynFHtreg
+    section_id: s1102-training
+    start: 2862.1
+    end: 2940.22
+    type: sermon
+    title: Small daily acts of faith and service
+    summary: The speaker recommends forgiving, giving, praying, reading scripture and serving in ordinary ways, comparing the discomfort of spiritual growth with exercise.
+    questions: ['What daily practices does the speaker recommend for strengthening faith?']
+    topics: [faith, discipleship, prayer]
+    scripture: []
+    transcript: |
+      So how can we start to build our spiritual muscles? Start with daily faith workouts. Obey God in small things. Forgive when it is hard. Give when it is costly. Pray when you are tired. Keep up your spiritual disciplines, be it prayer, scripture reading, quiet time with God. Serve in small ways. It can be arranging chairs, be a scripture reader, serve where you can. And over time let God grow you to serve in greater capacities. [Biblical allusion omitted; exact reference not announced.] Not if you can, but if you will. And each act will strengthen your faith in Christ. And we know that gym workouts are uncomfortable. They bring sweat, sore muscles, aches, but we push through because we know that the pain builds strength. So in the same way, spiritual growth means putting God in the first place and denying ourselves and choosing to be God-centered, not self-centered.
+    confidence: 0.88
+    review_notes: ['Five-loaves allusion is not assigned a guessed gospel reference.']
+  - id: p1102-reflections
+    video_id: 94fynFHtreg
+    section_id: s1102-conclusion
+    start: 2947.64
+    end: 2990.16
+    type: sermon
+    title: Questions for personal reflection
+    summary: The speaker asks listeners to consider what they treasure, whether they love the gift more than the giver, and how journaling, surrender and ordinary practice might shape their response.
+    questions: ['What reflection questions does the speaker leave with listeners?']
+    topics: [sacrifice, discipleship]
+    scripture: ['Genesis 22:1-19', 'Romans 12:1-2']
+    transcript: |
+      Some reflections for us to ponder upon. What or who is my Isaac? Do I love the gift more than the giver? Consider starting a journal to remember the mercies of God. How can I surrender myself daily to God as a living sacrifice? How can I start to build and strengthen my spiritual muscles?
+    confidence: 0.89
+    review_notes: ['3000s slide confirms the reflection prompts; displayed slide lags the ASR conclusion onset.']
+  - id: p1102-conclusion
+    video_id: 94fynFHtreg
+    section_id: s1102-conclusion
+    start: 2990.16
+    end: 3045.02
+    type: sermon
+    title: The death that brings life — the closing appeal
+    summary: The speaker concludes by connecting provision at Moriah with Christ and calls for joyful, daily surrender of what listeners treasure.
+    questions: ['How does the speaker bring the sermon’s central image into the concluding appeal?']
+    topics: [sacrifice, discipleship]
+    scripture: ['Genesis 22:1-19', 'Romans 12:1-2', 'John 10:10']
+    transcript: |
+      In conclusion, on Mount Moriah God provided a ram. On Mount [place name uncertain in ASR], God provided his son. As we read in Romans chapter 12, our response is joyful surrender because God provided the ultimate sacrifice in Christ. We live as daily sacrifices to him. [Embedded scriptural wording omitted.] Surrender is not measured by what we can spare, but by whether we will lay down what we treasure. Sacrifice in Christ is not loss. Our sacrifice becomes channels of blessing. [Embedded quotation omitted; exact reference not announced.] Remember, death to self, alive in Christ, the death that brings life. [Scripture-related closing phrase omitted; John 10:10.]
+    confidence: 0.85
+    review_notes: ['ASR “Cavalry” not silently corrected; earlier 2185s speech says Calvary. 3046s slide supplies John 10:10b, normalized to supported whole-verse reference John 10:10.']
+  - id: p1102-closing-prayer
+    video_id: 94fynFHtreg
+    section_id: s1102-closing
+    start: 3045.02
+    end: 3100.14
+    type: sermon
+    title: Prayer for grateful and daily surrender
+    summary: The speaker closes by asking for grateful hearts, surrender of pride and comfort, growth through trials and worship expressed through everyday life.
+    questions: ['What does the speaker ask for in the closing prayer?']
+    topics: [sacrifice, prayer]
+    scripture: []
+    transcript: |
+      Let us pray. Father God, we thank you for reminding us that sacrifice is not loss, but love expressed in our dedication to Christ our Lord. [Embedded scriptural wording omitted.] Now teach us to respond with grateful hearts, to lay down our pride, our comfort and our will before you. Strengthen us to live as daily sacrifices, faithful, obedient and transformed by your Spirit. When life feels heavy, remind us that every trial is your training ground, building our spiritual muscles, deepening our trust and drawing us closer to you. And let our worship be more than words. Let it be our very lives. In our Lord Jesus Christ’s most precious name we pray. Amen.
+    confidence: 0.86
+    review_notes: ['3075/3100s frames corroborate closing prayer. Final ASR Amen ends at 3100.14s; later 3103s creed slide does not justify a creed section or invented words.']
