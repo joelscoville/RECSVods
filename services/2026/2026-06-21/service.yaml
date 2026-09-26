@@ -1,47 +1,127 @@
-id: '2026-06-21'
-date: '2026-06-21'
-title: '21 June 2026 — The Third Person'
+id: 2026-06-21
+date: 2026-06-21
+title: 21 June 2026 — The Third Person
 sermon_title: The Third Person
-series: { id: gospel-of-john, name: Expository Preaching on the Gospel of John }
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
 type: service
 workflow_status: complete
 editorial_status: needs_review
 review_notes:
-  - 'Main batch integration applied the source-backed series and cited trinity topic; worker proposal notes describe the pre-merge stage. All interpretation remains needs_review. See docs/historical-001/integration.md.'
-  - Whole meaningful recorded programme curated from imported English ASR, word timings and inspected frames; inline transcripts are edited excerpts, not listening-verified verbatim transcripts. Bracketed omissions retain Bible, lyric, quiet-prayer and uncertain-text boundaries.
-  - Source title RECS 21 June 2026, upload date 20260621 and opening frame dated 21st June 2026, 9:30am agree with the assigned date. Frame at 2170 seconds identifies The Third Person and Rev Yong Teck Meng; slides at 2210 and 2250 show John 14:15-24 and Romans 8:26-30. Greater Works is explicitly last-session recap.
-  - Worship leader is introduced as Jason; no full identity verified, so no reusable speaker attribution is assigned to his material. The sermon speaker is independently named on the recording slide.
-  - Original target audio absent in both designated roots; audio_hash_verified is false. Supplied transcript checksum, acquired video identity/channel and ffprobe duration passed import checks. Exact receipt archive_provenance preserved.
-  - Eleven outside-segment word warnings affect source IDs 96, 110, 180, 183, 362, 619, 898, 961, 1365, 1377 and 1604; maximum offset 0.31 seconds. No segment backtracking, segment overlaps, word overlaps or tail clamps; 22 zero-duration words preserved. Context and word arrays inspected; human listening remains required.
-  - Ancient of Days is interrupted by a copyright/streaming-restriction slate visible at 1170, 1200 and 1245 seconds; music-video frames at 1155 and 1260 bracket its onset to 1155-1170 and return to 1245-1260. Exact hidden interval and audible continuity require human review; no missing lyrics or speech reconstructed.
-  - Historical, denominational, medical, demographic, wealth, legal and anecdotal claims are the speakers' claims, not externally verified conclusions. Preserve qualifications and review especially the charismatic-movement discussion, Pat Robertson anecdote and Father's Day gender-role remarks.
-  - 'Taxonomy proposal: gospel-of-john — Expository Preaching on The Gospel of John, displayed at 2170/2210/2250 seconds; supporting p20260621-sermon-introduction. Series omitted pending main consistency review.'
-  - 'Taxonomy proposal: trinity — Trinity, supported by p20260621-trinity-mystery at 5135.66-5216.18 and p20260621-indwelling at 5538-5590.7; existing holy-spirit and knowing-god used pending main review.'
+  - Main batch integration applied the source-backed series and cited trinity topic; worker proposal
+    notes describe the pre-merge stage. All interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - Whole meaningful recorded programme curated from imported English ASR, word timings and
+    inspected frames; inline transcripts are edited excerpts, not listening-verified verbatim
+    transcripts. Bracketed omissions retain Bible, lyric, quiet-prayer and uncertain-text
+    boundaries.
+  - Source title RECS 21 June 2026, upload date 20260621 and opening frame dated 21st June 2026,
+    9:30am agree with the assigned date. Frame at 2170 seconds identifies The Third Person and Rev
+    Yong Teck Meng; slides at 2210 and 2250 show John 14:15-24 and Romans 8:26-30. Greater Works is
+    explicitly last-session recap.
+  - Worship leader is introduced as Jason; no full identity verified, so no reusable speaker
+    attribution is assigned to his material. The sermon speaker is independently named on the
+    recording slide.
+  - Original target audio absent in both designated roots; audio_hash_verified is false. Supplied
+    transcript checksum, acquired video identity/channel and ffprobe duration passed import checks.
+    Exact receipt archive_provenance preserved.
+  - Eleven outside-segment word warnings affect source IDs 96, 110, 180, 183, 362, 619, 898, 961,
+    1365, 1377 and 1604; maximum offset 0.31 seconds. No segment backtracking, segment overlaps,
+    word overlaps or tail clamps; 22 zero-duration words preserved. Context and word arrays
+    inspected; human listening remains required.
+  - Ancient of Days is interrupted by a copyright/streaming-restriction slate visible at 1170, 1200
+    and 1245 seconds; music-video frames at 1155 and 1260 bracket its onset to 1155-1170 and return
+    to 1245-1260. Exact hidden interval and audible continuity require human review; no missing
+    lyrics or speech reconstructed.
+  - Historical, denominational, medical, demographic, wealth, legal and anecdotal claims are the
+    speakers' claims, not externally verified conclusions. Preserve qualifications and review
+    especially the charismatic-movement discussion, Pat Robertson anecdote and Father's Day
+    gender-role remarks.
+  - "Taxonomy proposal: gospel-of-john — Expository Preaching on The Gospel of John, displayed at
+    2170/2210/2250 seconds; supporting p20260621-sermon-introduction. Series omitted pending main
+    consistency review."
+  - "Taxonomy proposal: trinity — Trinity, supported by p20260621-trinity-mystery at 5135.66-5216.18
+    and p20260621-indwelling at 5538-5590.7; existing holy-spirit and knowing-god used pending main
+    review."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan based on the current service chapters and all 79 supplied passage summaries;
+    all 26 original chapters remain assigned once in order on dNeZD1HUmmE. Existing chapter
+    boundaries supply the proposed group boundaries, without new timing or listening verification.
+    Interpretation remains needs_review.
+  - "Five sermon movements follow the argument: the Greater Works recap establishes humble learning
+    and service; love, restoration and transactional faith form one sustained account of changed
+    life; charismatic history and recollections support the appeal to Scripture; the Spirit's help
+    and presence belong together; truth and the concluding prayer form the final application.
+    Greater Works remains a previous-session recap, not this sermon's title."
+  - Opening, Worship and Scripture, Creed and Father's Day Appreciation, and Offertory and Closing
+    are neutral peer entries. The brief creed is grouped with the adjacent independent Father's Day
+    address to preserve sequence without a routine standalone chapter. That address is not part of
+    the sermon's argument, and its speaker remains unidentified.
+  - "Three cues identify substantial supporting arguments within the two longer sermon movements:
+    restoration beyond rules, faithful love beyond transactions, and Scripture with the limits of
+    Trinitarian understanding. Routine worship, readings, the anthem and closing activities need no
+    additional cues; incidental announcements receive none. Group and cue summaries are internal
+    retrieval/review text only."
+  - Wealth comparisons, church-size estimates, charismatic history, reported manifestations and
+    testimonies, the Pat Robertson account and legal commentary remain the speaker's qualified or
+    unverified claims. Father's Day gender-role remarks remain attributed to their unidentified
+    speaker; no external verification is implied.
+  - Differing interpretations of 'that day' and limits of Trinitarian language remain unresolved.
+    Ancient of Days retains its source-restriction interruption with uncertain exact bounds and
+    audible continuity; Haven of Rest wording does not establish a verified standalone hymn title.
+    Existing creed ASR errors, timing/listening caveats and false original-audio hash verification
+    remain unresolved in the unchanged source records.
 speakers:
   - id: yong-teck-meng
     name: Rev. Yong Teck Meng
     role: Sermon speaker
 topics:
-  - { id: trinity, name: Trinity }
-  - { id: prayer, name: Prayer }
-  - { id: worship, name: Worship }
-  - { id: meditation, name: Meditation }
-  - { id: service-life, name: Church life }
-  - { id: authority, name: Authority }
-  - { id: faith, name: Faith }
-  - { id: holy-spirit, name: Holy Spirit }
-  - { id: knowing-god, name: Knowing God }
-  - { id: discipleship, name: Discipleship }
-  - { id: service, name: Service }
-  - { id: mission, name: Mission }
-  - { id: responsibility, name: Responsibility }
-  - { id: repentance, name: Repentance }
-  - { id: hypocrisy, name: Hypocrisy }
-  - { id: truth, name: Truth }
-  - { id: discernment, name: Discernment }
-  - { id: temptation, name: Temptation }
-  - { id: justice, name: Justice }
-  - { id: stewardship, name: Stewardship }
+  - id: trinity
+    name: Trinity
+  - id: prayer
+    name: Prayer
+  - id: worship
+    name: Worship
+  - id: meditation
+    name: Meditation
+  - id: service-life
+    name: Church life
+  - id: authority
+    name: Authority
+  - id: faith
+    name: Faith
+  - id: holy-spirit
+    name: Holy Spirit
+  - id: knowing-god
+    name: Knowing God
+  - id: discipleship
+    name: Discipleship
+  - id: service
+    name: Service
+  - id: mission
+    name: Mission
+  - id: responsibility
+    name: Responsibility
+  - id: repentance
+    name: Repentance
+  - id: hypocrisy
+    name: Hypocrisy
+  - id: truth
+    name: Truth
+  - id: discernment
+    name: Discernment
+  - id: temptation
+    name: Temptation
+  - id: justice
+    name: Justice
+  - id: stewardship
+    name: Stewardship
 videos:
   - id: dNeZD1HUmmE
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
@@ -50,7 +130,9 @@ videos:
     workflow_status: complete
     media_disposition: playable
     transcription_language: en
-    transcribed_span: { start: 0, end: 7054.5705625 }
+    transcribed_span:
+      start: 0
+      end: 7054.5705625
     transcription_provenance:
       engine: faster-whisper
       engine_version: 1.2.1
@@ -67,1391 +149,405 @@ videos:
       duration_seconds: 7054.5705625
       elapsed_seconds: 232.212
       real_time_factor: 0.03292
-      transcribed_at: '2026-09-25T12:34:32.656657+00:00'
+      transcribed_at: 2026-09-25T12:34:32.656657+00:00
       transcript_sha256: 0ee28d7f33a4097e774cd5d6587909c909fe9e41c8e6c32388fd797f62c46744
       source_duration_seconds: 7054.581
       duration_delta_seconds: -0.010437500000080036
       audio_hash_verified: false
-sections:
-  - { id: s20260621-preparation, video_id: dNeZD1HUmmE, start: 4.76, end: 340.9, type: prayer, title: Preparing for worship, confidence: 0.87 }
-  - { id: s20260621-welcome, video_id: dNeZD1HUmmE, start: 340.9, end: 474.8, type: welcome, title: Welcome and silent meditation, confidence: 0.9 }
-  - { id: s20260621-opening, video_id: dNeZD1HUmmE, start: 474.8, end: 775.76, type: worship, title: Call to worship and opening hymn and prayer, confidence: 0.91 }
-  - { id: s20260621-ancient-of-days, video_id: dNeZD1HUmmE, start: 775.76, end: 1274.98, type: worship, title: Ancient of Days — introduction and song, confidence: 0.83, review_notes: [Copyright-restriction slate interrupts the song; exact interruption bounds require review.] }
-  - { id: s20260621-responsive-readings, video_id: dNeZD1HUmmE, start: 1274.98, end: 1678.06, type: scripture-reading, title: Responsive readings from Proverbs and John, confidence: 0.93 }
-  - { id: s20260621-promises, video_id: dNeZD1HUmmE, start: 1678.06, end: 1882.38, type: worship, title: Standing on the Promises, confidence: 0.9 }
-  - { id: s20260621-anthem, video_id: dNeZD1HUmmE, start: 1882.38, end: 2057.84, type: music, title: Video anthem — The Lord is My Shepherd, confidence: 0.94 }
-  - { id: s20260621-romans-reading, video_id: dNeZD1HUmmE, start: 2057.84, end: 2173.72, type: scripture-reading, title: Romans 8:26-30, confidence: 0.96 }
-  - { id: s20260621-sermon-introduction, video_id: dNeZD1HUmmE, start: 2173.72, end: 2898.92, type: sermon, title: The Third Person — introduction and Greater Works recap, speaker_id: yong-teck-meng, confidence: 0.94 }
-  - { id: s20260621-love-obedience, video_id: dNeZD1HUmmE, start: 2898.92, end: 3307.78, type: sermon, title: Love and obedience — one-way traffic, speaker_id: yong-teck-meng, confidence: 0.89 }
-  - { id: s20260621-restoration, video_id: dNeZD1HUmmE, start: 3307.78, end: 3833.96, type: sermon, title: Christ's commandments and a restored life, speaker_id: yong-teck-meng, confidence: 0.88 }
-  - { id: s20260621-transactional-faith, video_id: dNeZD1HUmmE, start: 3833.96, end: 4281.02, type: sermon, title: Transactional faith and faithful love, speaker_id: yong-teck-meng, confidence: 0.86 }
-  - { id: s20260621-promise-spirit, video_id: dNeZD1HUmmE, start: 4281.02, end: 4513.82, type: sermon, title: The promised Spirit and the contemporary church, speaker_id: yong-teck-meng, confidence: 0.86 }
-  - { id: s20260621-charismatic-history, video_id: dNeZD1HUmmE, start: 4513.82, end: 4715.34, type: sermon, title: The speaker's account of charismatic history, speaker_id: yong-teck-meng, confidence: 0.85 }
-  - { id: s20260621-experiences, video_id: dNeZD1HUmmE, start: 4715.34, end: 5048.46, type: sermon, title: Recollections of charismatic experiences, speaker_id: yong-teck-meng, confidence: 0.83 }
-  - { id: s20260621-scripture-trinity, video_id: dNeZD1HUmmE, start: 5048.46, end: 5303.86, type: sermon, title: Scripture and the mystery of the Trinity, speaker_id: yong-teck-meng, confidence: 0.9 }
-  - { id: s20260621-helper, video_id: dNeZD1HUmmE, start: 5303.86, end: 5590.7, type: sermon, title: The Spirit as helper and abiding presence, speaker_id: yong-teck-meng, confidence: 0.9 }
-  - { id: s20260621-presence, video_id: dNeZD1HUmmE, start: 5590.7, end: 5680.56, type: sermon, title: Help in loneliness and in the church, speaker_id: yong-teck-meng, confidence: 0.91 }
-  - { id: s20260621-truth, video_id: dNeZD1HUmmE, start: 5680.56, end: 6031.86, type: sermon, title: The Spirit of truth and truth decay, speaker_id: yong-teck-meng, confidence: 0.89 }
-  - { id: s20260621-sermon-prayer, video_id: dNeZD1HUmmE, start: 6031.86, end: 6082.74, type: prayer, title: Prayer for life in truth, speaker_id: yong-teck-meng, confidence: 0.91 }
-  - { id: s20260621-creed, video_id: dNeZD1HUmmE, start: 6082.74, end: 6128.22, type: creed, title: Apostles' Creed, confidence: 0.86, review_notes: [ASR reverses ascended/descended and corrupts other creed words; recitation omitted rather than repaired from memory.] }
-  - { id: s20260621-fathers, video_id: dNeZD1HUmmE, start: 6128.22, end: 6510.32, type: address, title: Father's Day appreciation and prayer, confidence: 0.88 }
-  - { id: s20260621-offertory, video_id: dNeZD1HUmmE, start: 6510.32, end: 6639.62, type: offering, title: Offertory and cultural mandate work, confidence: 0.9 }
-  - { id: s20260621-closing-hymn, video_id: dNeZD1HUmmE, start: 6639.62, end: 6918.24, type: worship, title: Closing hymn and melody introduction, confidence: 0.84, review_notes: [Haven of Rest wording appears on slides; standalone title card not inspected. Avoid silently correcting ASR lyrics.] }
-  - { id: s20260621-blessing, video_id: dNeZD1HUmmE, start: 6918.24, end: 6994.16, type: blessing, title: Doxology and benediction, confidence: 0.92 }
-  - { id: s20260621-announcements, video_id: dNeZD1HUmmE, start: 6994.16, end: 7054.581, type: announcement, title: Ministry invitations and dismissal, confidence: 0.88 }
-passages:
-  - id: p20260621-adoration
+chapters:
+  - id: c20260621-opening
     video_id: dNeZD1HUmmE
-    section_id: s20260621-preparation
     start: 4.76
-    end: 81.98
-    type: prayer
-    title: Preparing through adoration
-    summary: The leader invites personal quiet prayer and begins with adoration of God as creator and Lord.
-    questions: [How is the congregation invited to prepare for worship?]
-    topics: [prayer, worship]
-    scripture: []
-    transcript: |
-      Okay, good morning. Let's prepare our heart for worship service this morning. We want to pray in adoration, in confession, in thanksgiving and supplication. This is a time for personal quiet prayer. Let's come before the Lord to first adore him as our creator and our Lord. Let us pray.
-      [Quiet-prayer interval; isolated ASR "Thank you" not treated as verified speech.]
-    confidence: 0.87
-    review_notes: [Opening wording lightly punctuated from ASR; no listening verification.]
-  - id: p20260621-confession
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-preparation
-    start: 81.98
-    end: 154.28
-    type: prayer
-    title: Personal confession
-    summary: The leader invites the congregation to confess sins in quiet prayer.
-    questions: []
-    topics: [prayer, repentance]
-    scripture: []
-    transcript: |
-      We are now going to come before God to confess our sins.
-      [Scripture-derived assurance omitted; precise reference not announced.]
-      Let's pray in confession now.
-      [Personal quiet prayer; unverified isolated ASR text omitted.]
-    confidence: 0.86
-    review_notes: []
-  - id: p20260621-thanksgiving
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-preparation
-    start: 154.28
-    end: 222.42
-    type: prayer
-    title: Personal thanksgiving
-    summary: The leader turns the quiet prayer to thanksgiving for God's gifts.
-    questions: []
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      We want to pray now in the prayer of thanksgiving.
-      [Scripture-derived wording omitted; reference not announced.]
-      So let us come and pray in thanksgiving.
-      [Personal quiet prayer.]
-    confidence: 0.87
-    review_notes: []
-  - id: p20260621-supplication
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-preparation
-    start: 222.42
-    end: 284.6
-    type: prayer
-    title: Bringing personal needs to God
-    summary: The leader invites supplication for personal needs.
-    questions: []
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      And now we will pray in supplication where we call upon God for our personal needs. Let's pray in supplication now.
-      [Personal quiet prayer.]
-    confidence: 0.89
-    review_notes: []
-  - id: p20260621-preparation-prayer
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-preparation
-    start: 284.6
-    end: 324.36
-    type: prayer
-    title: Gratitude for gathering and a teachable heart
-    summary: The prayer gives thanks for gathering in safety and asks for humility and attentiveness; Jason is introduced as the worship leader.
-    questions: []
-    topics: [prayer, worship]
-    scripture: []
-    transcript: |
-      Let us pray together. We thank you, God Almighty, for your grace and your mercy this morning to us all, for we are able to come to this place in comfort and safety to worship you. We do pray that you help us realize that not everybody get to do that, so that with a heart of thanksgiving and gratitude, we will come together to sing our hymns, to pray, to read your word and to listen to your word. Help us, O God, to be humble and teachable so that we can hear everything and have it come into our heart.
-      [Unclear prayer ending omitted.] In Jesus' name we pray. Amen. This morning our brother Jason will be leading us.
-    confidence: 0.86
-    review_notes: [Only the first name Jason is established.]
-  - id: p20260621-welcome-meditation
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-welcome
-    start: 340.9
     end: 474.8
-    type: welcome
-    title: Welcome, greeting and silent meditation
-    summary: The leader welcomes the first English service, invites mutual greetings and asks worshippers to set aside the week's distractions.
-    questions: []
-    topics: [service-life, meditation]
+    title: Opening
+    type: opening
+    summary: The leaders prepare the congregation through adoration, confession, thanksgiving, personal
+      requests, welcome and silent meditation.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - personal needs
+      - silent meditation
+    topics:
+      - prayer
+      - worship
+      - repentance
+      - service-life
+      - meditation
     scripture: []
-    transcript: |
-      Good morning, ladies and gentlemen, brothers and sisters. Happy Sunday. Welcome to church. This is the Reformed Evangelical Church of Singapore. This is the English service and the first service of it. Before we begin, shall we rise and greet each other?
-      [Congregational greeting interval.]
-      Right now we are going to adhere to the silent meditation. This is the time when we are going to turn off everything that has bothered us along the week and let us turn on our hearts ready to worship God.
-      [Silent meditation; unverified ASR filler omitted.]
-    confidence: 0.89
-    review_notes: [Longer unit retains greeting and meditation rather than inventing speech in the gaps.]
-  - id: p20260621-call-to-worship
+    source_chapters:
+      - s20260621-preparation
+      - s20260621-welcome
+    review_notes: []
+  - id: c20260621-worship-scripture
     video_id: dNeZD1HUmmE
-    section_id: s20260621-opening
     start: 474.8
-    end: 525.04
-    type: scripture-reading
-    title: Call to worship — Psalms 75:1-3
-    summary: The leader announces Psalms 75:1-3 and opens worship in the name of the triune God.
-    questions: [Which passage is used for the call to worship?]
-    topics: [worship]
-    scripture: ['Psalms 75:1-3']
-    transcript: |
-      Our call to worship is taken from Psalm 75, verses 1 to 3.
-      [Bible reading omitted: Psalms 75:1-3, approximately 487.64-511.66 seconds.]
-      This worship service commences in the name of the Triune God, the Father, the Son, and the Holy Spirit. Let us rise and sing our first hymn, O God, Our Help in Ages Past.
-    confidence: 0.94
+    end: 2173.72
+    title: Worship and Scripture
+    type: worship
+    summary: The congregation joins the call to worship, hymns, prayer, a source-interrupted Ancient of
+      Days video, Proverbs and John readings, and The Lord is My Shepherd anthem before the reader
+      corrects the final reading announcement to Romans 8:26-30.
+    keywords:
+      - call to worship
+      - ages past
+      - ancient of days
+      - responsive reading
+      - proverbs
+      - john
+      - promises
+      - my shepherd
+      - romans 8
+    topics:
+      - worship
+      - prayer
+      - authority
+      - faith
+      - holy-spirit
+    scripture:
+      - Psalms 75:1-3
+      - Daniel 7
+      - Proverbs 26
+      - John 14:15-31
+      - Romans 8:26-30
+    source_chapters:
+      - s20260621-opening
+      - s20260621-ancient-of-days
+      - s20260621-responsive-readings
+      - s20260621-promises
+      - s20260621-anthem
+      - s20260621-romans-reading
     review_notes: []
-  - id: p20260621-opening-hymn
+  - id: c20260621-learning-serving
     video_id: dNeZD1HUmmE
-    section_id: s20260621-opening
-    start: 525.04
-    end: 642.12
-    type: music
-    title: O God, Our Help in Ages Past
-    summary: The congregation sings the announced opening hymn.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: '[Hymn introduction and singing; song lyrics omitted. Title announced immediately before this interval and corroborated by the 600-second lyric slide.]'
-    confidence: 0.93
-    review_notes: [Complete musical unit exceeds the normal spoken-passage length.]
-  - id: p20260621-opening-prayer
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-opening
-    start: 642.12
-    end: 771.2
-    type: prayer
-    title: Prayer for worship, redemption and the preacher
-    summary: The leader acknowledges Father and Son, confesses sin, gives thanks for freedom to worship and prays for the speaker and congregation.
-    questions: []
-    topics: [prayer, worship]
-    scripture: []
-    transcript: |
-      Let us bow our head for the opening prayer. Dear Heavenly Father, we would like to begin this worship service by acknowledging, God, that there is only one God, and that you, Father, you are the one good God, the one who helped us, the one who is preceding all time. And yet, you exist in three persons.
-      [Prayer continues concerning Jesus' life, death and redemption; excerpt omitted.]
-      We thank you, O Lord, that we have been gathered here to worship you in freedom, to sing songs for you, to meditate in your words. Give us, O Lord, a heart that is made out of good soil so that we may grow and we can become blessings to our community around us. We ask you to anoint Pastor [name unclear in ASR], who's going to be our speaker today. May the words that is coming out from his mouth be deemed acceptable for you, Lord.
-      [Closing words omitted.] Amen. Please be seated.
-    confidence: 0.85
-    review_notes: [Full prayer unit retained; sermon slide independently verifies the preacher's name.]
-  - id: p20260621-ancient-authority
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-ancient-of-days
-    start: 775.76
-    end: 884.4
-    type: address
-    title: Ancient of Days and God's authority over empires
-    summary: Introducing Ancient of Days, the leader connects the phrase to Daniel 7 and describes God's authority as preceding and outlasting earthly empires.
-    questions: [How does the worship leader explain Ancient of Days?]
-    topics: [authority, worship]
-    scripture: ['Daniel 7']
-    transcript: |
-      Our second hymn is going to be our contemporary song, and this is the Ancient of Days by [artist attribution unclear in ASR]. So when I was listening to this song yesterday, I was pretty curious about what the Ancient of Days actually mean. So I actually had to look it up.
-      [Aramaic phrase and part of explanation omitted.]
-      This is coming from Daniel 7. It does not primarily mean that God exists outside of time, like in a Greek philosophical sense. Rather, this is actually a Hebraic poetic way of saying that God's authority precedes and outlasts every empire and every historical power. It is expressing the unmatched antiquity as a symbol of unmatched sovereignty.
-      [Historical illustration omitted.] Before any ruler claimed power, his authority was already there.
-    confidence: 0.85
-    review_notes: [Linguistic and historical explanation attributed to the leader; not independently verified. Longer passage preserves one explanation.]
-  - id: p20260621-king-came-near
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-ancient-of-days
-    start: 885.44
-    end: 995.58
-    type: address
-    title: The reigning King who came near
-    summary: The leader relates the song to Daniel's vision and Jesus' coming, suffering and victory, inviting trust amid uncertainty.
-    questions: []
-    topics: [faith, worship]
-    scripture: ['Daniel 7']
-    transcript: |
-      As we sing this hymn, notice the song later on, it will actually echo Daniel's vision.
-      [Quoted song lines omitted.]
-      Yet, the wonder of the gospel, that this Ancient of Days is actually not distant from us.
-      [Further explanation relating Daniel's vision to Jesus omitted from this excerpt.]
-      The eternal King stepped into our story that we may share in his. As we sing, let our eyes be lifted from the chaos of the moment to the throne that remains forever, and let us remember that the King who reigns over all things is also the King who came near.
-      [Lyric-adjacent wording omitted.] Let us sing our second hymn, Ancient of Days.
-    confidence: 0.83
-    review_notes: [Word-boundary warnings at 926.34 and 974.72 seconds enclosed within this unit; human review of wording and Trinitarian explanation required.]
-  - id: p20260621-ancient-song
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-ancient-of-days
-    start: 995.58
-    end: 1274.98
-    type: music
-    title: Ancient of Days — song with a source interruption
-    summary: The announced song appears as a music video; a source copyright-restriction slate interrupts part of the interval before the service resumes.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: |
-      [Song lyrics omitted. Music-video frames inspected at 1140 and 1260 seconds.]
-      [The source displays a temporary copyright/streaming-restriction notice at 1170, 1200 and 1245 seconds. Music-video frames at 1155 and 1260 bracket the interruption. Hidden content is not reconstructed; isolated ASR filler omitted.]
-    confidence: 0.82
-    review_notes: [One complete music unit; exact interruption onset/end and sound require human review. Decoded audio samples are not listening evidence.]
-  - id: p20260621-proverbs-reading
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-responsive-readings
-    start: 1274.98
-    end: 1481.92
-    type: scripture-reading
-    title: Responsive reading — Proverbs 26
-    summary: The leader announces Proverbs 26 and invites alternate-verse congregational responses.
-    questions: [What is the first responsive reading?]
-    topics: [worship]
-    scripture: ['Proverbs 26']
-    transcript: |
-      Beautiful hymn. Now let's open our Bible. We have come to our responsive reading. Our first responsive reading will be taken from the book of Proverbs chapter 26. So I will read the first verse and I invite the congregation to read the second verse, and we will read responsively from then on.
-      [Bible reading omitted, approximately 1303.22-1481.92 seconds; congregational responses are incompletely represented in ASR.]
-    confidence: 0.93
-    review_notes: [Retained as a complete reading; no missing congregational verses supplied.]
-  - id: p20260621-john-reading
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-responsive-readings
-    start: 1481.92
-    end: 1678.06
-    type: scripture-reading
-    title: Responsive reading — John 14:15-31
-    summary: The leader announces John 14:15-31 and continues alternate-verse reading with the congregation.
-    questions: [What is the second responsive reading?]
-    topics: [holy-spirit, worship]
-    scripture: ['John 14:15-31']
-    transcript: |
-      Let us open the book of John for our second responsive reading, the Gospel of John, sorry, chapter 14, verse 15 to 31. So here goes the same, I will read verse 15 and I will invite the congregation to read responsively afterwards until verse 31.
-      [Bible reading omitted, approximately 1519.26-1676.54 seconds.]
-    confidence: 0.95
-    review_notes: [The announced responsive-reading range is wider than the sermon title-slide range. Warning at source segment 180 lies in omitted reading; no retiming.]
-  - id: p20260621-promises-introduction
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-promises
-    start: 1678.06
-    end: 1730.74
-    type: address
-    title: Introducing Standing on the Promises
-    summary: The leader contrasts the hurt of broken human promises with confidence in God's promises before introducing the hymn.
-    questions: []
-    topics: [faith, worship]
-    scripture: []
-    transcript: |
-      Our third hymn will be Standing on the Promises. If ever you have experienced broken promises by someone that you love, you know that that particular experience hurts, right?
-      [Assurance wording uncertain in ASR; spoken lyric quotation omitted.]
-      Let us sing our third hymn, Standing on the Promises.
-    confidence: 0.82
-    review_notes: [ASR says heard at 1704.34-1706.06; not silently repaired to hurt. Segment 183 warning enclosed.]
-  - id: p20260621-promises-hymn
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-promises
-    start: 1730.74
-    end: 1882.38
-    type: music
-    title: Standing on the Promises — congregational hymn
-    summary: The congregation sings the announced hymn before the video anthem.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: '[Hymn lyrics omitted; the 1800-second frame corroborates the announced song. Complete musical unit retained.]'
-    confidence: 0.93
-    review_notes: []
-  - id: p20260621-video-anthem
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-anthem
-    start: 1882.38
-    end: 2057.84
-    type: music
-    title: The Lord is My Shepherd — video anthem
-    summary: The leader announces The Lord is My Shepherd and a landscape-backed music video follows.
-    questions: [Which video anthem is presented?]
-    topics: [worship]
-    scripture: []
-    transcript: |
-      We will have the video anthem, and our video anthem will be titled, The Lord is My Shepherd.
-      [Song lyrics omitted; title frame at 1890 and music-video frames at 1920/2040 inspected.]
-    confidence: 0.95
-    review_notes: [No scripture range assigned solely from resemblance of lyrics to a psalm.]
-  - id: p20260621-romans-reading
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-romans-reading
-    start: 2057.84
-    end: 2160.3
-    type: scripture-reading
-    title: Scripture reading — Romans 8:26-30
-    summary: The reader corrects the initial announcement to Romans 8:26-30 and reads the passage before the sermon.
-    questions: [What is the scripture reading before The Third Person?]
-    topics: [holy-spirit, prayer]
-    scripture: ['Romans 8:26-30']
-    transcript: |
-      Let us open our Bible again for the scripture reading.
-      [Initial reference misspoken or mistranscribed.] Romans 8, Romans 8 verse 26 to 30.
-      [Bible reading omitted, approximately 2091.38-2160.3 seconds.]
-    confidence: 0.97
-    review_notes: [Corrected spoken reference and sermon title slide agree; reading slide inspected at 2100 seconds.]
-  - id: p20260621-fathers-day-introduction
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
     start: 2173.72
-    end: 2228.14
+    end: 2898.92
+    title: Following Jesus Means Learning and Serving
     type: sermon
-    title: Father's Day greeting before exposition
-    summary: Yong greets fathers and explains that the sermon will follow the biblical exposition, with a separate appreciation after the creed.
-    questions: []
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      Happy Sunday and also Happy Father's Day. Today, in case you don't know, it's Father's Day. I will not be preaching a Father's Day message.
-      [Comments on special days omitted from this excerpt.]
-      Of course, it's good for us to remember fathers and mothers, but in the Bible, the general principles of how we should behave are already very clearly stated. So it's always safer for a preacher to go by the Bible in our preaching. But anyway, nonetheless, later on, after the Apostles' [Creed; ASR unclear], we will have, as usual, a kind of appreciation, a little appreciation for the fathers present, and I will share a little bit back then.
-    confidence: 0.89
-    review_notes: [Speaker independently identified by the 2170-second slide; not inferred from appearance.]
-  - id: p20260621-sermon-introduction
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
-    start: 2228.14
-    end: 2294.3
-    type: sermon
-    title: The Third Person and the farewell discourse
-    summary: Yong introduces a difficult part of John's farewell discourse concerning the Holy Spirit and invites questions before recapping the previous session.
-    questions: [What is The Third Person sermon about?]
-    topics: [holy-spirit, knowing-god]
-    scripture: ['John 14:15-24', 'Romans 8:26-30']
-    transcript: |
-      Today we move on to a very important aspect of the preaching in John. And remember I told you that once we enter into John 13, we are actually going into a very profound and complicated revelation because our Lord Jesus Christ began to reveal the things that are in his heart. This is called a farewell discourse by the Apostle John.
-      [Brief repetition omitted.] I actually will spend a few sessions just on a few of the passages here because it has to deal with the third person of the triune God, the Holy Spirit. Again I want to encourage you to ask any questions, especially after this, during the session itself or after the session. You can send your questions here and also drop it onto the box.
-      [Transition to last-session recap.]
-    confidence: 0.93
-    review_notes: [Current title and references verified in frames; series label proposed in service notes, not activated.]
-  - id: p20260621-recap-humility
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
-    start: 2294.3
-    end: 2403.74
-    type: sermon
-    title: Recap — Philip's question and humility
-    summary: Recalling Philip's question about the Father, Yong describes a gap in understanding and urges lifelong humility rather than assuming mastery of God.
-    questions: [Why does the speaker urge humility when learning about God?]
-    topics: [knowing-god, discipleship]
-    scripture: ['John 14:8-14']
-    transcript: |
-      It started out with Philip asking him about the Father, because Jesus Christ was revealing once again that he and the Father are one, and Philip still don't quite understand.
-      [Further recap omitted.]
-      There is just a gap between the understanding of the apostles and the disciples and the followers of Jesus Christ and the thing that Jesus Christ intended. It's the same today. There's a big gap between us and our Lord Jesus Christ, and especially in this topic, when we talk about the triune God.
-      [Excerpt omitted.] The first one will be a very genuine kind of humility to understand that no matter how much you study or how many degree you may have from the best theological college, you will still be very far away from the understanding of who God is.
-      [Scripture-derived quotation and intervening commentary omitted.]
-    confidence: 0.88
-    review_notes: [Reference comes from Last Session slide at 2400 seconds, not the current sermon title. Longer unit completes the humility point.]
-  - id: p20260621-learning-ministry
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
-    start: 2403.74
-    end: 2474.86
-    type: sermon
-    title: Reverence and lifelong learning in ministry
-    summary: Yong describes continuing nervousness in preaching and translation, alongside excitement at lifelong discovery of God.
-    questions: []
-    topics: [service, knowing-god]
-    scripture: []
-    transcript: |
-      Even for me, I've been preaching for so many decades, every single time I prepare sermon, I come up to the pulpit, I come up with a sense of fear almost, that this is handling a very important thing and you don't want to mess it up. And of course when I stand beside the senior pastor in translation, I've been doing this for almost 30 years with him. Next year will be 30th anniversary.
-      [Excerpt omitted.] So we must have a genuine humility in us, and at the same time it's exciting, at least to me, knowing that we really do not know God so well. I know that all my lifelong I can continue to discover his goodness and the things relating to him, and that's very exciting. It's something that we can have a lifelong learning experience.
-    confidence: 0.9
+    summary: Introducing the Spirit's promise, Yong recaps Greater Works as wider ministry reach, urging
+      humble lifelong learning, service by every believer and prayer for God's purposes rather than
+      wealth-based aspirations or formulas.
+    keywords:
+      - third person
+      - farewell discourse
+      - philip
+      - humility
+      - lifelong learning
+      - would jesus do
+      - greater works
+      - start small
+    topics:
+      - service-life
+      - holy-spirit
+      - knowing-god
+      - discipleship
+      - service
+      - discernment
+      - mission
+      - responsibility
+      - prayer
+    scripture:
+      - John 14:15-24
+      - Romans 8:26-30
+      - John 14:8-14
+      - John 14:12
+      - John 14:13-14
+    source_chapters:
+      - s20260621-sermon-introduction
     review_notes: []
-  - id: p20260621-follow-jesus
+    speaker_id: yong-teck-meng
+  - id: c20260621-love-restores-life
     video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
-    start: 2474.86
-    end: 2515.72
-    type: sermon
-    title: What would Jesus do?
-    summary: Yong encourages knowing Jesus well and using the question What would Jesus do? at life's crossroads, while calling the reminder imperfect but useful.
-    questions: [How does the speaker use What would Jesus do?]
-    topics: [discipleship, knowing-god]
-    scripture: []
-    transcript: |
-      [Scripture-derived description omitted.] And that's a very important thing to us all, because it then tells us that Jesus is the answer that we are seeking for all our life long. And so the acronym WWJD, what would Jesus do, is a good reminder. May not be perfect, but it is a good reminder. Every single crossroad in your life, you ask yourself what is it that Jesus Christ would do in this particular situation, and you go do it. And of course that means that you must know Jesus well.
-    confidence: 0.91
-    review_notes: []
-  - id: p20260621-wealth-models
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
-    start: 2515.72
-    end: 2604.04
-    type: sermon
-    title: Wealthy role models and following Jesus
-    summary: Yong contrasts admiration of wealthy public figures with following Jesus, using unverified comparisons involving Elon Musk, Solomon and billionaire donors.
-    questions: []
-    topics: [discipleship, discernment]
-    scripture: []
-    transcript: |
-      There are so many different models that we follow.
-      [Newspaper claim and wealth estimates concerning Elon Musk and Solomon omitted from this excerpt; these are the speaker's claims.]
-      I so happen to know billionaires in my life because I work in charity and some of my biggest donors are billionaires.
-      [Numerical comparisons omitted.] And so a lot of us worship people like that. I actually know people who worship Warren Buffett, Elon Musk, all these big, big deal people. But we are not. We are followers of the simple carpenter from Nazareth. And to the rest of the world, it sounds stupid. Why don't you go follow a carpenter? Why don't you go follow somebody who will tell you how to make a lot of money? The answer is because this carpenter from Nazareth is God.
-    confidence: 0.85
-    review_notes: [Do not treat the wealth figures or newspaper report as independently established facts.]
-  - id: p20260621-every-believer
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
-    start: 2604.04
-    end: 2689.64
-    type: sermon
-    title: Ministry entrusted to every believer
-    summary: Yong says Christ's work is entrusted to every believer, distinguishes pastoral calling from wider ministry and encourages initiatives beyond the congregation's usual activities.
-    questions: [Is ministry only the pastor's responsibility?]
-    topics: [service, mission, responsibility]
-    scripture: ['John 14:12']
-    transcript: |
-      [John 14:12 quotation omitted.] And so there is a plan of God where God will entrust his work after Jesus Christ ascended to every single believer. And the emphasis is every single believer.
-      [Quoted phrase omitted.] Not your special pastor, not the Stephen Tong, not Billy Graham or some big deal guy who is specially called. Of course, we do believe that some of us are specially called, especially in pastoral work.
-      [Excerpt omitted.] But that doesn't mean that the rest of you sit down there and watch the pastor do everything.
-      [Excerpt omitted.] There are so many, many things to do, and I'm very happy that some of you are really thinking and doing. We have the Pistachio Fellowship, that's great, a preaching ministry to mainly the mainland Chinese folks. We have other people thinking about other things, and I really encourage you to think through and seek the Lord.
-    confidence: 0.88
-    review_notes: [Fellowship name remains ASR-derived; human spelling review needed. Word-boundary warning at 2627.94 seconds enclosed.]
-  - id: p20260621-greater-works
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
-    start: 2689.84
-    end: 2734.28
-    type: sermon
-    title: Greater works in quantity
-    summary: Yong interprets greater works quantitatively, contrasting modern reach with the circumstances of Jesus' earthly ministry while denying equivalent sinlessness.
-    questions: [How does the speaker interpret greater works?]
-    topics: [mission, service]
-    scripture: ['John 14:12']
-    transcript: |
-      It's a certainty of purpose. Then if you don't do, it just simply means you're a very disobedient follower of Jesus Christ, right?
-      [Verse quotation omitted.] It's a quantitatively greater work than Christ because Christ lived in a time where he had to walk everywhere, take a donkey. No train, no plane, no nothing, no internet, no electricity. So therefore quantitatively this applies. Qualitatively doesn't apply because no way we're going to do the same work as the one who was sinless. We are all sinful people, but this remains true.
-    confidence: 0.9
-    review_notes: [Recap of the previous sermon, not an alternative title for this service.]
-  - id: p20260621-in-jesus-name
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
-    start: 2734.28
-    end: 2794.42
-    type: sermon
-    title: Praying in Jesus' name is not a formula
-    summary: Yong explains praying in Jesus' name as acting for God's purposes rather than uttering magic words to obtain anything desired.
-    questions: [What does praying in Jesus' name mean here?]
-    topics: [prayer, responsibility]
-    scripture: ['John 14:13-14']
-    transcript: |
-      [Bible quotations omitted.] For many of the churches, people believe that all you have to do is utter the magic word, in Jesus' name. You get whatever you want. The answer is no. In my name means that it is for his sake, for his purpose.
-      [Third-commandment quotation and related example omitted.]
-      Every time you invoke that name, you're talking about doing things for God. You're representing God. And so therefore, it's the same idea here. When we say we do something in the name of Jesus, it means we are doing something in the will of God. It means that we are doing something for the kingdom's sake. And of course, when that is the case and we pray, God is surely with us. That's what the two verses means.
-    confidence: 0.91
-    review_notes: []
-  - id: p20260621-start-serving
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
-    start: 2794.6
-    end: 2865.4
-    type: sermon
-    title: Start small and learn through serving
-    summary: Yong encourages starting with available resources, describing a cycle of service, learning and joy before turning to the promise of the Spirit.
-    questions: [How can someone begin a ministry without having every answer?]
-    topics: [service, holy-spirit]
-    scripture: ['John 14:15-24']
-    transcript: |
-      My parting encouragement is to encourage all of us to start really understanding your own ministry. You may want to start small and start with whatever you have, but whatever the case, just start. I will testify to you that in my life, this is how I do a lot of things. I don't have all the answers, but I will believe, seek God first. And if I think that this is what God is calling me to do, I will go and do it.
-      [Comparison with senior pastor omitted.] Once you start moving, you realize that God, the Holy Spirit, will continue to empower you and help you learn more. And so it's a cycle. And the more you do, the more you learn and the more joy you get. And then all the more you do.
-      [Transition to verse 15 and invitation to prayer.]
-    confidence: 0.9
-    review_notes: []
-  - id: p20260621-prayer-before-exposition
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-introduction
-    start: 2866.14
-    end: 2897.84
-    type: prayer
-    title: Prayer for understanding the triune God
-    summary: Yong asks for prepared hearts and open minds before the difficult teaching concerning God.
-    questions: []
-    topics: [prayer, knowing-god]
-    scripture: []
-    transcript: |
-      We thank you, God Almighty, for calling all of us here this morning to listen to your word. And as we approach this most profound and difficult lesson relating to the triune God, we do ask for your grace and mercy that our heart will be prepared properly, that our mind will be open to your word, and especially the word of your unworthy servant.
-      [Scripture-derived closing wording omitted.] In Jesus' name we pray. Amen.
-    confidence: 0.88
-    review_notes: [Triune resolves ASR Triumph from adjacent explicit subject and slides.]
-  - id: p20260621-love-commandments
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-love-obedience
     start: 2898.92
-    end: 3000.06
+    end: 4281.02
+    title: Love for Christ Changes How We Live
     type: sermon
-    title: Love for Jesus and keeping his word
-    summary: Yong groups recurring teaching in John 14:15, 21, 23 and 24, connecting love for Jesus with conduct and raising the distinction from legalism.
-    questions: [How are love and obedience linked in John 14?]
-    topics: [discipleship, faith]
-    scripture: ['John 14:15', 'John 14:21', 'John 14:23-24']
-    transcript: |
-      [Opening recap and John 14:15 quotation omitted.] Here in the passage that you just read earlier in your second responsive reading, you find that the thoughts of our Lord Jesus Christ was not entirely chronological in nature, meaning A do this, B do this, C do that. So some of the things go into many of the different verses.
-      [Quotations from John 14:21, 23 and 24 omitted.]
-      So here there is a very clear linkage about love for Jesus Christ and the way you will behave in your life.
-      [Further quoted wording omitted.] Oftentimes we get confused about all these things, right? Because on the one hand, we say that there are some people very legalistic. They keep telling you, don't do this, don't do this, do this, do that.
-      [Verse restatement omitted.] So how does it quite work?
-    confidence: 0.9
-    review_notes: [Longer unit preserves the full question before the one-way-traffic explanation.]
-  - id: p20260621-good-deeds-direction
+    summary: Yong argues that love for Christ produces repentant action and lifelong restoration beyond
+      rule-keeping or religious transactions, using kindness and marriage illustrations while
+      acknowledging continuing failure and temptation.
+    keywords:
+      - one way traffic
+      - good deeds
+      - commandments of christ
+      - redemption
+      - restoration
+      - transactional
+      - consumer
+      - vows
+    topics:
+      - discipleship
+      - faith
+      - discernment
+      - service
+      - hypocrisy
+      - repentance
+      - knowing-god
+      - truth
+      - service-life
+      - holy-spirit
+      - responsibility
+      - temptation
+    scripture:
+      - John 14:15
+      - John 14:21
+      - John 14:23-24
+      - Ephesians 2:10
+      - Luke 18
+      - John 14:12
+      - John 14:6
+      - John 10:10
+      - Galatians 5:22-23
+    source_chapters:
+      - s20260621-love-obedience
+      - s20260621-restoration
+      - s20260621-transactional-faith
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s20260621-restoration
     video_id: dNeZD1HUmmE
-    section_id: s20260621-love-obedience
-    start: 3000.32
-    end: 3073.28
-    type: sermon
-    title: One-way traffic — good deeds do not prove identity
-    summary: Yong explains that doing good is not by itself proof of being a child of God, giving examples of kindness by people with different beliefs.
-    questions: [Why does the speaker call this one-way traffic?]
-    topics: [faith, discernment]
-    scripture: []
-    transcript: |
-      Some of these verses are kind of a one-way traffic verses. What does that mean? It means it works one way, but it doesn't work the other way. For example, when we talk about doing good deeds, I remember Brother [name uncertain], when he was preaching, was talking about this, right? A person who does good deeds is not necessarily a child of God. We are not saved by good deeds, correct? That's true. And you have a lot of people with many religions out there, people without religious inclination also will do good things, right?
-      [Premarital-preparation and cat-shelter illustrations continue; excerpt omitted.]
-    confidence: 0.87
-    review_notes: [Mention of another preacher does not identify that person or the live speaker.]
-  - id: p20260621-created-for-good
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-love-obedience
-    start: 3073.28
-    end: 3150.74
-    type: sermon
-    title: Kindness to animals and being created for good works
-    summary: Continuing the animal-care illustration, Yong says kind acts do not prove Christian identity, then contrasts this with his reading of Ephesians 2:10.
-    questions: [How does the speaker connect Ephesians 2:10 with good deeds?]
-    topics: [faith, service]
-    scripture: ['Ephesians 2:10']
-    transcript: |
-      [Cat-shelter and reservoir details omitted.] There's this lady who will take dog food and walk all the way in, and then she will call out to the dogs and all the wild dogs will appear and she will feed the dog. Is that a good deed? I suppose if you love animals it's a good deed, right? But it doesn't mean that you are a child of God, so it's not a proof. However, a child of God will do good to others because we are saved for good deeds.
-      [Ephesians 2:10 quotation omitted.]
-      So this is a one-way traffic. That means if you are a child of God, you will do good, because you are created for good. It doesn't mean that you will come the other way around. When you do good, you are a child of God.
-    confidence: 0.88
-    review_notes: [Last statement is the reversed implication being rejected; read with preceding sentences.]
-  - id: p20260621-outward-compliance
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-love-obedience
-    start: 3150.74
-    end: 3243.08
-    type: sermon
-    title: Outward compliance and genuine love
-    summary: Yong uses the Pharisee and tax collector to distinguish outward rule-keeping from love for Jesus, while maintaining that genuine love produces action.
-    questions: []
-    topics: [hypocrisy, discipleship]
-    scripture: ['Luke 18', 'John 14:12', 'John 14:15']
-    transcript: |
-      [Bible quotation omitted.] There are many people who so-called keep the commandments of Jesus Christ, but they are not necessarily people who love him. For example, Pharisees of the past. Luke chapter 18, I believe, Pharisees and the tax collector. So the Pharisee guy will keep the commandments of God, all the rules and regulations, but that doesn't mean the person is a person who loves Jesus Christ.
-      [Further example and verse quotation omitted.]
-      In other words, you cannot come and tell me that you love Jesus, but you do nothing, you don't care, you're a horrible person, and you don't do good, because it cannot be.
-      [Repeated explanation omitted.]
-    confidence: 0.89
-    review_notes: [Luke chapter attribution retains the speaker's I believe qualification; no finer unannounced range added.]
-  - id: p20260621-direction-repentance
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-love-obedience
-    start: 3243.08
-    end: 3307.78
-    type: sermon
-    title: Imperfection, repentance and a believer's direction
-    summary: Yong distinguishes consistently harmful conduct from a believer's failures, stressing grief over sin and a desire to turn back rather than sinlessness.
-    questions: [Does the speaker equate Christian faith with being sinless?]
-    topics: [repentance, discipleship]
-    scripture: []
-    transcript: |
-      [Opening restatement omitted.] You cannot tell me that, hey, this is a Christian leader, but at the same time this guy is consistently nasty. I use the word consistently because as usual, no matter who we are, sometimes we fall, we get into trouble, we make mistakes. We are not sinless, we just sin less. And so don't be surprised that Christian leaders can have flaws. At the same time, the overall direction and trajectory of a [lover; ASR unclear] of Jesus Christ must be one which he consistently want to do the commands of God. And so much so that when you fall, you grieve, you are sad, you find that this is not the right thing to do and I want to turn around. That marks the true believer, not somebody who just takes everything for granted and exploits the system.
-      [Closing verse quotation omitted.]
-    confidence: 0.9
-    review_notes: [Keep the distinction between recurring direction and individual failure; ASR lover/level remains flagged.]
-  - id: p20260621-commandments-question
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-restoration
     start: 3307.78
-    end: 3359.92
-    type: sermon
-    title: Are Christ's commandments merely a list of rules?
-    summary: Yong uses an AI-generated image of religious rules to ask whether Christ's commandments can be reduced to superficial regulations.
-    questions: []
-    topics: [discipleship, discernment]
-    scripture: []
-    transcript: |
-      The natural next question, of course, is what are his commandments? There are many, many rules and regulations. This one is AI generated. Quite interesting. I say, give me somebody who is looking at a lot of rules.
-      [Image examples and scripture-derived slogans omitted.]
-      All the rules up there are the things that you see in church. Is that what Jesus Christ is talking about, all the commandments, do this, do that kind of thing that we can find in the Bible? Is that what it means? Answer is not so shallow and so superficial.
-    confidence: 0.88
-    review_notes: []
-  - id: p20260621-christ-himself
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-restoration
-    start: 3359.92
-    end: 3481.36
-    type: sermon
-    title: The commandments of Christ and Christ himself
-    summary: Revisiting John 14:6, Yong says the commandments point to Christ himself rather than simply summarizing rules.
-    questions: [What does the speaker mean by the commandments of Christ are Christ himself?]
-    topics: [knowing-god, discipleship, truth]
-    scripture: ['John 14:6']
-    transcript: |
-      [Recap and John 14:6 quotation omitted.] However, do not forget that this particular phrase is powerful in a way that it's not just about exclusivity.
-      [Further verse-derived wording omitted.] You have many sermons just on the way, many sermons just on the truth, many sermons just on the life. And it's all embedded all in one kind of a concept.
-      [Scripture-derived wording omitted.] Not the many, many rules made into a summary, but he is the embodiment of the way, the truth, and the life at the same time.
-      [Quoted phrase omitted.] He was referring to himself, that the commandments of Christ are Christ in himself. That everything that is about Jesus Christ is the thing that we will follow, that we will agree to, that we will uphold, that we will love.
-      [Verse-derived phrase omitted.] Not just simply these rules and regulations out there.
-    confidence: 0.89
-    review_notes: [Longer unit completes a single argument; word-boundary warning at 3449.5 seconds enclosed. Slide at 3600 corroborates the chapter's phrasing.]
-  - id: p20260621-summaries-not-reduction
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-restoration
-    start: 3481.36
-    end: 3566.78
-    type: sermon
-    title: Commandment summaries and following Christ
-    summary: Yong discusses the two great commandments and the Ten Commandments as guides, then uses the rich young man's encounter to say following Christ goes beyond a checklist.
-    questions: []
-    topics: [discipleship]
-    scripture: []
-    transcript: |
-      Of course, in the way God has designed things to be, he has made it simpler for us, I suppose, in a way, by segregating it somewhere into simple format and simple commandments to us.
-      [Quotations of the two great commandments omitted; precise reference not announced.]
-      So in a sense, that's a very easy guideline for us.
-      [Ten Commandments quotations and narrative paraphrase omitted; precise references not announced.]
-      So you see, it's not just about the commandment itself, but our Lord Jesus Christ.
-    confidence: 0.88
-    review_notes: [No unannounced verse locations supplied from memory.]
-  - id: p20260621-more-than-rules
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-restoration
-    start: 3566.78
-    end: 3626
-    type: sermon
-    title: Seeing worship as more than standing and sitting
-    summary: Yong uses a Sunday-school anecdote to illustrate reducing church life to rules and repeated movements.
-    questions: []
-    topics: [service-life, discipleship]
-    scripture: []
-    transcript: |
-      I think that most of us do not quite understand what our faith is all about. So when you come to church you keep thinking that coming to church means follow rules and regulations.
-      [Sunday-school teacher's name and part of anecdote omitted.] Everybody, now we pray, stand up and pray. And you know what the kids say? Ha, stand up again. Stand up, sit down, stand up, sit down. I try my best not to interfere.
-      [Excerpt omitted.] We kind of think of religion in this way. But you're quite mistaken, you know, when you think about the Christian faith.
-    confidence: 0.87
-    review_notes: []
-  - id: p20260621-redemption-restoration
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-restoration
-    start: 3626
-    end: 3707.74
-    type: sermon
-    title: Redemption and restoration
-    summary: Yong distinguishes rescue from condemnation from restoration of life as God intended, describing sanctification as a lifelong goal.
-    questions: [How does the speaker distinguish redemption from restoration?]
-    topics: [discipleship, faith]
-    scripture: []
-    transcript: |
-      We always like to tell you that it's not a religion, it's the truth. What happened is that, in a nutshell, our Lord Jesus Christ of course came to redeem his people. Not only to redeem his people, he came to restore his people as well.
-      [Excerpt omitted.] The redemption, of course, is to save all of us who belong to God from condemnation by God, from God's wrath. That's redemption. So we are saved.
-      [Excerpt omitted.] Jesus did not just come and save you from eternal hell. Jesus came to restore our life so that we will return to a life as designed originally by God. And so sometimes we use theological term like sanctification so that you can reach a stage of perfection all your life long. That's the goal to go after.
-      [Repetition and brief non-English wording omitted.] It's about restoration as well.
-    confidence: 0.9
-    review_notes: [English remains source language; short mixed-language phrase not translated or reconstructed.]
-  - id: p20260621-full-life
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-restoration
-    start: 3707.74
-    end: 3763.3
-    type: sermon
-    title: A full life and the fruit of the Spirit
-    summary: Yong connects restoration with a full and joyous life, referring to John 10:10 and a wedding couple's choice of Galatians 5:22-23.
-    questions: []
-    topics: [holy-spirit, discipleship]
-    scripture: ['John 10:10', 'Galatians 5:22-23']
-    transcript: |
-      I'm convinced beyond all doubt that our Lord Jesus Christ wants every single one of us, whether you are single, married or whatever situation you are in, to have a joyous life, to have a life that is full.
-      [John 10:10 quotation and further scripture-derived wording omitted.]
-      I just did a wedding where a wedding couple, a new couple is here. They picked Galatians 5, 22, 23. I think you are the first couple in all these years to pick Galatians 5 as your wedding verse. So it's a wonderful reminder.
-      [Fruit-of-the-Spirit quotation omitted.] That's what we are supposed to manifest.
-    confidence: 0.89
-    review_notes: []
-  - id: p20260621-restored-identity
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-restoration
-    start: 3763.3
     end: 3833.96
     type: sermon
-    title: Restoration as a changed identity
-    summary: Yong uses a DNA-change metaphor for restored identity, saying the restored person desires Christ and the life God intends.
-    questions: []
-    topics: [faith, discipleship]
-    scripture: []
-    transcript: |
-      When we are saved by Jesus Christ, then that becomes a part of our life, and because of that the restored soul definitely will want to love Jesus Christ because he is the perfect being.
-      [Verse-derived phrase omitted.] So when you say you are saved, it means that your DNA will go for a change. You are no longer who you are. You now belong to God. You belong to the group that has been recovered. You belong to a group that has received healing so that you will go back to the way God wants you to be, the life that he wants you to live. And of course because of that, then you will love to be with our Lord Jesus Christ.
+    title: Christ Restores Life Beyond Rule-Keeping
+    speaker_id: yong-teck-meng
     confidence: 0.88
-    review_notes: [DNA language retained as the speaker's metaphor, not a biological claim.]
-  - id: p20260621-reward-culture
+    scripture:
+      - John 14:6
+      - John 10:10
+      - Galatians 5:22-23
+    topics:
+      - discipleship
+      - discernment
+      - knowing-god
+      - truth
+      - service-life
+      - faith
+      - holy-spirit
+    summary: Yong distinguishes redemption from lifelong restoration, presenting Christ's commandments
+      as pointing to Christ himself and a changed identity rather than a checklist.
+    keywords:
+      - commandments of christ
+      - redemption
+      - restoration
+      - fruit
+    parent_id: c20260621-love-restores-life
+    source_chapters:
+      - s20260621-restoration
+  - id: s20260621-transactional-faith
     video_id: dNeZD1HUmmE
-    section_id: s20260621-transactional-faith
     start: 3833.96
-    end: 3916.7
-    type: sermon
-    title: Transactional thinking and the pressure to win
-    summary: Yong describes reward-and-punishment thinking and public fascination with winners as habits that shape people's approach to faith.
-    questions: [What does the speaker mean by a transactional view of faith?]
-    topics: [faith, discernment]
-    scripture: []
-    transcript: |
-      But of course that's not the thinking for most of us, right? We don't think like that for the vast majority of us. So what's the problem? The problem is that we do have a very transactional view of life and of faith, because we are trained like that all our life long. You do good, you get reward. You don't do good, you get punished. And everybody loves the winner. Nobody cares about who is second.
-      [World Cup timing and Olympic illustrations omitted.] Nobody cares, who cares about second? You must be first. So our life trains us to think like that, and it's transactional, right?
-    confidence: 0.91
-    review_notes: []
-  - id: p20260621-religious-bargains
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-transactional-faith
-    start: 3916.7
-    end: 4000.22
-    type: sermon
-    title: Religious bargains and an examination anecdote
-    summary: Yong criticizes treating religion as payment for divine favour, using an exam talisman story and a parallel warning about treating a Bible as a charm.
-    questions: []
-    topics: [faith, discernment]
-    scripture: []
-    transcript: |
-      You buy something, you give money, you get something, and then that's the way, consumer kind of society we are.
-      [Excerpt omitted.] We think like that in faith too, that in common faith, common religion, the idea is to give God whatever it is, then in return he gives you some divine favour, right?
-      [Temple and school examination anecdote omitted.]
-      Don't laugh. I know some of you put a Bible underneath your pillow and then you pray that God will save you for not studying. They're very transactional. So in faith, we are like consumer of faith as well, right?
-    confidence: 0.86
-    review_notes: [Anecdote and portrayal of religious practice attributed to Yong, not verified generalizations.]
-  - id: p20260621-consumer-church
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-transactional-faith
-    start: 4001.36
-    end: 4069.84
-    type: sermon
-    title: Choosing a church as a consumer
-    summary: Yong describes questions about church amenities and school connections as examples of transactional expectations that can distort love and obedience.
-    questions: []
-    topics: [service-life, discipleship]
-    scripture: []
-    transcript: |
-      You walk down the aisle and then you check, what I want. Is that faith, blessing, wisdom, whatever? I just pick and choose. And same thing, church, same thing. We come to church, we look at the church and we say, does it have what I want? And I will tell you plainly that people will write email to me and ask questions. What kind of Sunday school you have? You have parking or not?
-      [Unclear school-name discussion omitted.] So this is very transactional, and we think like that too.
-      [Restatement of love and commandment relation omitted.] We get it all confused, right?
-    confidence: 0.85
-    review_notes: [ASR school and denomination names are unreliable in this interval; no guessed correction.]
-  - id: p20260621-marriage-vows
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-transactional-faith
-    start: 4069.84
-    end: 4167.52
-    type: sermon
-    title: Marriage vows beyond a transaction
-    summary: Yong uses wedding vows and an elderly couple to illustrate commitment that endures changes in wealth and health.
-    questions: [How does the sermon use marriage vows to challenge transactional love?]
-    topics: [responsibility, faith]
-    scripture: []
-    transcript: |
-      The reality is it's very, very difficult to get out of a transactional situation, even in love itself. You marry someone because there's somebody somewhere ticked all the boxes in your life, right, generally speaking. Then if the box don't get ticked somewhere down the line, you get very confused. What to do next?
-      [Excerpt omitted.] This is why when I conduct a wedding, I insist that the couple will read the Church of England vows, which is a very serious vow: for better, for worse, in health or in sickness, for richer or poorer.
-      [Wedding wording anecdote omitted.] Because there will come a time where you get sick, or whatever it is, and the vows come in.
-      [Elderly-couple anecdote omitted.] It's so difficult that even church leaders don't understand this.
-    confidence: 0.88
-    review_notes: [Longer unit retains the marriage application before the separate Robertson anecdote.]
-  - id: p20260621-robertson-anecdote
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-transactional-faith
-    start: 4167.52
-    end: 4230.3
-    type: sermon
-    title: A reported response about Alzheimer's and marriage
-    summary: Yong recounts and criticizes an answer he attributes to Pat Robertson about a spouse with Alzheimer's, arguing that marriage vows include sickness.
-    questions: []
-    topics: [responsibility, discernment]
-    scripture: []
-    transcript: |
-      So Pat Robertson, the guy died already. He's one of those charismatic leaders in the United States, [ASR unclear], one of the first. He had a question and answer session on his show, you know. And some fellow wrote in, a guy, said that, hey, you know, Pastor Robertson, my wife now got Alzheimer's. She don't even remember me anymore. Can I go marry someone else? Because, you know, she's not there anymore. You know what Pat Robertson told him? [Pronoun unclear] said can. Why? Because she's no longer the same person you put your pledge to when you got married.
-      [Reaction account omitted.] That's what for better, for worse means, right? In health or in sickness means.
-      [Further criticism omitted.] That's not what it means.
-    confidence: 0.82
-    review_notes: [Unverified attributed anecdote, not a factual finding about Robertson or Alzheimer's. Segment 898 word-end warning enclosed; avoid cutting at 4196.12.]
-  - id: p20260621-transformation-temptation
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-transactional-faith
-    start: 4231.04
     end: 4281.02
     type: sermon
-    title: Transformation amid continuing temptation
-    summary: Yong returns to changed identity and warns that believers still face temptation, preparing his explanation of the promised helper.
-    questions: []
-    topics: [temptation, discipleship]
+    title: Faithful Love Goes Beyond Transactions
+    speaker_id: yong-teck-meng
+    confidence: 0.86
     scripture: []
-    transcript: |
-      We are so used to this idea that, of course, it made a lot of sense that if I love God, God is going to give this to me or give that to me. My dear brothers and sisters in Christ, that's not what it's all about. When we say we are followers of Jesus Christ, to put it another way, we actually go through a DNA change.
-      [Scripture-derived identity wording omitted.] But because we are fallen, and because the devil is everywhere whispering, I keep emphasizing this to you, do not underestimate the work of the devil. It's everywhere. I will tell you that every time you are tempted to do something that is not pleasing to God, although I'm not a charismatic pastor, I tell you the devil is there somewhere. He's whispering in your ears and we will fall because of all these difficulties.
-    confidence: 0.88
-    review_notes: [Spiritual explanation attributed to Yong; DNA language is metaphorical.]
-  - id: p20260621-pneumatology
+    topics:
+      - faith
+      - discernment
+      - service-life
+      - discipleship
+      - responsibility
+      - temptation
+    summary: Yong challenges religious bargaining and consumer expectations through enduring marriage
+      vows, including an unverified account attributed to Pat Robertson, before returning to
+      transformation amid temptation.
+    keywords:
+      - transactional
+      - consumer
+      - vows
+      - alzheimer
+    parent_id: c20260621-love-restores-life
+    source_chapters:
+      - s20260621-transactional-faith
+  - id: c20260621-knowing-spirit-scripture
     video_id: dNeZD1HUmmE
-    section_id: s20260621-promise-spirit
     start: 4281.02
-    end: 4397.46
+    end: 5303.86
+    title: Knowing the Spirit Begins With Scripture
     type: sermon
-    title: The promise of the Spirit and pneumatology
-    summary: Yong introduces pneumatology through the promise in John 14 and describes the farewell discourse as foundational for understanding the Holy Spirit.
-    questions: [Why does the speaker treat John 14-16 as foundational for understanding the Spirit?]
-    topics: [holy-spirit, knowing-god]
-    scripture: ['John 14:16', 'John 14-16']
-    transcript: |
-      [Introduction and John 14:16 quotation omitted.] From this point onwards, the great theological understanding of pneumatology, the doctrine of the Holy Spirit, began.
-      [Greek/Hebrew explanation unclear in ASR; omitted.]
-      The Gospel of John is the only Gospel that reports the promise of the coming of the Holy Spirit, the third person in the triune God, in such a clear manner. While it is true that in the Old Testament you see the Spirit being mentioned many times, for example in creation account, the Spirit is mentioned. Here we have a detailed explanation from the Son of God, given during the farewell discourse.
-      [Narrative transition omitted.] This passage is fundamental and foundational in the understanding of pneumatology, the understanding of God the Holy Spirit. At the same time, it's also a most mistaken understanding of the church today.
-    confidence: 0.86
-    review_notes: [Longer conceptual introduction; do not repair ASR wrath into an inferred Greek/Hebrew term. Claims about Gospel uniqueness remain attributed.]
-  - id: p20260621-contemporary-churches
+    summary: Yong uses qualified church-size estimates, his account of charismatic history and
+      unverified recollections to frame the congregation's position, grounding knowledge of the
+      Spirit in Scripture while acknowledging the Trinity's mystery.
+    keywords:
+      - pneumatology
+      - holy spirit
+      - azusa street
+      - charismatic
+      - army christian fellowship
+      - testimony
+      - sola scriptura
+      - westminster confession
+      - trinity
+    topics:
+      - holy-spirit
+      - knowing-god
+      - service-life
+      - discernment
+      - truth
+      - trinity
+    scripture:
+      - John 14:16
+      - John 14-16
+      - John 17:17
+      - John 14:15-16
+    source_chapters:
+      - s20260621-promise-spirit
+      - s20260621-charismatic-history
+      - s20260621-experiences
+      - s20260621-scripture-trinity
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s20260621-scripture-trinity
     video_id: dNeZD1HUmmE
-    section_id: s20260621-promise-spirit
-    start: 4398.44
-    end: 4454.84
-    type: sermon
-    title: The speaker's account of contemporary church size
-    summary: Yong describes charismatic churches as prominent in Singapore and globally, offering qualified estimates and comparisons of congregation size.
-    questions: []
-    topics: [service-life, holy-spirit]
-    scripture: []
-    transcript: |
-      I say that because you are in a Reformed Evangelical Church. We are the minority, you know, in case you don't know.
-      [Excerpt omitted.] In Singapore the largest Protestant churches are the charismatic churches. I think the largest church in Singapore is New Creation Church, followed perhaps closely by City Harvest, maybe Faith Community Baptist Church, and then there are many different kind of mega churches out there. I do not know of a mega church that is non-charismatic, do you?
-      [Estimate about the wider congregation omitted.] So in a sense we are a mega church.
-    confidence: 0.84
-    review_notes: [Keep I think/perhaps/maybe qualifications; estimates and rankings not independently checked. Segment 961 warning enclosed.]
-  - id: p20260621-why-study-spirit
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-promise-spirit
-    start: 4455.06
-    end: 4513.48
-    type: sermon
-    title: Why examine the doctrine of the Spirit?
-    summary: Yong notes varied reasons people join the congregation and says exposition provides an opportunity to explain its understanding of the Spirit.
-    questions: []
-    topics: [holy-spirit, service-life]
-    scripture: []
-    transcript: |
-      A lot of you are also from the charismatic church. You come and join us. Some of you join us because you want to marry somebody who is here. Some of you join us because you suddenly realize that, hey, something wrong with that kind of teaching. I want to come and find out what is it.
-      [Excerpt omitted.] There are many different reasons why we are here, but this is a very big phenomenon in the world today.
-      [Excerpt omitted.] I'm going to take some opportunity that the expository preaching have to dwell deeper into our understanding of the doctrine of God the Holy Spirit, so that you get a proper understanding why we do what we do in the Reformed Evangelical Church. What is the thinking behind the way we behave?
-    confidence: 0.87
-    review_notes: [Critique is the speaker's position, not an archive assessment of other churches.]
-  - id: p20260621-azusa-account
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-charismatic-history
-    start: 4513.82
-    end: 4598.4
-    type: sermon
-    title: Azusa Street in the speaker's historical account
-    summary: Yong traces the charismatic movement to the 1906 Azusa Street revival while acknowledging earlier phenomena, describing reported manifestations rather than verifying them.
-    questions: [How does the speaker introduce the history of the charismatic movement?]
-    topics: [holy-spirit, discernment]
-    scripture: []
-    transcript: |
-      For the charismatic movement, it may surprise you to know that this is actually not a very old movement. Comparatively, in the history of the world, it's very new. It actually is commonly thought to have its roots starting in 1906. So that's 120 years exactly, right, from now.
-      [Excerpt omitted.] At a place called Azusa Street Mission in Los Angeles, California. So there was a worship service in a Methodist revival meeting where all of a sudden people claimed that they were baptized by the Holy Spirit.
-      [Comparison with Pentecost omitted.] And people then started to manifest different phenomena like the speaking of tongues, miraculous healing, exorcism, frenzy kind of worship and many, many things else to go.
-      [Earlier-movement examples omitted.] But the main one is the Azusa Street revival.
-    confidence: 0.86
-    review_notes: [Historical labels and dates are attributed; no independent historical verification performed.]
-  - id: p20260621-media-spread
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-charismatic-history
-    start: 4598.4
-    end: 4679.22
-    type: sermon
-    title: Media and the spread of charismatic movements
-    summary: Yong describes television and radio as helping the movement spread and lists denominations with charismatic branches.
-    questions: []
-    topics: [holy-spirit, service-life]
-    scripture: []
-    transcript: |
-      This movement gained a lot of momentum in the sixties together with the emergence of media like television and radio. So we use the word televangelist, evangelist that use television, reach out to people. It's very effective.
-      [Television examples omitted.] We are also doing that kind of thing. We have Good TV, but ours is different. It's just Dr. Tong preaching a lot or different people sharing.
-      [Further comparison and geographic chronology omitted.] Today there are many churches that are charismatic in nature. They call them charismatic church, for example, or they call them Pentecostal church.
-      [Denominational list omitted from this excerpt.]
-    confidence: 0.86
-    review_notes: [Frame at 4800 confirms Assembly of God where ASR corrupts the name; the slide describes Europe in the 1970s and Asia in the 1980s. Generalizations remain the speaker's.]
-  - id: p20260621-cessation-distinction
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-charismatic-history
-    start: 4679.22
-    end: 4714.5
-    type: sermon
-    title: Distinguishing the church's position from cessationism
-    summary: Yong contrasts his description of Bible Presbyterian cessationism with the congregation's position, saying it is not cessationist while opposing public tongues and extreme charismatic practice.
-    questions: [Does the speaker describe the church as cessationist?]
-    topics: [holy-spirit, discernment]
-    scripture: []
-    transcript: |
-      Only a few churches in the world are firmly against charismatic teaching. In Singapore, the Bible Presbyterians are the most staunchly against charismatics. So they believe in cessation, which means that no such thing as speaking in tongues, no miracles, no nothing, cessation theory. We are not cessationists. Dr. Tong would agree that some people can speak in tongues, but he does not support public speaking in tongues. So we are a little bit less, not so overly anti-charismatic. But from the pulpit, of course, he will attack extreme charismatism.
-    confidence: 0.9
-    review_notes: [The speaker's compressed characterization of another denomination needs human contextual review; not endorsed as a definition.]
-  - id: p20260621-army-fellowship
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-experiences
-    start: 4715.34
-    end: 4806.1
-    type: sermon
-    title: Recalling an army Christian fellowship
-    summary: Yong recalls encountering charismatic Christians as an army officer, including fellowship activities and his sense of being the only non-charismatic leader present.
-    questions: []
-    topics: [service-life, discernment]
-    scripture: []
-    transcript: |
-      I myself was part of the people who experienced it in the early 1980s. Now you've got to remember that I'm one of those people who kind of grew up in church. I've been in church since I was five.
-      [Excerpt omitted.] First time I encountered charismatism was I was in the army. I was an army officer, and there's an Army Christian Fellowship, ACF. They still exist. Basically what happened is that we just want to spread the gospel within the army camp. I don't know about now, but back then you can do that because officers have a lot more power.
-      [Recollections of activities and ranks omitted.] Every single one of them were charismatics, except me. So I'm the only one who is not. It was quite interesting to encounter that because I never heard of anything like that before.
-    confidence: 0.87
-    review_notes: [Personal recollection is not external evidence of present army policy or fellowship membership.]
-  - id: p20260621-tongues-third-eye
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-experiences
-    start: 4806.9
-    end: 4886.12
-    type: sermon
-    title: Recollections of tongues instruction and spiritual sight claims
-    summary: Yong describes instruction about speaking in tongues and a pastor's claim to see spirits, explaining his own skeptical reaction and cultural comparison.
-    questions: []
-    topics: [holy-spirit, discernment]
-    scripture: []
-    transcript: |
-      They were telling me that, hey man, how come you're not speaking in tongues?
-      [Book instructions and vocal imitations omitted.] And all kinds of fascinating and also very exciting thing happening. And I remember there was this pastor that they invited to teach in the fellowship.
-      [Reported biblical paraphrase omitted.] This pastor said God has opened my third eye and I can see evil spirit all around us. But because I am bicultural, I know this has Taoist influence.
-      [Cultural comparison omitted.] I was very worried that he would look at me and say, the demon is here. He didn't. He said, wow, I can see the evil spirit moving here and there. It's all kinds of strange things.
-    confidence: 0.83
-    review_notes: [Unverified recollection and cultural interpretation; no supernatural event established by this record.]
-  - id: p20260621-translating-testimony
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-experiences
-    start: 4886.22
-    end: 4967.06
-    type: sermon
-    title: Translating extraordinary testimony
-    summary: Yong recounts translating for an unnamed pastor who claimed unusual spiritual experiences and describes his internal skepticism about an extraordinary jumping story.
-    questions: []
-    topics: [discernment, truth]
-    scripture: []
-    transcript: |
-      And then, of course, the influence comes into the Presbyterian Church as well. And I always remember this guy that I was translating for. I was quite young at that time, and then there was this pastor who was an Indonesian guy in the Presbyterian church, and he was preaching and he got me to translate for him. He said that the Spirit was upon him and he could smell flowers. Every time there's evil spirit, the smell of flower will come and he can detect it.
-      [Reported possession and tree-jumping story omitted from this excerpt.] I always remember that. You know why I remember it? Because at the back of my mind I keep thinking if you get the kid to the Olympic Games, he will win.
-      [Further joking omitted.] So you can imagine I felt very cornered.
-    confidence: 0.83
-    review_notes: [Retelling and skepticism are the content; do not turn reported possession into an independently verified event.]
-  - id: p20260621-testimony-pressure
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-experiences
-    start: 4967.06
-    end: 5048.46
-    type: sermon
-    title: Pressure to offer dramatic testimonies
-    summary: Yong describes feeling overshadowed by dramatic testimonies and repeats an anecdote attributed to Dr. Tong about a Sundar Singh legend.
-    questions: []
-    topics: [discernment, truth]
-    scripture: []
-    transcript: |
-      They got all these experiences. Then every time we gather together, we have all these testimony time, and it was very exciting.
-      [Reported rain miracle omitted.] Then after that, Lieutenant Yong, you got anything to share? When I read the Bible, the Bible says this and that. Oh, so boring. Next. So it's a very strange thing. And I'm not the only one. Dr. Tong also said that he find all these things very difficult.
-      [Sundar Singh and leopard legend omitted.] Dr. Tong said I was so moved by that testimony because when I pray even the cat will not come. So how does it all work for us?
-    confidence: 0.86
-    review_notes: [Quote attribution to Tong is not live-speaker attribution; legend retained as such, not confirmed biography.]
-  - id: p20260621-sola-scriptura
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-scripture-trinity
     start: 5048.46
-    end: 5135.66
-    type: sermon
-    title: Sola scriptura and the Westminster Confession
-    summary: Yong presents scripture as the basis for understanding God and reads the Westminster Confession's brief statement about the Trinity.
-    questions: [Why does the speaker begin with scripture when explaining the Trinity?]
-    topics: [truth, knowing-god, holy-spirit]
-    scripture: ['John 17:17']
-    transcript: |
-      We are people who believe in sola scriptura, by the Bible alone, and this is the cornerstone of our understanding of everything.
-      [John 17:17 quotation omitted.] And so this drives our entire understanding. In the Westminster Confession of Faith, our standard of faith that we declare we follow, the very first chapter is not God, you know. The very first chapter is Of the Holy Scripture. Why? Because it's from the Bible that we understand the second chapter, Of God and the Holy Trinity.
-      [Introduction and recitation of Westminster Confession 2.3 omitted from this excerpt.] Full stop, and that's it. No further explanation.
-    confidence: 0.91
-    review_notes: [5100-second slide confirms chapter names; confessional recitation omitted as an excerpt choice, not reconstructed.]
-  - id: p20260621-trinity-mystery
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-scripture-trinity
-    start: 5135.66
-    end: 5216.18
-    type: sermon
-    title: The Trinity and the limits of human expression
-    summary: Yong says the Trinity is evident in scripture while terms such as begotten and proceeding exceed complete human comprehension and can carry differing connotations in translation.
-    questions: [How does the speaker describe the limits of understanding the Trinity?]
-    topics: [knowing-god, holy-spirit, trinity]
-    scripture: []
-    transcript: |
-      You know why? Because this is not possible to explain. And as a bicultural person, I know that the Chinese description is quite different, or carry connotation that can be explained differently. Because these words, begotten, proceeding, where did it come from? It comes from the Bible.
-      [Confessional wording omitted.] But what does it actually mean? We really don't have too much comprehensive understanding. We accept because for us the triune God, God the Father, God the Son, God the Holy Spirit, is unmistakably seen in the Bible. At the same time, the profound mystery of the Trinity is beyond our full comprehension, or the ability of human expression.
-      [Further examples omitted.] Human limitation. We try our best to explain or express, but you are still limited.
-    confidence: 0.9
-    review_notes: [Supports proposed trinity topic; no new active taxonomy term added.]
-  - id: p20260621-scripture-not-impressions
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-scripture-trinity
-    start: 5216.18
     end: 5303.86
     type: sermon
-    title: Seeking the Spirit's work in scripture
-    summary: Yong recaps transformed but imperfect life and contrasts biblical inquiry with reliance on impressions, visions or perceived signs.
-    questions: []
-    topics: [discernment, holy-spirit]
-    scripture: ['John 14:15-16']
-    transcript: |
-      [Recap containing verse wording omitted.] When you are saved, you are transformed.
-      [Excerpt omitted.] While we are already saved, we are not yet made perfect.
-      [Promise paraphrase omitted.] It's not something you can do on your own. And so what would the Holy Spirit do for us as far as the Bible is concerned?
-      [Critical generalizations and humorous examples of visions/signs omitted.] We don't. We look into the Bible.
-    confidence: 0.87
-    review_notes: [Contrast represents Yong's argument, not a comprehensive assessment of charismatic believers.]
-  - id: p20260621-helper-comforter
+    title: Scripture Guides Understanding of the Trinity
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture:
+      - John 17:17
+      - John 14:15-16
+    topics:
+      - truth
+      - knowing-god
+      - holy-spirit
+      - trinity
+      - discernment
+    summary: Yong appeals to Scripture and the Westminster Confession while recognizing limits of
+      comprehension and translation, contrasting biblical inquiry with reliance on impressions or
+      visions.
+    keywords:
+      - sola scriptura
+      - westminster confession
+      - trinity
+      - human expression
+    parent_id: c20260621-knowing-spirit-scripture
+    source_chapters:
+      - s20260621-scripture-trinity
+  - id: c20260621-spirit-help-presence
     video_id: dNeZD1HUmmE
-    section_id: s20260621-helper
     start: 5303.86
-    end: 5391.64
-    type: sermon
-    title: God the Holy Spirit as helper and comforter
-    summary: Yong emphasizes the Spirit's divinity and describes helper, advocate, counselor and comforter language as support for a difficult journey rather than a source of magic tricks.
-    questions: [What does the sermon say the Holy Spirit does for believers?]
-    topics: [holy-spirit, knowing-god]
-    scripture: ['John 14:16']
-    transcript: |
-      The first thing I want to tell you is God the Holy Spirit is declared by Jesus Christ, not as somebody who will come and perform magic trick for you, but he's our helper and comforter. And I always like to use the word God the Holy Spirit as opposed to just the Holy Spirit, because sometimes really I look at other people, they think the Holy Spirit is like some spirit in a genie [ASR unclear]. No, it's God the Holy Spirit.
-      [John 14:16 quotation and uncertain Greek gloss omitted.] In other English Bible you see all these words appearing: advocate, helper, comforter, counselor, intercessor.
-      [Unclear phrase omitted.] The third person in the triune God who will help you, who will comfort you, who will empower you, because I know the journey ahead is going to be very difficult. It's going to be very rough because you belong to me.
-      [Verse-derived closing wording omitted.]
-    confidence: 0.88
-    review_notes: [Do not normalize the uncertain Greek form or ASR redeemer of the occurs phrase without listening.]
-  - id: p20260621-intercession
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-helper
-    start: 5391.64
-    end: 5471.6
-    type: sermon
-    title: The Spirit's help in weakness and prayer
-    summary: Yong returns to Romans 8:26-27 to explain the Spirit's intercession and help, then connects the promise in John with abiding presence.
-    questions: [How does Romans 8 describe the Spirit's help when prayer is difficult?]
-    topics: [holy-spirit, prayer]
-    scripture: ['Romans 8:26-27', 'John 14:16']
-    transcript: |
-      The Apostle Paul wrote in Romans 8:26.
-      [Bible quotation omitted.] Prior to this, Paul says that in our life there's a lot of suffering, a lot of challenges. I know a lot of you here are encountering a lot of challenges in your own life.
-      [Romans 8:26-27 quotation omitted.] So here you see the interplay of words that are interchangeably, right?
-      [Further verse paraphrase omitted.] But the general idea here is God the Holy Spirit is going to help you in your life, in your journey of life.
-      [Unverified Greek explanation omitted.] Not only that, God the Holy Spirit is going to be eternally with us because he is God, so he is eternal.
-      [John 14:16 quotation omitted.]
-    confidence: 0.9
-    review_notes: [Source reference corroborated by 5400-second slide.]
-  - id: p20260621-that-day
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-helper
-    start: 5471.6
-    end: 5538
-    type: sermon
-    title: The promised presence and differing readings of that day
-    summary: Yong reads through John 14:17-20 and mentions resurrection, Pentecost and the last day as interpretations, stating his account of the last-day reading without claiming unanimous agreement.
-    questions: []
-    topics: [holy-spirit, knowing-god]
-    scripture: ['John 14:17-20']
-    transcript: |
-      The rest of the verses actually keep emphasizing this, together with the fact that we must love him and keep his commandment.
-      [John 14:17-20 quotations and interwoven repetition omitted.]
-      And what is in that day? Some people say it's the day of resurrection. Some people say the day of Pentecost. Most people believe in the last day when we finally see our Lord Jesus Christ. Then it's clear without any doubt.
-      [Verse-derived wording omitted.] All mesh together.
-    confidence: 0.86
-    review_notes: [Most people is the speaker's unverified characterization; alternatives retained.]
-  - id: p20260621-indwelling
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-helper
-    start: 5538
-    end: 5590.7
-    type: sermon
-    title: Father, Son and Spirit making their home with believers
-    summary: Reading John 14:21-24, Yong connects the Spirit's indwelling with the Father's and Son's promised presence.
-    questions: []
-    topics: [holy-spirit, knowing-god]
-    scripture: ['John 14:21-24']
-    transcript: |
-      [John 14:21-23 quotation omitted.]
-      So when we say that we become a Christian, God the Holy Spirit is in us, and here the elements of the triune God is there.
-      [Verse-derived restatement and John 14:24 quotation omitted.]
-    confidence: 0.88
-    review_notes: [Passage largely consists of Bible quotation; preserves the reading interval and commentary without bundling verse text. Supports proposed trinity topic.]
-  - id: p20260621-help-loneliness
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-presence
-    start: 5590.7
     end: 5680.56
+    title: The Spirit Helps and Stays With Believers
     type: sermon
-    title: Help in loneliness through the Spirit and the church
-    summary: Yong encourages trust in the Spirit's lasting presence and describes other believers as practical help so that a person need not face life alone.
-    questions: [How does the sermon connect the Spirit's presence with help from other Christians?]
-    topics: [holy-spirit, service-life, faith]
-    scripture: ['John 14:16-24']
-    transcript: |
-      [Opening exposition omitted.] God the Holy Spirit in us will help us, will pray with us, pray for us, intercede for us, empower us and make his home together with us for all eternity.
-      [John quotation omitted.] I know that in our life, oftentimes we feel very lonely, that we don't know what is happening, and sometimes we find that we get no answer. But you must trust in the word of God that God promises that he will be with you in the third person, God the Holy Spirit. Not only that, as the Holy Spirit dwells in each and every one of us, as a body of Christ, as I preached last week, the rest of the brothers and sisters are also the hands and feet, the mouth and the ears and the eyes of God Almighty. They themselves will be the ready help for you so that you do not walk the journey of life all by yourself.
-    confidence: 0.91
-    review_notes: [Segment 1365 warning at 5673.36 seconds lies within the complete sentence; no cut at its uncertain word onset.]
-  - id: p20260621-spirit-truth
+    summary: Yong presents the divine Spirit's intercession and abiding presence with the Father and Son
+      as help in weakness and loneliness, including practical support through believers and
+      differing readings of 'that day'.
+    keywords:
+      - helper and comforter
+      - holy spirit
+      - weakness
+    topics:
+      - holy-spirit
+      - knowing-god
+      - prayer
+      - service-life
+      - faith
+    scripture:
+      - John 14:16
+      - Romans 8:26-27
+      - John 14:17-20
+      - John 14:21-24
+      - John 14:16-24
+    source_chapters:
+      - s20260621-helper
+      - s20260621-presence
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: c20260621-spirit-truthful-living
     video_id: dNeZD1HUmmE
-    section_id: s20260621-truth
     start: 5680.56
-    end: 5772.22
+    end: 6082.74
+    title: The Spirit of Truth Calls Us to Truthful Living
     type: sermon
-    title: The Spirit of truth and objective accuracy
-    summary: Yong names truth as the third emphasis and uses his engineering background to illustrate why objective accuracy matters.
-    questions: [Why does the speaker emphasize the Spirit of truth?]
-    topics: [holy-spirit, truth]
-    scripture: ['John 14:16-17']
-    transcript: |
-      So number one, God the Holy Spirit, first definition is our comforter and helper. Number two, God the Holy Spirit will stay with us, indwell with us forevermore. And number three is one of the most important answer to the mess of the charismatic movement today, that God the Holy Spirit is the truth.
-      [John 14:16-17 quotation omitted.] I personally find that this verse is one of the key that will unlock the problems with the charismatic movement today, and that is the recognition of the importance of the truth.
-      [Excerpt omitted.] I was an engineer when I started my career, and as engineer you're very sensitive towards the truth, objective truth, because 0.1 is very different from 0.001. You can't say it sounds the same. You go design a bridge and get the wrong number, the whole bridge will collapse. So very sensitive, the truth.
-      [Verse-derived closing phrase omitted.]
-    confidence: 0.9
-    review_notes: [Criticism attributed to Yong; warning at 5707.68 seconds lies in omitted Bible quotation.]
-  - id: p20260621-truth-decay
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-truth
-    start: 5772.22
-    end: 5849.24
-    type: sermon
-    title: Truth decay, online opinion and echo chambers
-    summary: Yong cites remarks attributed to Singapore's Chief Justice about blurred boundaries between opinion and fact, applying them to online reactions and algorithmic reinforcement.
-    questions: [What does the sermon mean by truth decay?]
-    topics: [truth, discernment, justice]
-    scripture: []
-    transcript: |
-      Recently, I'm reminded of this, surprisingly from another angle. The word truth decay. I've never heard of this word before.
-      [Chief Justice's name uncertain in ASR; event description omitted.] The Chief Justice of Singapore says we are already living in an age of truth decay, where there is a blurring of line between opinion and fact. Many people comment on court decision even though they do not know much about the case.
-      [Examples of online comments omitted.] It's echo chamber. The algorithm go and reinforce your negativity.
-      [AI-talk aside and closing repetition omitted.]
-    confidence: 0.88
-    review_notes: [Quotation and legal-event details are attributed recollection; proper-name spelling not guessed from external knowledge.]
-  - id: p20260621-courts-confidence
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-truth
-    start: 5849.24
-    end: 5939.76
-    type: sermon
-    title: Truth seeking and confidence in courts
-    summary: Yong discusses public confidence in courts as truth-seeking institutions and then questions the implications of acquittals on appeal, while calling the system the best available.
-    questions: []
-    topics: [truth, justice]
-    scripture: []
-    transcript: |
-      He said this is a serious problem if citizens lose their faith in court as objective truth-seeking institution. Now this I didn't know, that he said that the court is a truth-seeking institution. The consequences go beyond internet trolling.
-      [Further attributed quotation and social-order discussion omitted.]
-      From time to time you see some cases on appeal, the guy get acquitted. I always wonder how does that work? How come on appeal you can be acquitted? So if I don't appeal, I don't have money to appeal, then I'm guilty. So therefore something is wrong with that system, but it's still the best system we can have.
-    confidence: 0.84
-    review_notes: [These are the speaker's observations and questions, not legal advice or a verified description of appellate procedure.]
-  - id: p20260621-is-it-true
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-truth
-    start: 5939.76
-    end: 6031.86
-    type: sermon
-    title: Is it true? Testing testimony and daily life
-    summary: Yong concludes by asking whether claims are objectively and theologically true and recaps the Spirit as helper, abiding presence and truth.
-    questions: [What question does the speaker ask Christians to apply to their testimonies?]
-    topics: [truth, discernment, holy-spirit]
-    scripture: ['John 14:16-17']
-    transcript: |
-      What is pointed out here is the importance of truth. It's actually extremely important.
-      [Senior pastor quotations omitted from this excerpt.] With regard to our brothers and sisters in the charismatic church, or with regard to all our life, we believe that when we believe in our Lord Jesus Christ, the Holy Spirit comes and indwell in us.
-      [Verse-derived phrase omitted.] So the way we live our life, the things we say to others, the testimony you come up and you talk about, you need to ask your question, is this true? I believe that if all of us honestly ask ourselves this question, is it true, is it objectively true to begin with, then is it theologically true, which I will touch on in our next session, a lot of the charismatic chaos and a lot of the chaos in our life will disappear.
-      May we always understand that God, the indwelling Spirit, is first of all our helper. He's going to be with us forever, indwelling. And third, he is the truth.
-      [John 14:6 phrase omitted.] May we live a truthful life. Let us pray.
-    confidence: 0.91
-    review_notes: [6000-second slide reads Is It True?; length slightly above 90 seconds preserves conclusion.]
-  - id: p20260621-sermon-closing-prayer
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-sermon-prayer
-    start: 6032.12
-    end: 6081.24
-    type: prayer
-    title: Prayer to live truthfully
-    summary: Yong prays for the congregation to live truthfully in large and small matters, thanking God for the Spirit's help and intercession.
-    questions: []
-    topics: [prayer, truth, holy-spirit]
-    scripture: ['Romans 8:26-27']
-    transcript: |
-      We thank you, O God, for teaching us from your word, but we acknowledge that we have reached a very profound and difficult aspect of our faith. But our Lord Jesus Christ declared clearly that God, the Holy Spirit, as in the attributes of God, is our helper, is eternally with us, indwelling with us, empowering us, helping us. And the Book of Romans says he even prays for us when we don't know how to even pray in words. And most of all, that he is the Spirit of truth. May we live life in truth, in every aspect, big and small.
-      [Scriptural phrase omitted.] In Jesus' name we pray. Amen.
-    confidence: 0.92
+    summary: Yong applies the Spirit of truth to engineering, online opinion and qualified court
+      commentary, urging objective and theological testing of claims before praying for truthful
+      living through the Spirit's help.
+    keywords:
+      - spirit of truth
+      - truth decay
+      - objective
+      - opinion
+      - truth seeking
+      - courts
+      - testimony
+    topics:
+      - holy-spirit
+      - truth
+      - discernment
+      - justice
+      - prayer
+    scripture:
+      - John 14:16-17
+      - Romans 8:26-27
+    source_chapters:
+      - s20260621-truth
+      - s20260621-sermon-prayer
     review_notes: []
-  - id: p20260621-creed
+    speaker_id: yong-teck-meng
+  - id: c20260621-creed-fathers-appreciation
     video_id: dNeZD1HUmmE
-    section_id: s20260621-creed
     start: 6082.74
-    end: 6127.26
-    type: creed
-    title: Affirming the Apostles' Creed
-    summary: The congregation is invited to stand and affirm the Apostles' Creed.
-    questions: []
-    topics: [worship, faith]
-    scripture: []
-    transcript: |
-      Congregation, would you stand with me as we affirm our faith by reading the Apostles' Creed? The Apostles' Creed.
-      [Creed recitation omitted: ASR reverses ascended/descended and corrupts other phrases; no wording supplied from memory.]
-      You may be seated.
-    confidence: 0.85
-    review_notes: [Human listening required before publishing any full creed transcript.]
-  - id: p20260621-parenthood
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-fathers
-    start: 6128.22
-    end: 6199.08
+    end: 6510.32
+    title: Creed and Father's Day Appreciation
     type: address
-    title: Experiencing fatherhood
-    summary: The speaker introduces Father's Day appreciation and recalls the change in identity at his first daughter's birth.
-    questions: []
-    topics: [service-life, responsibility]
+    summary: The congregation affirms the Apostles' Creed before an unidentified speaker reflects on
+      enduring fatherhood and makes gender-role claims, followed by children's gifts and prayer for
+      fathers and families.
+    keywords:
+      - apostles creed
+      - fatherhood
+      - gender roles
+      - appreciation
+      - children
+    topics:
+      - worship
+      - faith
+      - service-life
+      - responsibility
+      - prayer
     scripture: []
-    transcript: |
-      I want to now commemorate the fathers among us for this Father's Day. This is something which is a privilege given to folks among us.
-      [Excerpt omitted.] It's not something that you can write about, read about, but something that you experience. I myself had that understanding. I mean, I'm into all this faith, religion, all this very deep thinking thing. And I thought that I know fatherhood well, right? My wife was expecting and all that. And I was there when my first daughter was delivered, and I kid you not, the first thing that came to my mind was, oh my God, what have I done? Because all of a sudden the status changed. You are now a father. And for those of you who are mothers, you also know that you are now a mother.
-      [Marriage-status comparison omitted.]
-    confidence: 0.88
-    review_notes: [Post-sermon speaker attribution left unset; continuity suggested by frames but no fresh full-name introduction here.]
-  - id: p20260621-parenthood-gender
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-fathers
-    start: 6199.68
-    end: 6278
-    type: address
-    title: Parenthood, gender roles and appreciation
-    summary: The speaker describes parenthood as enduring, criticizes an acquaintance's use of ex-sons and makes complementarian gender-role claims and Father's Day jokes before inviting appreciation.
-    questions: []
-    topics: [responsibility, service-life]
-    scripture: []
-    transcript: |
-      But when you are father, you're always a father, and when you are mother, you're always a mother, isn't it?
-      [Family-conflict anecdote omitted.] It's a biological thing. And so it's a gracious thing to experience parenthood. And of course fathers and mothers are different. God gives us different gender, and we believe in complementarism, meaning that we believe that the gender roles are different, and it is quite clear.
-      [Remarks about masculinity and contrasting Mother's Day/Father's Day meals omitted from this excerpt.]
-      But still, we want to appreciate our fathers among us.
-    confidence: 0.84
-    review_notes: [Review the unabridged 6247.54-6273.66-second remarks about men showing emotion and gender stereotypes in context; summary attributes them and does not endorse them.]
-  - id: p20260621-fathers-gifts
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-fathers
-    start: 6278
-    end: 6454.78
-    type: service-life
-    title: Children distribute Father's Day gifts
-    summary: Fathers are invited to stand while children distribute a small token of appreciation, with practical directions until everyone is included.
-    questions: []
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      May I invite all the fathers to stand up, and we'll get a kid to give you a little token of appreciation.
-      [Aside omitted.] A little bit of chocolate kind of thing. Okay, fathers, would you stand, and the kids, would you help us distribute? Don't go and give everything to your own father. You're supposed to distribute.
-      [Gift-distribution directions, names, jokes and repeated calls omitted; no missing words reconstructed.]
-      Am I missing anyone? Anyway, if we miss you, tell me later. I will pass it to you. Come, we pray together.
-    confidence: 0.87
-    review_notes: [Long practical distribution unit retained as one event, including ASR-uncertain directions.]
-  - id: p20260621-prayer-fathers
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-fathers
-    start: 6455.78
-    end: 6508.92
-    type: prayer
-    title: Prayer for fathers and their families
-    summary: The prayer thanks God for family and asks for fathers' physical, emotional and spiritual health and care for their children.
-    questions: []
-    topics: [prayer, responsibility, service-life]
-    scripture: []
-    transcript: |
-      We thank you, God Almighty, for you have given us people who love us in our life and people whom we love. And most of all, you have given us the privilege of calling you our Father.
-      [Lord's Prayer quotation omitted.]
-      And we are reminded that you, above all, are the best Father that there can ever be. May all the fathers standing before you be blessed, not only this morning, for the rest of their life, for you have given them the privilege of caring for family, caring for people who are offsprings of them, that you may bring their children up in the Lord as commanded by you. And may they be kept healthy, both physically, emotionally and spiritually, so that for the rest of their life they can continue to glorify your name and to enjoy you forevermore. In Jesus' name we pray. Amen. You may be seated.
-    confidence: 0.9
+    source_chapters:
+      - s20260621-creed
+      - s20260621-fathers
     review_notes: []
-  - id: p20260621-offertory
+  - id: c20260621-offertory-closing
     video_id: dNeZD1HUmmE
-    section_id: s20260621-offertory
     start: 6510.32
-    end: 6639.62
-    type: offering
-    title: Offertory for cultural mandate work
-    summary: The speaker announces giving arrangements and says the third-Sunday second-box offering supports cultural mandate work; an offertory interval follows.
-    questions: [What is the second-box offering designated for?]
-    topics: [stewardship, service-life]
-    scripture: []
-    transcript: |
-      We're going to move into our offertory now. You may give via your QR code or by the box in front. This being the third Sunday, the second box offering will go to cultural mandate work.
-      [Offertory interval; ASR marks piano and isolated unverified filler. Payment details are not transcribed.]
-    confidence: 0.91
-    review_notes: [Offering slides inspected at 6600 and 6640 seconds; no actual listening claim.]
-  - id: p20260621-closing-hymn
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-closing-hymn
-    start: 6639.62
-    end: 6918.24
-    type: music
-    title: Closing hymn — learning the melody and singing
-    summary: The leader asks the pianist to demonstrate an unfamiliar closing hymn, then invites singing; the slides contain Haven of Rest wording.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: |
-      Okay, our closing hymn today may be new to some, so maybe I invite the pianist to play it once first. The melody is quite easy to pick up, so let's listen to it once before we sing.
-      [Piano demonstration; unverified ASR filler omitted.]
-      Let's sing it together.
-      [Song lyrics omitted; congregation later invited to rise.]
-    confidence: 0.85
-    review_notes: [Long musical unit includes melody demonstration; lyric slide inspected at 6700/6900. No standalone title card verified. Segment 1604 warning lies in omitted singing.]
-  - id: p20260621-doxology-benediction
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-blessing
-    start: 6918.24
-    end: 6992.9
-    type: blessing
-    title: Doxology and a scriptural blessing
-    summary: The congregation sings the doxology and receives a blessing announced from 1 Thessalonians 5 and 2 Corinthians 13.
-    questions: [Which passages are announced for the blessing?]
-    topics: [worship]
-    scripture: ['1 Thessalonians 5', '2 Corinthians 13']
-    transcript: |
-      [ASR opening unclear.] Doxology in praise of God, and in faith receive his blessing taken from 1 Thessalonians 5 and 2 Corinthians 13.
-      [Doxology lyrics omitted, approximately 6931.44-6957.34 seconds.]
-      [Scriptural benediction omitted, approximately 6958.86-6977.78 seconds.]
-      [Sung response omitted.] Congregation, please be seated.
-    confidence: 0.91
-    review_notes: [Only announced chapter references normalized; no more precise verses inferred from memory.]
-  - id: p20260621-announcements-dismissal
-    video_id: dNeZD1HUmmE
-    section_id: s20260621-announcements
-    start: 6994.16
-    end: 7054.48
-    type: announcement
-    title: Scripture readers, rally participation and dismissal
-    summary: The speaker invites ministry participation, especially scripture reading, mentions opportunities to join the senior pastor's rallies and asks for prayer before dismissing the congregation to silent meditation.
-    questions: [What ministry opportunity is mentioned at the end of the service?]
-    topics: [service-life, service, mission, prayer]
-    scripture: []
-    transcript: |
-      Only have a few announcement for you again. [Opening wording uncertain.] Come and join us in ministry work. And you notice that we don't always have scripture reader, so you should come forward and do scripture reading. And then also, this is coming to an end soon, in July. I know that a couple of you have signed up. So these are still the dates where Senior Pastor is inviting people to join him in his rallies. He's very busy, you know.
-      [Camp/concert name uncertain in ASR; excerpt omitted.] And then July he will launch into all this again. So let's always continue to pray for him as his labour is very, very more than any one of us can imagine. And this also may continue to inspire us to do more things for the Lord Jesus Christ. That's all the announcement I have for you. You may be dismissed with silent meditation. Know that the Lord is with you.
-    confidence: 0.88
-    review_notes: [7050-second frame displays a North Sumatra 2026 Stephen Tong rally notice; no uncertain camp/concert name or individual event date invented. Recording ends immediately after dismissal.]
+    end: 7054.581
+    title: Offertory and Closing
+    type: closing
+    summary: The leaders announce an offering for cultural mandate work, guide an unfamiliar hymn with
+      unverified Haven of Rest title wording, and lead doxology, blessing and ministry invitations
+      before dismissal to silent meditation.
+    keywords:
+      - cultural mandate work
+      - offertory
+      - closing hymn
+      - melody
+      - doxology
+      - blessing
+    topics:
+      - stewardship
+      - service-life
+      - worship
+      - service
+      - mission
+      - prayer
+    scripture:
+      - 1 Thessalonians 5
+      - 2 Corinthians 13
+    source_chapters:
+      - s20260621-offertory
+      - s20260621-closing-hymn
+      - s20260621-blessing
+      - s20260621-announcements
+    review_notes: []
+sermon_description: Rev. Yong Teck Meng connects love for Christ with a restored life of obedience
+  and service rather than religious bargaining. Turning to Jesus' promise in John 14, he urges
+  listeners to understand the Holy Spirit through Scripture rather than dramatic experiences alone.
+  He presents the Spirit as divine helper and abiding presence, calling believers to seek truth,
+  test claims and live truthfully amid weakness and continuing temptation.

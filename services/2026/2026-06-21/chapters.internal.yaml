@@ -1,0 +1,504 @@
+chapters:
+  - id: s20260621-preparation
+    video_id: dNeZD1HUmmE
+    start: 4.76
+    end: 340.9
+    type: prayer
+    title: Preparing for worship
+    confidence: 0.87
+    scripture: []
+    topics:
+      - prayer
+      - worship
+      - repentance
+    summary: The leader guides quiet prayer through adoration of God as creator and Lord, confession, thanksgiving and personal needs. He thanks God for gathering safely, asks for humble, attentive hearts and introduces Jason as worship leader.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - personal needs
+  - id: s20260621-welcome
+    video_id: dNeZD1HUmmE
+    start: 340.9
+    end: 474.8
+    type: welcome
+    title: Welcome and silent meditation
+    confidence: 0.9
+    scripture: []
+    topics:
+      - service-life
+      - meditation
+    summary: The leader welcomes the first English service, invites mutual greetings and asks worshippers to set aside the week's distractions.
+    keywords:
+      - silent meditation
+  - id: s20260621-opening
+    video_id: dNeZD1HUmmE
+    start: 474.8
+    end: 775.76
+    type: worship
+    title: Call to worship and opening hymn and prayer
+    confidence: 0.91
+    scripture:
+      - Psalms 75:1-3
+    topics:
+      - worship
+      - prayer
+    summary: The leader opens worship with Psalms 75:1-3 in the triune God's name, followed by the congregation's opening hymn. His prayer acknowledges Father and Son, confesses sin, thanks God for freedom to worship and asks for help for the preacher and congregation.
+    keywords:
+      - call to worship
+      - ages past
+  - id: s20260621-ancient-of-days
+    video_id: dNeZD1HUmmE
+    start: 775.76
+    end: 1274.98
+    type: worship
+    title: Ancient of Days — introduction and song
+    confidence: 0.83
+    review_notes:
+      - Copyright-restriction slate interrupts the song; exact interruption bounds require review.
+    scripture:
+      - Daniel 7
+    topics:
+      - authority
+      - worship
+      - faith
+    summary: Introducing Ancient of Days through Daniel 7, the leader describes God's enduring authority over empires and Jesus' coming, suffering and victory, inviting trust amid uncertainty. The song appears as a music video interrupted by a source copyright-restriction slate before the service resumes.
+    keywords:
+      - ancient of days
+      - authority
+      - empires
+      - came near
+  - id: s20260621-responsive-readings
+    video_id: dNeZD1HUmmE
+    start: 1274.98
+    end: 1678.06
+    type: scripture-reading
+    title: Responsive readings from Proverbs and John
+    confidence: 0.93
+    scripture:
+      - Proverbs 26
+      - John 14:15-31
+    topics:
+      - worship
+      - holy-spirit
+    summary: The leader guides alternate-verse readings with the congregation from Proverbs 26, followed by John 14:15-31.
+    keywords:
+      - responsive reading
+      - proverbs
+      - john
+  - id: s20260621-promises
+    video_id: dNeZD1HUmmE
+    start: 1678.06
+    end: 1882.38
+    type: worship
+    title: Standing on the Promises
+    confidence: 0.9
+    scripture: []
+    topics:
+      - faith
+      - worship
+    summary: The leader contrasts broken human promises with confidence in God's promises as he introduces Standing on the Promises. The congregation sings the hymn before the video anthem.
+    keywords:
+      - promises
+  - id: s20260621-anthem
+    video_id: dNeZD1HUmmE
+    start: 1882.38
+    end: 2057.84
+    type: music
+    title: Video anthem — The Lord is My Shepherd
+    confidence: 0.94
+    scripture: []
+    topics:
+      - worship
+    summary: The leader announces The Lord is My Shepherd and a landscape-backed music video follows.
+    keywords:
+      - my shepherd
+      - video anthem
+  - id: s20260621-romans-reading
+    video_id: dNeZD1HUmmE
+    start: 2057.84
+    end: 2173.72
+    type: scripture-reading
+    title: Romans 8:26-30
+    confidence: 0.96
+    scripture:
+      - Romans 8:26-30
+    topics:
+      - holy-spirit
+      - prayer
+    summary: The reader corrects the initial announcement to Romans 8:26-30 and reads the passage before the sermon.
+    keywords:
+      - romans 8
+  - id: s20260621-sermon-introduction
+    video_id: dNeZD1HUmmE
+    start: 2173.72
+    end: 2898.92
+    type: sermon
+    title: The Third Person — introduction and Greater Works recap
+    speaker_id: yong-teck-meng
+    confidence: 0.94
+    scripture:
+      - John 14:15-24
+      - Romans 8:26-30
+      - John 14:8-14
+      - John 14:12
+      - John 14:13-14
+    topics:
+      - service-life
+      - holy-spirit
+      - knowing-god
+      - discipleship
+      - service
+      - discernment
+      - mission
+      - responsibility
+      - prayer
+    summary: After greeting fathers and postponing appreciation until after the creed, Yong introduces difficult Spirit teaching with questions and prayer, using Philip and his ministry nerves to urge humble lifelong learning. His recap favors following Jesus over wealth-based models, with qualified guidance and unverified comparisons, interprets greater works as wider reach rather than sinlessness, and urges all believers to start small, learn joyfully through service and pray for God's purposes.
+    keywords:
+      - third person
+      - farewell discourse
+      - philip
+      - humility
+      - lifelong learning
+      - would jesus do
+      - greater works
+      - start small
+      - triune
+      - holy spirit
+  - id: s20260621-love-obedience
+    video_id: dNeZD1HUmmE
+    start: 2898.92
+    end: 3307.78
+    type: sermon
+    title: Love and obedience — one-way traffic
+    speaker_id: yong-teck-meng
+    confidence: 0.89
+    scripture:
+      - John 14:15
+      - John 14:21
+      - John 14:23-24
+      - Ephesians 2:10
+      - Luke 18
+      - John 14:12
+    topics:
+      - discipleship
+      - faith
+      - discernment
+      - service
+      - hypocrisy
+      - repentance
+    summary: Reading John 14 alongside Ephesians 2:10, Yong argues that love for Jesus produces good works, while kindness across beliefs, including animal care, does not prove Christian identity. Through the Pharisee and tax collector he distinguishes love from outward compliance, stressing repentance and a changed direction rather than sinlessness.
+    keywords:
+      - love
+      - one way traffic
+      - good deeds
+      - animals
+      - direction
+  - id: s20260621-restoration
+    video_id: dNeZD1HUmmE
+    start: 3307.78
+    end: 3833.96
+    type: sermon
+    title: Christ's commandments and a restored life
+    speaker_id: yong-teck-meng
+    confidence: 0.88
+    scripture:
+      - John 14:6
+      - John 10:10
+      - Galatians 5:22-23
+    topics:
+      - discipleship
+      - discernment
+      - knowing-god
+      - truth
+      - service-life
+      - faith
+      - holy-spirit
+    summary: Using an AI rules image, commandment summaries, the rich young man and a Sunday-school anecdote, Yong argues that Christ's commandments point to Christ himself beyond checklists and worship routines. He distinguishes redemption from lifelong restoration, connecting full, joyous life and the fruit of the Spirit with a wedding couple's scripture choice and a DNA-change metaphor for desiring Christ.
+    keywords:
+      - rules
+      - commandments of christ
+      - redemption
+      - restoration
+      - fruit
+      - holy spirit
+  - id: s20260621-transactional-faith
+    video_id: dNeZD1HUmmE
+    start: 3833.96
+    end: 4281.02
+    type: sermon
+    title: Transactional faith and faithful love
+    speaker_id: yong-teck-meng
+    confidence: 0.86
+    scripture: []
+    topics:
+      - faith
+      - discernment
+      - service-life
+      - discipleship
+      - responsibility
+      - temptation
+    summary: Yong criticizes reward-and-punishment faith, winner culture, religious charms and consumer expectations of church amenities and school connections. Through wedding vows, an elderly couple and a response he attributes to Pat Robertson about Alzheimer's, he urges enduring love and transformed identity while warning that temptation continues.
+    keywords:
+      - transactional
+      - consumer
+      - vows
+      - alzheimer
+  - id: s20260621-promise-spirit
+    video_id: dNeZD1HUmmE
+    start: 4281.02
+    end: 4513.82
+    type: sermon
+    title: The promised Spirit and the contemporary church
+    speaker_id: yong-teck-meng
+    confidence: 0.86
+    scripture:
+      - John 14:16
+      - John 14-16
+    topics:
+      - holy-spirit
+      - knowing-god
+      - service-life
+    summary: Yong introduces pneumatology through John 14's promise of the Spirit and the farewell discourse. Offering qualified estimates of charismatic church prominence in Singapore and globally, he notes varied reasons for joining the congregation and uses exposition to explain its understanding of the Spirit.
+    keywords:
+      - pneumatology
+      - doctrine
+      - holy spirit
+  - id: s20260621-charismatic-history
+    video_id: dNeZD1HUmmE
+    start: 4513.82
+    end: 4715.34
+    type: sermon
+    title: The speaker's account of charismatic history
+    speaker_id: yong-teck-meng
+    confidence: 0.85
+    scripture: []
+    topics:
+      - holy-spirit
+      - discernment
+      - service-life
+    summary: Yong traces charismatic history to the 1906 Azusa Street revival, acknowledging earlier phenomena and describing unverified manifestations, media-driven spread and denominational branches. He contrasts his account of Bible Presbyterian cessationism with the congregation's position, which he describes as non-cessationist but opposed to public tongues and extreme charismatic practice.
+    keywords:
+      - azusa street
+      - media
+      - charismatic
+  - id: s20260621-experiences
+    video_id: dNeZD1HUmmE
+    start: 4715.34
+    end: 5048.46
+    type: sermon
+    title: Recollections of charismatic experiences
+    speaker_id: yong-teck-meng
+    confidence: 0.83
+    scripture: []
+    topics:
+      - service-life
+      - discernment
+      - holy-spirit
+      - truth
+    summary: Yong recalls feeling alone as a non-charismatic army fellowship leader and reacting skeptically to tongues instruction, claims of seeing spirits and an extraordinary jumping testimony he translated. He describes pressure from dramatic testimonies and repeats an anecdote attributed to Dr. Tong about a Sundar Singh legend, without verifying these accounts.
+    keywords:
+      - army christian fellowship
+      - translating
+      - testimony
+  - id: s20260621-scripture-trinity
+    video_id: dNeZD1HUmmE
+    start: 5048.46
+    end: 5303.86
+    type: sermon
+    title: Scripture and the mystery of the Trinity
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture:
+      - John 17:17
+      - John 14:15-16
+    topics:
+      - truth
+      - knowing-god
+      - holy-spirit
+      - trinity
+      - discernment
+    summary: Yong grounds understanding of God in scripture and the Westminster Confession's Trinity statement, acknowledging limits of comprehension and translation for begotten and proceeding. Recapping transformed but imperfect life, he urges biblical inquiry into the Spirit's work rather than reliance on impressions, visions or perceived signs.
+    keywords:
+      - sola scriptura
+      - westminster confession
+      - human expression
+      - trinity
+  - id: s20260621-helper
+    video_id: dNeZD1HUmmE
+    start: 5303.86
+    end: 5590.7
+    type: sermon
+    title: The Spirit as helper and abiding presence
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture:
+      - John 14:16
+      - Romans 8:26-27
+      - John 14:17-20
+      - John 14:21-24
+    topics:
+      - holy-spirit
+      - knowing-god
+      - prayer
+    summary: Yong describes the divine Spirit as helper, advocate, counselor and comforter, relating intercession in Romans 8 to abiding presence with the Father and Son in John 14. He presents this as support rather than magic, discussing resurrection, Pentecost and last-day readings of that day without claiming agreement on his account of the last-day reading.
+    keywords:
+      - helper and comforter
+      - holy spirit
+      - weakness
+  - id: s20260621-presence
+    video_id: dNeZD1HUmmE
+    start: 5590.7
+    end: 5680.56
+    type: sermon
+    title: Help in loneliness and in the church
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture:
+      - John 14:16-24
+    topics:
+      - holy-spirit
+      - service-life
+      - faith
+    summary: Yong encourages trust in the Spirit's lasting presence and describes other believers as practical help so that a person need not face life alone.
+    keywords:
+      - holy spirit
+  - id: s20260621-truth
+    video_id: dNeZD1HUmmE
+    start: 5680.56
+    end: 6031.86
+    type: sermon
+    title: The Spirit of truth and truth decay
+    speaker_id: yong-teck-meng
+    confidence: 0.89
+    scripture:
+      - John 14:16-17
+    topics:
+      - holy-spirit
+      - truth
+      - discernment
+      - justice
+    summary: Yong illustrates objective truth through engineering and remarks attributed to Singapore's Chief Justice on opinion, fact and online reinforcement. Questioning appeal acquittals while calling the court system the best available, he urges testing testimony and daily claims for objective and theological truth, recapping the Spirit as helper, abiding presence and truth.
+    keywords:
+      - spirit of truth
+      - objective
+      - truth decay
+      - opinion
+      - truth seeking
+      - courts
+      - testimony
+  - id: s20260621-sermon-prayer
+    video_id: dNeZD1HUmmE
+    start: 6031.86
+    end: 6082.74
+    type: prayer
+    title: Prayer for life in truth
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture:
+      - Romans 8:26-27
+    topics:
+      - prayer
+      - truth
+      - holy-spirit
+    summary: Yong prays for the congregation to live truthfully in large and small matters, thanking God for the Spirit's help and intercession.
+    keywords:
+      - truth
+      - holy spirit
+  - id: s20260621-creed
+    video_id: dNeZD1HUmmE
+    start: 6082.74
+    end: 6128.22
+    type: creed
+    title: Apostles' Creed
+    confidence: 0.86
+    review_notes:
+      - ASR reverses ascended/descended and corrupts other creed words; recitation omitted rather than repaired from memory.
+    scripture: []
+    topics:
+      - worship
+      - faith
+    summary: The congregation is invited to stand and affirm the Apostles' Creed.
+    keywords:
+      - apostles creed
+  - id: s20260621-fathers
+    video_id: dNeZD1HUmmE
+    start: 6128.22
+    end: 6510.32
+    type: address
+    title: Father's Day appreciation and prayer
+    confidence: 0.88
+    scripture: []
+    topics:
+      - service-life
+      - responsibility
+      - prayer
+    summary: The speaker recalls becoming a father, describes enduring parenthood, criticizes an acquaintance's use of ex-sons and offers complementarian gender-role claims and Father's Day jokes. Children distribute gifts to the fathers, followed by prayer thanking God for family and asking for fathers' physical, emotional and spiritual health and care for their children.
+    keywords:
+      - fatherhood
+      - gender roles
+      - appreciation
+      - children
+  - id: s20260621-offertory
+    video_id: dNeZD1HUmmE
+    start: 6510.32
+    end: 6639.62
+    type: offering
+    title: Offertory and cultural mandate work
+    confidence: 0.9
+    scripture: []
+    topics:
+      - stewardship
+      - service-life
+    summary: The speaker announces giving arrangements and says the third-Sunday second-box offering supports cultural mandate work; an offertory interval follows.
+    keywords:
+      - cultural mandate work
+      - offertory
+  - id: s20260621-closing-hymn
+    video_id: dNeZD1HUmmE
+    start: 6639.62
+    end: 6918.24
+    type: worship
+    title: Closing hymn and melody introduction
+    confidence: 0.84
+    review_notes:
+      - Haven of Rest wording appears on slides; standalone title card not inspected. Avoid silently correcting ASR lyrics.
+    scripture: []
+    topics:
+      - worship
+    summary: The leader asks the pianist to demonstrate an unfamiliar closing hymn, then invites singing. The existing summary notes Haven of Rest wording on slides, without a verified standalone title card.
+    keywords:
+      - closing hymn
+      - melody
+  - id: s20260621-blessing
+    video_id: dNeZD1HUmmE
+    start: 6918.24
+    end: 6994.16
+    type: blessing
+    title: Doxology and benediction
+    confidence: 0.92
+    scripture:
+      - 1 Thessalonians 5
+      - 2 Corinthians 13
+    topics:
+      - worship
+    summary: The congregation sings the doxology and receives a blessing announced from 1 Thessalonians 5 and 2 Corinthians 13.
+    keywords:
+      - doxology
+      - blessing
+  - id: s20260621-announcements
+    video_id: dNeZD1HUmmE
+    start: 6994.16
+    end: 7054.581
+    type: announcement
+    title: Ministry invitations and dismissal
+    confidence: 0.88
+    scripture: []
+    topics:
+      - service-life
+      - service
+      - mission
+      - prayer
+    summary: The speaker invites ministry participation, especially scripture reading, mentions opportunities to join the senior pastor's rallies and asks for prayer before dismissing the congregation to silent meditation.
+    keywords:
+      - scripture

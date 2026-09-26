@@ -1,0 +1,478 @@
+chapters:
+  - id: s0719-welcome
+    video_id: Z-vRVB-WucA
+    start: 0
+    end: 58.94
+    type: welcome
+    title: Greeting the online congregation
+    speaker_id: yong-teck-meng
+    confidence: 0.87
+    scripture: []
+    topics:
+      - church-life
+    summary: Rev. Yong Teck Meng greets the children and other participants joining by Zoom and invites them to turn on their cameras.
+    keywords: []
+  - id: s0719-worship
+    video_id: Z-vRVB-WucA
+    start: 58.94
+    end: 291.72
+    type: address
+    title: Worship and reflection under pandemic restrictions
+    speaker_id: yong-teck-meng
+    confidence: 0.84
+    scripture: []
+    topics:
+      - church-life
+      - prayer
+      - discernment
+      - discipleship
+    summary: The preacher recounts a masked wedding, disagreements over singing restrictions and speaking barriers as prompts for unfamiliar forms of meditation. He draws on Philip Yancey’s account of a silent monastic retreat to reflect on other prayer traditions and learning not to need things.
+    keywords:
+      - wedding
+      - singing
+  - id: s0719-recap-rich-man
+    video_id: Z-vRVB-WucA
+    start: 291.72
+    end: 516.76
+    type: sermon
+    title: Recap — the rich man and Lazarus
+    speaker_id: yong-teck-meng
+    confidence: 0.86
+    scripture:
+      - Luke 16:19-31
+      - Matthew 8:11-12
+    topics:
+      - discernment
+      - discipleship
+      - faith
+    summary: The preacher revisits the rich man and Lazarus, explaining why some read it as an actual event and illustrating luxury with purple dye, a questioned shellfish figure and a snail-rescuing aside. He contrasts abundance with need and outlines his understanding of paradise, Hades, resurrection and judgment.
+    keywords:
+      - rich man
+      - lazarus
+      - purple cloth
+      - snail
+      - death
+      - judgment
+  - id: s0719-recap-judgment
+    video_id: Z-vRVB-WucA
+    start: 516.76
+    end: 795.6
+    type: sermon
+    title: Recap — judgment and sins of omission
+    speaker_id: yong-teck-meng
+    confidence: 0.85
+    scripture:
+      - Luke 16:19-31
+      - Matthew 25
+    topics:
+      - faith
+      - responsibility
+      - discipleship
+    summary: The preacher rejects annihilation as an alternative to eternal punishment, using everyday common grace to consider the hard-to-imagine loss of God’s goodness. He connects the rich man’s neglect and Matthew 25 with sins of commission and omission, human imperfection and his warning that present choices have irreversible eternal consequences.
+    keywords:
+      - eternal
+      - common grace
+      - sins of commission
+      - omission
+      - irreversible
+  - id: s0719-recap-word
+    video_id: Z-vRVB-WucA
+    start: 795.6
+    end: 872.26
+    type: sermon
+    title: Recap — the importance of the Word
+    speaker_id: yong-teck-meng
+    confidence: 0.87
+    scripture:
+      - Luke 16:19-31
+    topics:
+      - faith
+      - discipleship
+    summary: The preacher interprets the conclusion of the Lazarus account as support for the central place of Scripture and introduces his chapter-by-chapter approach to Luke.
+    keywords:
+      - word
+  - id: s0719-opening-prayer
+    video_id: Z-vRVB-WucA
+    start: 872.26
+    end: 930
+    type: prayer
+    title: Prayer for teachable hearts
+    speaker_id: yong-teck-meng
+    confidence: 0.84
+    review_notes:
+      - End is an approximate within-segment transition.
+    scripture: []
+    topics:
+      - prayer
+    summary: The preacher prays for physical and online listeners to receive the message humbly and for his own ministry to be acceptable to God.
+    keywords: []
+  - id: s0719-interpretation
+    video_id: Z-vRVB-WucA
+    start: 930
+    end: 1257.06
+    type: sermon
+    title: Reading Luke with faith and attention to context
+    speaker_id: yong-teck-meng
+    confidence: 0.84
+    scripture:
+      - Luke 17:1-9
+      - Romans 1:17
+      - Romans 1:16-17
+    topics:
+      - discernment
+      - faith
+    summary: The preacher compares Reformed and liberal commentaries, using news perspectives and Singapore’s election to illustrate differing readings while expressing his judgments about media bias. Challenging disconnected readings of Luke 17 and assumptions excluding miracles, he invokes Romans 1:17 and his belief in the Bible as God’s Word to argue for coherence.
+    keywords:
+      - luke
+      - commentaries
+      - news
+      - interpretation
+  - id: s0719-continuity
+    video_id: Z-vRVB-WucA
+    start: 1257.06
+    end: 1407.88
+    type: sermon
+    title: From Lazarus to trials and temptation
+    speaker_id: yong-teck-meng
+    confidence: 0.86
+    scripture:
+      - Luke 16:19-31
+      - Luke 17:1-9
+    topics:
+      - prayer
+      - faith
+      - temptation
+    summary: The preacher imagines how disruptive Jesus’ teaching would have seemed and repeats a suggestion attributed to Philip Yancey about personal prayer. He reads Luke 17 as continuing the Lazarus warning and preparing disciples for trials and temptations.
+    keywords:
+      - temptations
+      - lazarus
+  - id: s0719-realism
+    video_id: Z-vRVB-WucA
+    start: 1407.88
+    end: 1572.16
+    type: sermon
+    title: Unlearning unrealistic expectations
+    speaker_id: yong-teck-meng
+    confidence: 0.84
+    scripture:
+      - Luke 17:1-9
+    topics:
+      - discernment
+      - temptation
+    summary: The preacher uses marriage preparation and celebrity imagery to argue that idealized expectations leave people unprepared for difficulty. He describes couples adapting wedding expectations and argues that trials and temptations are intertwined.
+    keywords:
+      - temptation
+  - id: s0719-test-introduction
+    video_id: Z-vRVB-WucA
+    start: 1572.16
+    end: 1695.72
+    type: sermon
+    title: Introducing the marshmallow test
+    speaker_id: yong-teck-meng
+    confidence: 0.87
+    scripture: []
+    topics:
+      - temptation
+    summary: The preacher introduces the marshmallow test as an illustration of trial and temptation and describes its psychologist and Stanford background. He explains the choice between eating now and waiting for a second treat, then describes later participant follow-up.
+    keywords:
+      - marshmallow
+  - id: s0719-test-video
+    video_id: Z-vRVB-WucA
+    start: 1695.72
+    end: 1915.7
+    type: illustration
+    title: Embedded marshmallow-test video
+    confidence: 0.86
+    review_notes:
+      - Dialogue belongs to the embedded clip, not the preacher. Gaps and largely visual action are retained.
+    scripture: []
+    topics:
+      - temptation
+    summary: An adult in the embedded video explains that a child can eat immediately or wait for another marshmallow. The clip shows extended waiting with a brief exclamation and repeated instructions, ending with an adult returning to let a child have both treats.
+    keywords: []
+  - id: s0719-test-discussion
+    video_id: Z-vRVB-WucA
+    start: 1915.7
+    end: 2060.94
+    type: sermon
+    title: Delayed gratification and competing explanations
+    speaker_id: yong-teck-meng
+    confidence: 0.87
+    scripture: []
+    topics:
+      - discernment
+      - temptation
+      - discipleship
+    summary: The preacher describes an apparent link between waiting and later success, then acknowledges challenges involving family background and trust in promised rewards. He favors delayed gratification’s practical value, contrasting studying now with playing a game.
+    keywords:
+      - marshmallow
+      - delayed gratification
+      - discipline
+  - id: s0719-fallen-world
+    video_id: Z-vRVB-WucA
+    start: 2060.94
+    end: 2212.5
+    type: sermon
+    title: A fallen world and the activity of evil
+    speaker_id: yong-teck-meng
+    confidence: 0.87
+    scripture:
+      - Genesis 3:17-18
+      - 1 Peter 5:8
+    topics:
+      - temptation
+      - faith
+      - discernment
+    summary: The preacher identifies fallen humanity and the fallen earth as reasons for trials and temptations, citing Isaiah and Genesis. Citing 1 Peter 5:8, he argues that evil acts subtly in marriages and personal life, including through people themselves.
+    keywords:
+      - fallen people
+      - evil
+  - id: s0719-growth
+    video_id: Z-vRVB-WucA
+    start: 2212.5
+    end: 2392.88
+    type: sermon
+    title: Trials and the paradox of growth
+    speaker_id: yong-teck-meng
+    confidence: 0.87
+    scripture:
+      - Luke 17:1-9
+    topics:
+      - faith
+      - temptation
+      - forgiveness
+      - discipleship
+    summary: The preacher attributes to Stephen Tong the view that trials and temptations are necessary for growth and discusses the difficulty of accepting that paradox. Drawing on premarital counseling, he argues that conflict can expose differences and offer opportunities to learn understanding and forgiveness.
+    keywords:
+      - tong
+      - trials
+      - growth
+      - forgiveness
+  - id: s0719-resistance
+    video_id: Z-vRVB-WucA
+    start: 2392.88
+    end: 2537.06
+    type: sermon
+    title: Being tempted and choosing not to dwell on it
+    speaker_id: yong-teck-meng
+    confidence: 0.85
+    scripture: []
+    topics:
+      - temptation
+    summary: The preacher uses a saying attributed to Luther and a first-look analogy to distinguish encountering temptation from dwelling on it. Through jokes and a university recollection, he locates the problem in choosing to continue looking and dwelling on attraction.
+    keywords:
+      - temptation
+      - third look
+  - id: s0719-truth
+    video_id: Z-vRVB-WucA
+    start: 2537.06
+    end: 2755.74
+    type: sermon
+    title: Knowing the truth and recognizing consequences
+    speaker_id: yong-teck-meng
+    confidence: 0.89
+    scripture:
+      - John 8:31-32
+      - Psalms 119
+    topics:
+      - faith
+      - discipleship
+      - temptation
+      - responsibility
+      - discernment
+    summary: Recalling childhood memorization, the preacher interprets John 8 as calling for belief beyond a Christian label and truth that frees in salvation and everyday temptation. He draws on counseling about adultery and the consequences of smoking, gambling and drugs, acknowledging that stopping smoking is difficult.
+    keywords:
+      - word
+      - temptation
+      - truth
+      - adultery
+  - id: s0719-discipline
+    video_id: Z-vRVB-WucA
+    start: 2755.74
+    end: 2888.84
+    type: sermon
+    title: Practical safeguards and believing what one teaches
+    speaker_id: yong-teck-meng
+    confidence: 0.88
+    scripture:
+      - John 8:31-32
+    topics:
+      - temptation
+      - responsibility
+      - faith
+      - discipleship
+    summary: The preacher explains his practice of not handling offering money personally as a safeguard against temptation, while saying belief in God’s truth is more fundamental. Recounting a listener’s comment about his apparent conviction, he urges listeners to believe the message they profess.
+    keywords:
+      - temptation
+  - id: s0719-warning
+    video_id: Z-vRVB-WucA
+    start: 2888.84
+    end: 2984.46
+    type: sermon
+    title: Luke 17 and Matthew 18 — causing others to stumble
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture:
+      - Luke 17:1-9
+      - Matthew 18:5-7
+    topics:
+      - temptation
+      - responsibility
+    summary: The preacher identifies the warning against becoming a source of temptation as the message’s central emphasis, compares Luke 17 with Matthew 18, and explains the millstone illustration’s severity.
+    keywords:
+      - matthew 18
+      - temptation
+  - id: s0719-industry
+    video_id: Z-vRVB-WucA
+    start: 2984.46
+    end: 3140.94
+    type: sermon
+    title: Direct harm — industries and gambling
+    speaker_id: yong-teck-meng
+    confidence: 0.86
+    scripture:
+      - Luke 17:1-9
+      - Matthew 18:5-7
+    topics:
+      - responsibility
+      - temptation
+    summary: The preacher asks listeners to examine whether their work promotes harm, naming gambling, irresponsible drinking, tobacco, pornography and drugs as direct causes of stumbling. He rejects job creation as sufficient justification for casinos, citing ministry encounters with gambling debt, including among foreign workers.
+    keywords:
+      - gambling
+      - jobs
+  - id: s0719-lifestyle
+    video_id: Z-vRVB-WucA
+    start: 3140.94
+    end: 3317.48
+    type: sermon
+    title: The preacher’s argument about dress and temptation
+    speaker_id: yong-teck-meng
+    confidence: 0.82
+    review_notes:
+      - Preserves and attributes the preacher’s disputed dress/assault reasoning; not an archive endorsement or independent causal finding.
+    scripture: []
+    topics:
+      - responsibility
+      - temptation
+    summary: Discussing SlutWalk Singapore, the preacher disputes its reasoning about freedom of dress and makes a contested link between provocative clothing, assault and tempting others. Arguing against unrestricted self-assertion and extreme covering, he appeals to consideration for others through a Communion anecdote and another pastor’s reported comment.
+    keywords:
+      - dress
+      - temptation
+      - communion
+  - id: s0719-hypocrisy
+    video_id: Z-vRVB-WucA
+    start: 3317.48
+    end: 3521.68
+    type: sermon
+    title: Scandals and less obvious stumbling blocks
+    speaker_id: yong-teck-meng
+    confidence: 0.87
+    scripture:
+      - Luke 17:1-9
+      - Luke 16:19-31
+      - Matthew 18:5-7
+    topics:
+      - hypocrisy
+      - responsibility
+    summary: The preacher criticizes prosperity teaching, financial abuse and ostentatious pastors, linking these and everyday hypocrisy, hurtful conduct and neglect with damage to others’ faith and the rich man’s omissions. He reinforces the warning with an unverified story of Gandhi being refused church entry because of his clothing.
+    keywords:
+      - hypocrisy
+  - id: s0719-rights
+    video_id: Z-vRVB-WucA
+    start: 3521.68
+    end: 3639.54
+    type: sermon
+    title: Consider others before insisting on your rights
+    speaker_id: yong-teck-meng
+    confidence: 0.92
+    scripture:
+      - 1 Corinthians 8:8-9
+      - Luke 17:1-9
+      - Matthew 18:5-7
+      - 1 Corinthians 8:13
+    topics:
+      - responsibility
+      - discernment
+      - discipleship
+    summary: The preacher applies 1 Corinthians 8 to food offered to idols, arguing that exercising a legitimate right can harm a weaker believer’s faith. He uses Paul’s willingness to forgo meat to urge caution and consideration for others rather than insisting on rights that cause a fall.
+    keywords:
+      - stumbling block
+      - right
+      - think beyond
+  - id: s0719-recovery
+    video_id: Z-vRVB-WucA
+    start: 3639.54
+    end: 3696.88
+    type: sermon
+    title: Restore and forgive rather than cause a fall
+    speaker_id: yong-teck-meng
+    confidence: 0.92
+    scripture:
+      - Luke 17:1-9
+      - Luke 17:3-4
+    topics:
+      - forgiveness
+      - responsibility
+    summary: The preacher turns from avoiding harm to recovering others, interpreting Luke 17:3-4 as a call to love, correct and forgive rather than serve only oneself.
+    keywords:
+      - forgive
+  - id: s0719-faith
+    video_id: Z-vRVB-WucA
+    start: 3696.88
+    end: 3883.92
+    type: sermon
+    title: The apostles’ request for faith
+    speaker_id: yong-teck-meng
+    confidence: 0.89
+    scripture:
+      - Luke 17:1-9
+      - Luke 17:5-6
+      - Luke 17:6
+      - Luke 18:8
+    topics:
+      - faith
+      - forgiveness
+      - temptation
+      - discernment
+    summary: The preacher connects the apostles’ request for faith with resisting temptation, avoiding harm and forgiving, reading the mustard-seed imagery as hyperbole exposing small faith rather than a tree-moving technique. Including himself among those with small faith, he links deeper understanding with resistance, love and forgiveness before citing Luke 18:8.
+    keywords:
+      - apostles
+      - faith
+      - mustard seed
+      - hyperbole
+  - id: s0719-conclusion
+    video_id: Z-vRVB-WucA
+    start: 3883.92
+    end: 3937
+    type: sermon
+    title: Take faith seriously in daily practice
+    speaker_id: yong-teck-meng
+    confidence: 0.89
+    scripture:
+      - Luke 17:1-9
+      - John 8:31-32
+    topics:
+      - faith
+      - responsibility
+      - temptation
+    summary: The preacher concludes that listeners should take faith seriously, know and practice God’s Word, and avoid becoming the person through whom others fall into temptation.
+    keywords:
+      - faith
+      - temptation
+  - id: s0719-closing-prayer
+    video_id: Z-vRVB-WucA
+    start: 3937
+    end: 4005.801
+    type: prayer
+    title: Prayer not to become a source of temptation
+    speaker_id: yong-teck-meng
+    confidence: 0.86
+    review_notes:
+      - Approximate prayer onset within segment 740. Creed slide does not establish a spoken creed; recording ends after Amen.
+    scripture: []
+    topics:
+      - prayer
+      - responsibility
+    summary: The preacher prays that listeners will not become a source of temptation to others, will be careful about their conduct, and will humbly reflect on their faith during a trying time.
+    keywords:
+      - humility

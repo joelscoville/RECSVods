@@ -1,0 +1,384 @@
+chapters:
+  - id: s1102-opening
+    video_id: 94fynFHtreg
+    start: 0
+    end: 86.6
+    type: sermon
+    title: Greeting, opening prayer and sermon title
+    confidence: 0.88
+    scripture:
+      - Genesis 22:1-19
+      - Romans 12:1-2
+    topics:
+      - sacrifice
+      - prayer
+    summary: The speaker greets the congregation, explains that Reverend Yong is away, prays for understanding and introduces the sermon on Abraham’s sacrifice of Isaac.
+    keywords: []
+  - id: s1102-sacrifice
+    video_id: 94fynFHtreg
+    start: 86.6
+    end: 188.8
+    type: sermon
+    title: Distinguishing sacrifice from loss
+    confidence: 0.88
+    scripture: []
+    topics:
+      - sacrifice
+    summary: The speaker distinguishes involuntary loss from a chosen sacrifice made for something valued more highly, contrasting despair with hope. He illustrates this with years of education and parents giving up leisure, ambitions and sleep for a hoped-for good.
+    keywords:
+      - loss
+      - voluntary
+      - education
+  - id: s1102-earlier-tests
+    video_id: 94fynFHtreg
+    start: 188.8
+    end: 461.52
+    type: sermon
+    title: Abraham’s earlier tests of faith
+    confidence: 0.86
+    scripture:
+      - Genesis 22:1
+      - Genesis 12
+      - Genesis 15
+      - Genesis 16
+      - Genesis 18
+      - Genesis 20
+    topics:
+      - faith
+    summary: The speaker frames Genesis 22 as a test of faith, recalling Abraham’s departure, fear in Egypt and belief in promised descendants despite Sarah’s barrenness. He contrasts impatience over Hagar with intercession for Sodom and presents repeated deception as part of faith developing through imperfect responses.
+    keywords:
+      - tests
+      - abraham
+      - fear
+      - egypt
+      - heir
+      - impatience
+  - id: s1102-promise
+    video_id: 94fynFHtreg
+    start: 461.52
+    end: 690.88
+    type: sermon
+    title: Isaac and the promise to Abraham
+    confidence: 0.85
+    scripture:
+      - Genesis 22:1-19
+      - Genesis 12
+      - Genesis 17:1-6
+      - Genesis 17
+    topics:
+      - sacrifice
+      - faith
+    summary: The speaker connects the costly command concerning Isaac with promises of a great nation and, in Genesis 17, many descendants and nations. He recalls Abraham’s laughter and proposed alternative of Ishmael while emphasizing the covenant’s connection with Isaac.
+    keywords:
+      - isaac
+      - promise
+      - multitude of nations
+      - covenant
+      - sarah
+  - id: s1102-joy
+    video_id: 94fynFHtreg
+    start: 690.88
+    end: 840.22
+    type: sermon
+    title: Isaac as Abraham’s joy and treasure
+    confidence: 0.87
+    scripture:
+      - Genesis 17
+      - Genesis 18
+      - Genesis 21
+      - Genesis 22:1-19
+    topics:
+      - faith
+      - sacrifice
+    summary: The speaker connects Isaac’s name with laughter and says his presence would remind Abraham of the promise and joy associated with his birth. Imagining Isaac’s place in Abraham’s later life, he argues that the test concerned his greatest delight, not something easy to spare.
+    keywords:
+      - isaac
+  - id: s1102-moriah
+    video_id: 94fynFHtreg
+    start: 840.22
+    end: 976.66
+    type: sermon
+    title: Moriah and the child-sacrifice question
+    confidence: 0.85
+    scripture:
+      - Genesis 22:2
+      - 2 Samuel 24
+      - Leviticus 20:1-3
+    topics:
+      - sacrifice
+    summary: The speaker describes Moriah’s religious and geographical significance and connects it with David’s altar and Solomon’s temple. Discussing Molech worship and Leviticus 20, he argues that God opposes child sacrifice and says Abraham did not yet have these scriptures.
+    keywords:
+      - mount moriah
+      - child sacrifice
+  - id: s1102-heart
+    video_id: 94fynFHtreg
+    start: 976.66
+    end: 1031.56
+    type: sermon
+    title: Testing the heart rather than seeking Isaac’s death
+    confidence: 0.87
+    scripture:
+      - Genesis 22:1-19
+    topics:
+      - sacrifice
+      - faith
+    summary: The speaker interprets the test as exposing Abraham’s priorities, asking whether Isaac had become an idol rather than describing the command as a desire for Isaac’s blood.
+    keywords:
+      - gift
+      - giver
+  - id: s1102-obedience
+    video_id: 94fynFHtreg
+    start: 1031.56
+    end: 1151
+    type: sermon
+    title: Immediate obedience contrasted with Sodom
+    confidence: 0.85
+    scripture:
+      - Genesis 22:3
+      - Genesis 18
+    topics:
+      - faith
+    summary: The speaker contrasts Abraham’s prompt response in Genesis 22 with his earlier questioning and bargaining over Sodom. He asks what changed to explain Abraham’s unhesitating response to the later test.
+    keywords:
+      - obedience
+      - sodom
+  - id: s1102-mature-faith
+    video_id: 94fynFHtreg
+    start: 1151
+    end: 1294.9
+    type: sermon
+    title: Trust matured through experience
+    confidence: 0.87
+    scripture:
+      - Genesis 22:1-19
+      - Hebrews 11
+    topics:
+      - faith
+    summary: The speaker says Abraham’s faith matured over decades and identifies Isaac’s birth as the clearest sign to Abraham that the promise could be trusted. Appealing to Hebrews 11, he interprets Abraham’s silence as trust shaped by experience rather than confidence in a visible outcome.
+    keywords:
+      - birth of isaac
+      - experience
+      - tested faith
+      - visible outcomes
+  - id: s1102-journey
+    video_id: 94fynFHtreg
+    start: 1294.9
+    end: 1458.94
+    type: sermon
+    title: The emotional cost of the journey
+    confidence: 0.81
+    scripture:
+      - Genesis 22:4
+      - Hebrews 11
+    topics:
+      - sacrifice
+      - faith
+    summary: The speaker imagines Abraham’s private distress during the journey and invites fathers in the congregation to consider its emotional cost. He stresses the time available to reconsider and describes Abraham’s persistence as costly, deliberate obedience.
+    keywords:
+      - father
+      - decision to trust
+      - every step
+  - id: s1102-age
+    video_id: 94fynFHtreg
+    start: 1458.94
+    end: 1640.72
+    type: sermon
+    title: How old might Isaac have been?
+    confidence: 0.8
+    review_notes:
+      - 17.38-second source-ASR gap near the opening reading; age estimates and Josephus attribution are the speaker’s reasoning, not independently verified.
+    scripture:
+      - Genesis 22:5-6
+      - Genesis 23
+    topics:
+      - sacrifice
+    summary: The speaker polls listeners about Isaac’s unspecified age, offering a conditional calculation from Sarah’s age while acknowledging the unknown interval between chapters. He jokes that parents still see grown children as young, cites Josephus’s age estimate and argues that Isaac was stronger than Abraham.
+    keywords:
+      - isaac
+  - id: s1102-trust
+    video_id: 94fynFHtreg
+    start: 1640.72
+    end: 1791.3
+    type: sermon
+    title: Abraham and Isaac — affection, trust and submission
+    confidence: 0.86
+    scripture:
+      - Genesis 22:7-8
+      - Genesis 22:9
+    topics:
+      - sacrifice
+      - faith
+    summary: The speaker reads the exchange between Abraham and Isaac, points to their affectionate relationship and interprets Abraham’s response as trust in God’s provision. He interprets Isaac’s lack of resistance as voluntary trust in his father, comparing it with Abraham’s obedience to God.
+    keywords:
+      - abraham
+      - isaac
+      - affection
+      - provision
+  - id: s1102-surrender
+    video_id: 94fynFHtreg
+    start: 1791.3
+    end: 1882.36
+    type: sermon
+    title: What the speaker says died on the mountain
+    confidence: 0.86
+    scripture:
+      - Genesis 22:10-12
+    topics:
+      - sacrifice
+      - discipleship
+    summary: The speaker says Isaac was not meant to die and interprets the event instead as the ending of Abraham’s divided allegiance, applying that image to possessions, ambitions and family.
+    keywords:
+      - divided loyalties
+  - id: s1102-provision
+    video_id: 94fynFHtreg
+    start: 1882.36
+    end: 2023.62
+    type: sermon
+    title: Provision, substitution and blessing
+    confidence: 0.87
+    scripture:
+      - Genesis 22:13-14
+      - Romans 8
+      - Genesis 22:15-19
+    topics:
+      - sacrifice
+      - faith
+    summary: The speaker describes the ram as a substitute for Isaac and connects that provision with Christ, referring to Romans 8. Reading the conclusion of Genesis 22, he describes Abraham’s faith as strengthened and identifies the promised offspring with Christ.
+    keywords:
+      - christ
+      - blessing
+      - offspring
+  - id: s1102-christ
+    video_id: 94fynFHtreg
+    start: 2023.62
+    end: 2165.94
+    type: sermon
+    title: Isaac and Christ — the speaker’s comparisons
+    confidence: 0.86
+    scripture:
+      - Genesis 22:2
+      - Matthew 3:17
+      - John 3:16
+      - Romans 8:32
+      - Genesis 22
+      - Luke 22:42
+      - Matthew 12:40
+      - Hebrews 11:19
+      - 1 Corinthians 15:3-4
+    topics:
+      - sacrifice
+    summary: The speaker compares Isaac and Christ through the father-son relationship, the call to sacrifice, obedience, the journey and the carried burden. He distinguishes Isaac’s spared life from Jesus’ death and resurrection.
+    keywords:
+      - call to sacrifice
+      - resurrection
+  - id: s1102-response
+    video_id: 94fynFHtreg
+    start: 2165.94
+    end: 2399.24
+    type: sermon
+    title: Responding to mercy and remembering commitment
+    confidence: 0.86
+    scripture:
+      - Romans 12:1-2
+      - Hebrews 10:10
+    topics:
+      - sacrifice
+      - faith
+      - discipleship
+      - prayer
+    summary: Introducing Sacrifice by Bob Fitts and reading Romans 12:1, the speaker presents mercy as motivation for a living sacrifice and recommends a thanksgiving journal during difficulties. He contrasts altar sacrifice with Christ’s offering and uses a commitment-prayer example to urge daily remembrance of the initial dedication of one’s life to Christ.
+    keywords:
+      - romans 12
+      - living sacrifice
+      - mercy
+      - one time offering
+  - id: s1102-daily
+    video_id: 94fynFHtreg
+    start: 2399.24
+    end: 2616.64
+    type: sermon
+    title: Living sacrifice as daily surrender
+    confidence: 0.84
+    scripture:
+      - Romans 12:1-2
+      - Matthew 16
+      - Galatians 2
+      - Romans 6
+    topics:
+      - sacrifice
+      - discipleship
+      - faith
+    summary: The speaker describes living sacrifice as continual surrender, treating everyday thoughts and choices as worship beyond Sunday services. Drawing on Galatians 2, Romans 6 and Romans 12, he connects being dead to self and alive in Christ with trust, renewed living and giving up self-gratification and earthly security to share the gospel and disciple others.
+    keywords:
+      - living sacrifice
+      - daily surrender
+      - sunday service
+      - selfish desires
+  - id: s1102-renewal
+    video_id: 94fynFHtreg
+    start: 2616.64
+    end: 2713.78
+    type: sermon
+    title: Renewed priorities and fruitful living
+    confidence: 0.86
+    scripture:
+      - Romans 12:1-2
+      - John 12
+      - Matthew 13:23
+      - Matthew 13:22
+    topics:
+      - discipleship
+    summary: The speaker contrasts pursuit of power, money and status with renewed priorities and connects self-denial with the discovery of life in Christ. Contrasting good soil and thorny ground in Matthew 13, he warns that concerns and riches undermine a fruitful response.
+    keywords:
+      - self centered
+      - riches
+  - id: s1102-training
+    video_id: 94fynFHtreg
+    start: 2713.78
+    end: 2947.64
+    type: sermon
+    title: Building spiritual muscles through ordinary obedience
+    confidence: 0.88
+    scripture:
+      - Genesis 22
+      - Romans 5
+    topics:
+      - faith
+      - discipleship
+      - prayer
+    summary: Citing Stephen Tong and Romans 5, the speaker urges preparation for trials and compares Abraham’s developing faith with muscles strengthened through repeated exercise. He recommends forgiving, giving, praying, reading scripture and serving as ordinary practices of faith, likening their discomfort to exercise.
+    keywords:
+      - trials
+      - resistance training
+  - id: s1102-conclusion
+    video_id: 94fynFHtreg
+    start: 2947.64
+    end: 3045.02
+    type: sermon
+    title: Reflection questions and conclusion
+    confidence: 0.88
+    scripture:
+      - Genesis 22:1-19
+      - Romans 12:1-2
+      - John 10:10
+    topics:
+      - sacrifice
+      - discipleship
+    summary: The speaker asks listeners to consider what they treasure, whether they love the gift more than the giver, and how journaling, surrender and ordinary practice might shape their response. He closes by connecting provision at Moriah with Christ and calling for joyful, daily surrender of what listeners treasure.
+    keywords:
+      - brings life
+      - death
+  - id: s1102-closing
+    video_id: 94fynFHtreg
+    start: 3045.02
+    end: 3104.181
+    type: sermon
+    title: Closing prayer for grateful surrender
+    confidence: 0.87
+    scripture: []
+    topics:
+      - sacrifice
+      - prayer
+    summary: The speaker closes by asking for grateful hearts, surrender of pride and comfort, growth through trials and worship expressed through everyday life.
+    keywords:
+      - grateful

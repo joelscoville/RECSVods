@@ -1,0 +1,601 @@
+chapters:
+  - id: s0705-prelude
+    video_id: OrsN83j3qxE
+    start: 0
+    end: 24
+    type: hymn
+    title: Opening hymn fragment
+    confidence: 0.8
+    scripture: []
+    topics:
+      - worship
+    summary: The recording opens with a sung fragment before the invitation to prepare for worship.
+    keywords: []
+  - id: s0705-preparation
+    video_id: OrsN83j3qxE
+    start: 24
+    end: 333.02
+    type: prayer
+    title: Preparation in adoration, confession, thanksgiving and supplication
+    confidence: 0.84
+    scripture: []
+    topics:
+      - prayer
+      - worship
+    summary: The leader guides preparation for Communion through adoration, confession, thanksgiving and requests for help, praying for humble, teachable hearts and worship that glorifies God. Some opening supplication wording remains unclear.
+    keywords:
+      - adoration
+      - confession
+      - thanks
+      - humble and teachable
+  - id: s0705-welcome
+    video_id: OrsN83j3qxE
+    start: 333.02
+    end: 486.6
+    type: welcome
+    title: Welcome and preparation for worship
+    confidence: 0.88
+    scripture: []
+    topics:
+      - worship
+      - communion
+      - prayer
+    summary: The worship leader welcomes visitors, announces Communion for baptized participants and invites congregational greetings, followed by quiet preparation for the call to worship.
+    keywords:
+      - communion
+  - id: s0705-call
+    video_id: OrsN83j3qxE
+    start: 486.6
+    end: 595.3
+    type: scripture-reading
+    title: Call to worship — Psalms 84:1-4
+    confidence: 0.92
+    scripture:
+      - Psalms 84:1-4
+    topics:
+      - worship
+    summary: The leader reads Psalms 84:1-4 and connects it with drawing near to God, finding rest after a weary week and singing gratefully.
+    keywords:
+      - call to worship
+      - longing
+  - id: s0705-king
+    video_id: OrsN83j3qxE
+    start: 595.3
+    end: 703.18
+    type: hymn
+    title: O Worship the King
+    confidence: 0.94
+    scripture: []
+    topics:
+      - worship
+    summary: The congregation sings O Worship the King before the opening prayer.
+    keywords:
+      - worship the king
+  - id: s0705-opening-prayer
+    video_id: OrsN83j3qxE
+    start: 703.18
+    end: 852.36
+    type: prayer
+    title: Prayer for worship and Communion
+    confidence: 0.87
+    scripture: []
+    topics:
+      - prayer
+      - communion
+    summary: The leader thanks God for gathering the congregation and asks for comfort amid relationship, work, study and health challenges. He also prays for grateful participation in Communion, blessing for the preacher and fruitful reception of the word.
+    keywords:
+      - weary hearts
+      - communion
+  - id: s0705-communion-intro
+    video_id: OrsN83j3qxE
+    start: 852.36
+    end: 1060.44
+    type: communion
+    title: Communion and the unity of the church
+    confidence: 0.89
+    scripture:
+      - 1 Corinthians 11:23
+      - 1 Corinthians 11:17
+      - 1 Corinthians 11
+    topics:
+      - communion
+    summary: The pastor cautions against treating first-Sunday Communion as routine, connecting 1 Corinthians 11 with church divisions. He describes early communal meals and emphasizes Communion’s connection with Christians elsewhere.
+    keywords:
+      - communion
+      - routine
+  - id: s0705-communion-prayer
+    video_id: OrsN83j3qxE
+    start: 1060.44
+    end: 1197.4
+    type: communion
+    title: Prayer and words of institution
+    confidence: 0.86
+    scripture:
+      - 1 Corinthians 11:23-26
+    topics:
+      - communion
+      - prayer
+    summary: The congregation prays together, and the pastor reads from 1 Corinthians 11 before inviting helpers to distribute Communion. A helper leads a prayer of repentance and gratitude before distribution of the bread and cup.
+    keywords:
+      - communion
+  - id: s0705-distribution
+    video_id: OrsN83j3qxE
+    start: 1197.4
+    end: 1441.18
+    type: communion
+    title: Distribution and partaking
+    confidence: 0.8
+    review_notes:
+      - Unclear ASR instructions and song gaps; do not invent missing speech.
+    scripture: []
+    topics:
+      - communion
+    summary: Communion distribution accompanies a hymn, with unclear sound and distribution instructions in the source. The pastor checks that participants have bread and cup and invites them to stand and partake gratefully.
+    keywords:
+      - partake
+  - id: s0705-communion-response
+    video_id: OrsN83j3qxE
+    start: 1441.18
+    end: 1546.2
+    type: prayer
+    title: Thanksgiving for belonging to Christ
+    confidence: 0.9
+    scripture: []
+    topics:
+      - communion
+      - prayer
+    summary: The pastor prays that belonging to Christ will shape forgiveness, humility and care for one another.
+    keywords:
+      - communion
+  - id: s0705-proverbs
+    video_id: OrsN83j3qxE
+    start: 1546.2
+    end: 1796.04
+    type: scripture-reading
+    title: Responsive reading — Proverbs 28:1-28
+    confidence: 0.94
+    scripture:
+      - Proverbs 28:1-28
+    topics:
+      - worship
+    summary: The leader introduces Proverbs 28:1-28 and alternates the reading with the congregation, with a spoken correction during the reading.
+    keywords:
+      - proverbs
+  - id: s0705-john
+    video_id: OrsN83j3qxE
+    start: 1796.04
+    end: 1962.38
+    type: scripture-reading
+    title: Responsive reading — John 14:15-31
+    confidence: 0.94
+    scripture:
+      - John 14:15-31
+    topics:
+      - worship
+      - holy-spirit
+    summary: The congregation reads John 14:15-31 responsively before the next hymn.
+    keywords:
+      - john
+  - id: s0705-teach
+    video_id: OrsN83j3qxE
+    start: 1962.38
+    end: 2100
+    type: hymn
+    title: Teach Me Thy Way, O Lord
+    confidence: 0.93
+    scripture: []
+    topics:
+      - worship
+      - prayer
+    summary: The leader introduces the hymn as a prayer for God’s wisdom and guidance through life’s joys and burdens, and the congregation sings it.
+    keywords:
+      - guidance
+      - thy way
+  - id: s0705-anthem
+    video_id: OrsN83j3qxE
+    start: 2100
+    end: 2290.24
+    type: anthem
+    title: Come, Gracious Spirit
+    confidence: 0.92
+    scripture: []
+    topics:
+      - worship
+      - holy-spirit
+    summary: The service presents the anthem labelled Come, Gracious Spirit on screen.
+    keywords:
+      - come gracious spirit
+  - id: s0705-deuteronomy
+    video_id: OrsN83j3qxE
+    start: 2290.24
+    end: 2366.82
+    type: scripture-reading
+    title: Scripture reading — Deuteronomy 13:1-4
+    confidence: 0.95
+    scripture:
+      - Deuteronomy 13:1-4
+    topics:
+      - worship
+      - discernment
+    summary: The leader invites a reader, who announces and reads Deuteronomy 13:1-4 before the sermon.
+    keywords:
+      - deuteronomy
+  - id: s0705-sermon-intro
+    video_id: OrsN83j3qxE
+    start: 2366.82
+    end: 2534.26
+    type: sermon
+    title: Welcome back and the question behind the sermon
+    confidence: 0.86
+    scripture:
+      - Ecclesiastes 12
+      - John 14:25-31
+    topics:
+      - holy-spirit
+      - discernment
+    summary: The preacher welcomes a returning family, reflects on passing time and children growing up, and encourages service while strength and opportunity remain. He introduces a discussion of the Holy Spirit prompted by a question about differences with charismatic churches.
+    keywords:
+      - strength
+      - charismatic
+      - holy spirit
+  - id: s0705-review
+    video_id: OrsN83j3qxE
+    start: 2534.26
+    end: 3070.88
+    type: sermon
+    title: Review — truth, illumination and peace
+    confidence: 0.87
+    scripture:
+      - John 14:15-17
+      - John 14:26
+      - John 14:27
+    topics:
+      - holy-spirit
+      - truth
+      - discernment
+    summary: The preacher reviews objective and subjective truth through everyday examples and Singapore’s pragmatism, linking the Spirit’s illumination and assurance to a view he attributes to Augustine and to the Westminster Confession. Contrasting education with spiritual understanding and local complaints with persecuted Christians including Wang Yi, he emphasizes Christ’s peace and commitment to truth before returning to charismatic churches.
+    keywords:
+      - spirit of truth
+      - pragmatism
+      - peace of christ
+      - persecution
+  - id: s0705-sermon-prayer
+    video_id: OrsN83j3qxE
+    start: 3070.88
+    end: 3115.24
+    type: prayer
+    title: Prayer for humility and understanding
+    confidence: 0.87
+    scripture: []
+    topics:
+      - prayer
+      - holy-spirit
+    summary: The preacher prays for humility, understanding and faithful speech before the main exposition.
+    keywords:
+      - humble
+  - id: s0705-resources
+    video_id: OrsN83j3qxE
+    start: 3115.24
+    end: 3285.32
+    type: sermon
+    title: Scope and resources for further study
+    confidence: 0.84
+    scripture: []
+    topics:
+      - discernment
+    summary: The preacher recommends further study, including Charismatic Chaos, while expressing disagreement with MacArthur’s cessationism. He describes his translation work and an English publication awaiting corrections, emphasizing care with theological translation.
+    keywords: []
+  - id: s0705-spirit
+    video_id: OrsN83j3qxE
+    start: 3285.32
+    end: 3690.02
+    type: sermon
+    title: The Spirit’s continuing presence
+    confidence: 0.88
+    scripture:
+      - John 14:16
+      - John 14:23
+      - John 14:26
+    topics:
+      - holy-spirit
+      - discernment
+    summary: The preacher reads John 14 as teaching the Spirit’s continuing presence and fullness, questioning requests for the Spirit to return and contrasting practices he associates with local mediums. Through The Exorcist and a fearful-hotel-staff anecdote, he discusses fear and presents the Spirit’s work as consistent with Christ, helping believers understand.
+    keywords:
+      - helper
+      - fullness
+      - fear
+      - movies
+      - holy spirit
+  - id: s0705-movement
+    video_id: OrsN83j3qxE
+    start: 3690.02
+    end: 4515.02
+    type: sermon
+    title: The preacher’s account of the charismatic movement
+    confidence: 0.85
+    scripture: []
+    topics:
+      - discernment
+      - holy-spirit
+      - mission
+      - prayer
+      - worship
+    summary: Discussing Stephen Tong’s ministry, the preacher distinguishes extreme charismatic practice from the wider movement while recounting its origins, second-experience claims, army encounters, laughter, prosperity teaching and media influence. He discusses social self-interest, the Third Wave and a reported miraculous-evangelism encounter, then critiques hypergrace’s treatment of confession and uses megachurch presentation, televised stage effects and a disco-ball conversation to discuss worship expectations.
+    keywords:
+      - liberalism
+      - charismatic
+      - second experience
+      - army
+      - laughter
+      - media
+      - power evangelism
+      - hypergrace
+      - megachurch
+      - stage
+  - id: s0705-differences
+    video_id: OrsN83j3qxE
+    start: 4515.02
+    end: 4732.9
+    type: sermon
+    title: Contrasting authority, sovereignty and worship
+    confidence: 0.88
+    scripture:
+      - John 14
+    topics:
+      - truth
+      - discernment
+      - worship
+    summary: The preacher contrasts sola scriptura with reliance on visions, feelings, church authority or tradition, linking his Reformed position to God’s sovereignty rather than his account of human free will. He emphasizes ordered worship and holy living before considering signs and wonders.
+    keywords:
+      - authority
+      - reformed position
+      - sovereignty
+      - holy living
+      - order
+  - id: s0705-tongues
+    video_id: OrsN83j3qxE
+    start: 4732.9
+    end: 5052.44
+    type: sermon
+    title: Definitions and private tongues
+    confidence: 0.87
+    scripture:
+      - Acts 2:1-6
+      - Acts 2
+      - 1 Corinthians 14:1-2
+    topics:
+      - holy-spirit
+      - discernment
+    summary: The preacher examines tongues as evidence of a second baptism, distinguishing glossolalia and xenolalia through Acts 2, local language examples and MacArthur’s stricter view. Recalling English and Mandarin services, he questions patterned expressions without calling them satanic and allows private incomprehensible tongues on his reading of 1 Corinthians 14:1-2.
+    keywords:
+      - language
+      - pentecost
+      - comprehensible
+      - satanic
+      - incomprehensible tongues
+  - id: s0705-worship-order
+    video_id: OrsN83j3qxE
+    start: 5052.44
+    end: 5415.84
+    type: sermon
+    title: Intelligibility and order in public worship
+    confidence: 0.84
+    review_notes:
+      - 5192.90–5207.00s source ASR reverses the audience described in the displayed quotation. Preserve this discrepancy for human review rather than correcting doctrine.
+    scripture:
+      - 1 Corinthians 14:5
+      - 1 Corinthians 14:18-19
+      - 1 Corinthians 14:22
+      - 1 Corinthians 14:22-25
+      - 1 Corinthians 14:24-25
+      - 1 Corinthians 14:33
+      - 1 Corinthians 14:39
+    topics:
+      - worship
+      - holy-spirit
+      - discernment
+      - truth
+    summary: The preacher argues for interpreted tongues, intelligible preaching and ordered public worship that builds understanding for members and visitors, drawing on Paul’s numerical contrast and Stephen Tong’s distinction between clarifying and confusing teaching. The supplied audience explanation reverses the displayed 1 Corinthians 14:22 wording and remains unresolved.
+    keywords:
+      - tongues
+      - intelligible
+      - preaching
+      - order
+      - confusion
+  - id: s0705-acts
+    video_id: OrsN83j3qxE
+    start: 5415.84
+    end: 5584.7
+    type: sermon
+    title: Four occasions in Acts and a warning against formulas
+    confidence: 0.88
+    scripture:
+      - Acts 2
+      - Acts 1:8
+      - Acts 8
+      - Acts 10
+      - Acts 19
+    topics:
+      - holy-spirit
+      - discernment
+      - mission
+    summary: The preacher attributes to Stephen Tong both the observation that not all Pentecost converts are recorded speaking in tongues and a reading of four Acts occasions through the spread of witness in Acts 1:8. Recalling pressure to follow a manual, he questions fixed techniques for receiving the Spirit.
+    keywords:
+      - pentecost
+      - formula
+      - four occasions
+      - manual
+      - tongues
+      - holy spirit
+  - id: s0705-signs-summary
+    video_id: OrsN83j3qxE
+    start: 5584.7
+    end: 5732.5
+    type: sermon
+    title: Summary of the preacher’s position on tongues
+    confidence: 0.9
+    scripture:
+      - Acts 1:8
+      - Acts 10
+      - Acts 19
+      - Acts 2
+      - 1 Corinthians 14:2
+    topics:
+      - holy-spirit
+      - worship
+    summary: The preacher rejects a required second baptism marked by tongues and locates baptism in the Spirit at receiving Christ. He allows private tongues, requires public interpretation and prioritizes intelligible preaching.
+    keywords:
+      - baptism
+      - tongues
+      - preaching
+      - holy spirit
+  - id: s0705-wonders
+    video_id: OrsN83j3qxE
+    start: 5732.5
+    end: 6045.88
+    type: sermon
+    title: Testing claims of wonders
+    confidence: 0.84
+    scripture:
+      - Acts 9:36-42
+      - Acts 20:7-12
+    topics:
+      - discernment
+      - truth
+    summary: The preacher questions evidence for healing, food-multiplication and weather-control claims, acknowledging concern for sick relatives while citing an unsourced internet recovery-rate comparison. He compares claims with apostolic healings, Tabitha and Eutychus, and recalls declining a translation assignment while calling for verifiable evidence of resurrection claims.
+    keywords:
+      - healing
+      - medical
+      - resurrection
+  - id: s0705-miracles
+    video_id: OrsN83j3qxE
+    start: 6045.88
+    end: 6123.44
+    type: sermon
+    title: Miracles and the sovereign will of God
+    confidence: 0.91
+    scripture: []
+    topics:
+      - prayer
+      - discernment
+    summary: The preacher distinguishes the role of apostolic wonders from later miracles and says believers can pray while trusting God’s sovereign decision.
+    keywords:
+      - miracles
+  - id: s0705-conclusion
+    video_id: OrsN83j3qxE
+    start: 6123.44
+    end: 6204.2
+    type: sermon
+    title: Deuteronomy 13 and the call to obedience
+    confidence: 0.92
+    scripture:
+      - Deuteronomy 13:1-4
+    topics:
+      - discernment
+      - truth
+    summary: The preacher returns to Deuteronomy 13 and argues that an impressive sign does not replace obedience to God’s word.
+    keywords:
+      - testing
+  - id: s0705-closing-prayer
+    video_id: OrsN83j3qxE
+    start: 6204.2
+    end: 6278.9
+    type: prayer
+    title: Prayer to hold fast to the word
+    confidence: 0.88
+    scripture: []
+    topics:
+      - prayer
+      - truth
+    summary: The preacher prays that the congregation will judge teaching by scripture rather than its popularity and live in the freedom of serving God.
+    keywords:
+      - hold fast
+  - id: s0705-creed
+    video_id: OrsN83j3qxE
+    start: 6278.9
+    end: 6325.24
+    type: creed
+    title: Apostles’ Creed
+    confidence: 0.9
+    scripture: []
+    topics:
+      - worship
+    summary: The pastor invites the congregation to affirm their faith with the Apostles’ Creed before prayer.
+    keywords: []
+  - id: s0705-pastoral
+    video_id: OrsN83j3qxE
+    start: 6325.24
+    end: 6551.5
+    type: prayer
+    title: Prayer for ourselves and the church
+    confidence: 0.88
+    scripture: []
+    topics:
+      - prayer
+      - truth
+      - mission
+    summary: The pastor invites personal response to the sermon and prayer for the church’s continued witness beyond its founding leadership, asking that leaders and members remain steadfast in truth. He closes by praying that the congregation remain prayerful and recognize God’s work in their lives.
+    keywords:
+      - steadfast
+  - id: s0705-offertory
+    video_id: OrsN83j3qxE
+    start: 6551.5
+    end: 6670.18
+    type: offertory
+    title: Offering for the church and evangelism
+    confidence: 0.88
+    scripture: []
+    topics:
+      - worship
+      - mission
+    summary: The pastor introduces the offering and explains the first-Sunday designation of the second offering for evangelism.
+    keywords:
+      - offering
+      - evangelism
+  - id: s0705-breathe
+    video_id: OrsN83j3qxE
+    start: 6670.18
+    end: 6812.08
+    type: hymn
+    title: Breathe on Me, Breath of God
+    confidence: 0.94
+    scripture: []
+    topics:
+      - worship
+      - holy-spirit
+    summary: The pastor introduces Breathe on Me, Breath of God and connects it with living out the Spirit’s presence rather than asking an absent Spirit to return. He leads the hymn, repeating the opening verse while introducing its melody.
+    keywords:
+      - breathe on me
+      - holy spirit
+  - id: s0705-blessing
+    video_id: OrsN83j3qxE
+    start: 6812.08
+    end: 6879.44
+    type: benediction
+    title: Doxology and blessing
+    confidence: 0.9
+    scripture:
+      - Romans 15
+      - 2 Corinthians 13
+    topics:
+      - worship
+    summary: The congregation sings the doxology and receives a blessing announced as coming from Romans 15 and 2 Corinthians 13.
+    keywords:
+      - doxology
+      - blessing
+  - id: s0705-announcements
+    video_id: OrsN83j3qxE
+    start: 6879.44
+    end: 7109.366
+    type: announcement
+    title: Student outreach, youth ministry and dismissal
+    confidence: 0.89
+    scripture: []
+    topics:
+      - mission
+      - prayer
+    summary: The pastor invites participation in September school outreach, noting translation help for non-Bahasa Indonesia speakers, training and support roles beyond preaching. He asks for prayer about possible support for a Boys’ Brigade group, describes church sponsorship and dismisses the congregation.
+    keywords:
+      - indonesia
+      - training
+      - boys brigade

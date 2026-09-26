@@ -1,0 +1,346 @@
+chapters:
+  - id: s20260607-preparation
+    video_id: 8Qjfp-2L5d8
+    start: 0
+    end: 330
+    type: prayer
+    title: ACTS prayer preparation
+    confidence: 0.91
+    review_notes:
+      - Quiet intervals retained as prayer units; isolated ASR thank-you fragments not treated as reliable speech.
+    scripture: []
+    topics:
+      - prayer
+      - communion
+      - repentance
+      - worship
+    summary: The leader guides personal adoration, confession, thanksgiving and supplication, inviting the congregation to confess sins, give thanks and bring needs before God. The opening prayer asks for childlike readiness to hear and follow God before the worship leader is introduced.
+    keywords:
+      - communion sunday
+      - adoration
+      - confession
+      - thanksgiving
+      - personal needs
+  - id: s20260607-opening
+    video_id: 8Qjfp-2L5d8
+    start: 330
+    end: 691
+    type: worship
+    title: Greeting, introit and opening praise
+    confidence: 0.91
+    scripture:
+      - Psalms 69:30-34
+    topics:
+      - worship
+      - meditation
+      - service-life
+      - prayer
+      - holy-spirit
+    summary: The worship leader invites greetings and silent preparation, followed by the introit, Psalm 69:30-34 and How Great Thou Art. The leader prays for the Holy Spirit's work and Pastor Yong's message, then invites him to lead Communion.
+    keywords:
+      - silent meditation
+      - great thou art
+      - psalm 69
+      - holy spirit
+  - id: s20260607-communion
+    video_id: 8Qjfp-2L5d8
+    start: 691
+    end: 1252
+    type: communion
+    title: Holy Communion
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture:
+      - John 13-15
+      - John 13:34-35
+      - 1 Corinthians 11:23-26
+    topics:
+      - communion
+      - service-life
+      - discipleship
+      - prayer
+      - worship
+    summary: The pastor connects monthly Communion with Jesus' farewell discourse and belonging to Christ across social identities and generations. He leads the Lord's Prayer and institution reading from 1 Corinthians 11, invites baptized participants to receive the elements during a hymn, and leads shared partaking and thanksgiving for that continuing belonging.
+    keywords:
+      - holy communion
+      - christ
+  - id: s20260607-readings
+    video_id: 8Qjfp-2L5d8
+    start: 1252
+    end: 1597
+    type: scripture-reading
+    title: Responsive readings from Proverbs and John
+    confidence: 0.95
+    scripture:
+      - Proverbs 24:1-34
+      - John 14:1-14
+    topics:
+      - worship
+    summary: The worship leader announces responsive readings from Proverbs 24:1-34 and John 14:1-14. The announced John reading extends beyond the sermon-title slide's John 14:1-7.
+    keywords:
+      - responsive reading
+      - proverbs
+      - john
+  - id: s20260607-hymn-anthem
+    video_id: 8Qjfp-2L5d8
+    start: 1597
+    end: 2012
+    type: worship
+    title: Jesus, I Come and Without the Cross
+    confidence: 0.94
+    scripture: []
+    topics:
+      - worship
+    summary: The congregation sings Jesus, I Come, with different groups invited to sing. The leader then introduces the video anthem Without the Cross as preparation for hearing the word.
+    keywords:
+      - without the cross
+      - video anthem
+  - id: s20260607-acts-reading
+    video_id: 8Qjfp-2L5d8
+    start: 2012
+    end: 2092.98
+    type: scripture-reading
+    title: Acts 4 reading and sermon introduction
+    confidence: 0.95
+    scripture:
+      - Acts 4:8-12
+    topics:
+      - worship
+    summary: The leader reads Acts 4:8-12 and invites Pastor Yong to preach.
+    keywords:
+      - scripture reading
+      - acts
+  - id: s20260607-sermon-recap
+    video_id: 8Qjfp-2L5d8
+    start: 2092.98
+    end: 2881
+    type: sermon
+    title: Only — introduction and last-session recap
+    speaker_id: yong-teck-meng
+    confidence: 0.94
+    scripture:
+      - John 14:1-7
+      - Acts 4:8-12
+      - John 13:31-35
+      - John 13:33
+      - John 13:34-35
+      - Deuteronomy 6:4
+      - Leviticus 19:18
+      - Matthew 22:37-40
+    topics:
+      - faith
+      - truth
+      - salvation
+      - glory
+      - discipleship
+      - mission
+      - worship
+      - service-life
+      - communion
+    summary: Introducing Only and a question about Christian exclusivity, the pastor recaps glory amid suffering and everyday witness, urging childlike expectation and bringing burdens to God rather than relying on worship style. Through examples of religious communities, church changes, dialect identity, family and retirement, he presents Jesus' commanded love as extending beyond social boundaries and isolation into the community expressed in Communion.
+    keywords:
+      - only way
+      - glory
+      - suffering
+      - expectation
+      - worship
+      - burdens
+      - dialect
+      - love
+      - community
+      - holy communion
+  - id: s20260607-sermon-troubled
+    video_id: 8Qjfp-2L5d8
+    start: 2881
+    end: 3539.72
+    type: sermon
+    title: The troubled heart and the speaker's comparison with Buddhism
+    speaker_id: yong-teck-meng
+    confidence: 0.86
+    scripture:
+      - John 13-15
+      - John 13:38
+      - John 14:1
+    topics:
+      - prayer
+      - discipleship
+      - faith
+      - responsibility
+      - meditation
+    summary: Praying for receptiveness, the pastor reads John 14 within the continuing farewell discourse, relating Jesus' reassurance after betrayal and predicted denial to the disciples' uncertainty and ordinary troubles. Drawing on childhood memories and everyday examples, he describes Buddhism's eight sufferings and the Eightfold Path, including desire, separation, speech, livelihood and meditation, characterizing the approach as reliant on personal effort.
+    keywords:
+      - disciples
+      - trouble
+      - eight sufferings
+      - aging
+      - desire
+      - speech
+      - livelihood
+      - self help
+      - meditation
+  - id: s20260607-sermon-hope
+    video_id: 8Qjfp-2L5d8
+    start: 3539.72
+    end: 4024.74
+    type: sermon
+    title: Ultimate destiny and help in the present
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture:
+      - John 14:1
+      - John 14:1-2
+      - John 14:2
+      - John 14:3
+      - John 15-16
+    topics:
+      - faith
+      - knowing-god
+      - eternal-life
+      - discipleship
+      - holy-spirit
+    summary: The pastor urges trust in God and Jesus amid contemporary worries, describing Jesus as embodying the invisible God and the Father's house as an intimate, permanent home, with the song There Is a Hope reinforcing that comfort. He reads John 14:3 both as future presence and transformation with Christ and as a promise of the Holy Spirit's sustaining help now.
+    keywords:
+      - faith
+      - aging
+      - marriage
+      - intimacy
+      - father
+      - home
+      - hotel
+      - hope
+      - holy spirit
+  - id: s20260607-sermon-only
+    video_id: 8Qjfp-2L5d8
+    start: 4024.74
+    end: 4910.88
+    type: sermon
+    title: John 14 and the claim of exclusivity
+    speaker_id: yong-teck-meng
+    confidence: 0.88
+    scripture:
+      - John 14:4-6
+      - John 14:6
+      - John 14:6-7
+      - Acts 4:8-12
+    topics:
+      - truth
+      - knowing-god
+      - faith
+      - responsibility
+    summary: From Thomas' question, the pastor explores way, truth and life through scholarly and East-West illustrations, contrasts objections and his account of Baha'i inclusivity with Christian exclusivity, and cautions against reckless public claims. He argues for Reformed revelation-faith and human limits while allowing some knowledge through general grace, using political power, moral leadership, an air analogy and the Acts 4 healing account to defend his reading of Christ as the only way.
+    keywords:
+      - john 14
+      - thomas
+      - only one way
+      - revelation faith
+      - self help faith
+      - military
+      - economic
+      - moral leadership
+      - peter and john
+      - acts 4
+  - id: s20260607-sermon-humility
+    video_id: 8Qjfp-2L5d8
+    start: 4910.88
+    end: 5762.32
+    type: sermon
+    title: Rejecting arrogance and leaving judgment to God
+    speaker_id: yong-teck-meng
+    confidence: 0.87
+    review_notes:
+      - Keep the speaker's qualifications about possible exceptions and continuing evangelism together; quotation and ASR issues need listening.
+    scripture:
+      - John 14:6
+      - Philippians 2:9-11
+    topics:
+      - discipleship
+      - mission
+      - responsibility
+      - prayer
+      - eternal-life
+      - knowing-god
+      - faith
+      - service
+    summary: Warning against arrogant evangelism in multireligious Singapore, the pastor affirms Christ as the only way while leaving individuals' salvation, including his grandmother's, unknown to him and in God's hands; he urges prayer, loving outreach and help regardless of conversion. Drawing on Lewis and a saying attributed to Wesley, he allows possible exceptions to the usual model under God's sovereignty, but explicitly calls his imagined deathbed encounter unsupported by scripture and unsuitable to preach as a method.
+    keywords:
+      - arrogance
+      - hatred
+      - loved ones
+      - c s lewis
+      - usual model
+      - kingdom
+      - gospel
+      - love
+  - id: s20260607-response
+    video_id: 8Qjfp-2L5d8
+    start: 5762.32
+    end: 6145.58
+    type: prayer
+    title: Sermon prayer, creed and intercession
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture: []
+    topics:
+      - prayer
+      - mission
+      - discipleship
+      - worship
+      - faith
+    summary: The pastor prays for gratitude, faith in Christ and loving outreach even toward enemies, and the congregation is invited to recite the Apostles' Creed. He invites quiet personal response and sustained prayer for those who do not know Jesus, asking for patience and perseverance rather than immediate results.
+    keywords:
+      - gratitude
+      - apostles creed
+      - patience
+      - faith
+  - id: s20260607-offertory
+    video_id: 8Qjfp-2L5d8
+    start: 6145.58
+    end: 6244.58
+    type: offertory
+    title: Offering and evangelism collection
+    speaker_id: yong-teck-meng
+    confidence: 0.86
+    scripture: []
+    topics:
+      - stewardship
+      - mission
+      - service-life
+    summary: The pastor explains giving arrangements and designates the first-Sunday second offering for evangelism, followed by the offertory interval.
+    keywords:
+      - offering
+      - evangelism
+  - id: s20260607-closing
+    video_id: 8Qjfp-2L5d8
+    start: 6244.58
+    end: 6477.7
+    type: worship
+    title: Closing hymn, doxology and benediction
+    speaker_id: yong-teck-meng
+    confidence: 0.93
+    scripture:
+      - Jude 1:24-25
+    topics:
+      - worship
+      - faith
+    summary: The pastor introduces All the Way My Saviour Leads Me, attributes it to Fanny Crosby and describes its comfort through hymn-writing and funeral anecdotes. The congregation sings, rises for the final portion and sings the doxology before receiving a benediction announced as from Jude.
+    keywords:
+      - saviour leads me
+      - doxology
+      - jude
+  - id: s20260607-announcements
+    video_id: 8Qjfp-2L5d8
+    start: 6477.7
+    end: 6590.661
+    type: announcement
+    title: Classes, gospel rallies and community notices
+    speaker_id: yong-teck-meng
+    confidence: 0.88
+    scripture: []
+    topics:
+      - service-life
+      - mission
+      - service
+    summary: The pastor announces the resumption of Westminster Shorter Catechism class, open beyond baptism candidates, and encourages participation in Dr. Tong's gospel rallies. He congratulates an upcoming wedding couple, thanks a returning volunteer pianist and encourages shared service before dismissal in silent meditation.
+    keywords:
+      - catechism class
+      - gospel

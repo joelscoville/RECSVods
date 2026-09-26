@@ -1,0 +1,638 @@
+chapters:
+  - id: s0913-preparation
+    video_id: GkmB_KeBlBw
+    start: 0
+    end: 284.58
+    type: prayer
+    title: Preparation — adoration, confession, thanksgiving and supplication
+    confidence: 0.86
+    scripture: []
+    topics:
+      - prayer
+      - worship
+    summary: The leader guides personal prayer through adoration, confession with assurance of forgiveness, thanksgiving for one’s life, and supplication for help with personal circumstances.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - personal situations
+  - id: s0913-gathering
+    video_id: GkmB_KeBlBw
+    start: 284.58
+    end: 453.8
+    type: welcome
+    title: Opening prayer and congregational welcome
+    confidence: 0.87
+    scripture: []
+    topics:
+      - prayer
+      - worship
+    summary: The leader thanks God for safe gathering and asks for humility to hear and follow. The worship leader welcomes newcomers, invites mutual greetings and calls for silence before worship.
+    keywords:
+      - newcomers
+  - id: s0913-call
+    video_id: GkmB_KeBlBw
+    start: 453.8
+    end: 551.42
+    type: scripture-reading
+    title: Call to worship — Psalms 99:1-5
+    confidence: 0.9
+    scripture:
+      - Psalms 99:1-5
+    topics:
+      - worship
+      - faith
+    summary: The leader reads Psalms 99:1-5 and connects God’s sovereignty and justice with gratitude and praise despite changing circumstances.
+    keywords:
+      - call to worship
+      - reigns
+  - id: s0913-glory
+    video_id: GkmB_KeBlBw
+    start: 551.42
+    end: 700.66
+    type: hymn
+    title: To God Be the Glory
+    confidence: 0.87
+    scripture: []
+    topics:
+      - worship
+    summary: The congregation begins the hymn introduced as To God Be the Glory.
+    keywords:
+      - glory
+  - id: s0913-opening-prayer
+    video_id: GkmB_KeBlBw
+    start: 700.66
+    end: 825.66
+    type: prayer
+    title: Prayer for growth and the church’s ministry
+    confidence: 0.86
+    scripture: []
+    topics:
+      - prayer
+      - faith
+      - service
+    summary: The worship leader thanks God for Christ and prays for forgiveness and growth toward maturity through the word, Spirit and church. The leader also prays for Stephen Tong’s ministry anniversary, Pastor Yong’s preaching and family, and a congregational response beyond Sunday worship.
+    keywords: []
+  - id: s0913-ancient
+    video_id: GkmB_KeBlBw
+    start: 825.66
+    end: 1145.4
+    type: hymn
+    title: Ancient of Days — includes a temporary-muted region
+    confidence: 0.84
+    review_notes:
+      - 1050s frame explicitly announces temporary muting. Exact mute onset/end not established; do not manufacture missing lyrics or claim silence was listened to.
+    scripture:
+      - Daniel 7
+    topics:
+      - worship
+      - faith
+    summary: The leader connects the hymn title with Daniel 7 and introduces it as an expression of trust in God’s eternal reign.
+    keywords:
+      - ancient of days
+  - id: s0913-proverbs
+    video_id: GkmB_KeBlBw
+    start: 1145.4
+    end: 1311.16
+    type: scripture-reading
+    title: Responsive reading — Proverbs 7:1-27
+    confidence: 0.92
+    scripture:
+      - Proverbs 7:1-27
+    topics:
+      - worship
+    summary: The leader announces Proverbs 7:1-27 and asks the congregation to alternate verses with him.
+    keywords:
+      - proverbs 7
+      - responsive reading
+  - id: s0913-john-reading
+    video_id: GkmB_KeBlBw
+    start: 1311.16
+    end: 1481.14
+    type: scripture-reading
+    title: Responsive reading — John 17:1-19
+    confidence: 0.92
+    scripture:
+      - John 17:1-19
+    topics:
+      - worship
+    summary: The congregation proceeds to the announced New Testament responsive reading from John 17.
+    keywords:
+      - john 17
+  - id: s0913-thine
+    video_id: GkmB_KeBlBw
+    start: 1481.14
+    end: 1654.68
+    type: hymn
+    title: I Am Thine, O Lord
+    confidence: 0.91
+    scripture: []
+    topics:
+      - worship
+      - discipleship
+    summary: The leader introduces the hymn as a prayer to draw closer to God and live as people belonging to him.
+    keywords:
+      - prayer of surrender
+      - thine
+  - id: s0913-anthem
+    video_id: GkmB_KeBlBw
+    start: 1654.68
+    end: 1835.48
+    type: anthem
+    title: I’ll Have a New Life — video anthem
+    confidence: 0.87
+    scripture: []
+    topics:
+      - worship
+      - eternal-life
+    summary: The leader introduces a video anthem called I’ll Have a New Life.
+    keywords:
+      - new life
+      - anthem
+  - id: s0913-psalm-reading
+    video_id: GkmB_KeBlBw
+    start: 1835.48
+    end: 1910.52
+    type: scripture-reading
+    title: Scripture reading — Psalms 1:1-6
+    confidence: 0.93
+    scripture:
+      - Psalms 1:1-6
+    topics:
+      - worship
+      - meditation
+    summary: The leader reads Psalms 1:1-6 and invites Pastor Yong to deliver the sermon.
+    keywords: []
+  - id: s0913-sermon-intro
+    video_id: GkmB_KeBlBw
+    start: 1910.52
+    end: 2077.18
+    type: sermon
+    title: Sermon introduction and questions about eternal life
+    confidence: 0.9
+    scripture:
+      - John 17:1-5
+      - Psalms 1:1-6
+    topics:
+      - discipleship
+      - service
+      - eternal-life
+    summary: The preacher returns to John 17:1-5 with questions about the afterlife and cremation in relation to resurrection. He requests current contact details for anniversary arrangements and points to earlier recordings of the linked expository series.
+    keywords:
+      - john 17
+      - afterlife
+      - cremation
+      - eternal life
+  - id: s0913-review
+    video_id: GkmB_KeBlBw
+    start: 2077.18
+    end: 2387.06
+    type: sermon
+    title: John 17 revisited — prayer, glory and knowing God
+    confidence: 0.86
+    scripture:
+      - John 17
+      - John 17:1-5
+      - John 17:3
+    topics:
+      - prayer
+      - faith
+      - eternal-life
+      - discipleship
+    summary: The preacher considers Jesus’ prayer in John 17, attributing a wish to have prayed more to Billy Graham and John Stott. He contrasts worldly glory with Jesus’ suffering, introduces his Reformed account of election, and uses John 17:3 to distinguish intimate knowledge of God from facts about him while noting language’s limits.
+    keywords:
+      - john 17
+      - pray more
+      - glory
+      - sovereign
+      - eternal life
+  - id: s0913-sermon-prayer
+    video_id: GkmB_KeBlBw
+    start: 2387.06
+    end: 2446
+    type: prayer
+    title: Prayer for humble and teachable hearts
+    confidence: 0.88
+    scripture: []
+    topics:
+      - prayer
+      - discipleship
+    summary: The preacher prays that pride and past successes or failures will not prevent listeners from receiving the message.
+    keywords: []
+  - id: s0913-eternal-life
+    video_id: GkmB_KeBlBw
+    start: 2446
+    end: 2575.22
+    type: sermon
+    title: Eternal life as more than physical duration
+    confidence: 0.88
+    scripture:
+      - John 17:1-3
+      - Galatians 5
+    topics:
+      - eternal-life
+      - meditation
+    summary: The preacher reads the opening of John 17 and describes eternal life as knowing God and sharing in what he calls God’s goodness and beauty. He uses the fruit of the Spirit in Galatians 5 to illustrate this richness and invite deep reflection on each quality.
+    keywords:
+      - living physically forever
+      - eternal life
+  - id: s0913-mortality
+    video_id: GkmB_KeBlBw
+    start: 2575.22
+    end: 2766.68
+    type: sermon
+    title: The uncertainty of life’s endpoint
+    confidence: 0.85
+    scripture: []
+    topics:
+      - eternal-life
+    summary: The preacher reflects on life’s passing through children’s growth and contrasts known birthdays with uncertain death, recalling his younger brother’s sudden death. He explicitly labels an aircraft-accident story an unverified rumour used to illustrate unpredictability.
+    keywords: []
+  - id: s0913-afterlife
+    video_id: GkmB_KeBlBw
+    start: 2766.68
+    end: 2985.5
+    type: sermon
+    title: The preacher’s account of death and resurrection
+    confidence: 0.86
+    scripture: []
+    topics:
+      - eternal-life
+      - service
+    summary: The preacher distinguishes paradise and Hades from final destinations in his Reformed account of death, resurrection and judgment, acknowledging that biblical detail is limited and present life matters. He distinguishes grief from hopelessness and recalls arranging respectful funerals for isolated people.
+    keywords:
+      - paradise
+      - hades
+      - resurrection
+  - id: s0913-burial
+    video_id: GkmB_KeBlBw
+    start: 2985.5
+    end: 3195.46
+    type: sermon
+    title: Burial convictions and a seminary recollection
+    confidence: 0.82
+    scripture: []
+    topics:
+      - eternal-life
+      - discipleship
+      - service
+    summary: The preacher associates a burial preference with Bible Presbyterians and recalls his demanding Greek teacher’s questions and a late arrival after ministry travel. He interprets an overheard offer by that teacher to fund a burial as evidence of conviction about resurrection.
+    keywords:
+      - biblical greek
+      - burial
+  - id: s0913-cremation
+    video_id: GkmB_KeBlBw
+    start: 3195.46
+    end: 3451.66
+    type: sermon
+    title: Cremation and the power to resurrect
+    confidence: 0.86
+    scripture: []
+    topics:
+      - eternal-life
+      - faith
+    summary: The preacher recounts Stephen Tong’s burial preference, his reported refusal of cemetery land to avoid commercial use of his grave’s proximity, and a humorous exchange about Singapore’s burial space. Citing fire and exhumation, he argues cremation does not prevent God’s resurrection of the body, while acknowledging practical and traditional burial preferences.
+    keywords:
+      - stephen tong
+      - burial
+      - singapore
+      - cremation
+  - id: s0913-hope
+    video_id: GkmB_KeBlBw
+    start: 3451.66
+    end: 3607.28
+    type: sermon
+    title: Partial knowledge and future hope
+    confidence: 0.88
+    scripture:
+      - 1 Corinthians 13:9-12
+    topics:
+      - eternal-life
+      - faith
+    summary: The preacher reads 1 Corinthians 13:9-12 and uses a pictured bronze mirror to explain partial knowledge of future life with God. He anticipates a future beyond suffering while acknowledging limited detail and returning attention to life now.
+    keywords:
+      - mirror
+      - suffering
+      - eternal life
+  - id: s0913-life-now
+    video_id: GkmB_KeBlBw
+    start: 3607.28
+    end: 3724.28
+    type: sermon
+    title: Eternal life beginning now
+    confidence: 0.87
+    scripture: []
+    topics:
+      - eternal-life
+      - faith
+    summary: The preacher presents a thought he attributes to Dallas Willard about passing from one existence to another, explicitly treating it as a proposal that moved him. He says eternal life begins with salvation even when an exact conversion moment cannot be identified.
+    keywords:
+      - dallas willard
+      - seamless
+      - eternal life
+  - id: s0913-knowing
+    video_id: GkmB_KeBlBw
+    start: 3724.28
+    end: 3985.9
+    type: sermon
+    title: Knowing about God and knowing God
+    confidence: 0.89
+    scripture: []
+    topics:
+      - discipleship
+      - meditation
+      - service
+    summary: The preacher recommends Packer’s Knowing God, contrasts Reformed theological learning with knowing God, and credits Packer’s simple but demanding path for the sermon title. Recalling pastors discussing theology while remaining seated as older passengers and families boarded a train, he questions knowledge without care while acknowledging this criticism may seem judgmental.
+    keywords:
+      - packer
+      - simple but demanding
+      - train
+  - id: s0913-simple
+    video_id: GkmB_KeBlBw
+    start: 3985.9
+    end: 4123.72
+    type: sermon
+    title: The speaker’s explanation of simplicity
+    confidence: 0.85
+    scripture:
+      - 1 John 5:3
+    topics:
+      - faith
+      - discipleship
+    summary: The preacher contrasts Packer’s simple path with elaborate rituals and pilgrimages. Using the label divine simplicity and 1 John 5:3, he argues that knowing and obeying God need not be an elaborate religious task.
+    keywords:
+      - divine simplicity
+  - id: s0913-knowledge
+    video_id: GkmB_KeBlBw
+    start: 4123.72
+    end: 4347.46
+    type: sermon
+    title: Correct knowledge as a starting point
+    confidence: 0.87
+    scripture:
+      - Acts 17
+    topics:
+      - meditation
+      - prayer
+      - discipleship
+      - faith
+    summary: The preacher presents Packer’s movement from reflection before God to prayer and praise, using Paul’s address in Athens to affirm correct knowledge as faith’s foundation. He recalls a former member seeking an effective place to pray and criticizes that understanding of God.
+    keywords:
+      - prayer and praise
+      - meditation
+      - paul
+      - athens
+  - id: s0913-meditation
+    video_id: GkmB_KeBlBw
+    start: 4347.46
+    end: 4595.94
+    type: sermon
+    title: Meditation — resting the mind and applying truth
+    confidence: 0.8
+    review_notes:
+      - Source-ASR text/word divergence and backward start near 4518–4544s; frames corroborate Packer quotation and topic, not audible word order.
+    scripture:
+      - Psalms 1:1-2
+    topics:
+      - meditation
+      - discipleship
+      - service
+    summary: Returning to Psalms 1, the preacher describes Maranatha meditation for mental rest, responds to criticism and uses distraction by entertainment to illustrate its difficulty. He distinguishes Packer’s reflective meditation and applies it to love of family, colleagues and others; local ASR alignment remains uncertain.
+    keywords:
+      - psalms
+      - meditation
+      - packer
+  - id: s0913-internalizing
+    video_id: GkmB_KeBlBw
+    start: 4595.94
+    end: 4779.56
+    type: sermon
+    title: Internalizing what is learned
+    confidence: 0.87
+    scripture: []
+    topics:
+      - meditation
+      - faith
+      - discipleship
+    summary: The preacher describes meditation as consciously thinking before God, reasoning through doubt and revisiting teaching. He recalls growth through sermon preparation and a listener’s observation of his conviction, then questions preaching without belief and jokes about practical versus impractical theology to stress internalizing the word.
+    keywords:
+      - doubt
+      - theology
+      - meditation
+  - id: s0913-praise
+    video_id: GkmB_KeBlBw
+    start: 4779.56
+    end: 4932.54
+    type: sermon
+    title: Meditation leading to prayer and praise
+    confidence: 0.88
+    scripture:
+      - Psalms 1:1-3
+    topics:
+      - meditation
+      - prayer
+      - worship
+      - discipleship
+      - service
+    summary: The preacher returns to Psalms 1, contrasting its familiar use in song with a vibrant response of prayer, praise and joy through meditation. He connects reflection with loving others and introduces Packer’s markers of knowing God.
+    keywords:
+      - psalms
+      - meditation
+  - id: s0913-energy
+    video_id: GkmB_KeBlBw
+    start: 4932.54
+    end: 5044.12
+    type: sermon
+    title: Energy for God with room for weakness
+    confidence: 0.88
+    scripture: []
+    topics:
+      - faith
+      - discipleship
+    summary: The preacher presents zeal as a marker of knowing God but explicitly acknowledges depression, dark periods and physical illness. He connects energy and love of life despite difficulty with drawing strength from God.
+    keywords:
+      - energy
+      - love of life
+      - strength
+  - id: s0913-thoughts
+    video_id: GkmB_KeBlBw
+    start: 5044.12
+    end: 5213.6
+    type: sermon
+    title: Great thoughts of God and public life
+    confidence: 0.85
+    scripture: []
+    topics:
+      - faith
+      - service
+    summary: The preacher applies a worldview shaped by God’s majesty to ministerial pay, arguing that reluctance to enter public service reflects concerns beyond remuneration. He uses cultural participation to urge attention beyond house, car and livelihood.
+    keywords:
+      - livelihood
+  - id: s0913-boldness
+    video_id: GkmB_KeBlBw
+    start: 5213.6
+    end: 5319.64
+    type: sermon
+    title: Boldness and small acts of love
+    confidence: 0.87
+    scripture: []
+    topics:
+      - service
+      - faith
+      - discipleship
+    summary: The preacher illustrates his call for boldness with a conversation about a proposed Christmas outreach that met repeated reluctance. He says boldness need not involve large projects, citing a saying he attributes to Mother Teresa about small acts done with love.
+    keywords:
+      - boldness
+      - christmas
+      - outreach
+      - small things
+      - great love
+  - id: s0913-contentment
+    video_id: GkmB_KeBlBw
+    start: 5319.64
+    end: 5399.46
+    type: sermon
+    title: Contentment as a direction for growth
+    confidence: 0.86
+    scripture: []
+    topics:
+      - faith
+      - discipleship
+    summary: The preacher describes deep peace as a marker of knowing God, offers an example of a disabled preacher and frames the four markers as directions for growth rather than a claim to perfection.
+    keywords:
+      - contentment
+  - id: s0913-demanding
+    video_id: GkmB_KeBlBw
+    start: 5399.46
+    end: 5525.3
+    type: sermon
+    title: Simple principles that demand persistence
+    confidence: 0.87
+    scripture: []
+    topics:
+      - discipleship
+    summary: The preacher uses disciplined study as an analogy for a straightforward practice that remains hard to sustain amid distractions. Recalling an intensely focused student, he qualifies academic success before applying the analogy to spiritual disciplines.
+    keywords:
+      - simple
+      - demanding
+  - id: s0913-devotional
+    video_id: GkmB_KeBlBw
+    start: 5525.3
+    end: 5665.04
+    type: sermon
+    title: Daily devotion and growth together
+    confidence: 0.89
+    scripture: []
+    topics:
+      - discipleship
+      - meditation
+      - prayer
+    summary: The preacher recommends daily devotional reading accompanied by deep reflection, prayer and action, rather than simply receiving information. He recalls subscribing to Our Daily Bread as a child and encourages continued learning, reflection and response with fellow believers.
+    keywords:
+      - daily devotional
+  - id: s0913-closing-prayer
+    video_id: GkmB_KeBlBw
+    start: 5665.04
+    end: 5755.3
+    type: prayer
+    title: Prayer to know God deeply
+    confidence: 0.88
+    scripture:
+      - Psalms 1:1-3
+    topics:
+      - prayer
+      - meditation
+      - faith
+      - service
+    summary: The preacher asks for deep knowledge of God expressed through reflection, prayer and praise rather than preoccupation with lesser concerns. He prays for joy amid challenges and mutual encouragement in obedience.
+    keywords: []
+  - id: s0913-creed
+    video_id: GkmB_KeBlBw
+    start: 5755.3
+    end: 5801.46
+    type: creed
+    title: Apostles’ Creed
+    confidence: 0.9
+    scripture: []
+    topics:
+      - worship
+      - faith
+    summary: The congregation is invited to stand and recite the Apostles’ Creed before the time of prayer.
+    keywords:
+      - apostles
+  - id: s0913-pastoral
+    video_id: GkmB_KeBlBw
+    start: 5801.46
+    end: 6036.4
+    type: prayer
+    title: Response and prayer for the church
+    confidence: 0.85
+    scripture: []
+    topics:
+      - prayer
+      - service
+    summary: The leader invites personal response to the sermon and prayer for the Reformed Evangelical Church’s anniversary, global ministry and witness as it enters its 38th year. He prays for a prayerful life and readiness to help fellow believers facing challenges.
+    keywords:
+      - ready help
+  - id: s0913-offertory
+    video_id: GkmB_KeBlBw
+    start: 6036.4
+    end: 6180.22
+    type: offering
+    title: Offertory and Christian Education Ministries
+    confidence: 0.87
+    scripture: []
+    topics:
+      - service
+      - worship
+    summary: The leader explains how to give and designates the second box offering for Christian Education Ministries on this second Sunday.
+    keywords:
+      - christian education ministries
+      - offertory
+  - id: s0913-trust
+    video_id: GkmB_KeBlBw
+    start: 6180.22
+    end: 6341.14
+    type: hymn
+    title: Trust and Obey
+    confidence: 0.91
+    scripture: []
+    topics:
+      - worship
+      - discipleship
+    summary: The preacher introduces Trust and Obey as a response that goes beyond listening to actual obedience.
+    keywords:
+      - trust and obey
+  - id: s0913-benediction
+    video_id: GkmB_KeBlBw
+    start: 6341.14
+    end: 6413.9
+    type: benediction
+    title: Doxology, blessing and three-fold Amen
+    confidence: 0.88
+    scripture:
+      - 2 Thessalonians 2
+      - 2 Corinthians 13
+    topics:
+      - worship
+    summary: The leader invites the doxology and announces a blessing drawn from 2 Thessalonians 2 and 2 Corinthians 13, followed by the closing Amen.
+    keywords:
+      - doxology
+      - blessing
+  - id: s0913-announcements
+    video_id: GkmB_KeBlBw
+    start: 6413.9
+    end: 6628.441
+    type: announcement
+    title: Anniversary worship, ministry events and dismissal
+    confidence: 0.88
+    scripture: []
+    topics:
+      - service
+      - worship
+    summary: The leader announces a forthcoming 10 a.m. anniversary service with Communion and a Jakarta link, no afternoon service and further arrangements to follow, plus Stephen Tong’s ministry anniversary event on 9 January 2027. He promotes the 26 September Personal Financial Stewardship programme and careful charitable giving, invites ministry participation, dismisses worshippers to silent meditation and mentions Tong’s evening preaching.
+    keywords:
+      - 10 a m
+      - anniversary service
+      - communion
+      - personal financial stewardship

@@ -1,0 +1,636 @@
+chapters:
+  - id: s0712-prelude
+    video_id: D-FyolbxJgk
+    start: 0
+    end: 105.06
+    type: prelude
+    title: Prelude and preparation
+    confidence: 0.65
+    review_notes:
+      - Setup and possible background music retained; isolated ASR thanks are not verified speech.
+    scripture: []
+    topics: []
+    summary: The recording opens with sanctuary preparation and a dated welcome slide before the invitation to worship.
+    keywords: []
+  - id: s0712-acts
+    video_id: D-FyolbxJgk
+    start: 105.06
+    end: 439.42
+    type: prayer
+    title: ACTS preparation prayers
+    confidence: 0.9
+    scripture: []
+    topics: []
+    summary: The leader guides adoration, confession, thanksgiving for God's care and supplication for personal situations. The leader prays for humility, childlike faith and attention to God, then introduces Belinda as worship leader.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - personal situations
+      - humility
+  - id: s0712-welcome
+    video_id: D-FyolbxJgk
+    start: 439.42
+    end: 577.36
+    type: welcome
+    title: Welcome and silent meditation
+    speaker_id: belinda-sutan
+    confidence: 0.9
+    scripture: []
+    topics: []
+    summary: Belinda welcomes the congregation, inviting thanksgiving for the freedom to worship and mutual greetings. She then invites silent meditation to quiet their hearts.
+    keywords:
+      - silent meditation
+  - id: s0712-call
+    video_id: D-FyolbxJgk
+    start: 577.36
+    end: 633
+    type: scripture-reading
+    title: Call to worship — Psalms 85:10-13
+    speaker_id: belinda-sutan
+    confidence: 0.95
+    scripture:
+      - Psalms 85:10-13
+    topics: []
+    summary: Belinda reads the call to worship and introduces Great is Thy Faithfulness in response to God's love and faithfulness.
+    keywords:
+      - faithfulness
+  - id: s0712-faithfulness
+    video_id: D-FyolbxJgk
+    start: 633
+    end: 813.82
+    type: hymn
+    title: Great is Thy Faithfulness
+    confidence: 0.95
+    scripture: []
+    topics: []
+    summary: The congregation sings Great is Thy Faithfulness before the opening prayer.
+    keywords:
+      - thy faithfulness
+  - id: s0712-opening-prayer
+    video_id: D-FyolbxJgk
+    start: 813.82
+    end: 910.84
+    type: prayer
+    title: Opening prayer
+    speaker_id: belinda-sutan
+    confidence: 0.95
+    scripture: []
+    topics: []
+    summary: Belinda leads a prayer confessing distraction and reliance on personal strength, asking for forgiveness and renewed obedience. She thanks God for salvation and prays for attentive worship, the congregation and Pastor Yong.
+    keywords:
+      - obedience
+  - id: s0712-christ-liveth
+    video_id: D-FyolbxJgk
+    start: 910.84
+    end: 1156.24
+    type: hymn
+    title: Christ Liveth in Me
+    confidence: 0.9
+    scripture: []
+    topics: []
+    summary: Belinda introduces Christ Liveth in Me as an answer to the insufficiency of one's own strength. The congregation sings the hymn with its repeated refrain.
+    keywords:
+      - christ liveth
+  - id: s0712-responsive
+    video_id: D-FyolbxJgk
+    start: 1156.24
+    end: 1540.02
+    type: scripture-reading
+    title: Responsive readings — Proverbs 29 and John 15
+    speaker_id: belinda-sutan
+    confidence: 0.95
+    scripture:
+      - Proverbs 29:1-27
+      - John 15:1-17
+    topics: []
+    summary: Belinda leads the congregation in responsive readings from Proverbs 29 and John 15, ending with a joint reading of the final three assigned verses in John.
+    keywords:
+      - responsive reading
+      - proverbs
+      - john
+  - id: s0712-need
+    video_id: D-FyolbxJgk
+    start: 1540.02
+    end: 1719.86
+    type: hymn
+    title: I Need Thee Every Hour
+    confidence: 0.95
+    scripture:
+      - John 15:5
+    topics: []
+    summary: Belinda connects the John 15 reading with the hymn I Need Thee Every Hour and dependence on Christ throughout daily life. The congregation sings the hymn before the guitar ensemble anthem.
+    keywords:
+      - dependence
+      - thee every hour
+  - id: s0712-anthem
+    video_id: D-FyolbxJgk
+    start: 1719.86
+    end: 2026.56
+    type: anthem
+    title: Guitar Ensemble — There is a Hope
+    confidence: 0.95
+    scripture: []
+    topics: []
+    summary: The worship leader and an ensemble representative introduce There is a Hope as encouragement in suffering and hope beyond this life. The guitar ensemble presents the anthem before the scripture reading.
+    keywords:
+      - hope
+  - id: s0712-matthew
+    video_id: D-FyolbxJgk
+    start: 2026.56
+    end: 2111.14
+    type: scripture-reading
+    title: Scripture reading — Matthew 10:40-42
+    confidence: 0.95
+    scripture:
+      - Matthew 10:40-42
+    topics: []
+    summary: Jacinta is invited to read Matthew 10:40-42 before the pulpit is handed to Pastor Yong.
+    keywords:
+      - matthew 10
+  - id: s0712-introduction
+    video_id: D-FyolbxJgk
+    start: 2111.14
+    end: 2372.84
+    type: sermon
+    title: To be Nothing — introduction
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:1-11
+      - Matthew 10:40-42
+    topics: []
+    summary: Pastor Yong thanks the ensemble and discusses the hymn's concluding stanza and hope amid suffering and death, contrasting victory-only songs. Using football to illustrate shifting loyalties and praise, he introduces John 15, recalls the question-submission opportunity and turns to the previous session.
+    keywords:
+      - ensemble
+      - hope
+      - football
+  - id: s0712-recap
+    video_id: D-FyolbxJgk
+    start: 2372.84
+    end: 2740.48
+    type: sermon
+    title: Last session — Signs and Wonders
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 14:25-31
+      - 1 Corinthians 14
+      - Deuteronomy 13
+    topics: []
+    summary: Pastor Yong reviews the Spirit's continuing help, humility in understanding scripture, and Reformed and charismatic views of private tongues and public worship, stressing intelligibility and order. Citing conversations with doctors, he questions unverified healing claims while affirming prayer and God's sovereignty, and invokes Deuteronomy 13 to prioritize obedience over signs, explicitly disavowing an instruction to stone anyone.
+    keywords:
+      - spirit
+      - humility
+      - tongues
+      - order in worship
+      - miraculous healing
+      - signs
+  - id: s0712-sermon-prayer
+    video_id: D-FyolbxJgk
+    start: 2740.48
+    end: 2780.42
+    type: prayer
+    title: Prayer before John 15 exposition
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15
+    topics: []
+    summary: Pastor Yong returns to John 15 and prays for the congregation to hear, recognize and follow God's voice.
+    keywords: []
+  - id: s0712-background
+    video_id: D-FyolbxJgk
+    start: 2780.42
+    end: 2997.04
+    type: sermon
+    title: From the upper room to the vine metaphor
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:1-17
+      - John 13
+      - John 14
+      - John 15
+    topics: []
+    summary: Pastor Yong illustrates the grapevine relationship metaphor with growing grapes in Singapore and recalls foot washing, Judas's departure, Peter's denial and the Spirit's promise in John 13–14. He proposes a setting on the way to Gethsemane and distinguishes the familiar-plant metaphor from a crafted parable.
+    keywords:
+      - metaphor
+      - upper room
+      - john 13
+      - parable
+  - id: s0712-divine
+    video_id: D-FyolbxJgk
+    start: 2997.04
+    end: 3295.4
+    type: sermon
+    title: The true vine and divine simplicity
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:1
+    topics: []
+    summary: Pastor Yong places the true vine last among seven declarations, compares English and Chinese wording, and links it to the burning bush and his account of Herod's temple vine rather than cultural belonging. He introduces divine simplicity through a religious-image comparison and describes God's faithfulness as independent of tricks or special formulas.
+    keywords:
+      - true vine
+      - translation
+      - temple
+      - divine simplicity
+      - special formula
+      - faithfulness
+  - id: s0712-culture
+    video_id: D-FyolbxJgk
+    start: 3295.4
+    end: 3420.52
+    type: sermon
+    title: Knowing God beyond cultural assumptions
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:1
+    topics: []
+    summary: Pastor Yong argues that Christ is not a cultural construction, illustrating how family and ethnic traditions shape decisions. He warns that misunderstanding God affects life and urges sustained reflection on the true-vine declaration.
+    keywords:
+      - habits
+      - doctrine
+  - id: s0712-father
+    video_id: D-FyolbxJgk
+    start: 3420.52
+    end: 3542.1
+    type: sermon
+    title: The Father as loving caretaker
+    speaker_id: pastor-yong
+    confidence: 0.95
+    scripture:
+      - John 15:1
+    topics: []
+    summary: Pastor Yong contrasts the Father as an active caretaker with the idea of a creator who makes a clock and leaves it running alone. He connects this care with seeing oneself as beloved by God rather than regarding God as distant and unconcerned.
+    keywords:
+      - absent clockmaker
+      - beloved
+  - id: s0712-confidence
+    video_id: D-FyolbxJgk
+    start: 3542.1
+    end: 3734.02
+    type: sermon
+    title: Full confidence in God
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - Psalms 121:1-2
+    topics: []
+    summary: Pastor Yong uses congregational recall and a song about Psalms 121 to urge confidence in the Father's care and reflection on the Creator's help amid suffering. He offers a deliberately limited analogy of debt and a wealthy parent.
+    keywords:
+      - confidence
+  - id: s0712-community
+    video_id: D-FyolbxJgk
+    start: 3734.02
+    end: 3836.94
+    type: sermon
+    title: Dependence and life with other branches
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15
+    topics: []
+    summary: Pastor Yong presents interconnected branches as dependence on God within a community. Using switching between online preachers as an example, he urges mutual encouragement, forgiveness and love rather than solitary religion.
+    keywords: []
+  - id: s0712-fruit
+    video_id: D-FyolbxJgk
+    start: 3836.94
+    end: 4038.38
+    type: sermon
+    title: Fruitfulness and branches removed
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:2
+      - John 15:6
+    topics: []
+    summary: Pastor Yong argues that removed branches never truly belonged to Christ and questions whether his church tradition sufficiently encourages fruitful, purposeful living. He uses strong language about defeat and despair while explicitly denying that fruitfulness guarantees wealth or health.
+    keywords:
+      - branches
+      - salvation
+      - fruit
+  - id: s0712-pruning
+    video_id: D-FyolbxJgk
+    start: 4038.38
+    end: 4312.52
+    type: sermon
+    title: Pruning and the paradox of trials
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:2
+      - 2 Timothy 3
+      - John 15:2-3
+    topics: []
+    summary: Pastor Yong uses gardening, reported remarks by Stephen Tong and Socrates, and a joke about others' trials to discuss difficult preparation for fruitful service. He addresses whether faithful living avoids suffering, distinguishes consequences of one's actions from trials while following God, and turns to the believer's response.
+    keywords:
+      - pruning
+      - gardening
+      - trials
+  - id: s0712-abide
+    video_id: D-FyolbxJgk
+    start: 4312.52
+    end: 4432.08
+    type: sermon
+    title: Our response — remaining in Christ
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:3-5
+      - John 15:5
+    topics: []
+    summary: Pastor Yong explains abide using remaining, staying and being united with Christ, connecting it with dependence on the source of life. He applies fruitfulness across differences of wealth, appearance and family background, then asks what that fruit means.
+    keywords:
+      - abide
+  - id: s0712-good-fruit
+    video_id: D-FyolbxJgk
+    start: 4432.08
+    end: 4538.94
+    type: sermon
+    title: The fruit of the Spirit as a reference point
+    speaker_id: pastor-yong
+    confidence: 0.95
+    scripture:
+      - Galatians 5:22-23
+    topics: []
+    summary: Pastor Yong uses the fruit of the Spirit as reference points for prayerful examination of his own life, drawing an analogy with engineering. He describes fruitfulness as life's overall direction and character, not happiness every day.
+    keywords:
+      - fruit
+      - spirit
+  - id: s0712-goodness
+    video_id: D-FyolbxJgk
+    start: 4538.94
+    end: 4752.08
+    type: sermon
+    title: All truth and goodness belong to God
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - James 1:17
+    topics: []
+    summary: Pastor Yong connects scientific truth and ordinary goodness with God, using James 1:17 to describe enjoyment and relationships as gifts while rejecting dishonesty as service to God. He argues that goodness extends beyond religious acts and that people of other faiths can do good and enjoy its fruit.
+    keywords:
+      - all truth
+      - all goodness
+      - james
+  - id: s0712-without
+    video_id: D-FyolbxJgk
+    start: 4752.08
+    end: 4845.8
+    type: sermon
+    title: Life apart from God's goodness
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:5
+    topics: []
+    summary: Pastor Yong reads John 15:5 beyond a promise of success through reliance on Jesus. Applying his interpretation beyond Christians, he argues that actions disconnected from God's goodness, purpose and truth ultimately mean nothing.
+    keywords:
+      - truth
+      - goodness
+  - id: s0712-retirement
+    video_id: D-FyolbxJgk
+    start: 4845.8
+    end: 4971.72
+    type: sermon
+    title: Achievement and the rich fool
+    speaker_id: pastor-yong
+    confidence: 0.85
+    scripture:
+      - Luke 12
+    topics: []
+    summary: Pastor Yong illustrates the attraction of accumulated wealth and leisure through his retired classmates' conversations. He connects displays of personal success with Luke 12's rich fool and asks what possessions ultimately amount to.
+    keywords:
+      - retirement
+      - achievement
+      - fool
+  - id: s0712-wealth
+    video_id: D-FyolbxJgk
+    start: 4971.72
+    end: 5183.4
+    type: sermon
+    title: Antilia and the meaning of wealth
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - Luke 12
+    topics: []
+    summary: Pastor Yong recalls passing Antilia while working with Habitat for Humanity and contrasts its purported amenities and staffing with nearby Mumbai slums. He questions luxury spending against possible help for the city and his understanding of value before God.
+    keywords:
+      - mumbai
+      - poverty
+      - slums
+  - id: s0712-value
+    video_id: D-FyolbxJgk
+    start: 5183.4
+    end: 5333.68
+    type: sermon
+    title: True value in small acts of service
+    speaker_id: pastor-yong
+    confidence: 0.95
+    scripture:
+      - Matthew 10:42
+    topics: []
+    summary: Pastor Yong contrasts wealth with Matthew 10:42, arguing that small acts of service linked with God have enduring value. He places serving and loving others above donor recognition and names on buildings as expressions of eternal goodness.
+    keywords:
+      - eternal value
+      - lasting impact
+  - id: s0712-ultimate
+    video_id: D-FyolbxJgk
+    start: 5333.68
+    end: 5395.68
+    type: sermon
+    title: The ultimate reality
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:6
+    topics: []
+    summary: The preacher returns to John 15:6 and warns that what is incompatible with God's goodness and truth cannot remain at the final consummation.
+    keywords:
+      - ultimate reality
+  - id: s0712-highest
+    video_id: D-FyolbxJgk
+    start: 5395.68
+    end: 5556.54
+    type: sermon
+    title: Prayer, love and obedience
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:7
+      - John 15:8-9
+      - John 15:10
+      - 1 Samuel 15:22
+    topics: []
+    summary: Pastor Yong interprets answered prayer as alignment with God's word and will rather than lottery wishes, and uses workplace conduct to illustrate love identifying disciples rather than buildings or labels. He links John 15:10 with 1 Samuel 15:22 to present obedience as love's expression rather than sacrifice alone.
+    keywords:
+      - fruits of love
+      - obedience
+      - sacrifice
+  - id: s0712-joy
+    video_id: D-FyolbxJgk
+    start: 5556.54
+    end: 5622.5
+    type: sermon
+    title: Fullness of joy
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:11
+    topics: []
+    summary: The preacher concludes the exposition with John 15:11, acknowledging difficulties while describing fullness of joy in connection with Christ.
+    keywords:
+      - fullness of joy
+  - id: s0712-studd
+    video_id: D-FyolbxJgk
+    start: 5622.5
+    end: 5738.96
+    type: sermon
+    title: Charles Thomas Studd and missionary service
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture: []
+    topics: []
+    summary: Pastor Yong introduces Charles Thomas Studd's poem through memories of missionaries and ministry across language barriers. He describes Studd as a faith missionary, mentions WEC and the Cambridge Seven, and introduces Only One Life.
+    keywords:
+      - missionary
+      - only one life
+  - id: s0712-poem
+    video_id: D-FyolbxJgk
+    start: 5738.96
+    end: 5867.32
+    type: sermon
+    title: Only One Life — concluding poem and appeal
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:5
+    topics: []
+    summary: The preacher reads selected stanzas of Only One Life, repeats its central refrain and applies its contrast between self-directed living and lasting service to Christ.
+    keywords:
+      - only one life
+  - id: s0712-response-prayer
+    video_id: D-FyolbxJgk
+    start: 5867.32
+    end: 5935
+    type: prayer
+    title: Prayer in response to the sermon
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 15:1-11
+    topics: []
+    summary: Pastor Yong prays in response to the vine metaphor, asking that the congregation understand dependence, pruning and joy in Christ.
+    keywords: []
+  - id: s0712-creed
+    video_id: D-FyolbxJgk
+    start: 5935
+    end: 5983.2
+    type: creed
+    title: Apostles' Creed
+    confidence: 0.9
+    scripture: []
+    topics: []
+    summary: The congregation is invited to stand and affirm its faith with the Apostles' Creed before pastoral prayer.
+    keywords:
+      - apostles creed
+  - id: s0712-pastoral
+    video_id: D-FyolbxJgk
+    start: 5983.2
+    end: 6243.42
+    type: prayer
+    title: Reflection, evangelism and pastoral prayer
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture: []
+    topics: []
+    summary: Pastor Yong invites personal reflection and prayer, then renews prayer for the senior pastor's discernment about a possible South America gospel rally in 2027 and for local evangelism. The closing prayer asks for comfort and strength amid health, financial and relationship challenges, and for mutual service and love.
+    keywords:
+      - south america
+      - rally
+      - evangelism
+      - health
+      - relationship
+  - id: s0712-offering
+    video_id: D-FyolbxJgk
+    start: 6243.42
+    end: 6339.52
+    type: offering
+    title: Offertory
+    confidence: 0.85
+    scripture: []
+    topics: []
+    summary: Pastor Yong introduces the offertory and mentions a second-Sunday offering designation before the collection interval.
+    keywords:
+      - second sunday
+  - id: s0712-closing-hymn
+    video_id: D-FyolbxJgk
+    start: 6339.52
+    end: 6469.64
+    type: hymn
+    title: Thou my everlasting portion
+    confidence: 0.95
+    scripture: []
+    topics: []
+    summary: Pastor Yong introduces a hymn attributed to Fanny Crosby and explains its older expression of God as provider and sustainer. The congregation sings the closing hymn with its repeated Close to Thee refrain.
+    keywords:
+      - everlasting portion
+  - id: s0712-doxology
+    video_id: D-FyolbxJgk
+    start: 6469.64
+    end: 6509.76
+    type: hymn
+    title: Doxology
+    confidence: 0.95
+    scripture:
+      - Hebrews 13
+    topics: []
+    summary: The leader invites the congregation to sing the doxology and receive the blessing from Hebrews 13.
+    keywords:
+      - doxology
+  - id: s0712-blessing
+    video_id: D-FyolbxJgk
+    start: 6509.76
+    end: 6543.04
+    type: blessing
+    title: Blessing — Hebrews 13
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - Hebrews 13
+    topics: []
+    summary: Pastor Yong pronounces the blessing introduced as coming from Hebrews 13.
+    keywords: []
+  - id: s0712-announcements
+    video_id: D-FyolbxJgk
+    start: 6543.04
+    end: 6641.58
+    type: announcement
+    title: Ministry plans and September trip follow-up
+    speaker_id: pastor-yong
+    confidence: 0.85
+    scripture: []
+    topics: []
+    summary: Pastor Yong announces a planned large gathering in Jakarta for the senior pastor's seventieth ministry year, correcting the proposed January date to the ninth. He says South America remains under consideration and directs interested people to a contact for the September 7–11 school-preaching trip discussed the previous week.
+    keywords:
+      - gathering in jakarta
+      - january
+      - south america
+      - september trip
+  - id: s0712-dismissal
+    video_id: D-FyolbxJgk
+    start: 6641.58
+    end: 6676.361
+    type: dismissal
+    title: Dismissal and silent meditation
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture: []
+    topics: []
+    summary: Pastor Yong closes the announcements and dismisses the congregation with silent meditation; the recording retains a short closing view.
+    keywords:
+      - silent meditation

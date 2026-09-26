@@ -1,0 +1,569 @@
+chapters:
+  - id: s20260719-preparation
+    video_id: rM0Oi8-Y8G4
+    start: 0
+    end: 228
+    type: prayer
+    title: Preparatory thanksgiving and supplication
+    confidence: 0.85
+    review_notes:
+      - Recording opens mid-preparation; no preceding speech reconstructed.
+    scripture: []
+    topics:
+      - prayer
+      - worship
+    summary: In the recorded preparation, the unnamed leader invites thanksgiving and personal supplication, leaving time for prayer. The leader asks that worshippers set aside burdens, hear God and entrust the service to him, then introduces the worship leader.
+    keywords:
+      - thanksgiving
+      - personal needs
+  - id: s20260719-welcome
+    video_id: rM0Oi8-Y8G4
+    start: 228
+    end: 370
+    type: worship
+    title: Welcome and call to worship
+    speaker_id: derrick-zou
+    confidence: 0.9
+    scripture:
+      - Psalms 89
+    topics:
+      - worship
+      - service-life
+      - meditation
+    summary: Derrick welcomes the English morning congregation and invites mutual greetings, followed by silent meditation and a call to worship from Psalms 89.
+    keywords:
+      - call to worship
+      - psalms 89
+      - meditation
+  - id: s20260719-first-hymn
+    video_id: rM0Oi8-Y8G4
+    start: 370
+    end: 497
+    type: hymn
+    title: I Sing the Mighty Power of God
+    speaker_id: derrick-zou
+    confidence: 0.92
+    scripture: []
+    topics:
+      - worship
+    summary: Derrick introduces I Sing the Mighty Power of God, describing Watts’s fresh poetic language alongside metrical psalm singing, and the congregation sings the hymn.
+    keywords:
+      - isaac watts
+      - mighty power
+  - id: s20260719-opening-prayer
+    video_id: rM0Oi8-Y8G4
+    start: 497
+    end: 534
+    type: prayer
+    title: Opening prayer
+    speaker_id: derrick-zou
+    confidence: 0.96
+    scripture: []
+    topics:
+      - prayer
+      - worship
+    summary: Derrick thanks God for the congregation’s safe gathering and prays for attention, understanding and transformation.
+    keywords: []
+  - id: s20260719-second-hymn
+    video_id: rM0Oi8-Y8G4
+    start: 534
+    end: 773
+    type: hymn
+    title: Here Is Love, Vast as the Ocean
+    speaker_id: derrick-zou
+    confidence: 0.91
+    scripture: []
+    topics:
+      - worship
+    summary: Derrick presents the ocean and flood imagery in Here Is Love, Vast as the Ocean as an illustration of grace, and the congregation sings the hymn.
+    keywords:
+      - here is love
+      - ocean
+  - id: s20260719-responsive-readings
+    video_id: rM0Oi8-Y8G4
+    start: 773
+    end: 1149
+    type: scripture-reading
+    title: "Responsive readings: Proverbs 30 and John 15"
+    speaker_id: derrick-zou
+    confidence: 0.96
+    scripture:
+      - Proverbs 30:1-33
+      - John 15:1-17
+    topics:
+      - worship
+    summary: The congregation reads Proverbs 30:1-33 and John 15:1-17 responsively, including the wider context of the sermon’s focus in John 15.
+    keywords:
+      - proverbs 30
+      - john 15
+  - id: s20260719-third-hymn
+    video_id: rM0Oi8-Y8G4
+    start: 1149
+    end: 1267
+    type: hymn
+    title: Love Divine, All Loves Excelling
+    speaker_id: derrick-zou
+    confidence: 0.91
+    scripture: []
+    topics:
+      - worship
+    summary: Derrick describes Charles Wesley as a prolific hymn writer and leads Love Divine, All Loves Excelling.
+    keywords:
+      - all loves excelling
+      - love divine
+  - id: s20260719-youth-choir
+    video_id: rM0Oi8-Y8G4
+    start: 1267
+    end: 1532
+    type: music
+    title: "Youth choir: The Lord Is My Shepherd"
+    confidence: 0.92
+    scripture:
+      - Psalms 23
+    topics:
+      - worship
+      - service-life
+    summary: Invited forward, the youth choir presents The Lord Is My Shepherd; the existing account identifies Psalms 23 on the sanctuary screen.
+    keywords:
+      - youth choir
+      - my shepherd
+  - id: s20260719-sermon-reading
+    video_id: rM0Oi8-Y8G4
+    start: 1532
+    end: 1596
+    type: scripture-reading
+    title: "Scripture reading: 1 Corinthians 13:8-13"
+    speaker_id: derrick-zou
+    confidence: 0.97
+    scripture:
+      - 1 Corinthians 13:8-13
+    topics:
+      - worship
+    summary: Derrick announces and reads 1 Corinthians 13:8-13 as a supporting sermon passage.
+    keywords:
+      - 1 corinthians
+  - id: s20260719-sermon-introduction
+    video_id: rM0Oi8-Y8G4
+    start: 1596
+    end: 1720
+    type: address
+    title: Sermon welcome and invitation to questions
+    speaker_id: yong-teck-meng
+    confidence: 0.88
+    scripture:
+      - John 15:12-17
+      - 1 Corinthians 13:8-13
+    topics:
+      - service-life
+      - service
+      - faith
+    summary: The preacher greets the congregation with a football-related remark, thanks the youth choir and encourages ministry participation before turning to John 15. He invites written questions of faith, noting how many can accumulate after teaching sessions.
+    keywords:
+      - questions
+  - id: s20260719-charity-question
+    video_id: rM0Oi8-Y8G4
+    start: 1720
+    end: 2202
+    type: question-answer
+    title: Doing good without being taken advantage of
+    speaker_id: yong-teck-meng
+    confidence: 0.88
+    scripture:
+      - Matthew 10:16
+      - James 2:17
+    topics:
+      - discernment
+      - service
+      - responsibility
+      - stewardship
+      - faith
+    summary: Answering a question about exploitation in charity, the preacher draws on his work and Matthew 10 to urge gentle, discerning, accountable help, preferring organized support over street appeals in his account of Singapore’s welfare provision; his tissue-selling crime anecdote remains unverified. Acknowledging that regulation cannot eliminate fraud, he urges prayerful, sustained involvement and practical action, citing James 2:17 and J217.
+    keywords:
+      - doing good
+      - charitable
+      - accountable
+  - id: s20260719-recap
+    video_id: rM0Oi8-Y8G4
+    start: 2202
+    end: 2438.06
+    type: sermon
+    title: "Last-session recap: the vine and God’s goodness"
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture:
+      - John 15:1-11
+    topics:
+      - knowing-god
+      - truth
+      - discipleship
+      - faith
+    summary: Recapping the previous lesson, the preacher places the vine metaphor in the farewell discourse and discusses dependence on Christ, relationships among believers and difficult pruning for fruitfulness. Contrasting Christ with human constructions of truth, he recalls his broad account of God’s goodness as essential to lasting meaning before exploring Christian identity.
+    keywords:
+      - farewell discourse
+      - true vine
+      - pruning
+      - goodness
+      - truth
+  - id: s20260719-sermon-prayer
+    video_id: rM0Oi8-Y8G4
+    start: 2438.06
+    end: 2490
+    type: prayer
+    title: Prayer for humble attention
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture: []
+    topics:
+      - prayer
+      - discernment
+    summary: The preacher prays for humility and attentive hearts focused on God amid competing voices.
+    keywords:
+      - voices
+  - id: s20260719-difficulties
+    video_id: rM0Oi8-Y8G4
+    start: 2490
+    end: 2842
+    type: sermon
+    title: Conditional friendship and chosen faith
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture:
+      - John 15:12-17
+      - John 14:15
+      - John 15:16
+    topics:
+      - discipleship
+      - authority
+      - faith
+      - knowing-god
+      - discernment
+    summary: Considering John 15:12-17, the preacher questions the connection between friendship, love and obedience, using stories of a child buying friendship and a nephew’s lending to illustrate transactional relationships. He contrasts divine choosing with personal religious selection, citing neighbouring institutions and mixed household altars as examples of worshippers retaining control.
+    keywords:
+      - commandments
+      - buy friendship
+      - money
+      - choose
+  - id: s20260719-human-constructs
+    video_id: rM0Oi8-Y8G4
+    start: 2842
+    end: 3289
+    type: sermon
+    title: Human constructs and the authority of Scripture
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture:
+      - John 17:17
+    topics:
+      - discernment
+      - truth
+      - worship
+      - discipleship
+      - authority
+    summary: The preacher attributes distorted reasoning to the fall and questions inherited cultural assumptions about faith and European-influenced worship forms, imagining distractions around Jesus’s teaching to challenge expectations of order. Contrasting taekwondo routines with free sparring, he challenges leaders’ conduct and reliance on status, urging Scripture rather than background or personal philosophy to guide choices.
+    keywords:
+      - fallen reason
+      - worship
+      - training
+  - id: s20260719-glory
+    video_id: rM0Oi8-Y8G4
+    start: 3289
+    end: 3779
+    type: sermon
+    title: Glory and goodness apart from Christ
+    speaker_id: yong-teck-meng
+    confidence: 0.86
+    scripture:
+      - John 15:5
+    topics:
+      - glory
+      - knowing-god
+      - truth
+      - faith
+      - discipleship
+    summary: Drawing on John 15:5 and wordplay on Christian identity, the preacher argues that life and glory depend on Christ and on truth, goodness and beauty beyond religious settings. Through disputed sporting examples, a hypothetical purchased national team and an anthem-singing recollection, he questions whether formal citizenship or technical victory brings authentic identification and shared achievement.
+    keywords:
+      - sovereignty
+      - goodness
+      - glory
+      - truth
+      - without christ
+  - id: s20260719-full-joy
+    video_id: rM0Oi8-Y8G4
+    start: 3779
+    end: 3937.42
+    type: sermon
+    title: Full joy rather than a religious tool
+    speaker_id: yong-teck-meng
+    confidence: 0.88
+    scripture:
+      - John 15:5
+      - John 15:11
+    topics:
+      - faith
+      - discipleship
+      - truth
+    summary: Returning to John 15, the preacher contrasts fullness of joy in Christ’s teaching with religion used for temporary comfort or personal benefit. Recalling a previous musical item, he argues that Scripture challenges inherited assumptions about Christian identity.
+    keywords:
+      - comfort
+  - id: s20260719-bought
+    video_id: rM0Oi8-Y8G4
+    start: 3937.42
+    end: 4073
+    type: sermon
+    title: Bought with a price
+    speaker_id: yong-teck-meng
+    confidence: 0.92
+    scripture:
+      - 1 Corinthians 6:19-20
+      - Galatians 2:20
+    topics:
+      - sacrifice
+      - discipleship
+      - faith
+      - authority
+    summary: Citing 1 Corinthians 6:19-20 and Galatians 2:20, the preacher describes redemption as belonging to Christ at the cost of his life, challenging the assumption of complete self-ownership.
+    keywords: []
+  - id: s20260719-doulos
+    video_id: rM0Oi8-Y8G4
+    start: 4073
+    end: 4341
+    type: sermon
+    title: "Doulos: servant or slave?"
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture:
+      - John 15:15
+    topics:
+      - truth
+      - authority
+      - discipleship
+    summary: Discussing John 15:15 and slavery in Roman and early Christian settings, the preacher argues that translating doulos as servant softens its force. Presenting John MacArthur’s argument about translation sensitivity and Christian identity, he contrasts slavery with voluntary bondservice and introduces freedom in belonging to Christ.
+    keywords:
+      - doulos
+      - early church
+      - john macarthur
+  - id: s20260719-chosen
+    video_id: rM0Oi8-Y8G4
+    start: 4341
+    end: 4490
+    type: sermon
+    title: Chosen before the foundation of the world
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture:
+      - John 15:15-16
+      - Ephesians 1:3-5
+    topics:
+      - faith
+      - authority
+      - knowing-god
+    summary: The preacher connects divine choosing in John 15:15-16 and Ephesians 1:3-5 with belonging to Christ, endorsing the interpretation he attributes to MacArthur. He applies this personally while acknowledging listeners’ resistance to slavery language.
+    keywords:
+      - chosen
+  - id: s20260719-paradox
+    video_id: rM0Oi8-Y8G4
+    start: 4490
+    end: 4702
+    type: sermon
+    title: The paradox of freedom under a perfect master
+    speaker_id: yong-teck-meng
+    confidence: 0.89
+    scripture: []
+    topics:
+      - faith
+      - knowing-god
+      - truth
+      - authority
+    summary: The preacher frames freedom in Christ as a paradox and condemns racist biblical justifications of historical slavery. Citing MacArthur, he distinguishes belonging to a perfectly good and wise God from subjection to abusive human masters.
+    keywords:
+      - paradox
+      - historical slavery
+      - master
+  - id: s20260719-marriage
+    video_id: rM0Oi8-Y8G4
+    start: 4702
+    end: 4799
+    type: sermon
+    title: Sacrificial love and the misuse of submission
+    speaker_id: yong-teck-meng
+    confidence: 0.88
+    scripture: []
+    topics:
+      - sacrifice
+      - responsibility
+      - authority
+    summary: Recalling a marital conversation, the preacher rejects using biblical submission to excuse bullying and stresses a husband’s responsibility for self-giving love, before returning to his account of God’s perfection.
+    keywords: []
+  - id: s20260719-prayer-lesson
+    video_id: rM0Oi8-Y8G4
+    start: 4799
+    end: 4994
+    type: sermon
+    title: A prayer partner’s challenge about calling Jesus Lord
+    speaker_id: yong-teck-meng
+    confidence: 0.87
+    scripture: []
+    topics:
+      - prayer
+      - repentance
+      - discernment
+      - authority
+      - discipleship
+    summary: Recalling a Bangkok gathering, the preacher admits judging a prayer partner from Papua by appearance and becoming impatient before being humbled by his prayer. He applies the partner’s challenge about calling Jesus Lord while saying no to everyday requests, refusals and acknowledging God as master.
+    keywords:
+      - habitat for humanity
+      - prayer group
+  - id: s20260719-greatest-love
+    video_id: rM0Oi8-Y8G4
+    start: 4994
+    end: 5275.44
+    type: sermon
+    title: The greatest love and the response of obedience
+    speaker_id: yong-teck-meng
+    confidence: 0.93
+    scripture:
+      - 1 Corinthians 13:13
+      - John 15:12-17
+    topics:
+      - knowing-god
+      - discipleship
+      - love
+      - sacrifice
+      - responsibility
+    summary: Returning to 1 Corinthians 13 and John 15:12-17, the preacher presents God’s love and the cross as the basis for belonging, divine choice, friendship and obedience. He urges listeners to share the love they receive and let love for Christ reshape responses to spouses, relatives, colleagues and friends rather than repeat familiar habits.
+    keywords:
+      - obedience
+      - greatest love
+  - id: s20260719-response-prayer
+    video_id: rM0Oi8-Y8G4
+    start: 5275.44
+    end: 5356.8
+    type: prayer
+    title: Prayer to live in obedient love
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture: []
+    topics:
+      - prayer
+      - discipleship
+      - repentance
+    summary: The preacher prays for loving obedience and help resisting a return to old habits under pressure.
+    keywords: []
+  - id: s20260719-creed
+    video_id: rM0Oi8-Y8G4
+    start: 5356.8
+    end: 5402
+    type: creed
+    title: Apostles’ Creed
+    speaker_id: yong-teck-meng
+    confidence: 0.95
+    scripture: []
+    topics:
+      - faith
+      - worship
+    summary: The congregation receives an invitation to stand and affirm the Apostles’ Creed before prayer.
+    keywords: []
+  - id: s20260719-intercession
+    video_id: rM0Oi8-Y8G4
+    start: 5402
+    end: 5652
+    type: prayer
+    title: Prayer for personal response and youth ministry
+    speaker_id: yong-teck-meng
+    confidence: 0.92
+    scripture:
+      - James 2:17
+    topics:
+      - prayer
+      - service-life
+      - responsibility
+      - meditation
+      - service
+      - faith
+    summary: The preacher gives the congregation time for personal response and directs prayer for young people’s protection and guidance about Boys’ and Girls’ Brigade ministry, including possible primary-school support. He prays for ministry participation, comfort in difficulties and readiness to help through deeds as well as words.
+    keywords:
+      - young people
+      - brigade
+      - ministry
+      - comfort
+  - id: s20260719-offertory
+    video_id: rM0Oi8-Y8G4
+    start: 5652
+    end: 5739
+    type: offering
+    title: Offertory for ministry and social causes
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture: []
+    topics:
+      - stewardship
+      - service
+    summary: Explaining giving arrangements, the preacher identifies the second offering box as designated for social causes on the third Sunday.
+    keywords:
+      - third sunday
+      - social causes
+      - offering
+  - id: s20260719-closing-hymn
+    video_id: rM0Oi8-Y8G4
+    start: 5739
+    end: 5872
+    type: hymn
+    title: The Love of God
+    speaker_id: yong-teck-meng
+    confidence: 0.96
+    scripture: []
+    topics:
+      - worship
+    summary: The preacher introduces The Love of God as a reminder of divine love beyond human understanding, and the congregation sings it.
+    keywords: []
+  - id: s20260719-blessing
+    video_id: rM0Oi8-Y8G4
+    start: 5872
+    end: 5945
+    type: blessing
+    title: Doxology and blessing from Jude
+    speaker_id: yong-teck-meng
+    confidence: 0.92
+    scripture:
+      - Jude 1
+      - Jude 1:24-25
+    topics:
+      - worship
+    summary: Following an invitation to receive a blessing from Jude, the congregation sings the doxology and the preacher pronounces the blessing. The congregation responds and receives an invitation to sit.
+    keywords:
+      - doxology
+      - jude
+  - id: s20260719-announcements
+    video_id: rM0Oi8-Y8G4
+    start: 5945
+    end: 6133
+    type: announcement
+    title: Evening preaching and proposed brigade ministry
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture: []
+    topics:
+      - service-life
+      - responsibility
+      - service
+    summary: The preacher cancels that evening’s expository preaching and asks listeners to inform prospective attendees. Describing a possible school brigade partnership, he contrasts the brigades’ Christian identity with scouting and proposes chaplaincy, fundraising and teaching support with prayerful readiness and sensitivity to a multireligious setting.
+    keywords:
+      - evening expository preaching
+      - cancelled
+      - brigade group
+      - next generation
+  - id: s20260719-dismissal
+    video_id: rM0Oi8-Y8G4
+    start: 6133
+    end: 6196.701
+    type: dismissal
+    title: Dismissal and closing meditation
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture: []
+    topics:
+      - meditation
+      - worship
+    summary: The congregation receives a dismissal with silent meditation, and the recording briefly continues on the closing contact slide.
+    keywords:
+      - silent meditation

@@ -1,0 +1,450 @@
+chapters:
+  - id: s20260823-preparation
+    video_id: QCNrRkiFeKw
+    start: 8.9
+    end: 313
+    type: prayer
+    title: A.C.T.S. preparation for worship
+    confidence: 0.94
+    scripture: []
+    topics:
+      - prayer
+      - worship
+      - forgiveness
+      - service-life
+    summary: The opening leader guides personal prayer through adoration, confession, thanksgiving and supplication for life's concerns. The leader thanks God for redemption and asks that worshippers encourage one another and listen to God's word.
+    keywords:
+      - adoration
+      - confession
+      - thanks
+      - encourage
+  - id: s20260823-welcome
+    video_id: QCNrRkiFeKw
+    start: 323.9
+    end: 492
+    type: worship
+    title: Welcome and call to worship
+    confidence: 0.95
+    scripture:
+      - Psalms 96:1-4
+    topics:
+      - worship
+      - meditation
+      - service-life
+    summary: The worship leader welcomes the congregation, acknowledges a potentially challenging week and invites greeting and silent meditation. The leader reads Psalms 96:1-4 and calls for joyful praise.
+    keywords:
+      - call to worship
+      - meditation
+  - id: s20260823-joyful
+    video_id: QCNrRkiFeKw
+    start: 499.38
+    end: 621.28
+    type: music
+    title: Joyful, Joyful, We Adore Thee
+    confidence: 0.96
+    scripture: []
+    topics:
+      - worship
+    summary: The congregation sings the hymn announced as Joyful, Joyful, We Adore Thee.
+    keywords:
+      - joyful joyful
+      - adore thee
+  - id: s20260823-invocation
+    video_id: QCNrRkiFeKw
+    start: 623.42
+    end: 744.24
+    type: prayer
+    title: Prayer of praise and dependence
+    confidence: 0.93
+    scripture: []
+    topics:
+      - prayer
+      - forgiveness
+      - faith
+      - holy-spirit
+    summary: The leader praises God, confesses distraction and self-reliance, and gives thanks for forgiveness and hope through Christ. The leader prays for Pastor Yong's preaching and strength for those facing uncertainty.
+    keywords:
+      - christ
+      - pastor yong
+      - holy spirit
+  - id: s20260823-higher-throne
+    video_id: QCNrRkiFeKw
+    start: 747.24
+    end: 1101
+    type: worship
+    title: There Is a Higher Throne
+    confidence: 0.94
+    scripture: []
+    topics:
+      - authority
+      - worship
+    summary: The worship leader contrasts the decline of Babylon and Rome with the reign of Christ while introducing There Is a Higher Throne. The congregation sings it before the responsive reading.
+    keywords:
+      - kingdoms
+      - higher throne
+  - id: s20260823-responsive-reading
+    video_id: QCNrRkiFeKw
+    start: 1102.08
+    end: 1381.14
+    type: scripture-reading
+    title: Proverbs 4 and John 16 responsive readings
+    confidence: 0.97
+    scripture:
+      - Proverbs 4
+      - John 16:16-24
+    topics:
+      - worship
+    summary: The worship leader announces Proverbs 4 in full as the first responsive reading, followed by the congregation's reading of John 16:16-24, the passage later expounded in the sermon.
+    keywords:
+      - responsive reading
+      - proverbs
+      - john
+  - id: s20260823-cross
+    video_id: QCNrRkiFeKw
+    start: 1382.1
+    end: 1665
+    type: worship
+    title: The Old Rugged Cross
+    confidence: 0.94
+    scripture:
+      - John 16:16-24
+    topics:
+      - sacrifice
+      - forgiveness
+      - eternal-life
+      - worship
+    summary: The leader connects the John reading with Christ's death and resurrection before introducing The Old Rugged Cross. The congregation sings it before the youth choir's ministry.
+    keywords:
+      - sorrow
+      - resurrection
+      - old rugged cross
+  - id: s20260823-choir
+    video_id: QCNrRkiFeKw
+    start: 1667.16
+    end: 1897.28
+    type: music
+    title: Youth choir — Bound For The Promised Land
+    confidence: 0.92
+    scripture: []
+    topics:
+      - worship
+      - service-life
+    summary: The youth choir ministers in song, followed by an invitation to Brother Jordan to read scripture and Pastor Yong to preach.
+    keywords:
+      - youth choir
+      - promised land
+  - id: s20260823-romans
+    video_id: QCNrRkiFeKw
+    start: 1904.38
+    end: 1943.86
+    type: scripture-reading
+    title: Romans 8 scripture reading
+    confidence: 0.98
+    scripture:
+      - Romans 8:20-23
+    topics: []
+    summary: The reader announces Romans 8:20-23 and reads the passage before the sermon.
+    keywords:
+      - romans 8
+      - future glory
+  - id: s20260823-pulpit-introduction
+    video_id: QCNrRkiFeKw
+    start: 1962.3
+    end: 2101.92
+    type: address
+    title: Learning through pulpit ministry
+    speaker_id: pastor-yong
+    confidence: 0.91
+    scripture: []
+    topics:
+      - service
+      - discipleship
+      - service-life
+    summary: Pastor Yong returns to expository preaching after a break and describes sermon preparation as intensive learning. He encourages listeners to discover their gifts and welcomes different people into ministry, with biblical faithfulness as the criterion.
+    keywords: []
+  - id: s20260823-politics-question
+    video_id: QCNrRkiFeKw
+    start: 2102.12
+    end: 2729.62
+    type: question-answer
+    title: Christian citizenship and political involvement
+    speaker_id: pastor-yong
+    confidence: 0.94
+    scripture: []
+    topics:
+      - politics
+      - government
+      - authority
+      - discipleship
+      - responsibility
+      - justice
+      - discernment
+    summary: Answering a National Day follow-up, Pastor Yong places allegiance to God's kingdom above family and work roles, urging taxes, voting and conscientious work without withdrawal, aggressive partisanship or unquestioning trust in politicians. Through his international legal comparisons and historical examples, he urges wisdom about resisting government and says the pulpit should teach justice while leaving party choices to individuals.
+    keywords:
+      - politics
+      - allegiance
+      - primary identity
+      - taxes
+      - voting
+      - citizenship
+      - different countries
+      - justice
+      - party
+      - government
+  - id: s20260823-recap
+    video_id: QCNrRkiFeKw
+    start: 2730.08
+    end: 3096.16
+    type: sermon
+    title: Farewell Discourse recap and sermon prayer
+    speaker_id: pastor-yong
+    confidence: 0.93
+    scripture:
+      - John 16
+    topics:
+      - discipleship
+      - politics
+      - holy-spirit
+      - discernment
+      - prayer
+    summary: Pastor Yong recalls religious violence and the disciples' pre-crucifixion setting, then outlines creation, fall, redemption and consummation, saying the indwelling Spirit means believers are never alone. He questions AI companions and deceased-person avatars as answers to loneliness, urges shared obedience and prays that listeners recognize God's care and presence.
+    keywords:
+      - holy spirit
+      - loneliness
+      - presence
+  - id: s20260823-jesus-cares
+    video_id: QCNrRkiFeKw
+    start: 3097.04
+    end: 3625.88
+    type: sermon
+    title: Jesus knows the disciples' anxiety
+    speaker_id: pastor-yong
+    confidence: 0.94
+    scripture:
+      - John 16:16
+      - John 16:16-18
+      - Romans 8
+      - John 16:17-18
+      - John 16:19
+      - 1 Peter 5:7
+    topics:
+      - discipleship
+      - holy-spirit
+      - authority
+      - faith
+      - prayer
+      - worship
+    summary: Pastor Yong contrasts the disciples' earthly expectations with a common death-and-resurrection reading of John 16, linking the Spirit's coming with Romans 8 while acknowledging the Trinity's mystery. Describing Jesus' recognition of their anxiety as discernment or supernatural knowledge, he addresses loneliness and hopelessness through 1 Peter 5:7 and biblical, group-centered songs, urging trust in God's promises while acknowledging its difficulty.
+    keywords:
+      - disciples
+      - spirit of christ
+      - resurrection
+      - pentecost
+      - power
+      - songs
+      - trust
+  - id: s20260823-labour
+    video_id: QCNrRkiFeKw
+    start: 3626.08
+    end: 4068.5
+    type: sermon
+    title: Sorrow and the illustration of childbirth
+    speaker_id: pastor-yong
+    confidence: 0.92
+    scripture:
+      - John 16:20
+      - Revelation 3:14
+      - John 16:21
+      - John 16:22
+    topics:
+      - faith
+    summary: Pastor Yong links amen in John 16:20 with Revelation 3:14 and discusses lament through Jesus' childbirth illustration, acknowledging that he lacks a mother's experience. Recalling his sister's labour and his own parenting fears and laughter, he cautions against minimizing childbirth pain and returns to the disciples' shock at the crucifixion before promised joy.
+    keywords:
+      - amen
+      - sorrow
+      - laughter
+      - disciples
+  - id: s20260823-access
+    video_id: QCNrRkiFeKw
+    start: 4068.68
+    end: 4422.02
+    type: sermon
+    title: Asking the Father in Jesus' name
+    speaker_id: pastor-yong
+    confidence: 0.93
+    scripture:
+      - John 16:23
+      - Hebrews 10:19-20
+      - Hebrews 10:23
+      - Hebrews 10:20
+      - John 16:16-24
+    topics:
+      - prayer
+      - holy-spirit
+      - discernment
+      - sacrifice
+      - faith
+    summary: Pastor Yong links John 16:23 with Pentecost, describing prayer in Jesus' name as serving Christ's purposes rather than self-serving requests. Drawing on Hebrews 10, he contrasts his evangelical understanding with his descriptions of Jewish and Roman Catholic practices, treasures access to the Father through Christ's death and the Spirit, and recalls the disciples' suffering and uncertainty before knowing the outcome.
+    keywords:
+      - purpose
+      - glory
+      - access
+      - father
+      - holy spirit
+  - id: s20260823-suffering
+    video_id: QCNrRkiFeKw
+    start: 4423.34
+    end: 4847.22
+    type: sermon
+    title: Living between redemption and consummation
+    speaker_id: pastor-yong
+    confidence: 0.91
+    scripture:
+      - Romans 8:20-21
+      - Romans 8:20-23
+      - Romans 8:22-23
+      - Romans 8:23-25
+      - John 16:21
+    topics:
+      - service
+      - service-life
+      - responsibility
+      - faith
+      - eternal-life
+      - suffering
+    summary: Pastor Yong contrasts pastors who avoid demands with those who share congregational burdens, using Romans 8's already-and-not-yet framework to explain continuing suffering. Recalling disasters and severe childhood illness, he acknowledges difficulty understanding suffering, affirms his Reformed view of God's sovereignty, discusses an objection he attributes to Richard Dawkins and urges patient hope rather than expecting exemption.
+    keywords:
+      - pastoral
+      - not yet
+      - suffering
+      - health challenges
+      - hope
+  - id: s20260823-joy
+    video_id: QCNrRkiFeKw
+    start: 4847.22
+    end: 5556.66
+    type: sermon
+    title: Joy in serving God's purposes
+    speaker_id: pastor-yong
+    confidence: 0.93
+    scripture:
+      - John 16:24
+      - 1 Thessalonians 5:16
+      - Philippians 4:4
+      - Matthew 11
+      - Matthew 5:11-12
+      - Hebrews 1:9
+      - Galatians 5:22-23
+    topics:
+      - prayer
+      - service
+      - faith
+      - eternal-life
+      - holy-spirit
+      - joy
+      - worship
+      - service-life
+      - discernment
+      - discipleship
+      - mission
+    summary: Pastor Yong connects John 16:24 with joy in God's work, drawing on Paul, John the Baptist, persecution teachings and the Spirit's fruit while allowing despair, illustrated by his account of Mother Teresa. Discussing charismatic reactions to joyless traditional worship, manufactured enthusiasm and poor fellowship, he describes fulfilment in following Christ through Richard Pratt's seminary work in India and his own ministry, urging trust, obedience and mutual encouragement.
+    keywords:
+      - fullness of joy
+      - despair
+      - joyless
+      - manufactured
+      - third millennium
+      - journey of faith
+  - id: s20260823-response
+    video_id: QCNrRkiFeKw
+    start: 5556.66
+    end: 5961.68
+    type: prayer
+    title: Sermon response, creed and pastoral prayer
+    speaker_id: pastor-yong
+    confidence: 0.93
+    scripture:
+      - 1 Peter 5:7
+      - Hebrews 10:19-20
+      - John 16:23-24
+    topics:
+      - prayer
+      - faith
+      - worship
+      - mission
+      - discipleship
+    summary: Pastor Yong prays for trust, obedience and joy amid struggles, and the congregation is invited to affirm the Apostles' Creed and respond in personal prayer. He leads intercession for Third Millennium's free theological training, personnel and funding, asking that believers treasure access to the Father and live for God's purposes.
+    keywords:
+      - grow in joy
+      - trust
+      - apostles creed
+      - third millennium
+      - training
+      - access
+  - id: s20260823-offertory
+    video_id: QCNrRkiFeKw
+    start: 5961.68
+    end: 6082.66
+    type: offertory
+    title: Offertory
+    confidence: 0.86
+    scripture: []
+    topics:
+      - stewardship
+      - worship
+    summary: The leader invites the congregation to give by QR code or the offering box before the closing hymn.
+    keywords:
+      - offertory
+  - id: s20260823-footprints
+    video_id: QCNrRkiFeKw
+    start: 6082.66
+    end: 6186.44
+    type: music
+    title: Footprints of Jesus
+    confidence: 0.95
+    scripture: []
+    topics:
+      - worship
+      - discipleship
+      - service-life
+    summary: The leader introduces the closing hymn as a call to follow Jesus while supporting one another.
+    keywords:
+      - footprints
+  - id: s20260823-blessing
+    video_id: QCNrRkiFeKw
+    start: 6186.44
+    end: 6260.36
+    type: blessing
+    title: Doxology and benediction
+    confidence: 0.94
+    scripture:
+      - Romans 15
+      - 2 Corinthians 13
+    topics:
+      - worship
+      - holy-spirit
+    summary: The congregation sings the doxology and receives a blessing announced from Romans 15 and 2 Corinthians 13, followed by the threefold Amen.
+    keywords:
+      - doxology
+      - blessing
+      - amen
+  - id: s20260823-announcements
+    video_id: QCNrRkiFeKw
+    start: 6264.34
+    end: 6427.68
+    type: announcements
+    title: Community lunch and Third Millennium resources
+    confidence: 0.95
+    scripture: []
+    topics:
+      - service-life
+      - service
+      - mission
+      - discipleship
+      - stewardship
+    summary: The closing speaker explains the community-lunch seating arrangement, thanks Brother Patrick and encourages practical ministry. Recommending support for Third Millennium, the speaker distinguishes free Bible-study resources from paid degree-linked study, contrasts online access with physical seminary costs and encourages learning before dismissal and lunch.
+    keywords:
+      - community lunch
+      - initiative
+      - third millennium
+      - study

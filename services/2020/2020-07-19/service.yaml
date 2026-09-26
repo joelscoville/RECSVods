@@ -1,32 +1,104 @@
-id: '2020-07-19'
-date: '2020-07-19'
+id: 2020-07-19
+date: 2020-07-19
 title: Tripping
 sermon_title: Tripping
 type: sermon
 workflow_status: complete
 editorial_status: needs_review
 review_notes:
-  - 'Trusted title, date, Rev. Yong Teck Meng and Luke 17:1-9 / Matthew 18:5-7 preserved. Frames at 0, 10 and 40s confirm title and references. Date and preacher identity are operator-attributed, not inferred from appearance.'
-  - 'Sermon-focused upload: online greeting, pandemic worship remarks, previous-sermon recap, prayer, exposition with an embedded marshmallow-test video, and closing prayer. No missing worship service, scripture reading or creed recitation is invented. The closing creed slide appears while the supplied speech remains prayer.'
-  - 'Programme spans the physical upload, 0–4005.801s. First ASR speech starts 1.84s; final Amen ends 4004.64s. Full imported span is 0–4005.778875s. Context margins clip to upload bounds. Mixed-segment prayer cuts at 930 and 3937s are approximate.'
-  - 'All 753 supplied segments and 11457 words passed complete import scanning and raw/imported correspondence checks. Eighteen word-boundary warnings on 18 segments, maximum 0.28s, remain flagged; no segment overlap, backtracking or tail clamp. Passage text is edited ASR-derived speech, with repetition reduced, punctuation normalized and uncertain words marked, not a listening-verified verbatim transcript.'
-  - 'Fourteen coarse audio/frame windows, 29 refined frames and seven boundary audio windows were extracted. All frames inspected and full audio stream decoded successfully; audio was not listened to. Short-video quiet gaps remain within the illustration rather than being treated as missing sermon speech.'
-  - 'Original target audio is absent from both designated batch roots. Import used the approved missing-audio exception; transcript checksum, source identity and duration passed. Supplied audio hash is retained with audio_hash_verified false, never represented as a newly verified byte match.'
-  - 'Scripture quotations and embedded repetitions are replaced with explicit reference-only markers. Surrounding exposition and prayer remain. Additional references come from spoken citations or inspected slides; unidentified biblical allusions are not completed from memory. Trusted Luke 17:1-9 is retained although exposition stops at verse 6.'
-  - 'Descriptions of research, theologians, political news, casino policy, dress and assault, church scandals, and Gandhi are the preacher’s claims. They have not been independently established as factual or endorsed by the archive. Garbled proper names and the Gandhi anecdote need review.'
-  - 'Complete under the operator’s flag-and-continue instruction, not editorial approval. See docs/tripping-review.md for evidence, limitations, source retry and candidate passage IDs.'
+  - Trusted title, date, Rev. Yong Teck Meng and Luke 17:1-9 / Matthew 18:5-7 preserved. Frames at
+    0, 10 and 40s confirm title and references. Date and preacher identity are operator-attributed,
+    not inferred from appearance.
+  - "Sermon-focused upload: online greeting, pandemic worship remarks, previous-sermon recap,
+    prayer, exposition with an embedded marshmallow-test video, and closing prayer. No missing
+    worship service, scripture reading or creed recitation is invented. The closing creed slide
+    appears while the supplied speech remains prayer."
+  - Programme spans the physical upload, 0–4005.801s. First ASR speech starts 1.84s; final Amen ends
+    4004.64s. Full imported span is 0–4005.778875s. Context margins clip to upload bounds.
+    Mixed-segment prayer cuts at 930 and 3937s are approximate.
+  - All 753 supplied segments and 11457 words passed complete import scanning and raw/imported
+    correspondence checks. Eighteen word-boundary warnings on 18 segments, maximum 0.28s, remain
+    flagged; no segment overlap, backtracking or tail clamp. Passage text is edited ASR-derived
+    speech, with repetition reduced, punctuation normalized and uncertain words marked, not a
+    listening-verified verbatim transcript.
+  - Fourteen coarse audio/frame windows, 29 refined frames and seven boundary audio windows were
+    extracted. All frames inspected and full audio stream decoded successfully; audio was not
+    listened to. Short-video quiet gaps remain within the illustration rather than being treated as
+    missing sermon speech.
+  - Original target audio is absent from both designated batch roots. Import used the approved
+    missing-audio exception; transcript checksum, source identity and duration passed. Supplied
+    audio hash is retained with audio_hash_verified false, never represented as a newly verified
+    byte match.
+  - Scripture quotations and embedded repetitions are replaced with explicit reference-only markers.
+    Surrounding exposition and prayer remain. Additional references come from spoken citations or
+    inspected slides; unidentified biblical allusions are not completed from memory. Trusted Luke
+    17:1-9 is retained although exposition stops at verse 6.
+  - Descriptions of research, theologians, political news, casino policy, dress and assault, church
+    scandals, and Gandhi are the preacher’s claims. They have not been independently established as
+    factual or endorsed by the archive. Garbled proper names and the Gandhi anecdote need review.
+  - Complete under the operator’s flag-and-continue instruction, not editorial approval. See
+    docs/tripping-review.md for evidence, limitations, source retry and candidate passage IDs.
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Plan only, based on the current service metadata and all 59 supplied passage summaries across 26
+    original chapters; no media, listening or ASR was used. Editorial status remains needs_review.
+  - Seven peer groups comprise Opening, five sermon movements and Closing Prayer. Opening contains
+    the online greeting and pandemic worship reflections; no separate worship set, reading,
+    offertory or spoken creed is inferred.
+  - The Lazarus recap, prayer for teachability and discussion of reading Luke coherently form the
+    scriptural foundation. The transition from Lazarus to trials begins the next movement, which
+    keeps the marriage examples, marshmallow illustration, fallen-world explanation and growth
+    argument together.
+  - "The remaining movements distinguish resisting personal temptation, avoiding harm to others, and
+    practicing restoration and forgiveness through faith. Six cues mark substantive support:
+    omission, delayed gratification, consequences, gambling harm, rights and small faith; routine
+    service groups have no cues."
+  - The sermon_description is the sole public description, intended beneath the video and in service
+    context. All group and cue summaries are internal retrieval/review metadata and must not appear
+    in chapter rows, navigation or search-result cards.
+  - Every original chapter is assigned once in its existing order on the same upload. Main derives
+    group bounds, unions existing scripture/topics, preserves original records and old-link
+    mappings, and handles any vector changes; this plan supplies no new numeric bounds or speaker
+    assignments.
+  - The existing prayer transitions remain approximate. The opening prayer stays within the
+    scriptural-foundation movement rather than becoming a separate navigation item; the closing
+    prayer remains a peer service group. Existing ASR, proper-name and unverified-original-audio
+    limitations remain unresolved.
+  - The preacher’s questioned purple-dye shellfish figure, attributed Yancey, Tong and Luther
+    material, media judgments and theological interpretations are not independently verified. His
+    marshmallow discussion acknowledges competing family-background and trust explanations; the
+    embedded clip’s unidentified adult is not attributed to the preacher.
+  - The stumbling-block movement includes the preacher’s disputed dress/assault reasoning and an
+    unverified Gandhi exclusion anecdote, alongside industry and church-conduct examples; grouping
+    does not endorse those claims or establish causation. His mustard-seed reading remains his
+    interpretation.
 speakers:
-  - { id: yong-teck-meng, name: Rev. Yong Teck Meng, role: Preacher }
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
+    role: Preacher
 topics:
-  - { id: church-life, name: Church life }
-  - { id: prayer, name: Prayer }
-  - { id: discipleship, name: Discipleship }
-  - { id: discernment, name: Discernment }
-  - { id: faith, name: Faith }
-  - { id: temptation, name: Temptation }
-  - { id: forgiveness, name: Forgiveness }
-  - { id: responsibility, name: Responsibility }
-  - { id: hypocrisy, name: Hypocrisy }
+  - id: church-life
+    name: Church life
+  - id: prayer
+    name: Prayer
+  - id: discipleship
+    name: Discipleship
+  - id: discernment
+    name: Discernment
+  - id: faith
+    name: Faith
+  - id: temptation
+    name: Temptation
+  - id: forgiveness
+    name: Forgiveness
+  - id: responsibility
+    name: Responsibility
+  - id: hypocrisy
+    name: Hypocrisy
 videos:
   - id: Z-vRVB-WucA
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
@@ -34,9 +106,15 @@ videos:
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    disposition_evidence: 'Full authorized acquisition verified RECS channel/ID and audio/video streams. Acquisition and repeated ffprobe measured 4005.801s; metadata reports 4006s. Full audio decode succeeded. Distributed and refined frames show the expected sermon title, exposition, embedded illustration and closing prayer. Assessment is based on decoding, visual inspection and matching supplied transcript, not direct listening or original batch-audio hash verification.'
+    disposition_evidence: Full authorized acquisition verified RECS channel/ID and audio/video streams.
+      Acquisition and repeated ffprobe measured 4005.801s; metadata reports 4006s. Full audio decode
+      succeeded. Distributed and refined frames show the expected sermon title, exposition, embedded
+      illustration and closing prayer. Assessment is based on decoding, visual inspection and
+      matching supplied transcript, not direct listening or original batch-audio hash verification.
     transcription_language: en
-    transcribed_span: { start: 0, end: 4005.778875 }
+    transcribed_span:
+      start: 0
+      end: 4005.778875
     transcription_provenance:
       engine: faster-whisper
       engine_version: 1.2.1
@@ -44,942 +122,390 @@ videos:
       backend_version: 4.8.2
       compute_type: float16
       device: Tesla T4
-      settings: { beam_size: 5, word_timestamps: true, vad_filter: false, condition_on_previous_text: false }
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
       audio_sha256: 9ebb1d6a7faebb8607b365f0d1c30fbd04903560ab5ef9fb0fa95837706d36fd
       duration_seconds: 4005.778875
       elapsed_seconds: 131.099
       real_time_factor: 0.03273
-      transcribed_at: '2026-09-25T11:25:45.022549+00:00'
+      transcribed_at: 2026-09-25T11:25:45.022549+00:00
       transcript_sha256: fcee2e5cb423e6e347445bb7aab1882f83bc65a2df8a669b75f194a2c356a1bb
       source_duration_seconds: 4005.801
       duration_delta_seconds: -0.022124999999959982
       audio_hash_verified: false
-sections:
-  - { id: s0719-welcome, video_id: Z-vRVB-WucA, start: 0, end: 58.94, type: welcome, title: Greeting the online congregation, speaker_id: yong-teck-meng, confidence: 0.87 }
-  - { id: s0719-worship, video_id: Z-vRVB-WucA, start: 58.94, end: 291.72, type: address, title: Worship and reflection under pandemic restrictions, speaker_id: yong-teck-meng, confidence: 0.84 }
-  - { id: s0719-recap-rich-man, video_id: Z-vRVB-WucA, start: 291.72, end: 516.76, type: sermon, title: Recap — the rich man and Lazarus, speaker_id: yong-teck-meng, confidence: 0.86 }
-  - { id: s0719-recap-judgment, video_id: Z-vRVB-WucA, start: 516.76, end: 795.6, type: sermon, title: Recap — judgment and sins of omission, speaker_id: yong-teck-meng, confidence: 0.85 }
-  - { id: s0719-recap-word, video_id: Z-vRVB-WucA, start: 795.6, end: 872.26, type: sermon, title: Recap — the importance of the Word, speaker_id: yong-teck-meng, confidence: 0.87 }
-  - { id: s0719-opening-prayer, video_id: Z-vRVB-WucA, start: 872.26, end: 930, type: prayer, title: Prayer for teachable hearts, speaker_id: yong-teck-meng, confidence: 0.84, review_notes: ['End is an approximate within-segment transition.'] }
-  - { id: s0719-interpretation, video_id: Z-vRVB-WucA, start: 930, end: 1257.06, type: sermon, title: Reading Luke with faith and attention to context, speaker_id: yong-teck-meng, confidence: 0.84 }
-  - { id: s0719-continuity, video_id: Z-vRVB-WucA, start: 1257.06, end: 1407.88, type: sermon, title: From Lazarus to trials and temptation, speaker_id: yong-teck-meng, confidence: 0.86 }
-  - { id: s0719-realism, video_id: Z-vRVB-WucA, start: 1407.88, end: 1572.16, type: sermon, title: Unlearning unrealistic expectations, speaker_id: yong-teck-meng, confidence: 0.84 }
-  - { id: s0719-test-introduction, video_id: Z-vRVB-WucA, start: 1572.16, end: 1695.72, type: sermon, title: Introducing the marshmallow test, speaker_id: yong-teck-meng, confidence: 0.87 }
-  - { id: s0719-test-video, video_id: Z-vRVB-WucA, start: 1695.72, end: 1915.7, type: illustration, title: Embedded marshmallow-test video, confidence: 0.86, review_notes: ['Dialogue belongs to the embedded clip, not the preacher. Gaps and largely visual action are retained.'] }
-  - { id: s0719-test-discussion, video_id: Z-vRVB-WucA, start: 1915.7, end: 2060.94, type: sermon, title: Delayed gratification and competing explanations, speaker_id: yong-teck-meng, confidence: 0.87 }
-  - { id: s0719-fallen-world, video_id: Z-vRVB-WucA, start: 2060.94, end: 2212.5, type: sermon, title: A fallen world and the activity of evil, speaker_id: yong-teck-meng, confidence: 0.87 }
-  - { id: s0719-growth, video_id: Z-vRVB-WucA, start: 2212.5, end: 2392.88, type: sermon, title: Trials and the paradox of growth, speaker_id: yong-teck-meng, confidence: 0.87 }
-  - { id: s0719-resistance, video_id: Z-vRVB-WucA, start: 2392.88, end: 2537.06, type: sermon, title: Being tempted and choosing not to dwell on it, speaker_id: yong-teck-meng, confidence: 0.85 }
-  - { id: s0719-truth, video_id: Z-vRVB-WucA, start: 2537.06, end: 2755.74, type: sermon, title: Knowing the truth and recognizing consequences, speaker_id: yong-teck-meng, confidence: 0.89 }
-  - { id: s0719-discipline, video_id: Z-vRVB-WucA, start: 2755.74, end: 2888.84, type: sermon, title: Practical safeguards and believing what one teaches, speaker_id: yong-teck-meng, confidence: 0.88 }
-  - { id: s0719-warning, video_id: Z-vRVB-WucA, start: 2888.84, end: 2984.46, type: sermon, title: Luke 17 and Matthew 18 — causing others to stumble, speaker_id: yong-teck-meng, confidence: 0.91 }
-  - { id: s0719-industry, video_id: Z-vRVB-WucA, start: 2984.46, end: 3140.94, type: sermon, title: Direct harm — industries and gambling, speaker_id: yong-teck-meng, confidence: 0.86 }
-  - { id: s0719-lifestyle, video_id: Z-vRVB-WucA, start: 3140.94, end: 3317.48, type: sermon, title: The preacher’s argument about dress and temptation, speaker_id: yong-teck-meng, confidence: 0.82, review_notes: ['Preserves and attributes the preacher’s disputed dress/assault reasoning; not an archive endorsement or independent causal finding.'] }
-  - { id: s0719-hypocrisy, video_id: Z-vRVB-WucA, start: 3317.48, end: 3521.68, type: sermon, title: Scandals and less obvious stumbling blocks, speaker_id: yong-teck-meng, confidence: 0.87 }
-  - { id: s0719-rights, video_id: Z-vRVB-WucA, start: 3521.68, end: 3639.54, type: sermon, title: Consider others before insisting on your rights, speaker_id: yong-teck-meng, confidence: 0.92 }
-  - { id: s0719-recovery, video_id: Z-vRVB-WucA, start: 3639.54, end: 3696.88, type: sermon, title: Restore and forgive rather than cause a fall, speaker_id: yong-teck-meng, confidence: 0.92 }
-  - { id: s0719-faith, video_id: Z-vRVB-WucA, start: 3696.88, end: 3883.92, type: sermon, title: The apostles’ request for faith, speaker_id: yong-teck-meng, confidence: 0.89 }
-  - { id: s0719-conclusion, video_id: Z-vRVB-WucA, start: 3883.92, end: 3937, type: sermon, title: Take faith seriously in daily practice, speaker_id: yong-teck-meng, confidence: 0.89 }
-  - { id: s0719-closing-prayer, video_id: Z-vRVB-WucA, start: 3937, end: 4005.801, type: prayer, title: Prayer not to become a source of temptation, speaker_id: yong-teck-meng, confidence: 0.86, review_notes: ['Approximate prayer onset within segment 740. Creed slide does not establish a spoken creed; recording ends after Amen.'] }
-passages:
-  - id: p0719-welcome
+chapters:
+  - id: c20200719-opening
     video_id: Z-vRVB-WucA
-    section_id: s0719-welcome
     start: 0
-    end: 58.94
-    type: welcome
-    title: Greeting friends joining by video
-    summary: Rev. Yong Teck Meng greets the children and other participants joining by Zoom and invites them to turn on their cameras.
-    questions: ['How does the preacher welcome online participants?']
-    topics: [church-life]
-    scripture: []
-    transcript: |
-      Happy Sunday. Let's take a look at our friends out there in Zoom land. I'm always fascinated to see [personal name uncertain], such a cute baby. Hi [name uncertain]. Hello, all the children. Come, turn on your video. Good. Wow, there's a virtual background kind of a thing going on there. That's Hannah, right? Am I right? Is that Hannah? Yeah, that's Hannah. This is wonderful. So wonderful to see all of you on video. Okay, cool. Thank you so much. As [name uncertain] said, you know—
-    confidence: 0.82
-    review_notes: ['First speech begins at 1.84s. Greeting names need listening review; no identification inferred from the video. Final phrase continues into the following passage.']
-  - id: p0719-wedding-masks
-    video_id: Z-vRVB-WucA
-    section_id: s0719-worship
-    start: 58.94
-    end: 115.6
-    type: address
-    title: A wedding under pandemic restrictions
-    summary: The preacher describes a wedding with masks and restrictions on singing, including his exchange with the bride’s mother about complying with the rules.
-    questions: ['What difficulties does the preacher describe about conducting a wedding during restrictions?']
-    topics: [church-life]
-    scripture: []
-    transcript: |
-      We are indeed in a very strange and odd time, and all the regulations given are also pretty difficult to explain. Yesterday I conducted a wedding. [Personal names uncertain] may want to hear this. It's the same thing: you tell the crowd that you're not supposed to sing. The bride and groom prepared songs just like us. Everybody was wearing face masks coming in. It was a little bit difficult because the bride's mother kept asking me, are you sure I cannot take out the face mask? She kept telling me that it's very ugly to walk in with face masks and all that kind of thing. I said, no, you can't, because if you do my license will be revoked and the hotel will get fined and what have you. Finally she relented. So I told the people that when we come to the part of the songs—
-    confidence: 0.85
-    review_notes: ['Historical account of 2020 restrictions, not current health or legal guidance. Sentence continues across the passage boundary.']
-  - id: p0719-singing-meditation
-    video_id: Z-vRVB-WucA
-    section_id: s0719-worship
-    start: 115.6
-    end: 186.12
-    type: address
-    title: Listening instead of singing
-    summary: The preacher recounts a guest singing despite restrictions, describes the barriers used while speaking, and considers how restrictions encourage unfamiliar forms of meditation.
-    questions: ['How does the preacher connect singing restrictions with meditation?']
-    topics: [church-life, prayer]
-    scripture: []
-    transcript: |
-      I didn't even know what words to use, because you cannot say, let's sing How Great Thou Art. It's like, let's have [song title repeated indistinctly], let's listen to it. As we went on, one of the uncles who is from Indonesia couldn't take it; he just suddenly burst out singing loudly because he didn't understand how this thing works. Just in case you don't know, the authorities believe that because you are expelling droplets when you sing, therefore you are discouraged from singing. For the speaker, you need to have either a face [shield; ASR unclear] or, the way we do it, we have this acrylic. That's going to collapse soon, I think; it's moving towards you. Please don't fall out as I preach! So as to block whatever droplets come from the mouth. But as [name uncertain] said, one of the interesting things is that it does remind us of the various ways of meditation and prayer that we are not familiar with. I find it interesting that she said, if you are a person who cannot sing then it's okay. But if you are one of those choir people, singers or musicians, you can't stand it; you just have to sing.
-    confidence: 0.84
-    review_notes: ['Song title is a tentative normalization of garbled ASR, not listening-verified; no lyrics retained. Shield wording is uncertain ASR.']
-  - id: p0719-silent-retreat
-    video_id: Z-vRVB-WucA
-    section_id: s0719-worship
-    start: 186.12
-    end: 239
-    type: address
-    title: Learning from another prayer tradition
-    summary: The preacher recounts Philip Yancey’s description of a silent monastic retreat as an example of learning from other worship traditions.
-    questions: ['Why does the preacher mention a silent retreat?']
-    topics: [prayer, discernment]
-    scripture: []
-    transcript: |
-      You need to know that indeed it's true that there are many different styles of worship. I think it's good from time to time to go and learn about other traditions. I was reading a book by Philip Yancey on prayer. He went to experience the silent meditation kind of style of the Roman Catholics. He enrolled himself in one of their monasteries, where once you go in you have to surrender everything, your phone and everything, and be quiet. It's a silent kind of treatment. He said at the beginning the brothers, meaning the monks, tell him: you surrender everything, and then you go through the routine; this is what you do every day, mainly keep quiet and meditate upon [word unclear]. The brothers came and told him that in a couple of days' time they would come and visit him, and he could tell them what he needed.
-    confidence: 0.84
-    review_notes: ['Book anecdote and attribution are the preacher’s account, not independently checked against the book.']
-  - id: p0719-learning-not-to-need
-    video_id: Z-vRVB-WucA
-    section_id: s0719-worship
-    start: 239
     end: 291.72
-    type: address
-    title: Rethinking what we need
-    summary: The preacher finds the retreat’s emphasis on learning not to need things thought-provoking and connects it with meditation during restricted worship.
-    questions: ['What lesson does the preacher draw from the retreat story?']
-    topics: [prayer, discipleship]
+    title: Opening
+    type: opening
+    summary: Rev. Yong Teck Meng welcomes online participants and reflects on pandemic worship
+      restrictions through a wedding account and Yancey’s account of a silent retreat.
+    keywords:
+      - wedding
+      - singing
+    topics:
+      - church-life
+      - prayer
+      - discernment
+      - discipleship
     scripture: []
-    transcript: |
-      [Retreat saying, as attributed by the preacher, omitted.] I thought that was fascinating. It's not like, you tell us what you need and we will try to help you and meet your needs. The answer is about how not to need them. I thought that's a fascinating way to look at life, because we have a lot of things that we think we need, but actually we don't. It's true that maybe with the face mask on and the song, it forces you to meditate more on the word. But you have your face mask on, so I really cannot tell whether you are singing or not. I think if you sing softly—[uncertain aside about advice on masks]. But I don't want to tempt the authorities to go after me, because today's topic is about temptation. Today we want to move into the next chapter of Luke, but let's quickly review what was learned in the last session.
-    confidence: 0.81
-    review_notes: ['Unclear mask aside is explicitly omitted, not reconstructed.']
-  - id: p0719-lazarus-account
+    source_chapters:
+      - s0719-welcome
+      - s0719-worship
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: c20200719-scripture-warnings
     video_id: Z-vRVB-WucA
-    section_id: s0719-recap-rich-man
     start: 291.72
-    end: 366.52
+    end: 1257.06
+    title: Take Scripture’s Warnings Seriously
     type: sermon
-    title: Revisiting the rich man and Lazarus
-    summary: The preacher reviews his previous sermon and explains why some readers treat the rich man and Lazarus as an actual event rather than a parable.
-    questions: ['Why does the preacher discuss whether the Lazarus account is a parable?']
-    topics: [discernment]
-    scripture: ['Luke 16:19-31', 'Matthew 8:11-12']
-    transcript: |
-      The last session we had together was an interesting session for me, actually. I entitled it Where the Sun Does Not Shine because it was focused on this narrative relating to the rich man and Lazarus. I've always been fascinated by this account because I read so many years ago that some people believe it was a real account, not just a parable, because of a couple of things. Jesus did not say that it is a parable. That's important because in most of the parables he would just come out and say this is a parable, this is a story, but this one he did not. Second, more importantly, there was a name associated with a character, and that's Lazarus. This is the only time it has happened in all the parables Jesus told, so people kept wondering whether it's a real event or not. Whether it's a real event or not is actually important, because if it is a real event, then what Jesus said about paradise and Hades and the fire and all that are all factual. But if it is just a parable, perhaps Jesus was trying to use that as an illustration. You see there's a difference even in small things like that.
-    confidence: 0.86
-    review_notes: ['300s recap slide supplies the previous sermon’s two references. Claims about Jesus’ parables remain attributed.']
-  - id: p0719-purple-cloth
+    summary: The preacher uses Lazarus and judgment to warn against neglect, prays for teachability and
+      argues that faith in Scripture reveals coherence in Luke’s teachings.
+    keywords:
+      - rich man
+      - lazarus
+      - judgment
+      - common grace
+      - sins of commission
+      - omission
+      - commentaries
+      - interpretation
+    topics:
+      - discernment
+      - discipleship
+      - faith
+      - responsibility
+      - prayer
+    scripture:
+      - Luke 16:19-31
+      - Matthew 8:11-12
+      - Matthew 25
+      - Luke 17:1-9
+      - Romans 1:17
+      - Romans 1:16-17
+    source_chapters:
+      - s0719-recap-rich-man
+      - s0719-recap-judgment
+      - s0719-recap-word
+      - s0719-opening-prayer
+      - s0719-interpretation
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s0719-recap-judgment
     video_id: Z-vRVB-WucA
-    section_id: s0719-recap-rich-man
-    start: 366.52
-    end: 445.22
-    type: sermon
-    title: Purple cloth and a snail-rescuing aside
-    summary: The preacher describes the rich man’s luxury through a purple-dye illustration, questions his own shellfish figure, and makes an aside about rescuing snails.
-    questions: ['How does the preacher illustrate the rich man’s wealth?']
-    topics: [discipleship]
-    scripture: ['Luke 16:19-31']
-    transcript: |
-      As usual, Jesus told a story with very extreme description. [Description from Luke 16:19 omitted; reference only.] It's a very extreme thing. I explained to you why purple cloth is important. It is made from a shellfish, the murex shellfish, and you've got to crush twelve thousand of them. Later I was talking to Patricia about it. I don't know whether it's true that it's twelve thousand. Twelve thousand is a lot! Maybe, but even one thousand is a lot. You get a slave to go to the lake or the seaside to catch all these shells and crush them to squeeze out the purple juice or whatever it is. Just to let you know, Patricia is a snail rescuer. As we walk, sometimes you step on snails. Pat is one of those people who has rescued many snails in her lifetime. But she always puts the snail on the wrong side! The snail is trying to cross the road to the other side; she puts it back here. If I'm the snail, it's like, hello, I just spent the last two hours crawling here, and then you put me on the wrong side. So you catch the murex and crush them, like you crush the snail, take the juice and make a purple linen cloth. That's how rich the guy was.
-    confidence: 0.85
-    review_notes: ['The preacher himself questions the shellfish count. No independent historical verification.']
-  - id: p0719-death-judgment
-    video_id: Z-vRVB-WucA
-    section_id: s0719-recap-rich-man
-    start: 445.22
-    end: 516.76
-    type: sermon
-    title: The preacher’s account of death and judgment
-    summary: The preacher contrasts the rich man’s abundance with Lazarus’s need and outlines his understanding of paradise, Hades, resurrection and final judgment.
-    questions: ['What understanding of death and judgment does the preacher draw from the account?']
-    topics: [faith]
-    scripture: ['Luke 16:19-31']
-    transcript: |
-      [Repeated narrative description from Luke 16 omitted.] The rich people were so rich that they would use bread to wipe their mouths and then throw away the bread, like you throw tissue paper, and all the beggars would go after that. In the illustration, the fact was that Lazarus was seen by the rich man; that's what it meant, looking for the scraps. But the illustration had a frightening aspect in what will happen at death. I explained that our understanding is that when the people of God die, immediately you are in paradise. But if you do not know Jesus Christ or reject Jesus Christ, when you die immediately you will be in Hades. When Jesus comes again, the resurrection of the body will happen, your soul will join with your body, and then you face the final judgment throne. For the people of God, we are judged for rewards, not for life or eternal punishment. People who do not belong to God will be judged for eternity and eternal punishment. That's in a nutshell what we believe in, and we get some of our understanding from the illustration of the rich man and Lazarus.
-    confidence: 0.86
-    review_notes: ['Theological and historical statements are preserved as the preacher’s exposition.']
-  - id: p0719-hell-absence
-    video_id: Z-vRVB-WucA
-    section_id: s0719-recap-judgment
     start: 516.76
-    end: 590.2
-    type: sermon
-    title: Eternal punishment and the absence of goodness
-    summary: The preacher rejects annihilation as an easy alternative to eternal punishment and stresses what he calls the absence of God’s goodness.
-    questions: ['What does the preacher find most frightening about hell?']
-    topics: [faith]
-    scripture: ['Luke 16:19-31']
-    transcript: |
-      Still, the idea of hell is very difficult: whether it's eternal torment, or some people believe in annihilation, where you get punished for a while and then are totally destroyed forevermore. The theory and theology is very appealing, I suppose, to some extent, and a lot of people are kind of biased towards it. However, the fact is that Hades and hell in the Bible is a topic that was most preached by our Lord Jesus Christ, and he absolutely definitely described it as an eternal kind of [torment; ASR says atonement]. It is a biblical teaching that should not be challenged so easily because you have no Bible basis if you want to challenge whether it's annihilation or whatever thought you may have. What we can accept is that that's what the Bible has said. At the same time, remember that when we talk about Hades, the most frightening thing is not just physical torment that the Taoists or Buddhists or Muslims or Hindus all have a similar concept of. It is the real absence of God. Not that God disappeared, but the absence of all the goodness of God.
-    confidence: 0.82
-    review_notes: ['Torment/atonement is an explicit ASR uncertainty. Comparative religious claims are attributed, not independently validated.']
-  - id: p0719-common-grace
-    video_id: Z-vRVB-WucA
-    section_id: s0719-recap-judgment
-    start: 590.2
-    end: 666.56
-    type: sermon
-    title: Everyday goodness and common grace
-    summary: The preacher uses ordinary comforts and relationships to explain common grace and why he finds the loss of all goodness difficult to imagine.
-    questions: ['How does the preacher illustrate common grace?']
-    topics: [faith]
-    scripture: []
-    transcript: |
-      Even after I preached to you, I kept thinking about what I said, and thinking deeply about what it means to have an absence of good. It's a very frightening thought, because all of us seated here and watching from cyberspace are under the common grace of God. [Biblical quotation about sunshine omitted; exact reference not stated.] Even the most evil person on earth today is enjoying the goodness of God. You enjoy a cold glass of water; that's good. You enjoy people who love you and people whom you love. Even the most evil person would do that, and it's good. You enjoy a cold glass of beer as you shout victory over the ruling party; that's a kind of goodness. Can you imagine not having any of these things? All goodness is associated with God, every single good. [Quotation attributed to James omitted; exact reference not stated.] Just on that point alone, it should send chills down your spine. It is not something you can actually understand because you are enjoying goodness even as I speak; you are sitting down very comfortably. Hell really is quite unimaginable. But whatever the case may be, remember that God is just.
-    confidence: 0.85
-    review_notes: ['No precise reference invented for the sunshine or James allusions.']
-  - id: p0719-sins-omission
-    video_id: Z-vRVB-WucA
-    section_id: s0719-recap-judgment
-    start: 666.56
-    end: 745
-    type: sermon
-    title: Sins of commission and omission
-    summary: The preacher distinguishes doing wrong from failing to do what one ought, and connects the rich man’s neglect of Lazarus with Matthew 25.
-    questions: ['What does the preacher mean by a sin of omission?']
-    topics: [responsibility, discipleship]
-    scripture: ['Luke 16:19-31', 'Matthew 25']
-    transcript: |
-      He cannot be not just. While we may be challenged when it comes to the way we feel about such things, you need not worry that there will come a stage when you say, this is very unfair. It won't happen because God is just. [Biblical confession quotation omitted; exact citation not supplied.] That brought us to why the rich man suffered the way he did. [Repeated Luke 16 description omitted.] The way a lot of us do today. The answer is that there are different kinds of sins. Sins of commission are the sins you do when you should not have done it. Sins of omission are things that you should do but never do. The rich man saw Lazarus every single day and did nothing. This is consistent with the biblical teaching in Matthew 25. [Matthew 25 quotation and narrated exchange omitted; reference only.]
-    confidence: 0.87
-    review_notes: ['Matthew 25 is explicitly named; no unspoken verse range supplied.']
-  - id: p0719-choices-eternity
-    video_id: Z-vRVB-WucA
-    section_id: s0719-recap-judgment
-    start: 745
     end: 795.6
     type: sermon
-    title: Present choices and irreversible consequences
-    summary: The preacher says sins of omission expose everyone’s imperfection and interprets the rich man’s fate as a warning that present choices affect eternity.
-    questions: ['Why does the preacher say avoiding obvious wrongdoing is not enough?']
-    topics: [responsibility]
-    scripture: ['Luke 16:19-31', 'Matthew 25']
-    transcript: |
-      Sins of omission are the ones most of us miss. This is also the reason none of us will ever be perfect. You can try to prevent sins of commission, never do anything that is really bad, but I think none of us can escape sins of omission in one way or another. The rich man was in Hades because of that, and he called out to Father Abraham. Abraham told him that actually what you have done in your life, now that period of time is over already. Which brings about two important points: what is done now will affect the future, and also it is irreversible, because you cannot cross over to the other side. The lesson here really is that we must be careful what we do in this lifetime, for it will affect eternity.
-    confidence: 0.86
-    review_notes: []
-  - id: p0719-word-over-signs
-    video_id: Z-vRVB-WucA
-    section_id: s0719-recap-word
-    start: 795.6
-    end: 872.26
-    type: sermon
-    title: The Word rather than demands for signs
-    summary: The preacher interprets the conclusion of the Lazarus account as support for the central place of Scripture and introduces his chapter-by-chapter approach to Luke.
-    questions: ['Why does the preacher place such emphasis on Scripture?']
-    topics: [faith, discipleship]
-    scripture: ['Luke 16:19-31']
-    transcript: |
-      The last point was that then the rich man said—[request concerning his brothers omitted; Luke 16]. Here comes one of the most important teachings in the Bible. [Abraham’s reply omitted; Luke 16.] They have the Old Testament. Herein lies one of the very key reasons why, in a Reformed evangelical understanding, the Word is so very important. Sola scriptura, the Word alone: the Bible lifts up the Word of God as the main bedrock where we get our faith. If you don't care about the Word of God, don't understand it, don't even bother with it, it doesn't matter what big miracle happens; it will still be the same thing. The Word is supreme over all, and this is why we put a lot of emphasis on it. Today we want to carry on with the teaching. Again, a reminder that we are reading the Bible as a continuation from chapter to chapter. The thoughts are all interlinked to each other. Let's come to God in a word of prayer.
-    confidence: 0.87
-    review_notes: ['Sola scriptura normalized from a garbled ASR phrase in context; listening review remains necessary.']
-  - id: p0719-opening-prayer
-    video_id: Z-vRVB-WucA
-    section_id: s0719-opening-prayer
-    start: 872.26
-    end: 930
-    type: prayer
-    title: Asking for humility and teachability
-    summary: The preacher prays for physical and online listeners to receive the message humbly and for his own ministry to be acceptable to God.
-    questions: ['What does the preacher ask for before beginning the exposition?']
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      Commit the time into his almighty hands. Let us pray. We thank you, God Almighty, that we are all here this morning, either physically here or in cyberspace, listening to your Word. What is needed, of course, is for us to be humble and teachable in our hearts, putting aside everything that is blocking us from you, so that we can come straight to your throne of grace and receive the mercy that we have called out to you for. We ask that you help us to make our hearts like good soil prepared for your Word to come, so that we will be rooted in it and be fruitful in our lives, that people will give glory to you in heaven. Have special mercy on your unworthy servant. [Closing biblical prayer quotation omitted; precise reference not stated.] In Jesus' name we pray. Amen.
+    title: Neglect Has Eternal Consequences
+    speaker_id: yong-teck-meng
     confidence: 0.85
-    review_notes: ['End at 930s is an approximate within-segment cut; prayer’s surrounding original wording retained.']
-  - id: p0719-connected-teachings
+    scripture:
+      - Luke 16:19-31
+      - Matthew 25
+    topics:
+      - faith
+      - responsibility
+      - discipleship
+    summary: The preacher connects common grace, judgment and sins of omission with his warning that
+      present choices have irreversible eternal consequences.
+    keywords:
+      - common grace
+      - sins of commission
+      - omission
+      - irreversible
+    parent_id: c20200719-scripture-warnings
+    source_chapters:
+      - s0719-recap-judgment
+  - id: c20200719-trials-and-growth
     video_id: Z-vRVB-WucA
-    section_id: s0719-interpretation
-    start: 930
-    end: 978.7
-    type: sermon
-    title: Are Luke’s teachings disconnected?
-    summary: The preacher raises the difficulty of connecting apparently separate teachings in Luke 17 and describes a scholarly view he intends to challenge.
-    questions: ['What interpretive difficulty does the preacher identify in Luke 17?']
-    topics: [discernment]
-    scripture: ['Luke 17:1-9']
-    transcript: |
-      One of the key difficulties in the Gospel is that when you think about the Gospel, you think about a lot of stories, narratives and parables found in the Gospel of Luke. Because of that, many people find it difficult to link passages to passages. You have read only the first part of chapter 17 and will immediately see that there are many different teachings, seemingly one after another. Some Bible scholars look at this and say these are kind of random teachings of Jesus Christ that are not linked. It's just like the apostle basically strung them here and there, suddenly remembered that Jesus said this, so he just plonked it in.
-    confidence: 0.86
-    review_notes: ['Reference to a prior reading does not establish that reading as part of this upload.']
-  - id: p0719-reading-commentaries
-    video_id: Z-vRVB-WucA
-    section_id: s0719-interpretation
-    start: 978.7
-    end: 1034.12
-    type: sermon
-    title: Consulting a range of commentaries
-    summary: The preacher describes reading both Reformed and liberal commentators to understand different approaches to a text.
-    questions: ['Why does the preacher consult commentators from different traditions?']
-    topics: [discernment]
-    scripture: []
-    transcript: |
-      Just to let you know, every time I prepare for a sermon I read commentaries or the thoughts of different scholars, and I do that in a range kind of manner. Of course I read people from the Reformed background because that's the key tradition we have. At the same time I also read from the liberals. William Barclay is one theologian I refer to who is a liberal, and these are people who have passed on already. There are very strong theologians out there. [Theologian’s name unclear] just passed away yesterday, and he's a very conservative, Reformed theologian. The reason you want to do that is so you can get a balanced view of what people are thinking about with the same text, and get an appreciation of the richness of the text of God.
-    confidence: 0.81
-    review_notes: ['ASR renders the recently deceased theologian as J.R. Parker. Identity is not silently repaired using external biographical inference.']
-  - id: p0719-news-perspectives
-    video_id: Z-vRVB-WucA
-    section_id: s0719-interpretation
-    start: 1034.12
-    end: 1103.66
-    type: sermon
-    title: Comparing different news perspectives
-    summary: The preacher uses his news-reading habits and Singapore’s election as an analogy for consulting different perspectives, while expressing his own judgments about media bias.
-    questions: ['What news-reading analogy does the preacher use for comparing perspectives?']
-    topics: [discernment]
-    scripture: []
-    transcript: |
-      I will tell you that I also do that in the news I read. I used to just turn on CNN, but I cannot do that anymore because CNN has become an anti-Donald Trump vehicle. Day and night, that's all they do; they're obsessed with it now. You go to CNN for the most liberal kind of view, then turn to Fox News, which is a very conservative news, and I also listen to BBC, which is somewhere in the middle. I do that even for Chinese websites. I go to the Taiwanese website China Times, which is a [party name unclear] conservative one. I also access Liberty Times, which is the [party description unclear], so it's the blue and green kind of thing, to get a view. In the general election in Singapore, I hope you have done that: listen to what the Workers' Party say, what the [party abbreviation unclear] say, what the PSP say, and all the A, B, C, D, E, F, G. What do they all say, so you can have a very informed idea? But because of that, you can tell there are many people with very liberal interpretations of the Bible.
-    confidence: 0.8
-    review_notes: ['Media and political characterizations are the preacher’s views. Garbled party labels retained as uncertainties.']
-  - id: p0719-belief-presupposition
-    video_id: Z-vRVB-WucA
-    section_id: s0719-interpretation
-    start: 1103.66
-    end: 1188.76
-    type: sermon
-    title: Beginning interpretation with belief
-    summary: The preacher criticizes interpretations that exclude miracles from the outset and contrasts them with his Reformed evangelical presupposition that the Bible is God’s Word.
-    questions: ['What starting assumption does the preacher advocate when interpreting Scripture?']
-    topics: [faith, discernment]
-    scripture: ['Luke 17:1-9', 'Romans 1:17']
-    transcript: |
-      Being a liberal means you don't necessarily believe in every word the Bible says. William Barclay, for example, does not believe Jesus Christ can perform miracles, so every time there's a miracle his interpretation is that something has happened. For example, the pigs that Jesus Christ sent the demons into, then they jumped off the cliff and all drowned. They say it must be because somebody suddenly shouted loudly, the pigs got frightened, and there was a stampede. As a liberal interpretation, the key problem is he starts off with unbelief: I do not believe there can be someone supernatural, divine like Jesus Christ; he's just a very good human teacher, a very nice guy. I don't believe, and therefore the conclusion will be unbelief. For liberal theologians looking at Luke chapter 17, they say these are just dribs and drabs of teaching strung together. But for Reformed evangelical folks, we always start off with belief and faith. We believe the Bible to be the Word of God; that's our first presupposition. From that moment onwards, we understand Scripture from that angle. If you do that, and you actually must do that, it will lead you to faith. The Bible actually puts it this way: the apostle Paul wrote in Romans chapter 1 verse 17—
-    confidence: 0.84
-    review_notes: ['Claims about Barclay are not independently checked. The pig narrative is the preacher’s discussion, not inserted Bible text.']
-  - id: p0719-faith-to-faith
-    video_id: Z-vRVB-WucA
-    section_id: s0719-interpretation
-    start: 1188.76
-    end: 1257.06
-    type: sermon
-    title: Finding a line through Luke 17
-    summary: The preacher connects Romans 1:17 with reading Luke in faith and argues that a coherent line links its apparently fragmentary teachings.
-    questions: ['How does the preacher propose to find continuity in Luke 17?']
-    topics: [faith, discernment]
-    scripture: ['Romans 1:16-17', 'Luke 17:1-9']
-    transcript: |
-      [Romans 1:17 quotation omitted; ESV reference only.] This verse comes after the famous verse—[Romans 1:16 quotation omitted]. The next verse says it is a progression that moves from faith to faith. You need to have a fundamental faith that the Gospel of Luke is the Word of God, chapter 17 is the Word of God, and God is going to speak to us through the Word. From there you understand Scripture, and you will find the linkage between the passages. If you start off with unbelief, then you read the Bible and say, what is he talking about? It's all over the place; this is stupid writing, and you will be lost. Let us understand that while chapter 17 may look a bit fragmentary, actually there is a line linking everything together. I pray I can explain the line better to you. Let's remember that, starting with the teaching of the rich man and Lazarus—
-    confidence: 0.88
-    review_notes: ['Romans 1:17 displayed at 1188/1200s; the speaker explicitly identifies the preceding verse before quoting it.']
-  - id: p0719-revolutionary-teaching
-    video_id: Z-vRVB-WucA
-    section_id: s0719-continuity
     start: 1257.06
-    end: 1327.86
+    end: 2392.88
+    title: Expect Trials and Learn Through Them
     type: sermon
-    title: The preacher’s account of Jesus’ challenging teaching
-    summary: The preacher imagines how disruptive Jesus’ teaching would have seemed and repeats a suggestion attributed to Philip Yancey about personal prayer.
-    questions: ['Why does the preacher describe Jesus’ teaching as revolutionary?']
-    topics: [prayer, faith]
-    scripture: ['Luke 16:19-31']
-    transcript: |
-      That's where chapter 16 ended, right? This is horrifying teaching. Can you imagine you are a follower of Jesus Christ and so used, before he appeared, to all the Jewish understanding of life? For example, you have to go to synagogue, do your sacrifice, do whatever the priest tells you. Talking about Philip Yancey earlier, Yancey believed that Jesus Christ probably was the one who invented personal prayer. I've never thought about that, and I think maybe he's right, because before Jesus Christ came everybody was following some system, going to synagogue, and the high priest was the one to pray for you. But Jesus taught people to pray. That was why the apostles asked him to teach them to pray, then he said—[Lord’s Prayer quotation omitted; precise reference not stated]. Yancey said Jesus Christ probably taught people personal prayer, and after his appearance people began to pray to God personally. My point is that it was a very strange time for them, a revolutionary time.
-    confidence: 0.81
-    review_notes: ['The personal-prayer origin claim is preserved as the preacher’s tentative attribution, not an archive historical assertion.']
-  - id: p0719-trials-sure
-    video_id: Z-vRVB-WucA
-    section_id: s0719-continuity
-    start: 1327.86
-    end: 1407.88
-    type: sermon
-    title: Trials and temptations follow the Lazarus warning
-    summary: The preacher reads Luke 17 as a continuation of the difficult teaching about Lazarus and says Jesus prepares his disciples for trials and temptations.
-    questions: ['How does the preacher connect Luke 17 with the rich man and Lazarus?']
-    topics: [temptation, faith]
-    scripture: ['Luke 16:19-31', 'Luke 17:1-9']
-    transcript: |
-      The apostles looking at Jesus Christ's teaching about the rich man and Lazarus—it must have blown their minds, especially the Pharisees and those experts of the law. Chapter 17 follows a very tough, rough, condemning teaching. Jesus Christ said to his disciples—[Luke 17:1 quotation omitted]. It is actually a following lesson to the lesson of the rich man and Lazarus. Jesus was reminding the disciples and apostles that it's not so simple. The lesson is very hard because you guys are all going to go through very difficult trial and temptation. This is the following lesson Jesus gave. The first affirmation he told the disciples is, you think the illustration of the rich man and Lazarus is very hard; let me tell you that you will go through the same trial and temptations. Trial and temptation is a standard thing. [Repeated quotation omitted; Luke 17:1.] This is important for you to know.
-    confidence: 0.88
+    summary: Reading Luke 17 as a continuation of Lazarus, the preacher uses marriage and the debated
+      marshmallow findings to discuss temptation in a fallen world and attributes to Stephen Tong
+      the paradox that trials are necessary for growth.
+    keywords:
+      - trials
+      - temptation
+      - marshmallow
+      - delayed gratification
+      - fallen people
+      - evil
+      - growth
+      - forgiveness
+    topics:
+      - prayer
+      - faith
+      - temptation
+      - discernment
+      - discipleship
+      - forgiveness
+    scripture:
+      - Luke 16:19-31
+      - Luke 17:1-9
+      - Genesis 3:17-18
+      - 1 Peter 5:8
+    source_chapters:
+      - s0719-continuity
+      - s0719-realism
+      - s0719-test-introduction
+      - s0719-test-video
+      - s0719-test-discussion
+      - s0719-fallen-world
+      - s0719-growth
     review_notes: []
-  - id: p0719-unrealistic-expectations
+  - id: s0719-test-discussion
     video_id: Z-vRVB-WucA
-    section_id: s0719-realism
-    start: 1407.88
-    end: 1495.08
-    type: sermon
-    title: Unlearning idealized pictures of life
-    summary: The preacher uses marriage preparation and celebrity imagery to argue that idealized expectations leave people unprepared for difficulty.
-    questions: ['What expectations does the preacher ask couples to unlearn?']
-    topics: [discernment, temptation]
-    scripture: ['Luke 17:1-9']
-    transcript: |
-      Somehow or another, we are all very lured towards a life of peace and comfort and happiness. Fresh off the wedding yesterday, one of the things I always try to help couples understand as they prepare for marriage is that you must unlearn many things the world has taught you, especially the Korean-drama people. It's really quite crazy. A couple of days ago I was helping someone do a PowerPoint thing, and she listed BTS as an example for fundraising. Very long story, but she came out with a very small picture of BTS. I thought I wanted to help her, so I went to find a much larger picture. For the first time I went to hunt for a BTS picture and actually see their faces. They are not human beings, basically; their faces and all that are not real. It's just so white until you can't really tell which one is a girl or guy or whatever. It's not real. But the million followers they have—it's like thirty-seven million or something, if I've got the number correct—and the influence on the world is tremendous. People think that's what the world is like: if I'm a guy, I've got super nice hair and nice clothing. It's not. You must unlearn the way the world teaches you.
-    confidence: 0.84
-    review_notes: ['Celebrity comments and follower count are the speaker’s rhetoric and uncertain estimate, not verified archive facts.']
-  - id: p0719-trial-and-temptation
-    video_id: Z-vRVB-WucA
-    section_id: s0719-realism
-    start: 1495.08
-    end: 1572.16
-    type: sermon
-    title: Trials and temptations are intertwined
-    summary: The preacher describes couples adapting their wedding expectations and argues that trials and temptations are intertwined.
-    questions: ['How does the preacher distinguish and connect trial and temptation?']
-    topics: [temptation]
-    scripture: ['Luke 17:1-9']
-    transcript: |
-      Temptation and trial are a sure thing, and they will surely come; our Lord Jesus Christ said that. For marriages, the first thing young couples trying to get married face is the challenge that they cannot get the wedding they want. Especially the girls are very upset they have to wear masks. I cannot tell you how many times the bride [asked], can I have an exception, because I've looked forward to this, and you ask me to wear a mask now? Yesterday the bride was very clever. She decorated her mask into a bridal mask, a white mask with [decoration wording unclear] and flowers. It was so pretty she refused to take it off because it made her look very exotic. During rehearsal I said, take out the mask. She said, can I not take it out? This is the first time a bride told me she didn't want to take out the mask! But the fact is trials and difficulties will all come. Didn't Jesus say temptation? This is because in every trial there is a temptation, and in every temptation there is a form of trial as well. It is not necessarily just the negative temptation. Temptation and trial are two things actually mixed together.
-    confidence: 0.84
-    review_notes: []
-  - id: p0719-marshmallow-background
-    video_id: Z-vRVB-WucA
-    section_id: s0719-test-introduction
-    start: 1572.16
-    end: 1630.84
-    type: sermon
-    title: Introducing a familiar experiment
-    summary: The preacher introduces the marshmallow test as an illustration of trial and temptation and identifies its psychologist and Stanford background.
-    questions: ['Why does the preacher introduce the marshmallow test?']
-    topics: [temptation]
-    scripture: []
-    transcript: |
-      It is a fascinating topic that cannot be explained in one or two sessions. One of these topics that never goes away is trial and temptation. Our senior pastor did a long series on it, and I believe this will be a hallmark of his ministry; one of his key focuses is trial and temptation. As an illustration, I'm going to show you a very old video. Those of you who have been with us for a while will recognize it. I showed it many years ago. It's called the marshmallow test, a test that talks about temptation and trial for little children. How many of you know about this? Raise your hand; let me see. Quite a few of you. You may have seen the video. I've watched it many times because I find it very cute. This is a test done by Stanford University, by a leading psychologist, Walter Mischel, in 1972, a long time ago. He wanted to find out about human psychology when it comes to resistance to temptation.
-    confidence: 0.86
-    review_notes: ['Psychologist spelling and stated date appear on the 1696s slide. Research history remains the preacher’s description.']
-  - id: p0719-marshmallow-procedure
-    video_id: Z-vRVB-WucA
-    section_id: s0719-test-introduction
-    start: 1630.84
-    end: 1695.72
-    type: sermon
-    title: Waiting for a second marshmallow
-    summary: The preacher explains the experiment’s choice between eating now and waiting for a second treat, and describes the later follow-up of participants.
-    questions: ['What choice does the marshmallow test give the children?']
-    topics: [temptation]
-    scripture: []
-    transcript: |
-      He did this marshmallow test where he gave the kids a marshmallow. Those of you who don't know what a marshmallow is can later go to the supermarket and look for it. Here maybe you want to try KitKat or something. It's American cotton-candy kind of stuff that they roast over fire. I don't know why; it's just a white cotton, basically just sugar. The idea is to tell the kid, I'm giving you one marshmallow and I'm going to leave the room. If you don't eat it when I'm away, when I come back I'll give you one more. They put hidden cameras in the room and wanted to see what happened, whether the kid would eat or not eat the marshmallow. After the experiment they actually tracked all these children for the next few decades, many years, finding out how they were doing, whether they were doing well in school and what have you, to try to correlate life successes with the ability to resist temptation. Let's watch this together.
-    confidence: 0.87
-    review_notes: []
-  - id: p0719-clip-instructions
-    video_id: Z-vRVB-WucA
-    section_id: s0719-test-video
-    start: 1695.72
-    end: 1769
-    type: illustration
-    title: The embedded clip sets the waiting task
-    summary: An adult in the embedded video explains that a child can eat immediately or wait for another marshmallow; the clip then shows children waiting.
-    questions: ['What instructions are given in the embedded illustration?']
-    topics: [temptation]
-    scripture: []
-    transcript: |
-      [Embedded video begins; title frame at 1705s. Dialogue below is from the clip, not the preacher.]
-      Adult: Okay, sit in that chair. All right, here's the deal. Marshmallow, for you. You can either wait, and I'll give you another one if you wait, or you can eat it now. When I come back, I'll give you another one, so then you'll have two. But stay in here and stay in the chair until I come back, okay? All right.
-      [Visual waiting interval.]
-      Adult: I'm going to go do something, and then I'll come back.
-      Child: It smells yummy. It smells really good.
-      [Further visual waiting; no speech supplied for the remainder of this passage.]
-    confidence: 0.82
-    review_notes: ['Clip speaker labels inferred from dialogue roles, not named identities. Last child line ends 1758.98s; preserve the ensuing gap.']
-  - id: p0719-clip-waiting
-    video_id: Z-vRVB-WucA
-    section_id: s0719-test-video
-    start: 1769
-    end: 1842
-    type: illustration
-    title: Children waiting in the embedded clip
-    summary: The embedded video continues with a brief exclamation, repeated instructions and extended visual waiting.
-    questions: []
-    topics: [temptation]
-    scripture: []
-    transcript: |
-      [Embedded clip; extended visual action, not continuous sermon speech.]
-      [Brief exclamation at 1796.26s.] Oh.
-      Adult: All right, so it's up to you. You can have it now or you can wait, okay? I'll be back. Stay in the chair, okay?
-      Child: Okay.
-      [No further speech supplied in this passage; waiting action continues.]
-    confidence: 0.8
-    review_notes: ['1800s frame shows a child in the illustration. Gaps at 1758.98–1796.26 and 1820.88–1878.94s lie inside this embedded video; audio decode is not listening verification of silence.']
-  - id: p0719-clip-return
-    video_id: Z-vRVB-WucA
-    section_id: s0719-test-video
-    start: 1842
-    end: 1915.7
-    type: illustration
-    title: The adult returns in the embedded clip
-    summary: The embedded video ends with another waiting instruction and an adult returning to let a child have both marshmallows.
-    questions: ['How does the embedded marshmallow illustration end?']
-    topics: [temptation]
-    scripture: []
-    transcript: |
-      [Visual waiting continues; next supplied speech begins at 1878.94s.]
-      Adult: All right, so I'm going to leave and then I'll come back. Okay, so you can either eat it right now or you can wait. Either way, okay?
-      Child: Okay.
-      [Brief overlapping or unclear remark around 1887s.]
-      Adult: How'd you do? Did you do good? You did? You wanted to eat it, didn't you?
-      Child: Yeah.
-      [Brief exchange unclear.] Adult: Okay, now you can have both.
-      [Clip finishes; preacher resumes at 1915.7s.]
-    confidence: 0.79
-    review_notes: ['1912s frame still shows the child in the clip. Unclear exchange is marked rather than invented.']
-  - id: p0719-test-debate
-    video_id: Z-vRVB-WucA
-    section_id: s0719-test-discussion
     start: 1915.7
-    end: 2006.42
-    type: sermon
-    title: Different explanations of the marshmallow findings
-    summary: The preacher describes an apparent link between waiting and later success, then acknowledges challenges involving family background and trust in promised rewards.
-    questions: ['What alternative explanation of the marshmallow test does the preacher acknowledge?']
-    topics: [discernment, temptation]
-    scripture: []
-    transcript: |
-      This is a very famous experiment. As you can see, the children reacted very differently, one after another. It is a short illustration of trial and temptation. They are quite different, including the little girl who was already eating before the adult left. The survey seems to show that kids who can resist temptation early in life will do better later: better in school, higher SAT scores, their entrance-exam scores, and end up more successful. Whereas those children who eat the marshmallow before the adult even leaves, the percentage not doing well is very high. But this experiment was also controversial. People challenged the thinking processes and did other large-scale ones. You can do an internet search on the marshmallow test and find the differences. For example, some proposed it has nothing to do with the ability to resist temptation; it has to do with your family background, whether you are rich or poor. From a rich family, you are likely to resist because you know whatever is promised will come true. From a poor family, you eat first just in case there isn't one later. That's a very interesting understanding as well.
-    confidence: 0.87
-    review_notes: ['Research claims and counterclaims are the preacher’s account, not a literature review or validated predictor for an individual child.']
-  - id: p0719-delayed-gratification
-    video_id: Z-vRVB-WucA
-    section_id: s0719-test-discussion
-    start: 2006.42
     end: 2060.94
     type: sermon
-    title: Discipline and delayed gratification
-    summary: The preacher favors the practical value of delaying gratification and compares studying now with playing a game instead.
-    questions: ['What practical lesson does the preacher take from delayed gratification?']
-    topics: [temptation, discipleship]
+    title: Delayed Gratification and Competing Explanations
+    speaker_id: yong-teck-meng
+    confidence: 0.87
     scripture: []
-    transcript: |
-      Those of you who have young kids at home can go back and try it on your kids, the KitKat test or something, and see what happens. But I think we can all agree that generally anybody able to go for delayed gratification—that means I don't think I want it right now, I don't have to have it right now, I'm prepared to wait and have the discipline to do that—is likely to succeed better in life. Isn't it like your experience in school? Do you want to play Candy Crush now, or study and focus now? Whether you succeed often depends on that one simple decision. The marshmallow experiment demonstrated the kinds of difficulties we all have, even for little children. Trials and temptations are a very difficult topic to talk about. Why did Jesus Christ say that for sure in life we will go through it?
-    confidence: 0.87
-    review_notes: []
-  - id: p0719-fallen-humanity
+    topics:
+      - discernment
+      - temptation
+      - discipleship
+    summary: The preacher favors delayed gratification’s practical value while acknowledging family
+      background and trust as competing explanations for the apparent link between waiting and later
+      success.
+    keywords:
+      - marshmallow
+      - delayed gratification
+      - discipline
+    parent_id: c20200719-trials-and-growth
+    source_chapters:
+      - s0719-test-discussion
+  - id: c20200719-resist-through-truth
     video_id: Z-vRVB-WucA
-    section_id: s0719-fallen-world
-    start: 2060.94
-    end: 2128.8
-    type: sermon
-    title: Fallen people in a fallen world
-    summary: The preacher identifies fallen humanity and the fallen earth as reasons for trials and temptations, citing Isaiah and Genesis.
-    questions: ['What reasons does the preacher give for unavoidable trials?']
-    topics: [temptation, faith]
-    scripture: ['Genesis 3:17-18']
-    transcript: |
-      There are a couple of reasons that we'll run through very quickly. The first must be the fallen nature of humanity: we are all fallen people. Either we will tempt other people or other people will tempt us. Not only that, we are living in a world that is fallen, the fallen nature of the earth. Remember the prophet Isaiah, when he came into close proximity with God? [Isaiah quotation omitted; exact reference not spoken.] This reflects that. We see that from the beginning of the Bible in Genesis, after the fall of Adam and Eve. This is a proclamation done by God to Adam. [Genesis 3:17-18 quotation omitted; ESV reference only.] For sure, temptation and trials and difficulties will come into our lives.
-    confidence: 0.88
-    review_notes: ['Genesis 3:17-18 displayed at 2100/2105s. No exact Isaiah reference invented.']
-  - id: p0719-active-evil
-    video_id: Z-vRVB-WucA
-    section_id: s0719-fallen-world
-    start: 2128.8
-    end: 2212.5
-    type: sermon
-    title: Taking the activity of evil seriously
-    summary: The preacher cites 1 Peter 5:8 and argues that evil works actively and subtly in marriages and personal life, including through people themselves.
-    questions: ['How does the preacher describe the activity of evil?']
-    topics: [temptation, discernment]
-    scripture: ['1 Peter 5:8']
-    transcript: |
-      On top of that, there is also the presence of the evil one, something that Reformed evangelicals tend not to talk too much about, which is a mistake in my opinion. First Peter chapter 5—[quotation omitted; 1 Peter 5:8]. It's an active kind of description. It's not like the devil sits down there until he gets activated when you push a button or whatever. [Repeated verse imagery omitted; 1 Peter 5:8.] In this task, often we ourselves could become a tool of the devil without knowing. The devil would use all sorts of methods to make things happen. I am becoming more and more sensitive to this aspect. Not the charismatic kind of understanding, where there's all this devil turning his head around 360 degrees; those are crude and superficial things. I don't think the devil is so dumb. The methods of the devil are very sophisticated. I see that happening in marriages, personal lives, and my own life as well, always being very careful to know the devil is not sitting idly by. He is one of the key reasons there are trials and temptation.
-    confidence: 0.87
-    review_notes: ['2140s slide supplies 1 Peter 5:8 where the ASR lacks the full citation/reading. Denominational contrasts are the speaker’s own.']
-  - id: p0719-growth-paradox
-    video_id: Z-vRVB-WucA
-    section_id: s0719-growth
-    start: 2212.5
-    end: 2306.54
-    type: sermon
-    title: Stephen Tong’s view of trials and growth
-    summary: The preacher attributes to Stephen Tong the view that trials and temptations are necessary for growth and discusses the difficulty of accepting that paradox.
-    questions: ['What view of trials does the preacher attribute to Stephen Tong?']
-    topics: [faith, temptation]
-    scripture: ['Luke 17:1-9']
-    transcript: |
-      I mentioned our senior pastor talking about trial and temptation. Dr. Tong proposed something pretty unusual and put a lot of effort into this: he believed trials and temptations are absolute necessities for one's growth in life. This is a paraphrasing of what he said in Chinese. [Repeated Luke 17:1 wording omitted.] However, Dr. Tong positions it as something that must come because it's absolutely necessary, that you cannot possibly grow in faith without any trial and temptation. The paradox of life, the no-pain-no-gain concept. It flies against our understanding because we just want to go through life very nicely, properly, safely, with not a single mosquito bite. But that's not how life works. It's a paradoxical truth that's very hard to accept. Dr. Tong also always said that if you have trouble accepting the paradox, then you probably have trouble learning the Christian faith more deeply. If you keep thinking life must be black and white—I must be safe, why would I want trials and difficulties, I want a smooth journey—and cannot accept a paradox in suffering and difficulties, getting very upset, then you probably have difficulty understanding the deeper truth of the Christian faith.
-    confidence: 0.87
-    review_notes: ['2400s slide identifies Rev. Dr. Stephen Tong and the growth claim; this is the preacher’s explicitly announced paraphrase. Passage slightly exceeds 90s to retain the thought.']
-  - id: p0719-marriage-conflict
-    video_id: Z-vRVB-WucA
-    section_id: s0719-growth
-    start: 2306.54
-    end: 2392.88
-    type: sermon
-    title: Learning forgiveness through disagreement
-    summary: The preacher uses premarital counseling to argue that conflict can expose differences and provide occasions to learn understanding and forgiveness.
-    questions: ['What does the preacher say couples can learn through disagreement?']
-    topics: [forgiveness, discipleship]
-    scripture: []
-    transcript: |
-      For example, young couples getting married: when I meet them, one of my first questions is, when was the last time you fought? What do you fight about? There was one particular couple who consistently, throughout all my counseling sessions, kept saying, we never fight; we are a couple that does not fight. Do you believe them? I said, I don't believe you. Consistently they said they were telling the truth. I noticed only the girl said it; the guy didn't say it through all the sessions. It's a fairy-tale story: we don't fight, Snow White appears, the birds come, the prince on the white horse, and we live happily ever after. It violates a lot of the actual way we live, because after you fight you get to learn about each other better, who you are. You learn to apply biblical teachings about forgiveness, accommodating each other, understanding each other's thoughts, that we are all fallen. So many lessons can only come through a very paradoxical way of living. Dr. Tong is very insistent on this and pushes this idea very strongly throughout his ministry. I believe it will become a very important bedrock of his ministry.
-    confidence: 0.87
-    review_notes: ['Counseling anecdote is not independently verified; no couple identities supplied.']
-  - id: p0719-not-dwelling
-    video_id: Z-vRVB-WucA
-    section_id: s0719-resistance
     start: 2392.88
-    end: 2462.96
+    end: 2888.84
+    title: Resist Temptation by Believing the Truth
     type: sermon
-    title: Temptation does not require surrender
-    summary: The preacher uses a saying attributed to Luther and a first-look analogy to distinguish encountering temptation from dwelling on it.
-    questions: ['How does the preacher distinguish temptation from giving in to it?']
-    topics: [temptation]
-    scripture: []
-    transcript: |
-      What do you do with temptations when they come? There are many run-of-the-mill explanations. For example, Martin Luther said—[attributed birds-and-nest saying omitted]. This is quite a famous idea. You cannot escape temptation; you can be tempted, but just because you're tempted doesn't mean you must give in to it. You cannot prevent birds flying over your head, and maybe you cannot prevent them dropping something on your head either, but you can prevent them making a nest there. That you can do. Another one that is more common is this: we may not be able to stop the first look, but we can stop the second and third. The problem is not the first look; it's the second, third and fourth. Usually, you have a boyfriend or girlfriend, a pretty girl walks by, and your boyfriend looks at her and you get very upset. How can you look at her? I thought you said I'm the most beautiful woman on the earth!
-    confidence: 0.86
-    review_notes: ['The quoted saying is marked; the preacher’s explanation and application are retained. Luther attribution is unverified.']
-  - id: p0719-second-look
+    summary: The preacher distinguishes encountering temptation from dwelling on it and argues that
+      believing God’s Word and recognizing harmful consequences underlie practical safeguards.
+    keywords:
+      - temptation
+      - third look
+      - truth
+      - adultery
+      - word
+    topics:
+      - temptation
+      - faith
+      - discipleship
+      - responsibility
+      - discernment
+    scripture:
+      - John 8:31-32
+      - Psalms 119
+    source_chapters:
+      - s0719-resistance
+      - s0719-truth
+      - s0719-discipline
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s0719-truth
     video_id: Z-vRVB-WucA
-    section_id: s0719-resistance
-    start: 2462.96
-    end: 2537.06
-    type: sermon
-    title: The second and third look
-    summary: The preacher continues his attraction analogy with jokes and a university recollection, locating the problem in choosing to dwell on temptation.
-    questions: ['Where does the preacher locate the problem in his first-look analogy?']
-    topics: [temptation]
-    scripture: []
-    transcript: |
-      When the person walks by, how can you say suddenly she's more beautiful? How can you be tempted? Let me tell you the truth: there's only one person who can say his spouse is the most beautiful woman in the entire world, and that person is Adam, because Eve was the only woman back then; no other choice. You should not be so upset that your boyfriend—and by the way it can be the girl also—looks at a guy who looks like BTS, [performer name unclear]. You cannot avoid the first look because some are stunningly beautiful. There is no escape. I think I told you before, Miss Texas was from my batch when I was studying at the University of Texas at Austin. We were in a public lecture hall, and my goodness, the girl walked in and everyone [reaction]. This is stunningly beautiful. In the species of mankind some are a little bit unusual. It's like when you keep guppy fish: some guppies are exceptional. You cannot avoid the first look, but the problem comes with the second, third or fourth look as you dwell on the temptation before you.
-    confidence: 0.83
-    review_notes: ['University recollection and names not independently verified; unclear performer name is not reconstructed.']
-  - id: p0719-abiding-word
-    video_id: Z-vRVB-WucA
-    section_id: s0719-truth
     start: 2537.06
-    end: 2611.84
-    type: sermon
-    title: Moving beyond memorization to believing the Word
-    summary: The preacher turns to John 8, recalling childhood verse memorization and arguing that discipleship requires taking the Word seriously rather than merely claiming a Christian identity.
-    questions: ['Why does the preacher move from practical sayings to John 8?']
-    topics: [faith, discipleship, temptation]
-    scripture: ['John 8:31-32', 'Psalms 119']
-    transcript: |
-      These are things I learned when I was younger, but as years go by and I dwell further in the Word of God, I have come to realize that the sure-fire way to understand temptation and how to fight it is found in the Gospel of John chapter 8. This is the verse I rely on very strongly. [John 8:31 quotation omitted; ESV reference only.] Again, the emphasis is on the Word of God. Psalm 119 says—[quotation omitted; verse number not stated]. When I was young, you memorized all these things because you were told to by the Sunday school teacher, and because in the memory quiz you could win a little colored-pencil box. Those were the incentives, the temptations of the day. But as you grow older you realize this is the truth of God; this is real, very real. [Repeated John 8:31 wording omitted.] It's not because you say you're Christian that you're his disciple; it's not so simple. You must abide in his Word. But the most important verse comes next.
-    confidence: 0.88
-    review_notes: ['John 8:31-32 visible at 2558s and 2700s. Psalms 119 is spoken, but an exact verse is not silently supplied.']
-  - id: p0719-truth-freedom
-    video_id: Z-vRVB-WucA
-    section_id: s0719-truth
-    start: 2611.84
-    end: 2650.92
-    type: sermon
-    title: Freedom from temptation through knowing the truth
-    summary: The preacher interprets John 8:32 as applying both to salvation and to recognizing temptations and mistakes in everyday life.
-    questions: ['How broadly does the preacher apply John 8:32?']
-    topics: [faith, temptation]
-    scripture: ['John 8:31-32']
-    transcript: |
-      [John 8:32 quotation omitted; ESV reference only.] This is a very important verse for me because most people look at it and say it's about salvation, Jesus Christ is talking about salvation. [Biblical quotation and repeated John 8:32 wording omitted.] That's true. At the same time, I believe this verse is all-encompassing in setting us free from the temptations and mistakes we make in life because we know the truth. [Repeated verse wording omitted.] Let me give you a very simple example.
-    confidence: 0.88
-    review_notes: ['Surrounding interpretation retained; unidentified embedded quotation not assigned a verse from memory.']
-  - id: p0719-adultery-consequences
-    video_id: Z-vRVB-WucA
-    section_id: s0719-truth
-    start: 2650.92
-    end: 2719.04
-    type: sermon
-    title: Recognizing the damage of adultery
-    summary: The preacher says counseling families affected by adultery has deepened his understanding of its consequences and helped him resist moving beyond an initial temptation.
-    questions: ['How does the preacher connect pastoral experience with resisting temptation?']
-    topics: [temptation, responsibility]
-    scripture: ['John 8:31-32']
-    transcript: |
-      If you are in pastoral work and counsel families broken because of adultery and all the mess that happens, do you think you will be very tempted to be involved in adultery yourself? The answer must be no, because you now know the truth of what marriage is about, of what a third party—the devastation you can bring to a family, the pain and suffering you can bring to individuals. When I share with young couples, I share from all these experiences, not just from the Bible but from many years of dealing with these things, because I know the truth. The Bible points out the truth to me and informs it deeply. Yes, I may be tempted by the first look, the birds flying over the air, but I'm not stupid enough to move to the next step because I know the truth. [Repeated John 8:32 wording omitted.] For example, smoking—
-    confidence: 0.88
-    review_notes: ['The preacher’s asserted protection against temptation is an attributed claim, not a guarantee offered by the archive.']
-  - id: p0719-harmful-habits
-    video_id: Z-vRVB-WucA
-    section_id: s0719-truth
-    start: 2719.04
     end: 2755.74
     type: sermon
-    title: Seeing through the appeal of harmful habits
-    summary: The preacher acknowledges the difficulty of stopping smoking and argues that witnessing its consequences can undermine temptation, extending the point to gambling and drugs.
-    questions: ['What examples of harmful habits does the preacher discuss?']
-    topics: [temptation, discernment]
-    scripture: ['John 8:31-32']
-    transcript: |
-      I am assuming we have no smokers here. I know among our congregation there are people who smoke, and it's a very difficult habit to beat. I know people with cancer who still smoke. That's how difficult it is. But if you have counseled people who are dying and gasping for air because of that, surely you're not stupid enough to do that. You can see through it. That applies to so many things: gambling, smoking, drugs, all that kind of thing. Because you know the truth, you are not going to do it. [Repeated John 8:32 wording omitted.] My dear brothers and sisters in Christ—
-    confidence: 0.86
-    review_notes: ['Preserves the speaker’s strong language and inference; not medical advice or an independent claim about addiction treatment.']
-  - id: p0719-money-safeguards
-    video_id: Z-vRVB-WucA
-    section_id: s0719-discipline
-    start: 2755.74
-    end: 2834.56
-    type: sermon
-    title: A practical safeguard for handling offerings
-    summary: The preacher explains his practice of not handling offering money personally as a safeguard against temptation, while saying belief in God’s truth is more fundamental.
-    questions: ['What practical financial safeguard does the preacher describe?']
-    topics: [temptation, responsibility]
-    scripture: ['John 8:31-32']
-    transcript: |
-      This is something you need to know when it comes to temptation. What Martin Luther said and the first-look thing are helpful tools. It's also true I exercise certain disciplines to make sure I don't fall into temptation in my life. Yesterday after the wedding, the couple gave a first offering. The girl in charge gave the first-offering envelope to me. The first thing I told her is, our practice is that pastors don't touch money, so please find a way to pass it to [name uncertain] later. The girl, an events organizer, said, so troublesome, you just take it. That's where the temptation comes in, because [the intended recipient] will not know whether I have received any offering. Maybe I open it and take half for myself, commission or whatever; you also will not know. There's a temptation. I have all these quite technical disciplines that I practice. But I will tell you the fundamental thing is not these things; the fundamental thing is in this verse. Know the truth of God deeply. You must know it and believe in it.
-    confidence: 0.88
-    review_notes: ['Private individual’s unclear name is not resolved. The commission example is a hypothetical temptation, not an admission of taking money.']
-  - id: p0719-believing-preaching
-    video_id: Z-vRVB-WucA
-    section_id: s0719-discipline
-    start: 2834.56
-    end: 2888.84
-    type: sermon
-    title: Believing the message one preaches
-    summary: The preacher recounts a listener’s comment about his apparent conviction and urges listeners to take the truth they profess seriously.
-    questions: ['Why does the preacher emphasize believing what one teaches?']
-    topics: [faith, discipleship]
-    scripture: ['John 8:31-32']
-    transcript: |
-      Many years ago I was preaching in a church. After I finished, one guy came and did the customary, pastor, that was a great message. I was a little naughty that day, so I said, what's so great about it? He said, you preach as if you really believe in what you preach. I was like, you mean there's a choice? I can preach as if I don't believe in it? He said most preachers preach, but when you listen to them it's like they cut and paste; you preach as if you really believe it. Hello, I really believe it. It's not as if. [Question repeating John 8:32 omitted.] If you do, you dig deep into the Word of God. It will help you understand and be aware of the deceptions and lies of the world, and set you free from a lot of burdens in your life.
-    confidence: 0.87
-    review_notes: []
-  - id: p0719-luke-matthew-warning
-    video_id: Z-vRVB-WucA
-    section_id: s0719-warning
-    start: 2888.84
-    end: 2984.46
-    type: sermon
-    title: Luke 17 and Matthew 18 warn against causing others to stumble
-    summary: The preacher identifies the warning against becoming a source of temptation as the message’s central emphasis, compares Luke 17 with Matthew 18, and explains the millstone illustration’s severity.
-    questions: ['Why does the preacher treat causing others to stumble so seriously?', 'How does the preacher connect Luke 17 with Matthew 18?']
-    topics: [temptation, responsibility]
-    scripture: ['Luke 17:1-9', 'Matthew 18:5-7']
-    transcript: |
-      But that's not the main aim of Jesus Christ. Don't worry, I'm going to touch on a few verses only. Jesus said—[Luke 17:1-2 quotation omitted; ESV reference only]. The emphasis is the next verse. [Warning quotation omitted; Luke 17:1-2.] My dear brothers and sisters in Christ, this is one of the harshest statements Jesus ever made in his ministry on earth. This is parallel with the Matthew 18 version, with the order the other way around. [Matthew 18:6-7 quotation omitted; ESV reference only.] This is what a millstone looks like. It is one of the tools used to crush wheat. Sometimes you get a donkey to make it go around. It's a big round stone. [Preacher’s repeated retelling of the millstone warning omitted; Luke 17:2 and Matthew 18:6.]
-    confidence: 0.91
-    review_notes: ['Trusted full references preserved; actual quoted comparison concerns Luke 17:1-2 and Matthew 18:6-7. 2935s frame displays Matthew 18:6; 2985s frame shows the millstone. Longer interval retains comparison as one thought. Severe imagery is discussed as the sermon’s scriptural warning, not an instruction from the archive.']
-  - id: p0719-direct-stumbling
-    video_id: Z-vRVB-WucA
-    section_id: s0719-industry
-    start: 2984.46
-    end: 3055.92
-    type: sermon
-    title: Asking whether our work causes others to fall
-    summary: The preacher asks listeners to examine whether their work promotes harm, naming gambling, irresponsible drinking, tobacco, pornography and drugs as direct causes of stumbling.
-    questions: ['How can our work cause others to stumble?', 'What direct causes of stumbling does the preacher name?']
-    topics: [responsibility, temptation]
-    scripture: ['Luke 17:1-9', 'Matthew 18:5-7']
-    transcript: |
-      This is the key emphasis of today's message. Are you the one who causes other people to fall? There are many ways to cause people to fall. Some are very plain and simple. Direct causes could be if you work in or promote what is called the sin industry, industries that obviously promote a sinful lifestyle or harmful win-lose lifestyle: for you to win, others must lose. Gambling is a classic example. If you promote alcohol, irresponsible drinking behavior, if you're involved in tobacco ministry—I mean tobacco industry; what's the use of ministry? Occupational hazard!—if you're involved in the promotion of a decadent lifestyle like nightlife, in pornography, in drugs, the promotion of drugs, and many other things, and that's your industry, then you are involved in things that directly cause other people to fall.
+    title: Recognize the Cost of Giving In
+    speaker_id: yong-teck-meng
     confidence: 0.89
-    review_notes: ['3000s slide labels Direct Causes: Sin Industries. Occupational judgments are attributed to the preacher.']
-  - id: p0719-gambling-jobs
+    scripture:
+      - John 8:31-32
+      - Psalms 119
+    topics:
+      - faith
+      - discipleship
+      - temptation
+      - responsibility
+      - discernment
+    summary: Applying John 8 to everyday temptation, the preacher draws on adultery counseling and
+      harmful habits while acknowledging the difficulty of stopping smoking.
+    keywords:
+      - truth
+      - adultery
+      - temptation
+    parent_id: c20200719-resist-through-truth
+    source_chapters:
+      - s0719-truth
+  - id: c20200719-avoid-stumbling-blocks
     video_id: Z-vRVB-WucA
-    section_id: s0719-industry
-    start: 3055.92
+    start: 2888.84
+    end: 3639.54
+    title: Do Not Become a Stumbling Block
+    type: sermon
+    summary: The preacher applies Luke 17 and Matthew 18 to harmful work, hypocrisy and personal rights,
+      also presenting disputed dress/assault reasoning and an unverified Gandhi anecdote in his
+      warning against damaging others’ faith.
+    keywords:
+      - matthew 18
+      - stumbling block
+      - gambling
+      - jobs
+      - dress
+      - hypocrisy
+      - right
+    topics:
+      - temptation
+      - responsibility
+      - hypocrisy
+      - discernment
+      - discipleship
+    scripture:
+      - Luke 17:1-9
+      - Matthew 18:5-7
+      - Luke 16:19-31
+      - 1 Corinthians 8:8-9
+      - 1 Corinthians 8:13
+    source_chapters:
+      - s0719-warning
+      - s0719-industry
+      - s0719-lifestyle
+      - s0719-hypocrisy
+      - s0719-rights
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s0719-industry
+    video_id: Z-vRVB-WucA
+    start: 2984.46
     end: 3140.94
     type: sermon
-    title: Gambling harm and the jobs argument
-    summary: The preacher rejects job creation as sufficient justification for casinos and cites his ministry’s encounters with gambling debt, including among foreign workers.
-    questions: ['Why does the preacher reject the jobs argument for gambling businesses?']
-    topics: [responsibility]
-    scripture: ['Luke 17:1-9']
-    transcript: |
-      I want to be very clear because there are people who counter-argue with me that it's job creation. When the gambling thing was on, I fought against it strongly. In Parliament one of the ministers was relating a story about when he was young, stealing his mother's money to buy tikam-tikam. If you don't know what that is, come and talk to me after the service; it's a gambling thing for children. His mother caught him and whacked him, and he knew for the rest of his life he should not gamble. But because the casinos would bring in seventeen thousand jobs for Singaporeans, he must support it. Then he cried in Parliament. [Brief unclear phrase.] Excuse me, you have just approved something that causes other people to fall. If you don't believe me, come and join me and some of my coworkers as we minister to people with gambling debts. They fall into the trap. Foreign workers lose everything because they can enter the casino for free. At least if you're Singaporean, a hundred bucks—did they increase it? Something like that. Now they're retrenching people, right? Praise be to God that it's happening. It's wonderful. But that's a direct kind of sin industry.
-    confidence: 0.83
-    review_notes: ['Political anecdote, jobs figure and entry charge remain unverified and historical. Retrenchment comment is the preacher’s expressed view and is not softened into archive approval.']
-  - id: p0719-dress-protest
-    video_id: Z-vRVB-WucA
-    section_id: s0719-lifestyle
-    start: 3140.94
-    end: 3207.46
-    type: sermon
-    title: The preacher introduces a protest about dress
-    summary: The preacher describes SlutWalk Singapore as a response to harassment and assault and introduces his disagreement with its argument about freedom of dress.
-    questions: ['How does the preacher describe the protest used in his illustration?']
-    topics: [responsibility]
-    scripture: []
-    transcript: |
-      The second one is when you have a sinful lifestyle itself. It gets very complicated. The one on the left, SlutWalk Singapore, is a classic example. It's a movement that started, I think, in the United States. I suppose the intention is quite okay, so to speak. What happened is that women who dress provocatively get wolf-whistled at, harassed, molested even, and are very angry. The women gather and organize what's called a SlutWalk, meaning a big demonstration of women dressed like a slut. Is that appropriate to use in the pulpit? I don't think so, but that's the word; I didn't mean to be obscene. Meaning, I can wear anything I want, right? This is my hot body; I can do whatever I want. To demonstrate that as a woman I can dress in any way I want, but you shouldn't say anything and disturb me. So what if I'm a [word incomplete in ASR]? It's okay.
-    confidence: 0.8
-    review_notes: ['Movement title visible at 3300s. Origin and characterization are the speaker’s uncertain account, not independently verified.']
-  - id: p0719-dress-assault-argument
-    video_id: Z-vRVB-WucA
-    section_id: s0719-lifestyle
-    start: 3207.46
-    end: 3265.16
-    type: sermon
-    title: The preacher’s contested link between dress and temptation
-    summary: The preacher questions the protest’s reasoning, links provocative dress with the possibility of assault and tempting others, and argues against both unrestricted self-assertion and extreme covering.
-    questions: ['What position does the preacher express about dress and responsibility for temptation?']
-    topics: [responsibility, temptation]
-    scripture: []
-    transcript: |
-      There's something quite strange about that thinking process, isn't it? For all the women present, and by the way for the men as well, if you're going to dress provocatively at night and walk into a dark alley, is it any surprise that you could be assaulted? Then you say, hello, this is my body; I can do what I want. The logic is a little strange to me. At the same time, if you are dressing provocatively, although it is of course your right to do so without a doubt, you play a role in causing temptation to come to the man. Of course you don't want to swing to the other extreme of some other religion and say you can dress like a walking curtain and cover any curve in your body. But at the same time, surely there must be some consideration about this. I remember in my previous church, when we did Holy Communion—
-    confidence: 0.83
-    review_notes: ['This is the preacher’s dress/assault argument, including victim-blaming implications; preserved for review, not presented as established causation or endorsed guidance.']
-  - id: p0719-dress-church
-    video_id: Z-vRVB-WucA
-    section_id: s0719-lifestyle
-    start: 3265.16
-    end: 3317.48
-    type: sermon
-    title: A Communion anecdote about dress
-    summary: The preacher recounts being distracted by someone’s clothing while distributing Communion and uses another pastor’s reported comment to reinforce his appeal to consider others.
-    questions: ['What church anecdote does the preacher use in discussing dress?']
-    topics: [responsibility, temptation]
-    scripture: []
-    transcript: |
-      One time I was giving out the bread, and people queued up and came forward. My head was bowed low, and suddenly I saw a [navel; ASR says neighbor], because the girl was wearing a kind of midriff-exposing thing to church. I almost [dropped; ASR unclear] the tray because I didn't expect to see flesh. There are some things about this that we need to rethink carefully. Are you the person who creates further temptation for other people? One of the pastors was very clever. He didn't tell the woman, you shouldn't do this, you should wear off-shoulder, no off-shoulder, whatever. He didn't do that. All he did was tell the women, please don't be in church and tempt your pastor by the way you dress. This is quite smart. You see my point.
-    confidence: 0.8
-    review_notes: ['Uncertain navel/neighbor and tray wording marked; responsibility claim remains attributed to the preacher.']
-  - id: p0719-church-scandals
-    video_id: Z-vRVB-WucA
-    section_id: s0719-hypocrisy
-    start: 3317.48
-    end: 3363.8
-    type: sermon
-    title: Church scandals that repel people
-    summary: The preacher says financial abuses and ostentatious pastoral lifestyles can lead observers to reject Christianity, particularly criticizing prosperity teaching.
-    questions: ['How does the preacher say church scandals affect people’s view of Christianity?']
-    topics: [hypocrisy, responsibility]
-    scripture: ['Luke 17:1-9']
-    transcript: |
-      But of course there are other things. One of the things that's very scary these days is a lot of horrifying scandals happening in church, all kinds of abuses, financial ones. They are very open about it in many places, in Africa especially. There are so many crazy stunts all these so-called pastors are doing. They are completely nonsensical and completely sinful. The prosperity gospel especially has brought along very overt, upfront ideas of pastors living lifestyles that are completely disgraceful. Because of this sinful lifestyle, people look at them and say, what is this stupid Christianity all about? I'm not going to believe in this.
+    title: Jobs Do Not Justify Gambling Harm
+    speaker_id: yong-teck-meng
     confidence: 0.86
-    review_notes: ['Generalized accusations are the preacher’s claims; no individual or organization is identified or independently investigated.']
-  - id: p0719-hypocrisy-stumbling
+    scripture:
+      - Luke 17:1-9
+      - Matthew 18:5-7
+    topics:
+      - responsibility
+      - temptation
+    summary: The preacher rejects job creation as sufficient justification for casinos, citing ministry
+      encounters with gambling debt when asking whether work harms others.
+    keywords:
+      - gambling
+      - jobs
+    parent_id: c20200719-avoid-stumbling-blocks
+    source_chapters:
+      - s0719-industry
+  - id: s0719-rights
     video_id: Z-vRVB-WucA
-    section_id: s0719-hypocrisy
-    start: 3363.8
-    end: 3436.96
-    type: sermon
-    title: Hypocrisy, hurtful words and neglect as stumbling blocks
-    summary: The preacher says apparently religious people can drive others away through hypocrisy, meanness, hurtful workplace behavior and neglect of suffering, linking this with the rich man’s sins of omission.
-    questions: ['How can hypocrisy cause others to stumble?', 'Why can neglect of suffering undermine a Christian witness?']
-    topics: [hypocrisy, responsibility]
-    scripture: ['Luke 17:1-9', 'Luke 16:19-31']
-    transcript: |
-      I will tell you the most horrifying ones are the subtle and indirect causes of other people falling. If you ask people why they are not Christians, a lot will tell you: I'm not a Christian because of hypocrisy I experienced in church. People may speak peace, but there's a snake in his mouth. People are mean. They may appear very nice on stage or in church, doing your hallelujah, praise-the-Lord thing, but in reality you're a horrifying person in the workplace, for example, or the words you use in your life hurt people. Even as I was preaching last week, when you don't care, when you have sins of omission, when Lazarus is right there and you don't care, then you tell people we're loving people—[biblical love-command wording omitted; precise citation not stated]—but you don't care about suffering right before your eyes. People look at that, and you say you're Christian; I don't think I want any part of it. Then you fall. One of the most famous quotations by [Gandhi; ASR given name unreliable] is this—[attributed quotation omitted].
-    confidence: 0.9
-    review_notes: ['3365s slide labels Subtle, indirect Causes. Gandhi attribution is unverified; the surrounding application is preserved.']
-  - id: p0719-exclusion-warning
-    video_id: Z-vRVB-WucA
-    section_id: s0719-hypocrisy
-    start: 3436.96
-    end: 3521.68
-    type: sermon
-    title: Exclusion and the severity of the warning
-    summary: The preacher recounts an unverified story about Gandhi being refused entry to church because of his clothing, then returns to the seriousness of damaging others’ faith.
-    questions: ['What story does the preacher use to illustrate exclusion?', 'Why does he return to the millstone warning?']
-    topics: [hypocrisy, responsibility]
-    scripture: ['Luke 17:1-9', 'Matthew 18:5-7']
-    transcript: |
-      Another story related to Gandhi was when he was studying in London as a young Indian law student. He wanted to go to church, but he was poor. He went to a local church and was blocked at the door by the deacon because he was not appropriately dressed. He didn't have the suit people back then wore to church. Because of that, Gandhi said he would never be a Christian: what kind of religion judges people by how they dress? My dear brothers and sisters in Christ, if you belong to any of these categories, a person causing other people to fall, to give up their faith, to have a negative opinion of who Jesus Christ is because of your behavior, your industry or your work—[repeated millstone warning omitted; Luke 17:2 and Matthew 18:6]. Can this picture be imprinted in your brain? It's such a horrifying description. Notice Jesus did not say what will happen to you. [Repeated scriptural comparative wording omitted.] Which means whatever will happen because you cause others to fall is going to be worse than this. That was what he meant. What exactly then shall we do?
-    confidence: 0.83
-    review_notes: ['Gandhi story, location and causal attribution are unverified and require human review; no silent historical correction. Millstone image visible at 3525s.']
-  - id: p0719-rights-stumbling
-    video_id: Z-vRVB-WucA
-    section_id: s0719-rights
     start: 3521.68
-    end: 3586.02
-    type: sermon
-    title: A right can become a stumbling block
-    summary: The preacher applies 1 Corinthians 8 to food offered to idols, arguing that exercising a legitimate right can still harm the faith of a weaker believer and therefore requires wisdom.
-    questions: ['How can we avoid causing others to stumble?', 'When can exercising a right become a stumbling block?']
-    topics: [responsibility, discernment]
-    scripture: ['1 Corinthians 8:8-9', 'Luke 17:1-9', 'Matthew 18:5-7']
-    transcript: |
-      Your responsive reading gives us a clue, and we have gone through that when we preached through First Corinthians 8. Look at what the apostle Paul said about causing people to fall because of the problem with food offered to idols. [1 Corinthians 8:8 quotation omitted; ESV reference only.] People ask, this food was given to Guan Yin, Guan Gong, [deity name unclear], whatever; can I eat it? There was an argument back in the days of the church of Corinth. But Paul says—[1 Corinthians 8:9 quotation omitted; ESV reference only]. He first affirms, come on, this is just food. Whether it's [food names unclear], it doesn't do anything for us Christians because it's just food. So what if it's been offered to idols? You actually have the right to eat it. But you need wisdom to know that if you eat it and other people who are very weak Christians look at you and say, how come that guy can do this, maybe I don't want to believe in this faith anymore, Paul says you will become a stumbling block to others.
-    confidence: 0.91
-    review_notes: ['3560s slide visibly identifies 1 Corinthians 8:8-9. Responsive reading is referred to retrospectively; not added as a separate service section. Trusted sermon references describe the application context.']
-  - id: p0719-think-beyond-self
-    video_id: Z-vRVB-WucA
-    section_id: s0719-rights
-    start: 3586.02
     end: 3639.54
     type: sermon
-    title: Think beyond yourself rather than insist on your rights
-    summary: The preacher uses Paul’s willingness to forgo meat to urge listeners to consider their impact on others, err on the cautious side and refrain from insisting on rights that cause someone to fall.
-    questions: ['How can we avoid causing others to stumble?', 'Why does the preacher say to think beyond our own rights?']
-    topics: [responsibility, discipleship]
-    scripture: ['1 Corinthians 8:13', 'Luke 17:1-9', 'Matthew 18:5-7']
-    transcript: |
-      Because of that, Paul concludes in verse 13—[1 Corinthians 8:13 quotation omitted; ESV reference only]. His answer is that I will always think beyond myself. I will always want to err on the side of being conservative, and that, I believe, is what we all must always do. We want always to think of what our impact in life is on other people, and not just keep insisting that it is my right, for the sole purpose of not being the person who causes other people to fall. [Repeated millstone warning omitted; Luke 17:2.] We are only at verse two, by the way. You see, in this particular teaching there is so much richness in what the Lord has said.
-    confidence: 0.93
-    review_notes: ['3593/3600s slides add 1 Corinthians 8:13. Central practical application, rather than a query-specific search alias.']
-  - id: p0719-restore-forgive
+    title: Consider Others Rather Than Insist on Rights
+    speaker_id: yong-teck-meng
+    confidence: 0.92
+    scripture:
+      - 1 Corinthians 8:8-9
+      - Luke 17:1-9
+      - Matthew 18:5-7
+      - 1 Corinthians 8:13
+    topics:
+      - responsibility
+      - discernment
+      - discipleship
+    summary: The preacher applies Paul’s willingness to forgo meat to urge caution when exercising a
+      legitimate right could harm another believer’s faith.
+    keywords:
+      - stumbling block
+      - right
+      - think beyond
+    parent_id: c20200719-avoid-stumbling-blocks
+    source_chapters:
+      - s0719-rights
+  - id: c20200719-faith-and-forgiveness
     video_id: Z-vRVB-WucA
-    section_id: s0719-recovery
     start: 3639.54
-    end: 3696.88
+    end: 3937
+    title: Practice Faith by Restoring and Forgiving
     type: sermon
-    title: Restore and forgive people instead of causing them to fall
-    summary: The preacher turns from avoiding harm to recovering others, interpreting Luke 17:3-4 as a call to love, correct and forgive rather than serve only oneself.
-    questions: ['What should we do instead of causing others to stumble?', 'How does the preacher connect forgiveness with responsibility for others?']
-    topics: [forgiveness, responsibility]
-    scripture: ['Luke 17:1-9', 'Luke 17:3-4']
-    transcript: |
-      Immediately, instead of causing others to sin, verse three tells us what we should do beyond that. He said—[Luke 17:3-4 quotation omitted; ESV reference only]. Rather than causing other people to fall, Jesus Christ said you must do the other thing: you must recover your people, love them, forgive them. My dear brothers and sisters in Christ, we must think beyond the usual and not just about our rights, lest we cause other people to fall. I pray you will see by now that our faith is not just to serve ourselves. There's a much bigger purpose and a much bigger impact to it.
-    confidence: 0.93
-    review_notes: ['3648s slide explicitly says Instead of causing others to sin — Recover them. Reading quotation removed while practical commentary remains.']
-  - id: p0719-increase-faith
+    summary: The preacher links restoration and forgiveness with the apostles’ request for faith,
+      interprets the mustard-seed imagery as exposing small faith and urges listeners to practice
+      the Word without causing others to fall.
+    keywords:
+      - forgive
+      - apostles
+      - faith
+      - mustard seed
+      - hyperbole
+    topics:
+      - forgiveness
+      - responsibility
+      - faith
+      - temptation
+      - discernment
+    scripture:
+      - Luke 17:1-9
+      - Luke 17:3-4
+      - Luke 17:5-6
+      - Luke 17:6
+      - Luke 18:8
+      - John 8:31-32
+    source_chapters:
+      - s0719-recovery
+      - s0719-faith
+      - s0719-conclusion
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s0719-faith
     video_id: Z-vRVB-WucA
-    section_id: s0719-faith
     start: 3696.88
-    end: 3756.96
-    type: sermon
-    title: Why the apostles ask for faith
-    summary: The preacher links the apostles’ request in Luke 17:5 with the difficulty of resisting temptation, avoiding harm and forgiving others, rather than treating it as an unrelated saying.
-    questions: ['Why do the apostles ask for increased faith in the preacher’s reading?']
-    topics: [faith, forgiveness, temptation]
-    scripture: ['Luke 17:1-9', 'Luke 17:5-6']
-    transcript: |
-      But it's very tough. When the apostles hear that—note verse five says the apostles, meaning the original twelve—they say to the Lord—[Luke 17:5 quotation omitted]. It's so difficult; you tell us not to be a stumbling block, not to be this or that. [Repeated request omitted.] I end with verse six. [Luke 17:6 quotation omitted; ESV reference only.] The verses don't seem linked, but they are linked because of the teaching of Jesus Christ. The apostles said, what you have taught us is so difficult: the rich man and Lazarus, all these things about being tempted by other people, and at the same time asking us to forgive people. Please give us the faith to do all these things. Jesus remarked that actually your faith is very small.
-    confidence: 0.89
-    review_notes: ['3706s frame displays Back to Faith. Trusted Luke 17:1-9 is not narrowed merely because this exposition ends at verse 6.']
-  - id: p0719-mustard-hyperbole
-    video_id: Z-vRVB-WucA
-    section_id: s0719-faith
-    start: 3756.96
-    end: 3830.96
-    type: sermon
-    title: Reading the mustard-seed saying as hyperbole
-    summary: The preacher rejects using Luke 17:6 as a technique for supernatural tree-moving and interprets its extreme imagery as exposing the disciples’ small faith.
-    questions: ['How does the preacher interpret the mustard-seed saying?']
-    topics: [faith, discernment]
-    scripture: ['Luke 17:6']
-    transcript: |
-      Many people misinterpret verse six, especially the charismatic people, to say this means you can use your faith to do all kinds of things. I can imagine a lot of people trying: go to your rambutan tree and say, I have faith, you come out and go to the Changi Sea. Nothing happens, so you practice every day because the verse says so. Of course, as we have preached through the chapters you see Jesus Christ's pattern: he uses very extreme examples to make a point. The rich man with purple cloth, Lazarus really desperate. This is the same thing. The grain of mustard is very, very small. Jesus is not trying to tell you to practice tree-shifting technology or supernatural things. Jesus is saying your faith is so small that if you have just a little more, you can accomplish great things. This is a hyperbolic saying. What Christ was pointing out to the disciples is, yes, I know you ask me to increase your faith, but let me tell you that you are people of little faith. As far as your faith is concerned, you have very, very little faith.
-    confidence: 0.88
-    review_notes: ['Illustrative rambutan/Changi dialogue is the preacher’s invented example, not Bible text. Condensed repeated very in source; no meaning change intended.']
-  - id: p0719-small-faith
-    video_id: Z-vRVB-WucA
-    section_id: s0719-faith
-    start: 3830.96
     end: 3883.92
     type: sermon
-    title: The preacher acknowledges his own small faith
-    summary: The preacher includes himself among those with small faith and connects deeper understanding with resisting temptation, loving and forgiving, before citing Luke 18:8.
-    questions: ['How does the preacher apply the challenge of faith to himself?']
-    topics: [faith, forgiveness]
-    scripture: ['Luke 17:6', 'Luke 18:8']
-    transcript: |
-      I will affirm what Christ has said. Although I'm your pastor and have been in ministry for a long time, one thing I am very certain about is that I'm a man of little faith, smaller than a mustard seed, that's for sure. When challenges come, I panic the way everybody does as well. The fact is that when we understand the truth of God even more, we will be able to do greater things for him, overcoming temptations in our lives, loving other people, accepting and forgiving them. But it's a tough, tough task. In the very next chapter—let me jump a little forward—it is so tough that Jesus Christ lamented in Luke 18:8b. [Luke 18:8 quotation omitted; ESV reference only.]
-    confidence: 0.88
-    review_notes: ['Luke 18:8b is spoken and displayed at 3878s; normalized to Luke 18:8 without storing verse text.']
-  - id: p0719-take-faith-seriously
+    title: Small Faith and the Call to Forgive
+    speaker_id: yong-teck-meng
+    confidence: 0.89
+    scripture:
+      - Luke 17:1-9
+      - Luke 17:5-6
+      - Luke 17:6
+      - Luke 18:8
+    topics:
+      - faith
+      - forgiveness
+      - temptation
+      - discernment
+    summary: The preacher includes himself among those with small faith and reads the mustard-seed
+      saying as hyperbole tied to resisting temptation, loving and forgiving.
+    keywords:
+      - apostles
+      - mustard seed
+      - hyperbole
+      - faith
+    parent_id: c20200719-faith-and-forgiveness
+    source_chapters:
+      - s0719-faith
+  - id: c20200719-closing-prayer
     video_id: Z-vRVB-WucA
-    section_id: s0719-conclusion
-    start: 3883.92
-    end: 3937
-    type: sermon
-    title: Practicing faith without becoming a source of temptation
-    summary: The preacher concludes that listeners should take faith seriously, know and practice God’s Word, and avoid becoming the person through whom others fall into temptation.
-    questions: ['What is the preacher’s concluding appeal in Tripping?', 'How does he connect daily faith with not causing others to stumble?']
-    topics: [faith, responsibility, temptation]
-    scripture: ['Luke 17:1-9', 'John 8:31-32']
-    transcript: |
-      My dear brothers and sisters in Christ, looking at today's teachings, the final emphasis really is that we must take our faith seriously, for there is no other way. Let us never be the person who causes other people to fall into temptation, while we acknowledge that temptation will surely come. The only way to overcome these things is truly to have faith in the Word of God, to know the truth deeply. [Repeated John 8:32 wording omitted.] May we be serious about our faith. May we know the Word of God deeply. May we truly practice it, not perfectly, but every day in our lives as we come closer and closer to Jesus Christ. [Repeated millstone warning omitted; Luke 17:2.]
-    confidence: 0.9
-    review_notes: ['3900/3937s frames show the concluding Take your faith seriously slide. Approximate end before prayer within ASR segment 740.']
-  - id: p0719-closing-prayer
-    video_id: Z-vRVB-WucA
-    section_id: s0719-closing-prayer
     start: 3937
     end: 4005.801
-    type: prayer
-    title: Prayer for care, humility and genuine faith
-    summary: The preacher prays that listeners will not become a source of temptation to others, will be careful about their conduct, and will humbly reflect on their faith during a trying time.
-    questions: ['What does the closing prayer ask concerning our influence on others?']
-    topics: [prayer, responsibility]
+    title: Closing Prayer
+    type: closing
+    summary: The preacher prays for care in conduct, humility and genuine faith so that listeners will
+      not become a source of temptation to others.
+    keywords:
+      - humility
+    topics:
+      - prayer
+      - responsibility
     scripture: []
-    transcript: |
-      Let us pray together. We thank you, God Almighty, for the Word we have heard this morning. Help us to understand that while temptation will inevitably come, we shouldn't be the one who will be the source of temptation to others, for the consequences are frightening indeed. Help us, O God, to be careful with what we do in life, especially with our faith. May we truly be serious about everything we say we believe in, so we do not find ourselves at the end of our lives being displeased by God. For we live for the audience of one. Especially in this most trying time, maybe this is a time for us to truly reflect upon our status before you as redeemed children of God. May we have the humility to turn back to you and to learn your truth deeply. [Repeated biblical wording omitted; John 8:32.] Listen to our prayers. In Jesus' name we pray. Amen.
-    confidence: 0.87
-    review_notes: ['ASR’s being displeased by God is grammatically ambiguous and retained for listening review. Final Amen ends 4004.64s; final frame at 4005s shows preacher and creed slide. No creed speech inferred.']
+    source_chapters:
+      - s0719-closing-prayer
+    review_notes: []
+    speaker_id: yong-teck-meng
+sermon_description: Rev. Yong Teck Meng reads Luke 17 as a connected call to take faith seriously
+  amid unavoidable trials and temptations. Drawing on the rich man’s neglect, delayed gratification
+  and everyday choices, he argues that believing God’s Word helps people resist temptation and
+  recognize the harm they can cause others. He urges listeners to put others’ faith ahead of
+  personal rights and to practice restoration and forgiveness rather than become stumbling blocks.

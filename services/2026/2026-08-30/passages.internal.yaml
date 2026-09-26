@@ -1,0 +1,1204 @@
+passages:
+  - id: p20260830-001
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-preparation
+    start: 5.1
+    end: 85.66
+    type: prayer
+    title: Preparing for worship with adoration
+    summary: The leader invites personal prayer and begins the ACTS pattern with adoration of God.
+    questions: [How does the congregation prepare for worship?]
+    topics: [prayer, worship]
+    scripture: []
+    transcript: |
+      Let's prepare our worship. [Opening weather remark omitted.] Let's pray together—sorry, not pray together, pray separately. We want to pray personal prayers in preparation for worship service, in adoration, in confession, thanksgiving [unclear ASR]. This is a time for personal quiet prayer. Let's start with adoring God Almighty, our maker. Let us pray.
+      [Quiet prayer interval; isolated ASR “thank you” is not treated as substantive speech.]
+    confidence: 0.87
+    review_notes: ['ACTS headings verified in the opening frame; unclear wording is not silently restored.']
+  - id: p20260830-002
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-preparation
+    start: 85.66
+    end: 161.24
+    type: prayer
+    title: Personal confession
+    summary: The leader asks worshippers to confess their sins before God, followed by time for personal prayer.
+    questions: []
+    topics: [prayer, forgiveness]
+    scripture: []
+    transcript: |
+      We come now before God to pray the prayer of confession. We want to confess our sins before God [scriptural wording omitted]. Let us pray in confession now.
+      [Quiet prayer interval.]
+    confidence: 0.91
+    review_notes: ['Reference not explicitly stated; no guessed reference supplied.']
+  - id: p20260830-003
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-preparation
+    start: 161.24
+    end: 227.62
+    type: prayer
+    title: Personal thanksgiving
+    summary: The leader invites thanksgiving regardless of circumstances and leaves time for prayer.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      Let us now give thanks in our prayers, in the prayer of thanksgiving. [Scriptural exhortation omitted.] Let us give thanks now.
+      [Quiet prayer interval.]
+    confidence: 0.91
+  - id: p20260830-004
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-preparation
+    start: 227.62
+    end: 295.06
+    type: prayer
+    title: Bringing personal needs to God
+    summary: The leader invites the congregation to bring their needs to God in supplication.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      And now we bring our needs to the Lord in the prayer of supplication. Whatever it is that we want to seek God for, let us pray about it. Let's pray now.
+      [Quiet prayer interval.]
+    confidence: 0.93
+  - id: p20260830-005
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-preparation
+    start: 295.06
+    end: 338.32
+    type: prayer
+    title: Prayer to hear and follow God
+    summary: The leader gives thanks for safe worship and asks that worshippers recognize and follow God's voice, before introducing Jason.
+    questions: []
+    topics: [prayer, worship]
+    scripture: []
+    transcript: |
+      Almighty God, we give you thanks and praise for this morning as we all gathered here. By your grace and your mercy, we see a world that is in chaos and in so much trouble. And here we are this morning, peaceful and comfortable and safe to worship you. And so we do pray that you guide us through this morning's worship service so that our spiritual ears are open and our eyes are open to be attuned to you, so that we will hear you speaking to us and recognize your voice, turn and follow you. May everything we do bring glory unto your holy name. In Jesus' name we pray. Amen. This morning our brother Jason will be leading us.
+    confidence: 0.94
+  - id: p20260830-006
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-opening
+    start: 347.92
+    end: 409.36
+    type: worship
+    title: Welcome and congregational greetings
+    summary: The worship leader welcomes the English first service and invites worshippers to greet each other.
+    questions: []
+    topics: [worship, service-life]
+    scripture: []
+    transcript: |
+      Good morning. Happy Sunday. Welcome to church. This is the Reformed Evangelical Church of Singapore. This is the English service and also the first service. Before we begin, I think we should rise and greet each other [greeting instruction unclear in ASR].
+      [Congregational greeting interval.]
+    confidence: 0.9
+    review_notes: ['ASR says shaking everybody’s head; not silently changed to hands.']
+  - id: p20260830-006-meditation
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-opening
+    start: 409.36
+    end: 502
+    type: meditation
+    title: Setting distractions aside for worship
+    summary: The worship leader points to the e-bulletin and invites silent meditation to turn the congregation's attention to God.
+    questions: [What is the purpose of the opening silent meditation?]
+    topics: [worship, meditation]
+    scripture: []
+    transcript: |
+      All right, the e-bulletin is in one of the QR code which is shown to you in the slide. Now, before we begin our worship service, we are going to adhere to our silent meditation. This is the time when we are going to turn off everything that has to do with the outside world, everything that's going to hinder us from worshipping God. Now let us turn our heart, our mind, and our body to worship God.
+      [Silent meditation.]
+    confidence: 0.93
+    review_notes: ['Slightly longer unit includes the silent meditation interval.']
+  - id: p20260830-007
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-opening
+    start: 508.26
+    end: 570.84
+    type: reading
+    title: Call to worship from Psalms 97
+    summary: The leader reads Psalms 97:1-5, opens worship in the name of the Triune God, and introduces the first hymn.
+    questions: []
+    topics: [worship]
+    scripture: [Psalms 97:1-5]
+    transcript: |
+      Our call to worship is taken from the book of Psalm, chapter 97, verse 1 to 5.
+      [Scripture reading omitted: Psalms 97:1-5.]
+      This worship service [ASR: “commends”] in the name of the Triune God, the Father, the Son, and the Holy Spirit. Let us rise and sing our first song, Rejoice, the Lord Is King.
+    confidence: 0.94
+  - id: p20260830-008
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-opening
+    start: 582.96
+    end: 688.24
+    type: hymn
+    title: Rejoice, the Lord Is King
+    summary: The congregation sings the announced opening hymn Rejoice, the Lord Is King.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: '[Congregational hymn: Rejoice, the Lord Is King. Song lyrics omitted.]'
+    confidence: 0.95
+    review_notes: ['Complete musical unit retained; title announced at 565.94s and hymn frame inspected at 600s.']
+  - id: p20260830-009
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-opening
+    start: 690.72
+    end: 801.68
+    type: prayer
+    title: Opening prayer and request for the preacher
+    summary: The worship leader thanks the Father, Son and Holy Spirit and asks for blessing on the worship service and Pastor Yong's preaching.
+    questions: []
+    topics: [prayer, worship, holy-spirit]
+    scripture: []
+    transcript: |
+      Let us bow our head for the opening prayer. Dear Heavenly Father, we would like to begin this worship service, Lord, by acknowledging that there is only one God worthy to be worshipped and that you, you are that one good God. You exist in three persons, Lord.
+      [Prayer's description of Father, Son and Holy Spirit omitted from this excerpt.]
+      We thank you, Lord, for this privilege and this luxury of worshipping you. We thank you that you have gathered us over here today, that we sing songs and we listen to the words that you are giving. We ask of you to bless Pastor Yong, the person who is going to deliver your word through his mouth. We ask you for journey mercy of the people who are still coming. And we ask you, Lord, that you bless this worship service, that it may go from beginning to the end, and then this worship service should glorify your name forever. With that, Lord, we thank you again. In Jesus' name we pray. Amen. Please be seated.
+    confidence: 0.92
+    review_notes: ['Prayer retained as one unit. Pastor Yong is a spoken identification, not identification by appearance.']
+  - id: p20260830-010
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-trust
+    start: 804.32
+    end: 920.68
+    type: hymn
+    title: Learning I Will Trust My Savior Jesus
+    summary: The worship leader introduces a CityAlight hymn and asks for a video demonstration before the congregation sings.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: |
+      Our second hymn will be taken from a video. And it is a hymn written by [ASR: “Citi Alight”]. The title is I Will Trust My Savior Jesus. And I think this is one of the songs that we may not know; we may not be familiar with it. So I'm going to ask the AV team to actually play the first and then the refrain, and then we will sing together.
+      [Video demonstration; song lyrics omitted.]
+    confidence: 0.91
+    review_notes: ['CityAlight spelling is editorial normalization of the spoken attribution; authorship not independently researched.']
+  - id: p20260830-011
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-trust
+    start: 920.68
+    end: 1006.4
+    type: address
+    title: Believing a fact and trusting a person
+    summary: The worship leader distinguishes belief in a historical fact from relational trust in Jesus and invites reflection while singing.
+    questions: [How does the worship leader distinguish believing from trusting?]
+    topics: [faith, worship]
+    scripture: []
+    transcript: |
+      So that is the song. [Quoted song lyric omitted.] So much so in our daily Christian life the narrative is always saying that I will believe in Jesus, right? A lot of times we ask our friends who are non-Christian or anybody, we like, do you believe in Jesus? Now believing and trusting is two very different thing. Like belief is actually claiming the truth of a certain historical something, right? Like if I say I believe Singapore had its independence in the 9th of August 1965, but do I trust it? No. So trust actually has a relational dimension to it. This song is asking us to trust in Jesus. Do you trust Jesus? Sometimes we say we believe in Jesus, but we may not trust in Him. So let us sing this song and really meditate on the word [closing song-related wording omitted].
+    confidence: 0.92
+  - id: p20260830-012
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-trust
+    start: 1016.6
+    end: 1273.48
+    type: hymn
+    title: Singing I Will Trust My Savior Jesus
+    summary: The congregation follows the video hymn after the leader's reflection on trust.
+    questions: []
+    topics: [worship, faith]
+    scripture: []
+    transcript: |
+      [Hymn: I Will Trust My Savior Jesus. Song lyrics omitted throughout.]
+      Beautiful hymn.
+    confidence: 0.94
+    review_notes: ['Long musical unit retained intact rather than divided by a speech quota.']
+  - id: p20260830-013
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-readings-hymns
+    start: 1274.78
+    end: 1444.16
+    type: reading
+    title: Responsive reading of Proverbs 5
+    summary: The leader announces the entire fifth chapter of Proverbs for alternating congregational reading.
+    questions: []
+    topics: [worship]
+    scripture: [Proverbs 5]
+    transcript: |
+      And now we've come to our responsive reading. And our first responsive reading will be taken from the book of Proverbs, chapter 5. We will read the whole entire chapter. I will read the first verse and I invite the congregation to read the second verse, and we will read responsively from then on.
+      [Scripture reading omitted: Proverbs 5.]
+    confidence: 0.95
+    review_notes: ['ASR incompletely captures congregational responses. Segment 171 word starts 0.36s before its segment; entire reading retained, not cut at that boundary.']
+  - id: p20260830-014
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-readings-hymns
+    start: 1446.1
+    end: 1592.28
+    type: reading
+    title: Responsive reading of John 16:25-33
+    summary: The congregation reads John 16:25-33 responsively, then repeats the final three verses together.
+    questions: []
+    topics: [worship, peace]
+    scripture: [John 16:25-33]
+    transcript: |
+      Let's go to our second portion of the responsive reading. That will be taken from the Gospel of John. The Gospel of John, chapter 16, verse 25 to 33. So the same thing, I will read chapter 16, verse 25, and I will invite the congregation to read the next verse, and then we will read responsively.
+      [Scripture reading omitted: John 16:25-33.]
+      Shall we read the last three verses together, from verse 31 to 33?
+      [Repeated scripture reading omitted: John 16:31-33.]
+      Thanks be to God.
+    confidence: 0.95
+    review_notes: ['Reading slide inspected at 1500s. Word-boundary warnings in segments 191, 194 and 200 remain within the reading unit.']
+  - id: p20260830-015
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-readings-hymns
+    start: 1593.52
+    end: 1729.62
+    type: hymn
+    title: The Solid Rock
+    summary: The congregation sings the announced hymn The Solid Rock.
+    questions: []
+    topics: [worship, faith]
+    scripture: []
+    transcript: |
+      Our third hymn will be a very familiar hymn. This is The Solid Rock.
+      [Congregational hymn lyrics omitted, 1613.76-1729.62s.]
+    confidence: 0.94
+    review_notes: ['Whole hymn retained as a musical unit.']
+  - id: p20260830-015-anthem
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-readings-hymns
+    start: 1731.76
+    end: 1899.8
+    type: anthem
+    title: The Lord Is Coming
+    summary: The worship leader introduces the video anthem The Lord Is Coming, which is then played.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: |
+      And we will have a video anthem. Title of the hymn on the video anthem is The Lord Is Coming.
+      [Video anthem lyrics omitted, 1747.34-1899.8s.]
+    confidence: 0.94
+    review_notes: ['Whole musical unit; word warning at segment 230 is internal to the anthem.']
+  - id: p20260830-016
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-hebrews
+    start: 1911.86
+    end: 1977.82
+    type: reading
+    title: Scripture reading from Hebrews 11:13-16
+    summary: A reader introduced by a partial name reads Hebrews 11:13-16 before the sermon.
+    questions: []
+    topics: [faith]
+    scripture: [Hebrews 11:13-16]
+    transcript: |
+      I now invite Sister [name uncertain] to read the scripture reading. [Handover wording unclear.]
+      Today's scripture reading comes from Hebrews 11, verses 13 to 16.
+      [Scripture reading omitted: Hebrews 11:13-16.]
+      This is the Word of God.
+    confidence: 0.92
+    review_notes: ['ASR has Yashinta here and Jacinta at 5145s; no full speaker identity assigned. Reference confirmed by reading and title slides.']
+  - id: p20260830-017
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-introduction
+    start: 1985
+    end: 2068.8
+    type: sermon
+    title: Overcoming and access to earlier sermons
+    summary: The title slide introduces Overcoming, and Pastor Yong tells listeners how to find earlier church recordings on YouTube.
+    questions: [Where does the preacher direct people to find earlier sermons?]
+    topics: [service-life]
+    scripture: [John 16:25-33, Hebrews 11:13-16]
+    transcript: |
+      [Title slide: Overcoming; John 16:25-33; Hebrews 11:13-16. Opening speech before 2006.48s is absent from the supplied ASR.]
+      And it has been a wonderful journey for me thus far. And I was reviewing some of the earlier sermons [brief incomplete wording omitted], because you know, every time we record the sermon, we will put it out on Facebook. And also I discovered that you can actually go on YouTube and find all the past. [Excerpt continues.] In YouTube you just search for Reformed Evangelical Church Singapore and you will find our depository. So like even last week's worship service you can find on the YouTube. [Illustration about advertisements omitted.] So you can catch up on past sermons.
+    confidence: 0.87
+    review_notes: ['Title and proposed series wording verified at 1995s. Boundary approximate within the reading-to-title transition; no invented first sentence.']
+  - id: p20260830-018
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-introduction
+    start: 2068.8
+    end: 2149.24
+    type: sermon
+    title: Questions as a way to keep learning
+    summary: Pastor Yong introduces the continuation of Jesus' farewell discourse and encourages questions beyond the immediate sermon topic.
+    questions: [Why does the preacher encourage people to ask questions?]
+    topics: [discipleship, knowing-god]
+    scripture: []
+    transcript: |
+      Today's passage is a continuation of the last discourse of Jesus, meaning before Jesus was crucified, the last things that he said to his disciples. But again before I start, I want to encourage you to ask any questions. This week there's no relevant questions so I'm not going to go into this. But you can ask your questions, put it in the box or send it to this number. And you can ask any questions; that's why it's called Ask Me Anything. It doesn't have to be related to the sermon proper.
+      [Anecdote about unanswered questions at Dr. Stephen Tong's sessions omitted.]
+      The encouragement to ask questions is so you continue to learn and also to demonstrate to you that actually the truth of God, as the Westminster say, it's sufficient to answer all questions relating to life, faith and salvation.
+    confidence: 0.9
+    review_notes: ['Public contact number not reproduced. Westminster attribution is the speaker’s, not an independently verified quotation.']
+  - id: p20260830-019
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-introduction
+    start: 2149.24
+    end: 2225.74
+    type: sermon
+    title: Recap of Jesus' departure and the Holy Spirit
+    summary: Pastor Yong reviews the previous lesson, interpreting Jesus' departure and return in relation to crucifixion, resurrection, ascension and the Holy Spirit.
+    questions: [How does the preacher explain the previous lesson about seeing Jesus again?]
+    topics: [holy-spirit, knowing-god]
+    scripture: [John 16]
+    transcript: |
+      So last week's lesson was on the middle part of John 16 and it is about how Jesus Christ was talking, preparing the disciples. And today we actually will continue a little bit. [Scripture quotations and the speaker's self-correction omitted.] He was talking about how he will be crucified, so they will not see him. However, most interpretation is that a little while you will see me because he will be resurrected, ascended, and then Holy Spirit will come. So God the Holy Spirit will come and that's the Spirit of Christ as well. [Excerpt continues.] Jesus was saying to the disciples that the physical Jesus Christ will ascend and then God the Holy Spirit will come, and they would then access Jesus Christ via the Holy Spirit. Today, we will continue that thought a little bit further.
+    confidence: 0.89
+    review_notes: ['Clearly a Last Session recap; not a separate current sermon title or series inference.']
+  - id: p20260830-020
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-introduction
+    start: 2225.96
+    end: 2297.04
+    type: sermon
+    title: Jesus cares for confused disciples
+    summary: Pastor Yong describes the disciples' confused political expectations and Jesus' care for them as he prepares them for his crucifixion.
+    questions: [How does the preacher connect Jesus' care with the disciples' confusion?]
+    topics: [faith, holy-spirit]
+    scripture: [1 Peter 5:7, John 16]
+    transcript: |
+      But of course, for the disciples, it's a very confusing thing. Remember that at that time, in that moment, they were wondering whether Jesus is going to be very triumphant. And this kind of expectation carried on all the way to the book of Acts, that they keep thinking that Jesus is a political kind of a leader, military leader. So back then, they get all confused. But Jesus Christ, then knowing that they are confused, went ahead and took the initiative to allay their fears even further. So from there, we are reminded that our Lord Jesus Christ cares for us.
+      [Quotation of 1 Peter 5:7 omitted.]
+      And Jesus told the disciples and revealed to them [scriptural wording omitted]. It's a fallen world because hours after he said that, they will be freaking out because their master, their teacher for three and a half years, will be arrested, tortured, and then will be crucified. That's why they will weep. And then the Romans and the Jews who were against Jesus will all be very happy and will be rejoicing.
+    confidence: 0.88
+    review_notes: ['Historical and theological descriptions remain the speaker’s account.']
+  - id: p20260830-020-spirit
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-introduction
+    start: 2297.68
+    end: 2351.42
+    type: sermon
+    title: Suffering, the Spirit and access to the Father
+    summary: Pastor Yong reviews the labour imagery in John 16 and connects the Spirit's coming with access to the Father.
+    questions: [How does the preacher relate the disciples' suffering to the Spirit's coming?]
+    topics: [holy-spirit, prayer]
+    scripture: [John 16]
+    transcript: |
+      [Recap of scripture's suffering and labour imagery omitted.]
+      So in the history of revelation, progressive revelation of God, step by step, Jesus was telling them what's going to happen. And there are two areas to it. One will be for that moment in the historical moment: the Holy Spirit will come. [Further paraphrase omitted.] Today we will actually talk a little bit further on this. You get direct access to God the Father via God the Holy Spirit because of the work done by God the Son. And not only was that a snapshot of what happened in history, we too today are subjected to all these similar kind of challenges in life.
+    confidence: 0.9
+    review_notes: ['Start includes the 0.08s early word in segment 318. “Via” resolves a homophone using surrounding text and the later snapshot slide.']
+  - id: p20260830-021
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-introduction
+    start: 2352.06
+    end: 2444.18
+    type: sermon
+    title: Joy and bitterness in ministry
+    summary: Pastor Yong connects joy with the Holy Spirit's presence while explicitly denying that Christians must always feel happy; he challenges bitter service.
+    questions: [Does the preacher equate joy with always feeling happy?]
+    topics: [holy-spirit, service, joy]
+    scripture: [John 16]
+    transcript: |
+      And being in the will of God, however, brings fullness of joy. [Scripture quotation omitted.] So Christianity is an unusual kind of a faith because we link suffering with joy, tribulation with joy. And today we want to dig deeper into it. But I want you to know that joy is a mark of the presence of God the Holy Spirit. And so no matter what you are going through in life, I'm not saying that we are always up, up, up and very happy all the time. [Illustration involving children omitted.] But if you are an adult and you are involved in ministry, whether you are serving as a chairman, your pianist, usher, or even the preacher, pastor, whoever, if you serve with great bitterness in your heart and dragging your feet, and you go on the pulpit with a “kill me already” kind of look, it's not right.
+    confidence: 0.88
+    review_notes: ['Joy topic proposed, not activated. Slightly longer than 90 seconds to complete the ministry application.']
+  - id: p20260830-022
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-introduction
+    start: 2444.18
+    end: 2536.9
+    type: sermon
+    title: Joy, private struggles and public ministry
+    summary: Pastor Yong illustrates the tension between teaching joy and private marital struggles, while allowing that believers sometimes feel down.
+    questions: [How does the preacher qualify his teaching about joy in ministry?]
+    topics: [service, holy-spirit]
+    scripture: []
+    transcript: |
+      [Scriptural fruit-of-the-Spirit wording omitted.] And of course there will be times where we are down. And so as a preacher, it's one of the big challenges of a preacher is that you stand on the pulpit, you are facing people, right? Like, you better make sure that your life is in order first.
+      [Personal marriage illustration and account of counseling another couple omitted from this excerpt.]
+      So remember, joy is a mark of the presence of God, the Holy Spirit. Despite the fact that sometimes you are down, it's still typically true. Because joy is very different from happiness. Today we dig a little bit deeper into it, because the last portion of chapter 16 is linked with everything else.
+    confidence: 0.88
+    review_notes: ['Personal anecdotes are the preacher’s account; omitted details are not independent evidence about another couple.']
+  - id: p20260830-023
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-introduction
+    start: 2537.04
+    end: 2585.72
+    type: prayer
+    title: Prayer for humility before the sermon
+    summary: Pastor Yong asks for humility, attention to God's voice and mercy for the preacher.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      Let's come to God in a time of prayer. We thank you, O God, that in this world where so many people don't get to even worship you properly, we are all here listening to your word in comfort and in safety. And what is lacking surely for many of us is a heart that appreciates this privilege and will come to you in humility. So may you grant us that humility, a childlike innocence when we come before you. No matter what burdens we have in our life, may you help us to set them aside so that we can hear your voice, recognize it, turn and follow you. Have special mercy on your unworthy servant. [Scriptural prayer wording omitted.] In Jesus' name we pray. Amen.
+    confidence: 0.93
+  - id: p20260830-024
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-access
+    start: 2586.52
+    end: 2639.96
+    type: sermon
+    title: A snapshot of the unfolding redemption plan
+    summary: Pastor Yong traces the farewell discourse from the upper room to Jesus' suffering, resurrection and return to the Father.
+    questions: [How does the preacher summarize the plan revealed in the farewell discourse?]
+    topics: [holy-spirit, knowing-god]
+    scripture: [John 13, John 16]
+    transcript: |
+      So let me quickly review what's the snapshot so far as to what has happened. We know that Jesus Christ was speaking to the eleven because Judas Iscariot left, right? So we start on chapter 13 in the upper room when Jesus washed the feet of disciples, the Last Supper [further narrative recap omitted]. For the disciples, Jesus then, step by step, progressive revelation revealed that he will be arrested, tried, tortured, and be crucified. Of course, he didn't use the exact words, but he was preparing the disciples for a horrifying thing that will happen.
+      But more importantly, he then revealed the processes of what is going to happen: that He will suffer, He will be resurrected, He will return to the Father. And not only that, we will not be left alone.
+    confidence: 0.9
+  - id: p20260830-024-spirit
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-access
+    start: 2640.2
+    end: 2708.3
+    type: sermon
+    title: From a physical presence to the indwelling Spirit
+    summary: Pastor Yong describes the Spirit's coming as a change from following Jesus physically to the Spirit living in every believer.
+    questions: [What change does the preacher associate with the Spirit's coming?]
+    topics: [holy-spirit, prayer]
+    scripture: [John 16]
+    transcript: |
+      The next stage of things that will happen is God the Holy Spirit will then come and change the whole scenario whereby earlier there was only one Jesus Christ walking along Jerusalem and the surrounding areas with all these physical disciples. But now God the Holy Spirit will live in every single believer forevermore. And so all of a sudden, the approach becomes a global kind of approach. So this is a progressive kind of plan that God has given to humanity. [Further scriptural recap omitted.] And this is the earthly redemption plan that God has revealed [preposition uncertain in ASR] our Lord Jesus Christ. So for those of us who are now here today, because we have the entire revealed will of God with us, it seems like, okay, sure, that's the way it is.
+    confidence: 0.91
+  - id: p20260830-025
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-access
+    start: 2708.3
+    end: 2786.8
+    type: sermon
+    title: Hidden wisdom and the privilege of revelation
+    summary: Pastor Yong uses 1 Corinthians 2 to describe God's plan as progressively revealed and calls present readers privileged to know its outcome.
+    questions: [Why does the preacher call present-day readers privileged?]
+    topics: [knowing-god]
+    scripture: [1 Corinthians 2:6-7, John 16]
+    transcript: |
+      But you can imagine that through the times, this has not been the case for many millions of people. The Apostle Paul spoke about this as a hidden plan in the letter that he wrote to the church in Corinth. First Corinthians 2, verse 6 [scripture quotation omitted]. So Paul pointed out correctly that actually the plan of God is a secret plan, a mysterious plan, that if you imagine that you are disciples and back in those days, you have problem trying to understand it, especially for the Jews. And by the wisdom of God in his timing, it was revealed step by step. So what we are studying and witnessing in John 16 is that snapshot in time where it is being revealed. But today, of course, you already know, you read the Bible all the way to Revelation, you know, the end game. And the plan of God was revealed. So we are people who have received great grace and great privilege because we don't have to guess.
+    confidence: 0.92
+  - id: p20260830-026
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-access
+    start: 2787.5
+    end: 2857.08
+    type: sermon
+    title: Asking the Father through the Holy Spirit
+    summary: Pastor Yong interprets John 16:25-26 as pointing toward Pentecost and direct prayer to the Father through the Holy Spirit.
+    questions: [How does the preacher interpret the day when the disciples will ask in Jesus' name?]
+    topics: [prayer, holy-spirit]
+    scripture: [John 16:25-26]
+    transcript: |
+      So back in John 16 then, it's still in the progression of revelation. [Scripture quotations omitted.] Prior to that, Jesus Christ was speaking to them in parables and talking to them in teaching. And some of the teachings are difficult to understand. [Scripture quotation omitted.] So physically up to that point, right, Jesus was walking the earth. These people follow him for three and a half years. There are still very strong physical limitations. They will seek the Lord and ask Jesus for all kinds of things. They don't quite understand all this plan of God yet. And Jesus will then ask on their behalf to the Father. But Jesus said the day will come where that is no longer needed. And that day, we believe, is the day of the Pentecost. When God, the Holy Spirit, comes, Jesus is saying that you don't have to ask me anymore. You can go directly to God the Father via the Holy Spirit.
+    confidence: 0.9
+    review_notes: ['Start includes the 0.04s early word in segment 451; original evidence timestamps remain unchanged.']
+  - id: p20260830-027
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-access
+    start: 2857.24
+    end: 2963.72
+    type: sermon
+    title: Priesthood of believers and prayer without an intermediary
+    summary: Pastor Yong contrasts his Reformed Protestant understanding of direct access to God with his description of Roman Catholic confession.
+    questions: [What does the preacher mean by the priesthood of all believers?]
+    topics: [prayer, forgiveness]
+    scripture: [John 16:25-26]
+    transcript: |
+      So, my dear brothers and sisters in Christ, this is a very important thing for all of us in modern-day Christianity to understand: that we are people who do not need to go through some agents to get to the gods, right? So in this, we differ very much from our friends in the Roman Catholic Church because we believe in priesthood of all believers, which means that all of you have direct access to God the Father and you don't have to go to some agents.
+      [The speaker's extended description of Catholic confession omitted from this excerpt.]
+      For us in the Protestant and especially in Reformed evangelical understanding, I want you to know that when you pray, you have direct access to God's throne of grace. Every single one of you. Because you are praying in the name of our Lord Jesus Christ because of the work that He has done, and so you have direct access.
+    confidence: 0.9
+    review_notes: ['Denominational comparison and characterization belong to the preacher; not externally verified or generalized as archive doctrine. Longer unit preserves contrast and conclusion.']
+  - id: p20260830-028
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-access
+    start: 2965.2
+    end: 3033.3
+    type: sermon
+    title: Why a pastor responds to requests for prayer
+    summary: Pastor Yong recounts a requested prayer visit and denies that his pastoral role automatically makes his prayer better, before introducing James 5.
+    questions: [Does Pastor Yong regard his prayer as automatically better than another believer's?]
+    topics: [prayer, service]
+    scripture: [James 5]
+    transcript: |
+      But still, many people will ask the pastor to come and pray, right? Yesterday evening time, my wife and I, we did a wedding, and after that we were going to rush off because somebody requested some emergency prayer. Somebody who is getting into quite a big trouble, and so ask me to go and pray. And this person is not a believer, but the wife is a believer, so they feel very sad and very burdened, and they want me to go and pray for them. Now, when that kind of thing happens, I will go. Not because I believe my prayer is better than your prayer, you know. Although the book of James chapter 5 does say [scripture wording omitted]. And Elijah was cited as an example in James 5, right? [Further biblical narrative recap omitted.]
+    confidence: 0.92
+    review_notes: ['Personal anecdote attributed to the speaker; no private identity inferred.']
+  - id: p20260830-029
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-access
+    start: 3033.5
+    end: 3106.36
+    type: sermon
+    title: Effective prayer and knowing God's will
+    summary: Pastor Yong qualifies a joke about praying for rain, linking righteous prayer with knowing God's will rather than obtaining arbitrary wishes.
+    questions: [How does the preacher distinguish prayer from asking for a lottery win?]
+    topics: [prayer, knowing-god]
+    scripture: [James 5]
+    transcript: |
+      So you can go and try it. Is it going to rain outside? Go pray. So if you pray and it rains, then maybe you are in the line of the righteous. But of course that's not what it means. The righteous people who are very close to God, like Elijah, they know the will of God. They understand. So you can never ask Elijah to pray for you to strike lottery tomorrow because he will tell you that's nonsense, because it's not in the will of God. He will never pray that kind of prayer anyway. And yes, it is true that those who are very, very close to God have a heart that is very pure, and God listened to many of them. So sometimes when you read about all these great men and women of God, some examples are quite marvellous, like George Mueller. [Orphanage illustration omitted.]
+    confidence: 0.91
+    review_notes: ['The explicit correction after the rain joke is retained. Historical prayer accounts are not independently confirmed.']
+  - id: p20260830-030
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-access
+    start: 3106.68
+    end: 3173.56
+    type: sermon
+    title: A prayer anecdote about George Muller
+    summary: Pastor Yong recounts a story in which George Muller prays before an apparently empty evangelistic meeting and the evangelist subsequently finds the room full.
+    questions: [What prayer story does Pastor Yong tell about George Muller?]
+    topics: [prayer, faith]
+    scripture: []
+    transcript: |
+      And I remember one George Muller story that is quite fascinating. So something like this, some guy went to his town and wanted to have a gospel rally, and then when he looked out behind the curtain before he started, nobody was there. No one was there. And he was a bit anxious and felt that this was going to be a failure. And then somebody came to tell him that, oh, Brother Muller is here to pray for you. [Dialogue omitted.] George Muller came; the two of them sat together. And George Muller said, brother, let's pray. And for quite some time, George Muller didn't say anything. [Excerpt continues.] Suddenly George Muller said, “My Father.” And the evangelist recalled, all of a sudden, I felt the presence of God. And Muller prayed a very simple prayer that God will bless the meeting. And right after the prayer, the fellow went to the curtain and took a look. The whole place was full of people. So it was quite an interesting kind of a story, right?
+    confidence: 0.89
+    review_notes: ['Retelling, not independent historical verification; ASR alternates Mueller/Miller/Muller. Name normalized within the anecdote, not assigned as a live speaker.']
+  - id: p20260830-031
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-access
+    start: 3174.66
+    end: 3250.12
+    type: sermon
+    title: Pray often yourself, not only through famous Christians
+    summary: Pastor Yong urges believers to pray personally and regularly rather than treating pastors or prominent Christians as necessary prayer intermediaries.
+    questions: [Why should believers pray themselves rather than rely only on pastors?]
+    topics: [prayer, discipleship]
+    scripture: [James 5]
+    transcript: |
+      So it is true that some among us, according to James 5, are so close to God that when they pray, they are always in line with the will of God. However, you must know that the message of the gospel of Jesus Christ is liberation, that you have direct access to God as well. And so while you may want to have pastors or famous people pray for you, I believe the more correct way to live your Christian life is to pray often and much yourself. And so you go on to the pathway of prayer, and prayer is such an important lesson. [Brief phrase omitted.] I have groups of people who pray together weekly, and I really appreciate very simple prayers from people of simple faith. And remember always that God hears your prayer as well because Jesus Christ died for that purpose. [Unclear intermediary term omitted.] Some Stephen Tong or whoever to pray for you, then it works—then you actually violate the very principle of what the gospel of Jesus Christ is all about.
+    confidence: 0.91
+    review_notes: ['ASR “psychon” at 3236s is unresolved and omitted explicitly; central argument is clear in adjacent context.']
+  - id: p20260830-032
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-access
+    start: 3250.4
+    end: 3307.46
+    type: sermon
+    title: Prayer in God's will and fullness of joy
+    summary: Pastor Yong returns to John 16:23-24, connecting the Spirit's indwelling, prayer in God's will and joy.
+    questions: [How does the preacher connect prayer in God's will with joy?]
+    topics: [prayer, holy-spirit]
+    scripture: [John 16:23-24]
+    transcript: |
+      And Jesus then, if you go back to the earlier verse, right, why is it that we can go direct access to God? [Spoken verse number and scripture quotation omitted.] So last week's lesson, these are the two verses from last week. Because the Holy Spirit will come. And when the Holy Spirit comes, he will live in you. And last week's lesson was that when we then live a life in accordance to the way the Holy Spirit wants us to live, we ask of God in his will, doing his work, the joy is full. And so there is nothing more joyful than the will of God. And the disciples then subsequently experience it, right?
+    confidence: 0.94
+    review_notes: ['ASR says verse 28; slide at 3270s displays John 16:23, with verse 24 following. Reference follows the displayed verses; discrepancy retained here.']
+  - id: p20260830-033
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-community
+    start: 3307.62
+    end: 3418.82
+    type: sermon
+    title: Pentecost and the joyful sharing of the early church
+    summary: Pastor Yong describes Pentecost and interprets the shared life of Acts 2 as an example of the fullness of joy discussed in John 16.
+    questions: [How does the preacher connect Acts 2 with John 16?]
+    topics: [holy-spirit, service-life]
+    scripture: [Acts 2:1-3, Acts 2:44-47, John 16:24]
+    transcript: |
+      The first big thing that happened after the ascension was the coming of the Holy Spirit, the descent of the Holy Spirit found in Acts chapter 2. And the prophecy of Jesus Christ came true, that the joy becomes full. [Acts 2:1-3 quotation omitted.] So when you look at the depiction of the Pentecost, they always draw fire, a little bit of fire on top of each of the people who are all gathered together. [Further biblical narrative and quotations omitted.] The early church, the earliest church, people gathered together and they shared everything, and they were living together, and there was just great description of joy. [Acts 2:46-47 quotation omitted.] So this fulfills the earlier verse in chapter 16, verse 24. [Quotation omitted.]
+    confidence: 0.92
+    review_notes: ['Complete Pentecost-to-community exposition kept together. Segment 622 has a 0.02s outside-word warning, internal to the passage.']
+  - id: p20260830-034
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-community
+    start: 3419.42
+    end: 3479.54
+    type: sermon
+    title: Walking the journey of faith with others
+    summary: Pastor Yong explains his repeated emphasis on shared Christian life and introduces his admiration for Amish communities.
+    questions: [Why does the preacher discourage walking the journey of faith alone?]
+    topics: [service-life, discipleship, service]
+    scripture: [Acts 2:44-47]
+    transcript: |
+      You know, since I was young, I've been very intrigued by this idea. You notice that when I preach, I have several themes that I always emphasize. One of them is the truth. The other one is this whole idea that you should never walk the journey of faith by yourself, right? You should always walk together with other fellow brothers and sisters in Christ, and that we love God by loving people made in His image and likeness. We serve God by serving people made in His image and likeness. And one of the key reasons why I believe this strongly is from passages like this. And since I was young, I've been very intrigued by this whole idea that people will gather together and share everything. Now, this is something that is very utopian thinking, right? Like a perfect world situation. [Transition to Amish example omitted.]
+    confidence: 0.93
+    review_notes: ['Segment 648 outside-word warning is enclosed; no cut at its start.']
+  - id: p20260830-035
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-community
+    start: 3479.78
+    end: 3542.46
+    type: sermon
+    title: Admiration and reservations about an Amish community model
+    summary: Pastor Yong describes mutual practical support in Amish communities while also expressing reservations about their separation from outsiders.
+    questions: [What does the preacher admire and question about the Amish example?]
+    topics: [service-life, service]
+    scripture: []
+    transcript: |
+      And you know, I'm involved with the charity Habitat for Humanity, house-building kind of thing. In the Amish situation, when you get married, because they live in a [ASR: “commute”], the whole community will come and build you a house. And I thought that's quite marvellous. [Further descriptions omitted.] You don't have to worry about a lot of things. Anything happen to you, the community come together and help you. Isn't that marvellous? Would you want to do that? I don't know. [Clothing illustration omitted.] I admire it greatly. I think it's marvellous to live like that. However, they don't preach the gospel also because they don't get out of their community. It's the enclosed kind of community.
+    confidence: 0.86
+    review_notes: ['Generalizations about Amish life are recorded as the speaker’s assertions, not externally verified facts; unclear “commute” is not silently repaired.']
+  - id: p20260830-036
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-community
+    start: 3543.02
+    end: 3649.7
+    type: sermon
+    title: Why a shared community cannot simply be forced
+    summary: Pastor Yong contrasts voluntary shared life with his account of communist ideals and retells a political speech about unequal privileges.
+    questions: [Why does the preacher say communal sharing cannot be forced?]
+    topics: [service-life, politics]
+    scripture: [Acts 2]
+    transcript: |
+      And all my life long I've been thinking about this long and hard. And one thing I know is that you cannot force this kind of thing to happen. You notice that the early church model did not last because we are fallen people, right? All of us. And I was in a meeting long time ago where [name uncertain in ASR] was a speaker. [Description of the speech omitted.] He was talking about how communism would not work, and he said that the communist idea is quite similar to this idea, right? [Exposition of Marxist ownership and a Mao-suit pocket anecdote omitted.] At the end of the day nobody really want to share everything with everybody.
+    confidence: 0.83
+    review_notes: ['ASR renders the politician’s name inconsistently as Lee Seng Lung / Li Sien-Lung; no definitive name correction or historical endorsement. Longer anecdote preserved as a unit.']
+  - id: p20260830-037
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-community
+    start: 3649.7
+    end: 3746.66
+    type: sermon
+    title: Self-interest and the preacher's account of economic incentives
+    summary: Pastor Yong discusses work incentives and China's economic changes as illustrations of the difficulty of sustaining selfless sharing.
+    questions: [How does the preacher use economic incentives to illustrate self-interest?]
+    topics: [politics, stewardship]
+    scripture: []
+    transcript: |
+      And you know that China was in poverty for a very long time because if no matter how hard I work I still get the same thing [rice-allocation illustration omitted], there is no incentive for me. So why would I want to work so hard? [Account of Chinese economic reforms and related jokes omitted.] Because the idea is that everybody is selfish. And if we allow you to be selfish within the constraint of the law, then commerce will happen and then you will prosper because you want to be rich. So because you want to be rich, you invent things better. You do things better. You find a loophole somewhere so that you will become rich.
+    confidence: 0.86
+    review_notes: ['Economic and historical assertions are attributed to the speaker. Mixed-language names and political jokes are not silently reconstructed.']
+  - id: p20260830-038
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-community
+    start: 3747.18
+    end: 3848.58
+    type: sermon
+    title: Online shopping as an illustration of self-interest
+    summary: Pastor Yong uses an online marketplace and shipping example to illustrate the effectiveness of commercial self-interest compared with his ideal of voluntary sharing.
+    questions: [What commercial example does the preacher use when discussing selfish desire?]
+    topics: [stewardship]
+    scripture: []
+    transcript: |
+      Recently, the big news in the world is the [marketplace name uncertain in ASR] thing. I don't know whether you have seen this. And I didn't know about it because I keep buying things from Taobao. [Supply-chain and low-cost shipping example omitted.] Because of commerce, because of free market, they go figure out that if I can cut off the middleman [examples involving retail goods and prices omitted]. I'm just telling you the thing that's happening in the world. So when it caters to your own selfish desire, it seems to work better. And this kind of utopian idea becomes something that doesn't quite work.
+    confidence: 0.82
+    review_notes: ['ASR varies Ping Tuo Tuo / Ping Toto / Pinto; no brand identity inferred. Prices and claims are anecdotal, not shopping advice or independent market evidence.']
+  - id: p20260830-039
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-community
+    start: 3848.58
+    end: 3925.08
+    type: sermon
+    title: Cell groups and practical mutual help
+    summary: Pastor Yong recommends cell groups and practical mutual help while acknowledging that participation cannot guarantee trustworthy relationships.
+    questions: [How can a cell group express the shared life the preacher commends?]
+    topics: [service-life, service, discipleship]
+    scripture: [Acts 2:44-47, John 16:24]
+    transcript: |
+      So I don't know how it will work or not work, but I did have some conclusion that despite the fact that it doesn't work, it still means that it is something that God is pleased with. And so I believe that we should still pursue it. And so from this purpose, I keep telling you that don't go and walk the journey of faith alone. Come together with some other people of God. And the only thing that I can think about as closest would be a cell group. That through the cell group, develop real relationship with people and walk the journey of life and share your burdens with each other, not just by words, also by deeds, meaning even financially or issues or whatever it is, you actually go in and love one another and do it.
+      Is that a formula that will work for sure? I don't know. [Examples of untrustworthy leaders omitted.] But nonetheless, I believe scripture is still correct. [Scriptural application omitted.]
+    confidence: 0.9
+    review_notes: ['Positive application and qualification retained together. Full-name ASR near 3908s is uncertain; Pastor Yong is the only speaker label used.']
+  - id: p20260830-039-fellowship
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-community
+    start: 3925.7
+    end: 3974.34
+    type: sermon
+    title: Seeking fellowship despite past disappointments
+    summary: Pastor Yong acknowledges having been cheated and disappointed but remains grateful for shared Christian service.
+    questions: [Why does the preacher still encourage fellowship after disappointment?]
+    topics: [service-life, service]
+    scripture: []
+    transcript: |
+      So despite the fact that there are some disappointment here, I still believe that we should always try to live our life together with other believers. And by the grace of God, if you get to walk together with a group of people who are pure in heart, it's just some beautiful, beautiful and wonderful thing. I'm just very thankful in my life. God was gracious to me. Okay, fine, there's one or two people who are crooks and cheated me of money even, but generally speaking it still has been wonderful. [Names in recent-meeting anecdote omitted.] It's just most wonderful to meet people whose mind is in line with what God wants to do and to serve together and work together. I pray that that's the way we all understand it.
+    confidence: 0.9
+  - id: p20260830-040
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-tribulation
+    start: 3974.34
+    end: 4076.64
+    type: sermon
+    title: Joy did not remove persecution from the early church
+    summary: Pastor Yong contrasts early Christian joy with persecution, describing an illustration of suffering under Roman rule.
+    questions: [Why does the preacher contrast early church joy with persecution?]
+    topics: [faith]
+    scripture: [John 16:33]
+    transcript: |
+      But for the disciples then this was not the end of the story, that they were very happy together, right, in the early church, shared everything together, had great joy. However, even when Jesus Christ was speaking to them, in the passage that you have read just now, from John 16, 25 to 33, we jump to the last verse first. [Scripture quotation omitted.] So it's quite strange, right? At first you say that there's joy in the world, but now you repeat one more time that you will have tribulation. So while it is true that the disciples then at the Pentecost had great joy, early church formed together when God the Holy Spirit came, great tribulation, of course, in history continued for the early Christians.
+      [Description of a persecution illustration omitted from this excerpt.]
+      It was horrifying to be a Christian back then, and yet again it was horrifying to be apostles.
+    confidence: 0.87
+    review_notes: ['Complete persecution illustration is just over 100s. Claims about Rome are the preacher’s account, not verified history. Segment 777 warning lies inside the omitted illustration.']
+  - id: p20260830-040-shields
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-tribulation
+    start: 4076.64
+    end: 4143.7
+    type: sermon
+    title: Apostles' shields and traditions of suffering
+    summary: Pastor Yong explains symbols on apostles' shields as reminders of traditions about their deaths and returns to the paradox of joy amid suffering.
+    questions: [What does the preacher say the apostles' shields signify?]
+    topics: [faith]
+    scripture: []
+    transcript: |
+      As I've shared with you many times, the shields of the apostles indicate how they die. Sometimes you notice older churches, you will see the display of the shields of the apostles. Each shield represents one apostle and has a symbol that more or less indicates how they die. [Examples involving Peter, Andrew and other apostles omitted.] It's unimaginable, isn't it? And I always think that this is some of the things that's quite crazy. And yet the Bible says they have joy.
+    confidence: 0.88
+    review_notes: ['Traditions about apostles’ deaths are the speaker’s account. ASR flaying terminology is unreliable and omitted rather than reconstructed.']
+  - id: p20260830-041
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-tribulation
+    start: 4144.22
+    end: 4265.78
+    type: sermon
+    title: Disappointment and getting up again
+    summary: Pastor Yong rejects an ideal of uninterrupted emotional peace, contrasts accounts he attributes to other preachers, and emphasizes recovering after disappointment.
+    questions: [Does overcoming mean never feeling disappointed?]
+    topics: [faith, peace, suffering]
+    scripture: []
+    transcript: |
+      And so, fast forward to today, I would say that we too experience something quite similar, that no matter who we are, we do live in a life where there are tribulations aplenty. I wouldn't say that it's the same as being [unclear word], right, but I know that each and every one of us here have a lot of worries in life too, right?
+      [Joke and criticism of a claim attributed to John MacArthur Jr. omitted from this excerpt.]
+      At least my boss, senior pastor, is more honest. In one of the question-and-answer sessions somebody asked Dr. Tong [question paraphrase omitted]. He said, “Of course, I'm a human being. I'm not a saint or an angel or whatever it is. Of course, in my life, I have been severely tested and disappointed.” [Brief comment omitted.] What Dr. Tong said, the difference is that I don't get defeated and lie down and never get up again. I always get up after my disappointment.
+    confidence: 0.86
+    review_notes: ['Comparative anecdote retained over 90 seconds to avoid presenting criticism without its alternative. Attributions are unverified. ASR “afraid” appears to refer back to a mode of execution; not silently reconstructed.']
+  - id: p20260830-042
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-tribulation
+    start: 4266.16
+    end: 4345.44
+    type: sermon
+    title: Social media and the burden of seeing suffering
+    summary: Pastor Yong describes how distressing disaster footage and repeated recommendations can add to viewers' anxiety.
+    questions: [How does the preacher say social media can add to anxiety?]
+    topics: [peace]
+    scripture: []
+    transcript: |
+      So such is the case for every one of us, right? All kinds of issues. Can be relationship issue, can be health issue, can be finance issue. And it is made worse, I think, in our generation by the social media that bring other people's suffering right before our very eyes. [Descriptions of flood footage omitted.] These are the things that then add to our own anxiety, isn't it? And the algorithm of the application will figure out that you like to watch this kind of thing, so they'll keep sending you more and more, and it's a mental health issue, you know.
+    confidence: 0.89
+    review_notes: ['Disaster location/details are uncertain in ASR; no external event identity or clinical conclusion added.']
+  - id: p20260830-043
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-tribulation
+    start: 4345.92
+    end: 4404.44
+    type: sermon
+    title: Caring for a friend's trouble
+    summary: Pastor Yong recounts being moved by a Christian's distress for a friend and connects empathy with the difficulty of pastoral work.
+    questions: [Why does caring for others create burdens in pastoral work?]
+    topics: [service, prayer]
+    scripture: []
+    transcript: |
+      We care for people and we take on their suffering as well. So in the case yesterday, for example, the guy that I prayed for, the prayer was requested by somebody who cared because it's his friend. He wanted to share the gospel with him as well. So I went there and as I was leaving, the host of the house, who is a Christian guy, told me that he felt so distressed with his friend's problem that he cried a lot. And I was deeply moved. [Brief repetition omitted.] It's not his problem, right? It's his friend's problem. But he cares so much that he takes on the worries. And herein lies the difficulty of pastoral work as well. [Excerpt continues.] How easy it is or how difficult it is to be a pastor? The answer is it can be as easy as you want it to be and as difficult as you want it to be.
+    confidence: 0.92
+  - id: p20260830-044
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-tribulation
+    start: 4405.2
+    end: 4509.94
+    type: sermon
+    title: Availability, empathy and costly ministry
+    summary: Pastor Yong contrasts hiding behind pastoral status with becoming involved in people's lives and acknowledges the emotional cost of care.
+    questions: [What makes pastoral care demanding according to the preacher?]
+    topics: [service, service-life]
+    scripture: []
+    transcript: |
+      Easy because if I don't do anything, you also won't know, right? Because, you know, I'm a pastor. How dare you question me? I'm the holy man of God, okay? You are a sinner. [Satirical example continues, then omitted.] Yesterday someone was talking to me and I was telling him that you should come talk to me whenever you need to. He said, no, your time is very precious. [Further dialogue omitted.] Or you can be as busy as you want to be by getting involved in people's life, and it's a bottomless pit, right? [Charitable-work examples omitted.] If you don't care, I don't think you're going to be a very effective pastor. But if you care, you get pulled into the situation that people have, and the empathy is difficult. And so, yeah, it's tribulations aplenty for all of us. But then here comes Jesus Christ, keeps talking about joy in tribulations, and we see people talking about it all the time. How is it really possible?
+    confidence: 0.88
+    review_notes: ['Opening boast is the speaker’s satire of disengaged ministry, not a claim of superiority. Longer unit preserves that contrast.']
+  - id: p20260830-045
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-love
+    start: 4509.94
+    end: 4605.1
+    type: sermon
+    title: Love, faith and hope amid tribulation
+    summary: Pastor Yong introduces love, faith and hope as his framework for understanding Jesus' words about joy and overcoming trouble.
+    questions: [What three themes structure the preacher's answer to tribulation?]
+    topics: [faith, peace]
+    scripture: [1 Corinthians 13:13, John 16:27-28]
+    transcript: |
+      In today's passage, there are actually some wonderful lessons that are in line with much of the Bible's revelation as well. And one of the most beautiful things in the short passage we have today is there is a reminder of what the Apostle Paul says in 1 Corinthians chapter 13, verse 13. [Scripture quotation omitted.] So after he wrote so many things, Paul says that the most important thing is love, faith, and hope. And among these three, the greatest is love. And in the passage today, we do see the answer from the words of our Lord Jesus Christ as well. Why would he say that you will have fullness of joy? And how is it that we will overcome tribulations in our life? [Examples of sources of trouble omitted.] From the words of our Lord Jesus Christ, the first thing He said to His disciples, or reminded His disciples, was that there is love. [John 16:27-28 quotation omitted.]
+    confidence: 0.93
+    review_notes: ['Slightly over 90 seconds to keep the announced framework and first scriptural point together.']
+  - id: p20260830-046
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-love
+    start: 4605.68
+    end: 4651.86
+    type: sermon
+    title: Remembering that believers are loved
+    summary: Pastor Yong tells listeners facing trials to remember God's love, linking this assurance to love for and belief in Jesus.
+    questions: [What should listeners remember when they face trials?]
+    topics: [faith, knowing-god, love]
+    scripture: [John 16:27-28]
+    transcript: |
+      My dear brothers and sisters in Christ, there is no doubt, you know, the words of Christ will apply to all of us as well. [Scriptural wording omitted.] You have trials, you have temptations, you have difficulty. And Christ says that you must remember that you are beloved of God. [ASR wording uncertain in the repeated question.] You are beloved of God because you love and believe in Jesus Christ. And that's the whole gospel message, isn't it?
+    confidence: 0.91
+    review_notes: ['Segment 965 word starts 0.12s early; passage encloses the full surrounding sentence. Love topic proposed, not activated.']
+  - id: p20260830-047
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-love
+    start: 4653.58
+    end: 4727.62
+    type: sermon
+    title: Love expressed in obedience despite imperfection
+    summary: Pastor Yong connects loving Jesus with trying to obey him while acknowledging imperfection, failure, forgiveness and renewed effort.
+    questions: [How does the preacher connect love for Jesus with obedience and forgiveness?]
+    topics: [discipleship, faith, forgiveness]
+    scripture: []
+    transcript: |
+      Before we are lost and in darkness, but because we believe in Jesus, to believe in Jesus means to love Him. [Scriptural wording omitted.] So there's no picture of a guy who basically says, okay, I believe in Jesus, but I'm going to do whatever nonsense I want in my life. It's not in the Bible. In the Bible, to believe in Jesus Christ means to love Him. To love Him means we will delight in doing what He calls us to do. Now, of course, none of us are perfect and we are all on a different journey. But generally speaking, it means that I'm going to do my very best to live the life that God wants me to live. Yes, from time to time, I will fall, but I get up. Almost like what senior pastor says, right? You get up and then you don't lie down, because his forgiveness is total. But I know that I will want to devote my life to him because I love him. [Scriptural wording omitted.] God, the Father, God, the Son, God, the Holy Spirit, the community of love, and you are part of it. This is profound thought.
+    confidence: 0.92
+  - id: p20260830-048
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-love
+    start: 4728.08
+    end: 4802.72
+    type: sermon
+    title: Augustine and a theologian's reflection on divine love
+    summary: Pastor Yong quotes a saying attributed on screen to Augustine and tells an anecdote about a theologian finding profound meaning in a children's hymn.
+    questions: [What examples does the preacher use to emphasize the profundity of God's love?]
+    topics: [knowing-god, faith]
+    scripture: []
+    transcript: |
+      So much so that some of the biggest thinkers in the world understand this, and one of them is Augustine. And Augustine says, “God loves each one of us as if there were only one of us.” And you know something, the deeper a thinker you are, the more you will find this intriguing and difficult to understand. But yet, marvellous, marvellous truth that will transform your whole life. One of the other great theologians of the last century is a guy called [name unclear in ASR]. [Further description omitted.] He was once asked, in your entire theological career, what is the most profound thing that you can think of when you study theology? [Children's hymn quotation omitted.] It's not from the Bible; this is from some children's Sunday school, right? [Repeated hymn quotation omitted.]
+    confidence: 0.87
+    review_notes: ['Augustine attribution visible at 4735s; not independently authenticated. ASR repeatedly renders the second name as Kalbath/Kyle Bath; possible Karl Barth remains a review question, not a speaker identity. Song lyrics omitted even when quoted in the sermon.']
+  - id: p20260830-049
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-love
+    start: 4802.72
+    end: 4878.16
+    type: sermon
+    title: Divine love and personal insecurity
+    summary: Pastor Yong applies the assurance of God's love to relational, financial and health worries, describing insecurity as an obstacle to receiving it.
+    questions: [How does the preacher apply God's love to insecurity and anxiety?]
+    topics: [faith, peace]
+    scripture: [Matthew 10]
+    transcript: |
+      And so, my dear brothers and sisters in Christ, whatever it is that you are facing in the world today, whether it is a turmoil that comes from relationship, from finance, from health, you must know that Jesus loves you, that God loves you as if in the entire world there is only one of you. And because we often don't quite understand, we don't quite believe also. And that's one of the key problems with us as human beings, right? The sense of insecurity when you look at the mirror, you don't see anybody who is so lovable. And you find a lot of flaws in yourself. [Imagined discouraging speech omitted.] From that understanding then, it should then help us to put our priorities of anxieties right and not get things all messed up. And there's so many things you can talk about, but our Lord Jesus Christ pointed out some very practical issue in the Gospel of Matthew chapter 10.
+    confidence: 0.92
+  - id: p20260830-050
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-love
+    start: 4878.4
+    end: 4951.14
+    type: sermon
+    title: Sparrows as a reminder of God's care
+    summary: Pastor Yong explains how Jesus' words about sparrows encourage him when stressed and connects them with a hymn about God's care.
+    questions: [Why does the preacher look at sparrows when he is worried?]
+    topics: [faith, peace]
+    scripture: [Matthew 10:29-31]
+    transcript: |
+      [Scripture quotation omitted: Matthew 10:29-31.]
+      Sparrows, right here and there. Jesus Christ said that these are very cheap animals, you know, that they are sold for a penny. But then God the Father is in control. [Scripture quotation omitted.] It's a very logical progression from the understanding that I am a beloved of God. And if God should take care of the sparrows, then surely He will take care of me because I'm worth a lot more than the sparrows. So there are some hymns that are most marvellous. One of them is His Eye Is on the Sparrow. And I thought that's one of the most marvellous hymns. [Song lyric omitted.] And yeah, even for me in my life, oftentimes when I am stressed and I'm worried about many things, I remember verses like this. And yeah, I look at the sparrows and say that if God will take care of the sparrow, surely he will take care of me. [Scriptural wording omitted.] That's love.
+    confidence: 0.93
+    review_notes: ['Matthew 10:29 heading visible at 4880s; continuing quotation supports verses 30-31. Segment 1037 warning is internal.']
+  - id: p20260830-051
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-faith
+    start: 4951.34
+    end: 5044.06
+    type: sermon
+    title: The disciples' confidence and their weak faith
+    summary: Pastor Yong reads the disciples' profession of belief against Jesus' warning that they will scatter, emphasizing that their confidence was premature.
+    questions: [How does the preacher assess the disciples' declaration of belief?]
+    topics: [faith, discipleship]
+    scripture: [John 16:29-32]
+    transcript: |
+      The second thing that Jesus pointed out was faith, or dealt with with the disciples, in line with what the Apostle Paul says in 1 Corinthians 13. [Scripture quotation omitted: John 16:29-30.] And the Bible in verse 31 has a very strange verse. It is not a praise, you know. [The preacher's paraphrase of Jesus' challenge and scripture quotation omitted.] And so in the area of faith, when Christ was dealing with the disciples, the disciples' faith back then was very weak and was most misguided. They didn't know what they were talking about. And they thought they all have good faith and they say, I believe in you. But we know from scripture that when Christ was crucified, they all ran away. In Hokkien, it's called [phrase omitted because transcription uncertain]. They all disappeared and cannot be found.
+    confidence: 0.91
+    review_notes: ['Slightly over 90 seconds to preserve contrast. Historical/narrative interpretation remains attributed to the preacher.']
+  - id: p20260830-052
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-faith
+    start: 5044.16
+    end: 5135.3
+    type: sermon
+    title: Asking for help with weak faith
+    summary: Pastor Yong connects the disciples' failures with Mark 9:24 and says that God understands weak faith and develops it through trials.
+    questions: [What encouragement does the preacher offer when faith is weak?]
+    topics: [faith, temptation]
+    scripture: [Mark 9:24]
+    transcript: |
+      Except one—who was that one person? John was the only one who was before Jesus Christ. All the other ten all ran away. Peter was the worst, right? Not only did he run away, later in John we will see [narrative recap omitted]. But you know something, this also reflects our faith too, right? And so one of the verses in the Bible that I always go back to is Mark chapter 9 verse 24. [Narrative retelling, uncertain cross-reference wording and quotation omitted.] My dear brothers and sisters in Christ, faith is important. And Christ was telling the disciples that in the days ahead, you must have faith. But immediately you realize that their faith is not there. But we see from scripture that God does understand our weak faith and does not reject us. Through our tribulations in life, progressively God does build up our faith in Him more and more. And so Dr. Stephen Tong always argued that trials and temptations are absolute necessities in faith.
+    confidence: 0.9
+    review_notes: ['Mark 9:24 appears on the 5100s slide. ASR at 5089-5095s reverses a phrase about possibility; omitted rather than reconstructed from memory.']
+  - id: p20260830-053
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-faith
+    start: 5136.06
+    end: 5234.38
+    type: sermon
+    title: Encouragement from the faith described in Hebrews 11
+    summary: Pastor Yong returns to Hebrews 11:13-16 and says that examples of people who trusted beyond their own lifetimes can encourage weak faith.
+    questions: [How does Hebrews 11 encourage listeners whose faith is weak?]
+    topics: [faith]
+    scripture: [Hebrews 11:13-16]
+    transcript: |
+      Sometimes when our own faith is weak, what is helpful is when we look at other people, other people who have great faith. So earlier our sister [partial name] was reading to us, the scripture itself points that out, right? In Hebrews chapter 11, the whole chapter is about many, many different people in history that had great faith. [Scripture quotation omitted.] Can you imagine the kind of faith you need? The things didn't happen in your lifetime, you know. [Further quotation and paraphrase omitted.] So yes, from time to time our faith is weak, including mine, but we know that faith leads us to God. And so, even in the weak faith, God understands, and God will help us in our unbelief. And it is helpful oftentimes to go think and be encouraged by many examples of great men and women of faith.
+    confidence: 0.92
+    review_notes: ['Reading plus application retained as one slightly longer unit. Reader’s full identity remains unverified.']
+  - id: p20260830-054
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-faith
+    start: 5234.72
+    end: 5308.18
+    type: sermon
+    title: Learning from Stephen Tong's determination
+    summary: Pastor Yong describes working on Stephen Tong's autobiography and being encouraged by his resolve to act on what he believes God calls him to do.
+    questions: [What encourages Pastor Yong as he works on Stephen Tong's autobiography?]
+    topics: [faith, service]
+    scripture: []
+    transcript: |
+      In my lifetime, there are quite a few people that I look to. Of course, they are all not perfect people too, but then they are very encouraging. One of them must be this guy, for sure. So like now, I'm translating his autobiography, about to finish because he keeps kicking my butt. [Deadline discussion and unclear names omitted.] But you know, it's a tough job, but at the same time it's quite fascinating, right? Because you get to dig into the mind of the guy and a lot of fine detail that even I didn't know. I mean, I worked with him for almost 30 years, you know. [Brief aside omitted.] This guy is so daring to do so many things and has so much faith and belief. And so one of the things about working with Dr. Tong is that, you know, you can go and disagree with him for all you want. He don't care, you know. He will just go and do it if he believes that this is what God called him to do.
+    confidence: 0.9
+    review_notes: ['Stephen Tong is the subject of the anecdote, not the live preacher. Deadline remarks are not assigned an inferred calendar date.']
+  - id: p20260830-055
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-faith
+    start: 5308.66
+    end: 5376.62
+    type: sermon
+    title: Faith before a project's finances are secured
+    summary: Pastor Yong contrasts his own caution about funding with a university-building example he attributes to Stephen Tong.
+    questions: [What does the university-building anecdote illustrate for the preacher?]
+    topics: [faith, stewardship]
+    scripture: []
+    transcript: |
+      And that I can't. It's like so many stories. You can stand here and talk to you up until 6 p.m., the many stories that he has. I mean, some of the things that he talked about, if I were him, I would give up immediately, especially when it comes to money. No money, no talk. Simple, right? It's a very Singaporean thing. No money, no talk. This is a different ballgame. He goes out and then declares, oh, I'm going to build a university. Budget in the U.S., $100 million. [Clarification and jokes about possible donors omitted.] Before I declare anything, I would make sure all you pledge first. Then I would go up there and declare, by faith, we will, whatever, whatever. Not him. No, he really got nothing. He would just go up there and say it because he really believes so. And so I'm often encouraged: tenacity, determination, faith.
+    confidence: 0.89
+    review_notes: ['Budget and funding claims are the speaker’s anecdote, not independently checked. Mentioned donors are not identified or assigned speaker metadata.']
+  - id: p20260830-056
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-faith
+    start: 5376.62
+    end: 5455.48
+    type: sermon
+    title: Encouragement from Nick Vujicic and Kanae Miyahara
+    summary: Pastor Yong points to the displayed example of Nick Vujicic and Kanae Miyahara as an encouragement to faith and joy despite difficulty.
+    questions: [Why does the preacher point listeners toward Nick and his wife?]
+    topics: [faith, holy-spirit]
+    scripture: []
+    transcript: |
+      And apart from [unclear word], there are many other people that I look to. Some of them are very odd people. For example, this guy. This is Nick. His name is very strange; follow on the right-hand side. Born without arms, without legs. He's an evangelist, now stationed in Australia. And man, I think the person who has greater faith than him is the wife, [name on slide: Kanae Miyahara]. [Comments about family and marriage omitted.] Guy got no hands, no legs, and yet lives a very joyful life. You can go to YouTube and look at him preach and teach. [Further illustration omitted.] So I tell you, go and look at Nick and his wife because all these great men and women of faith will encourage us.
+    confidence: 0.91
+    review_notes: ['Names Nick Vujicic and Kanae Miyahara are printed on the 5400s slide. They are illustrative subjects, not live speakers. Residence and family claims remain the preacher’s account.']
+  - id: p20260830-057
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-hope
+    start: 5455.66
+    end: 5528.4
+    type: sermon
+    title: Taking heart as a command to be courageous
+    summary: Pastor Yong interprets Jesus' instruction in John 16:33 as a command to courage rather than empty cheerleading.
+    questions: [How does the preacher explain the instruction to take heart?]
+    topics: [faith, peace]
+    scripture: [John 16:33]
+    transcript: |
+      Love, faith, and finally hope. Jesus Christ said in verse 33 [scripture quotation omitted]. That's not the end of the verse. [Quotation omitted.] “Take heart” in the original Greek is [uncertain transcription], which is again a very complicated word. It means be courageous, be of good cheer, cheer up, have confidence. Now, was Jesus Christ trying to do a cheerleader thing, rah-rah? Yeah, I know it's difficult, but okay, go [brief cheering imitation omitted]. Not so. In the original Greek, the word is a command. Just like earlier, “fear not.” [Illustration and repeated scripture wording omitted.] I command you, be courageous despite the tribulation. Why would He say that? Because the next verse, in the closing verse of chapter 16 [scripture quotation omitted].
+    confidence: 0.9
+    review_notes: ['Greek transliteration “tasede” in ASR is unresolved; grammatical claim remains attributed to the preacher. Segment 1206 warning is internal.']
+  - id: p20260830-058
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-hope
+    start: 5528.86
+    end: 5593.9
+    type: sermon
+    title: Christ's victory as the ground of hope
+    summary: Pastor Yong contrasts ordinary reassurance with the hope he grounds in Jesus' victory, death, resurrection and ascension.
+    questions: [Why does the preacher distinguish Christian hope from saying everything will be fine?]
+    topics: [faith, peace]
+    scripture: [John 16:33]
+    transcript: |
+      My dear brothers and sisters in Christ, this is the ultimate hope for us all. Our Lord Jesus Christ, even at that stage before His crucifixion, already revealed the whole plan of God. [Repeated scriptural wording omitted.] I mean, if you come to me and you tell me you have problems and what have you, and I'm not a Christian, I don't have the Bible, I don't know anything, of course I will tell you, oh, everything will be fine, right? It's okay, and we always encourage each other that way, right? At the back of your mind, it's reasonable for you to think to yourself, why am I going to listen to this guy? What does he know about my suffering, isn't it? But we are talking about Lord Jesus Christ here. [Quotation omitted.] It's a statement of fact. [Repeated quotation omitted.] He has victory over the devil in the temptation. He will fulfill the work of God the Father by hanging on the cross. He will finish the work. He will be dead. He will be buried. He will be resurrected. And He will ascend in glory. [Scriptural refrain omitted.]
+    confidence: 0.92
+    review_notes: ['Segment 1231 outside-word warning is enclosed. The summary attributes the theological argument rather than adopting it as an archive conclusion.']
+  - id: p20260830-059
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-hope
+    start: 5594.16
+    end: 5674.32
+    type: sermon
+    title: Hope, patience and looking forward
+    summary: Pastor Yong uses Romans 8:24-25 and a comparison of English and Chinese words to distinguish assured expectation from wishful thinking.
+    questions: [How does the preacher distinguish hope from merely wishing?]
+    topics: [faith, hope]
+    scripture: [Romans 8:24-25]
+    transcript: |
+      And hope, therefore, is something we cling on to despite the greatest issues we may have. And hope is a very paradoxical thing because you cannot see it, right? The Apostle Paul says [scripture quotation omitted: Romans 8:24-25]. And so we have a hope that the one who overcame the world will come and recover us and redeem us, no matter what it is that we go through in our life. Sometimes I'm not very satisfied with the English word hope because it's a bit wishy-washy and we are limited by languages. Chinese words are better in this way. [Chinese terms and lottery/examination examples omitted because transcription is uncertain.] It's not just something that may or may not happen, you know. And so in the English word, I think hope is a problem.
+    confidence: 0.89
+    review_notes: ['Romans 8:24 displayed at 5610s; ensuing quotation supports verse 25. Segment 1248 starts a word 0.22s early, internal to the passage. Chinese ASR terms are not silently translated. Hope proposed as a topic.']
+  - id: p20260830-060
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-hope
+    start: 5674.32
+    end: 5749
+    type: sermon
+    title: Assurance when trusting is difficult
+    summary: Pastor Yong concludes that hope means assurance, applying the earlier hymn's theme of trust to difficult circumstances and a secure destination.
+    questions: [What assurance does the preacher offer when trust feels difficult?]
+    topics: [faith, peace]
+    scripture: [John 16:33]
+    transcript: |
+      The better word, I think, is assurance. We have this assurance. We know that he will come again. And so the song [hymn quotation omitted]. I am assured. My dear brothers and sisters in Christ, whatever it is we are going through in our life today, it seems so difficult sometimes. So earlier the song I Will Trust My Savior Jesus, one of the phrases is most beautiful [song lyric omitted]. Yeah, sometimes you look at your circumstances, you say why am I going to trust anything? It's the hardest thing to do. That is exactly where you have to trust because he is our Lord and Saviour [scriptural wording omitted]. In a sense we already know what the end game is, and we are journeying towards that. In the meantime our life may have all these ups and downs, but our destiny is sure. May the word of God encourage us this morning that we are loved by him, and through faith we come to him, and we are assured of the eternal hope that is real and is a fact. May that comfort us and give us strength as we journey forward. Let us pray.
+    confidence: 0.93
+    review_notes: ['Song lyrics omitted even where quoted as sermon illustrations. ASR “up there now” lightly normalized to ups and downs from the sentence context; listening review remains required.']
+  - id: p20260830-061
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-response
+    start: 5750.1
+    end: 5850.58
+    type: prayer
+    title: Prayer for strength, trust and hope
+    summary: Pastor Yong asks for strength to trust amid difficulties and for the congregation to hold onto love, faith, hope, joy and peace.
+    questions: []
+    topics: [prayer, faith, peace]
+    scripture: []
+    transcript: |
+      We thank you, God, for speaking to us through your word. And we touch on a really tough topic because a lot of us are struggling with many issues, and sometimes in the midst of our difficulties we look around and we don't seem to find that there's any way out and doesn't seem to be any hope at all. [Song-related wording omitted.] So we do pray for your strength and your wisdom to help us understand that your word is completely trustworthy, that you are a faithful God. [Scriptural allusion and further prayer omitted.] And so no matter what happens in our life, remind us constantly that we are loved. We are loved by you. No matter what happens, you will see us through. And that by the simple and yet small faith that you've given to us, we have an eternal hope. Help us to hold on tight to all this so that even in the midst of great tribulation, we can still have deep-seated joy and peace [scriptural wording omitted]. In Jesus' name we pray. Amen.
+    confidence: 0.92
+    review_notes: ['Prayer kept intact as a slightly longer unit.']
+  - id: p20260830-062
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-response
+    start: 5852
+    end: 5893.96
+    type: creed
+    title: Affirming faith with the Apostles' Creed
+    summary: The congregation is invited to stand and affirm its faith by reading the Apostles' Creed.
+    questions: []
+    topics: [worship, faith]
+    scripture: []
+    transcript: |
+      Congregation, would you stand with me as we affirm our faith by reading the Apostles' Creed? The Apostles' Creed.
+      [Congregational creed omitted: supplied ASR captures only a fragment and contains an uncertain word. No missing creed text reconstructed.]
+    confidence: 0.88
+    review_notes: ['ASR renders communion of sins; not silently replaced with remembered liturgy.']
+  - id: p20260830-063
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-response
+    start: 5894.32
+    end: 6003.84
+    type: prayer
+    title: Personal response and concern for young people
+    summary: Pastor Yong invites prayer for strength and faith in response to the sermon and introduces prayer for young people facing trials and temptations.
+    questions: [What prayer requests follow the sermon?]
+    topics: [prayer, faith, temptation]
+    scripture: []
+    transcript: |
+      Let's come before God in a time of prayer. We first pray for ourselves in response to the sermon preached. Whatever it is that we may be going through in our life, let us ask God to give us strength and faith and hope to believe in the faithfulness of His Word. The second prayer item, I want the congregation to join me in prayer for our young people. And we continue to always want to remind ourselves to pray for them, for they live in a world with challenges aplenty, so many trials, so many temptations ahead. We want to pray that God the Holy Spirit will strengthen them so that they will continue to walk in the ways of the Lord, despite the many, many temptations and challenges out there for them. So these are two prayer items. You can pray verbally or you can pray in your heart. Let us start by praying for ourselves. Let us pray.
+      [Congregational prayer interval.]
+    confidence: 0.93
+    review_notes: ['Longer duration includes prayer interval rather than added speech.']
+  - id: p20260830-064
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-response
+    start: 6003.84
+    end: 6084.92
+    type: prayer
+    title: Prayer for children, teenagers and young adults
+    summary: Pastor Yong asks the congregation to pray for God's protection and guidance for the church's young people.
+    questions: []
+    topics: [prayer, service-life]
+    scripture: []
+    transcript: |
+      Lift up our young people before the Lord God Almighty, and we ask God especially for his special protection for our children and for our teenagers and our young adults, and ask God to continue to lead them and guide them in his pathway. Let us pray.
+      [Congregational prayer interval.]
+    confidence: 0.93
+    review_notes: ['Pastoral Prayer slide inspected at 6000s. No words invented for the quiet interval.']
+  - id: p20260830-065
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-response
+    start: 6084.92
+    end: 6150.88
+    type: prayer
+    title: Collective prayer to walk closely with God
+    summary: Pastor Yong gathers the prayers, asking that the congregation pray often, live in God's will and remember that they are loved.
+    questions: []
+    topics: [prayer, holy-spirit]
+    scripture: []
+    transcript: |
+      Let us pray together. We thank you, O God, as we have learned earlier, when we pray because of what Jesus Christ has done for us, we go straight to your throne of grace. And so remind us often to pray often and much so that we are in line with your will in our life, and by so doing have the fullness of joy in the life that you have given to each and every one of us. Help us to never neglect to walk closely with you, for when we do that we are wasting away moments of our life that we cannot retrieve. But help us walk close with you so that the joy that marks the presence of the Holy Spirit is always with us, no matter what tribulations we may be going through in our life. And we commit every single person before you and ask that you speak to us. Help us to always recognize that we are your beloved. Exactly as Augustine said, you love us as if in the entire universe there's only one of us. Listen to our prayers. In Jesus' name we pray. Amen. You may be seated.
+    confidence: 0.94
+  - id: p20260830-066
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-closing
+    start: 6154.08
+    end: 6236.48
+    type: offertory
+    title: Fifth-Sunday offering for charitable works
+    summary: Pastor Yong introduces the offering and says the second offering is designated to charitable work because this is the month's fifth Sunday.
+    questions: [What is the fifth-Sunday second offering designated for?]
+    topics: [stewardship, service]
+    scripture: []
+    transcript: |
+      So we want to move to our offertory now. You can give [via] the QR code or by the box in front. This being the fifth Sunday of the month, the second [ASR: “back”] offering will be designated to charitable works.
+      [Offering and background music interval.]
+      Did you turn it off early or it just went off by itself? The song, the background music. It just went off by itself. Okay.
+    confidence: 0.9
+    review_notes: ['Uncertain collection wording preserved. The calendar remark agrees with 30 August 2026, but the dated slide is the primary date evidence.']
+  - id: p20260830-067
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-closing
+    start: 6239.86
+    end: 6354.86
+    type: hymn
+    title: Lead On, O King Eternal
+    summary: Pastor Yong introduces the closing hymn as a reminder of Christ's victory, and the congregation sings it.
+    questions: []
+    topics: [worship, faith]
+    scripture: []
+    transcript: |
+      Okay, our closing hymn is Lead On, O King Eternal. So it is a reminder to us that our Lord Jesus Christ has overcome and is victorious. So Lead On, O King Eternal. Let's sing this song together.
+      [Song lyrics omitted throughout; congregation invited to rise during the hymn.]
+      Marvellous!
+    confidence: 0.95
+    review_notes: ['Whole hymn retained; lyrics visible in frame at 6300s but not copied into the archive.']
+  - id: p20260830-068
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-closing
+    start: 6355.12
+    end: 6410.4
+    type: worship
+    title: Doxology and blessing from Jude
+    summary: Pastor Yong invites the doxology and delivers a blessing from the letter of Jude.
+    questions: []
+    topics: [worship]
+    scripture: [Jude 1:24-25]
+    transcript: |
+      Let's praise God with doxology and in faith receive His blessing, taken from the letter of Jude.
+      [Doxology song lyrics omitted.]
+      [Scripture blessing omitted: Jude 1:24-25.]
+    confidence: 0.94
+    review_notes: ['Book explicitly announced; verse range identifies the supplied blessing, without reproducing its words.']
+  - id: p20260830-069
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-announcements
+    start: 6425.08
+    end: 6470
+    type: announcement
+    title: Church as Home of Counsel announcement
+    summary: Pastor Yong announces a forthcoming English-language talk by Dr. Keith A. Evans about counsel within the church.
+    questions: [What counseling-related talk is announced?]
+    topics: [service-life, service]
+    scripture: []
+    transcript: |
+      Congregation, please be seated. A couple of announcements for you. The first one is coming Friday, there is going to be a talk here by Dr. Keith Evans. And the talk is a bit unusual. It's called Church as Home of Counsel, [subtitle differs in ASR; see review note]. So he's going to talk about being a source of counsel within the church itself and how together, well, I believe he's going to talk about how together, brothers and sisters, we can help each other and counsel each other. So this is going to be held over at the other sanctuary at 7.30, only in English. There's no translation, correct? There's no translation. So please come and join this one.
+    confidence: 0.95
+    review_notes: ['Slide at 6435s: Church as Home of Counsel; Scriptural Counsel in Daily Ministries; Dr. Keith A. Evans; 4 Sep 2026, 7.30pm. ASR says Spiritual Counsel in Daily Ministry. Guest is announced, not speaking in this recording.']
+  - id: p20260830-070
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-announcements
+    start: 6470.38
+    end: 6542.24
+    type: announcement
+    title: Financial stewardship for younger people
+    summary: Pastor Yong announces a personal financial stewardship talk intended especially for teenagers and people beginning their careers.
+    questions: [Who is the financial stewardship talk especially intended for?]
+    topics: [stewardship, service-life]
+    scripture: []
+    transcript: |
+      But within ourselves, we have one more talk coming out, which is personal financial stewardship by our brother Paul [surname unclear in ASR]. I requested for him—he did one before already—and I requested for him to do one for young people, especially even teenagers and younger people. Because financial literacy actually is very important, and this is not my area. I'm a financial idiot. I know nothing. [Bank interest and inflation remarks omitted.] I think it's a marvellous, marvellous opportunity. Our brother Paul is a serious expert in financial matters [joke about disclaimer omitted]. I want to encourage you to tell people about this. We will have it here on the 26th of September, 1.30, especially for young people, especially starting your career and all that, right?
+    confidence: 0.92
+    review_notes: ['Slide at 6600s confirms Personal Financial Stewardship, Saturday 26th September 2026, 1.30pm, and prints Paul Rafiuly, CFA, FRM. ASR surname Raffioli is not silently substituted in spoken text.']
+  - id: p20260830-071
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-announcements
+    start: 6542.24
+    end: 6599.96
+    type: announcement
+    title: A networking anecdote and invitation to the talk
+    summary: Pastor Yong recounts financial networking advice attributed to Lee Ka-shing and encourages attendance at the stewardship talk.
+    questions: []
+    topics: [stewardship, service-life]
+    scripture: []
+    transcript: |
+      What you should do, you know—I mean, I did learn a little bit last time. I remember that Lee Ka-shing, the Hong Kong super-rich guy [speculative aside omitted], says if you make one dollar, other than keeping aside money here and there, you should spend 20 cents every week giving somebody a treat, lunch or something like that, so that you build a network. [Numerical illustration omitted.] In due time [excerpt continues] more and more people will know you, then there will be opportunity. Too late, by the time I read it I'm already quite old. So anyway, please encourage people to join this talk, I think, and ask questions. You can come also, of course, but we wanted it to teach younger people [closing sentence uncertain in ASR].
+    confidence: 0.84
+    review_notes: ['Anecdotal financial advice, not independently endorsed. Speculation about longevity omitted. Final ASR “important to anyhow spend money” may omit a negative; no invented correction.']
+  - id: p20260830-072
+    video_id: M9uwSKpB_gk
+    section_id: s20260830-announcements
+    start: 6601.24
+    end: 6640.42
+    type: announcement
+    title: Invitation to serve and final dismissal
+    summary: Pastor Yong invites willing service in youth, children's and Sunday school ministries, emphasizing grace and joy, then dismisses the congregation to silent meditation.
+    questions: [Which ministries does the closing announcement invite people to consider?]
+    topics: [service, service-life]
+    scripture: []
+    transcript: |
+      And of course, this is our access for you to join in ministry. We want to continue to call upon you to prayerfully consider ministry in the youth ministry, children ministry, Sunday school ministry. All these are very important different ministries. And I know that a lot of you think that you're not good enough, blah, blah, blah, you know. Guess what? You're never good enough. It's always by the grace of God that we get to do whatever [unclear pronoun] calls us to do. So pray about this and come willingly. [Uncertain opening word] come with a long face. I don't want to work with people who have no joy and bitterness. Okay, that's all the announcements I have for you. You may be dismissed with silent meditation. Do know the Lord is with you.
+    confidence: 0.9
+    review_notes: ['Recording ends immediately after dismissal; no extended post-service meditation or missing programme is invented.']

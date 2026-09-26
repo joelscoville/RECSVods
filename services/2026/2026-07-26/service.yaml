@@ -1,50 +1,135 @@
-id: '2026-07-26'
-date: '2026-07-26'
-title: '26 July 2026 — To be Hated'
+id: 2026-07-26
+date: 2026-07-26
+title: 26 July 2026 — To be Hated
 sermon_title: To be Hated
-series: { id: gospel-of-john, name: Expository Preaching on the Gospel of John }
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
 type: service
 workflow_status: complete
 editorial_status: needs_review
 review_notes:
-  - 'Main batch integration applied the source-backed series and cited persecution topic; common-grace remains a deferred proposal. All interpretation remains needs_review. See docs/historical-001/integration.md.'
-  - Full meaningful programme curated from this recording only, including preparation, worship, readings, sermon, prayers, offering, closing and announcements. The opening music and final meditation are retained as programme units.
-  - YouTube title RECS 26 July 2026, upload date 20260726 and opening slide 26th July 2026 9:30am agree with the assigned service date. Current sermon title and references are visible at 2100 seconds. Last Session / The Greatest Love is a recap, not today's title.
-  - Inline transcripts are selected, lightly punctuated ASR excerpts and explicit omission descriptions, not a full verbatim or listening-verified transcript. Scripture quotations and song lyrics are omitted throughout; surrounding commentary and reference metadata are retained. Excerpt markers identify untranscribed surrounding speech.
-  - Evidence method was full converted-text review, flagged word-timing inspection and coarse/refined video frames. Twenty-three 30-second audio samples were decoded every five minutes; no actual listening is claimed.
-  - Speaker is independently introduced as Pastor Yong at 935 seconds and again before the anthem. Use only pastor-yong; the phonetic self-name in the 3849-second anecdote does not establish full-name spelling. Worship leader's partial name varies as Chai Yadi/Jayadi in ASR; no speaker entity assigned to that role.
-  - Import preserved 1470 segments and 15439 words, including 20 zero-duration words. Fifteen outside-segment word warnings affect IDs 52, 148, 150, 157, 160, 162, 164, 166, 175, 181, 555, 799, 1106, 1223 and 1305, maximum 0.32 seconds. No backtracking, overlaps or tail clamps were reported. Human listening remains needed.
-  - Both exact original-audio targets were absent at import; audio_hash_verified is false. Reacquired media confirms source identity and duration, not the deleted original audio bytes.
-  - Historical, legal, political and personal anecdotes are attributed to the preacher and not independently corroborated. Particular review priorities are MacArthur and Pope claims, persecution figures, housing claims and the Fuller allegation narrative. Do not treat quoted people's names as live-speaker identities.
-  - 'Taxonomy proposal only: persecution — Persecution, supported by p20260726-047 through p20260726-055, especially 4051.66-4231.24 and 4315.08-4499.66. Existing faith, discipleship, justice and mission tags used pending main review.'
-  - 'Taxonomy proposal only: common-grace — Common grace, supported by p20260726-039 through p20260726-046 at 3467-4051.66. Existing truth, service and mission tags used pending main review.'
-  - 'Series proposal only: expository-preaching-gospel-john — Expository Preaching on The Gospel of John, displayed on this recording at 2100 seconds and supported by p20260726-023. No series activated pending shared consistency review.'
+  - Main batch integration applied the source-backed series and cited persecution topic;
+    common-grace remains a deferred proposal. All interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - Full meaningful programme curated from this recording only, including preparation, worship,
+    readings, sermon, prayers, offering, closing and announcements. The opening music and final
+    meditation are retained as programme units.
+  - YouTube title RECS 26 July 2026, upload date 20260726 and opening slide 26th July 2026 9:30am
+    agree with the assigned service date. Current sermon title and references are visible at 2100
+    seconds. Last Session / The Greatest Love is a recap, not today's title.
+  - Inline transcripts are selected, lightly punctuated ASR excerpts and explicit omission
+    descriptions, not a full verbatim or listening-verified transcript. Scripture quotations and
+    song lyrics are omitted throughout; surrounding commentary and reference metadata are retained.
+    Excerpt markers identify untranscribed surrounding speech.
+  - Evidence method was full converted-text review, flagged word-timing inspection and
+    coarse/refined video frames. Twenty-three 30-second audio samples were decoded every five
+    minutes; no actual listening is claimed.
+  - Speaker is independently introduced as Pastor Yong at 935 seconds and again before the anthem.
+    Use only pastor-yong; the phonetic self-name in the 3849-second anecdote does not establish
+    full-name spelling. Worship leader's partial name varies as Chai Yadi/Jayadi in ASR; no speaker
+    entity assigned to that role.
+  - Import preserved 1470 segments and 15439 words, including 20 zero-duration words. Fifteen
+    outside-segment word warnings affect IDs 52, 148, 150, 157, 160, 162, 164, 166, 175, 181, 555,
+    799, 1106, 1223 and 1305, maximum 0.32 seconds. No backtracking, overlaps or tail clamps were
+    reported. Human listening remains needed.
+  - Both exact original-audio targets were absent at import; audio_hash_verified is false.
+    Reacquired media confirms source identity and duration, not the deleted original audio bytes.
+  - Historical, legal, political and personal anecdotes are attributed to the preacher and not
+    independently corroborated. Particular review priorities are MacArthur and Pope claims,
+    persecution figures, housing claims and the Fuller allegation narrative. Do not treat quoted
+    people's names as live-speaker identities.
+  - "Taxonomy proposal only: persecution — Persecution, supported by p20260726-047 through
+    p20260726-055, especially 4051.66-4231.24 and 4315.08-4499.66. Existing faith, discipleship,
+    justice and mission tags used pending main review."
+  - "Taxonomy proposal only: common-grace — Common grace, supported by p20260726-039 through
+    p20260726-046 at 3467-4051.66. Existing truth, service and mission tags used pending main
+    review."
+  - "Series proposal only: expository-preaching-gospel-john — Expository Preaching on The Gospel of
+    John, displayed on this recording at 2100 seconds and supported by p20260726-023. No series
+    activated pending shared consistency review."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan from the current service record and all 76 existing passage summaries; all 20
+    original chapters remain assigned in order on D7gXD-Mo25s. The service remains needs_review, and
+    this plan does not approve or modify its source.
+  - Opening, Worship and Scripture, and Response and Closing are neutral peer groups. Four sermon
+    movements follow the argument from Scripture-shaped assumptions through interpreting the world's
+    hostility, facing opposition responsibly, and persevering in active witness; examples and
+    citations do not become separate primary chapters.
+  - The introductory voluntary-service remarks and previous-session recap stay with the sermon's
+    challenge to comfortable assumptions. The Greatest Love is a recap, not the current sermon
+    title. The existing response chapter combines sermon prayer, creed and pastoral intercession, so
+    it remains intact in Response and Closing.
+  - "Two cues preserve useful entry points into substantial supporting arguments: common grace
+    qualifies the preceding condemnation discussion, and spiritual conflict leads into
+    accountability within the opposition movement. Each uses an original chapter's full bounds; the
+    accountability discussion begins later within its cue, and no finer timestamp is inferred.
+    Routine service groups have no cues."
+  - Opening music and anthem titles remain unverified, the worship leader's identity remains
+    unresolved, and the second offering's destination remains unclear. Closing announcements
+    describe future Communion and hoped-for orphanage capacity, not Communion celebrated here or
+    completed capacity.
+  - MacArthur/Pope/legal accounts, persecution figures, reported detentions, housing claims and
+    personal anecdotes remain attributed and uncorroborated. The Habitat founder allegation retains
+    the reported denial; the knowledge/accountability discussion retains theological difficulty and
+    rejects ignorance as guaranteed exemption. Recognizing goodness outside Christianity is not
+    presented as a salvation claim.
+  - Timing and spoken keyword support are inherited from existing metadata, without new listening,
+    media or ASR. Existing alignment caveats and unverified original-audio hashes remain unresolved.
+    Parent and cue summaries are internal retrieval/review text only; the single sermon description
+    is the public prose.
 speakers:
   - id: pastor-yong
     name: Pastor Yong
     role: Preacher
 topics:
-  - { id: persecution, name: Persecution }
-  - { id: communion, name: Holy Communion }
-  - { id: discernment, name: Discernment }
-  - { id: discipleship, name: Discipleship }
-  - { id: faith, name: Faith }
-  - { id: forgiveness, name: Forgiveness }
-  - { id: glory, name: Glory }
-  - { id: government, name: Government }
-  - { id: holy-spirit, name: Holy Spirit }
-  - { id: justice, name: Justice }
-  - { id: mission, name: Mission }
-  - { id: peace, name: Peace }
-  - { id: prayer, name: Prayer }
-  - { id: repentance, name: Repentance }
-  - { id: responsibility, name: Responsibility }
-  - { id: service, name: Service }
-  - { id: service-life, name: Church life }
-  - { id: stewardship, name: Stewardship }
-  - { id: temptation, name: Temptation }
-  - { id: truth, name: Truth }
-  - { id: worship, name: Worship }
+  - id: persecution
+    name: Persecution
+  - id: communion
+    name: Holy Communion
+  - id: discernment
+    name: Discernment
+  - id: discipleship
+    name: Discipleship
+  - id: faith
+    name: Faith
+  - id: forgiveness
+    name: Forgiveness
+  - id: glory
+    name: Glory
+  - id: government
+    name: Government
+  - id: holy-spirit
+    name: Holy Spirit
+  - id: justice
+    name: Justice
+  - id: mission
+    name: Mission
+  - id: peace
+    name: Peace
+  - id: prayer
+    name: Prayer
+  - id: repentance
+    name: Repentance
+  - id: responsibility
+    name: Responsibility
+  - id: service
+    name: Service
+  - id: service-life
+    name: Church life
+  - id: stewardship
+    name: Stewardship
+  - id: temptation
+    name: Temptation
+  - id: truth
+    name: Truth
+  - id: worship
+    name: Worship
 videos:
   - id: D7gXD-Mo25s
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
@@ -53,7 +138,9 @@ videos:
     workflow_status: complete
     media_disposition: playable
     transcription_language: en
-    transcribed_span: { start: 0, end: 6650.8451875 }
+    transcribed_span:
+      start: 0
+      end: 6650.8451875
     transcription_provenance:
       engine: faster-whisper
       engine_version: 1.2.1
@@ -61,1332 +148,347 @@ videos:
       backend_version: 4.8.2
       compute_type: float16
       device: Tesla T4
-      settings: { beam_size: 5, word_timestamps: true, vad_filter: false, condition_on_previous_text: false }
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
       audio_sha256: 3eee08778dd11fa4c21d4449a8b922037d5af69109e950a80b75b98d23ce3d15
       duration_seconds: 6650.8451875
       elapsed_seconds: 217.698
       real_time_factor: 0.03273
-      transcribed_at: '2026-09-25T12:20:06.823215+00:00'
+      transcribed_at: 2026-09-25T12:20:06.823215+00:00
       transcript_sha256: a59adfc512e5084ac76e48004011802fbd5cee8668e2e24a45bdfaec74d518fd
       source_duration_seconds: 6650.861
       duration_delta_seconds: -0.015812499999810825
       audio_hash_verified: false
-sections:
-  - { id: s20260726-prelude, video_id: D7gXD-Mo25s, start: 0, end: 99.1, type: music, title: Opening music and dated service slide, confidence: 0.78, review_notes: [Music title unverified; do not infer it from the later anthem.] }
-  - { id: s20260726-preparation, video_id: D7gXD-Mo25s, start: 99.1, end: 421.9, type: prayer, title: ACTS preparation for worship, confidence: 0.94 }
-  - { id: s20260726-welcome, video_id: D7gXD-Mo25s, start: 421.9, end: 595.52, type: welcome, title: Welcome and silent meditation, confidence: 0.93 }
-  - { id: s20260726-call, video_id: D7gXD-Mo25s, start: 595.52, end: 678.56, type: reading, title: Call to worship from Psalms 91, confidence: 0.97 }
-  - { id: s20260726-hymns, video_id: D7gXD-Mo25s, start: 678.56, end: 1278.08, type: worship, title: Holy Holy Holy and Shepherd of My Soul, confidence: 0.94 }
-  - { id: s20260726-readings, video_id: D7gXD-Mo25s, start: 1278.08, end: 1594.74, type: reading, title: Responsive readings from Proverbs and John, confidence: 0.98 }
-  - { id: s20260726-rock, video_id: D7gXD-Mo25s, start: 1594.74, end: 1833.98, type: worship, title: Rock of Ages and hope in Christ, confidence: 0.94 }
-  - { id: s20260726-scripture, video_id: D7gXD-Mo25s, start: 1833.98, end: 1906.86, type: reading, title: Scripture reading from 2 Timothy, confidence: 0.97 }
-  - { id: s20260726-anthem, video_id: D7gXD-Mo25s, start: 1906.86, end: 2062.98, type: music, title: Anthem and meditation, confidence: 0.86, review_notes: [Anthem title not independently established; lyrics omitted.] }
-  - { id: s20260726-introduction, video_id: D7gXD-Mo25s, start: 2062.98, end: 2309.84, type: sermon, title: Voluntary service and the question of a trouble-free life, speaker_id: pastor-yong, confidence: 0.94 }
-  - { id: s20260726-recap, video_id: D7gXD-Mo25s, start: 2309.84, end: 2907.54, type: sermon, title: Recap — love and a worldview shaped by Scripture, speaker_id: pastor-yong, confidence: 0.93 }
-  - { id: s20260726-world, video_id: D7gXD-Mo25s, start: 2907.54, end: 3467, type: sermon, title: The world's hatred and a disputed interpretation, speaker_id: pastor-yong, confidence: 0.9 }
-  - { id: s20260726-common-good, video_id: D7gXD-Mo25s, start: 3467, end: 4051.66, type: sermon, title: Common grace and doing good together, speaker_id: pastor-yong, confidence: 0.94 }
-  - { id: s20260726-opposition, video_id: D7gXD-Mo25s, start: 4051.66, end: 4846.8, type: sermon, title: Persecution and conflicting values, speaker_id: pastor-yong, confidence: 0.91 }
-  - { id: s20260726-traps, video_id: D7gXD-Mo25s, start: 4846.8, end: 5249.72, type: sermon, title: Spiritual opposition and responsibility for knowledge, speaker_id: pastor-yong, confidence: 0.85 }
-  - { id: s20260726-witness, video_id: D7gXD-Mo25s, start: 5249.72, end: 5794.6, type: sermon, title: Active witnesses who persevere in the Word, speaker_id: pastor-yong, confidence: 0.95 }
-  - { id: s20260726-response, video_id: D7gXD-Mo25s, start: 5794.6, end: 6171.98, type: prayer, title: 'Sermon response, creed and pastoral prayer', speaker_id: pastor-yong, confidence: 0.94 }
-  - { id: s20260726-offering, video_id: D7gXD-Mo25s, start: 6171.98, end: 6295.48, type: offering, title: Offertory, speaker_id: pastor-yong, confidence: 0.83, review_notes: [Second offering destination unclear in ASR; do not normalize without listening.] }
-  - { id: s20260726-closing, video_id: D7gXD-Mo25s, start: 6295.48, end: 6523.14, type: worship, title: 'Onward Christian Soldiers, doxology and benediction', speaker_id: pastor-yong, confidence: 0.97 }
-  - { id: s20260726-announcements, video_id: D7gXD-Mo25s, start: 6523.14, end: 6650.861, type: announcement, title: 'Communion, orphanage, fellowship lunch and dismissal', speaker_id: pastor-yong, confidence: 0.92 }
-passages:
-  - id: p20260726-001
+chapters:
+  - id: c20260726-opening
     video_id: D7gXD-Mo25s
-    section_id: s20260726-prelude
     start: 0
-    end: 99.1
-    type: music
-    title: Opening music with the July 26 service slide
-    summary: The recording opens with music over a slide dated 26 July 2026 at 9:30am, before the spoken welcome to personal prayer.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: '[Opening music; lyrics omitted. The slide displays 26th July 2026 9:30am. Music title and whether this is a prelude or holding sequence require human review.]'
-    confidence: 0.78
-    review_notes: [Do not promote fragmentary opening ASR to reliable speech or identify the song from later content.]
-  - id: p20260726-002
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-preparation
-    start: 99.1
-    end: 178.9
-    type: prayer
-    title: Preparing in adoration
-    summary: The opening leader invites personal prayer using adoration, confession, thanksgiving and supplication, beginning with adoration.
-    questions: [How does the service prepare the congregation for worship?]
-    topics: [prayer, worship]
-    scripture: []
-    transcript: |
-      Good morning. Let's prepare our heart for worship this morning. As usual we will pray personal before we even start, in adoration, in confession, in thanksgiving and supplication. This is a time for personal quiet prayer. Let's start by adoring God Almighty, our maker. Let us pray.
-      [Quiet personal prayer; isolated ASR filler omitted.]
-    confidence: 0.94
-  - id: p20260726-003
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-preparation
-    start: 178.9
-    end: 246.36
-    type: prayer
-    title: Personal confession
-    summary: The leader moves the congregation into confession, with a biblical reminder followed by quiet prayer.
-    questions: []
-    topics: [prayer, repentance]
-    scripture: []
-    transcript: |
-      Let us now come before the Lord to pray in confession.
-      [Biblical wording about confession omitted; no reference is announced.]
-      So let's pray in confession now.
-      [Quiet prayer; isolated ASR filler omitted.]
-    confidence: 0.91
-  - id: p20260726-004
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-preparation
-    start: 246.36
-    end: 316.4
-    type: prayer
-    title: Giving thanks
-    summary: The opening leader asks the congregation to reflect on their lives and give thanks.
-    questions: []
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      Let us now give thanks in our prayers.
-      [Biblical wording about thankfulness omitted.]
-      And so let's reflect on our life and be thankful. Let us give thanks now.
-      [Quiet personal prayer.]
-    confidence: 0.92
-  - id: p20260726-005
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-preparation
-    start: 316.4
-    end: 380.56
-    type: prayer
-    title: Bringing personal needs to God
-    summary: The leader invites supplication for personal circumstances.
-    questions: []
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      And now we pray in supplication. We bring our personal situations before the Lord and seek His help. Let's pray in supplication now.
-      [Quiet personal prayer.]
-    confidence: 0.95
-  - id: p20260726-006
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-preparation
-    start: 380.56
-    end: 421.9
-    type: prayer
-    title: Committing the service to God
-    summary: The leader prays for the Holy Spirit's guidance in hymns, prayer, reading and preaching, then introduces the worship leader.
-    questions: []
-    topics: [prayer, holy-spirit, worship]
-    scripture: []
-    transcript: |
-      Let us pray together. We thank you, God, for this morning as we can gather here to worship you. We want to commit our worship service into your mighty hands and ask that God the Holy Spirit lead every one of us and speak to us in our heart as we sing the hymns, pray, read your word and listen to your word preached. May all glory be unto your holy name. In Jesus' name we pray. Amen.
-      [Worship leader introduced with a name transcribed as Chai Yadi; spelling unverified.]
-    confidence: 0.91
-  - id: p20260726-007
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-welcome
-    start: 421.9
-    end: 486.08
-    type: welcome
-    title: Welcoming one another on a rainy morning
-    summary: The worship leader welcomes those who came through heavy rain and asks them to greet one another.
-    questions: []
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      Good morning, brothers and sisters. Welcome to our church. This morning it was raining quite bad. I'm glad that all of us made it. So let's greet one another and let's say to the person next to you, you are welcome here and I'm glad that you made it. Let's greet one another.
-      [Congregational greeting.]
-      Wouldn't it be great if the world we live in is as welcoming as you are in here. There is no more contention, rejection, opposition.
-    confidence: 0.94
-  - id: p20260726-008
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-welcome
-    start: 486.08
     end: 595.52
-    type: meditation
-    title: Becoming still before God
-    summary: The leader invites worshippers to set aside the pressures of the week and come before God in silent meditation; an introit slide follows.
-    questions: []
-    topics: [worship, peace]
+    title: Opening
+    type: opening
+    summary: Unidentified opening music leads into the leaders' guided adoration, confession,
+      thanksgiving and supplication, welcome and silent meditation.
+    keywords:
+      - adoration
+      - confession
+      - thanks
+      - holy spirit
+    topics:
+      - worship
+      - prayer
+      - repentance
+      - holy-spirit
+      - service-life
+      - peace
     scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      Maybe we had a wonderful week or maybe we didn't have one, we had a rough week. Maybe we still have a lot of things to be done, jobs still piling in the office or at home. But whatever it is, let us come before God, come as we are and be still before our God who knows us, the God who knows us, who love us and really care for us. Let us have a moment of silent meditation.
-      [Meditation/introit interval; no reliable additional speech transcribed.]
-    confidence: 0.89
-    review_notes: [Longer passage retains the quiet preparation and introit as a unit.]
-  - id: p20260726-009
+    source_chapters:
+      - s20260726-prelude
+      - s20260726-preparation
+      - s20260726-welcome
+    review_notes: []
+  - id: c20260726-worship-scripture
     video_id: D7gXD-Mo25s
-    section_id: s20260726-call
     start: 595.52
-    end: 678.56
-    type: reading
-    title: God as refuge in the call to worship
-    summary: The leader reads Psalms 91:1-6 and invites those who feel alone or defenseless to worship God as their refuge.
-    questions: [What is the call to worship on July 26?]
-    topics: [worship, peace, faith]
-    scripture: ['Psalms 91:1-6']
-    transcript: |
-      Beloved of God, brothers and sisters, let us hear from the word of God taken from Psalm 91 as our call to worship.
-      [Scripture reading omitted: Psalms 91:1-6.]
-      Are you still running, not knowing where to go? Do you feel alone, defenseless? Know that God is our refuge, our true fortress. We may find shelter from the rain, but God offers what the world cannot give us, the peace, true peace. So let us come before God with grateful hearts. Let us worship our God, the Most High, Almighty, our true fortress, our true refuge. Let us sing together the first hymn, Holy, Holy, Holy.
-    confidence: 0.96
-    review_notes: [Segment 52 word starts 0.22 seconds before its ASR segment; enclosed in the reading rather than used as a cut.]
-  - id: p20260726-010
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-hymns
-    start: 678.56
-    end: 849.18
-    type: hymn
-    title: Holy, Holy, Holy
-    summary: The congregation sings the announced opening hymn, Holy, Holy, Holy.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: '[Congregational hymn: Holy, Holy, Holy. Lyrics omitted; the complete musical unit is retained.]'
-    confidence: 0.96
-  - id: p20260726-011
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-hymns
-    start: 849.18
-    end: 958.7
-    type: prayer
-    title: Prayer for forgiveness and a deeply rooted faith
-    summary: The worship leader gives thanks for Christ, asks forgiveness and prays that the congregation will be rooted in God's word. He names Pastor Yong as the coming preacher and prays for Sunday school.
-    questions: []
-    topics: [prayer, forgiveness, faith]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts; uncertain intervening wording omitted.]
-      Dear God Almighty, we come before you, we bow before you, and we thank you. Thank you because we are here today. Thank you because you love us so dearly, and care for us so deeply.
-      God, we also ask You that You bless us today in this church. Help us to abide in Your Word, deeply rooted in Your Word.
-      Please bless this service today. We ask that you bless Pastor Yong who will deliver your message. Please also bless the Sunday school teacher, and bless everyone here that we may hear your voice and encounter you personally. We pray all this in the name of Jesus Christ, our Lord, our Great Shepherd. Amen. Please be seated.
-    confidence: 0.9
-    review_notes: [Prayer kept whole; ASR has seen/sinned and winds of change/chains ambiguities.]
-  - id: p20260726-012
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-hymns
-    start: 958.7
-    end: 1034.56
-    type: exhortation
-    title: Anxiety and the desire to control life
-    summary: The worship leader describes the stress of wanting life to follow one's own plans and directs attention to Jesus as shepherd.
-    questions: [How does the worship leader connect anxiety with wanting control?]
-    topics: [faith, peace]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      We want to be certain about our life. We want things to be in our control. We wouldn't dare to verbally say that we want to be in control, but deep down we want everything to go as we planned or as we wished. And when we can't, we become stressed, anxious, our health gets affected, our relationship gets affected. It's all because we forget that we have Jesus our true Shepherd. He knows the future and not only that, he holds the future and he knows us best, better than ourselves.
-    confidence: 0.93
-  - id: p20260726-013
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-hymns
-    start: 1034.56
-    end: 1080.44
-    type: exhortation
-    title: Entrusting life to the shepherd
-    summary: The worship leader asks listeners to look back for God's guidance, refers to Isaiah 55 and introduces the second hymn as an expression of trust.
-    questions: []
-    topics: [faith]
-    scripture: ['Isaiah 55']
-    transcript: |
-      Sometimes we simply or sinfully forget. But if we look back at our lives, I hope both the happy moments and the sad moments, we can often see the leading, his hands, his guidance, his help and his purpose in our lives, as written in Isaiah 55.
-      [Scripture wording omitted.]
-      So as we sing our second hymn, let us be reminded to trust in Jesus, trust in him. Let us entrust our lives to Jesus our great shepherd as we sing the second hymn.
-    confidence: 0.94
-  - id: p20260726-014
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-hymns
-    start: 1080.44
-    end: 1278.08
-    type: hymn
-    title: Shepherd of My Soul
-    summary: The service presents Shepherd of My Soul, followed by the leader's invitation to make its message a daily prayer.
-    questions: []
-    topics: [worship, faith]
-    scripture: []
-    transcript: |
-      [Hymn: Shepherd of My Soul; title confirmed on the 1085-second frame. Lyrics omitted.]
-      May that be our prayer and may we be reminded day by day.
-    confidence: 0.97
-  - id: p20260726-015
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-readings
-    start: 1278.08
-    end: 1480.98
-    type: reading
-    title: Responsive reading — Proverbs 31
-    summary: The leader introduces a responsive reading of Proverbs 31, with odd and even verses shared between leader and congregation.
-    questions: [Which Proverbs chapter is read in the service?]
-    topics: [worship]
-    scripture: ['Proverbs 31:1-31']
-    transcript: |
-      May I invite all of us to turn to our Bible for responsive reading. The first reading will be taken from Proverbs 31. Proverbs chapter 31, I will read the odd verses, and you may read the even verses.
-      [Complete responsive scripture reading omitted: Proverbs 31:1-31.]
-    confidence: 0.98
-    review_notes: ["Complete reading retained as one unit. Segment IDs 148, 150, 157, 160, 162, 164 and 166 have outside-segment words; maximum 0.32 seconds."]
-  - id: p20260726-016
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-readings
-    start: 1480.98
-    end: 1594.74
-    type: reading
-    title: Responsive reading — John 15:18-27
-    summary: The congregation reads the day's John passage responsively, with the leader taking the even verses.
-    questions: [What is the main Gospel reading for To be Hated?]
-    topics: [worship, discipleship]
-    scripture: ['John 15:18-27']
-    transcript: |
-      May I invite you to turn to John chapter 15, verse 18 to 27 for the second responsive reading. John chapter 15, verse 18 to 27, I will read the even verses and you may read the odd verses.
-      [Responsive scripture reading omitted: John 15:18-27.]
-      Praise be to God.
-    confidence: 0.98
-    review_notes: [Segment 175 word-boundary warning enclosed in the reading.]
-  - id: p20260726-017
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-rock
-    start: 1594.74
-    end: 1660.88
-    type: exhortation
-    title: Hope when misunderstood or rejected
-    summary: The worship leader contrasts changing relationships, finances and circumstances with hope in Christ, then introduces Rock of Ages.
-    questions: [What encouragement is offered to people who feel rejected?]
-    topics: [faith, peace]
-    scripture: []
-    transcript: |
-      Church, maybe today you are going through some difficult times, maybe you feel misunderstood or even rejected. Maybe you are struggling with something that nobody even knows about. But let me remind you today, our hope is in Christ Jesus. It is not in the people, it is not in maybe your work, your title, your income, your finances, nothing. People may change. Your things that you own may be gone or taken. Circumstances may change, even our feelings may change, but Jesus remains the same. So whatever you are going through, let us come to him. He is our rock, he is our refuge.
-      [The leader introduces Rock of Ages.]
-    confidence: 0.94
-    review_notes: [Segment 181 has a 0.18-second outside-segment word; passage encloses the complete sentence.]
-  - id: p20260726-018
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-rock
-    start: 1660.88
-    end: 1833.98
-    type: hymn
-    title: Rock of Ages, sung again after a pitch adjustment
-    summary: The congregation sings Rock of Ages. The leader asks to repeat it at a lower pitch, making the repetition part of the service rather than duplicate ASR.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: |
-      [Rock of Ages; lyrics omitted.]
-      Can I invite all of us to sing again? I'm not sure whether the tone is higher or I'm jumping to the higher tone. So maybe slightly lower, or I'll try to sing lower as well. Is that okay? Let us sing one more time Rock of Ages. Yes, thank you. Yes, it's good.
-      [Repeated hymn; lyrics omitted.]
-    confidence: 0.95
-    review_notes: [Title normalized from the announced and displayed title; not from the ASR variant Rogue of Ages.]
-  - id: p20260726-019
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-scripture
-    start: 1833.98
-    end: 1906.86
-    type: reading
-    title: 2 Timothy 3:12-15 and the anthem transition
-    summary: The leader reads 2 Timothy 3:12-15, then corrects an early invitation to the preacher because an anthem remains before the sermon.
-    questions: [Which 2 Timothy passage accompanies the sermon?]
-    topics: [faith, worship]
-    scripture: ['2 Timothy 3:12-15']
-    transcript: |
-      [Edited ASR excerpt.]
-      Thanks be to God, even though I can't sing well, I can hide in God.
-      [Scripture reading introduced from 2 Timothy 3:12-15; quoted Bible text omitted.]
-      Thanks be to God. May I invite Pastor [Yong] — I'm sorry, one more. We do anthem.
-    confidence: 0.93
-    review_notes: [Interrupted transition retained; Pastor Yong spelling uses the clearer earlier introduction.]
-  - id: p20260726-020
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-anthem
-    start: 1906.86
     end: 2062.98
-    type: music
-    title: Anthem before the sermon
-    summary: The leader invites meditation on an anthem. The final anthem slide displays 1 Thessalonians 5:18 before the preacher begins.
-    questions: []
-    topics: [worship]
-    scripture: ['1 Thessalonians 5:18']
-    transcript: |
-      May we take the time to meditate on the anthem.
-      [Anthem lyrics omitted. Scripture quotation displayed at the end omitted: 1 Thessalonians 5:18. Song title remains unverified.]
-    confidence: 0.89
-  - id: p20260726-021
+    title: Worship and Scripture
+    type: worship
+    summary: The worship leader guides the congregation through a Psalms 91 call, hymns and prayers of
+      trust, responsive Proverbs and John readings, Rock of Ages, 2 Timothy and an anthem whose
+      title remains unverified.
+    keywords:
+      - refuge
+      - holy holy holy
+      - shepherd
+      - responsive reading
+      - proverbs 31
+      - rock of ages
+      - 2 timothy 3
+      - anthem
+    topics:
+      - worship
+      - peace
+      - faith
+      - prayer
+      - forgiveness
+      - discipleship
+    scripture:
+      - Psalms 91:1-6
+      - Isaiah 55
+      - Proverbs 31:1-31
+      - John 15:18-27
+      - 2 Timothy 3:12-15
+      - 1 Thessalonians 5:18
+    source_chapters:
+      - s20260726-call
+      - s20260726-hymns
+      - s20260726-readings
+      - s20260726-rock
+      - s20260726-scripture
+      - s20260726-anthem
+    review_notes: []
+  - id: c20260726-scripture-shaped-faith
     video_id: D7gXD-Mo25s
-    section_id: s20260726-introduction
     start: 2062.98
-    end: 2121.18
-    type: sermon
-    title: Choosing to worship and serve voluntarily
-    summary: Pastor Yong welcomes those who came despite the rain and describes his preference for voluntary ministry, while recognizing the need to organize.
-    questions: [Why does Pastor Yong value voluntary service?]
-    topics: [service, worship]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      As I was leaving the house today, the rain suddenly came very heavy. And I said to myself, good. That means the people who come for worship service today will be people who are quite determined to come, because you have overcome the temptation of staying on your bed and sleeping for another hour or so. And it's always good to be with the Lord. In my own ministry all my life, I'm biased towards what I call natural ministry or voluntary kind of ministry. I don't quite like to force people to do anything. When we have a general gathering of people who really do come because they want to come, and they want to serve because they want to serve, that's the sweetest thing.
-    confidence: 0.94
-  - id: p20260726-022
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-introduction
-    start: 2121.18
-    end: 2210.92
-    type: sermon
-    title: Families serving together
-    summary: Pastor Yong appreciates siblings serving in worship and Sunday school, recalls his own family and gives examples of ministry across generations.
-    questions: [What does the preacher appreciate about families serving together?]
-    topics: [service, service-life]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt; personal names and subsequent historical illustrations require review.]
-      I always find it very sweet. It reminded me of my own growing up years where my siblings and I, we are all in the church serving. And it's a very pleasant thing to have a family of folks who follow the Lord and also serve the Lord together. I pray that that's the experience that you guys will have as well, as we serve the Lord as a family and as a people of God, not only in the Church of Jesus Christ, but also within your own family.
-      [The preacher discusses the Hudson Taylor generations and David Tong as examples; surrounding anecdotal details not transcribed here.]
-    confidence: 0.89
-    review_notes: [Do not use names mentioned in illustrations as identities of people speaking in this service.]
-  - id: p20260726-023
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-introduction
-    start: 2210.92
-    end: 2309.84
-    type: sermon
-    title: Is a trouble-free life a sign of God's blessing?
-    summary: Pastor Yong introduces To be Hated and a submitted question about whether few difficulties indicate God's blessing. He says the day's passage will address that desire for a smooth life.
-    questions: [Is a trouble-free life necessarily a sign of God's blessing?, What question introduces To be Hated?]
-    topics: [faith, discipleship]
-    scripture: ['John 15:18-27', '2 Timothy 3:12-15']
-    transcript: |
-      [Edited ASR excerpt; question spelling corroborated by the slide.]
-      Now today we will finish John chapter 15. And again, before I start, I want to encourage you to ask any question. The question asked today is related to the preaching for the past few weeks as well. Somebody asked, isn't it a sign of God's blessing if I were to live a life without much challenges or difficulties? What is wrong with wanting to live a trouble-free life?
-      [Brief scripture paraphrase omitted.]
-      Hence, the sermon title is To Be Hated. So this question is relevant too, right? Because what's wrong with not being hated and wanting to live a life that is very smooth and fine? I guess that's the main idea that the whole world have as far as living is concerned, that you want to just live a nice life.
-      [Travel illustrations omitted from this excerpt.]
-    confidence: 0.97
-    review_notes: [Today's title and references confirmed at 2100 seconds; question confirmed at 2300 seconds.]
-  - id: p20260726-024
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-recap
-    start: 2309.84
-    end: 2407.86
-    type: sermon
-    title: Recapping The Greatest Love and inherited assumptions
-    summary: Pastor Yong recaps the previous discussion of love, friendship and election, then says cultural assumptions can shape even church leaders' judgments.
-    questions: [Why does the preacher say familiar assumptions can make biblical teaching difficult?]
-    topics: [discernment, truth, peace]
-    scripture: ['John 15:12-17', 'Matthew 5:9']
-    transcript: |
-      [Edited ASR excerpts. Scripture quotations in the recap omitted.]
-      Let's review what was taught in the last lesson. Last lesson was about Jesus Christ talking about the greatest love that is to be given to us.
-      We find difficult because actually we have a construct around us, the worldview that is shaped by many, many things in our life, by our culture, by our reasoning that has fallen, by languages, by many, many things. Every time you make a decision, every time you think you have an opinion, I will tell you that that is very much influenced by the human construct.
-      [The preacher describes mediating disputes between pastors and cites the beatitude about peacemakers; quotation omitted.]
-    confidence: 0.92
-    review_notes: [The slide at 2400 seconds explicitly says Last Session; not a competing current title.]
-  - id: p20260726-025
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-recap
-    start: 2407.86
-    end: 2506.18
-    type: sermon
-    title: Culture and the universality of the gospel
-    summary: The preacher discusses a Chinese Christian conference and criticizes defining churches by ethnic or cultural boundaries, using this as an example of inherited worldviews.
-    questions: [How does the preacher relate church identity to cultural assumptions?]
-    topics: [service-life, discernment, mission]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt; uncertain conference name omitted.]
-      Somebody pointed out that something is wrong because you call yourself Chinese Christian something, something, because that goes against the universality of the gospel of Jesus Christ, right? So that's also the opinion that I have. Sometimes you pass by some churches, you see that it's something Chinese church, something Malay church — not Malay, Indonesian church — something Hindu Tamil church, right? And so right away, you are boxing the church into that culture or that language or that group of people. And actually, it is most unbiblical. But it also demonstrates how strong our worldview is influenced by our background and the way we all live.
-    confidence: 0.86
-    review_notes: ["Retain as the preacher's critique, not an archive judgment on language-specific congregations. Conference acronym and location need listening."]
-  - id: p20260726-026
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-recap
-    start: 2506.18
-    end: 2595.44
-    type: sermon
-    title: Seeking direction in Scripture
-    summary: Pastor Yong presents Scripture as the highest authority over personal, cultural and pastoral opinions, then recalls dependence on Christ.
-    questions: [Where does the preacher say to seek direction amid conflicting values?]
-    topics: [truth, discernment, faith]
-    scripture: ['John 15:5']
-    transcript: |
-      [Edited ASR excerpt.]
-      In the midst of all this confusion, in the Reformed Evangelical understanding, you have the Word of God to show you what is the right way to go because it's the highest authority in our life. So I don't care what you say you think is right or wrong, or what your culture says is right or wrong, what your nation says is right or wrong, even what your pastor says is right or wrong. I only care what the word of God says is right or wrong, and that really will give us a way out in the midst of all our confusion.
-      [Further exhortation and John 15 quotation omitted from this excerpt.]
-    confidence: 0.94
-  - id: p20260726-027
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-recap
-    start: 2595.44
-    end: 2689.1
-    type: sermon
-    title: A sitcom illustration of cultural Christianity
-    summary: The preacher uses an episode of The Middle and his experience of different worship cultures to ask whether churchgoing is merely a cultural habit.
-    questions: [How does The Middle illustrate cultural churchgoing in the sermon?]
-    topics: [worship, discernment]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts.]
-      Our culture and our construct shape our mind very strongly about Christianity today. Much of Christianity today is cultural in nature. So people go to church because it's a cultural thing, they just do it.
-      My family have been watching this situation comedy called The Middle in the Netflix.
-      [The preacher describes an episode contrasting a quiet church with an African American church, and recalls attending a church in Atlanta.]
-      For them, it's different, right? When the pastor is speaking, they're all [unclear]. Yeah man, preach it, preacher. And then they stand up and dance and do all these things.
-    confidence: 0.88
-    review_notes: ["Illustration is the preacher's account, not a factual characterization of all churches in either tradition."]
-  - id: p20260726-028
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-recap
-    start: 2689.1
-    end: 2759.44
-    type: sermon
-    title: Church as a place to sleep?
-    summary: Pastor Yong recounts the sitcom character's preference for a restful church hour and challenges that view with observations from preaching settings.
-    questions: [What does the preacher challenge about passive church attendance?]
-    topics: [worship, discipleship]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      The whole episode is about finding meaning and what is it all about. And her final conclusion is that she will go back to her own church because she works so hard every single week. God has given her that one hour in that boring church to sleep and to rest. And that's the purpose of a pastor, to bore her to sleep because every week she works so hard. So it's good to come to church to relax and sleep. I pray that that's not the case for you because that's terrible.
-      [The preacher adds an anecdote about people sleeping during sermons.]
-      When you ask yourself, what is a Christian? The scripture is the one that will give you the answer.
-    confidence: 0.92
-  - id: p20260726-029
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-recap
-    start: 2759.44
-    end: 2851.06
-    type: sermon
-    title: MacArthur's argument about doulos
-    summary: The preacher recalls John MacArthur's argument that Christian discipleship involves belonging to Christ as a slave or bondservant, and discusses controversy over that language.
-    questions: [How does the sermon explain the word doulos?]
-    topics: [discipleship, service]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt; names normalized from clear adjacent references, uncertain translation details omitted.]
-      First of all, the Christian is definitely a person who is bought with a heavy price. So much so that the Bible used the word doulos, or [bondservant], or slave. I told you that this guy called John MacArthur Jr., who is one of the key Reformed leaders — he argued strongly that actually, if you want to ask what a Christian is, the answer is slave, slave to Jesus Christ. And so therefore, the answer for Christians is that you don't get to live your life by yourself.
-      [Discussion of MacArthur's book and disputed translation terminology omitted from this excerpt.]
-    confidence: 0.89
-    review_notes: ["ASR alternates MacArthur/my author and RSV wording; translation/version claims need human listening. MacArthur is a quoted figure, not the preacher."]
-  - id: p20260726-030
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-recap
-    start: 2851.06
     end: 2907.54
+    title: Let Scripture Challenge Comfortable Assumptions
     type: sermon
-    title: Receiving Christ's love and extending it to others
-    summary: Pastor Yong explains why he accepts the loving-master aspect of MacArthur's argument and recalls the vertical and horizontal relationships illustrated by the cross.
-    questions: [How does the preacher connect receiving love with loving others?]
-    topics: [discipleship, service]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      His argument really is that the word slave is not as negative as you think it is, because in the case of the Bible we are slave to the most perfect master who is love, who love us so much that he actually gave his life for us. This is the greatest love for us.
-      I closed the sermon last week by telling you that the way we think about our faith is like the cross. We first have a vertical acceptance of the love of Jesus Christ, the greatest love of them all, and then because we have that vertical relationship, then we extend the horizontal relationship to the people all around us. And today's sermon will then go on a completely different direction, where Jesus Christ switch direction and talk about the consequences of being his followers.
-    confidence: 0.93
-  - id: p20260726-031
+    summary: Pastor Yong moves from voluntary family service and the question of an easy life to
+      challenging cultural churchgoing, placing Scripture above inherited assumptions and recalling
+      dependence on Christ's love.
+    keywords:
+      - serving
+      - blessing
+      - greatest love
+      - culture
+      - scripture
+      - doulos
+    topics:
+      - service
+      - worship
+      - service-life
+      - faith
+      - discipleship
+      - discernment
+      - truth
+      - peace
+      - mission
+    scripture:
+      - John 15:18-27
+      - 2 Timothy 3:12-15
+      - John 15:12-17
+      - Matthew 5:9
+      - John 15:5
+    source_chapters:
+      - s20260726-introduction
+      - s20260726-recap
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260726-hostility-common-grace
     video_id: D7gXD-Mo25s
-    section_id: s20260726-world
     start: 2907.54
-    end: 2963.32
-    type: prayer
-    title: Prayer for a humble and teachable heart
-    summary: Pastor Yong prays for humility and receptivity before the exposition, recognizing the many voices that shape the congregation's values.
-    questions: []
-    topics: [prayer, discernment]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt; concluding biblical allusions omitted.]
-      Let's come to the Lord in a time of prayer and commit the time to him. We ask, O God, that you give us a heart that is made humble and teachable, for we approach your throne of grace. If we approach your throne of grace with pride in our heart, surely you will oppose us. And at the same time we all know that we come before you with so many burdens, so many issues, so many things and value system that have been formed in us because of the many voices all around us. So give us the strength and the grace to be childlike before you, to obey and to listen to your word.
-      [Prayer continues and closes in Jesus' name.]
-    confidence: 0.92
-  - id: p20260726-032
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-world
-    start: 2963.32
-    end: 3069.94
+    end: 4051.66
+    title: Recognize Goodness Amid the World's Hostility
     type: sermon
-    title: From loving one another to the world's hatred
-    summary: The preacher locates the passage in the farewell discourse and examines the shift from mutual love to hostility from the world, noting the range of meaning of kosmos.
-    questions: [What change of direction does the preacher identify in John 15?]
-    topics: [discipleship, discernment]
-    scripture: ['John 15:12-19']
-    transcript: |
-      [Edited ASR excerpts; quotations and close scriptural restatements omitted.]
-      Remember that this was after he had the Last Supper and they were walking probably towards the Garden of Gethsemane, maybe in darkness. And so the last discourse was given before they reached the Garden of Gethsemane.
-      [John 15 love and hatred passages quoted; Bible text omitted.]
-      In this particular passage here you see the word world appearing many, many times. The original Greek word is kosmos, and it again has many, many meaning. And because of that these two verses has become the basis for many people preaching a black and white or very binary kind of way to look at our life.
-    confidence: 0.91
-    review_notes: [The preacher's probable journey setting remains qualified; no independent historical claim made.]
-  - id: p20260726-033
+    summary: Pastor Yong questions sweeping condemnation through attributed MacArthur accounts, then
+      uses the Good Samaritan, common grace and interfaith service to distinguish the fallen world's
+      hostility from recognizable goodness without making a salvation claim.
+    keywords:
+      - macarthur
+      - religious harmony
+      - evangelism
+      - good samaritan
+      - common grace
+      - special grace
+      - habitat for humanity
+      - fallen part
+    topics:
+      - prayer
+      - discernment
+      - discipleship
+      - truth
+      - government
+      - worship
+      - peace
+      - mission
+      - service
+      - responsibility
+      - stewardship
+    scripture:
+      - John 15:12-19
+      - John 7:7
+      - John 15:18-19
+      - Luke 10
+    source_chapters:
+      - s20260726-world
+      - s20260726-common-good
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260726-common-good
     video_id: D7gXD-Mo25s
-    section_id: s20260726-world
-    start: 3069.94
-    end: 3144.66
-    type: sermon
-    title: Introducing MacArthur's reading of the world's evil
-    summary: Pastor Yong introduces John MacArthur's strong interpretation of John 7:7 as the background for a reading he will later qualify.
-    questions: [Which interpretation of the world does the preacher go on to qualify?]
-    topics: [discernment, truth]
-    scripture: ['John 7:7', 'John 15:18-19']
-    transcript: |
-      [Edited ASR excerpt; Scripture quotations omitted; MacArthur name normalized from context.]
-      Earlier, last week we talked about MacArthur really focusing on the idea that we are slaves of Jesus Christ. In this topic also he has his own very strong views about it. Based on John 7:7, MacArthur argues that the reason why the world will hate us is because the world is evil.
-      [Repeated scripture wording omitted.]
-      His words are very strong. This guy is controversial for a reason. Before he passed on, he was a very powerful and very noted Reformed leader in the United States.
-    confidence: 0.9
-    review_notes: ["Segment 555 warning enclosed. Read with p20260726-039 through p20260726-046, where Pastor Yong qualifies this interpretation."]
-  - id: p20260726-034
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-world
-    start: 3144.66
-    end: 3225.62
-    type: sermon
-    title: Recalling worship restrictions during COVID
-    summary: The preacher remembers protective equipment and streaming worship during COVID, contrasting his congregation's compliance with his account of MacArthur's resistance.
-    questions: []
-    topics: [government, worship]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      There was a time when I was wearing this funny thing like Darth Vader and preaching. I conducted wedding that way too. There's this plastic thing here.
-      [Further description of the face shield omitted.]
-      There was a time where I was preaching to nobody here because we were using the thing to stream. The only good thing that came out from COVID is all this Zoom and all this instant streaming technology. So we were very obedient, right? Because the Singapore government said you cannot gather, so we didn't gather. We just follow the rules. We kept far away from each other. Not him — he argued that worship is a God-given right, and so he just defied the authority.
-    confidence: 0.89
-    review_notes: [Personal recollection and account of another minister; no legal conclusion endorsed.]
-  - id: p20260726-035
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-world
-    start: 3225.62
-    end: 3296.18
-    type: sermon
-    title: A sweeping condemnation of the world's system
-    summary: Pastor Yong recounts a legal claim about MacArthur and presents his sweeping condemnation of the world's philosophies and goals as the position under discussion.
-    questions: []
-    topics: [discernment, truth]
-    scripture: ['John 7:7']
-    transcript: |
-      [Edited ASR excerpt; legal anecdote not transcribed here.]
-      With regard to what Jesus Christ said, he said that if we don't say that the world is evil, we are sinning. You can say in love, but you must say it.
-      [Scriptural restatement omitted.]
-      They hate us because we are not a part of the system, because by our life we [rebuke] the system and by our message we condemn what the system is. And then he went on to say, we condemn everything about it. We condemn its philosophy, its religions, its ideology, its goals, its objectives, everything.
-    confidence: 0.87
-    review_notes: ["Attributed quotation, not Pastor Yong's final position. Rebuke supported by the 3300-second slide. Supreme Court/federal-government claim requires review, not factual endorsement."]
-  - id: p20260726-036
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-world
-    start: 3296.18
-    end: 3367.42
-    type: sermon
-    title: Polemical language and religious harmony
-    summary: Pastor Yong quotes condemnatory language attributed to MacArthur about the Pope, discusses Pope Francis and contrasts such rhetoric with Singapore's religious-harmony restrictions.
-    questions: [Why does the preacher caution about condemning other religions?]
-    topics: [discernment, government, peace]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts; the quoted polemic and uncertain biographical claims are not reproduced here.]
-      Some of the words he used are very strong.
-      [The preacher quotes MacArthur's condemnation of the Pope and comments on Pope Francis.]
-      Now, if I say what he said here, I can be arrested in Singapore because in Singapore we have the Religious Harmony Act, and no preachers, whatever religion you have, can be allowed to say nasty things about another religion.
-      When you make statements like that, it's a very serious statement. Guess what? What he said is not new.
-    confidence: 0.83
-    review_notes: ["Preserve attribution and the critical discussion. Claims about Pope Francis's religious order, US society and Singapore law are unverified source claims."]
-  - id: p20260726-037
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-world
-    start: 3367.42
-    end: 3434.94
-    type: sermon
-    title: The attraction of a wholly condemning approach
-    summary: Pastor Yong links the polemic with historic confessional wording and recounts a congregant's preference for beginning evangelism with divine hatred rather than love.
-    questions: []
-    topics: [mission, discernment]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts.]
-      The Westminster Confession of Faith, in its original version, actually have all these words as well. So that's one of the issues with Reformed faith. Reformed faith has the reputation of being very judgmental, very condemning.
-      This kind of thinking is very attractive to many people, including folks who are in our congregation.
-      [The preacher recalls explaining an evangelistic tool.]
-      A young man came and see me. He said, I need to talk to you, pastor. I said, what? He said, you go and tell people that God loved them, you're wrong. I said, why? He said, you should tell them God hate you.
-    confidence: 0.87
-    review_notes: ["A reported conversation being challenged by the preacher, not endorsed evangelistic wording. ASR false spiritual law is uncertain."]
-  - id: p20260726-038
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-world
-    start: 3434.94
-    end: 3467
-    type: sermon
-    title: Questioning an evangelism of condemnation
-    summary: The preacher completes the reported exchange and questions whether that presentation is effective, leading into his alternative account of good in the world.
-    questions: []
-    topics: [mission, discernment]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      He could quote scripture. Wow, he got a lot of scripture.
-      [Reported threatening presentation of the gospel omitted from this excerpt.]
-      I said, wow, that's a fascinating way. I'm sure you have not been very successful in your evangelism. So that's the image that many people have of the Reformed church, that we will go out there and hammer people. So what's the answer?
-    confidence: 0.87
-  - id: p20260726-039
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-common-good
     start: 3467
-    end: 3555.12
-    type: sermon
-    title: The Good Samaritan and good beyond one's own group
-    summary: Pastor Yong uses Jesus' selection of a Samaritan as the helpful figure in the parable to challenge condemning everyone outside one's own group.
-    questions: [How does the Good Samaritan challenge a blanket condemnation of outsiders?]
-    topics: [truth, service, mission]
-    scripture: ['Luke 10']
-    transcript: |
-      [Edited ASR excerpts; the preacher's retelling of the parable is omitted here.]
-      For the past few sermons I've been illustrating this idea that all good is God's good. And again you go back to the Bible to find the answer as to what the Bible is really talking about. All good is God's good. All truth is God's truth. Our Lord Jesus Christ in the Gospel of Luke chapter 10 have the parable of the Good Samaritan, and I'm deeply influenced by the parable of the Good Samaritan.
-      [Parable retelling omitted.]
-      In the parable Jesus went to use the most despised person and elevated him to the highest position to illustrate the point that all good is God's good.
-    confidence: 0.94
-  - id: p20260726-040
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-common-good
-    start: 3555.12
-    end: 3641.48
-    type: sermon
-    title: Common grace and special grace
-    summary: Pastor Yong distinguishes common grace given to all people from special grace associated with receiving Christ, saying good outside Christian communities can still be recognized.
-    questions: [How does Pastor Yong distinguish common grace from special grace?]
-    topics: [truth, discernment, service]
-    scripture: ['Luke 10']
-    transcript: |
-      [Edited ASR excerpts; biblical wording about sun and rain omitted.]
-      You cannot simply say that just because this guy is not of my race or not of my religion or not of my own clan, then he is evil and he should be condemned the way John MacArthur seemingly has put it. Because all good is God's good.
-      Even among people who disagree with us, there's good. And that's good because all good is God's good. So we understand that God has common grace given to all human beings and special grace given to us Christians. Special grace because we get to accept our Lord Jesus Christ as the most wonderful gift there is. But common grace is also given to everyone.
-    confidence: 0.95
-    review_notes: [MacArthur spelling normalized from adjacent discussion and slide. Common grace is proposed taxonomy only.]
-  - id: p20260726-041
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-common-good
-    start: 3641.48
-    end: 3734.84
-    type: sermon
-    title: Habitat for Humanity and Singapore's housing context
-    summary: The preacher describes his involvement in Habitat for Humanity Singapore and tells how its housing mission encountered a different local context, illustrated by a flood response.
-    questions: [How does the preacher introduce Habitat for Humanity Singapore?]
-    topics: [service, mission]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt; housing statistics and flood anecdote summarized rather than transcribed here.]
-      Habitat for Humanity is a ministry which I have been involved with by now for 22 years. I'm the founder of Habitat for Humanity Singapore, the branch here. It is very big in the United States. In Singapore very few people know what it is, because we don't build anything. Habitat for Humanity is a Christian charity that fights poverty by building houses.
-      [The preacher claims Singapore uniquely lacks slum housing and recalls visiting a flooded kampong to consider practical help.]
-    confidence: 0.89
-    review_notes: [Founder statement belongs to this recording but does not establish full-name spelling. UN and unique-housing claims are not independently verified.]
-  - id: p20260726-042
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-common-good
-    start: 3734.84
-    end: 3819
-    type: sermon
-    title: Shifting from building to helping elderly households
-    summary: Pastor Yong recounts permit difficulties and a move toward cleaning poor living conditions in elderly residents' flats, including an argument about replacing dim lights.
-    questions: [Why did the local Habitat work turn toward house cleaning?]
-    topics: [service, responsibility]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts.]
-      Later on we kind of shifted, right? Because no way you can build anything in Singapore, it's out of question. We shifted to do house cleaning. In Singapore we realized that there are a lot of elderly people who live in one-room flat, but because they are old and sickly, their living condition is quite terrible. It can be full of cockroaches or bed bugs. Our church actually, people got involved in that kind of thing before.
-      [The preacher recalls replacing dim bulbs and being challenged by a housing official over possible electricity costs.]
-    confidence: 0.89
-    review_notes: ["Reported institutional interactions are anecdotes, not independently verified events."]
-  - id: p20260726-043
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-common-good
-    start: 3819
-    end: 3898.52
-    type: sermon
-    title: Working across differences to do good
-    summary: The preacher finishes the light-bulb anecdote and explains why Habitat can work with volunteers of different religions and backgrounds while his own motivation remains Christian.
-    questions: [Can Christians work with people of other beliefs to help those in need?]
-    topics: [service, mission, responsibility]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt; ending of the housing anecdote not transcribed here.]
-      This organization is unusual in some way in that it is a Christian charity and at the same time it works with people regardless of their race, language or religion. And I find that to be most heartwarming.
-      Whoever put up the hand, we come, we go. I don't care whether you are Christian, Catholic, gay, lesbian, atheist, whatever, it doesn't matter. We focus on the commonality of wanting to do good. And then if you ask me, where does the Christian part come in? The answer is that's why I walk in the room in the first place. Because I am driven by the love and teachings of our Lord Jesus Christ. And I found this to be the most wonderful idea. And it really demonstrates the point that all good is God's good.
-    confidence: 0.94
-  - id: p20260726-044
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-common-good
-    start: 3898.52
-    end: 3953.82
-    type: sermon
-    title: A challenge from the generosity of non-Christian volunteers
-    summary: Pastor Yong says some non-Christian teams show exceptional commitment, contrasting this with his frustrating experiences of churches bargaining over charity costs.
-    questions: []
-    topics: [service, stewardship]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt; churches normalized from repeated context where ASR says judges.]
-      Some of the teams that I've worked with are decidedly not Christian people. But yet you see that the love they have for the poor, the amount of energy and the amount of effort they put in is just better than many Christian people. In fact I will share with you that I get very frightened if a church will call up and say that, hey, we want to join you and build something in Batam or something, because I tell you it's very troublesome. I've gone through it many times already.
-      [Anecdote about bargaining over bottled-water prices omitted from this excerpt.]
-    confidence: 0.9
-    review_notes: [A criticism based on the preacher's reported experiences; not a general factual ranking of religious groups.]
-  - id: p20260726-045
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-common-good
-    start: 3953.82
-    end: 4013.84
-    type: sermon
-    title: Interpreting world as the fallen part of the world
-    summary: The preacher argues that John 15's opposition should be understood as coming from the fallen world, while goodness among people of other faiths remains recognizable.
-    questions: [What does the preacher mean by the fallen world?]
-    topics: [discernment, truth]
-    scripture: ['John 15:18-19']
-    transcript: |
-      [Edited ASR excerpt; quoted biblical wording omitted.]
-      We believe that there is good even among the many people who do not know Jesus Christ, and good among the people of other faith as well. And so please do not take the approach that so long as you are not a Christian, you are condemned or you are evil.
-      [Bible quotation omitted.]
-      When we go back to the Bible then, the correct understanding is that the word world refers to the fallen part of the world. And so I have a habit to always add the word fallen when I use the word world, to remind all of us that it's that fallen part of the world, the world that is fallen into sin, that will react to the people of God. But the redeemed part of the world is still beautiful.
-    confidence: 0.94
-  - id: p20260726-046
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-common-good
-    start: 4013.84
     end: 4051.66
     type: sermon
-    title: Celebrating beauty without making a salvation claim
-    summary: Pastor Yong uses an atheist musician as an example of beauty that can be celebrated, explicitly distinguishing that judgment from a claim about the person's salvation.
-    questions: [Does recognizing good in a nonbeliever settle the question of salvation?]
-    topics: [discernment, truth]
-    scripture: []
-    transcript: |
-      It's still wonderful. When an [atheist] person plays the most beautiful music on the violin, that's the redeemed part of the world. I'm not saying that that guy will go to heaven, so please don't go and complain to senior pastor. I'm saying that that portion of it can still be celebrated and should be celebrated, and that's the redeemed portion of the world. So when we see the word world appearing all the time, we are talking about that fallen portion of the world. And indeed the fallen portion of the world seriously have problems with Christianity, and it's a very serious issue.
-    confidence: 0.93
-    review_notes: [ASR 80s normalized tentatively to atheist; human listening needed. Preserve the explicit qualification.]
-  - id: p20260726-047
+    title: Common Grace Makes Goodness Recognizable
+    speaker_id: pastor-yong
+    confidence: 0.94
+    scripture:
+      - Luke 10
+      - John 15:18-19
+    topics:
+      - truth
+      - service
+      - mission
+      - discernment
+      - responsibility
+      - stewardship
+    summary: Pastor Yong distinguishes common from special grace and uses Habitat volunteers and an
+      atheist musician to recognize goodness outside Christianity without equating it with
+      salvation.
+    keywords:
+      - common grace
+      - special grace
+      - good samaritan
+      - habitat for humanity
+    parent_id: c20260726-hostility-common-grace
+    source_chapters:
+      - s20260726-common-good
+  - id: c20260726-opposition-responsibility
     video_id: D7gXD-Mo25s
-    section_id: s20260726-opposition
     start: 4051.66
-    end: 4139.76
+    end: 5249.72
+    title: Following Christ Brings Opposition and Responsibility
     type: sermon
-    title: Open Doors figures on persecution
-    summary: The preacher presents an Open Doors screenshot about persecution and discrimination, emphasizing severe violence rather than merely being stared at.
-    questions: [How does the sermon describe persecution beyond social discomfort?]
-    topics: [faith, justice, persecution]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt; disputed number restatement omitted.]
-      There is a ministry out there that is called Open Doors that monitors the persecution that Christians have been experiencing all through the world today. And this is a screen grab from their website.
-      [The preacher reads statistics; the displayed headline says more than 388 million Christians face high levels of persecution and discrimination.]
-      When we talk about persecution, we're not talking about people staring at you. We're talking about serious stuff like burning your house or killing you and doing all kinds of things to you.
-      [Country examples and further statistics not transcribed in this excerpt.]
-    confidence: 0.89
-    review_notes: ["Source slide inspected at 4200 seconds. ASR alternates 388 and 288 million; figures and country claims are source claims, not independently checked. Segment 799 warning enclosed."]
-  - id: p20260726-048
+    summary: Pastor Yong presents reported persecution, conflicting values and spiritual conflict as
+      challenges of following Jesus, recounts allegations denied by Habitat's founder, and explores
+      greater knowledge's accountability while rejecting ignorance as guaranteed exemption.
+    keywords:
+      - open doors
+      - persecution
+      - xiamen
+      - bribes
+      - value systems
+      - trap
+      - ignorance
+      - knowledge
+    topics:
+      - faith
+      - justice
+      - persecution
+      - prayer
+      - government
+      - peace
+      - discipleship
+      - responsibility
+      - stewardship
+      - discernment
+      - temptation
+      - repentance
+    scripture:
+      - 2 Timothy 3:12-13
+      - John 15:18-19
+      - John 15:19
+      - 1 Thessalonians 5:5
+      - Ephesians 5:7-8
+      - John 15:20-21
+      - 1 John 5:19
+      - John 12:31
+      - John 15:22-24
+      - Acts 17:30-31
+    source_chapters:
+      - s20260726-opposition
+      - s20260726-traps
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260726-traps
     video_id: D7gXD-Mo25s
-    section_id: s20260726-opposition
-    start: 4139.76
-    end: 4231.24
-    type: sermon
-    title: An account of interrogation in Xiamen
-    summary: Pastor Yong recounts reports of a home church being detained and an oncologist's distress after questioning, describing these as serious persecution.
-    questions: []
-    topics: [faith, justice, prayer]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts; the companion's uncertain name omitted.]
-      My recent trip to Xiamen really brings that very close to home.
-      [The preacher recounts a home church being taken to a police station before release.]
-      There was a brother there who is an oncologist in the local hospital, but also a very serious Christian leader in that home church. Even he did not escape. When I was visiting, it so happened that at that time he was being called in for interrogation. And so it was quite a traumatic experience for him.
-      [The preacher reports that the man later cried in his car.]
-      It's a really serious issue because you don't know what's going to happen to you and all that. Very serious persecution.
-    confidence: 0.88
-    review_notes: [Reported events and distress are attributed to the preacher. Companion's name varies substantially in ASR; no inferred identity.]
-  - id: p20260726-049
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-opposition
-    start: 4231.24
-    end: 4315.08
-    type: sermon
-    title: Singapore, religious speech and subtler pressures
-    summary: Pastor Yong contrasts the previous account with Singapore and recalls cautioning his senior pastor about religious rhetoric before turning to subtler difficulties in everyday life.
-    questions: [What distinction does the preacher draw between severe and subtle opposition?]
-    topics: [government, peace, discipleship]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts.]
-      For people like us sitting here, we never encounter anything like that. I don't recall being persecuted in Singapore in that kind of level, right?
-      [A reported exchange with the senior pastor about religious speech, imprisonment and entry to Singapore is omitted from this excerpt.]
-      However, we have other kind of persecution, right? We have all these kind of very subtle things that happen in our life. All of you know that in your life, when you tell people you're a Christian, or not only that you're a Christian, you want to do things that God wants you to do, you know that it's difficult. And it's a very subtle but also challenging thing to happen.
-    confidence: 0.89
-  - id: p20260726-050
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-opposition
-    start: 4315.08
-    end: 4397.5
-    type: sermon
-    title: Refusing bribes and facing rejection
-    summary: The preacher recounts an architect friend being ostracized for refusing bribes and relates this to his own experience of being misunderstood when choosing what he believes God wants.
-    questions: [Where does the sermon discuss refusing bribes at work?]
-    topics: [justice, responsibility, discipleship, persecution]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      Many years ago when I first started working, a friend of mine just finished school, architect, and then he became an architect. We gathered, we were speaking, and I asked him how's work and all that. He said, very difficult. I say, why? He said, in my department there were like eight people. They were doing work for other companies. He said, out of eight of us, seven received bribes of different sort, and I refuse to take bribe. And because of that they ostracized me. And you can imagine that if your whole department, everybody is taking bribes and all that, and you refuse to follow along, you want to do the right thing, of course they will come after you, isn't it?
-      [Personal examples of being misunderstood omitted from this excerpt.]
-    confidence: 0.94
-    review_notes: ["An anonymized anecdote reported by the preacher, not an independently verified workplace finding."]
-  - id: p20260726-051
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-opposition
-    start: 4397.5
-    end: 4499.66
-    type: sermon
-    title: Expected opposition and conflicting value systems
-    summary: Pastor Yong returns to 2 Timothy 3 and interprets the warning of opposition as expected rather than merely possible. He quotes John Stott on clashing value systems.
-    questions: [Why does the preacher expect conflict between Christian and fallen-world values?]
-    topics: [faith, discipleship]
-    scripture: ['2 Timothy 3:12-13', 'John 15:18-19']
-    transcript: |
-      [Edited ASR excerpt; quotations from 2 Timothy and John omitted.]
-      The question really will be why. Many reasons — at least three. Number one, we are just very different from the rest of the world. The late great theologian John Stott says, persecution is simply the clash between two irreconcilable value systems. So you have two value systems that are very different, it will clash, because the two in coexistence find it difficult to accommodate each other. The Christian worldview is very, very different from the fallen world's worldview. And when the two come together, you will clash, and there is very little escape.
-    confidence: 0.94
-    review_notes: ["John Stott is a quotation attribution, not a live speaker. Passage slightly exceeds the normal duration to retain the first stated reason."]
-  - id: p20260726-052
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-opposition
-    start: 4499.66
-    end: 4585.4
-    type: sermon
-    title: Different priorities at a class reunion
-    summary: The preacher describes feeling out of place in conversations about property, passive income and golf, contrasting them with his concern for poverty and ministry.
-    questions: []
-    topics: [discipleship, stewardship]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      When I go and join my classmates, for example, for our meetings and our 50th anniversary reunion, guess what? I keep quiet most of the time. I don't talk much. This preacher always can talk a lot, right? But when I go for class gathering, I don't talk much. Why? Because the world values are different. They are talking about GCB and don't know what passive income generation, and my this, my that, going golf trip and doing all kinds of things. And I don't know what to say because we live in a different world. We have different worldviews.
-      [The preacher contrasts a golf-trip conversation with concern for people living in a slum.]
-    confidence: 0.92
-  - id: p20260726-053
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-opposition
-    start: 4585.4
-    end: 4679.48
-    type: sermon
-    title: Biblical contrasts and cultural prejudice
-    summary: Pastor Yong cites contrasts between light and darkness, then extends his discussion of difference to cultural prejudice and racism.
-    questions: []
-    topics: [discernment, discipleship]
-    scripture: ['John 15:19', '1 Thessalonians 5:5', 'Ephesians 5:7-8']
-    transcript: |
-      [Edited ASR excerpt. Scripture quotations and an unnumbered reference to unequal yoking omitted.]
-      That's the first big reason. And of course even in our life today, we already discriminate against people based on the color of their skin, or their culture or whatever it is, right? It's a very natural thing for many of us. Maybe you sit down there and say, no, no, I'm not racist. Let me tell you something. We are all racist. It's a question of degree.
-      [Further illustration omitted from this excerpt.]
-      So it's all part of our cultural construct, right?
-    confidence: 0.87
-    review_notes: [The preacher's generalization and illustration require human editorial review; do not render them as an archive factual assertion.]
-  - id: p20260726-054
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-opposition
-    start: 4679.48
-    end: 4762.86
-    type: sermon
-    title: Sharing the opposition faced by Jesus
-    summary: The preacher presents following Jesus as a second reason for opposition, cites John 15 and introduces his account of the fallen world's relationship to Satan.
-    questions: [What is the second reason given for opposition to Christians?]
-    topics: [discipleship, faith]
-    scripture: ['John 15:20-21', '1 John 5:19', 'John 12:31']
-    transcript: |
-      [Edited ASR excerpt; quoted Scripture omitted.]
-      No matter how, because you are different, you will be ostracized. People will go after you.
-      The second reason is that we are the followers of our Lord Jesus Christ.
-      [John 15:20-21 quoted; Bible text omitted.]
-      Don't think that there's escape. No such thing as the master being persecuted but the followers escape. Because you are followers of Jesus Christ you will be persecuted. Add to this is the fact that the fallen world is the followers of Satan.
-      [1 John 5:19 and John 12:31 quoted; Bible text omitted.]
-    confidence: 0.92
-  - id: p20260726-055
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-opposition
-    start: 4762.86
-    end: 4846.8
-    type: sermon
-    title: Taking spiritual opposition seriously
-    summary: Pastor Yong says Reformed Christians may neglect spiritual opposition while other Christians overemphasize it. He links his concern to counseling and mediation work.
-    questions: [How does the preacher caution against both ignoring and sensationalizing Satan?]
-    topics: [discernment, temptation, peace]
-    scripture: ['1 John 5:19', 'John 12:31']
-    transcript: |
-      [Edited ASR excerpt.]
-      The other reason why we will surely encounter difficulty is because there's an active opposer out there, which is Satan. Again I say that in the Reformed church we seldom speak about Satan, but it's the same Satan, same demons, same opposition and hatred to God and all that God represents from the time of Adam and Eve till today. There is no reason why there should be any change. So this is one thing that many Christians, Reformed Christians, ignore. Charismatic Christians talk about it too much without really understanding what they're talking about. But we on the other hand, we ignore it. We think that it's superstitious to talk about Satan.
-      [The preacher connects this concern with conflicts encountered in his mediation work.]
-    confidence: 0.9
-  - id: p20260726-056
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-traps
     start: 4846.8
-    end: 4929.04
-    type: sermon
-    title: A reported dispute involving Habitat's founder
-    summary: The preacher recounts allegations and a board conflict involving Habitat's founder, says the founder denied wrongdoing, and recalls seeking his senior pastor's advice.
-    questions: []
-    topics: [discernment, responsibility]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts; allegation details omitted from this excerpt.]
-      Many years ago the founder, the late founder of Habitat for Humanity, whom I'm very proud to say is a personal friend, [first name unclear] Fuller, he got into trouble because somebody in the United States accused him of sexual harassment.
-      It was quite a complicated situation. Then he was fighting with the board, right? And Fuller insisted that he had done nothing wrong.
-      [The preacher describes litigation and settlement pressures and a personal exchange with Fuller.]
-      I told him that I'm going to ask senior pastor what he would think.
-    confidence: 0.8
-    review_notes: [Highly material allegation narrative requires human listening and editorial review. ASR gives Miller Fuller; no full-name spelling verified. Neither allegations nor denials are independently adjudicated here.]
-  - id: p20260726-057
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-traps
-    start: 4929.04
-    end: 4983
-    type: sermon
-    title: The perceived trap of fighting or withdrawing
-    summary: Pastor Yong recounts advice to fight the dispute but says he did not relay it, interpreting the conflict as a situation in which either response could do harm.
-    questions: []
-    topics: [discernment, peace, temptation]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      You know what Dr. Tong told me? He said, you got to tell him this: fight to the death. Fight to the death. I said, okay, okay. Guess what? I never told him fight to the death. It's a perfect trap, right? Because if he keep fighting, the lawsuit go in instead of settlement, the whole thing will become a big fat mess. But then he will not retreat too because he's servant of God. And that's what Dr. Tong said, fight to the death.
-      [The preacher interprets this as a trap in which either outcome causes loss.]
-    confidence: 0.84
-    review_notes: [Reported advice and spiritual interpretation belong to the preacher's anecdote; not recommendations from the archive.]
-  - id: p20260726-058
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-traps
-    start: 4983
-    end: 5044.92
-    type: sermon
-    title: The preacher's precaution against compromising situations
-    summary: Pastor Yong advocates precautions associated with Billy Graham, gives his account of how the Fuller allegation arose and uses a personal transport example to illustrate his policy.
-    questions: []
-    topics: [responsibility, discernment, temptation]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts; contested allegation details and joking illustration omitted.]
-      You need to prevent yourself from following a trap like that. I thought that Fuller was quite silly. He never followed Billy Graham's prescription: don't ever go and find yourself alone with a woman anywhere.
-      [The preacher offers his account of a car journey and an allegation, then describes his own precaution about offering a lift.]
-      So the trap of the devil is always there. He and his team of followers will continue to harass and be a very real opposition to the people of God.
-    confidence: 0.81
-    review_notes: ["Retain as the preacher's counsel and account, without implying that an allegation is false or that the underlying events were verified."]
-  - id: p20260726-059
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-traps
-    start: 5044.92
-    end: 5142.12
-    type: sermon
-    title: Sin, ignorance and greater knowledge
-    summary: Turning to John 15:22-24 and Acts 17, the preacher argues that knowledge affects accountability while recognizing a theological difficulty in that idea.
-    questions: [How does the preacher distinguish sin in ignorance from knowing wrongdoing?]
-    topics: [responsibility, repentance]
-    scripture: ['John 15:22-24', 'Acts 17:30-31']
-    transcript: |
-      [Edited ASR excerpts.]
-      Let me detract a little bit because the next few verses is a very interesting little verse.
-      [John 15:22-24 quoted; Bible text omitted.]
-      This is an interesting sideline kind of an issue. Jesus Christ implies that if you do not know the laws of God, and you do not know what is right and what is wrong, your sin or the consequences of sin are lesser. And this is quite interesting: the sin from ignorance. And the Apostle Paul mentioned this as well in Acts when he was preaching to the Greeks.
-      [Acts 17:30-31 quoted; Bible text omitted.]
-      This is theologically a little bit of difficulty as well, right?
-    confidence: 0.91
-    review_notes: [Segment 1106 warning enclosed. Interpretive claim attributed to preacher; read with his qualification in p20260726-060.]
-  - id: p20260726-060
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-traps
-    start: 5142.12
     end: 5249.72
     type: sermon
-    title: A comedy illustration and the limits of ignorance
-    summary: The preacher recounts a Joe Wong comedy routine about hearing the gospel, then explicitly rejects the inference that ignorance guarantees exemption or makes avoiding church wiser.
-    questions: [Does the preacher suggest staying ignorant to avoid responsibility?]
-    topics: [responsibility, repentance, discernment]
-    scripture: ['Acts 17:30-31', 'John 15:22-24']
-    transcript: |
-      [Edited ASR excerpts.]
-      It reminds me of a comedian in the United States, a guy called Joe Wong.
-      [The preacher recounts a routine about evangelists and people who have never heard of Christ, ending with the comedian asking why they told him.]
-      But please, the verse did not say that God will let you be. But it does say that there is a difference between sinning with full knowledge and sinning with ignorance. That doesn't mean that you shouldn't come to church, because I know how you think. You immediately say that, the less I know, the better it is. God is ultimately fair.
-    confidence: 0.92
-    review_notes: [Longer unit preserves the joke's correction; not evidence for a doctrine of automatic salvation through ignorance.]
-  - id: p20260726-061
+    title: Spiritual Conflict and Greater Accountability
+    speaker_id: pastor-yong
+    confidence: 0.85
+    scripture:
+      - John 15:22-24
+      - Acts 17:30-31
+    topics:
+      - discernment
+      - responsibility
+      - peace
+      - temptation
+      - repentance
+    summary: Pastor Yong recounts a disputed allegation and the Habitat founder's denial before
+      advocating precautions and discussing knowledge's accountability with acknowledged theological
+      difficulty, rejecting ignorance as guaranteed exemption.
+    keywords:
+      - trap
+      - ignorance
+      - knowledge
+    parent_id: c20260726-opposition-responsibility
+    source_chapters:
+      - s20260726-traps
+  - id: c20260726-persevering-witness
     video_id: D7gXD-Mo25s
-    section_id: s20260726-witness
     start: 5249.72
-    end: 5325
-    type: sermon
-    title: Active witnesses and the Spirit of truth
-    summary: Pastor Yong presents active witness as the third reason for opposition, relates John 15:25-27 to the Holy Spirit and briefly notes its Trinitarian significance.
-    questions: [What is the third reason for opposition in the sermon?]
-    topics: [mission, holy-spirit, truth]
-    scripture: ['John 15:25-27', 'Psalms 35', 'Psalms 69']
-    transcript: |
-      [Edited ASR excerpts; quoted Scripture omitted.]
-      Going back to the verses that we are focusing on today, the first one is that the world hates us because we do live in a different world. The fallen world is very different from the redeemed world. Second, we are followers of Jesus Christ. The third is that we are not just followers, we are active followers. We are supposed to be active witnesses of truth.
-      [John 15:25-27 read with references to Psalms 35 and 69; quoted Bible wording omitted.]
-      As a sideline, this is one of the Trinitarian doctrines.
-      The third reason is this, that the world will hate you because you will actively bear witness for Jesus Christ.
-    confidence: 0.95
-  - id: p20260726-062
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-witness
-    start: 5325
-    end: 5415.54
-    type: sermon
-    title: Going with the flow like a dead fish
-    summary: Returning to the opening question, the preacher says avoiding witness and ignoring injustice can produce an easy life, but likens that passivity to a dead fish drifting with the tide.
-    questions: [What does the dead-fish illustration say about a trouble-free Christian life?]
-    topics: [discipleship, mission, justice]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      Earlier the guy asked the question, what's wrong with living a life that is peaceful, no trouble, no challenges? It's an easy life to live even as a Christian. It's very simple. You will have no trouble if you kind of go with the flow, isn't it? Don't go and challenge the system. Don't go and stand out from a crowd. Don't go and say anything correct. Don't do anything. And if you don't do anything, the chances of you making a mistake is very low because you have done nothing. You go with the flow. You be a Christian that is very quiet. You don't preach the gospel, don't go and share anything, don't go and do anything to correct injustice in the world. When people get bullied, just close one eye and move away.
-      Guess what? This is like a dead fish that is floating around, right? A fish that floats with the tide must be a dead fish.
-      [The preacher turns back to Scripture as the guide to active witness.]
-    confidence: 0.96
-    review_notes: ["The passive suggestions are rhetorical criticism, not the preacher's recommended behavior."]
-  - id: p20260726-063
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-witness
-    start: 5415.54
-    end: 5520.62
-    type: sermon
-    title: Salt, light and a lifelong calling
-    summary: Pastor Yong interprets Matthew 5's salt and light images as descriptions of Christian identity and says he finds no retirement limit attached to them.
-    questions: [Why does the preacher describe Christian witness as lifelong?]
-    topics: [mission, discipleship]
-    scripture: ['Matthew 5:13-16']
-    transcript: |
-      [Edited ASR excerpts; Scripture quotations omitted.]
-      Sermon on the Mount, Matthew 5, you are familiar with this.
-      [Matthew 5 quotations omitted.]
-      It is who you are. It is your being. It is your DNA.
-      Salt, many preachers will point out to you, has preservative function, to preserve, to protect, to add flavor even. But then the next statement is one which is on the offense. So this is more defensive, the next statement is the offensive one.
-      [Light imagery quoted; Bible text omitted.]
-      When I read verses like this, I do not see a time clause to it.
-      I see this as a lifelong command for all of us.
-    confidence: 0.93
-    review_notes: [Segment 1223 word warning enclosed in omitted quotation. Longer unit keeps the paired images and application together.]
-  - id: p20260726-064
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-witness
-    start: 5520.62
-    end: 5589.06
-    type: sermon
-    title: Finding ways to contribute despite limitations
-    summary: The preacher uses Habitat's contribution model and a wheelchair-using couple promoting its work to argue that age, poverty or disability need not end all contribution.
-    questions: [What example illustrates continued service despite physical limitations?]
-    topics: [service, responsibility]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      Sometimes you use all kinds of excuse, right? Sometimes you say that, oh, I'm very poor, I don't have money. Oh, I'm very sick, I don't have health, I cannot do anything.
-      [The preacher describes financial or labor contributions in Habitat's housing model.]
-      There's this couple that keep building houses after houses, but then when they grew older and older they were wheelchair-bound. Then wheelchair-bound, how to do anything for Habitat, right? The couple decided that every time they go out they will wear Habitat T-shirt with a giant logo so that everybody know about the organization. This is really doing something all the time. No matter what, there is no clause to tell you that you should stop.
-    confidence: 0.92
-    review_notes: ["Personal illustration and exhortation, not a clinical assessment of anyone's capacity."]
-  - id: p20260726-065
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-witness
-    start: 5589.06
-    end: 5699.1
-    type: sermon
-    title: Glorifying God rather than planning only for enjoyment
-    summary: Pastor Yong connects good works with glorifying God, cites the Shorter Catechism and questions retirement understood as doing nothing for others.
-    questions: [How does the preacher relate retirement and the purpose of life?]
-    topics: [glory, service, discipleship]
-    scripture: ['Matthew 5:16']
-    transcript: |
-      [Edited ASR excerpts; Matthew quotation and Joshua retelling omitted.]
-      This recalls the purpose of life in the Westminster Confession of Faith, Shorter Catechism. The chief purpose of our life, what is it? To glorify God and to enjoy Him forever. I dare say for most of us, we like the enjoy Him forever part, because that's what a lot of us do. We plan our life to enjoy forever. We forget that the first call, the first priority is to glorify God.
-      Everybody keeps asking me, hey, when are you retiring? When are you stopping? Why are you not stopping? Why are you still doing all these things? The answer is, I don't see any way out in the Bible.
-      [The preacher questions complete inactivity in retirement and mentions God's continuing task for the aged Joshua.]
-    confidence: 0.93
-    review_notes: [Longer thought unit retains the qualification that the preacher objects to doing absolutely nothing.]
-  - id: p20260726-066
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-witness
-    start: 5699.1
     end: 5794.6
+    title: Persevere as Active Witnesses
     type: sermon
-    title: Persevering in the Word amid opposition
-    summary: The preacher concludes by returning to 2 Timothy 3 and 1 Timothy 6:12, urging continued faith grounded in Scripture rather than measuring blessing by ease.
-    questions: [What response to opposition concludes To be Hated?]
-    topics: [faith, discipleship, truth]
-    scripture: ['2 Timothy 3:12-15', '1 Timothy 6:12']
-    transcript: |
-      [Edited ASR excerpts; quoted Bible text omitted.]
-      What to do next then? Earlier we read from 2 Timothy 3:12.
-      [Scripture quotation omitted.]
-      Not only fallen but continue to fall, fallen and falling kind of world will be all around us. And so the future for Christians will not be that great, because the more you decide to be like Jesus Christ, all the oppositions will come. What to do then?
-      [2 Timothy 3:14-15 and 1 Timothy 6:12 quoted; Bible text omitted.]
-      You find that your life is smooth, as senior pastor said, it means God is not blessing you, or you have no idea what being a Christian is all about.
-      [Concluding biblical restatement omitted.]
-    confidence: 0.91
-    review_notes: ["Segment 1305 outside-segment word enclosed. Strong final claim is the preacher's attributed application, not an archive rule about suffering."]
-  - id: p20260726-067
+    summary: Pastor Yong connects the Spirit's witness with lifelong salt-and-light service, urging
+      contribution despite limitations and perseverance in Scripture rather than passive comfort.
+    keywords:
+      - spirit of truth
+      - active witnesses
+      - dead fish
+      - salt
+      - light
+      - lifelong
+      - contribute
+      - word
+    topics:
+      - mission
+      - holy-spirit
+      - truth
+      - discipleship
+      - justice
+      - service
+      - responsibility
+      - glory
+      - faith
+    scripture:
+      - John 15:25-27
+      - Psalms 35
+      - Psalms 69
+      - Matthew 5:13-16
+      - Matthew 5:16
+      - 2 Timothy 3:12-15
+      - 1 Timothy 6:12
+    source_chapters:
+      - s20260726-witness
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260726-response-closing
     video_id: D7gXD-Mo25s
-    section_id: s20260726-response
     start: 5794.6
-    end: 5884.38
-    type: prayer
-    title: Prayer to persevere and support one another
-    summary: Pastor Yong prays that Scripture will correct inherited assumptions and that the congregation will persevere together, supporting one another in practical ways.
-    questions: []
-    topics: [prayer, faith, service-life]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts; biblical quotations and close allusions omitted.]
-      We thank you, God, for your word that shines a light into our very dark world, and even our personal world that is shaped by so many, many different constructs of the human mind, our culture, our language, the way we have been brought up, the tradition, the philosophies of the world.
-      [Reference to Hebrews' sword imagery omitted.]
-      We are people who belong to you, and when we belong to you and want to live our life in the way you have called us to live, the fallen world will oppose us and will hate us, will go after us. But yet we are thankful that your word continue to be the source of our strength.
-      So may we persevere, not just alone but with each other, encouraging each other along the way, supporting one another.
-      [Prayer continues with biblical imagery and closes in Jesus' name.]
-    confidence: 0.93
-  - id: p20260726-068
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-response
-    start: 5884.38
-    end: 5929.9
-    type: creed
-    title: Affirming the Apostles' Creed
-    summary: The congregation stands and recites the Apostles' Creed before pastoral prayer.
-    questions: []
-    topics: [faith, worship]
-    scripture: []
-    transcript: |
-      Congregation, would you stand with me as we affirm our faith by reading the Apostles' Creed, and then we go into a time of prayer.
-      [Congregational recitation of the Apostles' Creed omitted from this edited transcript.]
-    confidence: 0.96
-    review_notes: ["Creed omission is an editorial excerpt choice, distinct from Bible/lyrics policy; no reconstructed liturgy supplied."]
-  - id: p20260726-069
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-response
-    start: 5929.9
-    end: 6040.28
-    type: prayer
-    title: Prayer response and thanks for orphanage progress
-    summary: Pastor Yong asks the congregation to pray about living faithfully amid challenges and gives thanks for progress in acquiring space beside the Batam orphanage.
-    questions: [What prayer requests follow the sermon?]
-    topics: [prayer, faith, service]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt.]
-      Let's first pray for ourselves in response to the sermon preached. Maybe you're going to ask God to shake us up so that we will live a life that is worthy of our calling and face the many challenges that inevitably will come to us when we live in accordance to his word. The second prayer item, we want to give thanks to God for our progress in our Batam orphanage. We managed to sign the deal to purchase the unit next to the orphanage, so as part of our expansion plan for the orphanage, or rather improvement plan for them. So let us commit the Five Loaves and Two Fish orphanage into the hands of God and ask for God's wisdom so that we can help all these kids there to grow up to be faithful servants of Jesus Christ.
-      [Invitation to pray and quiet prayer.]
-    confidence: 0.92
-    review_notes: [ASR bottom normalized to Batam from clear later wording. Singular unit here versus two units later retained as a review issue.]
-  - id: p20260726-070
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-response
-    start: 6040.28
-    end: 6117.34
-    type: prayer
-    title: Praying for Five Loaves and Two Fish in Batam
-    summary: The congregation is asked to pray for the orphanage's expanded ministry to street children.
-    questions: []
-    topics: [prayer, service, mission]
-    scripture: []
-    transcript: |
-      Congregation, let us lift up the Five Loaves and Two Fish orphanage we are supporting in Batam. And we thank God that there have been progress in the acquisition of the units, and we want to ask God to continue to help us to expand the ministry so that more street children can be helped. Let us pray.
-      [Quiet congregational prayer; isolated ASR filler omitted.]
-    confidence: 0.95
-  - id: p20260726-071
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-response
-    start: 6117.34
-    end: 6171.98
-    type: prayer
-    title: Prayer for members facing health, financial and relationship challenges
-    summary: Pastor Yong thanks God for prayer, asks for strength for members in difficulty and prays that others will become practical help to them.
-    questions: []
-    topics: [prayer, holy-spirit, service]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt; biblical wording in the opening omitted.]
-      We want to pray in simple faith for brothers and sisters in Christ among us who are facing many challenges. There are people who have challenges in health, in their finance, in their relationship, in many areas in life. We do pray that God the Holy Spirit will strengthen them and remind them of your word, and more importantly to send us forth as ready help for them so that all glory may be unto your name. In Jesus' name we pray. Amen. You may be seated.
-    confidence: 0.95
-  - id: p20260726-072
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-offering
-    start: 6171.98
-    end: 6295.48
-    type: offering
-    title: Fourth-Sunday offertory
-    summary: The preacher introduces giving and a second offering associated with the fourth Sunday, followed by the offertory interval. The second destination is unclear in the supplied ASR.
-    questions: []
-    topics: [stewardship, worship]
-    scripture: []
-    transcript: |
-      We're going to move into our offertory now. You may give [by] QR code or by the box in front of you. This being the fourth Sunday of the month, the second [bag] offering will be going to [destination unclear].
-      [Offertory interval; no reliable additional speech transcribed.]
-    confidence: 0.82
-    review_notes: [ASR Cultural Mental Work is not sufficient to infer the offering destination. No payment details copied. Fourth-Sunday wording supports but does not determine the service date.]
-  - id: p20260726-073
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-closing
-    start: 6295.48
-    end: 6449.32
-    type: hymn
-    title: Onward, Christian Soldiers
-    summary: Pastor Yong introduces the closing hymn as appropriate to the sermon, and the congregation sings Onward, Christian Soldiers.
-    questions: []
-    topics: [worship, faith]
-    scripture: []
-    transcript: |
-      Our closing hymn is [an] appropriate hymn, Onward, Christian Soldiers.
-      [Quoted introductory lyrics omitted.]
-      Let's sing it together.
-      [Congregational hymn; lyrics omitted. During the hymn the congregation is invited to rise.]
-    confidence: 0.98
-  - id: p20260726-074
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-closing
-    start: 6449.32
-    end: 6523.14
-    type: benediction
-    title: Doxology and blessing
-    summary: The service moves from doxology to a benediction announced from 1 Thessalonians 5 and 2 Corinthians 13.
-    questions: [Which passages are named for the benediction?]
-    topics: [worship, peace]
-    scripture: ['1 Thessalonians 5', '2 Corinthians 13']
-    transcript: |
-      Let's sing doxology in praise of God and in faith receive his blessing, taken from 1 Thessalonians 5 and 2 Corinthians 13.
-      [Doxology lyrics omitted. Biblical benediction wording omitted; references retained.]
-    confidence: 0.97
-  - id: p20260726-075
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-announcements
-    start: 6523.14
-    end: 6605.42
-    type: announcement
-    title: Next week's Communion and the Batam orphanage expansion
-    summary: Pastor Yong announces Communion for the following week and reports on acquiring adjacent orphanage space, roof repairs and the hope of eventually accommodating fifty children.
-    questions: [What update is given about the Batam orphanage?]
-    topics: [communion, service-life, service, prayer]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpts.]
-      Congregation, please be seated. So next week we have Holy Communion. So please come prepared to partake in the bread and the cup with reverence, as commanded by the Bible. And we were praying just now for the Five Loaves and Two Fish. Just an update for you, we managed to acquire the unit beside. Those of you who have visited it know that the place is a house, right? So there are two kind of [unclear] units. So we decided that we acquired the two units, and we will expand the place and fix the roof and do a lot of things for them. But it has been a long journey and it's still a long journey.
-      [Illustrations of project delays omitted.]
-      Please continue to pray with us and come alongside us. We want to have the orphanage finally be able to house 50 kids, if possible, but we definitely have a lot of work to do.
-    confidence: 0.91
-    review_notes: ["Communion is announced for the next week, not performed in this recording. Unit/units wording and precise transaction stage need review."]
-  - id: p20260726-076
-    video_id: D7gXD-Mo25s
-    section_id: s20260726-announcements
-    start: 6605.42
     end: 6650.861
-    type: announcement
-    title: Fellowship lunch, continued prayer and dismissal
-    summary: A slide announces fellowship lunch on 23 August at 11:30am, with orders due 16 August and char siew rice at one dollar per plate. Pastor Yong closes by urging prayer for ministry and dismissing the congregation to silent meditation.
-    questions: [What fellowship-lunch date is displayed in the closing announcements?]
-    topics: [service-life, prayer]
-    scripture: []
-    transcript: |
-      [Edited ASR excerpt; lunch details below are slide evidence rather than a reconstructed spoken sentence.]
-      The next gathering we have is towards the third week of August, 11:30am.
-      [Slide: 23 Aug (Sun), 11:30am; order by Sun 16 Aug; fellowship lunch after service; char siew rice $1 per plate. Unclear spoken ordering phrase omitted.]
-      And finally please remember to continue to pray for our ministry, and prayer is very, very important. All our work, as I said earlier, you get a lot of challenges from all over the place. We have an active opposer in Satan always hanging around, and prayer is the one thing that will keep us strong. So please remember to pray often and much. You may be dismissed with silent meditation. Know that the Lord is with you.
-      [Recording ends shortly after dismissal.]
-    confidence: 0.93
-    review_notes: ["Slide at 6600/6625 seconds specifies 23 August, while ASR says third week. Preserve the explicit displayed date and flag the spoken discrepancy; no other service's metadata used."]
+    title: Response and Closing
+    type: closing
+    summary: Pastor Yong leads prayer for perseverance, members and the Batam orphanage alongside the
+      congregation's creed, followed by offertory with an unclear second destination, the closing
+      hymn, doxology, blessing and Communion, orphanage and lunch announcements.
+    keywords:
+      - creed
+      - orphanage
+      - batam
+      - fourth sunday
+      - offertory
+      - onward christian soldiers
+      - doxology
+      - holy communion
+    topics:
+      - prayer
+      - faith
+      - service-life
+      - worship
+      - service
+      - mission
+      - holy-spirit
+      - stewardship
+      - peace
+      - communion
+    scripture:
+      - 1 Thessalonians 5
+      - 2 Corinthians 13
+    source_chapters:
+      - s20260726-response
+      - s20260726-offering
+      - s20260726-closing
+      - s20260726-announcements
+    review_notes: []
+    speaker_id: pastor-yong
+sermon_description: Pastor Yong challenges the idea that an easy life proves God's blessing, reading
+  John 15 as a call to faithful witness amid opposition. He distinguishes the fallen world's
+  hostility from the goodness Christians can recognize through common grace, while exploring the
+  conflicting values and responsibilities of following Christ. He urges lifelong service and
+  perseverance grounded in Scripture rather than retreat into comfort or passivity.

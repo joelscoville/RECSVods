@@ -1,0 +1,381 @@
+chapters:
+  - id: s20260614-01
+    video_id: GlVgMoehT2I
+    start: 26.54
+    end: 363.66
+    type: prayer
+    title: Opening ACTS prayer
+    confidence: 0.9
+    review_notes:
+      - Opening microphone checks at 3.82-24.58 seconds precede the meaningful programme.
+    scripture: []
+    topics:
+      - prayer
+      - worship
+      - repentance
+    summary: The opening leader welcomes the congregation into personal adoration, confession, thanksgiving for God's goodness and supplication for individual circumstances. He prays for humble, teachable hearts in worship and introduces Hadi as worship leader.
+    keywords:
+      - adoration
+      - confession
+      - goodness
+      - individual situations
+      - humble and teachable
+  - id: s20260614-02
+    video_id: GlVgMoehT2I
+    start: 384.14
+    end: 613.66
+    type: worship
+    title: Welcome and call to worship
+    confidence: 0.9
+    scripture:
+      - Psalms 71
+    topics:
+      - service-life
+      - worship
+    summary: The worship leader welcomes visitors, invites mutual greetings and calls for silence to set aside the week's distractions. Reading from Psalms 71, he describes worship as a joyful response to God's faithfulness and introduces Crown Him with Many Crowns.
+    keywords:
+      - one another
+      - silence
+      - joyful response
+  - id: s20260614-03
+    video_id: GlVgMoehT2I
+    start: 621.5
+    end: 744
+    type: music
+    title: Crown Him with Many Crowns
+    confidence: 0.9
+    scripture: []
+    topics:
+      - worship
+    summary: The congregation sings the opening hymn, identified in the introduction and title slide.
+    keywords:
+      - many crowns
+  - id: s20260614-04
+    video_id: GlVgMoehT2I
+    start: 745.22
+    end: 840.76
+    type: prayer
+    title: Prayer for worship and the preacher
+    confidence: 0.88
+    scripture: []
+    topics:
+      - prayer
+      - faith
+    summary: The worship leader thanks God for Christ, prays for faithful living amid uncertainty, and asks for wisdom for the explicitly named preacher, Pastor Yong.
+    keywords:
+      - pastor yong
+      - hope
+      - christ
+  - id: s20260614-05
+    video_id: GlVgMoehT2I
+    start: 850.22
+    end: 1279.4
+    type: music
+    title: Known and Loved
+    confidence: 0.91
+    scripture: []
+    topics:
+      - faith
+      - knowing-god
+      - worship
+    summary: Introducing Known and Loved, the leader contrasts security in belonging to Christ with possessions, achievement and loneliness. A portion is played to introduce the melody before the congregation sings it.
+    keywords:
+      - security
+      - christ
+      - known and loved
+  - id: s20260614-06
+    video_id: GlVgMoehT2I
+    start: 1289.9
+    end: 1725.74
+    type: scripture-reading
+    title: Responsive readings from Proverbs and John
+    confidence: 0.94
+    scripture:
+      - Proverbs 25:1-28
+      - John 14:8-31
+    topics:
+      - worship
+    summary: The leader announces Proverbs 25:1–28 for alternating reading with the congregation, followed by a responsive reading of John 14:8–31 before the next hymn.
+    keywords:
+      - responsive reading
+      - proverbs 25
+      - john 14
+  - id: s20260614-07
+    video_id: GlVgMoehT2I
+    start: 1727.76
+    end: 1893.7
+    type: music
+    title: O Hover Me Holy Spirit
+    confidence: 0.8
+    review_notes:
+      - Title follows spoken introduction; precise punctuation and hymn title need review.
+    scripture: []
+    topics:
+      - worship
+      - holy-spirit
+    summary: The leader introduces O Hover Me Holy Spirit as a prayer for softened hearts, strengthened faith and readiness to receive the Word; the precise hymn title and punctuation remain for review.
+    keywords:
+      - holy spirit
+  - id: s20260614-08
+    video_id: GlVgMoehT2I
+    start: 1896.16
+    end: 2047.94
+    type: music
+    title: Wonderful Savior Redeemer
+    confidence: 0.91
+    scripture: []
+    topics:
+      - worship
+    summary: The service presents the anthem Wonderful Savior Redeemer, confirmed by its displayed title.
+    keywords:
+      - wonderful savior redeemer
+  - id: s20260614-09
+    video_id: GlVgMoehT2I
+    start: 2055.68
+    end: 2123.72
+    type: scripture-reading
+    title: Hebrews 1 reading
+    confidence: 0.95
+    scripture:
+      - Hebrews 1:1-4
+    topics:
+      - worship
+    summary: A reader presents Hebrews 1:1–4 after the worship leader announces the handover to Pastor Yong.
+    keywords:
+      - hebrews 1
+  - id: s20260614-10
+    video_id: GlVgMoehT2I
+    start: 2142.12
+    end: 2828.22
+    type: sermon
+    title: Opening remarks and John 14 recap
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 14
+      - John 14:1-7
+      - John 14:6
+      - Acts 4:12
+    topics:
+      - worship
+      - responsibility
+      - service-life
+      - faith
+      - knowing-god
+      - holy-spirit
+      - discipleship
+      - discernment
+      - mission
+      - prayer
+    summary: After sports jokes and a golf story he says may be untrue, Pastor Yong recaps John 14, contrasting his account of Buddhist self-help with trust in Christ, revelation and the Spirit's present help. He cautions against self-righteousness and speculation about salvation, expresses sympathy with a position he attributes to C. S. Lewis, and urges gospel-sharing and humble, prayerful listening.
+    keywords:
+      - soccer
+      - golf
+      - john 14
+      - troubled heart
+      - revelation
+      - humility
+      - c s lewis
+      - gospel
+      - holy spirit
+  - id: s20260614-11
+    video_id: GlVgMoehT2I
+    start: 2829.26
+    end: 4266.1
+    type: sermon
+    title: Knowing the Father and following Jesus
+    speaker_id: pastor-yong
+    confidence: 0.88
+    scripture:
+      - John 14:8-9
+      - John 14:9
+      - John 8
+      - Luke 6:46
+      - Mark 4:40
+      - Matthew 17:17
+      - Mark 8:17-18
+      - Matthew 26:40
+      - Luke 18:8
+      - Acts 1:6
+      - John 14:10-11
+      - Hebrews 1:1-4
+      - Colossians 1:15-17
+      - Colossians 1:18-20
+      - John 14:8-11
+    topics:
+      - knowing-god
+      - discipleship
+      - faith
+      - holy-spirit
+      - discernment
+      - glory
+      - forgiveness
+    summary: From Philip's request and the disciples' persistent misunderstanding, Pastor Yong urges lifelong, Spirit-dependent learning, presenting Jesus' works, Hebrews and Colossians as testimony that Jesus reveals the Father while warning about deceptive signs. Applying Christ's preeminence to daily life, he commends Bible-grounded WWJD, forgiveness and following Jesus over wealthy celebrities, qualifying his criticism of an animal-activism example as no endorsement of cruelty.
+    keywords:
+      - last supper
+      - philip
+      - endless treasure
+      - christ superstar
+      - signs
+      - hebrews
+      - colossians
+      - wwjd
+      - carpenter from nazareth
+      - holy spirit
+  - id: s20260614-12
+    video_id: GlVgMoehT2I
+    start: 4266.1
+    end: 5290.38
+    type: sermon
+    title: Work entrusted to every believer
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 14:12
+    topics:
+      - service
+      - responsibility
+      - discipleship
+      - faith
+      - stewardship
+      - mission
+      - discernment
+    summary: Pastor Yong reads John 14:12 as entrusting Christ's work to every believer, contrasting selective political recruitment and urging compassionate action through a qualified use of words attributed to Teresa of Avila. Drawing on his creative gifts and service as health permits, he encourages living beyond oneself and interprets greater works as wider reach through evangelism, travel and communication, not work surpassing Christ's in quality.
+    keywords:
+      - work is entrusted
+      - baton
+      - hungry person
+      - gifts
+      - trusting
+      - obeying
+      - greater works
+      - travel
+      - mission
+  - id: s20260614-13
+    video_id: GlVgMoehT2I
+    start: 5290.38
+    end: 5868.72
+    type: sermon
+    title: Prayer in Christ's name and beginning to serve
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - John 14:13-14
+      - John 14:12-14
+      - John 14:12
+    topics:
+      - prayer
+      - discernment
+      - responsibility
+      - faith
+      - glory
+      - service-life
+      - peace
+      - service
+      - discipleship
+    summary: Pastor Yong reads prayer in Christ's name as representing Christ's cause, challenging guaranteed-outcome claims through football wishes, COVID declarations and his account of a friend's death after a claimed healing. Using a bank-loan illustration and the unsuccessful Bidadari land bid, he affirms Christ's support while allowing for failure and withheld requests, urging peace and small acts of service.
+    keywords:
+      - covid
+      - representing
+      - bidadari land
+      - peace
+      - start small
+      - glory
+  - id: s20260614-14
+    video_id: GlVgMoehT2I
+    start: 5868.72
+    end: 5955.78
+    type: prayer
+    title: Prayer to live beyond ourselves
+    speaker_id: pastor-yong
+    confidence: 0.91
+    scripture: []
+    topics:
+      - prayer
+      - discipleship
+      - service
+    summary: Pastor Yong prays for the congregation to reconsider habitual assumptions, follow Jesus in action and live for a cause greater than themselves.
+    keywords: []
+  - id: s20260614-15
+    video_id: GlVgMoehT2I
+    start: 5958.04
+    end: 6002.52
+    type: creed
+    title: Apostles' Creed
+    confidence: 0.91
+    scripture: []
+    topics:
+      - faith
+      - worship
+    summary: The congregation stands to affirm its faith using the Apostles' Creed.
+    keywords:
+      - apostles creed
+  - id: s20260614-16
+    video_id: GlVgMoehT2I
+    start: 6003.22
+    end: 6242.04
+    type: prayer
+    title: Response and seminary intercession
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture: []
+    topics:
+      - prayer
+      - service-life
+      - service
+    summary: Pastor Yong gives the congregation time to respond to the sermon in prayer and invites intercession for incoming Chinese seminary students in Jakarta, their recruitment and interviews, and their resolve to serve. He thanks God for prayer and asks the congregation to recognize sustaining grace as they attend to others' concerns.
+    keywords:
+      - seminary students
+  - id: s20260614-17
+    video_id: GlVgMoehT2I
+    start: 6243.42
+    end: 6353.64
+    type: offering
+    title: Second-Sunday offering
+    confidence: 0.77
+    review_notes:
+      - Offering destination is unclear in ASR; do not normalize Christian altercation work to a guessed ministry.
+    scripture: []
+    topics:
+      - stewardship
+      - service-life
+    summary: The speaker invites the congregation to give to a special second-Sunday destination that remains unclear in ASR, then requests an audio adjustment during the offertory.
+    keywords:
+      - second sunday
+      - offertory
+      - audio
+  - id: s20260614-18
+    video_id: GlVgMoehT2I
+    start: 6353.64
+    end: 6612.96
+    type: worship
+    title: Trust and Obey and benediction
+    confidence: 0.89
+    scripture:
+      - Hebrews 13
+    topics:
+      - worship
+      - faith
+    summary: The preacher connects Trust and Obey with his reason for serving, and the congregation sings it with a restart after a comment about the key. Doxology follows, then a blessing announced as from Hebrews 13, the closing Amen and an instruction to sit.
+    keywords:
+      - trust and obey
+      - hebrews 13
+      - doxology
+  - id: s20260614-19
+    video_id: GlVgMoehT2I
+    start: 6615.1
+    end: 6703.86
+    type: announcement
+    title: Ministry invitations and dismissal
+    speaker_id: pastor-yong
+    confidence: 0.83
+    scripture: []
+    topics:
+      - service-life
+      - service
+      - mission
+    summary: Pastor Yong invites service in scripture reading, worship leading and audiovisual work, and participation in Dr Tong's July evangelistic schedule. He congratulates a couple on their wedding, announces the Westminster course around 11:30 in connection with baptism preparation, and dismisses the congregation for silent meditation.
+    keywords:
+      - ministry
+      - westminster course
+      - wedding

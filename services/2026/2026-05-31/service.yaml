@@ -1,40 +1,112 @@
-id: '2026-05-31'
-date: '2026-05-31'
-title: '31 May 2026 worship service — What’s New?'
-sermon_title: 'What’s New?'
-series: { id: gospel-of-john, name: Expository Preaching on the Gospel of John }
+id: 2026-05-31
+date: 2026-05-31
+title: 31 May 2026 worship service — What’s New?
+sermon_title: What’s New?
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
 type: service
 workflow_status: complete
 editorial_status: needs_review
 review_notes:
-  - 'Main batch integration applied the source-backed series and cited love topic; worker proposal notes describe the pre-merge stage. All interpretation remains needs_review. See docs/historical-001/integration.md.'
-  - 'Whole meaningful programme assessed from imported English ASR, word timings, 21 coarse frames and 21 refined frames. Audio samples were decoded, not listened to. Inline transcripts are faithful selected excerpts with explicit omissions, not complete verbatim speech.'
-  - 'Source title RECS 31 May 2026, upload/release date 20260531 and discussion of May 25, 2026 support the assigned date. Title slide at 1640 seconds reads What’s New? and John 13:31-35. Last Session / The Most Hideous Sin is recap metadata, not today’s title.'
-  - 'No full live-speaker identity independently verified. Derek is introduced by first name only; speaker IDs remain absent. Quoted authors and named people are not live speakers.'
-  - 'Recording begins during A.C.T.S. prayer preparation, not a waiting slate. Brief isolated ASR thanks during silence/instrumental passages are not treated as verified speech. The final few seconds follow dismissal.'
-  - 'Import preserved all 1262 segments and 13690 words. Fourteen outside-segment word warnings, maximum 0.38 seconds; 17 zero-duration words; no backtracking, segment overlaps or tail clamps. See review report for affected source IDs and intervals. Human listening is still needed.'
-  - 'Original target WebM absent in both designated roots; audio_hash_verified is false. Source identity, channel, checksum and actual duration independently verified. No new ASR performed.'
-  - 'Scripture quotations and song lyrics omitted throughout, including quotations within the sermon. Some readings and music remain intentionally longer than 90 seconds. Short transitional units preserve complete thoughts.'
-  - 'Historical, denominational, medical, cultural, AI and financial claims remain attributed to the speaker, not independently verified. Particularly review suicide/medical discussion, ageing anecdotes, Catholic/Protestant contrasts, Amish description and insurance illustration.'
-  - 'Taxonomy proposals only: love / Love, supported by p20260531-048 at 4251.22 and p20260531-058 at 4993.68; proposed series gospel-of-john / The Gospel of John, supported by title slide at 1640 and p20260531-024 at 2281.2. Neither proposal is activated.'
-  - 'Reference uncertainty: ASR says Leviticus 9.18; omitted as an exact tag pending review. A footwashing slide at 5100 labels John 12:14-15 while spoken context is John 13; use John 13 at chapter level there. Announced blessing is Hebrews 13; exact verses and missing spoken wording require listening.'
+  - Main batch integration applied the source-backed series and cited love topic; worker proposal
+    notes describe the pre-merge stage. All interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - Whole meaningful programme assessed from imported English ASR, word timings, 21 coarse frames
+    and 21 refined frames. Audio samples were decoded, not listened to. Inline transcripts are
+    faithful selected excerpts with explicit omissions, not complete verbatim speech.
+  - Source title RECS 31 May 2026, upload/release date 20260531 and discussion of May 25, 2026
+    support the assigned date. Title slide at 1640 seconds reads What’s New? and John 13:31-35. Last
+    Session / The Most Hideous Sin is recap metadata, not today’s title.
+  - No full live-speaker identity independently verified. Derek is introduced by first name only;
+    speaker IDs remain absent. Quoted authors and named people are not live speakers.
+  - Recording begins during A.C.T.S. prayer preparation, not a waiting slate. Brief isolated ASR
+    thanks during silence/instrumental passages are not treated as verified speech. The final few
+    seconds follow dismissal.
+  - Import preserved all 1262 segments and 13690 words. Fourteen outside-segment word warnings,
+    maximum 0.38 seconds; 17 zero-duration words; no backtracking, segment overlaps or tail clamps.
+    See review report for affected source IDs and intervals. Human listening is still needed.
+  - Original target WebM absent in both designated roots; audio_hash_verified is false. Source
+    identity, channel, checksum and actual duration independently verified. No new ASR performed.
+  - Scripture quotations and song lyrics omitted throughout, including quotations within the sermon.
+    Some readings and music remain intentionally longer than 90 seconds. Short transitional units
+    preserve complete thoughts.
+  - Historical, denominational, medical, cultural, AI and financial claims remain attributed to the
+    speaker, not independently verified. Particularly review suicide/medical discussion, ageing
+    anecdotes, Catholic/Protestant contrasts, Amish description and insurance illustration.
+  - "Taxonomy proposals only: love / Love, supported by p20260531-048 at 4251.22 and p20260531-058
+    at 4993.68; proposed series gospel-of-john / The Gospel of John, supported by title slide at
+    1640 and p20260531-024 at 2281.2. Neither proposal is activated."
+  - "Reference uncertainty: ASR says Leviticus 9.18; omitted as an exact tag pending review. A
+    footwashing slide at 5100 labels John 12:14-15 while spoken context is John 13; use John 13 at
+    chapter level there. Announced blessing is Hebrews 13; exact verses and missing spoken wording
+    require listening."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan based on the current service chapters and all 74 supplied passage summaries;
+    interpretation remains needs_review. All 16 original chapters are assigned once in order on
+    m51rgcZHQmE, with no proposed new numeric boundaries.
+  - Opening, Worship, Scripture and Welcome, and Response and Closing are neutral peer service
+    groups. The brief welcome and invitation for future questions stay with the preceding worship
+    and readings because no substantive Q&A occurs.
+  - "Five sermon movements retain the substantial repentance recap, combine the exposition of glory
+    and childlikeness as preparation for receiving the command, and preserve the preacher’s three
+    explicit emphases: love as identity, shared life, and Christ’s example as the binding model.
+    Illustrations do not become separate primary movements."
+  - The worship cue gives access to a distinctive guitar-ensemble presentation, but its inherited
+    span also includes the preceding congregational hymn; it does not claim a precise ensemble
+    start. The childlikeness cue retains useful access to the sustained application of humility to
+    ageing within the longer preparatory exposition. Routine closing items and incidental
+    announcements have no cues.
+  - Only sermon_description is intended as public descriptive prose; parent and cue summaries are
+    internal retrieval/review metadata. Public titles use Title Case.
+  - Live-speaker and ensemble identities remain unverified; Derek is only a first-name introduction.
+    Sparse opening speech, source-alignment warnings and the prayer-to-creed listening need remain
+    unresolved, and this plan does not reverify source timing or the missing original audio.
+  - Medical and suicidal-distress discussion, ageing anecdotes, the document attributed to Pope Leo
+    XIV, AI and denominational comparisons, and Amish and insurance illustrations remain attributed
+    claims, not independently verified facts. The preacher’s uncertainty about cell-group outcomes
+    is retained.
+  - The uncertain Leviticus reference and footwashing-slide chapter conflict remain unresolved. The
+    blessing is announced as Hebrews 13 but its exact wording and verses remain uncertain; baptism
+    candidate names and venue remain unclear. No identities, scripture corrections or taxonomy
+    additions are inferred.
 speakers: []
 topics:
-  - { id: love, name: Love }
-  - {id: prayer, name: Prayer}
-  - {id: worship, name: Worship}
-  - {id: service-life, name: Church life}
-  - {id: faith, name: Faith}
-  - {id: repentance, name: Repentance}
-  - {id: forgiveness, name: Forgiveness}
-  - {id: responsibility, name: Responsibility}
-  - {id: discipleship, name: Discipleship}
-  - {id: glory, name: Glory}
-  - {id: knowing-god, name: Knowing God}
-  - {id: service, name: Service}
-  - {id: mission, name: Mission}
-  - {id: stewardship, name: Stewardship}
-  - {id: eternal-life, name: Eternal life}
+  - id: love
+    name: Love
+  - id: prayer
+    name: Prayer
+  - id: worship
+    name: Worship
+  - id: service-life
+    name: Church life
+  - id: faith
+    name: Faith
+  - id: repentance
+    name: Repentance
+  - id: forgiveness
+    name: Forgiveness
+  - id: responsibility
+    name: Responsibility
+  - id: discipleship
+    name: Discipleship
+  - id: glory
+    name: Glory
+  - id: knowing-god
+    name: Knowing God
+  - id: service
+    name: Service
+  - id: mission
+    name: Mission
+  - id: stewardship
+    name: Stewardship
+  - id: eternal-life
+    name: Eternal life
 videos:
   - id: m51rgcZHQmE
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
@@ -43,7 +115,9 @@ videos:
     workflow_status: complete
     media_disposition: playable
     transcription_language: en
-    transcribed_span: {start: 0, end: 6160.4861875}
+    transcribed_span:
+      start: 0
+      end: 6160.4861875
     transcription_provenance:
       engine: faster-whisper
       engine_version: 1.2.1
@@ -51,1302 +125,332 @@ videos:
       backend_version: 4.8.2
       compute_type: float16
       device: Tesla T4
-      settings: {beam_size: 5, word_timestamps: true, vad_filter: false, condition_on_previous_text: false}
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
       audio_sha256: d9eacd4d191db341a636c9fd41267d89c0c3c7d622d87573fb77c926887c047b
       duration_seconds: 6160.4861875
       elapsed_seconds: 193.852
       real_time_factor: 0.03147
-      transcribed_at: '2026-09-25T12:44:54.435549+00:00'
+      transcribed_at: 2026-09-25T12:44:54.435549+00:00
       transcript_sha256: 679ce4740ef489b7ce883ebfde22e0759f8f465c658d9350e970b99162f3a27f
       source_duration_seconds: 6160.501
       duration_delta_seconds: -0.014812500000516593
       audio_hash_verified: false
-sections:
-  - {id: s20260531-opening, video_id: m51rgcZHQmE, start: 0, end: 381.94, type: worship, title: 'Opening prayers, greeting and call to worship', confidence: 0.88, review_notes: ['A.C.T.S. frame at zero; opening speech is sparsely transcribed.']}
-  - {id: s20260531-hymns, video_id: m51rgcZHQmE, start: 381.94, end: 792.76, type: worship, title: 'Opening hymns and prayer', confidence: 0.92, review_notes: []}
-  - {id: s20260531-readings, video_id: m51rgcZHQmE, start: 792.76, end: 1178.28, type: scripture-reading, title: 'Responsive readings from Proverbs and 1 John', confidence: 0.94, review_notes: []}
-  - {id: s20260531-music, video_id: m51rgcZHQmE, start: 1178.28, end: 1558.8, type: worship, title: 'Congregational hymn and guitar ensemble', confidence: 0.89, review_notes: ['Ensemble names unclear; retain no performer identities.']}
-  - {id: s20260531-sermon-reading, video_id: m51rgcZHQmE, start: 1558.8, end: 1640.12, type: scripture-reading, title: 'John 13:31–35', confidence: 0.97, review_notes: []}
-  - {id: s20260531-welcome, video_id: m51rgcZHQmE, start: 1640.12, end: 1752.92, type: address, title: 'Welcome and invitation for questions', confidence: 0.93, review_notes: []}
-  - {id: s20260531-recap, video_id: m51rgcZHQmE, start: 1752.92, end: 2281.2, type: sermon, title: 'Recap — betrayal, responsibility and repentance', confidence: 0.9, review_notes: ['Previous-session title belongs to the recap only. Medical and historical claims need review.']}
-  - {id: s20260531-glory, video_id: m51rgcZHQmE, start: 2281.2, end: 3515.4, type: sermon, title: 'The paradox of suffering and glory', confidence: 0.91, review_notes: ['Includes opening prayer and extended AI illustration. External claims are not fact-checked.']}
-  - {id: s20260531-childlikeness, video_id: m51rgcZHQmE, start: 3515.4, end: 4046.56, type: sermon, title: 'Childlikeness, humility and growing older', confidence: 0.89, review_notes: ['Review Greek terminology, brief Chinese quotation and medical anecdotes.']}
-  - {id: s20260531-new-mark, video_id: m51rgcZHQmE, start: 4046.56, end: 4573.3, type: sermon, title: 'A new mark of Christ’s followers', confidence: 0.93, review_notes: []}
-  - {id: s20260531-new-life, video_id: m51rgcZHQmE, start: 4573.3, end: 4993.68, type: sermon, title: 'A new model of life together', confidence: 0.91, review_notes: ['Amish and insurance illustrations are speaker claims, not advice from the archive.']}
-  - {id: s20260531-new-love, video_id: m51rgcZHQmE, start: 4993.68, end: 5297.72, type: sermon, title: 'Christ’s example and the command to love', confidence: 0.94, review_notes: ['Footwashing slide has a chapter-label conflict; see service notes.']}
-  - {id: s20260531-response, video_id: m51rgcZHQmE, start: 5297.72, end: 5665.38, type: prayer, title: 'Response prayer, creed and intercessions', confidence: 0.91, review_notes: ['Prayer-to-creed boundary uses word timing at 5388.7, inside a source segment; review transition by listening.']}
-  - {id: s20260531-offering, video_id: m51rgcZHQmE, start: 5665.38, end: 5796.46, type: offering, title: 'Fifth-Sunday charitable offering', confidence: 0.93, review_notes: []}
-  - {id: s20260531-closing, video_id: m51rgcZHQmE, start: 5796.46, end: 6017.12, type: worship, title: 'Amazing Grace, doxology and blessing', confidence: 0.87, review_notes: ['Blessing text is not captured reliably by ASR; Hebrews 13 is announced.']}
-  - {id: s20260531-announcements, video_id: m51rgcZHQmE, start: 6017.12, end: 6160.501, type: announcement, title: 'Baptism, gospel rallies and dismissal', confidence: 0.83, review_notes: ['Candidate names and venue are unclear in ASR; not promoted to metadata. Slides may change ahead of speech.']}
-passages:
-  - id: p20260531-001
+chapters:
+  - id: c20260531-opening
     video_id: m51rgcZHQmE
-    section_id: s20260531-opening
     start: 0
-    end: 112.5
-    type: prayer
-    title: Thanksgiving during opening prayer
-    summary: The leader invites the congregation to thank God for goodness received in life.
-    questions: ['How does the opening prayer invite thanksgiving?']
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      [Recording opens during prayer preparation; quiet intervals and uncertain isolated ASR words omitted.]
-      We come now before the Lord to give thanks for all the goodness that He has given to us in our life. Let's pray in thanksgiving now.
-      [Quiet prayer interval; no additional speech reconstructed.]
-    confidence: 0.82
-    review_notes: ['A.C.T.S. slide visible at 0 and 30 seconds. The recording does not establish an earlier complete opening. Longer unit retains the prayer interval.']
-  - id: p20260531-002
-    video_id: m51rgcZHQmE
-    section_id: s20260531-opening
-    start: 112.5
-    end: 179.02
-    type: prayer
-    title: Personal needs in supplication
-    summary: The leader asks worshippers to bring their personal needs before God.
-    questions: ['What is the second guided prayer invitation?']
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      And now we pray in supplication, we bring our personal needs before the Lord.
-      [Unclear final words of the invitation and quiet prayer interval omitted.]
-    confidence: 0.82
-    review_notes: ['ASR renders the final invitation poorly; no words supplied from memory.']
-  - id: p20260531-003
-    video_id: m51rgcZHQmE
-    section_id: s20260531-opening
-    start: 179.02
-    end: 221.62
-    type: prayer
-    title: Preparing to hear and follow
-    summary: The opening prayer acknowledges grace and asks for hearts ready to hear and follow God, before introducing Derek as leader.
-    questions: ['What does the opening prayer ask for the worship service?']
-    topics: [prayer, worship]
-    scripture: []
-    transcript: |
-      Let us pray together. We thank you for this morning, O God, as we are all gathered here to worship you. We want to acknowledge that it is by your grace that we get to do this.
-      [Excerpt omission: prayer for prepared hearts.]
-      In the worship service this morning we will hear you, we will turn and we will follow you.
-      [Closing prayer words omitted.]
-      This morning our brother Mr. Derek will be leading us.
-    confidence: 0.89
-    review_notes: ['Only the first name Derek is supported.']
-  - id: p20260531-004
-    video_id: m51rgcZHQmE
-    section_id: s20260531-opening
-    start: 221.62
-    end: 347.76
-    type: worship
-    title: Greeting and silent meditation
-    summary: The worship leader invites mutual greetings and then silent preparation for the call to worship.
-    questions: ['How is the congregation invited to prepare for worship?']
-    topics: [worship, service-life]
-    scripture: [Psalms 68]
-    transcript: |
-      Good morning brothers and sisters. Happy Sunday. So before we begin, as usual, let's stand up and say hi to everyone around you.
-      [Congregational greeting interval omitted.]
-      So let us prepare our hearts with silent meditation, followed by the call to worship right from Psalm 68.
-      [Silent meditation; uncertain isolated ASR words omitted.]
-    confidence: 0.9
-    review_notes: ['Longer unit retains greeting and meditation as one preparation sequence.']
-  - id: p20260531-005
-    video_id: m51rgcZHQmE
-    section_id: s20260531-opening
-    start: 347.76
     end: 381.94
-    type: scripture-reading
-    title: Call to worship from Psalm 68
-    summary: The leader reads the call to worship from Psalm 68.
-    questions: ['Which psalm supplies the call to worship?']
-    topics: [worship]
-    scripture: [Psalms 68]
-    transcript: |
-      It's a call to worship from Psalm 68.
-      [Scripture quotation omitted; reference retained.]
-    confidence: 0.94
-    review_notes: ['Frame at 375 shows verses 3–4; the full announced range is not captured, so the chapter reference is retained.']
-  - id: p20260531-006
+    title: Opening
+    type: opening
+    summary: In a sparsely transcribed opening, the leaders guide thanksgiving, personal supplication,
+      readiness to hear God, greetings and silent preparation before the Psalm 68 call to worship.
+    keywords:
+      - thanksgiving
+      - personal needs
+      - supplication
+      - silent meditation
+      - call to worship
+      - psalm 68
+    topics:
+      - prayer
+      - worship
+      - service-life
+    scripture:
+      - Psalms 68
+    source_chapters:
+      - s20260531-opening
+    review_notes: []
+  - id: c20260531-worship-scripture-welcome
     video_id: m51rgcZHQmE
-    section_id: s20260531-hymns
     start: 381.94
-    end: 501.68
-    type: hymn
-    title: Love Divine, All Loves Excelling
-    summary: The leader invites the congregation to stand for the opening hymn.
-    questions: ['Which hymn opens the congregational singing?']
-    topics: [worship]
-    scripture: []
-    transcript: |
-      Now let us rise as we praise our Lord with our first hymn, Love Divine, All Love Excelling.
-      [Sung lyrics omitted.]
-    confidence: 0.91
-    review_notes: ['Title lightly normalized from the spoken introduction. Source segment 33 has a 0.22-second word-boundary warning inside the retained whole hymn unit.']
-  - id: p20260531-007
-    video_id: m51rgcZHQmE
-    section_id: s20260531-hymns
-    start: 501.68
-    end: 545.36
-    type: prayer
-    title: Soft and teachable hearts
-    summary: The leader thanks God for salvation and safe gathering, asking for forgiveness and attentive worship.
-    questions: ['What does the worship prayer ask about distraction?']
-    topics: [prayer, worship, forgiveness]
-    scripture: []
-    transcript: |
-      Now let us pray. Our dear Heavenly Father, you are our rock and our salvation. We thank you for giving us the gift of salvation through your Son, Jesus. We pray that you'll continue to forgive our sins and renew us in your grace.
-      [Excerpt omission: thanks for gathering safely.]
-      Grant us hearts that are soft and teachable. As we worship today, help us set aside every distraction and fix our eyes on you. May this service be pleasing to you and edifying to your people. In Jesus Christ's most precious name we pray. Amen.
-    confidence: 0.95
-    review_notes: []
-  - id: p20260531-008
-    video_id: m51rgcZHQmE
-    section_id: s20260531-hymns
-    start: 545.36
-    end: 792.76
-    type: hymn
-    title: In Christ Alone
-    summary: The congregation sings the hymn introduced as In Christ Alone.
-    questions: ['Which hymn follows the opening prayer?']
-    topics: [worship]
-    scripture: []
-    transcript: |
-      The next hymn is a very familiar hymn, In Christ Alone.
-      [Sung lyrics omitted.]
-    confidence: 0.95
-    review_notes: ['Full musical unit retained. Source IDs 63, 64 and 75 have word-boundary warnings up to 0.38 seconds; no cuts within those regions.']
-  - id: p20260531-009
-    video_id: m51rgcZHQmE
-    section_id: s20260531-readings
-    start: 792.76
-    end: 1003.7
-    type: scripture-reading
-    title: Responsive reading — Proverbs 23
-    summary: The leader assigns alternating verses and a joint ending for the reading of Proverbs 23:1–35.
-    questions: ['How is the Proverbs reading shared with the congregation?']
-    topics: [worship]
-    scripture: ['Proverbs 23:1-35']
-    transcript: |
-      Now let's turn to our Bibles for responsive reading. Let's start with Proverbs chapter 23, verses 1 to 35. As usual, I'll read the odd-numbered verses, and the congregation, I'll invite you to read the even-numbered verses, and let's read the last three verses together.
-      [Scripture reading omitted.]
-    confidence: 0.97
-    review_notes: ['The congregation’s responses are incompletely captured by ASR; no missing scripture reconstructed.']
-  - id: p20260531-010
-    video_id: m51rgcZHQmE
-    section_id: s20260531-readings
-    start: 1003.7
-    end: 1178.28
-    type: scripture-reading
-    title: Responsive reading — 1 John 4
-    summary: The responsive reading continues with 1 John 4:1–21.
-    questions: ['Which New Testament chapter is read responsively?']
-    topics: [worship]
-    scripture: ['1 John 4:1-21']
-    transcript: |
-      Now let us continue our reading from 1 John chapter 4, verses 1 to 21.
-      [Scripture reading omitted.]
-      Thanks be to God.
-    confidence: 0.97
-    review_notes: ['Whole reading unit retained despite exceeding 90 seconds.']
-  - id: p20260531-011
-    video_id: m51rgcZHQmE
-    section_id: s20260531-music
-    start: 1178.28
-    end: 1254.16
-    type: hymn
-    title: I Have Decided to Follow Jesus
-    summary: The congregation sings the announced hymn before the ensemble is invited forward.
-    questions: ['Which hymn precedes the guitar ensemble?']
-    topics: [worship, discipleship]
-    scripture: []
-    transcript: |
-      Now let us sing the next hymn, I Have Decided to Follow Jesus.
-      [Sung lyrics omitted.]
-    confidence: 0.94
-    review_notes: ['The 1260-second frame still shows the song slide while the spoken invitation begins around 1254; screen changes do not define exact audio boundaries.']
-  - id: p20260531-012
-    video_id: m51rgcZHQmE
-    section_id: s20260531-music
-    start: 1254.16
-    end: 1329.22
-    type: address
-    title: Introducing Christ the Lord Is Risen Today
-    summary: The ensemble introduction connects the Easter anthem with continuing hope, eternal life and daily renewal.
-    questions: ['Why offer an Easter anthem after Easter?']
-    topics: [worship, eternal-life]
-    scripture: []
-    transcript: |
-      [Invitation and uncertain performer names omitted.]
-      At first, I felt that it might be a bit late to offer an Easter anthem. It's almost two months since Easter. However upon reflection, I am reminded that because Jesus has risen, therefore we have hope and eternal faith. It is because he has risen that we have eternal life and may our lives be renewed on a daily basis.
-      [Unclear phrase omitted.]
-      May this anthem be a blessing for all congregation.
-    confidence: 0.84
-    review_notes: ['Title independently visible at 1325 seconds. ASR performer names and one concluding phrase are unreliable.']
-  - id: p20260531-013
-    video_id: m51rgcZHQmE
-    section_id: s20260531-music
-    start: 1329.22
-    end: 1558.8
-    type: music
-    title: Guitar ensemble — Christ the Lord Is Risen Today
-    summary: The recording shows a guitar ensemble presenting the announced anthem.
-    questions: ['Where is the guitar ensemble presentation?']
-    topics: [worship]
-    scripture: []
-    transcript: |
-      [Musical presentation. Lyrics displayed on screen are omitted. Sparse ASR fragments during the performance are not treated as verified spoken words.]
-    confidence: 0.88
-    review_notes: ['Guitar ensemble visible at 1500 seconds, matching the spoken introduction and subsequent appreciation. No claim of audio listening.']
-  - id: p20260531-014
-    video_id: m51rgcZHQmE
-    section_id: s20260531-sermon-reading
-    start: 1558.8
-    end: 1640.12
-    type: scripture-reading
-    title: Sermon reading — John 13:31–35
-    summary: The worship leader announces and reads John 13:31–35 before the sermon.
-    questions: ['What is the scripture passage for What’s New?']
-    topics: [worship]
-    scripture: ['John 13:31-35']
-    transcript: |
-      So now it's time for scripture reading. Today's scripture reading is taken from John 13, verses 31 to 35.
-      [Scripture quotation omitted.]
-      This is the word of the Lord.
-      [Transition to sermon.]
-    confidence: 0.98
-    review_notes: ['Reference confirmed by the 1610-second scripture-reading slide and 1640-second sermon slide.']
-  - id: p20260531-015
-    video_id: m51rgcZHQmE
-    section_id: s20260531-welcome
-    start: 1640.12
-    end: 1714.66
-    type: address
-    title: Welcoming visitors and appreciating the musicians
-    summary: The preacher welcomes overseas visitors and encourages the musicians to share their work more widely.
-    questions: ['What encouragement does the preacher give the guitar ensemble?']
-    topics: [service-life, worship]
-    scripture: []
-    transcript: |
-      Happy Sunday. Every time it's very obvious to me when there's a holiday. We have exchange of people. Half our people go away and half of other people will come to us, and so if you are from overseas, welcome to our worship service.
-      [Excerpt omission: appreciation and suggestion to share the ensemble’s music on Spotify.]
-      After all you practice so hard, right, you should put it up so that the world will get to access wonderful music that God has created.
-    confidence: 0.92
-    review_notes: ['Named musicians not assigned speaker identities; exact names need review.']
-  - id: p20260531-016
-    video_id: m51rgcZHQmE
-    section_id: s20260531-welcome
-    start: 1714.66
     end: 1752.92
-    type: address
-    title: An invitation to submit questions
-    summary: The preacher skips Ask Me Anything because there are no relevant questions, but invites future submissions.
-    questions: ['Why is Ask Me Anything skipped in this service?']
-    topics: [service-life, faith]
-    scripture: []
-    transcript: |
-      There is no questions raised that was relevant to today's topic, so I'm going to skip the Ask Me Anything.
-      [Submission instructions omitted.]
-      The reason why we keep doing this is so that in case you have anything that's bugging you, and also we wanted to show you that the truth of God is able to answer everything in a reasonable manner. So please don't let any questions you have in life block you from a deeper understanding of God's Word.
-    confidence: 0.94
+    title: Worship, Scripture and Welcome
+    type: worship
+    summary: The leaders guide hymns, prayer and readings from Proverbs 23, 1 John 4 and John 13 around
+      a guitar-ensemble anthem, followed by the preacher’s welcome and invitation for future
+      questions.
+    keywords:
+      - love divine
+      - christ alone
+      - responsive reading
+      - proverbs 23
+      - 1 john
+      - guitar
+      - risen today
+      - john 13
+    topics:
+      - worship
+      - prayer
+      - forgiveness
+      - discipleship
+      - eternal-life
+      - service-life
+      - faith
+    scripture:
+      - Proverbs 23:1-35
+      - 1 John 4:1-21
+      - John 13:31-35
+    source_chapters:
+      - s20260531-hymns
+      - s20260531-readings
+      - s20260531-music
+      - s20260531-sermon-reading
+      - s20260531-welcome
     review_notes: []
-  - id: p20260531-017
+  - id: s20260531-music
     video_id: m51rgcZHQmE
-    section_id: s20260531-recap
+    start: 1178.28
+    end: 1558.8
+    type: worship
+    title: Congregational Hymn and Guitar Ensemble
+    confidence: 0.89
+    review_notes:
+      - Ensemble names unclear; retain no performer identities.
+    scripture: []
+    topics:
+      - worship
+      - discipleship
+      - eternal-life
+    summary: The congregation sings before a guitar ensemble presents an Easter anthem introduced
+      through hope, eternal life and daily renewal; performer identities remain unclear.
+    keywords:
+      - decided to follow
+      - risen today
+      - guitar
+      - eternal life
+    parent_id: c20260531-worship-scripture-welcome
+    source_chapters:
+      - s20260531-music
+  - id: c20260531-regret-repentance
+    video_id: m51rgcZHQmE
     start: 1752.92
-    end: 1831.74
-    type: sermon
-    title: Revisiting Judas before the middle of John 13
-    summary: The preacher explains that today addresses the middle of John 13 and recaps the preceding lesson on Judas’s betrayal.
-    questions: ['How does today’s sermon relate to the previous lesson?']
-    topics: [responsibility]
-    scripture: [John 13]
-    transcript: |
-      And today we are going to finish John chapter 13. And last week we went to do actually the whole passage of John 13, except that I only focus on the top portion and the bottom portion. And the passage that Derek read for us just now is in the middle. So we want to review what was taught in the last lesson before we go on. It is really a lesson relating to the betrayal of Judas Iscariot.
-      [Excerpt omission: prophecy and reference to Jesus Christ Superstar.]
-    confidence: 0.94
-    review_notes: ['The 1800-second Last Session slide labels John 13:21–30, 36–38 and The Most Hideous Sin. Those are recap details.']
-  - id: p20260531-018
-    video_id: m51rgcZHQmE
-    section_id: s20260531-recap
-    start: 1831.74
-    end: 1916.98
-    type: sermon
-    title: The preacher’s response to sympathetic portrayals of Judas
-    summary: The preacher contrasts sympathetic portrayals of Judas with his reading of John and James on theft and responsibility for sin.
-    questions: ['How does the preacher respond to attempts to excuse Judas?']
-    topics: [responsibility]
-    scripture: ['John 12:6', James 1]
-    transcript: |
-      And the whole idea was Judas was a mistaken, tragic character who actually loved his people and somehow felt that Jesus Christ was leading them astray.
-      [Excerpt omission: discussion of competing portrayals and biblical quotations.]
-      So when you go back to the Bible, the first principles, considerations are very straightforward.
-      [Scripture-linked account and quotations omitted; John 12:6 and James 1 are discussed.]
-    confidence: 0.87
-    review_notes: ['Summary attributes the argument to the preacher; it does not independently evaluate the stage musical or resolve the theology.']
-  - id: p20260531-019
-    video_id: m51rgcZHQmE
-    section_id: s20260531-recap
-    start: 1916.98
-    end: 2007.38
-    type: sermon
-    title: Responsibility is not confined to Judas
-    summary: The preacher maintains Judas’s responsibility and broadens the discussion to other participants in the crucifixion.
-    questions: ['Who else does the preacher include in the betrayal discussion?']
-    topics: [responsibility, knowing-god]
-    scripture: [John 13]
-    transcript: |
-      These are very clear first principle that we cling on to clearly. So therefore there is no need for us to think about whether Judas was mistaken or it was a mistake to blame him. He absolutely was the one who is responsible for his own action to betray Jesus Christ although it was long prophesied. However I wanted to point out to you that Judas was not the only person who betrayed Jesus or had a role to play in the crucifixion of Jesus.
-      [Excerpt omission: named leaders and crowd discussion; scriptural dialogue omitted.]
-    confidence: 0.88
-    review_notes: ['Political roles assigned to biblical figures in the speech require human accuracy review; not corrected from external knowledge.']
-  - id: p20260531-020
-    video_id: m51rgcZHQmE
-    section_id: s20260531-recap
-    start: 2007.38
-    end: 2106.96
-    type: sermon
-    title: Regret and repentance
-    summary: The preacher includes Peter and the wider congregation in the discussion of failure, then distinguishes regret from repentance.
-    questions: ['What distinction does the preacher make between regret and repentance?']
-    topics: [repentance, forgiveness]
-    scripture: [John 13]
-    transcript: |
-      So they are not better than Judas to some ways. And of course, all of us too, because that's why Jesus was crucified.
-      [Excerpt omission: account of Judas’s regret and death.]
-      The difference between Judas and us is that Judas had deep regret. However, regret is not the same as repentance. And the rest of the people, including Peter and including us, prayerfully we are people who repented. And so if Judas Iscariot had sought forgiveness from our Lord Jesus Christ, he will be forgiven.
-      [Scripture quotation omitted.]
-    confidence: 0.91
-    review_notes: ['Slightly longer unit keeps the comparison intact. Forgiveness claim is the preacher’s interpretation.']
-  - id: p20260531-021
-    video_id: m51rgcZHQmE
-    section_id: s20260531-recap
-    start: 2106.96
-    end: 2166.2
-    type: sermon
-    title: Suicidal distress and seeking medical help
-    summary: In discussing Judas, the preacher recounts a recent counselling visit and urges serious medical help for people experiencing suicidal distress.
-    questions: ['What help does the preacher urge for someone who is suicidal?']
-    topics: [responsibility]
-    scripture: []
-    transcript: |
-      So even for Judas Iscariot, he would have been forgiven, but he did not.
-      [Excerpt omission: suicide account, graphic detail and identification of a person cited for medical advice.]
-      They need help, so don't just go and tell them to snap out of it. So if you actually meet somebody who is like that, make sure that you counsel them properly to get serious medical help.
-    confidence: 0.85
-    review_notes: ['Boundary uses the word-timed end of medical help at 2166.2, within source segment 285. Medical generalizations and theological framing are not clinical findings.']
-  - id: p20260531-022
-    video_id: m51rgcZHQmE
-    section_id: s20260531-recap
-    start: 2166.2
-    end: 2223.82
-    type: sermon
-    title: Forgiveness and surrendering self-reliance
-    summary: The preacher connects self-reliance, sin and repentance, emphasizing the availability of forgiveness.
-    questions: ['How does the preacher connect repentance and forgiveness?']
-    topics: [repentance, forgiveness]
-    scripture: []
-    transcript: |
-      At the same time the leading factor is this idea that I can solve my own problem, nobody can help me kind of thing.
-      [Excerpt omission: attribution to John Stott.]
-      Forgiveness is really given to all of us who truly repent, and so you can be the biggest sinner in the world, however if you truly repent deep in your heart and come to our Lord Jesus Christ, you will be forgiven, which was why Christ died on the cross in the first place.
-    confidence: 0.88
-    review_notes: ['Review the transition and attribution; do not generalize the speaker’s self-reliance explanation into a clinical cause of suicide.']
-  - id: p20260531-023
-    video_id: m51rgcZHQmE
-    section_id: s20260531-recap
-    start: 2223.82
     end: 2281.2
+    title: Turn from Regret to Repentance
     type: sermon
-    title: Taking faith seriously rather than endlessly doubting
-    summary: The preacher urges sincere commitment and repentance rather than treating faith as an exercise in testing whether one is saved.
-    questions: ['What response does the preacher urge when believers fall?']
-    topics: [faith, repentance, discipleship]
-    scripture: []
-    transcript: |
-      We should just commit our life to Jesus Christ and follow him totally and faithfully all the days of our life. Of course there will be time where we fall.
-      [Excerpt omission: warning against repeated uncertainty about salvation.]
-      From time to time we may fall, but when we fall we repent, we get back up again, and with sincerity in our heart, we believe our sins are forgiven, because that's what the Bible tells us.
-    confidence: 0.94
+    summary: Recapping Judas’s betrayal, the preacher extends responsibility for failure beyond Judas,
+      distinguishes regret from repentance, emphasizes forgiveness and sincere commitment, and urges
+      medical help for suicidal distress.
+    keywords:
+      - judas
+      - regret
+      - repentance
+      - forgiveness
+      - medical help
+      - suicidal
+    topics:
+      - responsibility
+      - knowing-god
+      - repentance
+      - forgiveness
+      - faith
+      - discipleship
+    scripture:
+      - John 13
+      - John 12:6
+      - James 1
+    source_chapters:
+      - s20260531-recap
     review_notes: []
-  - id: p20260531-024
+  - id: c20260531-glory-humility
     video_id: m51rgcZHQmE
-    section_id: s20260531-glory
     start: 2281.2
-    end: 2347.66
-    type: prayer
-    title: Approaching the passage with childlike hearts
-    summary: The preacher introduces the middle of John 13 as personally significant and prays for hearts ready to recognize and follow God’s voice.
-    questions: ['How does the preacher prepare to expound John 13:31–35?']
-    topics: [prayer, faith]
-    scripture: ['John 13:31-35']
-    transcript: |
-      Now we go on to the middle portion, which is a very important portion. I told you earlier that John 13 is one of the important passages for me in my life.
-      [Excerpt omission: personal introduction and prayer opening.]
-      We do pray that You grant us a heart that is childlike, so that we can recognize Your voice, and we will turn, and we will follow You no matter what the rest of the world will tell us.
-      [Remaining prayer, including scripture-derived wording, omitted.]
-    confidence: 0.92
-    review_notes: ['Prayer ending spans a source segment that also resumes the sermon; word timing places the sermon resumption at 2347.66.']
-  - id: p20260531-025
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 2347.66
-    end: 2418.12
+    end: 4046.56
+    title: Glorify God in Suffering and Humility
     type: sermon
-    title: The new commandment in the Last Supper setting
-    summary: The preacher situates the new commandment among the footwashing, Judas’s departure and the prediction of Peter’s denial.
-    questions: ['What events surround the new commandment in John 13?']
-    topics: [discipleship]
-    scripture: [John 13]
-    transcript: |
-      Remember that this particular passage that we are reading, or we have read, come after some of the bigger things. We are at the Passover.
-      [Excerpt omission: Last Supper setting, footwashing and betrayal recap.]
-      But in between all these things, he then went on to talk about the new commandment that he is giving to his disciples and, of course, all of us.
-      [Quotation from John 13:30 omitted.]
-    confidence: 0.93
+    summary: Explaining the Last Supper setting, the preacher connects glory with the cross, defends
+      human worth and forgiveness through technological and denominational illustrations, and urges
+      everyday faithfulness and childlike humility amid suffering and ageing.
+    keywords:
+      - last supper
+      - glory
+      - suffering
+      - transhumanism
+      - post humanism
+      - chatbot
+      - catholic
+      - protestant
+      - childlikeness
+      - humility
+    topics:
+      - prayer
+      - faith
+      - discipleship
+      - glory
+      - responsibility
+      - forgiveness
+      - worship
+      - knowing-god
+    scripture:
+      - John 13:31-35
+      - John 13
+      - John 13:31-32
+      - John 13:33
+      - 1 John 2-4
+      - Matthew 18
+    source_chapters:
+      - s20260531-glory
+      - s20260531-childlikeness
     review_notes: []
-  - id: p20260531-026
+  - id: s20260531-childlikeness
     video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 2418.12
-    end: 2495.88
-    type: sermon
-    title: Anticipating a difficult week
-    summary: The preacher uses memories of military training to illustrate the feeling of approaching serious suffering.
-    questions: ['What personal illustration does the preacher use for anticipation of suffering?']
-    topics: [faith]
-    scripture: [John 13]
-    transcript: |
-      Jesus Christ in the last gathering, the Bible tells us that He's troubled in His heart because He knew that the events that are going to unfold right after this was going to be very serious and very frightening. I don't know whether you have that kind of feeling before. I think that in my lifetime, I usually feel like that more so when I'm in the army.
-      [Excerpt omission: training and travel memories.]
-    confidence: 0.91
-    review_notes: ['Place names in the army anecdote are not normalized from uncertain ASR.']
-  - id: p20260531-027
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 2495.88
-    end: 2587.7
-    type: sermon
-    title: A troubled heart before the coming events
-    summary: The preacher completes the military illustration and returns to Jesus’s declaration of glory after Judas leaves.
-    questions: ['How does the military illustration lead back to John 13?']
-    topics: [glory]
-    scripture: ['John 13:31-32']
-    transcript: |
-      [Excerpt omission: the journey to camp and a parent’s objections.]
-      Every step you take the heart sink a bit further because the next week you know there's going to be a lot of things happening, a lot of exercises. The heart is very troubled. So I understand a little bit what our Lord Jesus Christ was thinking about.
-      [Transition and scripture quotation omitted.]
-    confidence: 0.89
-    review_notes: ['The analogy is the speaker’s reflection, not an independently established account of Jesus’s emotions.']
-  - id: p20260531-028
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 2587.7
-    end: 2656.32
-    type: sermon
-    title: Glory linked with suffering
-    summary: The preacher contrasts ordinary expectations of victory with the passage’s association of glorification and the cross.
-    questions: ['What paradox does the preacher see in Jesus speaking about glory?']
-    topics: [glory, faith]
-    scripture: ['John 13:31-32']
-    transcript: |
-      So, the irony of it is that Jesus is talking about glorification right after the motion has started, where the most horrifying suffering will occur next.
-      [Excerpt omission.]
-      For us, glorification and all that has to do with victory, has to do with winning, has to do with all good things in life. But here our Lord Jesus Christ linked glorification to the most horrifying and shameful suffering ever because He's going to be hung on the cross next.
-      [Excerpt omission: attribution about paradox to Stephen Tong.]
-    confidence: 0.95
-    review_notes: []
-  - id: p20260531-029
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 2656.32
-    end: 2735.1
-    type: sermon
-    title: An encyclical as an illustration about humanity and AI
-    summary: The preacher introduces a document he attributes to Pope Leo XIV, dated May 25, 2026, as an illustration concerning human life in the age of artificial intelligence.
-    questions: ['Which contemporary document does the preacher use in the AI illustration?']
-    topics: [glory]
-    scripture: []
-    transcript: |
-      I often tell you that when I preach, there is no lack of good material illustration, very alive, coming very close to us. And this one I want to show you is from Pope Leo the 14th on the 25th of May 2026.
-      [Excerpt omission: denominational comments and description of encyclicals.]
-      He wanted to talk about safeguarding the human person in the time of artificial intelligence.
-    confidence: 0.89
-    review_notes: ['Slide at 3000 supports Magnifica Humanitas / Magnificent Humanity and the stated date. Existence, length and interpretation of the document are not independently fact-checked.']
-  - id: p20260531-030
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 2735.1
-    end: 2803.16
-    type: sermon
-    title: Explaining transhumanism
-    summary: The preacher describes technological changes to human bodies as part of his account of transhumanism.
-    questions: ['How does the preacher explain transhumanism?']
-    topics: []
-    scripture: []
-    transcript: |
-      Generally speaking he was talking about what is known as transhumanism and post-humanism. What does that mean? Transhumanism means that we are now in a world whereby the human being is no longer the human being as we know. We are kind of transforming the human being.
-      [Excerpt omission: pacemaker, brain-implant and nanotechnology examples.]
-      So more and more like a kind of artificial human being will emerge, and it's very likely to happen.
-    confidence: 0.9
-    review_notes: ['Technology predictions are attributed, not externally validated. No narrow AI topic introduced.']
-  - id: p20260531-031
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 2803.16
-    end: 2885.04
-    type: sermon
-    title: Bionic fiction and longer life
-    summary: The preacher illustrates bodily enhancement through television fiction and jokes about living to 120 with health and wealth.
-    questions: ['What popular-culture example illustrates bodily enhancement?']
-    topics: []
-    scripture: []
-    transcript: |
-      When I was young, there's a TV programme called The Six Million Dollar Man, anybody seen that before?
-      [Excerpt omission: characters, bionic limbs and newspaper longevity anecdote.]
-      The caveat must be to be healthy and wealthy. Okay, if you are healthy and wealthy, who wants to live to 120?
-      [Audience exchange omitted.]
-    confidence: 0.86
-    review_notes: ['Anecdote details and uncertain actor names are not repaired from memory.']
-  - id: p20260531-032
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 2885.04
-    end: 2946.7
-    type: sermon
-    title: Post-humanism and the Terminator illustration
-    summary: The preacher uses the Terminator films to illustrate a scenario in which human beings cease to be in control.
-    questions: ['How is Terminator used in the sermon’s AI discussion?']
-    topics: []
-    scripture: []
-    transcript: |
-      The idea that human beings will one day no longer be the center of the earth, that you think you are the center for so long, you're in control. There will be a time where the artificial intelligence or the robots or whatever will take over, a little bit like the Terminator movie kind of thing, right?
-      [Excerpt omission: film discussion and imagined AI reasoning.]
-    confidence: 0.89
-    review_notes: ['Opening ASR says humanism, but preceding speech and slide distinguish post-humanism. Summary follows the surrounding explanation without silently rewriting the opening word.']
-  - id: p20260531-033
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 2946.7
-    end: 3036.84
-    type: sermon
-    title: The attraction of a perfectly agreeable chatbot
-    summary: The preacher contrasts an always-agreeable artificial companion with the difficulties of real relationships.
-    questions: ['What concern does the preacher raise about artificial companions?']
-    topics: [responsibility]
-    scripture: []
-    transcript: |
-      The key emphasis I wanted to bring up to you today is the paradox thinking in this particular document.
-      [Excerpt omission: attributed document statement.]
-      You can have a chatbot, girlfriend, boyfriend, or wife, or husband, or spouse, whom you don't have to deal with because that fellow or that thing or that holographic whatever thing person will always tell you what you want to hear. It will always be most wonderful to you.
-      [Excerpt omission: contrast with real-life disagreements.]
-    confidence: 0.92
-    review_notes: ['Document interpretation and predicted chatbot behaviour remain the speaker’s claims.']
-  - id: p20260531-034
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 3036.84
-    end: 3141.26
-    type: sermon
-    title: Learning forgiveness in imperfect relationships
-    summary: The preacher argues that human weaknesses should not make lives less worthy and encourages forgiveness amid ordinary relational difficulties.
-    questions: ['How does the AI illustration lead to forgiveness in real relationships?']
-    topics: [forgiveness, responsibility]
-    scripture: []
-    transcript: |
-      [Excerpt omission: toothpaste and family jokes, followed by an attributed document quotation.]
-      They are saying to the world that if your spouse is giving you some problem, guess what? It's quite normal. And you should attempt to learn to forgive, learn to accept, because that's life. So if your boss is giving you some problem in life, don't keep tearing your hair out or whatever it is, but learn to apply all the biblical principles because there is value in suffering.
-    confidence: 0.91
-    review_notes: ['Longer passage preserves the illustration-to-application transition; attributed quotation omitted rather than reproduced as source text.']
-  - id: p20260531-035
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 3141.26
-    end: 3218.96
-    type: sermon
-    title: Contrasting Catholic and Protestant emphases
-    summary: The preacher contrasts what he sees as Catholic attention to suffering with Protestant celebration of the resurrection.
-    questions: ['How does the preacher contrast suffering and celebration in worship traditions?']
-    topics: [glory, faith, worship]
-    scripture: ['John 13:31-32']
-    transcript: |
-      Our crucifix is empty. Protestant understanding, that's one very key mark difference. Why? Because Roman Catholicism understand suffering in a sense better than Protestant understanding.
-      [Excerpt omission: description of the Mass and quoted liturgical words.]
-      Whereas in Protestant understanding is the other way around.
-    confidence: 0.85
-    review_notes: ['Source ID 509 warning at 3154.46, maximum 0.06 seconds. Denominational generalizations remain the speaker’s account.']
-  - id: p20260531-074
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 3218.96
-    end: 3285.7
-    type: sermon
-    title: Trials, celebration and glorification
-    summary: The preacher cautions against an exclusively celebratory account of faith, cites Stephen Tong on trials and returns to glory through suffering.
-    questions: ['How does the preacher relate trials to growth in faith?']
-    topics: [glory, faith, worship]
-    scripture: ['John 13:31-32']
-    transcript: |
-      We celebrate. We talk about the resurrection.
-      [Excerpt omission: charismatic worship comparison and attributed remarks from Stephen Tong.]
-      But it's something that we find most difficult, right? Because who wants to suffer?
-      [Scripture quotation and further explanation omitted.]
-      So, therefore, glorification is not the way we think it is. It is actually quite a profound understanding.
-    confidence: 0.89
-    review_notes: ['Reported cancer-related remark and denominational comparisons in the surrounding speech require human review. The archive does not prescribe suffering or endorse those generalizations.']
-  - id: p20260531-036
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 3285.7
-    end: 3406.5
-    type: sermon
-    title: Glorifying God in the whole of life
-    summary: Using a Westminster formulation and the ensemble as examples, the preacher says glorifying God encompasses every activity, including suffering.
-    questions: ['Does the preacher limit glorifying God to music and worship services?']
-    topics: [glory, worship]
-    scripture: []
-    transcript: |
-      [Excerpt omission: Westminster question and quoted answer.]
-      It's not about coming together to do a guitar ensemble or have a nice choir to sing songs of glory. It's everything. Of course, this is wonderful. This shows us glorification of God in another way.
-      [Excerpt omission: appreciation for musical arrangement.]
-      It means that everything we do, including the suffering, has to be something where the glory of God is manifested because that's who God is.
-    confidence: 0.91
-    review_notes: ['Speaker calls the source Confession of Faith and later Shorter Catechism; source-label inconsistency retained for human review. Longer unit preserves the music illustration.']
-  - id: p20260531-037
-    video_id: m51rgcZHQmE
-    section_id: s20260531-glory
-    start: 3406.5
-    end: 3515.4
-    type: sermon
-    title: Joy and everyday faithfulness
-    summary: The preacher discusses John Piper’s emphasis on satisfaction in God and applies glorification to work and treatment of others.
-    questions: ['How does the preacher apply glorifying God to ordinary work and relationships?']
-    topics: [glory, discipleship]
-    scripture: []
-    transcript: |
-      [Excerpt omission: John Piper’s motto and discussion of Christian hedonism.]
-      I believe that when we live life in the way God wants us to live, in every sense, whatever it is that you are doing in life, when you do your job, you do the best. When you treat somebody, you treat that somebody in the way God wanted you to, based on His Word, God is glorified.
-      [Excerpt omission: music example.]
-      The glorification of God is not something that is left to other people. It is our chief goal in life.
-    confidence: 0.94
-    review_notes: ['Source ID 595 warning at 3459.52, maximum 0.16 seconds, is enclosed. Longer unit keeps the quotation discussion and application together.']
-  - id: p20260531-038
-    video_id: m51rgcZHQmE
-    section_id: s20260531-childlikeness
     start: 3515.4
-    end: 3595.9
-    type: sermon
-    title: Jesus addresses the disciples as children
-    summary: The preacher discusses the disciples’ confusion and interprets Jesus’s address as an expression of affection.
-    questions: ['How does the preacher explain Jesus’s affectionate address to the disciples?']
-    topics: [knowing-god]
-    scripture: ['John 13:33', 1 John 2-4]
-    transcript: |
-      [Quotation from John 13:33 omitted.]
-      And of course, the disciples were very confused, right? They don't know what He's talking about. Can you imagine? I thought that we were all going to gather together to have a good meal at the Last Supper. We didn't even know that it was the Last Supper.
-      [Excerpt omission: word-frequency and Greek-term explanation.]
-    confidence: 0.88
-    review_notes: ['Frame at 3600 supports the speaker’s Greek-term discussion. Counts and assertion that only John uses the expression need human review.']
-  - id: p20260531-039
-    video_id: m51rgcZHQmE
-    section_id: s20260531-childlikeness
-    start: 3595.9
-    end: 3672.58
-    type: sermon
-    title: Being loved and becoming childlike
-    summary: The preacher moves from being beloved by God to a personally significant saying from Matthew 18.
-    questions: ['Which passage shapes the preacher’s concern with childlikeness?']
-    topics: [knowing-god, faith]
-    scripture: [Matthew 18]
-    transcript: |
-      So this idea that God loves us, not just loves us, loves us deeply.
-      [Excerpt omission: affectionate address and an author attribution.]
-      And some of the verses in the Bible really affect me deeply. One of them is what Jesus Christ said in Matthew 18.
-      [Scripture quotation in English and Chinese omitted.]
-      And I've been thinking about this all my life long, you know.
-    confidence: 0.89
-    review_notes: ['Source ID 638 warning at 3620.66, maximum 0.21 seconds. ASR author name uncertain; no author promoted to speaker metadata. Brief Chinese quotation does not imply translation of the English programme.']
-  - id: p20260531-040
-    video_id: m51rgcZHQmE
-    section_id: s20260531-childlikeness
-    start: 3672.58
-    end: 3733.16
-    type: sermon
-    title: Childlikeness as humility
-    summary: The preacher interprets childlikeness as humility and begins reflecting on burdens that may come with ageing.
-    questions: ['What quality does the preacher associate with childlikeness?']
-    topics: [faith, discipleship]
-    scripture: [Matthew 18]
-    transcript: |
-      We are all so corrupted in the way we think, that we are no longer childlike before God Almighty. And so for me, in my life, all my life long, I understood this deeply, that child-likeness is a very important aspect of spirituality because it reflects humility. Now, for all of us who live life, especially the older you get, the more burdened you can be, right?
-      [Excerpt omission: physical ageing and start of a news anecdote.]
-    confidence: 0.92
-    review_notes: ['Quoted and closely restated scripture omitted; interpretation retained.']
-  - id: p20260531-041
-    video_id: m51rgcZHQmE
-    section_id: s20260531-childlikeness
-    start: 3733.16
-    end: 3815.1
-    type: sermon
-    title: Ageing without losing openness before God
-    summary: After a news anecdote about a public figure, the preacher contrasts ageing and accumulated burdens with continuing childlikeness before God.
-    questions: ['How does the preacher connect ageing and spiritual openness?']
-    topics: [faith]
-    scripture: []
-    transcript: |
-      [Excerpt omission: unverified medical claims about a public figure.]
-      And the bitterness and the burdens of life do drive us to a stage whereby a lot of people in old age, physically, emotionally, becomes very old. But, you know, if you are really close to Jesus Christ, guess what? Childlikeness must be something that is always there. Because no way you can be older than God. No way. And also before God Almighty, for sure, there are so many, many things in life that we are only scratching the surface.
-    confidence: 0.86
-    review_notes: ['The omitted anecdote names Ma Ying-jeou and alleges dementia; it is not verified medical evidence. This excerpt does not present illness as lack of faith.']
-  - id: p20260531-042
-    video_id: m51rgcZHQmE
-    section_id: s20260531-childlikeness
-    start: 3815.1
-    end: 3894.7
-    type: sermon
-    title: Childlike is not childish
-    summary: The preacher distinguishes childlikeness from childishness and challenges habitual expectations about growing older.
-    questions: ['What distinction does the preacher make between childlike and childish?']
-    topics: [faith, discipleship]
-    scripture: [Matthew 18]
-    transcript: |
-      [Scripture-derived restatement omitted.]
-      May I suggest to you to be childlike all your life. Remember that childlike is not the same as childish. Quite different. But I don't see any reason why we cannot be childlike all our life long and enjoy the world that God has given to us.
-      [Excerpt omission: cultural expectations, retirement and Reader’s Digest anecdote.]
-    confidence: 0.91
-    review_notes: ['Cultural generalizations and ageing claims are attributed, not established by the archive.']
-  - id: p20260531-043
-    video_id: m51rgcZHQmE
-    section_id: s20260531-childlikeness
-    start: 3894.7
-    end: 3966.64
-    type: sermon
-    title: Refusing to rehearse an identity of decline
-    summary: The preacher recounts deciding in youth not to habitually describe himself as old and introduces a later-life venture reported in a newspaper.
-    questions: ['What personal habit does the preacher say he resisted?']
-    topics: [faith]
-    scripture: []
-    transcript: |
-      [Excerpt omission: conclusion of the ageing anecdote.]
-      And I have read this since when I was in my 20s. So I was determined that this will not happen to me. And so you don't hear me say, Oh, I'm old. It doesn't happen to me. And of course, God is very kind to me.
-      [Excerpt omission: personal appearance and newspaper introduction.]
-    confidence: 0.86
-    review_notes: ['Speaker’s claimed relationship between self-description and decline is not validated medical guidance.']
-  - id: p20260531-044
-    video_id: m51rgcZHQmE
-    section_id: s20260531-childlikeness
-    start: 3966.64
     end: 4046.56
     type: sermon
-    title: Possibilities for later life
-    summary: The preacher uses reported examples of later-life work to encourage approaching God with openness and continuing purpose.
-    questions: ['How does the preacher conclude the discussion of growing older?']
-    topics: [faith, prayer]
-    scripture: []
-    transcript: |
-      [Excerpt omission: Australian cattle-farming and Donald Trump newspaper anecdotes.]
-      Meaning that there is many things we can do in life.
-      [Brief colloquial remark omitted.]
-      Before God Almighty, we are always children. You seek God before Him, speak to Him as if you are still a little child, because you are a little child before Him, and you will find that there is many, many scopes and many, many things in life you can go on to.
+    title: Remain Childlike as You Grow Older
     confidence: 0.89
-    review_notes: ['Newspaper claims, ages, land size and health assessment are not independently confirmed.']
-  - id: p20260531-045
+    review_notes:
+      - Review Greek terminology, brief Chinese quotation and medical anecdotes.
+    scripture:
+      - John 13:33
+      - 1 John 2-4
+      - Matthew 18
+    topics:
+      - knowing-god
+      - faith
+      - discipleship
+      - prayer
+    summary: Interpreting Jesus’s affectionate address and Matthew 18, the preacher distinguishes
+      humility from childishness and uses reported later-life examples to encourage openness to God
+      and continuing purpose.
+    keywords:
+      - childlikeness
+      - humility
+      - childish
+    parent_id: c20260531-glory-humility
+    source_chapters:
+      - s20260531-childlikeness
+  - id: c20260531-love-identifies-followers
     video_id: m51rgcZHQmE
-    section_id: s20260531-new-mark
     start: 4046.56
-    end: 4102.52
-    type: sermon
-    title: What makes the commandment new?
-    summary: The preacher identifies verse 34 as the sermon’s main focus, discusses Maundy Thursday and asks what is new about the commandment.
-    questions: ['Why does the preacher connect the new commandment with Maundy Thursday?']
-    topics: [discipleship]
-    scripture: ['John 13:34']
-    transcript: |
-      Now, the main key of today's passage is in verse 34.
-      [Scripture quotation omitted.]
-      This is the reason why the day before Good Friday is called Maundy Thursday.
-      [Excerpt omission: Latin explanation.]
-      But for those of you who are familiar with the Bible, you know that this is a bit odd, right? Because what's so new about this commandment? In the Bible, what Jesus Christ said has already been recorded.
-    confidence: 0.93
-    review_notes: ['Etymology remains the speaker’s explanation.']
-  - id: p20260531-046
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-mark
-    start: 4102.52
-    end: 4167.9
-    type: sermon
-    title: Earlier commands to love
-    summary: The preacher compares the new commandment with earlier biblical commands and Jesus’s account of the greatest commandments.
-    questions: ['Which earlier commands does the preacher compare with John 13?']
-    topics: [discipleship]
-    scripture: ['Deuteronomy 6:4-5', Matthew 22, 'John 13:34']
-    transcript: |
-      For example, Deuteronomy 6.4, Old Testament.
-      [Scripture quotations from Deuteronomy, a cited Leviticus passage and Matthew 22 omitted.]
-      So why a new commandment that seems quite familiar to us?
-      [Scripture restatement omitted.]
-    confidence: 0.9
-    review_notes: ['Deuteronomy 6:4–5 visible at 4115. ASR says Leviticus 9.18; exact Leviticus reference withheld pending human review. Source ID 777 warning at 4123.48 is enclosed.']
-  - id: p20260531-047
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-mark
-    start: 4167.9
-    end: 4251.22
-    type: sermon
-    title: The identities people use
-    summary: The preacher lists nationality, dialect, family and profession as familiar markers of identity, using his own family as an illustration.
-    questions: ['What ordinary identity markers does the preacher contrast with Christian identity?']
-    topics: [service-life]
-    scripture: ['John 13:34-35']
-    transcript: |
-      Now this has to do with a change of the usual practice. The first thing that you need to think about is that Jesus was talking to a group of people who later on will go out and then evangelize and spread the gospel. And it has to do, first of all, with identities. Now, we are all identified in different ways in the world till today, right?
-      [Excerpt omission: Chinese nationalities, dialect groups, family-clan hospitality and professions.]
-    confidence: 0.92
-    review_notes: ['Family-clan anecdote is not enough to establish the preacher’s full identity.']
-  - id: p20260531-048
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-mark
-    start: 4251.22
-    end: 4351.62
-    type: sermon
-    title: Love as a new mark of Christ’s followers
-    summary: The preacher argues that love, rather than ethnic or social grouping, is the defining mark of Christ’s followers and connects this with 1 John 4.
-    questions: ['What new identity does the preacher say Jesus gives his followers?']
-    topics: [discipleship, knowing-god, love]
-    scripture: ['John 13:34-35', 1 John 4]
-    transcript: |
-      The first thing new about this command is Jesus is giving a new mark for his followers.
-      [Scripture quotations and paraphrased list of social divisions omitted.]
-      Christians are to be identified by love. And that's new. Never happened before. Until today, it is still something that is quite odd and quite rare, actually.
-      [Quotation from 1 John 4 omitted.]
-      So the identity of Christian is love. And if you don't love, you cannot say you know God.
-    confidence: 0.93
-    review_notes: ['Supports proposed love / Love topic only; existing discipleship and knowing-god tags used. Historical novelty claim remains attributed.']
-  - id: p20260531-049
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-mark
-    start: 4351.62
-    end: 4432.5
-    type: sermon
-    title: Church buildings and the temptation to measure glory
-    summary: The preacher uses a large German church building to question whether impressive architecture is the measure of glorifying God.
-    questions: ['Why does the preacher discuss a large church building?']
-    topics: [glory, service-life]
-    scripture: ['John 13:35']
-    transcript: |
-      We are still quite stuck with the rest of the world, thinking like that. We think that we build a huge building, we glorify God. We have a nice choir and we sing a great song, we glorify God. We are kind of stuck in that.
-      [Excerpt omission: church-building name, dates and size claims.]
-      You would think that when you build this and the taller the steeple is, the more glorified God is, and we keep thinking like that.
-    confidence: 0.9
-    review_notes: ['ASR building name is uncertain. Construction dates, rank and comparative size claims are not verified.']
-  - id: p20260531-050
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-mark
-    start: 4432.5
-    end: 4505.16
-    type: sermon
-    title: Identity beyond institutional size or power
-    summary: The preacher contrasts love with denomination, wealth and group power, then introduces difficulties in charity collaboration.
-    questions: ['What does the preacher contrast with love as a Christian identity?']
-    topics: [discipleship, service-life, service]
-    scripture: ['John 13:35']
-    transcript: |
-      We are identified by belonging to this, belonging to that, belonging to this powerful group, belonging to the powerful group.
-      [Scripture quotation and rhetorical comparison omitted.]
-      My dear brothers and sisters in Christ, remember always that the identity of a Christian is not dependent on anything except love.
-      [Excerpt omission: recent meeting of charities discussing collaboration.]
-    confidence: 0.93
-    review_notes: ['No organization or meeting participant identities inferred.']
-  - id: p20260531-051
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-mark
-    start: 4505.16
     end: 4573.3
+    title: Love Identifies Christ’s Followers
     type: sermon
-    title: Charities as collaborators rather than competitors
-    summary: The preacher recalls charity-sector advice framed around competition and challenges a win–lose attitude among Christian organizations.
-    questions: ['Why does the preacher question treating other Christian charities as competitors?']
-    topics: [service, service-life, discipleship]
-    scripture: ['John 13:35']
-    transcript: |
-      [Excerpt omission: organizational-advice anecdote.]
-      We are Christian and the Christian charity, and the other guy is also a Christian charity, but to you they are the competitor. So therefore we must do something to make sure the money don't go to them, the money come to us. There's something wrong in the picture, right? Because that's the way we always think, and we think about our life in the same manner too. I must win, you must lose, because that's the way life is for everybody else.
-      [Scripture quotation omitted.]
-    confidence: 0.93
-    review_notes: ['Reported conversation is illustrative recollection, not independently confirmed organizational practice.']
-  - id: p20260531-052
+    summary: The preacher argues that the new command makes love the defining mark of Christ’s followers
+      rather than social identity, institutional grandeur or power, urging charities to collaborate
+      rather than compete.
+    keywords:
+      - commandment
+      - love
+      - mark of christ
+      - identity
+      - charities
+      - competitors
+    topics:
+      - discipleship
+      - service-life
+      - knowing-god
+      - love
+      - glory
+      - service
+    scripture:
+      - John 13:34
+      - Deuteronomy 6:4-5
+      - Matthew 22
+      - John 13:34-35
+      - 1 John 4
+      - John 13:35
+    source_chapters:
+      - s20260531-new-mark
+    review_notes: []
+  - id: c20260531-life-beyond-self
     video_id: m51rgcZHQmE
-    section_id: s20260531-new-life
     start: 4573.3
-    end: 4654.18
-    type: sermon
-    title: Living for a cause greater than self
-    summary: The preacher presents the second emphasis as a shared life extending beyond oneself and one’s own family.
-    questions: ['What does the preacher mean by a new model of life?']
-    topics: [discipleship, service-life]
-    scripture: ['John 13:34']
-    transcript: |
-      Not only that, the second thing you note is that it is a new model of life as well.
-      [Scripture-derived restatement omitted.]
-      And life is to be lived together with one another, not just yourself. Because all of the Bible commands us to live a life for a cause greater than self. The whole Bible. I don't find any part in the Bible that says that your purpose in life is to live well, enjoy yourself, take care of your own family, that's about it.
-      [Excerpt omission: further application and quoted song lyrics.]
-    confidence: 0.92
-    review_notes: ['Source ID 893 warning at 4602, maximum 0.25 seconds. Broad biblical claim is attributed.']
-  - id: p20260531-053
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-life
-    start: 4654.18
-    end: 4743.62
-    type: sermon
-    title: Why not walk the journey of faith alone?
-    summary: The preacher distinguishes loving others from self-hatred and urges believers not to pursue faith entirely alone.
-    questions: ['Why does the preacher urge believers not to walk the journey of faith alone?']
-    topics: [service-life, discipleship]
-    scripture: ['John 13:34']
-    transcript: |
-      [Quoted song lyrics and discussion omitted.]
-      It doesn't mean that you should hate yourself.
-      [Scripture-linked restatement omitted.]
-      In my ministry one of the things that I keep telling you to do is you should never ever walk the journey of faith all by yourself.
-      [Excerpt omission: reluctance to share problems and introduction of unchurched friends.]
-    confidence: 0.92
-    review_notes: ['Preserves the qualification against self-hatred; song lyrics omitted rather than indexed.']
-  - id: p20260531-054
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-life
-    start: 4743.62
-    end: 4844.04
-    type: sermon
-    title: Love within family and beyond it
-    summary: The preacher challenges substituting online sermons for community, calls for forgiveness in family life and urges support for others in deeds.
-    questions: ['How does the preacher extend love beyond the immediate family?']
-    topics: [forgiveness, service-life]
-    scripture: ['John 13:34']
-    transcript: |
-      [Excerpt omission: listening to sermons at home, criticism of self-serving life and scripture restatement.]
-      These are all part of how God wants us to live. And we are to overcome, we are to love, we are to forgive. And at the same time, the extension beyond that, the people in the community or the people of God. How wonderful it is if we are a community of love in accordance to the command of Jesus Christ and we truly support one another, not just in words, but in deeds alone.
-    confidence: 0.92
-    review_notes: ['Longer unit retains the movement from solitary sermon listening to family and community application.']
-  - id: p20260531-055
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-life
-    start: 4844.04
-    end: 4906.02
-    type: sermon
-    title: Mutual support and the Amish illustration
-    summary: The preacher imagines reduced anxiety in a mutually supportive community, jokes about insurance and introduces his admiration for Amish community life.
-    questions: ['What community example does the preacher use to illustrate mutual support?']
-    topics: [service-life, service]
-    scripture: []
-    transcript: |
-      [Opening questions about health and future worries omitted; AI-replacement wording is unclear in ASR.]
-      If this community is a community of love, you have a lot less worry, right? I even dare say you don't have to buy insurance. Any insurance salesman among us, don't scratch my car.
-      [Excerpt omission: early-church comparison and Amish lifestyle description.]
-      I'm a great admirer of it. I sometimes feel that my entire family will pull up and go there. But then my wife and all the women in my life will miss a lot of things in life.
-      [Family jokes omitted.]
-    confidence: 0.87
-    review_notes: ['Insurance remark is a conditional rhetorical illustration, not archive financial advice. Amish location, amenities and gender generalizations need review.']
-  - id: p20260531-056
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-life
-    start: 4906.02
-    end: 4964.26
-    type: sermon
-    title: Building homes together and influencing the wider world
-    summary: The preacher admires an account of communal housebuilding while questioning an inward-looking community’s wider influence.
-    questions: ['What strength and limitation does the preacher see in the community illustration?']
-    topics: [service, mission, service-life]
-    scripture: []
-    transcript: |
-      I was so drawn to it because of my charity Habitat for Humanity. I read that when a couple get married in that community, the entire community come together to build them a house. Wow, so nice, right? Go and build a house.
-      [Excerpt omission: housing comparison.]
-      And I thought, my goodness, they're very close to the early church. The only problem is that they never go and influence the world. They only take care of themselves and they are a closed community.
-    confidence: 0.88
-    review_notes: ['Both the housebuilding account and criticism of wider influence remain attributed generalizations.']
-  - id: p20260531-057
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-life
-    start: 4964.26
     end: 4993.68
+    title: Share Life Beyond Self and Family
     type: sermon
-    title: Cell groups as a possible way toward community
-    summary: The preacher suggests cell groups as a way to cultivate community, while acknowledging uncertainty about the outcome.
-    questions: ['What role does the preacher suggest for cell groups?']
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      I think the cell group is about the only way where we can truly push this and learn to develop ourselves to have a community that's close to God. Will it happen for sure? I don't know. We have to really leave it to God. We are very far away, and you can talk about love all you want because everybody also talk about love, but the third thing that happened is that it is a new model of love that is given to us.
-    confidence: 0.94
-    review_notes: ['Short complete transitional thought; uncertainty expressly retained.']
-  - id: p20260531-058
+    summary: The preacher calls for forgiveness and practical mutual support beyond self and family,
+      drawing on Amish community life while questioning insularity and proposing cell groups with
+      uncertainty about their outcome.
+    keywords:
+      - greater than self
+      - journey of faith
+      - family
+      - support
+      - amish
+      - community
+    topics:
+      - discipleship
+      - service-life
+      - forgiveness
+      - service
+      - mission
+    scripture:
+      - John 13:34
+    source_chapters:
+      - s20260531-new-life
+    review_notes: []
+  - id: c20260531-love-as-christ-commands
     video_id: m51rgcZHQmE
-    section_id: s20260531-new-love
     start: 4993.68
-    end: 5084.26
-    type: sermon
-    title: Christ’s love as the model
-    summary: The preacher recaps the three emphases and presents Jesus’s footwashing as the model for the commanded love.
-    questions: ['What model of love does the preacher identify in Jesus’s example?']
-    topics: [discipleship, service]
-    scripture: [John 13]
-    transcript: |
-      So the first thing, remember Jesus Christ give you a new commandment because it's a mark of a new community. The second one is that it is a new emphasis that love is not about you but about one another. And the last one is it is a new model of love.
-      [Scripture quotations omitted.]
-      And this came right after the washing of the feet of the disciples, right?
-      [Excerpt omission: reference to an earlier sermon and quoted footwashing instruction.]
-      He has done this for you, you do it.
-    confidence: 0.94
-    review_notes: ['Supports proposed love / Love. Source ID 1026 warning at 5031.22, maximum 0.12 seconds. Footwashing slide at 5100 says John 12:14–15 while spoken context says John 13; chapter-level reference avoids adopting the conflicting verse label.']
-  - id: p20260531-059
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-love
-    start: 5084.26
-    end: 5188.9
-    type: sermon
-    title: Applying Christ’s example to close relationships
-    summary: The preacher applies the model to family, colleagues, friends and community, asking how Jesus would love and forgive.
-    questions: ['How does the preacher apply Christ’s example to family disagreements?']
-    topics: [discipleship, forgiveness, service-life]
-    scripture: ['John 13:34-35']
-    transcript: |
-      If you are a Christian, your common identity is love. And that love has to do with loving not just yourself and your extended family, but one another, not just in words but in deeds.
-      [Excerpt omission.]
-      As a follower of Jesus Christ you got to ask yourself what would Jesus do about this? How would he love? What would he do? How would he forgive?
-      [Excerpt omission: examples of faultfinding and forgiveness.]
-      And then also beyond your immediate family, the people you know. How would you live your life in your community?
-    confidence: 0.95
-    review_notes: ['Longer thought-aligned unit keeps family and community applications together.']
-  - id: p20260531-060
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-love
-    start: 5188.9
-    end: 5246.66
-    type: sermon
-    title: A command rather than a consumer choice
-    summary: The preacher criticizes conflicts among Christian leaders and emphasizes that the command to love is not an optional suggestion.
-    questions: ['Why does the preacher insist that love is not optional?']
-    topics: [discipleship, responsibility]
-    scripture: ['John 13:34']
-    transcript: |
-      Even in Christian organization, that's not the case. Even for pastors, that's not the case too, right? From time to time you hear about how these pastors will fight each other in the most horrifying manner. It's crazy, you know, because we forget that this is a commandment that is given.
-      [Excerpt omission: Greek word explanation.]
-      It's not a suggestion. It's also not an option. And I think that for the vast majority of us, we missed it. We think there is an option. We think that it's something that's up to me, because I'm a consumer of faith. I decide.
-    confidence: 0.95
-    review_notes: ['Source ID 1085 warning at 5218.08, maximum 0.02 seconds, is enclosed.']
-  - id: p20260531-061
-    video_id: m51rgcZHQmE
-    section_id: s20260531-new-love
-    start: 5246.66
     end: 5297.72
+    title: Love as Christ Commands
     type: sermon
-    title: Childlike obedience that demonstrates love
-    summary: The preacher closes by calling for obedience to Jesus as Lord and love visible beyond the household.
-    questions: ['What response does the preacher call for at the sermon’s close?']
-    topics: [discipleship, glory]
-    scripture: ['John 13:34-35']
-    transcript: |
-      [Opening reference to the earlier hymn omitted.]
-      You are saying that Jesus is Lord. He is the King. He is the Master. I am following Him. He is the General in my army. I am a soldier.
-      [Excerpt omission: imagined response to a command.]
-      May we have childlike humility before Him, recognize His commandment and obey, and live a life that will continue to demonstrate God's love, not just in our own family, but for anybody who encounter us in our life, so that they will give glory to the Father in Heaven.
-    confidence: 0.95
-    review_notes: ['Source ID 1103 warning at 5285.8, maximum 0.08 seconds.']
-  - id: p20260531-062
+    summary: The preacher presents Jesus’s footwashing as the model for love and forgiveness in everyday
+      relationships, calling for childlike obedience to a command rather than a consumer choice.
+    keywords:
+      - love
+      - command
+      - consumer
+      - childlike
+      - forgiveness
+    topics:
+      - discipleship
+      - service
+      - forgiveness
+      - service-life
+      - responsibility
+      - glory
+    scripture:
+      - John 13
+      - John 13:34-35
+      - John 13:34
+    source_chapters:
+      - s20260531-new-love
+    review_notes: []
+  - id: c20260531-response-closing
     video_id: m51rgcZHQmE
-    section_id: s20260531-response
     start: 5297.72
-    end: 5388.7
-    type: prayer
-    title: Prayer for the strength to obey
-    summary: The preacher thanks God for Christ’s example and asks for grace to obey rather than live by bitterness or feelings.
-    questions: ['What does the response prayer ask in relation to feelings and obedience?']
-    topics: [prayer, discipleship, faith]
-    scripture: [John 13]
-    transcript: |
-      Let us pray. We thank You, O God, for Your Word that brings us clarity as to what we should do in our life.
-      [Excerpt omission: footwashing reflection and commandment quotations.]
-      We do pray, O God, that you open our eyes to your word. Whatever it is that we are feeling, at least give us the grace and the strength to obey so that we obey not our feelings, but we obey Your Word. And we have faith to trust that You will make all things right because You are God Almighty.
-      [Excerpt omission.]
-      We pray for grace. We pray for strength. We pray for love to be seen in our life. In Jesus name we pray, amen.
-    confidence: 0.93
-    review_notes: ['Source ID 1137 warning at 5383.72, maximum 0.14 seconds. Closing amen ends at 5388.7 in words; transition after it remains a listening-review point.']
-  - id: p20260531-063
-    video_id: m51rgcZHQmE
-    section_id: s20260531-response
-    start: 5388.7
-    end: 5435.68
-    type: creed
-    title: Affirming faith with the Apostles’ Creed
-    summary: The congregation is invited to stand and affirm its faith with the Apostles’ Creed.
-    questions: ['Which creed follows the sermon prayer?']
-    topics: [faith, worship]
-    scripture: []
-    transcript: |
-      Congregation, would you stand as we affirm our faith with the Apostles' Creed, and then we go into a time of prayer. The Apostles' Creed.
-      [Creed recitation omitted rather than reconstructed from familiar wording.]
-    confidence: 0.93
-    review_notes: ['Creed slide visible at 5400. Source ID 1140 has a 0.04-second word warning at 5405.16. Word-level transition from response prayer is retained for review.']
-  - id: p20260531-064
-    video_id: m51rgcZHQmE
-    section_id: s20260531-response
-    start: 5435.68
-    end: 5536.44
-    type: prayer
-    title: Prayer for personal growth in love
-    summary: The leader invites prayer for living with love and announces a second prayer focus on baptism, confirmation and membership transfer candidates.
-    questions: ['What prayer topics follow the creed?']
-    topics: [prayer, service-life]
-    scripture: []
-    transcript: |
-      Let's come before God in a time of prayer. We want to pray for ourselves as we come before God and ask God to help us. Maybe in our life we haven't been displaying much love because of whatever challenges that we are having. So we pray for ourselves first. The second prayer item, later on in the evening, there's going to be baptism, confirmation and transfer of membership.
-      [Excerpt omission: congregations involved and invitation to pray aloud or silently. Quiet prayer interval retained.]
-    confidence: 0.91
-    review_notes: ['Start approximately word-aligned within the transition segment. Longer unit includes quiet prayer.']
-  - id: p20260531-065
-    video_id: m51rgcZHQmE
-    section_id: s20260531-response
-    start: 5536.44
-    end: 5604.28
-    type: prayer
-    title: Prayer for baptism and membership candidates
-    summary: The leader asks the congregation to pray for lifelong faith among those being baptized, confirmed or received as members.
-    questions: ['What is requested for the baptism and membership candidates?']
-    topics: [prayer, service-life, faith]
-    scripture: []
-    transcript: |
-      Congregation, let us now lift up our baptismal candidates and also members who are being transferred or confirmed and ask God to strengthen their faith for the rest of their life. Let us pray.
-      [Quiet prayer interval; isolated ASR thanks not treated as verified speech.]
-    confidence: 0.94
-    review_notes: []
-  - id: p20260531-066
-    video_id: m51rgcZHQmE
-    section_id: s20260531-response
-    start: 5604.28
-    end: 5665.38
-    type: prayer
-    title: Trusting God’s timing and serving others
-    summary: The concluding intercession asks for trust, help for struggling members and the ability to make God’s care visible through service.
-    questions: ['How does the prayer connect trust in God with practical service?']
-    topics: [prayer, faith, service]
-    scripture: []
-    transcript: |
-      Let us pray together. We thank you God for listening to our prayers. We know you hear us. It's just that oftentimes we are of little faith and we forget that your timing and our timing are two completely different things. Grant to us the faith we need to always trust in your word and to obey.
-      [Scripture-derived phrase and intervening prayer omitted.]
-      You send us forth as your hands and your feet and your mouth and your ears so that you are experienced and witnessed by the people through us. May all glory be unto your name. In Jesus' name we pray. Amen.
-    confidence: 0.94
-    review_notes: []
-  - id: p20260531-067
-    video_id: m51rgcZHQmE
-    section_id: s20260531-offering
-    start: 5665.38
-    end: 5796.46
-    type: offering
-    title: Fifth-Sunday offering for charitable work
-    summary: The leader announces the offertory and explains that the second-box offering on this fifth Sunday is dedicated to charitable work.
-    questions: ['What is the fifth-Sunday second-box offering for?']
-    topics: [stewardship, service]
-    scripture: []
-    transcript: |
-      We're going to move into our offertory now. You may give the QR code or by the box in front. This being the last special Sunday, fifth Sunday, often fifth Sunday, second box offering is dedicated to charitable work.
-      [Instrumental/offertory interval; no additional speech reconstructed.]
-    confidence: 0.91
-    review_notes: ['ASR disfluency retained. Offertory frame at 5700 confirms the section. Longer unit preserves the offering interval.']
-  - id: p20260531-068
-    video_id: m51rgcZHQmE
-    section_id: s20260531-closing
-    start: 5796.46
-    end: 5826.2
-    type: address
-    title: Introducing Amazing Grace
-    summary: The leader introduces Amazing Grace and connects it with his account of John Newton’s conversion.
-    questions: ['How is the closing hymn introduced?']
-    topics: [worship, repentance]
-    scripture: []
-    transcript: |
-      Okay, our closing hymn is a hymn that even non-Christians know how to sing, right? Amazing Grace. And this is a song, a very old song that is written by John Newton. If you don't know John Newton's story, you can go and Google.
-      [Excerpt omission: historical characterization of Newton and quoted lyric.]
-      Let's sing this together.
-    confidence: 0.91
-    review_notes: ['Historical description of Newton remains unverified and is not silently corrected.']
-  - id: p20260531-069
-    video_id: m51rgcZHQmE
-    section_id: s20260531-closing
-    start: 5826.2
-    end: 5937.38
-    type: hymn
-    title: Amazing Grace
-    summary: The congregation sings Amazing Grace, with an invitation to stand during the hymn.
-    questions: ['Where is the closing hymn Amazing Grace?']
-    topics: [worship]
-    scripture: []
-    transcript: |
-      [Sung lyrics omitted.]
-      Let's rise.
-      [Remaining sung lyrics omitted.]
-    confidence: 0.93
-    review_notes: ['Whole hymn unit retained; spoken invitation is captured near 5907 seconds.']
-  - id: p20260531-070
-    video_id: m51rgcZHQmE
-    section_id: s20260531-closing
-    start: 5937.38
-    end: 6017.12
-    type: blessing
-    title: Doxology and blessing from Hebrews 13
-    summary: The leader invites the doxology and announces a blessing from Hebrews 13 before the congregation is seated.
-    questions: ['Which chapter is announced for the closing blessing?']
-    topics: [worship]
-    scripture: [Hebrews 13]
-    transcript: |
-      Wonderful. Let's sing doxology in praise of God and in faith receive His blessing taken from Hebrews 13.
-      [Doxology lyrics omitted. Blessing wording not reliably captured in ASR and not reconstructed.]
-      Amen.
-    confidence: 0.82
-    review_notes: ['Frames at 5990 and 6000 show the blessing gesture. Exact verses and speech in the ASR gap require listening; no full benediction supplied from memory.']
-  - id: p20260531-071
-    video_id: m51rgcZHQmE
-    section_id: s20260531-announcements
-    start: 6017.12
-    end: 6060.42
-    type: announcement
-    title: Evening baptism and a pause in the Westminster class
-    summary: The leader announces the evening baptism and membership-related events, then says the Westminster class will pause because participants need to attend.
-    questions: ['Why does the Westminster class pause on this Sunday?']
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      Congregation, please be seated. So a couple of announcements for you today.
-      [Time, venue and candidate names omitted because exact wording requires review.]
-      So we want to continue to pray for them. So because of that, then the Westminster class will stop for a while because the candidates all have to go there in the afternoon. So a bit of tight in time.
-    confidence: 0.83
-    review_notes: ['ASR candidate names and venue are uncertain; no local person definitions created. At 6025 the visual has already advanced to a rally slide; this may be presentation timing rather than speech alignment.']
-  - id: p20260531-072
-    video_id: m51rgcZHQmE
-    section_id: s20260531-announcements
-    start: 6060.42
-    end: 6144.58
-    type: announcement
-    title: Invitation to join Stephen Tong’s gospel rallies
-    summary: The leader encourages participation in forthcoming gospel rallies and describes their significance in his view of Chinese- and Indonesian-speaking ministry.
-    questions: ['What invitation is given concerning Stephen Tong’s rallies?']
-    topics: [mission, service-life]
-    scripture: []
-    transcript: |
-      Then the other thing I want to remind you is that Dr. Tong is inviting people to join him for his rallies in these places. So this is the June dates and also these are the July dates.
-      [Excerpt omission: historical comparisons and assessment of rally preaching.]
-      So Dr. Tong is saying that after this, he will probably not preach anymore in large scale one. But this is like a 50 city in the next few years, next two to three years. So he's calling for us to join. So yeah, I want to encourage you to look at this and join as well.
-    confidence: 0.88
-    review_notes: ['Slide visibly names Stephen Tong. This is an announcement about him, not evidence that he is the live speaker. Schedule and historical claims require review.']
-  - id: p20260531-073
-    video_id: m51rgcZHQmE
-    section_id: s20260531-announcements
-    start: 6144.58
     end: 6160.501
-    type: dismissal
-    title: Ministry involvement and silent dismissal
-    summary: The leader points to a ministry-involvement QR code and dismisses the congregation with silent meditation.
-    questions: ['How does the service conclude?']
-    topics: [service-life, service]
-    scripture: []
-    transcript: |
-      Finally this is the QR code for you to get involved in our ministry in all kinds of manner. That's all the announcement I have for you. You may be dismissed with silent meditation.
-      [Uncertain final sentence omitted. Recording ends shortly afterward.]
-    confidence: 0.85
-    review_notes: ['Short complete closing unit. ASR final phrase renders law rather than a clearly established word; not repaired from expected liturgy. Final frame at 6155 shows ministry contact slide.']
+    title: Response and Closing
+    type: closing
+    summary: The leaders guide response prayer, the Apostles’ Creed and intercessions, a charitable
+      offering, Amazing Grace, doxology and an uncertainly captured Hebrews 13 blessing, then
+      baptism, class and rally notices before silent dismissal.
+    keywords:
+      - strength to obey
+      - apostles creed
+      - baptism
+      - membership
+      - fifth sunday
+      - charitable work
+      - amazing grace
+      - hebrews 13
+      - westminster class
+    topics:
+      - prayer
+      - discipleship
+      - faith
+      - worship
+      - service-life
+      - service
+      - stewardship
+      - repentance
+      - mission
+    scripture:
+      - John 13
+      - Hebrews 13
+    source_chapters:
+      - s20260531-response
+      - s20260531-offering
+      - s20260531-closing
+      - s20260531-announcements
+    review_notes: []
+sermon_description: Reading John 13, the preacher presents Jesus’s command to love as the defining
+  mark of Christ’s followers and a pattern for shared life beyond self and family. Against the
+  background of human failure, suffering and the call to childlike humility, he urges believers to
+  take Christ’s example as their measure, forgiving and supporting others in obedience to a command
+  rather than personal preference.

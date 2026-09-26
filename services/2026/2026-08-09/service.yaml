@@ -1,35 +1,104 @@
-id: '2026-08-09'
-date: '2026-08-09'
+id: 2026-08-09
+date: 2026-08-09
 title: RECS English service — 9 August 2026
 sermon_title: We, the citizens...
 type: service
 workflow_status: complete
 editorial_status: needs_review
 review_notes:
-  - Full meaningful programme curated from all 1378 imported ASR segments, adjacent word timings, coarse frames and selected boundary/metadata frames. Audio samples were decoded, not listened to. Human listening and editorial approval remain required.
-  - Inline transcripts are edited ASR excerpts, not complete verbatim transcriptions. Ellipses mark omitted speech; bracketed markers identify scripture quotations, song lyrics, other quotations, uncertain wording and nonverbal intervals. No missing speech or lyrics have been supplied.
-  - Source title RECS 9 August 2026, upload/release dates 20260809, opening dated slide and repeated 61st National Day references agree with the approved service date.
-  - Sermon title and principal readings verified on the 2105-second slide. Its Gospel of John header conflicts with the speaker's explicit announcement of a National Day break from the usual exposition; no series is assigned.
-  - Only partial spoken names Hadi, Sister Cecilia and Pastor Yong/Young are available with confidence. The ASR self-reference at 4836 seconds is unclear; no full identity or speaker ID is inferred from appearance or other services.
-  - Import preserves 24 word-outside-segment warnings on 24 segments, maximum 0.26 seconds, 19 zero-duration words, zero backtracks/overlaps and zero tail clamps. Warning regions were checked in surrounding text and word evidence; broader thought units avoid internal warning cuts.
-  - A streaming/copyright restriction card appears during The Night Song at 1200 seconds. The supplied ASR has sparse text and repeated thank-you fragments there; omitted lyrics and source-hidden content are not reconstructed.
-  - Political, historical, demographic, biographical and anecdotal claims are attributed to the speaker and are not independently verified. Especially review the Ceuta numbers/chronology, North Korea and Bonhoeffer anecdotes, Vietnamese refugee dates and quoted attributions.
-  - 'Taxonomy proposal only: citizenship / Citizenship, supported by p20260809-050 (4137.76–4215.10), p20260809-051 (4215.10–4261.16), and p20260809-069 (5362.82–5459.46). Existing government, responsibility and discipleship tags are used pending main review. No proposed term is activated.'
+  - Full meaningful programme curated from all 1378 imported ASR segments, adjacent word timings,
+    coarse frames and selected boundary/metadata frames. Audio samples were decoded, not listened
+    to. Human listening and editorial approval remain required.
+  - Inline transcripts are edited ASR excerpts, not complete verbatim transcriptions. Ellipses mark
+    omitted speech; bracketed markers identify scripture quotations, song lyrics, other quotations,
+    uncertain wording and nonverbal intervals. No missing speech or lyrics have been supplied.
+  - Source title RECS 9 August 2026, upload/release dates 20260809, opening dated slide and repeated
+    61st National Day references agree with the approved service date.
+  - Sermon title and principal readings verified on the 2105-second slide. Its Gospel of John header
+    conflicts with the speaker's explicit announcement of a National Day break from the usual
+    exposition; no series is assigned.
+  - Only partial spoken names Hadi, Sister Cecilia and Pastor Yong/Young are available with
+    confidence. The ASR self-reference at 4836 seconds is unclear; no full identity or speaker ID is
+    inferred from appearance or other services.
+  - Import preserves 24 word-outside-segment warnings on 24 segments, maximum 0.26 seconds, 19
+    zero-duration words, zero backtracks/overlaps and zero tail clamps. Warning regions were checked
+    in surrounding text and word evidence; broader thought units avoid internal warning cuts.
+  - A streaming/copyright restriction card appears during The Night Song at 1200 seconds. The
+    supplied ASR has sparse text and repeated thank-you fragments there; omitted lyrics and
+    source-hidden content are not reconstructed.
+  - Political, historical, demographic, biographical and anecdotal claims are attributed to the
+    speaker and are not independently verified. Especially review the Ceuta numbers/chronology,
+    North Korea and Bonhoeffer anecdotes, Vietnamese refugee dates and quoted attributions.
+  - "Taxonomy proposal only: citizenship / Citizenship, supported by p20260809-050
+    (4137.76–4215.10), p20260809-051 (4215.10–4261.16), and p20260809-069 (5362.82–5459.46).
+    Existing government, responsibility and discipleship tags are used pending main review. No
+    proposed term is activated."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan based on the current service and all 83 existing passage summaries across 30
+    original chapters; no new listening, source verification or editorial approval is implied, and
+    needs_review remains applicable.
+  - Opening, Worship and Scripture, and Response and Closing are neutral peer groups alongside five
+    sermon movements; prayers, songs, readings and announcements are consolidated without altering
+    original chapter membership or timing.
+  - The introductory question about a Christian minority explicitly leads into national identity in
+    the supplied summaries, so it remains with the sermon's contextual argument rather than becoming
+    an independent Q&A; the intervening citizenship prayer stays with that contiguous movement.
+  - The five navigation movements follow the national-allegiance challenge, God's authority,
+    discernment, civic fairness and active contribution; they do not purport to reproduce the
+    preacher's numbered five points verbatim, and the governance and power examples stay together as
+    support for God's highest authority.
+  - "Four cues provide precise access to substantial support: nationalism and immigration within the
+    long contextual movement, the Romans 13 interpretation within the authority movement, and the
+    Vietnamese refugee account within civic fairness; routine service groups and incidental
+    announcements receive no cues."
+  - The preacher remains unnamed because only partial or uncertain names are supported; the National
+    Day sermon is not assigned to the Gospel of John series despite the conflicting slide header.
+  - Political, historical, demographic and biographical claims remain the preacher's unverified
+    accounts, including Ceuta chronology, North Korea, Bonhoeffer, disaster relief and refugee
+    policy; Vietnamese refugee dates and numbers remain expressly uncertain, and statements
+    attributed to Mao, Gandhi, Mark Twain and S. Rajaratnam are not independently authenticated.
+  - Retain the preacher's uncertainty about who belongs to God's kingdom, acknowledgment of
+    immigration complexity, distinction between opposing undocumented entry and opposing
+    immigration, and acknowledgment of older people's integration difficulties.
+  - The Night Song has a source restriction card and sparse ASR; hidden content is not
+    reconstructed, and the Introit label rests on the existing sampled-frame report; all existing
+    source, timing and provenance caveats remain for human review.
+  - Only sermon_description is intended as public descriptive prose; every group and cue summary is
+    internal retrieval/review metadata, and main derives spans, scripture, topics and old-link
+    mappings from the assigned originals.
 speakers: []
 topics:
-  - { id: prayer, name: Prayer }
-  - { id: worship, name: Worship }
-  - { id: faith, name: Faith }
-  - { id: government, name: Government }
-  - { id: politics, name: Politics }
-  - { id: authority, name: Authority }
-  - { id: responsibility, name: Responsibility }
-  - { id: service-life, name: Church life }
-  - { id: discipleship, name: Discipleship }
-  - { id: discernment, name: Discernment }
-  - { id: justice, name: Justice }
-  - { id: truth, name: Truth }
-  - { id: stewardship, name: Stewardship }
+  - id: prayer
+    name: Prayer
+  - id: worship
+    name: Worship
+  - id: faith
+    name: Faith
+  - id: government
+    name: Government
+  - id: politics
+    name: Politics
+  - id: authority
+    name: Authority
+  - id: responsibility
+    name: Responsibility
+  - id: service-life
+    name: Church life
+  - id: discipleship
+    name: Discipleship
+  - id: discernment
+    name: Discernment
+  - id: justice
+    name: Justice
+  - id: truth
+    name: Truth
+  - id: stewardship
+    name: Stewardship
 videos:
   - id: gO6gc5jL-jU
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
@@ -38,7 +107,9 @@ videos:
     workflow_status: complete
     media_disposition: playable
     transcription_language: en
-    transcribed_span: { start: 0, end: 6564.699125 }
+    transcribed_span:
+      start: 0
+      end: 6564.699125
     transcription_provenance:
       engine: faster-whisper
       engine_version: 1.2.1
@@ -46,1184 +117,381 @@ videos:
       backend_version: 4.8.2
       compute_type: float16
       device: Tesla T4
-      settings: { beam_size: 5, word_timestamps: true, vad_filter: false, condition_on_previous_text: false }
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
       audio_sha256: 990db28e5c0c9b6f19b10bc269703cbf1f93eb58628e642b25ac32da0ccdcae0
       duration_seconds: 6564.699125
       elapsed_seconds: 206.5
       real_time_factor: 0.03146
-      transcribed_at: '2026-09-25T12:37:59.836154+00:00'
+      transcribed_at: 2026-09-25T12:37:59.836154+00:00
       transcript_sha256: 1fc17dcef22657922ff5754ece996a9d77b1d040e4f7cef821676459e3cd8250
       source_duration_seconds: 6564.721
       duration_delta_seconds: -0.021874999999454303
       audio_hash_verified: false
-sections:
-  - { id: s20260809-preparation, video_id: gO6gc5jL-jU, start: 16.04, end: 364.08, type: prayer, title: ACTS prayer and preparation, confidence: 0.88, review_notes: [Quiet intervals retained as prayer units; isolated ASR thank-you fragments withheld.] }
-  - { id: s20260809-welcome, video_id: gO6gc5jL-jU, start: 385.82, end: 623.60, type: welcome, title: National Day welcome and quiet preparation, confidence: 0.91 }
-  - { id: s20260809-opening-worship, video_id: gO6gc5jL-jU, start: 623.60, end: 951.78, type: worship, title: Call to worship and opening hymn and prayer, confidence: 0.92 }
-  - { id: s20260809-night-song, video_id: gO6gc5jL-jU, start: 960.74, end: 1360, type: worship, title: The Night Song and encouragement to endure, confidence: 0.83, review_notes: [Source restriction card and sparse ASR during the song; lyrics omitted.] }
-  - { id: s20260809-responsive-readings, video_id: gO6gc5jL-jU, start: 1360, end: 1661.08, type: scripture-reading, title: Proverbs 2 and Romans 13, confidence: 0.95 }
-  - { id: s20260809-great-savior, video_id: gO6gc5jL-jU, start: 1661.82, end: 1829.76, type: worship, title: Our Great Savior, confidence: 0.93 }
-  - { id: s20260809-anthem, video_id: gO6gc5jL-jU, start: 1829.76, end: 2027.24, type: music, title: When the Ages Roll — video anthem, confidence: 0.89 }
-  - { id: s20260809-sermon-reading, video_id: gO6gc5jL-jU, start: 2027.24, end: 2090.36, type: scripture-reading, title: 1 Peter 2 reading, confidence: 0.95 }
-  - { id: s20260809-sermon-introduction, video_id: gO6gc5jL-jU, start: 2104.70, end: 2365.44, type: sermon, title: National Day reflection and a question about Christianity, confidence: 0.89 }
-  - { id: s20260809-sermon-prayer, video_id: gO6gc5jL-jU, start: 2365.72, end: 2441.52, type: prayer, title: Prayer before reflecting on citizenship, confidence: 0.92 }
-  - { id: s20260809-nationalism, video_id: gO6gc5jL-jU, start: 2442.20, end: 2860.62, type: sermon, title: Christianity and nationalism, confidence: 0.85 }
-  - { id: s20260809-immigration, video_id: gO6gc5jL-jU, start: 2860.74, end: 3354.44, type: sermon, title: Immigration and competing political responses, confidence: 0.80 }
-  - { id: s20260809-changing-identities, video_id: gO6gc5jL-jU, start: 3354.44, end: 3511.48, type: sermon, title: Changing national and cultural loyalties, confidence: 0.87 }
-  - { id: s20260809-governance, video_id: gO6gc5jL-jU, start: 3511.66, end: 3783.70, type: sermon, title: No biblical model for civil governance, confidence: 0.91 }
-  - { id: s20260809-power, video_id: gO6gc5jL-jU, start: 3783.90, end: 4001.92, type: sermon, title: Political power and its limits, confidence: 0.84 }
-  - { id: s20260809-highest-authority, video_id: gO6gc5jL-jU, start: 4002.32, end: 4261.16, type: sermon, title: God as highest authority and primary allegiance, confidence: 0.94 }
-  - { id: s20260809-public-good, video_id: gO6gc5jL-jU, start: 4261.70, end: 4442.26, type: sermon, title: Civil servants and the public good, confidence: 0.87 }
-  - { id: s20260809-discernment, video_id: gO6gc5jL-jU, start: 4442.94, end: 4642.78, type: sermon, title: Discernment when authority crosses a line, confidence: 0.89 }
-  - { id: s20260809-skepticism, video_id: gO6gc5jL-jU, start: 4643.20, end: 4851.94, type: sermon, title: Healthy skepticism about politicians and human leaders, confidence: 0.89 }
-  - { id: s20260809-live-truth, video_id: gO6gc5jL-jU, start: 4852.66, end: 5121.10, type: sermon, title: Taxes and fairness in civil society, confidence: 0.90 }
-  - { id: s20260809-refugees, video_id: gO6gc5jL-jU, start: 5121.32, end: 5362.42, type: sermon, title: Refugee history and Singaporean citizenship, confidence: 0.79 }
-  - { id: s20260809-city-welfare, video_id: gO6gc5jL-jU, start: 5362.82, end: 5599.76, type: sermon, title: Actively seek the welfare of the city, confidence: 0.93 }
-  - { id: s20260809-conclusion, video_id: gO6gc5jL-jU, start: 5599.76, end: 5729.26, type: sermon, title: Contribute wherever God places you, confidence: 0.92 }
-  - { id: s20260809-response-prayer, video_id: gO6gc5jL-jU, start: 5729.54, end: 5802.64, type: prayer, title: Prayer to live responsibly wherever we are, confidence: 0.93 }
-  - { id: s20260809-creed, video_id: gO6gc5jL-jU, start: 5804.06, end: 5848.24, type: creed, title: Apostles' Creed, confidence: 0.93 }
-  - { id: s20260809-national-prayer, video_id: gO6gc5jL-jU, start: 5848.52, end: 6009.08, type: prayer, title: Thanksgiving and prayer for Singapore, confidence: 0.92 }
-  - { id: s20260809-offertory, video_id: gO6gc5jL-jU, start: 6011.22, end: 6144.62, type: offering, title: Offering for church and Christian education, confidence: 0.89 }
-  - { id: s20260809-closing-hymn, video_id: gO6gc5jL-jU, start: 6144.62, end: 6292.22, type: worship, title: Tell It to Jesus, confidence: 0.93 }
-  - { id: s20260809-blessing, video_id: gO6gc5jL-jU, start: 6292.22, end: 6373.06, type: worship, title: Doxology and benediction, confidence: 0.91 }
-  - { id: s20260809-announcements, video_id: gO6gc5jL-jU, start: 6375.56, end: 6564.721, type: announcement, title: Fellowship and ministry announcements and dismissal, confidence: 0.92 }
-passages:
-  - id: p20260809-001
+chapters:
+  - id: c20260809-opening
     video_id: gO6gc5jL-jU
-    section_id: s20260809-preparation
-    start: 18.68
-    end: 97.62
-    type: prayer
-    title: Prepare with adoration
-    summary: The leader introduces personal prayer through adoration, confession, thanksgiving and supplication, beginning with adoration.
-    questions: [How does the service prepare for worship?]
-    topics: [prayer, worship]
+    start: 16.04
+    end: 623.6
+    title: Opening
+    type: opening
+    summary: The leaders guide personal adoration, confession, thanksgiving and supplication, welcome
+      the congregation on National Day and invite quiet preparation for worship.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - supplication
+      - national day
+    topics:
+      - prayer
+      - worship
+      - discipleship
+      - service-life
     scripture: []
-    transcript: '... As usual we want to pray in adoration, in confession, in thanksgiving and supplication. This is a time for a personal quiet prayer. Let us start with adoring God Almighty, our Maker and our Lord. Let us pray. [Quiet prayer interval; isolated ASR fragment omitted.]'
-    confidence: 0.88
-    review_notes: [Opening phrase is unclear and omitted; no prayer is invented for the quiet interval.]
-  - id: p20260809-002
+    source_chapters:
+      - s20260809-preparation
+      - s20260809-welcome
+    review_notes: []
+  - id: c20260809-worship-scripture
     video_id: gO6gc5jL-jU
-    section_id: s20260809-preparation
-    start: 97.62
-    end: 171.48
-    type: prayer
-    title: Personal confession
-    summary: The leader invites the congregation to confess their sins in personal prayer.
-    questions: []
-    topics: [prayer]
-    scripture: []
-    transcript: 'Let us now come to pray in confession. [Scripture quotation omitted; no reference announced.] Let us pray in confession now. [Quiet prayer interval.]'
-    confidence: 0.89
-  - id: p20260809-003
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-preparation
-    start: 171.48
-    end: 243.74
-    type: prayer
-    title: Thanksgiving on National Day
-    summary: The leader asks the congregation to give thanks, especially on Singapore's National Day.
-    questions: [What occasion is remembered in the opening thanksgiving?]
-    topics: [prayer]
-    scripture: []
-    transcript: 'Let us now pray in thanksgiving. ... Especially today being Singapore’s National Day, let us be thankful for what God has given to us. Let us pray. [Quiet prayer interval.]'
-    confidence: 0.93
-  - id: p20260809-004
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-preparation
-    start: 243.74
-    end: 312.14
-    type: prayer
-    title: Personal supplication
-    summary: The leader invites prayer for personal situations.
-    questions: []
-    topics: [prayer]
-    scripture: []
-    transcript: 'And now we pray in supplication where we call upon the Lord for our personal situations. Let us pray in supplication now. [Quiet prayer interval.]'
-    confidence: 0.91
-  - id: p20260809-005
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-preparation
-    start: 312.14
-    end: 364.08
-    type: prayer
-    title: Listen through worship and the preached word
-    summary: The prayer asks for distractions to be set aside and for the congregation to hear and follow God; the leader then introduces Hadi.
-    questions: [What does the opening prayer ask for the congregation?]
-    topics: [prayer, worship, discipleship]
-    scripture: []
-    transcript: 'Almighty God, we are thankful that you have called us together here in a land of peace, safety and comfort to worship you. We do pray that right now you will help us to set aside everything that is blocking us from you, anything in our life that makes it difficult for us to hear your voice ... May everything we do this morning bring glory unto your holy name. In Jesus’ name we pray, amen. This morning our brother Hadi will be leading us.'
-    confidence: 0.91
-    review_notes: [Segment 26 word begins 0.10 seconds before its segment; enclosed within this prayer. Hadi is not expanded to a full name.]
-  - id: p20260809-006
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-welcome
-    start: 385.82
-    end: 456.84
-    type: welcome
-    title: National Day and family traditions
-    summary: The worship leader welcomes the congregation on Singapore's 61st National Day and describes watching the parade as a family.
-    questions: [How does the worship leader describe his family's National Day tradition?]
-    topics: [service-life]
-    scripture: []
-    transcript: 'Good morning everyone. Happy Sunday. ... Happy 61st birthday to the nation Singapore, and I’m happy to see many of you coming during National Day ... Normally during the evening time before the NDP, the family actually congregate around the TV watching the parade, right? And we order in some food. ... It gives us the sense of national identity ... of what it means to be Singaporean.'
-    confidence: 0.90
-    review_notes: [Word-boundary warnings on segments 37–39 lie inside this unit.]
-  - id: p20260809-007
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-welcome
-    start: 457.50
-    end: 540.18
-    type: welcome
-    title: Welcome visitors and greet one another
-    summary: The leader continues his family recollection, welcomes first-time visitors and invites greetings among the congregation.
-    questions: []
-    topics: [service-life]
-    scripture: []
-    transcript: '... So we end up watching the TV, and as the kids grow up now that tradition in our family sort of slowly disappear from our home. ... If you’re worshiping with us for the first time today, we are especially glad to have you with us. ... As always, let’s take some time to greet our brothers and sisters around us with a warm handshake.'
-    confidence: 0.90
-    review_notes: [Start precedes the outside-segment word at 457.62 seconds; informal grammar retained.]
-  - id: p20260809-008
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-welcome
-    start: 543.92
-    end: 623.60
-    type: worship
-    title: Quiet preparation and introit
-    summary: The leader asks for silence and preparation for worship; a sampled frame labels the interval Introit.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: 'Okay, so let’s spend a moment in silence as we set aside the distraction of the week. May our heart be drawn to the presence of God as we enter into worship. [Quiet/introit interval; no additional words reconstructed.]'
-    confidence: 0.88
-  - id: p20260809-009
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-opening-worship
-    start: 623.60
-    end: 672.54
-    type: scripture-reading
-    title: Call to worship from Psalms 93
-    summary: The leader reads Psalms 93 as the call to worship.
-    questions: [Which psalm opens worship?]
-    topics: [worship]
-    scripture: [Psalms 93]
-    transcript: 'The call to worship this morning is taken from the book of Psalm, chapter 93. [Scripture reading omitted.]'
-    confidence: 0.96
-  - id: p20260809-010
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-opening-worship
-    start: 672.54
-    end: 724.62
-    type: exhortation
-    title: Worship amid changing circumstances
-    summary: The leader says the psalm encourages confidence in an unchanging God and introduces All Hail the Power of Jesus' Name.
-    questions: [How does the leader connect Psalms 93 with present worries?]
-    topics: [faith, worship]
-    scripture: [Psalms 93]
-    transcript: 'This morning, this psalm reminds us of a simple and yet powerful truth. God is still in control. Our circumstances may change, and we may not always fully understand what is happening around us, especially in the world today, but our God has not changed. ... Whatever burden we are carrying this morning ... we can place them before him and worship our unchanging God with confidence.'
-    confidence: 0.93
-    review_notes: [Segment 69 boundary uncertainty is internal to the complete exhortation.]
-  - id: p20260809-011
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-opening-worship
-    start: 724.62
-    end: 842.98
-    type: music
-    title: All Hail the Power of Jesus' Name
-    summary: The congregation sings the announced opening hymn.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: '[Congregational hymn: All Hail the Power of Jesus’ Name. Song lyrics omitted.]'
-    confidence: 0.93
-    review_notes: [Whole musical unit retained rather than artificial short passages.]
-  - id: p20260809-012
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-opening-worship
-    start: 842.98
-    end: 905.30
-    type: prayer
-    title: Thanksgiving for Singapore and prayer for leaders
-    summary: The opening prayer gives thanks for Singapore and asks for wisdom, integrity and compassion in national leadership.
-    questions: [What does the opening prayer ask for national leaders?]
-    topics: [prayer, government]
-    scripture: []
-    transcript: 'Our Father in heaven, we praise you as King and Lord. Lord, all honor and glory belong to Jesus Christ, and we thank you for your grace and mercy. ... As our nation celebrates its 61st birthday this National Day, we thank you for your blessing upon this small island. ... We also want to pray for our national leaders. Grant them wisdom, integrity, give them compassion. Help them to govern responsibly and to care well for the people, especially in these uncertain times.'
-    confidence: 0.94
-  - id: p20260809-013
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-opening-worship
-    start: 905.30
-    end: 951.78
-    type: prayer
-    title: Prayer for the preacher and congregation
-    summary: The leader prays for the preacher's health, family and ministry, and for listeners to be changed by the word.
-    questions: []
-    topics: [prayer, discipleship]
-    scripture: []
-    transcript: 'We also remember our speaker, Pastor [name rendered Young in ASR], this morning who will bring us your word ... Strengthen him, watch over his health, and bless his family and ministry. As he speaks, help us to hear you speaking through your word. Change us from the inside out, so that our lives may bear fruit ... [Scripture quotation omitted.] May all that we do this morning would bring glory to your name. ... Amen. You may be seated.'
-    confidence: 0.88
-    review_notes: [No full speaker identity inferred; segment 107 timing warning enclosed.]
-  - id: p20260809-014
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-night-song
-    start: 960.74
-    end: 1030.26
-    type: exhortation
-    title: Introducing The Night Song
-    summary: The leader introduces The Night Song as encouragement for people experiencing anxiety, hurt or uncertainty and asks for a demonstration before singing.
-    questions: [Why is The Night Song introduced?]
-    topics: [faith, worship]
-    scripture: []
-    transcript: 'The next hymn is entitled The Night Song. It is not really new, but we have not sing this song that often. ... The hymn speaks especially to the seasons when life feels quite dark, when we are tired, when we are anxious, and when we are hurting. When we cannot see what God is indeed doing, the song reminds us that even in the night, God has not left us. ... Let’s play the song for one minute, and after that we sing this song together.'
-    confidence: 0.92
-  - id: p20260809-015
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-night-song
-    start: 1030.26
-    end: 1322.48
-    type: music
-    title: The Night Song — demonstration and congregational singing
-    summary: A musical demonstration precedes congregational singing; the recording displays a streaming restriction card during part of this unit.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: '[The Night Song demonstration and congregational singing; lyrics omitted. Part of the source displays a copyright/streaming restriction notice. Missing content and sparse ASR fragments are not reconstructed.]'
-    confidence: 0.82
-    review_notes: [Long whole musical unit; the 1200-second frame explicitly announces temporarily hidden worship content. No listening or complete audible coverage claimed.]
-  - id: p20260809-016
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-night-song
-    start: 1322.48
-    end: 1360
-    type: exhortation
-    title: Singing as endurance and holding on in silence
-    summary: The leader calls singing a means of endurance and reassures those too burdened to sing that they can hold on in silence.
-    questions: [What encouragement is offered to someone too burdened to sing?]
-    topics: [faith, worship, prayer]
-    scripture: []
-    transcript: 'In the Christian faith, singing is not just worship. ... It is what I call a weapon of endurance. ... So if we are in the difficult time, may a song like this become our prayer. And even if we cannot sing yet because our burden seems that heavy, that is okay. We can hold on in silence and know that he is near. You are never alone. So thanks be to God for that.'
-    confidence: 0.92
-    review_notes: [Segment 146 has a 0.26-second word-boundary warning inside this unit.]
-  - id: p20260809-017
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-responsive-readings
-    start: 1360
-    end: 1506.20
-    type: scripture-reading
-    title: Responsive reading of Proverbs 2
-    summary: The leader announces the whole of Proverbs 2, alternating verses with the congregation and joining for the final two verses.
-    questions: [Which Old Testament chapter is read responsively?]
-    topics: [worship]
-    scripture: [Proverbs 2]
-    transcript: 'The first reading is taken from the book of Proverbs, chapter 2. The whole chapter of Proverbs, chapter 2. ... Let me start with the odd verse, and the congregation will follow with the even verse. [Scripture reading omitted.] Let’s read the last two verses together. [Scripture reading omitted.] Amen.'
-    confidence: 0.96
-    review_notes: [Whole reading retained; not all congregational responses are present in ASR.]
-  - id: p20260809-018
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-responsive-readings
-    start: 1506.20
-    end: 1661.08
-    type: scripture-reading
-    title: Responsive reading of Romans 13
-    summary: The congregation reads Romans 13:1–14 before the next hymn.
-    questions: [Which Romans passage is read in this service?]
-    topics: [government, authority]
-    scripture: [Romans 13:1-14]
-    transcript: 'The second one is taken from the book of Romans chapter 13, verse 1 to 14. ... [Scripture reading omitted.] Amen. Thanks be to God for the word.'
-    confidence: 0.96
-    review_notes: [Whole responsive reading retained as one meaningful unit.]
-  - id: p20260809-019
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-great-savior
-    start: 1661.82
-    end: 1829.76
-    type: worship
-    title: Our Great Savior — introduction and singing
-    summary: The leader introduces Our Great Savior as a reminder of Jesus' friendship, salvation and sustaining help, and the congregation sings.
-    questions: []
-    topics: [worship, faith]
-    scripture: []
-    transcript: 'So let’s now continue the worship this morning by singing hymn number three. ... Our Great Savior. It reminds us of who Jesus is to us. ... Let us sing this with gratitude and lift our voices together. [Song lyrics omitted.]'
-    confidence: 0.93
-  - id: p20260809-020
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-anthem
-    start: 1829.76
-    end: 2027.24
-    type: music
-    title: Video anthem — When the Ages Roll
-    summary: The announced video anthem is played before the sermon reading.
-    questions: []
-    topics: [worship]
-    scripture: []
-    transcript: 'Please enjoy the next video anthem entitled When the Ages Roll. [Video anthem; song lyrics omitted.]'
-    confidence: 0.91
-    review_notes: [Word-boundary warnings on source segments 243 and 264 concern omitted lyrics.]
-  - id: p20260809-021
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-sermon-reading
-    start: 2027.24
+    start: 623.6
     end: 2090.36
-    type: scripture-reading
-    title: Scripture reading — 1 Peter 2:13–17
-    summary: A reader introduced as Sister Cecilia reads 1 Peter 2:13–17 before the sermon.
-    questions: [What is the sermon scripture reading?]
-    topics: [government, authority]
-    scripture: [1 Peter 2:13-17]
-    transcript: '... I would like to invite Sister Cecilia to read the scripture for us. Today’s scripture reading is taken from 1 Peter 2, verse 13–17. [Scripture reading omitted.] This is the word of the Lord.'
-    confidence: 0.96
-    review_notes: [Only the introduced first name is retained in prose; no full speaker identity assigned.]
-  - id: p20260809-022
+    title: Worship and Scripture
+    type: worship
+    summary: The leaders and congregation share hymns, prayers, a video anthem and readings from Psalms
+      93, Proverbs 2, Romans 13 and 1 Peter 2, including encouragement to endure through singing or
+      silence during the partly restricted Night Song interval.
+    keywords:
+      - hail the power
+      - night song
+      - proverbs
+      - romans
+      - great savior
+      - ages roll
+      - 1 peter 2
+    topics:
+      - worship
+      - faith
+      - prayer
+      - government
+      - discipleship
+      - authority
+    scripture:
+      - Psalms 93
+      - Proverbs 2
+      - Romans 13:1-14
+      - 1 Peter 2:13-17
+    source_chapters:
+      - s20260809-opening-worship
+      - s20260809-night-song
+      - s20260809-responsive-readings
+      - s20260809-great-savior
+      - s20260809-anthem
+      - s20260809-sermon-reading
+    review_notes: []
+  - id: c20260809-national-allegiance
     video_id: gO6gc5jL-jU
-    section_id: s20260809-sermon-introduction
-    start: 2104.70
-    end: 2167.14
+    start: 2104.7
+    end: 3511.48
+    title: National Allegiance Requires Discernment
     type: sermon
-    title: A National Day break from the usual exposition
-    summary: The preacher announces a reflection on nationhood and nationality for National Day and introduces the question-submission format.
-    questions: [Why does the sermon depart from the usual expository preaching?]
-    topics: [government, service-life]
-    scripture: []
-    transcript: 'Happy Sunday. This being National Day of Singapore, I thought I want to break from our usual expository preaching and do a reflection on nationhood and nationality. I think it’s appropriate. ... Remember that you can send any of your question ... for me to answer. It can be anything relating to scripture or anything at all. That’s why it’s called AMA, ask me anything. You can put your written questions there as well into the box.'
-    confidence: 0.93
-    review_notes: [Title slide at 2105 seconds verifies We, the citizens...; no series assigned. Segment 293 timing warning enclosed.]
-  - id: p20260809-023
+    summary: The preacher uses cultural Christianity, national symbolism, migration and changing
+      loyalties to question assumptions about Christian power and national belonging, acknowledging
+      uncertainty about who belongs to God's kingdom and the complexity of immigration.
+    keywords:
+      - national day
+      - cultural christianity
+      - citizenship
+      - nationalism
+      - immigration
+      - enforcement
+      - nationality
+      - religious symbolism
+    topics:
+      - government
+      - service-life
+      - faith
+      - discipleship
+      - discernment
+      - politics
+      - prayer
+      - responsibility
+      - worship
+      - justice
+    scripture:
+      - Matthew 7
+    source_chapters:
+      - s20260809-sermon-introduction
+      - s20260809-sermon-prayer
+      - s20260809-nationalism
+      - s20260809-immigration
+      - s20260809-changing-identities
+    review_notes: []
+  - id: s20260809-nationalism
     video_id: gO6gc5jL-jU
-    section_id: s20260809-sermon-introduction
-    start: 2167.14
-    end: 2249.20
-    type: sermon
-    title: Will Christians become a minority?
-    summary: The preacher recounts a question arising from difficulty sharing the gospel and answers through his interpretation of Jesus' teaching about the narrow way.
-    questions: [How does the preacher answer the question about Christians becoming a minority?]
-    topics: [faith, discipleship]
-    scripture: [Matthew 7]
-    transcript: '... This guy actually sent quite a few questions which led to one final question. Will Christians become a minority race on earth? ... He was asking me a lot of things about how difficult it is to get people to believe in our Lord Jesus Christ ... [Scripture quotation and close paraphrase from Matthew 7 omitted.] So I believe that Jesus Christ would never be wrong, that the answer of people who actually find a way to life will be few because Jesus Christ said it himself.'
-    confidence: 0.88
-    review_notes: [Minority race is the questioner's wording as reported by the preacher; not an archive demographic classification. Only chapter explicitly named.]
-  - id: p20260809-024
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-sermon-introduction
-    start: 2249.20
-    end: 2306.02
-    type: sermon
-    title: Cultural Christianity and the limits of judging others
-    summary: The preacher distinguishes cultural identification from belief, says he cannot know who belongs to God's kingdom, and recounts a disagreement with Stephen Tong about final numbers.
-    questions: [What distinction does the preacher make between cultural Christianity and belief?]
-    topics: [faith, discernment]
-    scripture: [Matthew 7]
-    transcript: '... Are you talking about cultural Christianity or people who really believe? And as I’ve always preached to you, if you were to ask me whether this person or that person is in the kingdom of God, my answer to you will always be, I do not know because I’m not God. ... I do believe that on the final day when Jesus Christ comes again, we will be very surprised at the numbers. And I think the number is low. ...'
-    confidence: 0.90
-    review_notes: [Numerical predictions and reported conversation are the speaker's views; Stephen Tong is not identified as a live speaker.]
-  - id: p20260809-025
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-sermon-introduction
-    start: 2306.02
-    end: 2365.44
-    type: sermon
-    title: National identity and the 61st National Day
-    summary: The preacher connects the question's assumptions about Christian power with nationality and introduces reflection on citizenship using the National Day logo.
-    questions: [How does the opening question lead into citizenship?]
-    topics: [government, politics]
-    scripture: []
-    transcript: 'But this question also relates to nationality as well because the guy who asked the question sort of assumed that being Christian means that you belong to a certain class of people ... You have to be big and strong and very powerful as you grow. ... Today is the 61st National Day of the Republic of Singapore. ... I want to reflect a little bit on what it means to be a citizen or not a citizen and wherever you may be living.'
-    confidence: 0.92
-    review_notes: [61st National Day logo inspected at 2350 seconds; segment 336 warning lies inside the unit.]
-  - id: p20260809-026
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-sermon-prayer
-    start: 2365.72
-    end: 2441.52
-    type: prayer
-    title: Gratitude for safety and reflection on citizenship
-    summary: The preacher gives thanks for ordinary security and services, remembers immigrants, and asks for guidance in reflecting on citizenship.
-    questions: []
-    topics: [prayer, responsibility]
-    scripture: []
-    transcript: 'We thank you, God Almighty, for giving us the opportunity to live in a land where everything is so smooth running that many of us just simply take it for granted. We turn on the tap and we can drink the water. We have peace and security here. ... For many of us, we are immigrants. We come to this place to live, to make a living, or we go and live in another place. ... It is appropriate on the National Day of Singapore today that we pause and reflect a little bit deeper as to what your word has taught us about our citizenship. ... In Jesus’ name we pray. Amen.'
-    confidence: 0.93
-    review_notes: [Scriptural prayer wording near the end is omitted within the marked excerpt.]
-  - id: p20260809-027
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-nationalism
-    start: 2442.20
-    end: 2527.38
-    type: sermon
-    title: A historical link between faith and nation
-    summary: The preacher introduces Christianity and nationalism, using the Crusades as an example of religion and national power becoming entangled.
-    questions: [What historical example introduces Christianity and nationalism?]
-    topics: [politics, government]
-    scripture: []
-    transcript: 'This whole idea about Christianity and nationalism is on the rise especially. And if you are a student of history, you know that religion and citizenship and nationality has been linked for a very, very long time ... Christianity was very much linked with the Crusades and the medieval time, trying to conquer Jerusalem back for the Christian faith. ... Sometimes when you share the gospel with people, they will then point back to the period of time and say that Christianity is a very cruel and very violent kind of a faith.'
-    confidence: 0.84
-    review_notes: [Chronology in the ASR around 2473–2482 seconds is unclear and omitted, not corrected from memory. Historical characterization remains attributed.]
-  - id: p20260809-028
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-nationalism
-    start: 2527.98
-    end: 2631.36
-    type: sermon
-    title: Religious symbolism in the British monarchy
-    summary: The preacher uses King Charles' coronation and the Church of England to discuss surviving links between religious office and monarchy, contrasting his assessments of Charles and Elizabeth II.
-    questions: [How does the coronation illustrate links between church and state?]
-    topics: [government, politics]
-    scripture: []
-    transcript: 'And till today, the shadow of such linkage is still very much with us. ... If you ever watch things like this, you will find that it’s very complicated religious symbolism inside. ... The king himself is then ordained ... and then he’s surrounded by clergy as well, all the key leaders. ... But the linkage now is more symbolic than anything else ...'
-    confidence: 0.84
-    review_notes: [A longer complete illustration; personal judgments about monarchs are not independently verified. ASR biased/pious wording is withheld rather than silently repaired.]
-  - id: p20260809-029
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-nationalism
-    start: 2631.76
-    end: 2713.08
-    type: sermon
-    title: Flags and military symbolism in American worship
-    summary: The preacher recalls seeing national and state flags, patriotic hymns and military commemorations in American churches and finds their presence in worship striking.
-    questions: [What surprised the preacher about American church worship?]
-    topics: [politics, worship]
-    scripture: []
-    transcript: 'So in America, there’s some pretty odd phenomena. When I was studying there ... I was very surprised that the church had state flag and the federal flag inside the church. ... Not only that, the hymnal of the church has a lot of nationalistic songs in the hymns ... [Quoted song lyrics omitted.] They have commemoration during Veterans Day and all kinds of different occasions where the army will be involved. ...'
-    confidence: 0.89
-    review_notes: [Personal recollection; university wording is unclear and omitted.]
-  - id: p20260809-030
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-nationalism
-    start: 2713.52
-    end: 2761.80
-    type: sermon
-    title: Military ceremony in Singapore and national allegiance
-    summary: The preacher compares military commemorations and ceremonial weddings in Singapore with what he regards as a more entrenched American association between Christianity and nationalism.
-    questions: []
-    topics: [politics, worship]
-    scripture: []
-    transcript: 'In Singapore, I think that some churches have some things like this too ... to honour the soldiers among us, we have this commemoration. ... In Singapore, the closest to that is weddings. Some army officers, when they get married, they go get permission to have their fellow officer put up the sword thing ... But America is very, very entrenched, this idea of Christianity and nationalism.'
-    confidence: 0.88
-  - id: p20260809-031
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-nationalism
-    start: 2761.80
-    end: 2822.12
-    type: sermon
-    title: Politicians in the pulpit
-    summary: The preacher discusses political speakers in American churches and recounts his objection to a politician's ceremonial welcome at a former church.
-    questions: [What concern does the preacher raise about welcoming politicians in church?]
-    topics: [politics, discernment]
-    scripture: []
-    transcript: 'So often time they would have politicians preach to the congregation during election time, and it depends on your church stand ... [Unclear ASR wording omitted.] In my previous church the member of parliament was coming to visit ... My previous pastor got all the kids to line the street to wave little flag to welcome the guy to come into our church, and I was an elder and I was very unhappy ...'
-    confidence: 0.82
-    review_notes: [Segment 450 timing warning and adjacent garbled pulpit wording retained as uncertainty. Reported objection is the preacher's recollection, not archive policy.]
-  - id: p20260809-032
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-nationalism
-    start: 2822.12
+    start: 2442.2
     end: 2860.62
     type: sermon
-    title: Concern about right-wing Christian nationalism
-    summary: The preacher warns about movements that connect Christian faith, patriotism and racial supremacy.
-    questions: [What concern does the preacher raise about Christian nationalism?]
-    topics: [politics, discernment]
-    scripture: []
-    transcript: '... One of the key problem with Christianity and nationalism now is that it has swing to the extent of being very right-wing, and there are very serious right-wing supremacy people who link the Christian faith together with their movement. ... All over the world nationalism, citizenship are linked like that, especially in places of the world where race is very much a part of it.'
-    confidence: 0.89
-  - id: p20260809-033
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-immigration
-    start: 2860.74
-    end: 2923.30
-    type: sermon
-    title: Nationalism as a reaction to turmoil
-    summary: The preacher presents nationalism as partly a reaction against what he calls liberalism and anarchy, introducing undocumented immigration and the US–Mexico border.
-    questions: [How does the preacher connect immigration controversies with nationalism?]
-    topics: [politics, government]
-    scripture: []
-    transcript: 'Now, of course, the background of the American situation also has to do with a counter reaction to some of the things that are happening ... On the other side of very nationalistic Christianity is liberalism and anarchy. Anarchy means a state of no government. ... One of the clearest issue is illegal immigration ... especially in states that border Mexico. ...'
-    confidence: 0.86
-    review_notes: [Political framing is attributed to the preacher, not endorsed as a neutral description.]
-  - id: p20260809-034
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-immigration
-    start: 2923.30
-    end: 2973.72
-    type: sermon
-    title: Immigration enforcement and economic consequences
-    summary: The preacher argues that action against undocumented workers has economic consequences and uses food prices as an illustration.
-    questions: [What economic complication does the preacher associate with immigration enforcement?]
-    topics: [government, responsibility]
-    scripture: []
-    transcript: '... There are already millions of undocumented people in America itself for generations. And so, therefore, when you move against these people, there’s a lot of implication. ... So are you prepared to pay for it? So it’s a pretty complicated thing. And not only is America facing all this issue. Border control is a very serious issue ...'
+    title: Nationalism Entangles Faith and Power
     confidence: 0.85
-    review_notes: [Includes the segment 481 word at 2923.40 seconds. Population and price claims are unverified speaker illustrations.]
-  - id: p20260809-035
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-immigration
-    start: 2974.22
-    end: 3074.86
-    type: sermon
-    title: The preacher's account of the Ceuta border situation
-    summary: The preacher describes migration from Morocco toward the Spanish enclave shown on a map, linking it to a reported court decision and hopes of escaping poverty.
-    questions: [What border example does the preacher use from Spain and Morocco?]
-    topics: [government, politics]
     scripture: []
-    transcript: '... If you look at the map ... on top, red colour, Spain, that’s where Europe is. And on the bottom, yellow colour, that’s where Africa is. ... The area happened to belong to Spain. ... Somehow or other everybody heard it as ... Spain cannot turn back immigrant ... thinking that they would cross into it and become European and escape the poverty in Morocco. ...'
-    confidence: 0.77
-    review_notes: [Map at 3000 seconds labels CEUTA; ASR CETA/Seta is not treated as a different place. Reported 60000-plus arrivals and very recent timing require human factual review; no independent verification claimed.]
-  - id: p20260809-036
+    topics:
+      - politics
+      - government
+      - worship
+      - discernment
+    summary: The preacher recalls religious and political ceremony in Britain, America and Singapore
+      while warning against movements linking Christian faith, patriotism and racial supremacy.
+    keywords:
+      - nationalism
+      - religious symbolism
+      - politicians
+      - right wing
+    parent_id: c20260809-national-allegiance
+    source_chapters:
+      - s20260809-nationalism
+  - id: s20260809-immigration
     video_id: gO6gc5jL-jU
-    section_id: s20260809-immigration
-    start: 3074.86
-    end: 3157.12
-    type: sermon
-    title: Children and the complexity of repatriation
-    summary: The preacher recounts a radio discussion about repatriation, children's welfare and unaccompanied young migrants.
-    questions: [Why does the preacher describe children's repatriation as complicated?]
-    topics: [government, justice]
-    scripture: []
-    transcript: '... Yesterday when I was listening to the British Broadcasting ... radio, they were talking about this issue. ... The complication is that under European Union law, the adults can be sent back to Morocco easily, but not the children. ... And the court have to decide every single child. Can you imagine? And it was very complicated. ...'
-    confidence: 0.81
-    review_notes: [Legal description and reported interview are unverified claims within the sermon, not legal guidance.]
-  - id: p20260809-037
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-immigration
-    start: 3157.12
-    end: 3206.74
-    type: sermon
-    title: His father's migration as a young teenager
-    summary: The preacher contrasts current views of childhood with his recollection of his father migrating at thirteen because of hardship.
-    questions: []
-    topics: [responsibility]
-    scripture: []
-    transcript: '... My father came down from [place name unclear in ASR] when he was only 13 because they were starving to death. So therefore, he just jumped on a boat and come down. ... My dad just jumped in and came down. He didn’t know anybody, didn’t even speak the language, nothing. He just knew that he had to come ...'
-    confidence: 0.84
-    review_notes: [ASR alternates Highland/Hainai for the place; no spelling is asserted. Family history is the speaker's account.]
-  - id: p20260809-038
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-immigration
-    start: 3207.72
-    end: 3296.58
-    type: sermon
-    title: Churches on opposing sides of immigration enforcement
-    summary: The preacher contrasts law-and-order nationalism with churches defending migrants, referring to a bishop's statement about human dignity and protection from immigration enforcement.
-    questions: [How does the preacher describe opposing church responses to immigration?]
-    topics: [politics, justice]
-    scripture: []
-    transcript: 'On the one hand, we have all these very nationalistic people who say that ... we want to make sure that the law is upheld ... And there are pastors who stand on both sides in the United States of America ... There are also churches on the liberal side that arose to defend the right of the immigrant. ... [Third-party quotation omitted.] ... People who are coming to your country illegally are sheltered and provided for and protected from ICE or any authority.'
-    confidence: 0.83
-    review_notes: [Quoted bishop is not a live speaker. Her full name is not assigned from uncertain ASR.]
-  - id: p20260809-039
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-immigration
-    start: 3296.58
+    start: 2860.74
     end: 3354.44
     type: sermon
-    title: Compassion and an anecdote about assisting migrants
-    summary: The preacher recounts a pastor friend's migrant assistance and acknowledges why appeals to compassion can resonate, while presenting the issue as complicated.
-    questions: [Why does the preacher regard migrant assistance as a difficult issue?]
-    topics: [justice, discernment]
+    title: Immigration Tests Law and Compassion
+    confidence: 0.8
     scripture: []
-    transcript: 'I have a friend who actually does that, and he’s a pastor. So his church is in Lubbock, Texas ... They basically have a shelter in the church ... This is a very real issue, right? So you can see it’s a very complicated issue because this bishop lady, what she said would ring true for many of us too, right? ...'
-    confidence: 0.83
-    review_notes: [The alleged border-crossing activity is a reported anecdote; no identification beyond the sermon is added. Segment 575 warning enclosed.]
-  - id: p20260809-040
+    topics:
+      - politics
+      - government
+      - responsibility
+      - justice
+      - discernment
+    summary: Through his accounts of border enforcement, economic consequences, child migration and
+      church responses, the preacher acknowledges competing appeals to law and compassion rather
+      than presenting immigration as simple.
+    keywords:
+      - immigration
+      - enforcement
+      - border
+      - children
+    parent_id: c20260809-national-allegiance
+    source_chapters:
+      - s20260809-immigration
+  - id: c20260809-god-above-government
     video_id: gO6gc5jL-jU
-    section_id: s20260809-changing-identities
-    start: 3354.44
-    end: 3428.06
-    type: sermon
-    title: Citizenship and changing assumptions about nationality
-    summary: The preacher recalls discovering London's diversity and says older assumptions equating nationality with ancestry or appearance no longer describe modern societies.
-    questions: [How does the preacher's London recollection challenge assumptions about nationality?]
-    topics: [government, discernment]
-    scripture: []
-    transcript: 'So citizenship is actually a very complicated issue ... The world has changed so much. In the past citizenship is always linked with nationality, the color of your skin and stuff like that, and it has changed so much today. ... So the world has changed very much so. And the thoughts have been changing too. [Quotation attributed to Socrates omitted.]'
-    confidence: 0.87
-    review_notes: [The speaker's generalized description of London is not an externally verified demographic account.]
-  - id: p20260809-041
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-changing-identities
-    start: 3428.06
-    end: 3511.48
-    type: sermon
-    title: An immigrant congregation and competing loyalties
-    summary: The preacher points to the congregation's diverse backgrounds, then uses football clubs and pop fandom to illustrate loyalties that compete with national identity.
-    questions: [What examples illustrate loyalties beyond national citizenship?]
-    topics: [discipleship, responsibility]
-    scripture: []
-    transcript: '... You guys are all from many different places. It is an immigrant society as well, right? ... So citizenship is a pretty complicated thing. ... Some of you are a lot more loyal to the Liverpool Football Club than to your own country ... [Song quotation omitted.] ... For the younger generation, it’s your idol and your club, right? BTS fans are called the army. ... So as Christians, what is it that we are looking at when we look at things like the National Day and all that?'
-    confidence: 0.90
-  - id: p20260809-042
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-governance
     start: 3511.66
-    end: 3609.44
+    end: 4442.26
+    title: God's Authority Stands Above Human Government
     type: sermon
-    title: The preacher's first point — no prescribed civil system
-    summary: The preacher argues that the Bible does not prescribe a detailed civil-government model and gives general rather than exhaustive instructions for church organization.
-    questions: [Does the preacher think the Bible prescribes one civil-government system?]
-    topics: [government, service-life]
-    scripture: []
-    transcript: 'The first thing is that you must know that there’s actually no biblical model for civil governance. That means when you look at the Bible, you will not find a model for governance of civil society. ... The Bible also does not even have a detailed model for church governance. The Bible’s church governance instructions are very general. Like, for example, there are elders, there are deacons and that’s about it ...'
-    confidence: 0.92
-    review_notes: [Preserves the speaker's interpretive claim. The denomination name rendered reverend churches is unclear and withheld.]
-  - id: p20260809-043
+    summary: The preacher argues from 1 Samuel 8 and Romans 13 that no human system is God's ultimate
+      solution, that allegiance to God limits civil authority, and that governments can nevertheless
+      serve the public good.
+    keywords:
+      - israel
+      - king
+      - dictatorship
+      - romans 13
+      - westminster confession
+      - civil government
+      - law abiding
+      - chengdu
+    topics:
+      - government
+      - service-life
+      - authority
+      - politics
+      - faith
+      - discernment
+      - discipleship
+      - responsibility
+      - justice
+    scripture:
+      - 1 Samuel 8
+      - Romans 13:1
+      - Romans 13:1-2
+      - Romans 13:3-4
+    source_chapters:
+      - s20260809-governance
+      - s20260809-power
+      - s20260809-highest-authority
+      - s20260809-public-good
+    review_notes: []
+  - id: s20260809-highest-authority
     video_id: gO6gc5jL-jU
-    section_id: s20260809-governance
-    start: 3609.44
-    end: 3697.08
-    type: sermon
-    title: Human institutions and Israel's request for a king
-    summary: The preacher contrasts church traditions and argues that God's ultimate solution does not lie in flawed human institutions, then introduces 1 Samuel 8.
-    questions: [Why does the preacher turn to 1 Samuel 8 when discussing government?]
-    topics: [government, authority]
-    scripture: [1 Samuel 8]
-    transcript: '... Why is that the case? The answer is because actually God’s ultimate solution for the world does not lie in the fallen human institution and methods. ... When you form a human institution, whoever you are, it doesn’t quite work. There will always be flaw to it. ... In 1 Samuel chapter 8, we read that all of the elders of Israel gathered together ... [Scripture quotation omitted.]'
-    confidence: 0.91
-  - id: p20260809-044
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-governance
-    start: 3697.08
-    end: 3783.70
-    type: sermon
-    title: Wanting to be like other nations
-    summary: The preacher reads Israel's request for a king as a rejection of divine rule and contrasts Saul with David while reflecting on political choice.
-    questions: [How does the preacher interpret Israel's desire for a king?]
-    topics: [government, authority]
-    scripture: [1 Samuel 8]
-    transcript: 'So there comes a period of time where all of a sudden the people say that we want to be like everybody else. Everybody else have a king. They have all this system and we want to follow ... [Scripture quotations omitted.] And so God allowed them to then have their king. And who was the first king? Saul. ... But God chose who? David as the one. ...'
-    confidence: 0.88
-    review_notes: [The preacher's comparison with democratic election is interpretive; no additional scripture reference inferred for David.]
-  - id: p20260809-045
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-power
-    start: 3783.90
-    end: 3865.72
-    type: sermon
-    title: National origins and the role of power
-    summary: The preacher asks why people hold citizenship and political power, describes contested national origins, and introduces an attribution to Mao about coercive power.
-    questions: [Why does the preacher call national origins complicated?]
-    topics: [politics, government]
-    scripture: []
-    transcript: 'And so then today we do have so many different political systems out there ... Why are you citizen of this place? The answer will be quite complicated. And why are the people who are in this place in power? That one even more complicated. ... So all in all, how are nations formed? ... [Quotation attributed to Mao Zedong omitted.] In other words, those with the gun make the rule because they are in power.'
-    confidence: 0.84
-    review_notes: [Start encloses segment 719's early word. Generalizations about Australian ancestry and national origins require review.]
-  - id: p20260809-046
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-power
-    start: 3866.40
-    end: 3933.92
-    type: sermon
-    title: Coercion and the persistence of dictatorship
-    summary: The preacher uses North Korea to argue that brutality can preserve political power for a long time.
-    questions: [What example illustrates the coercive use of political power?]
-    topics: [politics, authority]
-    scripture: []
-    transcript: 'If you have the gun and you have the power, you can then rule ... If you can hold that power for very long time, you’re very ruthless, you can hold on for a long time like North Korea. ... If you continue to slaughter anybody who disagrees with you, guess what? You can hold on to power for a very long time.'
-    confidence: 0.82
-    review_notes: [Segment 743 warning enclosed. The execution anecdote is unverified and not restated as fact; disparaging descriptions are omitted from the excerpt.]
-  - id: p20260809-047
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-power
-    start: 3935.62
-    end: 4001.92
-    type: sermon
-    title: The preacher contrasts tyranny with ultimate authority
-    summary: The preacher cites an attributed Gandhi statement about the eventual failure of tyrants and interprets it through his belief in God's highest authority.
-    questions: [How does the preacher qualify the apparent strength of tyrants?]
-    topics: [authority, faith]
-    scripture: []
-    transcript: 'However, people who think about such issues a little bit deeper knows that that is not the final answer. ... [Quotation attributed to Gandhi omitted.] ... Now, was he right? The answer is yes, he is. If you look at the timing of God, Gandhi was right because God is the highest authority, no matter what authority we are looking at.'
-    confidence: 0.88
-    review_notes: [Quotation attribution and historical claim not independently checked.]
-  - id: p20260809-048
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-highest-authority
     start: 4002.32
-    end: 4074.80
-    type: sermon
-    title: Romans 13 and the Westminster Confession
-    summary: The preacher connects Romans 13 with the Westminster Confession's treatment of civil authorities, then challenges a reading that demands unquestioning obedience to government.
-    questions: [How does the preacher challenge an unconditional-obedience reading of Romans 13?]
-    topics: [authority, government, discernment]
-    scripture: [Romans 13:1]
-    transcript: 'Earlier you read in a second responsive reading some of the passages in the Bible that is always related to governance, which is Romans chapter 13. And with this, the Westminster Confession of Faith has a chapter of civil authorities. ... [Confession and scripture quotations omitted.] So some of the nationalistic churches would then say ... always listen to the government, always follow ... Don’t ever protest. Don’t ever say anything bad about your government.'
-    confidence: 0.93
-    review_notes: [The final wording describes the reading he is challenging; the following passage supplies his correction.]
-  - id: p20260809-049
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-highest-authority
-    start: 4074.80
-    end: 4137.46
-    type: sermon
-    title: God's authority above civil government
-    summary: The preacher argues that Romans 13 emphasizes God's authority over every other authority rather than making a secular government absolute.
-    questions: [What does the preacher identify as the main emphasis of Romans 13?]
-    topics: [authority, government]
-    scripture: [Romans 13:1-2]
-    transcript: '[Scripture quotation omitted.] This actually is the more important verse because this means ... that God’s authority is higher than any authority because He is the one that instituted all authority. [Scripture quotation omitted.] Here, the emphasis cannot be that your secular government or your civil government has an authority that is so high that we all have to follow. The emphasis must be that actually God’s authority is higher than any other authority.'
-    confidence: 0.94
-    review_notes: [Romans 13:1–2 identification follows the consecutive displayed/read argument; no verse text included.]
-  - id: p20260809-050
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-highest-authority
-    start: 4137.76
-    end: 4215.10
-    type: sermon
-    title: Belonging to God before every secondary identity
-    summary: The preacher says a Christian's primary and eternal allegiance is to God, with nationality and family roles as secondary identities.
-    questions: [How should Christian identity relate to nationality and family roles?]
-    topics: [discipleship, authority, responsibility]
-    scripture: []
-    transcript: 'A Christian’s highest allegiance in life must be to the highest authority over the entire universe, and that’s God ... [Attributed quotation omitted.] ... When you understand that, you will realize that all other identities must be secondary identities. Your secondary identity could be you are a citizen of Singapore, you are an American citizen, Indonesian citizen, you are a husband, you are a wife, you are a son ... The key identity is that you are beloved of God, a citizen of His kingdom. That’s the primary allegiance and the eternal allegiance as well.'
-    confidence: 0.95
-  - id: p20260809-051
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-highest-authority
-    start: 4215.10
     end: 4261.16
     type: sermon
-    title: Law-abiding citizenship under God's will
-    summary: The preacher calls Christians to obey laws aligned with God's goodness and justice, while retaining allegiance to God above changing earthly citizenship.
-    questions: [What qualification does the preacher attach to law-abiding citizenship?]
-    topics: [government, responsibility, discipleship]
-    scripture: []
-    transcript: '... The Christian must be a law-abiding citizen when the laws of the land are in line with God’s will. That’s why you are law-abiding, because the laws of the land is in line with God’s goodness, God’s justice, God’s fairness, God’s grace. ... You may change your citizenship all your life long on earth, but your eternal citizenship in God will never change ... and that’s your very first allegiance.'
+    title: Allegiance to God Comes First
     confidence: 0.94
-  - id: p20260809-052
+    scripture:
+      - Romans 13:1
+      - Romans 13:1-2
+    topics:
+      - authority
+      - government
+      - discernment
+      - discipleship
+      - responsibility
+    summary: Reading Romans 13 alongside the Westminster Confession, the preacher places allegiance to
+      God above national and family identities while calling for obedience to laws aligned with
+      God's goodness and justice.
+    keywords:
+      - romans 13
+      - westminster confession
+      - secondary identity
+      - law abiding
+    parent_id: c20260809-god-above-government
+    source_chapters:
+      - s20260809-highest-authority
+  - id: c20260809-discern-fallible-leaders
     video_id: gO6gc5jL-jU
-    section_id: s20260809-public-good
-    start: 4261.70
-    end: 4324.32
-    type: sermon
-    title: In what sense can a government serve God?
-    summary: Reading Romans 13:3–4, the preacher argues that a government can serve the public good through order and justice even when it opposes Christian faith.
-    questions: [How does the preacher explain a government being God's servant?]
-    topics: [government, authority, justice]
-    scripture: [Romans 13:3-4]
-    transcript: 'And for God to be the highest authority, it means that everything that is aligned with Him, we will obey. [Scripture quotation omitted.] ... How can a communist government who is oppressive ... be a servant of God? The answer is when they are doing things that are relating to God. For example, order and getting things done and being right in maintaining social order.'
-    confidence: 0.93
-    review_notes: [Segment 847 early-word warning enclosed; claim about oppression is the speaker's description.]
-  - id: p20260809-053
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-public-good
-    start: 4324.54
-    end: 4392.90
-    type: sermon
-    title: Contrasting disaster-relief experiences
-    summary: The preacher recounts relief work in Aceh and Chengdu and says the contrast challenged his prior view of the Chinese Communist Party.
-    questions: [What experience changed the preacher's view of civil authorities?]
-    topics: [government, service-life]
-    scripture: []
-    transcript: 'Now, I used to also have a very, I suppose, negative stance about the Communist Party in China until I started working with them in the Chengdu earthquake ... It was an eye-opening experience. But I will tell you that going to Indonesia was very different from going to China. ... When I was in Chengdu, it was a very different ballgame. On the ground, the People Liberation Army was already there when we arrived.'
-    confidence: 0.88
-    review_notes: [Relief totals, named officials and place-name spelling in omitted material remain unverified personal recollection.]
-  - id: p20260809-054
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-public-good
-    start: 4393.04
-    end: 4442.26
-    type: sermon
-    title: Order and service in the Chengdu account
-    summary: The preacher describes the discipline he says he witnessed in disaster relief and interprets such public service as an example of civil authorities doing good.
-    questions: []
-    topics: [government, justice]
-    scripture: []
-    transcript: '... They were directing traffic ... I keep looking out for a camera, is there some camera somewhere? Because it was very impressive. They were very disciplined people ... [Reported slogan omitted.] And the display was right before us. And so this is an example of what happened when they do things in accordance to God’s justice, they are also God’s servant as well.'
-    confidence: 0.87
-  - id: p20260809-055
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-discernment
     start: 4442.94
-    end: 4513.20
-    type: sermon
-    title: Discernment before opposing government
-    summary: The preacher cautions that Christians can err in judging authorities, rejects automatic anti-government reactions, and mentions his anti-casino activism as a personal example.
-    questions: [What caution does the preacher give before opposing civil authority?]
-    topics: [discernment, government, responsibility]
-    scripture: []
-    transcript: '... I want to caution you that you must be very careful to discern the will of God when the civil authority deviate from God’s principle on love, justice, truth, goodness ... Always remember that we too are fallen sinners. We have received grace. We are prone to sin and error in judgment as well. So I really do not advocate the idea that ... we must be anti-government because they did this wrong, they did that wrong. You have to have a lot of discernment and wisdom ...'
-    confidence: 0.95
-  - id: p20260809-056
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-discernment
-    start: 4513.20
-    end: 4584.36
-    type: sermon
-    title: Sun Yat-sen and Bonhoeffer as contrasting examples
-    summary: The preacher contrasts Sun Yat-sen and Dietrich Bonhoeffer as Christians who, in his account, judged that their governments should be resisted.
-    questions: [Which historical figures illustrate resistance to government?]
-    topics: [government, discernment]
-    scripture: []
-    transcript: '... Because God is the highest authority, we do see some people making that decision. ... Dr. Sun Yat-sen, who is the father of modern China ... On the other side of the coin is Dr. Dietrich Bonhoeffer, who is a German theologian, and he fought against Adolf Hitler and failed, executed at age 39. So these are Christian leaders who thought about their government and they decided that they have crossed all this line ...'
-    confidence: 0.87
-    review_notes: [Biographical and political interpretations remain attributed; no named historical figure is a live-speaker identity.]
-  - id: p20260809-057
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-discernment
-    start: 4584.36
-    end: 4642.78
-    type: sermon
-    title: Costly resistance and the need for caution
-    summary: The preacher recounts the suffering of Bonhoeffer, mentions cheap grace, and returns to caution about believing oneself called to overthrow a government.
-    questions: [What qualification follows the examples of political resistance?]
-    topics: [discernment, responsibility]
-    scripture: []
-    transcript: '... His work is still very much studied today. He is considered one of the most brilliant theological mind in the last century. Some of his thinking relate to things like cheap grace, how we take God for granted ... So remember that while God is the highest authority, we have to be very careful and think very deeply into whether God is calling you to overthrow the Singapore government, for example. Sometimes God may do that, but caution is important.'
-    confidence: 0.87
-    review_notes: [Execution timing and piano-string account are unverified; the speaker labels the latter rumor. Excerpt retains his explicit caution rather than presenting resistance as an unconditional instruction.]
-  - id: p20260809-058
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-skepticism
-    start: 4643.20
-    end: 4717.80
-    type: sermon
-    title: Patriotism without idealizing leaders
-    summary: The preacher advises healthy skepticism about politics because institutions are run by fallible people, even when national celebrations evoke strong loyalty.
-    questions: [Why does the preacher advocate skepticism about politicians?]
-    topics: [politics, discernment]
-    scripture: []
-    transcript: '... When we look at politics, I would advise that we need to have a very healthy skepticism about politics and politicians. ... All human institutions are run by fallen human beings. ... Politics in particular is a complex entity. So don’t go and bet too much on somebody who is looking so great.'
-    confidence: 0.94
-  - id: p20260809-059
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-skepticism
-    start: 4717.98
-    end: 4815.82
-    type: sermon
-    title: Integrity claims and political failure
-    summary: The preacher cites sayings attributed to Mark Twain, then questions a disgraced politician's public teaching on integrity while acknowledging his pastoral concern for forgiveness.
-    questions: [How does the preacher distinguish forgiveness from accepting a leader's integrity claims?]
-    topics: [politics, discernment, truth]
-    scripture: []
-    transcript: '[Quotations attributed to Mark Twain omitted.] ... I’m in the business of forgiveness, I’m a pastor, and so I don’t want to go and hammer people or condemn them because they made a mistake ... But I would think that something is quite wrong that you would dare to stand up and talk about something which you yourself clearly have not demonstrated, right? ...'
-    confidence: 0.86
-    review_notes: [Complete anecdote exceeds 90 seconds. The unnamed politician is not identified by inference; quotation attributions and personal claims require review.]
-  - id: p20260809-060
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-skepticism
-    start: 4815.82
     end: 4851.94
+    title: Discern Authority Without Idealizing Leaders
     type: sermon
-    title: Build faith on Christ rather than a human leader
-    summary: The preacher extends skepticism to pastors and says a leader's failure should not destroy faith built on Christ.
-    questions: [Why should faith not depend on a pastor's character?]
-    topics: [faith, discernment]
+    summary: The preacher urges caution about both resisting governments and trusting fallible
+      politicians or pastors, drawing on attributed historical accounts and personal activism while
+      grounding faith in Christ rather than human leaders.
+    keywords:
+      - discernment
+      - sun yat sen
+      - bonhoeffer
+      - integrity
+      - christ
+    topics:
+      - discernment
+      - government
+      - responsibility
+      - politics
+      - truth
+      - faith
     scripture: []
-    transcript: '[Scripture quotation omitted.] ... Including your pastors, by the way, because I want you to always remember that your faith is built upon our Lord Jesus Christ, not a human being. Lest one day you discover that Pastor [full name unclear in ASR] is actually a crook or fraud or whatever it is, then you get so surprised until your faith will fall away. It shouldn’t be like that. So remember that politicians, we need to have a healthy skepticism about it.'
-    confidence: 0.90
-    review_notes: [Hypothetical self-reference, not an allegation of misconduct. Full name is not normalized from uncertain ASR or another service.]
-  - id: p20260809-061
+    source_chapters:
+      - s20260809-discernment
+      - s20260809-skepticism
+    review_notes: []
+  - id: c20260809-civic-fairness
     video_id: gO6gc5jL-jU
-    section_id: s20260809-live-truth
     start: 4852.66
-    end: 4935.32
+    end: 5362.42
+    title: Citizenship Requires Fairness to Others
     type: sermon
-    title: Conscience and paying what is owed
-    summary: The preacher returns to Romans 13 and argues that God's authority does not exempt Christians from taxes, law or ordinary obligations.
-    questions: [Does the preacher say God's authority exempts Christians from paying taxes?]
-    topics: [government, responsibility, justice]
-    scripture: [Romans 13:5-7]
-    transcript: 'That doesn’t mean therefore that we should always criticize our government or the politics ... God’s truth is the guiding principle in everything that we do. [Scripture quotations from Romans 13 omitted.] ... You cannot just use ... God is the highest authority and then think that ... therefore I don’t have to pay tax, I don’t have to do anything, I don’t have to do the right thing, because rule of law and justice for all must be upheld ...'
-    confidence: 0.93
-  - id: p20260809-062
+    summary: The preacher rejects religious exemptions from taxes and civic duties, weighs migrant
+      compassion against public costs and consent, distinguishes objections to undocumented entry
+      from opposition to immigration, and recalls sensitive refugee-policy stories with uncertain
+      dates and numbers.
+    keywords:
+      - conscience
+      - fairness
+      - immigration
+      - vietnamese boat
+      - refugee
+    topics:
+      - government
+      - responsibility
+      - justice
+      - authority
+      - discernment
+    scripture:
+      - Romans 13:5-7
+    source_chapters:
+      - s20260809-live-truth
+      - s20260809-refugees
+    review_notes: []
+  - id: s20260809-refugees
     video_id: gO6gc5jL-jU
-    section_id: s20260809-live-truth
-    start: 4935.32
-    end: 5026.60
-    type: sermon
-    title: Fairness toward everyone who sustains society
-    summary: The preacher rejects religious exceptionalism about taxes and reminds listeners that people of many beliefs and backgrounds maintain essential public services.
-    questions: [How does the preacher connect tax obligations with public services?]
-    topics: [justice, responsibility, government]
-    scripture: []
-    transcript: '... Even for people who disagree with us, because that’s the right thing to do. So we should never be in a situation where we try to say that ... we are people of God, therefore we are different from other people, we can do different things ... There are many people who are not Christians, but they play a role in making this place safe for you. ... You turn on the tap, you can drink the water because there are many, many people behind that work very hard to make it happen, and in all fairness you need to then pay and remember them ...'
-    confidence: 0.94
-  - id: p20260809-063
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-live-truth
-    start: 5026.60
-    end: 5095.32
-    type: sermon
-    title: Immigration, compassion and public consent
-    summary: The preacher says concern for vulnerable migrants must also account for borders, public costs and the consent of other citizens.
-    questions: [What fairness concern does the preacher raise about unilateral migrant admission?]
-    topics: [government, justice, responsibility]
-    scripture: []
-    transcript: '... In a perfect world, of course we should always care for people who are downtrodden ... But ... the nation is defined by the borders. There is no such thing as a borderless nation. ... In all fairness the question is whether the other citizens have agreed with you, because they have to pay the tax to sustain whoever that is coming in illegally, isn’t it? ...'
-    confidence: 0.89
-    review_notes: [A policy argument attributed to the preacher, not a neutral legal or economic conclusion.]
-  - id: p20260809-064
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-live-truth
-    start: 5095.32
-    end: 5121.10
-    type: sermon
-    title: Disagreement with a colleague's immigration approach
-    summary: The preacher says he disagrees with a colleague's church bringing in undocumented migrants, while explicitly distinguishing that objection from opposition to immigration itself.
-    questions: [Does the preacher distinguish immigration from unlawful entry?]
-    topics: [government, responsibility]
-    scripture: []
-    transcript: '... This is a very complicated issue. So I completely disagree with my co-worker whose church mission is to just forcefully bringing illegal immigrants. I’m not against immigration, I’m saying that whatever it is you must follow the rule of the land because these are calibrated very carefully with whatever the situation is.'
-    confidence: 0.92
-    review_notes: [Short complete qualification preserved rather than joined to the following historical anecdote.]
-  - id: p20260809-065
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-refugees
     start: 5121.32
-    end: 5199.28
-    type: sermon
-    title: Recalling Vietnamese boat arrivals
-    summary: The preacher recalls Vietnamese refugees reaching Singapore and acknowledges uncertainty about the dates and numbers in his account.
-    questions: [What historical refugee example does the preacher recall?]
-    topics: [government, responsibility]
-    scripture: []
-    transcript: 'In Singapore many years ago, one of the first challenge came when the Vietnamese boat people came to Singapore. ... Uncle remembered this because it’s so long ago. ... I don’t remember ... in the 70s ... A lot of people jump on boats and came down, try to escape. It’s called the boat people. ... They landed on our shores ... and of course they came here to seek asylum, to escape communism in Vietnam.'
-    confidence: 0.79
-    review_notes: [The source gives uncertain dates and an approximate arrival count; neither is externally confirmed or silently corrected. Segment 1057 timing warning enclosed.]
-  - id: p20260809-066
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-refugees
-    start: 5200.28
-    end: 5269.30
-    type: sermon
-    title: Reported border policy and humanitarian objections
-    summary: The preacher recounts a Lee Kuan Yew announcement, subsequent restrictions on landing, and objections from church and charity leaders.
-    questions: [How does the preacher describe the tension between compassion and border restrictions?]
-    topics: [government, justice]
-    scripture: []
-    transcript: 'That very night, Lee Kuan Yew went on live television ... [Reported announcement omitted.] When he made that announcement, there were many church leaders that were very upset, and some charity were very upset too ... It was a very difficult time. Now that many years have passed, some of the stories have emerged ...'
-    confidence: 0.80
-    review_notes: [Reported announcement and chronology require human review. Segment 1061 warning enclosed. This excerpt does not supply a historical quotation.]
-  - id: p20260809-067
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-refugees
-    start: 5269.30
-    end: 5336.02
-    type: sermon
-    title: Difficult refugee enforcement and a chosen national identity
-    summary: The preacher recounts traumatic stories about naval enforcement, calls the issues sensitive, and introduces a statement attributed to S. Rajaratnam about citizenship as conviction and choice.
-    questions: [How does the preacher connect Singaporean identity with choice rather than ancestry?]
-    topics: [government, responsibility]
-    scripture: []
-    transcript: '... It was very traumatic, and apparently some young NS kids were so traumatized that they need psychiatric help because of what they have witnessed ... So the world has changed so very much. ... These are very sensitive issues. I want to be very careful with it. Singapore in particular is actually a nation that is put together artificially. And so fairness is important in this place. ... [Quotation attributed to S. Rajaratnam omitted.]'
-    confidence: 0.78
-    review_notes: [Reported trauma is not a medically verified claim. Segment 1100 warning enclosed; attributed quotation withheld.]
-  - id: p20260809-068
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-refugees
-    start: 5336.66
     end: 5362.42
     type: sermon
-    title: Recap — authority, fallibility and fairness
-    summary: The preacher recaps his points about governance, God's highest authority, human fallibility and living fairly before introducing active contribution.
-    questions: [What principles does the preacher recap before discussing the city's welfare?]
-    topics: [authority, discernment, justice]
+    title: Vietnamese Refugees and Civic Responsibility
+    confidence: 0.79
     scripture: []
-    transcript: 'So, in looking back, number one, the Bible has no formula for church governance. However, the Bible declared that God is the highest authority ... We need to be a bit sceptical about politicians because they are fallen human beings. And where we are, we are to live out God’s truth and be fair.'
-    confidence: 0.91
-    review_notes: [The recap says church governance in ASR whereas the principal slide says civil governance; retained without harmonizing.]
-  - id: p20260809-069
+    topics:
+      - government
+      - responsibility
+      - justice
+      - authority
+      - discernment
+    summary: Acknowledging uncertain dates and numbers, the preacher recalls disputed refugee landing
+      restrictions and traumatic enforcement stories before connecting chosen citizenship with
+      authority, fallibility and fairness.
+    keywords:
+      - vietnamese boat
+      - refugee
+    parent_id: c20260809-civic-fairness
+    source_chapters:
+      - s20260809-refugees
+  - id: c20260809-contribute-to-society
     video_id: gO6gc5jL-jU
-    section_id: s20260809-city-welfare
     start: 5362.82
-    end: 5459.46
-    type: sermon
-    title: Seek the welfare of the city — Jeremiah 29:7
-    summary: The preacher applies Jeremiah 29:7 to citizenship, arguing that Christians should contribute to the welfare of the place where they live rather than merely enjoy its benefits.
-    questions: [How should Christians contribute to the city where they live?]
-    topics: [responsibility, discipleship, government]
-    scripture: [Jeremiah 29:7]
-    transcript: '... Not only do you live out God’s truth wherever you are, you are also to actively promote God’s truth on earth. Whether you are a Singaporean citizen, Indonesian, American or whatever it is ... [Scripture quotation omitted.] ... We are to live a life that is fair, that is right. Not only that, we are to live a life where we will contribute to the welfare of the place that we are in as well. ... We do our best to make sure that the land and the city that we live in becomes a better place ...'
-    confidence: 0.95
-    review_notes: [Jeremiah 29:7 displayed at 5390 seconds. Segment 1115 early-word warning enclosed.]
-  - id: p20260809-070
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-city-welfare
-    start: 5460.12
-    end: 5527.90
-    type: sermon
-    title: Contributing honestly in National Service
-    summary: The preacher discourages evading National Service duties and recounts disappointment when an otherwise capable intern boasted of doing so.
-    questions: [What practical example does the preacher give of contributing to society?]
-    topics: [responsibility, truth]
-    scripture: [Jeremiah 29:7]
-    transcript: 'And so as citizens, we will participate, we will promote, we will make this place better. ... I knew a young man who was an intern with me, and he was such a wonderful young man working for my charity ... But one day ... he said something that really shocked me. ... My opinion of him dropped like a stone right after that. Because ... we are people of God. We should do our best in wherever God has supposed us to be.'
-    confidence: 0.89
-    review_notes: [Omitted reported boasting contains colloquial keng/siam; not generalized to legitimate medical needs. Personal anecdote remains attributed.]
-  - id: p20260809-071
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-city-welfare
-    start: 5528.10
-    end: 5599.76
-    type: sermon
-    title: Doing good and praying for those in authority
-    summary: The preacher connects 1 Peter 2 with Romans 13, then points to 1 Timothy 2 as instruction to pray for leaders.
-    questions: [Which passages does the preacher connect with doing good and praying for leaders?]
-    topics: [government, responsibility, prayer]
-    scripture: [1 Peter 2:13-17, Romans 13, 1 Timothy 2]
-    transcript: '... Earlier Sister Cecilia was reading to us the other portion of the Bible, 1 Peter. Paul wrote Romans 13, Peter wrote 1 Peter 2. You see, the kind of thinking is the same. [Scripture quotations omitted.] Remember, at that time, the emperor was oppressing the Christians. ... And this is not the only place. The Apostle Paul wrote to Timothy ... [Reference corrected in speech to chapter 2; quotation/paraphrase omitted.]'
-    confidence: 0.92
-    review_notes: [The 5590-second slide verifies 1 Peter 2:16–17; earlier reading supplies 13–17. Spoken 1 Timothy 4 is immediately corrected to 2 and confirmed again at 5856 seconds.]
-  - id: p20260809-072
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-conclusion
-    start: 5599.76
-    end: 5660.78
-    type: sermon
-    title: Five principles for citizenship
-    summary: 'The preacher summarizes his five points: no complete governance model, God above authorities, realism about politics, living truthfully and improving the society where one lives.'
-    questions: [What are the sermon’s concluding principles for citizenship?]
-    topics: [government, authority, responsibility, truth]
-    scripture: []
-    transcript: '... The Bible tells us that there is really no full model for the perfect governance because God’s solution is not about the temporal fallen world. Nonetheless, all authorities are under God, who is the Lord of the entire universe. The Christian, therefore, you and I are firstly the citizens of God’s kingdom. This means that we need to understand the reality of human politics ... At the same time, always seek to live out God’s truth wherever you believe God has led you to be, and be part of the society and make it better ...'
-    confidence: 0.95
-    review_notes: [Summary slide inspected at 5700 seconds. Segment 1184's 0.26-second early word enclosed.]
-  - id: p20260809-073
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-conclusion
-    start: 5661.58
     end: 5729.26
+    title: Contribute to the Society Where You Live
     type: sermon
-    title: Participate in the place where you live
-    summary: The preacher uses his observations of language enclaves to urge positive participation in one's host society, acknowledges older people's difficulties, and closes with National Day gratitude.
-    questions: [What practical response closes the citizenship reflection?]
-    topics: [responsibility, discipleship]
-    scripture: []
-    transcript: '... Maybe older generation had problems, but I think that wherever God may place us to be, remember all these key principles. So that wherever you are, as much as you are a citizen of God’s kingdom, you also will contribute very positively to whichever nation that God has put you in, so that all the truth of God will be exemplified ... And so on this, the 61st birthday of Singapore, let’s come together and be thankful. Let us pray.'
-    confidence: 0.91
-    review_notes: [The preceding enclave observation is the speaker's anecdote; no demographic finding is inferred.]
-  - id: p20260809-074
+    summary: Applying Jeremiah 29:7, the preacher calls for honest National Service, prayer for leaders
+      and positive participation in one's host society, acknowledging older people's difficulties as
+      he closes with National Day gratitude.
+    keywords:
+      - seek the welfare
+      - jeremiah 29
+      - national service
+      - doing good
+    topics:
+      - responsibility
+      - discipleship
+      - government
+      - truth
+      - prayer
+      - authority
+    scripture:
+      - Jeremiah 29:7
+      - 1 Peter 2:13-17
+      - Romans 13
+      - 1 Timothy 2
+    source_chapters:
+      - s20260809-city-welfare
+      - s20260809-conclusion
+    review_notes: []
+  - id: c20260809-response-closing
     video_id: gO6gc5jL-jU
-    section_id: s20260809-response-prayer
     start: 5729.54
-    end: 5802.64
-    type: prayer
-    title: Prayer for wisdom and contribution
-    summary: The preacher asks for wisdom to uphold justice and love and to use peaceful circumstances to make the world better.
-    questions: []
-    topics: [prayer, responsibility, justice]
-    scripture: []
-    transcript: 'We ask God Almighty to help us in our lifetime. We may be living in different places, taking up different citizenship. Help us to understand your truth deeply so that wherever you may lead us to, we will not just be there to enjoy whatever it is that the place has given to us, but in obedience to your word we will contribute, we will do the right thing ... We will use this grace that you have given to us to make this world just a little bit better than when we first visited it. Listen to our prayers. In Jesus’ name we pray. Amen.'
-    confidence: 0.94
-  - id: p20260809-075
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-creed
-    start: 5804.06
-    end: 5848.24
-    type: creed
-    title: Affirming faith with the Apostles' Creed
-    summary: The congregation stands and recites the Apostles' Creed.
-    questions: []
-    topics: [faith, worship]
-    scripture: []
-    transcript: 'Congregation, would you stand with me? We want to affirm our faith by reading the Apostles’ Creed. And then we pray together. The Apostles’ Creed. [Quoted creed text omitted.]'
-    confidence: 0.95
-  - id: p20260809-076
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-national-prayer
-    start: 5848.52
-    end: 5919.20
-    type: prayer
-    title: Thanksgiving for Singapore and its public servants
-    summary: Invoking 1 Timothy 2, the preacher invites prayer for national leaders and thanks God for people maintaining Singapore's peace and order.
-    questions: [Why does the congregation pray for national leaders?]
-    topics: [prayer, government]
-    scripture: [1 Timothy 2]
-    transcript: 'This being the National Day of Singapore, it is appropriate that we pray a prayer of thanksgiving ... Earlier I told you 1 Timothy chapter 2 ... We thank you, God, that we are all here gathered in this place ... Many of us are citizens, some are permanent residents, some are visitors, and whatever the case may be, we are thankful for the peace and comfort of this place. ... We do pray for those who are in power and who are in charge, and we ask that you will always remind them of your grace, your truth, your justice ...'
-    confidence: 0.94
-  - id: p20260809-077
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-national-prayer
-    start: 5919.90
-    end: 6009.08
-    type: prayer
-    title: Rule of law and contributing wherever we are sent
-    summary: The prayer asks that law, love and truth guide Singapore and that people discerning where to live will contribute positively wherever they go.
-    questions: []
-    topics: [prayer, government, responsibility]
-    scripture: []
-    transcript: '... May our land always be a shining example to the rest of the world as to what can happen when people follow the natural laws that you have set up for all of us ... And for those of us who are wondering about where we are going, we do pray, O God, that you grant us wisdom to seek the place that you will send us to, always remembering that we are not just to go to a land or a country just to enjoy ourselves ... We will make the place better than when we first arrived. To your glory, in Jesus’ name we pray. Amen. Please be seated.'
-    confidence: 0.92
-  - id: p20260809-078
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-offertory
-    start: 6011.22
-    end: 6144.62
-    type: offering
-    title: Second offering designated for Christian education
-    summary: The leader gives offering instructions and designates the second-Sunday offering for Christian education, followed by the offertory interval.
-    questions: [What is the second offering designated for?]
-    topics: [stewardship, service-life]
-    scripture: []
-    transcript: 'We want to go into our offertory now. ... This being the second Sunday, the second offering will be designated to Christian education. [Offertory interval; isolated ASR thank-you fragments omitted.]'
-    confidence: 0.92
-    review_notes: [Whole offering unit retained; no invented speech in sparse-text interval.]
-  - id: p20260809-079
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-closing-hymn
-    start: 6144.62
-    end: 6292.22
-    type: worship
-    title: Tell It to Jesus — closing hymn
-    summary: The leader introduces Tell It to Jesus as a reminder of prayer's importance, and the congregation sings.
-    questions: []
-    topics: [prayer, worship]
-    scripture: []
-    transcript: 'We want to end by singing the song Tell It to Jesus. This is a wonderful song. It is a song that reminds us that prayer is very important. [Quoted and sung lyrics omitted.]'
-    confidence: 0.94
-    review_notes: [Whole musical unit; stand instruction occurs during the song.]
-  - id: p20260809-080
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-blessing
-    start: 6292.22
-    end: 6373.06
-    type: worship
-    title: Doxology and blessing from the epistles
-    summary: The congregation sings the doxology and receives a blessing introduced as drawn from 1 Thessalonians 5 and 2 Corinthians 13, followed by the threefold Amen.
-    questions: [Which chapters are announced for the benediction?]
-    topics: [worship, prayer]
-    scripture: [1 Thessalonians 5, 2 Corinthians 13]
-    transcript: 'Great! Let’s sing doxology in praise of God and in faith receive his blessing taken from 1 Thessalonians 5 and 2 Corinthians 13. [Doxology lyrics and scripture-based benediction omitted. Threefold Amen.] Congregation, please be seated.'
-    confidence: 0.94
-    review_notes: [Only announced chapter references retained; no verse ranges inferred from familiar wording. Threefold Amen slide inspected at 6360 seconds.]
-  - id: p20260809-081
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-announcements
-    start: 6375.56
-    end: 6429.94
-    type: announcement
-    title: August 23 fellowship lunch and a snack ministry
-    summary: The leader asks people to register for the August 23 fellowship lunch and invites participation in a proposed after-service snack and coffee ministry.
-    questions: [What fellowship plans are announced on August 9?]
-    topics: [service-life]
-    scripture: []
-    transcript: '... The fellowship lunch is 23rd ... two Sundays from now. So please sign this up because we need to know how many people are coming ... It’s a one dollar per plate of char siu rice ... We try to do it quarterly so that we can have some time to share in fellowship instead of just getting out and going off. ... We prayerfully will try to set up some kind of snack booth after worship service. You don’t just rush off, you can hang around and have tea or have coffee ...'
-    confidence: 0.94
-    review_notes: [Historical announcement, not a current invitation.]
-  - id: p20260809-082
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-announcements
-    start: 6429.94
-    end: 6498.80
-    type: announcement
-    title: Richard Pratt's August 22 talk at Jubilee Church
-    summary: The leader announces Richard Pratt's talk at Jubilee Church, clarifies that it is free but requires registration, and commends Third Millennium's theological education work.
-    questions: [Which visiting speaker and event are announced for August 22?]
-    topics: [service-life]
-    scripture: []
-    transcript: '... The other announcement is also 22nd of August, Dr. Richard Pratt will be in Singapore, and this time around we are organizing his talk at Jubilee Church, and you must register if you want to come ... Free, but must register. ... Dr. Richard Pratt of course is the leader of Third Millennium Ministry ... Because I think that their ministry is wonderful. This is an online ministry for seminary. ... Please take note of this. And also tell your friends, because it’s a good one to attend.'
-    confidence: 0.95
-    review_notes: [6440-second slide verifies Richard Pratt, Jubilee Church, August 22, 1–5 pm, and Humanity at the Crossroads. He is a future event speaker, not a live speaker in this recording. Segment 1350 word extends 0.14 seconds beyond its segment but stays within this unit.]
-  - id: p20260809-083
-    video_id: gO6gc5jL-jU
-    section_id: s20260809-announcements
-    start: 6499
     end: 6564.721
-    type: announcement
-    title: Brigade ministry update and dismissal
-    summary: The leader says weekday scheduling prevents the church from running a Boys' and Girls' Brigade company, while leaving spiritual and financial support possible; the service ends with an invitation to silent meditation.
-    questions: [Why does the church say it cannot run a Brigade company?]
-    topics: [service-life, responsibility]
-    scripture: []
-    transcript: '... We have informed the headquarters of the Boys and Girls Brigade that we cannot participate in their work ... The brigade activities are on weekdays. So it’s a Wednesday afternoon thing, which is impossible. ... We can continue to support them if they need spiritual support, want people to go and share gospel ... or even financial support, want help in fundraising ... But we cannot run a company. ... That’s all the announcement I have for you. You may be dismissed with silent meditation. Do know that the Lord is with you.'
-    confidence: 0.93
-    review_notes: [Reason for scheduling change is the leader's account, not independently verified regulation. Speech ends at 6562.50 seconds; brief recording tail retained.]
+    title: Response and Closing
+    type: closing
+    summary: The preacher and congregation respond with prayer for responsible living and Singapore, the
+      Apostles' Creed, an offering supporting Christian education, Tell It to Jesus, doxology and
+      blessing, followed by fellowship and ministry notices and silent meditation.
+    keywords:
+      - apostles creed
+      - singapore
+      - rule of law
+      - christian education
+      - doxology
+    topics:
+      - prayer
+      - responsibility
+      - justice
+      - faith
+      - worship
+      - government
+      - stewardship
+      - service-life
+    scripture:
+      - 1 Timothy 2
+      - 1 Thessalonians 5
+      - 2 Corinthians 13
+    source_chapters:
+      - s20260809-response-prayer
+      - s20260809-creed
+      - s20260809-national-prayer
+      - s20260809-offertory
+      - s20260809-closing-hymn
+      - s20260809-blessing
+      - s20260809-announcements
+    review_notes: []
+sermon_description: Reflecting on National Day, the preacher argues that allegiance to God should
+  guide citizenship without turning faith into nationalism or excusing civic responsibility. He
+  reads civil authority as accountable to God, urges discernment toward fallible leaders, and weighs
+  compassion for migrants alongside fairness to fellow citizens. His call is to contribute honestly
+  to the society where one lives, seek its welfare and pray for its leaders.

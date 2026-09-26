@@ -1,0 +1,669 @@
+chapters:
+  - id: s0628-preparation
+    video_id: k27dmsPvmG8
+    start: 0
+    end: 290.18
+    type: prayer
+    title: Preparation through A.C.T.S. prayer
+    confidence: 0.87
+    review_notes:
+      - 120s slide verifies prayer pattern. Quiet gaps retained in playback; isolated thanks artifacts excluded. Imported ASR misses opening 10.2s.
+    scripture: []
+    topics:
+      - prayer
+      - repentance
+    summary: The leader guides prayer through adoration of God as Creator, confession with reference to cleansing through Jesus, thanksgiving for life and supplication for personal needs.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - personal needs
+      - supplication
+  - id: s0628-preparation-prayer
+    video_id: k27dmsPvmG8
+    start: 290.18
+    end: 344.3
+    type: prayer
+    title: Prayer before worship and handover
+    confidence: 0.9
+    scripture: []
+    topics:
+      - prayer
+    summary: The leader prays for freedom from distractions, attention to God and a willingness to follow, before handing over to the worship leader.
+    keywords: []
+  - id: s0628-welcome
+    video_id: k27dmsPvmG8
+    start: 344.3
+    end: 383.28
+    type: welcome
+    title: Greeting and invitation to meditation
+    confidence: 0.8
+    review_notes:
+      - Greeting sentence is incomplete in ASR.
+    scripture: []
+    topics:
+      - service-life
+    summary: The worship leader invites a congregational greeting and then a moment of silent meditation.
+    keywords:
+      - meditation
+  - id: s0628-introit
+    video_id: k27dmsPvmG8
+    start: 383.28
+    end: 448.12
+    type: worship
+    title: Introit and meditation
+    confidence: 0.89
+    review_notes:
+      - 400/435s frames explicitly show Introit after the meditation invitation. Legitimate worship interval retained, not cropped as waiting. No indexed speech or claim of complete silence.
+    scripture: []
+    topics: []
+    summary: No existing passage summary is available; chapter summary requires review.
+    keywords: []
+  - id: s0628-call
+    video_id: k27dmsPvmG8
+    start: 448.12
+    end: 474
+    type: scripture-reading
+    title: Call to worship — Psalms 81:1-3
+    confidence: 0.96
+    scripture:
+      - Psalms 81:1-3
+    topics: []
+    summary: The leader announces Psalms 81:1-3 as the call to worship and invites the congregation to the first hymn.
+    keywords:
+      - call to worship
+      - psalms 81
+  - id: s0628-praise
+    video_id: k27dmsPvmG8
+    start: 474
+    end: 639.36
+    type: worship
+    title: Praise Him, Praise Him
+    confidence: 0.92
+    review_notes:
+      - Lyrics omitted. 486s frame shows hymn lyrics before imported ASR begins singing at 498.5s; the missing onset is not assumed silent.
+    scripture: []
+    topics: []
+    summary: No existing passage summary is available; chapter summary requires review.
+    keywords: []
+  - id: s0628-opening-prayer
+    video_id: k27dmsPvmG8
+    start: 639.36
+    end: 687.54
+    type: prayer
+    title: Opening prayer for peaceful and attentive worship
+    confidence: 0.9
+    scripture: []
+    topics:
+      - prayer
+      - peace
+    summary: The leader thanks God for daily blessings and prays for a peaceful heart, a quiet mind and attentive worship.
+    keywords:
+      - peaceful heart
+      - quiet mind
+  - id: s0628-behold
+    video_id: k27dmsPvmG8
+    start: 687.54
+    end: 934.22
+    type: worship
+    title: Behold Our God
+    confidence: 0.93
+    review_notes:
+      - Announced title; 790s frame corroborates video hymn. Repeated lines are singing, not automatically rejected decoding loops. Lyrics omitted.
+    scripture: []
+    topics: []
+    summary: The leader introduces the video hymn Behold Our God and invites congregational singing.
+    keywords:
+      - behold
+  - id: s0628-responsive
+    video_id: k27dmsPvmG8
+    start: 934.22
+    end: 1281.02
+    type: scripture-reading
+    title: Responsive reading — Proverbs 27 and John 14
+    confidence: 0.94
+    review_notes:
+      - 950s slide verifies Proverbs 27:1-27 and John 14:15-31. Congregational alternate verses are incompletely captured; no reconstruction.
+    scripture:
+      - Proverbs 27:1-27
+      - John 14:15-31
+    topics: []
+    summary: The leader introduces responsive reading in Proverbs 27, with the congregation taking the even-numbered verses, then turns to John 14:15-31.
+    keywords:
+      - responsive reading
+      - proverbs 27
+      - john 14
+  - id: s0628-shepherd
+    video_id: k27dmsPvmG8
+    start: 1281.02
+    end: 1444.4
+    type: worship
+    title: Savior, Like a Shepherd Lead Us
+    confidence: 0.9
+    scripture:
+      - John 14:27
+    topics:
+      - peace
+    summary: The leader connects the preceding reading’s promise of peace with the hymn Savior, Like a Shepherd Lead Us.
+    keywords:
+      - shepherd
+      - peace
+  - id: s0628-wonderful
+    video_id: k27dmsPvmG8
+    start: 1444.4
+    end: 1636.5
+    type: worship
+    title: Wonderful Peace — video anthem
+    confidence: 0.91
+    scripture: []
+    topics:
+      - peace
+    summary: The leader introduces Wonderful Peace as the video anthem.
+    keywords:
+      - wonderful peace
+  - id: s0628-reading
+    video_id: k27dmsPvmG8
+    start: 1636.5
+    end: 1715.62
+    type: scripture-reading
+    title: Scripture reading — 2 Timothy 3:14-17
+    confidence: 0.9
+    review_notes:
+      - 1655s title card identifies Johan Pramono but prints 1 Timothy; spoken introduction and sermon slide say 2 Timothy. Speaker assigned only to the reading passage because handover at section start is by the worship leader.
+    scripture:
+      - 2 Timothy 3:14-17
+    topics: []
+    summary: Johan Pramono announces and reads 2 Timothy 3:14-17 before the sermon.
+    keywords:
+      - 2 timothy
+      - johan
+  - id: s0628-intro
+    video_id: k27dmsPvmG8
+    start: 1715.62
+    end: 1819.58
+    type: sermon
+    title: Greeting and introduction to the farewell discourse
+    confidence: 0.85
+    scripture:
+      - John 14:25-31
+    topics: []
+    summary: The preacher greets the congregation with a joke about football fans staying awake, explains his slower pace through Jesus’ farewell discourse and invites Ask Me Anything questions.
+    keywords:
+      - farewell discourse
+  - id: s0628-ama
+    video_id: k27dmsPvmG8
+    start: 1819.58
+    end: 2254.42
+    type: sermon
+    title: Ask Me Anything — Peter and Judas
+    confidence: 0.87
+    review_notes:
+      - 2000s slide verifies the question. Religious/legal comparisons and allegations remain attributed; no independent fact-check claimed.
+    scripture:
+      - John 13
+      - Matthew 5
+    topics:
+      - repentance
+    summary: Comparing Peter and Judas, the preacher emphasizes Peter’s repentance and uses an imagined Roman Catholic confession, civil penalties, Matthew 5 and a speck in the eye to contrast quantitative views of wrongdoing with his view of sin before God. He distinguishes earthly consequences, warns against cynicism after leaders’ failures or using forgiveness to abandon holiness, and extends his adultery illustration to pride, anger and love of money.
+    keywords:
+      - peter and judas
+      - repentance
+      - forgiveness
+      - transactional
+      - quantitative
+      - qualitative
+      - consequences
+  - id: s0628-consequences
+    video_id: k27dmsPvmG8
+    start: 2254.42
+    end: 2574.62
+    type: sermon
+    title: Forgiveness and continuing consequences of sin
+    confidence: 0.88
+    scripture: []
+    topics:
+      - repentance
+      - service-life
+    summary: The preacher develops a seed-to-durian-tree illustration to distinguish forgiveness from recovery, entrenched habits and continuing responsibilities such as caring for a child. Recounting the difficulties of supporting single mothers, he urges early repentance and understanding of consequences rather than treating universal sinfulness as a license.
+    keywords:
+      - seed
+      - durian tree
+      - consequences
+  - id: s0628-recap
+    video_id: k27dmsPvmG8
+    start: 2574.62
+    end: 2853.58
+    type: sermon
+    title: Recap — love, restoration and the promised Helper
+    confidence: 0.88
+    scripture:
+      - John 14:15-24
+    topics:
+      - holy-spirit
+      - truth
+    summary: The preacher links love with obedience, uses an explicitly hypothetical scandal to urge faith in Christ rather than leaders, and presents restoration and sanctification through everyday marital conflict rather than merely a guarantee of heaven. He argues that scripture should govern understanding of the enduring Helper, the Spirit of truth, rather than materialistic expectations.
+    keywords:
+      - ticket to heaven
+      - sanctification
+      - helper
+      - spirit of truth
+  - id: s0628-sermon-prayer
+    video_id: k27dmsPvmG8
+    start: 2853.58
+    end: 2886.98
+    type: prayer
+    title: Prayer before the exposition
+    confidence: 0.9
+    scripture: []
+    topics:
+      - prayer
+    summary: The preacher commits the teaching time to God and asks for grace in addressing a difficult doctrine.
+    keywords: []
+  - id: s0628-truth-culture
+    video_id: k27dmsPvmG8
+    start: 2886.98
+    end: 3110.98
+    type: sermon
+    title: Truth and cultural priorities
+    confidence: 0.87
+    review_notes:
+      - 2900s slide attributes the quotation to Rev. Dr. Stephen Tong; he is not identified as the live preacher. Cultural generalizations are the speaker’s comparisons.
+    scripture: []
+    topics:
+      - truth
+      - holy-spirit
+    summary: Citing Stephen Tong, the preacher contrasts truth and ideals taught to children with his recollection of family priorities centered on possessions and appearances. He introduces a broad, non-exhaustive account of truth and rejects treating the Holy Spirit as a source of whatever one wants.
+    keywords:
+      - truth
+      - holy spirit
+  - id: s0628-objective
+    video_id: k27dmsPvmG8
+    start: 3110.98
+    end: 3330.86
+    type: sermon
+    title: Objective truth illustrated through a hypercar
+    confidence: 0.84
+    review_notes:
+      - 3135s frame shows the car; earlier 3300s slide verifies model spelling and S$16 million. ASR later alternates sixteen/sixty; figures and claims are not independently verified.
+    scripture: []
+    topics:
+      - truth
+    summary: The preacher uses a Swedish hypercar’s acceleration and price claims to illustrate objective truth through repeatable measurements. He jokes about traffic delays and suggests other uses for money before returning to repeated demonstrations as a basis for agreement.
+    keywords:
+      - objective truth
+      - hypercar
+      - traffic light
+  - id: s0628-relative
+    video_id: k27dmsPvmG8
+    start: 3330.86
+    end: 3441
+    type: sermon
+    title: Subjective judgments and relative claims
+    confidence: 0.86
+    scripture: []
+    topics:
+      - truth
+    summary: The preacher discusses how feelings, assumptions and culture influence judgments, using anecdotes about marital expectations and court appeals to illustrate his argument about relative judgments.
+    keywords:
+      - culture
+      - subjective
+  - id: s0628-pragmatism
+    video_id: k27dmsPvmG8
+    start: 3441
+    end: 3552.82
+    type: sermon
+    title: Pragmatism and the temptation to neglect truth
+    confidence: 0.85
+    scripture: []
+    topics:
+      - truth
+    summary: The preacher uses a saying associated with Deng Xiaoping to illustrate economic pragmatism and warns that favoring measurable results can displace concern for truth.
+    keywords:
+      - black or white
+      - pragmatism
+  - id: s0628-bell
+    video_id: k27dmsPvmG8
+    start: 3552.82
+    end: 3644.34
+    type: sermon
+    title: Stealing the bell while covering the ears
+    confidence: 0.89
+    review_notes:
+      - Earlier 3600s slide verifies the idiom; Chinese phrase is not recovered from English-only ASR or memory.
+    scripture: []
+    topics:
+      - truth
+    summary: The preacher tells a Chinese idiom about a bell thief who mistakes his inability to hear for the absence of sound, arguing that self-justification likewise does not change reality.
+    keywords:
+      - thief
+      - ears
+      - bell
+      - justification
+  - id: s0628-absolute
+    video_id: k27dmsPvmG8
+    start: 3644.34
+    end: 3771.42
+    type: sermon
+    title: Absolute truth and scripture
+    confidence: 0.89
+    scripture:
+      - 2 Timothy 3:16-17
+      - John 14:26
+    topics:
+      - truth
+      - holy-spirit
+    summary: The preacher affirms his belief in truth that does not vary with time or location, connecting 2 Timothy 3 with the Spirit’s work in John 14. He introduces a statement he attributes to Augustine that treats all genuinely true claims as God’s truth.
+    keywords:
+      - absolute truth
+      - scripture
+      - all truth
+      - holy spirit
+  - id: s0628-all-truth
+    video_id: k27dmsPvmG8
+    start: 3771.42
+    end: 3896.84
+    type: sermon
+    title: All truth is God’s truth — the diagram explained
+    confidence: 0.89
+    scripture: []
+    topics:
+      - truth
+    summary: The preacher explains a diagram in which some objective and subjective claims intersect with biblical truth, while scripture does not address every technical subject. He argues that God’s truth encompasses everything genuinely true and calls listeners to live accordingly.
+    keywords:
+      - objective
+      - biblical
+      - subjective
+      - intersect
+  - id: s0628-hus
+    video_id: k27dmsPvmG8
+    start: 3896.84
+    end: 4022.86
+    type: sermon
+    title: Jan Hus and living out the truth
+    confidence: 0.87
+    review_notes:
+      - 3960s slide names Jan Hus (1369–1415), correcting variable ASR names. Legend and historical dates remain the speaker’s account.
+    scripture: []
+    topics:
+      - truth
+    summary: The preacher presents Jan Hus as an earlier reformer and uses a quotation attributed to him to urge commitment to truth under persecution. He recounts a goose-and-swan legend connecting Hus and Luther and urges listeners to embrace truth rather than treat it as optional.
+    keywords:
+      - goose
+      - swan
+      - legend
+  - id: s0628-teaching
+    video_id: k27dmsPvmG8
+    start: 4022.86
+    end: 4132.74
+    type: sermon
+    title: Teaching and remembering Jesus’ words
+    confidence: 0.91
+    scripture:
+      - John 14:25-26
+      - John 14:26
+    topics:
+      - holy-spirit
+      - truth
+    summary: The preacher reads from John 14 and interprets acting in Jesus’ name as serving Jesus’ purpose rather than seeking personal luxury. He connects the Spirit’s continuing presence and teaching with communal Bible study, distinguishing reading alone from inward conviction.
+    keywords:
+      - helper
+      - bible study
+      - holy spirit
+  - id: s0628-evidence
+    video_id: k27dmsPvmG8
+    start: 4132.74
+    end: 4301.34
+    type: sermon
+    title: Scripture and the testimony of the church
+    confidence: 0.89
+    scripture: []
+    topics:
+      - truth
+      - service-life
+      - prayer
+    summary: Discussing Westminster Confession 1.5, the preacher presents church testimony, scripture’s coherence and preservation as reasons to value the Bible before introducing inward conviction. He describes hotel-room prayer-request QR codes as care for strangers that he hopes will encourage guests to consider scripture.
+    keywords:
+      - testimony
+      - scripture
+      - prayer requests
+      - hotel
+      - strangers
+  - id: s0628-illumination
+    video_id: k27dmsPvmG8
+    start: 4301.34
+    end: 4399.9
+    type: sermon
+    title: Inward conviction and the Holy Spirit
+    confidence: 0.86
+    review_notes:
+      - 4301.34–4321.7s has no imported segment, during a Westminster slide transition. Missing quotation is not filled from the slide or memory.
+    scripture:
+      - John 14:26
+    topics:
+      - holy-spirit
+      - truth
+    summary: The preacher connects differing responses to the Bible with the Holy Spirit’s inward work, describing his own conviction and emotional response to scripture as the Spirit’s work.
+    keywords:
+      - holy spirit
+  - id: s0628-humility
+    video_id: k27dmsPvmG8
+    start: 4399.9
+    end: 4566.24
+    type: sermon
+    title: Approaching scripture with humility
+    confidence: 0.9
+    scripture:
+      - Psalms 138:6
+      - Proverbs 3:34
+      - Proverbs 29:23
+      - Matthew 23:12
+      - Luke 1:52
+      - James 4:6
+      - 1 Peter 5:5
+    topics:
+      - holy-spirit
+      - truth
+    summary: The preacher urges humble, willing study rather than dismissive preconceptions, presenting Paul’s conversion as an exception rather than a strategy to demand. He calls for surrender and a growing love for Christ through scripture.
+    keywords:
+      - humility
+      - paul
+  - id: s0628-peace
+    video_id: k27dmsPvmG8
+    start: 4566.24
+    end: 4696.42
+    type: sermon
+    title: Christ’s peace and worldly security
+    confidence: 0.88
+    scripture:
+      - John 14:27
+    topics:
+      - peace
+    summary: The preacher relates John 14’s promise of peace to the hardships he says the disciples would face. While acknowledging safety and basic needs, he argues that wealth alone cannot supply the peace he understands Jesus to promise.
+    keywords:
+      - peace
+      - security
+  - id: s0628-persecution
+    video_id: k27dmsPvmG8
+    start: 4696.42
+    end: 4812.04
+    type: sermon
+    title: Peace amid persecution
+    confidence: 0.85
+    scripture: []
+    topics:
+      - peace
+    summary: The preacher uses Open Doors and a persecution map to discuss peace under pressure, contrasting his congregation’s freedom with persecuted Christians and acknowledging the limits of his own experience.
+    keywords:
+      - open doors
+      - persecution
+      - peace
+  - id: s0628-wang
+    video_id: k27dmsPvmG8
+    start: 4812.04
+    end: 4937.74
+    type: sermon
+    title: Wang Yi — translation recollection and prayer
+    confidence: 0.86
+    review_notes:
+      - 4820s slide verifies Rev. Wang Yi and Chengdu Early Rain Covenant Church. He is discussed, not a speaker in this recording. Prison/family claims are attributed and unverified.
+    scripture: []
+    topics:
+      - peace
+      - prayer
+    summary: The preacher recounts preparing to translate for Wang Yi, receiving a script after his arrest, and being struck by his understanding of peace. He attributes a prayer metaphor to Wang Yi and says it encourages his continued prayer and illustrates Christ’s peace.
+    keywords:
+      - wang yi
+      - prayer
+      - peace
+  - id: s0628-conclusion
+    video_id: k27dmsPvmG8
+    start: 4937.74
+    end: 5066.78
+    type: sermon
+    title: Closing John 14 and the call to live truthfully
+    confidence: 0.89
+    scripture:
+      - John 14:28-31
+      - John 15-17
+    topics:
+      - holy-spirit
+      - peace
+      - truth
+    summary: The preacher interprets Jesus’ words about the Father, coming events and the ruler of the world, emphasizing his understanding of Christ’s final victory. Looking ahead to later chapters in John, he urges a life directed by truth and the Holy Spirit.
+    keywords:
+      - john 14
+      - truth
+      - holy spirit
+  - id: s0628-response-prayer
+    video_id: k27dmsPvmG8
+    start: 5066.78
+    end: 5151.98
+    type: prayer
+    title: Prayer to embrace truth
+    confidence: 0.9
+    scripture: []
+    topics:
+      - prayer
+      - truth
+    summary: The preacher prays for release from self-interest and cultural bias, asking that the congregation live according to God’s word.
+    keywords:
+      - truth
+  - id: s0628-creed
+    video_id: k27dmsPvmG8
+    start: 5151.98
+    end: 5198.26
+    type: creed
+    title: Apostles’ Creed
+    confidence: 0.93
+    scripture: []
+    topics: []
+    summary: The leader invites the congregation to stand and recite the Apostles’ Creed before prayer.
+    keywords: []
+  - id: s0628-pastoral
+    video_id: k27dmsPvmG8
+    start: 5198.26
+    end: 5497
+    type: prayer
+    title: Prayer for the congregation and Reformed Evangelical Movement
+    confidence: 0.89
+    review_notes:
+      - 5275s frame confirms pastoral prayer during ASR gap. Isolated thanks not indexed. Offertory handover at 5497s is an approximate cut within a mixed ASR segment.
+    scripture: []
+    topics:
+      - prayer
+      - service-life
+    summary: The leader invites self-examination and asks for strength, wisdom and discernment for the Reformed Evangelical Movement’s leaders. Recalling Wang Yi’s prayer metaphor, he asks for patience, trust and practical congregational care amid health, financial and relational difficulties.
+    keywords:
+      - reformed evangelical movement
+      - timing
+  - id: s0628-offering
+    video_id: k27dmsPvmG8
+    start: 5497
+    end: 5588.24
+    type: offering
+    title: Offertory and second offering
+    confidence: 0.85
+    review_notes:
+      - 5520s frame confirms offertory. No banking or QR details copied. The phrase social courses is uncertain ASR, likely a purpose announcement; not silently corrected.
+    scripture: []
+    topics:
+      - service-life
+    summary: The leader announces the offertory and a second offering on the fourth Sunday.
+    keywords:
+      - offertory
+  - id: s0628-hymn-intro
+    video_id: k27dmsPvmG8
+    start: 5588.24
+    end: 5700.12
+    type: worship
+    title: Introduction to It Is Well With My Soul
+    confidence: 0.88
+    review_notes:
+      - 5600s slide verifies hymn title and Horatio G. Spafford attribution. Story details are the speaker’s account, not authenticated history.
+    scripture: []
+    topics:
+      - peace
+    summary: The leader recounts a story of loss associated with Spafford and introduces It Is Well With My Soul, inviting the congregation to sing with the sermon’s account of peace in mind.
+    keywords:
+      - closing hymn
+      - spafford
+      - peace
+  - id: s0628-closing-hymn
+    video_id: k27dmsPvmG8
+    start: 5700.12
+    end: 5860.04
+    type: worship
+    title: It Is Well With My Soul
+    confidence: 0.92
+    scripture: []
+    topics: []
+    summary: No existing passage summary is available; chapter summary requires review.
+    keywords: []
+  - id: s0628-doxology
+    video_id: k27dmsPvmG8
+    start: 5860.04
+    end: 5899.88
+    type: worship
+    title: Doxology
+    confidence: 0.92
+    scripture:
+      - Hebrews 13
+    topics: []
+    summary: The leader invites the doxology and announces a blessing from Hebrews 13.
+    keywords:
+      - doxology
+      - blessing
+  - id: s0628-blessing
+    video_id: k27dmsPvmG8
+    start: 5899.88
+    end: 5919.88
+    type: scripture-reading
+    title: Benediction from Hebrews 13
+    confidence: 0.9
+    review_notes:
+      - Chapter announced; exact verse range not independently confirmed on a frame, so metadata remains Hebrews 13. Reading omitted.
+    scripture:
+      - Hebrews 13
+    topics:
+      - peace
+    summary: The leader gives the blessing introduced as being from Hebrews 13.
+    keywords: []
+  - id: s0628-announcements
+    video_id: k27dmsPvmG8
+    start: 5919.88
+    end: 6090.1529375
+    type: announcements
+    title: Communion, ministry participation and July events
+    confidence: 0.89
+    review_notes:
+      - 5990s contact slide; 6020/6085s event slide verifies North Sumatra events on 28–31 July. Spoken day order is incomplete/unclear; not harmonized into a verbatim announcement.
+    scripture: []
+    topics:
+      - service-life
+      - prayer
+    summary: The leader asks for early arrival for July’s first-Sunday Communion after the first hymn and opening prayer, encourages ministry participation beginning with scripture reading, and invites interest in July events with the senior pastor. He asks for prayer for the pastor’s wisdom and strength amid his demands, then dismisses the congregation with silent meditation.
+    keywords:
+      - holy communion
+      - ministry
+      - july
+      - senior pastor

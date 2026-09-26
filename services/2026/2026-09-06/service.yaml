@@ -1,27 +1,89 @@
-id: '2026-09-06'
-date: '2026-09-06'
+id: 2026-09-06
+date: 2026-09-06
 title: RECS 6 September 2026 — Eternal Life
 sermon_title: Eternal Life
 type: service
 workflow_status: complete
 editorial_status: needs_review
 review_notes:
-  - 'Only physical upload ZTDYIJUDb0M was processed. Date and 9:30am service are displayed at 0s; sermon title Eternal Life and references John 17:1-5 and 1 John 5:10-12 are displayed at 1920s and 1940s.'
-  - 'Full English CPU transcription succeeded for 0–6759s. Source duration 6759s; ffprobe container duration 6759.281s. Programme begins at the recording start and continues through dismissal; no waiting interval was discarded.'
-  - 'One bounded same-model recovery pass recovered the opening, Communion sequence and pastoral prayer. On 2026-09-25 the operator instructed the agent to flag the remaining 251.08–318.34s uncertainty for human editorial review and continue. Agent processing is complete, not a claim of a complete verbatim transcript: human listening must distinguish quiet prayer from missing spoken lead-in. No further automatic retry was run; editorial_status remains needs_review.'
-  - 'All transcript text is an ASR-derived review draft, not an audio-verified verbatim edition. Punctuation/capitalization normalized; unresolved words marked rather than completed from memory. Segment timestamps are machine estimates, not word-level guarantees.'
-  - 'All sung lyrics, creed/liturgical recitations and scripture quotations are omitted with explicit markers. A few spoken biblical allusions without an announced or displayed verse are marked reference uncertain rather than assigned guessed references. Commentary is retained separately. Recovery outputs retain local offsets externally; absolute time equals filename start plus raw millisecond offset divided by 1000.'
-  - 'No reliable displayed full speaker name was found. Spoken introductions sound like Pastor Yong, Patrick and Brother Joseph; these are review leads only, not verified speaker records. speakers is intentionally empty.'
-  - 'Sections preserve music, Communion, readings, prayer and announcements in playback. Search passages cover coherent spoken material and reference-only readings; gaps and longer passages are explained in docs/first-recording-review.md.'
+  - Only physical upload ZTDYIJUDb0M was processed. Date and 9:30am service are displayed at 0s;
+    sermon title Eternal Life and references John 17:1-5 and 1 John 5:10-12 are displayed at 1920s
+    and 1940s.
+  - Full English CPU transcription succeeded for 0–6759s. Source duration 6759s; ffprobe container
+    duration 6759.281s. Programme begins at the recording start and continues through dismissal; no
+    waiting interval was discarded.
+  - "One bounded same-model recovery pass recovered the opening, Communion sequence and pastoral
+    prayer. On 2026-09-25 the operator instructed the agent to flag the remaining 251.08–318.34s
+    uncertainty for human editorial review and continue. Agent processing is complete, not a claim
+    of a complete verbatim transcript: human listening must distinguish quiet prayer from missing
+    spoken lead-in. No further automatic retry was run; editorial_status remains needs_review."
+  - All transcript text is an ASR-derived review draft, not an audio-verified verbatim edition.
+    Punctuation/capitalization normalized; unresolved words marked rather than completed from
+    memory. Segment timestamps are machine estimates, not word-level guarantees.
+  - All sung lyrics, creed/liturgical recitations and scripture quotations are omitted with explicit
+    markers. A few spoken biblical allusions without an announced or displayed verse are marked
+    reference uncertain rather than assigned guessed references. Commentary is retained separately.
+    Recovery outputs retain local offsets externally; absolute time equals filename start plus raw
+    millisecond offset divided by 1000.
+  - No reliable displayed full speaker name was found. Spoken introductions sound like Pastor Yong,
+    Patrick and Brother Joseph; these are review leads only, not verified speaker records. speakers
+    is intentionally empty.
+  - Sections preserve music, Communion, readings, prayer and announcements in playback. Search
+    passages cover coherent spoken material and reference-only readings; gaps and longer passages
+    are explained in docs/first-recording-review.md.
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Plan only, based on the current service metadata and all 77 supplied passage summaries under the
+    current concise-service-outline brief; editorial status remains needs_review and speaker
+    identities remain unverified.
+  - Seven equal peer entries comprise Opening, Worship and Scripture, four argument-led sermon
+    movements, and Response and Closing; all 22 original chapters are assigned once in physical
+    order on the single upload ZTDYIJUDb0M.
+  - The sermon introduction and recording-access notice stay with the John 16 recap establishing
+    confidence in God’s love; the study prayer, John 17 background and prayer-practice illustrations
+    form one movement; the cross and glory illustrations stay together; the question about eternal
+    life, its relational answer, application and concluding prayer form the final movement.
+  - "Two cues provide useful access within those movements: prayer practice moves from Jesus’
+    example to daily discipline, and Knowing God Changes Daily Life marks the answer in John 17:3
+    and its application after the question and church anecdotes. Each cue retains its original
+    chapter span; no finer timestamp is inferred."
+  - Routine service material has no cues; songs, readings, Communion, congregational prayers,
+    offerings and notices remain accessible through their neutral parent groups. No independent
+    address is evidenced, and incidental announcements do not become subsections.
+  - Only the holistic sermon description is intended for display beneath the video and in service
+    context; all parent and cue summaries are internal retrieval/review material, never public
+    chapter, subsection or search-result descriptions.
+  - "Existing timing and source qualifications remain unresolved: the opening prayer lead-in at
+    251.08–318.34s, machine-estimated boundaries, incomplete responsive-reading recognition,
+    unconfirmed hymn title, Communion translation uncertainty and pastoral-prayer onset refinement.
+    Hebrews 13 remains a chapter-level reference; the endpoint remains the recording bound."
+  - The proposed setting of John 17, Greek-word interpretation, doctrinal and denominational
+    comparisons, personal stories and historical claims remain the preacher’s account, not
+    independently verified conclusions; the Billy Graham answer remains attributed. Announcements
+    are historical, and anniversary logistics were still being considered.
+  - Migration must derive bounds, upload membership, scripture and topics from these source
+    assignments, preserve original IDs, notes and provenance internally, retain old-link mappings,
+    and recompute vectors for changed spans; this plan does not perform that migration.
 speakers: []
 topics:
-  - { id: prayer, name: Prayer }
-  - { id: eternal-life, name: Eternal life }
-  - { id: knowing-god, name: Knowing God }
-  - { id: glory, name: Glory }
-  - { id: faith, name: Faith }
-  - { id: communion, name: Holy Communion }
-  - { id: service-life, name: Church life }
+  - id: prayer
+    name: Prayer
+  - id: eternal-life
+    name: Eternal life
+  - id: knowing-god
+    name: Knowing God
+  - id: glory
+    name: Glory
+  - id: faith
+    name: Faith
+  - id: communion
+    name: Holy Communion
+  - id: service-life
+    name: Church life
 videos:
   - id: ZTDYIJUDb0M
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
@@ -29,1443 +91,292 @@ videos:
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    disposition_evidence: 'Authorized acquisition verified channel and ID; ffprobe found audio/video, 6759.281s. All 23 coarse frames and full-span ASR inspected; worship, sermon and announcements corroborate expected service. ASR gaps are transcription defects, not evidence of unusable media.'
+    disposition_evidence: Authorized acquisition verified channel and ID; ffprobe found audio/video,
+      6759.281s. All 23 coarse frames and full-span ASR inspected; worship, sermon and announcements
+      corroborate expected service. ASR gaps are transcription defects, not evidence of unusable
+      media.
     transcription_language: en
-    transcribed_span: { start: 0, end: 6759 }
-sections:
-  - id: s0906-preparation
+    transcribed_span:
+      start: 0
+      end: 6759
+chapters:
+  - id: c20260906-opening
     video_id: ZTDYIJUDb0M
     start: 0
-    end: 356.58
-    type: prayer
-    title: Preparation for worship — A.C.T.S. prayer
-    confidence: 0.72
-    review_notes: ['Frame 300s displays Adoration, Confession, Thanksgiving, Supplication. Recovery 0000–0065 restores opening 0–29s; recovery 0055–0120 places confession prompt at 85–107.4s rather than full-run 72–108s. Repetitive quiet-prayer ASR is excluded. The lead-in to collective prayer before 318.34s still needs listening; frames at 300/315s do not establish its words or onset.']
-  - id: s0906-welcome
-    video_id: ZTDYIJUDb0M
-    start: 356.58
     end: 459.96
-    type: welcome
-    title: Welcome and silent meditation
-    confidence: 0.87
-  - id: s0906-call-hymn
+    title: Opening
+    type: opening
+    summary: The leaders prepare the congregation through adoration, confession, thanksgiving and
+      supplication, then welcome worshippers into greetings and silent meditation; the
+      collective-prayer lead-in remains uncertain.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving and supplication
+    topics:
+      - prayer
+      - communion
+      - service-life
+    scripture: []
+    source_chapters:
+      - s0906-preparation
+      - s0906-welcome
+    review_notes: []
+  - id: c20260906-worship-and-scripture
     video_id: ZTDYIJUDb0M
     start: 459.96
-    end: 619.4
-    type: worship
-    title: Call to worship and opening hymn
-    confidence: 0.9
-    review_notes: ['Psalms 98:1-3 announced at 459.96s. Hymn introduced at 496.76s; lyrics omitted.']
-  - id: s0906-invocation
-    video_id: ZTDYIJUDb0M
-    start: 619.4
-    end: 706.24
-    type: prayer
-    title: Opening prayer
-    confidence: 0.84
-  - id: s0906-communion
-    video_id: ZTDYIJUDb0M
-    start: 706.24
-    end: 1195.68
-    type: communion
-    title: Holy Communion
-    confidence: 0.86
-    review_notes: ['Introduction at 706.24s; one targeted recovery pass now supplies Communion explanation, Lord’s Prayer, 1 Corinthians 11 reading, participation invitation, hymn and thanksgiving. New passages use recovery offsets, not the hallucinated 717.48–1126.48s full-run repetitions. Greeting segment 736–752.68s is broad and includes transition. Frames 850/925s confirm liturgy/reading; 940/990/1045/1060s confirm hymn, whose lyrics are omitted. Slide translation differs from ESV; reference-only links do not identify the spoken version.']
-  - id: s0906-responsive
-    video_id: ZTDYIJUDb0M
-    start: 1195.68
-    end: 1584.16
-    type: scripture-reading
-    title: Responsive reading — Proverbs 6 and John 17
-    confidence: 0.94
-    review_notes: ['Frame 1200s explicitly gives Proverbs 6:1-35 and John 17:1-19; 1500s labels English Standard Version 2016. Congregational responses are incompletely recognized; entire readings reference-only.']
-  - id: s0906-hymn-anthem
-    video_id: ZTDYIJUDb0M
-    start: 1584.16
-    end: 1857.2
-    type: worship
-    title: Hymn and video anthem before the reading
-    confidence: 0.84
-    review_notes: ['Hymn introduction cites Psalms 27:4. Video anthem introduced 1697.92–1709.92s; music continues into the coarse 1800s frame. All lyrics omitted. ASR hymn title needs confirmation.']
-  - id: s0906-scripture
-    video_id: ZTDYIJUDb0M
-    start: 1857.2
     end: 1919.2
-    type: scripture-reading
-    title: Scripture reading — 1 John 5:10-12
-    confidence: 0.92
-    review_notes: ['Reference announced in ASR and confirmed by sermon title slide; frame 1900s displays 1 John 5:12 ESV. Boundary includes transition to sermon.']
-  - id: s0906-sermon-intro
+    title: Worship and Scripture
+    type: worship
+    summary: The leaders guide worship, prayer and Communion as remembrance of Christ, with responsive
+      readings, a hymn and video anthem, and the reading of 1 John 5:10-12.
+    keywords:
+      - psalms 98
+      - holy communion
+      - universal church
+      - bread and cup
+      - responsive reading
+      - proverbs
+      - 1 john
+    topics:
+      - prayer
+      - faith
+      - communion
+      - service-life
+      - knowing-god
+      - eternal-life
+    scripture:
+      - Psalms 98:1-3
+      - 1 Corinthians 11:23-26
+      - Proverbs 6:1-35
+      - John 17:1-19
+      - Psalms 27:4
+      - 1 John 5:10-12
+    source_chapters:
+      - s0906-call-hymn
+      - s0906-invocation
+      - s0906-communion
+      - s0906-responsive
+      - s0906-hymn-anthem
+      - s0906-scripture
+    review_notes: []
+  - id: c20260906-trusting-gods-love
     video_id: ZTDYIJUDb0M
     start: 1919.2
-    end: 2073.2
-    type: sermon
-    title: Eternal Life — introduction and recording access
-    confidence: 0.87
-  - id: s0906-recap
-    video_id: ZTDYIJUDb0M
-    start: 2073.2
     end: 2706.78
+    title: Trusting God’s Love amid Imperfect Faith
     type: sermon
-    title: Review of John 16 — prayer, love, faith and hope
-    confidence: 0.88
-    review_notes: ['Frame 2100s identifies prior sermon Overcoming, John 16:25-33; this is not today’s sermon title.']
-  - id: s0906-sermon-prayer
+    summary: Introducing John 17 through a recap of John 16, the preacher encourages confidence in
+      prayer and God’s love despite tribulation and imperfect faith, contrasting wishful hope with
+      assurance.
+    keywords:
+      - tribulation
+      - beloved
+      - disciples
+      - eternal plan
+      - assurance
+    topics:
+      - service-life
+      - prayer
+      - faith
+    scripture:
+      - John 17:1-5
+      - John 16:25-33
+      - James 5
+      - Acts 2
+      - Mark 9
+      - John 16:33
+      - John 17
+    source_chapters:
+      - s0906-sermon-intro
+      - s0906-recap
+    review_notes: []
+  - id: c20260906-learning-prayer-from-jesus
     video_id: ZTDYIJUDb0M
     start: 2706.78
-    end: 2759.78
-    type: prayer
-    title: Prayer before studying John 17
-    confidence: 0.78
-  - id: s0906-high-priestly
-    video_id: ZTDYIJUDb0M
-    start: 2759.78
-    end: 3133.66
+    end: 3412.82
+    title: Learning to Pray from Jesus’ Example
     type: sermon
-    title: John 17 — the High Priestly Prayer
-    confidence: 0.9
-    review_notes: ['Slide at 3000s confirms heading and MacArthur attribution; 3080s displays Hebrews 7:25. Interpretive claims belong to the preacher.']
+    summary: After praying for humility, the preacher considers Jesus’ intercession in John 17 and urges
+      learning prayer through daily practice, drawing on an answer attributed to Billy Graham.
+    keywords:
+      - humble and teachable
+      - john 17
+      - intercessory
+      - mystery
+      - billy graham
+      - discipline of prayer
+    topics:
+      - prayer
+      - knowing-god
+      - faith
+    scripture:
+      - John 13-16
+      - John 17
+      - Matthew 6
+      - John 17:1-5
+      - Hebrews 7:25
+    source_chapters:
+      - s0906-sermon-prayer
+      - s0906-high-priestly
+      - s0906-prayer-example
+    review_notes: []
   - id: s0906-prayer-example
     video_id: ZTDYIJUDb0M
     start: 3133.66
     end: 3412.82
     type: sermon
-    title: Learning to pray through practice
+    title: Prayer Is Learned through Practice
     confidence: 0.88
-  - id: s0906-glory
+    scripture:
+      - John 17
+    topics:
+      - prayer
+      - faith
+    summary: The preacher urges regular prayer and meditation rather than learning only through reading
+      or listening, using Billy Graham illustrations whose claims remain attributed.
+    keywords:
+      - prayer by praying
+      - billy graham
+      - discipline of prayer
+    parent_id: c20260906-learning-prayer-from-jesus
+    source_chapters:
+      - s0906-prayer-example
+  - id: c20260906-glory-and-the-cross
     video_id: ZTDYIJUDb0M
     start: 3412.82
     end: 4247.7
+    title: Christ’s Path to Glory Leads through the Cross
     type: sermon
-    title: Glory, the cross and examples of faith
-    confidence: 0.87
-    review_notes: ['Psalms 19:1 shown at 3900s; hymn title Jesus, keep me near the cross and Fanny Crosby shown at 4200s. Personal anecdotes and historical claims remain attributed and unverified.']
-  - id: s0906-eternal-life
+    summary: The preacher contrasts human recognition with God’s inherent glory, connects Christ’s
+      mission and return to glory with the cross, and recalls encouragement from continued service
+      despite suffering.
+    keywords:
+      - glory
+      - cross
+      - suffering
+      - recognition
+      - fanny crosby
+      - first pastor
+    topics:
+      - glory
+      - faith
+    scripture:
+      - John 16:33
+      - John 17:1
+      - Psalms 19:1
+      - John 17:1-5
+    source_chapters:
+      - s0906-glory
+    review_notes: []
+  - id: c20260906-eternal-life-as-knowing-god
     video_id: ZTDYIJUDb0M
     start: 4247.7
-    end: 4756.04
+    end: 5718.3
+    title: Eternal Life Means Knowing God Now
     type: sermon
-    title: Asking what eternal life means
-    confidence: 0.85
+    summary: Questioning eternal life as duration alone, the preacher interprets John 17:3 through
+      relational knowledge of God and urges meditation, changed conduct and purposeful service,
+      closing in prayer.
+    keywords:
+      - eternal life
+      - living forever
+      - election
+      - significance
+      - ginóskó
+      - intimacy
+      - j i packer
+      - meditation
+      - here and now
+      - gifts
+    topics:
+      - eternal-life
+      - service-life
+      - knowing-god
+      - prayer
+      - glory
+    scripture:
+      - John 17:2
+      - John 17:3
+      - Luke 1:34
+      - John 17
+      - John 17:4-5
+      - 1 John 5:10-12
+    source_chapters:
+      - s0906-eternal-life
+      - s0906-knowing-god
+      - s0906-response-prayer
+    review_notes: []
   - id: s0906-knowing-god
     video_id: ZTDYIJUDb0M
     start: 4756.04
     end: 5623.56
     type: sermon
-    title: Knowing God and living in response
+    title: Knowing God Changes Daily Life
     confidence: 0.9
-    review_notes: ['John 17:3 at 4800s, Greek ginóskó at 4880s, Luke 1:34 at 4950s, J. I. Packer at 5100s and 5400s. Do not turn the preacher’s linguistic or doctrinal assertions into archive conclusions.']
-  - id: s0906-response-prayer
-    video_id: ZTDYIJUDb0M
-    start: 5623.56
-    end: 5718.3
-    type: prayer
-    title: Sermon closing prayer
-    confidence: 0.78
-  - id: s0906-creed-prayers
+    review_notes:
+      - John 17:3 at 4800s, Greek ginóskó at 4880s, Luke 1:34 at 4950s, J. I. Packer at 5100s and
+        5400s. Do not turn the preacher’s linguistic or doctrinal assertions into archive
+        conclusions.
+    scripture:
+      - John 17:3
+      - Luke 1:34
+      - John 17
+      - John 17:4-5
+      - 1 John 5:10-12
+    topics:
+      - eternal-life
+      - knowing-god
+      - prayer
+      - glory
+    summary: The preacher uses John 17:3, his account of ginóskó and Packer’s distinction between
+      knowing God and knowing about God to urge lived relationship, reflection and use of one’s
+      gifts.
+    keywords:
+      - john 17
+      - ginóskó
+      - j i packer
+      - intimacy
+      - meditation
+      - here and now
+      - gifts
+    parent_id: c20260906-eternal-life-as-knowing-god
+    source_chapters:
+      - s0906-knowing-god
+  - id: c20260906-response-and-closing
     video_id: ZTDYIJUDb0M
     start: 5718.3
-    end: 6012.8
-    type: prayer
-    title: Apostles’ Creed and congregational prayer
-    confidence: 0.75
-    review_notes: ['Creed recitation 5727.14–5763.62s remains an explicit liturgical omission, now corroborated by frames 5735/5755s and partial recovery. Prayer prompts at 5764.34s and 5876.52s remain; recovered pastoral prayer is indexed at 5940–6012.76s, with substantive words beginning 5964.02s. The long introductory ASR segment requires onset refinement, not invented missing words.']
-  - id: s0906-offering
-    video_id: ZTDYIJUDb0M
-    start: 6012.8
-    end: 6135
-    type: offering
-    title: Offertory
-    confidence: 0.84
-    review_notes: ['Spoken notice 6012.8–6027.62s; subsequent instrumental/quiet interval not transcribed. Raw chunk 0011 starts with unrelated hallucinated text at 6105–6134.98s; excluded.']
-  - id: s0906-closing-worship
-    video_id: ZTDYIJUDb0M
-    start: 6135
-    end: 6369.18
-    type: worship
-    title: Closing hymn, doxology and benediction
-    confidence: 0.87
-    review_notes: ['It Is Well With My Soul introduced 6135–6171.6s; doxology 6299.92s, benediction from Hebrews 13 announced 6302.16s. Exact verse numbers not announced in inspected evidence; retain chapter-level reference. Lyrics and blessing text omitted.']
-  - id: s0906-announcements
-    video_id: ZTDYIJUDb0M
-    start: 6369.18
-    end: 6594.44
-    type: announcement
-    title: Ministry anniversary, proofreading and financial stewardship
-    confidence: 0.88
-    review_notes: ['Historical announcements as spoken on 6 September, not current invitations. Financial stewardship slide at 6600s gives Paul Rafiuly, 26 September 2026, 1.30 pm, Alexcier #03-11.']
-  - id: s0906-teachers-dismissal
-    video_id: ZTDYIJUDb0M
-    start: 6594.44
     end: 6759
-    type: service
-    title: Appreciation of teachers, prayer and dismissal
-    confidence: 0.85
-    review_notes: ['Individual call-outs 6630.18–6696.64s are not indexed; no names inferred. Final speech ends about 6754.96s; frame 6750s still shows minister and announcement slide. Programme endpoint is recording bound, not an inferred post-service cut.']
-passages:
-  - id: p0906-acts-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-preparation
-    start: 0
-    end: 108
-    type: prayer
-    title: Adoration and confession in personal prayer
-    summary: The leader prepares the congregation for worship and Holy Communion, then invites personal prayer in adoration and confession.
-    questions: ['How does the service begin its time of personal prayer?']
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      All right folks, let's prepare our heart for worship this morning, especially we have Holy Communion, so we want to make sure that our heart is made right with God, as the scripture says before we start. We pray in adoration, in confession, in thanksgiving and supplication. This is a time for personal quiet prayer. We want to start by adoring God Almighty, our Maker. Let's pray in adoration.
-
-      [Quiet-prayer interval; repetitive ASR not retained.]
-
-      Let us now come to confess our sins before the Lord as we pray the prayer of confession. We know that we are far away from Him and so we need to confess our sins. But we know the Bible says [scripture quotation omitted; reference not announced in this evidence, requires review]. So let us pray in confession now.
-    confidence: 0.88
-    review_notes: ['Recovered 0–29s from recovery-0000-0065; confession 85–107.4s from recovery-0055-0120 offsets 30–52.4s. Existing outer passage range retained. Recovery 0000–0065 hallucinates a Thank you segment extending beyond its 65s audio bound; that segment and other isolated quiet-interval artifacts excluded. Longer range retains quiet prayer, not continuous speech. Reference deliberately not guessed.']
-  - id: p0906-thanksgiving
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-preparation
-    start: 168
-    end: 251.08
-    type: prayer
-    title: Thanksgiving and supplication
-    summary: The leader asks the congregation to reflect thankfully and bring personal needs before God.
-    questions: ['What guidance is given for thanksgiving and supplication?']
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      In the prayer of thanksgiving, we know that the Bible says [scripture quotation omitted; reference not announced, requires review]. Let's be reflective of our life and be thankful to God in our prayers. Let us pray.
-
-      [Personal prayer; repeated ASR prompts omitted as unreliable.]
-
-      Let us pray in supplication where we bring our personal needs before the Lord and seek His guidance. Let us pray in supplication now.
-    confidence: 0.74
-    review_notes: ['Speech at 168–181.24s and 243.66–251.08s; quiet interval retained in playback.']
-  - id: p0906-preparation-close
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-preparation
-    start: 318.34
-    end: 352.24
-    type: prayer
-    title: Prayer while preparing for Communion
-    summary: The leader prays for reflection on Christ’s death and for a life directed toward God.
-    questions: []
-    topics: [prayer, communion]
-    scripture: []
-    transcript: |
-      [Prayer excerpt; preceding words are unresolved in ASR.]
-      Especially as we gather together to remember that the body of Christ is broken for us and his blood was shed for us so that we can be redeemed and belong to you forever more. And so help us this morning to be reflective of this fact that we cannot truly comprehend but can only accept by faith. And we ask that in this morning's worship service that we are reminded that we no longer live for ourselves but we live because of you. May all glory be unto your holy name. In Jesus' name we pray. Amen.
-    confidence: 0.75
-    review_notes: ['Opening of this prayer is unresolved in repetitive ASR before 318.34s; excerpt is explicitly labelled. This remains outside the single targeted recovery pass. Listen to 251.08–318.34s, especially around 300–318.34s, to establish the transition from quiet prayer and recover any missing spoken lead-in; frames alone cannot resolve it.']
-  - id: p0906-welcome
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-welcome
-    start: 356.58
-    end: 413.8
-    type: welcome
-    title: Welcome to the English service
-    summary: The service leader welcomes the congregation, invites greetings and introduces silent meditation.
-    questions: []
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      Very good morning Church. Okay, welcome to Reformed Evangelical Church Singapore English Service. As we come together as a body of Christ, can I invite all of you to stand and greet one another good morning.
-
-      [Congregational greetings.]
-
-      Thank you and thank God, please be seated. Let us prepare our hearts with a silent meditation.
-    confidence: 0.85
-    review_notes: ['Church spelling confirmed by frame 0s. Greetings condensed into a labelled event marker; meditation music follows.']
-  - id: p0906-call-to-worship
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-call-hymn
-    start: 459.96
-    end: 504.16
-    type: scripture-reading
-    title: Call to worship — Psalms 98:1-3
-    summary: The leader announces Psalms 98:1-3 as the call to worship and invites the opening hymn.
-    questions: ['Which passage is used for the call to worship?']
-    topics: []
-    scripture: ['Psalms 98:1-3']
-    transcript: |
-      Today's call to worship is taken from Psalms 98, verses 1 to 3.
-
-      [ESV reading omitted; reference only: Psalms 98:1-3 — https://www.esv.org/Psalm+98:1-3/]
-
-      The first hymn today is Praise Ye The Lord. So let us stand to sing this majestic hymn together. Praise Ye The Lord.
-    confidence: 0.91
-    review_notes: ['Reading 464.68–495.32s omitted; hymn lyrics 504.82–619.4s not transcribed.']
-  - id: p0906-opening-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-invocation
-    start: 619.4
-    end: 705.34
-    type: prayer
-    title: Prayer for worship, perseverance and receiving the sermon
-    summary: The leader thanks God and asks for perseverance, attention in worship and readiness to apply the sermon.
-    questions: ['What does the opening prayer ask for the congregation?']
-    topics: [prayer, faith, communion]
-    scripture: []
-    transcript: |
-      Let us pray. Heavenly Father, we come before you this morning with grateful hearts to worship you. We thank you, O God, our Father, that you have loved us so much [biblical wording omitted; reference not announced in this prayer, requires review]. You have justified us and continue to sanctify us so that we can be glorified when you come again to bring us back to you. Help us not to be distracted or to be led astray by the evil one, but help us to obey your word even through many trials and temptations that may come our way. Help us to hold steadfast to you and your word in our faith and spiritual journey, in the hope and assurance of eternal life to be with you after this [word uncertain] on earth is over. All the more as we partake this morning in the Holy Communion and look forward to your second coming.
-
-      We thank you and praise your most holy name. May the precious blood of our Lord Jesus Christ cover our sins so that we can draw near to you this morning [biblical wording omitted; reference uncertain]. We pray that you [word uncertain] the lips of [pastor's name uncertain] as you speak through him this morning. Prepare our hearts, O God, to receive your word and apply it in our lives, that people may see Christ in us. We thank you and praise your name. In our Lord Jesus Christ, most precious name we pray. Amen.
-    confidence: 0.78
-    review_notes: ['ASR has light at 669.4s, annoy at 687.48s, Pastor Yong at 690.26s; no unsupported correction. Quotation-like biblical language omitted conservatively.']
-  - id: p0906-communion-meaning
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-communion
-    start: 736
-    end: 815.9
-    type: communion
-    title: Remembering Christ and belonging to the universal church
-    summary: The minister describes Communion as remembrance of Christ’s sacrifice and participation with believers across generations and around the world.
-    questions: ['How does the minister explain the purpose of Holy Communion?']
-    topics: [communion, service-life]
-    scripture: []
-    transcript: |
-      Good morning, brothers and sisters in Christ. Every first Sunday of the month we come together to remember the sacrifice of our Lord Jesus Christ in the sacrament of Holy Communion. And in Holy Communion we are being obedient to the command of our Lord Jesus Christ that we should always remember, and that he shed his blood and broke his body for our sake. And every Holy Communion we join together with all the brothers and sisters throughout all generations and all over the world and be part of the body of Christ.
-
-      And I am always reminded that the Holy Communion remind me that I am part of the universal church of Jesus Christ. In the Apostles' Creed we always recite [creed wording omitted]. And the word catholic here is a small c, which means that [wording uncertain] the big C church, which means there is a universal church of Jesus Christ. And so that's what Holy Communion is all about.
-    confidence: 0.84
-    review_notes: ['Recovery 0706–0796 offsets 30–81.76s supplies greeting/explanation; 0786–0876 offsets 0–29.9s supplies overlapping continuation. Duplicate body-of-Christ phrase retained once; final segment also begins next invitation. ASR apostle script resolved by explicit later creed announcement and frames 5735/5755s. Small-c/big-C wording not doctrinally repaired. Start segment 736–752.68s includes transition; 745s frame still shows empty pulpit, so exact audible greeting onset requires listening.']
-  - id: p0906-communion-liturgy
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-communion
-    start: 815.9
-    end: 905.06
-    type: scripture-reading
-    title: The Lord’s Prayer and Communion reading
-    summary: The minister leads the Lord’s Prayer, invites assistance and reads from 1 Corinthians 11 before Communion.
-    questions: ['Which reading accompanies Holy Communion?']
-    topics: [communion, prayer]
-    scripture: ['1 Corinthians 11:23-26']
-    transcript: |
-      [The preceding segment introduces coming together to share.] The [wording uncertain] cup and the bread. So let's come together first to prepare our heart and pray the Lord's Prayer together. Let us pray.
-
-      [The Lord's Prayer recited; liturgical text omitted. Title confirmed on the 850s slide; no chapter/verse supplied in this segment.]
-
-      I want to invite brothers [names uncertain] to come forward and assist me as I minister the bread and the cup to you. Let us listen to the word of God as given to us by the Apostle Paul in 1 Corinthians chapter 11.
-
-      [Scripture reading omitted; reference only: 1 Corinthians 11:23-26. ESV reference link: https://www.esv.org/1+Corinthians+11:23-26/. Displayed/spoken wording differs from ESV; this link is not an assertion of the reading's translation.]
-    confidence: 0.86
-    review_notes: ['Recovery 0786–0876 offsets 29.9–90s and 0866–0956 offsets 0–39.06s. Reading begins about 869.6–870.16s and ends 905.06s; overlapping reading retained only as one omission. Frames 850/925s corroborate recitation and reference. ASR names Patrick and seven are not verified identities.']
-  - id: p0906-communion-invitation
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-communion
-    start: 905.06
-    end: 930.96
-    type: communion
-    title: Invitation to share the bread and cup
-    summary: The minister invites baptized participants to share Communion and introduces the Communion hymn.
-    questions: ['Whom does the minister invite to share Communion in this service?']
-    topics: [communion]
-    scripture: []
-    transcript: |
-      I now invite all who have been baptized in the church of Jesus Christ, wherever it may be, to share the bread and the cup together with me and the rest of the brothers and sisters. [Name uncertain], can you come and help me? And the congregation will now sing the Communion song, Break Thou the Bread of Life.
-    confidence: 0.87
-    review_notes: ['Recovery 0866–0956 offsets 39.06–64.96s. Title supported by 940s hymn slide; lyrics omitted. After 930.96s this recovery repeats the announcement implausibly; 0946–1036 and frames 940/990/1045/1060s establish hymn instead. Short completed invitation, not a general archive eligibility rule.']
-  - id: p0906-communion-thanksgiving
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-communion
-    start: 1050.94
-    end: 1118.5
-    type: communion
-    title: Thanksgiving and sharing Communion
-    summary: The minister checks that participants have received the bread and cup, invites thanksgiving and then leads participation.
-    questions: ['How does the congregation prepare to partake after the distribution?']
-    topics: [communion, prayer]
-    scripture: []
-    transcript: |
-      [The opening timing segment includes the end of the Communion hymn; lyrics omitted.]
-
-      So anyone who has yet to receive the bread and the cup, would you raise your hand? Then I invite all who have received the bread and cup to stand. And I ask Brother [name uncertain] to lead us in the prayer of thanksgiving.
-
-      Father Lord Jesus, we give thanks to you. [Biblical wording omitted; reference not announced.] And with your precious blood we are cleansed and we can draw near to you [biblical wording omitted; reference not announced]. We thank you and praise your holy name. All these things we ask and pray in our Lord Jesus Christ's most precious name. Amen.
-
-      [Words accompanying the bread and cup omitted as liturgical/biblical wording; no additional scripture reference inferred.] Let us partake [wording uncertain] together and in our heart with thanksgiving.
-    confidence: 0.83
-    review_notes: ['Recovery 1026–1116 offsets 24.94–90s plus 1106–1135 offsets 0–12.5s; overlapping participation wording retained once. Start 1050.94s is a broad ASR segment ending 1075.74s; frame 1060s still shows hymn lyrics, so the passage explicitly includes music and exact invitation onset needs listening. Prayer starts about 1083.88s; participation about 1104.88s. Raw chunk 0002 had a coarser 1130.4s endpoint; the complete short recovery gives 1118.5s.']
-  - id: p0906-communion-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-communion
-    start: 1140
-    end: 1191.68
-    type: prayer
-    title: Prayer after Communion
-    summary: The minister prays that remembering redemption will lead to a life dedicated to knowing God.
-    questions: ['What response does the minister pray for after Communion?']
-    topics: [communion, knowing-god, prayer]
-    scripture: []
-    transcript: |
-      Let us pray. We thank you once again, O Lord, for the reminder that we belong to you all our life long. May that always be something that we always hold on to dearly because you have come into the world and fulfilled the plan of the Father just to redeem us, and scripture say that this is done and planned even [biblical wording omitted; reference not announced]. And so help us grasp maybe just a little bit deeper into this truth so that we do not live a life floating around like the rest of the world, but a life that is fully dedicated to knowing you. Listen to our prayers. In Jesus' name we pray. Amen. You may be seated.
-    confidence: 0.85
-    review_notes: ['Raw chunk 0002 offsets 30–81.68s plus 1110s corroborate merged evidence. Earlier Communion material is now covered by four recovery passages, with recitations and lyrics explicitly omitted.']
-  - id: p0906-proverbs-reading
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-responsive
-    start: 1195.68
-    end: 1419.92
-    type: scripture-reading
-    title: Responsive reading — Proverbs 6:1-35
-    summary: The leader introduces alternating responsive reading and begins Proverbs 6.
-    questions: ['Which Proverbs passage is read responsively?']
-    topics: []
-    scripture: ['Proverbs 6:1-35']
-    transcript: |
-      Thank you [pastor's name uncertain]. We will now proceed to the responsive reading. Today's responsive reading is taken from the books of Proverbs and the book of John. As usual I will read the odd verses and the congregation will read the even verses. Let's go to the book of Proverbs. Proverbs chapter 6, Practical Warnings.
-
-      [ESV reading omitted; reference only: Proverbs 6:1-35 — https://www.esv.org/Proverbs+6:1-35/]
-
-      Let's move to the book of John.
-    confidence: 0.94
-    review_notes: ['Long passage intentionally follows the complete reference-only reading, not an artificial 60s cut. Full range confirmed at 1200s; ASR incompletely captures congregation.']
-  - id: p0906-john-reading
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-responsive
-    start: 1424.48
-    end: 1576.8
-    type: scripture-reading
-    title: Responsive reading — John 17:1-19
-    summary: The leader introduces John 17:1-19 and the congregation continues the responsive reading.
-    questions: ['Which passage follows Proverbs in the responsive reading?']
-    topics: [prayer]
-    scripture: ['John 17:1-19']
-    transcript: |
-      John chapter 17 verses 1 to 19. The High Priestly Prayer, verse 1.
-
-      [ESV reading omitted; reference only: John 17:1-19 — https://www.esv.org/John+17:1-19/]
-
-      Thank God for his holy word.
-    confidence: 0.95
-    review_notes: ['Complete reading retained as one reference-only passage; displayed range and ESV label corroborate ASR.']
-  - id: p0906-hymn-introduction
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-hymn-anthem
-    start: 1584.16
-    end: 1612.96
-    type: worship
-    title: Introducing the hymn before the anthem
-    summary: The leader connects the next hymn’s theme of Christ’s beauty with Psalms 27:4.
-    questions: []
-    topics: []
-    scripture: ['Psalms 27:4']
-    transcript: |
-      Okay, the next hymn is [title uncertain in ASR] and this hymn expounds on the theme of the beauty of Christ and the creation in an overflowing expression of [word uncertain], similar to King David's statement [ESV quotation omitted; reference only: Psalms 27:4 — https://www.esv.org/Psalm+27:4/]. And let us sing this beautiful hymn together.
-    confidence: 0.73
-    review_notes: ['ASR title fairies lord jesus suggests Fairest Lord Jesus, but no independently inspected title slide. Do not assert corrected title as trusted metadata. Hymn lyrics omitted at 1612.96–1697.92s; anthem lyrics omitted 1710.56–1857.2s.']
-  - id: p0906-scripture-reading
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-scripture
-    start: 1857.2
-    end: 1918.2
-    type: scripture-reading
-    title: Scripture reading — 1 John 5:10-12
-    summary: The reader announces and reads 1 John 5:10-12 before the sermon.
-    questions: ['What is the scripture reading before Eternal Life?']
-    topics: [eternal-life]
-    scripture: ['1 John 5:10-12']
-    transcript: |
-      Today's scripture reading is taken from 1 John chapter 5 verse 10 to 12.
-
-      [ESV reading omitted; reference only: 1 John 5:10-12 — https://www.esv.org/1+John+5:10-12/]
-
-      This is the word of God.
-    confidence: 0.92
-    review_notes: ['ASR introduction occupies 1857.2–1876.2s and may include preceding music/transition. Frame 1900s confirms verse 12, frame 1920s confirms full range.']
-  - id: p0906-sermon-introduction
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-sermon-intro
-    start: 1919.2
-    end: 1972.2
-    type: sermon
-    title: Beginning John 17
-    summary: The preacher introduces the move from John 16 to John 17 and describes learning while preparing sermons.
-    questions: ['Which chapter does the sermon begin studying?']
-    topics: []
-    scripture: ['John 17:1-5']
-    transcript: |
-      Today we move into perhaps one of the most important chapters according to some people in the Bible, John chapter 17. And we finished chapter 16 last week and now we have a very complete change in the direction with chapter 17. So I'm excited and looking forward to sharing with you. And as I always tell you, oftentimes you forget that among all of us, I am the one that learned the most whenever I prepare sermons. So you can imagine so many years, you know, and it's the most wonderful journey so far. Before I begin again, there is no relevant question to today's topic. So I'm not going to answer questions per se, but remember you can still send your question to this number or put it in the box in front.
-    confidence: 0.88
-    review_notes: ['Title Eternal Life and John 17:1-5 confirmed by frames 1920/1940s. Contact number is not transcribed.']
-  - id: p0906-recordings
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-sermon-intro
-    start: 1972.2
-    end: 2073.2
-    type: sermon
-    title: Finding and revisiting past sermons
-    summary: The preacher explains how the congregation can revisit worship recordings and distinguishes delayed sermon-only Facebook postings from the full uploads.
-    questions: ['How can the congregation revisit past sermons?']
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      Last week I mentioned that if you want to catch up on the past lessons and all that, our worship services actually are all uploaded and also put on the Facebook. Facebook postings are trimmed to the sermons only and so that takes some time and Facebook posting is about maybe a year behind the actual timing. But if you want to look at the live one, this is the particular site you can go to to check. Oh, sorry. Yeah, okay. So the worship videos are all into this particular site and QR code can be used to access it. Then you can go and check if you miss any sermons or you find that you want to find out more or you want to re-look at some of the things that has been taught. So that's a good tool to be used.
-
-      The only price to pay is that you may have to watch KFC [word uncertain] before we start because it's not a subscription model, it's a free model. And so they put out ads and what have you that's not relevant to us. But you know, it's a small price to pay. I'm actually quite [word uncertain] surprised that they allow us to load so many, many things through the years. You know, I don't know, maybe sometime down the line I may have to download everything just to keep in case YouTube collapse, right? So maybe I have to pray for YouTube. So this is a good tool to use. Yeah, there are some things in there that I'm very appreciative of that's free, right? Like YouTube, [names uncertain]. May they survive for a long time because they bring [word uncertain] down quite a lot. Alright.
-    confidence: 0.82
-    review_notes: ['101s preserves one practical announcement. ASR at 2039–2072s has uncertain adjectives, software names and costs; no guessed replacements. Historical platform availability is not verified.']
-  - id: p0906-direct-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-recap
-    start: 2073.2
-    end: 2155.2
-    type: sermon
-    title: Review — confidence in prayer
-    summary: The preacher reviews the previous lesson and encourages confidence in praying as a child of God.
-    questions: ['Why does the preacher encourage believers to pray with confidence?']
-    topics: [prayer, faith]
-    scripture: ['John 16:25-33', 'James 5']
-    transcript: |
-      Last lesson, we closed chapter 16 and the sermon was entitled Overcoming because it's about our Lord Jesus Christ telling us that the plan of God being revealed, right? So, Jesus said [ESV quotation omitted; reference only: John 16:25-33 — https://www.esv.org/John+16:25-33/]. And you don't have to, I won't go and in turn go and talk to the Father for you. Because this direct [word uncertain] to God without any agent. And that's a very important thing for us to remember. So I spent some time to encourage you to understand. You pray, God will hear you.
-
-      And it is true that scripture says [scripture quotation omitted; James 5, ESV reference only — https://www.esv.org/James+5/]. James chapter 5. At the same time, that's because the righteous are closer to the will of God. And so they won't go and pray nonsense for you. And their prayer is always in line with what it is that God wants. And so that's important for you. But for you, yourself, you must have the confidence to pray and know that God will hear you. Not because you are such a great person, but because you are a child of God. You are covered by the power of the Lord Jesus Christ. And so often times people use the illustration of a jacket, right? That Christ is like a jacket that you wear. And when God looks at you, He looks at a jacket and therefore recognizes you as His beloved. And this is a really very important thing to remember.
-    confidence: 0.87
-    review_notes: ['John 16 range from 2100s slide; James chapter announced but verse not resolved. ASR direct as at 2094s marked rather than silently corrected.']
-  - id: p0906-believers-community
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-recap
-    start: 2155.2
-    end: 2244.2
-    type: sermon
-    title: Review — believers, community and tribulation
-    summary: The preacher connects the priesthood of believers and the early church’s shared life with the subsequent experience of persecution.
-    questions: ['How does the preacher move from early church joy to tribulation?']
-    topics: [faith, service-life]
-    scripture: ['Acts 2', 'John 16:25-33']
-    transcript: |
-      Because if you look at other religions, it's like so difficult to reach their gods. And so many things you need to do just to speak to God. Or go to some intermediary priest or some guy and you put your trust on this holy man and holy woman. You shouldn't do that. In Christian understanding, priesthood of all believers, you are all children of God. And along line with that, I also believe that you are all servants of God as well, wherever God has placed you to be. Today's sermon, I will expand on that a little bit more.
-
-      And then also that Jesus said [scripture wording omitted; John 16:25-33, ESV reference only — https://www.esv.org/John+16:25-33/]. So on that day is the Pentecost. And then that was the case for the early church. So during the Pentecost, the Holy Spirit came, the early church was established. And we read from Acts chapter 2, the kind of church life that I still feel is a very envious situation. [Scripture wording omitted; Acts 2, ESV reference only — https://www.esv.org/Acts+2/]. At the same time, we see that it did not last. That immediately after that, they were persecuted by the Roman Empire and with horrifying, terrible persecution. And Jesus already said that too in last week's lesson [scripture wording omitted; John 16:25-33, ESV]. And horrendous suffering of the early Christians. Today we know that the case.
-    confidence: 0.82
-    review_notes: ['Duplicate horrendous suffering at 2239.4–2242.2s removed by comparing chunks 0003 and 0004. Endpoint uses chunk 0003 offset 579.2 + 1665s, a sentence boundary rather than the midpoint-merged fragment. Historical/religious comparisons are the speaker’s assertions.']
-  - id: p0906-tribulation-love
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-recap
-    start: 2244.2
-    end: 2347.56
-    type: sermon
-    title: Review — tribulation and being beloved
-    summary: The preacher discusses persecution and personal difficulties, then presents being loved by God as encouragement amid tribulation.
-    questions: ['What encouragement does the preacher connect with tribulation?']
-    topics: [faith]
-    scripture: []
-    transcript: |
-      But this tribulation continues all the way till today. On a global scale, there are many, many Christians in the world that are persecuted outside of our shore. Closest to us, I suppose, would be places like Myanmar, places like mainland China. Myanmar was quite bad. I think I just saw some internet posting a pastor got executed by the Myanmar military government. And the bigger scale one of the Middle East, all this [words uncertain] situation. But personally to us all too, we have tribulations in our life as well, right? This is something that every single one of us will go through. Either the tribulation come because we are living in a fallen world, or we are fallen ourselves, or the tribulation come because you want to be holy in the sight of God and you want to live a godly life. And the Apostle Paul told Timothy [biblical wording omitted; exact reference not announced].
-
-      But Jesus talked about joy in tribulation. How is it exactly possible? In last week's lesson then, I pointed out that in the teaching of our Lord Jesus Christ, as he was speaking to the disciples, he brought out at least three things. Number one, love. You can go through tribulation because you know that you are beloved of God. And remember [name uncertain], the Catholic priest who spent his entire life pushing this idea of beloved. And it's such an important thing for us to know that you look into the mirror, you must always remind yourself you're a beloved of God. However difficult it is to believe. And a lot of us don't really believe. And I think that most of us don't. We look in the mirror, we see a loser or we see somebody, you know, who just wouldn't make it, right?
-    confidence: 0.79
-    review_notes: ['103.36s retains the move from persecution to application. Closest corroborated by chunk 0003 offset 588.2–595.2s where chunk 0004 has Grossest. External reports unverified; attributed summary does not assert them as archive facts. ASR Henry Norwin at 2317s left uncertain.']
-  - id: p0906-acceptance
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-recap
-    start: 2347.56
-    end: 2456.78
-    type: sermon
-    title: Review — accepting that one is loved
-    summary: The preacher contrasts discouraging self-perception with accepting God’s love by faith, quoting his senior pastor’s phrase about acceptance.
-    questions: ['What does the preacher mean by faith as acceptance of acceptance?']
-    topics: [faith]
-    scripture: []
-    transcript: |
-      And all of our lives tell us that this is the case. I was looking at some marriage counseling video. A comedian was making fun of it. And one of the things that we say in marriage counseling is you must use more I word rather than you word. Meaning I feel this way, I feel that way. As opposed to you always do this, you always do that, right? The comedian said, huh? I word. What about I feel like a loser because I married you. I word. So you see the entire [words uncertain]. Very quickly will shift the way God has created us to be to make us feel lousy, feel like a loser or, you know, I mean, just nothing great about us. And that's the key problem, you know, we have tremendous problem breaking out of that. But if you really understand scripture deeply, you will know that indeed true, we are the beloved of God. You read the Bible, it's incomprehensible, you know.
-
-      Ephesians says [scripture quotation omitted; book announced, chapter and verse not verified; reference-only link — https://www.esv.org/Ephesians/]. I think that sentence alone will really blow your mind. You can't even figure out the days before you are born, let alone [scripture phrase omitted], right? Faith is because we are very far away from God who transcends time and space. And therefore, as our senior pastor, faith is the acceptance of acceptance. You know, senior pastor has a lot of key quotations. Next time I'm going to make a living printing his quotation on merchandise instead of faith is the acceptance of acceptance. As difficult as it may be to accept, as difficult as it may be to accept that I'm a beloved of God, I exercise faith, I believe. Why? Because God said so. So, because of that love, we can overcome many things.
-    confidence: 0.75
-    review_notes: ['ASR broken at 2377.54–2384.54s. Ephesians book only is spoken; chapter/verse omitted rather than guessed. Last ASR segment at 2448.78–2456.78s also begins the next thought; passage boundary approximate within that segment. Passage longer to keep illustration with its explanation.']
-  - id: p0906-imperfect-faith
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-recap
-    start: 2456.78
-    end: 2527.78
-    type: sermon
-    title: Review — imperfect faith and the disciples
-    summary: The preacher describes the disciples’ confusion and failures as encouragement for people conscious of imperfect faith.
-    questions: ['How does the preacher use the disciples’ failures to encourage faith?']
-    topics: [faith]
-    scripture: ['Mark 9', 'John 16:25-33']
-    transcript: |
-      [The preceding segment introduces faith as the second point and repeats the phrase acceptance of acceptance.] Even if I said to you, you were still like halfway there, maybe, maybe not there. It's the same for me too. Many times I feel that I'm not a person of great faith. It's quite crazy, right? Ah, but it's fine. The apostles also all messed up. When Jesus Christ spoke to them about this, they were also quite confused. They said, yeah, yeah, yeah, we believe. And Jesus was a bit sarcastic. He said, what do you mean you believe? Later on, all of you will run away. So that was a prediction that Jesus Christ, and that was indeed the case. They all ran, and I think Peter was kind of the worst, right? He was the head of the group. And also, he talked big and told Jesus that I'm going to die for you and stuff like that. So don't talk so big next time because the bigger you talk, the harder you fall. And of course, he ended up denying Christ. But as imperfect as our faith is, scripture tells us that God understands. And He cares. He still continues to choose to love us in spite of that. Remember, Mark 9, the father says [ESV quotation omitted; reference only: Mark 9 — https://www.esv.org/Mark+9/]. And Jesus did not rebuke him. Jesus went ahead and exorcised the demon from His child.
-    confidence: 0.87
-    review_notes: ['Speaker’s conversational retelling preserved; direct Mark quotation omitted, no verse number invented.']
-  - id: p0906-faith-examples
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-recap
-    start: 2527.78
-    end: 2618.78
-    type: sermon
-    title: Review — encouragement from examples of faith
-    summary: The preacher recalls his senior pastor and an evangelist named Nick as personal examples of faith.
-    questions: ['What personal examples does the preacher find encouraging?']
-    topics: [faith]
-    scripture: []
-    transcript: |
-      And of course, in the practical term in our life, we can get a lot of encouragement from examples of great men and women of faith among us. There are many examples for me. Of course, senior pastor will be the closest example. Next year will mark my 30th year, three-zero, working with him. Crazy, right? I looked at all the early pictures of me working with him. I looked like a kid, man. And he looked like an old man. Today, he still looks like an old man. And yeah, you know, it's quite funny. This is the second service, somebody told me, Pastor, you know, when I first joined this service, I looked at you and said, wow, how come this pastor is so young? Now I must tell you that you don't look young anymore. He said, that's not very encouraging. But that's the way life is, right? Like, you know, the [word uncertain] of life grows. And senior pastor is a really wonderful example for me.
-
-      And then of course, I also show you Nick. I always have a problem with his name. The guy with no arm, no leg. And he has four kids. Beautiful kids. And he's an evangelist from Australia. And he's born in America. He's an Australian. And YouTube has many of his clips and his teachings and his sermons. You should listen to him, you know. You should blow up his picture and stick it on your fridge to remind yourself that if somebody like that can have faith, people like us, [Hokkien phrase uncertain]. So we shouldn't really always look down on ourselves and get upset with trivialities of life, isn't it?
-    confidence: 0.79
-    review_notes: ['Do not infer Nick’s surname or correct biographical claims from general knowledge. Brief Hokkien phrase is untranslated and unresolved.']
-  - id: p0906-hope-plan
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-recap
-    start: 2618.78
-    end: 2706.78
-    type: sermon
-    title: Review — assurance and the eternal plan
-    summary: The preacher contrasts wishful hope with assurance and introduces John 17 as a further glimpse of the eternal plan he has been describing.
-    questions: ['How does the preacher distinguish hope from assurance?']
-    topics: [faith]
-    scripture: ['John 16:33', 'John 17']
-    transcript: |
-      And finally, the most important thing is hope. Not only a hope, but assurance. And I told you that the English language hope is a bit weak. I hope this happened. I wish this happened. The more correct understanding, the more assurance because our Lord Jesus Christ, after saying [ESV quotation omitted; reference only: John 16:33 — https://www.esv.org/John+16:33/]. It's a past tense, you know, something already done deal kind of a thing.
-
-      So today we carry on with chapter 17 because what happened is that up to this point in time, we see our Lord Jesus Christ in the last stage before He was crucified, slowly [word uncertain] the eternal plan of God in a step by step by step by step manner. And we keep seeing how the apostles are quite confused. They don't know what's happening. So it's like a snapshot kind of a thing. But the thing that should impress us is the plan is an eternal plan that really [biblical wording omitted; exact reference not announced] was already set, you know. So you must remember that as you look at the words of our Lord Jesus Christ as He spoke to the disciples. And the confusion that come about, and even till today as we attempt to understand it, we find that, wow, the depth is very, very deep, because it's a snapshot of the Eternal One speaking to humanity while He is still on earth, walking the earth, trapped in time-space for the period of time before His crucifixion. And so there are really many wonderful things to learn from all these chapters. Let's come before the Lord and commit the time to Him as we enter chapter 17. Let's pray.
-    confidence: 0.85
-    review_notes: ['John 16:33 confirmed by frame 3425s. ASR reviewing at 2652.78s unresolved.']
-  - id: p0906-teachable-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-sermon-prayer
-    start: 2706.78
-    end: 2759.78
-    type: prayer
-    title: Prayer for a humble and teachable heart
-    summary: The preacher asks for freedom from distracting burdens and for humility while studying scripture.
-    questions: ['What does the preacher ask before studying John 17?']
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      Thank you, O God, for giving us the opportunity to discover the wonders of Your Word in an in-depth manner. And so we do pray that You grant us a heart that is humble and teachable. Often times when we come before You, we have so much burden in our life, we get all confused. We walk into this place, [words uncertain], with our mind all clogged up with so many things. And we just want to ask that You lift all this up away from us so that we can focus on You, just as a little child would before his heavenly Father. And when we do that, in humility, we will hear You. And by hearing You, we will recognize Your peace, we will turn and then follow You. Thank you, O God, [words uncertain], and especially on Your unworthy servant. [Biblical prayer wording omitted; reference not announced, requires review.] In Jesus' name we pray.
-    confidence: 0.77
-    review_notes: ['ASR unclear at 2717.78–2728.78 and 2746.78–2759.78s; no prayer text supplied from memory.']
-  - id: p0906-disciples-understanding
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-high-priestly
-    start: 2759.78
-    end: 2853.94
-    type: sermon
-    title: The disciples’ understanding and continuing study
-    summary: The preacher describes the disciples’ limited understanding and encourages continuing study of God’s revealed will.
-    questions: ['Why does the preacher emphasize lifelong study?']
-    topics: [knowing-god]
-    scripture: ['John 13-16']
-    transcript: |
-      Now, when we come to John chapter 13, 14, 15, 16, as I said earlier, we see a very unusual situation that's happening where our Lord Jesus Christ, before His physical crucifixion, then took the time to slowly revise, so to speak, or review in a step-by-step manner the plan of God to a group of people who followed Him for three and a half years, but really had no idea what He was really doing and never quite scratched the surface of the depth of what's going to happen. And so they keep thinking He's going to be some triumphant military leader. And all the way to the book of Acts, that was still the case. Right before the ascension, they still asked Jesus whether you're here to revive the kingdom of Israel rather than the kingdom of God.
-
-      And so I always am appreciative of the fact that even for me, and I think for all of us, we are far away from God, and we don't really get it, you know. And so it is wonderful that God has revealed his will in the Word, that we can spend our entire lifetime studying on it more and more. And as I preach through the gospel of any other passage that I've done in the past, I continue to enjoy it very, very much, and I continue to learn so much from it. I just want to be very careful with the time I have to encourage you to discover more and to share with you some of the snippets of the things I found. But I must tell you that my thoughts or the things that I learned from here are so much more than what I am presenting because of time constraint, right?
-    confidence: 0.87
-    review_notes: ['Chunk 0005 opening overlaps 2775–2820s; wording continuity checked against preceding merged segments. No audio-perfect timing claim.']
-  - id: p0906-unusual-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-high-priestly
-    start: 2853.94
-    end: 2925.5
-    type: sermon
-    title: Why the preacher calls John 17 unusual
-    summary: The preacher cites John MacArthur and highlights the extended communication between the Son and the Father in John 17.
-    questions: ['Why does the preacher describe John 17 as unusual?']
-    topics: [prayer]
-    scripture: ['John 17']
-    transcript: |
-      And when we teach chapter 17, for example, it's such an unusual chapter that when you look at your scripture in your English Standard Version, they put up there a subtitle called the High Priestly Prayer. And this chapter is a highly unusual chapter, so much so that John MacArthur Jr., the great Reformed leader who passed away, went back to the Lord just last year, said, John 17 is the holy of holies of scripture, the most elevated, most [word uncertain] chapter, the prayer above all prayer, chapter above all chapters. So, this guy really think that chapter 17 is a highly, highly unusual chapter. Now, when you read it, maybe you don't quite see what's so unusual about it. Now, it's unusual because in the whole of the Bible, the Bible talks about the reaction of, the actions of man and God, right? And the history of God's creation, the will of God, the teaching of God. And it's very, from the angle of human being, a lot, a lot from the angle of human being. But John 17 is the only chapter in the entire Bible where you see the communication of God the Son with God the Father.
-    confidence: 0.87
-    review_notes: ['3000s slide confirms MacArthur and holy of holies. Slide says glory-filled where ASR says glorified; unresolved spoken wording marked. Uniqueness and biographical claims belong to the preacher.']
-  - id: p0906-lords-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-high-priestly
-    start: 2926.32
-    end: 3013.02
-    type: sermon
-    title: Distinguishing John 17 from the prayer taught to disciples
-    summary: The preacher distinguishes Jesus’ own prayer in John 17 from the prayer he taught his followers in Matthew 6.
-    questions: ['How does the preacher distinguish John 17 from the Lord’s Prayer in Matthew 6?']
-    topics: [prayer]
-    scripture: ['John 17', 'Matthew 6']
-    transcript: |
-      It's the only one, you know, a direct, very in-depth communication. And the detail of how God the Son spoke to God the Father within the mystery of the [word uncertain] God is displayed fully in chapter 17 only. There is no other place in the Bible can you see that. Now, you say about other gospel, sometimes you see Jesus praying to God and saying things to God. But other places are only like one or two lines. Like, for example, you know, you say that [biblical wording omitted; exact reference not announced] or something. There's only one, two lines. But it's different. This is a whole chapter with very insightful communication between God the Son and God the Father.
-
-      But some people then say that, but then we have the Lord's Prayer, right, in Matthew chapter 6. But the Lord's Prayer is not Jesus' prayer. We call it the Lord's Prayer because He taught it to us. It's not His prayer because it contains the line [scripture quotation omitted; Matthew 6, reference only — https://www.esv.org/Matthew+6/]. It cannot be Jesus' prayer because Jesus has no trespass. So He don't have to ask for forgiveness. So the prayer is for us. This, however, is the real Lord's Prayer. It is the Lord Himself praying to His Father. And so from there, we can really glimpse a lot of wonderful, wonderful knowledge. And I pray that even after this sermon, you will continue to explore on your own. Because like I said, there isn't enough time to dig deep into this.
-    confidence: 0.84
-    review_notes: ['ASR triumphant God at 2930.42–2938.44s unresolved; do not silently substitute a doctrinal term. Matthew prayer wording is not labelled a verified ESV quotation; all verse wording omitted under reference-only policy.']
-  - id: p0906-intercession
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-high-priestly
-    start: 3013.02
-    end: 3097.84
-    type: sermon
-    title: The setting and intercessory character of the prayer
-    summary: The preacher proposes a setting for the prayer, outlines its portions and connects it with Christ’s intercession in Hebrews 7.
-    questions: ['How does the preacher outline the prayer in John 17?']
-    topics: [prayer]
-    scripture: ['John 17:1-5', 'Hebrews 7:25']
-    transcript: |
-      Here, we have a very unusual situation. We believe that our Lord Jesus Christ [word uncertain] prayed aloud. So He was in the upper room. He [word uncertain] the feet of the disciples. They had the last supper. Judas Iscariot left. Then Jesus Christ continued to teach. And He [word uncertain] outside of the upper room. Because at the end of chapter 13, He said [brief biblical wording omitted; chapter attribution requires review]. So we believe they were walking towards the Garden of Gethsemane, probably in darkness. And He probably prayed aloud. And the Holy Spirit then inspired the Apostle John to either recall or to record down the detail of what Jesus Christ prayed. And it was an intercessory prayer. That means it's a prayer largely for others.
-
-      So the prayer is in three portions. The first portion, verse 1 to 5, which we are going to touch on today, is the opening prayer, where He expresses His own communication with God. Then He will pray for His followers. And finally, He will pray for the world. The Bible tells us that that's the role of Jesus still today. Hebrews chapter 7 says [ESV quotation omitted; reference only: Hebrews 7:25 — https://www.esv.org/Hebrews+7:25/]. So we believe that our Lord Jesus Christ, and the Bible also says the Holy Spirit, intercedes for us even when we pray.
-    confidence: 0.81
-    review_notes: ['3080s slide supplies Hebrews 7:25 and likely prayed aloud; ASR lightly/watched/thought unresolved. ASR says end of chapter 13; preserve claim for review rather than correcting from memory. Hebrews quotation absent in merged ASR; explicit marker reflects displayed scripture.']
-  - id: p0906-prayer-mystery
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-high-priestly
-    start: 3097.84
-    end: 3133.66
-    type: sermon
-    title: Prayer as a mystery and a practice
-    summary: The preacher acknowledges his own limitations in prayer and points to Jesus’ frequent prayer as an example.
-    questions: ['What simple point does the preacher retain amid the mystery of prayer?']
-    topics: [prayer]
-    scripture: ['John 17']
-    transcript: |
-      And it's a great mystery of how it all works. But in the topic of prayer, as I mentioned many, many times, it's a topic that I really don't like to preach about because I'm not a prayerful person, I think. Not good enough. And it's a very mysterious and very in-depth kind of a theology when it comes to the theology of prayer. But I always say that there's one thing that we can remember. And that is our Lord Jesus Christ prayed often and much. And so surely we must do the same.
-    confidence: 0.91
-    review_notes: ['Compact completed thought; 3300s slide corroborates central wording.']
-  - id: p0906-learn-by-praying
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-prayer-example
-    start: 3133.66
-    end: 3220.74
-    type: sermon
-    title: Learning prayer by praying
-    summary: The preacher uses Jesus’ example to urge prayer and says that prayer is learned through practice, not only reading or listening.
-    questions: ['How does the preacher say we learn to pray?']
-    topics: [prayer]
-    scripture: ['John 17']
-    transcript: |
-      And so in this chapter 17, you see that the Son of God, who is fully human, fully divine. And again, there's a mysterious aspect of how Christology worked when He walked the earth. And when was He human? When was He using His divine powers? All these are by perfect timing of God. But largely, Jesus walked the earth as the only perfect human being who ever walked the earth. So He was limited in many ways. And He found a tremendous need to pray. And the Bible tells us that He pray very often. He goes to corners and pray and all that. And you think about it, you're talking about somebody who can walk on water, who can [word uncertain] the storm, who feed five thousand, who can resurrect the dead. And He needs to pray. And so, can you do any of these things? Cannot, right? We cannot do even the smallest thing that Jesus can do. And if Jesus found the need to pray, then surely we must pray as well.
-
-      And prayer is a very unusual lesson. You learn about prayer by praying. So you don't learn about prayer by reading a book or only go and listen to somebody preach about praying. That's not how it works. You learn it by praying. And so, we all need to pray often and much. And I have a prayer list that is very long. And every time I tell you I pray for you, I do it. I put you in a prayer list, I pray. Because it's a very important part of my spiritual life as well. And still, I feel I don't pray enough.
-    confidence: 0.89
-    review_notes: ['ASR steal the storm at 3170.5s unresolved. Good preview search candidate; no inferred speaker identity.']
-  - id: p0906-billy-graham
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-prayer-example
-    start: 3220.74
-    end: 3300.22
-    type: sermon
-    title: The preacher’s Billy Graham illustration
-    summary: The preacher describes Billy Graham’s reach and the ministry practices he associates with the Modesto Manifesto.
-    questions: ['What ministry practices does the preacher describe in his Billy Graham illustration?']
-    topics: [faith]
-    scripture: []
-    transcript: |
-      You know, the greatest preacher in human history, who is it? The greatest, most successful preacher in human history, Billy Graham. He's not Stephen Tong. Stephen Tong preached to about 37 million people in his lifetime. Billy Graham live face-to-face, about 400 million through his many, many channel network, more than one billion in his lifetime. His largest number was one million people in Korea, gospel rally. One million people gathered in Korea to listen to him. So, great man of God and a person who has no scandal in his entire ministry, right? And the reason why he has no scandal, I shared with you before. He had the Modesto Manifesto. This idea that he and his team are [words uncertain] very tightly. Number one, never touch money. They don't get involved with money. Number two, never criticize people who they work with, wherever they go. And number three, don't go and criticize other religions or whatever it is. And number four, never be seen alone with a woman who is not your wife. So, you hold on very tightly to all these kind of things. So, all his life long, there's no scandal. And so, there are many things to learn from Billy Graham, right?
-    confidence: 0.83
-    review_notes: ['Numerical, biographical and manifesto claims are transcribed assertions, not independently verified. ASR clearing on at 3268.54s marked.']
-  - id: p0906-pray-more
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-prayer-example
-    start: 3300.22
-    end: 3358.8
-    type: sermon
-    title: An illustration about praying more
-    summary: The preacher recalls an answer attributed to Billy Graham about praying more if beginning ministry again.
-    questions: ['What answer does the preacher attribute to Billy Graham about starting again?']
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      So, people ask Billy Graham in his old age. I think he lived to be in his nineties. What would you do if you were to start all over again as such a great servant of God, right? He holds the record of having reached the most people in his lifetime. And it probably will not happen anymore, you know, because those days are over. This large-scale gospel rally concept. You notice, in these days, there are very few people doing this kind of thing. Other than those signs and wonders and healing, that kind of thing. Pure gospel preaching, my boss is about the only one who can do that kind of thing. It's not because people don't want to do it. Because if you do it, you may not have the ability to draw the crowd like Stephen Tong or Billy Graham. So, these are very unusual people. So, when he was asked, if you were to start all over again, what would you do? What would you change? Billy Graham said, I will pray more. When I read that, I was astonished. I mean, the guy accomplished so much in his life, and yet he realized that he did not pray enough.
-    confidence: 0.87
-    review_notes: ['Chunk 0006 offsets 0–28.8s corroborate seam at 3330–3358.8s; quotation is speaker attribution, not independently sourced.']
-  - id: p0906-daily-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-prayer-example
-    start: 3358.98
-    end: 3412.82
-    type: sermon
-    title: Cultivating a daily discipline of prayer
-    summary: The preacher encourages regular prayer and meditation, recalling morning and evening devotional practices.
-    questions: ['What daily spiritual discipline does the preacher encourage?']
-    topics: [prayer]
-    scripture: []
-    transcript: |
-      And so, my dear brothers and sisters in Christ, one of the side lessons here is that our Lord Jesus Christ prayed, and he felt a need to pray. And so it would be very strange for us to say, I don't feel a need to pray. And so some of the spiritual disciplines are important. The idea of cultivating a spiritual discipline of prayer at least once a day, meditation, these are very important things. And in the early days, they used to have two. They used to recommend two, morning and evening. So if you look at C. H. Spurgeon's devotional, his morning and evening devotional, Alexander McLaren, those early days people also write devotional too, you know. Now we only write one already, very tiring. Writing devotional. And I noticed early days they write two, you know. So times are different, but please remember to pray and learn about prayer and trust God [word uncertain] your prayer.
-    confidence: 0.88
-    review_notes: ['Devotional author spelling is ASR-derived; check before approval. Final preposition uncertain.']
-  - id: p0906-hour
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 3412.82
-    end: 3494.36
-    type: sermon
-    title: The transition to John 17 and God’s timing
-    summary: The preacher connects the close of John 16 with the opening of John 17 and emphasizes the timing of Jesus’ actions.
-    questions: ['How does the preacher connect the end of John 16 with John 17?']
-    topics: [glory]
-    scripture: ['John 16:33', 'John 17:1']
-    transcript: |
-      And when we come to chapter 17, remember that it's sort of a continuation of chapter 16, right? At the end of chapter 16, Jesus Christ said [ESV quotation omitted; reference only: John 16:33 — https://www.esv.org/John+16:33/]. And then chapter 17 opens up by saying [ESV quotation omitted; reference only: John 17:1 — https://www.esv.org/John+17:1/]. So therefore that closes the chapter 13, 14, 15, 16, that period of time where Jesus reveals what's going to happen, the Holy Spirit is going to come. In Chinese, everything is already properly handled over already. And chapter 17 says [ESV quotation omitted; John 17:1].
-
-      A reminder to us again that everything that Jesus did was based on the timing of God. Sometimes he wants to be known, sometimes he don't want to be known. Sometimes he tells the disciples, please keep quiet. Don't go and tell people that I did this healing. Or tell the guy who was the leper who was healed. Don't go and tell anyone. Sometimes he tells them to go to the temple. Everything has a meaning. Everything is a timing. [ESV quotation omitted; John 17:1.]
-    confidence: 0.88
-    review_notes: ['Quoted John verses omitted at 3423.48–3437.44, 3456.3–3464.28 and 3486.66–3494.36s; commentary retained. Frames 3425s and 3460s verify John 16:33 and John 17:1.']
-  - id: p0906-glory-suffering
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 3494.36
-    end: 3558.36
-    type: sermon
-    title: A prayer for glory before suffering
-    summary: The preacher contrasts the disciples’ fear and his own imagined response with Jesus’ prayer before the crucifixion.
-    questions: ['Why does the preacher find Jesus’ prayer before suffering striking?']
-    topics: [glory]
-    scripture: ['John 17:1']
-    transcript: |
-      Now you've got to remember that up until that point, Jesus was telling the people that horrible things are going to happen next. And then they all got very depressed, right? They got very worried because they keep thinking that great victory will come. But Jesus revealed to them that tribulation will come, difficulties will come. And the disciples all got so frightened. Again, so frightened that hours later they all run away. And here is a very strange prayer, right? Jesus said [ESV quotation omitted; reference only: John 17:1 — https://www.esv.org/John+17:1/]. If I am the one who is praying, I will say, the hour has come. Please protect me and I don't know, make sure I don't suffer like crazy. But Jesus said [ESV quotation omitted; John 17:1]. The next thing that happens is horrifying suffering of Lord Jesus Christ. Our Roman Catholic friends, every time there is a Good Friday, always have this thing called the 14 Stations of the Cross, which we don't do right over here. So they commemorate, according to them in the scripture, 14 things that happened before Jesus was crucified and dead and buried.
-    confidence: 0.86
-    review_notes: ['Speaker’s imagined prayer is commentary, distinguished from omitted scripture quotations. Stations discussion continues in next passage.']
-  - id: p0906-stations
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 3558.36
-    end: 3625.42
-    type: sermon
-    title: Stations of the Cross and ordinary ideas of glory
-    summary: The preacher discusses the Stations of the Cross and contrasts suffering with ordinary associations of glory and recognition.
-    questions: ['What contrast does the preacher draw between suffering and ordinary ideas of glory?']
-    topics: [glory]
-    scripture: ['John 17:1']
-    transcript: |
-      So from here you see one, two, three, four. Like for example, scripture recorded that he was made to carry the cross. That's one station, then another station, he fell down and then fell down three times and all that. So then the Roman Catholics always, either they go and preach about it every single Sunday, 14 Sundays to do that. Or they've set up a commemoration where you go there and meditate and think about things like that. But some of the things they say are not in the scripture. For example, they have this Veronica wiping the perspiration of Jesus Christ. Any Veronica here? That's where the name comes from. Veronica, they were not in the Bible, but in Catholic tradition is part of it.
-
-      So my point is that right after Jesus prayed, it happened to all these horrifying, horrendous things that happened, right? But then he said [ESV quotation omitted; reference only: John 17:1 — https://www.esv.org/John+17:1/]. And it's so different from our understanding. Because in our understanding, glory has to do with wonderful, wonderful things, isn't it? I mean, I ask you what is glory. Glory is a big thing. I win something big. I get some recognition.
-    confidence: 0.85
-    review_notes: ['3600s slide corroborates Stations topic. Denominational and historical descriptions are speaker claims requiring editorial review, not archive assertions.']
-  - id: p0906-recognition
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 3626.26
-    end: 3719.8
-    type: sermon
-    title: Recognition, prizes and the human idea of glory
-    summary: The preacher uses Nobel Prizes and childhood awards to illustrate an achievement-based idea of glory.
-    questions: ['What examples does the preacher use for human recognition?']
-    topics: [glory]
-    scripture: []
-    transcript: |
-      The Nobel Prize is the greatest glory, so to speak, on earth. I was just talking to someone just two days ago about university having a Nobel laureate. You know, the Nobel Prize is like the biggest, biggest in the world, right? Singapore, I don't know where we will produce, if we ever will produce a Nobel Prize laureate. When I was studying at university, my university spent a lot of money trying to invite all these people to university to teach. Because the more you have, the better your reputation is. University of Chicago, I think, have many. University of Berkeley, MIT, of course, a lot, a lot, a lot. So I remember they hired quite a few, you know. And I remember being in the lift with one of them. The guy who just won the Nobel Prize for physics. Wow, he stand right beside me. Wow, I feel very [Chinese phrase uncertain]. We [word uncertain] the same air. Nobel Prize laureate. Thankfully, he never [word uncertain]. So it's like, wow, you know, this is a big thing, right? You win some award.
-
-      And these days, we do all kinds of things to encourage recognition. Even kindergarten. Yeah, kindergarten, quite crazy, right? I was just passing by a kindergarten at a HDB flat. And then the teacher was giving out award. Best friend award. Yeah. I drink water today award. You know, that kind of nonsense. Anything you can think of, you can come up with an award. And it's very, very glorious. And of course, sometimes it's about building and stuff like that. And sometimes it's also about nature. So in our concept, glory is always tied to wonderful things and big things.
-    confidence: 0.79
-    review_notes: ['ASR read/breathe and fudge at 3673–3679.56s unresolved; no invented laureate identity. 93.54s preserves whole illustration.']
-  - id: p0906-large-choirs
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 3719.86
-    end: 3787.26
-    type: sermon
-    title: Large choirs and the preacher’s distinction about glory
-    summary: The preacher describes impressive musical gatherings, then distinguishes their human impact from what he calls God’s inherent glory.
-    questions: ['How does the preacher distinguish an impressive gathering from God’s glory?']
-    topics: [glory]
-    scripture: []
-    transcript: |
-      And so we have this idea that we glorify God by, I don't know, making something big, big, big. Like you get a choir to sing a giant song or many, many people. Like Stephen Tong Gospel Rally, we always get the Hallelujah Chorus people to form a giant. We try to do a [Chinese phrase uncertain]. I don't know whether we ever achieved that before. A thousand people kind of a choir. I don't think so. So far, maybe five hundred kind of thing. But, you know, the more, the merrier kind of situation. And sometimes when Christmas comes, people sing Hallelujah Chorus. And you can have a stadium. Can you imagine? It's very glorious. Of course, in between, there will be some people like me who cannot sing. I just open my mouth, pretend. But it's very glorious. You feel that all the glory of God is there. That's the way we think. What we don't understand is that this is a human-based understanding of what glory is. The fact is that glory, when it comes to God, is not a thing that needs to be done. Because glory is the very nature of God.
-    confidence: 0.88
-    review_notes: ['Chinese expression not silently translated; the preacher’s own following explanation retained. Slide at 3900s corroborates glory theme.']
-  - id: p0906-nature-glory
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 3787.26
-    end: 3871.28
-    type: sermon
-    title: Glory as God’s nature rather than an added achievement
-    summary: The preacher contrasts human experiences of inadequacy with God’s glory and refers to Psalms 19:1.
-    questions: ['How does the preacher use Psalms 19:1 in discussing glory?']
-    topics: [glory]
-    scripture: ['Psalms 19:1']
-    transcript: |
-      And when we use the word glory as human beings, because we are beings who oftentimes are not glorified. Right? Like I said, you look in the mirror, you always think that you are a loser. Because, you know, in life, many people say you are a loser. Since you are young, you know, until you are old. You draw a monkey and you go and show your father. Your father say, what is this? You say, a monkey. Your father say, look like a dog. Why is it like this? And a lot of parents like that. You go back home, you tell your mommy, hey, mommy, I got ninety points in my [word uncertain]. First thing the mommy say will be, what about Elizabeth? What about Jane? What about next-door neighbor? What about your cousin? Whoever. That's the way we think, right? And so we always have this state of being less than what we think.
-
-      But that's not the case with God. When we use the word glorify God, it doesn't mean that God needs your glory, you know. It's a phrase that they try to express the way we should live. And when we look at all of nature, one example is what the psalmist says. The psalmist says [ESV quotation omitted; reference only: Psalms 19:1 — https://www.esv.org/Psalm+19:1/]. Declare. That means it's already there. It's not something that you must make and then to stick to it, you know. It's already there. The glory of God is who God is.
-    confidence: 0.86
-    review_notes: ['3900s frame identifies Psalms 19:1. ASR mouth at 3822.68s marked rather than changed to a school subject.']
-  - id: p0906-cross-purpose
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 3871.92
-    end: 3959.92
-    type: sermon
-    title: The cross in the preacher’s account of God’s purpose
-    summary: The preacher connects Jesus’ mission and return to glory with the cross, then introduces a hymn used at gospel rallies.
-    questions: ['How does the preacher connect the cross with the purpose he describes?']
-    topics: [glory]
-    scripture: ['John 17:1-5']
-    transcript: |
-      And so what is happening is that Jesus Christ was talking about how he's going to fulfill the plan of God and then the glory of God and return to his own original state of glory. And that's who he is because as he walked the journey of earth, he was constrained as a human being and he is going to be tortured, he's going to be crucified. At the same time, he knew that the time will come where his mission will be completed and he will be back to his original state of glory. And that's what the phrase means. And so because of that the cross of our Lord Jesus Christ in our sight is a horrifying tool of torture that's meant for the worst criminal, and the pain and this is beyond understanding. But in the plan of God it is a pathway for the purpose of God and the plan of God to be completed and hence the glory of God. And very, very few people understand this. So our senior pastor, one of his habits is when he do his gospel rally, which I had the privilege of working with him for so many years, he always sings the song [hymn wording omitted; title displayed as Jesus, keep me near the cross, Fanny Crosby]. The Chinese version. He was following, or he is following, the tradition of Dr. John Sung, who did that too during his time.
-    confidence: 0.85
-    review_notes: ['Duplicate original state of glory at 3907.32–3909.54s removed using raw chunk 0007 offsets 14.58–30.6s and preceding merged context. Hymn metadata from 4200s slide, lyrics omitted. John Sung spelling is ASR-derived; review.']
-  - id: p0906-crosby
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 3959.92
-    end: 4046.6
-    type: sermon
-    title: Fanny Crosby and encouragement through service
-    summary: The preacher refers to the Westminster Confession’s discussion of creation and describes Fanny Crosby’s hymn writing as an encouragement.
-    questions: ['Why does the preacher find Fanny Crosby’s example encouraging?']
-    topics: [glory, faith]
-    scripture: []
-    transcript: |
-      Now Stephen Tong has never met John because by the time [name uncertain] died, Stephen Tong was four years old, something like five years old. But John [name uncertain] had a habit of singing this song. This is a song by Fanny Crosby. Fanny Crosby says [hymn quotation omitted; Jesus, keep me near the cross]. And the Westminster Confession of Faith also says that God's glory is seen everywhere, even in nature. It pleased God the Father, Son, the Holy Spirit, for the manifestation of his glory, of his eternal power, wisdom and goodness, in the beginning to create or make of nothing the world and all things thereof, whether visible or invisible, in the space of six days, and all very good.
-
-      So in the cross, in the nature, in everything the glory of God is seen. And Fanny Crosby then wrote this song [hymn quotation omitted]. And so Dr. Tong loves Fanny Crosby and always pointed out that Fanny Crosby is a [words missing in ASR]. And she was even blind and all that, right? So again, sometimes these great men and women of faith encourages us tremendously. Even blinded she still is faithful to God and will continue to serve God, writing so many wonderful songs.
-    confidence: 0.79
-    review_notes: ['Westminster quotation is ASR-derived, not supplied from a text. Fanny Crosby/Stephen Tong spelling supported by slides; John name variants and missing descriptor require listening. All hymn lyric fragments removed, irrespective of possible public-domain status.']
-  - id: p0906-first-pastor
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 4046.6
-    end: 4126.98
-    type: sermon
-    title: An account of the preacher’s first pastor
-    summary: The preacher recalls his first pastor’s injuries in a bombing and describes the effects on his eyesight.
-    questions: []
-    topics: [faith]
-    scripture: []
-    transcript: |
-      And again another great man of faith was my first pastor, the Reverend [name uncertain]. And [name uncertain] is now 84 years old. So [name uncertain] was a victim of the [president's name uncertain] era Greater Indonesia plot. So for those of you who know history, President [name uncertain] believed that the Indonesian archipelago should include Singapore and Malaysia and all these things. So in the sixties he actually sent Indonesian commando to Singapore to bomb the place. [Place name uncertain] station, there's an old building called [building name uncertain], not the McDonald's, it's just called [building name uncertain]. So [building name uncertain] was bombed. So my first pastor was a seminary student at Trinity Theological College which was at Mount Sophia behind that place. So he happened to be walking by the building and the building exploded and he was the victim that was [word uncertain], and he got so many glass [word uncertain] all over his body, all kinds of things. It's just crazy. He was in hospital for many, many months. But one of the worst things happened was that it took out his right eye. So he became blind in right eye. So his right eye is made of glass.
-    confidence: 0.68
-    review_notes: ['ASR Kenny Yo, Sukano, to be god and Macdonald not treated as verified names. Personal medical account is the preacher’s public account, not independently established. Boundary uses end of ASR 4120.5–4126.98s segment, which also begins the next sentence; human word-level boundary refinement needed. Next passage retains his self-correction about positioning.']
-  - id: p0906-eyesight
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 4126.98
-    end: 4196.74
-    type: sermon
-    title: Eyesight difficulties and concern for a pastor
-    summary: The preacher describes translating alongside his first pastor and recalls concern when the pastor’s remaining vision deteriorated.
-    questions: []
-    topics: [faith]
-    scripture: []
-    transcript: |
-      [The preceding ASR segment begins this sentence: In case you don't know, your] pastor's left eye is not functional. So when I translate for [name uncertain], I have to stand on his right because his right eye cannot see and my left eye cannot see. Let me think, it was the other way around. I have to stand on his left because his left eye can see and my right eye can see. Yeah, if I stand on the other side I cannot see him, he also cannot see me, so that's how it works. But sadly recent years his good eye became problematic. He got glaucoma. I mean, it's like stubborn old man refused to see doctor until it's very late, even when I told him, hey hello, don't fool around with this kind of thing. So he basically now is legally blind. I was very sad because blindness is a tough, tough thing to deal with, right? And even like, when I was in the hospital with my left eye situation, I told God that, hey boss, one eye okay, two I cannot. I cannot do this. I'm not that great. So even I got issues, you know. So I was [words uncertain], very sad for him.
-    confidence: 0.77
-    review_notes: ['Speaker’s right/left self-correction retained. Not medical advice or verified medical history. ASR broken at 4189.86s.']
-  - id: p0906-continuing-service
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-glory
-    start: 4196.74
-    end: 4247.7
-    type: sermon
-    title: Being encouraged by continued service
-    summary: The preacher recalls being moved when his first pastor continued translating despite severe vision loss.
-    questions: ['What encouraged the preacher when visiting his first pastor’s congregation?']
-    topics: [faith]
-    scripture: []
-    transcript: |
-      But then what happened was that I was invited to preach in his congregation two weeks ago when Brother [name uncertain] took the pulpit, and I was very worried for him. But I was so surprised, although he was kind of effectively blind, he moved around like nothing because he's so familiar with that place. And he did translation for me. I spoke in Mandarin and he translated into [language uncertain in ASR]. Because he was effectively blind he cannot read scripture anymore, right? So therefore he told me beforehand that, hey, afterwards you want to quote scripture, you read slowly. So sentence by sentence I read it and then he translated it. And I was deeply moved because, man of faith, although he did go into a period of depression, I know, but still, you know, he bounced back. And so again I tell a lot of you that, you know, don't go and always focus on the trivialities of your life, right? [Hymn words omitted; Jesus, keep me near the cross.] The glory of God is there.
-    confidence: 0.79
-    review_notes: ['ASR hadhi and heinous are not corrected without verification. Boundary ends before introduction of John 17:2.']
-  - id: p0906-election
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-eternal-life
-    start: 4247.7
-    end: 4318.58
-    type: sermon
-    title: John 17:2 and the preacher’s account of election
-    summary: The preacher connects John 17:2 with the Reformed doctrine of election and introduces his question about eternal life.
-    questions: ['How does the preacher connect John 17:2 with election?']
-    topics: [eternal-life]
-    scripture: ['John 17:2']
-    transcript: |
-      And Jesus Christ went on to say [ESV quotation omitted; reference only: John 17:2 — https://www.esv.org/John+17:2/]. And implicit in this verse is the great Reformed understanding of the doctrine of election. Jesus Christ said that you have given to the Father, that you have given the Son authority over all things and to give eternal life, and this eternal life is given to whom God the Father has given to God the Son. And so this is the doctrine of election, that we believe that every single one of you who belong to Jesus Christ was called by God and given by God the Father to God the Son so that he will save and redeem you by giving up his life and shedding his blood on the cross. And praise be to God, that's who we are. And this is done [biblical wording omitted; exact reference not announced]. Now if you have been in the Reformed Evangelical Church or any church for a while, you probably would know this a bit generally, right? I've entitled today's sermon Eternal Life because the word eternal life appear all the time.
-    confidence: 0.86
-    review_notes: ['Title independently displayed at 1920/1940s. John 17:2 displayed at 4260s. Preserve speaker’s interpretation; avoid unattributed doctrine. Direct verse at 4247.7–4264.42s omitted.']
-  - id: p0906-living-forever
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-eternal-life
-    start: 4318.58
-    end: 4403.62
-    type: sermon
-    title: Asking whether eternal life means only living forever
-    summary: The preacher uses preserved flowers and a conversation with a former supervisor to question a merely time-based understanding of eternal life.
-    questions: ['Why does the preacher question the phrase living forever?']
-    topics: [eternal-life]
-    scripture: []
-    transcript: |
-      But I tell you, if I were to ask you what eternal life is, I'm not very sure whether many of you know you can answer. Because eternal life is, the word is eternal, right? That's what I mean, Chinese [phrase uncertain]. Means forever. And recently I discovered that there is this flowers that's called [Chinese phrase uncertain], eternal flower. What they do is that they go and get your roses or whatever and quickly dehydrate it and it look quite alive. It's a [words uncertain] to all the men, you want to buy your wife flowers that are eternal, don't buy plastic flower, that one's not cool. Buy eternal flowers. More expensive, but next year don't have to buy again kind of concept.
-
-      So eternal life, what does it mean? And you say that you preach your gospel to your friend, you say you believe in Jesus, you have eternal life. Have you ever had someone ask you what's the point of living forever? You know, I don't want eternal life. I want to die and get it over with. It's my first job, right? My supervisor is not a Christian, so I share the gospel with him and he said, why you want me to go to heaven? I want to go to hell. I said why? He said all my friends are there, we all can have beer and have a good time. I said, man, you're mistaken.
-    confidence: 0.8
-    review_notes: ['Brief Chinese phrases not translated by the agent; speaker’s English gloss retained. ASR typo white/wife remains a review issue; context-based rendering wife is provisional.']
-  - id: p0906-significance
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-eternal-life
-    start: 4403.62
-    end: 4498.2
-    type: sermon
-    title: The preacher’s account of the search for significance
-    summary: The preacher links religion and the search for meaning with what he describes as an inbuilt sense of eternity.
-    questions: ['How does the preacher connect significance with a sense of eternity?']
-    topics: [eternal-life]
-    scripture: []
-    transcript: |
-      So you say eternal life, you live forever, and you have that concept because if you look at all religion they seem to imply that. And that you believe in your god or whatever it is, you go to different part of heaven or wherever and you live for a long, long time. The first clue is that religion exists because there is a sense of eternity inbuilt in us because God is eternal. So every single one of us seek meaning and seek direction and want to have purpose. And in English sometimes we use the word significance. And we can't accept the fact that when I die everything is gone. So it's like a candle, you blow, extinguish, and that's about it. You know, it takes a lot of faith to believe in that, that when I die everything is gone. And [word uncertain] organizations like the Communist Party and all that, they believe in that.
-
-      But you see, even in China or in Russia during Soviet Union time, when the great leader died, they never go and destroy the body. They leave it there. Mao Zedong, Lenin, you can go. So even they have some concept of eternity embedded in them, right? I mean, if we are not made by God, then who cares? Just destroy the body and move on already. But no. So that is already a clue somehow. That's why religion will never die. No matter how hard you try to destroy religion, it will never die. Because the sense of eternity is in us. And we believe that there must be more to my life.
-    confidence: 0.82
-    review_notes: ['Raw chunk 0008 offsets 0–34.68s resolves everything is gone and removes duplicate when the great leader died at 4463.7–4465.46s. Adjective before organizations differs between chunks, so remains uncertain. Speaker’s social/historical arguments not independently validated.']
-  - id: p0906-packaged-message
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-eternal-life
-    start: 4499.16
-    end: 4583.58
-    type: sermon
-    title: Discussing a packaged gospel presentation
-    summary: The preacher discusses a four-part evangelistic presentation, acknowledging its usefulness under time constraints while questioning simplification.
-    questions: ['What advantages and limitations does the preacher discuss in a short gospel presentation?']
-    topics: [eternal-life]
-    scripture: []
-    transcript: |
-      But what exactly is that? And so when you go and preach the gospel to people, many of us don't quite get it. So we keep telling people [Chinese phrase uncertain]. You believe in Jesus, you get eternal life. And people who don't like life will tell you, who cares? I'm not very interested in life. And sometimes it's not helped even within the Christian circle. The idea of what our faith is all about has changed tremendously in the past few decades or even centuries. For example, you must have heard of the [Four/false: ASR uncertain] Spiritual Laws. And we talked about it a little bit before. This is by the Campus Crusade for Christ people. And this is something that came about in the sixties. You get marketing people to come together and you tell them that, hey man, can you please summarize the Christian message to something that's very easy to tell others about? And so here comes [Four/false: ASR uncertain] Spiritual Laws.
-
-      There are some use to [Four/false: ASR uncertain] Spiritual Laws and I do, I use it myself too. There's very limited time then maybe I will make sure that people understand. If you know the [Four/false: ASR uncertain] Spiritual Laws, the first one is God has a wonderful plan for you in your life. And then, but we are very far, law number two is we are very far away from God. And law number three is that Jesus Christ came to bridge that gap. Law number four is that if you believe in Him, you get eternal life. And that's it, you know, that kind of thing. So this is an example of a packaging of the gospel message.
-    confidence: 0.74
-    review_notes: ['ASR repeatedly false spiritual laws; four numbered points suggest Four, but distinction matters and must be checked in audio. Kept explicit, not silently turned into a criticism or corrected title.']
-  - id: p0906-changing-church-scene
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-eternal-life
-    start: 4583.58
-    end: 4678.76
-    type: sermon
-    title: The preacher’s account of a changing church scene
-    summary: The preacher discusses demographic change and recounts an unnamed acquaintance’s movement between churches and eventual conversion to Roman Catholicism.
-    questions: []
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      And it doesn't help that today in the whole movement of the world, things are changing rapidly, very fast. The latest census in Singapore shows that the number of people who proclaim themselves to be Christian in Singapore has risen or fallen? Fallen by two percent. The number of people who proclaim themselves to not believe in God has risen four percent. So the demographics are moving. The world is changing. Social media, everything all coming together. And within the church scene, there's so many things that's happening. All these mega church movement, all these many packaged things, people proclaim health and wealth. Oh, this is a big, fat mess. And it's very sad and very scary.
-
-      I just had a conversation with some guy who is a very unusual person. He was a key leader in two mega churches in Singapore. The first one, he worked very hard and he was rising very high, become a leader. But then he said his pastor decided that he would do magic show. And so he felt that this is something not right. So he went to join another mega church where he rose very fast to become a zone leader. He told me seven zones, all together, three hundred over people in the zone cells that was under his leadership. And when he decided to leave that church because the pastor keep talking about grace, hyper-grace situation, he felt something not very true. He said, wow, the church leader all gathered to [word uncertain] him not to go. And he went to Protestant churches, normal Protestant churches, think long and hard, study, look at all these things. Guess what happened recently? He converted to Roman Catholicism.
-    confidence: 0.84
-    review_notes: ['Numerical census claims and secondhand account are unverified speaker statements. No church/person identities inferred. 95.18s retains complete anecdote.']
-  - id: p0906-consistency
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-eternal-life
-    start: 4680.06
-    end: 4755.08
-    type: sermon
-    title: The preacher’s comparison of church consistency
-    summary: Continuing the anecdote, the preacher discusses the attraction he sees in Roman Catholic consistency and contrasts it with Protestant disagreements.
-    questions: ['What attraction does the preacher identify in the acquaintance’s decision?']
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      This is the third person I know in my lifetime who has done that. And it's a very interesting situation that if you study scripture carefully, study church history carefully, study all these doctrines carefully, there's a chance that someone will move back to the Roman Catholic position. Because there are some appeal in the Roman Catholic position that's quite interesting. The consistency is one. Because the Roman Catholic church has a very long history. Before the Reformation, they are the one. They always proclaim themselves to be the one true church. Then people like us, we are the rebel, we are the Protestant. We protest, so we come out, form our own thing. So I think the idea that, man, my goodness, you guys are all in a mess. You have so many different ideas, so many different theories. Whereas they are different, they are very consistent. When the Pope declares something, that's it. It's called dogma. No need to argue. Abortion, homosexuality, no need to argue, right? Whereas in the Protestant side, you've got LGBTQIA church in Singapore, you know. I won't tell you where in case you go and join them. It's like to a serious person of the [word uncertain], it's like, are you guys crazy when you do this kind of thing? So he navigates towards that direction. Because we don't understand all this eternal life, all these things, it's all messed up, right?
-    confidence: 0.83
-    review_notes: ['Retain preceding acquaintance context; these are the preacher’s comparisons, not archive judgments. ASR world/word at 4741.4s unresolved. No independent theological or institutional fact-check claimed.']
-  - id: p0906-john17-answer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 4756.04
-    end: 4832.5
-    type: sermon
-    title: Returning to John 17:3 for the meaning of eternal life
-    summary: The preacher turns to John 17:3 and explains why he does not understand eternal life as duration alone.
-    questions: ['Where does the preacher turn to explain eternal life?']
-    topics: [eternal-life, knowing-god]
-    scripture: ['John 17:3']
-    transcript: |
-      So what's the answer? Answer from the mouth of our Lord Jesus Christ himself. What is eternal life? [ESV quotation omitted; reference only: John 17:3 — https://www.esv.org/John+17:3/]. Remember, Jesus himself said it. So if there's a ten-year series question and answer on the exam, this is a standard answer. What is eternal life? Jesus said [ESV quotation omitted; John 17:3]. This is the only place in the Bible where Jesus referred to himself as Jesus Christ. Only place. That he referred to himself as a third person. Jesus Christos. Christos, the anointed one. That I am the Christ. The anointed one.
-
-      And so the answer as to what is eternal life is not that you will live forever. I mean, the words seem to imply that, right? And I tell you again, oftentimes it's because of the limitation of human language. And being bicultural, I'm very, very sensitive to this. Because I look at the Chinese Bible, I look at the English Bible, I see that there's just, wow, the [word uncertain] and all that is quite different. Because the language is different, the culture is different. Then, of course, you look at the original Greek and the original Hebrew. And that's where the key is.
-    confidence: 0.87
-    review_notes: ['4800s frame confirms John 17:3. Uniqueness claim belongs to preacher; language and Christos claims not independently evaluated. ASR anger at 4816.68s unresolved.']
-  - id: p0906-know-word
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 4832.5
-    end: 4915.34
-    type: sermon
-    title: The preacher’s explanation of ginóskó
-    summary: The preacher discusses the Greek word translated as knowing and uses Luke 1:34 to illustrate his account of intimacy.
-    questions: ['How does the preacher explain the word know in John 17:3?']
-    topics: [knowing-god, eternal-life]
-    scripture: ['John 17:3', 'Luke 1:34']
-    transcript: |
-      That's why every good pastor must be good at biblical languages. Because our understanding is that the original language is correct. Because it is definitive in its original language. Even in the original language, it's still limited. So, looking at this one, it's very strange. [ESV quotation omitted; reference only: John 17:3 — https://www.esv.org/John+17:3/]. I mean, what's the big deal? I know, that's where language comes in. The word know is in original Greek. And again, like all Greek languages, it's rich and very deep in its application. To know God is not to simply say that, oh, I know God the way I know [names uncertain], or that kind of know. It's not. In the Bible, ginóskó means a super-duper in-depth knowledge. So much so that Luke chapter 1, when the angel Gabriel appeared to Mary and said that, you are going to have a child. Mary said to the angel, Luke 1:34, [scripture quotation omitted; reference only: Luke 1:34 — https://www.esv.org/Luke+1:34/]. And the word know there is the exact same word, ginóskó. Which means that since I've never had sex with a man, how can I ever bear a child? You see the intimacy of the word know here.
-    confidence: 0.87
-    review_notes: ['Greek spelling from 4880s slide; Luke 1:34 from 4950s slide, not model memory. Quoted slide translation of Luke differs from standard ESV wording; reference-only marker avoids translation assertion. Linguistic interpretation remains attributed.']
-  - id: p0906-oneness
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 4915.34
-    end: 5018.02
-    type: sermon
-    title: Intimacy, relationship and the preacher’s account of eternal life
-    summary: The preacher uses marriage imagery to describe knowing God and says that duration is only part of what he means by eternal life.
-    questions: ['How does the preacher connect eternal life with relationship?']
-    topics: [eternal-life, knowing-god]
-    scripture: ['John 17:3', 'Luke 1:34']
-    transcript: |
-      That you will know God in such an intimate manner that is beyond the usual surface understanding of knowing God. So much so that the word for sex was used actually here. [Repeated scripture wording omitted; Luke 1:34, reference only — https://www.esv.org/Luke+1:34/]. I have never ginóskó a man. And my dear brothers and sisters in Christ, that's what the Bible say. And if you look at the rest of the scripture, that is indeed the case too, right? The Apostle Paul described the relationship between Jesus Christ and the church to be similar to the relationship between who and who? The husband and the wife, right? The intimate relationship. And the Bible says [scripture quotation omitted; exact reference not announced, requires review]. That kind of wording is the word used when Jesus Christ said [ESV quotation omitted; reference only: John 17:3 — https://www.esv.org/John+17:3/]. That you will know God in that kind of intimacy.
-
-      Therefore, eternal life is not just living forever, you know. It is the state of oneness with God. That when we believe in our Lord Jesus Christ, we become one with God. We know Him. We are in Him. We are in tune with everything that He is. And of course, therefore, because He is eternal, we will become eternal as well. And that length of eternity, passage of time is just a very small part of what having eternal life is all about. And as Christ has said, eternal life means knowing God. There are very few people who actually understand this deeply.
-    confidence: 0.85
-    review_notes: ['102.68s keeps the marriage analogy with its conclusion. No guessed Ephesians/Genesis citation for unannounced marriage quotation. Seam at 4995–5040s compared with raw chunk 0009; next thought begins One of them in raw evidence.']
-  - id: p0906-packer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 5018.02
-    end: 5099.16
-    type: sermon
-    title: J. I. Packer and knowing about God
-    summary: The preacher recommends Knowing God and cites J. I. Packer’s distinction between knowing God and knowing about God.
-    questions: ['Which book does the preacher recommend when discussing knowing God?']
-    topics: [knowing-god]
-    scripture: ['John 17']
-    transcript: |
-      One of them is J. I. Packer. J. I. Packer was a Canadian theologian. Together with John Stott in the last century he's considered one of the greatest Reformed theologians, and his book Knowing God is his most famous book, written in 1973, long time ago. Strongly, strongly recommend that you go and find the book and read it. Maybe download in your Kindle or whatever it is, just eight bucks or something like that. And one of the most revolutionary books written. J. I. Packer wrote the book based on John chapter 17 and he declared that there is a difference between knowing God and knowing about God. When you truly know God you have energy to serve him, boldness to share him, and contentment with him. My dear brothers and sisters in Christ, I think that most people who call themselves Christians know about God. I think that's true. And then especially in our church we make you go to your Westminster Confession of Faith or whatever it is. And earlier I was just discussing with [name uncertain] that both the Mandarin church and the English is moving towards a stage where we need to now consider setting up of deacons.
-    confidence: 0.84
-    review_notes: ['Packer spelling confirmed at 5100/5400s; ASR Parker normalized from slide. One of them recovered from chunk 0009 offset 18.48–24.08s, lost by midpoint merge. Boundary is approximate within this source segment; biographical/book claims remain speaker assertions.']
-  - id: p0906-knowledge-relationship
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 5099.16
-    end: 5196.12
-    type: sermon
-    title: Knowledge, examinations and personal relationship
-    summary: The preacher distinguishes answering questions about belief from personal relationship, using church leadership and marriage as illustrations.
-    questions: ['How does the preacher distinguish factual knowledge from relationship?']
-    topics: [knowing-god]
-    scripture: ['John 17']
-    transcript: |
-      And [name uncertain] say that they must take exam, you know, take exam. I don't know, I didn't know that. So wow, we're very serious. I will make you take exam if you want to be a deacon or deaconess among us. I know mother church does that, so quite serious. Yeah, you can answer the question properly, [words uncertain]. Some can answer better than others, I suppose. You know about God, but knowing God is a different ballgame, isn't it? Do you know God in the way Jesus Christ described in John 17, a ginóskó in-depth understanding of God? Do you have a relationship with him that is deep and intimate, the way the Bible tells us we should be? And a lot of people just know a lot about God, but very few people really can say that I know God.
-
-      And I mean we know a lot of things, right? You can say you know Lee Kuan Yew. The question is, does Lee Kuan Yew know you, right? You know, I know him, but even within the Lee Kuan Yew inner circle, how many people really know, know him? It's like even your spouse, do you know, know him? I don't know, if you ask my wife, does she really know me? Know me to a large extent, I suppose. I don't think she would dare to declare she know me completely, neither would I dare to say that I know her completely, which is quite interesting because then you have your entire life to keep learning about each other, right? And then I know I can tell you that as we go through all the ups and [word uncertain] in our own marriage, I discovered many things about her that I didn't know. Must be the case.
-    confidence: 0.8
-    review_notes: ['ASR why is the three god at 5114.2–5120.44s not corrected into an invented examination question. Lee Kuan Yew spelling is provisional familiar-name normalization; verify spoken identity.']
-  - id: p0906-meditation
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 5196.12
-    end: 5299.96
-    type: sermon
-    title: Moving from knowledge to meditation and practice
-    summary: The preacher cites Packer’s approach of turning learned truths into meditation, prayer and praise, then asks how those truths affect daily conduct.
-    questions: ['How does the preacher suggest moving from knowing about God to knowing God?']
-    topics: [knowing-god, prayer]
-    scripture: []
-    transcript: |
-      So do you know Jesus? Do you know God? It has to do with relationship. And so we have a lot of knowledge about God, a lot of understanding about God. How do you move from knowing about God to knowing God? J. I. Packer says that, you know, you turn our knowledge about God into the knowledge of God. The rule of doing this is actually quite simple; however it is very demanding. What is the rule? He says that from knowing about God to knowing God means that we turn each truth that we learn about God into matter of meditation before God, leading to prayer and praise to God. Sounds a bit complicated but he says a very simple thing, actually. It means that when you read the Bible, and in his book he talked about how you should always spend your life studying about God and knowing God at least on the [word uncertain] level. But after you know about God you then turn that truth into a meditative part of your life. It doesn't mean you just sit down there and you pray and you hum, hum or whatever it is. It means you think about it day and night, the way the psalmist says [biblical wording omitted; reference not announced]. For example, if the Bible says [biblical wording about love omitted; references not announced]. Now that's knowledge, right? Packer says you need to meditate on it. You need to think deeply into it. What does this mean in my life?
-    confidence: 0.84
-    review_notes: ['5400s slide corroborates Packer quotation. ASR connective level unresolved; do not substitute cognitive without listening. Biblical allusions at 5275.48–5292.76s omitted conservatively, no guessed verses. 103.84s preserves method and explanation.']
-  - id: p0906-application
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 5300.92
-    end: 5355.24
-    type: sermon
-    title: Asking how a learned truth changes daily life
-    summary: The preacher urges listeners to examine their treatment of others and to let reflection on scripture become lived practice.
-    questions: ['What questions does the preacher suggest asking when applying what one learns?']
-    topics: [knowing-god]
-    scripture: []
-    transcript: |
-      How am I learning about this? What am I doing about this before God? This is something that I know I must do. How am I living it out in my life? And if you do that, God the Holy Spirit will prompt you and tell you that, hey man, you are so mean to your own wife or your own husband. Scripture say [biblical wording omitted; reference not announced]. And if you meditate on it day and night, you will move, you will know that that's what God want you to do, and you will do it. And the knowledge of God then becomes part of your life. It's a simple thing, meaning translate your head knowledge into a meditative part of your life. And as scripture say [biblical wording omitted; reference not announced], the consciousness of what God wants you to be in your life then comes alive, and then you really know God. I think it's quite similar to courtship as well, right?
-    confidence: 0.86
-    review_notes: ['Preceding Packer passage supplies context; unannounced biblical wording at 5314.76–5320.52s and 5333.32–5346.36s omitted, not reconstructed.']
-  - id: p0906-courtship
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 5355.24
-    end: 5407.72
-    type: sermon
-    title: A courtship illustration about communication
-    summary: The preacher uses a courtship anecdote to illustrate his point that relationships require interaction.
-    questions: ['What point does the preacher illustrate with the courtship anecdote?']
-    topics: [knowing-god]
-    scripture: []
-    transcript: |
-      You can't possibly be courting someone without talking to that person or interacting with that person. Not possible. Yeah, I think I shared this with you before. Somebody came to seek my advice about his girlfriend. That was one of the few times I told him to dump the girl, because he said that, oh, you know, I have a girlfriend, got a problem. I said what problem? He said she never talked to me. I said what does that mean? So I text her, she never respond. I said never respond is how long? One day, two days? He said no, two weeks. I said huh, two weeks? He said yeah. Then what happened? Finally when I caught up with her she said, I'm very busy, so I cannot talk to you for two weeks. Then he said, what to do, Pastor? How ah? How? I said, well, you're not married, right? [Word uncertain] her like a hot potato. And that's what he did. Now he's happily married with a kid. So you know, you have to go and build a relationship.
-    confidence: 0.84
-    review_notes: ['Personal anecdote, not generalized relationship advice from the archive. ASR dumb her at 5394.76s unresolved; pronoun attribution is provisional punctuation/normalization.']
-  - id: p0906-here-now
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 5407.72
-    end: 5476.2
-    type: sermon
-    title: Eternal life in the here and now
-    summary: The preacher connects knowing God with present life and encourages listeners to understand their lives as part of the plan he has described.
-    questions: ['When does the preacher say eternal life begins?']
-    topics: [eternal-life, knowing-god]
-    scripture: ['John 17:3']
-    transcript: |
-      Meditate and apply your faith. And when you do that, Packer says, what were we made for? To know God. What aim shall we have in life? To know God. What is the eternal life that Jesus gave? To know God. What is the best thing in life? To know God. What in humans gives God most pleasure? The knowledge of himself. And so when we believe in our Lord Jesus Christ we get an eternal life that begins here and now. As we then grow to know God, we [word uncertain] God, we strive to have that oneness with God, and we are filled with the presence of God in our life. And that's what eternal life is all about. May I encourage you to understand your life in this way. As our Lord Jesus Christ slowly reveal the plan of God, you are part of that plan, and he has redeemed you so that you have eternal life, not to wait for you to die and then live forever more, but in the here and now to live the life that he has wanted you to live.
-    confidence: 0.87
-    review_notes: ['Packer attribution remains the speaker’s; ASR live God at 5440.28s unresolved. Title and summary are attributed paraphrases, not scripture text.']
-  - id: p0906-accomplished-work
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 5477.48
-    end: 5565.06
-    type: sermon
-    title: The work described in John 17:4-5
-    summary: The preacher returns to John 17:4-5, describes salvation in terms of the Father, Son and Holy Spirit, and closes with a reference to 1 John 5.
-    questions: ['Which passages does the preacher return to near the sermon’s conclusion?']
-    topics: [eternal-life, glory]
-    scripture: ['John 17:4-5', '1 John 5:10-12']
-    transcript: |
-      Because that's who he is. His love comes upon us. And Jesus Christ then said [ESV quotation omitted; reference only: John 17:4-5 — https://www.esv.org/John+17:4-5/]. You see how profound and glorious our salvation is. It's not just a simple thing, you know, you walk into a church, you put up your hand, you say I want to believe in Jesus Christ. Yeah, in the beginning it seems to be so, but as you learn about God more and more you find the profoundness is just beyond our comprehension. Our senior pastor says that God the Father prepared the salvation, God the Son accomplished the salvation, God the Holy Spirit administers the salvation. And we see that in these two verses Jesus, towards the end of his journey on earth, accomplishing the mission of God, is recovering his people so that they will fulfill the purpose of God in their life. I end by quoting the Apostle John again as he wrote the letter in 1 John 5, recalling what he wrote himself.
-
-      [ESV quotation omitted; reference only within the displayed reading range: 1 John 5:10-12 — https://www.esv.org/1+John+5:10-12/]
-    confidence: 0.87
-    review_notes: ['Raw chunk 0010 offsets 0–15.06s supplies intact reference wording where chunk 0009/merged ASR drops a clause and reverses the apparent sense. Verse text omitted rather than repaired into repository. Boundary 5565.06s is raw chunk 0010 offset 15.06 + 5550. Frame 5500s confirms John 17:4-5; frame 5555s names 1 John 5 without verse numbers, so retain the independently displayed 10-12 reading range rather than infer a narrower range.']
-  - id: p0906-purpose
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-knowing-god
-    start: 5565.06
-    end: 5623.56
-    type: sermon
-    title: Seeking one’s purpose and using one’s gifts
-    summary: The preacher encourages listeners to seek God’s purpose and use their gifts, talents and resources as part of the body of Christ.
-    questions: ['How does the preacher encourage listeners to respond to the sermon?']
-    topics: [eternal-life, knowing-god]
-    scripture: []
-    transcript: |
-      I want to remind all of you who truly belong to Jesus Christ that your life is not just a random life floating in the history of mankind. That you are a beloved of God. That [biblical wording omitted; reference not announced] he has called you for a purpose. I don't know what that purpose is. But I can tell you that that purpose cannot be for you to just float around and then just die. It must have something to do with the eternal life that God has given to us because we belong to him. Whatever the case may be, may you seek God earnestly so that he will reveal to you your place on earth. Whatever gifts or talents or resources that he has given to you, remember always that we do not live for ourselves anymore. But we live our eternal life as part of his body, the body of Christ.
-    confidence: 0.9
-    review_notes: ['Opening restored from raw chunk 0010 offsets 15.06–19.3s; no duplication of preceding scripture. Strong conclusion passage suitable for preview verification.']
-  - id: p0906-sermon-closing-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-response-prayer
-    start: 5623.56
-    end: 5718.3
-    type: prayer
-    title: Prayer not to waste one’s life
-    summary: The preacher prays that the congregation will live purposefully and serve in the opportunities given to them.
-    questions: ['What response does the sermon’s closing prayer ask for?']
-    topics: [prayer, eternal-life]
-    scripture: []
-    transcript: |
-      Let us pray. We thank you God for speaking to us through your word. For by ourselves, we will never [words uncertain]. We will always be confused and lost and always chasing after the things of the world like the rest of the world tell us. But when we open up your word and we dig deep into it, it reveals to us the eternal plan that you have given to all of us. That every single one of us who belong to you are not just some random biological being walking and occupying a little bit of time in the history of mankind. That we are your beloved, that we are [word uncertain] for a purpose. That your eternal life is given to us so that we will live our life in accordance to your design and be [biblical wording omitted; reference not announced] of this world that you have placed us in, and to fulfill all the will that you have meant for every single one of us.
-
-      It can be something that is as trivial as being helpful and being testifying for you in front of others. It can be something much greater when we call upon great evangelists like Dr. Stephen Tong. Whatever the case may be, may we continue to shine for you so that when we see you face to face again, we will hear you say [scripture quotation omitted; reference not announced in this prayer]. Help us, O God, not to waste away our life. For you have [word uncertain] us [biblical wording omitted; reference not announced]. Listen to our prayers. In Jesus' name we pray. Amen.
-    confidence: 0.77
-    review_notes: ['ASR never forget it at 5627.9–5631.1s, safe at 5657.68s, caught at 5710.92s unresolved. No reverse meaning silently invented. Unannounced allusions omitted conservatively. 94.74s retains entire prayer.']
-  - id: p0906-creed
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-creed-prayers
-    start: 5718.3
-    end: 5763.62
-    type: creed
-    title: Affirming faith with the Apostles’ Creed
-    summary: The minister invites the congregation to stand and affirm their faith with the Apostles’ Creed.
-    questions: ['Which creed is recited after the sermon?']
-    topics: [faith]
-    scripture: []
-    transcript: |
-      Congregation, would you stand as we affirm our faith by reading the Apostles' Creed? And then we go in the time of prayer. The Apostles' Creed.
-
-      [Congregational recitation of the Apostles' Creed, approximately 5727.14–5763.62s. Liturgical text intentionally omitted. Both displayed creed slides were inspected at 5735/5755s; no wording supplied from memory.]
-    confidence: 0.91
-    review_notes: ['Recovery 5718–5770 confirms the invitation at offsets 0.34–9.16s and ending recitation at 30–45.6s but skips the first half. Frames 5735/5755s corroborate both displayed portions and resolve the prior born after/communion of sins ASR errors. Full creed text remains omitted by instruction, not reconstructed. Existing passage boundaries retained.']
-  - id: p0906-prayer-prompts
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-creed-prayers
-    start: 5764.34
-    end: 5819.64
-    type: prayer
-    title: Prayer for personal response and church leaders
-    summary: The minister invites prayer in response to the sermon and for church leaders across the movement’s branches.
-    questions: ['What prayer requests follow the sermon and creed?']
-    topics: [prayer, service-life]
-    scripture: []
-    transcript: |
-      Let's stand before God and we go into a time of prayer. First, we pray for ourselves in response to the sermon preached. And we want to ask God to help us search our life so that we don't waste even a single moment of our life, and that we understand that eternal life begins in the here and now. The second prayer item, I want to invite congregation to pray for all our church leaders. We have about ninety branch organizations globally. You can imagine the many challenges for many of our leaders everywhere. And so, as scripture commands us, we must always remember to pray for our leaders. May God help our leaders shepherd their flock obediently. Just most recently, Montreal has set up a new [organization acronym uncertain] Mandarin-speaking church. So, let's commit in faith all our leaders to God. So, you may pray verbally or you can pray in your heart. Let us start by praying for ourselves. Let us pray.
-    confidence: 0.85
-    review_notes: ['ASR GIEE unresolved; branch count and Montreal announcement are speaker assertions. Quiet prayer follows; repeated prompts in ASR not retained.']
-  - id: p0906-leaders-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-creed-prayers
-    start: 5876.52
-    end: 5897.04
-    type: prayer
-    title: Invitation to pray for church leaders
-    summary: The minister asks the congregation to pray that church leaders will be strengthened to shepherd their congregations.
-    questions: []
-    topics: [prayer, service-life]
-    scripture: []
-    transcript: |
-      Congregation, let us now pray and lift up all our church leaders throughout the world, the church leaders of the various Reformed Evangelical Church affiliates everywhere, and ask God to strengthen our leaders so that they will shepherd the flock in the way that is pleasing to God. Let us pray.
-    confidence: 0.88
-    review_notes: ['Short completed invitation; congregation’s ensuing personal prayer is not reconstructed. Concluding pastoral prayer was recovered in the single targeted pass and has its own passage at 5940–6012.76s.']
-  - id: p0906-pastoral-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-creed-prayers
-    start: 5940
-    end: 6012.76
-    type: prayer
-    title: Pastoral prayer for trust and knowing God
-    summary: The minister thanks God for hearing prayer and asks for trust, awareness of God’s work and a deeper knowledge of God.
-    questions: ['What does the pastoral prayer ask after the congregation’s personal prayer?']
-    topics: [prayer, faith, knowing-god]
-    scripture: []
-    transcript: |
-      Let us pray together.
-
-      [Introductory ASR segment includes a pause; substantive prayer resumes at approximately 5964.02s.]
-
-      We thank you, God, for listening to our prayers. As we have heard so often from scripture, we know that you hear us when we pray, every single one of us. Help us to always, always remember that. Maybe we don't even trust it ourselves, but may we just trust in your word and your promises. And when we pray [biblical wording omitted; exact reference not announced], and you will hear us because of what our Lord Jesus Christ have done for us in our life. May we exercise the small little faith we have in you, believing in everything that you say you will do, because we know you are faithful. Help us to open our eyes to see you at work in our life, and may we continue to live our eternal life in knowing you and knowing you deeply. Listen to our prayers. In Jesus' name we pray. Amen. You may be seated.
-    confidence: 0.88
-    review_notes: ['Recovery 5910–5980 offsets 30–66.44s and 5970–6013 offsets 6.46–42.76s; matching overlap about 5970–5976.46s retained once. Recovery restores substantive prayer after the full-run repeated prompt failure. Frames 5945/5965s display Pastoral Prayer. Exact Let us pray onset within 5940–5964.02s remains coarse. No claim of a continuous 24s utterance.']
-  - id: p0906-offering
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-offering
-    start: 6012.8
-    end: 6027.62
-    type: offering
-    title: Offertory notice
-    summary: The minister introduces the offertory and says the second offering is committed to evangelism.
-    questions: ['What purpose is announced for the second offering?']
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      We want to go into our offertory now. You may give [words uncertain] the QR code [word uncertain] the box in front. This being the first Sunday, the second [word uncertain] offering will be committed to evangelism. Amen.
-    confidence: 0.73
-    review_notes: ['ASR second back offering and giving instruction unclear. No payment details copied. Short completed practical notice.']
-  - id: p0906-closing-hymn
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-closing-worship
-    start: 6135
-    end: 6171.6
-    type: worship
-    title: Introducing It Is Well With My Soul
-    summary: The minister introduces the closing hymn as an example of faith amid severe difficulty.
-    questions: ['How does the minister introduce the closing hymn?']
-    topics: [faith, knowing-god]
-    scripture: []
-    transcript: |
-      All right, our closing hymn is a wonderful, wonderful hymn by [author's name uncertain in ASR]. Go and Google [author's name uncertain] story, right? I don't want to repeat here, but it's a wonderful song that's written by somebody who has gone through tremendous difficulties and challenges in his life. I think a catastrophe that I don't think any one of us or anybody I know in my life has gone through. And he can write a song, It Is Well With My Soul. So this is indicative of somebody who really knows God and knows Him well, that he can say, no matter what happens, [hymn wording omitted]. Let's sing this together.
-    confidence: 0.83
-    review_notes: ['Raw chunk 0011 offsets 30–66.6s plus 6105s corroborates range. ASR Horan Cho Spafford not repaired from memory. Lyrics through 6299.92s omitted.']
-  - id: p0906-benediction
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-closing-worship
-    start: 6299.92
-    end: 6369.18
-    type: benediction
-    title: Doxology and blessing from Hebrews 13
-    summary: The minister introduces the doxology and a blessing from Hebrews 13 before seating the congregation.
-    questions: ['Which chapter is named for the closing blessing?']
-    topics: []
-    scripture: ['Hebrews 13']
-    transcript: |
-      Let us praise God with doxology and in faith receive his blessing taken from Hebrews 13.
-
-      [Doxology sung; lyrics omitted.]
-
-      [Scripture blessing omitted; ESV reference only: Hebrews 13 — https://www.esv.org/Hebrews+13/. Exact verse range requires review; not announced in inspected evidence.]
-
-      [Congregational response.]
-
-      Congregation, please be seated.
-    confidence: 0.86
-    review_notes: ['Blessing 6334.3–6354.7s; 6340s frame shows minister blessing congregation without verse slide. Do not infer verse numbers from remembered wording.']
-  - id: p0906-anniversary
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-announcements
-    start: 6369.18
-    end: 6438.1
-    type: announcement
-    title: Announcement of a ministry anniversary in January 2027
-    summary: The minister announces a planned 9 January 2027 celebration in Jakarta for the senior pastor’s seventieth year in ministry and says logistics are being considered.
-    questions: ['What January 2027 event is announced?']
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      I have a couple of announcements to make. Before this one. So next year on January the ninth, Saturday, January the ninth, Saturday, 2027, the senior pastor will be commemorating his seventieth year in ministry because he dedicated his life to be a preacher at seventeen years old. So next year will be eighty-seven. And January the ninth, there is going to be a celebration at a stadium in Jakarta. So please mark the time. And he invites everyone anywhere who has anything to do with his ministry, who know him, to come and join him. So therefore first thing to do is to mark the calendar and make time for him, pray about coming. Logistic-wise, we are now going to start thinking about all these things because we have to work with Jakarta and what have you. So good chance that STEMI Singapore will coordinate something like this because the Chinese side and all that, and hotel stay are quite a complication, right? So, but first of all, mark the time.
-    confidence: 0.86
-    review_notes: ['Historical announcement only, not current event confirmation. Organization acronym is ASR-derived; confirm.']
-  - id: p0906-proofread-request
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-announcements
-    start: 6438.1
-    end: 6527.22
-    type: announcement
-    title: Calling for autobiography proofreaders
-    summary: The minister reports completing a translation and invites volunteers to identify unclear content and errors ahead of the planned publication.
-    questions: ['What help does the minister request with the translated autobiography?']
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      And in line with that I am very happy to announce that I finished the translation of the autobiography. It is a long, long journey. So the pre-order of the book is already up, but I am not here to sell the book. The book needs to be published by January the ninth and available, which means that now we enter into a time of intensive proofreading. I already have a proofreading team, but I was talking to Reverend [name uncertain] of Kuala Lumpur. He said the more people the merrier. So I am calling out for people to come to read the book and proofread it and identify errors. Not the formatting errors, because it is Word format, but the content errors or areas where you read and you don't understand, don't know what is happening, and not well written or whatever it is. Those are the things that proofreader will help me do.
-
-      So I am not going to pay you because I am not going to pay myself. But you have a part of history because your name will appear in the book's [words uncertain] that you are one of the proofreaders. So those of you who are interested to join my present proofreading team, and those of you who are in my present proofreading team better read faster because we have to, tomorrow in fact I will be meeting people who are doing the publishing to start to talk about formatting already. So it will move very fast.
-    confidence: 0.83
-    review_notes: ['ASR Wang Fu and stand up front are not verified. Book title absent rather than inferred. Volunteer request is dated recording content.']
-  - id: p0906-proofreading-followup
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-announcements
-    start: 6527.22
-    end: 6546.64
-    type: announcement
-    title: How to volunteer for proofreading
-    summary: The minister asks interested volunteers to approach him for a copy to proofread.
-    questions: []
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      So again those of you who want to join in to proofread, hey, I know you all have university degree. Don't go and tell me you cannot even proofread. So you just read the thing and then circle, circle whatever problem you have. Come and talk to me and I will pass the copy to you. And not for you to sell, for you to proofread. Okay.
-    confidence: 0.87
-    review_notes: ['Short complete follow-up instruction retained separately from subsequent event.']
-  - id: p0906-financial-stewardship
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-announcements
-    start: 6546.64
-    end: 6594.44
-    type: announcement
-    title: Personal financial stewardship talk
-    summary: The minister encourages attendance at a financial stewardship talk, especially for younger people and those developing financial literacy.
-    questions: ['What financial literacy event does the minister announce?']
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      Then one more thing is, as I was mentioning last week, on the last Saturday of this month we have a wonderful personal financial stewardship talk by our brother Paul Rafiuly, who is here. This is especially a talk good for young people. And I've told the mother church about this as well. Please go and, you can come yourself, whatever state of financial literacy you have, I'm sure you will gain something. You always have a very wonderful Q and A kind of session. But I especially want to encourage you to get younger people to come so that your children know that mummy and daddy's [word uncertain] don't grow on a tree. And financial literacy is important even for Christian understanding. Okay.
-    confidence: 0.87
-    review_notes: ['Name spelling verified on 6600s slide: PAUL RAFIULY, CFA, FRM; event 26 September 2026, 1.30 pm, Alexcier #03-11. Those slide-only details are not inserted into spoken transcript. ASR mummy/money unresolved.']
-  - id: p0906-teachers-appreciation
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-teachers-dismissal
-    start: 6594.44
-    end: 6630.18
-    type: announcement
-    title: Appreciation for teachers in the congregation
-    summary: The minister invites those who teach in the church to stand so children can give them tokens of appreciation after Teachers’ Day.
-    questions: ['Who is invited to stand for the teachers’ appreciation?']
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      And then now what we want to do is, we just passed Teachers' Day. We want to spend some time showing appreciation to anyone among us who is in the role of teaching. That includes our Sunday school teacher, guitar teacher, cell group leader, cell group teacher, Bible school teacher, any Bible teaching people. Would you stand right now so that our children can pass you a little token of appreciation, which means your reward in heaven is gone after this. Stand up, stand up, quick.
-    confidence: 0.85
-    review_notes: ['Reward comment retained as spoken context, not archive doctrine; likely humorous delivery requires human listening. Individual call-outs after this passage omitted from search, still accessible in section playback.']
-  - id: p0906-teachers-prayer
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-teachers-dismissal
-    start: 6696.64
-    end: 6742.56
-    type: prayer
-    title: Prayer for teachers and sharing with the next generation
-    summary: The minister thanks God for teachers and prays that the congregation will share experience and help others.
-    questions: ['What does the minister pray for teachers and the congregation?']
-    topics: [prayer, service-life]
-    scripture: []
-    transcript: |
-      Okay, come, let's pray for our teachers among us. We thank you God for you have sent us people who teach and guide us in our life. And so remind us also that we ought to then share our experiences with the next generation, with people who need help. And yours is true wisdom, and so the Bible says [scripture wording omitted; reference not announced]. And you have made us to shine forth to the rest of the world, to make this world a better place in whatever way that you have given to us. So we do ask for your blessing, not just upon the teachers but for all of us, so that we will go out and make this world a better place because we belong to you. Listen to our prayers. In Jesus' name we pray. Amen.
-    confidence: 0.86
-    review_notes: ['Raw chunk 0012 offset 36.64s supplies start; end includes the beginning of next transition within a coarse ASR segment. Unannounced biblical wording at 6720.72–6726.56s omitted.']
-  - id: p0906-dismissal
-    video_id: ZTDYIJUDb0M
-    section_id: s0906-teachers-dismissal
-    start: 6742.56
-    end: 6754.96
-    type: dismissal
-    title: Final reminder and dismissal
-    summary: The minister repeats the invitation to encourage friends to attend the announced event and dismisses the congregation to silent meditation.
-    questions: []
-    topics: [service-life]
-    scripture: []
-    transcript: |
-      [The preceding ASR segment ends with “so this”.] Particular thing, please go and encourage your friends to come for this. Okay, that's all the announcement I have for you. You may be dismissed with silent meditation. Know that the Lord is with you.
-    confidence: 0.81
-    review_notes: ['Frame 6750s still displays the financial stewardship event. 6754.96–6759s retained as terminal meditation, not invented transcript. Short closing segment intentionally below 30s.']
+    title: Response and Closing
+    type: closing
+    summary: The minister leads the creed, congregational prayer, offertory and closing worship, then
+      shares historical ministry notices and thanks teachers before prayer and dismissal.
+    keywords:
+      - apostles creed
+      - church leaders
+      - offertory
+      - hebrews 13
+      - doxology
+      - autobiography
+      - proofreading
+      - financial stewardship talk
+      - teachers
+      - next generation
+    topics:
+      - faith
+      - prayer
+      - service-life
+      - knowing-god
+    scripture:
+      - Hebrews 13
+    source_chapters:
+      - s0906-creed-prayers
+      - s0906-offering
+      - s0906-closing-worship
+      - s0906-announcements
+      - s0906-teachers-dismissal
+    review_notes: []
+sermon_description: In John 17, the preacher presents eternal life as knowing God, not merely living
+  forever. Jesus’ prayer and his path to glory through the cross frame a call to trust God’s love
+  and cultivate prayer. Drawing on the distinction between knowing God and knowing about God, he
+  urges listeners to turn reflection into daily conduct and use their gifts in service.

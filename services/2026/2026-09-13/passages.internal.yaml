@@ -1,0 +1,1252 @@
+passages:
+  - id: p0913-adoration
+    video_id: GkmB_KeBlBw
+    section_id: s0913-preparation
+    start: 11.16
+    end: 82.5
+    type: prayer
+    title: Preparing for worship in adoration
+    summary: The leader invites personal prayer in adoration before the congregation’s worship.
+    questions: ['How does the service begin its preparation for worship?']
+    topics: [prayer, worship]
+    scripture: []
+    transcript: 'Okay folks, let’s prepare our heart for worship this morning as we go into a time of prayer to prepare ourselves. So this is a time for personal prayers. Let’s come before God and pray in adoration of God Almighty. Let us pray. [Personal-prayer interval; no further wording reconstructed.]'
+    confidence: 0.86
+    review_notes: ['Opening dated slide at 0/10/28s and prayer posture at 60s. The ASR gap is not a measured silence claim.']
+  - id: p0913-confession
+    video_id: GkmB_KeBlBw
+    section_id: s0913-preparation
+    start: 82.5
+    end: 153.66
+    type: prayer
+    title: Personal prayer in confession
+    summary: The leader moves from adoration to confession and refers to the assurance of forgiveness.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: 'We now come to pray in confession. We want to remember, the Bible says that [scripture-related assurance omitted; reference not explicitly established]. Let us pray in confession now. [Personal-prayer interval; isolated ASR fragment not relied upon.]'
+    confidence: 0.82
+    review_notes: ['100s ACTS slide corroborates prayer framework. No verse assigned from memory.']
+  - id: p0913-thanksgiving
+    video_id: GkmB_KeBlBw
+    section_id: s0913-preparation
+    start: 153.66
+    end: 220.98
+    type: prayer
+    title: Reflecting with thanksgiving
+    summary: The leader asks worshippers to reflect on their lives and give thanks.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: 'Let us come to give thanks in our prayers. In the prayer of thanksgiving, we want to reflect on our life and be truly thankful. Let us pray. [Personal-prayer interval.]'
+    confidence: 0.87
+  - id: p0913-supplication
+    video_id: GkmB_KeBlBw
+    section_id: s0913-preparation
+    start: 220.98
+    end: 284.58
+    type: prayer
+    title: Bringing personal situations to God
+    summary: The leader introduces supplication as bringing personal circumstances to the Lord for help.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: 'And now we pray in supplication. We bring our personal situations to the Lord and seek his help. Let us pray in supplication now. [Personal-prayer interval.]'
+    confidence: 0.87
+  - id: p0913-gathered-prayer
+    video_id: GkmB_KeBlBw
+    section_id: s0913-gathering
+    start: 284.58
+    end: 327.04
+    type: prayer
+    title: Gratitude for gathering safely to worship
+    summary: The leader thanks God for the congregation’s safety and opportunity to worship, and asks for humility to hear and follow.
+    questions: []
+    topics: [prayer, worship]
+    scripture: []
+    transcript: 'Let us pray together. We thank you, God, for this morning as you have gathered all of us here to worship you. When we look at the rest of the world, we know that this is not the case for many, many people. And yet we are here safe and comfortable in a place where we can hear your word [unclear phrase], in the prayers we utter, the word that we read, the songs that we sing. Help us to be truly thankful, and with humility in our heart may we approach your throne of grace this morning and hear your voice, turn and follow you. May all glory be unto your name. In Jesus’ name we pray, amen. This morning our brother [ASR: Hardy] will be leading us.'
+    confidence: 0.84
+    review_notes: ['Leader’s full name not established here; no structured speaker attribution.']
+  - id: p0913-welcome
+    video_id: GkmB_KeBlBw
+    section_id: s0913-gathering
+    start: 342.72
+    end: 406.2
+    type: welcome
+    title: Welcoming newcomers and greeting one another
+    summary: The worship leader welcomes the congregation, asks about first-time visitors and invites mutual greetings.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: 'Good morning, everyone. I hope all of you had a good rest last night. The weather is pretty cold; it’s good to sleep. Is there anyone among us who came to our church for the first time? Would you please raise your hand so that at least we could greet and welcome you? [Brief uncertain response.] If not, then let’s rise and spend time to greet one another. Good morning and welcome. [Congregational greeting interval.]'
+    confidence: 0.86
+  - id: p0913-introit
+    video_id: GkmB_KeBlBw
+    section_id: s0913-gathering
+    start: 406.2
+    end: 453.8
+    type: worship
+    title: Setting aside distractions
+    summary: The leader invites a moment of silence before the call to worship.
+    questions: []
+    topics: [worship, prayer]
+    scripture: []
+    transcript: 'Let’s spend a moment in silence as we set aside the distraction in our mind. May we be drawn into his presence as we enter into worship this morning. [Introit and reflective interval; no additional words supplied.]'
+    confidence: 0.88
+    review_notes: ['Introit label visible at 450s.']
+  - id: p0913-call-reading
+    video_id: GkmB_KeBlBw
+    section_id: s0913-call
+    start: 453.8
+    end: 494.0
+    type: scripture-reading
+    title: Psalms 99:1-5 — call to worship
+    summary: The leader announces and reads Psalms 99:1-5 as the call to worship.
+    questions: []
+    topics: [worship]
+    scripture: ['Psalms 99:1-5']
+    transcript: 'The call to worship is taken from the book of Psalm 99, verse 1 to 5. [Scripture reading omitted; Psalms 99:1-5, ESV reference only.]'
+    confidence: 0.9
+    review_notes: ['ASR announcement and 490s verse-5 slide corroborate reading; 494s transition is an approximate sentence cut within the source segment.']
+  - id: p0913-call-response
+    video_id: GkmB_KeBlBw
+    section_id: s0913-call
+    start: 494.0
+    end: 551.42
+    type: exhortation
+    title: Responding to the God who reigns
+    summary: The worship leader connects the psalm with God’s sovereignty and justice, encouraging gratitude and praise despite changing circumstances.
+    questions: ['How does the worship leader apply the call to worship?']
+    topics: [worship, faith]
+    scripture: ['Psalms 99:1-5']
+    transcript: 'The psalm reminds us this morning that we all come before the God who reigns. He is the ultimate authority. He is a sovereign king. Nations may rise and fall. The situation in our life may change, but our God remains in control. The psalm also reminds us that the king whom we worship this morning is indeed holy and just. [Embedded scriptural wording omitted.] In response to this, let us focus ourselves in the one whom all glory belongs. And through Jesus Christ, we have the privilege of approaching this holy God with gratitude and praise. So brothers and sisters, with grateful heart, let us rise together and sing our first hymn, To God Be the Glory.'
+    confidence: 0.87
+  - id: p0913-glory-hymn
+    video_id: GkmB_KeBlBw
+    section_id: s0913-glory
+    start: 551.42
+    end: 610.0
+    type: hymn
+    title: To God Be the Glory — hymn entry
+    summary: The congregation begins the hymn introduced as To God Be the Glory.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: '[Hymn performance; lyrics omitted. The full hymn and concluding Amen continue within this section to 700.66s.]'
+    confidence: 0.87
+    review_notes: ['Passage is a short navigation entry, not the full performance; section retains its full programme span.']
+  - id: p0913-prayer-growth
+    video_id: GkmB_KeBlBw
+    section_id: s0913-opening-prayer
+    start: 700.66
+    end: 750.14
+    type: prayer
+    title: Thanksgiving and growth in faith
+    summary: The worship leader thanks God for Christ and prays for forgiveness and growth toward maturity through the word, Spirit and church.
+    questions: []
+    topics: [prayer, faith]
+    scripture: []
+    transcript: 'While standing, let me lead you in opening prayer. Our Father in heaven, to you alone be the glory this morning, for you have done great things for us. We thank you for your Son, Jesus Christ, whose sacrifice atoned for our sin and opened the way for us to come before you and call you our Father. Forgive our unbelief and the weaknesses of our faith. We thank you that when you gave us new life, you did not leave us as an infant in the faith. Through your word, Spirit, and this church, RECS, you have nourished us with spiritual milk, with solid food, so that we may grow in maturity.'
+    confidence: 0.86
+  - id: p0913-prayer-ministry
+    video_id: GkmB_KeBlBw
+    section_id: s0913-opening-prayer
+    start: 750.14
+    end: 819.38
+    type: prayer
+    title: Prayer for church leaders and responsive listeners
+    summary: The leader prays for Stephen Tong’s ministry anniversary, for Pastor Yong’s preaching and family, and for the congregation to respond beyond Sunday worship.
+    questions: []
+    topics: [prayer, service]
+    scripture: []
+    transcript: 'In this period of thanksgiving this morning, we remember our senior pastor and founder, Reverend Dr. Stephen Tong, as we are planning to commemorate his 70th year [ASR wording uncertain] in ministry. Continue to sustain him with good health and a heart devoted to you. May this church continue to be a faithful channel of your grace. We also want to pray for Pastor Yong this morning who will bring your word. Bless his ministry, his health, and his family. Give him clarity and faithfulness as he speaks. And give us humble hearts to listen and to obey. May we not just be hearers of your word, remembering you only on Sundays. [Scripture-related language and quotation omitted; reference not announced.] May all that we do this morning bring glory to you. In Jesus’ name we pray. Amen. You may be seated.'
+    confidence: 0.84
+  - id: p0913-ancient-intro
+    video_id: GkmB_KeBlBw
+    section_id: s0913-ancient
+    start: 825.66
+    end: 888.22
+    type: hymn
+    title: Ancient of Days and God’s enduring reign
+    summary: The leader connects the hymn title with Daniel 7 and introduces it as an expression of trust in God’s eternal reign.
+    questions: ['Why does the leader connect Ancient of Days with Daniel 7?']
+    topics: [worship, faith]
+    scripture: ['Daniel 7']
+    transcript: 'The second hymn is entitled Ancient of Days [artist attribution unclear in ASR]. So the title may sound a bit unusual for some of us. It comes from the Bible, in fact from the book of Daniel 7, that speaks of our God who is eternal, who reigns over all things, and whose kingdom will never end, because our God exists in eternity. We may not know what tomorrow will hold, but we know who holds our tomorrow, because nothing is outside his control and nothing indeed can change his perfect plan. So, church, let us sing this familiar hymn together, Ancient of Days. [Lyrics omitted; performance continues in section.]'
+    confidence: 0.85
+    review_notes: ['Title visible at 850s; Daniel chapter explicitly announced. 1050s temporary-muting notice explains a source limitation but not its exact duration.']
+  - id: p0913-proverbs-reading
+    video_id: GkmB_KeBlBw
+    section_id: s0913-proverbs
+    start: 1145.4
+    end: 1215.42
+    type: scripture-reading
+    title: Proverbs 7:1-27 — responsive-reading entry
+    summary: The leader announces Proverbs 7:1-27 and asks the congregation to alternate verses with him.
+    questions: []
+    topics: [worship]
+    scripture: ['Proverbs 7:1-27']
+    transcript: 'Next, let me invite you for a responsive reading, and let’s open the Bible. The first reading is taken from the book of Proverbs, Proverbs chapter 7. Proverbs 7, verse 1 to 27. Let me start with the odd verse, and you will follow with the next verse. [Reading omitted; Proverbs 7:1-27, ESV reference only. Reading continues through the section; this entry is not its full duration.]'
+    confidence: 0.92
+    review_notes: ['1150/1200s slide confirms full range. Do not treat missing congregational responses in ASR as omitted source reading.']
+  - id: p0913-john-responsive
+    video_id: GkmB_KeBlBw
+    section_id: s0913-john-reading
+    start: 1311.16
+    end: 1385.6
+    type: scripture-reading
+    title: John 17:1-19 — responsive-reading entry
+    summary: The congregation proceeds to the announced New Testament responsive reading from John 17.
+    questions: []
+    topics: [worship]
+    scripture: ['John 17:1-19']
+    transcript: 'Second one is from the book of John 17. The New Testament, John 17, verse 1 to 19. [Reading omitted; John 17:1-19, ESV reference only. Reading continues through the section; this entry is not its full duration.]'
+    confidence: 0.92
+    review_notes: ['Full range on responsive-reading slide; 1450s frame confirms continuing John reading.']
+  - id: p0913-thine-intro
+    video_id: GkmB_KeBlBw
+    section_id: s0913-thine
+    start: 1481.14
+    end: 1536.92
+    type: hymn
+    title: I Am Thine, O Lord — a prayer of surrender
+    summary: The leader introduces the hymn as a prayer to draw closer to God and live as people belonging to him.
+    questions: []
+    topics: [worship, discipleship]
+    scripture: []
+    transcript: 'The third hymn is entitled I Am Thine, O Lord. So let’s continue with singing hymn number three. This hymn is actually a prayer of surrender. We ask God to draw us closer to himself, to grow our faith and to help us to live our life as a people who truly belong to God. So let’s sing the third hymn together. [Lyrics omitted; performance continues in section.]'
+    confidence: 0.9
+    review_notes: ['1500s title slide resolves ASR “I’m dying” without reconstructing lyrics.']
+  - id: p0913-new-life-anthem
+    video_id: GkmB_KeBlBw
+    section_id: s0913-anthem
+    start: 1654.68
+    end: 1717.14
+    type: anthem
+    title: I’ll Have a New Life — video anthem entry
+    summary: The leader introduces a video anthem called I’ll Have a New Life.
+    questions: []
+    topics: [worship, eternal-life]
+    scripture: []
+    transcript: 'So let’s enjoy the next anthem from the video. It is entitled I’ll Have a New Life. [Video anthem; lyrics omitted. Performance continues within the section.]'
+    confidence: 0.88
+    review_notes: ['1800s landscape/lyric frame corroborates recorded anthem; repetitions not classified as ASR loops.']
+  - id: p0913-psalm-one
+    video_id: GkmB_KeBlBw
+    section_id: s0913-psalm-reading
+    start: 1835.48
+    end: 1891.52
+    type: scripture-reading
+    title: Psalms 1:1-6 and the invitation to the preacher
+    summary: The leader reads Psalms 1:1-6 and invites Pastor Yong to deliver the sermon.
+    questions: []
+    topics: [worship, meditation]
+    scripture: ['Psalms 1:1-6']
+    transcript: 'Next is scripture reading, so I’ll read this for you. Psalm 1, verse 1 to 6. [Scripture reading omitted; Psalms 1:1-6, ESV reference only.] This is the word of God. So I will invite Pastor Yong for the sermon.'
+    confidence: 0.93
+    review_notes: ['1840s reading title and 1905s sermon title slide corroborate reference. Name retained as announced, not expanded.']
+  - id: p0913-sermon-opening
+    video_id: GkmB_KeBlBw
+    section_id: s0913-sermon-intro
+    start: 1910.52
+    end: 1959.34
+    type: sermon
+    title: Returning carefully to John 17:1-5
+    summary: The preacher explains why he is returning to the opening five verses of John 17 and introduces questions arising from the previous sermon.
+    questions: ['Why does the preacher revisit John 17:1-5?']
+    topics: [discipleship]
+    scripture: ['John 17:1-5', 'Psalms 1:1-6']
+    transcript: 'Happy Sunday. Today we want to carry on with the preaching on John 17. I want to go into the second round of preaching on the first five verses. Sometimes when you think about some of these verses, they have a lot of things to teach us. So I want to be very careful not to just skim too fast, but at the same time also don’t want to stay too long. If I follow my boss’s example, one verse can take one month or more, but we kind of moderate a little bit. There are some wonderful things to be shared this morning from the first five verses which we started last week. Before I start, I want to highlight two questions that are related to this.'
+    confidence: 0.9
+    review_notes: ['This recording’s own title slide verifies Simple but Demanding; “Last Session” slides later in the sermon do not change its title.']
+  - id: p0913-contact-anniversary
+    video_id: GkmB_KeBlBw
+    section_id: s0913-sermon-intro
+    start: 1959.34
+    end: 2038.32
+    type: announcement
+    title: Contact updates and access to earlier sermons
+    summary: The preacher asks worshippers to keep their contact details current for anniversary-service arrangements and explains how earlier recordings support the linked expository series.
+    questions: []
+    topics: [service]
+    scripture: []
+    transcript: 'Remember, you can send your question to this number or put it in the box in front. This number is important for contact purposes as well. If you haven’t given us your contact, you should send your contact number, because we may need to highlight some issues, some arrangement, and we use this to broadcast our latest information. For example, next week will be anniversary Sunday. [Travel-disruption explanation omitted; details not independently verified.] I just confirmed earlier that we will have anniversary worship, the usual thing we do every year. If your contact is not with us, you may find that you come in the afternoon and all of a sudden there’s no afternoon service. I also want to remind you that our worship videos can be accessed through this particular place. Because we do expository preaching, it’s all kind of linked together. Some of you ask about linkages between the sermons; you can find it in this particular place.'
+    confidence: 0.86
+    review_notes: ['Historical announcement only; contact numbers/QR payloads not reproduced.']
+  - id: p0913-two-questions
+    video_id: GkmB_KeBlBw
+    section_id: s0913-sermon-intro
+    start: 2038.32
+    end: 2077.18
+    type: sermon
+    title: Questions about the afterlife and cremation
+    summary: 'The preacher introduces two questions: what follows death if eternal life begins now, and how resurrection relates to cremation.'
+    questions: ['What questions about eternal life and cremation does the preacher address?']
+    topics: [eternal-life]
+    scripture: []
+    transcript: 'The question asked is related to last week’s sermon, because last week we spoke about eternal life. There were two questions related to it. I’m summarizing; the questions were actually a little bit long. You spoke about eternal life starting now: what about the afterlife? What will happen next? Another one is a little bit more pragmatic question: given that our Lord Jesus is returning and we will be resurrected, what is the Reformed view on cremation? That one is interesting. We actually touched on this before, but some of these topics are pretty real. We want to sometimes take the time to repeat or review some of the teachings so that you will remember them. I will answer these questions later as we go into the text proper.'
+    confidence: 0.9
+  - id: p0913-jesus-prayer
+    video_id: GkmB_KeBlBw
+    section_id: s0913-review
+    start: 2077.18
+    end: 2144.18
+    type: sermon
+    title: John 17 as an insight into Jesus’ prayer
+    summary: The preacher describes John 17 as an unusual view of Jesus addressing the Father and draws attention to Jesus’ own practice of prayer.
+    questions: ['Why does the preacher call John 17 the real Lord’s Prayer?']
+    topics: [prayer]
+    scripture: ['John 17']
+    transcript: 'Quick review as to what was taught last week. We entered into John 17, which I told you is considered one of the most important chapters in the Bible by many scholars, because it is a chapter where we get to look into the personal prayer of our Lord Jesus Christ. You will find no other chapters or verses that have such in-depth display of what Jesus prayed. [Unclear ASR phrase about the Trinity.] The interaction between God the Father and God the Son is very precious, very unusual, the insight into it. So this is the real Lord’s Prayer. The Lord’s Prayer that we pray is not the prayer of Jesus, the prayer for us. [Prayer quotation omitted.] One of the key side lessons I wanted to highlight is the role of prayer: we need to be prayerful simply because Jesus Christ was prayerful when he walked the earth.'
+    confidence: 0.85
+    review_notes: ['ASR “three-room God” not silently retained as a theological term.']
+  - id: p0913-pray-more
+    video_id: GkmB_KeBlBw
+    section_id: s0913-review
+    start: 2144.18
+    end: 2207.2
+    type: sermon
+    title: Learning from the desire to pray more
+    summary: The preacher attributes a wish to have prayed more to Billy Graham and John Stott, then returns to Jesus’ prayer for glorification.
+    questions: ['What lesson does the preacher draw from the wish to pray more?']
+    topics: [prayer]
+    scripture: ['John 17:1-5']
+    transcript: 'No matter what you think about prayer, all you have to remember is that Jesus Christ found the need to pray often and much. I told you last week that the great Billy Graham, when asked, if you had to live your life all over again, what would you do? He said, I will pray more. I discovered that another person said the same thing, John Stott. John Stott was also one of the great Christians who ever lived. Today I want to carry on with the thoughts of J. I. Packer. Packer and John Stott were considered giants in the Christian world in the last century. John Stott said, if I start over again, I’ll pray more. I find it instructive and I feel that’s the thing we all need to do. But when we saw the prayer of Jesus Christ, [quotation omitted; John 17:1, ESV reference only], that was the first thing he prayed.'
+    confidence: 0.86
+    review_notes: ['Historical quotations are the preacher’s attributions, not independently verified quotations.']
+  - id: p0913-glory-suffering
+    video_id: GkmB_KeBlBw
+    section_id: s0913-review
+    start: 2207.2
+    end: 2280.66
+    type: sermon
+    title: Glory despite suffering and the sovereign will of God
+    summary: The preacher contrasts worldly ideas of glory with his reading of Jesus’ coming suffering and introduces his Reformed account of divine election.
+    questions: ['How does the preacher connect Jesus’ suffering with glory?']
+    topics: [faith, eternal-life]
+    scripture: ['John 17:1-5']
+    transcript: 'It was quite very strange, right? Because terrible sufferings would follow. Therefore the question: what does he mean by glorifying? Right after the prayer he was arrested, tortured, put on a cross, and all kinds of horrifying things happened. But yet he considered those to be glory. [Hymn quotation omitted.] We have problems understanding it because we don’t understand that glory is actually the very nature of God. Our concept of glory is: we glorify ourselves, build a big building, win some award or whatever it is. Whenever things are negative, it’s not glorious. But because glory is the nature of God, Jesus was talking about returning to his original status before the foundation of the world. [Embedded John 17 quotation omitted.] We talked a little bit about the sovereign will of God. This is a Reformed evangelical distinctiveness: we believe that all of us who really belong to Jesus Christ, before the foundation of the world he already chose us.'
+    confidence: 0.86
+  - id: p0913-eternal-definition
+    video_id: GkmB_KeBlBw
+    section_id: s0913-review
+    start: 2280.66
+    end: 2339.56
+    type: sermon
+    title: Returning to John 17:3 to define eternal life
+    summary: The preacher directs listeners to John 17:3 rather than popular assumptions when asking what eternal life means.
+    questions: ['Where does the preacher look for the meaning of eternal life?']
+    topics: [eternal-life]
+    scripture: ['John 17:3']
+    transcript: '[Continuation of John 17 paraphrase omitted.] The focus last week was on eternal life, because Jesus said he can give eternal life. So what is eternal life? There are a lot of misconstructions about this still today, and in religion, even in Christianity, we kind of get confused about what eternal life is all about. The answer is in verse 3 because Jesus Christ himself gave the answer. That being the case, I want to encourage you to understand: no matter what you study or know from the rest of the world, just look at John 17 verse 3. [Scripture quotation omitted; John 17:3, ESV reference only.] This is a very unusual thing that may take us by surprise because of the word eternal life.'
+    confidence: 0.88
+  - id: p0913-knowing-deeply
+    video_id: GkmB_KeBlBw
+    section_id: s0913-review
+    start: 2339.56
+    end: 2387.06
+    type: sermon
+    title: Knowing God deeply rather than superficially
+    summary: The preacher emphasizes the limits of language and distinguishes intimate knowledge of God from knowing facts about God.
+    questions: ['What distinction between knowing God and knowing about God frames the sermon?']
+    topics: [eternal-life, discipleship]
+    scripture: ['John 17:3']
+    transcript: 'Again I want to remind you that human languages are very limited. When we think about God and the things of God, the English language, Indonesian language, Chinese language, they all have their own limitation. The word eternal life really means to be one with God, to know him. [Greek term and comparison uncertain in ASR; omitted.] Therefore, to know God means you know God deeply, not just superficial knowledge. The difference between knowing about God and knowing God is extremely important. Today we want to focus very much on the last part as an extension of last week’s lesson: what does it really mean to know about God versus knowing God, and also take the opportunity to answer the question that was raised.'
+    confidence: 0.85
+  - id: p0913-teachable-prayer
+    video_id: GkmB_KeBlBw
+    section_id: s0913-sermon-prayer
+    start: 2387.06
+    end: 2446.0
+    type: prayer
+    title: Asking for humility to hear and follow
+    summary: The preacher prays that pride and past successes or failures will not prevent listeners from receiving the message.
+    questions: []
+    topics: [prayer, discipleship]
+    scripture: []
+    transcript: 'Let’s come before God in a time of prayer and commit the time to him. We thank you, God, that we can come before you and have a session to really think deeply into what we believe. We know that God the Holy Spirit is in every single one of us who truly believe you, and he is living and real. But we block him often because of our pride and our own reluctance to obey. We do pray that you grant us a heart that is humble and teachable, whoever we may be, however old we are or young we are, whatever we have encountered in our life, the successes and the failures. May we set them all aside, that we can come before you as a little child would before his heavenly Father, so that we will hear you, recognize you, turn and follow. [Scripture-related closing wording omitted; reference not announced.] In Jesus’ name we pray, amen.'
+    confidence: 0.87
+    review_notes: ['End approximates prayer/sermon transition inside the 2444.18–2452.34s ASR segment; no subsecond certainty claimed.']
+  - id: p0913-more-than-duration
+    video_id: GkmB_KeBlBw
+    section_id: s0913-eternal-life
+    start: 2446.0
+    end: 2523.62
+    type: sermon
+    title: Eternal life is more than living physically forever
+    summary: The preacher reads the opening of John 17 and describes eternal life as knowing God and sharing in what he calls God’s goodness and beauty.
+    questions: ['Why does the preacher say eternal life means more than endless physical life?']
+    topics: [eternal-life]
+    scripture: ['John 17:1-3']
+    transcript: 'The opening verses of John 17 are revolutionary because we get to hear Jesus Christ speak to his Father. [Scripture quotations omitted; John 17:1-3, ESV reference only.] Last week I spent quite a bit of time to tell you that that’s what eternal life means. It’s not just simply living physically forever, but to know God, to be one with God, to be everything that God meant for us to be. Of course then the physical eternity and the living eternity is part of it because God is eternal. But it’s much, much more than that. It is everything which belongs to God, all the wonders of God, all the beauty of God, every wonderful thing.'
+    confidence: 0.88
+  - id: p0913-fruit-illustration
+    video_id: GkmB_KeBlBw
+    section_id: s0913-eternal-life
+    start: 2523.62
+    end: 2575.22
+    type: sermon
+    title: The fruit of the Spirit as an illustration
+    summary: The preacher uses Galatians 5 to illustrate the richness of life with God and says each quality invites deep reflection.
+    questions: ['How does the preacher use Galatians 5 to illustrate eternal life?']
+    topics: [eternal-life, meditation]
+    scripture: ['Galatians 5']
+    transcript: 'Sometimes you think about it, the verses in Galatians chapter 5 kind of illustrate it quite well, the nine different flavours of the Holy Spirit. [Scriptural list omitted; Galatians 5, reference only.] I don’t think that nine is the exhaustive description of the attributes of God. There will be a lot more, but just in case it blows your mind, the Bible only gives us nine. I think every single one of them, you meditate deeply, you will find that it’s something that we have problems trying to figure out completely. Just take love for example. We sing all kinds of love songs, pop songs have love songs, church has love songs, love of God. It’s just endless. So that’s what it means to have eternal life.'
+    confidence: 0.86
+    review_notes: ['Only chapter explicitly announced; no verse range guessed. Theological interpretation is the preacher’s.']
+  - id: p0913-life-timeline
+    video_id: GkmB_KeBlBw
+    section_id: s0913-mortality
+    start: 2575.22
+    end: 2646.8
+    type: sermon
+    title: Asking what becomes of us
+    summary: The preacher introduces a timeline of human life and reflects on the speed of time, particularly when watching children grow.
+    questions: ['How does the preacher introduce the question of what happens after death?']
+    topics: [eternal-life]
+    scripture: []
+    transcript: 'But physically, of course, as the person who asks the question: what are you talking about? Last week I talked about how eternal life starts here and now, and not just after you die. But still there is a process that we are thinking about. What will become of us is an interesting question. If I were to ask you, if you drop dead now, what will become of you? I don’t think many people will have the correct answer. The chart that I’m going to show you has been shown before, a kind of revision. First of all, this is a progression of time in the world. Time rolls by very, very quickly. [Family-photo illustration condensed by omission.] The kid keeps changing. We just love children; every single day we are showing each other pictures. All of a sudden you realize that time has passed by so quickly, especially when you look at your children.'
+    confidence: 0.87
+  - id: p0913-unknown-end
+    video_id: GkmB_KeBlBw
+    section_id: s0913-mortality
+    start: 2646.8
+    end: 2712.08
+    type: sermon
+    title: Knowing one’s birthday but not one’s final day
+    summary: The preacher contrasts known birth dates with uncertain death and recalls his younger brother’s sudden death.
+    questions: ['What personal example illustrates the uncertainty of death?']
+    topics: [eternal-life]
+    scripture: []
+    transcript: 'For me especially, now I enter into a time where I receive my senior citizen card, and everybody is asking me, when are you going to retire? It forces you to move. Within this time of humanity, there’s a portion that belongs to you only. There’s a time where you are born, and also a time where you will die. [Comments on the slide animation omitted.] You know the time you are born, every one of you, but you won’t know the time you will die. All kinds of things can happen in life. The older you grow, the more you are aware of this. For me, for example, my younger brother went back to the Lord very suddenly, just over a year ago. He went cycling and then came back and said he wanted to go upstairs and take a nap. And that’s it, never woke up. By the time the doctor went to find him, he was already gone.'
+    confidence: 0.85
+    review_notes: ['Personal recollection retained as the speaker’s account, not independently verified.']
+  - id: p0913-uncertain-story
+    video_id: GkmB_KeBlBw
+    section_id: s0913-mortality
+    start: 2712.08
+    end: 2766.68
+    type: sermon
+    title: An explicitly uncertain story about sudden death
+    summary: The preacher labels an aircraft-accident story as an unverified rumour and uses it to illustrate unpredictability rather than to establish a historical event.
+    questions: []
+    topics: [eternal-life]
+    scripture: []
+    transcript: 'When I was young, there was a rumour; I don’t know whether it’s true or not. In Singapore there is Pulau Ubin, Pulau Tekong. In the early days when I was growing up, there weren’t many built-in toilets, so toilets were outside. There’s this story about how some guy in Pulau Ubin, I remember, in the morning went to the toilet. The SAF has all these aircraft having exercises. An A4 Skyhawk, which is a fighter jet, crashed onto the outhouse. A guy got killed. [Untranscribed Hokkien expression omitted.] You get killed by a plane while you are doing your business. So we have no idea what is going to happen to us. The end of life will come.'
+    confidence: 0.81
+    review_notes: ['The preacher explicitly doubts the rumour; that qualification must remain with this excerpt.']
+  - id: p0913-paradise-hades
+    video_id: GkmB_KeBlBw
+    section_id: s0913-afterlife
+    start: 2766.68
+    end: 2832.58
+    type: sermon
+    title: Paradise and Hades in the preacher’s account
+    summary: The preacher describes an intermediate state after death, distinguishing paradise and Hades from the final destinations in his Reformed explanation.
+    questions: ['What does the preacher say happens immediately after death?']
+    topics: [eternal-life]
+    scripture: []
+    transcript: 'What will happen at the end of life, at the moment you take your last breath? A lot of people don’t know, so I want to make sure that you understand. This is the Reformed evangelical understanding from the Bible. The first thing that happens is that your soul goes to paradise with the Lord immediately while your body lies on the earth. [Scripture quotation omitted; reference not announced.] The word is paradise, not heaven. Paradise is like the waiting room for heaven; that’s what Stephen Tong said. It’s like an intermediate stage, but you are not sleeping, you are not in a state of turmoil, for the people of God. But for people who don’t belong to God, they go to another place called Hades immediately also. [Rich man and Lazarus narrative reference omitted; verse range not announced.] Hades is a waiting room for hell, as paradise is the waiting room for heaven.'
+    confidence: 0.85
+    review_notes: ['Afterlife chart visible at 3000s. No scripture coordinates inferred from narrative memory.']
+  - id: p0913-funeral-hope
+    video_id: GkmB_KeBlBw
+    section_id: s0913-afterlife
+    start: 2832.58
+    end: 2909.98
+    type: sermon
+    title: Grief, hope and care at funerals
+    summary: The preacher distinguishes grief from hopelessness at Christian funerals and describes arranging respectful funerals for isolated people.
+    questions: ['How does the preacher connect belief about death with conducting funerals?']
+    topics: [eternal-life, service]
+    scripture: []
+    transcript: 'In Christian funeral wakes, we don’t do the things that other faiths do, which is cry and scream and “don’t go” and all kinds of things. [Joke omitted.] This is a very cultural kind of understanding. In Christian funeral wakes we are at peace and certain that our beloved who has passed on, who belongs to Jesus Christ, is already in paradise. When I conduct funeral wakes, I know we are sad because of the parting of the loved one, but it’s not a hopeless situation. Every time somebody calls me and says, can you please help conduct a funeral wake, the first question I ask is, is the guy a Christian? If not, sometimes I will do it because we want to have a proper funeral. Sadly a lot of people don’t know anybody and they are all alone. Sometimes I’ll call you: can you please come and [the speaker says “pretend you know this guy”], sit there as I do a simple funeral wake for the deceased. It happens, so don’t be surprised if I call you.'
+    confidence: 0.84
+    review_notes: ['Cultural comparison is the speaker’s generalization, not an archive claim about other faiths. ASR wake/wig homophone edited contextually.']
+  - id: p0913-resurrection-limits
+    video_id: GkmB_KeBlBw
+    section_id: s0913-afterlife
+    start: 2909.98
+    end: 2985.5
+    type: sermon
+    title: Resurrection and the limits of detailed predictions
+    summary: The preacher outlines resurrection and final judgment while emphasizing that the Bible does not supply every detail and that present life also matters.
+    questions: ['What limits does the preacher place on detailed accounts of the afterlife?']
+    topics: [eternal-life]
+    scripture: []
+    transcript: 'The next important event in history will be the coming of our Lord Jesus Christ. When that happens, resurrection will occur, where our physical body will be resurrected and our soul and our body will join together to become a new entity, a new existence. Finally the endpoint will come at the end of time where judgment will come and the new heaven and new earth will be made. Note that the Bible is not extremely clear about the fine detail of what happens. But some of the more major blocks are already given to us. [Comparison with other religions omitted.] In the Bible, the book of Revelation and other books hint at what is going to happen next. To some extent I am of the opinion that God wants us also to remember that it’s not just about the afterlife, but it’s also about the here and now.'
+    confidence: 0.87
+    review_notes: ['No specific Revelation chapter was established in this passage.']
+  - id: p0913-burial-belief
+    video_id: GkmB_KeBlBw
+    section_id: s0913-burial
+    start: 2985.5
+    end: 3054.42
+    type: sermon
+    title: Burial convictions and learning biblical Greek
+    summary: The preacher introduces a burial preference he associates with Bible Presbyterians, then recalls his seminary Greek teacher.
+    questions: ['Why do some Christians prefer burial according to the preacher?']
+    topics: [eternal-life]
+    scripture: []
+    transcript: 'With regard to the present, because of the resurrection when Jesus Christ returns, some conservative Christians believe that you should not [ASR unclear; cremation is the subject], because the body has to be resurrected. In Singapore, the Bible Presbyterians belong to that category. They believe in [ASR “long burial”], which is buried by the soil. I didn’t know how serious they were until I was in seminary. My seminary is the Biblical Graduate School of Theology, which was run or started by Dr. [name uncertain in ASR] of the Bible Presbyterian Church. I remember when we were having lessons, he was the one who taught Greek. I once did translation for him and suddenly realized he was reading a Greek Bible. The guy could read the Greek Bible and preach at the same time. Greek is a very difficult language. In case you want to do seminary study, I recommend that you do Greek first.'
+    confidence: 0.79
+    review_notes: ['Teacher name and “long/lawn burial” not resolved from memory. Denominational position is attributed to this preacher, not externally verified.']
+  - id: p0913-greek-class
+    video_id: GkmB_KeBlBw
+    section_id: s0913-burial
+    start: 3054.42
+    end: 3135.48
+    type: sermon
+    title: A demanding teacher and a late arrival
+    summary: The preacher remembers a Greek teacher’s demanding classroom questions and an evening when students hoped he would not arrive after travelling for ministry.
+    questions: []
+    topics: [discipleship]
+    scripture: []
+    transcript: 'You say, it’s very difficult, why do Greek first? Because if you do Greek last, you will give up. So do it first; you’ve got no choice but to [unclear colloquial word] and finish. It’s a really tough language. I remember we had Greek on Monday night. He, like Dr. Stephen Tong, belonged to those pastors who work until they drop dead. The night before was Sunday; he went to Kuantan, typically to do church planting, then rushed back on Monday. We were all gathering in class and I was praying that he wouldn’t come, because he teaches Greek in a very strange manner. He will suddenly call you to stand up, [example and unclear Greek omitted], and you don’t know what he’s talking about. We were quite happy because he took a long time. By 7:30 the class was supposed to start, and he didn’t appear. But about 7:45 he rushed into the classroom. [Unclear arrival exchange omitted.]'
+    confidence: 0.8
+  - id: p0913-funeral-burial-anecdote
+    video_id: GkmB_KeBlBw
+    section_id: s0913-burial
+    start: 3135.48
+    end: 3195.46
+    type: sermon
+    title: A remembered offer to pay for a burial
+    summary: The preacher recalls overhearing his teacher offer to pay for a burial and interprets that incident as evidence of the teacher’s conviction about resurrection.
+    questions: []
+    topics: [eternal-life, service]
+    scripture: []
+    transcript: 'I was waiting for him to call me, but he didn’t, because halfway through there was a phone call. He rushed out of the classroom, and I heard him taking the call outside. The Bible Presbyterians were also supportive of a drug rehabilitation centre [organisation name uncertain in the speaker’s recollection and ASR]. Apparently one of the residents had hanged himself. Quite sad. I overheard him talking to the guy on the other side: you go and tell his father that we insist on [ASR “long burial”]. If he cannot afford the grave, I will pay for it. I thought, wow, that’s fascinating. The Bible Presbyterians believe you need to be buried properly because resurrection will happen. Therefore they are opposed to cremation.'
+    confidence: 0.8
+    review_notes: ['Retains the reported nature of an overheard conversation; no name/organisation or policy is independently established.']
+  - id: p0913-tong-burial
+    video_id: GkmB_KeBlBw
+    section_id: s0913-cremation
+    start: 3195.46
+    end: 3264.32
+    type: sermon
+    title: Stephen Tong’s reported preference for burial
+    summary: The preacher relates Stephen Tong’s preference for burial and a story about declining cemetery land to avoid commercial use of proximity to his grave.
+    questions: []
+    topics: [eternal-life]
+    scripture: []
+    transcript: 'In Singapore almost all of us will be cremated. So how do we [unclear word] that in accordance with that question? If you ask Dr. Stephen Tong whether you should be cremated or not, who knows his answer? He will propose burial more than anything else. Our church in Jakarta is going to have a cemetery. [Brief aside omitted.] He said somebody donated a huge piece of land for us to have a cemetery, and that guy said you and your family can be buried here. He refused to take the land. One possibility is that if the guy buries me here, he will sell the land next to me more expensively: you want to be very near to Stephen Tong, you have to pay a lot more money. Dr. Tong said he doesn’t want that. His idea is that you should go for [burial term uncertain] if you can, based on two reasons. Number one, he says the Bible has no recording of cremation. Number two, not very nice to burn your mother. That’s his answer.'
+    confidence: 0.82
+    review_notes: ['Both reasons and cemetery story are reported statements, not assertions independently checked by the curator.']
+  - id: p0913-burial-land-jokes
+    video_id: GkmB_KeBlBw
+    section_id: s0913-cremation
+    start: 3264.32
+    end: 3342.5
+    type: sermon
+    title: Singapore’s land constraints and a humorous exchange
+    summary: The preacher recounts a humorous conversation about burial space in Singapore before turning to the theological question of resurrection.
+    questions: []
+    topics: [eternal-life]
+    scripture: []
+    transcript: 'So I asked him, but this is Singapore, we have no land. [Jakarta and haze aside omitted.] He said, I have a solution. What solution? I thought about your issue: number one, you can bury people standing up. When you stand up it’s just a square, a lot smaller. Then I told him, [unclear joke about standing in the corner]. He said, okay, I have another solution: you stack them up one by one like HDB flats. I looked at him and said, thankfully you are not the Prime Minister of Singapore. If not, we will all be stacking up and down. When people visit me, they must see which one, which floor. [Brief joke and transition.]'
+    confidence: 0.82
+    review_notes: ['Humorous reported conversation; not a policy proposal or burial instruction.']
+  - id: p0913-cremation-resurrection
+    video_id: GkmB_KeBlBw
+    section_id: s0913-cremation
+    start: 3342.5
+    end: 3406.48
+    type: sermon
+    title: Why cremation need not prevent resurrection
+    summary: The preacher argues that God can reconstitute a body and uses death in fire and eventual exhumation to question a bodily-preservation requirement.
+    questions: ['Does the preacher think cremation prevents resurrection?']
+    topics: [eternal-life, faith]
+    scripture: []
+    transcript: 'In mainstream understanding of God, we believe that our Lord Jesus Christ can reconstitute anything. If cremation is a problem, then people who die in a fire accident, what is going to happen to them? They cannot be reconstituted? In any case, the Bible Presbyterians, if I may say so, are mistaken. If you [burial term unclear] in Singapore, Choa Chu Kang is the only place you can. Guess how long you will last? Maybe about thirty years only, right? At thirty years they will dig you up because they want to build the next BTO flat or whatever it is. They will put it in the newspaper: all the relatives of [the speaker uses his own name; spelling not established here], please come and take whatever it is. You think my great-great-grandchildren will remember me and take care of me? The answer is no. So the government will dig it up and say nobody came to retrieve him. So what to do?'
+    confidence: 0.83
+    review_notes: ['Burial term, time limit and institutional position are the preacher’s wording/claims, not verified legal guidance. Self-name in ASR not used to expand metadata.']
+  - id: p0913-cremation-answer
+    video_id: GkmB_KeBlBw
+    section_id: s0913-cremation
+    start: 3406.48
+    end: 3451.66
+    type: sermon
+    title: The preacher’s answer on cremation
+    summary: The preacher says he sees no theological problem with cremation because God can resurrect the body, while acknowledging practical and traditional reasons to prefer burial where possible.
+    questions: ['What is the preacher’s Reformed view on cremation?', 'Why can burial remain a preference without being required for resurrection?']
+    topics: [eternal-life, faith]
+    scripture: []
+    transcript: 'They will burn me anyway, so there is no escape to it, that cremation will happen. For most mainstream churches, we do believe that God is able to resurrect the body in any way, because he’s God Almighty. So it’s not about [burial term unclear] alone. But of course, if you have land, burial is always a more traditional way, and I think that is better also in the sense of being able to go there and visit. But from the theological angle, we don’t see a problem with cremation, which is why cremation is a very common thing in this country. So I hope that answers the question.'
+    confidence: 0.89
+  - id: p0913-future-wonder
+    video_id: GkmB_KeBlBw
+    section_id: s0913-hope
+    start: 3451.66
+    end: 3525.42
+    type: sermon
+    title: Future hope without exhaustive detail
+    summary: The preacher describes future life with God as wonderful while acknowledging limited detail, then reads 1 Corinthians 13:9-12.
+    questions: ['How does the preacher express hope while acknowledging limited knowledge?']
+    topics: [eternal-life]
+    scripture: ['1 Corinthians 13:9-12']
+    transcript: 'Now the next question has to do with eternal life. The thing about what will happen next is, as I said, the Bible doesn’t give a very clear answer, but it’s going to be marvellous. [Revelation allusion and anthem-related wording omitted; precise Revelation reference not established.] The Bible doesn’t give very fine detail as to what is next. But it is quite clear to us that when we are one with God, it’s going to be most marvellous beyond anything we know. The Apostle Paul says in 1 Corinthians 13, the great chapter of love: [scripture reading omitted; 1 Corinthians 13:9-12, ESV reference only].'
+    confidence: 0.89
+    review_notes: ['3500/3600s slide explicitly gives 1 Corinthians 13:9-12.']
+  - id: p0913-bronze-mirror
+    video_id: GkmB_KeBlBw
+    section_id: s0913-hope
+    start: 3525.42
+    end: 3607.28
+    type: sermon
+    title: A dim mirror and a hope beyond present suffering
+    summary: The preacher uses the pictured bronze mirror to explain partial knowledge and looks forward to a future beyond suffering while returning attention to life now.
+    questions: ['How does the bronze-mirror illustration support the preacher’s account of partial knowledge?']
+    topics: [eternal-life, faith]
+    scripture: ['1 Corinthians 13:9-12']
+    transcript: 'In the time of the Apostle Paul, mirrors were polished bronze, like this picture. You look at the mirror, you can’t quite see fully, because the glass mirror we know today did not exist. So it’s a dim thing. [Scripture paraphrase omitted.] It doesn’t mean that you are God, like God, but you will know a lot more things than you would now. Everything is going to be wonderful, so we look forward to that end. [Lord’s Prayer quotation omitted; reference not announced.] As much as we would live our life here and now, perfection will not come until that final day. There are still many things in life that are difficult, many mysteries, many sufferings very difficult to understand. [Scripture-related assurance omitted.] Billy Graham said that heaven must be better than sex. That caught your attention, right? The idea is that it must be better than any best experience you can possibly have on earth. But in the teachings I started last week, I am interested very much in this particular portion: your lifetime, my lifetime, the here and now.'
+    confidence: 0.86
+    review_notes: ['Ancient-mirror history and Graham attribution are the preacher’s claims; no independent verification.']
+  - id: p0913-willard-transition
+    video_id: GkmB_KeBlBw
+    section_id: s0913-life-now
+    start: 3607.28
+    end: 3677.68
+    type: sermon
+    title: Dallas Willard’s suggested seamless transition
+    summary: The preacher presents a thought he attributes to Dallas Willard about passing from one existence to another, explicitly treating it as a proposal that moved him.
+    questions: []
+    topics: [eternal-life]
+    scripture: []
+    transcript: 'We talk about how our eternal life starts in the here and now, while it is absolutely true that when you die, eternal life in the next space will begin. Sometimes theologians think about it in a very deep way. One is Dallas Willard, a little unusual in his thinking processes. One thing he said touched my heart greatly: Dallas Willard proposed that Christians would not know that they have died. I thought that’s quite an interesting idea, that when you die you wouldn’t know, because Willard proposed we will move from one existence to another in a seamless manner. All of a sudden you realize your old life has passed. Apparently his last words right before he died were “Thank you.” I thought that’s fascinating. [Brief contrast omitted.] It’s a wonderful [ASR uncertain: face/phase] that goes to the next life.'
+    confidence: 0.84
+    review_notes: ['Proposal and reported last words are not asserted as established facts or biblical quotations.']
+  - id: p0913-salvation-begins
+    video_id: GkmB_KeBlBw
+    section_id: s0913-life-now
+    start: 3677.68
+    end: 3724.28
+    type: sermon
+    title: Eternal life and the beginning of faith
+    summary: The preacher says eternal life begins with salvation, whether or not someone can identify an exact conversion moment.
+    questions: ['Must someone remember an exact conversion date to understand eternal life as beginning now?']
+    topics: [eternal-life, faith]
+    scripture: []
+    transcript: 'However, based on what was taught last week from the Bible, eternal life begins when we are saved by our Lord Jesus Christ at a certain time frame in our life. For some of us, you can detect that time frame. For example, maybe you attend a Stephen Tong gospel rally and he calls for you to believe, to put up your hand. Sometimes he encourages people to write it in the Bible: on this day, at this time, you decide to follow Jesus Christ. For many of us, including me, I don’t know what that particular time frame is because I’ve been to church since I was a child. Whatever the case is, at the moment we are saved [ASR preposition unclear], eternal life begins at that point moving forward. That’s the thing that we want to think about very deeply.'
+    confidence: 0.87
+  - id: p0913-packer-book
+    video_id: GkmB_KeBlBw
+    section_id: s0913-knowing
+    start: 3724.28
+    end: 3784.12
+    type: sermon
+    title: J. I. Packer’s Knowing God and theological learning
+    summary: The preacher recommends Packer’s Knowing God and describes the emphasis on theological knowledge in the Reformed evangelical setting.
+    questions: ['Which book does the preacher use to explore knowing God?']
+    topics: [discipleship]
+    scripture: []
+    transcript: 'I have shared with you the work of James Packer, Knowing God. Earlier I talked about how John Stott and James Packer were two of the biggest names when I was growing up. They are British theologians, Anglicans, really very wise people. John Stott wrote Basic Christianity, a very pivotal piece of great work, and Packer, Knowing God in 1973, considered one of his best works and one of the most earth-shaking works in the evangelical world. Last week we mentioned how there is a difference, according to Packer, between knowing God and knowing about God. Today I want to dwell a little bit deeper into it, because many of us know about God, especially in the Reformed evangelical circle, because we have a lot of seminars, a lot of studies; we encourage you to do a lot of deep understanding.'
+    confidence: 0.89
+    review_notes: ['3750s book cover/portrait and subsequent J. I. Packer caption resolve ASR variants Packer/Parker/Becker. Publication date remains the speaker’s statement.']
+  - id: p0913-simple-demanding-title
+    video_id: GkmB_KeBlBw
+    section_id: s0913-knowing
+    start: 3784.86
+    end: 3874.16
+    type: sermon
+    title: Why the sermon is called Simple but Demanding
+    summary: The preacher contrasts extensive theological knowledge with knowing God and explains that Packer’s description of a simple but demanding path supplied the sermon title.
+    questions: ['Why is the sermon titled Simple but Demanding?', 'How can knowledge about God become knowledge of God?']
+    topics: [discipleship, meditation]
+    scripture: []
+    transcript: 'We talk about theology and our pastors quote names of philosophers. This is not usual. Reformed evangelical people sometimes have problems when they switch church: you listen to another pastor and say, there’s no depth to the preaching. A lot of us know a lot about God. Packer says that if you know God instead of knowing about God, you will have energy to serve him, boldness to share him and contentment in him. But the big question is: how can you turn from knowledge about God into knowledge of God? Everything I’m telling you is from his book Knowing God. I really encourage you to get that book and read it. It may be very much a turning point for many of us. Packer says the rule to do this is simple. That caught my attention, because you think it should be very complicated. But he says the rule for doing this is simple, and he added the word “but demanding.” That’s why I entitled today’s sermon Simple but Demanding. I want to dwell on what he’s talking about. I know many people who know many things about God, but something is wrong somewhere, because the fellow could be very nasty, doesn’t seem to love anyone, care about anyone, or do anything to help anyone.'
+    confidence: 0.89
+    review_notes: ['Title independently visible at 1905s, not inferred from this paragraph.']
+  - id: p0913-train-story
+    video_id: GkmB_KeBlBw
+    section_id: s0913-knowing
+    start: 3874.16
+    end: 3935.22
+    type: sermon
+    title: The train journey and a practical test of knowledge
+    summary: The preacher recounts travelling with pastors who discussed theology while remaining seated as older passengers and families boarded.
+    questions: ['What train-journey illustration does the preacher use?']
+    topics: [discipleship, service]
+    scripture: []
+    transcript: 'There was one time I was travelling on a train in Indonesia with a whole bunch of pastors. We were supposed to go back to Jakarta, and there was news about a massive traffic accident, so we decided to take the train. We happened to board at the first terminal, so everybody got to sit because the train was empty. As the train was moving and picking up more people, the local people came on board. Those pastors were sitting there discussing theology. Guess what? Not a single pastor stood up for some of these people who came on: the old people, women, some with young kids. Not a single pastor stood up. Of course I stood up. [Self-deprecating remark omitted.] I was thinking to myself, fascinating, isn’t it?'
+    confidence: 0.87
+  - id: p0913-knowledge-conduct
+    video_id: GkmB_KeBlBw
+    section_id: s0913-knowing
+    start: 3935.22
+    end: 3985.9
+    type: sermon
+    title: When theological talk does not become care
+    summary: The preacher asks whether knowledge of God is evident in conduct and acknowledges that this criticism can be perceived as judgmental.
+    questions: ['How does the preacher distinguish theological discussion from conduct that reflects knowing God?']
+    topics: [discipleship, service]
+    scripture: []
+    transcript: 'All of you know about God. You can talk a lot about who God is, what is this theory, what [philosopher’s name unclear] said. But would I dare say that you know God? Because I don’t see anything in your life that seems to exemplify that. Every time I say something like that, people look at me and say, you’re very judgmental, you think you’re a big deal. So okay, better don’t say anything. It’s a pretty confusing thing.'
+    confidence: 0.84
+    review_notes: ['Includes surrounding pause and transition context; no philosopher’s name reconstructed. Shorter textual excerpt than duration because unclear/colloquial wording is omitted.']
+  - id: p0913-religious-complexity
+    video_id: GkmB_KeBlBw
+    section_id: s0913-simple
+    start: 3985.9
+    end: 4049.98
+    type: sermon
+    title: Religious complexity contrasted with simplicity
+    summary: The preacher contrasts Packer’s description of a simple path with his examples of elaborate religious rituals and pilgrimages.
+    questions: []
+    topics: [faith]
+    scripture: []
+    transcript: 'Packer says that it’s first of all simple, and this in itself is very strange because religion is not usually conceived as simple. It’s very complicated; religions have rituals. The big one just passed in Singapore: burning things all over the place, all kinds of things, notes with one followed by twelve zeros. How does it work? What’s the economic system there? Is there hyperinflation? Is it good enough to use? [Further comparative remarks omitted.] If you ask religious leaders in major religions, most will tell you, not so simple. Some religions, to see the god you have to do pilgrimage. [Descriptions of pilgrimage practices omitted; not independently checked.] It can take you five years just to go to meet your god. So how can it be simple?'
+    confidence: 0.81
+    review_notes: ['Generalizations and humorous comparisons are the preacher’s, not neutral descriptions of other religions.']
+  - id: p0913-divine-simplicity
+    video_id: GkmB_KeBlBw
+    section_id: s0913-simple
+    start: 4049.98
+    end: 4123.72
+    type: sermon
+    title: The preacher’s explanation of divine simplicity
+    summary: The preacher uses the label divine simplicity and 1 John 5:3 to argue that knowing and obeying God need not be conceived as an elaborate religious task.
+    questions: ['How does the preacher connect simplicity with 1 John 5:3?']
+    topics: [faith, discipleship]
+    scripture: ['1 John 5:3']
+    transcript: 'In Christian understanding, this is called divine simplicity. The Bible is very clear about this: as rich as God is, God is also simple in the sense that he didn’t make himself that complicated for us to understand. The Apostle John wrote in 1 John 5:3: [scripture quotation omitted; 1 John 5:3, ESV reference only]. You look at this: how can it be? It’s very burdensome, very difficult. It’s difficult for those who don’t obey, but it’s not burdensome for those who understand, who believe and who know. And so knowing God, Packer said, is actually simple. It’s a very simple thing.'
+    confidence: 0.85
+    review_notes: ['4060s slide confirms the label Divine Simplicity; definition remains this speaker’s use of the term, not an external doctrinal definition. Reference explicitly stated in ASR.']
+  - id: p0913-two-movements
+    video_id: GkmB_KeBlBw
+    section_id: s0913-knowledge
+    start: 4123.72
+    end: 4197.72
+    type: sermon
+    title: Meditation, prayer and praise
+    summary: 'The preacher presents two movements from Packer: reflecting on each learned truth before God, and allowing that reflection to lead to prayer and praise, without dismissing correct knowledge.'
+    questions: ['What two practices does the preacher propose for moving from knowing about God to knowing God?']
+    topics: [meditation, prayer, discipleship]
+    scripture: []
+    transcript: 'The rule for doing this, to move from the knowledge of God to knowing God, is actually very simple. He proposed two things. The first is that we turn each truth that we learn about God into matter for meditation before God. You want to move from knowing about God to knowing God? You must make everything you know about God into a matter for meditation. Then, in due time, also leading to prayer and praise to God. That’s the second thing. You put these two together, then you will move from knowing about God to knowing God. My dear brothers and sisters in Christ, that doesn’t mean knowing about God is not important. Surely correct knowledge of God must be the starting point of faith. [Examples of contrasting ideas of God omitted.] Just because you know more about God doesn’t mean you know God more. Some people who may not know much about God may actually know God more than a theologian because that person is closer to God.'
+    confidence: 0.9
+    review_notes: ['4370s slide corroborates first movement; 4805s slide corroborates prayer/praise heading.']
+  - id: p0913-athens
+    video_id: GkmB_KeBlBw
+    section_id: s0913-knowledge
+    start: 4197.72
+    end: 4266.58
+    type: sermon
+    title: Paul in Athens and knowing whom one worships
+    summary: The preacher uses Paul’s address in Athens to support the need for knowledge of God as the foundation of faith.
+    questions: ['Why does the preacher bring Paul’s address in Athens into the discussion?']
+    topics: [faith, discipleship]
+    scripture: ['Acts 17']
+    transcript: 'However, the fundamental understanding of God is important. In the Bible we see that clearly in many places. The Apostle Paul, when he was in Athens, said this in Acts chapter 17. [Scripture reading omitted; Acts 17, ESV reference only.] Paul was explaining to these people that the God you worship is not an unknown God; he is the God of heaven and earth. Therefore knowing about God is important. The knowledge of who God is is important, lest you spend your entire life chasing after the wrong thing, barking up the wrong tree and praying to the wrong god. Knowledge about God is important. This is why in the Reformed Evangelical Church we encourage you to know God properly.'
+    confidence: 0.88
+    review_notes: ['4215s slide explicitly shows Acts 17:23; chapter-level reference retained for the wider reading, without guessing the full verse endpoint.']
+  - id: p0913-effective-prayer-story
+    video_id: GkmB_KeBlBw
+    section_id: s0913-knowledge
+    start: 4266.58
+    end: 4347.46
+    type: sermon
+    title: The problem with treating prayer as mere effectiveness
+    summary: The preacher recalls a former church member seeking a place he considered effective for prayer and criticizes that approach as a mistaken understanding of God.
+    questions: ['Why does the preacher question choosing prayer practices only for their perceived effectiveness?']
+    topics: [prayer, faith]
+    scripture: []
+    transcript: 'This is why our senior pastor says much of the problems in our world come because our doctrine of God is wrong. You don’t know God; you just [colloquial expression omitted]. One time I was passing by Novena, where there’s a Roman Catholic church, and I saw a church member from my previous church. [Name omitted; spelling unverified.] I said, what are you doing here? He said, come here and pray. I said, we’re a Presbyterian church, why are you here to pray? He said, you don’t know, they are very [Hokkien term uncertain]. What is a good translation? Very effective. He said other people come here and pray too: lottery, girlfriend or boyfriend problems, no children, come and pray. [Further generalization about visitors omitted.] My friend, who has long gone to be with the Lord, believed that wherever God is “effective,” we go. Wrong doctrine of God, wrong understanding. So knowing God is important.'
+    confidence: 0.81
+    review_notes: ['Anecdotal speech and cultural/religious interpretation attributed to the preacher. Names and dialect spelling not reconstructed.']
+  - id: p0913-psalm-meditation
+    video_id: GkmB_KeBlBw
+    section_id: s0913-meditation
+    start: 4347.46
+    end: 4407.02
+    type: sermon
+    title: Psalms 1 and turning truth into meditation
+    summary: The preacher returns to the earlier Psalm reading as the basis for deliberate reflection on what is learned about God.
+    questions: ['How does Psalms 1 support the sermon’s call to meditate?']
+    topics: [meditation, discipleship]
+    scripture: ['Psalms 1:1-2']
+    transcript: 'However, we cannot stay at the stage where you know about God. Packer says the first thing you need to do is turn each truth about God into matters for meditation before God. Today, for scripture reading, Brother [ASR: Hardy] read for us one of the most marvellous opening verses in the Psalms, which as children we memorize, in Chinese especially. [Scripture quotation omitted; Psalms 1:1-2, ESV reference only.] Packer says that everything you know about God, you want to turn it into a matter of meditation before God, so that you will know God. Therefore the next question must be: what is meditation?'
+    confidence: 0.89
+    review_notes: ['Psalms 1:1-2 later explicitly visible at 4805s; no unrelated scripture imported.']
+  - id: p0913-resting-mind
+    video_id: GkmB_KeBlBw
+    section_id: s0913-meditation
+    start: 4407.02
+    end: 4463.9
+    type: sermon
+    title: Resting the mind in the preacher’s personal practice
+    summary: The preacher describes his use of Maranatha meditation for mental rest and responds to criticism of that practice.
+    questions: ['How does the preacher describe his personal use of Maranatha meditation?']
+    topics: [meditation]
+    scripture: []
+    transcript: 'When you think about meditation you must be thinking about a picture like that. There is some part of it too. Sometimes people ask me, Pastor Yong, you do so many things and have so many issues; how do you maintain some sanity? My answer is, I do meditate. I meditate using Maranatha Christian meditation, which essentially is one in which the mind is rested. You’re not thinking about anything, to rest the mind. Some people complain to Dr. Tong and say Pastor Yong teaches New Age meditation where the mind is empty, then the devil can come in. Please, go and try. See whether you can empty your mind until the devil can come in. I don’t think so. The whole idea about Maranatha meditation is to rest your mind, just like when you exercise, after a while you need to rest your physical body. [Breathing-syllable demonstration omitted; ASR uncertain.] It doesn’t matter what mantra you use. You can call, Lord Jesus, forgive me, or whatever it is.'
+    confidence: 0.84
+    review_notes: ['Personal practice and response to critics, not curator endorsement. No uncertain syllables reconstructed.']
+  - id: p0913-distracted-mind
+    video_id: GkmB_KeBlBw
+    section_id: s0913-meditation
+    start: 4463.9
+    end: 4504.58
+    type: sermon
+    title: Noticing how distracted the mind is
+    summary: The preacher uses drifting attention toward entertainment as an illustration of how difficult it can be to rest the mind.
+    questions: []
+    topics: [meditation]
+    scripture: []
+    transcript: 'I was interested in this when Lee Kuan Yew practised Maranatha meditation. You try it. [Repeated demonstration syllables omitted.] One minute, two minutes later you say, what is the Netflix coming on today, what is the next show coming on? You realize how clouded your brain is. So there is a place for that kind of meditation.'
+    confidence: 0.85
+    review_notes: ['4498s frame retains What is Meditation? slide. Historical attribution not separately checked.']
+  - id: p0913-meditation-definition
+    video_id: GkmB_KeBlBw
+    section_id: s0913-meditation
+    start: 4504.58
+    end: 4564.5
+    type: sermon
+    title: Packer’s definition of meditation — alignment uncertainty
+    summary: The preacher distinguishes Packer’s reflective meditation from simply resting the mind, then begins applying it to love of others; local ASR alignment remains uncertain.
+    questions: ['How does the preacher distinguish Packer’s meditation from resting the mind?']
+    topics: [meditation, discipleship]
+    scripture: ['Psalms 1:1-2']
+    transcript: 'But the one that Packer talked about is different. It is the same with [ASR “someone”; Psalms 1 supported by surrounding reading and slides]. The Chinese version [short Chinese scripture quotation omitted; reference only, no replacement translation]. You think about it day and night, not sit down and hum about it day and night. From J. I. Packer’s book, he says that meditation is the activity of calling to mind, thinking over, dwelling on, and applying to oneself the various things that one knows about the works and ways and purposes and promises of God. [ASR alignment uncertain here: source ID 974 is followed by backtracked IDs 975/976; order retained, not a listening-verified transition.] For example, [unclear connector] the pastor talks about loving one another. [Scripture-related command quotation and congregational prompt omitted; exact reference not established.]'
+    confidence: 0.67
+    review_notes:
+      - 'Raw order 974 (4543.58–4543.86), 975 (4540.76–4542.12), 976 (4542.12–4543.90) preserved by importer; 2.82s backward jump and 1.36/1.74s overlaps. No editorial boundary placed within this sequence.'
+      - 'Regional words reveal text/word divergence beginning around Chinese IDs 958–960 and continuing into definition IDs 965–974. Word array of 972 already contains “for example”; 973/974 contain the next connector, while text of 974 ends the definition. IDs 975/976 have no words. This suggests an alignment problem, not proof of audible repetition or a corrected clock.'
+      - 'Frames at 4535/4540/4543/4546/4550/4565s show the Packer definition and continuing preacher. Slide supports quoted definition and spelling; frame captions lag and are not used to retime speech. Neighbor paragraphs 4407–4504.58 and 4564.5–4650.64 reviewed. Audio windows decoded, not listened to. Exact transition remains for human review.'
+  - id: p0913-love-application
+    video_id: GkmB_KeBlBw
+    section_id: s0913-meditation
+    start: 4564.5
+    end: 4595.94
+    type: sermon
+    title: Applying the sermon to everyday relationships
+    summary: The preacher asks listeners to consider what a teaching means for their spouse, children, colleagues and other people they encounter.
+    questions: ['What everyday relationships does the preacher ask listeners to bring into meditation?']
+    topics: [meditation, discipleship, service]
+    scripture: []
+    transcript: 'Meditation means that you don’t just listen, one ear in and one ear out. After worship service, when you’re walking out, you think to yourself: is this what I’m doing in my life? What does it mean when it comes to my spouse, my children, my neighbour, my boss, my subordinates, the people I work with, that wet-market auntie [unfinished phrase]? How do I do it? I’m thinking about it. That’s what Packer means: you think about it deeply.'
+    confidence: 0.84
+    review_notes: ['Neighbor of flagged alignment region. Cut after the complete reflective-application thought, not at the backward-start sequence. “Ear” is a contextual edit of ASR “year,” not a listening claim.']
+  - id: p0913-reflection-doubt
+    video_id: GkmB_KeBlBw
+    section_id: s0913-internalizing
+    start: 4595.94
+    end: 4669.6
+    type: sermon
+    title: Reflection that engages doubt rather than forgetting
+    summary: The preacher describes meditation as consciously thinking before God, reasoning through doubt and returning to teaching after hearing or reading it.
+    questions: ['How can meditation engage doubt and unbelief according to the preacher?']
+    topics: [meditation, faith]
+    scripture: []
+    transcript: 'He says it is an activity of holy thought, consciously performed in the presence of God, under the eye of God, [ASR “by the head of God”; wording uncertain], as a means of communication with God. When you learn some truth of God and meditate upon it, it is a means to clear your mental and spiritual vision of God, and let his truth make its full and proper impact on your mind and heart. He says it is even a matter of talking to oneself about God and oneself, often arguing with oneself, reasoning oneself out of moods of doubt and unbelief into a clear appreciation of God’s power and grace. That’s what meditation is all about. Every time you listen to a sermon, join a [ASR “self-group”; group term uncertain], someone teaches something, or you read the daily devotional, it’s not something you just listen to and forget. You go and meditate upon it, struggle with it, ask yourself what it’s all about.'
+    confidence: 0.85
+    review_notes: ['4620s purpose slide corroborates mental/spiritual vision wording. Unclear parts of the longer quotation not silently supplied from the book.']
+  - id: p0913-preparing-sermons
+    video_id: GkmB_KeBlBw
+    section_id: s0913-internalizing
+    start: 4669.6
+    end: 4736.98
+    type: sermon
+    title: Growing through the work of preparing sermons
+    summary: The preacher describes how wrestling with the biblical text has shaped his own life and recounts a listener noticing conviction in his preaching.
+    questions: ['How does preparing sermons affect the preacher’s own growth?']
+    topics: [meditation, discipleship]
+    scripture: []
+    transcript: 'This is why I tell you in no uncertain terms that I am so blessed to be your pastor. Not because you are such nice people, but through the years as I prepare sermons I grow more and more. It’s so enjoyable, so wonderful, because I struggle with the text. I ask myself, what gives me the right to tell you how to live life? It’s not me, it’s about the word of God. As I struggle with the word of God and meditate upon it, I become closer to God. I know him even deeper because it becomes part of my life. I don’t want to stand here and preach something I don’t believe in. There was one sermon I preached in another church. Afterwards one guy shook my hand and said, great sermon. I thought I would be mischievous and ask, what’s so great about the sermon? The fellow was caught by surprise. He said, you preach as if you really believe what you preach. It never left my mind.'
+    confidence: 0.88
+  - id: p0913-practical-theology
+    video_id: GkmB_KeBlBw
+    section_id: s0913-internalizing
+    start: 4736.98
+    end: 4779.56
+    type: sermon
+    title: Theology becoming part of life
+    summary: The preacher questions preaching without belief and jokes about the distinction between practical and impractical theology before returning to internalizing the word.
+    questions: ['What does the preacher mean by internalizing theology?']
+    topics: [discipleship, meditation]
+    scripture: []
+    transcript: 'You mean there’s another choice? Of course there is. You can stand here and preach, preach, preach, but not really believe what you preach. We know many people like that. Sometimes another pastor comes and says, Pastor Yong, I think you should study a PhD in theology. I said, what area? He said, practical theology. You mean there’s impractical theology? You study theology for fun? Right here is an internalization of the word of God: when you pray, think, meditate and grapple with it, because it’s alive, it is real. Packer also says we turn each truth we learn about God into matter for meditation before God, and it will then lead to prayer and praise to God. That’s the second thing.'
+    confidence: 0.88
+  - id: p0913-tree-reading
+    video_id: GkmB_KeBlBw
+    section_id: s0913-praise
+    start: 4779.56
+    end: 4840.24
+    type: sermon
+    title: Psalms 1 and a life drawing from its source
+    summary: The preacher returns to Psalms 1 to connect meditation with the living response of prayer and praise.
+    questions: ['Why does the preacher return to the tree image in Psalms 1?']
+    topics: [meditation, prayer]
+    scripture: ['Psalms 1:1-3']
+    transcript: 'What does that mean? It means that it becomes alive. In the Psalms earlier we read: [scripture reading omitted; Psalms 1:1-3, ESV reference only]. The psalmist painted a lively picture of something that comes about from drawing from the streams.'
+    confidence: 0.9
+    review_notes: ['4805s verses 1–2 and 4925s verse 3 slides corroborate range. Reading-dominant excerpt intentionally sparse.']
+  - id: p0913-living-response
+    video_id: GkmB_KeBlBw
+    section_id: s0913-praise
+    start: 4840.24
+    end: 4893.24
+    type: sermon
+    title: Internalized teaching becoming prayer and joy
+    summary: The preacher contrasts a familiar song use of the psalm with his emphasis on a vibrant life of prayer, praise and joy.
+    questions: ['What response does the preacher expect from internalizing what is learned?']
+    topics: [meditation, prayer, worship]
+    scripture: ['Psalms 1:1-3']
+    transcript: 'Unhappily this became one of the cheer songs for soccer. [Song lyrics omitted.] Sometimes you hear England Premier League football people singing this kind of song. They take it from Psalm 1:3. We should make them pay copyright. Anyway, it’s a vibrant understanding. When we internalize whatever we learn of God into our life, it will lead us to interaction, a life of prayer, a life of praise, a life of joy that lifts us up. [Scripture-related tree description omitted; Psalms 1:3, ESV reference only.] It’s full of life.'
+    confidence: 0.87
+  - id: p0913-living-out
+    video_id: GkmB_KeBlBw
+    section_id: s0913-praise
+    start: 4893.24
+    end: 4932.54
+    type: sermon
+    title: Living out what has been understood
+    summary: The preacher connects reflection with loving others and introduces Packer’s markers of knowing God.
+    questions: []
+    topics: [meditation, discipleship, service]
+    scripture: []
+    transcript: 'That’s what Packer says will help us move from the knowledge of God to knowing God. Everything I learn about God, I internalize, meditate, grapple with it, understand it to be true, and then live it out in my life. I go out and love people because God made them in his image and likeness. When I do that, I tap myself into the whole design of God, and the gratitude, the life, the joy all come back. It’s circular, and all life will come [ASR unclear]. Packer has this idea about being able to identify those who know about God versus those who know God.'
+    confidence: 0.87
+  - id: p0913-energy-weakness
+    video_id: GkmB_KeBlBw
+    section_id: s0913-energy
+    start: 4932.54
+    end: 4998.62
+    type: sermon
+    title: Energy for God without denying illness or low periods
+    summary: The preacher presents zeal as a marker of knowing God but explicitly acknowledges depression, dark periods and physical illness.
+    questions: ['Does the preacher’s account of zeal allow for illness and low periods?']
+    topics: [faith, discipleship]
+    scripture: []
+    transcript: 'He came up with four markers that I thought were interesting. What’s the difference between those who merely know about God and those [ASR contrast unclear]? The first thing he said is you will find great energy for God. For people who really know God there is a zeal, rather than a very passive or lukewarm kind of life. Now I want to be clear: in our life sometimes it’s up and down, sometimes we get depressed, sometimes there’s [biblical allusion omitted]. That’s true. Especially when you are physically sick it’s a bit difficult. For me it’s food poisoning: very hard to hug the toilet and at the same time say I’m full of zeal. It doesn’t happen. But the bottom line of life for those who know God must be one of zeal, as opposed to one that is very [colloquial expression], life is bitter, difficult, tough.'
+    confidence: 0.87
+    review_notes: ['Illness/depression qualification kept beside zeal claim; not reduced to a diagnostic rule about faith.']
+  - id: p0913-source-strength
+    video_id: GkmB_KeBlBw
+    section_id: s0913-energy
+    start: 4998.62
+    end: 5044.12
+    type: sermon
+    title: Drawing strength and a love of life from God
+    summary: The preacher connects energy for God with a positive love of life despite difficulty and with drawing strength from God.
+    questions: []
+    topics: [faith, discipleship]
+    scripture: []
+    transcript: 'The French call this the zest of life. There is zeal. Why? Because God is God, God is almighty, great, awesome, and that translates to a real zeal and love of life despite the many difficulties. Somebody who really knows God will display a positiveness that draws people to them, as opposed to a serious negativity situation where everybody looks at you and is very scared, doesn’t dare to come near you. My dear brothers and sisters in Christ, the energy for God comes because God is the source of all strength. The more you know God, the more strength you draw from him.'
+    confidence: 0.87
+    review_notes: ['Read with preceding p0913-energy-weakness, which explicitly preserves the illness and low-period qualification.']
+  - id: p0913-great-thoughts
+    video_id: GkmB_KeBlBw
+    section_id: s0913-thoughts
+    start: 5044.12
+    end: 5099.96
+    type: sermon
+    title: A larger perspective on public questions
+    summary: The preacher introduces great thoughts of God as a worldview shaped by divine majesty and applies this to discussion of ministerial pay.
+    questions: ['What does the preacher mean by great thoughts of God?']
+    topics: [faith, service]
+    scripture: []
+    transcript: 'The second one is great thoughts of God: a worldview based on the majesty of God and not on trivialities of life. A person who knows God looks at the world from God’s perspective, not from the trivialities of the world. Most recently our parliament announced the ministerial pay increment kind of thing. Channel 8 television called me to appear on the news programme in the evening, and the very next day, early morning, 8 o’clock, FM 95.8 asked me to talk about this. As usual everybody talks about money. Very few people are able to look beyond the trivialities of life: how much a minister is paid, this and that. This is, in a sense, a smaller issue than the bigger issue.'
+    confidence: 0.85
+    review_notes: ['Contemporary political/media claims are the preacher’s recollection; no external event chronology inferred.']
+  - id: p0913-public-service
+    video_id: GkmB_KeBlBw
+    section_id: s0913-thoughts
+    start: 5099.96
+    end: 5151.98
+    type: sermon
+    title: Public service and self-interest
+    summary: The preacher argues that a reluctance to enter public service reflects a deeper concern than remuneration alone.
+    questions: ['What deeper concern does the preacher identify behind the discussion of political pay?']
+    topics: [service]
+    scripture: []
+    transcript: 'In the programme I pointed out, I think after this they won’t invite me anymore because I was quite fierce, that the biggest problem is the prime minister said he talked to permanent secretaries, CEOs, asking them to go into politics, and not even one agreed. I said that’s where the problem is, because you now have a society where the best, the so-called best of the best, only think about themselves. Therefore you want to lure them by making sure joining politics is less painful, by upping their pay to the price of one five-room flat every single year. Those are the trivialities you are focusing on. You forget that you are missing the boat. Everything is linked together. [Transition into cultural-support example; uncertain wording omitted.]'
+    confidence: 0.83
+    review_notes: ['Attribution retained; numbers and political characterization are not independently verified. End chosen before the next cultural example develops.']
+  - id: p0913-beyond-livelihood
+    video_id: GkmB_KeBlBw
+    section_id: s0913-thoughts
+    start: 5151.98
+    end: 5213.6
+    type: sermon
+    title: Looking beyond livelihood and material concerns
+    summary: The preacher uses cultural participation as a further example and argues for concerns larger than one’s house, car and livelihood.
+    questions: []
+    topics: [faith, service]
+    scripture: []
+    transcript: '[The preacher continues his cultural-support example.] Government is giving Singaporeans free money, asking you to be cultural, watch a play, [uncertain examples omitted]. Only ten percent of people go and get the money. Why? Because it’s a cultural desert. Singapore will never in the near future produce a great movie or great book or poem. Your poets are here, can you please do something to save our face? That’s the problem: you focus on trivialities, all the [ASR phrase unclear] issues, and forget there is something much more than that. A person who knows God understands life is not about trivialities. Yes, it’s important to take care of my livelihood, my car, my house, but the things about God are much bigger than that.'
+    confidence: 0.82
+    review_notes: ['Rhetorical cultural assessment and percentage remain the speaker’s claims. Does not supply an unverified programme name or statistics source.']
+  - id: p0913-boldness-outreach
+    video_id: GkmB_KeBlBw
+    section_id: s0913-boldness
+    start: 5213.6
+    end: 5283.2
+    type: sermon
+    title: Boldness and the proposed Christmas outreach
+    summary: The preacher illustrates his call for boldness with a conversation about a proposed Christmas outreach that met repeated reluctance.
+    questions: ['What example illustrates the preacher’s call for boldness?']
+    topics: [service, faith]
+    scripture: []
+    transcript: 'A person who knows God will also have great boldness for God: courage and boldness for God’s truth, because God’s truth is so big, so marvellous. It’s something very difficult. Just yesterday I met someone; not yesterday, Friday. In case you don’t know, Christmas is coming. There was this wonderful Christmas project that I thought could be a very good evangelical outreach. I always tell you Christmas is the best time to bring friends, because it’s very natural. I told this high-level guy, who has a chauffeur driving him in and out in his work, this is exciting, we can do this. The fellow kept telling me, no, I don’t think so, it won’t work, I don’t think people will do this. It’s like pulling teeth. There’s just no courage, no boldness. [Reported resistance to extra work.]'
+    confidence: 0.86
+    review_notes: ['Person not identified. ASR misrecognition of boldness edited using explicit section context and slide.']
+  - id: p0913-small-great-love
+    video_id: GkmB_KeBlBw
+    section_id: s0913-boldness
+    start: 5283.2
+    end: 5319.64
+    type: sermon
+    title: Small things done with great love
+    summary: The preacher qualifies boldness by saying it need not mean large projects, using a saying he attributes to Mother Teresa about small acts done with love.
+    questions: ['Does boldness require doing something large or spectacular?']
+    topics: [service, discipleship]
+    scripture: []
+    transcript: 'I said, this is so strange. It’s the excitement that we can do something for our Lord Jesus Christ. I’m not saying you have to do big, big things. Mother Teresa, a Roman Catholic, although I theologically don’t agree with her, many of her statements are really quite good. Mother Teresa said, not all of us can do great things for God, but all of us can do small things with great love in our heart. Amen? That’s correct. Not all of us can do earth-shaking things, but all of us can do whatever is placed before us with great love in our heart. That’s great boldness for God.'
+    confidence: 0.88
+    review_notes: ['Quotation attributed as delivered; exact external wording not verified.']
+  - id: p0913-contentment-growth
+    video_id: GkmB_KeBlBw
+    section_id: s0913-contentment
+    start: 5319.64
+    end: 5399.46
+    type: sermon
+    title: Contentment and imperfect people growing toward it
+    summary: The preacher describes deep peace as a marker of knowing God, offers an example of a disabled preacher and frames the four markers as directions for growth rather than a claim to perfection.
+    questions: ['How does the preacher qualify his four markers of knowing God?']
+    topics: [faith, discipleship]
+    scripture: []
+    transcript: 'Finally, great contentment in God. If you know God and really know him, know what your life is about as a beloved of God, you have deep peace regardless of circumstances. I believe that with all my heart. Through the years I’ve shown you different examples. Remember [name unclear in ASR], no hands, no legs. How can he have deep peace in his heart, go around preaching, have four kids? Because he knows God. I don’t think he spends his life grumbling about not being able to hold his kids. He spends his life basking in what it means to be a beloved of God. Great contentment in God. When you look at all this, does it describe you? Does it describe me? It’s a good question to ask. Again, we are fallen people. I don’t think any one of us is so perfect to claim we have all of this, but it’s a good reference point for us to think about, that we can move towards that direction.'
+    confidence: 0.85
+    review_notes: ['5395s four-marker slide supports framework. Example’s name not reconstructed from familiarity. The imperfection qualification is retained.']
+  - id: p0913-simple-study
+    video_id: GkmB_KeBlBw
+    section_id: s0913-demanding
+    start: 5399.46
+    end: 5465.48
+    type: sermon
+    title: Simple does not mean undemanding
+    summary: The preacher uses disciplined study as an analogy for a straightforward practice that remains hard to sustain amid distractions.
+    questions: ['Why can a simple practice still be demanding?']
+    topics: [discipleship]
+    scripture: []
+    transcript: 'Packer says it’s simple, but he also says it’s demanding. That caught my attention. In life, are there many things that are simple but demanding? There are many examples. For example, study. Studying is actually quite simple. Being a scholar is actually quite simple. [Congregational exchange omitted.] You get your ten-year series, do it from cover to cover twice. If you have average intelligence, no way you are going to fail or not get an A. Simple formula, right? Can you do it or not? Cannot. Very demanding, because you spend all your time doom-scrolling, watching Netflix, [unclear entertainment reference omitted], because they are more exciting. The formula is very simple, and I’ve known many people like this.'
+    confidence: 0.86
+    review_notes: ['Academic-outcome claim retained as the preacher’s rhetorical analogy, not an archive guarantee.']
+  - id: p0913-persistent-study
+    video_id: GkmB_KeBlBw
+    section_id: s0913-demanding
+    start: 5465.48
+    end: 5525.3
+    type: sermon
+    title: Persistence as the demanding part
+    summary: The preacher recalls an intensely focused student, qualifies academic success and turns from that analogy to spiritual disciplines.
+    questions: []
+    topics: [discipleship]
+    scripture: []
+    transcript: 'I came from a scholar class. I looked at all these scholars and thought, how come they can get this scholarship and that scholarship? Because they could do this thing. I remember during A levels, in the school holidays we went back to the classroom to study. One guy was in a room by himself studying. At dinner time I went to ask him to dinner. I walked in and said, want to go for dinner? You know what happened? Birds flew off. He was so still when he studied that birds flew into the room. [Brief exclamation omitted.] It doesn’t mean these people will do well later in life, but at least they got the scholarship. [Unclear colloquial comment omitted.] The formula is simple, yet demanding. So is the case for spirituality. May I close by suggesting some simple steps, but demanding steps, that you can do.'
+    confidence: 0.85
+  - id: p0913-daily-devotional
+    video_id: GkmB_KeBlBw
+    section_id: s0913-devotional
+    start: 5525.3
+    end: 5591.24
+    type: sermon
+    title: Daily devotional reading that becomes response
+    summary: The preacher recommends daily devotional reading accompanied by deep reflection, prayer and action, rather than simply receiving information.
+    questions: ['How does the preacher recommend practising daily devotions?']
+    topics: [discipleship, meditation, prayer]
+    scripture: []
+    transcript: 'You should definitely start with the basic spiritual discipline of daily devotional. We have our daily devotional available. This is Stillness devotional, written by myself and quite a few of our own people and people outside as well. What does that mean? Every day a devotional will be sent to you telling you facts about God. As Packer says, read it. Don’t just let it go one ear in and one ear out. Meditate on it deeply and translate it [unclear phrase] in praise and worship of him, and it becomes part of your life. I definitely say this is something simple yet demanding, because many of us will just give up after a while. But if you do it consistently, respond to God in your thoughts, prayers and actions as you read his word, God the Holy Spirit in your life will transform you slowly but surely.'
+    confidence: 0.88
+  - id: p0913-devotional-journey
+    video_id: GkmB_KeBlBw
+    section_id: s0913-devotional
+    start: 5591.24
+    end: 5665.04
+    type: sermon
+    title: A childhood devotional habit and growing together
+    summary: The preacher recalls subscribing to Our Daily Bread as a child and closes by encouraging continued learning, reflection and response alongside fellow believers.
+    questions: ['How does the preacher connect a lifelong devotional habit with growth in community?']
+    topics: [discipleship, meditation]
+    scripture: []
+    transcript: 'I myself am a testimony of this. I’m one of the youngest people in Singapore to have subscribed to Our Daily Bread. Now I think back, I did it when I was in primary school. I wrote a letter to Grand Rapids, Michigan: I want to subscribe, because I came across one in church. They started sending Our Daily Bread to me since I was a child. By the time it reached us, it was always two months overdue. [Calendar joke omitted.] It’s okay: you read it, meditate upon it and learn it. I’ve done that so many years. Now of course I don’t do Our Daily Bread anymore; you grow to the extent of writing devotionals yourself. May I suggest you do this, and of course church attendance, listening to sermons. Continue to learn about God, meditate on it deeply, respond in your thoughts, prayer and action. Because God the Holy Spirit is in you, slowly but surely you will grow together with fellow brothers and sisters in Christ as we walk this journey of faith and joy. May I wish you joy. Let us pray.'
+    confidence: 0.88
+    review_notes: ['Personal earliest-subscriber assertion remains the preacher’s account. No external ranking asserted.']
+  - id: p0913-closing-prayer-knowing
+    video_id: GkmB_KeBlBw
+    section_id: s0913-closing-prayer
+    start: 5665.04
+    end: 5713.98
+    type: prayer
+    title: Prayer to move beyond knowing about God
+    summary: The preacher asks for deep knowledge of God expressed through reflection, prayer and praise rather than preoccupation with lesser concerns.
+    questions: []
+    topics: [prayer, meditation]
+    scripture: ['Psalms 1:1-3']
+    transcript: 'We thank you, God, for speaking to us through your word. As J. I. Packer says, a lot of us know about you, but very few of us really know you. Of course that’s not what we want, because in you there’s fullness of joy. Why would we want to waste our life going after the trivialities of the world? Help us, O God, not just to know about you but to know you deeply. [Scripture-related prayer wording omitted; Psalms 1:1-3, reference only.] It becomes really a part of our life as we then grow outwardly in prayer and praise of you. [Tree comparison omitted; Psalms 1:3, reference only.] Help us to do that.'
+    confidence: 0.87
+  - id: p0913-closing-prayer-together
+    video_id: GkmB_KeBlBw
+    section_id: s0913-closing-prayer
+    start: 5713.98
+    end: 5753.46
+    type: prayer
+    title: Prayer for joy and mutual encouragement
+    summary: The preacher prays for joy amid challenges and for believers to encourage one another as they obey.
+    questions: []
+    topics: [prayer, faith, service]
+    scripture: []
+    transcript: 'So that we will enter into joy unspeakable that you have meant for all of us, despite the many challenges we definitely must have. Those of us who really know you know that we are your beloved, and you will allow us to rise above any situations in our life. All the more, we have other fellow brothers and sisters in Christ who can walk with us, encourage us, just as we encourage them as well. Help us not to miss out on all these wonders that you have meant for us to have. What we need to do is to obey. Listen to our prayers. In Jesus’ name we pray. Amen.'
+    confidence: 0.88
+  - id: p0913-creed
+    video_id: GkmB_KeBlBw
+    section_id: s0913-creed
+    start: 5755.3
+    end: 5801.2
+    type: creed
+    title: Affirming faith through the Apostles’ Creed
+    summary: The congregation is invited to stand and recite the Apostles’ Creed before the time of prayer.
+    questions: []
+    topics: [worship, faith]
+    scripture: []
+    transcript: 'Congregation, would you stand with me as we affirm our faith by reading the Apostles’ Creed, and then we enter into a time of prayer. [Creed recitation omitted from this edited excerpt; no reconstruction from memory.] Amen.'
+    confidence: 0.9
+    review_notes: ['5780s slide confirms Apostles’ Creed; ASR has creed/quit and saints/sins errors. Full creed not silently corrected or supplied.']
+  - id: p0913-prayer-response
+    video_id: GkmB_KeBlBw
+    section_id: s0913-pastoral
+    start: 5801.46
+    end: 5877.4
+    type: prayer
+    title: Prayer in response to the sermon
+    summary: The leader invites personal response to the sermon and introduces prayer for the church’s anniversary and global ministry.
+    questions: []
+    topics: [prayer, service]
+    scripture: []
+    transcript: 'Let’s come before God in a time of prayer. We want to first pray for ourselves, responding to the sermon that we heard. The second prayer item, as I mentioned earlier, is going to be our 37th anniversary of our church. We want to pray for the Reformed Evangelical Church and ask God to continue to lead this church globally, as we continue to lift up the name of Jesus for the whole world. Let’s pray for our church and its future. That’s the second prayer item. You may pray verbally or you may pray in your heart. Let us start by praying for ourselves. Let us pray. [Personal-prayer interval; isolated ASR fragments not treated as reliable speech.]'
+    confidence: 0.85
+  - id: p0913-prayer-church
+    video_id: GkmB_KeBlBw
+    section_id: s0913-pastoral
+    start: 5898.72
+    end: 5981.46
+    type: prayer
+    title: Prayer for the church entering its next year
+    summary: The leader invites prayer for the Reformed Evangelical Church’s ministry and witness as it enters its 38th year.
+    questions: []
+    topics: [prayer, service]
+    scripture: []
+    transcript: 'We now pray for the Reformed Evangelical Church as we move into our 38th year. We pray that God will continue to bless the ministry in this church globally, that together with fellow brothers and sisters in Christ we will shine forth the light of Jesus to the world. Let us pray. [Congregational-prayer interval; no missing words supplied.]'
+    confidence: 0.86
+    review_notes: ['37th anniversary and entering 38th year are retained as stated, not silently treated as a conflict. 5900s pastoral-prayer slide corroborates context.']
+  - id: p0913-prayer-ready-help
+    video_id: GkmB_KeBlBw
+    section_id: s0913-pastoral
+    start: 5981.46
+    end: 6034.06
+    type: prayer
+    title: Becoming ready help for others
+    summary: The leader prays for a prayerful life and readiness to help fellow believers facing challenges.
+    questions: ['What does the leader ask concerning people facing difficulties?']
+    topics: [prayer, service]
+    scripture: []
+    transcript: 'Let us pray together. We thank you, God, for the privilege of prayer. All of us standing before you belong to you. Always remind us that you are but a prayer away, that this privilege is not given to many people in this world and yet we have it. Help us to be prayerful people so we can see you at work in our life and be all the more convinced that you are God who loves us and cares for us. Grant us the faith to believe. We continue to lift up brothers and sisters in Christ among us who may be facing different challenges. We pray more than anything else that you will alert us, push us, bring us forth to be the ready help that other people need. [Embedded scriptural command omitted; reference not announced.] Listen to our prayers. In Jesus’ name we pray. Amen. You may be seated.'
+    confidence: 0.88
+  - id: p0913-offertory
+    video_id: GkmB_KeBlBw
+    section_id: s0913-offertory
+    start: 6036.4
+    end: 6096.4
+    type: offering
+    title: Offertory for Christian Education Ministries
+    summary: The leader explains how to give and designates the second box offering for Christian Education Ministries on this second Sunday.
+    questions: []
+    topics: [service, worship]
+    scripture: []
+    transcript: 'We’re going to move into our offertory now. You may give through the QR code or by the box in front. This being the second Sunday, the second box offering will be designated for Christian Education Ministries. [Offering interval; no additional speech reconstructed. Section continues to 6180.22s.]'
+    confidence: 0.87
+    review_notes: ['6100s offertory slide corroborates context. No bank identifiers/QR payload retained; isolated Thank you ASR fragments not relied on.']
+  - id: p0913-trust-obey
+    video_id: GkmB_KeBlBw
+    section_id: s0913-trust
+    start: 6180.22
+    end: 6242.48
+    type: hymn
+    title: Trust and Obey — responding through obedience
+    summary: The preacher introduces Trust and Obey as a response that goes beyond listening to actual obedience.
+    questions: []
+    topics: [worship, discipleship]
+    scripture: []
+    transcript: 'Our closing hymn is a wonderful hymn, Trust and Obey. [Quoted lyrics omitted.] That really is one of the most important things in the Christian walk: not just to listen but actually obey. Let’s sing this together. [Hymn lyrics omitted; full performance continues in the section.]'
+    confidence: 0.91
+    review_notes: ['6180s title and 6300/6335s lyric frames corroborate performance.']
+  - id: p0913-doxology-blessing
+    video_id: GkmB_KeBlBw
+    section_id: s0913-benediction
+    start: 6341.14
+    end: 6413.9
+    type: benediction
+    title: Doxology and scriptural blessing
+    summary: The leader invites the doxology and announces a blessing drawn from 2 Thessalonians 2 and 2 Corinthians 13, followed by the closing Amen.
+    questions: []
+    topics: [worship]
+    scripture: ['2 Thessalonians 2', '2 Corinthians 13']
+    transcript: 'Great. Let’s sing doxology, praise God, and in faith receive his blessing taken from Second Thessalonians 2 and Second Corinthians 13. [Doxology lyrics omitted.] [Scriptural benediction omitted; 2 Thessalonians 2 and 2 Corinthians 13, ESV references only.] [Closing Amen response; no additional wording reconstructed.]'
+    confidence: 0.88
+    review_notes: ['Only chapters are announced; no verse numbers inferred from familiar wording. 6380s raised-hands frame and 6420s 3-fold Amen slide support closing sequence; exact response endpoint is approximate.']
+  - id: p0913-anniversary-service
+    video_id: GkmB_KeBlBw
+    section_id: s0913-announcements
+    start: 6413.9
+    end: 6480.38
+    type: announcement
+    title: Next week’s anniversary service at 10 a.m.
+    summary: The leader announces a 10 a.m. anniversary service linked with Jakarta and no afternoon service, with arrangements to be communicated to the congregation.
+    questions: ['What service-time change was announced on 13 September?']
+    topics: [service]
+    scripture: []
+    transcript: 'Congregation, please be seated. An important announcement: next week our worship service will start at 10 a.m. Every year there are two services linked with the mother church. One is the anniversary service, the second is the Easter service. Next week is our 37th anniversary worship service, so come at 10 a.m. There will be no afternoon service because we will live-feed the service from Jakarta, the English version. The mother church one will be the Indonesian service. [Slide-source exchange omitted.] The reason we didn’t announce earlier is a lot of disruption last week because of the airport thing. That’s why Dr. Tong is coming today instead of next week, schedule-wise. Please tell people you know, and we will use our phone number to broadcast it as well. Again, next week, 10 a.m.'
+    confidence: 0.88
+    review_notes: ['Historical announcement, not current scheduling advice; no attempt to infer date from unrelated uploads.']
+  - id: p0913-ministry-anniversary
+    video_id: GkmB_KeBlBw
+    section_id: s0913-announcements
+    start: 6480.38
+    end: 6532.58
+    type: announcement
+    title: Communion arrangements and a ministry anniversary
+    summary: The leader specifies Communion for the forthcoming anniversary service and announces Stephen Tong’s ministry anniversary event for 9 January 2027.
+    questions: []
+    topics: [service]
+    scripture: []
+    transcript: 'It is a Holy Communion service. Just to remind you, all our anniversary services are Holy Communion services. We start at 10 a.m., do Holy Communion here, and have a live feed as well. No afternoon service, remember. In line with that, remember our senior pastor is going to host a 70th anniversary of his ministry next year, January 9, 2027, Saturday. He is inviting everybody to join him, so mark that date. As we go closer to it, we will tell you details of how to book. The best way is if you can figure it out yourself; if not, we will gather everybody together to do this. On top of that, remember upcoming we have our own [transition to next slide].'
+    confidence: 0.87
+    review_notes: ['Communion is announced for next week; no Communion section invented for this recording. Event date is the speaker’s announcement.']
+  - id: p0913-financial-stewardship
+    video_id: GkmB_KeBlBw
+    section_id: s0913-announcements
+    start: 6532.58
+    end: 6589.64
+    type: announcement
+    title: Personal Financial Stewardship and careful giving
+    summary: The leader promotes the 26 September Personal Financial Stewardship programme and urges care in choosing recipients of charitable giving.
+    questions: ['Why does the leader encourage learning financial stewardship?']
+    topics: [service]
+    scripture: []
+    transcript: '26 September, this one we also publicised on the other side. This is a good programme, so please get your kids to come, the young people, or you yourself can come, because you can seek out personal financial stewardship from our brother Paul [surname uncertain in ASR], who is here this morning. If you want to know more, ask him what he’s going to talk about. Are you going to be a millionaire because you joined his course? No. [Fine-print joke omitted.] Stewardship is very important. Somebody sent me a note and talked about the Nepalese disaster. He has money and wants to give, but give to whom? It’s quite a unique wisdom. It’s not just anybody who says they’re collecting money, you give to them. Financial stewardship is actually very important. Think carefully about all this.'
+    confidence: 0.86
+    review_notes: ['6550s slide confirms Personal Financial Stewardship, Saturday 26 September 2026, 1:30 p.m.; surname not expanded into speaker metadata from unclear ASR. Disaster reference remains the speaker’s account.']
+  - id: p0913-ministry-dismissal
+    video_id: GkmB_KeBlBw
+    section_id: s0913-announcements
+    start: 6589.64
+    end: 6628.441
+    type: announcement
+    title: Ministry participation and dismissal
+    summary: The leader invites ministry participation, dismisses worshippers to silent meditation and reminds interested listeners of Stephen Tong’s evening preaching.
+    questions: []
+    topics: [service, worship]
+    scripture: []
+    transcript: 'Finally, this is the thing we use for you to put your name in to come and join us in ministry. This is very important. That’s all the announcements I have for you. You may be dismissed with silent meditation. For those interested, Dr. Tong will be here this evening for expository preaching. The Lord bless you. Know that he is with you. [Dismissal and recording tail; isolated terminal ASR “You” not treated as reliable speech.]'
+    confidence: 0.87
+    review_notes: ['Last substantive ASR ends 6610.54s. The 6615s frame shows post-dismissal lectern context; 6625/6628s frames are black. End retains bounded context, not invented speech.']
