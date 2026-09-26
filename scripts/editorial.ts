@@ -8,6 +8,7 @@ import {
   archiveFromFiles, assertWorkflowTransition, IdentifierRecordSchema, loadArchive,
   parseWithPath, parseYaml, ServiceSourceSchema, type Service, type WorkflowStatus,
 } from '../site/lib/archive';
+import { assertManifestDiff, BackfillManifestSchema, MANIFEST_PATH, manifestFromFiles, validateManifestReferences } from '../site/lib/backfill';
 
 const APPROVAL_FIELDS = ['editorial_status', 'reviewed_by', 'reviewed_at'] as const;
 function git(root: string, args: string[], input?: string): string {
@@ -18,13 +19,24 @@ function withoutApproval(value: Record<string, unknown>): Record<string, unknown
 }
 function treeFiles(root: string, revision: string): Map<string, string> {
   const files = new Map<string, string>();
-  const entries = git(root, ['ls-tree', '-r', '-z', revision, '--', 'services', 'corpus']).split('\0').filter(Boolean);
+  const entries = git(root, ['ls-tree', '-r', '-z', revision]).split('\0').filter(Boolean);
+  const manifestEntry = entries.find((entry) => entry.endsWith(`\t${MANIFEST_PATH}`));
+  const inputPaths = new Set<string>();
+  if (manifestEntry) {
+    const match = /^(\d+) blob ([a-f0-9]+)\t/.exec(manifestEntry);
+    if (!match || match[1] === '120000') throw new Error(`${revision}:${MANIFEST_PATH}: invalid manifest tree entry`);
+    const text = execFileSync('git', ['cat-file', 'blob', match[2]], { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    const manifest = parseWithPath(BackfillManifestSchema, parseYaml(text, MANIFEST_PATH), MANIFEST_PATH);
+    manifest.batches.forEach((batch) => inputPaths.add(batch.discovery_source));
+  }
   for (const entry of entries) {
+    const filenameInTree = entry.slice(entry.indexOf('\t') + 1);
+    if (!filenameInTree.startsWith('services/') && !filenameInTree.startsWith('corpus/') && !inputPaths.has(filenameInTree)) continue;
     const match = /^(\d+) blob ([a-f0-9]+)\t([\s\S]+)$/.exec(entry);
     if (!match) throw new Error(`${revision}: unsupported archive tree entry ${entry}`);
     const [, mode, hash, filename] = match;
     if (mode === '120000') throw new Error(`${revision}:${filename}: archive symlinks are not allowed`);
-    if (/\.(ya?ml|md)$/.test(filename)) {
+    if (/\.(ya?ml|md)$/.test(filename) || inputPaths.has(filename)) {
       // Preserve transcript whitespace; git() trims command-oriented outputs only.
       files.set(filename, execFileSync('git', ['cat-file', 'blob', hash], { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
     }
@@ -43,7 +55,7 @@ function workflowRecords(files: ReadonlyMap<string, string>, services: readonly 
     records.set(`service:${service.id}`, service.workflow_status);
     for (const video of service.videos) records.set(`video:${video.id}`, video.workflow_status);
   }
-  for (const [filename, text] of files) if (filename.startsWith('corpus/') && /\.ya?ml$/.test(filename)) {
+  for (const [filename, text] of files) if (filename !== MANIFEST_PATH && filename.startsWith('corpus/') && /\.ya?ml$/.test(filename)) {
     const record = parseWithPath(IdentifierRecordSchema, parseYaml(text, filename), filename);
     records.set(`corpus:${record.youtube_id}`, record.workflow_status);
   }
@@ -59,6 +71,10 @@ function checkCommit(root: string, parent: string, commit: string, message: stri
   const afterFiles = treeFiles(root, commit);
   const before = archiveFromFiles(beforeFiles);
   const after = archiveFromFiles(afterFiles);
+  const oldManifest = manifestFromFiles(beforeFiles); const newManifest = manifestFromFiles(afterFiles);
+  validateManifestReferences(oldManifest, before, beforeFiles);
+  validateManifestReferences(newManifest, after, afterFiles);
+  assertManifestDiff(oldManifest, newManifest);
   const oldSources = serviceSources(beforeFiles);
   const newSources = serviceSources(afterFiles);
   const changed = git(root, ['diff-tree', '--no-commit-id', '--name-only', '-r', '-z', '--no-renames', parent, commit]).split('\0').filter(Boolean);
@@ -124,7 +140,8 @@ export function guardEditorial(root: string, base: string, head = 'HEAD'): { com
   try { git(root, ['merge-base', '--is-ancestor', baseId, headId]); }
   catch { throw new Error('editorial guard BASE must be an ancestor of HEAD'); }
   // Validate the final tree even for an empty range.
-  archiveFromFiles(treeFiles(root, headId));
+  const finalFiles = treeFiles(root, headId);
+  validateManifestReferences(manifestFromFiles(finalFiles), archiveFromFiles(finalFiles), finalFiles);
   const commits = git(root, ['rev-list', '--reverse', '--topo-order', `${baseId}..${headId}`]).split('\n').filter(Boolean);
   for (const commit of commits) {
     const parents = git(root, ['show', '-s', '--format=%P', commit]).split(' ').filter(Boolean);

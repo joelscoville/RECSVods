@@ -12,6 +12,14 @@ The execution order is:
 
 Operator-supplied inputs live in [`inputs/`](./inputs/). Treat them as read-only unless the operator edits them.
 
+## Contract amendments
+
+The operator's [2026-09-26 chapter-search decision](./decisions/2026-09-26-chapter-search.md)
+supersedes conflicting passage/transcript requirements below. Freeze the current
+Milestone 4 content checkpoint first; then migrate to chapter-only publication and
+compact committed vectors before further M4 tooling acceptance or Milestone 5.
+Existing passage/transcript material must be preserved unchanged internally.
+
 ## Naming
 
 The user-facing product name is **RECS Replay**. Use it in the site, page titles, metadata, documentation, and the root `README.md`. `RECVods`, `RECSVods`, and `RECS VODS` are placeholder repository and design-file names; never show them to users. The GitHub repository may be renamed, so never hardcode the repository name or base path. Read the base path from one configuration value (for example `SITE_BASE_PATH`) so the same build works under a GitHub Pages project path or at a domain root.
@@ -54,6 +62,25 @@ The application must not call an LLM to maintain the archive. Archive interpreta
 GitHub Actions may run deterministic discovery, validation, testing, index generation, and deployment. It must not invoke an AI model, interpret recordings, or publish unreviewed archive content.
 
 The continuous implementation agent does not approve its own archive interpretation. Human approval is required before any archive content reaches production.
+
+### Historical batch concurrency exception (operator decision, 2026-09-26)
+
+Milestone 4 batch 001 and future explicitly approved historical batches may run in
+parallel, one subagent per logical service, with no fixed worker cap within the
+approved batch. Stagger media-acquisition starts by approximately 1–2 minutes to
+avoid YouTube throttling. Each worker uses its own external work directory and
+writes only its assigned service's `service.yaml` and review document. Workers
+must not edit taxonomy, shared manifests, application code, or the run log. Proposed
+new taxonomy terms belong in their review notes, not in shared taxonomy files.
+
+The main agent owns the shared manifest and run log, merges taxonomy proposals,
+performs cross-service consistency review, and runs repository-wide validation and
+search regressions once after the batch is assembled. Workers still perform source,
+checksum, duration, timing and own-file integrity checks and clean their own media.
+All other rules remain: bounded approved scope, finite tools, `needs_review` only,
+safe cleanup, human approval, and separate code/content commits. The weekly
+single-service workflow remains sequential. This permission does not create
+unattended interpretation or application/CI agent infrastructure.
 
 ## Record Model
 

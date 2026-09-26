@@ -12,7 +12,7 @@ const root = process.cwd();
 // Recreate shared generated assets before either build so no preview text survives.
 await rm(path.join(root, 'site/public/generated'), { recursive: true, force: true });
 buildIndex(root, mode);
-await buildVectors(root);
+await buildVectors(root, { full: process.env.RECS_FULL_INDEX === '1' });
 const child = spawn('pnpm', ['exec', 'astro', command === 'dev' ? 'dev' : 'build', ...process.argv.slice(3)], {
   stdio: 'inherit', env: { ...process.env, ARCHIVE_MODE: mode },
 });

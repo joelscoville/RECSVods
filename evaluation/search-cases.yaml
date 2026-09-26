@@ -16,6 +16,18 @@ sourceDates:
   - { milestone: 3, videoId: D-FyolbxJgk, expectedDate: '2026-07-12' }
   - { milestone: 3, videoId: MZr169xBwrU, expectedDate: '2026-07-12' }
   - { milestone: 3, videoId: Z-vRVB-WucA, expectedDate: '2020-07-19' }
+  - { milestone: 4, videoId: M9uwSKpB_gk, expectedDate: '2026-08-30' }
+  - { milestone: 4, videoId: QCNrRkiFeKw, expectedDate: '2026-08-23' }
+  - { milestone: 4, videoId: gO6gc5jL-jU, expectedDate: '2026-08-09' }
+  - { milestone: 4, videoId: 1R4gnCvqrOA, expectedDate: '2026-08-02' }
+  - { milestone: 4, videoId: D7gXD-Mo25s, expectedDate: '2026-07-26' }
+  - { milestone: 4, videoId: rM0Oi8-Y8G4, expectedDate: '2026-07-19' }
+  - { milestone: 4, videoId: dNeZD1HUmmE, expectedDate: '2026-06-21' }
+  - { milestone: 4, videoId: GlVgMoehT2I, expectedDate: '2026-06-14' }
+  - { milestone: 4, videoId: 8Qjfp-2L5d8, expectedDate: '2026-06-07' }
+  - { milestone: 4, videoId: m51rgcZHQmE, expectedDate: '2026-05-31' }
+  - { milestone: 4, videoId: uJDdItVGgj8, expectedDate: '2026-05-24' }
+  - { milestone: 4, videoId: lrRnxGzvPaM, expectedDate: '2026-05-17' }
 
 # Every case runs in exact and actual-local-embedding hybrid modes.
 # Lists are alternatives within a field; supplied fields must all match.
@@ -42,11 +54,11 @@ cases:
     milestone: 2
     kind: rank
     query: Yong Teck Meng
-    acceptableServiceIds: ['2020-09-27', '2020-07-19']
+    acceptableServiceIds: ['2020-09-27', '2020-07-19', '2026-07-19', '2026-06-21', '2026-06-07']
     speaker: Rev. Yong Teck Meng
     reason: Speaker match
     maxRank: 3
-    note: Either trusted historical sermon is valid as the corpus grows; an incidental name is insufficient.
+    note: Records with the exact trusted speaker metadata are valid, including the source-backed 2026 records added in historical batch 001; an incidental name is insufficient.
   - id: government-question
     milestone: 2
     kind: rank
@@ -219,3 +231,99 @@ cases:
     kind: empty
     query: zxqvpl-no-match
     note: Lexical and real semantic search must both be empty. This is an out-of-vocabulary test, not a claim that the archive answers or rejects any theological question.
+  - id: historical-0830
+    milestone: 4
+    kind: rank
+    query: Do I need a pastor to pray for me?
+    acceptablePassageIds: [p20260830-031]
+    acceptableVideoIds: [M9uwSKpB_gk]
+    maxRank: 5
+    note: Source-backed prayer discussion in the August 30 worker report; historical expansion target set before measuring ranks.
+  - id: historical-0823
+    milestone: 4
+    kind: rank
+    query: Does Christian joy mean never feeling despair?
+    acceptablePassageIds: [p20260823-joy-and-despair]
+    acceptableVideoIds: [QCNrRkiFeKw]
+    maxRank: 5
+    note: Keeps the speaker's qualification attached to the joy claim.
+  - id: historical-0809
+    milestone: 4
+    kind: rank
+    query: Should my national identity come before being a Christian?
+    acceptablePassageIds: [p20260809-050]
+    acceptableVideoIds: [gO6gc5jL-jU]
+    maxRank: 5
+    note: Explicit national and primary identity distinction, with speaker attribution.
+  - id: historical-0802
+    milestone: 4
+    kind: rank
+    query: What is sanctification and why is Christian life about the here and now?
+    acceptablePassageIds: [p20260802-sanctification]
+    acceptableVideoIds: [1R4gnCvqrOA]
+    maxRank: 5
+    note: Source definition and explicit rejection of passive waiting, from the worker's cited range.
+  - id: historical-0726
+    milestone: 4
+    kind: rank
+    query: 26 July 2026 refusing bribes at work
+    acceptablePassageIds: [p20260726-050]
+    acceptableVideoIds: [D7gXD-Mo25s]
+    maxRank: 5
+    note: Date-qualified workplace anecdote; no factual endorsement of the reported events.
+  - id: historical-0719
+    milestone: 4
+    kind: rank
+    query: The Greatest Love no and Lord in the same sentence
+    acceptablePassageIds: [p20260719-prayer-partner-challenge, p20260719-lord-and-no]
+    acceptableVideoIds: [rM0Oi8-Y8G4]
+    maxRank: 5
+    note: The 2026 service's prayer-partner illustration and immediate application, not 2020 Tripping.
+  - id: historical-0621
+    milestone: 4
+    kind: rank
+    query: 21 June 2026 Holy Spirit help when I cannot pray
+    acceptablePassageIds: [p20260621-intercession]
+    acceptableVideoIds: [dNeZD1HUmmE]
+    maxRank: 5
+    note: Source-backed intercession discussion with date context.
+  - id: historical-0614
+    milestone: 4
+    kind: rank
+    query: Does greater works mean doing greater miracles than Jesus?
+    acceptablePassageIds: [p20260614-058, p20260614-059]
+    acceptableVideoIds: [GlVgMoehT2I]
+    maxRank: 5
+    note: Keeps the comparative explanation and its adjacent qualification.
+  - id: historical-0607
+    milestone: 4
+    kind: rank
+    query: Why should Jesus be the only way is that arrogant or intolerant?
+    acceptablePassageIds: [p20260607-only-introduction]
+    acceptableVideoIds: [8Qjfp-2L5d8]
+    maxRank: 5
+    note: The recorded introductory question in Only, with trusted title and references.
+  - id: historical-0531
+    milestone: 4
+    kind: rank
+    query: 31 May 2026 What's New love identifies Christ's followers
+    acceptablePassageIds: [p20260531-048]
+    acceptableVideoIds: [m51rgcZHQmE]
+    maxRank: 5
+    note: The worker's dated candidate about the identifying mark of followers.
+  - id: historical-0524
+    milestone: 4
+    kind: rank
+    query: What is the difference between regret and repentance in The Most Hideous Sin?
+    acceptablePassageIds: [p20260524-seeking-right-answer]
+    acceptableVideoIds: [uJDdItVGgj8]
+    maxRank: 5
+    note: Source-backed distinction in the May 24 report.
+  - id: historical-0517
+    milestone: 4
+    kind: rank
+    query: Why confess sins daily if I am already saved?
+    acceptablePassageIds: [p20260517-daily-confession]
+    acceptableVideoIds: [lrRnxGzvPaM]
+    maxRank: 5
+    note: The May 17 explanation, with the original upload's timing and reviewed-source requirement unchanged.

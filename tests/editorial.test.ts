@@ -6,6 +6,7 @@ import { parse, stringify } from 'yaml';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { approveService, guardEditorial } from '../scripts/editorial';
 import { loadArchive, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
+import { importBackfill, loadBackfill, MANIFEST_PATH, transitionBackfill } from '../site/lib/backfill';
 
 const roots: string[] = [];
 const filename = 'services/2026/test-service/service.yaml';
@@ -101,6 +102,40 @@ describe('genuine approval function, in temporary Git repositories only', () => 
 });
 
 describe('per-commit editorial guard', () => {
+  it('validates manifest workflow history across combined claim/completion commits and preserves approval guard', () => {
+    const { root, base } = repo();
+    put(root, 'inputs/fixture.yaml', stringify({ schema_version: 1, batch_id: 'test-batch', approved_by: 'Fictional Operator',
+      services: [{ service_id: 'test-service', date: '2026-01-04', videos: [{ youtube_id: 'AAAAAAAAAAA' }] }] }));
+    importBackfill(root, 'inputs/fixture.yaml'); commit(root, 'Discover fictional service');
+    transitionBackfill(root, 'test-service', 'registered'); transitionBackfill(root, 'test-service', 'in_progress'); transitionBackfill(root, 'test-service', 'complete');
+    commit(root, 'Finish fictional service');
+    expect(guardEditorial(root, base).commits).toBe(2);
+    setReviewed(root); commit(root, 'Attempt promotion without approval trailer');
+    expect(() => guardEditorial(root, base)).toThrow('trailer');
+  });
+  it('rejects manifest history rewrites and forged cached editorial fields', () => {
+    for (const forged of ['history', 'editorial_status']) {
+      const { root, base } = repo();
+      put(root, 'inputs/fixture.yaml', stringify({ schema_version: 1, batch_id: 'test-batch', approved_by: 'Fictional Operator',
+        services: [{ service_id: 'test-service', date: '2026-01-04', videos: [{ youtube_id: 'AAAAAAAAAAA' }] }] }));
+      importBackfill(root, 'inputs/fixture.yaml'); transitionBackfill(root, 'test-service', 'blocked', 'Fictional blocker'); commit(root, 'Record fictional blocker');
+      const manifest = loadBackfill(root);
+      if (forged === 'history') { manifest.services[0].history = []; manifest.services[0].workflow_status = 'discovered'; delete manifest.services[0].blocked_reason; }
+      else Object.assign(manifest.services[0], { editorial_status: 'reviewed' });
+      put(root, MANIFEST_PATH, stringify(manifest)); commit(root, 'Forge manifest state');
+      expect(() => guardEditorial(root, base)).toThrow(forged === 'history' ? 'history' : 'editorial_status');
+    }
+  });
+  it('rejects approved-input edits even when a replacement manifest has a matching new hash', () => {
+    const { root, base } = repo();
+    const filename = 'inputs/fixture.yaml';
+    put(root, filename, stringify({ schema_version: 1, batch_id: 'test-batch', approved_by: 'Fictional Operator',
+      services: [{ service_id: 'test-service', date: '2026-01-04', videos: [{ youtube_id: 'AAAAAAAAAAA' }] }] }));
+    importBackfill(root, filename); commit(root, 'Import fictional approval');
+    put(root, filename, `${readFileSync(path.join(root, filename), 'utf8')}# Altered approved bytes\n`);
+    rmSync(path.join(root, MANIFEST_PATH)); importBackfill(root, filename); commit(root, 'Replace immutable input hash');
+    expect(() => guardEditorial(root, base)).toThrow('immutable approved batch');
+  });
   it.each([
     ['no trailer', 'Approve test', 'trailer'],
     ['wrong service', 'Approve test\n\nEditorial-Approval: other', 'trailer'],

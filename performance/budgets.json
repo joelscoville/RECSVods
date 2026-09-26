@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "profile": {
+    "name": "development-mobile-proxy-v1",
+    "cpuSlowdown": 4,
+    "viewport": { "width": 390, "height": 844 },
+    "network": "loopback-identity-unshaped-v1",
+    "samplesPerQuery": 5,
+    "warmupRounds": 1,
+    "syntheticRows": [2000, 5000],
+    "queries": ["Romans 13", "Yong", "living sacrifice", "How should Christians relate to government?", "zxqvpl-no-match"],
+    "pageTimeoutMs": 120000,
+    "runTimeoutMs": 780000
+  },
+  "budgets": {
+    "initial.rawBytes": { "limit": 8388608, "operator": "<=", "unit": "bytes" },
+    "initial.gzipBytes": { "limit": 2621440, "operator": "<=", "unit": "bytes" },
+    "initial.modelRequests": { "limit": 0, "operator": "<=", "unit": "requests" },
+    "metadata.rawBytes": { "limit": 8388608, "operator": "<=", "unit": "bytes" },
+    "vectors.rawBytes": { "limit": 25165824, "operator": "<=", "unit": "bytes" },
+    "index.gzipBytes": { "limit": 8388608, "operator": "<=", "unit": "bytes" },
+    "model.hostedBytes": { "limit": 26214400, "operator": "<=", "unit": "bytes" },
+    "runtime.hostedBytes": { "limit": 35651584, "operator": "<=", "unit": "bytes" },
+    "model.coldAssetBytes": { "limit": 67108864, "operator": "<=", "unit": "bytes" },
+    "model.warmModelBytes": { "limit": 0, "operator": "<=", "unit": "bytes" },
+    "host.largestFileBytes": { "limit": 104857600, "operator": "<", "unit": "bytes" },
+    "model.coldMs": { "limit": 30000, "operator": "<=", "unit": "ms" },
+    "model.warmCacheMs": { "limit": 15000, "operator": "<=", "unit": "ms" },
+    "model.warmInferenceP95Ms": { "limit": 2000, "operator": "<=", "unit": "ms" },
+    "model.coldWeightRequests": { "limit": 1, "operator": "==", "unit": "requests" },
+    "model.warmWeightRequests": { "limit": 0, "operator": "<=", "unit": "requests" },
+    "model.cacheWeightEntries": { "limit": 1, "operator": "==", "unit": "entries" },
+    "model.cacheBytes": { "limit": 26214400, "operator": "<=", "unit": "bytes" },
+    "model.coldJsHeapBytes": { "limit": 402653184, "operator": "<=", "unit": "bytes" },
+    "search.exactP95Ms": { "limit": 150, "operator": "<=", "unit": "ms" },
+    "search.rerankP95Ms": { "limit": 250, "operator": "<=", "unit": "ms" },
+    "search.jsHeapBytes": { "limit": 134217728, "operator": "<=", "unit": "bytes" },
+    "runtime.externalRequests": { "limit": 0, "operator": "<=", "unit": "requests" }
+  }
+}

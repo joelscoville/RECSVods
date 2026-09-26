@@ -6,12 +6,12 @@ import { z } from 'zod';
 import { enrichPassages } from '../bible/enrich';
 import { flattenArchive, IdentifierRecordSchema, loadArchive, parseWithPath, parseYaml, publishedServices } from '../site/lib/archive';
 import { EMBEDDING_CONFIG, isCompatibleEmbeddingConfig, isEmbeddingVector, MODEL_FILES } from '../site/lib/embedding-config';
-import { buildEmbeddingDocument, parseFullDateQuery, search, type SearchResult, type VectorIndex } from '../site/lib/search';
+import { buildEmbeddingDocument, parseFullDateQuery, prepareSearchIndex, type SearchResult, type VectorIndex } from '../site/lib/search';
 import { normalizeScriptureReference, scriptureUrl } from '../site/lib/scripture';
 import type { IdentifierRecord, SearchPassage, Service } from '../site/lib/types';
 import { embedTexts, sha256, verifyModelFile } from './embeddings';
 
-// Acceptance expectations only: all ranking goes through the product's shared search().
+// Acceptance expectations only: all ranking goes through the product's prepared search path.
 export const CORE_INVENTORY: Readonly<Record<string, readonly string[]>> = {
   '2026-09-06': ['ZTDYIJUDb0M'],
   '2026-08-16': ['mw4SAoJRZgo', 'XWAH9SWFcoo', 'IcIxBc--VvM'],
@@ -20,9 +20,9 @@ export const CORE_INVENTORY: Readonly<Record<string, readonly string[]>> = {
   '2025-11-02': ['94fynFHtreg'],
 };
 const failedId = 'wh4mCRKRJ-4';
-export interface EvaluationOptions { milestone: 2 | 3; implementation: boolean }
+export interface EvaluationOptions { milestone: 2 | 3 | 4; implementation: boolean }
 export function parseEvaluationArgs(args: readonly string[]): EvaluationOptions {
-  const options: EvaluationOptions = { milestone: 3, implementation: false };
+  const options: EvaluationOptions = { milestone: 4, implementation: false };
   const seen = new Set<string>();
   const tokens = args.filter((arg) => arg !== '--');
   for (let i = 0; i < tokens.length; i++) {
@@ -30,8 +30,8 @@ export function parseEvaluationArgs(args: readonly string[]): EvaluationOptions 
     if (seen.has(arg)) throw new Error(`Duplicate option: ${arg}`);
     seen.add(arg);
     if (arg === '--implementation') options.implementation = true;
-    else if (arg === '--milestone' && ['2', '3'].includes(tokens[i + 1])) options.milestone = Number(tokens[++i]) as 2 | 3;
-    else throw new Error('Usage: tsx scripts/evaluate-core.ts [--milestone 2|3] [--implementation]');
+    else if (arg === '--milestone' && ['2', '3', '4'].includes(tokens[i + 1])) options.milestone = Number(tokens[++i]) as 2 | 3 | 4;
+    else throw new Error('Usage: tsx scripts/evaluate-core.ts [--milestone 2|3|4] [--implementation]');
   }
   return options;
 }
@@ -39,7 +39,8 @@ export function parseEvaluationArgs(args: readonly string[]): EvaluationOptions 
 const Text = z.string().trim().min(1);
 const Ids = z.array(Text).min(1).refine((ids) => new Set(ids).size === ids.length, 'duplicate acceptable ID');
 const DateText = Text.refine((value) => /^\d{4}-\d{2}-\d{2}$/.test(value) && parseFullDateQuery(value) === value, 'expected a valid ISO date');
-const baseCase = { id: Text, milestone: z.union([z.literal(2), z.literal(3)]), query: Text, note: Text };
+const Milestone = z.union([z.literal(2), z.literal(3), z.literal(4)]);
+const baseCase = { id: Text, milestone: Milestone, query: Text, note: Text };
 const targetFields = {
   acceptableServiceIds: Ids.optional(), acceptablePassageIds: Ids.optional(), acceptableVideoIds: Ids.optional(),
   speaker: Text.optional(), reason: Text.optional(), maxRank: z.number().int().positive(),
@@ -59,7 +60,7 @@ const CaseSchema = z.discriminatedUnion('kind', [
 });
 const CaseFileSchema = z.object({
   schemaVersion: z.literal(1),
-  sourceDates: z.array(z.object({ milestone: z.union([z.literal(2), z.literal(3)]), videoId: Text, expectedDate: DateText }).strict()).min(1),
+  sourceDates: z.array(z.object({ milestone: Milestone, videoId: Text, expectedDate: DateText }).strict()).min(1),
   cases: z.array(CaseSchema).min(1),
 }).strict().superRefine((file, ctx) => {
   for (const [label, ids] of [['case', file.cases.map((item) => item.id)], ['source video', file.sourceDates.map((item) => item.videoId)]] as const) {
@@ -74,6 +75,7 @@ export type EvaluationCaseFile = z.infer<typeof CaseFileSchema>;
 const REQUIRED_CASE_IDS = {
   2: ['romans-13', 'romans-alias', 'speaker-yong', 'government-question', 'abraham-isaac', 'living-sacrifice', 'august-date', 'authority-date'],
   3: ['tripping-question', 'tripping-luke', 'tripping-matthew', 'july-iso', 'july-day-first', 'july-month-first', 'july-abbreviated', 'july-corrected-date', 'excluded-candidates', 'no-match'],
+  4: ['historical-0830', 'historical-0823', 'historical-0809', 'historical-0802', 'historical-0726', 'historical-0719', 'historical-0621', 'historical-0614', 'historical-0607', 'historical-0531', 'historical-0524', 'historical-0517'],
 };
 export function parseEvaluationCases(text: string, filename = 'evaluation/search-cases.yaml'): EvaluationCaseFile {
   return parseWithPath(CaseFileSchema, parseYaml(text, filename), filename);
@@ -81,12 +83,12 @@ export function parseEvaluationCases(text: string, filename = 'evaluation/search
 export function loadEvaluationCases(filename = 'evaluation/search-cases.yaml'): EvaluationCaseFile {
   return parseEvaluationCases(readFileSync(filename, 'utf8'), filename);
 }
-export function selectEvaluationCases(file: EvaluationCaseFile, milestone: 2 | 3): AcceptanceCase[] {
+export function selectEvaluationCases(file: EvaluationCaseFile, milestone: 2 | 3 | 4): AcceptanceCase[] {
   const cases = file.cases.filter((item) => item.milestone <= milestone);
-  for (const stage of [2, 3] as const) if (stage <= milestone) {
+  for (const stage of [2, 3, 4] as const) if (stage <= milestone) {
     for (const id of REQUIRED_CASE_IDS[stage]) assert.ok(cases.some((item) => item.id === id && item.milestone === stage), `Missing required M${stage} case: ${id}`);
   }
-  const requiredVideos = [...Object.values(CORE_INVENTORY).flat(), ...(milestone === 3
+  const requiredVideos = [...Object.values(CORE_INVENTORY).flat(), ...(milestone >= 3
     ? ['GkmB_KeBlBw', 'OrsN83j3qxE', 'D-FyolbxJgk', 'MZr169xBwrU', 'Z-vRVB-WucA'] : [])];
   for (const id of requiredVideos) assert.ok(file.sourceDates.some((item) => item.videoId === id && item.milestone <= milestone), `Missing source-date case: ${id}`);
   assert.ok(cases.length, `No evaluation cases for milestone ${milestone}`);
@@ -123,6 +125,7 @@ function loadIdentifierRecords(root = 'corpus'): IdentifierRecord[] {
   if (!existsSync(root)) return [];
   return readdirSync(root, { withFileTypes: true }).flatMap((entry): IdentifierRecord[] => {
     const filename = path.join(root, entry.name);
+    if (path.resolve(filename) === path.resolve('corpus/manifest.yaml')) return [];
     if (entry.isDirectory()) return loadIdentifierRecords(filename);
     return /\.ya?ml$/.test(entry.name) ? [parseWithPath(IdentifierRecordSchema, parseYaml(readFileSync(filename, 'utf8'), filename), filename)] : [];
   });
@@ -191,9 +194,10 @@ export function evaluateSearchCases(cases: readonly AcceptanceCase[], passages: 
   queryVectors: readonly number[][], excludedIds: ReadonlySet<string>, blocker?: string) {
   assert.ok(cases.length, 'Evaluation requires cases');
   const hybridBlocker = blocker ?? (queryVectors.length !== cases.length || !queryVectors.every(isEmbeddingVector) ? 'Missing or invalid actual query embeddings' : undefined);
+  const prepared = prepareSearchIndex(passages, vectors);
   return cases.flatMap((item, index) => (['exact', 'hybrid'] as const).map((mode) => {
     const blocked = mode === 'hybrid' ? hybridBlocker : undefined;
-    const results = blocked ? [] : search(passages, item.query, mode === 'hybrid' ? { vectors, queryVector: queryVectors[index] } : {});
+    const results = blocked ? [] : prepared.search(item.query, mode === 'hybrid' ? { queryVector: queryVectors[index] } : {});
     return reportSearchCase(item, results, { mode, passages, excludedIds, blocker: blocked });
   }));
 }

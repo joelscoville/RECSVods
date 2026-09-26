@@ -25,13 +25,13 @@ Extend the curator skill or add a narrowly scoped companion skill. It must direc
 1. Read and verify the bounded batch.
 2. Stay on the continuous-run feature branch and assign a stable batch identifier; do not create a second implementation branch or PR.
 3. Run the authorization and media-tool preflight.
-4. Process one service at a time with the authorized local pipeline.
-5. Reuse taxonomy and add terms only when necessary.
+4. Apply the operator's 2026-09-26 historical-batch exception: one isolated subagent per logical service may run in parallel without a fixed worker cap. Stagger acquisition starts approximately 1–2 minutes apart. Each worker writes only its service YAML and review document, with its own external workspace; the weekly workflow stays sequential.
+5. Reuse taxonomy. Workers put proposed new terms in review notes; only the main agent merges shared taxonomy after reviewing the batch.
 6. Preserve trustworthy historical metadata and wording.
-7. Validate after each service.
-8. Run search regressions before committing.
+7. Workers perform source/import and own-file integrity checks. The main agent performs cross-service consistency review and repository-wide validation once after assembling the batch.
+8. The main agent runs search regressions once at the end before committing.
 9. Remove all temporary media.
-10. Keep interpreted services at `needs_review`, update `docs/run-log.md`, commit code and archive content separately, and update the existing draft PR.
+10. Keep interpreted services at `needs_review`. Only the main agent updates `docs/run-log.md`, shared progress, commits and the existing draft PR; keep code and archive content in separate commits.
 
 Stop a batch early when context, time, storage, or review complexity becomes unsafe. Partial work may be proposed only when included services are valid and the manifest truthfully records the remainder.
 

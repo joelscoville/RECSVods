@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { EMBEDDING_CONFIG, EMBEDDING_OPTIONS, isCompatibleEmbeddingConfig, isEmbeddingVector, MODEL_FILES, preprocessEmbedding, semanticAssetPaths } from '../site/lib/embedding-config';
-import { buildEmbeddingDocument, parseFullDateQuery, search, SEARCH_WEIGHTS, type VectorIndex } from '../site/lib/search';
+import { buildEmbeddingDocument, parseFullDateQuery, prepareSearchIndex, search, SEARCH_WEIGHTS, type VectorIndex } from '../site/lib/search';
 import { createSemanticClient, type SemanticRequest, type SemanticResponse, type SemanticStatus } from '../site/lib/semantic';
 import type { SearchPassage } from '../site/lib/types';
 import { buildVectors, embedTexts, prepare, sha256, verifyModelFile } from '../scripts/embeddings';
@@ -58,6 +58,21 @@ describe('embedding contract', () => {
 });
 
 describe('transparent hybrid ranking', () => {
+  it('ignores question scaffolding without discarding meaningful subject words', () => {
+    const target = { ...fixture, id: 'practice', title: 'Daily practice', questions: [], summary: 'A musician describes daily practice.', transcript: 'Regular practice is discussed.' };
+    const noise = { ...fixture, id: 'scaffolding', title: 'Unrelated example', questions: [], summary: 'An unrelated example.', transcript: 'Should my plans matter if I am being myself?' };
+    expect(search([noise, target], 'Should my daily practice matter if I am being a musician?').map((result) => result.passage.id)).toEqual(['practice']);
+    expect(search([target], 'should my am if being')).toEqual([]);
+  });
+  it('preserves negation and meaningful title words', () => {
+    const records = [
+      { ...fixture, id: 'negative', title: 'Not willing', questions: [], summary: 'A fictional example.', transcript: 'A fictional example.' },
+      { ...fixture, id: 'positive', title: 'Willing', questions: [], summary: 'A fictional example.', transcript: 'A fictional example.' },
+      { ...fixture, id: 'only', title: 'Only', questions: [], summary: 'A fictional example.', transcript: 'A fictional example.' },
+    ];
+    expect(search(records, 'not willing').map((result) => result.passage.id)).toEqual(['negative']);
+    expect(search(records, 'only')[0].passage.id).toBe('only');
+  });
   it('matches optional series names as general metadata without changing embedding documents', () => {
     const passage = { ...fixture, series: { id: 'fixture-series-id', name: 'Fictional orchard' } };
     const result = search([passage], 'fictional orchard')[0];
@@ -145,6 +160,27 @@ describe('transparent hybrid ranking', () => {
     expect(search([...passages].reverse(), 'community')).toEqual(search(passages, 'community'));
     expect(search(passages, 'community', { limit: 2 })).toHaveLength(2);
     expect(search(passages, 'community', { limit: 0 })).toEqual([]);
+  });
+  it('reevaluates in-place passage and vector edits on every pure API call', () => {
+    const passage = structuredClone(fixture);
+    const passages = [passage];
+    const vectors = vectorIndex(passages);
+    const options = { vectors, queryVector: unit() };
+    expect(search(passages, 'unrelated', options)[0].reasons).toEqual(['Semantic similarity']);
+    passage.summary = 'A changed source document.';
+    passage.topics.splice(0, 1, 'Orchard');
+    expect(search(passages, 'unrelated', options)).toEqual([]);
+    expect(search(passages, 'community', options)).toEqual([]);
+    expect(search(passages, 'orchard', options)[0].reasons).toEqual(['Topic match']);
+    vectors.vectors[passage.id].document = buildEmbeddingDocument(passage);
+    expect(search(passages, 'unrelated', options)[0].reasons).toEqual(['Semantic similarity']);
+    vectors.vectors[passage.id].vector[0] = 0;
+    expect(search(passages, 'unrelated', options)).toEqual([]);
+    // Searching neither freezes nor changes caller-owned input/output passage identity.
+    const before = structuredClone({ passages, vectors });
+    expect(search(passages, 'orchard')[0].passage).toBe(passage);
+    expect({ passages, vectors }).toEqual(before);
+    expect(Object.isFrozen(passage)).toBe(false);
   });
 });
 
@@ -295,6 +331,7 @@ describe.skipIf(process.env.RECS_TEST_EMBEDDINGS !== '1')('prepared real q8 mode
     const index: VectorIndex = { schemaVersion: 1, model: EMBEDDING_CONFIG, passagesSha256: 'synthetic-only',
       vectors: Object.fromEntries(passages.map((passage, i) => [passage.id, { document: buildEmbeddingDocument(passage), vector: vectors[i] }])) };
     const results = search(passages, query, { queryVector, vectors: index });
+    expect(prepareSearchIndex(passages, index).search(query, { queryVector })).toStrictEqual(results);
     expect(results.slice(0, 3).map((result) => result.passage.id)).toContain('civic-fixture');
     expect(results.find((result) => result.passage.id === 'civic-fixture')?.reasons).toContain('Semantic similarity');
   }, 60_000);

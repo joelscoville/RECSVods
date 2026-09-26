@@ -30,6 +30,23 @@ session; this is not application logic, an LLM API integration or automatic AI p
   alternative design. UI work follows the shared live/export contract; curation
   does not introduce styling or override the design through general design advice.
 
+### Historical batch parallelism — operator decision 2026-09-26
+
+- M4 batch 001 and future approved historical batches may use one subagent per
+  logical service in parallel, with no fixed worker cap. Scope is still the exact
+  approved batch; weekly single-service curation stays sequential.
+- Main staggers acquisition starts about 1–2 minutes apart and assigns each worker
+  an isolated external workspace, service YAML and review-document path.
+- Workers write only those two repository outputs, using inline passage transcripts.
+  They do not change taxonomy, shared manifests, application code or the run log.
+  Reuse existing terms; propose necessary new terms in review notes for main to merge.
+- Workers verify their source/import and own-file integrity and perform their own
+  media cleanup. Main alone updates shared progress/run log, merges taxonomy,
+  reviews consistency across services and runs repository-wide validation/search
+  regressions once at batch end, before separate signed code/content checkpoints.
+- Authorization, finite bounds, needs_review, source checks and cleanup still apply.
+  Parallelism is person-invoked development work, not app/CI agent infrastructure.
+
 ## 2. Keep all three axes independent
 
 Use these exact `workflow_status` edges on applicable service/video records:
@@ -203,7 +220,9 @@ blocked     -> registered | in_progress
   the whole milestone passed from one case. Real access failure stops real-content work;
   reviewable uncertainty can remain flagged without redundant approval loops.
 - Update the run log after each recording with safe evidence, scope, uncertainties,
-  checks, cleanup and next step. Preserve unrelated edits and read-only future inputs.
+  checks, cleanup and next step. In parallel historical batches, workers report these
+  to main; only main writes the log and runs the final global checks. Preserve unrelated
+  edits and read-only future inputs.
 - Only with authorized Git delivery: inspect full diff/status/history; separate
   code/tests/docs and archive-content commits on the shared feature branch, maintaining
   legal edges. EVERY agent commit includes `Curated-by: agent`, also when a human

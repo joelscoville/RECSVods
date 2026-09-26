@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { SearchPassage } from '../lib/types';
-import { search, type VectorIndex } from '../lib/search';
+import { prepareSearchIndex, type VectorIndex } from '../lib/search';
 import { createSemanticClient, type SemanticClient, type SemanticStatus } from '../lib/semantic';
 import { clearSearchHistory, getSearchHistory, saveSearch } from '../lib/local-state';
 import { searchUrl, siteUrl } from '../lib/urls';
@@ -31,7 +31,9 @@ export default function SearchApp({ base, initialPassages }: { base: string; ini
   const [semanticStatus, setSemanticStatus] = useState<SemanticStatus>({ state: 'idle' });
   const [semanticError, setSemanticError] = useState(false);
   const [semanticAttempt, setSemanticAttempt] = useState(0);
-  const [hybrid, setHybrid] = useState<{ query: string; results: ReturnType<typeof search> } | null>(null);
+  const [vectors, setVectors] = useState<{ base: string; index: VectorIndex } | null>(null);
+  const [hybrid, setHybrid] = useState<{ query: string; queryVector: number[]; passages: SearchPassage[]; base: string } | null>(null);
+  const prepared = useMemo(() => prepareSearchIndex(passages, vectors?.base === base ? vectors.index : undefined), [passages, vectors, base]);
   const client = useRef<SemanticClient | null>(null);
   const vectorCache = useRef<Promise<VectorIndex> | null>(null);
   const generation = useRef(0);
@@ -39,6 +41,8 @@ export default function SearchApp({ base, initialPassages }: { base: string; ini
   const editTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
+    vectorCache.current = null;
+    setVectors(null);
     const sync = () => { generation.current++; setQuery(new URLSearchParams(window.location.search).get('q')?.slice(0, 300) ?? ''); setHybrid(null); editing.current = false; };
     sync();
     const initialQuery = new URLSearchParams(window.location.search).get('q');
@@ -78,8 +82,11 @@ export default function SearchApp({ base, initialPassages }: { base: string; ini
           if (!response.ok) throw new Error('Semantic index unavailable');
           return await response.json() as VectorIndex;
         }).catch((error: unknown) => { vectorCache.current = null; throw error; });
-        const [vectors, queryVector] = await Promise.all([vectorCache.current, client.current.embed(query)]);
-        if (generation.current === version) setHybrid({ query, results: search(passages, query, { vectors, queryVector, limit: 30 }) });
+        const [index, queryVector] = await Promise.all([vectorCache.current, client.current.embed(query)]);
+        if (generation.current === version) {
+          setVectors((current) => current?.base === base && current.index === index ? current : { base, index });
+          setHybrid({ query, queryVector, passages, base });
+        }
       } catch {
         if (generation.current === version) { setSemanticError(true); setHybrid(null); }
       }
@@ -87,8 +94,10 @@ export default function SearchApp({ base, initialPassages }: { base: string; ini
     return () => { clearTimeout(timer); generation.current++; };
   }, [base, query, passages, semanticAttempt]);
 
-  const exact = useMemo(() => search(passages, query), [passages, query]);
-  const results = hybrid?.query === query ? hybrid.results : exact;
+  const exact = useMemo(() => prepared.search(query), [prepared, query]);
+  const hybridResults = useMemo(() => hybrid?.query === query && hybrid.passages === passages && hybrid.base === base
+    ? prepared.search(query, { queryVector: hybrid.queryVector, limit: 30 }) : null, [prepared, hybrid, query, passages, base]);
+  const results = hybridResults ?? exact;
   const categories = availableBrowseCategories([], passages);
   const topics = [...new Set(passages.flatMap((passage) => passage.topics))].slice(0, 8);
 
@@ -117,7 +126,7 @@ export default function SearchApp({ base, initialPassages }: { base: string; ini
       <div className="search-status" role="status" aria-live="polite" aria-atomic="true">
         {indexStatus === 'loading' && <p>Loading the archive…{initialPassages.length > 0 && ' You can search the available passages now.'}</p>}
         {indexStatus === 'error' && <p>The archive could not be refreshed.{passages.length > 0 ? ' Search is using the passages available on this page.' : ' Check your connection and retry.'}</p>}
-        {query.trim() && <p>{results.length} {results.length === 1 ? 'passage' : 'passages'} found{hybrid?.query === query ? '.' : ' with exact search.'}</p>}
+        {query.trim() && <p>{results.length} {results.length === 1 ? 'passage' : 'passages'} found{hybridResults ? '.' : ' with exact search.'}</p>}
         {query.trim() && passages.length > 0 && !semanticError && semanticStatus.state === 'loading' && <p>Loading meaning-based search{semanticStatus.progress !== undefined ? ` (${Math.floor(semanticStatus.progress * 100)}%)` : ''}. Exact results are ready below.</p>}
         {query.trim() && semanticError && <p>Meaning-based search is unavailable. Exact search still works.</p>}
       </div>

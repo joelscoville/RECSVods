@@ -42,13 +42,14 @@ function index(passages: SearchPassage[]): VectorIndex {
 const context = { mode: 'exact' as const, passages: [fixture], excludedIds: new Set<string>() };
 
 describe('evaluation case file and command contract', () => {
-  it('loads human-readable cases and selects the M2 subset or all M3 cases explicitly', () => {
+  it('loads human-readable cases and selects explicit milestone subsets', () => {
     const file = loadEvaluationCases();
     const core = selectEvaluationCases(file, 2);
     const all = selectEvaluationCases(file, 3);
     expect(core.length).toBeGreaterThanOrEqual(8);
     expect(core.every((item) => item.milestone === 2)).toBe(true);
-    expect(all.length).toBe(file.cases.length);
+    expect(all.length).toBe(file.cases.filter((item) => item.milestone <= 3).length);
+    expect(selectEvaluationCases(file, 4)).toHaveLength(file.cases.length);
     expect(all.length).toBeGreaterThan(core.length);
     expect(all.find((item) => item.id === 'tripping-question')).toMatchObject({ acceptableServiceIds: ['2020-07-19'], maxRank: 3 });
     expect(file.sourceDates.find((item) => item.videoId === 'D-FyolbxJgk')?.expectedDate).toBe('2026-07-12');
@@ -75,10 +76,10 @@ describe('evaluation case file and command contract', () => {
     expect(() => parseEvaluationCases('schemaVersion: 1\nschemaVersion: 1')).toThrow();
     expect(() => parseEvaluationCases(JSON.stringify({ ...file, sourceDates: [] }))).toThrow();
   });
-  it('defaults to M3 with human approvals supported; implementation checking is opt-in', () => {
-    expect(parseEvaluationArgs([])).toEqual({ milestone: 3, implementation: false });
+  it('defaults to the current milestone with human approvals supported; implementation checking is opt-in', () => {
+    expect(parseEvaluationArgs([])).toEqual({ milestone: 4, implementation: false });
     expect(parseEvaluationArgs(['--', '--milestone', '2', '--implementation'])).toEqual({ milestone: 2, implementation: true });
-    for (const args of [['--milestone'], ['--milestone', '4'], ['--unknown'], ['--implementation', '--implementation'], ['--milestone', '2', '--milestone', '3']]) {
+    for (const args of [['--milestone'], ['--milestone', '5'], ['--unknown'], ['--implementation', '--implementation'], ['--milestone', '2', '--milestone', '3']]) {
       expect(() => parseEvaluationArgs(args)).toThrow();
     }
   });

@@ -3,9 +3,12 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { flattenArchive, loadArchive, type BuildMode } from '../site/lib/archive';
 import { enrichPassages } from '../bible/enrich';
+import { validateBackfill } from '../site/lib/backfill';
 
 export function buildIndex(root = process.cwd(), mode: BuildMode = 'production'): string {
-  const passages = enrichPassages(flattenArchive(loadArchive(root), mode));
+  const services = loadArchive(root);
+  validateBackfill(root, services);
+  const passages = enrichPassages(flattenArchive(services, mode));
   const directory = path.join(root, 'site/public/generated');
   mkdirSync(directory, { recursive: true });
   // One canonical output is replaced on every build, so a production rebuild cannot
@@ -21,7 +24,11 @@ export function archiveCli(args = process.argv.slice(2)): void {
   if (!['validate', 'build-index'].includes(command) || !['production', 'preview'].includes(mode ?? '') || (command === 'validate' && options.length)) {
     throw new Error('Usage: tsx scripts/archive.ts validate | build-index [--mode production|preview]');
   }
-  if (command === 'validate') console.log(`Archive valid: ${loadArchive().length} interpreted service(s).`);
+  if (command === 'validate') {
+    const services = loadArchive();
+    validateBackfill(process.cwd(), services);
+    console.log(`Archive valid: ${services.length} interpreted service(s).`);
+  }
   else console.log(buildIndex(process.cwd(), mode as BuildMode));
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {

@@ -296,7 +296,8 @@ export function archiveFromFiles(files: ReadonlyMap<string, string>): Service[] 
     globalIds.set(id, `${filename}:${field}`);
   };
   for (const [filename, text] of [...files].sort(([a], [b]) => compareText(a, b))) {
-    if (filename.startsWith('corpus/') && /\.ya?ml$/.test(filename)) {
+    // The canonical backfill registry has its own validator, orchestrated by scripts/archive.ts.
+    if (filename !== 'corpus/manifest.yaml' && filename.startsWith('corpus/') && /\.ya?ml$/.test(filename)) {
       const record = parseWithPath(IdentifierRecordSchema, parseYaml(text, filename), filename);
       if (corpusIds.has(record.youtube_id)) throw new Error(`${filename}:youtube_id: duplicate corpus ID ${record.youtube_id}`);
       corpusIds.set(record.youtube_id, { filename, record });

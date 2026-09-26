@@ -97,11 +97,16 @@ Script exports for an orchestrator: `prepare(root?)`, `buildVectors(root?)`; `em
 ## Search and client interfaces
 
 ```ts
-import { search, type VectorIndex } from './search';
+import { prepareSearchIndex, search, type VectorIndex } from './search';
 import { createSemanticClient } from './semantic';
 
 search(passages, query); // Array<{ passage: SearchPassage; score: number; reasons: string[] }>
 search(passages, query, { queryVector, vectors, limit: 30 });
+
+// Reuse for a loaded snapshot (the application and benchmark path):
+const prepared = prepareSearchIndex(passages, vectors);
+prepared.search(query); // exact, no model/query vector required
+prepared.search(query, { queryVector, limit: 30 });
 
 const client = createSemanticClient(import.meta.env.BASE_URL, onStatus);
 const queryVector = await client.embed(query);
@@ -112,9 +117,27 @@ client.dispose();
 
 Client initialization is lazy: construction reports `idle`; the first nonempty `embed` creates the worker. Responses carry request IDs, allowing concurrent callers to receive their own vectors. A worker error rejects pending embeddings, terminates that worker, and reports `error`. The next `embed` attempts initialization with a new worker. Requests have a 120-second deadline. `dispose` terminates the worker and rejects pending calls; create a new client to use semantic search after disposal.
 
-UI integration should render `search(passages, query)` immediately, fetch the vector artifact from the same deployment base, then optionally enrich those results after `embed`. Catch model/fetch errors and retain exact results. Use a query generation counter to discard late results when the input changes; request IDs correlate promises but do not decide which query the UI should display. Dispose the client on unmount. Do not label an exact-only result “semantic”; use the returned reasons.
+UI integration renders `prepared.search(query)` immediately, fetches the vector artifact from the same deployment base, then optionally enriches those results after `embed`. Catch model/fetch errors and retain exact results. Use a query generation counter to discard late results when the input changes; request IDs correlate promises but do not decide which query the UI should display. Dispose the client on unmount. Do not label an exact-only result “semantic”; use the returned reasons.
+
+### Prepared snapshot lifecycle
+
+`prepareSearchIndex(passages, vectors?)` owns a snapshot: it copies and freezes public passage objects and their nested arrays/series, parses scripture references, normalizes lexical fields (including conservative BSB plural folding), and validates compatible, normalized, source-current passage vectors once. Valid vectors are copied as ordinary JavaScript numbers, retaining Float64 precision. Construction-only maps intern repeated field strings and parsed references; their entries are cleared after preparation. There is no global ID cache or per-word posting/Set index.
+
+`prepared.search(query, options?)` accepts `queryVector`, `semanticThreshold`, and `limit`; vectors belong to the factory, not query options. It validates each supplied query vector, scans all eligible passages and compatible vectors exhaustively, and retains the pure API's arithmetic order, weights, thresholds, sort order and reasons. A full-date query still filters passages before lexical or semantic scoring. Preparation changes when work happens, not which candidates can score.
+
+Treat each loaded passage/vector pair as immutable and **create a new prepared index when either changes**, including source edits under existing IDs. Later mutation of caller-owned inputs does not alter an existing snapshot; it continues to represent the original data. Rebuilding with edited passages and old vectors rejects those stale vectors through the exact embedding-document check. Results expose frozen snapshot passages, while result objects/reason arrays are fresh per query. Release the prepared index when replacing it so its storage can be collected.
+
+`SearchApp` memoizes preparation by passage/vector state and deployment base, then memoizes queries separately. Vector arrival rebuilds the snapshot once; subsequent queries reuse it. Late embedding responses are generation-guarded, and hybrid results must belong to the current query, passage array and base. The exact-first display, semantic progress/error/retry controls, history and share state retain their existing behavior.
+
+The original `search(passages, query, options)` remains a nonmutating, fresh-input API: it reevaluates in-place source and vector edits on every call and returns the caller's passage objects. It intentionally has no prepared cache. `tests/prepared-search.test.ts` compares the optimized path against this independent implementation using exact equality of result order, scores and reasons, plus snapshot ownership/rebuild tests. Keep these paths equivalent when changing ranking policy.
 
 ### Scoring and deterministic order
+
+Natural-language question scaffolding (common pronouns, auxiliaries and conditionals)
+does not count toward meaningful-term coverage. Negation and meaningful title words
+such as `only` and `will` remain searchable. Exact-phrase checks retain the whole
+original query. This general rule was tightened after the larger historical corpus
+revealed irrelevant matches driven by function words; no query-specific alias was added.
 
 All weights live in `SEARCH_WEIGHTS`:
 
@@ -126,6 +149,7 @@ All weights live in `SEARCH_WEIGHTS`:
 | Topic | 7 |
 | Passage title | 6 |
 | Service title, question | 4 each |
+| Series name (when present) | 4 |
 | Summary | 3 |
 | Transcript, type | 2 each |
 | Semantic cosine | 3 |
@@ -143,6 +167,7 @@ Sort order is descending score, descending date, then ascending service ID, vide
 
 ```sh
 RECS_DEVENV_TIMEOUT_SECONDS=120 scripts/devenv-run pnpm test:search
+RECS_DEVENV_TIMEOUT_SECONDS=120 scripts/devenv-run pnpm exec vitest run tests/prepared-search.test.ts
 RECS_DEVENV_TIMEOUT_SECONDS=120 scripts/devenv-run pnpm exec tsc --noEmit
 
 # After prepare: real model, networking forbidden during cache reuse/Node inference.
@@ -166,3 +191,5 @@ Measured on the development machine on 2026-09-25, through `scripts/devenv-run`:
 - TypeScript `tsc --noEmit` and ESLint on all six owned TypeScript files passed. Tests cover document construction, preprocessing/config mismatch, dimensions/norms, exact and hybrid ranking, deterministic order, truthful reasons, empty results, stale-vector rejection, lazy worker lifecycle, retry/timeouts, zero-passage replacement, verified cache reuse, revision-scoped browser caching, and real browser/Node compatibility.
 
 Preparation timings exclude devenv shell entry. Browser-test timing is not an isolated model download or latency benchmark. This verifies the search subsystem; the milestone's real-recording/editorial/playback gate remains separate.
+
+The historical verification above predates the M4 prepared-search change. **Prepared-search tests, typecheck, lint, regression checks and post-change performance measurement are pending the main worker's batch-end run.** No commands were run by the optimization worker while the content workers were active. The existing `test:search` package script does not include the new prepared-search test file; invoke it explicitly as above or use the full Vitest suite. See `docs/performance.md` for the saved pre-change measurements and unchanged benchmark policy.

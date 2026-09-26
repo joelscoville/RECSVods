@@ -37,4 +37,6 @@ jobs:
       - run: pnpm test:e2e
       - name: Verify real core-corpus acceptance
         run: pnpm evaluate:core
+      - name: Verify incremental indexes against a full rebuild
+        run: pnpm index:verify
 # No deployment in this milestone. In particular, preview output must never deploy.
