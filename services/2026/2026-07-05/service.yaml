@@ -1,0 +1,1396 @@
+id: '2026-07-05'
+date: '2026-07-05'
+title: RECS English service — 5 July 2026
+sermon_title: Signs and Wonders
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - 'Selected physical upload OrsN83j3qxE. Title, release/upload metadata and opening slide agree on 5 July 2026; opening slide specifies 9:30am. The 2400s sermon slide reads Signs and Wonders, John 14:25-31, Deuteronomy 13:1-4. No metadata from the distinct July 12 programme D-FyolbxJgk is used here.'
+  - 'The worship leader is introduced as Brother Hadi and the preacher as Pastor Yong in this recording. Full names were not verified on a source caption; structured speakers remain empty. Source anecdotes and descriptions of other churches are attributed claims, not independently established history or doctrine.'
+  - 'Whole programme reviewed from opening hymn fragment through dismissal. Retain prelude at 0–24s; preparation begins at 24s; sermon introduction at 2366.82s; sermon prayer ends at 6278.90s; dismissal ends at 7107.32s. Programme/context spans the acquired recording; two-minute margins clip to its bounds. The imported full span 0–7109.346375s is retained without local inference.'
+  - 'All 1702 source segments reviewed with adjacent context. Passages contain explicitly edited ASR excerpts, not complete verbatim or listening-verified transcripts. Ellipsis markers identify omitted speech; Bible readings/quotations and hymn lyrics have explicit omission markers. Music, distribution and quiet-prayer sections retain timing rather than manufactured words. Some marker-only or brief liturgical units intentionally depart from 30–90s guidance.'
+  - 'Twenty-four coarse 30s audio samples/frames at 0,300,...,6900s; refined date/title/programme frames, aligned PCM comparisons and twelve additional boundary/gap windows were decoded. No audio listening or browser playback is claimed. Frames and ASR corroborate programme content; sample decoding alone does not verify every spoken word.'
+  - 'Original English metadata and ASR agree. Nine outside-segment word warnings (maximum 0.40s), 26 zero-duration words, no segment overlaps/backward starts/tail clamps. Authentic timings are retained; boundaries follow source thoughts rather than silently repairing alignments.'
+  - 'Human review priorities: unclear opening supplication wording and Communion distribution speech; source-ASR reversal of the audience explanation around 5192.90–5207.00s relative to the displayed 1 Corinthians 14:22; unsupported external historical/medical statistics; uncertain proper names; prayer/music gaps. These are flagged, not doctrinally corrected from memory.'
+  - 'Original batch audio was already absent in both designated roots. Import used --allow-missing-audio; exact receipt projection records audio_hash_verified false. JSON hash, exact recipe, identity, duration, bounds and converted segment/word correspondence passed. Supplied raw bundle remains unchanged and external.'
+  - 'Operator-approved completion with flagged uncertainty is processing completion only. Human editorial approval remains required. See docs/july5-comparison.md for the independent-upload comparison, evidence limits, validation and cleanup.'
+speakers: []
+topics:
+  - { id: worship, name: Worship }
+  - { id: prayer, name: Prayer }
+  - { id: communion, name: Communion }
+  - { id: holy-spirit, name: Holy Spirit }
+  - { id: truth, name: Truth }
+  - { id: discernment, name: Discernment }
+  - { id: mission, name: Mission }
+videos:
+  - id: OrsN83j3qxE
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 7109.366
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: 'Authorized full acquisition verified exact RECS channel and ID. Acquisition and independent ffprobe measured 7109.366s with usable audio/video. Twenty-four coarse windows/frames, refined programme frames and additional PCM windows decoded successfully. Opening July 5 slide, Communion, sermon title/reading slides and final announcements corroborate supplied evidence throughout. Selected for July 5 on content/date evidence, not duration; not a duplicate rejection of the other upload. Playable is not a listening, uninterrupted-content or browser-playback guarantee.'
+    transcription_language: en
+    transcribed_span: { start: 0, end: 7109.346375 }
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings: { beam_size: 5, word_timestamps: true, vad_filter: false, condition_on_previous_text: false }
+      audio_sha256: 9dba5d18e5b71de5cd490d920aba103e14d68624c2f1909d9cf6dbe71cb77867
+      duration_seconds: 7109.346375
+      elapsed_seconds: 234.624
+      real_time_factor: 0.033
+      transcribed_at: '2026-09-25T11:21:25.009952+00:00'
+      transcript_sha256: 2c2ddbc63307e8ac864e09143abd056652474f95538fa2d50d0fac87fef9a978
+      source_duration_seconds: 7109.366
+      duration_delta_seconds: -0.019624999999905413
+      audio_hash_verified: false
+sections:
+  - { id: s0705-prelude, video_id: OrsN83j3qxE, start: 0, end: 24, type: hymn, title: Opening hymn fragment, confidence: 0.8 }
+  - { id: s0705-preparation, video_id: OrsN83j3qxE, start: 24, end: 333.02, type: prayer, title: 'Preparation in adoration, confession, thanksgiving and supplication', confidence: 0.84 }
+  - { id: s0705-welcome, video_id: OrsN83j3qxE, start: 333.02, end: 486.6, type: welcome, title: Welcome and preparation for worship, confidence: 0.88 }
+  - { id: s0705-call, video_id: OrsN83j3qxE, start: 486.6, end: 595.3, type: scripture-reading, title: Call to worship — Psalms 84:1-4, confidence: 0.92 }
+  - { id: s0705-king, video_id: OrsN83j3qxE, start: 595.3, end: 703.18, type: hymn, title: O Worship the King, confidence: 0.94 }
+  - { id: s0705-opening-prayer, video_id: OrsN83j3qxE, start: 703.18, end: 852.36, type: prayer, title: Prayer for worship and Communion, confidence: 0.87 }
+  - { id: s0705-communion-intro, video_id: OrsN83j3qxE, start: 852.36, end: 1060.44, type: communion, title: Communion and the unity of the church, confidence: 0.89 }
+  - { id: s0705-communion-prayer, video_id: OrsN83j3qxE, start: 1060.44, end: 1197.4, type: communion, title: Prayer and words of institution, confidence: 0.86 }
+  - { id: s0705-distribution, video_id: OrsN83j3qxE, start: 1197.4, end: 1441.18, type: communion, title: Distribution and partaking, confidence: 0.8, review_notes: ['Unclear ASR instructions and song gaps; do not invent missing speech.'] }
+  - { id: s0705-communion-response, video_id: OrsN83j3qxE, start: 1441.18, end: 1546.2, type: prayer, title: Thanksgiving for belonging to Christ, confidence: 0.9 }
+  - { id: s0705-proverbs, video_id: OrsN83j3qxE, start: 1546.2, end: 1796.04, type: scripture-reading, title: Responsive reading — Proverbs 28:1-28, confidence: 0.94 }
+  - { id: s0705-john, video_id: OrsN83j3qxE, start: 1796.04, end: 1962.38, type: scripture-reading, title: Responsive reading — John 14:15-31, confidence: 0.94 }
+  - { id: s0705-teach, video_id: OrsN83j3qxE, start: 1962.38, end: 2100, type: hymn, title: 'Teach Me Thy Way, O Lord', confidence: 0.93 }
+  - { id: s0705-anthem, video_id: OrsN83j3qxE, start: 2100, end: 2290.24, type: anthem, title: 'Come, Gracious Spirit', confidence: 0.92 }
+  - { id: s0705-deuteronomy, video_id: OrsN83j3qxE, start: 2290.24, end: 2366.82, type: scripture-reading, title: Scripture reading — Deuteronomy 13:1-4, confidence: 0.95 }
+  - { id: s0705-sermon-intro, video_id: OrsN83j3qxE, start: 2366.82, end: 2534.26, type: sermon, title: Welcome back and the question behind the sermon, confidence: 0.86 }
+  - { id: s0705-review, video_id: OrsN83j3qxE, start: 2534.26, end: 3070.88, type: sermon, title: 'Review — truth, illumination and peace', confidence: 0.87 }
+  - { id: s0705-sermon-prayer, video_id: OrsN83j3qxE, start: 3070.88, end: 3115.24, type: prayer, title: Prayer for humility and understanding, confidence: 0.87 }
+  - { id: s0705-resources, video_id: OrsN83j3qxE, start: 3115.24, end: 3285.32, type: sermon, title: Scope and resources for further study, confidence: 0.84 }
+  - { id: s0705-spirit, video_id: OrsN83j3qxE, start: 3285.32, end: 3690.02, type: sermon, title: The Spirit’s continuing presence, confidence: 0.88 }
+  - { id: s0705-movement, video_id: OrsN83j3qxE, start: 3690.02, end: 4515.02, type: sermon, title: The preacher’s account of the charismatic movement, confidence: 0.85 }
+  - { id: s0705-differences, video_id: OrsN83j3qxE, start: 4515.02, end: 4732.9, type: sermon, title: 'Contrasting authority, sovereignty and worship', confidence: 0.88 }
+  - { id: s0705-tongues, video_id: OrsN83j3qxE, start: 4732.9, end: 5052.44, type: sermon, title: Definitions and private tongues, confidence: 0.87 }
+  - { id: s0705-worship-order, video_id: OrsN83j3qxE, start: 5052.44, end: 5415.84, type: sermon, title: Intelligibility and order in public worship, confidence: 0.84, review_notes: ['5192.90–5207.00s source ASR reverses the audience described in the displayed quotation. Preserve this discrepancy for human review rather than correcting doctrine.'] }
+  - { id: s0705-acts, video_id: OrsN83j3qxE, start: 5415.84, end: 5584.7, type: sermon, title: Four occasions in Acts and a warning against formulas, confidence: 0.88 }
+  - { id: s0705-signs-summary, video_id: OrsN83j3qxE, start: 5584.7, end: 5732.5, type: sermon, title: Summary of the preacher’s position on tongues, confidence: 0.9 }
+  - { id: s0705-wonders, video_id: OrsN83j3qxE, start: 5732.5, end: 6045.88, type: sermon, title: Testing claims of wonders, confidence: 0.84 }
+  - { id: s0705-miracles, video_id: OrsN83j3qxE, start: 6045.88, end: 6123.44, type: sermon, title: Miracles and the sovereign will of God, confidence: 0.91 }
+  - { id: s0705-conclusion, video_id: OrsN83j3qxE, start: 6123.44, end: 6204.2, type: sermon, title: Deuteronomy 13 and the call to obedience, confidence: 0.92 }
+  - { id: s0705-closing-prayer, video_id: OrsN83j3qxE, start: 6204.2, end: 6278.9, type: prayer, title: Prayer to hold fast to the word, confidence: 0.88 }
+  - { id: s0705-creed, video_id: OrsN83j3qxE, start: 6278.9, end: 6325.24, type: creed, title: Apostles’ Creed, confidence: 0.9 }
+  - { id: s0705-pastoral, video_id: OrsN83j3qxE, start: 6325.24, end: 6551.5, type: prayer, title: Prayer for ourselves and the church, confidence: 0.88 }
+  - { id: s0705-offertory, video_id: OrsN83j3qxE, start: 6551.5, end: 6670.18, type: offertory, title: Offering for the church and evangelism, confidence: 0.88 }
+  - { id: s0705-breathe, video_id: OrsN83j3qxE, start: 6670.18, end: 6812.08, type: hymn, title: 'Breathe on Me, Breath of God', confidence: 0.94 }
+  - { id: s0705-blessing, video_id: OrsN83j3qxE, start: 6812.08, end: 6879.44, type: benediction, title: Doxology and blessing, confidence: 0.9 }
+  - { id: s0705-announcements, video_id: OrsN83j3qxE, start: 6879.44, end: 7109.366, type: announcement, title: 'Student outreach, youth ministry and dismissal', confidence: 0.89 }
+passages:
+  - id: p0705-prelude
+    video_id: OrsN83j3qxE
+    section_id: s0705-prelude
+    start: 0
+    end: 24
+    type: hymn
+    title: Opening hymn fragment before preparation
+    summary: The recording opens with a sung fragment before the invitation to prepare for worship.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: '[Opening hymn lyrics omitted. The recording begins during the song; no missing opening is reconstructed.]'
+    confidence: 0.8
+    review_notes: ['Short source fragment retained as programme context.']
+  - id: p0705-adoration
+    video_id: OrsN83j3qxE
+    section_id: s0705-preparation
+    start: 24
+    end: 98.86
+    type: prayer
+    title: Preparing the heart in adoration
+    summary: The leader invites the congregation to prepare for worship before Communion and begins a time of prayer.
+    questions: ['How does the leader invite the congregation to prepare for worship?']
+    topics: [prayer, worship]
+    scripture: []
+    transcript: 'Okay folks, [unclear phrase] prepare our heart for worship this morning. Before we have Holy Communion, before we begin this adoration and confession, thanksgiving [unclear wording]. Let’s pray. [Prayer interval; uncertain isolated ASR fragments omitted.]'
+    confidence: 0.7
+    review_notes: ['Do not silently replace the unclear opening with a memorized ACTS formula.']
+  - id: p0705-confession
+    video_id: OrsN83j3qxE
+    section_id: s0705-preparation
+    start: 98.86
+    end: 169.16
+    type: prayer
+    title: Invitation to confession
+    summary: The leader invites confession before God, followed by time for prayer.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: 'Let us now come before God to have a prayer of confession. [Scriptural wording omitted; reference not explicitly announced.] Let’s pray in confession now. [Prayer interval; no words reconstructed.]'
+    confidence: 0.83
+  - id: p0705-thanksgiving
+    video_id: OrsN83j3qxE
+    section_id: s0705-preparation
+    start: 169.16
+    end: 232.86
+    type: prayer
+    title: Giving thanks in prayer
+    summary: The leader asks the congregation to give thanks for the many things in their lives.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: 'We now come before the Lord to pray in thanksgiving. We want to be thankful to the Lord for so many things in our life. Let’s give thanks in our prayers now. [Prayer interval.]'
+    confidence: 0.86
+  - id: p0705-supplication
+    video_id: OrsN83j3qxE
+    section_id: s0705-preparation
+    start: 232.86
+    end: 298.56
+    type: prayer
+    title: Bringing personal situations before God
+    summary: The leader invites the congregation to bring their situations before the Lord and seek help.
+    questions: ['What does the leader invite people to bring into supplication?']
+    topics: [prayer]
+    scripture: []
+    transcript: 'And now we pray in supplication. We bring our situations before the Lord and seek His help. Let’s pray in supplication now. [Prayer interval; isolated ASR Thank you is not treated as established speech.]'
+    confidence: 0.86
+  - id: p0705-gathering-prayer
+    video_id: OrsN83j3qxE
+    section_id: s0705-preparation
+    start: 298.56
+    end: 333.02
+    type: prayer
+    title: A humble and teachable heart
+    summary: The leader prays that the congregation will be humble and teachable and that worship will glorify God.
+    questions: ['What attitude does the opening prayer ask for?']
+    topics: [prayer]
+    scripture: []
+    transcript: 'Let us pray together. We thank you, God, for this morning as we are all gathered here in your name to worship you. […] Help us then to be prepared in our hearts to be humble and teachable so that we can hear you fully and enter into your throne of grace. May everything we do this morning bring glory unto your holy name. In Jesus’ name we pray, amen. This morning our brother Hadi will be leading us.'
+    confidence: 0.87
+  - id: p0705-welcome
+    video_id: OrsN83j3qxE
+    section_id: s0705-welcome
+    start: 358.34
+    end: 411.42
+    type: welcome
+    title: Welcome and invitation to Communion
+    summary: The worship leader welcomes visitors, announces Communion for baptized participants and invites congregational greetings.
+    questions: ['Who is invited to participate in Communion in this service?']
+    topics: [worship, communion]
+    scripture: []
+    transcript: 'Good morning and happy Sunday everyone. Welcome to the Reformed Evangelical Church of Singapore English service. […] As announced last week, today we will be observing a Holy Communion. So if you have been baptized, I would like to invite you all to please join us later, which will be led by Pastor Yong. And if you are worshipping with us for the first time today, we want to extend a warm welcome to all of you. […] Let’s rise as usual and let’s take time to greet our brothers and sisters around us.'
+    confidence: 0.88
+  - id: p0705-quiet-preparation
+    video_id: OrsN83j3qxE
+    section_id: s0705-welcome
+    start: 436.92
+    end: 486.6
+    type: prayer
+    title: Laying aside the week’s distractions
+    summary: The leader invites quiet preparation before the call to worship.
+    questions: []
+    topics: [worship, prayer]
+    scripture: []
+    transcript: 'Let’s take a moment for a quiet time as we lay aside the distraction of the week. May we be drawn into His presence and come before Him for worship. [Quiet preparation; no missing speech inferred.]'
+    confidence: 0.86
+  - id: p0705-call-reading
+    video_id: OrsN83j3qxE
+    section_id: s0705-call
+    start: 486.6
+    end: 531.8
+    type: scripture-reading
+    title: Call to worship from Psalms 84
+    summary: The leader announces and reads Psalms 84:1-4 as the call to worship.
+    questions: ['Which psalm opens the call to worship?']
+    topics: [worship]
+    scripture: ['Psalms 84:1-4']
+    transcript: '[Bible reading omitted: Psalms 84:1-4. Reference-only ESV display; see the linked source passage.]'
+    confidence: 0.94
+  - id: p0705-longing
+    video_id: OrsN83j3qxE
+    section_id: s0705-call
+    start: 531.8
+    end: 595.3
+    type: address
+    title: Longing for God’s presence
+    summary: The worship leader connects the psalm with drawing near to God, finding rest after a weary week and singing gratefully.
+    questions: ['How does the worship leader apply the call to worship to a weary week?']
+    topics: [worship]
+    scripture: ['Psalms 84:1-4']
+    transcript: 'The psalmist here speaks with deep longing for the presence of God. We can see the heartfelt desire of someone who knows that there is no place more precious than to draw near to the living God. […] Our souls grow weary in many ways through the week, but here we are called again to lift our eyes to the Lord, to find in Him our rest, to find in Him our help. […] Let’s rise and lift our voices together to worship Him by singing our first hymn, hymn number one, O Worship the King.'
+    confidence: 0.9
+  - id: p0705-king
+    video_id: OrsN83j3qxE
+    section_id: s0705-king
+    start: 595.3
+    end: 703.18
+    type: hymn
+    title: O Worship the King
+    summary: The congregation sings O Worship the King before the opening prayer.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: '[Hymn lyrics omitted: O Worship the King. Whole musical unit retained rather than split into artificial spoken passages.]'
+    confidence: 0.93
+  - id: p0705-prayer-rest
+    video_id: OrsN83j3qxE
+    section_id: s0705-opening-prayer
+    start: 703.18
+    end: 780.92
+    type: prayer
+    title: Prayer for weary hearts
+    summary: The leader thanks God for gathering the congregation and asks for comfort amid relationship, work, study and health challenges.
+    questions: ['What personal difficulties are included in the opening prayer?']
+    topics: [prayer]
+    scripture: []
+    transcript: 'Our Heavenly Father, we come before you this morning to worship you. […] We give thanks for the house of worship where your people may gather in your name. […] Many of us come this morning with weary hearts and troubled minds. We pray that you would quieten us before you, help us to lay aside the distractions of the week, and turn our eyes upon you. For those facing challenges in relationships perhaps, in work, in study, or in health, grant us strength, grant us comfort, and peace according to your mercy.'
+    confidence: 0.87
+  - id: p0705-prayer-communion
+    video_id: OrsN83j3qxE
+    section_id: s0705-opening-prayer
+    start: 780.92
+    end: 852.36
+    type: prayer
+    title: Prayer for Communion and the speaker
+    summary: The leader asks for grateful participation in Communion, blessing for the preacher and fruitful reception of the word.
+    questions: ['What does the leader pray for the preacher and congregation?']
+    topics: [prayer, communion]
+    scripture: []
+    transcript: 'And as we prepare the Holy Communion today, ready our heart to partake and to remember with gratitude what our Lord Jesus Christ has done for us. […] We pray too for Pastor Yong, your servant and our speaker this morning who will bring your word. Please bless our speaker, his ministry, his family and his health. […] [Scriptural quotation omitted; reference not announced.] Let every part of our worship this morning, our singing, our prayers, our fellowship rise to you as a pleasant offering.'
+    confidence: 0.85
+  - id: p0705-communion-routine
+    video_id: OrsN83j3qxE
+    section_id: s0705-communion-intro
+    start: 880.14
+    end: 942.44
+    type: communion
+    title: Communion as more than routine
+    summary: The pastor explains the congregation’s first-Sunday Communion schedule and cautions against treating it as a routine observance.
+    questions: ['Why does the pastor caution against treating Communion as routine?']
+    topics: [communion]
+    scripture: ['1 Corinthians 11:23']
+    transcript: 'Good morning, brothers and sisters in Christ. I pray that as Hadi has prayed earlier, we are prepared to observe the Holy Communion together. […] Starting this year we will have Holy Communion on the first Sunday of every month. […] For us we will do it once a month, and I want to once again remind you not to treat Holy Communion as [unclear word] or some kind of a routine. […] I will always read for you what the apostle Paul wrote in First Corinthians chapter 11, verse 23, which I will do later as well.'
+    confidence: 0.84
+  - id: p0705-communion-divisions
+    video_id: OrsN83j3qxE
+    section_id: s0705-communion-intro
+    start: 942.44
+    end: 1013.04
+    type: communion
+    title: Remembering Communion’s context of division
+    summary: The pastor turns to the preceding discussion in 1 Corinthians 11 and connects Communion with the church’s divisions.
+    questions: ['Why does the pastor read the verses before the words of institution?']
+    topics: [communion]
+    scripture: ['1 Corinthians 11:17', '1 Corinthians 11:23']
+    transcript: 'One of the things that people forget is that if you read the passage before what Paul said […] [Bible quotations omitted: 1 Corinthians 11.] In other words, the apostle Paul was talking about how the Holy Communion is very important because it is something that reminds us that we should not be divided, that we are all people of God. So when he first talked about this, the church was divided. There was a lot of quarrels, a lot of issues among the people.'
+    confidence: 0.88
+  - id: p0705-belonging
+    video_id: OrsN83j3qxE
+    section_id: s0705-communion-intro
+    start: 1013.04
+    end: 1060.44
+    type: communion
+    title: Belonging to Christ together
+    summary: The pastor describes early communal meals and reminds the congregation that Communion joins them with Christians elsewhere.
+    questions: ['How does the pastor connect Communion with belonging together?']
+    topics: [communion]
+    scripture: ['1 Corinthians 11']
+    transcript: 'They quarrel of all kinds of things, including who is eating what or who is drinking what, because early days Holy Communion is like a dinner. […] I want to remind you once again that when we observe the Holy Communion we remember that we don’t belong to ourselves, that we belong to our Lord Jesus Christ, and it’s universal, together with all the brothers and sisters in Christ everywhere in the world. […]'
+    confidence: 0.86
+  - id: p0705-institution
+    video_id: OrsN83j3qxE
+    section_id: s0705-communion-prayer
+    start: 1060.44
+    end: 1153.02
+    type: communion
+    title: The Lord’s Prayer and words of institution
+    summary: The congregation prays together, and the pastor reads from 1 Corinthians 11 before inviting helpers to distribute Communion.
+    questions: []
+    topics: [communion, prayer]
+    scripture: ['1 Corinthians 11:23-26']
+    transcript: '[The Lord’s Prayer and biblical words of institution omitted. The pastor announces 1 Corinthians 11; reference-only scripture display. Distribution instructions follow.]'
+    confidence: 0.87
+    review_notes: ['Complete liturgical unit retained; slightly exceeds 90s.']
+  - id: p0705-table-prayer
+    video_id: OrsN83j3qxE
+    section_id: s0705-communion-prayer
+    start: 1156.02
+    end: 1197.4
+    type: prayer
+    title: Prayer before distribution
+    summary: A helper leads a prayer of repentance and gratitude before the bread and cup are distributed.
+    questions: []
+    topics: [communion, prayer]
+    scripture: []
+    transcript: 'Our Father in heaven, we come before you today with a [unclear word] heart and gratitude. We seek for the forgiveness for the sin, for the pride, for the unconfessed sins or anything that is hindering our relationship with you as we approach the table this morning. Help us to remember the price. [Unclear ASR wording omitted.] […] We will sing the Communion hymn. [Song title verified visually: Break Thou the Bread of Life.]'
+    confidence: 0.72
+  - id: p0705-distribution
+    video_id: OrsN83j3qxE
+    section_id: s0705-distribution
+    start: 1197.4
+    end: 1386
+    type: communion
+    title: Communion distribution with hymn accompaniment
+    summary: Communion is distributed while a hymn is presented; the source includes sound and distribution instructions.
+    questions: []
+    topics: [communion]
+    scripture: []
+    transcript: '[Hymn lyrics omitted: Break Thou the Bread of Life. Distribution interval includes unclear instructions and a restart of the sound; no missing words reconstructed.]'
+    confidence: 0.75
+    review_notes: ['Long practical/musical unit retained; not evidence of a stream restart. ASR around 1345s is unclear.']
+  - id: p0705-partaking
+    video_id: OrsN83j3qxE
+    section_id: s0705-distribution
+    start: 1386
+    end: 1441.18
+    type: communion
+    title: Invitation to stand and partake
+    summary: The pastor checks whether anyone still needs the bread and cup, then invites participants to stand and partake with gratitude.
+    questions: []
+    topics: [communion]
+    scripture: []
+    transcript: 'Is there anyone else who need the bread and the cup? […] I want to invite all who have received the bread and the cup to stand with me. [Biblical Communion wording omitted.] Let us partake in it together with gratitude in our heart. [Partaking interval.]'
+    confidence: 0.87
+  - id: p0705-communion-thanks
+    video_id: OrsN83j3qxE
+    section_id: s0705-communion-response
+    start: 1441.18
+    end: 1521.08
+    type: prayer
+    title: Communion, forgiveness and mutual care
+    summary: The pastor prays that belonging to Christ will shape forgiveness, humility and care for one another.
+    questions: ['What response to disagreement does the Communion prayer ask for?']
+    topics: [communion, prayer]
+    scripture: []
+    transcript: 'We thank you, God Almighty, for once again reminding us that we don’t belong to ourselves anymore. […] When there are divisions and arguments and disagreements among ourselves, we are to remember that we do belong to you in your body. […] What is needed from us is humility, to turn and follow you and not insist in our own ways. May the Holy Communion once again remind us that we belong to your body, and in so doing, live our life loving and caring and supporting one another. Listen to our prayers. In Jesus’ name we pray. Amen.'
+    confidence: 0.89
+  - id: p0705-proverbs
+    video_id: OrsN83j3qxE
+    section_id: s0705-proverbs
+    start: 1555.1
+    end: 1796.04
+    type: scripture-reading
+    title: Responsive reading from Proverbs 28
+    summary: The leader introduces Proverbs 28:1-28 and alternates the reading with the congregation, with a spoken correction during the reading.
+    questions: ['Which Proverbs chapter is read responsively?']
+    topics: [worship]
+    scripture: ['Proverbs 28:1-28']
+    transcript: '[Full Bible reading omitted: Proverbs 28:1-28, ESV reference only. The source includes a correction in the alternating verse order; no absent congregational words are reconstructed.]'
+    confidence: 0.93
+  - id: p0705-john
+    video_id: OrsN83j3qxE
+    section_id: s0705-john
+    start: 1796.04
+    end: 1957.7
+    type: scripture-reading
+    title: Responsive reading from John 14
+    summary: The congregation reads John 14:15-31 responsively before the next hymn.
+    questions: ['Which passage from John is read in this service?']
+    topics: [worship, holy-spirit]
+    scripture: ['John 14:15-31']
+    transcript: '[Full Bible reading omitted: John 14:15-31. Reference-only ESV display; original recording timing retained.]'
+    confidence: 0.94
+  - id: p0705-teach-intro
+    video_id: OrsN83j3qxE
+    section_id: s0705-teach
+    start: 1962.38
+    end: 1997
+    type: address
+    title: A hymn asking for guidance
+    summary: The leader introduces the hymn as a prayer for God’s wisdom and guidance through life’s joys and burdens.
+    questions: ['How does the leader introduce Teach Me Thy Way, O Lord?']
+    topics: [worship, prayer]
+    scripture: []
+    transcript: 'Let us now continue our worship this morning by praising Him with hymn number three. […] This is actually a prayer that longs to be led by God. As we walk through the joys, as we walk through the burdens of life, we are reminded again and again that our need is for wisdom, for His wisdom, for His guidance, and for His steady hand upon us. Let us sing this hymn together.'
+    confidence: 0.9
+    review_notes: ['Title taken from 1970s frame, not ASR’s earlier Word/Way inconsistency.']
+  - id: p0705-teach-hymn
+    video_id: OrsN83j3qxE
+    section_id: s0705-teach
+    start: 2007.12
+    end: 2100
+    type: hymn
+    title: 'Teach Me Thy Way, O Lord'
+    summary: The congregation sings the hymn introduced as a prayer for guidance.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: '[Hymn lyrics omitted: Teach Me Thy Way, O Lord.]'
+    confidence: 0.93
+  - id: p0705-anthem
+    video_id: OrsN83j3qxE
+    section_id: s0705-anthem
+    start: 2100
+    end: 2290.24
+    type: anthem
+    title: 'Come, Gracious Spirit'
+    summary: The service presents the anthem labelled Come, Gracious Spirit on screen.
+    questions: []
+    topics: [worship, holy-spirit]
+    scripture: []
+    transcript: '[Anthem lyrics omitted: Come, Gracious Spirit. Musical unit and surrounding transition retained.]'
+    confidence: 0.92
+  - id: p0705-deuteronomy
+    video_id: OrsN83j3qxE
+    section_id: s0705-deuteronomy
+    start: 2290.24
+    end: 2355.26
+    type: scripture-reading
+    title: Scripture reading from Deuteronomy 13
+    summary: The leader invites a reader, who announces and reads Deuteronomy 13:1-4 before the sermon.
+    questions: ['Which Old Testament reading precedes Signs and Wonders?']
+    topics: [worship, discernment]
+    scripture: ['Deuteronomy 13:1-4']
+    transcript: '[Reader introduction followed by Bible reading omitted: Deuteronomy 13:1-4, ESV reference only. The reference is confirmed on the 2315s slide.]'
+    confidence: 0.95
+  - id: p0705-welcome-back
+    video_id: OrsN83j3qxE
+    section_id: s0705-sermon-intro
+    start: 2366.82
+    end: 2420.24
+    type: sermon
+    title: Welcoming a family back and noticing passing time
+    summary: The preacher welcomes a returning family and reflects on how quickly two years have passed.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: 'Happy Sunday. I need to take out my pastoral robe because it’s very warm. […] We want to welcome back [name uncertain] and his family. […] They escaped the heat of Paris into the heat of Singapore, and they went away for two over years. […] It’s quite crazy, two years, and I thought we just sent you off a while ago, and time has passed by very quickly. […]'
+    confidence: 0.8
+    review_notes: ['Family name not normalized from other services. Opening joke and uncertain year segmentation omitted.']
+  - id: p0705-use-time
+    video_id: OrsN83j3qxE
+    section_id: s0705-sermon-intro
+    start: 2420.24
+    end: 2471.14
+    type: sermon
+    title: Serving while strength is available
+    summary: The preacher reflects on seeing children grow up and encourages service while people have strength and opportunity.
+    questions: ['Why does the preacher encourage serving while strength is available?']
+    topics: []
+    scripture: ['Ecclesiastes 12']
+    transcript: 'I was thinking to myself, wow, last time I used to be like this. All of a sudden my kids are all adults, and I really don’t know where the time went to. […] [Ecclesiastes 12 quotation and hymn lyrics omitted.] When you have the strength, when you are able to, I pray that that’s what we understand.'
+    confidence: 0.86
+  - id: p0705-question
+    video_id: OrsN83j3qxE
+    section_id: s0705-sermon-intro
+    start: 2471.14
+    end: 2534.26
+    type: sermon
+    title: The question about charismatic churches
+    summary: The preacher introduces a further discussion of the Holy Spirit in response to a question about differences between the congregation and charismatic churches.
+    questions: ['What question prompted the Signs and Wonders sermon?']
+    topics: [holy-spirit, discernment]
+    scripture: ['John 14:25-31']
+    transcript: 'Today I want to end John 14 by not going to John 14 but talking about the Holy Spirit. I want to take the opportunity to explain and review a little bit more as to why we believe what we believe with regard to the Holy Spirit because of the question that was asked as well. […] The question that was asked from last week actually: can you explain more about the differences between us and the charismatic church? […]'
+    confidence: 0.91
+  - id: p0705-spirit-truth
+    video_id: OrsN83j3qxE
+    section_id: s0705-review
+    start: 2534.26
+    end: 2593.98
+    type: sermon
+    title: Reviewing the Spirit of truth
+    summary: The preacher reviews the Spirit’s role as helper and connects that role with the preceding sermon’s discussion of truth.
+    questions: ['How does the preacher connect the Holy Spirit with truth?']
+    topics: [holy-spirit, truth]
+    scripture: ['John 14:15-17']
+    transcript: 'The main role of the Holy Spirit, our Lord Jesus Christ was explaining, was that He would be teaching us all things. […] [John 14 quotation omitted.] We actually already spent time talking about what does that mean: the helper, the comforter, the paracletos, the one that will walk beside you. […] Last week’s lesson was really focusing on the concept of truth and how important it is. […]'
+    confidence: 0.86
+  - id: p0705-objective-subjective
+    video_id: OrsN83j3qxE
+    section_id: s0705-review
+    start: 2593.98
+    end: 2664.4
+    type: sermon
+    title: Measurable performance and differing accounts
+    summary: The preacher contrasts measurable vehicle performance with differing personal accounts in a quarrel to illustrate objective and subjective truth.
+    questions: ['What examples does the preacher use for objective and subjective truth?']
+    topics: [truth]
+    scripture: []
+    transcript: 'Quite interestingly after the sermon some people kind of discussed with me about fast cars. […] From an engineering perspective the thing can hit [performance figures omitted; not independently verified], and that’s a very objective measurable kind of thing. […] Subjective truths are depending on what you say. You say this, you say that, everybody say different thing, especially when as a pastor I have to deal with quarrels. […] Each will have their own version of truth.'
+    confidence: 0.84
+  - id: p0705-pragmatism
+    video_id: OrsN83j3qxE
+    section_id: s0705-review
+    start: 2664.4
+    end: 2726.7
+    type: sermon
+    title: Pragmatism and ignoring inconvenient truth
+    summary: The preacher describes Singapore as pragmatic and uses an idiom about stealing a bell to criticize ignoring truth.
+    questions: ['How does the preacher distinguish pragmatism from attending to truth?']
+    topics: [truth]
+    scripture: []
+    transcript: 'Pragmatic understanding is based on pure numbers, and so we operate based on pure numbers. Singapore is a very pragmatic country. […] We only care about what works. […] Remember the Chinese idiom, you cover your ears to steal the bell, thinking that if you cover your ears when the bell rings you cannot hear it so nobody else can hear it. […] In our understanding the word of God [is] absolute truth.'
+    confidence: 0.85
+    review_notes: ['Political characterization is the preacher’s account, not an archive fact claim.']
+  - id: p0705-all-truth
+    video_id: OrsN83j3qxE
+    section_id: s0705-review
+    start: 2726.7
+    end: 2788.48
+    type: sermon
+    title: All truth and the Spirit’s illumination
+    summary: The preacher attributes a view of all truth belonging to God to Augustine and connects it with the Spirit’s work in understanding scripture.
+    questions: ['How does the preacher connect truth with illumination?']
+    topics: [truth, holy-spirit]
+    scripture: ['John 14:26']
+    transcript: 'We believe in absolute truth. […] Also, we believe that all truths are God’s truth. Whether it’s objective truth, anything that is true must be God’s truth. This is a thought from Augustine of Hippo. […] If you extend the thought further, anything that is not true cannot be of God. […] You can read the Bible for all you want, but it is the Holy Spirit that will teach you and to enlighten you in your heart that it is the Word of God.'
+    confidence: 0.88
+  - id: p0705-assurance
+    video_id: OrsN83j3qxE
+    section_id: s0705-review
+    start: 2788.9
+    end: 2863.56
+    type: sermon
+    title: Beyond admiration for the Bible
+    summary: The preacher distinguishes admiration for the Bible as literature from assurance through the Spirit’s inward work, referring to the Westminster Confession.
+    questions: ['What distinction does the preacher draw between admiration and assurance?']
+    topics: [holy-spirit, truth]
+    scripture: []
+    transcript: 'You can be very impressed with the Bible for all the wonderful things the Bible is. […] [Comparative literary claims and confessional quotation omitted.] In other words, when you read the Bible, it is God, the Holy Spirit, in your heart that will work in a supernatural manner, actually, to enlighten you that, wow, this is the Word of God. And so there is mysticism in some part of our faith, that’s for sure.'
+    confidence: 0.86
+  - id: p0705-learning-peace
+    video_id: OrsN83j3qxE
+    section_id: s0705-review
+    start: 2863.96
+    end: 2924.7
+    type: sermon
+    title: Understanding and the peace of Christ
+    summary: The preacher contrasts education with spiritual understanding and connects the Spirit’s presence with peace in Christ.
+    questions: ['How does the preacher distinguish spiritual understanding from academic ability?']
+    topics: [holy-spirit, truth]
+    scripture: ['John 14:27']
+    transcript: 'Some brilliant guy who may be a Nobel Prize winner in literature, when he reads the Bible, he don’t get anything. […] Whereas a simple person with very simple education reads the Bible and can be very enlightened, and even from the Bible gets a lot of wisdom of truth because God the Holy Spirit works in his heart. […] [John 14:27 quotation omitted.] The peace of the world is really very different from the peace of Christ.'
+    confidence: 0.86
+  - id: p0705-persecution
+    video_id: OrsN83j3qxE
+    section_id: s0705-review
+    start: 2924.7
+    end: 2980.9
+    type: sermon
+    title: Peace amid persecution
+    summary: The preacher recalls persecuted Christians, mentioning Wang Yi, and contrasts their endurance with everyday complaints in Singapore.
+    questions: ['What contrast does the preacher draw between persecution and everyday complaints?']
+    topics: [truth]
+    scripture: []
+    transcript: 'I ended the sermon by relating to you the people who are persecuted greatly, especially Reverend Wang Yi of Chengdu. […] It’s just most amazing to think that, faced with so much persecution and difficulty, people all over the world who belong to Jesus Christ are still willing to suffer for Him and have that peace that is incomprehensible. […] We complain about all kinds of things. […]'
+    confidence: 0.84
+    review_notes: ['Detention details and timing remain the preacher’s report; not independently verified.']
+  - id: p0705-truth-transition
+    video_id: OrsN83j3qxE
+    section_id: s0705-review
+    start: 2980.9
+    end: 3070.88
+    type: sermon
+    title: From everyday comfort to commitment to truth
+    summary: The preacher concludes his contrast with persecuted believers, emphasizes commitment to truth and turns to the differences with charismatic churches.
+    questions: ['What concern connects the recap with the main sermon?']
+    topics: [truth, discernment]
+    scripture: []
+    transcript: '[School-discipline reminiscence omitted.] We are so used to the peace of the world, but then the reality is that there are so many people who suffer for Lord Jesus Christ. […] When I’m before these kind of people I always keep quiet. I don’t dare to talk too much. […] [Quotation attributed to an uncertain ASR name omitted.] Today we will then take the opportunity, because Jesus Christ introduced the Holy Spirit, […] to explain […] the issues relating to the charismatic churches and the difference between them and us.'
+    confidence: 0.8
+  - id: p0705-sermon-prayer
+    video_id: OrsN83j3qxE
+    section_id: s0705-sermon-prayer
+    start: 3070.88
+    end: 3114.34
+    type: prayer
+    title: Prayer for a prepared and humble heart
+    summary: The preacher prays for humility, understanding and faithful speech before the main exposition.
+    questions: []
+    topics: [prayer, holy-spirit]
+    scripture: []
+    transcript: 'Let’s come to God in a time of prayer and commit the time to Him. […] We thank you God Almighty for your grace to us all that we are here in air-con comfort and to listen to you. And so grant us a heart that is prepared to hear, an attitude of humility. [Scriptural and scripturally derived prayer wording omitted; reference not announced.] In Jesus’ name we pray. Amen.'
+    confidence: 0.85
+  - id: p0705-study-resources
+    video_id: OrsN83j3qxE
+    section_id: s0705-resources
+    start: 3115.24
+    end: 3165.66
+    type: sermon
+    title: A broad introduction and further study
+    summary: The preacher describes the topic as too large for one sermon and recommends further study, including Charismatic Chaos.
+    questions: ['Which further-study resource does the preacher recommend?']
+    topics: [discernment]
+    scripture: []
+    transcript: 'When we want to talk about issues relating to charismaticism and signs and wonders, we are talking about a very, very big topic. […] I can’t explain everything in a sermon. I can only give you a very big, broad stroke of understanding. But if you are interested, you can go and read some of the books that are out there. One of them that is quite good is Charismatic Chaos by […] John MacArthur Jr. […]'
+    confidence: 0.88
+    review_notes: ['Book/author spelling verified on the 3190s source frame; biographical timing omitted.']
+  - id: p0705-resources-caveat
+    video_id: OrsN83j3qxE
+    section_id: s0705-resources
+    start: 3165.66
+    end: 3243
+    type: sermon
+    title: Recommending a book without endorsing every position
+    summary: The preacher respects MacArthur’s work while reserving disagreement with cessationism, then discusses an English translation awaiting corrections.
+    questions: ['What reservation accompanies the recommendation of MacArthur’s work?']
+    topics: [discernment]
+    scripture: []
+    transcript: '[Ordination recollection omitted.] The only thing I would say is that he’s a cessationist. So therefore we don’t always agree everything he said, and I will explain it a bit later. […] A translated book […] I get the first copy, and I have recommended that they do not publish it because there’s a lot of grammatical and formatting errors. […] There’s some in-depth study of this topic in this book.'
+    confidence: 0.82
+    review_notes: ['Second book’s exact title/publisher not normalized from uncertain ASR.']
+  - id: p0705-translation
+    video_id: OrsN83j3qxE
+    section_id: s0705-resources
+    start: 3243.16
+    end: 3285.32
+    type: sermon
+    title: Care in translating theological work
+    summary: The preacher describes his translation work and explains why he wants care before English publication.
+    questions: ['Why does the preacher call for care before English publication?']
+    topics: []
+    scripture: []
+    transcript: 'This is a ministry that I think that for the years to come I will get heavily involved with: a translation ministry of Dr. Tong’s work from Bahasa Indonesia and Mandarin to English. I actually have translated five of his books already, except that a lot of things have to happen before a book is published. […] Once you publish in English you are sending it to America and Europe. […] I want to be very, very careful before anything happens.'
+    confidence: 0.85
+  - id: p0705-helper-forever
+    video_id: OrsN83j3qxE
+    section_id: s0705-spirit
+    start: 3285.32
+    end: 3347.68
+    type: sermon
+    title: The helper’s continuing presence
+    summary: The preacher reviews John 14 and raises a question about prayers and songs asking the Spirit to come again.
+    questions: ['What question does the preacher raise about asking the Holy Spirit to come?']
+    topics: [holy-spirit]
+    scripture: ['John 14:16']
+    transcript: 'John 14 happened to introduce very systematically the initial thought of our Lord Jesus Christ as He revealed the Holy Spirit. […] [John 14:16 quotation omitted.] God, the Holy Spirit in our heart is someone who will help us, who will comfort us, who will even pray for us when we don’t even know what to say. […] One of the questions raised earlier to me last week was that in some churches, maybe even in our church, oftentimes we pray [song/prayer formula omitted]. Is that a biblical concept?'
+    confidence: 0.86
+  - id: p0705-religious-analogy
+    video_id: OrsN83j3qxE
+    section_id: s0705-spirit
+    start: 3347.68
+    end: 3419.66
+    type: sermon
+    title: Distinguishing the Spirit from a visiting presence
+    summary: The preacher contrasts his understanding of the Spirit’s continuing presence with practices he associates with local religious mediums.
+    questions: ['What misunderstanding does the preacher challenge in language about the Spirit coming?']
+    topics: [holy-spirit, discernment]
+    scripture: ['John 14:16']
+    transcript: 'The verse already said the Spirit is with us forever. […] We are living in multi-racial Singapore. […] There are mediums and things like that. […] I’m very familiar with it because I grew up in that kind of environment. And so this idea about calling some gods to fill you seems to be something that is very common in other religions. […] Now what does that mean?'
+    confidence: 0.83
+    review_notes: ['Comparison is the preacher’s characterization; local religious names in ASR remain uncertain and are omitted.']
+  - id: p0705-fullness
+    video_id: OrsN83j3qxE
+    section_id: s0705-spirit
+    start: 3420.82
+    end: 3497.46
+    type: sermon
+    title: Living in the fullness of the Spirit
+    summary: The preacher understands being filled as living out the Spirit’s presence rather than repeatedly receiving a departing Spirit.
+    questions: ['How does the preacher explain being filled with the Holy Spirit?']
+    topics: [holy-spirit]
+    scripture: ['John 14:16', 'John 14:23']
+    transcript: 'It doesn’t mean the Holy Spirit will disappear and then you call and then [He] comes back again. It means to be fulfilled. […] Human language has problems expressing the fullness of what God wants to say. […] You have to live the life in fullness of the Holy Spirit. […] [John 14:23 quotation omitted.] Sometimes you feel that God is very far away. Guess who moved? It’s not God. […]'
+    confidence: 0.88
+  - id: p0705-fear-movies
+    video_id: OrsN83j3qxE
+    section_id: s0705-spirit
+    start: 3497.46
+    end: 3575.22
+    type: sermon
+    title: Fear shaped by movies
+    summary: The preacher argues that some Christians’ fears are shaped by films and recalls the effect of The Exorcist.
+    questions: ['What influence does the preacher identify in some Christians’ fears?']
+    topics: [holy-spirit]
+    scripture: []
+    transcript: 'As Christians, you must not fear that you are abandoned by God. […] Sometimes Christians are very frightened of many things because you watch too many movies, and you get influenced by all these things. […] I remember when I was very young, The Exorcist came out. […] It casts a very big shadow on many Christians. We’re sort of very frightened about all these things.'
+    confidence: 0.84
+    review_notes: ['Film-history and cinema anecdotes are not independently verified.']
+  - id: p0705-hotel-story
+    video_id: OrsN83j3qxE
+    section_id: s0705-spirit
+    start: 3575.48
+    end: 3634.62
+    type: sermon
+    title: A hotel anecdote about fear
+    summary: The preacher describes being called to help fearful hotel staff and connects the story with his teaching about the Spirit’s presence.
+    questions: ['How does the preacher use the hotel anecdote to address fear?']
+    topics: [holy-spirit]
+    scripture: []
+    transcript: 'One of the roles your pastor plays is that from time to time, people will call me up and ask for help. […] In the hotels, sometimes some people will be found dead in a room. […] My friend will call me up and say, can you help or not? I say, why? Because the cleaners refuse to go into the room. They are very scared. […] [Unclear wording and scriptural allusion omitted.] So that’s another topic altogether.'
+    confidence: 0.8
+  - id: p0705-consistent-message
+    video_id: OrsN83j3qxE
+    section_id: s0705-spirit
+    start: 3635.02
+    end: 3690.02
+    type: sermon
+    title: The Spirit’s work in relation to Christ
+    summary: The preacher presents the Spirit’s work as consistent with Christ, helping believers and bringing understanding.
+    questions: ['How does the preacher relate the Spirit’s work to Christ?']
+    topics: [holy-spirit]
+    scripture: ['John 14:26']
+    transcript: '[John 14:26 quotation omitted.] God the Father, Son, Holy Spirit, they are all one God. And so it’s very consistent. […] In the beginning, when Jesus Christ spoke about the Holy Spirit, the message was very consistent. […] To help us, to enlighten us, to bring us into all truth. And so it’s very defined and very clear.'
+    confidence: 0.87
+  - id: p0705-two-challenges
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 3690.02
+    end: 3773.64
+    type: sermon
+    title: Liberalism and extreme charismatic practice
+    summary: The preacher describes two challenges associated with Stephen Tong’s ministry and explicitly distinguishes extreme charismatic practice from the movement as a whole.
+    questions: ['Why does the preacher emphasize the word extreme?']
+    topics: [discernment]
+    scripture: []
+    transcript: 'Our senior pastor always declared that in his lifetime he has two great [ASR word uncertain]. […] One is liberalism. […] The other one that Dr. Tong spent a lot of time battling is extreme charismatism. Notice I would use the word extreme, not just simply charismatism, but the extreme form of charismatism. […]'
+    confidence: 0.85
+  - id: p0705-external-signs
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 3773.64
+    end: 3839.48
+    type: sermon
+    title: Emphasis on outward signs
+    summary: The preacher sketches the movement’s origins and describes an emphasis on outward signs of receiving the Spirit.
+    questions: ['What emphasis does the preacher identify in the charismatic movement?']
+    topics: [holy-spirit, discernment]
+    scripture: []
+    transcript: 'When we look at the charismatic movement, I mentioned a little bit earlier before where it started, right, in the Azusa Street Revival. […] Doesn’t mean that it suddenly happened there. Prior to that, of course, there were quite a few things that’s happening. […] There is this emphasis on the outpouring of what is called the gift of the Holy Spirit. And it is marked by a lot of emphasis on external signs and wonders.'
+    confidence: 0.85
+  - id: p0705-second-experience
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 3839.86
+    end: 3915.88
+    type: sermon
+    title: The proposed second experience
+    summary: The preacher describes a reading of Acts that treats signs and tongues as necessary evidence of a subsequent experience of the Spirit.
+    questions: ['How does the preacher describe the second-experience teaching he is examining?']
+    topics: [holy-spirit, discernment]
+    scripture: []
+    transcript: 'In the book of Acts there are at least four different occasions marking the coming of the Holy Spirit. And when that happened, the charismatic church reads it as saying that these are a kind of baptism that will signal that the Holy Spirit has come. […] Our charismatic friends, and I will use the word even brothers and sisters, believe that […] there must come a time whereby you have to have a second experience where the Holy Spirit will come. […]'
+    confidence: 0.85
+    review_notes: ['Generalization retained as the speaker’s description, not a universal claim about all charismatic churches.']
+  - id: p0705-army-experience
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 3915.88
+    end: 3976.96
+    type: sermon
+    title: Encountering the movement in the army
+    summary: The preacher recalls his Army Christian Fellowship experience and lists practices he associates with the movement.
+    questions: ['Where does the preacher recall first encountering these emphases?']
+    topics: [discernment]
+    scripture: []
+    transcript: 'The first time I encountered this was I was in the army running the Army Christian Fellowship, and it so happened that among the leadership I was the only non-charismatic. […] There are many, many things that the charismatic church put emphasis in which we don’t, like healings, vision, dreams, exorcism, dance, word of knowledge, being slain in the Holy Spirit. […]'
+    confidence: 0.83
+  - id: p0705-laughter-prosperity
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 3976.96
+    end: 4045.38
+    type: sermon
+    title: Laughter movements and prosperity teaching
+    summary: The preacher describes uncontrollable laughter practices and contrasts them with the later prominence of health-and-wealth teaching.
+    questions: ['Which emphases does the preacher contrast in this part of his overview?']
+    topics: [discernment]
+    scripture: []
+    transcript: 'People laugh uncontrollably, make animal sound. […] The idea that the Spirit is very free, so the Spirit will inspire people to do all kinds of things. […] In recent years, the other one that comes on very strong is health and wealth theology. So in Singapore it’s a mixture of all kinds of things. […] The idea that if you believe, God is going to heal all your diseases, God is going to make you very prosperous. […]'
+    confidence: 0.83
+    review_notes: ['Descriptions and breadth of the claim require human review; no archive endorsement.']
+  - id: p0705-media-change
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 4045.38
+    end: 4102.3
+    type: sermon
+    title: Media and religious change
+    summary: The preacher links twentieth-century religious movements with radio and television and compares their influence with social media.
+    questions: ['What comparison does the preacher make between broadcast media and social media?']
+    topics: [discernment]
+    scripture: []
+    transcript: 'A lot of influence and movement come about in the 1960s because radio, television, mass media all occurred, and then it shaped the era. […] These are history-shaping events, just like today we are not prepared for social media, actually. […] These are things that really shaped the whole era, right?'
+    confidence: 0.84
+    review_notes: ['Current-policy anecdote is omitted rather than independently asserted.']
+  - id: p0705-social-values
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 4102.3
+    end: 4178.46
+    type: sermon
+    title: Social values and the preacher’s historical overview
+    summary: The preacher discusses survey trends and self-interest, then returns to the spread of charismatic practice and introduces the Third Wave.
+    questions: ['How does the preacher relate changes in media to social values?']
+    topics: [discernment]
+    scripture: []
+    transcript: '[Survey figures and family aside omitted; not independently verified.] All these events, value-shaping things, […] have to do with the internet and social media, because the world is now moving towards a very self-centred, self-serving world. […] The social media back in those days were very much a part of the emergence of the charismatic movement. […] Then there’s this thing called the Third Wave Movement. […]'
+    confidence: 0.81
+  - id: p0705-power-evangelism
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 4179.26
+    end: 4254.86
+    type: sermon
+    title: Power evangelism and a reported airplane encounter
+    summary: The preacher recalls reading books about power evangelism and healing and recounts an example offered in support of miraculous evangelism.
+    questions: ['What argument about evangelism does the preacher describe?']
+    topics: [mission, discernment]
+    scripture: []
+    transcript: 'I too was kind of sucked into it somehow. […] I read both books a few times actually, and he argued that, you know, these days when you go out there and preach the gospel to your friends, very hard. […] If you have the power of the Holy Spirit and you have signs and wonders, then people will believe. […] [Reported airplane encounter omitted.] It’s a wave, and it’s not Pentecostalism per se. It’s a mixture of a lot of things.'
+    confidence: 0.82
+    review_notes: ['ASR author’s given name uncertain; not silently expanded. This is a recounted claim, not a verified miracle.']
+  - id: p0705-hypergrace
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 4255.22
+    end: 4319.28
+    type: sermon
+    title: The preacher’s criticism of hypergrace
+    summary: The preacher describes a teaching he calls hypergrace and contrasts its treatment of confession with the congregation’s ACTS preparation.
+    questions: ['How does the preacher contrast hypergrace with confession in worship?']
+    topics: [discernment, prayer]
+    scripture: []
+    transcript: 'It keeps evolving to many different things. […] Hypergrace means that God is so gracious to you that your sins are already forgiven; you don’t have to confess your sins. I mean every time before our worship service we do the ACTS, right? The adoration, confession, thanksgiving, supplication. […] That kind of theory, and it’s very popular because people love it. […]'
+    confidence: 0.85
+    review_notes: ['The preacher is describing and criticizing a position, not teaching the quoted position as his own.']
+  - id: p0705-megachurch-scale
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 4320.42
+    end: 4401.8
+    type: sermon
+    title: Scale and presentation in megachurch worship
+    summary: The preacher discusses large congregations and polished presentation, contrasting them with his own efforts to keep listeners engaged.
+    questions: ['What contrast does the preacher draw about worship presentation?']
+    topics: [worship, discernment]
+    scripture: []
+    transcript: '[Church-size figures and uncertain names omitted.] It’s a very controlled kind of environment, and the worship service is very entertaining and very to the point. […] As a pastor and a preacher of the word, I try my best not to bore you to sleep. […] I try my best to come up with illustrations so that you are pretty engaged. But of course I’ve attended megachurch meetings before. […]'
+    confidence: 0.82
+  - id: p0705-stage-effects
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 4401.92
+    end: 4453.86
+    type: sermon
+    title: Recollections of stage effects
+    summary: The preacher recalls visual effects in televised worship and contrasts them with his own simpler setting.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: '[Names and entertainment comparison omitted.] I was a young student, and I was watching on TV. […] Some pigeons flew from one end of the stage to the other end, and then there was a waterfall and all that, all kinds of things. Over here I only have this thing and I talk to you, maybe a little bit here and there. It’s a lot of difference. […]'
+    confidence: 0.8
+  - id: p0705-visitor-expectations
+    video_id: OrsN83j3qxE
+    section_id: s0705-movement
+    start: 4454.78
+    end: 4515.02
+    type: sermon
+    title: A visitor’s expectations of church
+    summary: The preacher recounts a conversation about a disco ball to illustrate how a visitor’s experience shapes expectations of worship.
+    questions: ['What does the visitor anecdote illustrate about expectations of church?']
+    topics: [worship, discernment]
+    scripture: []
+    transcript: 'My wife was trying to […] share the gospel with one of her teachers. […] My friend asked me to go to another church; they got this big, big ball in the middle. Then finally we found out it’s a disco ball, you know, with a lot of lights. […] This person is not a Christian. She’s completely lost. […] It’s not a simple laughing matter, and also […] many of you have charismatic friends and pastors. […]'
+    confidence: 0.83
+  - id: p0705-authority
+    video_id: OrsN83j3qxE
+    section_id: s0705-differences
+    start: 4515.02
+    end: 4594.48
+    type: sermon
+    title: Scripture and additional sources of authority
+    summary: The preacher contrasts sola scriptura with reliance on visions, feelings, church authority or tradition.
+    questions: ['What difference in authority does the preacher identify?']
+    topics: [truth, discernment]
+    scripture: []
+    transcript: 'If you really want to understand, you really have to spend a lot of time and effort thinking deeply. […] The first key difference is we are sola scriptura people, right? We are by-the-Bible-alone people. […] Extra-biblical is outside the Bible. […] If I believe that my visions are very important and the way God speaks to me is very important, then I can supplant the Bible. […] [Comparison with Roman Catholic authority omitted.]'
+    confidence: 0.89
+    review_notes: ['Sola Scriptura spelling confirmed by 4580s slide. Broad comparisons remain the preacher’s descriptions.']
+  - id: p0705-sovereignty
+    video_id: OrsN83j3qxE
+    section_id: s0705-differences
+    start: 4594.48
+    end: 4650.82
+    type: sermon
+    title: Sovereignty and the preacher’s Reformed position
+    summary: The preacher relates his approach to scripture to belief in God’s sovereignty and contrasts it with his account of human free will.
+    questions: ['How does the preacher connect his position with God’s sovereignty?']
+    topics: [discernment]
+    scripture: ['John 14']
+    transcript: 'For us, we always go back to the Bible. So you notice that when I preach to you John 14, I take what the Lord says step by step. We also definitely believe in the sovereignty of God. […] God’s decision, God’s control, God’s providence of the world is immutable, and that He is fully in control. […] For us, because we are all fallen people, only God can rescue us.'
+    confidence: 0.87
+  - id: p0705-order-holy-living
+    video_id: OrsN83j3qxE
+    section_id: s0705-differences
+    start: 4650.82
+    end: 4732.9
+    type: sermon
+    title: Order in worship and holy living
+    summary: The preacher emphasizes ordered worship and holy living before turning specifically to signs and wonders.
+    questions: ['Which emphases does the preacher associate with Reformed worship?']
+    topics: [worship, discernment]
+    scripture: []
+    transcript: 'Because His word says so, we put emphasis in order of worship. […] Reformed worship service is marked by order. […] For us order is important, and for us we also emphasize very strongly on holy living. […] [Congregational appearance comparison omitted.] The biggest thing among them all is the signs and wonders, so I want to split the two and talk about it quickly. […]'
+    confidence: 0.85
+  - id: p0705-tongues-definition
+    video_id: OrsN83j3qxE
+    section_id: s0705-tongues
+    start: 4732.9
+    end: 4807
+    type: sermon
+    title: Tongues and two language categories
+    summary: The preacher introduces glossolalia and xenolalia while examining the claim that tongues demonstrate a second baptism.
+    questions: ['Which two categories does the preacher distinguish when discussing tongues?']
+    topics: [holy-spirit, discernment]
+    scripture: []
+    transcript: 'How do you know that the Holy Spirit has baptized you? The answer is, you must speak in tongue. […] [The preacher’s description of the position he is examining.] We don’t here in public worship service speak in tongue at all. […] In Greek there is an explanation of it. Glossolalia is an incomprehensible language. […] [Xenolalia] is a comprehensible foreign language. And so the idea is that speaking in tongues can be two different kinds of categories, or even more.'
+    confidence: 0.84
+    review_notes: ['Terms checked against the 4780s Definitions slide; retain the speaker’s correction that these are explanatory Greek terms, not a claim about two biblical words.']
+  - id: p0705-pentecost
+    video_id: OrsN83j3qxE
+    section_id: s0705-tongues
+    start: 4807.42
+    end: 4884.06
+    type: sermon
+    title: Reading the Pentecost account
+    summary: The preacher turns to Acts 2 and focuses on the hearers understanding their own languages.
+    questions: ['What feature of the Pentecost account does the preacher emphasize?']
+    topics: [holy-spirit]
+    scripture: ['Acts 2:1-6']
+    transcript: 'In Acts chapter 2, we see for the first time the mentioning of the public speaking of tongues at the Pentecost where the Holy Spirit comes. […] [Bible reading and repeated quotations omitted: Acts 2:1-6. The preacher highlights the hearers’ own languages; no verse text is reconstructed.]'
+    confidence: 0.9
+  - id: p0705-understood-language
+    video_id: OrsN83j3qxE
+    section_id: s0705-tongues
+    start: 4884.68
+    end: 4951.34
+    type: sermon
+    title: Comprehensible languages and a stronger opposing view
+    summary: The preacher illustrates comprehensible speech with local language examples and describes MacArthur’s stricter view of tongues.
+    questions: ['How does the preacher distinguish his account from MacArthur’s stricter view?']
+    topics: [holy-spirit, discernment]
+    scripture: ['Acts 2']
+    transcript: '[Local-language illustration omitted.] In this particular case it was a comprehensible language that they could understand, and this continues to be a big, big debate till today. […] Leaders like John MacArthur Jr. are very fierce on this. He argues strongly that all tongues must be comprehensible foreign language. […] This is a very serious thing to say. […]'
+    confidence: 0.85
+  - id: p0705-cultural-observation
+    video_id: OrsN83j3qxE
+    section_id: s0705-tongues
+    start: 4952.6
+    end: 5018.68
+    type: sermon
+    title: Observations without declaring every practice satanic
+    summary: The preacher recalls speaking in English and Mandarin services, questions patterned expressions of tongues and declines to label them satanic.
+    questions: ['What limit does the preacher place on his criticism of tongues?']
+    topics: [discernment]
+    scripture: []
+    transcript: 'For me I do preach in charismatic churches because I’ve got friends who are charismatics. […] They also have certain order. It’s always the same. […] I often get invited to preach first in English […] then Mandarin service will follow later on. […] A lot of all these things are pretty strange, but I would definitely not dare to say that, oh, it’s satanic. […]'
+    confidence: 0.86
+  - id: p0705-private-tongues
+    video_id: OrsN83j3qxE
+    section_id: s0705-tongues
+    start: 5018.68
+    end: 5052.44
+    type: sermon
+    title: Allowing private incomprehensible tongues
+    summary: The preacher appeals to 1 Corinthians 14:1-2 to explain why he allows for private incomprehensible tongues.
+    questions: ['Why does the preacher allow for private incomprehensible tongues?']
+    topics: [holy-spirit]
+    scripture: ['1 Corinthians 14:1-2']
+    transcript: 'Why do we say that some of the tongue can be incomprehensible? Because the Bible says so. […] [1 Corinthians 14:1-2 quotation omitted.] The apostle Paul says that there are people who speak in tongue that other people don’t understand. […] Therefore we accept that some people do speak in incomprehensible tongue privately. […]'
+    confidence: 0.89
+  - id: p0705-public-interpretation
+    video_id: OrsN83j3qxE
+    section_id: s0705-worship-order
+    start: 5052.44
+    end: 5123.22
+    type: sermon
+    title: Public tongues require interpretation
+    summary: The preacher distinguishes private practice from public worship, where he says interpretation and the building up of the church matter.
+    questions: ['What requirement does the preacher place on public speaking in tongues?']
+    topics: [worship, holy-spirit]
+    scripture: ['1 Corinthians 14:5', '1 Corinthians 14:18-19']
+    transcript: 'However, we do draw the line in worship services. Why? Because the Bible says so. So the apostle Paul’s longest discourse about tongues is in First Corinthians 14. […] [Bible quotations omitted.] Prophesy, it means to tell of God. […] So public speaking of tongue must be interpreted. Implication of public tongue is a foreign language mainly, but there are also tongues that are of mysteries that we learned earlier. […]'
+    confidence: 0.89
+  - id: p0705-intelligible-preaching
+    video_id: OrsN83j3qxE
+    section_id: s0705-worship-order
+    start: 5124.4
+    end: 5192.9
+    type: sermon
+    title: Why the preacher prioritizes intelligible teaching
+    summary: The preacher draws a numerical comparison from Paul’s contrast and argues for intelligible preaching in church.
+    questions: ['Why does the preacher prioritize intelligible teaching in public worship?']
+    topics: [worship]
+    scripture: ['1 Corinthians 14:18-19', '1 Corinthians 14:22']
+    transcript: '[Bible quotation omitted: 1 Corinthians 14:18-19.] How many times difference? […] Two thousand. Two thousand times difference between speaking in tongues and preaching. So therefore in the Reformed Church we adhere to this very closely. [Further quotation from 1 Corinthians 14:22 omitted.]'
+    confidence: 0.86
+    review_notes: ['The numerical comparison is the preacher’s rhetorical interpretation, not an independent doctrinal conclusion.']
+  - id: p0705-audience-discrepancy
+    video_id: OrsN83j3qxE
+    section_id: s0705-worship-order
+    start: 5192.9
+    end: 5252.3
+    type: sermon
+    title: Audience explanation requiring review
+    summary: The preacher discusses how visitors encounter worship, but the supplied wording reverses the audiences named on the displayed 1 Corinthians 14:22 slide.
+    questions: ['Why does the preacher emphasize what a visitor can understand in worship?']
+    topics: [worship, discernment]
+    scripture: ['1 Corinthians 14:22-25']
+    transcript: '[Source-ASR audience explanation withheld for review: the believer/unbeliever wording at 5192.90–5207.00s conflicts with the displayed quotation. Bible quotations omitted.] You bring a non-believer in […] they look at you and say […] what you are doing, it’s kind of weird things. […] [Continuation explaining intelligible preaching; scriptural language omitted.]'
+    confidence: 0.62
+    review_notes: ['5210s and 5230s frames show the reference and audience contrast. No listening capability: cannot determine spoken slip versus ASR error. Do not silently invert words to harmonize the sermon.']
+  - id: p0705-visitor-understanding
+    video_id: OrsN83j3qxE
+    section_id: s0705-worship-order
+    start: 5252.8
+    end: 5302.28
+    type: sermon
+    title: A visitor hearing understandable preaching
+    summary: The preacher explains that a visitor should be able to understand the preaching rather than leave confused.
+    questions: ['What should a visitor be able to understand in worship?']
+    topics: [worship]
+    scripture: ['1 Corinthians 14:24-25', '1 Corinthians 14:33', '1 Corinthians 14:39']
+    transcript: 'The Reformed Church hold on to this very tightly, so that in the way we worship, if a non-believer walks in suddenly, sits down among you, he listens to what I’m saying. I’m prophesying. I’m preaching the word of God, and he understands, and he can be convicted. But if we are all speaking in tongues, […] I don’t know what is happening. I’m going to turn around and walk away. […] [Bible quotations omitted.]'
+    confidence: 0.87
+  - id: p0705-order-confusion
+    video_id: OrsN83j3qxE
+    section_id: s0705-worship-order
+    start: 5302.28
+    end: 5367.34
+    type: sermon
+    title: Order and teaching that clarifies
+    summary: The preacher contrasts ordered worship with practices he regards as confusing and introduces Stephen Tong’s distinction between clarifying and confusing teaching.
+    questions: ['What effect should teaching have on understanding, according to the preacher?']
+    topics: [worship, discernment]
+    scripture: []
+    transcript: 'This is the mark of the Reformed Church: everything is done in order. […] In the extreme side of the charismatic church, as I mentioned earlier, really some of the excesses are really quite weird. […] One general principle that you want to remember from our senior pastor is this. [Displayed quotation omitted.] That’s what I’m trying to do, that’s what our Sunday school is trying to do with your children, with all of you, that’s why we conduct classes. […]'
+    confidence: 0.84
+  - id: p0705-enlightenment
+    video_id: OrsN83j3qxE
+    section_id: s0705-worship-order
+    start: 5367.72
+    end: 5415.84
+    type: sermon
+    title: Growing in understanding rather than confusion
+    summary: The preacher argues that the congregation should grow in understanding and links that aim with education.
+    questions: ['What growth does the preacher hope to see in the congregation?']
+    topics: [truth]
+    scripture: []
+    transcript: 'If you are in a Reformed church, or any church, […] you should become smarter and smarter and smarter as days go by. And I pray that my congregation is like this. If you become dumber and dumber as days go by, then either I’m doing something very wrong, or you’re in the wrong church, because that’s not what the Word of God does. The Word of God brings enlightenment. […] Enlightenment is very important.'
+    confidence: 0.85
+    review_notes: ['Unclear cave/school contrast omitted; do not infer a missing negation.']
+  - id: p0705-acts-no-formula
+    video_id: OrsN83j3qxE
+    section_id: s0705-acts
+    start: 5415.84
+    end: 5471.8
+    type: sermon
+    title: Pentecost is not presented as a formula
+    summary: The preacher attributes to Stephen Tong an observation that the Pentecost converts are not all recorded as speaking in tongues.
+    questions: ['Why does the preacher say the Pentecost account is not a formula?']
+    topics: [holy-spirit, discernment]
+    scripture: ['Acts 2']
+    transcript: 'Stephen Tong has a very unique understanding on the signs seen in the book of Acts. […] He pointed out that actually they were not the only ones. […] After these people spoke in tongue, they went out to preach the gospel on the same day, and three thousand people believed. But the Bible did not record that they spoke in tongues. So therefore the phenomenon was not a formula. It was different for all. So this is the first group in Jerusalem.'
+    confidence: 0.89
+  - id: p0705-four-occasions
+    video_id: OrsN83j3qxE
+    section_id: s0705-acts
+    start: 5472.42
+    end: 5537.6
+    type: sermon
+    title: Four occasions and the spread of witness
+    summary: The preacher relates the Acts accounts to the geographical spread of witness in Acts 1:8, following an interpretation he attributes to Stephen Tong.
+    questions: ['How does the preacher connect the four occasions with Acts 1:8?']
+    topics: [holy-spirit, mission]
+    scripture: ['Acts 1:8', 'Acts 8', 'Acts 10', 'Acts 19']
+    transcript: 'There are three other groups recorded in the book of Acts over a span of twenty-eight years. […] Acts 8, the Samaritans. Acts 10, Cornelius and his family. Acts 19, the Christians in Ephesus. […] Stephen Tong believed that the four occasions represent the four places commanded by Jesus in Acts 1:8. [Bible quotation omitted.] […] There are very different experiences in all four. No formula.'
+    confidence: 0.89
+    review_notes: ['Names and references verified on the 5540s slide; chronological/geographical interpretation remains attributed.']
+  - id: p0705-manual
+    video_id: OrsN83j3qxE
+    section_id: s0705-acts
+    start: 5538.22
+    end: 5584.7
+    type: sermon
+    title: Recalling a manual for producing tongues
+    summary: The preacher recalls being pressured to follow a manual and uses the experience to question a fixed technique for receiving the Spirit.
+    questions: ['Why does the preacher recount being given a manual?']
+    topics: [discernment]
+    scripture: []
+    transcript: 'The first time I encountered, somebody actually passed me a manual and said that you must follow the manual. […] Loosen your tongue, be relaxed first. […] [Vocal imitation omitted.] Serious, I’m not kidding. It’s like for me, it’s like, what’s happening? And the guy who gave it to me kept pressing, do it, do it, do it, you must receive the Holy Spirit. But I didn’t follow. Then he was very unhappy with me.'
+    confidence: 0.84
+  - id: p0705-baptism-summary
+    video_id: OrsN83j3qxE
+    section_id: s0705-signs-summary
+    start: 5584.7
+    end: 5660.16
+    type: sermon
+    title: The preacher’s understanding of baptism in the Spirit
+    summary: The preacher rejects a required second baptism marked by tongues and locates baptism in the Spirit at receiving Christ.
+    questions: ['When does the preacher say baptism in the Holy Spirit occurs?']
+    topics: [holy-spirit]
+    scripture: ['Acts 1:8', 'Acts 10', 'Acts 19']
+    transcript: 'In summary, when we think about signs, there is really no biblical basis for a second baptism of the Holy Spirit with tongues as a sign of His presence. […] The phenomena are all different. There is no formula. […] The baptism of the Holy Spirit actually happened when we accept Jesus Christ as our Lord and Savior. This is our understanding. […] We refer to this as the baptism of the Holy Spirit.'
+    confidence: 0.9
+  - id: p0705-tongues-summary
+    video_id: OrsN83j3qxE
+    section_id: s0705-signs-summary
+    start: 5661.52
+    end: 5732.5
+    type: sermon
+    title: Private tongues, public interpretation and preaching
+    summary: The preacher allows private tongues, requires interpretation publicly and reiterates the priority of intelligible preaching.
+    questions: ['How does the preacher summarize his position on tongues?']
+    topics: [holy-spirit, worship]
+    scripture: ['Acts 2', '1 Corinthians 14:2']
+    transcript: 'Some people do receive the gift of tongue, and we believe that some people do speak privately in tongue. But public speaking of tongue must be interpreted, and either as a foreign language applicable to Acts 2, with many foreigners present, or mystery in speaking as seen in First Corinthians 14:2. […] [Reported Russian-language miracle and repeated biblical quotation omitted.] Nonetheless, clearly the Bible emphasizes intelligent preaching as part of God’s Word much more than tongue. […]'
+    confidence: 0.89
+    review_notes: ['Reported miracle is an attributed anecdote, not verified evidence.']
+  - id: p0705-wonder-claims
+    video_id: OrsN83j3qxE
+    section_id: s0705-wonders
+    start: 5732.5
+    end: 5805.68
+    type: sermon
+    title: Asking whether a reported wonder is true
+    summary: The preacher lists claims about healing, multiplying food and controlling weather, and asks whether they are objectively true.
+    questions: ['What question does the preacher ask about reports of wonders?']
+    topics: [discernment, truth]
+    scripture: []
+    transcript: 'Quickly, I want to talk now about wonders. […] The wonders from the early church are still present today: that’s the argument. […] [Examples of food multiplication and commanding rain omitted.] I always would ask, is this true? Objectively true? Is it true that some marvellous, remarkable sign has happened? And there’s just so many claims out there.'
+    confidence: 0.88
+  - id: p0705-healing-evidence
+    video_id: OrsN83j3qxE
+    section_id: s0705-wonders
+    start: 5806.08
+    end: 5861.06
+    type: sermon
+    title: A challenge about evidence for healing claims
+    summary: The preacher acknowledges concern for sick loved ones and questions why longstanding healing claims have not produced the institutional evidence he expects.
+    questions: ['What evidence does the preacher say he would expect from repeated healing claims?']
+    topics: [discernment, truth]
+    scripture: []
+    transcript: 'When you think about healing, for example, which is very close to our heart, right? Sometimes we have loved ones who are sick. […] If wonders that they claim are all true, all hospitals should have a charismatic healing wing, right? […] Don’t you think that that’s a reasonable thing to think about and being objective?'
+    confidence: 0.85
+    review_notes: ['This is the preacher’s challenge, not medical advice or an independently validated study.']
+  - id: p0705-healing-quotation
+    video_id: OrsN83j3qxE
+    section_id: s0705-wonders
+    start: 5862.5
+    end: 5907.1
+    type: sermon
+    title: An unsourced medical comparison
+    summary: The preacher quotes an internet claim about recovery rates and then contrasts present claims with wonders in the early church.
+    questions: ['What distinction does the preacher make between present claims and early-church wonders?']
+    topics: [discernment]
+    scripture: []
+    transcript: 'One of the quotations I found in the internet […] [Medical claim omitted; no study source supplied.] One of the things that you need to know is that the signs and wonders of the early church are of a different calibre altogether from the claims today. […] It’s very different, actually, from a biblical perspective.'
+    confidence: 0.79
+    review_notes: ['5870s slide corroborates the existence of the quotation, not its validity. Human review should not promote it as established research.']
+  - id: p0705-apostolic-comparison
+    video_id: OrsN83j3qxE
+    section_id: s0705-wonders
+    start: 5907.92
+    end: 5970.46
+    type: sermon
+    title: Comparing claims with apostolic accounts
+    summary: The preacher invokes apostolic healings and the accounts of Tabitha and Eutychus when asking what a claim of equivalent wonders would entail.
+    questions: ['Which resurrection accounts does the preacher use in his comparison?']
+    topics: [discernment]
+    scripture: ['Acts 9:36-42', 'Acts 20:7-12']
+    transcript: '[Biblical accounts and local illustration omitted.] Is there anyone that can demonstrate that kind of thing today? The answer must be no. Very different calibre. And one other thing that I will share with you that is interesting: resurrection of the dead. When you claim that you can do signs and wonders the same as the early church, you cannot escape from the idea that the early church apostles resurrected the dead. […]'
+    confidence: 0.85
+    review_notes: ['References visible at 6000s; claims about contemporary evidence remain the preacher’s assessment.']
+  - id: p0705-resurrection-verification
+    video_id: OrsN83j3qxE
+    section_id: s0705-wonders
+    start: 5970.8
+    end: 6044.14
+    type: sermon
+    title: Asking to verify a resurrection claim
+    summary: The preacher recounts declining a translation assignment and argues that claims of raising someone from the dead call for verifiable evidence.
+    questions: ['Why does the preacher say he declined a translation assignment?']
+    topics: [discernment, truth]
+    scripture: []
+    transcript: '[Generalized accusation omitted.] People asked me to translate his books. […] I read the first one. By page ten I say I cannot do this, because in page ten he claimed that he resurrected the dead. […] To claim that the person has been resurrected is a very serious matter. […] You should move in and say, where is this guy? I’m very interested to find out what happened in the four days when he died. Where did he go? […]'
+    confidence: 0.84
+    review_notes: ['No identity inferred for the unnamed author. No external resurrection claim adjudicated by the archive.']
+  - id: p0705-miracles
+    video_id: OrsN83j3qxE
+    section_id: s0705-miracles
+    start: 6045.88
+    end: 6123.18
+    type: sermon
+    title: Prayer for miracles without demanding an outcome
+    summary: The preacher distinguishes the role of apostolic wonders from later miracles and says believers can pray while trusting God’s sovereign decision.
+    questions: ['Does the preacher deny all present-day miracles?', 'How does the preacher describe prayer when healing is not granted?']
+    topics: [prayer, discernment]
+    scripture: []
+    transcript: 'For us, we believe that the wonders of the early church are of a different calibre. […] The wonders were granted to the early apostles so that they can establish the early church. […] Does that mean that there are no more wonders in the world today? The answer, we believe, is that there are still wonders and miracles in the world today. […] When we get sick, when we are ill, when we are desperate, we pray. We believe in the sovereign will of God. We pray that God can grant a miracle, and when He does we rejoice. When He decides not to, we believe that we should just simply be obedient to Him and trust in His goodness.'
+    confidence: 0.91
+  - id: p0705-obedience
+    video_id: OrsN83j3qxE
+    section_id: s0705-conclusion
+    start: 6123.44
+    end: 6203.94
+    type: sermon
+    title: Testing signs by faithfulness to God’s word
+    summary: The preacher returns to Deuteronomy 13 and argues that an impressive sign does not replace obedience to God’s word.
+    questions: ['What test does the preacher draw from Deuteronomy 13?', 'What final response does the preacher ask of the congregation?']
+    topics: [discernment, truth]
+    scripture: ['Deuteronomy 13:1-4']
+    transcript: 'I end with the correct focus we should have from Deuteronomy 13. […] [Bible reading and repeated quotations omitted: Deuteronomy 13:1-4.] The correct focus is on the word of God. […] My dear brothers and sisters in Christ, this is the spirit of the Reformed Evangelical Church. We believe in simple obedience of the Word of God. Know it well, know it deep. It will liberate you from all the nonsense that are flooding us today. We trust and we obey. May that be the hallmark of our life. Let us pray.'
+    confidence: 0.92
+  - id: p0705-sermon-response
+    video_id: OrsN83j3qxE
+    section_id: s0705-closing-prayer
+    start: 6204.2
+    end: 6278.9
+    type: prayer
+    title: Prayer to hold fast to truth
+    summary: The preacher prays that the congregation will judge teaching by scripture rather than its popularity and live in the freedom of serving God.
+    questions: ['What does the closing sermon prayer ask for?']
+    topics: [prayer, truth]
+    scripture: []
+    transcript: 'We thank you, God, for speaking to us with your word. Many of the things we learn about are difficult indeed, because the world is flooded with all kinds of teaching. […] May we hold fast to your word. […] The key question is whether what we say we believe is revealed by your holy word, the truth. May we always live a life of truth no matter how many people agree with us or disagree with us. […] [Scriptural quotation omitted.] Grant to us a life that is truly free, truly free in loving you, serving you and enjoying your presence forevermore. In Jesus’ name we pray, amen.'
+    confidence: 0.88
+  - id: p0705-creed
+    video_id: OrsN83j3qxE
+    section_id: s0705-creed
+    start: 6278.9
+    end: 6325.24
+    type: creed
+    title: Affirming faith together
+    summary: The pastor invites the congregation to affirm their faith with the Apostles’ Creed before prayer.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: 'We want to affirm our faith by reading the Apostles’ Creed, and then we go into a time of prayer. [Repeated creedal text omitted; this is a marked editorial excerpt.]'
+    confidence: 0.9
+  - id: p0705-prayer-response
+    video_id: OrsN83j3qxE
+    section_id: s0705-pastoral
+    start: 6325.24
+    end: 6383.72
+    type: prayer
+    title: Praying for steadfast faith and the church
+    summary: The pastor invites personal response to the sermon and prayer for the church’s continued witness beyond its founding leadership.
+    questions: ['What two concerns guide the congregational prayer?']
+    topics: [prayer, truth]
+    scripture: []
+    transcript: 'Let us first pray for ourselves in response to the sermon preached. May we ask the Lord to help us to be steadfast in following His commandments as seen in His word rather than chase after many things that tickle our ears and make us feel good. […] Let us secondly pray for our church and ask God to continue to strengthen our church […] so that the movement will continue to shine forth the truth for the rest of the world to see. […] Let us pray either verbally or pray in our heart.'
+    confidence: 0.87
+  - id: p0705-prayer-church
+    video_id: OrsN83j3qxE
+    section_id: s0705-pastoral
+    start: 6439.9
+    end: 6494.18
+    type: prayer
+    title: Prayer for the church’s witness
+    summary: The pastor asks the congregation to pray for leaders and members to remain steadfast in truth.
+    questions: []
+    topics: [prayer, mission]
+    scripture: []
+    transcript: 'Congregation, let us now lift up our church, the Reformed Evangelical Church, and ask God to continue to strengthen us so that we will play the role started by the senior pastor of being the shining light for the world of darkness. In the midst of all the strange teachings, may our leaders and ourselves be steadfast in holding fast the truth of God. Let us pray. [Congregational prayer interval.]'
+    confidence: 0.87
+  - id: p0705-prayer-gift
+    video_id: OrsN83j3qxE
+    section_id: s0705-pastoral
+    start: 6516.3
+    end: 6550.38
+    type: prayer
+    title: Receiving prayer as a gift
+    summary: The pastor closes the prayer time by asking that the congregation remain prayerful and recognize God’s work in their lives.
+    questions: ['What does the pastor ask the congregation to remember about prayer?']
+    topics: [prayer]
+    scripture: []
+    transcript: 'Let us pray together. We thank you, God, for listening to us. Help us to always remember that prayer is a gift that you have given to us. […] Help us to be prayerful people, and open our eyes to see you at work in our life so that we know that you are true and living God. Listen to our prayers. In Jesus’ name we pray. Amen. You may be seated.'
+    confidence: 0.88
+  - id: p0705-offertory
+    video_id: OrsN83j3qxE
+    section_id: s0705-offertory
+    start: 6551.5
+    end: 6611.5
+    type: offertory
+    title: The offering and evangelism support
+    summary: The pastor introduces the offering and explains the first-Sunday designation of the second offering for evangelism.
+    questions: ['What is the second offering designated for?']
+    topics: [worship, mission]
+    scripture: []
+    transcript: 'I’m going to move into our offertory now. You may give [giving instructions omitted]. This being the first Sunday of the month, the second box offering will be designated to evangelism work. [Offering interval; no music or isolated ASR fragments transcribed.]'
+    confidence: 0.88
+  - id: p0705-breathe-intro
+    video_id: OrsN83j3qxE
+    section_id: s0705-breathe
+    start: 6670.18
+    end: 6718.56
+    type: address
+    title: Understanding the closing hymn’s prayer
+    summary: The pastor introduces Breathe on Me, Breath of God and connects it with living out the Spirit’s presence rather than asking an absent Spirit to return.
+    questions: ['How does the pastor explain the closing hymn in light of the sermon?']
+    topics: [worship, holy-spirit]
+    scripture: []
+    transcript: 'Our closing hymn is a hymn that surprisingly I think we have not sung before. It is a hymn that we used to sing in my old church, Breathe on Me, Breath of God. So as I said earlier, when we pray and we sing hymns like that, we are not saying that the Spirit will go out and then come back again, but that we are called to live out the life that the Spirit would want us to live, God the Holy Spirit in us. Can I ask the pianist to play it through one time? It’s a very simple melody.'
+    confidence: 0.91
+  - id: p0705-breathe
+    video_id: OrsN83j3qxE
+    section_id: s0705-breathe
+    start: 6718.56
+    end: 6812.08
+    type: hymn
+    title: 'Breathe on Me, Breath of God'
+    summary: The pastor leads the closing hymn, including a repeated opening verse while introducing the melody.
+    questions: []
+    topics: [worship, holy-spirit]
+    scripture: []
+    transcript: '[Hymn lyrics omitted: Breathe on Me, Breath of God. The source’s repeated opening verse is treated as part of the performance, not an ASR loop.]'
+    confidence: 0.93
+  - id: p0705-blessing
+    video_id: OrsN83j3qxE
+    section_id: s0705-blessing
+    start: 6812.08
+    end: 6879.44
+    type: benediction
+    title: Doxology and scriptural blessing
+    summary: The congregation sings the doxology and receives a blessing announced as coming from Romans 15 and 2 Corinthians 13.
+    questions: ['Which biblical chapters are announced for the blessing?']
+    topics: [worship]
+    scripture: ['Romans 15', '2 Corinthians 13']
+    transcript: 'Let’s sing doxology in praise of God and in faith receive His blessing, taken from Romans 15 and Second Corinthians 13. [Doxology lyrics and scriptural blessing omitted; chapter-level references retained as announced.]'
+    confidence: 0.9
+  - id: p0705-student-outreach
+    video_id: OrsN83j3qxE
+    section_id: s0705-announcements
+    start: 6882.3
+    end: 6951.8
+    type: announcement
+    title: Invitation to Indonesia student outreach
+    summary: The pastor introduces a September school-outreach opportunity and says translators can support participants who do not speak Bahasa Indonesia.
+    questions: ['Can people who do not speak Bahasa Indonesia participate in the outreach?']
+    topics: [mission]
+    scripture: []
+    transcript: '[Opening announcement and uncertain place/date wording omitted.] You go to those places and then you go to the schools which are open for us, and they will let the kids gather together, and then all our people will then go and share the gospel with them. […] We have translators with us, so if you cannot speak Bahasa Indonesia, you can still come. […] I can go and help figure out how to get translators for you as well.'
+    confidence: 0.85
+    review_notes: ['6900s slide and later source correction at 7015.40–7022.84s establish September 7–11, 2026; early ASR December 2006 is not propagated.']
+  - id: p0705-outreach-roles
+    video_id: OrsN83j3qxE
+    section_id: s0705-announcements
+    start: 6951.8
+    end: 7022.84
+    type: announcement
+    title: Training and support roles for outreach
+    summary: The pastor invites people to the training session and describes support roles beyond preaching.
+    questions: ['What supporting roles does the pastor mention for the outreach?']
+    topics: [mission]
+    scripture: []
+    transcript: 'The training session is coming Saturday 11 at 1pm, over at the other side, and you need to confirm participation by the end of this month. […] If you cannot find him, talk to me and I will bring you to the right person. Other things that are needed too: logistics coordinator, pianist, song leader and usher, and different things as well. […] Please prayerfully think about this. […] It’s for the 7th to 11th September this year.'
+    confidence: 0.89
+    review_notes: ['Training/date details checked against 6900s slide. Contact information and unverified reach statistics omitted.']
+  - id: p0705-youth-ministry
+    video_id: OrsN83j3qxE
+    section_id: s0705-announcements
+    start: 7022.84
+    end: 7107.32
+    type: announcement
+    title: Considering support for a Boys’ Brigade group
+    summary: The pastor asks for prayer about possible support for a Boys’ Brigade group, describes church sponsorship and dismisses the congregation.
+    questions: ['What new youth-ministry possibility does the pastor ask the congregation to pray about?']
+    topics: [mission, prayer]
+    scripture: []
+    transcript: 'One other interesting ministry that I want to share with you is that there is an opening possibility for us to support a Boys’ Brigade group in [place uncertain], so I’m prayerfully considering it. Please pray with me on this. […] As a character-building thing, I have benefited greatly from it. […] To support a group, usually they need a church at the back to so-called sponsor it. […] Provide spiritual guidance for the group of people and continue to support, maybe pray for them or even financially raise money for them. […] That’s all the announcements I have for you. You may be dismissed with silent meditation. Know that the Lord is with you.'
+    confidence: 0.84
+    review_notes: ['Place spelling not inferred from ASR pongo; ministry proposal is not recorded as an approved commitment.']
