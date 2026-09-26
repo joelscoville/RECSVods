@@ -8,6 +8,7 @@ import { resolveSelection } from '../site/components/Watch';
 import BrowsePage from '../site/components/BrowsePage';
 import Home from '../site/components/Home';
 import ScriptureLinks from '../site/components/ScriptureLinks';
+import SearchApp from '../site/components/SearchApp';
 import { readWatchTarget } from '../site/lib/urls';
 
 // Fictional records exercise navigation; they are never archive interpretation.
@@ -38,6 +39,63 @@ describe('static browse from the current publication gate', () => {
     expect(availableBrowseCategories(services)).toEqual([]);
     expect(renderToStaticMarkup(createElement(Home, { items: homeItems(services, '/review/'), base: '/review/' }))).toContain('There are no published recordings');
     expect(buildBrowsePages(displayed()).some((page) => page.path.startsWith('series'))).toBe(false);
+    expect(availableBrowseCategories(displayed()).some((category) => category.path === 'series')).toBe(false);
+    expect(availableBrowseCategories([], displayed()[0].passages).some((category) => category.path === 'series')).toBe(false);
+  });
+  it('builds stable series indexes and newest-first service groups from eligible factual metadata', () => {
+    const newer = fixture();
+    newer.series = { id: 'series-stable-id', name: 'Fictional shared series' };
+    const older: Service = { ...fixture(), id: 'older-service', date: '2020-09-27', series: { ...newer.series } };
+    const other: Service = { ...fixture(), id: 'other-service', series: { id: 'other-series', name: 'Another fictional series' } };
+    const services = displayed([older, other, newer]);
+    const pages = buildBrowsePages(services);
+    expect(pages.filter((page) => page.path.startsWith('series'))).toEqual([
+      { path: 'series', title: 'Series', links: [
+        { path: 'series/other-series', title: 'Another fictional series' },
+        { path: 'series/series-stable-id', title: 'Fictional shared series' },
+      ] },
+      { path: 'series/other-series', title: 'Another fictional series', serviceIds: ['other-service'], parent: { path: 'series', title: 'Series' } },
+      { path: 'series/series-stable-id', title: 'Fictional shared series', serviceIds: ['fixture-multipart', 'older-service'], parent: { path: 'series', title: 'Series' } },
+    ]);
+    expect(buildBrowsePages([...services].reverse())).toEqual(pages);
+    expect(availableBrowseCategories(services).map((category) => category.path)).toEqual(pages.filter((page) => !page.parent).map((page) => page.path));
+    for (const base of ['/', '/review/', '/nested/review/']) {
+      for (const path of ['services', 'series', 'series/series-stable-id']) {
+        const html = renderToStaticMarkup(createElement(BrowsePage, { page: pages.find((page) => page.path === path)!, services, base }));
+        expect(html).toContain(`href="${base}browse/series/series-stable-id/"`);
+        expect(html).toContain('Fictional shared series');
+      }
+    }
+    older.series!.name = 'Conflicting name';
+    expect(() => buildBrowsePages(displayed([older, newer]))).toThrow('Conflicting name for series ID series-stable-id');
+  });
+  it('gates Series by publication and supports eligible services without passages', () => {
+    const service = fixture();
+    service.series = { id: 'fixture-series', name: 'Fictional series' };
+    expect(buildBrowsePages(displayed([service], 'production'))).toEqual([]);
+    expect(availableBrowseCategories(displayed([service], 'production'))).toEqual([]);
+    service.editorial_status = 'reviewed';
+    service.reviewed_by = 'Fictional reviewer'; service.reviewed_at = '2026-08-17T00:00:00Z';
+    expect(buildBrowsePages(displayed([service], 'production')).some((page) => page.path === 'series/fixture-series')).toBe(true);
+    service.sections = []; service.passages = [];
+    expect(availableBrowseCategories(displayed([service])).some((category) => category.path === 'series')).toBe(true);
+    expect(buildBrowsePages(displayed([service])).find((page) => page.path === 'series/fixture-series')?.serviceIds).toEqual([service.id]);
+    service.videos.forEach((video) => { video.media_disposition = 'unassessed'; });
+    for (const mode of ['production', 'preview'] as const) {
+      expect(buildBrowsePages(displayed([service], mode))).toEqual([]);
+      expect(availableBrowseCategories(displayed([service], mode))).toEqual([]);
+    }
+  });
+  it('derives SearchApp Series navigation from passages without rendering hidden search metadata', () => {
+    const service = fixture();
+    service.series = { id: 'fixture-series', name: 'Fictional series' };
+    const passages = displayed([service])[0].passages;
+    Object.assign(passages[0], { verseText: 'HIDDEN BSB SENTINEL', transcription_provenance: 'PRIVATE PROVENANCE SENTINEL' });
+    expect(availableBrowseCategories([], passages)).toContainEqual({ path: 'series', title: 'Series' });
+    const html = renderToStaticMarkup(createElement(SearchApp, { initialPassages: passages, base: '/review/' }));
+    expect(html).toContain('href="/review/browse/series/"');
+    expect(html).not.toContain('HIDDEN BSB SENTINEL');
+    expect(html).not.toContain('PRIVATE PROVENANCE SENTINEL');
   });
   it('generates every available category and only eligible metadata with stable IDs', () => {
     const services = displayed();

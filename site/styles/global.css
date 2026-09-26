@@ -156,7 +156,9 @@ ul, ol { padding: 0; margin: 0; }
 .youtube-host-hidden { visibility: hidden; }
 .player-consent { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 24px; }
 .player-context { position: absolute; top: 24px; left: 32px; right: 32px; display: flex; flex-direction: column; gap: 4px; }
-.player-context strong { font-size: 28px; line-height: 1.2; }
+/* The full title remains in h1 and Play's accessible name. Bound only the
+   duplicate overlay title so long archive text cannot cover the Play control. */
+.player-context strong { font-size: 28px; line-height: 1.2; overflow-wrap: anywhere; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
 .player-context span { font-size: 16px; color: var(--periwinkle); }
 .play-button { width: 96px; height: 96px; flex: 0 0 auto; border: 0; border-radius: 50%; background: var(--ink); color: var(--surface); display: inline-flex; justify-content: center; align-items: center; }
 .play-button .icon { width: 48px; height: 48px; }

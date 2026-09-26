@@ -21,6 +21,12 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, onTime
   const [continued, setContinued] = useState(false);
   const lastTime = useRef<number | null>(null);
 
+  useEffect(() => {
+    // onReady fires while the host is still visibility:hidden. Hand keyboard
+    // focus to the native controls only after React reveals the ready iframe.
+    if (status === 'ready') container.current?.querySelector('iframe')?.focus();
+  }, [status]);
+
   useEffect(() => { timeListener.current = onTime; }, [onTime]);
   useEffect(() => {
     currentRange.current = range;

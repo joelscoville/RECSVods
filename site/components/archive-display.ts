@@ -7,6 +7,7 @@ export interface DisplaySection { id: string; videoId: string; start: number; en
 export interface DisplayService {
   id: string; title: string; date: string; type: string; preview: boolean;
   sermonTitle?: string;
+  series?: Service['series'];
   speakers: { id: string; name: string; passageIds: string[] }[];
   topics: { id: string; name: string; passageIds: string[] }[];
   videos: { id: string; duration: number; sequence: number }[];
@@ -18,6 +19,7 @@ export function displayServices(services: Service[], passages: SearchPassage[]):
   return services.map((service) => ({
     id: service.id, title: service.title, date: service.date, type: service.type,
     sermonTitle: service.sermon_title,
+    ...(service.series ? { series: { id: service.series.id, name: service.series.name } } : {}),
     preview: service.editorial_status !== 'reviewed',
     speakers: service.speakers.map(({ id, name }) => ({ id, name, passageIds: service.passages.filter((passage) => (passage.speaker_id ?? service.sections.find((section) => section.id === passage.section_id)?.speaker_id) === id).map((passage) => passage.id) }))
       .filter((speaker) => speaker.passageIds.length > 0 || service.sections.some((section) => section.speaker_id === speaker.id)),

@@ -2,6 +2,7 @@ import type { SearchPassage } from '../lib/types';
 import { displayType, formatDate, formatTime, serviceUrl, watchUrl } from '../lib/urls';
 import Icon from './Icon';
 import ScriptureLinks from './ScriptureLinks';
+import CorrectionLinks from './CorrectionLinks';
 
 export default function PassageResult({ passage, reasons, base }: { passage: SearchPassage; reasons?: string[]; base: string }) {
   return <article className="passage-result">
@@ -14,7 +15,7 @@ export default function PassageResult({ passage, reasons, base }: { passage: Sea
       <p>{passage.summary}</p>
       {passage.preview && <p className="preview-label">Unreviewed preview</p>}
       {reasons && reasons.length > 0 && <p className="match-reasons"><strong>Matched:</strong> {reasons.join(' · ')}</p>}
-      <div className="action-row"><a className="button" href={watchUrl(base, { id: passage.id })}><Icon name="play" />Play passage</a><a className="text-link" href={serviceUrl(base, passage.serviceId)}>{passage.type === 'sermon' ? 'View full sermon' : 'View full service'}</a></div>
+      <div className="action-row"><a className="button" href={watchUrl(base, { id: passage.id })}><Icon name="play" />Play passage</a><a className="text-link" href={serviceUrl(base, passage.serviceId)}>{passage.type === 'sermon' ? 'View full sermon' : 'View full service'}</a><CorrectionLinks target={{ passageId: passage.id }} base={base} /></div>
     </div>
   </article>;
 }

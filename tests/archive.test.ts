@@ -7,7 +7,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import {
   archiveFromFiles, assertWorkflowTransition, canTransitionWorkflow, flattenArchive,
   IdentifierRecordSchema, loadArchive, parseYaml, publishedServices, ScriptureReferenceSchema,
-  ServiceSchema, SOURCE_CHANNEL_ID, TranscriptionProvenanceSchema, WorkflowStatusSchema, type Service, type WorkflowStatus,
+  ServiceSchema, ServiceSourceSchema, SOURCE_CHANNEL_ID, TranscriptionProvenanceSchema, WorkflowStatusSchema, type Service, type WorkflowStatus,
 } from '../site/lib/archive';
 import { archiveCli, buildIndex } from '../scripts/archive';
 import { displayServices } from '../site/components/archive-display';
@@ -123,6 +123,18 @@ describe('workflow contract', () => {
 });
 
 describe('strict schemas', () => {
+  it('accepts optional factual series with exactly a stable ID and nonblank name', () => {
+    const series = { id: 'fixture-series', name: 'Fictional series' };
+    for (const schema of [ServiceSchema, ServiceSourceSchema]) {
+      expect(schema.parse({ ...fixture(), series }).series).toEqual(series);
+      expect(schema.parse(fixture())).not.toHaveProperty('series');
+      for (const invalid of [null, {}, { id: series.id }, { name: series.name },
+        { ...series, id: '../invalid' }, { ...series, name: ' ' },
+        { ...series, description: 'Extra metadata' }, { ...series, provenance: 'Private evidence' }]) {
+        expect(schema.safeParse({ ...fixture(), series: invalid }).success).toBe(false);
+      }
+    }
+  });
   it('accepts interpreted services and the existing identifier-only corpus format', () => {
     expect(ServiceSchema.parse(fixture())).toEqual(fixture());
     expect(IdentifierRecordSchema.parse({ youtube_id: 'ZTDYIJUDb0M', date: '2026-09-06',
@@ -206,6 +218,20 @@ describe('strict schemas', () => {
 });
 
 describe('loader and global validation', () => {
+  it('allows shared series IDs only with a consistent name, independent of file input order', () => {
+    const first = fixture();
+    first.series = { id: 'fixture-series', name: 'Fictional series' };
+    const second: Service = { ...fixture(), id: 'other-service', series: { ...first.series },
+      videos: [{ ...first.videos[0], id: 'BBBBBBBBBBB' }], sections: [], passages: [] };
+    const otherFilename = 'services/2026/other-service/service.yaml';
+    const files = new Map([[filename, stringify(first)], [otherFilename, stringify(second)]]);
+    expect(archiveFromFiles(files).map((service) => service.series)).toEqual([first.series, first.series]);
+    second.series!.name = 'Conflicting fictional name';
+    files.set(otherFilename, stringify(second));
+    const message = `${otherFilename}:series.name: conflicting name for series ID fixture-series (first at ${filename}:series.name)`;
+    expect(() => archiveFromFiles(files)).toThrow(message);
+    expect(() => archiveFromFiles(new Map([...files].reverse()))).toThrow(message);
+  });
   it('loads external Markdown and validates optional corpus without interpreting it', () => {
     const directory = root();
     const service = fixture();
@@ -263,6 +289,22 @@ describe('loader and global validation', () => {
 });
 
 describe('publication and flat frontend contract', () => {
+  it('projects only series ID/name and omits the optional key when absent', () => {
+    const service = fixture();
+    const absent = flattenArchive([service], 'preview');
+    expect(absent[0]).not.toHaveProperty('series');
+    expect(displayServices(publishedServices([service], 'preview'), absent)[0]).not.toHaveProperty('series');
+    service.series = { id: 'fixture-series', name: 'Fictional series' };
+    // Even a caller bypassing schema validation cannot spread private series keys into UI data.
+    Object.assign(service.series, { provenance: 'PRIVATE SERIES SENTINEL' });
+    const passages = flattenArchive([service], 'preview');
+    const displayed = displayServices(publishedServices([service], 'preview'), passages);
+    expect(passages[0].series).toEqual({ id: 'fixture-series', name: 'Fictional series' });
+    expect(displayed[0].series).toEqual(passages[0].series);
+    expect(passages[0].series).not.toBe(service.series);
+    expect(displayed[0].series).not.toBe(service.series);
+    expect(JSON.stringify(displayed)).not.toContain('PRIVATE SERIES SENTINEL');
+  });
   for (const editorial of ['needs_review', 'reviewed'] as const) for (const media of ['unassessed', 'playable', 'failed', 'rejected'] as const) {
     it(`${editorial}/${media} are independent axes with exact publication gating`, () => {
       const service = fixture(); service.editorial_status = editorial;

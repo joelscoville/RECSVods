@@ -3,7 +3,9 @@ import { spawn } from 'node:child_process';
 import { mkdir, writeFile } from 'node:fs/promises';
 
 const milestone2 = process.argv.includes('--milestone2');
-const output = milestone2 ? '.local/ui-review-m2' : '.local/ui-review';
+const milestone3 = process.argv.includes('--milestone3');
+const catalogue = milestone2 || milestone3;
+const output = milestone3 ? '.local/ui-review-m3' : milestone2 ? '.local/ui-review-m2' : '.local/ui-review';
 await mkdir(output, { recursive: true });
 const server = spawn(process.execPath, ['node_modules/astro/astro.js', 'preview', '--host', '127.0.0.1', '--port', '4180'], {
   env: { ...process.env, SITE_BASE_PATH: '/replay-check/', ARCHIVE_MODE: 'preview' }, stdio: 'ignore',
@@ -21,7 +23,8 @@ try {
   for (const [name, width, height] of [['desktop', 1728, 1000], ['portrait', 390, 844], ['landscape', 844, 390]] as const) {
     const page = await browser.newPage({ viewport: { width, height }, reducedMotion: 'reduce' });
     const routes = [['', 'home'], ['search/', 'search'], ['watch/?id=p0906-learn-by-praying', 'watch']];
-    if (milestone2) routes.push(['search/?q=Romans+13', 'results'], ['browse/scripture/romans/', 'browse']);
+    if (catalogue) routes.push(['search/?q=Romans+13', 'results'], ['browse/scripture/romans/', 'browse']);
+    if (milestone3) routes.push(['services/2020-07-19/', 'service']);
     for (const [route, suffix] of routes) {
       await page.goto(base + route);
       await page.locator('astro-island[ssr]').evaluateAll(async (islands) => {
@@ -31,13 +34,13 @@ try {
         })));
       });
       await page.evaluate(() => document.fonts.ready);
-      if (suffix === 'results') await expect(page.locator('.search-status')).not.toContainText('Loading', { timeout: 30_000 });
+      if (suffix === 'results' || suffix === 'search') await expect(page.locator('.search-status')).not.toContainText('Loading', { timeout: 30_000 });
       await page.screenshot({ path: `${output}/${name}-${suffix}.png`, fullPage: true });
-      if (suffix === 'watch') await page.screenshot({ path: `${output}/${name}-watch-viewport.png`, fullPage: false });
+      if (milestone3 || suffix === 'watch') await page.screenshot({ path: `${output}/${name}-${suffix}-viewport.png`, fullPage: false });
       results.push({ name, route, ...(await page.evaluate(() => ({ width: window.innerWidth, scrollWidth: document.documentElement.scrollWidth, height: document.documentElement.scrollHeight }))) });
     }
     // Real provider acceptance check on desktop; no mock API injection here.
-    if (name === 'desktop' && !milestone2) {
+    if (name === 'desktop' && !catalogue) {
       const requests: string[] = [];
       page.on('request', (request) => { if (request.url().includes('youtube-nocookie.com/embed/')) requests.push(request.url().split('&origin=')[0]); });
       await page.locator('button.play-button').click();
@@ -59,7 +62,7 @@ try {
       await page.getByText('Playback will pause at the end of this passage.').waitFor();
       results.push({ actualYouTubeSoftEndpoint: 'observed', continueWatching: 'observed', replay: 'observed' });
     }
-    if (milestone2) {
+    if (catalogue) {
       await page.evaluate(() => localStorage.setItem('recs-replay:resume:v1', JSON.stringify({ serviceId: '2026-09-06', videoId: 'ZTDYIJUDb0M', time: 3200 })));
       await page.goto(base);
       await expect(page.locator('.featured-returning')).toBeVisible();

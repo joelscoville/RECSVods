@@ -1,0 +1,221 @@
+schemaVersion: 1
+
+# Source identity checks use physical IDs, never a service-directory date prefix.
+# These expectations do not classify media or group recordings into services.
+sourceDates:
+  - { milestone: 2, videoId: ZTDYIJUDb0M, expectedDate: '2026-09-06' }
+  - { milestone: 2, videoId: mw4SAoJRZgo, expectedDate: '2026-08-16' }
+  - { milestone: 2, videoId: XWAH9SWFcoo, expectedDate: '2026-08-16' }
+  - { milestone: 2, videoId: IcIxBc--VvM, expectedDate: '2026-08-16' }
+  - { milestone: 2, videoId: wh4mCRKRJ-4, expectedDate: '2026-06-28' }
+  - { milestone: 2, videoId: k27dmsPvmG8, expectedDate: '2026-06-28' }
+  - { milestone: 2, videoId: W2IZ6MUX-Yk, expectedDate: '2020-09-27' }
+  - { milestone: 2, videoId: 94fynFHtreg, expectedDate: '2025-11-02' }
+  - { milestone: 3, videoId: GkmB_KeBlBw, expectedDate: '2026-09-13' }
+  - { milestone: 3, videoId: OrsN83j3qxE, expectedDate: '2026-07-05' }
+  - { milestone: 3, videoId: D-FyolbxJgk, expectedDate: '2026-07-12' }
+  - { milestone: 3, videoId: MZr169xBwrU, expectedDate: '2026-07-12' }
+  - { milestone: 3, videoId: Z-vRVB-WucA, expectedDate: '2020-07-19' }
+
+# Every case runs in exact and actual-local-embedding hybrid modes.
+# Lists are alternatives within a field; supplied fields must all match.
+# Date cases also require ALL AND ONLY eligible passages on expectedDate,
+# including multiple distinct services if that is what the source contains.
+cases:
+  - id: romans-13
+    milestone: 2
+    kind: rank
+    query: Romans 13
+    acceptableServiceIds: ['2020-09-27']
+    reason: Scripture match (reference)
+    maxRank: 1
+    note: Authority's trusted reference must outrank incidental mentions.
+  - id: romans-alias
+    milestone: 2
+    kind: rank
+    query: Rom 13
+    acceptableServiceIds: ['2020-09-27']
+    reason: Scripture match (reference)
+    maxRank: 1
+    note: Common book abbreviation uses the shared reference parser.
+  - id: speaker-yong
+    milestone: 2
+    kind: rank
+    query: Yong Teck Meng
+    acceptableServiceIds: ['2020-09-27', '2020-07-19']
+    speaker: Rev. Yong Teck Meng
+    reason: Speaker match
+    maxRank: 3
+    note: Either trusted historical sermon is valid as the corpus grows; an incidental name is insufficient.
+  - id: government-question
+    milestone: 2
+    kind: rank
+    query: How should Christians relate to government?
+    acceptableServiceIds: ['2020-09-27']
+    acceptablePassageIds: [p0927-romans-government, p0927-government-allegiance]
+    maxRank: 3
+    note: Evidence-backed relevant segments, not any greeting in Authority.
+  - id: abraham-isaac
+    milestone: 2
+    kind: rank
+    query: Abraham and Isaac
+    acceptableServiceIds: ['2025-11-02']
+    acceptablePassageIds: [p1102-abraham-isaac]
+    maxRank: 3
+    note: Sacrifice's father-son exchange, original physical-upload clock.
+  - id: living-sacrifice
+    milestone: 2
+    kind: rank
+    query: living sacrifice
+    acceptableServiceIds: ['2025-11-02']
+    acceptablePassageIds: [p1102-living-sacrifice]
+    reason: Verse-text match (BSB)
+    maxRank: 3
+    note: Hidden sourced BSB text contributes an honestly labelled match.
+  - id: august-date
+    milestone: 2
+    kind: date
+    query: 16 August 2026
+    expectedDate: '2026-08-16'
+    acceptableServiceIds: ['2026-08-16']
+    reason: Date match
+    maxRank: 1
+    note: All three ordered physical uploads share one service date.
+  - id: authority-date
+    milestone: 2
+    kind: date
+    query: 27 September 2020
+    expectedDate: '2020-09-27'
+    acceptableServiceIds: ['2020-09-27']
+    reason: Date match
+    maxRank: 1
+    note: Historical years use exactly the same calendar-date behavior.
+  - id: baseline-prayer
+    milestone: 2
+    kind: rank
+    query: learn about prayer by praying
+    acceptablePassageIds: [p0906-learn-by-praying]
+    maxRank: 3
+    note: Baseline relevant segment from docs/first-recording-review.md.
+  - id: august-first-upload
+    milestone: 2
+    kind: rank
+    query: A.C.T.S. prayer
+    acceptablePassageIds: [p0816-p1-adoration]
+    acceptableVideoIds: [mw4SAoJRZgo]
+    maxRank: 3
+    note: First multipart upload candidate from docs/august-multipart-review.md.
+  - id: august-second-upload
+    milestone: 2
+    kind: rank
+    query: media ministry engagement
+    acceptablePassageIds: [p0816-p2-media-ministry]
+    acceptableVideoIds: [XWAH9SWFcoo]
+    maxRank: 3
+    note: Second physical upload must preserve its own timeline.
+  - id: august-third-upload
+    milestone: 2
+    kind: rank
+    query: God ordains ends means
+    acceptablePassageIds: [p0816-p3-ends-means]
+    acceptableVideoIds: [IcIxBc--VvM]
+    maxRank: 3
+    note: Third physical upload candidate from the multipart evidence.
+  - id: june-full-upload
+    milestone: 2
+    kind: rank
+    query: Hotel-room prayer requests
+    acceptablePassageIds: [p0628-hotel-prayer]
+    acceptableVideoIds: [k27dmsPvmG8]
+    maxRank: 3
+    note: Only the full stream carries the evidenced passage; failed upload remains in source.
+  - id: tripping-question
+    milestone: 3
+    kind: rank
+    query: How can we avoid causing others to stumble?
+    acceptableServiceIds: ['2020-07-19']
+    acceptableVideoIds: [Z-vRVB-WucA]
+    acceptablePassageIds: [p0719-rights-stumbling, p0719-think-beyond-self, p0719-restore-forgive, p0719-hypocrisy-stumbling]
+    maxRank: 3
+    note: Evidence-backed discussion of rights, considering others, hypocrisy and restoring people, from docs/tripping-review.md.
+  - id: tripping-luke
+    milestone: 3
+    kind: rank
+    query: Luke 17:1-9
+    acceptableServiceIds: ['2020-07-19']
+    acceptableVideoIds: [Z-vRVB-WucA]
+    reason: Scripture match (reference)
+    maxRank: 3
+    note: Operator-supplied Tripping reference; actual curated metadata must support it.
+  - id: tripping-matthew
+    milestone: 3
+    kind: rank
+    query: Matthew 18:5-7
+    acceptableServiceIds: ['2020-07-19']
+    acceptableVideoIds: [Z-vRVB-WucA]
+    reason: Scripture match (reference)
+    maxRank: 3
+    note: Second known Tripping reference, evaluated against the entire eligible corpus.
+  - id: july-iso
+    milestone: 3
+    kind: date
+    query: '2026-07-05'
+    expectedDate: '2026-07-05'
+    acceptableVideoIds: [OrsN83j3qxE]
+    reason: Date match
+    maxRank: 1
+    note: July 5 is OrsN83j3qxE; D-FyolbxJgk's misleading title cannot override its July 12 source date.
+  - id: july-day-first
+    milestone: 3
+    kind: date
+    query: 5 July 2026
+    expectedDate: '2026-07-05'
+    acceptableVideoIds: [OrsN83j3qxE]
+    reason: Date match
+    maxRank: 1
+    note: Regression for the documented incidental partial-date false positives.
+  - id: july-month-first
+    milestone: 3
+    kind: date
+    query: July 5, 2026
+    expectedDate: '2026-07-05'
+    acceptableVideoIds: [OrsN83j3qxE]
+    reason: Date match
+    maxRank: 1
+    note: Common English month-first form has the identical date constraint.
+  - id: july-abbreviated
+    milestone: 3
+    kind: date
+    query: 5 Jul. 2026
+    expectedDate: '2026-07-05'
+    acceptableVideoIds: [OrsN83j3qxE]
+    reason: Date match
+    maxRank: 1
+    note: Common month abbreviations use general parsing, not query-specific aliases.
+  - id: july-corrected-date
+    milestone: 3
+    kind: date
+    query: 12 July 2026
+    expectedDate: '2026-07-12'
+    acceptableVideoIds: [D-FyolbxJgk]
+    reason: Date match
+    maxRank: 3
+    note: Distinct July 12 programme after full curation. Service ID may change; no assumption about grouping with short MZr169xBwrU or its disposition.
+  - id: september-baseline
+    milestone: 3
+    kind: rank
+    query: How can knowledge about God become knowledge of God?
+    acceptablePassageIds: [p0913-simple-demanding-title]
+    acceptableVideoIds: [GkmB_KeBlBw]
+    maxRank: 3
+    note: Relevant passage evidenced in docs/september13-review.md.
+  - id: excluded-candidates
+    milestone: 3
+    kind: excluded-media
+    query: July 2026
+    note: Broad ordinary query; every failed/rejected/unassessed source ID is forbidden. Separate per-ID checks cover complete indexes and both navigation projections even when a query returns nothing.
+  - id: no-match
+    milestone: 3
+    kind: empty
+    query: zxqvpl-no-match
+    note: Lexical and real semantic search must both be empty. This is an out-of-vocabulary test, not a claim that the archive answers or rejects any theological question.

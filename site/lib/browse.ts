@@ -8,6 +8,7 @@ export const BROWSE_CATEGORIES = [
   { path: 'speakers', title: 'Speakers' },
   { path: 'scripture', title: 'Bible books' },
   { path: 'topics', title: 'Topics' },
+  { path: 'series', title: 'Series' },
   { path: 'years', title: 'Years' },
 ] as const;
 export interface BrowseLink { path: string; title: string }
@@ -36,6 +37,7 @@ export function availableBrowseCategories(services: readonly DisplayService[], p
       case 'speakers': return services.some((service) => service.sections.some((section) => section.speaker)) || passages.some((passage) => passage.speaker);
       case 'scripture': return passages.some((passage) => passage.scripture.length > 0);
       case 'topics': return passages.some((passage) => passage.topics.length > 0);
+      case 'series': return services.some((service) => service.series) || passages.some((passage) => passage.series);
     }
   });
 }
@@ -91,6 +93,15 @@ export function buildBrowsePages(services: readonly DisplayService[]): BrowsePag
   }
   addGroups('scripture', books);
   addGroups('topics', topics);
+  const series = new Map<string, { title: string; serviceIds: string[] }>();
+  for (const service of ordered) {
+    if (!service.series) continue;
+    const group = series.get(service.series.id) ?? { title: service.series.name, serviceIds: [] };
+    if (group.title !== service.series.name) throw new Error(`Conflicting name for series ID ${service.series.id}`);
+    group.serviceIds.push(service.id);
+    series.set(service.series.id, group);
+  }
+  addGroups('series', series);
   const years = new Map<string, { title: string; serviceIds: string[] }>();
   for (const service of ordered) {
     const year = service.date.slice(0, 4);

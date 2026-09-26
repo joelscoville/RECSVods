@@ -1,0 +1,64 @@
+name: Archive correction
+description: Suggest a correction to a transcript, timestamp, reference or archive description.
+title: 'Archive correction: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve RECS Replay. This is a public issue and a suggestion for human review, not an automatic edit or approval.
+        Keep the prefilled archive identifiers. Do not paste search history, saved playback progress, private filesystem paths, raw evidence, credentials or private editorial notes.
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What needs correcting?
+      options:
+        - transcript
+        - timestamp
+        - scripture
+        - speaker
+        - section
+        - other
+    validations:
+      required: true
+  - type: input
+    id: service-id
+    attributes:
+      label: Service ID
+    validations:
+      required: true
+  - type: input
+    id: video-id
+    attributes:
+      label: Video ID(s)
+      description: The physical YouTube upload, or uploads for a whole-service report.
+  - type: input
+    id: passage-id
+    attributes:
+      label: Passage ID
+      description: Leave the whole-recording/service marker if no passage was selected.
+  - type: input
+    id: section-id
+    attributes:
+      label: Section ID
+  - type: textarea
+    id: timestamps
+    attributes:
+      label: Recording timestamps
+      description: Original recording bounds in seconds, not your saved playback position. Add a more precise proposed boundary in the correction below if needed.
+  - type: input
+    id: page
+    attributes:
+      label: Archive page
+      description: A canonical archive link or deployment-relative path. Do not paste a search query or your current browser URL.
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction and evidence
+      description: Describe the issue and proposed change. Give a public recording timestamp or reference where possible; keep uncertainty explicit. Use scripture references, not ESV verse text.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        A human checks the recording and proposed change in `pnpm build:preview`. Interpretation changes return the logical service to `needs_review`; merging code does not approve content.
+        After reviewing the entire service, only a human may run `pnpm editorial:approve -- <service-id> --reviewer <name>`. The approval-only commit records that separate decision.

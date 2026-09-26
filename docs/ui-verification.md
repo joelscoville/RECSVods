@@ -78,3 +78,25 @@ Milestone 2's 27 browser executions also verify real-worker hybrid search,
 multipart video selection, static browse routes, local history clearing without
 erasing resume state, and production/failed-media exclusion. See
 `docs/milestone2-checks.md` for exact acceptance queries and evidence scope.
+
+## Milestone 3 confirmation
+
+Final captures in `.local/ui-review-m3/` cover new/returning home, loaded search,
+results, browse, playback and a service page at the same three viewports. All
+18 measured route/size combinations have no horizontal document overflow. A fresh
+bounded comparison with the saved Penpot frames returned ship with no material
+fixes. Correction/edit links wrap in the established action rows; mobile Back and
+Play remain reachable. Very long service/result pages are intentionally scrollable;
+review of those pages used representative viewports, not an exhaustive pixel audit.
+
+The final 69-browser-execution run passed after all M3 changes, including 21 tagged
+axe scans with zero violations/incomplete findings. The initially combined command
+exceeded its external five-minute tool wait partway through browser tests; it was
+not a product assertion failure. Verified orphaned test-server groups were stopped,
+test servers were changed to direct Node entry points with graceful shutdown, and
+the full run passed in 6.4 minutes under the existing finite 900-second wrapper.
+
+Keyboard and DOM-derived ARIA inspection, difficult content lengths, unavailable
+player/retry states, model/index failure fallback, and correction-link privacy are
+documented in `docs/milestone3-ui-checks.md`. Physical keyboards/software keyboards,
+actual assistive-technology sessions, and new real-provider playback are not claimed.

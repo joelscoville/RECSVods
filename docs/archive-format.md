@@ -106,6 +106,12 @@ passages:
 - Optional service-level `sermon_title` preserves a trusted displayed sermon title
   independently of chapter descriptions. Home cards use it when supplied rather
   than mislabelling the first sermon chapter as the whole sermon.
+- Optional service-level `series: { id, name }` records a factual series only when
+  supported by source metadata. `id` uses the stable identifier rules above and
+  `name` must be nonblank. Both fields are required when present; extra keys
+  (including provenance) are rejected. Repeated series IDs across services must
+  have the same name; conflicting names fail archive validation deterministically.
+  Omit `series` when unknown; do not infer a series from topics or sermon titles.
 - `confidence` is a required number from 0 to 1. Uncertainty goes in optional
   `review_notes` arrays, which default to `[]` and are not included in search
   output. Service `speakers` and `topics` likewise default to `[]`.
@@ -203,6 +209,7 @@ interface SearchPassage {
   id: string;
   serviceId: string;
   serviceTitle: string;
+  series?: { id: string; name: string }; // factual service metadata, omitted when absent
   videoId: string;              // original YouTube ID
   start: number;
   end: number;

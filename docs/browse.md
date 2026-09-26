@@ -20,13 +20,23 @@ Available routes, relative to the configured deployment base:
 | `browse/speakers/<speaker-id>/` | Actual speaker's chapters and passages |
 | `browse/scripture/<canonical-book-slug>/` | Passages referencing that Bible book, e.g. `1-john` |
 | `browse/topics/<topic-id>/` | Passages assigned the topic |
+| `browse/series/` | Factual series present on eligible services |
+| `browse/series/<series-id>/` | Logical services in that series, newest first |
 | `browse/years/<YYYY>/` | Logical services in that year |
 
 Speakers, Bible books, topics, and years also have static category indexes. IDs
 come from archive metadata rather than display-name slugs. Book slugs come from
 canonical references; years come from ISO service dates. Empty categories are
-not generated. The schema currently has no Series metadata, so no Series category
-or URL is invented. Adding it later requires real, validated source metadata.
+not generated. Optional service `series: { id, name }` supplies the Series category
+and stable series URLs only when eligible data exists. Shared series IDs must use
+the same name; conflicting names are rejected rather than silently merged. No
+series is assigned to the real archive by this capability change.
+Service cards and service pages use the existing text-link style for the series.
+The display and search-passage projections carry only the optional `id` and `name`,
+omitting the key when absent. Search navigation can derive Series from these
+passages alone. Exact search matches the series name as a general metadata field
+with weight 4; the explicit embedding-document fields are unchanged. Hidden BSB
+verse text and transcription provenance are not rendered as series metadata.
 All links use `browseUrl`, `serviceUrl`, or `watchUrl`, preserving nested/non-root
 deployment bases. Browse pages work without JavaScript.
 

@@ -72,6 +72,7 @@ export type IdentifierRecord = z.infer<typeof IdentifierRecordSchema>;
 
 export const SpeakerSchema = z.object({ id: Id, name: Text, role: Text.optional() }).strict();
 export const TopicSchema = z.object({ id: Id, name: Text, description: Text.optional() }).strict();
+export const SeriesSchema = z.object({ id: Id, name: Text }).strict();
 export type Speaker = z.infer<typeof SpeakerSchema>;
 export type Topic = z.infer<typeof TopicSchema>;
 
@@ -189,6 +190,7 @@ const serviceFields = {
   date: DateSchema,
   title: Text,
   sermon_title: Text.optional(),
+  series: SeriesSchema.optional(),
   type: Id,
   ...workflowFields,
   editorial_status: EditorialStatusSchema,
@@ -250,6 +252,7 @@ export interface SearchPassage {
   id: string;
   serviceId: string;
   serviceTitle: string;
+  series?: Service['series'];
   videoId: string;
   start: number;
   end: number;
@@ -285,6 +288,7 @@ export function parseWithPath<S extends z.ZodTypeAny>(schema: S, value: unknown,
 export function archiveFromFiles(files: ReadonlyMap<string, string>): Service[] {
   const services: Service[] = [];
   const globalIds = new Map<string, string>();
+  const seriesNames = new Map<string, { name: string; filename: string }>();
   const corpusIds = new Map<string, { filename: string; record: IdentifierRecord }>();
   const register = (id: string, filename: string, field: string) => {
     const previous = globalIds.get(id);
@@ -311,6 +315,13 @@ export function archiveFromFiles(files: ReadonlyMap<string, string>): Service[] 
       return { ...passage, transcript };
     });
     const service = parseWithPath(ServiceSchema, { ...source, passages }, filename);
+    if (service.series) {
+      const previous = seriesNames.get(service.series.id);
+      if (previous && previous.name !== service.series.name) {
+        throw new Error(`${filename}:series.name: conflicting name for series ID ${service.series.id} (first at ${previous.filename}:series.name)`);
+      }
+      seriesNames.set(service.series.id, previous ?? { name: service.series.name, filename });
+    }
     register(service.id, filename, 'id');
     for (const key of ['videos', 'sections', 'passages'] as const) service[key].forEach((item, i) => register(item.id, filename, `${key}.${i}.id`));
     services.push(service);
@@ -366,6 +377,7 @@ export function flattenArchive(services: readonly Service[], mode: BuildMode = '
     const speaker = service.speakers.find((s) => s.id === speakerId)?.name;
     return {
       id: passage.id, serviceId: service.id, serviceTitle: service.title, videoId: passage.video_id,
+      ...(service.series ? { series: { id: service.series.id, name: service.series.name } } : {}),
       start: passage.start, end: passage.end, title: passage.title, summary: passage.summary,
       transcript: passage.transcript, questions: [...passage.questions],
       topics: passage.topics.map((id) => service.topics.find((t) => t.id === id)!.name),

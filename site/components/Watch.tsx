@@ -7,6 +7,7 @@ import YouTubePlayer from './YouTubePlayer';
 import CopyLink from './CopyLink';
 import Icon from './Icon';
 import ScriptureLinks from './ScriptureLinks';
+import CorrectionLinks from './CorrectionLinks';
 import { surroundingPassages } from '../lib/browse';
 
 interface Selection { service: DisplayService; video: DisplayService['videos'][number]; passage?: SearchPassage; start: number }
@@ -54,6 +55,8 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
   </main>;
 
   const { service, video, passage, start } = selection;
+  // Only an exact archive chapter boundary supplies section context; arbitrary resume/seek times never leave the site.
+  const correctionSection = !passage ? service.sections.find((section) => section.videoId === video.id && section.start === start) : undefined;
   const title = passage?.title ?? service.title;
   const range = { id: passage?.id ?? `${video.id}:${start}`, start, end: passage?.end };
   const shareUrl = passage ? watchUrl(base, { id: passage.id }) : watchUrl(base, { service: service.id, video: video.id, start });
@@ -68,7 +71,7 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
     <summary>{direction} passage context · {formatTime(item.start)}–{formatTime(item.end)} · {item.title}</summary>
     <p className="transcript-note">Separate transcript segment from this recording.{passage && (direction === 'Previous' ? item.end < passage.start : item.start > passage.end) && ' There is a gap between this segment and the selected passage; the intervening audio is not shown.'}{item.preview && ' Unreviewed transcription.'}</p>
     <p className="transcript-text">{item.transcript}</p>
-    <a className="text-link" href={watchUrl(base, { id: item.id })}>Play {direction.toLowerCase()} passage</a>
+    <div className="action-row"><a className="text-link" href={watchUrl(base, { id: item.id })}>Play {direction.toLowerCase()} passage</a><CorrectionLinks target={{ passageId: item.id }} base={base} /></div>
   </details>;
 
   return <main id="main" className="watch-main" tabIndex={-1}>
@@ -81,11 +84,11 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
         <p className="metadata"><time dateTime={service.date}>{formatDate(service.date)}</time>{passage?.speaker && <> · {passage.speaker}</>}{service.videos.length > 1 && <> · Recording {service.videos.findIndex((item) => item.id === video.id) + 1} of {service.videos.length}</>}</p>
         {passage && <p className="playback-summary">{passage.summary}</p>}
         {service.preview && <p className="preview-label">Unreviewed preview</p>}
-        <div className="action-row"><a className="text-link" href={serviceUrl(base, service.id)}>View full service</a><a className="text-link" href={youtubeUrl(video.id, passage?.start ?? start)}>Watch on YouTube</a><CopyLink href={shareUrl} /></div>
+        <div className="action-row"><a className="text-link" href={serviceUrl(base, service.id)}>View full service</a><a className="text-link" href={youtubeUrl(video.id, passage?.start ?? start)}>Watch on YouTube</a><CopyLink href={shareUrl} /><CorrectionLinks target={passage ? { passageId: passage.id } : { serviceId: service.id, videoId: video.id, sectionId: correctionSection?.id }} base={base} /></div>
       </section>
       <Chapters service={service} videoId={video.id} time={time} onChoose={chooseChapter} />
     </div>
     {passage && <section className="transcript-panel watch-passages page-width" aria-labelledby="transcript-title"><h2 id="transcript-title">Passage transcript</h2><p className="transcript-note">{passage.preview ? 'Unreviewed transcription. ' : ''}Bracketed notes identify uncertain wording or omitted readings.</p>{contextDetails(context.previous, 'Previous')}<p className="metadata">Selected passage · {formatTime(passage.start)}–{formatTime(passage.end)}</p><p className="transcript-text">{passage.transcript}</p>{contextDetails(context.next, 'Next')}</section>}
-    {service.passages.length > 0 && <section className="watch-passages page-width" aria-labelledby="passages-title"><details><summary id="passages-title">Browse all {service.passages.length} passages in this service</summary><p>Play a shorter passage with a pause at its endpoint.</p><ul className="compact-passage-list">{service.passages.map((item) => <li key={item.id}><a href={watchUrl(base, { id: item.id })} aria-current={passage?.id === item.id ? 'true' : undefined} onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) { event.preventDefault(); choose({ id: item.id }); document.getElementById('recording-title')?.scrollIntoView({ block: 'center' }); } }}><span>{formatTime(item.start)}–{formatTime(item.end)}</span><strong>{item.title}</strong>{passage?.id === item.id && <span>Selected passage</span>}</a></li>)}</ul></details></section>}
+    {service.passages.length > 0 && <section className="watch-passages page-width" aria-labelledby="passages-title"><details><summary id="passages-title">Browse all {service.passages.length} passages in this service</summary><p>Play a shorter passage with a pause at its endpoint.</p><ul className="compact-passage-list">{service.passages.map((item) => <li key={item.id}><a href={watchUrl(base, { id: item.id })} aria-current={passage?.id === item.id ? 'true' : undefined} onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) { event.preventDefault(); choose({ id: item.id }); document.getElementById('recording-title')?.scrollIntoView({ block: 'center' }); } }}><span>{formatTime(item.start)}–{formatTime(item.end)}</span><strong>{item.title}</strong>{passage?.id === item.id && <span>Selected passage</span>}</a><div className="action-row"><CorrectionLinks target={{ passageId: item.id }} base={base} /></div></li>)}</ul></details></section>}
   </main>;
 }

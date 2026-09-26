@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { EMBEDDING_CONFIG, EMBEDDING_OPTIONS, isCompatibleEmbeddingConfig, isEmbeddingVector, MODEL_FILES, preprocessEmbedding, semanticAssetPaths } from '../site/lib/embedding-config';
-import { buildEmbeddingDocument, search, SEARCH_WEIGHTS, type VectorIndex } from '../site/lib/search';
+import { buildEmbeddingDocument, parseFullDateQuery, search, SEARCH_WEIGHTS, type VectorIndex } from '../site/lib/search';
 import { createSemanticClient, type SemanticRequest, type SemanticResponse, type SemanticStatus } from '../site/lib/semantic';
 import type { SearchPassage } from '../site/lib/types';
 import { buildVectors, embedTexts, prepare, sha256, verifyModelFile } from '../scripts/embeddings';
@@ -58,6 +58,17 @@ describe('embedding contract', () => {
 });
 
 describe('transparent hybrid ranking', () => {
+  it('matches optional series names as general metadata without changing embedding documents', () => {
+    const passage = { ...fixture, series: { id: 'fixture-series-id', name: 'Fictional orchard' } };
+    const result = search([passage], 'fictional orchard')[0];
+    expect(result.reasons).toEqual(['Series match (exact phrase)']);
+    expect(result.score).toBe(4 * (1 + SEARCH_WEIGHTS.phraseBonus));
+    expect(search([fixture], 'fictional orchard')).toEqual([]);
+    expect(search([passage], 'orch')).toEqual([]);
+    expect(search([passage], 'orchard')[0].reasons).toEqual(['Series match']);
+    expect(search([passage], 'community')).toEqual(search([fixture], 'community').map((match) => ({ ...match, passage })));
+    expect(buildEmbeddingDocument(passage)).toBe(buildEmbeddingDocument(fixture));
+  });
   it('finds singular living sacrifice through actual BSB enrichment, with an honest hidden-text reason', () => {
     const [enriched] = enrichPassages([{ ...fixture, scripture: ['Romans 12:1'] }]);
     expect(search([fixture], 'living sacrifice')).toEqual([]);
@@ -84,7 +95,7 @@ describe('transparent hybrid ranking', () => {
     expect(search([fixture], 'help others')[0].reasons).toEqual(['Question match (exact phrase)']);
     expect(search([fixture], 'Example Speaker')[0].reasons).toEqual(['Speaker match (exact phrase)', 'Transcript match']);
   });
-  it.each(['2026-09-06', '6 September 2026', 'September 6 2026', '6 Sep 2026'])('matches the date %s', (query) => {
+  it.each(['2026-09-06', '6 September 2026', 'September 6 2026', '6 Sep 2026', 'Sep. 6, 2026', '6 Sept 2026'])('matches the date %s', (query) => {
     expect(search([fixture], query)[0].reasons).toEqual(['Date match (exact phrase)']);
   });
   it.each([
@@ -134,6 +145,41 @@ describe('transparent hybrid ranking', () => {
     expect(search([...passages].reverse(), 'community')).toEqual(search(passages, 'community'));
     expect(search(passages, 'community', { limit: 2 })).toHaveLength(2);
     expect(search(passages, 'community', { limit: 0 })).toEqual([]);
+  });
+});
+
+describe('whole-query calendar scope', () => {
+  it.each([
+    ['2026-07-05', '2026-07-05'], ['5 July 2026', '2026-07-05'], ['July 5, 2026', '2026-07-05'],
+    ['  05 JUL.\n2020 ', '2020-07-05'], ['Jul 5 2031', '2031-07-05'], ['29 Feb 2000', '2000-02-29'],
+    ['February 29, 2024', '2024-02-29'], ['1 Jan 0099', '0099-01-01'], ['31 Dec 2099', '2099-12-31'],
+  ])('parses %s without depending on one date or year', (query, expected) => {
+    expect(parseFullDateQuery(query)).toBe(expected);
+    const target = { ...fixture, date: expected };
+    const incidental = { ...fixture, id: 'incidental', date: '2025-01-01', title: query, transcript: query };
+    const otherYear = { ...target, id: 'other-year', date: `2019${expected.slice(4)}`, transcript: query };
+    for (const options of [{}, { vectors: vectorIndex([incidental, otherYear]), queryVector: unit() }]) {
+      expect(search([incidental, otherYear, target], query, options).map((r) => r.passage.id)).toEqual(['fixture']);
+      expect(search([incidental, otherYear], query, options)).toEqual([]);
+    }
+  });
+  it.each(['2026-02-29', '29 February 1900', '31 Apr 2024', 'April 31, 2024', '2026-13-05', '2026-00-05',
+    '2026-07-00', '32 July 2026', '5 Jule 2026', '5 July 0000', '2026', 'July', 'July 2026', '5 July',
+    '2026-7-5', 'on 5 July 2026', '5 July 2026 prayer', '2026-07-05T00:00:00Z', '5 July 2026 and 12 July 2026'])('%s is not a full valid date query', (query) => {
+    expect(parseFullDateQuery(query)).toBeUndefined();
+    // Invalid or partial input stays ordinary text; it is never rolled over or silently scoped.
+    expect(search([{ ...fixture, date: '2021-01-01', transcript: query }], query)).toHaveLength(1);
+  });
+  it('keeps all same-date services, excludes misleading titles and incidental day/month/year terms', () => {
+    const a = { ...fixture, id: 'a', serviceId: 'morning', date: '2026-07-05' };
+    const b = { ...a, id: 'b', serviceId: 'evening' };
+    const misleading = { ...fixture, id: 'wrong', date: '2026-07-12', serviceTitle: '5 July 2026', transcript: 'July 5 2026' };
+    const partial = { ...fixture, id: 'partial', date: '2026-09-13', transcript: 'July plans and five visits in 2026' };
+    for (const query of ['2026-07-05', '5 July 2026', 'July 5 2026', 'Jul. 5, 2026']) {
+      const results = search([misleading, partial, a, b], query, { vectors: vectorIndex([misleading, partial]), queryVector: unit() });
+      expect(new Set(results.map((r) => r.passage.id))).toEqual(new Set(['a', 'b']));
+      expect(results.every((r) => r.reasons.includes('Date match (exact phrase)'))).toBe(true);
+    }
   });
 });
 

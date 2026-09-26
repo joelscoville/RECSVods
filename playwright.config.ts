@@ -12,7 +12,7 @@ export default defineConfig({
     { name: 'landscape', use: { viewport: { width: 844, height: 390 }, isMobile: true, hasTouch: true } },
   ],
   webServer: [
-    { command: 'pnpm exec astro preview --host 127.0.0.1 --port 4173', env: { ARCHIVE_MODE: 'preview', SITE_BASE_PATH: '/replay-check/' }, url: 'http://127.0.0.1:4173/replay-check/', reuseExistingServer: false },
-    { command: 'pnpm exec astro preview --host 127.0.0.1 --port 4174', env: { ARCHIVE_MODE: 'production', SITE_BASE_PATH: '/replay-check/' }, url: 'http://127.0.0.1:4174/replay-check/', reuseExistingServer: false },
+    { command: 'node node_modules/astro/astro.js preview --host 127.0.0.1 --port 4173', env: { ARCHIVE_MODE: 'preview', SITE_BASE_PATH: '/replay-check/' }, url: 'http://127.0.0.1:4173/replay-check/', reuseExistingServer: false, gracefulShutdown: { signal: 'SIGTERM', timeout: 5000 } },
+    { command: 'node node_modules/astro/astro.js preview --host 127.0.0.1 --port 4174', env: { ARCHIVE_MODE: 'production', SITE_BASE_PATH: '/replay-check/' }, url: 'http://127.0.0.1:4174/replay-check/', reuseExistingServer: false, gracefulShutdown: { signal: 'SIGTERM', timeout: 5000 } },
   ],
 });

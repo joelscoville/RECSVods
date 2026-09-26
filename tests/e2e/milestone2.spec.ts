@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { parse } from 'yaml';
 import type { SearchPassage, ServiceSource } from '../../site/lib/types';
 
@@ -9,6 +9,15 @@ const passages = JSON.parse(readFileSync('dist/preview/generated/passages.json',
 // free of build-only imports (including JSON modules handled by Astro/tsx).
 const services = ['2026-09-06', '2026-08-16', '2026-06-28', '2020-09-27', '2025-11-02']
   .map((id) => parse(readFileSync(`services/${id.slice(0, 4)}/${id}/service.yaml`, 'utf8')) as ServiceSource);
+const allSources = (readdirSync('services', { recursive: true }) as string[])
+  .filter((file) => file.endsWith('/service.yaml'))
+  .map((file) => parse(readFileSync(`services/${file}`, 'utf8')) as ServiceSource);
+const latestSermon = allSources
+  .filter((service) => ['needs_review', 'reviewed'].includes(service.editorial_status ?? ''))
+  .sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id))
+  .flatMap((service) => [...service.videos].sort((a, b) => a.sequence - b.sequence)
+    .filter((video) => video.media_disposition === 'playable' && (service.type === 'sermon' || service.sections.some((section) => section.video_id === video.id && section.type === 'sermon')))
+    .map((video) => ({ service, video, sermon: service.sections.find((section) => section.video_id === video.id && section.type === 'sermon') })))[0];
 const august = services.find((service) => service.id === '2026-08-16')!;
 const governmentIds = ['p0927-romans-government', 'p0927-government-allegiance'];
 const failedId = 'wh4mCRKRJ-4';
@@ -143,8 +152,13 @@ test('new and returning home use local progress; clearing search history preserv
   await page.goto('');
   await expect(page.getByRole('heading', { level: 1, name: 'Watch the latest sermon', exact: true })).toBeVisible();
   const featured = page.locator('section.featured');
-  await expect(featured.getByText('Unreviewed preview', { exact: true })).toBeVisible();
-  await expect(featured.locator('a.video-card-link')).toHaveAttribute('href', /video=ZTDYIJUDb0M/);
+  const badge = featured.getByText('Unreviewed preview', { exact: true });
+  if (latestSermon.service.editorial_status === 'needs_review') await expect(badge).toBeVisible();
+  else await expect(badge).toHaveCount(0);
+  const featuredUrl = new URL((await featured.locator('a.video-card-link').getAttribute('href'))!, page.url());
+  expect(featuredUrl.searchParams.get('service')).toBe(latestSermon.service.id);
+  expect(featuredUrl.searchParams.get('video')).toBe(latestSermon.video.id);
+  expect(Number(featuredUrl.searchParams.get('t') ?? 0)).toBe(Math.floor(latestSermon.sermon?.start ?? 0));
   const saved = { serviceId: '2026-09-06', videoId: 'ZTDYIJUDb0M', time: 3200 };
   await page.evaluate((value) => {
     localStorage.setItem('recs-replay:resume:v1', JSON.stringify(value));
@@ -169,7 +183,13 @@ test('failed stream stays out of ordinary links/index and production excludes ev
   expect(index.ok()).toBe(true);
   expect(await index.json()).toEqual(passages);
   expect(passages.length).toBeGreaterThan(0);
-  expect(passages.every((passage) => passage.preview && passage.videoId !== failedId)).toBe(true);
+  expect(passages.every((passage) => passage.videoId !== failedId)).toBe(true);
+  expect(new Set(passages.map((passage) => passage.serviceId)).size).toBeGreaterThanOrEqual(5);
+  for (const service of services) {
+    const corePassages = passages.filter((passage) => passage.serviceId === service.id);
+    expect(corePassages.length, `Required core service ${service.id}`).toBeGreaterThan(0);
+    expect(corePassages.every((passage) => passage.preview === (service.editorial_status !== 'reviewed'))).toBe(true);
+  }
   for (const route of ['', 'browse/services/', ...services.map((service) => `services/${service.id}/`)]) {
     await page.goto(route);
     await expect(page.locator('main')).toBeVisible();
@@ -182,9 +202,17 @@ test('failed stream stays out of ordinary links/index and production excludes ev
   const production = 'http://127.0.0.1:4174/replay-check/';
   const productionIndex = await request.get(`${production}generated/passages.json`);
   expect(productionIndex.ok()).toBe(true);
-  expect(await productionIndex.json()).toEqual([]);
+  // The CLI independently verifies this built preview against enriched source.
+  // Human-approved passages retain identical fields and preview:false in both modes.
+  const expectedProduction = passages.filter((passage) => !passage.preview);
+  expect(await productionIndex.json()).toEqual(expectedProduction);
   await page.goto(production);
-  await expect(page.getByRole('heading', { level: 1, name: 'The archive is being prepared', exact: true })).toBeVisible();
-  await expect(page.locator('a[href*="/watch/"]')).toHaveCount(0);
-  for (const service of services) expect((await request.get(`${production}services/${service.id}/`)).status()).toBe(404);
+  if (!expectedProduction.length) {
+    await expect(page.getByRole('heading', { level: 1, name: 'The archive is being prepared', exact: true })).toBeVisible();
+    await expect(page.locator('a[href*="/watch/"]')).toHaveCount(0);
+  }
+  for (const service of services) {
+    const eligible = service.editorial_status === 'reviewed' && service.videos.some((video) => video.media_disposition === 'playable');
+    expect((await request.get(`${production}services/${service.id}/`)).status()).toBe(eligible ? 200 : 404);
+  }
 });
