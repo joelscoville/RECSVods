@@ -1,16 +1,16 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import { loadArchive, publishedServices, flattenArchive } from '../../lib/archive';
+import { loadArchive, publishedServices, flattenChapters } from '../../lib/archive';
 import { displayServices, type DisplayService } from '../../components/archive-display';
 import { displayType, formatDate, formatTime, siteUrl, serviceUrl, watchUrl, youtubeUrl } from '../../lib/urls';
-import PassageResult from '../../components/PassageResult';
 import CopyLink from '../../components/CopyLink';
 import CorrectionLinks from '../../components/CorrectionLinks';
 import { browseUrl } from '../../lib/browse';
+import OutlineRows from '../../components/OutlineRows';
 export function getStaticPaths() {
   const mode = import.meta.env.ARCHIVE_MODE;
   const eligible = publishedServices(loadArchive(), mode);
-  return displayServices(eligible, flattenArchive(eligible, mode)).map((service) => ({ params: { id: service.id }, props: { service } }));
+  return displayServices(eligible, flattenChapters(eligible, mode)).map((service) => ({ params: { id: service.id }, props: { service } }));
 }
 interface Props { service: DisplayService }
 const { service } = Astro.props;
@@ -21,6 +21,7 @@ const base = import.meta.env.BASE_URL;
     <a class="text-link" href={siteUrl(base)}>Back to archive</a>
     <header class="service-heading">
       <h1>{service.title}</h1>
+      {service.sermonDescription && <p class="sermon-description">{service.sermonDescription}</p>}
       <p class="metadata"><time datetime={service.date}>{formatDate(service.date)}</time> · {displayType(service.type)}</p>
       {service.series && <a class="text-link" href={browseUrl(base, `series/${service.series.id}`)}>Series: {service.series.name}</a>}
       {service.preview && <p class="preview-label">Unreviewed preview</p>}
@@ -32,9 +33,8 @@ const base = import.meta.env.BASE_URL;
         <div class="action-row"><a class="button" href={watchUrl(base, { service: service.id, video: video.id })}>Play full recording</a><a class="text-link" href={youtubeUrl(video.id)}>Watch on YouTube</a></div>
       </li>)}</ul>
     </section>
-    {service.sections.length > 0 && <section class="service-chapters" aria-labelledby="service-chapters-heading"><h2 id="service-chapters-heading">Chapters</h2><ol>{service.sections.map((section) => <li><a class="chapter-row" href={watchUrl(base, { service: service.id, video: section.videoId, start: section.start })}><span class="timestamp">{formatTime(section.start)}</span><span class="chapter-copy"><strong>{section.title}</strong><span>{displayType(section.type)} · {formatTime(section.end - section.start)}{section.speaker && ` · ${section.speaker}`}</span></span></a></li>)}</ol></section>}
-    <section class="service-passages" aria-labelledby="service-passages-heading"><h2 id="service-passages-heading">Passages</h2><p>Shorter sections of the recording, each with its own summary and playback link.</p>
-      {service.passages.length > 0 ? <ol class="result-list">{service.passages.map((passage) => <li><PassageResult passage={passage} base={base} /></li>)}</ol> : <p>No passages have been published for this service.</p>}
+    <section class="service-chapters" aria-labelledby="service-chapters-heading"><h2 id="service-chapters-heading">Chapters</h2>
+      {service.chapters.length > 0 ? <OutlineRows service={service} base={base} client:load /> : <p>No chapters have been published for this service.</p>}
     </section>
   </main>
 </SiteLayout>

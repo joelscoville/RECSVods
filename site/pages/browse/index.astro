@@ -2,12 +2,12 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import BrowseNavigation from '../../components/BrowseNavigation';
 import { displayServices } from '../../components/archive-display';
-import { loadArchive, publishedServices, flattenArchive } from '../../lib/archive';
+import { loadArchive, publishedServices, flattenChapters } from '../../lib/archive';
 import { buildBrowsePages } from '../../lib/browse';
 import { siteUrl } from '../../lib/urls';
 const mode = import.meta.env.ARCHIVE_MODE;
 const eligible = publishedServices(loadArchive(), mode);
-const categories = buildBrowsePages(displayServices(eligible, flattenArchive(eligible, mode))).filter((page) => !page.parent);
+const categories = buildBrowsePages(displayServices(eligible, flattenChapters(eligible, mode))).filter((page) => !page.parent);
 const base = import.meta.env.BASE_URL;
 ---
 <SiteLayout title="Browse the archive" route="browse-route">

@@ -1,38 +1,39 @@
-import type { SearchPassage, Service } from '../lib/types';
+import type { SearchChapter, Service } from '../lib/types';
 import { displayType, watchUrl } from '../lib/urls';
 import { availableBrowseCategories } from '../lib/browse';
 import type { SavedPlayback } from '../lib/local-state';
 
-export interface DisplaySection { id: string; videoId: string; start: number; end: number; title: string; type: string; speaker?: string; speakerId?: string }
+export type DisplayChapter = Omit<SearchChapter, 'summary' | 'verseText'>;
 export interface DisplayService {
   id: string; title: string; date: string; type: string; preview: boolean;
   sermonTitle?: string;
+  sermonDescription?: string;
   series?: Service['series'];
-  speakers: { id: string; name: string; passageIds: string[] }[];
-  topics: { id: string; name: string; passageIds: string[] }[];
+  speakers: { id: string; name: string; chapterIds: string[] }[];
+  topics: { id: string; name: string; chapterIds: string[] }[];
   videos: { id: string; duration: number; sequence: number }[];
-  sections: DisplaySection[];
-  passages: SearchPassage[];
+  chapters: DisplayChapter[];
 }
 /** Explicit allowlist at the server/client boundary: editorial notes and workflow never serialize. */
-export function displayServices(services: Service[], passages: SearchPassage[]): DisplayService[] {
+export function displayServices(services: Service[], chapters: SearchChapter[]): DisplayService[] {
   return services.map((service) => ({
     id: service.id, title: service.title, date: service.date, type: service.type,
     sermonTitle: service.sermon_title,
+    ...(service.sermon_description ? { sermonDescription: service.sermon_description } : {}),
     ...(service.series ? { series: { id: service.series.id, name: service.series.name } } : {}),
     preview: service.editorial_status !== 'reviewed',
-    speakers: service.speakers.map(({ id, name }) => ({ id, name, passageIds: service.passages.filter((passage) => (passage.speaker_id ?? service.sections.find((section) => section.id === passage.section_id)?.speaker_id) === id).map((passage) => passage.id) }))
-      .filter((speaker) => speaker.passageIds.length > 0 || service.sections.some((section) => section.speaker_id === speaker.id)),
-    topics: service.topics.map(({ id, name }) => ({ id, name, passageIds: service.passages.filter((passage) => passage.topics.includes(id)).map((passage) => passage.id) }))
-      .filter((topic) => topic.passageIds.length > 0),
+    speakers: service.speakers.map(({ id, name }) => ({ id, name, chapterIds: service.chapters.filter((chapter) => chapter.speaker_id === id).map((chapter) => chapter.id) }))
+      .filter((speaker) => speaker.chapterIds.length > 0),
+    topics: service.topics.map(({ id, name }) => ({ id, name, chapterIds: service.chapters.filter((chapter) => chapter.topics.includes(id)).map((chapter) => chapter.id) }))
+      .filter((topic) => topic.chapterIds.length > 0),
     videos: service.videos.map(({ id, duration, sequence }) => ({ id, duration, sequence })).sort((a, b) => a.sequence - b.sequence),
-    sections: service.sections.map((section) => ({
-      id: section.id, videoId: section.video_id, start: section.start, end: section.end,
-      title: section.title, type: section.type,
-      speaker: service.speakers.find((speaker) => speaker.id === section.speaker_id)?.name,
-      speakerId: section.speaker_id,
-    })).sort((a, b) => service.videos.find((video) => video.id === a.videoId)!.sequence - service.videos.find((video) => video.id === b.videoId)!.sequence || a.start - b.start || a.id.localeCompare(b.id)),
-    passages: passages.filter((passage) => passage.serviceId === service.id && service.videos.some((video) => video.id === passage.videoId)),
+    chapters: chapters.filter((chapter) => chapter.serviceId === service.id && service.videos.some((video) => video.id === chapter.videoId))
+      .map(({ id, serviceId, serviceTitle, videoId, start, end, type, title, parentId, parentTitle, keywords, topics, scripture, scriptureDisplay, speaker, date, series, preview }) => ({
+        id, serviceId, serviceTitle, videoId, start, end, type, title, keywords: [...keywords], topics: [...topics], scripture: [...scripture],
+        ...(parentId ? { parentId, parentTitle } : {}),
+        ...(scriptureDisplay ? { scriptureDisplay: [...scriptureDisplay] } : {}), ...(speaker ? { speaker } : {}), date,
+        ...(series ? { series: { id: series.id, name: series.name } } : {}), preview,
+      })).sort((a, b) => service.videos.find((video) => video.id === a.videoId)!.sequence - service.videos.find((video) => video.id === b.videoId)!.sequence || a.start - b.start || a.id.localeCompare(b.id)),
   }));
 }
 export interface HomeItem {
@@ -42,12 +43,13 @@ export interface HomeItem {
 }
 export function homeItems(services: DisplayService[], base: string): HomeItem[] {
   return [...services].sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id)).flatMap((service) => [...service.videos].sort((a, b) => a.sequence - b.sequence).map((video) => {
-    const sermon = service.sections.find((section) => section.videoId === video.id && section.type === 'sermon');
+    const first = service.chapters.find((chapter) => chapter.videoId === video.id);
+    const sermon = service.chapters.find((chapter) => chapter.videoId === video.id && chapter.type === 'sermon');
     return {
       id: video.id, serviceId: service.id, videoId: video.id,
       title: sermon || service.type === 'sermon' ? service.sermonTitle ?? sermon?.title ?? service.title : service.title, date: service.date, type: sermon?.type ?? service.type,
-      speaker: sermon?.speaker, href: watchUrl(base, { service: service.id, video: video.id, start: sermon?.start }),
-      duration: video.duration, preview: service.preview, start: sermon?.start ?? 0,
+      speaker: sermon?.speaker, href: watchUrl(base, sermon || first ? { chapter: (sermon ?? first)!.id } : { service: service.id, video: video.id }),
+      duration: video.duration, preview: service.preview, start: sermon?.start ?? first?.start ?? 0,
       browseCategories: availableBrowseCategories([service]).map((category) => category.path),
     };
   }));

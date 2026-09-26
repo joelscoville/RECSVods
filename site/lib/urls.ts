@@ -15,10 +15,10 @@ export function searchUrl(base: string, query = ''): string {
   return `${siteUrl(base, 'search/')}${params.size ? `?${params}` : ''}`;
 }
 
-export interface WatchTarget { id?: string; service?: string; video?: string; start?: number }
+export interface WatchTarget { chapter?: string; /** Legacy input only. */ id?: string; service?: string; video?: string; start?: number }
 export function watchUrl(base: string, target: WatchTarget): string {
   const params = new URLSearchParams();
-  if (target.id) params.set('id', target.id);
+  if (target.chapter) return `${siteUrl(base, 'watch/')}?${new URLSearchParams({ chapter: target.chapter })}`;
   if (target.service) params.set('service', target.service);
   if (target.video) params.set('video', target.video);
   if (Number.isFinite(target.start) && target.start! >= 0) params.set('t', String(Math.floor(target.start!)));
@@ -29,6 +29,7 @@ export function readWatchTarget(query: string): WatchTarget {
   const params = new URLSearchParams(query);
   const time = params.get('t');
   return {
+    chapter: params.get('chapter') || undefined,
     id: params.get('id') || undefined,
     service: params.get('service') || undefined,
     video: params.get('video') || undefined,

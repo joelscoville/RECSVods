@@ -4,6 +4,30 @@ The [canonical skill](../.agents/skills/recs-archive-curator/SKILL.md) is the co
 agent procedure. This runbook supplies interfaces and case-derived review checks.
 Curation is a person-invoked workflow, not application logic or an LLM API integration.
 
+## Chapter-only amendment
+
+The newer [concise service outline](concise-outlines.md) is now controlling: outline
+the whole service with neutral peer groups and a few argument-led sermon movements,
+use Title Case, one holistic sermon description and only meaningful supporting cues.
+Subsections are an integrated button-expanded tree. Never render per-unit synopses.
+The same procedure applies to the pending M5 weekly workflow; older density guidance
+in this runbook is superseded.
+
+The [chapter decision](implementation-prompts/decisions/2026-09-26-chapter-search.md)
+controls all current authoring: approximately 8–15 chapters per new full service,
+1–2 sentence summaries, at most ten distinctive spoken keywords, and committed int8
+vectors from private transcript windows. No new passages or transcript files enter
+the repository. Existing internal material is immutable; its older case reports
+below are historical evidence, not instructions to repeat passage-level curation.
+Read [chapter migration](chapter-migration.md), [vectors](chapter-vectors.md) and
+[archive format](archive-format.md) for the current interfaces.
+
+The operator's [caption decision](implementation-prompts/decisions/2026-09-26-caption-transcripts.md)
+applies after batch 001 and to M5: use quality-gated English original captions when
+available, otherwise the existing local whisper.cpp fallback. Prefer weekly curation
+on Monday to allow captions to become available. Discovery/CI never fetches captions
+or interprets recordings. M5 implementation and its quality-gate checks remain pending.
+
 ## Invocation and scope
 
 | Harness | Explicit invocation | Loading changes |
@@ -43,7 +67,7 @@ Read these before the relevant operation:
   model hash, Intel CPU workaround, smoke/failure/calibration and finite timeouts.
 - [Transcript import](transcript-import.md): current CLI, source alignment policy,
   receipt projection, missing-audio exception and verification-gated deletion.
-- [Archive format](archive-format.md): strict schema, Markdown sources, publication
+- [Archive format](archive-format.md): strict chapter schema, committed vectors, publication
   projections, legal workflow edges and human-only approval/guard behavior.
 
 Run project/native commands sequentially through `scripts/devenv-run`, with finite

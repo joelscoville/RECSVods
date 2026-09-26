@@ -1,195 +1,178 @@
-# Passage search and embeddings
+# Chapter search
 
-RECS Replay searches the generated, publication-filtered passage index entirely in the browser. Exact search is synchronous and works without a model. Optional semantic inference runs in a dedicated module worker using self-hosted assets. No model API key or runtime model CDN is used.
+The [concise service outline](concise-outlines.md) adds primary groups and selective
+subsections. Results may target either; child hits show their parent and service
+context. Per-unit synopses remain retrieval-only, never rendered. Service/watch
+display projections strip those synopses entirely and show one sermon description.
 
-## Pinned model contract
+Chapters are the public search and playback unit. Exact search uses public chapter
+metadata immediately; hidden BSB verse-text matching and local meaning-based
+search enrich it independently. No transcript, question, confidence, review note,
+or source path is a public search field. The operator decision is
+[2026-09-26-chapter-search.md](implementation-prompts/decisions/2026-09-26-chapter-search.md).
 
-The authoritative [Hugging Face model API metadata](https://huggingface.co/api/models/Xenova/all-MiniLM-L6-v2?blobs=true), retrieved on 2026-09-25, reported:
+## Artifacts and browser loading
 
-| Property | Value |
+| Artifact under `generated/` | Contents |
 | --- | --- |
-| Model | `Xenova/all-MiniLM-L6-v2` |
-| Exact revision | `751bff37182d3f1213fa05d7196b954e230abad9` |
-| License | Apache-2.0 (upstream model metadata) |
-| Weights | `onnx/model_quantized.onnx`, Transformers.js `dtype: q8` |
-| Weight SHA-256, published in upstream LFS metadata | `afdb6f1a0e45b715d0bb9b11772f032c399babd23bfc31fed1c170afc848bdb1` |
-| Vector | 384 floating-point components; mean pooling; L2 normalized |
-| Transformers.js | `3.8.1` |
-| Browser ONNX runtime | `1.22.0-dev.20250409-89f8206ba4` |
-| Token limit | 256 tokens, including special tokens; longer inputs truncate |
-| Shared preprocessing | Unicode NFKC, collapse whitespace, trim; no document/query prefixes |
+| `chapters.json` | `{schemaVersion:2, model:CHAPTER_VECTOR_CONFIG, chapters:SearchChapter[]}` |
+| `vectors.bin` | Versioned compact int8 rows, in exactly the metadata array's order |
+| `scripture.json` | Deduplicated public-domain BSB verse keys/text and reference mappings |
+| `legacy-chapters.json` | Old ID → eligible chapter ID compatibility mapping only |
 
-`site/lib/embedding-config.ts` is the single source of these values. The pinned tokenizer lowercases text internally. FeatureExtractionPipeline always tokenizes with truncation; version 3.8.1 does **not** honor a `max_length` pipeline-call option. Both Node and worker therefore explicitly set `tokenizer.model_max_length = 256`.
+The builder applies the same publication rule to all artifacts. Production excludes
+unreviewed services and nonplayable uploads. No inference or internal text is needed
+to build an index: the builder selects committed chapter vector rows.
 
-`buildEmbeddingDocument(passage)` concatenates title, summary, questions, topic display names, canonical scripture references, hidden public-domain BSB verse text, and transcript in that order, then applies the same preprocessing as a query. It preserves the separate original display fields. Service title, speaker, date, and type remain exact-search fields. Milestone 2 adds sourced BSB enrichment and reference aliases; see `docs/bible.md` for provenance and normalization. ESV verse text is never indexed or displayed.
-
-### Download and cache verification
-
-`prepare` fetches only these five model files, using the exact revision in every URL:
-
-| File | Exact bytes |
-| --- | ---: |
-| `config.json` | 650 |
-| `tokenizer.json` | 711,661 |
-| `tokenizer_config.json` | 366 |
-| `special_tokens_map.json` | 125 |
-| `onnx/model_quantized.onnx` | 22,972,370 |
-| **Model total** | **23,685,172** |
-
-Weights are verified against the upstream SHA-256 and byte count. The API publishes Git blob SHA-1 IDs, rather than SHA-256, for the small JSON files; preparation verifies those authoritative IDs using the Git blob header and exact byte count. Every file additionally receives a computed SHA-256 in the generated manifest. Cache reuse repeats source checks; matching size alone is insufficient. Corrupt files are replaced only after a verified download. Downloads have a 120-second abort bound, and writes use temporary files followed by atomic rename.
-
-The browser runtime is copied from the installed, version-checked `onnxruntime-web` dependency, whose package archive integrity is managed by the pnpm lockfile. Cached copies are compared by SHA-256 to those installed source bytes. These runtime files total **32,794,766 bytes**:
-
-| File | Exact bytes |
-| --- | ---: |
-| `ort-wasm-simd-threaded.mjs` | 20,856 |
-| `ort-wasm-simd-threaded.wasm` | 11,133,407 |
-| `ort-wasm-simd-threaded.jsep.mjs` | 44,484 |
-| `ort-wasm-simd-threaded.jsep.wasm` | 21,596,019 |
-
-Prepared model plus runtime assets total **56,479,938 bytes**, excluding the small manifest. Both plain and JSEP runtime pairs are staged; a browser loads the pair selected by its runtime, not both pairs. Every individual file is below 100 MB. The worker uses WASM with one thread and no nested proxy worker, so it does not require cross-origin-isolation headers.
-
-Generated paths:
-
-```text
-site/public/models/Xenova/all-MiniLM-L6-v2/{JSON files,onnx/model_quantized.onnx}
-site/public/models/manifest.json
-site/public/onnx/{runtime mjs/wasm files}
-site/public/generated/passages.json
-site/public/generated/vectors.json
-```
-
-The deterministic manifest contains model metadata, relative paths, exact byte counts, SHA-256 values, source URLs, and upstream hashes where supplied. It has no timestamp or machine-specific path. These are ignored generated deployment assets, not source-controlled model caches. Deploy both model/runtime directories along with the generated indexes. Serve `.mjs` as JavaScript and `.wasm` as `application/wasm`.
-
-Both inference paths disable remote model loading and require local files. The worker overrides the runtime's default WASM CDN path with the same-origin deployment base. A missing asset causes an error and leaves exact search usable. Browser model caching is best-effort and uses a revision/dtype-specific cache so an upgrade cannot reuse weights from an older revision. If Cache Storage is unavailable, the worker still fetches same-origin assets. An offline return visit still needs the site application and WASM resources available through the browser/host cache. This is not a service-worker offline-app guarantee.
-
-## Build integration
-
-Run from the repository root, through the bounded wrapper:
-
-```sh
-RECS_DEVENV_TIMEOUT_SECONDS=300 scripts/devenv-run pnpm exec tsx scripts/embeddings.ts prepare
-
-# The archive build selects production or preview records before embeddings run.
-RECS_DEVENV_TIMEOUT_SECONDS=120 scripts/devenv-run pnpm exec tsx scripts/archive.ts build-index
-RECS_DEVENV_TIMEOUT_SECONDS=300 scripts/devenv-run pnpm exec tsx scripts/embeddings.ts index
-```
-
-For local editorial preview, use `scripts/archive.ts build-index --mode preview` before `embeddings.ts index`. Production and preview replace the same canonical files; run these builds sequentially. In the build orchestrator, order operations as archive index → embedding index → Astro build. `index` reads the current `generated/passages.json`; it does not choose editorial eligibility or interpret content.
-
-For **zero passages**, `index` writes a valid empty vector index without loading or preparing the model. The orchestrator may explicitly call `prepare` even for empty archives if model assets should be present in the output. For nonempty passages, `index` verifies/prepares assets automatically. An absent/malformed passage file fails; an old vector index is removed before processing so failure cannot leave preview vectors as current production output.
-
-The vector artifact shape is:
+`site/lib/chapter-index.ts` exposes browser-safe helpers:
 
 ```ts
-interface VectorIndex {
-  schemaVersion: 1;
-  model: typeof EMBEDDING_CONFIG;
-  passagesSha256: string; // SHA-256 of exact source passages.json bytes
-  vectors: Record<string, { document: string; vector: number[] }>;
-}
+loadChapterMetadata(base, signal?); // validates schema and full CHAPTER_VECTOR_CONFIG
+loadScriptureIndex(base, signal?);
+enrichChapters(chapters, scripture); // copies, preserves array order
+loadChapterVectors(base, signal?); // decodes binary header, dimension, rows
+resolveLegacyChapter(base, oldId, signal?); // only for old ?id= links
 ```
 
-Exact preprocessed documents are included to reject stale vectors for edited passages with the same ID. This adds text payload overhead but allows synchronous validation without importing a hashing library into search. Each entry must match its current document and have a finite, approximately unit-length 384-component vector. Full model metadata must match before any semantic contribution is used. No timestamps enter vector output. Numerical parity across Node CPU and browser WASM is checked with tolerance, not claimed to be bit-identical across all hardware.
+Loaders support optional gzip companions with ordinary-file fallback. Metadata
+must validate before vectors are attached. The binary does not carry chapter IDs:
+**never independently filter, sort or remove zero rows from its metadata array**.
+SearchApp rejects a mixed production/preview artifact instead of shifting ordinals.
+It verifies vector row count against the validated metadata. Artifact pairs must
+come from the same build; deploy the generated directory together.
 
-Script exports for an orchestrator: `prepare(root?)`, `buildVectors(root?)`; `embedTexts(texts, root?)` performs local-only inference for verification. The script checks installed dependency versions instead of silently building incompatible vectors after a dependency upgrade.
+BSB enrichment happens only in browser memory. The UI neither renders `verseText`
+nor serializes it per chapter. Scripture links remain reference-only ESV links.
 
-## Search and client interfaces
+## Search APIs
 
 ```ts
-import { prepareSearchIndex, search, type VectorIndex } from './search';
-import { createSemanticClient } from './semantic';
+import { search, prepareSearchIndex, type DecodedChapterVectors } from './search';
 
-search(passages, query); // Array<{ passage: SearchPassage; score: number; reasons: string[] }>
-search(passages, query, { queryVector, vectors, limit: 30 });
+search(chapters, query); // {chapter: SearchChapter, score, reasons}[]
+search(chapters, query, { vectors, queryVector, semanticThreshold: 0.45, limit: 30 });
 
-// Reuse for a loaded snapshot (the application and benchmark path):
-const prepared = prepareSearchIndex(passages, vectors);
-prepared.search(query); // exact, no model/query vector required
+const prepared = prepareSearchIndex(chapters, vectors);
+prepared.search(query);
 prepared.search(query, { queryVector, limit: 30 });
-
-const client = createSemanticClient(import.meta.env.BASE_URL, onStatus);
-const queryVector = await client.embed(query);
-client.dispose();
 ```
 
-`vectors` is the **whole parsed `VectorIndex` artifact**, not its nested `vectors` property. The base must be a same-origin absolute path such as `/` or `/review/`, not an external URL. `onStatus` receives `{state: 'idle' | 'loading' | 'ready' | 'error', progress?: number}`. Progress is a fraction from 0 to 1. `loading` covers model download/cache reads and initialization; progress stays below 1 until the pipeline is ready. The percentage tracks model bytes, not WASM download bytes or estimated initialization time.
+`DecodedChapterVectors` is the codec's decoded `{dimension, rowCount, values:
+Int8Array}` shape, not JSON floats or an ID-keyed map. Search validates dimension,
+row count, byte-array length and quantized value range. Model/recipe validation is
+performed by `loadChapterMetadata`/`parseChapterMetadata`, before pairing rows.
+The old `VectorIndex`, `buildEmbeddingDocument`, and result `.passage` APIs are
+removed. There is no browser-side document reconstruction or transcript embedding.
 
-Client initialization is lazy: construction reports `idle`; the first nonempty `embed` creates the worker. Responses carry request IDs, allowing concurrent callers to receive their own vectors. A worker error rejects pending embeddings, terminates that worker, and reports `error`. The next `embed` attempts initialization with a new worker. Requests have a 120-second deadline. `dispose` terminates the worker and rejects pending calls; create a new client to use semantic search after disposal.
+`search` reevaluates mutable inputs on each call and returns caller-owned chapter
+objects. `prepareSearchIndex` owns a frozen, explicitly allowlisted metadata
+snapshot and a copy of the compact rows. It caches normalized fields/references and
+compact lexical postings. Postings only skip impossible lexical candidates;
+semantic scoring remains exhaustive before any result limit. Zero rows never
+produce a semantic match, even at threshold zero.
 
-UI integration renders `prepared.search(query)` immediately, fetches the vector artifact from the same deployment base, then optionally enriches those results after `embed`. Catch model/fetch errors and retain exact results. Use a query generation counter to discard late results when the input changes; request IDs correlate promises but do not decide which query the UI should display. Dispose the client on unmount. Do not label an exact-only result “semantic”; use the returned reasons.
+Recreate a prepared index when the metadata/vector pair changes. Later caller
+mutations do not affect the snapshot; each query returns fresh result/reason arrays.
+Public title or summary changes do not fabricate or regenerate transcript-derived
+vectors. Source-side binding and freshness checks belong to sidecar generation and
+the builder, not a public text comparison.
 
-### Prepared snapshot lifecycle
-
-`prepareSearchIndex(passages, vectors?)` owns a snapshot: it copies and freezes public passage objects and their nested arrays/series, parses scripture references, normalizes lexical fields (including conservative BSB plural folding), and validates compatible, normalized, source-current passage vectors once. Valid vectors are copied as ordinary JavaScript numbers, retaining Float64 precision. Construction-only maps intern repeated field strings and parsed references; their entries are cleared after preparation. There is no global ID cache or per-word posting/Set index.
-
-`prepared.search(query, options?)` accepts `queryVector`, `semanticThreshold`, and `limit`; vectors belong to the factory, not query options. It validates each supplied query vector, scans all eligible passages and compatible vectors exhaustively, and retains the pure API's arithmetic order, weights, thresholds, sort order and reasons. A full-date query still filters passages before lexical or semantic scoring. Preparation changes when work happens, not which candidates can score.
-
-Treat each loaded passage/vector pair as immutable and **create a new prepared index when either changes**, including source edits under existing IDs. Later mutation of caller-owned inputs does not alter an existing snapshot; it continues to represent the original data. Rebuilding with edited passages and old vectors rejects those stale vectors through the exact embedding-document check. Results expose frozen snapshot passages, while result objects/reason arrays are fresh per query. Release the prepared index when replacing it so its storage can be collected.
-
-`SearchApp` memoizes preparation by passage/vector state and deployment base, then memoizes queries separately. Vector arrival rebuilds the snapshot once; subsequent queries reuse it. Late embedding responses are generation-guarded, and hybrid results must belong to the current query, passage array and base. The exact-first display, semantic progress/error/retry controls, history and share state retain their existing behavior.
-
-The original `search(passages, query, options)` remains a nonmutating, fresh-input API: it reevaluates in-place source and vector edits on every call and returns the caller's passage objects. It intentionally has no prepared cache. `tests/prepared-search.test.ts` compares the optimized path against this independent implementation using exact equality of result order, scores and reasons, plus snapshot ownership/rebuild tests. Keep these paths equivalent when changing ranking policy.
-
-### Scoring and deterministic order
-
-Natural-language question scaffolding (common pronouns, auxiliaries and conditionals)
-does not count toward meaningful-term coverage. Negation and meaningful title words
-such as `only` and `will` remain searchable. Exact-phrase checks retain the whole
-original query. This general rule was tightened after the larger historical corpus
-revealed irrelevant matches driven by function words; no query-specific alias was added.
-
-All weights live in `SEARCH_WEIGHTS`:
+## Ranking
 
 | Field | Weight |
 | --- | ---: |
 | Date | 16 |
 | Speaker, scripture | 14 each |
-| BSB verse text | 8 |
-| Topic | 7 |
-| Passage title | 6 |
-| Service title, question | 4 each |
-| Series name (when present) | 4 |
+| Browser-only BSB verse text | 2 |
+| Keyword, topic | 7 each |
+| Chapter title | 6 |
+| Service title, series name | 4 each |
 | Summary | 3 |
-| Transcript, type | 2 each |
-| Semantic cosine | 3 |
-| Valid overlapping scripture-reference bonus | 32 |
+| Type | 2 |
+| Semantic cosine | 6 |
+| Overlapping parsed scripture-reference bonus | 32 |
 
-Lexical comparison uses NFKC, case folding, Unicode letter/number token boundaries, and a small English stop-word list. A field contributes its weight multiplied by the fraction of distinct meaningful query terms present. An exact whole-query phrase adds half that field's weight. Repetition does not inflate scores. A candidate must cover at least 60% of meaningful query terms across its fields to retain lexical contributions. Reasons name only fields that contributed; an exact-phrase qualifier is emitted only when that phrase is present. Partial field reasons can coexist for mixed queries such as speaker plus topic.
+All weights are in `SEARCH_WEIGHTS`. Normalization uses NFKC, case folding and
+Unicode token boundaries. Query scaffolding is removed with a general stop-word
+list; negation and meaningful words such as `only` remain. Light English inflection
+normalization applies to metadata and BSB, without synonyms or prefix matching.
+Field contributions use inverse document frequency over metadata postings:
+`1 + log((chapterCount + 1) / (documentFrequency + 1))`, normalized by total query
+weight. A whole-query phrase contributes one additional field weight.
 
-ISO dates and English long/short month forms are searchable. Scripture aliases normalize before matching; reference ranges support intersection and preserve verse-number boundaries (`1` does not substring-match `10`). Metadata weights prioritize speaker/date/scripture over incidental transcript mentions and the bounded semantic contribution. Hidden BSB text uses a distinct verse-text match reason and conservative plural matching; it is never presented as an ESV quotation. General fuzzy spelling is not implemented.
+Candidates normally need 60% term coverage. A sparse match needs at least two terms,
+one third coverage, and a title/keyword/summary cue appearing in at most 5% of the
+corpus; it cannot drop a query's negation/`only`. Unknown terms remain in the
+denominator. Phrase matches cannot cross array values. These rules address short
+chapter metadata generally; no service IDs, special query aliases or corpus answers
+are encoded in ranking. BSB's lower weight prevents incidental common verse words
+from overwhelming chapter descriptions.
 
-Semantic scores are cosine similarity × 3, only at or above **0.45** by default. `semanticThreshold` optionally overrides that cutoff, clamped to [0, 1]. Below-cutoff vectors contribute neither score nor reason. This deliberately permits no results rather than always selecting the nearest vector. The cutoff is a conservative initial heuristic, not a relevance guarantee; tune it against human-reviewed archive queries. Blank and stop-word-only queries return no results even if a vector is supplied.
+Whole-query valid ISO/English dates constrain both lexical and semantic results.
+Scripture aliases and range intersections are parsed; verse 1 does not match 10.
+The parsed-reference bonus scales by the fraction of requested verses covered,
+merging duplicate/overlapping ranges so repeated citations cannot inflate it.
+BSB matching uses the same inflection normalization and the reason `Verse-text match
+(BSB)`. Other reasons are `Scripture: <canonical reference>`, `Keyword`,
+`Similar in meaning`, or the specific contributing field.
 
-Sort order is descending score, descending date, then ascending service ID, video ID, start seconds, and passage ID, using code-point comparisons rather than locale-dependent sorting. `limit` truncates after sorting. Input arrays and passage objects are not modified.
+Semantic cosine normalizes the int8 row itself using `cosineChapterVector`; no
+float scale is needed. Positive similarities at or above 0.45 contribute by default.
+The optional threshold is clamped to [0,1]. Missing/zero rows remain exact-searchable
+and receive no semantic reason. Blank and stop-word-only queries return no results.
+Ties sort by descending date, then ascending service ID, video ID, start, chapter ID.
+Each query caches term/phrase membership for repeated normalized metadata and BSB
+values. This avoids repeated long-text scans across parents/subsections while
+preserving exhaustive row scoring, order and match reasons.
 
-## Verification and measured evidence
+## Lazy self-hosted MiniLM
+
+The unchanged query model is `Xenova/all-MiniLM-L6-v2`, revision
+`751bff37182d3f1213fa05d7196b954e230abad9`, q8, 384 dimensions, mean pooling and
+L2 normalization. `embedding-config.ts` pins query inference; `chapter-vectors.ts`
+adds the source windowing/aggregation/quantization recipe. Source chapter vectors
+use overlapping token windows and int8 quantization; query inference retains its
+256-token limit. Model and ONNX assets stay self-hosted under the deployment base.
+
+`createSemanticClient(base, onStatus)` remains lazy: the first nonempty `embed`
+creates its module worker. Request IDs correlate replies; a generation guard in
+SearchApp discards late query replies. Failures reject pending requests and allow a
+fresh worker on retry. Requests have a 120-second deadline; dispose on unmount.
+No query is sent to an external model service.
+
+SearchApp memoizes preparation per metadata/enrichment/vector snapshot. Exact
+results use server-provided chapters before any fetch completes. BSB and semantic
+failures have independent recovery controls and leave metadata search usable.
+Semantic arrival reranks without dropping exact matches. An all-zero vector file
+reports unavailable meaning-based search; partial zero rows receive an explicit
+availability note. Submitted history and playback progress remain local.
+
+## Evaluation and verification
+
+The chapter migration's unit fixtures use fictional metadata and compact vectors.
+Previous passage-era measurements do not establish chapter correctness or download
+size. Fresh evidence is recorded in `docs/run-log.md`.
+
+`evaluation/search-cases.yaml` keeps original natural-language questions and rank
+bounds for actual pinned-model hybrid evaluation. Four cases additionally declare
+`exactQuery` keyword companions: concise metadata need not repeat question wording.
+Reports show the actual query for each mode; companion-query success is never a
+claim of exact recall for the longer question. Existing targets map to their
+containing chapters; September 13 also accepts `s0913-knowledge`, whose preserved
+`p0913-two-movements` explicitly gives the substantive meditation/prayer/praise answer.
+
+After integration is ready:
 
 ```sh
-RECS_DEVENV_TIMEOUT_SECONDS=120 scripts/devenv-run pnpm test:search
-RECS_DEVENV_TIMEOUT_SECONDS=120 scripts/devenv-run pnpm exec vitest run tests/prepared-search.test.ts
-RECS_DEVENV_TIMEOUT_SECONDS=120 scripts/devenv-run pnpm exec tsc --noEmit
-
-# After prepare: real model, networking forbidden during cache reuse/Node inference.
-RECS_DEVENV_TIMEOUT_SECONDS=120 RECS_TEST_EMBEDDINGS=1 \
-  scripts/devenv-run pnpm test:search
-
-# Optional real-browser verification; install Chromium into a local cache first.
-RECS_DEVENV_TIMEOUT_SECONDS=300 scripts/devenv-run pnpm exec playwright install chromium --only-shell
-RECS_DEVENV_TIMEOUT_SECONDS=180 RECS_TEST_EMBEDDINGS=1 RECS_TEST_BROWSER_EMBEDDINGS=1 \
-  scripts/devenv-run pnpm test:search
+scripts/devenv-run pnpm exec vitest run tests/search.test.ts tests/prepared-search.test.ts
+scripts/devenv-run pnpm typecheck
+scripts/devenv-run pnpm lint
 ```
 
-Set `PLAYWRIGHT_BROWSERS_PATH` consistently on install and test commands when using an isolated temporary browser cache. The browser check starts and closes its own Vite server, runs the real worker under `/review/`, blocks external requests, verifies self-hosted q8/WASM requests, and compares its normalized vector to Node (cosine > 0.999). It creates no product UI or archive content.
-
-Measured on the development machine on 2026-09-25, through `scripts/devenv-run`:
-
-- First successful preparation: **5.984 seconds**, **23,685,172 bytes downloaded** from the pinned model revision; runtime files copied from installed dependencies.
-- Subsequent preparation: **1.113 seconds**, **0 download bytes**, all **23,685,172 model bytes** reverified and reused.
-- Current production index: **0 passages**, completed in **0.009 seconds**. No invented archive passages were added.
-- Final focused suite with both real-model checks: **24 tests passed** in **9.019 seconds** test execution; the real Node check took **1.845 seconds**, and the browser integration check took **7.105 seconds**, including server/browser setup and inference.
-- TypeScript `tsc --noEmit` and ESLint on all six owned TypeScript files passed. Tests cover document construction, preprocessing/config mismatch, dimensions/norms, exact and hybrid ranking, deterministic order, truthful reasons, empty results, stale-vector rejection, lazy worker lifecycle, retry/timeouts, zero-passage replacement, verified cache reuse, revision-scoped browser caching, and real browser/Node compatibility.
-
-Preparation timings exclude devenv shell entry. Browser-test timing is not an isolated model download or latency benchmark. This verifies the search subsystem; the milestone's real-recording/editorial/playback gate remains separate.
-
-The historical verification above predates the M4 prepared-search change. **Prepared-search tests, typecheck, lint, regression checks and post-change performance measurement are pending the main worker's batch-end run.** No commands were run by the optimization worker while the content workers were active. The existing `test:search` package script does not include the new prepared-search test file; invoke it explicitly as above or use the full Vitest suite. See `docs/performance.md` for the saved pre-change measurements and unchanged benchmark policy.
+The search suite retains opt-in offline model-cache and real browser-worker checks
+through `RECS_TEST_EMBEDDINGS=1` and `RECS_TEST_BROWSER_EMBEDDINGS=1`. Prepare local
+assets and Chromium before enabling those. Evaluation and benchmark consumers use
+ordered chapter rows, including zero rows. Use `pnpm evaluate:core -- --implementation`
+for this all-needs-review implementation checkpoint, `pnpm benchmark:search` for
+the declared browser budgets, and `pnpm exec tsx scripts/chapter-report.ts` for
+current sizes and explicitly qualified 700-service projections.

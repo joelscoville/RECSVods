@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { createPassageController, mountYouTubePlayer, type PassageController, type PlaybackRange, type PlayerAdapter } from '../lib/player';
+import { createChapterController, mountYouTubePlayer, type ChapterController, type PlaybackRange, type PlayerAdapter } from '../lib/player';
 import { savePlayback } from '../lib/local-state';
 import { youtubeUrl } from '../lib/urls';
 import Icon from './Icon';
@@ -9,7 +9,7 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, onTime
 }) {
   const container = useRef<HTMLDivElement>(null);
   const adapter = useRef<PlayerAdapter | null>(null);
-  const controller = useRef<PassageController | null>(null);
+  const controller = useRef<ChapterController | null>(null);
   const abort = useRef<AbortController | null>(null);
   const currentRange = useRef(range);
   const timeListener = useRef(onTime);
@@ -31,12 +31,12 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, onTime
   useEffect(() => {
     currentRange.current = range;
     seekSettlesAt.current = Date.now() + 750;
-    controller.current?.setPassage(range);
+    controller.current?.setChapter(range);
     setEnded(false);
     setContinued(false);
     setBlocked(false);
     lastTime.current = null;
-  }, [range.id, range.start, range.end]);
+  }, [range.id, range.start, range.end, range.resumeAt]);
 
   useEffect(() => {
     let lastSavedAt = 0;
@@ -80,15 +80,15 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, onTime
     setEnded(false);
     try {
       const player = await mountYouTubePlayer(container.current, {
-        videoId, title, start: currentRange.current.start, signal: request.signal,
+        videoId, title, start: currentRange.current.resumeAt ?? currentRange.current.start, signal: request.signal,
         onError(message) { if (!request.signal.aborted) { setError(message); setStatus('error'); adapter.current?.pauseVideo(); } },
         onAutoplayBlocked() { if (!request.signal.aborted) setBlocked(true); },
       });
       if (request.signal.aborted) return;
       adapter.current = player;
-      controller.current = createPassageController(player, () => setEnded(true));
+      controller.current = createChapterController(player, () => setEnded(true));
       seekSettlesAt.current = Date.now() + 750;
-      controller.current.setPassage(currentRange.current);
+      controller.current.setChapter(currentRange.current);
       setStatus('ready');
     } catch (failure) {
       if (!request.signal.aborted) { setError(failure instanceof Error ? failure.message : 'The player could not be loaded.'); setStatus('error'); }
@@ -107,9 +107,9 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, onTime
       {status === 'error' && <div className="player-message"><p role="alert">{error}</p><div className="action-row"><button type="button" className="button button-secondary" onClick={play}>Retry player</button><a className="text-link" href={youtubeUrl(videoId, range.start)}>Watch on YouTube</a></div></div>}
     </div>
     {blocked && <div className="playback-notice"><p role="status">Your browser paused automatic playback. Press Play to start.</p><button className="button button-secondary" type="button" onClick={() => { adapter.current?.playVideo(); }}>Play recording</button></div>}
-    {range.end !== undefined && status === 'ready' && <div className="passage-controls">
-      <p role="status">{ended ? 'Passage finished. Playback is paused.' : continued ? 'Continuing through the full recording.' : 'Playback will pause at the end of this passage.'}</p>
-      <div className="action-row"><button type="button" className="button button-secondary" onClick={() => { seekSettlesAt.current = Date.now() + 750; controller.current?.replay(); setEnded(false); setContinued(false); }}>Replay passage</button><button type="button" className="button button-secondary" onClick={() => { controller.current?.continueWatching(); setEnded(false); setContinued(true); }}>Continue watching</button></div>
+    {range.end !== undefined && status === 'ready' && <div className="chapter-controls">
+      <p role="status">{ended ? 'Chapter finished. Playback is paused.' : continued ? 'Continuing through the full recording.' : 'Playback will pause at the end of this chapter.'}</p>
+      <div className="action-row"><button type="button" className="button button-secondary" onClick={() => { seekSettlesAt.current = Date.now() + 750; controller.current?.replay(); setEnded(false); setContinued(false); }}>Replay chapter</button><button type="button" className="button button-secondary" onClick={() => { controller.current?.continueWatching(); setEnded(false); setContinued(true); }}>Continue watching</button></div>
     </div>}
   </div>;
 }

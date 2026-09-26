@@ -54,3 +54,19 @@ export function scriptureOverlaps(a: ScriptureReference, b: ScriptureReference):
   const position = (point: ScriptureReference['start']) => point.chapter * 1000 + point.verse;
   return a.book === b.book && position(a.start) <= position(b.end) && position(b.start) <= position(a.end);
 }
+
+/** Fraction of requested verses covered, merging duplicate/overlapping references. */
+export function scriptureCoverage(query: ScriptureReference, references: readonly ScriptureReference[]): number {
+  const chapters = (counts as Record<string, number[]>)[query.book];
+  const position = (point: ScriptureReference['start']) => chapters.slice(0, point.chapter - 1).reduce((sum, count) => sum + count, 0) + point.verse;
+  const start = position(query.start), end = position(query.end);
+  const spans = references.filter(reference => scriptureOverlaps(query, reference))
+    .map(reference => [Math.max(start, position(reference.start)), Math.min(end, position(reference.end))])
+    .sort((a, b) => a[0] - b[0]);
+  let covered = 0, previousEnd = start - 1;
+  for (const [from, to] of spans) {
+    covered += Math.max(0, to - Math.max(from, previousEnd + 1) + 1);
+    previousEnd = Math.max(previousEnd, to);
+  }
+  return covered / (end - start + 1);
+}

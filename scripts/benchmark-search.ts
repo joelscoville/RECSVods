@@ -288,40 +288,42 @@ interface Scenario {
 // Native browser import string bypasses Node/Vitest SSR; no copied ranking algorithm.
 function searchHarness(base: string, profile: Budgets['profile'], queryVectors: number[][], rows: number | null, sha256: string) {
   return `(async () => {
-    const { prepareSearchIndex, buildEmbeddingDocument } = await import(${JSON.stringify(`${base}site/lib/search.ts`)});
-    const { isEmbeddingVector, isCompatibleEmbeddingConfig } = await import(${JSON.stringify(`${base}site/lib/embedding-config.ts`)});
+    const { prepareSearchIndex } = await import(${JSON.stringify(`${base}site/lib/search.ts`)});
+    const { isEmbeddingVector } = await import(${JSON.stringify(`${base}site/lib/embedding-config.ts`)});
+    const { parseChapterMetadata, parseScriptureIndex, enrichChapters } = await import(${JSON.stringify(`${base}site/lib/chapter-index.ts`)});
+    const { decodeChapterVectors } = await import(${JSON.stringify(`${base}site/lib/chapter-vectors.ts`)});
     const start = performance.now();
     const load = async (file) => {
       const response = await fetch(${JSON.stringify(base)} + 'generated/' + file, { signal: AbortSignal.timeout(120000) });
       if (!response.ok) throw new Error('Missing preview artifact: ' + file);
-      return response.json();
+      return response.arrayBuffer();
     };
-    let [passages, vectors] = await Promise.all([load('passages.json'), load('vectors.json')]);
-    if (!Array.isArray(passages) || !passages.length || vectors.schemaVersion !== 1 || !isCompatibleEmbeddingConfig(vectors.model) || vectors.passagesSha256 !== ${JSON.stringify(sha256)}) throw new Error('Invalid/stale preview index');
-    if (new Set(passages.map(p => p.id)).size !== passages.length || Object.keys(vectors.vectors).length !== passages.length) throw new Error('Duplicate/missing vector IDs');
-    for (const passage of passages) {
-      const entry = vectors.vectors[passage.id];
-      if (!entry || !isEmbeddingVector(entry.vector) || entry.document !== buildEmbeddingDocument(passage)) throw new Error('Stale/invalid vector: ' + passage.id);
-    }
+    const [metadataBytes, vectorBytes, scriptureBytes] = await Promise.all([load('chapters.json'), load('vectors.bin'), load('scripture.json')]);
+    const actualHash = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', metadataBytes)), n => n.toString(16).padStart(2, '0')).join('');
+    if (actualHash !== ${JSON.stringify(sha256)}) throw new Error('Stale preview metadata');
+    const metadata = parseChapterMetadata(JSON.parse(new TextDecoder().decode(metadataBytes)));
+    let chapters = enrichChapters(metadata.chapters, parseScriptureIndex(JSON.parse(new TextDecoder().decode(scriptureBytes))));
+    let vectors = decodeChapterVectors(vectorBytes);
+    if (!chapters.length || vectors.rowCount !== chapters.length) throw new Error('Invalid preview row count');
     const target = ${JSON.stringify(rows)};
     if (target !== null) {
-      const original = passages;
-      const originalVectors = vectors.vectors;
-      const entries = {};
-      passages = Array.from({ length: target }, (_, i) => {
+      const original = chapters;
+      const values = new Int8Array(target * vectors.dimension);
+      chapters = Array.from({ length: target }, (_, i) => {
         const source = original[i % original.length];
         const copy = structuredClone(source);
         copy.id = 'synthetic-' + i + '-' + source.id;
-        entries[copy.id] = structuredClone(originalVectors[source.id]);
+        const offset = (i % original.length) * vectors.dimension;
+        values.set(vectors.values.subarray(offset, offset + vectors.dimension), i * vectors.dimension);
         return copy;
       });
-      vectors = { ...vectors, passagesSha256: 'synthetic-duplication-not-an-artifact', vectors: entries };
+      vectors = { dimension: vectors.dimension, rowCount: target, values };
     }
     const queryVectors = ${JSON.stringify(queryVectors)};
     if (!queryVectors.every(isEmbeddingVector)) throw new Error('Invalid precomputed query vector');
     const queries = ${JSON.stringify(profile.queries)};
     const prepareStart = performance.now();
-    const prepared = prepareSearchIndex(passages, vectors);
+    const prepared = prepareSearchIndex(chapters, vectors);
     const prepareMs = performance.now() - prepareStart;
     const initMs = performance.now() - start;
     const samples = queries.map(query => ({ query, exact: [], rerank: [], exactCount: 0, rerankCount: 0 }));
@@ -339,8 +341,8 @@ function searchHarness(base: string, profile: Budgets['profile'], queryVectors: 
       }
     }
     // Keep live index references through the heap snapshot, without serializing them to Node.
-    window.__benchmarkLiveIndex = { passages, vectors, queryVectors, prepared };
-    return { rows: passages.length, initMs, prepareMs, samples };
+    window.__benchmarkLiveIndex = { chapters, vectors, queryVectors, prepared };
+    return { rows: chapters.length, initMs, prepareMs, samples };
   })()`;
 }
 
@@ -392,18 +394,19 @@ export async function benchmark(options: { label: string; output?: string }) {
     if (mode.mode !== 'preview' || typeof mode.base !== 'string' || !/^\/(?:[A-Za-z0-9_-]+\/)*$/.test(mode.base)) throw new Error('Expected existing preview build with valid build-mode.json');
     const base: string = mode.base;
     const assets = await inventory(directory);
-    const sourceFiles = ['site/lib/search.ts', 'site/lib/scripture.ts', 'site/lib/embedding-config.ts', 'bible/books.ts', 'bible/verse-counts.json'];
+    const sourceFiles = ['site/lib/search.ts', 'site/lib/chapter-index.ts', 'site/lib/chapter-vectors.ts', 'site/lib/scripture.ts', 'site/lib/embedding-config.ts', 'bible/books.ts', 'bible/verse-counts.json'];
     const sourceHashes = await Promise.all(sourceFiles.map(async filename => ({ path: filename, sha256: digest(await readFile(path.join(ROOT, filename))) })));
     report.searchSource = sourceHashes;
-    const passageBytes = await readFile(path.join(directory, 'generated/passages.json'));
-    const passageData: unknown = JSON.parse(passageBytes.toString('utf8'));
-    if (!Array.isArray(passageData) || !passageData.length) throw new Error('Benchmark requires a nonempty real preview index');
-    const metadata = sizes(passageBytes);
-    const vectors = sizes(await readFile(path.join(directory, 'generated/vectors.json')));
+    const chapterBytes = await readFile(path.join(directory, 'generated/chapters.json'));
+    const chapterData = JSON.parse(chapterBytes.toString('utf8'));
+    if (chapterData.schemaVersion !== 2 || !Array.isArray(chapterData.chapters) || !chapterData.chapters.length) throw new Error('Benchmark requires a nonempty real chapter preview index');
+    const metadata = sizes(chapterBytes);
+    const vectors = sizes(await readFile(path.join(directory, 'generated/vectors.bin')));
+    const scripture = sizes(await readFile(path.join(directory, 'generated/scripture.json')));
     const largest = assets.reduce((a, b) => a.rawBytes > b.rawBytes ? a : b);
-    report.artifacts = { directory: 'dist/preview', base, rows: passageData.length, metadata, vectors, largest, assets };
+    report.artifacts = { directory: 'dist/preview', base, rows: chapterData.chapters.length, metadata, vectors, scripture, largest, assets };
     check('real', 'metadata.rawBytes', metadata.rawBytes); check('real', 'vectors.rawBytes', vectors.rawBytes);
-    check('real', 'index.gzipBytes', metadata.gzipBytes + vectors.gzipBytes);
+    check('real', 'index.gzipBytes', metadata.gzipBytes + vectors.gzipBytes + scripture.gzipBytes);
     check('real', 'host.largestFileBytes', largest.rawBytes);
     check('real', 'model.hostedBytes', assets.filter(a => a.path.startsWith('models/')).reduce((sum, a) => sum + a.rawBytes, 0));
     check('real', 'runtime.hostedBytes', assets.filter(a => a.path.startsWith('onnx/')).reduce((sum, a) => sum + a.rawBytes, 0));

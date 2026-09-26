@@ -8,11 +8,20 @@ import counts from '../bible/verse-counts.json';
 import { enrichPassages, verseTextForReferences } from '../bible/enrich';
 import { generateBibleCounts, loadBible, verifyBibleSource } from '../scripts/bible';
 import { buildIndex } from '../scripts/archive';
-import { archiveFromFiles, flattenArchive, PassageSchema, SOURCE_CHANNEL_ID } from '../site/lib/archive';
-import { normalizeScriptureReference, parseScriptureReference, scriptureUrl } from '../site/lib/scripture';
+import { archiveFromFiles, flattenChapters, ChapterSourceSchema, SOURCE_CHANNEL_ID } from '../site/lib/archive';
+import { packChapterVectors } from '../site/lib/chapter-vectors';
+import { createChapterVectorManifest } from '../scripts/chapter-vectors';
+import { normalizeScriptureReference, parseScriptureReference, scriptureCoverage, scriptureUrl } from '../site/lib/scripture';
 
 const bible = loadBible();
 describe('scripture reference metadata', () => {
+  it('ranks real query coverage without double counting overlapping references or other books', () => {
+    const query = parseScriptureReference('Romans 13')!;
+    const refs = ['Romans 13:1-7', 'Romans 13:1', 'Romans 13:2-4', '1 Peter 2'].map(ref => parseScriptureReference(ref)!);
+    expect(scriptureCoverage(query, refs)).toBe(0.5);
+    expect(scriptureCoverage(query, [...refs, parseScriptureReference('Romans 13:8-14')!])).toBe(1);
+    expect(scriptureCoverage(query, [parseScriptureReference('Romans 12')!])).toBe(0);
+  });
   it('covers all 66 canonical books and every declared alias with sourced chapter bounds', () => {
     expect(BOOKS).toHaveLength(66);
     expect(Object.keys(counts)).toEqual(BOOKS.map(([book]) => book));
@@ -46,10 +55,9 @@ const service = {
   id: 'bible-fixture', date: '2026-01-04', title: 'Synthetic fixture gathering', type: 'service',
   workflow_status: 'complete', editorial_status: 'needs_review',
   videos: [{ id: 'AAAAAAAAAAA', channel_id: SOURCE_CHANNEL_ID, duration: 100, sequence: 1, workflow_status: 'complete', media_disposition: 'playable' }],
-  sections: [{ id: 'bible-section', video_id: 'AAAAAAAAAAA', start: 0, end: 100, type: 'address', title: 'Synthetic section', confidence: 1 }],
-  passages: [{ id: 'bible-passage', video_id: 'AAAAAAAAAAA', section_id: 'bible-section', start: 10, end: 60,
-    type: 'address', title: 'Synthetic address', summary: 'A synthetic test summary.', transcript: 'A synthetic test transcript.',
-    confidence: 1, questions: [], topics: [], scripture: ['Rom. 12:1', 'II Tim 3:16'] }],
+  chapters: [{ id: 'bible-chapter', video_id: 'AAAAAAAAAAA', start: 0, end: 100,
+    type: 'address', title: 'Synthetic address', summary: 'A synthetic test summary.',
+    keywords: [], topics: [], scripture: ['Rom. 12:1', 'II Tim 3:16'] }],
 };
 const filename = 'services/2026/bible-fixture/service.yaml';
 describe('offline BSB enrichment boundary', () => {
@@ -71,16 +79,16 @@ describe('offline BSB enrichment boundary', () => {
   });
   it('normalizes the loader, preserves aligned originals, and keeps BSB out of display projections', () => {
     const archive = archiveFromFiles(new Map([[filename, stringify(service)]]));
-    expect(archive[0].passages[0].scripture).toEqual(['Romans 12:1', '2 Timothy 3:16']);
-    const display = flattenArchive(archive, 'preview');
-    expect(display[0].scriptureDisplay).toEqual(service.passages[0].scripture);
+    expect(archive[0].chapters[0].scripture).toEqual(['Romans 12:1', '2 Timothy 3:16']);
+    const display = flattenChapters(archive, 'preview');
+    expect(display[0].scriptureDisplay).toEqual(service.chapters[0].scripture);
     expect(display[0]).not.toHaveProperty('verseText');
     const enriched = enrichPassages(display, bible);
     expect(enriched[0].verseText).toBe([bible.Romans[11][0], bible['2 Timothy'][2][15]].join('\n'));
     const { verseText: _verseText, ...unchanged } = enriched[0];
     expect(unchanged).toEqual(display[0]);
     expect(display[0]).not.toHaveProperty('verseText');
-    expect(PassageSchema.safeParse({ ...archive[0].passages[0], scriptureDisplay: ['Romans 1'] }).success).toBe(false);
+    expect(ChapterSourceSchema.safeParse({ ...archive[0].chapters[0], scriptureDisplay: ['Romans 1'] }).success).toBe(false);
     expect(enrichPassages([{ ...display[0], scripture: [], verseText: 'stale' }], bible)[0]).not.toHaveProperty('verseText');
   });
   it('adds BSB only after publication filtering and produces deterministic generated JSON', () => {
@@ -88,11 +96,19 @@ describe('offline BSB enrichment boundary', () => {
     try {
       mkdirSync(path.dirname(path.join(root, filename)), { recursive: true });
       writeFileSync(path.join(root, filename), stringify(service));
-      expect(JSON.parse(readFileSync(buildIndex(root), 'utf8'))).toEqual([]);
+      const binary = packChapterVectors([new Int8Array(384)]);
+      writeFileSync(path.join(root, path.dirname(filename), 'chapter-vectors.bin'), binary);
+      writeFileSync(path.join(root, path.dirname(filename), 'chapter-vectors.json'), JSON.stringify(createChapterVectorManifest(binary,
+        service.chapters.map(({ id, video_id, start, end }) => ({ id, video_id, start, end, windows: 0, has_text: false,
+          input_sha256: 'a'.repeat(64), source_kind: 'none' as const })))));
+      expect(JSON.parse(readFileSync(buildIndex(root), 'utf8')).chapters).toEqual([]);
       const first = readFileSync(buildIndex(root, 'preview'), 'utf8');
-      expect(JSON.parse(first)[0].verseText).toContain(bible.Romans[11][0]);
+      expect(JSON.parse(first).chapters[0]).not.toHaveProperty('verseText');
+      const scripture = JSON.parse(readFileSync(path.join(root, 'site/public/generated/scripture.json'), 'utf8'));
+      expect(scripture.verses['Romans 12:1']).toBe(bible.Romans[11][0]);
       expect(readFileSync(buildIndex(root, 'preview'), 'utf8')).toBe(first);
-      expect(JSON.parse(readFileSync(buildIndex(root), 'utf8'))).toEqual([]);
+      expect(JSON.parse(readFileSync(buildIndex(root), 'utf8')).chapters).toEqual([]);
+      expect(JSON.parse(readFileSync(path.join(root, 'site/public/generated/scripture.json'), 'utf8')).verses).toEqual({});
     } finally { rmSync(root, { recursive: true, force: true }); }
   });
 });

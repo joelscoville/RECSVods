@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { createPassageController, type PlayerAdapter } from '../site/lib/player';
+import { createChapterController, type PlayerAdapter } from '../site/lib/player';
 import { basePath, formatTime, readWatchTarget, searchUrl, serviceUrl, siteUrl, watchUrl, youtubeUrl } from '../site/lib/urls';
 import { clearLocalState, getSavedPlayback, getSearchHistory, savePlayback, saveSearch } from '../site/lib/local-state';
 import { clearSearchHistory } from '../site/lib/local-state';
@@ -16,21 +16,21 @@ function setup() {
     destroy: vi.fn(),
   };
   const onEnd = vi.fn();
-  const controller = createPassageController(adapter, onEnd);
+  const controller = createChapterController(adapter, onEnd);
   return { adapter, controller, onEnd, seekManually: (next: number) => { time = next; }, setState: (next: number) => { state = next; } };
 }
 
-describe('passage playback boundaries', () => {
-  it('seeks to the selected passage start and plays through the adapter', () => {
+describe('chapter playback boundaries', () => {
+  it('seeks to the selected chapter start and plays through the adapter', () => {
     const { adapter, controller } = setup();
-    controller.setPassage({ id: 'p1', start: 42.5, end: 70 });
+    controller.setChapter({ id: 'c1', start: 42.5, end: 70 });
     expect(adapter.seekTo).toHaveBeenCalledWith(42.5, true);
     expect(adapter.playVideo).toHaveBeenCalledOnce();
     expect(controller.tick()).toBe(false);
   });
   it('soft-pauses exactly once at the end while actually playing', () => {
     const { adapter, controller, seekManually, setState, onEnd } = setup();
-    controller.setPassage({ id: 'p1', start: 10, end: 20 });
+    controller.setChapter({ id: 'c1', start: 10, end: 20 });
     seekManually(20);
     setState(2);
     expect(controller.tick()).toBe(false);
@@ -44,9 +44,9 @@ describe('passage playback boundaries', () => {
     expect(adapter.pauseVideo).toHaveBeenCalledOnce();
     expect(onEnd).toHaveBeenCalledOnce();
   });
-  it('leaves manual seeks before the endpoint intact, including before the passage start', () => {
+  it('leaves manual seeks before the endpoint intact, including before the chapter start', () => {
     const { adapter, controller, seekManually } = setup();
-    controller.setPassage({ id: 'p1', start: 60, end: 100 });
+    controller.setChapter({ id: 'c1', start: 60, end: 100 });
     seekManually(4);
     controller.tick();
     seekManually(90);
@@ -56,7 +56,7 @@ describe('passage playback boundaries', () => {
   });
   it('handles a seek beyond the endpoint as a single soft stop without rewinding', () => {
     const { adapter, controller, seekManually } = setup();
-    controller.setPassage({ id: 'p1', start: 10, end: 20 });
+    controller.setChapter({ id: 'c1', start: 10, end: 20 });
     seekManually(120);
     expect(controller.tick()).toBe(true);
     expect(adapter.seekTo).toHaveBeenCalledTimes(1);
@@ -64,7 +64,7 @@ describe('passage playback boundaries', () => {
   });
   it('replay seeks back and rearms the endpoint', () => {
     const { adapter, controller, seekManually } = setup();
-    controller.setPassage({ id: 'p1', start: 10, end: 20 });
+    controller.setChapter({ id: 'c1', start: 10, end: 20 });
     seekManually(20);
     controller.tick();
     controller.replay();
@@ -76,7 +76,7 @@ describe('passage playback boundaries', () => {
   });
   it('continue disables the endpoint without seeking and replay restores it', () => {
     const { adapter, controller, seekManually } = setup();
-    controller.setPassage({ id: 'p1', start: 10, end: 20 });
+    controller.setChapter({ id: 'c1', start: 10, end: 20 });
     seekManually(20);
     controller.tick();
     controller.continueWatching();
@@ -88,37 +88,52 @@ describe('passage playback boundaries', () => {
     seekManually(20);
     expect(controller.tick()).toBe(true);
   });
-  it('new passage resets continuation and seeks to its own start', () => {
+  it('new chapter resets continuation and seeks to its own start', () => {
     const { controller, adapter, seekManually } = setup();
-    controller.setPassage({ id: 'p1', start: 10, end: 20 });
+    controller.setChapter({ id: 'c1', start: 10, end: 20 });
     controller.continueWatching();
-    controller.setPassage({ id: 'p2', start: 40, end: 60 });
+    controller.setChapter({ id: 'c2', start: 40, end: 60 });
     expect(adapter.seekTo).toHaveBeenLastCalledWith(40, true);
     seekManually(60);
     expect(controller.tick()).toBe(true);
   });
-  it('full recording/chapter navigation removes passage endpoint', () => {
+  it('a recording gap without a chapter has no invented endpoint', () => {
     const { controller, adapter, seekManually } = setup();
-    controller.setPassage({ id: 'p1', start: 10, end: 20 });
-    controller.setPassage({ id: 'chapter', start: 15 });
+    controller.setChapter({ id: 'c1', start: 10, end: 20 });
+    controller.setChapter({ id: 'gap', start: 30 });
     seekManually(500);
     expect(controller.tick()).toBe(false);
     expect(adapter.pauseVideo).not.toHaveBeenCalled();
   });
   it('supports preparing a range without autoplay and rejects invalid ranges', () => {
     const { controller, adapter } = setup();
-    controller.setPassage({ id: 'p1', start: 10, end: 20 }, false);
+    controller.setChapter({ id: 'c1', start: 10, end: 20 }, false);
     expect(adapter.playVideo).not.toHaveBeenCalled();
-    expect(() => controller.setPassage({ id: 'bad', start: -1 })).toThrow();
-    expect(() => controller.setPassage({ id: 'bad', start: 10, end: 10 })).toThrow();
-    expect(() => controller.setPassage({ id: 'bad', start: 10, end: Infinity })).toThrow();
+    expect(() => controller.setChapter({ id: 'bad', start: -1 })).toThrow();
+    expect(() => controller.setChapter({ id: 'bad', start: 10, end: 10 })).toThrow();
+    expect(() => controller.setChapter({ id: 'bad', start: 10, end: Infinity })).toThrow();
   });
-  it('does not treat an unavailable current time as a completed passage', () => {
+  it('does not treat an unavailable current time as a completed chapter', () => {
     const { controller, seekManually, adapter } = setup();
-    controller.setPassage({ id: 'p1', start: 10, end: 20 });
+    controller.setChapter({ id: 'c1', start: 10, end: 20 });
     seekManually(NaN);
     expect(controller.tick()).toBe(false);
     expect(adapter.pauseVideo).not.toHaveBeenCalled();
+  });
+});
+
+describe('resume and replay', () => {
+  it('resumes within a chapter but replays from its full start', () => {
+    const { controller, adapter, seekManually } = setup();
+    controller.setChapter({ id: 'c1', start: 10, end: 60, resumeAt: 42 });
+    expect(adapter.seekTo).toHaveBeenLastCalledWith(42, true);
+    seekManually(60); expect(controller.tick()).toBe(true);
+    controller.replay(); expect(adapter.seekTo).toHaveBeenLastCalledWith(10, true);
+  });
+  it.each([-1, 9, 60, 100, NaN, Infinity])('ignores unsafe resume time %s', (resumeAt) => {
+    const { controller, adapter } = setup();
+    controller.setChapter({ id: 'c1', start: 10, end: 60, resumeAt });
+    expect(adapter.seekTo).toHaveBeenLastCalledWith(10, true);
   });
 });
 
@@ -127,7 +142,7 @@ describe('base-aware shareable URLs', () => {
     const expected = base === '/' ? '/' : '/review/';
     expect(basePath(base)).toBe(expected);
     expect(siteUrl(base, '/search/')).toBe(`${expected}search/`);
-    expect(watchUrl(base, { id: 'passage_1' })).toBe(`${expected}watch/?id=passage_1`);
+    expect(watchUrl(base, { chapter: 'chapter_1', service: 'ignored', start: 42 })).toBe(`${expected}watch/?chapter=chapter_1`);
   });
   it('rejects external and traversal deployment bases', () => {
     expect(() => basePath('https://external.example/')).toThrow();
@@ -139,11 +154,13 @@ describe('base-aware shareable URLs', () => {
     expect(url.searchParams.get('q')).toBe('John 3:16 & hope');
     expect(url.pathname).toBe('/review/search/');
   });
-  it('round-trips stable passage and full-video targets', () => {
+  it('reads legacy IDs but only creates chapter and full-video targets', () => {
     const target = { service: 'service-1', video: 'abcdefghijk', start: 87.5 };
     const url = new URL(watchUrl('/review/', target), 'https://example.test');
-    expect(readWatchTarget(url.search)).toEqual({ ...target, start: 87, id: undefined });
-    expect(readWatchTarget('?id=stable-id')).toEqual({ id: 'stable-id', service: undefined, video: undefined, start: undefined });
+    expect(readWatchTarget(url.search)).toEqual({ ...target, start: 87, id: undefined, chapter: undefined });
+    expect(readWatchTarget('?id=stable-id')).toEqual({ id: 'stable-id', chapter: undefined, service: undefined, video: undefined, start: undefined });
+    expect(readWatchTarget('?chapter=chapter-1').chapter).toBe('chapter-1');
+    expect(watchUrl('/', { id: 'old-id' })).toBe('/watch/');
     expect(readWatchTarget('?t=-1').start).toBeUndefined();
     expect(readWatchTarget('?t=Infinity').start).toBeUndefined();
     expect(readWatchTarget('?t=1e10').start).toBeUndefined();

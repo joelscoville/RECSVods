@@ -104,7 +104,7 @@ export function manifestFromFiles(files: ReadonlyMap<string, string>): BackfillM
 }
 
 /** Validate assignments against ALL interpreted sources, even entries not yet complete. */
-export function validateManifestReferences(manifest: BackfillManifest, services: readonly Service[], files: ReadonlyMap<string, string>): void {
+export function validateManifestReferences(manifest: BackfillManifest, services: readonly Pick<Service, 'id' | 'date' | 'videos' | 'workflow_status'>[], files: ReadonlyMap<string, string>): void {
   for (const entry of manifest.services) {
     const service = services.find((s) => s.id === entry.service_id);
     for (const video of entry.videos) {
@@ -156,7 +156,7 @@ function addArchiveFiles(root: string, files: Map<string, string>, scope?: strin
     const absolute = safePath(root, relative);
     if (!existsSync(absolute)) return;
     if (lstatSync(absolute).isDirectory()) for (const name of readdirSync(absolute).sort()) walk(`${relative}/${name}`);
-    else if (/\.(ya?ml|md)$/.test(relative) && relative !== MANIFEST_PATH) files.set(relative, readFileSync(absolute, 'utf8'));
+    else if (/\.ya?ml$/.test(relative) && !relative.endsWith('.internal.yaml') && relative !== MANIFEST_PATH) files.set(relative, readFileSync(absolute, 'utf8'));
   };
   if (scope) walk(path.posix.dirname(scope));
   else { walk('services'); walk('corpus'); }
@@ -240,29 +240,25 @@ export function editorialReviewAids(services: readonly Service[], baseline?: rea
   const aids: ReviewAid[] = [];
   for (const service of services) {
     const add = (code: string, refs: string[], detail: string) => aids.push({ service_id: service.id, code, refs, detail });
-    for (const segment of [...service.sections, ...service.passages]) if (segment.confidence < 0.8) add('low_confidence_boundary', [segment.id], `confidence ${segment.confidence}; ${segment.start}–${segment.end}s`);
+    for (const chapter of service.chapters) {
+      if (chapter.confidence !== undefined && chapter.confidence < 0.8) add('low_confidence_boundary', [chapter.id], `legacy confidence ${chapter.confidence}; ${chapter.start}–${chapter.end}s`);
+      if (chapter.review_notes.length) add('chapter_review_notes', [chapter.id], chapter.review_notes.join('; '));
+    }
     if (!service.speakers.length) add('metadata_gap', [], 'No speaker metadata');
     if (!service.sermon_title) add('metadata_gap', [], 'No sermon title; may be intentional');
-    if (!service.passages.some((p) => p.scripture.length)) add('metadata_gap', [], 'No scripture references; may be intentional');
+    if (!service.chapters.some((p) => p.scripture.length)) add('metadata_gap', [], 'No scripture references; may be intentional');
     if (service.videos.length > 3) add('unusual_video_count', service.videos.map((v) => v.id), `${service.videos.length} physical videos`);
-    if (service.topics.length > 12 || service.topics.length > Math.max(4, service.passages.length)) add('topic_proliferation', service.topics.map((t) => t.id), `${service.topics.length} topics / ${service.passages.length} passages`);
-    for (const passage of service.passages) if (passage.end - passage.start < 15 || passage.end - passage.start > 180) add('unusual_passage_length', [passage.id], `${passage.end - passage.start}s`);
+    if (service.topics.length > 12 || service.topics.length > Math.max(4, service.chapters.length)) add('topic_proliferation', service.topics.map((t) => t.id), `${service.topics.length} topics / ${service.chapters.length} chapters`);
+    for (const chapter of service.chapters) if (chapter.end - chapter.start < 15 || chapter.end - chapter.start > 1800) add('unusual_chapter_length', [chapter.id], `${chapter.end - chapter.start}s`);
     for (const video of service.videos) {
-      const sections = service.sections.filter((s) => s.video_id === video.id).sort((a, b) => a.start - b.start || a.end - b.end);
+      const sections = service.chapters.filter((s) => s.video_id === video.id && !s.parent_id).sort((a, b) => a.start - b.start || a.end - b.end);
       let end = video.transcribed_span?.start ?? 0; let previous = video.id;
       for (const section of sections) {
-        if (section.start !== end) add(section.start > end ? 'section_gap' : 'section_overlap', [previous, section.id], `${Math.min(end, section.start)}–${Math.max(end, section.start)}s`);
+        if (section.start !== end) add(section.start > end ? 'chapter_gap' : 'chapter_overlap', [previous, section.id], `${Math.min(end, section.start)}–${Math.max(end, section.start)}s`);
         if (section.end > end) { end = section.end; previous = section.id; }
       }
       const last = video.transcribed_span?.end ?? video.duration;
-      if (end < last) add('section_gap', [previous, video.id], `${end}–${last}s (coverage edge; may be intentional)`);
-    }
-    const words = (text: string) => text.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, '').split(/\s+/).filter(Boolean);
-    for (let i = 0; i < service.passages.length; i++) for (let j = i + 1; j < service.passages.length; j++) {
-      const a = service.passages[i]; const b = service.passages[j]; const left = words(a.transcript); const right = words(b.transcript);
-      let overlap = 0;
-      for (let n = Math.min(left.length, right.length, 80); n >= 8; n--) if (left.slice(-n).join(' ') === right.slice(0, n).join(' ')) { overlap = n; break; }
-      if (overlap || (left.length >= 8 && left.join(' ') === right.join(' '))) add('duplicate_overlap_text', [a.id, b.id], 'Matching text; repeated liturgy is not proof of duplication');
+      if (end < last) add('chapter_gap', [previous, video.id], `${end}–${last}s (coverage edge; may be intentional)`);
     }
   }
   for (const old of baseline ?? []) if (old.editorial_status === 'reviewed') {
@@ -280,6 +276,7 @@ export function reportBackfill(root: string, options: { batch?: string; year?: s
   const rows = selected.map((entry) => {
     const source = services.find((s) => s.id === entry.service_id);
     return { service_id: entry.service_id, batch_id: entry.batch_id, year: entry.date.slice(0, 4), sourceFileRef: entry.sourceFileRef,
+      chapters: source?.chapters.length ?? 0,
       workflow_status: entry.workflow_status, ...(entry.blocked_reason ? { blocked_reason: entry.blocked_reason } : {}),
       ...(source ? { editorial_status: source.editorial_status, source_workflow_status: source.workflow_status } : {}),
       videos: entry.videos.map((v) => { const live = source?.videos.find((s) => s.id === v.youtube_id);
@@ -289,6 +286,7 @@ export function reportBackfill(root: string, options: { batch?: string; year?: s
       eligible: source?.editorial_status === 'reviewed' && source.videos.some((v) => v.media_disposition === 'playable') };
   });
   const counts = (items: typeof rows) => ({ total: items.length,
+    chapters: items.reduce((total, row) => total + row.chapters, 0),
     workflow_status: Object.fromEntries(WorkflowStatusSchema.options.map((s) => [s, items.filter((r) => r.workflow_status === s).length])),
     editorial_status: { absent: items.filter((r) => !r.editorial_status).length, needs_review: items.filter((r) => r.editorial_status === 'needs_review').length, reviewed: items.filter((r) => r.editorial_status === 'reviewed').length },
     media_disposition: Object.fromEntries(['unassessed', 'playable', 'failed', 'rejected'].map((s) => [s, items.flatMap((r) => r.videos).filter((v) => v.media_disposition === s).length])),

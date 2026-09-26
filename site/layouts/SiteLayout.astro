@@ -5,7 +5,7 @@ import '../styles/global.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer.astro';
 interface Props { title: string; description?: string; route?: string; header?: boolean; noindex?: boolean }
-const { title, description = 'Find and replay passages from the RECS service archive.', route = '', header = true, noindex = false } = Astro.props;
+const { title, description = 'Find and replay chapters from the RECS service archive.', route = '', header = true, noindex = false } = Astro.props;
 const preview = import.meta.env.ARCHIVE_MODE === 'preview';
 ---
 <!doctype html>

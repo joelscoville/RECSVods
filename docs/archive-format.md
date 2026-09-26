@@ -1,15 +1,22 @@
 # RECS Replay archive and editorial core
 
+The current [concise-outline contract](concise-outlines.md) adds one service-level
+sermon description, neutral peer groups and selective nested cues. It supersedes
+the earlier 8–15-chapter guidance below; original boundaries are preserved internally,
+while public grouping follows the sermon’s argument. Chapter synopses are retrieval-
+only and never displayed. All public chapter/subsection titles use Title Case.
+
 Editable interpretation lives in `services/YYYY/<service-id>/service.yaml`. Each
-file contains one logical service and all its ordered physical videos, major
-sections, and searchable passages. Markdown transcripts can live next to that
-file. `corpus/*.yaml` is an optional, separate identifier-only registration
+file contains one logical service and all its ordered physical videos and searchable
+chapters. Existing passages are unchanged internal preservation material, isolated
+in `passages.internal.yaml`; new transcripts stay outside the repository.
+`corpus/*.yaml` is an optional, separate identifier-only registration
 catalogue; it is validated but never returned as interpreted content.
 
 The schemas and Node loader are in `site/lib/archive.ts`. Browser code should
 import **types only** from `site/lib/types.ts`; do not bundle the filesystem
-loader into a browser island. `Service`, `ServiceSource`, `Video`, `Section`,
-`Passage`, `Speaker`, `Topic`, and `IdentifierRecord` are inferred from Zod
+loader into a browser island. `Service`, `ServiceSource`, `Video`, `Chapter`,
+`Speaker`, `Topic`, and `IdentifierRecord` are inferred from Zod
 schemas, rather than parallel handwritten data models.
 
 ## Editable format
@@ -46,32 +53,18 @@ videos:                          # array order is service playback order
     transcribed_span:            # optional; requires transcription_language
       start: 0
       end: 100
-sections:
-  - id: example-section
+chapters:
+  - id: example-chapter
     video_id: AAAAAAAAAAA
     start: 0
     end: 100
     type: address
-    title: Fictional section
-    confidence: 0.8
-    speaker_id: example-speaker   # optional; inherited by passages
-    review_notes: []
-passages:
-  - id: example-passage
-    video_id: AAAAAAAAAAA
-    section_id: example-section
-    start: 10
-    end: 60
-    type: address
-    title: Fictional passage
+    title: Fictional chapter
+    speaker_id: example-speaker   # optional; omit when unknown
     summary: The fictional speaker discusses a test example.
-    questions:
-      - What does the test example show?
+    keywords: [test example]     # at most ten distinctive spoken words/phrases
     topics: [example-topic]      # local topic IDs, resolved to names for search
     scripture: []               # normalized reference strings, never verse text
-    transcript: |
-      Fictional test transcript, not archive content.
-    confidence: 0.7
     review_notes: []
 ```
 
@@ -79,11 +72,12 @@ passages:
 
 - IDs use ASCII letters, digits, `_`, and `-`, beginning with a letter or digit.
   YouTube IDs are exactly 11 YouTube identifier characters. Service, video,
-  section, and passage IDs are globally unique, including across entity kinds.
+  and chapter IDs are globally unique, including across entity kinds.
   Speaker/topic IDs are local to each service and unique within their arrays.
 - The directory ID and year must agree with the service's `id` and ISO calendar
   `date`. Missing `services/` is valid. Unexpected YAML files under `services/`
-  are errors, not silently ignored content.
+  are errors, not silently ignored content. The explicit `*.internal.yaml`
+  quarantine is excluded from runtime source loading.
 - Video `channel_id` must equal the source channel above; this validates the
   supplied metadata, not remote ownership. Media tooling must verify ownership.
 - Optional video `transcription_provenance` stores the importer's safe
@@ -95,14 +89,14 @@ passages:
   a positive finite duration and sequence. Duration is measured, never inferred
   from transcript length. `transcribed_span` has absolute recording seconds and
   must fit the video. Language is an optional language tag (`en`, `zh`, etc.).
-- Sections/passages require finite nonnegative `start`, `end > start`, and an end
-  within the referenced video. Every passage references a known section on that
-  same video and fits its boundaries. Sections may cover the full recording;
-  passages need not fill the section or meet an artificial word/time quota.
+- Chapters require finite nonnegative `start`, `end > start`, and an end within
+  the referenced physical video. Aim for roughly 8–15 meaningful chapters per new
+  full service; preserve complete thoughts and uncertainty over a quota. All 582
+  pre-amendment boundaries are preserved, not resegmented to force that target.
 - `type` is an extensible stable identifier, such as `service`, `address`, or
-  `prayer`; this core does not invent a theological taxonomy. A title, summary,
-  transcript, and question string cannot be blank. Questions, topics, and
-  scripture arrays are required on passages but may be empty.
+  `prayer`; this core does not invent a theological taxonomy. Title and summary
+  cannot be blank. Summary is one or two attributed sentences. Keywords, topics
+  and scripture arrays may be empty. No transcript or questions are source fields.
 - Optional service-level `sermon_title` preserves a trusted displayed sermon title
   independently of chapter descriptions. Home cards use it when supplied rather
   than mislabelling the first sermon chapter as the whole sermon.
@@ -112,11 +106,11 @@ passages:
   (including provenance) are rejected. Repeated series IDs across services must
   have the same name; conflicting names fail archive validation deterministically.
   Omit `series` when unknown; do not infer a series from topics or sermon titles.
-- `confidence` is a required number from 0 to 1. Uncertainty goes in optional
+- `confidence` is optional private legacy metadata retained by migration, not a
+  new curation requirement or public field. Uncertainty goes in optional
   `review_notes` arrays, which default to `[]` and are not included in search
   output. Service `speakers` and `topics` likewise default to `[]`.
-- Optional `speaker_id` references a speaker in the same service. A passage's
-  speaker overrides its section's speaker. Unknown video, section, speaker, or
+- Optional `speaker_id` references a speaker in the same service. Unknown video, speaker, or
   topic references are errors.
 - Scripture is reference-only: canonical book names from `BIBLE_BOOKS`, positive
   chapter/verse numbers, ASCII hyphens, and forward ranges, for example
@@ -124,24 +118,27 @@ passages:
   ranges into separate strings. Source aliases are accepted and normalized, with
   original strings retained in the display projection. Bounds are validated against
   sourced BSB verse counts. Authored verse-text fields are rejected; only the
-  generated search index receives hidden BSB enrichment. See `docs/bible.md`.
+  deduplicated `scripture.json` receives BSB text, for browser-only enrichment.
+  See `docs/bible.md` and `docs/chapter-search-artifacts.md`.
 - All objects are strict. Unknown keys, duplicate YAML keys, non-finite numbers,
   and archive symlinks are rejected. Errors identify the file and field. Markdown
   is source text for rendering as text or through a separately sanitized renderer;
   never inject it as trusted HTML.
 
-### Markdown transcripts
+### Private evidence, vectors and preservation
 
-Replace `transcript` with `transcript_file: transcripts/example-passage.md` to
-reference a passage-sized Markdown file relative to the service directory.
-Exactly one of the two fields is required. Paths must stay inside that service
-directory, end in `.md`, and cannot traverse `..` or use symlinks. Referenced
-files must exist and contain nonblank text. The loader materializes them into
-`Passage.transcript` and removes `transcript_file` from the returned `Service`.
-Leading/trailing whitespace is normalized; internal transcript content is
-preserved. A single whole-recording transcript should not be referenced by every
-passage: each passage needs its own relevant text. No fragment/line-range syntax
-is supported.
+New ASR/caption transcripts are external working evidence only. Processing creates
+`chapter-vectors.bin` and `chapter-vectors.json` beside the service YAML. The manifest
+records the pinned model/windowing recipe, ordered chapter identity/bounds, input
+hashes and binary checksum, never transcript text or private paths. The static build
+copies committed int8 rows and does not need evidence. See `docs/chapter-vectors.md`.
+
+Legacy passage arrays and any referenced Markdown are preserved unchanged internally.
+The application loader never materializes them. Migration verification compares
+every original value and transcript byte to Git `540abab`; later editorial checks
+enforce byte immutability. No new passage/transcript files are authored. Only the
+minimal `legacy-chapters.json` ID map may be published for old-link compatibility.
+See `docs/chapter-migration.md` for the historical schema and lossless migration.
 
 ### Identifier-only corpus
 
@@ -183,13 +180,14 @@ field. Completed media becoming unavailable changes media disposition, not
 `complete -> blocked`. When abandoning never-completed interpretation, discard
 it and retain only registration metadata. Interpreted services cannot use
 `discovered` or `registered`; videos in either state cannot carry transcription
-metadata or referenced sections/passages.
+metadata or referenced chapters.
 
 `editorial_status` is service-level `needs_review` or `reviewed`. Identifier-only
 records have no editorial status. Every interpretation edit must remain or return
 to `needs_review`, removing `reviewed_by` and `reviewed_at`. A reviewed service
 requires nonblank `reviewed_by` and an ISO datetime `reviewed_at` with timezone.
-The human approval covers all videos, sections, passages, and transcript files.
+The human approval covers all videos, chapters and associated vector artifacts;
+preserved internal files remain immutable independently of approval.
 
 `media_disposition` is per-video `unassessed`, `playable`, `failed`, or `rejected`.
 Failed/rejected media requires nonblank `disposition_evidence`. Media and editorial
@@ -201,11 +199,10 @@ No API fetch or media inference occurs in these scripts.
 ```ts
 loadArchive(root?: string): Service[]; // synchronous, default process.cwd()
 publishedServices(services: readonly Service[], mode?: BuildMode): Service[];
-flattenArchive(services: readonly Service[], mode?: BuildMode): SearchPassage[];
-eligiblePassages = flattenArchive;
+flattenChapters(services: readonly Service[], mode?: BuildMode): SearchChapter[];
 type BuildMode = 'production' | 'preview'; // default is always production
 
-interface SearchPassage {
+interface SearchChapter {
   id: string;
   serviceId: string;
   serviceTitle: string;
@@ -215,28 +212,28 @@ interface SearchPassage {
   end: number;
   title: string;
   summary: string;
-  transcript: string;
-  questions: string[];
+  keywords: string[];
   topics: string[];             // resolved display names
   scripture: string[];          // normalized references, no ESV text
   speaker?: string;             // resolved display name
   date: string;                 // YYYY-MM-DD
   type: string;
-  preview: boolean;             // true iff this passage is unreviewed
+  preview: boolean;             // true iff this chapter is unreviewed
 }
 ```
 
 Production includes only reviewed services' playable videos. Preview additionally
 includes needs-review services' playable videos, with `preview: true` on every
-unreviewed passage. Unassessed/failed/rejected media is excluded in both modes.
+unreviewed chapter. Unassessed/failed/rejected media is excluded in both modes.
 Workflow completion is not approval. `publishedServices` also removes excluded
-videos and their sections/passages from returned service copies, so navigation
+videos and their chapters from returned service copies, so navigation
 must use it rather than exposing raw `loadArchive()` output. Its filtered video
 sequences retain original upload positions. This is a display projection, not a
-new editable service to save/revalidate. The source arrays are not mutated.
+new editable service to save/revalidate. It still contains private source fields:
+**only `flattenChapters` is a public serialization allowlist**. Source arrays are not mutated.
 
-Services sort by descending date then ID. Flattened passages sort by descending
-date, service ID, video sequence, start, then passage ID. The index includes no
+Services sort by descending date then ID. Flattened chapters sort by descending
+date, service ID, video sequence, start, then chapter ID. The index includes no
 reviewer metadata or private review notes. Render an explicit unreviewed preview
 label whenever `preview` is true; show an honest empty state for `[]`.
 
@@ -269,15 +266,14 @@ scripts/devenv-run pnpm exec tsx scripts/archive.ts build-index --mode preview
 scripts/devenv-run pnpm exec tsx scripts/editorial.ts guard BASE HEAD
 ```
 
-Both index modes replace `site/public/generated/passages.json` with a plain JSON
-`SearchPassage[]`, newline-terminated and deterministic. Production with zero
-approved services writes `[]` successfully. There is one canonical index file so
-a subsequent production build replaces preview data rather than leaving a second
-preview index in the public tree. Every production build **must regenerate in
-production mode before copying public assets**. Preview builds are local-review
-artifacts and must never be deployed. The main build owns output-directory and
-deployment isolation. No timestamps, embeddings, model calls, or remote requests
-are added by this index builder.
+Both modes clear `site/public/generated/` before validation, removing old or stale
+preview artifacts even on failure. They emit compact `chapters.json`, `vectors.bin`,
+deduplicated `scripture.json`, and the minimal `legacy-chapters.json`, with gzip
+companions. Zero eligible chapters produce valid empty envelopes and a header-only
+binary. Production **must regenerate before copying assets**; never deploy preview.
+The index builder validates committed vector bindings/checksums but never runs
+inference. `verify-output.ts` separately checks publication, exact row correspondence,
+private fields, hashes and meaningful transcript shingles throughout build output.
 
 ## Human editorial approval
 

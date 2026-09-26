@@ -2,11 +2,13 @@ import { execFileSync } from 'node:child_process';
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
+import { setImmediate as yieldToRunner } from 'node:timers/promises';
 import { parse, stringify } from 'yaml';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { approveService, guardEditorial } from '../scripts/editorial';
 import { loadArchive, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
 import { importBackfill, loadBackfill, MANIFEST_PATH, transitionBackfill } from '../site/lib/backfill';
+import { migrateChapters } from '../scripts/migrate-chapters';
 
 const roots: string[] = [];
 const filename = 'services/2026/test-service/service.yaml';
@@ -15,8 +17,10 @@ const gitEnv = { GIT_AUTHOR_NAME: 'Fictional Test Human', GIT_AUTHOR_EMAIL: 'hum
   GIT_CONFIG_GLOBAL: '/dev/null', GIT_CONFIG_NOSYSTEM: '1' };
 // Scope identity and configuration isolation to each test. Both helper commands and
 // approveService/guardEditorial child processes inherit this environment; no Git config is edited.
-beforeEach(() => {
+beforeEach(async () => {
   for (const [key, value] of Object.entries(gitEnv)) vi.stubEnv(key, value);
+  // Git helpers are synchronous; let worker RPC updates drain between tests.
+  await yieldToRunner();
 });
 function git(root: string, ...args: string[]) {
   return execFileSync('git', args, { cwd: root, encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] }).trim();
@@ -26,11 +30,9 @@ function fixture(): Service {
     workflow_status: 'complete', editorial_status: 'needs_review', review_notes: [], speakers: [], topics: [],
     videos: [{ id: 'AAAAAAAAAAA', channel_id: SOURCE_CHANNEL_ID, duration: 100, sequence: 1,
       workflow_status: 'complete', media_disposition: 'playable' }],
-    sections: [{ id: 'test-section', video_id: 'AAAAAAAAAAA', start: 0, end: 100, type: 'address',
-      title: 'Fictional section', confidence: 0.9, review_notes: [] }],
-    passages: [{ id: 'test-passage', video_id: 'AAAAAAAAAAA', section_id: 'test-section', start: 1, end: 60,
-      type: 'address', title: 'Fictional passage', summary: 'A fictional test statement.', transcript: 'A fictional transcript.',
-      questions: [], topics: [], scripture: [], confidence: 0.9, review_notes: [] }] };
+    chapters: [{ id: 'test-section', video_id: 'AAAAAAAAAAA', start: 0, end: 100, type: 'address',
+      title: 'Fictional section', summary: 'A fictional test statement.', keywords: ['fictional'],
+      topics: [], scripture: [], confidence: 0.9, review_notes: [] }] };
 }
 function put(root: string, file: string, text: string) {
   mkdirSync(path.dirname(path.join(root, file)), { recursive: true }); writeFileSync(path.join(root, file), text);
@@ -39,11 +41,10 @@ function repo(externalTranscript = false): { root: string; base: string } {
   const root = mkdtempSync(path.join(tmpdir(), 'recs-editorial-test-')); roots.push(root);
   git(root, 'init', '-q');
   const service = fixture();
+  put(root, filename, stringify(service));
   if (externalTranscript) {
-    const { transcript, ...passage } = service.passages[0];
-    put(root, filename, stringify({ ...service, passages: [{ ...passage, transcript_file: 'transcript.md' }] }));
-    put(root, 'services/2026/test-service/transcript.md', transcript);
-  } else put(root, filename, stringify(service));
+    put(root, 'services/2026/test-service/transcript.md', 'Unrelated private fictional evidence.');
+  }
   return { root, base: commit(root, 'Initial fictional needs_review fixture') };
 }
 function commit(root: string, message: string): string {
@@ -154,7 +155,7 @@ describe('per-commit editorial guard', () => {
   });
   it.each(['interpretation', 'unrelated file', 'transcript'])('rejects approval mixed with %s', (mixed) => {
     const { root, base } = repo(true); setReviewed(root);
-    if (mixed === 'interpretation') edit(root, (s) => { s.passages[0].summary = 'Changed test statement'; });
+    if (mixed === 'interpretation') edit(root, (s) => { s.chapters[0].summary = 'Changed test statement'; });
     if (mixed === 'unrelated file') put(root, 'unrelated.txt', 'unrelated change');
     if (mixed === 'transcript') put(root, 'services/2026/test-service/transcript.md', 'Changed test transcript');
     commit(root, 'Approve test\n\nEditorial-Approval: test-service');
@@ -171,13 +172,12 @@ describe('per-commit editorial guard', () => {
     commit(root, 'Reset for review\n\nCurated-by: agent');
     expect(() => guardEditorial(root, base)).toThrow(invalid);
   });
-  it.each(['inline transcript', 'external transcript', 'boundary', 'summary', 'media', 'speaker', 'reviewer'])('rejects %s changes retaining reviewed', (kind) => {
-    const { root, base } = repo(kind === 'external transcript'); humanApprove(root);
-    if (kind === 'external transcript') put(root, 'services/2026/test-service/transcript.md', 'Changed fictional transcript.');
-    else edit(root, (s) => {
-      if (kind === 'inline transcript') s.passages[0].transcript = 'Changed fictional transcript.';
-      if (kind === 'boundary') s.passages[0].end = 65;
-      if (kind === 'summary') s.passages[0].summary = 'Changed fictional summary.';
+  it.each(['keywords', 'boundary', 'summary', 'media', 'speaker', 'reviewer'])('rejects %s changes retaining reviewed', (kind) => {
+    const { root, base } = repo(); humanApprove(root);
+    edit(root, (s) => {
+      if (kind === 'keywords') s.chapters[0].keywords = ['changed'];
+      if (kind === 'boundary') s.chapters[0].end = 65;
+      if (kind === 'summary') s.chapters[0].summary = 'Changed fictional summary.';
       if (kind === 'media') { s.videos[0].media_disposition = 'failed'; s.videos[0].disposition_evidence = 'Source unavailable.'; }
       if (kind === 'speaker') s.speakers.push({ id: 'new-speaker', name: 'Fictional speaker' });
       if (kind === 'reviewer') s.reviewed_by = 'Someone else';
@@ -187,7 +187,7 @@ describe('per-commit editorial guard', () => {
   });
   it('accepts interpretation corrections that reset the service to needs_review', () => {
     const { root, base } = repo(); humanApprove(root);
-    edit(root, (s) => { s.passages[0].summary = 'Corrected fictional summary.'; s.editorial_status = 'needs_review'; delete s.reviewed_by; delete s.reviewed_at; });
+    edit(root, (s) => { s.chapters[0].summary = 'Corrected fictional summary.'; s.editorial_status = 'needs_review'; delete s.reviewed_by; delete s.reviewed_at; });
     commit(root, 'Correct interpretation\n\nCurated-by: agent');
     expect(guardEditorial(root, base).commits).toBe(2);
   });
@@ -220,5 +220,34 @@ describe('per-commit editorial guard', () => {
     expect(guardEditorial(root, base, base).commits).toBe(0);
     put(root, 'unrelated.txt', 'test'); commit(root, 'Unrelated\n\nEditorial-Approval: test-service');
     expect(() => guardEditorial(root, base)).toThrow('without a reviewed transition');
+  });
+  it.each(['chapter-vectors.bin', 'chapter-vectors.json'])('requires reset for reviewed %s changes, including mechanical trailers', (sidecar) => {
+    const { root, base } = repo(); humanApprove(root);
+    put(root, `services/2026/test-service/${sidecar}`, sidecar.endsWith('.bin') ? '\0\u00ff' : '{"schemaVersion":1}');
+    commit(root, 'Change vectors\n\nMechanical-Change: schema-migration');
+    expect(() => guardEditorial(root, base)).toThrow('reset to needs_review');
+  });
+  it('allows changed vectors after an explicit needs_review reset', () => {
+    const { root, base } = repo(); humanApprove(root);
+    edit(root, (s) => { s.editorial_status = 'needs_review'; delete s.reviewed_by; delete s.reviewed_at; });
+    put(root, 'services/2026/test-service/chapter-vectors.bin', '\0\u00ff');
+    commit(root, 'Reprocess vectors\n\nCurated-by: agent');
+    expect(guardEditorial(root, base).commits).toBe(2);
+  });
+  it('validates legacy history and migration without approval, then rejects internal rewrites', () => {
+    const { root } = repo();
+    const { chapters, ...metadata } = fixture();
+    const { summary, keywords: _keywords, topics, scripture, ...section } = chapters[0];
+    const legacy = { ...metadata, sections: [section], passages: [{ ...section, id: 'old-passage', section_id: section.id,
+      summary, topics, scripture, questions: [], transcript: '  Original fictional bytes.\n\n' }] };
+    put(root, filename, stringify(legacy)); const base = commit(root, 'Legacy fixture checkpoint');
+    expect(guardEditorial(root, base, base).commits).toBe(0);
+    migrateChapters(root, { baseline: base, mode: 'prepare' });
+    commit(root, 'Migrate fictional fixture\n\nCurated-by: agent');
+    expect(guardEditorial(root, base).commits).toBe(1);
+    const internal = 'services/2026/test-service/passages.internal.yaml';
+    put(root, internal, readFileSync(path.join(root, internal), 'utf8').replace('Original', 'Rewritten'));
+    commit(root, 'Rewrite private material');
+    expect(() => guardEditorial(root, base)).toThrow('internal material preservation');
   });
 });

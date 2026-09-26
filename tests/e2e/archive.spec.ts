@@ -1,18 +1,29 @@
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
-import type { SearchPassage } from '../../site/lib/types';
+import type { SearchChapter } from '../../site/lib/types';
+import { chapterFor } from './archive-fixtures';
 
-const passages = JSON.parse(readFileSync('dist/preview/generated/passages.json', 'utf8')) as SearchPassage[];
-const production = JSON.parse(readFileSync('dist/production/generated/passages.json', 'utf8')) as SearchPassage[];
+const chapters = JSON.parse(readFileSync('dist/preview/generated/chapters.json', 'utf8')).chapters as SearchChapter[];
+const production = JSON.parse(readFileSync('dist/production/generated/chapters.json', 'utf8')).chapters as SearchChapter[];
 
-test('production excludes every unreviewed passage', async ({ request }) => {
-  const response = await request.get('http://127.0.0.1:4174/replay-check/generated/passages.json');
+test('old passage links resolve to their chapter without exposing transcript controls', async ({ page }) => {
+  const chapter = chapterFor('s0927-romans-order');
+  expect(chapter).toBeTruthy();
+  await page.goto('watch/?id=p0927-romans-government');
+  await expect(page).toHaveURL(new RegExp(`watch/\\?chapter=${chapter.id}$`));
+  await expect(page.getByRole('heading', { level: 1, name: chapter.title, exact: true })).toBeVisible();
+  await expect(page.locator('.transcript-panel, .compact-passage-list')).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Edit this transcript' })).toHaveCount(0);
+});
+
+test('production excludes every unreviewed chapter', async ({ request }) => {
+  const response = await request.get('http://127.0.0.1:4174/replay-check/generated/chapters.json');
   expect(response.ok()).toBe(true);
-  const index = await response.json() as SearchPassage[];
+  const index = (await response.json()).chapters as SearchChapter[];
   expect(index).toEqual(production);
   expect(index.every((p) => !p.preview)).toBe(true);
   const approvedIds = new Set(index.map((p) => p.id));
-  for (const passage of passages.filter((p) => p.preview)) expect(approvedIds.has(passage.id)).toBe(false);
+  for (const chapter of chapters.filter((p) => p.preview)) expect(approvedIds.has(chapter.id)).toBe(false);
 });
 
 test('home, focused search, and policies stay usable at the viewport', async ({ page }) => {
@@ -28,7 +39,7 @@ test('home, focused search, and policies stay usable at the viewport', async ({ 
   await input.focus();
   await expect(input).toBeFocused();
   await input.fill('zxqvpl-no-match');
-  await expect(page.getByRole('heading', { name: /No matching passages|No published passages yet/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /No matching chapters|No published chapters yet/ })).toBeVisible();
   expect(await input.evaluate((element) => element.getBoundingClientRect().top >= 0)).toBe(true);
   expect(errors).toEqual([]);
 });
@@ -48,16 +59,17 @@ test('keyboard skip link, labelled search, and shareable URL state', async ({ pa
   await expect(input).toHaveValue('second-query');
 });
 
-test('real preview passage search opens a reload-safe player and soft endpoint', async ({ page }) => {
-  test.skip(!passages.length, 'Real content is not yet available; this cannot satisfy the milestone gate.');
-  const passage = passages[0];
+test('real preview chapter search opens a reload-safe player and soft endpoint', async ({ page }) => {
+  expect(chapters.length, 'Real content is required for acceptance').toBeGreaterThan(0);
+  const passage = chapters[0];
   // Exact results must work even when semantic assets cannot load.
   await page.route('**/models/**', (route) => route.abort());
   await page.goto(`search/?q=${encodeURIComponent(passage.title)}`);
   await expect(page.getByRole('heading', { name: passage.title, exact: true }).first()).toBeVisible();
   if (passage.preview) await expect(page.getByText(/Unreviewed preview/).first()).toBeVisible();
-  await page.getByRole('link', { name: 'Play passage', exact: true }).first().click();
-  await expect(page).toHaveURL(/watch\/\?id=/);
+  const result = page.locator('.result-list > li').filter({ has: page.locator(`a[href$="chapter=${passage.id}"]`) });
+  await result.getByRole('link', { name: 'Play chapter', exact: true }).click();
+  await expect(page).toHaveURL(new RegExp(`watch/\\?chapter=${passage.id}$`));
   await page.reload();
   await expect(page.getByRole('heading', { name: passage.title, exact: true }).first()).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
@@ -70,7 +82,7 @@ test('real preview passage search opens a reload-safe player and soft endpoint',
   await page.locator('button.play-button').click();
   await expect.poll(() => page.evaluate(() => (window as unknown as { testPlayer?: { time: number } }).testPlayer?.time)).toBe(passage.start);
   await page.evaluate((end) => { (window as unknown as { testPlayer: { time: number } }).testPlayer.time = end; }, passage.end);
-  await expect(page.getByText('Passage finished. Playback is paused.')).toBeVisible();
+  await expect(page.getByText('Chapter finished. Playback is paused.')).toBeVisible();
   await page.getByRole('button', { name: /Continue watching/ }).click();
   await expect.poll(() => page.evaluate(() => (window as unknown as { testPlayer: { state: number } }).testPlayer.state)).toBe(1);
   await page.waitForTimeout(600);

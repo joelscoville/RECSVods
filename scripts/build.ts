@@ -1,18 +1,19 @@
 import { spawn } from 'node:child_process';
-import { mkdir, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { buildIndex } from './archive';
-import { buildVectors } from './embeddings';
+import { prepare } from './embeddings';
 import { verifyOutput } from './verify-output';
 
 const command = process.argv[2];
 if (!['production', 'preview', 'dev'].includes(command)) throw new Error('Usage: build.ts production | preview | dev');
 const mode = command === 'production' ? 'production' : 'preview';
 const root = process.cwd();
-// Recreate shared generated assets before either build so no preview text survives.
-await rm(path.join(root, 'site/public/generated'), { recursive: true, force: true });
-buildIndex(root, mode);
-await buildVectors(root, { full: process.env.RECS_FULL_INDEX === '1' });
+// buildIndex always recreates generated and copies only committed, eligible int8 rows.
+const metadataFile = buildIndex(root, mode);
+const metadata = JSON.parse(await readFile(metadataFile, 'utf8'));
+// Query inference still needs pinned self-hosted weights. Never infer chapter vectors here.
+if (metadata.chapters.length) await prepare(root);
 const child = spawn('pnpm', ['exec', 'astro', command === 'dev' ? 'dev' : 'build', ...process.argv.slice(3)], {
   stdio: 'inherit', env: { ...process.env, ARCHIVE_MODE: mode },
 });

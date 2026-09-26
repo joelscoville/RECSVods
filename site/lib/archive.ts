@@ -25,7 +25,7 @@ export function assertWorkflowTransition(from: WorkflowStatus, to: WorkflowStatu
   if (!canTransitionWorkflow(from, to)) throw new Error(`workflow_status: forbidden transition ${from} -> ${to}`);
 }
 
-const Text = z.string().trim().min(1);
+const Text = z.string().refine((value) => Boolean(value.trim()), 'required nonblank text');
 const compareText = (a: string, b: string): number => a < b ? -1 : a > b ? 1 : 0;
 const Id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_-]*$/, 'expected a stable identifier');
 export const YoutubeIdSchema = z.string().regex(/^[A-Za-z0-9_-]{11}$/, 'expected an 11-character YouTube ID');
@@ -140,56 +140,44 @@ export const VideoSchema = z.object({
 });
 export type Video = z.infer<typeof VideoSchema>;
 
-const segmentFields = {
+export const segmentFields = {
   id: Id,
   video_id: YoutubeIdSchema,
   start: Seconds,
   end: Seconds,
   type: Id,
   title: Text,
-  confidence: Confidence,
-  review_notes: z.array(Text).default([]),
+  confidence: Confidence.optional(),
+  review_notes: z.array(z.string().min(1)).default([]),
   speaker_id: Id.optional(),
 };
-export const SectionSchema = z.object(segmentFields).strict().refine((v) => v.end > v.start, {
-  path: ['end'], message: 'must be greater than start',
-});
-const passageFields = {
+export const ChapterSourceSchema = z.object({
   ...segmentFields,
-  section_id: Id,
+  parent_id: Id.optional(),
+  /** Private migration lineage, never serialized to the site. */
+  source_chapters: z.array(Id).min(1).optional(),
   summary: Text,
-  questions: z.array(Text),
+  keywords: z.array(Text).max(10),
   topics: z.array(Id),
   scripture: z.array(ScriptureInputSchema),
-};
-export const PassageSchema = z.object({ ...passageFields, transcript: Text, scriptureDisplay: z.array(ScriptureInputSchema).optional() }).strict().refine((v) => v.end > v.start, {
+  scriptureDisplay: z.array(ScriptureInputSchema).optional(),
+}).strict().refine((v) => v.end > v.start, {
   path: ['end'], message: 'must be greater than start',
-}).refine((passage) => !passage.scriptureDisplay || (passage.scriptureDisplay.length === passage.scripture.length
-  && passage.scriptureDisplay.every((value, index) => parseScriptureReference(value)?.canonical === parseScriptureReference(passage.scripture[index])?.canonical)),
+}).refine((chapter) => !chapter.scriptureDisplay || (chapter.scriptureDisplay.length === chapter.scripture.length
+  && chapter.scriptureDisplay.every((value, index) => parseScriptureReference(value)?.canonical === parseScriptureReference(chapter.scripture[index])?.canonical)),
 { path: ['scriptureDisplay'], message: 'must align with canonical scripture references' })
-  .transform((passage) => {
-    const scripture = passage.scripture.map(normalizeScriptureReference);
-    return { ...passage, scripture, ...(scripture.some((value, index) => value !== passage.scripture[index])
-      ? { scriptureDisplay: passage.scriptureDisplay ?? [...passage.scripture] } : {}) };
+  .transform((chapter) => {
+    const scripture = chapter.scripture.map(normalizeScriptureReference);
+    return { ...chapter, scripture, ...(scripture.some((value, index) => value !== chapter.scripture[index])
+      ? { scriptureDisplay: chapter.scriptureDisplay ?? [...chapter.scripture] } : {}) };
   });
-const TranscriptFileSchema = z.string().regex(/^(?!\/)(?!.*(?:^|\/)\.\.?\/)[A-Za-z0-9_./-]+\.md$/, 'expected a relative Markdown path inside the service directory');
-export const PassageSourceSchema = z.object({
-  ...passageFields,
-  transcript: Text.optional(),
-  transcript_file: TranscriptFileSchema.optional(),
-}).strict().superRefine((v, ctx) => {
-  if (v.end <= v.start) ctx.addIssue({ code: 'custom', path: ['end'], message: 'must be greater than start' });
-  if (Boolean(v.transcript) === Boolean(v.transcript_file)) {
-    ctx.addIssue({ code: 'custom', path: ['transcript'], message: 'provide exactly one of transcript or transcript_file' });
-  }
-});
-export type Passage = z.infer<typeof PassageSchema>;
-export type Section = z.infer<typeof SectionSchema>;
-const serviceFields = {
+export type Chapter = z.infer<typeof ChapterSourceSchema>;
+export const serviceFields = {
   id: Id,
   date: DateSchema,
   title: Text,
   sermon_title: Text.optional(),
+  sermon_description: Text.optional(),
   series: SeriesSchema.optional(),
   type: Id,
   ...workflowFields,
@@ -200,10 +188,9 @@ const serviceFields = {
   speakers: z.array(SpeakerSchema).default([]),
   topics: z.array(TopicSchema).default([]),
   videos: z.array(VideoSchema).min(1),
-  sections: z.array(SectionSchema),
 };
-type ServiceCheck = z.infer<z.ZodObject<typeof serviceFields>> & { passages: z.infer<typeof PassageSourceSchema>[] };
-function checkService(v: ServiceCheck, ctx: z.RefinementCtx) {
+type ServiceCheck = z.infer<z.ZodObject<typeof serviceFields>> & { chapters: Chapter[] };
+export function checkService(v: ServiceCheck, ctx: z.RefinementCtx) {
   axisChecks(v, ctx);
   const issue = (field: (string | number)[], message: string) => ctx.addIssue({ code: 'custom', path: field, message });
   if (['discovered', 'registered'].includes(v.workflow_status)) issue(['workflow_status'], 'identifier-only workflow cannot contain interpretation; use corpus/');
@@ -211,7 +198,7 @@ function checkService(v: ServiceCheck, ctx: z.RefinementCtx) {
     if (!v.reviewed_by) issue(['reviewed_by'], 'required for reviewed services');
     if (!v.reviewed_at) issue(['reviewed_at'], 'required for reviewed services');
   } else if (v.reviewed_by || v.reviewed_at) issue(['editorial_status'], 'clear reviewed_by and reviewed_at when returning to needs_review');
-  for (const key of ['videos', 'sections', 'passages', 'speakers', 'topics'] as const) {
+  for (const key of ['videos', 'chapters', 'speakers', 'topics'] as const) {
     const seen = new Set<string>();
     v[key].forEach((item, i) => {
       if (seen.has(item.id)) issue([key, i, 'id'], `duplicate ${key} ID ${item.id}`);
@@ -222,33 +209,34 @@ function checkService(v: ServiceCheck, ctx: z.RefinementCtx) {
     if (video.sequence !== i + 1) issue(['videos', i, 'sequence'], 'videos must be ordered with contiguous sequence starting at 1');
   });
   const videos = new Map(v.videos.map((video) => [video.id, video]));
-  const sections = new Map(v.sections.map((section) => [section.id, section]));
-  for (const key of ['sections', 'passages'] as const) v[key].forEach((segment, i) => {
+  for (const key of ['chapters'] as const) v[key].forEach((segment, i) => {
     const video = videos.get(segment.video_id);
     if (!video) issue([key, i, 'video_id'], 'unknown video reference');
     else {
       if (segment.end > video.duration) issue([key, i, 'end'], 'exceeds video duration');
-      if (['discovered', 'registered'].includes(video.workflow_status)) issue([key, i, 'video_id'], 'never-interpreted video cannot have sections/passages');
+      if (['discovered', 'registered'].includes(video.workflow_status)) issue([key, i, 'video_id'], 'never-interpreted video cannot have chapters');
     }
     if (segment.speaker_id && !v.speakers.some((s) => s.id === segment.speaker_id)) issue([key, i, 'speaker_id'], 'unknown speaker reference');
   });
-  v.passages.forEach((passage, i) => {
-    const section = sections.get(passage.section_id);
-    if (!section) issue(['passages', i, 'section_id'], 'unknown section reference');
-    else if (section.video_id !== passage.video_id || passage.start < section.start || passage.end > section.end) {
-      issue(['passages', i, 'section_id'], 'passage must fit within its section on the same video');
+  v.chapters.forEach((chapter, i) => {
+    if (chapter.parent_id) {
+      const parent = v.chapters.find((candidate) => candidate.id === chapter.parent_id);
+      if (!parent || parent.parent_id || parent.id === chapter.id || parent.video_id !== chapter.video_id
+        || chapter.start < parent.start || chapter.end > parent.end) {
+        issue(['chapters', i, 'parent_id'], 'subsection requires a top-level parent on the same video containing its bounds');
+      }
     }
-    passage.topics.forEach((topic, j) => {
-      if (!v.topics.some((t) => t.id === topic)) issue(['passages', i, 'topics', j], 'unknown topic reference');
+    chapter.topics.forEach((topic, j) => {
+      if (!v.topics.some((t) => t.id === topic)) issue(['chapters', i, 'topics', j], 'unknown topic reference');
     });
   });
 }
-export const ServiceSourceSchema = z.object({ ...serviceFields, passages: z.array(PassageSourceSchema) }).strict().superRefine(checkService);
-export const ServiceSchema = z.object({ ...serviceFields, passages: z.array(PassageSchema) }).strict().superRefine(checkService);
+export const ServiceSourceSchema = z.object({ ...serviceFields, chapters: z.array(ChapterSourceSchema) }).strict().superRefine(checkService);
+export const ServiceSchema = ServiceSourceSchema;
 export type Service = z.infer<typeof ServiceSchema>;
 export type ServiceSource = z.infer<typeof ServiceSourceSchema>;
 
-export interface SearchPassage {
+export interface SearchChapter {
   id: string;
   serviceId: string;
   serviceTitle: string;
@@ -257,14 +245,16 @@ export interface SearchPassage {
   start: number;
   end: number;
   title: string;
+  parentId?: string;
+  parentTitle?: string;
+  /** Retrieval-only synopsis. Never render in a chapter, subsection or result. */
   summary: string;
-  transcript: string;
-  questions: string[];
+  keywords: string[];
   topics: string[];
   scripture: string[];
   /** Entered references, positionally aligned with canonical scripture. */
   scriptureDisplay?: string[];
-  /** Public-domain BSB text for generated search input only; never render as ESV. */
+  /** Browser-only BSB enrichment; never serialize per chapter or render as ESV. */
   verseText?: string;
   speaker?: string;
   date: string;
@@ -302,20 +292,13 @@ export function archiveFromFiles(files: ReadonlyMap<string, string>): Service[] 
       if (corpusIds.has(record.youtube_id)) throw new Error(`${filename}:youtube_id: duplicate corpus ID ${record.youtube_id}`);
       corpusIds.set(record.youtube_id, { filename, record });
     }
-    if (!filename.startsWith('services/') || !/\.ya?ml$/.test(filename)) continue;
+    if (!filename.startsWith('services/') || !/\.ya?ml$/.test(filename) || filename.endsWith('.internal.yaml')) continue;
     const match = /^services\/(\d{4})\/([^/]+)\/service\.yaml$/.exec(filename);
     if (!match) throw new Error(`${filename}: expected services/YYYY/<service-id>/service.yaml`);
     const source = parseWithPath(ServiceSourceSchema, parseYaml(text, filename), filename);
     if (source.id !== match[2]) throw new Error(`${filename}:id: must match service directory`);
     if (!source.date.startsWith(match[1])) throw new Error(`${filename}:date: must match year directory`);
-    const passages = source.passages.map(({ transcript_file, ...passage }, i) => {
-      if (!transcript_file) return passage;
-      const transcriptPath = path.posix.join(path.posix.dirname(filename), transcript_file);
-      const transcript = files.get(transcriptPath);
-      if (transcript === undefined) throw new Error(`${filename}:passages.${i}.transcript_file: missing ${transcriptPath}`);
-      return { ...passage, transcript };
-    });
-    const service = parseWithPath(ServiceSchema, { ...source, passages }, filename);
+    const service = source;
     if (service.series) {
       const previous = seriesNames.get(service.series.id);
       if (previous && previous.name !== service.series.name) {
@@ -324,7 +307,7 @@ export function archiveFromFiles(files: ReadonlyMap<string, string>): Service[] 
       seriesNames.set(service.series.id, previous ?? { name: service.series.name, filename });
     }
     register(service.id, filename, 'id');
-    for (const key of ['videos', 'sections', 'passages'] as const) service[key].forEach((item, i) => register(item.id, filename, `${key}.${i}.id`));
+    for (const key of ['videos', 'chapters'] as const) service[key].forEach((item, i) => register(item.id, filename, `${key}.${i}.id`));
     services.push(service);
   }
   for (const service of services) for (const video of service.videos) {
@@ -345,7 +328,7 @@ export function loadArchive(root = process.cwd()): Service[] {
       const name = `${relative}/${entry.name}`;
       if (entry.isSymbolicLink()) throw new Error(`${name}: archive symlinks are not allowed`);
       if (entry.isDirectory()) walk(name);
-      else if (/\.(ya?ml|md)$/.test(name)) files.set(name, readFileSync(path.join(absoluteRoot, name), 'utf8'));
+      else if (/\.ya?ml$/.test(name) && !name.endsWith('.internal.yaml')) files.set(name, readFileSync(path.join(absoluteRoot, name), 'utf8'));
     }
   };
   // Check the archive roots too, including a symlink to a directory outside the repository.
@@ -361,35 +344,35 @@ export function loadArchive(root = process.cwd()): Service[] {
 function assertMode(mode: BuildMode): void {
   if (mode !== 'production' && mode !== 'preview') throw new Error(`Unknown archive build mode: ${String(mode)}`);
 }
-/** Returns sanitized copies: non-playable videos and their sections/passages never escape this gate. */
+/** Eligibility gate. Source records remain private; use flattenChapters for public metadata. */
 export function publishedServices(services: readonly Service[], mode: BuildMode = 'production'): Service[] {
   assertMode(mode);
   return services.filter((s) => s.editorial_status === 'reviewed' || (mode === 'preview' && s.editorial_status === 'needs_review')).flatMap((service) => {
     const videos = service.videos.filter((v) => v.media_disposition === 'playable');
     if (!videos.length) return [];
     const ids = new Set(videos.map((v) => v.id));
-    return [{ ...service, videos, sections: service.sections.filter((s) => ids.has(s.video_id)), passages: service.passages.filter((p) => ids.has(p.video_id)) }];
+    return [{ ...service, videos, chapters: service.chapters.filter((chapter) => ids.has(chapter.video_id)) }];
   });
 }
-export function flattenArchive(services: readonly Service[], mode: BuildMode = 'production'): SearchPassage[] {
+export function flattenChapters(services: readonly Service[], mode: BuildMode = 'production'): SearchChapter[] {
   const sequence = new Map(services.flatMap((s) => s.videos.map((v) => [v.id, v.sequence] as const)));
-  return publishedServices(services, mode).flatMap((service) => service.passages.map((passage): SearchPassage => {
-    const speakerId = passage.speaker_id ?? service.sections.find((s) => s.id === passage.section_id)?.speaker_id;
+  return publishedServices(services, mode).flatMap((service) => service.chapters.map((chapter): SearchChapter => {
+    const speakerId = chapter.speaker_id;
     const speaker = service.speakers.find((s) => s.id === speakerId)?.name;
     return {
-      id: passage.id, serviceId: service.id, serviceTitle: service.title, videoId: passage.video_id,
+      id: chapter.id, serviceId: service.id, serviceTitle: service.title, videoId: chapter.video_id,
       ...(service.series ? { series: { id: service.series.id, name: service.series.name } } : {}),
-      start: passage.start, end: passage.end, title: passage.title, summary: passage.summary,
-      transcript: passage.transcript, questions: [...passage.questions],
-      topics: passage.topics.map((id) => service.topics.find((t) => t.id === id)!.name),
-      scripture: passage.scripture.map(normalizeScriptureReference),
-      ...(passage.scriptureDisplay || passage.scripture.some((value) => normalizeScriptureReference(value) !== value)
-        ? { scriptureDisplay: [...(passage.scriptureDisplay ?? passage.scripture)] } : {}),
+      start: chapter.start, end: chapter.end, title: chapter.title, summary: chapter.summary,
+      ...(chapter.parent_id ? { parentId: chapter.parent_id, parentTitle: service.chapters.find((parent) => parent.id === chapter.parent_id)!.title } : {}),
+      keywords: [...chapter.keywords],
+      topics: chapter.topics.map((id) => service.topics.find((t) => t.id === id)!.name),
+      scripture: chapter.scripture.map(normalizeScriptureReference),
+      ...(chapter.scriptureDisplay || chapter.scripture.some((value) => normalizeScriptureReference(value) !== value)
+        ? { scriptureDisplay: [...(chapter.scriptureDisplay ?? chapter.scripture)] } : {}),
       ...(speaker ? { speaker } : {}), date: service.date,
-      type: passage.type, preview: service.editorial_status !== 'reviewed',
+      type: chapter.type, preview: service.editorial_status !== 'reviewed',
     };
   })).sort((a, b) => compareText(b.date, a.date) || compareText(a.serviceId, b.serviceId)
     || sequence.get(a.videoId)! - sequence.get(b.videoId)!
     || a.start - b.start || compareText(a.id, b.id));
 }
-export const eligiblePassages = flattenArchive;

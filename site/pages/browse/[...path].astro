@@ -2,12 +2,12 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import BrowsePage from '../../components/BrowsePage';
 import { displayServices, type DisplayService } from '../../components/archive-display';
-import { loadArchive, publishedServices, flattenArchive } from '../../lib/archive';
+import { loadArchive, publishedServices, flattenChapters } from '../../lib/archive';
 import { buildBrowsePages, type BrowsePage as BrowsePageData } from '../../lib/browse';
 export function getStaticPaths() {
   const mode = import.meta.env.ARCHIVE_MODE;
   const eligible = publishedServices(loadArchive(), mode);
-  const services = displayServices(eligible, flattenArchive(eligible, mode));
+  const services = displayServices(eligible, flattenChapters(eligible, mode));
   return buildBrowsePages(services).map((page) => ({ params: { path: page.path }, props: { page, services } }));
 }
 interface Props { page: BrowsePageData; services: DisplayService[] }

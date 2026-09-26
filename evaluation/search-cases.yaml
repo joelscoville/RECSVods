@@ -30,24 +30,28 @@ sourceDates:
   - { milestone: 4, videoId: lrRnxGzvPaM, expectedDate: '2026-05-17' }
 
 # Every case runs in exact and actual-local-embedding hybrid modes.
+# Where natural wording is not in concise metadata, exactQuery exercises spoken
+# keywords separately. The original question and rank bound still gate real hybrid
+# search. Do not claim an exactQuery result as lexical recall of the full question.
 # Lists are alternatives within a field; supplied fields must all match.
-# Date cases also require ALL AND ONLY eligible passages on expectedDate,
+# Targets retain the containing chapters of the frozen passage expectations.
+# Date cases also require ALL AND ONLY eligible chapters on expectedDate,
 # including multiple distinct services if that is what the source contains.
 cases:
   - id: romans-13
     milestone: 2
     kind: rank
     query: Romans 13
-    acceptableServiceIds: ['2020-09-27']
-    reason: Scripture match (reference)
+    acceptableServiceIds: ['2020-09-27', '2026-08-09']
+    reason: 'Scripture: Romans 13'
     maxRank: 1
-    note: Authority's trusted reference must outrank incidental mentions.
+    note: Authority's exposition or the August 9 source-backed Romans 13 reading/exposition must outrank incidental mentions. The latter is a genuine whole-service scripture destination, not an incidental mention; M2's core-only ranking still requires Authority.
   - id: romans-alias
     milestone: 2
     kind: rank
     query: Rom 13
-    acceptableServiceIds: ['2020-09-27']
-    reason: Scripture match (reference)
+    acceptableServiceIds: ['2020-09-27', '2026-08-09']
+    reason: 'Scripture: Romans 13'
     maxRank: 1
     note: Common book abbreviation uses the shared reference parser.
   - id: speaker-yong
@@ -63,8 +67,9 @@ cases:
     milestone: 2
     kind: rank
     query: How should Christians relate to government?
+    exactQuery: Romans 13 government
     acceptableServiceIds: ['2020-09-27']
-    acceptablePassageIds: [p0927-romans-government, p0927-government-allegiance]
+    acceptableChapterIds: [c20200927-civil-order-and-conscience, c20200927-wise-political-engagement, s0927-romans-order]
     maxRank: 3
     note: Evidence-backed relevant segments, not any greeting in Authority.
   - id: abraham-isaac
@@ -72,7 +77,7 @@ cases:
     kind: rank
     query: Abraham and Isaac
     acceptableServiceIds: ['2025-11-02']
-    acceptablePassageIds: [p1102-abraham-isaac]
+    acceptableChapterIds: [s1102-trust]
     maxRank: 3
     note: Sacrifice's father-son exchange, original physical-upload clock.
   - id: living-sacrifice
@@ -80,7 +85,7 @@ cases:
     kind: rank
     query: living sacrifice
     acceptableServiceIds: ['2025-11-02']
-    acceptablePassageIds: [p1102-living-sacrifice]
+    acceptableChapterIds: [s1102-daily]
     reason: Verse-text match (BSB)
     maxRank: 3
     note: Hidden sourced BSB text contributes an honestly labelled match.
@@ -106,14 +111,14 @@ cases:
     milestone: 2
     kind: rank
     query: learn about prayer by praying
-    acceptablePassageIds: [p0906-learn-by-praying]
+    acceptableChapterIds: [s0906-prayer-example]
     maxRank: 3
     note: Baseline relevant segment from docs/first-recording-review.md.
   - id: august-first-upload
     milestone: 2
     kind: rank
     query: A.C.T.S. prayer
-    acceptablePassageIds: [p0816-p1-adoration]
+    acceptableChapterIds: [c20260816-p1-opening]
     acceptableVideoIds: [mw4SAoJRZgo]
     maxRank: 3
     note: First multipart upload candidate from docs/august-multipart-review.md.
@@ -121,7 +126,7 @@ cases:
     milestone: 2
     kind: rank
     query: media ministry engagement
-    acceptablePassageIds: [p0816-p2-media-ministry]
+    acceptableChapterIds: [c20260816-p2-worship-scripture]
     acceptableVideoIds: [XWAH9SWFcoo]
     maxRank: 3
     note: Second physical upload must preserve its own timeline.
@@ -129,7 +134,7 @@ cases:
     milestone: 2
     kind: rank
     query: God ordains ends means
-    acceptablePassageIds: [p0816-p3-ends-means]
+    acceptableChapterIds: [s0816-p3-sovereignty]
     acceptableVideoIds: [IcIxBc--VvM]
     maxRank: 3
     note: Third physical upload candidate from the multipart evidence.
@@ -137,17 +142,17 @@ cases:
     milestone: 2
     kind: rank
     query: Hotel-room prayer requests
-    acceptablePassageIds: [p0628-hotel-prayer]
+    acceptableChapterIds: [c20260628-spirit-teaches-scripture]
     acceptableVideoIds: [k27dmsPvmG8]
     maxRank: 3
-    note: Only the full stream carries the evidenced passage; failed upload remains in source.
+    note: Only the full stream carries the evidenced chapter; failed upload remains in source.
   - id: tripping-question
     milestone: 3
     kind: rank
     query: How can we avoid causing others to stumble?
     acceptableServiceIds: ['2020-07-19']
     acceptableVideoIds: [Z-vRVB-WucA]
-    acceptablePassageIds: [p0719-rights-stumbling, p0719-think-beyond-self, p0719-restore-forgive, p0719-hypocrisy-stumbling]
+    acceptableChapterIds: [s0719-rights, c20200719-faith-and-forgiveness, c20200719-avoid-stumbling-blocks]
     maxRank: 3
     note: Evidence-backed discussion of rights, considering others, hypocrisy and restoring people, from docs/tripping-review.md.
   - id: tripping-luke
@@ -156,7 +161,7 @@ cases:
     query: Luke 17:1-9
     acceptableServiceIds: ['2020-07-19']
     acceptableVideoIds: [Z-vRVB-WucA]
-    reason: Scripture match (reference)
+    reason: 'Scripture: Luke 17:1-9'
     maxRank: 3
     note: Operator-supplied Tripping reference; actual curated metadata must support it.
   - id: tripping-matthew
@@ -165,7 +170,7 @@ cases:
     query: Matthew 18:5-7
     acceptableServiceIds: ['2020-07-19']
     acceptableVideoIds: [Z-vRVB-WucA]
-    reason: Scripture match (reference)
+    reason: 'Scripture: Matthew 18:5-7'
     maxRank: 3
     note: Second known Tripping reference, evaluated against the entire eligible corpus.
   - id: july-iso
@@ -217,10 +222,11 @@ cases:
     milestone: 3
     kind: rank
     query: How can knowledge about God become knowledge of God?
-    acceptablePassageIds: [p0913-simple-demanding-title]
+    exactQuery: knowledge prayer practice
+    acceptableChapterIds: [c20260913-knowledge-prayer-practice]
     acceptableVideoIds: [GkmB_KeBlBw]
     maxRank: 3
-    note: Relevant passage evidenced in docs/september13-review.md.
+    note: The original introduction remains valid; the substantive answer in s0913-knowledge also qualifies. Its preserved p0913-two-movements explicitly describes turning learned truth into meditation, prayer and praise (4123.72–4347.46s); this is source-supported answer coverage, not merely a title match.
   - id: excluded-candidates
     milestone: 3
     kind: excluded-media
@@ -235,7 +241,7 @@ cases:
     milestone: 4
     kind: rank
     query: Do I need a pastor to pray for me?
-    acceptablePassageIds: [p20260830-031]
+    acceptableChapterIds: [s20260830-access]
     acceptableVideoIds: [M9uwSKpB_gk]
     maxRank: 5
     note: Source-backed prayer discussion in the August 30 worker report; historical expansion target set before measuring ranks.
@@ -243,7 +249,8 @@ cases:
     milestone: 4
     kind: rank
     query: Does Christian joy mean never feeling despair?
-    acceptablePassageIds: [p20260823-joy-and-despair]
+    exactQuery: fullness of joy despair
+    acceptableChapterIds: [s20260823-joy]
     acceptableVideoIds: [QCNrRkiFeKw]
     maxRank: 5
     note: Keeps the speaker's qualification attached to the joy claim.
@@ -251,7 +258,8 @@ cases:
     milestone: 4
     kind: rank
     query: Should my national identity come before being a Christian?
-    acceptablePassageIds: [p20260809-050]
+    exactQuery: civil government citizenship
+    acceptableChapterIds: [s20260809-highest-authority, c20260809-god-above-government]
     acceptableVideoIds: [gO6gc5jL-jU]
     maxRank: 5
     note: Explicit national and primary identity distinction, with speaker attribution.
@@ -259,7 +267,7 @@ cases:
     milestone: 4
     kind: rank
     query: What is sanctification and why is Christian life about the here and now?
-    acceptablePassageIds: [p20260802-sanctification]
+    acceptableChapterIds: [s20260802-sanctification]
     acceptableVideoIds: [1R4gnCvqrOA]
     maxRank: 5
     note: Source definition and explicit rejection of passive waiting, from the worker's cited range.
@@ -267,7 +275,7 @@ cases:
     milestone: 4
     kind: rank
     query: 26 July 2026 refusing bribes at work
-    acceptablePassageIds: [p20260726-050]
+    acceptableChapterIds: [c20260726-opposition-responsibility]
     acceptableVideoIds: [D7gXD-Mo25s]
     maxRank: 5
     note: Date-qualified workplace anecdote; no factual endorsement of the reported events.
@@ -275,7 +283,7 @@ cases:
     milestone: 4
     kind: rank
     query: The Greatest Love no and Lord in the same sentence
-    acceptablePassageIds: [p20260719-prayer-partner-challenge, p20260719-lord-and-no]
+    acceptableChapterIds: [c20260719-love-shaped-obedience]
     acceptableVideoIds: [rM0Oi8-Y8G4]
     maxRank: 5
     note: The 2026 service's prayer-partner illustration and immediate application, not 2020 Tripping.
@@ -283,7 +291,7 @@ cases:
     milestone: 4
     kind: rank
     query: 21 June 2026 Holy Spirit help when I cannot pray
-    acceptablePassageIds: [p20260621-intercession]
+    acceptableChapterIds: [c20260621-spirit-help-presence]
     acceptableVideoIds: [dNeZD1HUmmE]
     maxRank: 5
     note: Source-backed intercession discussion with date context.
@@ -291,7 +299,7 @@ cases:
     milestone: 4
     kind: rank
     query: Does greater works mean doing greater miracles than Jesus?
-    acceptablePassageIds: [p20260614-058, p20260614-059]
+    acceptableChapterIds: [c20260614-christs-work-belongs-to-every-believer]
     acceptableVideoIds: [GlVgMoehT2I]
     maxRank: 5
     note: Keeps the comparative explanation and its adjacent qualification.
@@ -299,7 +307,7 @@ cases:
     milestone: 4
     kind: rank
     query: Why should Jesus be the only way is that arrogant or intolerant?
-    acceptablePassageIds: [p20260607-only-introduction]
+    acceptableChapterIds: [c20260607-love-marks-christs-followers]
     acceptableVideoIds: [8Qjfp-2L5d8]
     maxRank: 5
     note: The recorded introductory question in Only, with trusted title and references.
@@ -307,7 +315,7 @@ cases:
     milestone: 4
     kind: rank
     query: 31 May 2026 What's New love identifies Christ's followers
-    acceptablePassageIds: [p20260531-048]
+    acceptableChapterIds: [c20260531-love-identifies-followers]
     acceptableVideoIds: [m51rgcZHQmE]
     maxRank: 5
     note: The worker's dated candidate about the identifying mark of followers.
@@ -315,7 +323,7 @@ cases:
     milestone: 4
     kind: rank
     query: What is the difference between regret and repentance in The Most Hideous Sin?
-    acceptablePassageIds: [p20260524-seeking-right-answer]
+    acceptableChapterIds: [c20260524-repentance-forgiveness]
     acceptableVideoIds: [uJDdItVGgj8]
     maxRank: 5
     note: Source-backed distinction in the May 24 report.
@@ -323,7 +331,7 @@ cases:
     milestone: 4
     kind: rank
     query: Why confess sins daily if I am already saved?
-    acceptablePassageIds: [p20260517-daily-confession]
+    acceptableChapterIds: [c20260517-forgiveness-and-responsibility]
     acceptableVideoIds: [lrRnxGzvPaM]
     maxRank: 5
     note: The May 17 explanation, with the original upload's timing and reviewed-source requirement unchanged.

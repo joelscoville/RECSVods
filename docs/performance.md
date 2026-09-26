@@ -1,5 +1,16 @@
 # Static search measurement
 
+**Current result:** concise outlines use compact committed rows, not the passage-
+era artifacts described in the historical investigation below. All **53/53** declared
+budgets passed in `.local/performance-outlines-cached.json`: 233 real search units,
+plus 2,000/5,000-row synthetic stress. See
+[`migrations/concise-outline-verification.md`](migrations/concise-outline-verification.md)
+for current latency, preparation cost, sizes, hardware assumptions and limits.
+`pnpm index:verify` now validates committed per-service artifacts; incremental/full
+build equivalence is covered by `tests/incremental.test.ts`. No build/CI transcription
+or inference is required. `scripts/benchmark-search.ts` measures current binary rows
+and deduplicated BSB through the same product search path.
+
 ## Status and scope
 
 The main worker's saved **pre-change** report is

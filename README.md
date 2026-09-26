@@ -1,7 +1,7 @@
 # RECS Replay
 
-A static, passage-searchable archive of Reformed Evangelical Church Singapore
-recordings. YouTube hosts playback; reviewable YAML and Markdown hold the archive
+A static, chapter-searchable archive of Reformed Evangelical Church Singapore
+recordings. YouTube hosts playback; reviewable chapter YAML holds the archive
 interpretation. Search runs in the browser, with exact matching available while
 the self-hosted semantic model loads.
 
@@ -44,6 +44,8 @@ presence of these commands.
 - [Archive schemas and human editorial approval](docs/archive-format.md)
 - [Authorized media tooling and cleanup](docs/media-tooling.md)
 - [Static search, model provenance, and budgets](docs/search.md)
+- [Chapter migration and unchanged internal preservation](docs/chapter-migration.md)
+- [Private transcript-window processing and committed vectors](docs/chapter-vectors.md)
 - [Penpot design references](docs/design-reference/penpot/README.md)
 - [Ordered implementation prompts](docs/implementation-prompts/README.md)
 

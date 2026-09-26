@@ -3,11 +3,10 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { stringify } from 'yaml';
 import { afterEach, describe, expect, it } from 'vitest';
-import { archiveFromFiles, loadArchive, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
+import { archiveFromFiles, flattenChapters, loadArchive, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
 import { assertManifestDiff, BackfillManifestSchema, editorialReviewAids, importBackfill, loadBackfill,
   MANIFEST_PATH, manifestFromFiles, nextBackfill, reportBackfill, transitionBackfill, validateBackfill } from '../site/lib/backfill';
 import { backfillCli } from '../scripts/backfill';
-import { buildIndex } from '../scripts/archive';
 
 const roots: string[] = [];
 const inputPath = 'inputs/approved.yaml';
@@ -30,10 +29,9 @@ function source(id = '2026-01-01', video = videos[0]): Service {
   return { id, date: id, title: 'Fictional interpreted title', type: 'service', workflow_status: 'complete', editorial_status: 'needs_review',
     review_notes: [], speakers: [], topics: [], videos: [{ id: video, channel_id: SOURCE_CHANNEL_ID, sequence: 1, duration: 300,
       workflow_status: 'complete', media_disposition: 'playable' }],
-    sections: [{ id: `${id}-section`, video_id: video, type: 'address', title: 'Fictional section', start: 10, end: 290, confidence: 0.7, review_notes: [] }],
-    passages: [{ id: `${id}-passage`, section_id: `${id}-section`, video_id: video, type: 'address', title: 'Fictional passage',
-      start: 20, end: 30, confidence: 0.6, review_notes: [], summary: 'The speaker discusses a fictional example.',
-      transcript: 'This fictional text is long enough to demonstrate duplicate overlap detection.', questions: [], topics: [], scripture: [] }] };
+    chapters: [{ id: `${id}-section`, video_id: video, type: 'address', title: 'Fictional chapter',
+      start: 10, end: 290, confidence: 0.7, review_notes: [], summary: 'The speaker discusses a fictional example.',
+      keywords: ['fictional'], topics: [], scripture: [] }] };
 }
 function putSource(root: string, service = source()) { put(root, `services/${service.date.slice(0, 4)}/${service.id}/service.yaml`, stringify(service)); }
 function claim(root: string, id = '2026-01-01') { transitionBackfill(root, id, 'registered'); transitionBackfill(root, id, 'in_progress'); }
@@ -187,14 +185,15 @@ describe('source references, integrated build gate, read-only reports', () => {
     }
     files.delete(inputPath); expect(() => manifestFromFiles(files)).toThrow('missing discovery_source');
   });
-  it('integrated indexes validate manifest when present; absent is valid; production never gains unreviewed content', () => {
+  it('validates registry independently of private material; production never gains unreviewed chapters', () => {
     const root = fixture(); expect(validateBackfill(root).services).toEqual([]);
-    expect(JSON.parse(readFileSync(buildIndex(root), 'utf8'))).toEqual([]);
+    expect(flattenChapters(loadArchive(root))).toEqual([]);
     importBackfill(root, inputPath); putSource(root);
-    expect(JSON.parse(readFileSync(buildIndex(root, 'preview'), 'utf8'))).toHaveLength(1);
-    expect(JSON.parse(readFileSync(buildIndex(root, 'production'), 'utf8'))).toEqual([]);
-    put(root, MANIFEST_PATH, 'schema_version: 999'); expect(() => buildIndex(root, 'preview')).toThrow('corpus/manifest.yaml');
-    expect(JSON.parse(readFileSync(path.join(root, 'site/public/generated/passages.json'), 'utf8'))).toEqual([]);
+    put(root, 'services/2026/2026-01-01/passages.internal.yaml', 'malformed private material: [');
+    expect(flattenChapters(loadArchive(root), 'preview')).toHaveLength(1);
+    expect(flattenChapters(loadArchive(root), 'production')).toEqual([]);
+    expect(validateBackfill(root).services).toHaveLength(3);
+    put(root, MANIFEST_PATH, 'schema_version: 999'); expect(() => validateBackfill(root)).toThrow('corpus/manifest.yaml');
   });
   it('reads live media and exact editorial_status, reports eligibility only, and never rewrites sources', () => {
     const root = fixture(); importBackfill(root, inputPath);
@@ -215,14 +214,13 @@ describe('source references, integrated build gate, read-only reports', () => {
   });
   it('reports all review aids with references rather than duplicating or rewriting interpretation', () => {
     const service = source();
-    service.sections.push({ ...service.sections[0], id: 'overlap', start: 280 });
-    service.passages.push({ ...service.passages[0], id: 'duplicate', start: 40, end: 280 });
+    service.chapters.push({ ...service.chapters[0], id: 'overlap', start: 280, end: 285, review_notes: ['Boundary needs review'] });
     service.topics = Array.from({ length: 13 }, (_, i) => ({ id: `topic-${i}`, name: `Topic ${i}` }));
     for (let i = 1; i <= 3; i++) service.videos.push({ ...service.videos[0], id: `VID${String(i).padStart(8, '0')}`, sequence: i + 1 });
     const baseline = structuredClone(service); baseline.editorial_status = 'reviewed'; baseline.reviewed_by = 'Fictional human'; baseline.reviewed_at = '2026-01-02T00:00:00Z';
     const before = structuredClone(service); const aids = editorialReviewAids([service], [baseline]);
-    expect(new Set(aids.map((a) => a.code))).toEqual(new Set(['low_confidence_boundary', 'metadata_gap', 'section_gap', 'section_overlap', 'duplicate_overlap_text', 'topic_proliferation', 'unusual_video_count', 'unusual_passage_length', 'changed_reviewed_record']));
-    expect(JSON.stringify(aids)).not.toContain(service.passages[0].transcript); expect(service).toEqual(before);
+    expect(new Set(aids.map((a) => a.code))).toEqual(new Set(['low_confidence_boundary', 'chapter_review_notes', 'metadata_gap', 'chapter_gap', 'chapter_overlap', 'topic_proliferation', 'unusual_video_count', 'unusual_chapter_length', 'changed_reviewed_record']));
+    expect(JSON.stringify(aids)).not.toContain('transcript'); expect(service).toEqual(before);
     expect(editorialReviewAids([], [baseline])[0].detail).toContain('absent');
   });
   it('CLI routes all commands with strict options and a read-only baseline root', () => {

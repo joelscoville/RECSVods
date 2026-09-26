@@ -27,7 +27,7 @@ Extend the curator skill or add a narrowly scoped companion skill. It must direc
 3. Run the authorization and media-tool preflight.
 4. Apply the operator's 2026-09-26 historical-batch exception: one isolated subagent per logical service may run in parallel without a fixed worker cap. Stagger acquisition starts approximately 1–2 minutes apart. Each worker writes only its service YAML and review document, with its own external workspace; the weekly workflow stays sequential.
 5. Reuse taxonomy. Workers put proposed new terms in review notes; only the main agent merges shared taxonomy after reviewing the batch.
-6. Preserve trustworthy historical metadata and wording.
+6. Preserve trustworthy historical metadata. Under the chapter amendment, new output is roughly 8–15 meaningful chapters per full service, short summaries, spoken keywords and committed transcript-window vectors; no new passage transcripts. Preserve all existing boundaries and internal passage text unchanged during migration.
 7. Workers perform source/import and own-file integrity checks. The main agent performs cross-service consistency review and repository-wide validation once after assembling the batch.
 8. The main agent runs search regressions once at the end before committing.
 9. Remove all temporary media.
@@ -45,7 +45,7 @@ Define budgets for initial assets, model download/cache, index transfer, exact-r
 
 ## Editorial Review Reports
 
-Report low-confidence boundaries, missing likely metadata, unusual passage lengths, section gaps/overlaps, duplicated overlap text, topic proliferation, suspicious video counts, and changes to previously reviewed records. These are review aids, not automatic rewrite rules.
+Report uncertain boundaries, missing likely metadata, unusual chapter lengths, chapter gaps/overlaps, topic proliferation, suspicious video counts, and changes to previously reviewed records. Reports do not require private transcript comparisons or new per-passage interpretation. These are review aids, not automatic rewrite rules.
 
 ## First Approved Batch
 
@@ -56,6 +56,14 @@ The PR must list attempted and `complete` services, `registered`, `in_progress`,
 ## Required Tests
 
 Test manifest transitions, batch selection/resume/idempotency, duplicate/conflict detection, partial failure isolation, forbidden curator promotion, preview/production filtering, incremental/full index equivalence, core and edge-case search regressions, compression/shard reconstruction if used, stable performance budgets, editorial reports, interrupted cleanup, and media/cache exclusion.
+
+Chapter-model acceptance additionally verifies committed vector bindings and ordered
+row copying without ASR, lossless internal preservation, transcript exclusion from
+all public output, gzip reconstruction, legacy ID redirects, and current plus
+700-service size projections. Incremental/full equivalence compares a rebuild from
+changed committed chapter artifacts against a clean build; it never regenerates
+transcripts or embeddings in CI. Keep original natural-language evaluation queries
+for real hybrid search; any metadata-only lexical companion is reported separately.
 
 ## Completion Gate
 

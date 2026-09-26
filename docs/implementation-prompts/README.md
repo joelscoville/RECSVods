@@ -14,11 +14,38 @@ Operator-supplied inputs live in [`inputs/`](./inputs/). Treat them as read-only
 
 ## Contract amendments
 
+The current [concise-outline brief](./decisions/2026-09-26-sermon-outline.md) further
+amends the chapter decision: re-outline all 22 migrated services, preserve original
+boundaries internally, use neutral peer service groups and a few sermon movements,
+Title Case, one holistic sermon description, and no rendered per-unit descriptions.
+The user's subsequent UI direction makes subsections an integrated chapter tree
+expanded by a button inside its row. See [implementation and weekly procedure](../concise-outlines.md).
+
 The operator's [2026-09-26 chapter-search decision](./decisions/2026-09-26-chapter-search.md)
 supersedes conflicting passage/transcript requirements below. Freeze the current
 Milestone 4 content checkpoint first; then migrate to chapter-only publication and
 compact committed vectors before further M4 tooling acceptance or Milestone 5.
 Existing passage/transcript material must be preserved unchanged internally.
+
+The operator's [concise service-outline brief](./decisions/2026-09-26-sermon-outline.md)
+supersedes chapter granularity and presentation guidance in that decision. Apply it
+to the current migration before M4 acceptance and to M5 weekly curation.
+
+The frozen content baseline is `540abab`. For all remaining acceptance and future
+curation, use `chapters`, `SearchChapter`, `chapters.json` and committed int8 vector
+sidecars. Any older passage/transcript authoring, rendering, edit-link or JSON-vector
+instruction below is historical and superseded, including copied milestone criteria.
+Use [archive format](../archive-format.md), [chapter migration](../chapter-migration.md),
+[chapter vectors](../chapter-vectors.md) and [chapter search](../search.md) as the
+implemented interfaces. Migration acceptance includes unchanged internal hashes,
+chapter-only preview/production output, old-link resolution, actual model evaluation,
+and measured current/700-service downloads. Keep code and migrated content in
+separate signed checkpoints before proceeding to M5.
+
+For work after historical batch 001, also read the operator's
+[caption-source decision](./decisions/2026-09-26-caption-transcripts.md). It does not
+authorize replacing the in-progress batch's recorded ASR history. M5 must implement
+its caption quality gate and local whisper.cpp fallback before claiming weekly readiness.
 
 ## Naming
 

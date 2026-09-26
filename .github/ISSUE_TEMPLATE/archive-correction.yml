@@ -1,5 +1,5 @@
 name: Archive correction
-description: Suggest a correction to a transcript, timestamp, reference or archive description.
+description: Suggest a correction to a chapter time, title, reference or archive description.
 title: 'Archive correction: '
 body:
   - type: markdown
@@ -12,11 +12,11 @@ body:
     attributes:
       label: What needs correcting?
       options:
-        - transcript
-        - timestamp
+        - chapter time
+        - title
         - scripture
         - speaker
-        - section
+        - topic
         - other
     validations:
       required: true
@@ -32,14 +32,10 @@ body:
       label: Video ID(s)
       description: The physical YouTube upload, or uploads for a whole-service report.
   - type: input
-    id: passage-id
+    id: chapter-id
     attributes:
-      label: Passage ID
-      description: Leave the whole-recording/service marker if no passage was selected.
-  - type: input
-    id: section-id
-    attributes:
-      label: Section ID
+      label: Chapter ID
+      description: Leave the whole-recording/service marker if no chapter was selected.
   - type: textarea
     id: timestamps
     attributes:

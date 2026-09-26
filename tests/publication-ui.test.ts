@@ -14,7 +14,7 @@ describe('homepage publication states independent of the live approval count', (
     const item: HomeItem = {
       id: 'abcdefghijk', videoId: 'abcdefghijk', serviceId: 'fixture-service',
       title: 'Fictional state fixture', date: '2026-01-04', type: 'sermon',
-      href: '/review/watch/?service=fixture-service&video=abcdefghijk',
+      href: '/review/watch/?chapter=fixture-chapter',
       duration: 120, start: 0, preview,
     };
     const html = renderToStaticMarkup(createElement(Home, { items: [item], base: '/review/' }));

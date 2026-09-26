@@ -1,16 +1,14 @@
-import { mkdtempSync, mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { stringify } from 'yaml';
 import { afterEach, describe, expect, it } from 'vitest';
 import {
-  archiveFromFiles, assertWorkflowTransition, canTransitionWorkflow, flattenArchive,
+  archiveFromFiles, assertWorkflowTransition, canTransitionWorkflow, flattenChapters,
   IdentifierRecordSchema, loadArchive, parseYaml, publishedServices, ScriptureReferenceSchema,
   ServiceSchema, ServiceSourceSchema, SOURCE_CHANNEL_ID, TranscriptionProvenanceSchema, WorkflowStatusSchema, type Service, type WorkflowStatus,
 } from '../site/lib/archive';
-import { archiveCli, buildIndex } from '../scripts/archive';
-import { displayServices } from '../site/components/archive-display';
 
 const roots: string[] = [];
 const filename = 'services/2026/fixture-service/service.yaml';
@@ -23,12 +21,10 @@ function fixture(): Service {
     videos: [{ id: 'AAAAAAAAAAA', channel_id: SOURCE_CHANNEL_ID, duration: 120, sequence: 1,
       workflow_status: 'complete', media_disposition: 'playable', transcription_language: 'en',
       transcribed_span: { start: 0, end: 100 } }],
-    sections: [{ id: 'fixture-section', video_id: 'AAAAAAAAAAA', start: 0, end: 100,
-      type: 'address', title: 'Fictional section', confidence: 0.8, speaker_id: 'fixture-speaker', review_notes: [] }],
-    passages: [{ id: 'fixture-passage', video_id: 'AAAAAAAAAAA', section_id: 'fixture-section',
+    chapters: [{ id: 'fixture-chapter', video_id: 'AAAAAAAAAAA', speaker_id: 'fixture-speaker',
       start: 10, end: 60, type: 'address', title: 'Fictional passage', summary: 'The fictional speaker discusses a test example.',
-      questions: ['What does the test example show?'], topics: ['fixture-topic'], scripture: ['Romans 13:1-7'],
-      transcript: 'Fictional test transcript, not archive content.', confidence: 0.7, review_notes: [] }],
+      keywords: ['test example'], topics: ['fixture-topic'], scripture: ['Romans 13:1-7'],
+      confidence: 0.7, review_notes: [] }],
   };
 }
 function root(): string {
@@ -93,13 +89,11 @@ print(json.dumps(archive_provenance(payload, verification, True)))
     expect(ServiceSchema.safeParse(service).success).toBe(false);
   });
 
-  it('never serializes provenance through either UI allowlist', () => {
+  it('never serializes provenance through the public DTO', () => {
     const service = fixture();
     service.videos[0].transcription_provenance = projection;
-    const passages = flattenArchive([service], 'preview');
-    const displayed = displayServices(publishedServices([service], 'preview'), passages);
-    expect(displayed[0].videos).toEqual([{ id: 'AAAAAAAAAAA', duration: 120, sequence: 1 }]);
-    for (const serialized of [JSON.stringify(passages), JSON.stringify(displayed)]) {
+    const chapters = flattenChapters([service], 'preview');
+    for (const serialized of [JSON.stringify(chapters)]) {
       expect(serialized).not.toContain('transcription_provenance');
       expect(serialized).not.toContain('faster-whisper');
       expect(serialized).not.toContain(projection.audio_sha256);
@@ -185,25 +179,22 @@ describe('strict schemas', () => {
     ['videos.0.transcribed_span.end', (s) => { s.videos[0].transcribed_span!.end = 0; }],
     ['videos.0.transcription_language', (s) => { delete s.videos[0].transcription_language; }],
     ['videos.0.workflow_status', (s) => { s.videos[0].workflow_status = 'registered'; }],
-    ['passages.0.start', (s) => { s.passages[0].start = -1; }],
-    ['passages.0.end', (s) => { s.passages[0].end = 10; }],
-    ['passages.0.end', (s) => { s.passages[0].end = 121; }],
-    ['passages.0.video_id', (s) => { s.passages[0].video_id = 'BBBBBBBBBBB'; }],
-    ['passages.0.section_id', (s) => { s.passages[0].section_id = 'missing'; }],
-    ['passages.0.section_id', (s) => { s.passages[0].end = 110; }],
-    ['passages.0.speaker_id', (s) => { s.passages[0].speaker_id = 'missing'; }],
-    ['passages.0.topics.0', (s) => { s.passages[0].topics = ['missing']; }],
-    ['passages.0.confidence', (s) => { s.passages[0].confidence = 1.1; }],
-    ['passages.0.summary', (s) => { s.passages[0].summary = ''; }],
-    ['sections.0.end', (s) => { s.sections[0].end = 121; }],
-    ['sections.0.video_id', (s) => { s.sections[0].video_id = 'BBBBBBBBBBB'; }],
+    ['chapters.0.start', (s) => { s.chapters[0].start = -1; }],
+    ['chapters.0.end', (s) => { s.chapters[0].end = 10; }],
+    ['chapters.0.end', (s) => { s.chapters[0].end = 121; }],
+    ['chapters.0.video_id', (s) => { s.chapters[0].video_id = 'BBBBBBBBBBB'; }],
+    ['chapters.0.speaker_id', (s) => { s.chapters[0].speaker_id = 'missing'; }],
+    ['chapters.0.topics.0', (s) => { s.chapters[0].topics = ['missing']; }],
+    ['chapters.0.confidence', (s) => { s.chapters[0].confidence = 1.1; }],
+    ['chapters.0.summary', (s) => { s.chapters[0].summary = ''; }],
+    ['chapters.0.keywords', (s) => { s.chapters[0].keywords = Array(11).fill('excess'); }],
     ['date', (s) => { s.date = '2026-02-30'; }],
   ];
   it.each(invalid)('reports file and invalid field %s', (field, mutate) => {
     const service = fixture(); mutate(service);
     expect(() => archiveFromFiles(new Map([[filename, stringify(service)]]))).toThrow(`${filename}:${field}`);
   });
-  it.each(['videos', 'sections', 'passages', 'speakers', 'topics'] as const)('rejects duplicate %s IDs', (key) => {
+  it.each(['videos', 'chapters', 'speakers', 'topics'] as const)('rejects duplicate %s IDs', (key) => {
     const service = fixture();
     const values = service[key] as { id: string }[];
     values.push({ ...values[0] });
@@ -222,7 +213,7 @@ describe('loader and global validation', () => {
     const first = fixture();
     first.series = { id: 'fixture-series', name: 'Fictional series' };
     const second: Service = { ...fixture(), id: 'other-service', series: { ...first.series },
-      videos: [{ ...first.videos[0], id: 'BBBBBBBBBBB' }], sections: [], passages: [] };
+      videos: [{ ...first.videos[0], id: 'BBBBBBBBBBB' }], chapters: [] };
     const otherFilename = 'services/2026/other-service/service.yaml';
     const files = new Map([[filename, stringify(first)], [otherFilename, stringify(second)]]);
     expect(archiveFromFiles(files).map((service) => service.series)).toEqual([first.series, first.series]);
@@ -232,24 +223,25 @@ describe('loader and global validation', () => {
     expect(() => archiveFromFiles(files)).toThrow(message);
     expect(() => archiveFromFiles(new Map([...files].reverse()))).toThrow(message);
   });
-  it('loads external Markdown and validates optional corpus without interpreting it', () => {
+  it('loads chapters with missing private files and ignores quarantine and vector JSON', () => {
     const directory = root();
     const service = fixture();
-    const { transcript: _transcript, ...passage } = service.passages[0];
-    put(directory, filename, stringify({ ...service, passages: [{ ...passage, transcript_file: 'transcripts/passage.md' }] }));
+    put(directory, filename, stringify(service));
+    expect(loadArchive(directory)).toEqual([service]);
     put(directory, 'services/2026/fixture-service/transcripts/passage.md', 'Fictional markdown transcript.\n');
+    put(directory, 'services/2026/fixture-service/passages.internal.yaml', 'malformed: [');
+    put(directory, 'services/2026/fixture-service/chapter-vectors.json', 'not read by source loader');
     put(directory, 'corpus/AAAAAAAAAAA.yaml', 'youtube_id: AAAAAAAAAAA\ndate: 2026-01-04\nworkflow_status: registered\nmedia_disposition: unassessed\n');
-    expect(loadArchive(directory)[0].passages[0].transcript).toBe('Fictional markdown transcript.');
+    expect(loadArchive(directory)).toEqual([service]);
   });
-  it('names transcript errors and rejects traversal, missing, empty, or ambiguous transcript sources', () => {
-    const service = fixture();
-    const { transcript: _transcript, ...passage } = service.passages[0];
-    for (const transcript_file of ['../outside.md', '/absolute.md', 'missing.md']) {
-      expect(() => archiveFromFiles(new Map([[filename, stringify({ ...service, passages: [{ ...passage, transcript_file }] })]]))).toThrow('transcript_file');
+  it('rejects legacy public models and private text fields rather than falling back', () => {
+    const { chapters, ...metadata } = fixture();
+    expect(() => archiveFromFiles(new Map([[filename, stringify({ ...metadata, sections: [], passages: [] })]]))).toThrow('chapters');
+    for (const field of ['transcript', 'transcript_file', 'questions']) {
+      expect(ServiceSourceSchema.safeParse({ ...metadata, chapters: [{ ...chapters[0], [field]: 'private' }] }).success).toBe(false);
     }
-    for (const p of [passage, { ...passage, transcript: '' }, { ...passage, transcript: 'text', transcript_file: 'text.md' }]) {
-      expect(() => archiveFromFiles(new Map([[filename, stringify({ ...service, passages: [p] })]]))).toThrow('transcript');
-    }
+    const chapter = { ...chapters[0] }; delete chapter.confidence;
+    expect(ServiceSourceSchema.safeParse({ ...metadata, chapters: [chapter] }).success).toBe(true);
   });
   it('rejects symlinks', () => {
     const directory = root();
@@ -257,21 +249,20 @@ describe('loader and global validation', () => {
     symlinkSync(root(), path.join(directory, 'services', 'outside'));
     expect(() => loadArchive(directory)).toThrow('symlinks');
   });
-  it.each(['videos', 'sections', 'passages'] as const)('rejects global %s duplicates', (key) => {
+  it.each(['videos', 'chapters'] as const)('rejects global %s duplicates', (key) => {
     const first = fixture();
     const second = fixture();
     second.id = 'other-service';
     if (key !== 'videos') {
       second.videos[0].id = 'BBBBBBBBBBB';
-      second.sections[0].video_id = second.passages[0].video_id = 'BBBBBBBBBBB';
+      second.chapters[0].video_id = 'BBBBBBBBBBB';
     }
-    if (key === 'passages') second.sections[0].id = second.passages[0].section_id = 'other-section';
     expect(() => archiveFromFiles(new Map([[filename, stringify(first)], ['services/2026/other-service/service.yaml', stringify(second)]]))).toThrow('duplicate global ID');
   });
   it('rejects duplicate service IDs across years and IDs across entity kinds', () => {
     const a = fixture(); const b = fixture(); b.date = '2025-01-05';
     expect(() => archiveFromFiles(new Map([[filename, stringify(a)], ['services/2025/fixture-service/service.yaml', stringify(b)]]))).toThrow('duplicate global ID');
-    a.passages[0].id = a.id;
+    a.chapters[0].id = a.id;
     expect(() => archiveFromFiles(new Map([[filename, stringify(a)]]))).toThrow('duplicate global ID');
   });
   it('validates corpus even without interpreted services', () => {
@@ -291,19 +282,15 @@ describe('loader and global validation', () => {
 describe('publication and flat frontend contract', () => {
   it('projects only series ID/name and omits the optional key when absent', () => {
     const service = fixture();
-    const absent = flattenArchive([service], 'preview');
+    const absent = flattenChapters([service], 'preview');
     expect(absent[0]).not.toHaveProperty('series');
-    expect(displayServices(publishedServices([service], 'preview'), absent)[0]).not.toHaveProperty('series');
     service.series = { id: 'fixture-series', name: 'Fictional series' };
     // Even a caller bypassing schema validation cannot spread private series keys into UI data.
     Object.assign(service.series, { provenance: 'PRIVATE SERIES SENTINEL' });
-    const passages = flattenArchive([service], 'preview');
-    const displayed = displayServices(publishedServices([service], 'preview'), passages);
-    expect(passages[0].series).toEqual({ id: 'fixture-series', name: 'Fictional series' });
-    expect(displayed[0].series).toEqual(passages[0].series);
-    expect(passages[0].series).not.toBe(service.series);
-    expect(displayed[0].series).not.toBe(service.series);
-    expect(JSON.stringify(displayed)).not.toContain('PRIVATE SERIES SENTINEL');
+    const chapters = flattenChapters([service], 'preview');
+    expect(chapters[0].series).toEqual({ id: 'fixture-series', name: 'Fictional series' });
+    expect(chapters[0].series).not.toBe(service.series);
+    expect(JSON.stringify(chapters)).not.toContain('PRIVATE SERIES SENTINEL');
   });
   for (const editorial of ['needs_review', 'reviewed'] as const) for (const media of ['unassessed', 'playable', 'failed', 'rejected'] as const) {
     it(`${editorial}/${media} are independent axes with exact publication gating`, () => {
@@ -315,58 +302,43 @@ describe('publication and flat frontend contract', () => {
         service.videos[0].disposition_evidence = 'Fictional test evidence.';
       }
       expect(ServiceSchema.safeParse(service).success).toBe(true);
-      expect(flattenArchive([service], 'production')).toHaveLength(editorial === 'reviewed' && media === 'playable' ? 1 : 0);
-      const preview = flattenArchive([service], 'preview');
+      expect(flattenChapters([service], 'production')).toHaveLength(editorial === 'reviewed' && media === 'playable' ? 1 : 0);
+      const preview = flattenChapters([service], 'preview');
       expect(preview).toHaveLength(media === 'playable' ? 1 : 0);
       if (preview[0]) expect(preview[0].preview).toBe(editorial === 'needs_review');
     });
   }
-  it('removes non-playable videos and sections even from mixed-service output', () => {
+  it('removes non-playable videos and chapters even from mixed-service output', () => {
     const service = fixture();
     service.videos.push({ ...service.videos[0], id: 'BBBBBBBBBBB', sequence: 2, media_disposition: 'unassessed' });
-    service.sections.push({ ...service.sections[0], id: 'second-section', video_id: 'BBBBBBBBBBB' });
-    service.passages.push({ ...service.passages[0], id: 'second-passage', section_id: 'second-section', video_id: 'BBBBBBBBBBB' });
+    service.chapters.push({ ...service.chapters[0], id: 'second-chapter', video_id: 'BBBBBBBBBBB' });
     const filtered = publishedServices([service], 'preview')[0];
-    expect(filtered.videos).toHaveLength(1); expect(filtered.sections).toHaveLength(1); expect(filtered.passages).toHaveLength(1);
+    expect(filtered.videos).toHaveLength(1); expect(filtered.chapters).toHaveLength(1);
     expect(service.videos).toHaveLength(2);
   });
-  it('flattens display names, inherited speakers and preview without leaking editorial notes', () => {
-    const result = flattenArchive([fixture()], 'preview')[0];
-    expect(result).toEqual({ id: 'fixture-passage', serviceId: 'fixture-service', serviceTitle: 'Fictional test service',
+  it('flattens display names and preview without leaking private fields even from unchecked callers', () => {
+    const service = fixture();
+    Object.assign(service.chapters[0], { transcript: 'PRIVATE', questions: ['PRIVATE'], provenance: 'PRIVATE', sourceFileRef: 'PRIVATE', review_notes: ['PRIVATE'] });
+    const result = flattenChapters([service], 'preview')[0];
+    expect(result).toEqual({ id: 'fixture-chapter', serviceId: 'fixture-service', serviceTitle: 'Fictional test service',
       videoId: 'AAAAAAAAAAA', start: 10, end: 60, title: 'Fictional passage', summary: 'The fictional speaker discusses a test example.',
-      transcript: 'Fictional test transcript, not archive content.', questions: ['What does the test example show?'],
+      keywords: ['test example'],
       topics: ['Fictional topic'], scripture: ['Romans 13:1-7'], speaker: 'Fictional speaker', date: '2026-01-04', type: 'address', preview: true });
   });
-  it('orders passages deterministically by service date, upload sequence, timestamp, ID', () => {
+  it('orders chapters deterministically by service date, upload sequence, timestamp, ID', () => {
     const service = fixture();
-    service.passages.push({ ...service.passages[0], id: 'earlier', start: 0 });
-    expect(flattenArchive([service], 'preview').map((p) => p.id)).toEqual(['earlier', 'fixture-passage']);
+    service.chapters.push({ ...service.chapters[0], id: 'earlier', start: 0 });
+    expect(flattenChapters([service], 'preview').map((p) => p.id)).toEqual(['earlier', 'fixture-chapter']);
   });
   it('accepts all interpreted workflow states without treating completion as approval', () => {
     for (const status of ['in_progress', 'complete', 'blocked'] as WorkflowStatus[]) {
       const service = fixture(); service.workflow_status = status;
       if (status === 'blocked') service.blocked_reason = 'Test blocker.';
       expect(ServiceSchema.safeParse(service).success).toBe(true);
-      expect(flattenArchive([service])).toEqual([]);
+      expect(flattenChapters([service])).toEqual([]);
     }
   });
-  it('builds deterministic labeled preview JSON and replaces it with empty production JSON', () => {
-    const directory = root();
-    expect(loadArchive(directory)).toEqual([]);
-    expect(JSON.parse(readFileSync(buildIndex(directory), 'utf8'))).toEqual([]);
-    put(directory, filename, stringify(fixture()));
-    const production = buildIndex(directory);
-    expect(JSON.parse(readFileSync(production, 'utf8'))).toEqual([]);
-    const preview = buildIndex(directory, 'preview');
-    expect(preview).toBe(production);
-    expect(JSON.parse(readFileSync(preview, 'utf8'))[0].preview).toBe(true);
-    const original = readFileSync(preview, 'utf8'); buildIndex(directory, 'preview');
-    expect(readFileSync(preview, 'utf8')).toBe(original);
-    buildIndex(directory, 'production');
-    expect(JSON.parse(readFileSync(production, 'utf8'))).toEqual([]);
-  });
-  it('rejects unknown build modes and CLI arguments rather than falling back to preview', () => {
-    expect(() => flattenArchive([fixture()], 'typo' as 'preview')).toThrow('Unknown archive build mode');
-    expect(() => archiveCli(['build-index', '--mode', 'typo'])).toThrow('Usage');
+  it('rejects unknown build modes rather than falling back to preview', () => {
+    expect(() => flattenChapters([fixture()], 'typo' as 'preview')).toThrow('Unknown archive build mode');
   });
 });

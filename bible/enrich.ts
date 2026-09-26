@@ -1,7 +1,6 @@
 /** Build-only: never import the full Bible into a browser bundle or display projection. */
 import { loadBible, type BibleText } from '../scripts/bible';
 import { parseScriptureReference } from '../site/lib/scripture';
-import type { SearchPassage } from '../site/lib/types';
 
 export function verseTextForReferences(references: readonly string[], bible: BibleText): string {
   const seen = new Set<string>();
@@ -27,7 +26,8 @@ export function verseTextForReferences(references: readonly string[], bible: Bib
   return text.join('\n');
 }
 
-export function enrichPassages(passages: readonly SearchPassage[], bible = loadBible()): SearchPassage[] {
+/** Compatibility helper for in-memory search consumers; never serialize its result. */
+export function enrichPassages<T extends { scripture: readonly string[]; verseText?: string }>(passages: readonly T[], bible = loadBible()): (Omit<T, 'verseText'> & { verseText?: string })[] {
   return passages.map((passage) => {
     const { verseText: _oldText, ...display } = passage;
     const verseText = verseTextForReferences(passage.scripture, bible);

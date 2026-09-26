@@ -5,9 +5,11 @@ import { pathToFileURL } from 'node:url';
 import { isDeepStrictEqual } from 'node:util';
 import { parseDocument } from 'yaml';
 import {
-  archiveFromFiles, assertWorkflowTransition, IdentifierRecordSchema, loadArchive,
-  parseWithPath, parseYaml, ServiceSourceSchema, type Service, type WorkflowStatus,
+  assertWorkflowTransition, IdentifierRecordSchema, loadArchive,
+  parseWithPath, parseYaml, ServiceSourceSchema, type WorkflowStatus,
 } from '../site/lib/archive';
+import { historyArchiveFromFiles, historySource, type HistoryService } from '../site/lib/legacy-schema';
+import { assertInternalHistory } from '../site/lib/internal-validation';
 import { assertManifestDiff, BackfillManifestSchema, MANIFEST_PATH, manifestFromFiles, validateManifestReferences } from '../site/lib/backfill';
 
 const APPROVAL_FIELDS = ['editorial_status', 'reviewed_by', 'reviewed_at'] as const;
@@ -36,7 +38,8 @@ function treeFiles(root: string, revision: string): Map<string, string> {
     if (!match) throw new Error(`${revision}: unsupported archive tree entry ${entry}`);
     const [, mode, hash, filename] = match;
     if (mode === '120000') throw new Error(`${revision}:${filename}: archive symlinks are not allowed`);
-    if (/\.(ya?ml|md)$/.test(filename) || inputPaths.has(filename)) {
+    if (filename.endsWith('.bin')) files.set(filename, `git-blob:${hash}`);
+    else if (/\.(ya?ml|md|json)$/.test(filename) || inputPaths.has(filename)) {
       // Preserve transcript whitespace; git() trims command-oriented outputs only.
       files.set(filename, execFileSync('git', ['cat-file', 'blob', hash], { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
     }
@@ -45,11 +48,11 @@ function treeFiles(root: string, revision: string): Map<string, string> {
 }
 function serviceSources(files: ReadonlyMap<string, string>) {
   return new Map([...files].filter(([filename]) => /^services\/\d{4}\/[^/]+\/service\.yaml$/.test(filename)).map(([filename, text]) => {
-    const source = parseWithPath(ServiceSourceSchema, parseYaml(text, filename), filename);
+    const source = historySource(text, filename);
     return [source.id, { filename, source, raw: parseYaml(text, filename) as Record<string, unknown> }] as const;
   }));
 }
-function workflowRecords(files: ReadonlyMap<string, string>, services: readonly Service[]) {
+function workflowRecords(files: ReadonlyMap<string, string>, services: readonly HistoryService[]) {
   const records = new Map<string, WorkflowStatus>();
   for (const service of services) {
     records.set(`service:${service.id}`, service.workflow_status);
@@ -69,8 +72,9 @@ const AI_ATTRIBUTION = /(?:\b(?:ai|agent|claude|anthropic|openai|chatgpt|gpt|cod
 function checkCommit(root: string, parent: string, commit: string, message: string): void {
   const beforeFiles = treeFiles(root, parent);
   const afterFiles = treeFiles(root, commit);
-  const before = archiveFromFiles(beforeFiles);
-  const after = archiveFromFiles(afterFiles);
+  const before = historyArchiveFromFiles(beforeFiles);
+  const after = historyArchiveFromFiles(afterFiles);
+  assertInternalHistory(beforeFiles, afterFiles);
   const oldManifest = manifestFromFiles(beforeFiles); const newManifest = manifestFromFiles(afterFiles);
   validateManifestReferences(oldManifest, before, beforeFiles);
   validateManifestReferences(newManifest, after, afterFiles);
@@ -121,8 +125,16 @@ function checkCommit(root: string, parent: string, commit: string, message: stri
       }
       const oldSource = oldSources.get(service.id)!;
       const related = new Set([source.filename, oldSource.filename]);
-      for (const record of [source, oldSource]) for (const passage of record.source.passages) {
-        if (passage.transcript_file) related.add(path.posix.join(path.posix.dirname(record.filename), passage.transcript_file));
+      for (const record of [source, oldSource]) if ('passages' in record.source) for (const passage of record.source.passages) {
+        if (passage.transcript_file) {
+          const external = path.posix.join(path.posix.dirname(record.filename), passage.transcript_file);
+          related.add(external);
+          if (beforeFiles.get(external) !== afterFiles.get(external)) throw new Error(`${source.filename}: reviewed interpretation changed; reset to needs_review and clear review metadata`);
+        }
+      }
+      const directories = [source.filename, oldSource.filename].map((filename) => `${path.posix.dirname(filename)}/`);
+      if (changed.some((filename) => directories.some((directory) => filename.startsWith(directory)) && /\.(bin|json)$/.test(filename))) {
+        throw new Error(`${source.filename}: reviewed vector/compatibility sidecar changed; reset to needs_review and clear review metadata`);
       }
       if (changed.some((filename) => related.has(filename))
         && !commitTrailers.some((t) => /^Mechanical-Change:\s*(formatting|schema-migration)$/i.test(t))) {
@@ -141,7 +153,7 @@ export function guardEditorial(root: string, base: string, head = 'HEAD'): { com
   catch { throw new Error('editorial guard BASE must be an ancestor of HEAD'); }
   // Validate the final tree even for an empty range.
   const finalFiles = treeFiles(root, headId);
-  validateManifestReferences(manifestFromFiles(finalFiles), archiveFromFiles(finalFiles), finalFiles);
+  validateManifestReferences(manifestFromFiles(finalFiles), historyArchiveFromFiles(finalFiles), finalFiles);
   const commits = git(root, ['rev-list', '--reverse', '--topo-order', `${baseId}..${headId}`]).split('\n').filter(Boolean);
   for (const commit of commits) {
     const parents = git(root, ['show', '-s', '--format=%P', commit]).split(' ').filter(Boolean);

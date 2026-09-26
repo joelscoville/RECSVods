@@ -6,9 +6,9 @@ export interface PlayerAdapter {
   getPlayerState(): number;
   destroy(): void;
 }
-export interface PlaybackRange { id: string; start: number; end?: number }
-export interface PassageController {
-  setPassage(range: PlaybackRange, play?: boolean): void;
+export interface PlaybackRange { id: string; start: number; end?: number; resumeAt?: number }
+export interface ChapterController {
+  setChapter(range: PlaybackRange, play?: boolean): void;
   tick(): boolean;
   replay(): void;
   continueWatching(): void;
@@ -16,17 +16,18 @@ export interface PassageController {
 }
 
 /** A soft boundary: never rewinds a manual seek and only pauses an actively playing video once. */
-export function createPassageController(player: PlayerAdapter, onEnd: () => void = () => {}): PassageController {
+export function createChapterController(player: PlayerAdapter, onEnd: () => void = () => {}): ChapterController {
   let range: PlaybackRange | undefined;
   let ended = false;
   let boundaryEnabled = true;
   return {
-    setPassage(next, play = true) {
+    setChapter(next, play = true) {
       if (!Number.isFinite(next.start) || next.start < 0 || (next.end !== undefined && (!Number.isFinite(next.end) || next.end <= next.start))) throw new Error('Invalid playback range');
       range = { ...next };
       ended = false;
       boundaryEnabled = true;
-      player.seekTo(next.start, true);
+      const resume = next.resumeAt;
+      player.seekTo(resume !== undefined && Number.isFinite(resume) && resume >= next.start && (next.end === undefined || resume < next.end) ? resume : next.start, true);
       if (play) player.playVideo();
     },
     tick() {
