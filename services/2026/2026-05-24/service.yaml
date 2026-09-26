@@ -1,0 +1,1375 @@
+id: '2026-05-24'
+date: '2026-05-24'
+title: '24 May 2026 — The Most Hideous Sin'
+sermon_title: The Most Hideous Sin
+series: { id: gospel-of-john, name: Expository Preaching on the Gospel of John }
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - 'Main batch integration applied the source-backed series using the common ID gospel-of-john. No new topic was needed; all interpretation remains needs_review. See docs/historical-001/integration.md.'
+  - Whole meaningful programme curated from 3.62 to 6600.34 seconds using the supplied English ASR, word timings, coarse frames and targeted boundary frames. Inline transcripts are edited excerpts, not full verbatim transcription. Bible quotations and lyrics are explicitly omitted.
+  - Source title RECS 24 May 2026, upload/release dates 20260524 and opening slide dated 24th May 2026 agree with the approved date. Title slide at 1980 seconds says The Most Hideous Sin, John 13:21-30, 36-38 and James 1:12-15. Follow the Leader is labelled Last Session, not today's title.
+  - Pastor Yong is identified in the opening prayer at 691 seconds. No full-name speaker identity is asserted. Catherine, Patricia and the reader rendered Yacinta/Jacinta have only partial names; their optional speaker IDs remain absent.
+  - Imported faster-whisper evidence retains 21 word-outside-segment warnings on 21 segments, maximum 0.30 seconds; no backward segment starts or segment overlaps. Twenty zero-duration words retained; no tail clamps. Human listening is still required for wording and precise transitions.
+  - Source ffprobe duration 6603.361 seconds; transcript duration 6603.337125 seconds. Exact receipt archive_provenance retained. Both designated original audio copies were absent; audio_hash_verified is false. Decoded samples and visual inspection are not a listening claim.
+  - Historical, denominational, medical, political and biographical statements are attributed to the recording and not independently verified. Especially review the comparison of sins, statements about suicide, cultural generalizations and anecdotes. The speaker explicitly says suicide is complicated and should not be treated lightly.
+  - 'Taxonomy proposal: series gospel-of-john / Expository Preaching on The Gospel of John, displayed at 1980 seconds; supported by p20260524-creed-question and p20260524-betrayal-context. Not activated pending main consistency review. No new topic proposed.'
+speakers:
+  - { id: pastor-yong, name: Pastor Yong, role: Preacher }
+topics:
+  - { id: authority, name: Authority }
+  - { id: discernment, name: Discernment }
+  - { id: discipleship, name: Discipleship }
+  - { id: faith, name: Faith }
+  - { id: forgiveness, name: Forgiveness }
+  - { id: hypocrisy, name: Hypocrisy }
+  - { id: mission, name: Mission }
+  - { id: prayer, name: Prayer }
+  - { id: repentance, name: Repentance }
+  - { id: responsibility, name: Responsibility }
+  - { id: sacrifice, name: Sacrifice }
+  - { id: service, name: Service }
+  - { id: service-life, name: Church life }
+  - { id: stewardship, name: Stewardship }
+  - { id: temptation, name: Temptation }
+  - { id: truth, name: Truth }
+  - { id: worship, name: Worship }
+videos:
+  - id: uJDdItVGgj8
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6603.361
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    transcription_language: en
+    transcribed_span: { start: 0, end: 6603.337125 }
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings: { beam_size: 5, word_timestamps: true, vad_filter: false, condition_on_previous_text: false }
+      audio_sha256: 06a72cbf81a522d8066405bb07a908c00c76ade9e48605d7ceb35f4be68eb42a
+      duration_seconds: 6603.337125
+      elapsed_seconds: 211.504
+      real_time_factor: 0.03203
+      transcribed_at: '2026-09-25T12:51:47.397283+00:00'
+      transcript_sha256: 74adcf6392d76bc4cd870a6512f8651d8b552d624574762eab8669e85078feba
+      source_duration_seconds: 6603.361
+      duration_delta_seconds: -0.023874999999861757
+      audio_hash_verified: false
+sections:
+  - { id: s20260524-preparation, video_id: uJDdItVGgj8, start: 3.62, end: 376.88, type: prayer, title: Prayerful preparation and meditation, confidence: 0.91, review_notes: [Quiet prayer intervals retained; isolated ASR thank-you fragments are not treated as distinct events.] }
+  - { id: s20260524-opening, video_id: uJDdItVGgj8, start: 376.88, end: 1131.1, type: worship, title: Welcome and opening worship, confidence: 0.93 }
+  - { id: s20260524-responsive-readings, video_id: uJDdItVGgj8, start: 1131.1, end: 1475.62, type: scripture-reading, title: Proverbs 22 and John 13 responsive readings, confidence: 0.96 }
+  - { id: s20260524-reflection, video_id: uJDdItVGgj8, start: 1475.62, end: 1584.74, type: reflection, title: Scripture and teaching students with special needs, confidence: 0.9 }
+  - { id: s20260524-hymns, video_id: uJDdItVGgj8, start: 1584.74, end: 1923.04, type: worship, title: Jesus Paid It All and video anthem, confidence: 0.93 }
+  - { id: s20260524-supporting-reading, video_id: uJDdItVGgj8, start: 1923.04, end: 1963.62, type: scripture-reading, title: James 1 supporting reading, confidence: 0.97 }
+  - { id: s20260524-ama, video_id: uJDdItVGgj8, start: 1980.58, end: 2199.56, type: question-answer, title: Apostles' Creed origins and authority, speaker_id: pastor-yong, confidence: 0.92 }
+  - { id: s20260524-recap, video_id: uJDdItVGgj8, start: 2199.56, end: 2708.16, type: sermon, title: 'Last session recap: Follow the Leader', speaker_id: pastor-yong, confidence: 0.94 }
+  - { id: s20260524-sermon-prayer, video_id: uJDdItVGgj8, start: 2708.16, end: 2760.36, type: prayer, title: Prayer before the message, speaker_id: pastor-yong, confidence: 0.9 }
+  - { id: s20260524-betrayal, video_id: uJDdItVGgj8, start: 2761.46, end: 3362.52, type: sermon, title: The Most Hideous Sin — Judas and the betrayal, speaker_id: pastor-yong, confidence: 0.92 }
+  - { id: s20260524-responsibility, video_id: uJDdItVGgj8, start: 3363.1, end: 4144.1, type: sermon, title: Temptation and responsibility for sin, speaker_id: pastor-yong, confidence: 0.91 }
+  - { id: s20260524-denial, video_id: uJDdItVGgj8, start: 4144.1, end: 5007.64, type: sermon, title: Not only Judas — Peter and our own denial, speaker_id: pastor-yong, confidence: 0.89 }
+  - { id: s20260524-repentance, video_id: uJDdItVGgj8, start: 5007.64, end: 5681.24, type: sermon, title: 'Regret, repentance and restoration', speaker_id: pastor-yong, confidence: 0.91 }
+  - { id: s20260524-response, video_id: uJDdItVGgj8, start: 5681.24, end: 6004.5, type: prayer, title: 'Closing prayer, creed and intercession', speaker_id: pastor-yong, confidence: 0.92 }
+  - { id: s20260524-offertory, video_id: uJDdItVGgj8, start: 6004.5, end: 6093.12, type: offering, title: Offering for church and social causes, speaker_id: pastor-yong, confidence: 0.91 }
+  - { id: s20260524-closing, video_id: uJDdItVGgj8, start: 6093.12, end: 6336.98, type: worship, title: 'Closing hymn, doxology and benediction', speaker_id: pastor-yong, confidence: 0.93 }
+  - { id: s20260524-announcements, video_id: uJDdItVGgj8, start: 6338.78, end: 6600.34, type: announcement, title: 'Baptism, regional rallies and ministry opportunities', speaker_id: pastor-yong, confidence: 0.91 }
+passages:
+  - id: p20260524-adoration
+    video_id: uJDdItVGgj8
+    section_id: s20260524-preparation
+    start: 3.62
+    end: 91.66
+    type: prayer
+    title: Preparing for worship through adoration
+    summary: The leader invites personal prayer using adoration, confession, thanksgiving and supplication, beginning with adoration.
+    questions: [How does the service prepare worshippers for prayer?]
+    topics: [prayer, worship]
+    scripture: []
+    transcript: |
+      Good morning. Let's prepare our heart for worship. Before we start we always want to spend some time in personal prayer, and let's pray in adoration, in confession, in thanksgiving and supplication. This is a time for quiet reflection. Let's start with adoring God Almighty. Let us pray.
+      [Quiet prayer interval; isolated uncertain ASR fragment omitted.]
+    confidence: 0.9
+    review_notes: [ASR segments 2 and 3 have 0.08-second word-boundary warnings; the opening thought is kept together.]
+  - id: p20260524-confession
+    video_id: uJDdItVGgj8
+    section_id: s20260524-preparation
+    start: 91.66
+    end: 160.76
+    type: prayer
+    title: Personal confession
+    summary: The leader calls the congregation to confess before God and leaves time for personal prayer.
+    questions: []
+    topics: [prayer, repentance]
+    scripture: []
+    transcript: |
+      We come now before God to pray in confession. We want to confess our sins.
+      [Biblical assurance quotation omitted; no reference is announced here.]
+      Let us pray in confession now.
+      [Quiet prayer interval.]
+    confidence: 0.89
+  - id: p20260524-thanksgiving
+    video_id: uJDdItVGgj8
+    section_id: s20260524-preparation
+    start: 160.76
+    end: 232.96
+    type: prayer
+    title: Personal thanksgiving
+    summary: The leader invites prayers of thanks and recalls God's gifts.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      Let us come before God to give thanks in our prayers.
+      [Biblical quotation omitted; no reference is announced here.]
+      Let us pray in thanksgiving now.
+      [Quiet prayer interval.]
+    confidence: 0.89
+  - id: p20260524-supplication
+    video_id: uJDdItVGgj8
+    section_id: s20260524-preparation
+    start: 232.96
+    end: 293.02
+    type: prayer
+    title: Bringing personal situations before God
+    summary: The congregation is invited to seek God's help in the situations of their lives.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      And now we pray in supplication. We bring our situations in our life to the Lord and seek His help. Let's pray in supplication now.
+      [Quiet prayer interval.]
+    confidence: 0.92
+  - id: p20260524-opening-prayer
+    video_id: uJDdItVGgj8
+    section_id: s20260524-preparation
+    start: 293.02
+    end: 376.88
+    type: prayer
+    title: Setting distractions aside and silent meditation
+    summary: The opening prayer asks for focus on God, introduces Catherine as leader and leads into a brief meditation with an interlude credited to Patricia.
+    questions: []
+    topics: [prayer, worship]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; intervening speech omitted.]
+      We do pray that right now whatever it is that is occupying our mind, we will be able to set them aside so that we can be focused on you and you alone. May all glory be unto your name. In Jesus' name we pray. Amen. This morning, our sister Catherine will be leading us.
+      [Change of leader.] With a moment of silent meditation, let us calm our hearts and minds for today's worship as we meditate on the interlude played by Sister Patricia.
+      [Instrumental/meditation interval; no inferred speech.]
+    confidence: 0.86
+    review_notes: [Meditation invitation lightly edited from imperfect ASR; partial names are not expanded.]
+  - id: p20260524-welcome
+    video_id: uJDdItVGgj8
+    section_id: s20260524-opening
+    start: 376.88
+    end: 427.78
+    type: welcome
+    title: Welcome and congregational greeting
+    summary: The worship leader welcomes the English morning congregation and invites everyone to greet one another.
+    questions: []
+    topics: [service-life, worship]
+    scripture: []
+    transcript: |
+      Happy Sunday, everyone. Good morning and welcome to the Reformed Evangelical Church English morning service. I'm very thankful to be able to worship with everyone here today. It's so lovely to see familiar faces when things around us are changing all the time. Before we begin, may I invite us to rise up and greet one another.
+      [Congregational greeting interval.]
+    confidence: 0.92
+    review_notes: [ASR read one another edited to greet one another from context; verify audibly.]
+  - id: p20260524-call-to-worship
+    video_id: uJDdItVGgj8
+    section_id: s20260524-opening
+    start: 427.78
+    end: 474.84
+    type: scripture-reading
+    title: Call to worship from Psalm 67
+    summary: The leader announces Psalm 67:1-4 in the ESV and invites the congregation to sing The Love of God.
+    questions: [Which psalm opens the worship service?]
+    topics: [worship]
+    scripture: [Psalms 67:1-4]
+    transcript: |
+      Today's call to worship is taken from Psalm chapter 67, verses 1 to 4. I will be reading from the English Standard Version of the Bible.
+      [Psalm 67:1-4 reading and subsequent biblical quotation omitted.]
+      The first hymn of the day is The Love of God. Let us rise, sing together and be renewed by God's presence.
+    confidence: 0.96
+  - id: p20260524-love-of-god
+    video_id: uJDdItVGgj8
+    section_id: s20260524-opening
+    start: 474.84
+    end: 617.12
+    type: hymn
+    title: The Love of God
+    summary: The congregation sings the announced hymn The Love of God.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: '[Hymn lyrics omitted. The Love of God; introduction and congregational singing retained as one musical unit.]'
+    confidence: 0.95
+    review_notes: [Longer than a speech passage to preserve the hymn.]
+  - id: p20260524-worship-prayer
+    video_id: uJDdItVGgj8
+    section_id: s20260524-opening
+    start: 617.12
+    end: 724.18
+    type: prayer
+    title: Prayer for forgiveness and receptive hearts
+    summary: The leader confesses pride, gives thanks for forgiveness and asks for the congregation to hear God's word through Pastor Yong.
+    questions: []
+    topics: [prayer, forgiveness]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; intervening prayer omitted.]
+      We fall into pride and vain self-conceit over and over throughout our lives. In spite of this, you are ever slow to anger, granting us undeserved grace and forgiveness.
+      Whatever concerns and distractions that are weighing on our hearts and minds today, help us to hand them over to you, trusting that you will take care of the things during this time that we dedicate to you in this morning service. May you anoint the lips of Pastor Yong as he administers your word to us. Please prepare our hearts to listen to your word.
+      [Remaining prayer omitted.] Amen. Please be seated.
+    confidence: 0.91
+    review_notes: [Single coherent prayer kept whole; Pastor Yong attribution comes from this recording at 691-695 seconds.]
+  - id: p20260524-good-gracious-preview
+    video_id: uJDdItVGgj8
+    section_id: s20260524-opening
+    start: 726.26
+    end: 853.76
+    type: hymn
+    title: Learning Good and Gracious King
+    summary: The leader introduces CityAlight's Good and Gracious King and requests a short demonstration before congregational singing.
+    questions: [Why is the video hymn played twice?]
+    topics: [worship]
+    scripture: []
+    transcript: |
+      For our second hymn, we will be singing along to a video hymn entitled Good and Gracious King by CityAlight. Since this song might be new to some of us, I ask the AV team to play the first 1 minute and 55 seconds of the song, which will cover the intro to the chorus of the song.
+      [Demonstration song lyrics omitted.]
+      Okay, let's sing together.
+    confidence: 0.95
+    review_notes: [AV team and CityAlight spellings normalized from ASR; demonstration is not a duplicate-upload artifact.]
+  - id: p20260524-good-gracious-singing
+    video_id: uJDdItVGgj8
+    section_id: s20260524-opening
+    start: 853.76
+    end: 1131.1
+    type: hymn
+    title: Good and Gracious King — congregational singing
+    summary: Following the demonstration, the congregation sings along to Good and Gracious King.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: '[Song lyrics omitted. Congregational sing-along follows the introductory demonstration; repeated refrains retained as one musical unit.]'
+    confidence: 0.94
+    review_notes: [Extended musical unit; word-boundary warnings in ASR segments 124 and 125 fall within omitted lyrics.]
+  - id: p20260524-proverbs-reading
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsive-readings
+    start: 1131.1
+    end: 1318.46
+    type: scripture-reading
+    title: Responsive reading — Proverbs 22
+    summary: The leader announces the responsive readings and begins Proverbs 22:1-29 with alternating congregational responses.
+    questions: [What is the Old Testament responsive reading?]
+    topics: [worship]
+    scripture: [Proverbs 22:1-29]
+    transcript: |
+      Let's move on to responsive reading, which is taken from Proverbs 22, verses 1-29 and John 13, verses 21-38. I will start reading first and may I invite you to read the next verse responsively. Proverbs 22, verse 1.
+      [Bible reading omitted; congregational responses are incompletely represented in the supplied ASR.]
+    confidence: 0.97
+    review_notes: [Whole chapter reading is an intentionally extended passage; no missing verses reconstructed.]
+  - id: p20260524-john-reading
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsive-readings
+    start: 1318.46
+    end: 1475.62
+    type: scripture-reading
+    title: Responsive reading — John 13:21-38
+    summary: The congregation continues the responsive reading with the betrayal, new commandment and prediction of Peter's denial.
+    questions: [What is the New Testament responsive reading?]
+    topics: [worship]
+    scripture: [John 13:21-38]
+    transcript: |
+      Now let us turn to John 13 and read through verses 21-38 responsively. John 13, verse 21.
+      [Bible reading omitted; announced full range retained without reconstructing quiet congregational responses.]
+    confidence: 0.97
+  - id: p20260524-special-needs-teaching
+    video_id: uJDdItVGgj8
+    section_id: s20260524-reflection
+    start: 1475.62
+    end: 1541.1
+    type: reflection
+    title: Proverbs through the lens of a special-needs teacher
+    summary: The leader relates Proverbs 22 to her work in special education and Sunday school, discussing reputation, discipline, financial prudence and friendship.
+    questions: [How does the worship leader connect Proverbs with special-needs teaching?]
+    topics: [responsibility, discipleship]
+    scripture: [Proverbs 22, John 13:21-38]
+    transcript: |
+      [Edited ASR excerpts; intervening speech omitted.]
+      Reflecting on Proverbs 22 from the lens of a teacher, I realize that it pretty much sums up what I would like my students to achieve in life, regardless of their neurological profile. It reinforces to me the sufficiency of scripture, that the Bible contains all knowledge necessary for salvation, faith and a godly life, even in atypical circumstances.
+      This epiphany comes through my work with students with special needs in the current season of my life, both in a special Sunday school ministry in Indonesian side, as well as now in a special school.
+      [Further applications about reputation, discipline, financial prudence, friendship, Judas and Peter omitted.]
+    confidence: 0.91
+    review_notes: [The educational and theological conclusions are the leader's; not independent special-education guidance. Segment 219 has a 0.16-second warning inside this passage.]
+  - id: p20260524-intervention
+    video_id: uJDdItVGgj8
+    section_id: s20260524-reflection
+    start: 1541.6
+    end: 1584.74
+    type: reflection
+    title: They are having a hard time — needing intervention
+    summary: The leader compares her students' distress with her own difficult thoughts and emotions, describing a shared need for help and God's gracious intervention.
+    questions: [What does the leader learn from helping students through meltdowns?]
+    topics: [faith, forgiveness]
+    scripture: []
+    transcript: |
+      At the same time, we cannot develop a good character by our own efforts. As I help my students through their frequent meltdowns, I see myself in them too. When their minds are stuck in a loop, they are helpless, just as I am helpless when I am mired with negative thoughts and emotions. They need intervention, and so do I. In the chaos, I remind myself that they are not giving me a hard time, but they are having a hard time. Thank God that while we are struggling with sin, there is divine intervention. He extends His good and gracious hand to help us, a faithful hand that will never let go, with a love that never fails. So let us move on to our third hymn, Jesus Paid It All.
+    confidence: 0.93
+  - id: p20260524-jesus-paid-it-all
+    video_id: uJDdItVGgj8
+    section_id: s20260524-hymns
+    start: 1584.74
+    end: 1721.2
+    type: hymn
+    title: Jesus Paid It All
+    summary: The congregation sings Jesus Paid It All after the reflection on divine intervention.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: '[Hymn lyrics omitted. Jesus Paid It All; full musical response retained as one unit.]'
+    confidence: 0.95
+  - id: p20260524-video-anthem
+    video_id: uJDdItVGgj8
+    section_id: s20260524-hymns
+    start: 1721.2
+    end: 1923.04
+    type: hymn
+    title: Come Every Soul by Sin Oppressed
+    summary: The leader introduces a video anthem, Come Every Soul by Sin Oppressed, followed by the supporting scripture reading.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt.] Our video anthem today is Come Every Soul by Sin Oppressed, followed by scripture reading by Sister [name unclear: Yacinta/Jacinta].
+      [Anthem lyrics omitted; transition to scripture reading retained.]
+    confidence: 0.9
+    review_notes: ["ASR entered corrected to anthem from programme context; reader spelling unresolved. Start includes the earliest word at 1721.2, 0.30 seconds before segment 275."]
+  - id: p20260524-james-reading
+    video_id: uJDdItVGgj8
+    section_id: s20260524-supporting-reading
+    start: 1923.04
+    end: 1963.62
+    type: scripture-reading
+    title: James 1:12-15 — trial and temptation
+    summary: The reader announces and reads James 1:12-15 as the supporting text for the sermon.
+    questions: [Which supporting scripture is read before the sermon?]
+    topics: [temptation]
+    scripture: [James 1:12-15]
+    transcript: |
+      Today's scripture reading comes from James 1, verses 12 to 15.
+      [Bible reading omitted.]
+      This is the word of God.
+    confidence: 0.98
+  - id: p20260524-creed-question
+    video_id: uJDdItVGgj8
+    section_id: s20260524-ama
+    start: 1980.58
+    end: 2047.08
+    type: question-answer
+    title: Did each apostle contribute a sentence to the Creed?
+    summary: Pastor Yong introduces the second half of John 13 and answers a submitted question about the traditional account of the Apostles' Creed's authorship.
+    questions: [Did each apostle write one line of the Apostles' Creed?]
+    topics: [authority, truth]
+    scripture: [John 13:21-30, John 13:36-38, James 1:12-15]
+    transcript: |
+      [Edited ASR excerpts; submission instructions and intervening speech omitted.]
+      Happy Sunday! Today we go into the second half portion of John 13. And one more session and we will move on to John 14.
+      The question asked is a little bit not so linked to today, but because I'm going to mention the Apostles' Creed, so I thought I might as well answer this question. “I find no evidence that the Apostles' Creed was written with each apostle contributing one sentence.”
+      [He describes the senior pastor's traditional account and the questioner's investigation.]
+    confidence: 0.94
+    review_notes: [Scripture ranges come from the current title slide at 1980 seconds. Submitted question confirmed visually at 2100 seconds.]
+  - id: p20260524-scripture-tradition
+    video_id: uJDdItVGgj8
+    section_id: s20260524-ama
+    start: 2047.3
+    end: 2121.4
+    type: question-answer
+    title: Distinguishing Scripture from tradition
+    summary: Pastor Yong says historical traditions should be clearly labelled and distinguishes their authority from the Reformed commitment to sola scriptura.
+    questions: [How should preachers distinguish tradition from Scripture?]
+    topics: [authority, truth]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; intervening speech omitted.]
+      Actually, the correct answer is that we must be careful when we talk about some of the historical things that we can trace back to.
+      So what Senior Pastor has mentioned actually is a traditional kind of understanding. That's not in the scripture. So if it's not in the scripture, when you share or when you talk about things like that, you have to be clearer to the people. I guess he should have emphasised very strongly that actually it's not in the scripture, it's part of tradition. Now it doesn't mean that traditions are not important, it just means that they are not the life and death thing that we should cling on to.
+    confidence: 0.94
+  - id: p20260524-creed-use
+    video_id: uJDdItVGgj8
+    section_id: s20260524-ama
+    start: 2121.4
+    end: 2199.56
+    type: question-answer
+    title: The Creed's value despite an uncertain origin story
+    summary: Pastor Yong contrasts Protestant and Roman Catholic authority as he understands them, then affirms the Creed's declarative and baptismal significance while rejecting certainty about its traditional origin story.
+    questions: [Does an uncertain authorship story remove the Creed's value?]
+    topics: [authority, faith]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; denominational comparison omitted.]
+      In this particular case, the Apostles' Creed, historically that story about how each apostle come up with one statement sounds romantic and interesting, but actually has no strict biblical or historical basis. Nonetheless, the Apostles' Creed by its declaration has its meaning and its important declaration. Throughout the early churches, the Apostles' Creed was used, especially during baptism, as a form of declaration of what you believe before you are even baptised. Later, I will touch on the Apostles' Creed a little bit in the passage today.
+    confidence: 0.89
+    review_notes: [Historical and denominational claims require human review; not independently checked. ASR decoration edited to declaration. Segment 321's warning is inside the passage.]
+  - id: p20260524-recap-john
+    video_id: uJDdItVGgj8
+    section_id: s20260524-recap
+    start: 2199.56
+    end: 2280.34
+    type: sermon
+    title: Recap — the intimacy of John 13 onward
+    summary: Pastor Yong recalls the foot-washing lesson and describes John 13 onward as unusually intimate teaching from Jesus, citing a theologian's assessment.
+    questions: [Why does the speaker emphasize John 13 onward?]
+    topics: [discipleship, service]
+    scripture: [John 13:1-20, John 14]
+    transcript: |
+      [Edited ASR excerpt; intervening speech and biblical quotation omitted.]
+      Let's review what was taught last lesson. Last lesson was a lesson that's very personal to me because it was a chapter that I really like, the narration of our Lord Jesus Christ washing the feet of his disciples at Passover. I mentioned to you that I am so enthralled by this that if I ever, ever start a church on my own, it will feature strongly in this church because I want everybody to see when you come to church that that's exactly one of the very important key lessons that Jesus has given to us all.
+    confidence: 0.91
+    review_notes: [Slide at 2400 seconds explicitly labels John 13:1-20 / Follow the Leader as Last Session. Theologian name in ASR uncertain; no speaker identity inferred from quotation.]
+  - id: p20260524-beloved
+    video_id: uJDdItVGgj8
+    section_id: s20260524-recap
+    start: 2280.34
+    end: 2354.2
+    type: sermon
+    title: Loved to the end and the role of temptation
+    summary: Pastor Yong recalls Jesus' enduring love for his disciples and introduces the distinction he draws between the devil's influence and Judas's responsibility.
+    questions: [How does the recap connect Jesus' love with Judas's betrayal?]
+    topics: [faith, temptation]
+    scripture: [John 13:1-2]
+    transcript: |
+      [Biblical quotation omitted; edited ASR excerpts follow.]
+      Every single one of us who really belong to Him is a beloved of God. And that understanding of beloved comes from verses like this. That till the very end, Jesus Christ will love all of us. If you want to ask why, the answer is I don't know.
+      [Intervening speech omitted.] Today we will spend quite a bit of time on this. And the role of the devil, not that the devil made Judas do what he did, but the devil whispered in his ears. And that's the role of the devil.
+    confidence: 0.91
+  - id: p20260524-lowly-service
+    video_id: uJDdItVGgj8
+    section_id: s20260524-recap
+    start: 2354.2
+    end: 2429.18
+    type: sermon
+    title: The lowly task of washing feet
+    summary: Pastor Yong explains his understanding of foot washing as a socially low task and recalls Peter's surprised response to Jesus doing it.
+    questions: [What significance does the speaker give to Jesus washing feet?]
+    topics: [service, discipleship]
+    scripture: [John 13:3-9]
+    transcript: |
+      [Edited ASR excerpt; historical background and biblical dialogue omitted.]
+      So our Lord Jesus Christ, the creator of all things, the master of the entire universe, would then take on the most lowly task to wash the feet of the disciples. Because it was a custom at that time, roads were not paved, when you go visit someone, your feet will be very dirty, and to have a proper meal, reclining at the table, then the servants will wash your feet.
+      [Further recollection of Peter's response omitted.]
+    confidence: 0.9
+    review_notes: [Social-history claims attributed to the speaker; segment 376 word warning lies inside the thought.]
+  - id: p20260524-lifelong-learning
+    video_id: uJDdItVGgj8
+    section_id: s20260524-recap
+    start: 2429.18
+    end: 2564.44
+    type: sermon
+    title: Humility and lifelong learning
+    summary: Pastor Yong uses Peter's incomplete understanding, current discussion of lifelong learning and stories of older medical students to encourage humility.
+    questions: [Why should believers remain lifelong learners?]
+    topics: [discipleship]
+    scripture: [John 13:6-10]
+    transcript: |
+      [Edited ASR excerpts; examples and intervening speech omitted.]
+      Although Peter and the other apostles have followed Jesus for so long, so many years, they really did not still quite understand. And so all the more for people like us, that we need to have a lifelong sense of humility and a lifelong learning attitude.
+      We need humility in our hearts to understand. And there's no way you can really understand God so fully. So anyone who tells you that, or position themselves as somebody who already figured out everything, something is quite wrong in that picture.
+    confidence: 0.9
+    review_notes: [Longer passage preserves the learning illustration and return to Peter; newspaper and medical-training anecdotes unverified.]
+  - id: p20260524-regular-confession
+    video_id: uJDdItVGgj8
+    section_id: s20260524-recap
+    start: 2564.7
+    end: 2596.14
+    type: sermon
+    title: Why the church practises regular confession
+    summary: Pastor Yong interprets the washing image as support for regular confession by people he describes as saved but not yet perfect.
+    questions: [Why does the speaker say regular confession remains necessary?]
+    topics: [repentance, forgiveness]
+    scripture: [John 13:10]
+    transcript: |
+      [Bible quotation omitted; edited ASR excerpt.]
+      This is why we have regular confession. Because the need for all of us, although we are already saved, we are not yet made perfect. And so unlike some of these hyper-grace churches, we believe that regular confession is important.
+      [Remaining comparison and commentary omitted.]
+    confidence: 0.9
+  - id: p20260524-follow-example
+    video_id: uJDdItVGgj8
+    section_id: s20260524-recap
+    start: 2596.14
+    end: 2708.16
+    type: sermon
+    title: Following the Master's example of service
+    summary: Pastor Yong says Jesus' example cuts through abstract debate and describes trying to model his own life on lowly service before returning to the Last Supper setting.
+    questions: [How does following Jesus' example simplify the decision to serve?]
+    topics: [service, discipleship]
+    scripture: [John 13:14-16]
+    transcript: |
+      [Bible quotation omitted; edited ASR excerpt.]
+      I believe that if Jesus Christ took on the lowest role to serve people, then I should do the same. And that's how I have modeled my life to be, and I pray that that's the case for all of us as well.
+      [Intervening speech omitted.] Remember we are still in the place where Jesus just washed the feet of the disciples, and then staying in that room where the Last Supper occurred. A lot of things that unfold from there. So the next few lessons are in the same kind of background situation, right before Jesus was arrested and then of course crucified.
+    confidence: 0.92
+    review_notes: [Kept the application and transition together; segment 462 warning lies within this passage.]
+  - id: p20260524-prayer-before-sermon
+    video_id: uJDdItVGgj8
+    section_id: s20260524-sermon-prayer
+    start: 2708.16
+    end: 2760.36
+    type: prayer
+    title: Prayer for a childlike and receptive heart
+    summary: Pastor Yong asks for appreciation of the opportunity to hear Scripture and for humble hearts able to follow God.
+    questions: []
+    topics: [prayer, discipleship]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; opening invitation and closing biblical allusion omitted.]
+      We thank you, God, for speaking to us through so many sessions as we slowly but carefully review your word. We do pray that you grant us an appreciation of this moment because not many people in the world get to listen to your word and to think deeply into it. But we do need a heart that is childlike, that is simple and pure and cleansed by your precious blood so that we can turn and follow you.
+      [Remaining prayer omitted.] In Jesus' name we pray. Amen.
+    confidence: 0.9
+  - id: p20260524-bible-quiz
+    video_id: uJDdItVGgj8
+    section_id: s20260524-betrayal
+    start: 2761.46
+    end: 2833.04
+    type: sermon
+    title: A Bible quiz and an obscure reference
+    summary: Pastor Yong recalls being asked to identify Matthew 11:26 and uses the experience to introduce his own questions for the congregation.
+    questions: [How does the speaker introduce his Bible quiz?]
+    topics: [discipleship]
+    scripture: [Matthew 11:26]
+    transcript: |
+      [Edited ASR excerpt; biblical quotations and intervening speech omitted.]
+      Before I begin, I want to give you a simple quiz, because last week the boss did that to me. He asked a very obscure verse.
+      [He recalls the question and identifies Matthew 11:26.] He asked me where is it, and I was stuck. I should ask you the same question. Okay, let me ask you an easier question.
+    confidence: 0.87
+  - id: p20260524-most-hideous-question
+    video_id: uJDdItVGgj8
+    section_id: s20260524-betrayal
+    start: 2833.04
+    end: 2890.94
+    type: sermon
+    title: From the first commandment and murder to the worst sin
+    summary: Pastor Yong asks about the first commandment and Cain's killing of Abel, then asks what the congregation considers the most hideous sin.
+    questions: [What question introduces the sermon title?]
+    topics: [responsibility]
+    scripture: [Genesis 1, Genesis 4]
+    transcript: |
+      [Biblical quotation and family-size aside omitted; edited ASR excerpts.]
+      What was the first murder in the world? The killing of Abel by Cain. Yeah, that's the first recorded murder in the world. So now the question is, what is the most hideous sin that can ever be committed in the world, the worst sin that can be committed?
+      [Transition into historical comparisons omitted.]
+    confidence: 0.89
+  - id: p20260524-comparison-of-sins
+    video_id: uJDdItVGgj8
+    section_id: s20260524-betrayal
+    start: 2890.94
+    end: 2946.56
+    type: sermon
+    title: Historical atrocities and the question of evil
+    summary: Pastor Yong mentions Hitler, wartime deaths and serial killers before turning to the view that Judas's betrayal is the most serious sin.
+    questions: []
+    topics: [responsibility]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; atrocity comparisons, figures and anecdote omitted.]
+      There are all these psycho killers, all these serial killers and all that kind of thing. Sometimes you watch American shows and all that, you see all these serial killers. It's pretty frightening.
+      [He recalls missing-person pictures on milk cartons and transitions to Judas's betrayal.]
+    confidence: 0.82
+    review_notes: [Historical casualty figures and clinical terminology are not verified or endorsed; human review required.]
+  - id: p20260524-innocent-christ
+    video_id: uJDdItVGgj8
+    section_id: s20260524-betrayal
+    start: 2946.56
+    end: 3043.62
+    type: sermon
+    title: Why the speaker singles out Judas's betrayal
+    summary: Pastor Yong explains the view that betraying Jesus is uniquely grave because he regards Jesus as completely innocent, then points to the betrayal narrative.
+    questions: [Why does the speaker call Judas's betrayal the most hideous sin?]
+    topics: [responsibility, sacrifice]
+    scripture: [John 13:21-30]
+    transcript: |
+      [Edited ASR excerpt; preceding comparison and intervening speech omitted.]
+      The betrayal of the Lord Jesus Christ is a betrayal of somebody who the scripture describes as the most holy one, and also the one who has never sinned before. And so that sets it in a different category altogether because there is absolutely no reason, no linkage whatsoever with the rest of the world, to sacrifice or to kill somebody who is completely, totally, absolutely innocent.
+      [Further discussion of Judas's reputation and the Gospel accounts omitted.]
+    confidence: 0.9
+    review_notes: ["The ranking of sins and contrast with other victims are the speaker's argument, not an archive judgment."]
+  - id: p20260524-betrayal-context
+    video_id: uJDdItVGgj8
+    section_id: s20260524-betrayal
+    start: 3043.62
+    end: 3142.86
+    type: sermon
+    title: Thirty pieces of silver and the prophetic background
+    summary: Pastor Yong connects the prior agreement to betray Jesus with Matthew's account of thirty pieces of silver and fulfilled prophecy.
+    questions: [What background does the speaker supply before John 13's betrayal scene?]
+    topics: [responsibility]
+    scripture: [Matthew 26:14-16, Matthew 27:9-10, John 13:21-30]
+    transcript: |
+      [Edited ASR excerpt; Bible quotations omitted.]
+      In other Gospels we see the events leading to it, in Matthew 26 and also in Mark and Luke, similar verses. That's before the gathering, and John did not mention this.
+      [Matthew 26 and Matthew 27 quotations omitted.]
+      Everything that has happened to Jesus Christ, we know was something that was allowed by God. And it's a plan of God, even down to the number of silver that Judas will receive for betraying Jesus Christ. And in the passage that you read just now, we see the event actually unfold in the recollection of the Apostle John.
+    confidence: 0.9
+    review_notes: [Prophetic chronology and attribution are speaker claims. ASR records a self-correction from Ezekiah to Zechariah; no speculative Old Testament verse range added.]
+  - id: p20260524-john-at-table
+    video_id: uJDdItVGgj8
+    section_id: s20260524-betrayal
+    start: 3142.86
+    end: 3245.76
+    type: sermon
+    title: Jesus' troubled spirit and the disciple beside him
+    summary: Pastor Yong follows John's account of Jesus announcing betrayal, identifies the beloved disciple as John and comments on his proximity to Jesus at the table.
+    questions: [How does the speaker explain John's position at the Last Supper?]
+    topics: [faith]
+    scripture: [John 13:21-25]
+    transcript: |
+      [Bible quotations omitted; edited ASR excerpts.]
+      Because events were unfolding, and the betrayal is going to happen, and so Jesus was troubled in his spirit.
+      [Intervening speech omitted.] So throughout the Gospel of John, he referred to himself as the one whom Jesus loved. It's quite a strange thing, a bit presumptuous, right? How do you know? But he thinks that he's the most favourite of Jesus Christ, which is great too. That's why the Apostle John was known as the Apostle of Love. He's very sensitive. He really believed that Jesus loved him.
+      [Further table-position commentary omitted.]
+    confidence: 0.9
+  - id: p20260524-morsel-and-departure
+    video_id: uJDdItVGgj8
+    section_id: s20260524-betrayal
+    start: 3245.76
+    end: 3362.52
+    type: sermon
+    title: The morsel, misunderstanding and Judas's departure
+    summary: Pastor Yong explains the private exchange identifying Judas, the other disciples' misunderstanding of his departure and the search for an opportunity to arrest Jesus away from the crowd.
+    questions: [Why did the disciples misunderstand Judas leaving the meal?]
+    topics: [responsibility]
+    scripture: [John 13:26-30]
+    transcript: |
+      [Bible quotations omitted; edited ASR excerpts.]
+      There was a conversation which Judas cannot hear. Correct or not? Because if I'm Judas and I hear that, I will siam first, I will run away or whatever. So it was like a table and some were very close to Jesus. But all the twelve were very close anyway. They were within the same sphere. But obviously Judas didn't know that this was going to happen.
+      [Intervening reading and commentary omitted.] So again, you see the habit of John being very careful, noticing all these details.
+      [Further explanation of an arrest away from the crowd omitted.]
+    confidence: 0.87
+    review_notes: [Private-conversation reconstruction is the speaker's interpretation. Longer narrative unit retained.]
+  - id: p20260524-whose-fault
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsibility
+    start: 3363.1
+    end: 3423.54
+    type: sermon
+    title: Does prophecy remove Judas's responsibility?
+    summary: Pastor Yong introduces the debate over whether Judas was an innocent instrument of a predicted event and connects it with the wider question of responsibility for evil.
+    questions: [Does the prediction of Judas's betrayal mean it was not his fault?]
+    topics: [responsibility, temptation]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; intervening speech omitted.]
+      This whole episode about Judas Iscariot betraying Jesus became a very intriguing thing in history, actually. Many people, till today, are still trying to discuss whose fault is it when Judas Iscariot did that.
+      Was it God's fault by allowing Judas to do this? And was Judas the kind of innocent party who, in the army term, [unclear phrase], so kind of no choice, right?
+      So then comes the serious question of evil. Where does it come from? And when I sinned, is it my fault?
+    confidence: 0.9
+    review_notes: [Start includes the warning word at 3363.12; ASR local idiom uncertain.]
+  - id: p20260524-superstar-context
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsibility
+    start: 3424.88
+    end: 3498.38
+    type: sermon
+    title: Jesus Christ Superstar as an example
+    summary: Pastor Yong recalls the musical Jesus Christ Superstar, its reception and his assessment of its human-centred portrayal of Jesus.
+    questions: [Why does the sermon discuss Jesus Christ Superstar?]
+    topics: [discernment]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; anecdotes and intervening speech omitted.]
+      Many years ago, there was a musical called Jesus Christ Superstar. How many of you watched this before? Jesus Christ Superstar. It's still on, you know. It's a musical by Andrew Lloyd Webber.
+      [He discusses its reception and his assessment of its portrayal of Jesus; no lyrics reproduced.]
+    confidence: 0.88
+    review_notes: ["Claims about the composer's belief and the musical's reception are attributed to the speaker, not independently established."]
+  - id: p20260524-superstar-judas
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsibility
+    start: 3498.38
+    end: 3595.6
+    type: sermon
+    title: The musical's sympathetic portrayal of Judas
+    summary: Pastor Yong describes the musical's Judas as caught in circumstances and discusses the song Damned for All Time.
+    questions: [How does the speaker describe the musical's view of Judas?]
+    topics: [responsibility]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; intervening commentary omitted.]
+      And the musical was really focused on the life of Jesus through the eyes of Judas Iscariot. And of course, Andrew Lloyd Webber believed that Judas Iscariot is just another human being who was caught in the system. So the musical opened with Judas Iscariot singing, and that was the opening score.
+      [Quoted song lyrics omitted, including the discussion of Damned for All Time.]
+    confidence: 0.91
+    review_notes: [Song title confirmed on coarse frame at 3600 seconds; start includes segment 652's earliest word. Composer's intention is the speaker's interpretation.]
+  - id: p20260524-blame-shifting
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsibility
+    start: 3595.6
+    end: 3687.18
+    type: sermon
+    title: Blaming circumstances, others or God
+    summary: Pastor Yong completes his discussion of the musical's rationale for Judas and relates it to common attempts to shift blame for personal sin.
+    questions: [How does the speaker connect Judas's excuses with ordinary blame-shifting?]
+    topics: [responsibility, repentance]
+    scripture: []
+    transcript: |
+      [Quoted song lyrics and intervening commentary omitted; edited ASR excerpt.]
+      When you come to think about sin and all that, we of course oftentimes will grapple with the same thing, especially when we sin, right? Wait, it's not my fault, it's other people's fault. Ultimately, it's God's fault. And yeah, these are all very standard issues. Where did evil come from? Where did sin come from? It forever and ever will be one of the questions that is being asked.
+      [Transition to first principles.]
+    confidence: 0.91
+  - id: p20260524-judas-thief
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsibility
+    start: 3687.18
+    end: 3745.28
+    type: sermon
+    title: First principle — Judas was not an innocent party
+    summary: Pastor Yong appeals to John's description of Judas taking money and argues against treating him as an innocent man trapped by circumstances.
+    questions: [What first principle does the speaker use to reject Judas's innocence?]
+    topics: [responsibility, stewardship]
+    scripture: [John 12:5-6]
+    transcript: |
+      [Bible quotations omitted; edited ASR excerpt.]
+      So this verse immediately gives you a clear answer that Judas Iscariot was no innocent party. Not that he was a great man or got lured into whatever it is. John immediately declared, as Scripture declared, that Judas Iscariot was not a good person. So therefore, we don't have to consider that at all. So that's one first big principle.
+    confidence: 0.93
+  - id: p20260524-trial-temptation
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsibility
+    start: 3745.28
+    end: 3827.68
+    type: sermon
+    title: Every trial contains temptation
+    summary: Pastor Yong connects James 1 with personal responsibility and cites Stephen Tong's Trial and Temptation before introducing exercise as an everyday illustration.
+    questions: [How are trial and temptation connected in the sermon?]
+    topics: [temptation, responsibility]
+    scripture: [James 1:12-15]
+    transcript: |
+      [Bible quotation omitted; edited ASR excerpt.]
+      So without a doubt that the temptation to sin and all that is a trial as well. And so Dr. Tong, one of the books I translated for him is called Trial and Temptation. Very good book. And the thing that he wants to point out is, in every trial, there is temptation. In every temptation, there is a trial. I thought it's quite interesting, right? In every trial, there is a temptation. Temptation to go into sin, temptation to give up.
+      [Exercise illustration introduction omitted.]
+    confidence: 0.91
+  - id: p20260524-running-discipline
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsibility
+    start: 3827.68
+    end: 3916.04
+    type: sermon
+    title: Running despite not feeling like it
+    summary: Pastor Yong quotes a runner's resolve to train despite reluctance and applies the illustration to resisting the temptation to give up, including coming to church.
+    questions: [What does the runner illustration show about temptation and discipline?]
+    topics: [temptation, responsibility]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; biographical aside and intervening speech omitted.]
+      He has a very interesting quotation that I like. [Runner's name uncertain.] “Every morning when I wake up, 90% of the time I don't feel like going out to run.” That kind of describes all of us, right? But I know some of you, it's 100% of the time. “90% of the time I don't feel like going out to run, but 100% of the time I will do it, and 110% of the time I don't regret my decision.”
+      [Application to exercise and attending church omitted.]
+    confidence: 0.86
+    review_notes: [Name transcribed inconsistently as Su Rui Yong / Su Rae Yong; no inferred spelling or independent quotation verification.]
+  - id: p20260524-own-desire
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsibility
+    start: 3916.04
+    end: 4029.12
+    type: sermon
+    title: Taking responsibility rather than blaming God or the devil
+    summary: Pastor Yong interprets James 1 as excluding God as the tempter and says people remain responsible for choosing whether to follow temptation, using Adam and Eve's blame-shifting as an example.
+    questions: [Can a person blame God or the devil for choosing to sin?]
+    topics: [temptation, responsibility]
+    scripture: [James 1:13-15, Genesis 3, John 13:14]
+    transcript: |
+      [Bible quotations and intervening speech omitted; edited ASR excerpt.]
+      There are many, many things I must admit when it comes to the mystery of sin, the mystery of temptation, all that, that we may find it difficult to understand. But these are first principle issues that the Bible declared: no matter what happens, you cannot say that God is the one that made me do this. You cannot even strictly say that it's the devil that made you do this. Because our understanding from Scripture is the devil cannot make any person do what he or she would not want to do himself. And what the devil can do is whisper in your ears. Whether you go towards that direction or not, it's your own choice. You are responsible for it.
+      [Adam and Eve illustration omitted.]
+    confidence: 0.92
+    review_notes: [Claims about the devil and human agency are the speaker's interpretation. Longer thought unit preserves qualification and application.]
+  - id: p20260524-bird-nest
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsibility
+    start: 4029.12
+    end: 4115.96
+    type: sermon
+    title: A bird flying overhead versus building a nest
+    summary: Pastor Yong uses the image of a bird overhead to distinguish encountering temptation from allowing it to take root, followed by an illustration about looking at people in public.
+    questions: [What does the bird-and-nest illustration mean?]
+    topics: [temptation, responsibility]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; surrounding illustrations omitted.]
+      I always say you cannot stop the bird from flying over your head, correct? You can't. The bird flies over the place. But you certainly can stop the bird from making a nest on your head, correct?
+      [Comments about clothing in public and the first look versus the second look omitted from this excerpt.]
+    confidence: 0.89
+    review_notes: [Human review requested for gendered/clothing commentary; the analogy is attributed rather than presented as guidance by the archive.]
+  - id: p20260524-vigilance
+    video_id: uJDdItVGgj8
+    section_id: s20260524-responsibility
+    start: 4115.96
+    end: 4144.1
+    type: sermon
+    title: Recognizing temptation and remaining careful
+    summary: Pastor Yong concludes the temptation illustration by urging awareness rather than ignoring the devil's activity.
+    questions: []
+    topics: [temptation]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt.]
+      You can certainly be the one who says, okay, I will be very careful because temptation is right here before us. And that's how the devil works, always whispering. And the devil is very active.
+      [Remaining exhortation omitted.]
+    confidence: 0.9
+    review_notes: [Short concluding thought kept separate from the next argument about additional participants in the crucifixion.]
+  - id: p20260524-other-participants
+    video_id: uJDdItVGgj8
+    section_id: s20260524-denial
+    start: 4144.1
+    end: 4261.1
+    type: sermon
+    title: The leaders, crowd and soldiers involved
+    summary: Pastor Yong broadens responsibility beyond Judas to religious and political leaders, the crowd and the soldiers involved in Jesus' arrest and crucifixion.
+    questions: [Who besides Judas does the speaker include in responsibility for Jesus' death?]
+    topics: [responsibility]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; quotations and intervening speech omitted.]
+      When you read the scripture, you know that it was not just him. In the crucifixion of Jesus there were a lot of players. Some of the more prominent players will be Caiaphas, who was the Jewish high priest, and he in turn got together with the Sanhedrin, which is a whole gang of Pharisees and religious leaders that plotted against Jesus.
+      [Discussion of Herod Antipas, Pontius Pilate, the crowd and Roman soldiers omitted.]
+    confidence: 0.9
+    review_notes: [Names supported by slide at 4200 seconds; narrative and historical claims remain attributed. No unannounced Gospel verse range invented.]
+  - id: p20260524-pontius-pilate-creed
+    video_id: uJDdItVGgj8
+    section_id: s20260524-denial
+    start: 4261.1
+    end: 4335.06
+    type: sermon
+    title: Why the Apostles' Creed names Pontius Pilate
+    summary: Pastor Yong interprets the Creed's reference to Pilate as representing the wider authority and system involved in Jesus' crucifixion, then introduces Peter's denial.
+    questions: [Why does the Apostles' Creed name Pontius Pilate rather than Judas?]
+    topics: [authority, responsibility]
+    scripture: [John 13:36-38]
+    transcript: |
+      [Edited ASR excerpt; intervening anecdote and transition omitted.]
+      I mentioned Apostles' Creed because then the Apostles' Creed used one sentence to represent all these people: Pontius Pilate. Because he represented the authority, the whole gang of people. So you see the Apostles' Creed says, “suffered under Pontius Pilate,” and not “suffered under Judas Iscariot,” because the whole gang of people, including Pontius Pilate.
+      Actually, the Apostles' Creed used that phrase to represent the whole system that then brought Jesus to His crucifixion.
+    confidence: 0.92
+    review_notes: [Interpretation of Creed wording is the speaker's; word warning at segment 849 included by starting at 4261.1.]
+  - id: p20260524-peter-promise
+    video_id: uJDdItVGgj8
+    section_id: s20260524-denial
+    start: 4335.32
+    end: 4434.58
+    type: sermon
+    title: Peter's grand promise and extravagant religious words
+    summary: Pastor Yong discusses Peter's promise to die for Jesus, distinguishes a church tradition about Peter's death and questions whether worshippers mean extravagant promises in songs.
+    questions: [How does Peter's promise lead to the warning about religious words?]
+    topics: [hypocrisy, discipleship]
+    scripture: [John 13:36-38]
+    transcript: |
+      [Bible quotations, quoted song wording and intervening speech omitted; edited ASR excerpt.]
+      And Simon Peter always does this kind of grand statement, right? And very common, I think, in religion, especially for me being bicultural.
+      [He questions extravagant promises in Christian songs and explains why he sometimes keeps quiet rather than sing words he does not mean.]
+    confidence: 0.88
+    review_notes: ["Peter's upside-down crucifixion is explicitly presented as church tradition, not independently verified history."]
+  - id: p20260524-army-anecdote
+    video_id: uJDdItVGgj8
+    section_id: s20260524-denial
+    start: 4434.74
+    end: 4508.62
+    type: sermon
+    title: An army-camp recollection from Taiwan
+    summary: Pastor Yong begins an extended personal illustration about Singaporean soldiers using Taiwanese camps, including an anecdote about discarded toilet paper.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; anecdotal details omitted.]
+      When I was doing army in Taiwan, we always make use of all these army camps that the Taiwanese authority allow Singaporean soldiers to do. And it was very funny. I don't know about now; back then it's supposed to be a secret.
+      [He recounts an anecdote about distinctive toilet paper left in the field and subsequent charges and cleanup.]
+    confidence: 0.82
+    review_notes: [Personal historical anecdote is not corroborated. Unclear multilingual phrases and ASR wording omitted rather than reconstructed.]
+  - id: p20260524-army-commands
+    video_id: uJDdItVGgj8
+    section_id: s20260524-denial
+    start: 4509.16
+    end: 4593.96
+    type: sermon
+    title: Commands and slogans without understanding
+    summary: Pastor Yong contrasts his experience of Singaporean drill commands with Taiwanese patriotic slogans as part of an illustration about words and actions.
+    questions: [What role do military slogans play in the sermon illustration?]
+    topics: [hypocrisy]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; drill imitation and intervening speech omitted.]
+      When we were there, one of the things that's very interesting, you see the Taiwanese soldiers doing their thing too, because we are sharing the camp with them.
+      Because you are trained, every time you hear that few words you know you either turn left, turn right or whatever it is.
+      [He contrasts familiar drill responses with emphatic patriotic slogans.]
+    confidence: 0.84
+    review_notes: [Cultural generalizations and multilingual content need listening review.]
+  - id: p20260524-slogans-and-actions
+    video_id: uJDdItVGgj8
+    section_id: s20260524-denial
+    start: 4593.96
+    end: 4694.58
+    type: sermon
+    title: Loud slogans and running away
+    summary: Pastor Yong recalls meeting Taiwanese people seeking to stay in the United States and uses a friend's remark about slogans to return to Peter's unfulfilled promise.
+    questions: [How does the long military illustration return to Peter's denial?]
+    topics: [hypocrisy, responsibility]
+    scripture: [John 13:38]
+    transcript: |
+      [Edited ASR excerpt; immigration claims, song wording and Bible quotation omitted.]
+      Then I asked the Taiwanese friend, I said, hey, when I was in Taiwan, I heard you all shout very grand. Why is this like this? The guy looked at me and said, “The louder you shout the slogan, the faster you run away.”
+      [He returns to Peter's promise and Jesus' prediction of three denials.]
+    confidence: 0.85
+    review_notes: [Speaker's immigration/citizenship and contemporary political claims are not verified legal information. Extended unit preserves the punchline and return to Scripture.]
+  - id: p20260524-apostles-fled
+    video_id: uJDdItVGgj8
+    section_id: s20260524-denial
+    start: 4694.58
+    end: 4772.7
+    type: sermon
+    title: Peter denied Jesus and the disciples fled
+    summary: Pastor Yong argues that betrayal was not confined to Judas, pointing to Peter's denial and the disciples fleeing, while noting John's presence at the cross.
+    questions: [How does the speaker compare Judas with the other apostles?]
+    topics: [responsibility, discipleship]
+    scripture: [Mark 14:50, John 13:38]
+    transcript: |
+      [Edited ASR excerpts; Bible quotation and intervening speech omitted.]
+      And so it was not just about Judas Iscariot, was it? This Peter, the lead apostle, would of course, later on we know, deny Jesus himself. Although he did not kind of sell Jesus away, but he denied him.
+      [Mark 14:50 quotation omitted.] After following him for three over years, when push come to shove, when danger come, they all ran away, except one, who? The Apostle John.
+      [Further comment about John at the cross omitted.]
+    confidence: 0.9
+  - id: p20260524-you-and-i
+    video_id: uJDdItVGgj8
+    section_id: s20260524-denial
+    start: 4772.7
+    end: 4856.28
+    type: sermon
+    title: The speaker includes the congregation in the need for salvation
+    summary: Pastor Yong turns from the apostles to himself and the congregation, quoting 1 Peter 3:18 and 2 Timothy 3 while describing continuing denial of Christ.
+    questions: [How does the sermon move from the disciples' failures to present-day believers?]
+    topics: [sacrifice, responsibility]
+    scripture: [1 Peter 3:18, 2 Timothy 3:1-5]
+    transcript: |
+      [Bible quotations omitted; edited ASR excerpts.]
+      And so it was not just about Judas Iscariot. The apostles also betrayed him, denied him, ran away from him. Guess what? It was also ultimately people like you and I. And the Bible is very clear about this in many, many places.
+      [1 Peter 3:18 quotation omitted.] Peter said that the reason why Jesus was crucified was because of you and I. We are the ones that deny Him. And guess what? We continue to deny Him all the way till today as well.
+      [2 Timothy 3 reading and commentary omitted.]
+    confidence: 0.92
+  - id: p20260524-denying-power
+    video_id: uJDdItVGgj8
+    section_id: s20260524-denial
+    start: 4856.28
+    end: 4941.44
+    type: sermon
+    title: Denying Christ's power while appearing godly
+    summary: Pastor Yong interprets outward godliness without transformation as denying Christ's power and adds self-reliance and misrepresentation as further forms of denial.
+    questions: [What does denying the power of godliness look like?]
+    topics: [hypocrisy, faith, discipleship]
+    scripture: [2 Timothy 3:5]
+    transcript: |
+      [Bible quotation omitted; edited ASR excerpt.]
+      The answer is when you don't understand what your faith is all about and you don't allow it to transform your life, you are not living to it. We deny Jesus Christ by denying His power over our entire life. So you can appear to be very holy and godly, or in a sense do right things in your life, but your life does not really display the power of Jesus Christ because you deny it, you don't allow it to happen. We deny Christ also by relying on ourselves rather than on Him. And we ultimately deny Christ in a sense by misrepresenting Him to the rest of the world.
+      [Further questions about trustworthy words omitted.]
+    confidence: 0.94
+    review_notes: [Start includes the earliest word of segment 1022; quoted verse omitted rather than retimed.]
+  - id: p20260524-trust-between-churches
+    video_id: uJDdItVGgj8
+    section_id: s20260524-denial
+    start: 4941.44
+    end: 5007.64
+    type: sermon
+    title: Trustworthiness between congregations
+    summary: Pastor Yong recounts church cooperation requiring lawyers and uses it to question the gap between professed faith and conduct before comparing Judas and Peter.
+    questions: [What church example illustrates the gap between profession and practice?]
+    topics: [truth, service-life, hypocrisy]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; anecdotal details omitted.]
+      Between two congregations, you need a lawyer to come in to write down how you collaborate. I said, something is wrong in the picture, right? Because something is wrong in our understanding. We say we are people of God. There's so many things in our life that doesn't seem to be so. So it's a mess, isn't it? Judas Iscariot betrayed Jesus Christ, Peter and the apostles, they're all like one whole mess. They all run away and what have you.
+    confidence: 0.89
+    review_notes: [Anecdote and legal-fee figure not independently confirmed; no inference about unidentified congregations.]
+  - id: p20260524-judas-outcome
+    video_id: uJDdItVGgj8
+    section_id: s20260524-repentance
+    start: 5007.64
+    end: 5094.34
+    type: sermon
+    title: Comparing Judas and Peter — Judas's regret
+    summary: Pastor Yong asks what distinguishes Judas from Peter and reads Matthew's account of Judas returning the money and dying by suicide.
+    questions: [What difference between Judas and Peter does the speaker investigate?]
+    topics: [repentance, responsibility]
+    scripture: [Matthew 27:3-5]
+    transcript: |
+      [Edited ASR excerpt; Bible quotations omitted.]
+      So the question actually we need to ask is, is there a difference between Judas Iscariot and Peter? Is there a difference? The outcome of course was different for sure. One of the key differences between Judas Iscariot and Peter and the rest of the apostles was Judas did not have a good ending at all, right? And John did not mention this, but this was found in the Gospel of Matthew.
+      [Matthew 27:3-5 reading and associated narration omitted.]
+    confidence: 0.91
+    review_notes: [Keep with the later qualification at 5336.34 seconds that suicide is complicated; no general clinical or moral conclusion about suicide inferred.]
+  - id: p20260524-regret-not-repentance
+    video_id: uJDdItVGgj8
+    section_id: s20260524-repentance
+    start: 5094.34
+    end: 5164.5
+    type: sermon
+    title: Regret is not the same as repentance
+    summary: Pastor Yong distinguishes Judas's regret from repentance and briefly alludes to a popular song about regret.
+    questions: [Why does the speaker distinguish regret from repentance?]
+    topics: [repentance]
+    scripture: [Matthew 27:3-5]
+    transcript: |
+      [Edited ASR excerpt; intervening narration omitted.]
+      So Judas did not repent. He did not get a chance to ask for forgiveness. He basically regretted and then he went and killed himself. So that was his ending. And when you look at statements like this, it would seem that we should have some sympathy to him. And that's how we are like oftentimes. A lot of us do many things that we regret in life.
+      [Quoted song lyrics omitted.]
+    confidence: 0.88
+    review_notes: [Speaker's interpretation of Judas retained with nearby qualification; incidental My Way lyrics omitted.]
+  - id: p20260524-seeking-right-answer
+    video_id: uJDdItVGgj8
+    section_id: s20260524-repentance
+    start: 5165.34
+    end: 5225.04
+    type: sermon
+    title: Repentance seeks God's answer rather than retaining control
+    summary: Pastor Yong says regret alone is insufficient and describes repentance as recognizing one's lack of an answer and seeking God's help.
+    questions: [What makes repentance different from simply regretting a choice?]
+    topics: [repentance, faith]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; marital aside omitted.]
+      Regret is not the same as repentance. Amen? You can regret many things in life, and a lot of us do regret.
+      Regret is very different from repentance. That you can regret many things in life without understanding that it is not about simply regretting. It is about knowing that you don't have the answer and then seeking God for the right answer. Judas did not do that. Ultimately, Judas still took things into his own hands and killed himself, because he is in control. He failed, so therefore he carried the failure.
+    confidence: 0.92
+    review_notes: [Speaker's interpretation only; retain the subsequent explicit qualification about suicide at 5336.34-5351.18 seconds.]
+  - id: p20260524-john-stott
+    video_id: uJDdItVGgj8
+    section_id: s20260524-repentance
+    start: 5225.04
+    end: 5300.22
+    type: sermon
+    title: John Stott and walking the talk
+    summary: Pastor Yong commends John Stott as someone whose life reflected his faith and introduces Stott's account of sin and salvation.
+    questions: [Why does the speaker admire John Stott?]
+    topics: [faith, discipleship]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; biographical details and intervening speech omitted.]
+      If you analyze it deeper, as some of the great thinkers do, you will find that actually it's a lot more profound. One of these great thinkers is a guy called John Stott. I highly respect John Stott. John Stott, when he died, somebody wrote an essay on him. The first sentence is, “John Stott was a true believer.” Wow, when I read that, I was shaken to my core. I wonder if I die, will people use that statement to describe me?
+      [Remaining biographical remarks omitted.]
+    confidence: 0.9
+    review_notes: ["John Stott is a quoted theologian, not the live preacher. Biographical and obituary claims unverified. Segment 1140 warning is internal."]
+  - id: p20260524-substitution
+    video_id: uJDdItVGgj8
+    section_id: s20260524-repentance
+    start: 5300.3
+    end: 5360.26
+    type: sermon
+    title: Substitution, mercy and the limits of self-rescue
+    summary: Pastor Yong presents a quotation attributed to John Stott contrasting human self-substitution with God's saving substitution and applies it to Judas, explicitly acknowledging the complexity of suicide.
+    questions: [How does the speaker use John Stott's contrast between sin and salvation?]
+    topics: [sacrifice, repentance, faith]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; intervening commentary omitted.]
+      One of the thinking of John Stott is this: “The essence of sin is we human beings substituting ourselves for God, while the essence of salvation is God substituting Himself for us. We put ourselves where only God deserves to be, while God puts Himself where we deserve to be.”
+      Now, I know that suicide is a very complicated matter, and I don't want to take it lightly, but it is quite clear that Judas Iscariot never quite realized that the solution is not upon himself, but the solution is upon God.
+      Let me ask you something. If Judas Iscariot asks Jesus Christ to forgive him, will he be forgiven? What do you think?
+    confidence: 0.94
+    review_notes: [Quotation visually attributed to John Stott at 5400 seconds; wording not checked against an external publication. Qualification retained explicitly.]
+  - id: p20260524-forgiveness-not-self-rescue
+    video_id: uJDdItVGgj8
+    section_id: s20260524-repentance
+    start: 5361.28
+    end: 5427.48
+    type: sermon
+    title: Could Judas have sought forgiveness?
+    summary: Pastor Yong answers that Judas would have been forgiven if he had sought forgiveness and contrasts this with attempts to solve spiritual failure through one's own efforts.
+    questions: [Does the speaker say Judas could have been forgiven?]
+    topics: [forgiveness, repentance, faith]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; intervening speech omitted.]
+      The answer absolutely will be yes, isn't it? It's very clear in the scripture. But he did not. He took things onto his own hand, just as the case would be for many of us, isn't it?
+      You think about being Asian especially: I'm going to solve my own problem. I find myself in a deep hole. I've got to crawl my way out. I find my own solution. To some extent, you think about it like, you mean it's so simple? Go and ask Jesus to forgive me and that's it? Surely it cannot be right. There should be more, right?
+      [Religious self-effort illustrations omitted.]
+    confidence: 0.92
+    review_notes: [Conditional claim about Judas and cultural generalization belong to the speaker; not supplied as independent doctrine.]
+  - id: p20260524-peter-restored
+    video_id: uJDdItVGgj8
+    section_id: s20260524-repentance
+    start: 5427.48
+    end: 5511.42
+    type: sermon
+    title: Peter's tears, restoration and the promise of forgiveness
+    summary: Pastor Yong contrasts Judas with Peter's sorrow and Jesus' restoration of him in John 21, then cites 1 John 1:9 in support of seeking forgiveness.
+    questions: [How does Peter's restoration contrast with Judas's ending?]
+    topics: [forgiveness, repentance]
+    scripture: [John 21:15-17, 1 John 1:9]
+    transcript: |
+      [Bible quotations and intervening narration omitted; edited ASR excerpt.]
+      In the case of the other apostles, thankfully they understood.
+      Although the Bible did not clearly say so, we know that all the apostles were recovered by Jesus Christ.
+      [John 21 dialogue omitted.] My dear brothers and sisters in Christ, even Judas Iscariot, who had committed the most hideous sin that can possibly be committed, that if he had asked for forgiveness, he would be forgiven. Because the Bible is clear. In 1 John 1, verse 9.
+      [Bible quotation omitted.]
+    confidence: 0.91
+    review_notes: [ASR says before denying where the argument describes restoration after denial; that phrase is omitted and flagged for listening rather than silently repaired.]
+  - id: p20260524-no-hopeless-trap
+    video_id: uJDdItVGgj8
+    section_id: s20260524-repentance
+    start: 5511.42
+    end: 5579.58
+    type: sermon
+    title: Do not assume there is no way back
+    summary: Pastor Yong encourages those struggling with past wrongdoing to seek forgiveness rather than believe there is no solution, before introducing a warning from Hebrews.
+    questions: [What encouragement does the speaker give people burdened by past sin?]
+    topics: [forgiveness, repentance]
+    scripture: [1 John 1:9]
+    transcript: |
+      [Edited ASR excerpt; preceding comparison and biblical quotation omitted.]
+      I know there are many of us out there who are struggling with many things. But you must not fall into the trap of the devil thinking that there is no solution and there's no way out. Because the Bible is clear. You come before the Lord, seek forgiveness, repent.
+      [He introduces a warning from the book of Hebrews.]
+    confidence: 0.93
+  - id: p20260524-hebrews-warning
+    video_id: uJDdItVGgj8
+    section_id: s20260524-repentance
+    start: 5579.58
+    end: 5638.32
+    type: sermon
+    title: Warning against outward participation without belief
+    summary: Pastor Yong reads Hebrews 6:4-6 and interprets it as a warning about people who participate outwardly without truly believing.
+    questions: [How does the speaker interpret the warning in Hebrews 6?]
+    topics: [hypocrisy, repentance, faith]
+    scripture: [Hebrews 6:4-6]
+    transcript: |
+      Hebrews 6:4.
+      [Bible quotation omitted; edited ASR excerpt follows.]
+      For those people who do not really belong to God, and there are people like that walking among us, they may have an outward sign of godliness and they may partake in many things. They may taste of the goodness of God. But deep in their heart, they don't really believe. And so the author of Hebrews says, for some of these people, they will not be recovered. May we not be counted among them.
+    confidence: 0.92
+    review_notes: [Interpretive conclusion attributed to the preacher. Word warnings at 5585.54 and 5615.88 seconds do not alter the editorial unit.]
+  - id: p20260524-follow-faithfully
+    video_id: uJDdItVGgj8
+    section_id: s20260524-repentance
+    start: 5638.32
+    end: 5681.24
+    type: sermon
+    title: Follow faithfully and return in repentance after falling
+    summary: Pastor Yong concludes by urging faithful discipleship, repentance after failure and seriousness about faith rather than taking God for granted.
+    questions: [What practical response concludes the sermon?]
+    topics: [discipleship, repentance, faith]
+    scripture: []
+    transcript: |
+      Finally, my dear brothers and sisters in Christ, follow Him. Follow Him totally and faithfully. Yes, there will be times where we will fall because we are not sinless. We should sin less. But when we fall, and it could be inevitable for the rest of our life, we get back, we pray for forgiveness, we repent. We may do this all the days of our life. Prayerfully we'll do it lesser and lesser. And of course, ultimately salvation will come when our Lord Jesus Christ returns again. Never take the position of taking God for granted and be serious with our faith. Let us pray.
+    confidence: 0.94
+  - id: p20260524-sermon-response-prayer
+    video_id: uJDdItVGgj8
+    section_id: s20260524-response
+    start: 5681.24
+    end: 5743.44
+    type: prayer
+    title: Prayer for repentance and growing faith
+    summary: Pastor Yong asks for understanding of the contrast between Judas and the restored apostles, and for growth that reflects Christ's power.
+    questions: []
+    topics: [prayer, repentance, faith]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; opening and closing prayer omitted.]
+      We pray, O God, that you help us understand this deeply so that we are people who would be cleansed by you, as your words say. Every time we fall, we come back, we get up. And in our life, may we continue to grow in faith so that we will fall lesser and lesser, that we will slowly but surely grow to be more and more like our Lord Jesus Christ, that in our life we will never deny your power over our life.
+      [Remaining prayer omitted.] In Jesus' name we pray. Amen.
+    confidence: 0.93
+  - id: p20260524-apostles-creed
+    video_id: uJDdItVGgj8
+    section_id: s20260524-response
+    start: 5744.26
+    end: 5788.48
+    type: creed
+    title: Congregational affirmation of the Apostles' Creed
+    summary: The congregation stands to affirm its faith using the Apostles' Creed.
+    questions: []
+    topics: [faith, worship]
+    scripture: []
+    transcript: |
+      Congregation, would you stand now? We want to read Apostles' Creed and affirm our faith. The Apostles' Creed.
+      [Creed recitation omitted from this edited transcript; uncertain ASR wording is not reconstructed from memory.]
+    confidence: 0.95
+    review_notes: [ASR renders communion of sins; full recitation requires listening review. No Holy Communion event is inferred from the Creed.]
+  - id: p20260524-prayer-for-ourselves
+    video_id: uJDdItVGgj8
+    section_id: s20260524-response
+    start: 5788.74
+    end: 5900.46
+    type: prayer
+    title: Prayer for repentance and for the senior pastor
+    summary: Pastor Yong introduces prayer for personal repentance and for Stephen Tong's demanding ministry schedule, then gives time to pray for oneself.
+    questions: [What two prayer items follow the sermon?]
+    topics: [prayer, repentance, mission]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; intervening speech omitted.]
+      Let's first pray for ourselves in response to the sermon preached. Maybe it's a time for us to come clean with God and to seek his forgiveness for whatever it is that we've done in our life, and to be determined to repent.
+      The second prayer item, let's continue to uphold our senior pastor. Later on in the announcement, I will share with you some of his schedule.
+      We want to commit him into God's hand and ask God to continue to sustain him, Dr. Stephen Tong, and the work that he is doing in this region.
+      [Personal prayer interval.]
+    confidence: 0.93
+  - id: p20260524-prayer-for-rallies
+    video_id: uJDdItVGgj8
+    section_id: s20260524-response
+    start: 5900.46
+    end: 5971.02
+    type: prayer
+    title: Intercession for Stephen Tong's gospel rallies
+    summary: The congregation is invited to pray for Stephen Tong as he continues a stated fifty-city gospel-rally programme.
+    questions: []
+    topics: [prayer, mission]
+    scripture: []
+    transcript: |
+      Congregation, let us now lift up our senior pastor as he continues his all-cities gospel rallies. He has declared that he wants to do 50 more cities and a very tight schedule. We just want to pray that God will continue to sustain him. Let us pray.
+      [Prayer interval; no additional speech inferred.]
+    confidence: 0.93
+  - id: p20260524-concluding-intercession
+    video_id: uJDdItVGgj8
+    section_id: s20260524-response
+    start: 5971.02
+    end: 6004.5
+    type: prayer
+    title: Asking for faith, protection and providence
+    summary: Pastor Yong gathers the prayers into a request for faith, deliverance, protection and strength.
+    questions: []
+    topics: [prayer, faith]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; uncertain wording omitted.]
+      Let us pray together. We thank you, God, for listening to us. For all the things that we have prayed, we ask that you grant us the faith to look at you for deliverance, to look at you for protection, to look at you for your providence. But we are people of little faith.
+      [Remaining prayer omitted.] May all glory be unto your name. In Jesus' name we pray. Amen. You may be seated.
+    confidence: 0.9
+    review_notes: [Segment 1322 has a 0.14-second word warning; prayer/offering boundary uses the word-timed end of seated at 6004.5.]
+  - id: p20260524-offering
+    video_id: uJDdItVGgj8
+    section_id: s20260524-offertory
+    start: 6004.5
+    end: 6093.12
+    type: offering
+    title: Fourth-Sunday offering for social causes
+    summary: Pastor Yong explains how to give and states that the second box offering on this fourth Sunday is for social causes.
+    questions: [What is the second offering designated for?]
+    topics: [stewardship, service-life]
+    scripture: []
+    transcript: |
+      We're going to move into our offertory now. You may give through the QR code or the box in front. This being the fourth Sunday, the second box offering will be given to social causes.
+      [Offering interval; no inferred speech or music title.]
+    confidence: 0.93
+    review_notes: [ASR social Corses normalized to social causes from context.]
+  - id: p20260524-trust-hymn-explanation
+    video_id: uJDdItVGgj8
+    section_id: s20260524-closing
+    start: 6093.12
+    end: 6120
+    type: reflection
+    title: Explaining an older phrase in the closing hymn
+    summary: Pastor Yong introduces 'Tis So Sweet to Trust in Jesus and explains that its older wording describes repeatedly experiencing Christ rather than scientifically proving him.
+    questions: [What does the older wording in the closing hymn mean?]
+    topics: [faith, worship]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpt; quoted lyrics omitted.]
+      Our closing hymn is a wonderful hymn, 'Tis So Sweet to Trust in Jesus. Somebody asked me about the refrain.
+      [Quoted refrain omitted.] What does that mean? It doesn't mean you go and put Jesus in a test tube and prove him. It's old English. It means how I've experienced him over and over. That's what it means, not that he's a result of your proof. Okay, let's sing this together.
+    confidence: 0.9
+    review_notes: [Speech-to-singing boundary is approximate within mixed ASR segment 1332; human review requested.]
+  - id: p20260524-trust-hymn
+    video_id: uJDdItVGgj8
+    section_id: s20260524-closing
+    start: 6120
+    end: 6263.86
+    type: hymn
+    title: "'Tis So Sweet to Trust in Jesus"
+    summary: The congregation sings the closing hymn, standing for the final portion.
+    questions: []
+    topics: [worship, faith]
+    scripture: []
+    transcript: '[Hymn lyrics omitted. The closing hymn is retained as a complete musical unit; the leader asks the congregation to rise near its final verse.]'
+    confidence: 0.93
+    review_notes: [Start approximate within the introduction/singing transition; full lyrics not reconstructed.]
+  - id: p20260524-doxology-benediction
+    video_id: uJDdItVGgj8
+    section_id: s20260524-closing
+    start: 6263.86
+    end: 6336.98
+    type: benediction
+    title: Doxology and blessing
+    summary: Pastor Yong invites the doxology and gives a blessing introduced as taken from Ephesians 3 and 2 Corinthians 13.
+    questions: [Which biblical chapters are announced for the benediction?]
+    topics: [worship]
+    scripture: [Ephesians 3, 2 Corinthians 13]
+    transcript: |
+      Great! Let's sing doxology in praise of God and in faith receive His blessing taken from Ephesians 3 and 2 Corinthians 13.
+      [Doxology lyrics and biblical benediction omitted.]
+      Amen. Congregation, please be seated.
+    confidence: 0.96
+    review_notes: [Chapter-level references retained exactly as announced; doxology is scarcely represented in ASR.]
+  - id: p20260524-baptism-announcement
+    video_id: uJDdItVGgj8
+    section_id: s20260524-announcements
+    start: 6338.78
+    end: 6387.44
+    type: announcement
+    title: Next Sunday's baptism and catechism class
+    summary: Pastor Yong announces baptism, transfer and confirmation candidates for the following Sunday and says candidates must complete the Shorter Catechism class, which is open to everyone.
+    questions: [What instructions are given to baptism and transfer candidates?]
+    topics: [service-life, discipleship]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; intervening instructions omitted.]
+      Next week will be Baptism Sunday. And so we have baptism candidates, we have transfer candidates, confirmation candidates as well.
+      Remember that those who are undergoing this, you must commit to finish the Shorter Catechism class even after your baptism. And Shorter Catechism class will start at 11.30, and it's open to all, not just for people who are being baptized or transferred. And if you think of doing transfer or whatever it is, it's always good to finish the course anyway.
+    confidence: 0.9
+    review_notes: ["ASR Shorter Catholicism / shorter baptism normalized contextually to Shorter Catechism; verify wording audibly. This is a historical announcement, not a current invitation."]
+  - id: p20260524-rally-dates
+    video_id: uJDdItVGgj8
+    section_id: s20260524-announcements
+    start: 6387.44
+    end: 6462.44
+    type: announcement
+    title: Invitation to accompany regional gospel rallies
+    summary: Pastor Yong points to June and July rally dates and encourages participation in Stephen Tong's regional ministry, describing it as a rare opportunity.
+    questions: [What regional gospel-rally opportunity is announced?]
+    topics: [mission, service-life]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; intervening schedule details and claims omitted.]
+      One of the things that Dr. Tong is calling out for is people to join him in this regional gospel rally. So then the dates are all there in Bahasa, but then you can tell it's 9th of June, 11th of June. Then there's one more at 10, then there's 12.
+      Other than that, there are also dates that are in July. Dr. Tong is calling for people to join him.
+      [The speaker describes his assessment of mass-rally evangelism; unverified superlatives omitted from this excerpt.]
+    confidence: 0.91
+    review_notes: [Targeted frame at 6365 seconds displays Maluku Utara 2026 with June 9-12 dates; July details are not expanded beyond evidence.]
+  - id: p20260524-rally-participation
+    video_id: uJDdItVGgj8
+    section_id: s20260524-announcements
+    start: 6463.26
+    end: 6514
+    type: announcement
+    title: Remote rally logistics and prayerful participation
+    summary: Pastor Yong describes the work of setting up rallies in remote places and invites interested congregants to ask about joining the stated fifty-city programme.
+    questions: [What does the speaker describe about setting up remote gospel rallies?]
+    topics: [mission, service]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; intervening speech omitted.]
+      The other part about his rallies are a bit unusual is that it's at very remote places. So then you get to see how our coworkers will move in and set up an air-blown stage, and then arrange chairs and get a drone. It's quite fascinating. I've been to a couple of all these things.
+      I want to ask that you prayerfully consider joining. If you are interested in this, please come and talk to me or even Chrissy. I know the Mandarin service has some people joining as well.
+    confidence: 0.9
+    review_notes: ["Partial contact name retained as heard in ASR, not given a speaker identity; forecasts about retirement remain historical speaker claims."]
+  - id: p20260524-personal-ministry
+    video_id: uJDdItVGgj8
+    section_id: s20260524-announcements
+    start: 6516.38
+    end: 6600.34
+    type: announcement
+    title: Ministry initiatives, learning resources and dismissal
+    summary: Pastor Yong encourages church-supported and individual ministry initiatives, mentions a possible fellowship in Leeds and online theological education, then dismisses the congregation in silent meditation.
+    questions: [How does the speaker encourage members to begin ministry work?]
+    topics: [service, mission, discipleship, service-life]
+    scripture: []
+    transcript: |
+      [Edited ASR excerpts; fellowship names and intervening speech omitted.]
+      We are seeing people getting involved in different aspects of ministry and on their own, which is great. I want to really encourage you to prayerfully think about what is it that God wants you to do in your life.
+      Don't waste your life. Think carefully what is it that God may want you to do, either through the church or through your own ministry. There are so many support resources out there. If you're interested in theological education, for example, Third Millennium online, free some more. You can actually get a degree from it, you know. So many, many things. So please think about this and pray about this.
+      Okay, that's all I have for you. You may be dismissed with silent meditation. Know that the Lord is with you.
+    confidence: 0.89
+    review_notes: ["Possible Leeds initiative, fellowship name rendered pistachio and claims about online degrees require review; no external verification or expansion. Recording ends during the dismissal/meditation transition."]

@@ -1,0 +1,1443 @@
+id: '2026-06-07'
+date: '2026-06-07'
+title: '7 June 2026 — Only'
+sermon_title: Only
+series: { id: gospel-of-john, name: Expository Preaching on the Gospel of John }
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - 'Main batch integration applied the source-backed series and cited salvation topic; worker proposal notes describe the pre-merge stage. All interpretation remains needs_review. See docs/historical-001/integration.md.'
+  - Whole meaningful programme curated from the supplied English ASR, word timings and inspected frames. Audio samples were decoded, not listened to. Inline transcripts are selected ASR excerpts with explicit omissions, not complete verbatim speech.
+  - Source title RECS 7 June 2026, upload/release date 20260607 and opening frame dated 7th June 2026 agree with the approved service date. Recording begins with ACTS prayer preparation, not a waiting slate.
+  - Displayed sermon title Only; John 14:1-7 and Acts 4:8-12. Responsive reading separately covers John 14:1-14. Last Session slides are recap, not the current title.
+  - Pastor Yong is introduced at 34:37; the sermon includes the self-referential name Pastor Yong-Tek-Meng at 93:21-93:35. Reused yong-teck-meng identity rests on this recording, not appearance. The worship leader's name sounds like Darmawan in ASR but remains unassigned pending spelling verification.
+  - Fourteen outside-segment word warnings, maximum 0.36 seconds; no backtracked starts or segment overlaps. Twenty-five zero-duration words retained; no tail clamps. Wider thought units avoid cuts through the warning regions.
+  - All Bible quotations, sung lyrics and recited lyric quotations are omitted. References and surrounding commentary remain; quiet prayer gaps and incomplete congregational text are not reconstructed.
+  - Theological claims and descriptions of other religions are the speaker's interpretations. Political statistics, historical anecdotes, quoted authors and personal names have not been externally verified.
+  - Especially review p20260607-lewis-distinction through p20260607-evangelism-conclusion together. The speaker affirms salvation through Christ, declines to determine individuals' salvation, discusses possible exceptions to the usual model, and explicitly says his imagined deathbed encounter is not taught by scripture and will not be preached as a method.
+  - At approximately 94:56 the ASR and visible Lewis quotation say most reasonable thing is to remain outside yourself. The surrounding exhortation points the other way; retained as an unresolved source/quotation issue, not silently corrected.
+  - 'Taxonomy proposals: salvation (Salvation), supported by p20260607-only-introduction at 2092.98-2178 and p20260607-lewis-distinction at 5374.12-5452.5; series gospel-of-john (Expository Preaching on the Gospel of John), displayed at 2095 and 2135 seconds. Neither proposal activated; existing faith, truth, eternal-life and mission tags used.'
+speakers:
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
+    role: Pastor
+topics:
+  - { id: salvation, name: Salvation }
+  - { id: communion, name: Holy Communion }
+  - { id: discipleship, name: Discipleship }
+  - { id: eternal-life, name: Eternal life }
+  - { id: faith, name: Faith }
+  - { id: glory, name: Glory }
+  - { id: holy-spirit, name: Holy Spirit }
+  - { id: knowing-god, name: Knowing God }
+  - { id: meditation, name: Meditation }
+  - { id: mission, name: Mission }
+  - { id: prayer, name: Prayer }
+  - { id: repentance, name: Repentance }
+  - { id: responsibility, name: Responsibility }
+  - { id: service, name: Service }
+  - { id: service-life, name: Church life }
+  - { id: stewardship, name: Stewardship }
+  - { id: truth, name: Truth }
+  - { id: worship, name: Worship }
+videos:
+  - id: 8Qjfp-2L5d8
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6590.661
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    transcription_language: en
+    transcribed_span: { start: 0, end: 6590.6358125 }
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: 73c05845c5df3aa72dc6997577f7f04ed5595a65dcb1945dd0b1700b2bccec28
+      duration_seconds: 6590.6358125
+      elapsed_seconds: 218.23
+      real_time_factor: 0.03311
+      transcribed_at: '2026-09-25T12:16:28.674361+00:00'
+      transcript_sha256: c9a54bd00bf077379ee7cf56261c01306042d622106c51dc5d313b740d0591bd
+      source_duration_seconds: 6590.661
+      duration_delta_seconds: -0.025187500000356522
+      audio_hash_verified: false
+sections:
+  - { id: s20260607-preparation, video_id: 8Qjfp-2L5d8, start: 0, end: 330, type: prayer, title: ACTS prayer preparation, confidence: 0.91, review_notes: [Quiet intervals retained as prayer units; isolated ASR thank-you fragments not treated as reliable speech.] }
+  - { id: s20260607-opening, video_id: 8Qjfp-2L5d8, start: 330, end: 691, type: worship, title: 'Greeting, introit and opening praise', confidence: 0.91 }
+  - { id: s20260607-communion, video_id: 8Qjfp-2L5d8, start: 691, end: 1252, type: communion, title: Holy Communion, speaker_id: yong-teck-meng, confidence: 0.9 }
+  - { id: s20260607-readings, video_id: 8Qjfp-2L5d8, start: 1252, end: 1597, type: scripture-reading, title: Responsive readings from Proverbs and John, confidence: 0.95 }
+  - { id: s20260607-hymn-anthem, video_id: 8Qjfp-2L5d8, start: 1597, end: 2012, type: worship, title: 'Jesus, I Come and Without the Cross', confidence: 0.94 }
+  - { id: s20260607-acts-reading, video_id: 8Qjfp-2L5d8, start: 2012, end: 2092.98, type: scripture-reading, title: Acts 4 reading and sermon introduction, confidence: 0.95 }
+  - { id: s20260607-sermon-recap, video_id: 8Qjfp-2L5d8, start: 2092.98, end: 2881, type: sermon, title: Only — introduction and last-session recap, speaker_id: yong-teck-meng, confidence: 0.94 }
+  - { id: s20260607-sermon-troubled, video_id: 8Qjfp-2L5d8, start: 2881, end: 3539.72, type: sermon, title: The troubled heart and the speaker's comparison with Buddhism, speaker_id: yong-teck-meng, confidence: 0.86 }
+  - { id: s20260607-sermon-hope, video_id: 8Qjfp-2L5d8, start: 3539.72, end: 4024.74, type: sermon, title: Ultimate destiny and help in the present, speaker_id: yong-teck-meng, confidence: 0.9 }
+  - { id: s20260607-sermon-only, video_id: 8Qjfp-2L5d8, start: 4024.74, end: 4910.88, type: sermon, title: John 14 and the claim of exclusivity, speaker_id: yong-teck-meng, confidence: 0.88 }
+  - { id: s20260607-sermon-humility, video_id: 8Qjfp-2L5d8, start: 4910.88, end: 5762.32, type: sermon, title: Rejecting arrogance and leaving judgment to God, speaker_id: yong-teck-meng, confidence: 0.87, review_notes: [Keep the speaker's qualifications about possible exceptions and continuing evangelism together; quotation and ASR issues need listening.] }
+  - { id: s20260607-response, video_id: 8Qjfp-2L5d8, start: 5762.32, end: 6145.58, type: prayer, title: 'Sermon prayer, creed and intercession', speaker_id: yong-teck-meng, confidence: 0.9 }
+  - { id: s20260607-offertory, video_id: 8Qjfp-2L5d8, start: 6145.58, end: 6244.58, type: offertory, title: Offering and evangelism collection, speaker_id: yong-teck-meng, confidence: 0.86 }
+  - { id: s20260607-closing, video_id: 8Qjfp-2L5d8, start: 6244.58, end: 6477.7, type: worship, title: 'Closing hymn, doxology and benediction', speaker_id: yong-teck-meng, confidence: 0.93 }
+  - { id: s20260607-announcements, video_id: 8Qjfp-2L5d8, start: 6477.7, end: 6590.661, type: announcement, title: 'Classes, gospel rallies and community notices', speaker_id: yong-teck-meng, confidence: 0.88 }
+passages:
+  - id: p20260607-adoration
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-preparation
+    start: 5.02
+    end: 80.34
+    type: prayer
+    title: Preparing for Communion Sunday in adoration
+    summary: The leader introduces personal prayer using adoration, confession, thanksgiving and supplication, beginning with adoration.
+    questions: [How does the service prepare the congregation for Communion Sunday?]
+    topics: [prayer, communion]
+    scripture: []
+    transcript: |
+      Good morning. Let's prepare our hearts for Communion Sunday by praying. We want to pray personally and in quiet prayer right now in adoration, in confession, thanksgiving and supplication. Let's start by adoring God Almighty, our Creator. Let us pray.
+      [Quiet prayer interval; uncertain isolated ASR fragment omitted.]
+    confidence: 0.9
+    review_notes: [Segment 2 begins 0.11 seconds after its first aligned word; the passage encloses the whole introduction.]
+  - id: p20260607-confession
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-preparation
+    start: 80.34
+    end: 150
+    type: prayer
+    title: Personal confession
+    summary: The leader invites the congregation to confess sins before God.
+    questions: []
+    topics: [prayer, repentance]
+    scripture: []
+    transcript: |
+      Let us now come before God to pray in confession.
+      [Scriptural wording in the invitation omitted; precise reference not announced.]
+      Let us pray in confession now.
+      [Quiet prayer interval; no reconstruction.]
+    confidence: 0.88
+    review_notes: []
+  - id: p20260607-thanksgiving
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-preparation
+    start: 150
+    end: 214.1
+    type: prayer
+    title: Personal thanksgiving
+    summary: The leader asks the congregation to give thanks for the goodness received in life.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      Now pray in thanksgiving, giving thanks to God for all the goodness we have received in our life. Let's pray in thanksgiving now.
+      [Quiet prayer interval; uncertain ASR fragment omitted.]
+    confidence: 0.9
+    review_notes: []
+  - id: p20260607-supplication
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-preparation
+    start: 214.1
+    end: 282.08
+    type: prayer
+    title: Bringing personal needs before God
+    summary: The leader invites personal supplication and prayer for God's intervention.
+    questions: []
+    topics: [prayer]
+    scripture: []
+    transcript: |
+      And now we pray in supplication. We bring our personal needs before the Lord and seek His intervention. Let us pray in supplication now.
+      [Quiet prayer interval; no reconstruction.]
+    confidence: 0.9
+    review_notes: []
+  - id: p20260607-opening-prayer
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-preparation
+    start: 282.08
+    end: 317.8
+    type: prayer
+    title: Committing the worship service to God
+    summary: The opening prayer asks for a childlike readiness to hear and follow God before the worship leader is introduced.
+    questions: []
+    topics: [prayer, worship]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      And so as we approach your throne of grace, we do pray for your grace and the strength for us to set aside everything that is blocking us from you so that we will be able to be childlike before you and we will hear your voice and recognize it then and follow you. We commit our entire worship service into your mighty hands. In Jesus name we pray, amen.
+      [Leader's name in the handover omitted pending verification.]
+    confidence: 0.85
+    review_notes: [ASR renders the introductory name as damar one; no full identity assigned.]
+  - id: p20260607-greeting-meditation
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-opening
+    start: 330.06
+    end: 448.54
+    type: worship
+    title: Greeting one another and silent meditation
+    summary: The worship leader invites mutual greetings, then silent preparation; the frame at 425 seconds labels the introit.
+    questions: []
+    topics: [worship, meditation, service-life]
+    scripture: []
+    transcript: |
+      Happy Sunday brothers and sisters in Christ. Before we start our service, let us greet one another. We can tell the person on your left and your right, good to see you here.
+      [Greeting interval.]
+      Okay, let's prepare our hearts for today's worship service by taking a silent meditation.
+      [Meditation/introit interval; no missing speech supplied.]
+    confidence: 0.87
+    review_notes: [Longer unit preserves the greeting and meditation rather than inventing speech in the gaps.]
+  - id: p20260607-call-and-hymn
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-opening
+    start: 448.54
+    end: 620.48
+    type: worship
+    title: Psalm 69 and How Great Thou Art
+    summary: The leader reads from Psalm 69:30-34 and invites the congregation to sing How Great Thou Art.
+    questions: [Which psalm introduces the opening hymn?]
+    topics: [worship]
+    scripture: ['Psalms 69:30-34']
+    transcript: |
+      [Bible reading omitted: Psalms 69:30-34; beginning is incomplete in ASR.]
+      Taken from Psalm 69, verse 30 to 34.
+      [Invitation to stand and sing How Great Thou Art; hymn lyrics omitted.]
+    confidence: 0.93
+    review_notes: [Complete reading-plus-hymn unit intentionally exceeds 90 seconds.]
+  - id: p20260607-invocation
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-opening
+    start: 620.48
+    end: 683.38
+    type: prayer
+    title: Prayer for conviction, comfort and the word
+    summary: The worship leader prays for the Holy Spirit's work and for the message to be delivered through Pastor Yong, then invites him to lead Communion.
+    questions: []
+    topics: [prayer, holy-spirit, worship]
+    scripture: []
+    transcript: |
+      [Opening prayer echoes of hymn lyrics omitted. Selected ASR excerpt follows.]
+      We pray for the Holy Spirit to convict us of our sins, to comfort us who is heavy laden, to assure us of the hope in our Lord Jesus Christ, and to transform us into his likeness. We pray for the truth of your word to be delivered today through your servant, Pastor Young. May today's praise and worship be deemed acceptable in your eyes. In the precious name of Jesus, our Lord and Savior, we pray. Amen.
+    confidence: 0.88
+    review_notes: [ASR Young/Yong spelling varies; later introduction and self-reference support the pastor identity.]
+  - id: p20260607-communion-context
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-communion
+    start: 722.92
+    end: 788.98
+    type: communion
+    title: Remembering the monthly Communion practice
+    summary: The pastor describes the first-Sunday Communion habit and connects it with the current preaching through Jesus' farewell discourse in John.
+    questions: [How does Communion connect with the preaching through John?]
+    topics: [communion, service-life]
+    scripture: ['John 13-15']
+    transcript: |
+      [Selected ASR excerpt.]
+      I grew up in a Presbyterian church where every first Sunday of the month would be Holy Communion. [...] It's important because we are preaching through the Gospel of John and we are now at the stage where Holy Communion was actually instituted by our Lord Jesus Christ in the Last Supper. [...] So it's the last very important passage of the teaching of our Lord Jesus Christ. And Holy Communion is very much a part of it.
+    confidence: 0.88
+    review_notes: [Initial pause/prayer at 691-722 is not reconstructed; historical and theological framing is attributed to the pastor.]
+  - id: p20260607-communion-remembrance
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-communion
+    start: 789.12
+    end: 889.68
+    type: communion
+    title: Communion as a reminder of belonging to Christ
+    summary: The pastor connects love across social identities with belonging to Christ and explains the value of repeated Communion observance.
+    questions: [Why does the pastor say repeated Communion reminders are needed?]
+    topics: [communion, discipleship]
+    scripture: ['John 13:34-35']
+    transcript: |
+      [Selected ASR excerpt; quoted scriptural wording and intervening examples omitted.]
+      We are now one people, that we are no longer, as I was preaching last week, identified anymore by nationality, by your race, by your social status. [...] So sometimes I also feel a bit odd that we always need to be reminded, but we are very stubborn people, right? [...] Holy Communion becomes a time where we are reminded once again that we don't belong to ourselves anymore. We belong to Jesus and that we are part of the whole body of Christ because He has given His body for us.
+    confidence: 0.88
+    review_notes: [Slightly longer unit retains the point of the comparison of Communion frequencies.]
+  - id: p20260607-communion-institution
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-communion
+    start: 889.68
+    end: 983.14
+    type: communion
+    title: The Lord's Prayer and words of institution
+    summary: The pastor leads the Lord's Prayer, reads from 1 Corinthians 11 and invites helpers to distribute the elements to baptized participants.
+    questions: [What reading accompanies the Communion distribution?]
+    topics: [communion, prayer]
+    scripture: ['1 Corinthians 11:23-26']
+    transcript: |
+      We start by praying the Lord's Prayer together. Let us pray the Lord's Prayer.
+      [Lord's Prayer omitted; congregational text not reconstructed.]
+      Listen to the word of God from 1 Corinthians chapter 11.
+      [Bible quotation omitted: 1 Corinthians 11:23-26.]
+      [Helpers' names omitted pending spelling verification.]
+      To come and help me distribute the bread and the cup to all who have been baptized into the family of Jesus Christ.
+    confidence: 0.91
+    review_notes: [Segment 140 word-start warning is enclosed within the omitted reading; slight extra length preserves the ritual unit.]
+  - id: p20260607-communion-distribution
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-communion
+    start: 983.14
+    end: 1160.02
+    type: communion
+    title: Distribution hymn and receiving the elements
+    summary: A hymn accompanies distribution, after which the pastor asks recipients to stand and partake together with gratitude.
+    questions: []
+    topics: [communion, worship]
+    scripture: []
+    transcript: |
+      [Distribution hymn lyrics omitted. ASR announcement resembles Break Thou the Bread of Life; title spelling needs source confirmation.]
+      Anybody else? All those who have received the bread and the cup, would you stand with me now?
+      [Scriptural/liturgical words over the elements omitted.]
+      Let us partake it together and have gratitude in our heart.
+      [Receiving the elements; no missing speech reconstructed.]
+    confidence: 0.82
+    review_notes: [Longer unit preserves distribution and reception; hymn ASR is markedly unreliable.]
+  - id: p20260607-communion-thanks
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-communion
+    start: 1160.02
+    end: 1219.38
+    type: prayer
+    title: Thanksgiving after Communion
+    summary: The pastor thanks God for belonging to Christ across generations and asks the congregation to remember that belonging in whatever life brings.
+    questions: []
+    topics: [communion, prayer]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      Let us pray together. We thank you God Almighty for once again we are reminded that we no longer live on this world by our own strength and for our own purpose, but we belong to you, the body of Christ. [...] And so help us to remember that deeply in our heart so that whatever may come to us in our life, we will always remember that you are our Lord and you are our God and that you have loved us so much that our Lord Jesus Christ has died on the cross for our sake.
+      [Remainder of prayer omitted.]
+    confidence: 0.9
+    review_notes: []
+  - id: p20260607-proverbs-reading
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-readings
+    start: 1252.44
+    end: 1473.34
+    type: scripture-reading
+    title: Responsive reading — Proverbs 24
+    summary: The worship leader announces Proverbs 24:1-34 for responsive reading.
+    questions: [Which Proverbs chapter is read in this service?]
+    topics: [worship]
+    scripture: ['Proverbs 24:1-34']
+    transcript: |
+      Let us turn to our Bible for today's responsive reading. The first passage is taken from Proverbs chapter 24, verse 1 to 34.
+      [Bible reading omitted: Proverbs 24:1-34. Congregational responses are incomplete in ASR and are not reconstructed.]
+    confidence: 0.96
+    review_notes: [Whole responsive reading retained as one meaningful unit.]
+  - id: p20260607-john-reading
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-readings
+    start: 1473.34
+    end: 1595.76
+    type: scripture-reading
+    title: Responsive reading — John 14:1-14
+    summary: The second responsive reading is announced as John 14:1-14, a wider range than the sermon-title slide's John 14:1-7.
+    questions: [What is the second responsive reading?]
+    topics: [worship]
+    scripture: ['John 14:1-14']
+    transcript: |
+      The second passage is taken from the book of John, chapter 14, verse 1 to 14.
+      [Bible reading omitted: John 14:1-14. Missing responses not reconstructed.]
+      Praise God for His Word.
+    confidence: 0.96
+    review_notes: [Complete reading unit; preserve distinct announced and displayed ranges.]
+  - id: p20260607-jesus-i-come
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-hymn-anthem
+    start: 1597.46
+    end: 1805.72
+    type: hymn
+    title: Jesus, I Come
+    summary: The congregation sings Jesus, I Come, with invitations for different groups to sing.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: |
+      Let us continue praising the Lord with the third hymn, Jesus, I Come.
+      [Hymn lyrics omitted; intermittent ASR fragments and group-singing instructions not reconstructed.]
+    confidence: 0.94
+    review_notes: [Whole hymn retained; word warnings on segments 242 and 243 occur in omitted lyrics.]
+  - id: p20260607-video-anthem
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-hymn-anthem
+    start: 1805.72
+    end: 2011.82
+    type: anthem
+    title: Video anthem — Without the Cross
+    summary: The leader introduces the video anthem Without the Cross as preparation for hearing the word.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: |
+      It's time for today's video anthem, titled Without the Cross. May the reflection of the love and work of our Lord Jesus Christ prepare our hearts for His words.
+      [Video anthem lyrics omitted.]
+      What a wonderful hymn.
+    confidence: 0.94
+    review_notes: [Complete anthem unit intentionally exceeds 90 seconds.]
+  - id: p20260607-acts-reading
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-acts-reading
+    start: 2012.98
+    end: 2079.36
+    type: scripture-reading
+    title: Scripture reading — Acts 4:8-12
+    summary: The leader reads Acts 4:8-12 and invites Pastor Yong to preach.
+    questions: [Which Acts passage accompanies the sermon Only?]
+    topics: [worship]
+    scripture: ['Acts 4:8-12']
+    transcript: |
+      Today's scripture reading is taken from the book of Acts, chapter 4, verse 8 to 12.
+      [Bible reading omitted: Acts 4:8-12.]
+      Now I'd like to invite Pastor Yong.
+    confidence: 0.96
+    review_notes: []
+  - id: p20260607-only-introduction
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2092.98
+    end: 2178
+    type: sermon
+    title: Why is Jesus described as the only way?
+    summary: The pastor introduces Only, focusing on John 14:6 and an Ask Me Anything question about whether Christian exclusivity is arrogant or intolerant.
+    questions: [Why should Jesus Christ be the only way?, Is the claim of one way a form of arrogance or intolerance?]
+    topics: [faith, truth, salvation]
+    scripture: ['John 14:1-7', 'Acts 4:8-12']
+    transcript: |
+      [Selected ASR excerpt.]
+      Gospel of John has quite a few fascinating revelations, and today we will focus on John 14, 6, a passage, a verse that a lot of you are most familiar with, and it has to do with salvation and exclusivity. That's why I entitled the Sermon Only. And just nice the Ask Me Anything question, that somebody asked the question, which is in the mind of many people, why should Jesus Christ be the only way. Is this not a form of arrogance and intolerance? To be fair, this question was asked quite some time ago. I just reserve it until today so that we can touch on it a little bit more.
+    confidence: 0.95
+    review_notes: [Title and focus references corroborated by frames at 2095 and 2135 seconds; opening attribution to a theologian omitted from excerpt.]
+  - id: p20260607-glory-recap
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2178
+    end: 2292.06
+    type: sermon
+    title: Recap — glory amid suffering
+    summary: Reviewing the previous session, the pastor contrasts Jesus' attention to glory with anticipated suffering and describes glory as intrinsic to God and manifested in a life aligned with God's will.
+    questions: [How does the recap connect suffering and God's glory?]
+    topics: [glory, discipleship]
+    scripture: ['John 13:31-35']
+    transcript: |
+      [Selected ASR excerpts.]
+      There is a paradox of suffering that is very strange that he would talk about glory when he was mindful of suffering, because for any one of us we would be whining about what's a horrible thing that is to come to our life but he was very focused on the glory. [...] However, actually, the drive of the Bible is that the glory of God is in itself an intrinsic attribute of God, meaning you don't have to do anything, the glory of God is there. It's almost like the sun is always shining. And so when we live a life that is in accordance to the will of God, you really don't have to do anything, the glory of God is there.
+    confidence: 0.9
+    review_notes: [Longer recap thought unit; a garbled John Piper attribution is not reproduced. The Last Session slide is not today's title.]
+  - id: p20260607-little-brothers
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2292.98
+    end: 2362.84
+    type: sermon
+    title: An example of ordinary life as witness
+    summary: The pastor describes the Little Brothers of Jesus as an example of people manifesting God's glory through their lives wherever they are sent.
+    questions: [What example does the pastor give of witnessing through everyday life?]
+    topics: [mission, glory]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      I'm always very impressed by the Roman Catholic. They have this group of people called the Little Brothers of Jesus. [...] So his concept is very simple. Instead of training people for missionary, he just get people to commit to be in that group. [...] Wherever you are you will manifest the glory of God and that's a very profound very deep thinking and I and I appreciate that and I think that that is a direction that is most correct.
+    confidence: 0.82
+    review_notes: [Founding history and claims about religious restrictions are the speaker's recollections; not independently checked.]
+  - id: p20260607-childlike
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2362.84
+    end: 2419.46
+    type: sermon
+    title: Childlikeness and expectation in worship
+    summary: The pastor distinguishes childlikeness from childishness and urges humility, wonder and expectation when coming to worship.
+    questions: [What distinction does the pastor make between childlikeness and childishness?]
+    topics: [discipleship, worship]
+    scripture: ['John 13:33']
+    transcript: |
+      [Selected ASR excerpt; Bible quotation omitted.]
+      Because before God, we are always child-like. And you should be because God is God. God is infinite and we are finite beings. [...] But child-likeness is not the same as childishness. [Bible quotation omitted.] Meaning you must have the humility of a child. You must have the sense of wonder and sense of awe. [...] Or do you have a sense of expectation, a sense of awe, a sense of wonder about what's happening in worship service?
+    confidence: 0.9
+    review_notes: []
+  - id: p20260607-worship-form
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2420.22
+    end: 2489.1
+    type: sermon
+    title: Worship form and inward understanding
+    summary: The pastor compares orderly and more demonstrative worship styles, saying commitment depends on understanding and appreciation rather than form alone.
+    questions: [Does changing worship style necessarily create deeper commitment?]
+    topics: [worship, discipleship]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts.]
+      Our worship service is a high church worship service, so we are very orderly and all that. [...] Because I work with them in the charity world, I'm very impressed by some of the priests and the nuns and some of the, even the lay people. So then, kind of think of it, it's not about the form, right? It's about whether you understand what it's all about, whether you are in it, whether you appreciate it.
+    confidence: 0.86
+    review_notes: ["Denominational comparisons are the pastor's characterizations, not archive judgments."]
+  - id: p20260607-worship-burdens
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2489.4
+    end: 2554.28
+    type: sermon
+    title: Bringing burdens to worship rather than changing appearances
+    summary: The pastor asks whether worshippers bring their burdens to God and uses an acquaintance's church changes to illustrate disillusionment across worship styles.
+    questions: [What inward issue does the pastor raise about dissatisfaction with worship?]
+    topics: [worship, discipleship]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      Whether you are childlike when you sing a hymn, when you listen to a prayer, or when you come to church, do you leave your burdens all with God before you meet him? If you are burdensome, I can say that no matter what kind of services you go to is the same thing. [...] Don't ever come to God like a tired old man or tired old woman.
+    confidence: 0.85
+    review_notes: [Acquaintance's account and uncertain church-name spellings omitted from excerpt; summary retains its illustrative purpose.]
+  - id: p20260607-new-commandment
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2554.28
+    end: 2609.06
+    type: sermon
+    title: Love as the new mark of Christ's followers
+    summary: The pastor asks what is new about Jesus' commandment and contrasts an identity marked by love with identities based on ethnicity and nationality.
+    questions: [What new identifying mark does the pastor see in John 13?]
+    topics: [discipleship, service-life]
+    scripture: ['John 13:34-35', 'Deuteronomy 6:4', 'Leviticus 19:18', 'Matthew 22:37-40']
+    transcript: |
+      [Selected ASR excerpt; Bible quotations omitted.]
+      But Jesus said it's new. So why is it new? There are many reasons, the three that I brought to you. First of all, is that it's a new mark of Christ's followers. [...] Because for the longest time, up to the point of the Last Supper, the Jews always identify themselves as the people of God. [...] So till today, that's the way we identify ourselves mainly. We are Chinese, we are Indonesian Chinese, Singaporean Chinese, mainland Chinese, whatever Chinese or your dialect group or all that.
+    confidence: 0.89
+    review_notes: ["Reference ranges retained as displayed on the recap slide, including its Deuteronomy 6:4; no correction from memory."]
+  - id: p20260607-dialect-anecdote
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2609.06
+    end: 2707.98
+    type: sermon
+    title: Dialect identities and the contrast with love
+    summary: The pastor recounts a radio discussion and stories about Hainanese social identity before returning to his claim that Jesus' followers should be identified by love.
+    questions: [Why does the pastor discuss dialect-group stereotypes?]
+    topics: [discipleship]
+    scripture: ['John 13:34-35']
+    transcript: |
+      [Selected ASR excerpts; intervening dialect stereotypes and historical anecdote omitted.]
+      I was on a Friday morning radio show, one of the guests said that she went to an exhibition in Singapore where it talks about how every dialect group is identified by certain features. I was quite surprised. Public exhibition. [...] So we identify ourselves by this kind of thing. But Jesus said from now onwards, you are no longer to be identified by anything else, but by identified by love.
+    confidence: 0.82
+    review_notes: ["Longer anecdote kept as one unit. Ethnic stereotypes are reported and questioned in the illustration, not endorsed by the archive; local terms require listening."]
+  - id: p20260607-universal-love
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2708.64
+    end: 2755.48
+    type: sermon
+    title: Love extending beyond one's own household
+    summary: Recalling a teacher's description of Christianity as universal love, the pastor says loving one another extends beyond being loving only within one's family.
+    questions: [How does loving one another go beyond loving one's family?]
+    topics: [discipleship, service-life]
+    scripture: ['John 13:34-35']
+    transcript: |
+      [Selected ASR excerpt.]
+      So we are identified by love. The second identity is not just love, but loving one another. Because you can be identified by love and very loving to your wife or your husband or your own family only. And then you're going to loving husband, loving wife. Not that, okay? [Quoted commandment omitted.]
+    confidence: 0.88
+    review_notes: []
+  - id: p20260607-community
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2755.48
+    end: 2818.64
+    type: sermon
+    title: Community rather than deliberate isolation
+    summary: The pastor argues against a self-sufficient retirement detached from others and connects loving one another with the community represented by Communion.
+    questions: [Why does the pastor connect Christian community with Communion?]
+    topics: [service-life, communion, discipleship]
+    scripture: ['John 13:34-35']
+    transcript: |
+      [Selected ASR excerpt.]
+      So if you think that you want to make a lot of money, retire and be alone and do your own thing and don't care about anybody else and be Christian, I am telling you that you are being disobedient to the word of God. [...] Whether you are single or have a family, it is a community of people of God. That's why Holy Communion comes in, right? We are the body of Christ and so the body of Christ cannot have one body that is somewhere else and not part of the system at all.
+    confidence: 0.89
+    review_notes: [Preserve the pastor's target of deliberate disregard for others; do not generalize this passage into a judgment about every experience of loneliness.]
+  - id: p20260607-model-and-command
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-recap
+    start: 2818.64
+    end: 2880.66
+    type: sermon
+    title: Jesus as the model of commanded love
+    summary: The pastor presents Jesus' love as the reference point for conduct and emphasizes that loving one another is a command rather than an option.
+    questions: [Why does the pastor call love a command rather than a suggestion?]
+    topics: [discipleship]
+    scripture: ['John 13:34-35']
+    transcript: |
+      [Selected ASR excerpt; Bible quotations omitted.]
+      The third thing is that this new model of love has a very clear reference point and that's the way Jesus Christ has loved us. [...] The acronym WWJD actually is quite useful: what would Jesus do? And the answer is you know that Jesus would love, Jesus would forgive, Jesus would be kind, Jesus would be strong. [...] But when it comes to loving one another, somehow we don't think that it's a very big deal thing. But it is an actual commandment. It's not a suggestion, nor is it an option.
+    confidence: 0.92
+    review_notes: []
+  - id: p20260607-sermon-prayer
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-troubled
+    start: 2881.28
+    end: 2949.56
+    type: prayer
+    title: Entering John 14 with prayer
+    summary: The pastor treats the farewell discourse as continuous across chapter divisions and prays for humility and receptiveness to God's word.
+    questions: []
+    topics: [prayer, discipleship]
+    scripture: ['John 13-15']
+    transcript: |
+      [Selected ASR excerpt.]
+      Meaning the thought process actually is one whole string. From chapter 13, 14, 15, it is all one whole string of thinking processes. So let's come to God in the word of prayer as we go into chapter 14. [...] Remind us that we ought to be childlike, that we ought to set aside everything that is blocking us from you. Maybe it's our arrogance of thought, maybe it's our sense of failure, bitterness in life, whatever it is, that we may remember that we belong to you. And because we belong to you, we should hear you and listen to you.
+      [Remaining prayer, including scriptural wording, omitted.]
+    confidence: 0.9
+    review_notes: [Historical claim about chapter numbering not independently verified.]
+  - id: p20260607-farewell-context
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-troubled
+    start: 2950.36
+    end: 3019.98
+    type: sermon
+    title: Reassurance after betrayal and predicted denial
+    summary: The pastor places John 14 after Judas' departure and the prediction of Peter's denial, describing Jesus as troubled yet reassuring his disciples.
+    questions: [What events frame the reassurance at the beginning of John 14?]
+    topics: [faith]
+    scripture: ['John 13:38', 'John 14:1']
+    transcript: |
+      [Selected ASR excerpt; direct quotations from John 13:38 and John 14:1 omitted.]
+      So when we ended chapter 13, Jesus Christ was telling Simon Peter that he's going to deny him three times. [...] Now this statement was made right after Jesus indicated that Judas will betray him and then you go do what you need to do and then he just get up and he left. And Jesus then also indicated that Peter would deny him. And the Bible in chapter 13 tells us that Jesus started with a very heavy heart. He was troubled in his spirit because he already knew all the subsequent suffering that will come.
+    confidence: 0.9
+    review_notes: [Word warning on segment 492 enclosed. ASR 11 percent near 49:45 appears erroneous; omitted rather than silently corrected.]
+  - id: p20260607-disciples-trouble
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-troubled
+    start: 3019.98
+    end: 3116.58
+    type: sermon
+    title: The disciples do not yet know what is coming
+    summary: The pastor contrasts readers who know the story's outcome with disciples who expected triumph and had yet to understand the coming suffering.
+    questions: [How does the pastor distinguish the disciples' perspective from that of later readers?]
+    topics: [faith, discipleship]
+    scripture: ['John 14:1']
+    transcript: |
+      [Selected ASR excerpt; Gethsemane quotation omitted.]
+      Now we have the Bible now, you know everything that is happening, like watching a movie, you already know the end. But for the disciples, the eleven of them in that room, they probably didn't quite know what Jesus was talking about. [...] Because right before this was a triumphal entry into Jerusalem, everybody was so excited, they all think that Jesus is going to be a king, he's going to be victorious.
+    confidence: 0.86
+    review_notes: [Excerpt omits the pastor's humorous speculation about desired political offices. The slightly longer unit retains the completed account of the disciples' difficulty.]
+  - id: p20260607-trouble-and-background
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-troubled
+    start: 3116.58
+    end: 3180.94
+    type: sermon
+    title: Human trouble and the pastor's religious background
+    summary: The pastor connects the disciples' uncertainty with ordinary human troubles and introduces a comparison with Buddhism using memories of growing up near temples.
+    questions: [Why does the sermon introduce a comparison with Buddhism?]
+    topics: [faith]
+    scripture: ['John 14:1']
+    transcript: |
+      [Selected ASR excerpt.]
+      And so we are reminded of how in life there are many many troubles for all of us as well. [...] There are many religions in the world. There is one religion that's very specialized in suffering and troubling and that's Buddhism. And I am a person who is pretty familiar with Buddhism and Taoism because as I shared with you I grew up in that kind of environment.
+      [Childhood place-name and temple-procession anecdote omitted from excerpt.]
+    confidence: 0.84
+    review_notes: [Segment 549 word-end warning enclosed with adjacent context. Descriptions of other traditions remain attributed.]
+  - id: p20260607-eight-sufferings
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-troubled
+    start: 3181.72
+    end: 3242.86
+    type: sermon
+    title: The speaker's account of eight sufferings
+    summary: The pastor introduces what he calls Buddhism's eight sufferings, beginning with birth, aging, sickness and death and a story about Shakyamuni.
+    questions: [Which categories of suffering does the pastor discuss?]
+    topics: []
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      The Buddhists believe that all the troubles in the world can be summarized into eight different big portions in Chinese. [...] So basically it's the first four people are quite familiar with: [ASR unclear first term; displayed list says Birth], aging, sickness and death. [...] Because the story is that he was a prince and he was sheltered from all the suffering in life.
+    confidence: 0.78
+    review_notes: [The speaker's claim that Zen represents true Buddhism is not independently established. Chinese terms and historical account need review; segment 563 timing warning enclosed.]
+  - id: p20260607-aging-sickness
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-troubled
+    start: 3243.06
+    end: 3315.56
+    type: sermon
+    title: Birth, aging and unwanted circumstances
+    summary: The pastor illustrates his suffering categories with childbirth, aging, illness and being stuck with disliked circumstances.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts.]
+      Physically, it's painful, you know, you're pain out there, pain every morning, you wake up, things don't seem to be working. But by the grace of God, I'm still okay. [...] Sickness, of course every time you're sick is terrible, and death. But beyond that there's some more that there is the encountering what we dislike. [...] Or in life there is something you don't like that you are stuck with, like your job for example.
+    confidence: 0.79
+    review_notes: [Awkward ASR wording retained; no medical claim inferred from the illustration.]
+  - id: p20260607-separation-desire
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-troubled
+    start: 3315.56
+    end: 3377.44
+    type: sermon
+    title: Separation, frustrated desire and the five aggregates
+    summary: The pastor continues his account with separation from loved ones, not getting what one wants and the burden of the five aggregates, calling it an interesting analysis of suffering.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts; uncertain Chinese expressions and celebrity-name jokes omitted.]
+      When you are parted from loved ones, right? Because whether the guy go overseas and work or go overseas and study, there's a parting. And then not getting what you want. [...] Which means that your form, your body, your sensation, your perception, your mental formation, consciousness, all these come together will disturb you and make you suffer in life. [...] So it's a pretty interesting analysis.
+    confidence: 0.8
+    review_notes: ["This is the pastor's comparative account, not a validated description of Buddhist doctrine."]
+  - id: p20260607-path-speech
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-troubled
+    start: 3377.76
+    end: 3437.0
+    type: sermon
+    title: The speaker's account of the Eightfold Path and speech
+    summary: The pastor describes wisdom, resolve and morality in the Noble Eightfold Path, using speech in marriage as an example and briefly referring to James.
+    questions: [What does the pastor say about speech in his religious comparison?]
+    topics: [responsibility]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt; Chinese expression and scriptural paraphrase omitted.]
+      First of all, it's wisdom. You need to have the right view and right resolve, right view of what life is all about. [...] That's wisdom. There's morality, sila, which is right speech, right action, right livelihood. Buddhist understanding is speech is very important. [...] Some of the problem you have in life is because you open your mouth, you say all kinds of nonsense to each other, very nasty thing to each other.
+    confidence: 0.82
+    review_notes: [Frame at 3540 supplies Noble Eightfold Path label; ASR Eighth Noble Path is not treated as an exact technical transcription.]
+  - id: p20260607-livelihood-example
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-troubled
+    start: 3437.52
+    end: 3484.22
+    type: sermon
+    title: A livelihood illustration from childhood
+    summary: The pastor illustrates his explanation of right livelihood with recollections of animal slaughter near where he grew up.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      So therefore you have to have the right speech, do the right thing. And when you live, you must do a livelihood that is the right livelihood. For example, you should not be a butcher. [...] And you can hear the pigs screaming, okay, all the time. Now no more already.
+      [Local geography and contemporary claims omitted from excerpt.]
+    confidence: 0.78
+    review_notes: [Illustration describes the pastor's account of another tradition; no occupational rule is added by the archive.]
+  - id: p20260607-meditation-comparison
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-troubled
+    start: 3484.36
+    end: 3539.72
+    type: sermon
+    title: Meditation and the speaker's self-help comparison
+    summary: The pastor describes effort, mindfulness and concentration, then characterizes the approach he has outlined as dependent on one's own effort.
+    questions: [How does the pastor characterize the approach he contrasts with faith in Jesus?]
+    topics: [meditation]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts.]
+      The answer is to have the right effort, right mindfulness, right concentration in meditation. So meditation becomes very important in Buddhist culture. [...] Looking at the troubles in life, this approach is a self-help, self-dependent, self-saving, self-effort. Correct? Because you identify the eight sufferings of the world, the trouble of the world, and you move in and you have eight solutions to it.
+    confidence: 0.85
+    review_notes: [Keep this explicitly attributed comparison with the following return to John 14.]
+  - id: p20260607-jesus-answer
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-hope
+    start: 3539.72
+    end: 3629.32
+    type: sermon
+    title: Returning to John 14 — faith in God and Jesus
+    summary: Returning from the comparison, the pastor interprets John 14:1 as directing troubled disciples to trust God and Jesus, whom he describes as the embodiment of the invisible God.
+    questions: [What answer to a troubled heart does the pastor find in John 14?]
+    topics: [faith, knowing-god]
+    scripture: ['John 14:1']
+    transcript: |
+      [Selected ASR excerpt; quotations of John 14:1 omitted.]
+      Now, returning back to the Bible, lest you complain to senior pastor that Pastor Yong always teach us Buddhism. [...] Now, he was speaking to eleven persons who are all Jews. They already believe in God, right? [...] And so from that point onwards, Jesus then began to give a much deeper revelation to His disciples that He Himself is an embodiment of God. [...] Our understanding is that in the troubles of life, Jesus Christ is the answer. Because ultimately, God is the answer. At the same time, Jesus is the embodiment of the invisible God.
+    confidence: 0.91
+    review_notes: []
+  - id: p20260607-worries-destiny
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-hope
+    start: 3629.5
+    end: 3683.18
+    type: sermon
+    title: Worries about aging, marriage and the future
+    summary: The pastor names contemporary worries, including AI, and introduces the promise of an ultimate destiny as a reason for trust.
+    questions: [What everyday worries does the sermon bring to John 14?]
+    topics: [faith, eternal-life]
+    scripture: ['John 14:1-2']
+    transcript: |
+      [Selected ASR excerpt.]
+      I mean, all our hearts are troubled in many ways. I know that all of us have a lot of issues in life. It can be, in fact, the Buddhist description can be quite good. It fits some part of our life. Maybe you're aging, maybe you're worried about your marriage, you're worried about your future. Now with all this AI thing coming along, it's very scary. [...] The first thing He talked about is how we have an ultimate destiny.
+      [Bible quotation omitted: John 14:2.]
+    confidence: 0.92
+    review_notes: []
+  - id: p20260607-father
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-hope
+    start: 3683.84
+    end: 3764.94
+    type: sermon
+    title: The intimacy of calling God Father
+    summary: The pastor reflects on the word Father in John 14:2 and describes it as an unusually intimate way of understanding the relationship with God.
+    questions: [Why does the pastor pause over the word Father?]
+    topics: [knowing-god, eternal-life]
+    scripture: ['John 14:2']
+    transcript: |
+      [Selected ASR excerpt; Lord's Prayer and other Bible quotations omitted.]
+      When we are troubled, when we are worried, when we face a lot of uncertainties in life, you've got to remember that ultimately, no matter what happens in life, we have an ultimate destiny. [...] The first is the word Father. [...] You know, you keep using the word father about God as if it is such a simple thing. The reality is that it's actually a very profound thing to call God your father. [...] Because the intimacy of God to us as a father is revolutionary, is highly unusual.
+    confidence: 0.9
+    review_notes: ["Comparisons with other religions are the speaker's claims, not an external assessment."]
+  - id: p20260607-house-not-hotel
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-hope
+    start: 3765.22
+    end: 3844.94
+    type: sermon
+    title: A permanent home rather than a hotel
+    summary: The pastor contrasts the warmth and permanence of a home with impersonal hotel stays to explain his reading of the Father's house.
+    questions: [How does the hotel illustration explain the Father's house?]
+    topics: [eternal-life, faith]
+    scripture: ['John 14:2']
+    transcript: |
+      [Selected ASR excerpts.]
+      And that He has a house, not a hotel, a house. My father has a house up there that is for you. It's permanent. It's not a place where you come and go. [...] And all of you know, those of you who travel, you don't care, right? I mean, it's like hotel room, who cares? They all look the same to you. [...] So here is an eternal, very close, very warm, very wonderful idea.
+      [Further scriptural wording omitted.]
+    confidence: 0.9
+    review_notes: [Travel anecdote shortened with explicit excerpt markers.]
+  - id: p20260607-hope-comfort
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-hope
+    start: 3844.94
+    end: 3898.74
+    type: sermon
+    title: Remembering ultimate hope amid present fears
+    summary: The pastor says the promised destiny is a source of comfort and refers to the song There Is a Hope as a reminder.
+    questions: [What comfort does the pastor draw from the promised future?]
+    topics: [eternal-life, faith]
+    scripture: ['John 14:2']
+    transcript: |
+      [Selected ASR excerpt; Bible quotation and recited lyric wording omitted.]
+      And so I want to remind all of us who belong to Jesus Christ that our ultimate destiny is in the kingdom. [...] And it's going to be marvelous. It's going to be wonderful. And you know, oftentimes we need to be reminded about this. So the song, There Is a Hope [...] I find that song most marvelous because it talks about the hope. [...] And that brings me then a lot of comfort. At least I'm not panicking as if I'm going to. It's the end of the world. So that's the first thing.
+    confidence: 0.86
+    review_notes: ["ASR gives songwriter Stuart Townsend; spelling not verified, so omitted."]
+  - id: p20260607-future-presence
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-hope
+    start: 3898.9
+    end: 3967.48
+    type: sermon
+    title: Being with Christ rather than merely going somewhere
+    summary: The pastor discusses the second-coming reading of John 14:3 and emphasizes the relationship with Christ and transformation, rather than location alone.
+    questions: [What does the pastor emphasize about being taken to Christ?]
+    topics: [eternal-life, discipleship]
+    scripture: ['John 14:3']
+    transcript: |
+      [Selected ASR excerpts; direct quotations omitted.]
+      The second thing, however, is that it's not just about the future alone. [...] People would normally say that this refers to the second coming of Christ, which is a very important understanding, that we must understand that Jesus will come again, and therefore live our life in accordance to that understanding. [...] And it means that Jesus said that we will be with Him as one. And that the transformation that we have is not just about staying in heaven, but a transformation to be one like Christ.
+    confidence: 0.9
+    review_notes: [Segment 800 word-start warning enclosed without retiming evidence.]
+  - id: p20260607-spirit-now
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-hope
+    start: 3967.8
+    end: 4024.74
+    type: sermon
+    title: The Holy Spirit's help in the present
+    summary: The pastor offers an additional present-tense reading of the promise, connecting it with the Holy Spirit's sustaining presence as well as future hope.
+    questions: [How does the pastor connect future hope with help here and now?]
+    topics: [holy-spirit, faith]
+    scripture: ['John 14:3', 'John 15-16']
+    transcript: |
+      Not only that, many people believe that this is an instantaneous here and now verse also, because later on we will talk about the coming of the Holy Spirit. Later in chapter 15 and 16, you will see the discourse moving to the promise of the Holy Spirit.
+      [Quoted scriptural wording omitted.]
+      Can also refer to the giving of God the Holy Spirit here and now. So, Jesus will die, He will be resurrected, and He will ascend. He will come again in the Holy Spirit, the Spirit of Christ, in the here and now. So, our help is not just about the future, having a home or house in the presence of God, but also in the here and now, where the Spirit of Christ, God, the Holy Spirit, is here right now as I speak to help us, to sustain us, to be with us. And so is both the future and now.
+    confidence: 0.89
+    review_notes: [Theological reading remains explicitly attributed. Start includes the first word at 3968.04 despite segment 809 starting 3968.2.]
+  - id: p20260607-thomas-and-greek
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4024.98
+    end: 4101.24
+    type: sermon
+    title: Thomas' question and the breadth of John 14:6
+    summary: The pastor moves from Thomas' question to John 14:6 and recalls a seminary dean's thesis about the connection between way, truth and life.
+    questions: [How does Thomas' question lead into the sermon's focus verse?]
+    topics: [truth, knowing-god]
+    scripture: ['John 14:4-6']
+    transcript: |
+      [Bible quotations omitted: John 14:4-6. Selected ASR commentary follows.]
+      That's why Thomas forever is known as doubting Thomas. Not only did he doubt that Jesus was resurrected, very curious, always ask this kind of question. [...] Here comes one of the most important verses in the Bible, John 14 verse 6. [...] You know, upon this verse there can be many very profound understanding.
+      [Seminary dean's name, Greek wording and intervening quotation omitted pending listening review.]
+    confidence: 0.78
+    review_notes: [Segment 832 word-end warning enclosed. ASR Dr. Quack Sui Hua and Greek care are uncertain and not normalized from external knowledge.]
+  - id: p20260607-way-east-west
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4101.24
+    end: 4162.16
+    type: sermon
+    title: Interpretive examples about way, truth and life
+    summary: The pastor recalls a senior pastor's East-West illustration and explores the range of meanings he associates with the Chinese word dao.
+    questions: [What linguistic and cultural illustrations does the pastor use for John 14:6?]
+    topics: [truth, knowing-god]
+    scripture: ['John 14:6']
+    transcript: |
+      [Selected ASR excerpt; quoted verse wording omitted.]
+      Now of course he's not the only one who write about this and so many many things, and you can preach a lot of sermons just on every one of them, right? [...] The senior pastor for example have a series on this where he explained that the way is very eastern, like Chinese and the Indians are always seeking the way to God, to enlightenment, to some mystic divinity. [...] Okay, pretty creative way of looking at this.
+      [Chinese wordplay and uncertain multilingual transcription omitted.]
+    confidence: 0.79
+    review_notes: [Includes broad cultural generalizations and an ASR claim about Jerusalem; none independently confirmed or adopted as archive facts.]
+  - id: p20260607-exclusive-clause
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4162.54
+    end: 4247.0
+    type: sermon
+    title: The difficult exclusivity claim in John 14
+    summary: The pastor distinguishes the broad discussion of truth and life from the clause he considers most difficult for hearers, the exclusive access to the Father in John 14:6.
+    questions: [Which part of John 14:6 does the pastor call most difficult?]
+    topics: [truth, faith]
+    scripture: ['John 14:6-7']
+    transcript: |
+      [Selected ASR commentary; Bible quotations omitted.]
+      Not one of the many truths, but the truth of all things. [...] Whether it's objective truth in engineering or the truth of the matter of your relationship in life. [...] And yeah, you can have many, many sermons just on this verse alone. However, the most difficult part about this verse is not that [quoted verse wording omitted], but the next statement. [Bible quotations omitted: John 14:6-7.]
+      [Untranscribed interval before the following example not reconstructed.]
+    confidence: 0.84
+    review_notes: [Segment 864 word warning enclosed. Do not infer speech missing from approximately 4235-4247.]
+  - id: p20260607-objections
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4247.24
+    end: 4347.58
+    type: sermon
+    title: Objections to there being only one way
+    summary: The pastor describes reactions to exclusivity and cites celebrity and clergy examples, including an analogy involving many television channels.
+    questions: [What objections to Christian exclusivity does the pastor discuss?]
+    topics: [faith, truth]
+    scripture: ['John 14:6']
+    transcript: |
+      [Selected ASR excerpt; names and disputed third-party quotations omitted.]
+      Now, for those of you who are Christians for a long time, it may seem most obvious. But for those of you who have, for example, shared the gospel with people, you know that that's one very big sticking point. That's very difficult. [...] Because, you know, it sounds pretty offensive, right, to say that your God is the only God, that your Jesus is the only way to God. And yeah, if you ever share the gospel with people, that's like a main sticking point.
+    confidence: 0.81
+    review_notes: [Longer unit preserves several connected objections. Celebrity/clergy names and representations of their views require source verification; not live speaker identities.]
+  - id: p20260607-bahai-introduction
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4347.72
+    end: 4395.38
+    type: sermon
+    title: Introducing the Baha'i comparison
+    summary: The pastor introduces the Baha'i faith as another approach to religious difference and makes historical and persecution claims before a warning against reckless public statements.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      A more sophisticated way to handle all these divisions are found in many other people. For example, the Baha'i faith. In Singapore, we have the Baha'i faith.
+      [Population, founder-name and persecution claims omitted from excerpt pending verification; intervening warning about reckless jokes also omitted.]
+    confidence: 0.76
+    review_notes: [Do not promote the speaker's unverified claims about treatment of Baha'is in particular countries into travel or historical facts.]
+  - id: p20260607-religious-inclusivity
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4395.38
+    end: 4463.46
+    type: sermon
+    title: The speaker's description of religious inclusivity
+    summary: The pastor describes Baha'i belief as treating religions as successive revelations and asks why Christians continue to make an exclusive claim.
+    questions: [How does the pastor contrast religious inclusivity with his reading of John 14?]
+    topics: [faith, truth]
+    scripture: ['John 14:6']
+    transcript: |
+      [Selected ASR excerpts.]
+      All religions are successive chapters of different revelation of God, and that founders of religions manifestation of God throughout history. [...] One big happy family. It sounds good, right? I mean it's like something that seems quite okay, you find your own way, you do your own way. So how do you deal with it? Why do we keep saying what we say?
+    confidence: 0.8
+    review_notes: ["Text is the pastor's description, not a quotation verified against Baha'i sources; uncertain founder names omitted."]
+  - id: p20260607-revelation-faith
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4463.46
+    end: 4538.92
+    type: sermon
+    title: Revelation-faith versus self-help faith
+    summary: The pastor distinguishes God-centered from human-centered approaches and says his Reformed understanding depends on God revealing truth rather than people finding salvation by themselves.
+    questions: [What distinction does the sermon make between revelation-faith and self-help faith?]
+    topics: [faith, knowing-god, truth]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts.]
+      The fundamental reason really is the approach to life and the approach to the divine. [...] The key difference is whether you believe in revelation faith or whether you believe in a self-help faith. [...] We are a faith that is revelation faith, which means that we believe that God revealed His truth to us, whereas Buddhism is a self-help faith. You've got to find your own way, you work out your own salvation.
+    confidence: 0.9
+    review_notes: [Slide at 4500 corroborates the contrast's wording. This remains the speaker's theological classification.]
+  - id: p20260607-depravity
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4538.92
+    end: 4573.94
+    type: sermon
+    title: Human limits and the need for revelation
+    summary: The pastor links revelation-faith to total depravity, while allowing that people can know something of truth through what he calls God's general grace.
+    questions: [Why does the pastor connect human limitations with the need for revelation?]
+    topics: [faith, truth]
+    scripture: []
+    transcript: |
+      Why do we believe in Revelation faith? We believe in Revelation faith because we also believe in total depravity. That we are totally depraved and we cannot possibly find the way, cannot possibly know the truth, cannot possibly live the life by ourselves. You may know a little bit about the way because God's general grace is upon you. Know a little bit about what truth is. Know a little bit about what life is. But you don't know the full answer. Because no matter how hard you try, you are a human being, you are fallen. It's quite clear, you know, you look at the world today.
+    confidence: 0.9
+    review_notes: [Segment 947 word-start warning enclosed. Preserve the general-grace qualification alongside the claim about human inability.]
+  - id: p20260607-national-power
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4574.5
+    end: 4658.46
+    type: sermon
+    title: Military and economic power as an illustration
+    summary: The pastor cites the United States, China and Germany, with military-spending, war and economic claims, to set up a contrast between material strength and moral leadership.
+    questions: [What contrast is the pastor building through his discussion of national power?]
+    topics: [responsibility]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts; numerical claims omitted pending factual and listening review.]
+      The most powerful nation in the world today is which country? The USA. [...] My goodness, the amount of bombs and military power they have is quite amazing. [...] And their economy is also the strongest in the entire world. [...] So it's a very powerful country, right?
+    confidence: 0.78
+    review_notes: ["Figures about military budgets, war casualties and relative economies are unverified speaker assertions. Source date is not altered on the strength of this anecdote."]
+  - id: p20260607-moral-leadership
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4658.9
+    end: 4701.66
+    type: sermon
+    title: Power does not establish moral leadership
+    summary: The pastor criticizes the moral leadership of political power and returns to his claim that people cannot solve their own fundamental problems without God's revelation.
+    questions: [How does the pastor distinguish power from moral leadership?]
+    topics: [responsibility, knowing-god]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt; contemporary legal speculation omitted.]
+      But then they are strong in military, strong in economy. They are like zero in terms of moral leadership, right? You're not going to look at Donald Trump and ask him what to solve the problem of the world. You can't. Because he can't even solve his own problem. [...] Because human beings cannot solve our own problem. And so in reformed understanding, we believe that God therefore, God revealed Himself to us. None of us can solve our own problem.
+    confidence: 0.82
+    review_notes: ["Political judgments are explicitly the pastor's; ASR has a potentially missing negation around 4687 seconds, excluded from the excerpt."]
+  - id: p20260607-air-illustration
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4701.92
+    end: 4776.04
+    type: sermon
+    title: The air illustration and the claim of necessity
+    summary: The pastor recounts a senior pastor's analogy about needing air to live, using it to argue that a claim of necessity is not merely arrogance.
+    questions: [How does the air analogy respond to the charge of arrogance?]
+    topics: [faith, truth]
+    scripture: ['John 14:6']
+    transcript: |
+      [Selected ASR excerpt; Bible quotation omitted.]
+      It is not a question of human construct or human argument. So senior pastor during his question and answer session gave an illustration. He said that if you look at the air, and if the air can speak, the air will tell you that you need to breathe me in in order to live. Then you tell the air, you are so arrogant. Why should you be the only way? I mean I can have many ways. [...] So you've got no choice but to accept that the air is something that you need to breathe in in order to live. And so Jesus is the only way because He is the only way.
+    confidence: 0.89
+    review_notes: [Rhetorical demonstration reported as an illustration; no independent proof or breathing advice inferred.]
+  - id: p20260607-acts-context
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4776.48
+    end: 4834.14
+    type: sermon
+    title: Returning to Peter and John in Acts
+    summary: The pastor returns to Acts 4, describing Peter and John's healing and questioning by religious leaders as the context for the reading.
+    questions: [Why does the sermon return to Acts 4?]
+    topics: [faith]
+    scripture: ['Acts 4:8-12']
+    transcript: |
+      [Selected ASR excerpt.]
+      The Bible is exceedingly clear and earlier [reader's name uncertain] read for us the other focus passage from the Acts of the Apostles. So this happened after Peter and John went to heal some guy who is lame, right, and all the religious leaders then go and arrest them and ask them, hey, what power, what authority you have to do this kind of thing?
+      [Bible quotations omitted: Acts 4:8-10; further scriptural speech omitted.]
+    confidence: 0.87
+    review_notes: []
+  - id: p20260607-no-other-name
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-only
+    start: 4834.14
+    end: 4910.88
+    type: sermon
+    title: The pastor's reading of Acts 4:12
+    summary: The pastor relates a children's song to the healing story, quotes Acts 4 and John 14, and stresses his reading of their exclusivity.
+    questions: [How does the pastor connect Acts 4:12 with John 14:6?]
+    topics: [faith, truth]
+    scripture: ['Acts 4:8-12', 'John 14:6']
+    transcript: |
+      [Children's song lyrics and Bible quotations omitted. Selected ASR commentary follows.]
+      Here comes another verse that is most exclusive. [Acts 4:12 quotation omitted.] So never be mistaken that Jesus is just one of the way. [John 14:6 quotation omitted.] I do not think that there's any possibility of misinterpreting what he means. [Repeated Acts quotation omitted.]
+    confidence: 0.9
+    review_notes: [Segment 1061 word-start warning is inside the omitted reading. The certainty expressed is the speaker's own.]
+  - id: p20260607-arrogance-warning
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 4910.88
+    end: 4989.74
+    type: sermon
+    title: Warning against arrogance and hatred
+    summary: The pastor warns that Christians can misuse exclusivity to become self-righteous, unkind or discriminatory, illustrating this with a young man's hostile approach to evangelism.
+    questions: [What misuse of the exclusivity teaching does the pastor warn against?]
+    topics: [discipleship, mission]
+    scripture: ['John 14:6']
+    transcript: |
+      [Selected ASR excerpt; hostile words in the anecdote omitted.]
+      Every time we touch on this topic there's a lot of issues, right, because there are a lot of ungodly kind of consequences and people get angry with us. But at the same time, Reformed Christians especially, having understood this, create a lot of issues I think for the rest of the world as well. Self-righteousness, arrogance, hatred, unkindness, discrimination, confusion, anxiety, and sadness, a lot of things come about because of this teaching as well. And one of the things that is pretty nasty is that Christians who understand this become pretty self-righteous and arrogant pretty often. And sometimes it scares me.
+    confidence: 0.92
+    review_notes: [ASR false spiritual law likely misrecognizes a named evangelistic approach; not corrected from memory or treated as a new doctrine.]
+  - id: p20260607-public-religious-speech
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 4990.28
+    end: 5075.28
+    type: sermon
+    title: Religious speech in a multireligious society
+    summary: The pastor contrasts aggressive religious rhetoric with the responsibilities of living among people of other faiths in Singapore, citing a pastor and contemporary news.
+    questions: [Why does the pastor bring Singapore's multireligious setting into this discussion?]
+    topics: [responsibility, mission]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts; uncertain pastor-name, attributed denunciation and contemporary news details omitted.]
+      And sometimes you also hear pastors saying things like that, words of hatred. That's very scary. [...] This is a multi-racial, multi-religious society. So for us we understand this a little bit differently because all of us have friends who are not Christians, right? [...] We wouldn't do that.
+    confidence: 0.8
+    review_notes: [ASR John Martha Jr is not silently expanded to a full name. Claims about arrest and newspaper reports are unverified speaker statements.]
+  - id: p20260607-loved-ones-question
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 5076.2
+    end: 5144.66
+    type: sermon
+    title: Anxiety about loved ones and judgments about others
+    summary: The pastor criticizes evangelism motivated by superiority and introduces questions about loved ones who did not say a sinner's prayer and about judging others' final destiny.
+    questions: [How does the pastor introduce concern about unbelieving loved ones?]
+    topics: [mission, prayer, eternal-life]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      Some of the confusion and sadness comes when people come and ask, Pastor, my father or my mother, I've been praying for them for so long, and then, you know, they didn't say the little sinner's prayer. So what happened? So will they go to the kingdom? How? Or this guy, that guy, this guy is so horrible, that guy should burn in hell. How, Pastor, can you tell me what will happen to that horrible person? Now, some of the things are important for us to understand.
+    confidence: 0.9
+    review_notes: ["Questions are reported examples, not the pastor's verdicts; read with the following response."]
+  - id: p20260607-grandmother-story
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 5144.66
+    end: 5213.76
+    type: sermon
+    title: God's justice and a story about the pastor's grandmother
+    summary: The pastor says God is sovereign and just, then describes explaining the gospel to his grandmother using a five-color book.
+    questions: [How does the pastor begin answering anxiety about another person's salvation?]
+    topics: [knowing-god, mission]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      First of all you must get your doctrine of God right. You must know that God is sovereign. God cannot possibly make any mistake and God is just. And so whatever the case may be, whether a person is in the kingdom or not, no way it will be a situation where it's unjust. As I've shared with you before, my grandma, I shared with her the gospel using the five color storybook, because she's illiterate.
+      [Description of the colors and uncertain attribution of the book's origin omitted from excerpt.]
+    confidence: 0.88
+    review_notes: [This is the pastor's theological response and personal account; the book's asserted inventor is not verified.]
+  - id: p20260607-grandmother-uncertainty
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 5214.84
+    end: 5295.2
+    type: sermon
+    title: Not knowing an individual's destiny while trusting God's justice
+    summary: The pastor recounts his grandmother professing belief yet continuing earlier religious practices. He says he does not know her final destiny, while trusting God's judgment and citing Philippians 2.
+    questions: [What does the pastor say he does and does not know about his grandmother's destiny?]
+    topics: [faith, eternal-life, knowing-god]
+    scripture: ['Philippians 2:9-11']
+    transcript: |
+      [Selected ASR excerpts; Hainanese exchange omitted pending listening.]
+      Next day she go and pray to Guan Yin again. [...] I don't know how many times it happened. And so would she enter the kingdom? I don't know. But I know that when I see God, everything will be correct. Philippians 2, 9, 11.
+      [Bible quotation omitted: Philippians 2:9-11.]
+      So for my dearly departed grandma, no matter what happened, it will not be a situation where I stand before God and say, hey, this is not fair. It cannot work. How come like that? I don't think so.
+      [Further scriptural wording omitted.]
+    confidence: 0.88
+    review_notes: [Segment 1192 word-start warning enclosed; do not turn the speaker's stated uncertainty into either assurance or condemnation.]
+  - id: p20260607-not-god
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 5295.82
+    end: 5374.12
+    type: sermon
+    title: Praying for loved ones without deciding for God
+    summary: The pastor paraphrases a friend associated with Habitat for Humanity and says he cannot decide whether another person is saved, though he can plead and pray for loved ones.
+    questions: [Why does the pastor decline to decide whether another person is saved?]
+    topics: [prayer, eternal-life, knowing-god]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts; friend's name omitted pending spelling review.]
+      And you notice that when I talk about my grandma, whether she's in the kingdom, I said I do not know. [...] I paraphrase what he said. When asked if someone is safe or not, I always reply, I do not know. I am not God. [...] I don't know, this is something that is in the sovereign will of God, right? It's not up to me. [...] I can plead and pray for my unbelieving loved ones of course, but I can't decide for God. So I'm not God.
+    confidence: 0.88
+    review_notes: [ASR safe appears to mean saved; retained rather than silently corrected. ASR Miller Fuller attribution needs verification; it does not establish a live speaker.]
+  - id: p20260607-lewis-distinction
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 5374.12
+    end: 5452.5
+    type: sermon
+    title: A distinction the pastor draws from C. S. Lewis
+    summary: The pastor cites Mere Christianity to distinguish the claim that salvation is through Christ from a claim to know the full limits of whom Christ may save.
+    questions: [What distinction does the pastor draw from C. S. Lewis about salvation through Christ?]
+    topics: [faith, eternal-life]
+    scripture: ['John 14:6']
+    transcript: |
+      [Selected ASR excerpt; intervening discussion of Narnia and Bible quotation omitted.]
+      C. S. Lewis dealt with this very well in my opinion, in Mere Christianity, his book, and I highly recommend you read his book. [...] First of all, we do know that no person can be saved except through Christ. So that's the first thing he affirmed, exclusivity. We do know. [...] But it's the next statement he made that's interesting. We do not know that only those who know him can be saved by him. [...] However, C. S. Lewis is saying that that doesn't mean that the only those who know Jesus will enter the kingdom.
+    confidence: 0.89
+    review_notes: ["Lewis and book attribution are visible on the slide; quotation checked against the slide only, not against an edition of the book. Preserve the following qualification and conclusion."]
+  - id: p20260607-possible-exceptions
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 5454.48
+    end: 5504.6
+    type: sermon
+    title: Possible cases beyond the usual model
+    summary: The pastor presents what he understands as a further category in Lewis' account, people who may enter through Christ without fitting the usual model, and relates this to God's sovereign will.
+    questions: [What possibility does the pastor discuss without claiming to decide individual outcomes?]
+    topics: [faith, eternal-life, knowing-god]
+    scripture: []
+    transcript: |
+      Because if Jesus is the only way to God, there can be people who do not know Him, whom He has special grace to, so that they will enter the kingdom through Him. Ah, this is an interesting statement, right? So therefore, in C. S. Lewis' idea, in the billions of people in the world, number one, Jesus Christ is the only way to God, that's for sure. Number two, surely those of us who put our faith in Jesus will be in the kingdom. That's true too. He also has a third category. He believes that it is possible that through Jesus, some people who do not fit the usual model will enter the kingdom. And I think that that is a correct understanding because we are not God and the sovereign will is in God.
+    confidence: 0.9
+    review_notes: [Interpretation is attributed to the pastor and his reading of Lewis; not an archive doctrinal conclusion.]
+  - id: p20260607-charity-qualification
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 5505.5
+    end: 5584.3
+    type: sermon
+    title: Helping people and the limit of speculation
+    summary: The pastor defends helping people in need regardless of conversion outcomes. He imagines a possible encounter with Christ near death but immediately says scripture does not state this and he would not preach it as a way to bring people to Christ.
+    questions: [Why does the pastor help people without requiring conversion?, What qualification does he attach to his imagined deathbed encounter?]
+    topics: [service, mission, faith]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts; uncertain third-party attribution omitted.]
+      I believe that the fellow is in the ditch, okay, he's living in cockroaches and all that, rats all over the place. How can I just walk by and do nothing? The good Samaritan story, right? So I would do something. Whether this person believes or not, I don't know. I tell him that I'm a Christian, I'm here to help you in the name of Jesus Christ. And that's what I do. [...] Who knows whether Jesus can appear to him right before he died and say, excuse me, I'm here, wake up your idea. We don't know. Of course, scripture doesn't say that, so I won't preach that as a way to bring people to Christ. But that's what C. S. Lewis is saying.
+    confidence: 0.9
+    review_notes: [Keep the explicit scripture-does-not-say-that qualification in every editorial summary of this thought. No unannounced verse range added for the Good Samaritan allusion.]
+  - id: p20260607-kingdom-surprises
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 5584.9
+    end: 5654.22
+    type: sermon
+    title: An attributed saying about surprises in the kingdom
+    summary: The pastor attributes a three-surprises saying to John Wesley and uses self-deprecating and social examples to warn against assuming who will be present, ending with gratitude for grace.
+    questions: [What is the point of the pastor's three-surprises illustration?]
+    topics: [eternal-life, faith]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts.]
+      And so John Wesley, the founder of the Methodist Church, has a very famous saying. He says that when we go to the Kingdom of God, three things will surprise us. Number one, many people who think will be in the Kingdom are not there. That's the first thing. [...] Second, you will be surprised that some people you think were not in the kingdom are there. [...] And the last thing that surprises you is that you are in the kingdom. Because by that time you already know what's happening and the grace of God. You'll be so surprised that the grace of God is even upon you.
+    confidence: 0.86
+    review_notes: [Wesley attribution not externally verified. The pastor uses his own full name at 5601-5615 in a hypothetical joke; not a claim about anyone's actual final destiny.]
+  - id: p20260607-judgment-restraint
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 5654.64
+    end: 5684.98
+    type: sermon
+    title: The pastor's conclusion about restraint in judgment
+    summary: The pastor reaffirms Christ as the only way while allowing possible exceptions to the usual model under God's sovereignty, and rejects a practice of condemning other people.
+    questions: [How does the pastor hold his exclusivity claim together with restraint in judgment?]
+    topics: [faith, discipleship]
+    scripture: ['John 14:6']
+    transcript: |
+      [Initial uncertain ASR phrase omitted.]
+      I absolutely completely believe that Jesus Christ is the only way because Jesus says so and the Bible says so. And I also absolutely believe that there can be exceptions because I trust in the sovereign will of God and He can make no mistake. So therefore, I am never in the practice in my life to go and condemn people or to look at other religions and say all these people are burned in hell because that's not the right thing to do. Then does that mean that you don't preach the gospel?
+    confidence: 0.91
+    review_notes: ["Exceptions must be read with p20260607-possible-exceptions: the speaker describes exceptions to the usual model, not an independently added alternate way apart from Christ."]
+  - id: p20260607-evangelism-conclusion
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-sermon-humility
+    start: 5686
+    end: 5762.32
+    type: sermon
+    title: Continue sharing the gospel with love rather than hatred
+    summary: After a Lewis quotation, the pastor urges continuing evangelism, living out Christ's teaching and treating people who do not believe with love rather than hatred or unkindness.
+    questions: [Does the pastor's uncertainty about others mean abandoning evangelism?]
+    topics: [mission, discipleship]
+    scripture: []
+    transcript: |
+      [Lewis quotation omitted here because its wording on the slide and in ASR conflicts with the surrounding exhortation; see review note. Selected ASR commentary follows.]
+      Meaning you go preach the gospel, go and share it to be very sure, right? Go and share the gospel with the people you love and tell them about it. Don't go and wait for chance or whatever it is. [...] We spend our entire life living out the way, the truth, the life, and exemplify His love and teaching for the whole world to know that Jesus Christ is Lord. At the same time, do not live a life of hatred and unkindness towards those people who do not know this. But on the other hand, out of the love you have for souls, always go out and reach them for Jesus.
+      [Closing scriptural allusion omitted.]
+    confidence: 0.85
+    review_notes: [At about 5696-5700 ASR and displayed quotation read most reasonable thing ... remain outside yourself. Possible missing negative or quotation error; not silently repaired. Main exhortation is clear from adjacent commentary.]
+  - id: p20260607-prayer-after-sermon
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-response
+    start: 5762.86
+    end: 5849.48
+    type: prayer
+    title: Prayer for gratitude, kindness and outreach
+    summary: The pastor prays for gratitude rather than arrogance, faith in Christ and continued loving outreach, including kindness toward enemies.
+    questions: []
+    topics: [prayer, mission, discipleship]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts.]
+      Fill us with gratitude for what you have done for us, not with hatred and arrogance, thinking that other people have no place in the kingdom. [...] May we then treasure this status given to us and [ASR wording uncertain] continue to reach out to them and to share the good news of the Gospel as commanded by our Lord and our Saviour. May we also live a life where we are kind, where we are not filled with hatred and where we continue to love even our enemies. All these are difficult, difficult things to do but they are commanded by your word. May we humbly follow them and in so doing, show the whole world that Jesus Christ is Lord. Listen to our prayers. In Jesus' name we pray. Amen.
+    confidence: 0.88
+    review_notes: [ASR caught/called and ask/as near 5774 and 5814 remain listening issues; no missing text supplied.]
+  - id: p20260607-creed
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-response
+    start: 5851.02
+    end: 5896.88
+    type: creed
+    title: Apostles' Creed
+    summary: The congregation is invited to stand and recite the Apostles' Creed before prayer.
+    questions: []
+    topics: [worship, faith]
+    scripture: []
+    transcript: |
+      Congregation, would you stand with me? We want to read the Apostles' Creed together and go into a time of prayer.
+      [Creed recitation omitted: ASR begins partway through a sentence and does not capture a complete congregational text. No missing creed text supplied from memory.]
+    confidence: 0.92
+    review_notes: []
+  - id: p20260607-response-prayer-invitation
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-response
+    start: 5896.88
+    end: 6001.2
+    type: prayer
+    title: Praying in response to the sermon
+    summary: The pastor invites personal response to Christ and faithfulness, then introduces prayer for someone who does not know Jesus, followed by a quiet interval.
+    questions: [What two prayer responses follow the sermon?]
+    topics: [prayer, faith, mission]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt; scriptural wording in first invitation omitted.]
+      Let us first pray for ourselves in response to the sermon preached. [...] And for those of us who have known Jesus for a long time, may we continue to pray and ask that we follow Him closely and be faithful to Him. The second prayer item, it will then be appropriate for us to pray for someone we know who has not known Jesus, that we commit this person to God or the group of people to God in prayer and seek His mercy. So this is the two prayer items we have. You can pray verbally or you can pray in your heart. Let us start by praying for ourselves. Let us pray.
+      [Quiet prayer interval.]
+    confidence: 0.9
+    review_notes: [Longer unit retains invitation and personal prayer; isolated thank-you ASR fragment omitted.]
+  - id: p20260607-prayer-loved-ones
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-response
+    start: 6001.2
+    end: 6084.84
+    type: prayer
+    title: Praying for those who do not know Jesus
+    summary: The pastor encourages sustained prayer for loved ones and other people who do not know Jesus.
+    questions: []
+    topics: [prayer, mission]
+    scripture: []
+    transcript: |
+      Congregation, I want to encourage you now to pray for your loved ones or somebody you know or some group of people you know who have not known Jesus. Remember we have a lot of examples of people who pray honestly for their loved ones for many, many years and then see the glory of God as these people become believers and so we commit them into the Lord in prayer. So let us pray.
+      [Quiet prayer interval; uncertain ASR fragment omitted.]
+    confidence: 0.89
+    review_notes: [ASR honestly may be another adverb; listening required before exact quotation.]
+  - id: p20260607-patience-in-prayer
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-response
+    start: 6084.84
+    end: 6144.26
+    type: prayer
+    title: Faith and patience while waiting
+    summary: The pastor prays for patience rather than expecting immediate results, and for perseverance in faith through life's changes.
+    questions: [What does the pastoral prayer ask about waiting for answers?]
+    topics: [prayer, faith]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      Let us pray together. We thank you, God, for the privilege of prayer. And we want to pray for faith. We want to pray for patience as we wait for you to move in our life. Oftentimes, we are so used to expecting things to happen immediately that when we pray, we get impatient and we lose faith. We do ask that you grant us the grace and the mercy to be faithful and believe that everything we utter, you have heard, because that's what your word tells us. Help us to persevere in faith, to be determined through all the ups and downs in life, to remember that you are faithful.
+      [Remainder of prayer omitted.]
+    confidence: 0.92
+    review_notes: []
+  - id: p20260607-offering
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-offertory
+    start: 6145.58
+    end: 6244.58
+    type: offertory
+    title: Offering for evangelism
+    summary: The pastor announces giving arrangements and says the first-Sunday second offering will go to evangelism; the following offertory interval is retained.
+    questions: [What is the announced purpose of the second offering?]
+    topics: [stewardship, mission, service-life]
+    scripture: []
+    transcript: |
+      We're going to go into our offertory now. You may give via the QR code or the box in front. This being the first Sunday the second [ASR: back] offering will go to evangelism.
+      [Offertory interval; isolated ASR thank-you fragments omitted. No lyrics or unrecognized speech supplied.]
+    confidence: 0.87
+    review_notes: [Offering noun requires listening; purpose is clear. Longer unit preserves the offering interval; no payment details copied.]
+  - id: p20260607-closing-hymn-introduction
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-closing
+    start: 6244.58
+    end: 6302.24
+    type: address
+    title: Introducing All the Way My Saviour Leads Me
+    summary: The pastor introduces the closing hymn, attributes it to Fanny Crosby and describes the comfort it gives him, with anecdotes about hymn writing and funerals.
+    questions: [Which hymn closes the service?]
+    topics: [worship, faith]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpt.]
+      Okay, our closing hymn is Fanny Crosby hymn. Remember Fanny Crosby is the lady who is blind, who was blind and all her lifetime wrote so many many hymns. I read that she wrote like 6,000 hymns, I don't know. 6,000 is a lot. [...] All the Way My Saviour Leads Me. In case you don't know, this is one of the favourite funeral songs. [...] But it's a beautiful lyrics.
+      [Recited hymn lyrics omitted.]
+      Every time I sing this, I am very comforted. So let's sing this together.
+    confidence: 0.9
+    review_notes: [Hymn title and Fanny Crosby attribution visible at 6245; numerical and popularity claims are the pastor's recollections.]
+  - id: p20260607-closing-hymn
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-closing
+    start: 6302.24
+    end: 6404.1
+    type: hymn
+    title: All the Way My Saviour Leads Me
+    summary: The congregation sings the closing hymn and is invited to rise during the final portion.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: |
+      [Hymn lyrics omitted: All the Way My Saviour Leads Me.]
+      Let's rise.
+      [Remaining hymn lyrics omitted.]
+      Amen.
+    confidence: 0.95
+    review_notes: [Whole hymn unit intentionally longer than 90 seconds.]
+  - id: p20260607-doxology-benediction
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-closing
+    start: 6404.1
+    end: 6463.36
+    type: benediction
+    title: Doxology and blessing from Jude
+    summary: The congregation sings the doxology and receives a benediction announced as from Jude.
+    questions: [Which biblical letter supplies the benediction?]
+    topics: [worship]
+    scripture: ['Jude 1:24-25']
+    transcript: |
+      Let's sing doxology in praise of God and in faith receive his blessing taken from the letter of Jude.
+      [Doxology lyrics omitted.]
+      [Bible quotation omitted: Jude 1:24-25.]
+      Amen.
+    confidence: 0.93
+    review_notes: ["Letter announced; verse range identified from the supplied spoken reading, not added verse text."]
+  - id: p20260607-class-rallies
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-announcements
+    start: 6477.7
+    end: 6543.84
+    type: announcement
+    title: Catechism class and June–July gospel rallies
+    summary: The pastor announces the resumption of Westminster Shorter Catechism class, open beyond baptism candidates, and encourages consideration of joining Dr. Tong's gospel rallies.
+    questions: [Who is invited to the catechism class?, What gospel rally opportunity is announced?]
+    topics: [service-life, mission]
+    scripture: []
+    transcript: |
+      [Selected ASR excerpts.]
+      Later on we will resume our Westminster Shorter Catechism class. So those who have already been baptized and all that, still to complete it, please do come complete. And also, we're open to everybody. So we have people who are joining us who are not going to be baptized anyway. It's a good class to go through. [...] Dr. Tong is still inviting people to join him for his Gospel Rally series. [...] So this is the June one. There's also one more in July. [...] So please prayerfully think about this.
+    confidence: 0.9
+    review_notes: [Frame at 6480 shows Stephen Tong and Maluku Utara 2026 June rally dates. Exact logistics and quoted final-rally claim require human confirmation; not treated as current invitations.]
+  - id: p20260607-community-dismissal
+    video_id: 8Qjfp-2L5d8
+    section_id: s20260607-announcements
+    start: 6543.84
+    end: 6590.24
+    type: announcement
+    title: Wedding congratulations, service appreciation and dismissal
+    summary: The pastor congratulates an upcoming wedding couple, thanks a returning volunteer pianist and encourages serving together before dismissal in silent meditation.
+    questions: []
+    topics: [service-life, service]
+    scripture: []
+    transcript: |
+      [Wedding names and rehearsal exchange omitted pending spelling verification. Selected ASR excerpt follows.]
+      Yeah, it's always a happy occasion. Congratulations and may God continue to bless them in the days to come.
+      [Pianist's name and uncertain wording omitted.]
+      He's back on internship and immediately volunteered. Good. So, same thing for all of you guys, you know. Please use this to come together and we serve the Lord together. Alright, that's all the announcement I have for you. You may be dismissed with silent meditation. Know that the Lord is with you.
+    confidence: 0.85
+    review_notes: ["ASR gives Han Peng, Yan Yi and Caden; no identities assigned. Recording ends immediately after dismissal, with no evidence of a separate post-service programme."]

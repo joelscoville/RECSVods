@@ -1,0 +1,1250 @@
+id: '2026-08-02'
+date: '2026-08-02'
+title: RECS English service — 2 August 2026
+sermon_title: The Here and Now
+series: { id: gospel-of-john, name: Expository Preaching on the Gospel of John }
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - 'Main batch integration applied the source-backed series and cited sanctification topic; worker proposal notes describe the pre-merge stage. All interpretation remains needs_review. See docs/historical-001/integration.md.'
+  - 'Historical-001 slot 3: only 1R4gnCvqrOA. Exact source ID/channel verified; source title RECS 2 August 2026, upload/release 20260802, and 300s date slide agree. Acquisition began 2026-09-26T02:47:41.002890Z.'
+  - 'Full meaningful programme reviewed from all 1437 supplied segments, adjacent word timings, 22 coarse frames/audio samples and 32 refined frames. Audio was decoded, not listened to. Inline transcripts are edited ASR excerpts with explicit omissions, not complete verbatim or listening-verified speech. No ASR or inference was run.'
+  - 'Opening ACTS slide at 0/30s shows preparation already underway; no opening adoration speech reconstructed. The programme continues through dismissal at 6462.86s. Closing visual context retained to measured duration 6464.981s.'
+  - 'Title and John 16:1-15 / Ephesians 5:15-17 appear at 2100/2120s. The slide heading Expository Preaching on The Gospel of John is a proposed series only, pending main taxonomy review; no series activated.'
+  - 'Pastor Yong is named in the opening prayer at 665.08–669.48s; use only that verified partial identity. Sister Catherine/Cat, Brother Hadi and Brother Joshua are mentioned, but no full identities were established. Do not expand names or identify people by appearance.'
+  - 'Proverbs 1:1-33 is announced and confirmed by 1300/1320/1460/1520s frames; the 1500s frame briefly shows Proverbs 16:1-2. Retain the mismatch for review rather than changing the reading. Around 4377.52s ASR says Luke chapter 10 for the rich-man illustration; precise reference is withheld pending listening, not silently corrected from memory.'
+  - 'Bible readings, embedded quotations and lyrics are omitted explicitly. No scripture text is supplied from memory. Unannounced allusions do not receive guessed verse ranges. Communion prayer near 1199–1247s and the early creed text are missing from ASR; no reconstruction.'
+  - 'Import preserves raw segment/word order and timings exactly: 24 outside-segment word warnings, maximum 0.64s, 20 zero-duration words, no segment overlaps, backward starts or tail clamps. Warning contexts reviewed; all remain human-review obligations. Largest discrepancy occurs inside the omitted opening hymn.'
+  - 'Historical, interfaith, medical and demographic assertions are the preacher’s statements, not independently verified facts. In particular review the Coptic-martyr narrative, HIV treatment/burial claims, Cambodia anecdote and Korean Christianity figures. The Cambodia account must retain his later admission of mistaken judgment.'
+  - 'Taxonomy proposals: sanctification / Sanctification, supported by p20260802-sanctification at 4132.82–4224.8s and p20260802-renewal at 4224.8–4298.6s; gospel-of-john / Expository Preaching on The Gospel of John series, displayed at 2100/2120s and supported by p20260802-sermon-introduction. Existing discipleship and holy-spirit tags used pending main review.'
+  - 'Original target WebM absent in both designated audio roots; verified import used --allow-missing-audio and records audio_hash_verified false. Safe provenance is copied exactly from receipt. See docs/historical-001/2026-08-02.md for checks and cleanup.'
+speakers:
+  - { id: pastor-yong, name: Pastor Yong, role: Preacher }
+topics:
+  - { id: sanctification, name: Sanctification }
+  - { id: communion, name: Holy Communion }
+  - { id: discernment, name: Discernment }
+  - { id: discipleship, name: Discipleship }
+  - { id: eternal-life, name: Eternal life }
+  - { id: faith, name: Faith }
+  - { id: forgiveness, name: Forgiveness }
+  - { id: holy-spirit, name: Holy Spirit }
+  - { id: mission, name: Mission }
+  - { id: prayer, name: Prayer }
+  - { id: repentance, name: Repentance }
+  - { id: service, name: Service }
+  - { id: service-life, name: Church life }
+  - { id: stewardship, name: Stewardship }
+  - { id: truth, name: Truth }
+  - { id: worship, name: Worship }
+videos:
+  - id: 1R4gnCvqrOA
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6464.981
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: 'Full authorized source has usable audio/video streams; ffprobe independently repeated 6464.981s. Coarse samples decode across the recording, and distributed programme/date/title/reading/dismissal frames correspond to supplied transcript. This establishes technical usability and programme suitability, not uninterrupted audibility or listening verification.'
+    transcription_language: en
+    transcribed_span: { start: 0, end: 6464.9694375 }
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings: { beam_size: 5, word_timestamps: true, vad_filter: false, condition_on_previous_text: false }
+      audio_sha256: 9508a23336ae2a5b3bfbe3dbeb383d9395d8fdb4b496ff13672ebf5fb8bafa24
+      duration_seconds: 6464.9694375
+      elapsed_seconds: 211.082
+      real_time_factor: 0.03265
+      transcribed_at: '2026-09-25T12:12:49.741671+00:00'
+      transcript_sha256: 5f3c0bd5498f76f10cabfc4cfda04b8969de1e2cca0ade78eedb0b5466505cc5
+      source_duration_seconds: 6464.981
+      duration_delta_seconds: -0.01156249999985448
+      audio_hash_verified: false
+sections:
+  - { id: s20260802-preparation, video_id: 1R4gnCvqrOA, start: 0, end: 300.42, type: prayer, title: ACTS preparation for worship, confidence: 0.85 }
+  - { id: s20260802-welcome, video_id: 1R4gnCvqrOA, start: 300.42, end: 415.3, type: welcome, title: Meditation and welcome, confidence: 0.88 }
+  - { id: s20260802-call, video_id: 1R4gnCvqrOA, start: 415.3, end: 454.78, type: scripture-reading, title: Call to worship — Psalms 92:1-4, confidence: 0.95 }
+  - { id: s20260802-world, video_id: 1R4gnCvqrOA, start: 454.78, end: 582.72, type: hymn, title: This Is My Father’s World, confidence: 0.92 }
+  - { id: s20260802-opening-prayer, video_id: 1R4gnCvqrOA, start: 582.72, end: 734.34, type: prayer, title: Prayer for forgiveness and a receptive heart, confidence: 0.87 }
+  - { id: s20260802-communion, video_id: 1R4gnCvqrOA, start: 734.34, end: 1282.64, type: communion, title: Holy Communion and belonging to a community, confidence: 0.88 }
+  - { id: s20260802-proverbs, video_id: 1R4gnCvqrOA, start: 1282.64, end: 1498.06, type: scripture-reading, title: Responsive reading — Proverbs 1:1-33, confidence: 0.89, review_notes: ['Announced range and multiple frames agree; a transient Proverbs 16:1-2 slide at 1500s conflicts with the programme.'] }
+  - { id: s20260802-john, video_id: 1R4gnCvqrOA, start: 1498.06, end: 1614.22, type: scripture-reading, title: Responsive reading — John 16:1-15, confidence: 0.94 }
+  - { id: s20260802-reflection, video_id: 1R4gnCvqrOA, start: 1614.22, end: 1707.4, type: reflection, title: Christ’s care before the cross, confidence: 0.88 }
+  - { id: s20260802-nearer, video_id: 1R4gnCvqrOA, start: 1707.4, end: 1895.26, type: hymn, title: 'Nearer, Still Nearer', confidence: 0.94 }
+  - { id: s20260802-anthem, video_id: 1R4gnCvqrOA, start: 1895.26, end: 2072.32, type: anthem, title: This World Is Not My Home — video anthem, confidence: 0.94 }
+  - { id: s20260802-ephesians, video_id: 1R4gnCvqrOA, start: 2072.32, end: 2108.78, type: scripture-reading, title: Scripture reading — Ephesians 5:15-17, confidence: 0.95 }
+  - { id: s20260802-introduction, video_id: 1R4gnCvqrOA, start: 2108.78, end: 2233.96, type: sermon, title: The Here and Now — introduction and co-worker appreciation, speaker_id: pastor-yong, confidence: 0.9 }
+  - { id: s20260802-ama, video_id: 1R4gnCvqrOA, start: 2233.96, end: 2531.76, type: question-answer, title: AMA — paranormal claims and objective evidence, speaker_id: pastor-yong, confidence: 0.86 }
+  - { id: s20260802-recap, video_id: 1R4gnCvqrOA, start: 2531.76, end: 2837.94, type: sermon, title: Recap — hatred and perseverance, speaker_id: pastor-yong, confidence: 0.87 }
+  - { id: s20260802-sermon-prayer, video_id: 1R4gnCvqrOA, start: 2837.94, end: 2879.5, type: prayer, title: Prayer before the exposition, speaker_id: pastor-yong, confidence: 0.89 }
+  - { id: s20260802-persecution, video_id: 1R4gnCvqrOA, start: 2879.5, end: 3122.26, type: sermon, title: John 16 and the preacher’s Coptic-martyr illustration, speaker_id: pastor-yong, confidence: 0.85 }
+  - { id: s20260802-progression, video_id: 1R4gnCvqrOA, start: 3122.26, end: 3480.56, type: sermon, title: Progressive revelation and life in time, speaker_id: pastor-yong, confidence: 0.87 }
+  - { id: s20260802-future, video_id: 1R4gnCvqrOA, start: 3480.56, end: 3636.94, type: sermon, title: Is faith only about a future life?, speaker_id: pastor-yong, confidence: 0.87 }
+  - { id: s20260802-cambodia, video_id: 1R4gnCvqrOA, start: 3636.94, end: 4132.82, type: sermon, title: Cambodia recollection — poverty and a mistaken judgment, speaker_id: pastor-yong, confidence: 0.82, review_notes: ['Keep the initial assumption with the later correction; medical, cultural and autobiographical claims are not independently verified.'] }
+  - { id: s20260802-sanctification, video_id: 1R4gnCvqrOA, start: 4132.82, end: 4402.64, type: sermon, title: Redemption and lifelong sanctification, speaker_id: pastor-yong, confidence: 0.9 }
+  - { id: s20260802-spirit, video_id: 1R4gnCvqrOA, start: 4402.64, end: 4937.42, type: sermon, title: The Holy Spirit’s presence and conviction, speaker_id: pastor-yong, confidence: 0.89 }
+  - { id: s20260802-marriage, video_id: 1R4gnCvqrOA, start: 4937.42, end: 5177.76, type: sermon, title: Serving a spouse through the Spirit’s help, speaker_id: pastor-yong, confidence: 0.89 }
+  - { id: s20260802-daily, video_id: 1R4gnCvqrOA, start: 5177.76, end: 5263.72, type: sermon, title: Returning daily to the Word, speaker_id: pastor-yong, confidence: 0.89 }
+  - { id: s20260802-community, video_id: 1R4gnCvqrOA, start: 5263.72, end: 5508.24, type: sermon, title: A loving community and willing service, speaker_id: pastor-yong, confidence: 0.88 }
+  - { id: s20260802-closing-prayer, video_id: 1R4gnCvqrOA, start: 5508.24, end: 5607.58, type: prayer, title: Prayer to live in the here and now, speaker_id: pastor-yong, confidence: 0.88 }
+  - { id: s20260802-creed, video_id: 1R4gnCvqrOA, start: 5607.58, end: 5652, type: creed, title: Apostles’ Creed, confidence: 0.85 }
+  - { id: s20260802-pastoral, video_id: 1R4gnCvqrOA, start: 5652, end: 5883.52, type: prayer, title: Response and prayer for cell ministry, speaker_id: pastor-yong, confidence: 0.89 }
+  - { id: s20260802-offering, video_id: 1R4gnCvqrOA, start: 5883.52, end: 5967.64, type: offering, title: Offertory and evangelism work, confidence: 0.85 }
+  - { id: s20260802-prayer-exhortation, video_id: 1R4gnCvqrOA, start: 5967.64, end: 6061.2, type: exhortation, title: Encouragement to pray often, speaker_id: pastor-yong, confidence: 0.83 }
+  - { id: s20260802-friend, video_id: 1R4gnCvqrOA, start: 6061.2, end: 6186.06, type: hymn, title: What a Friend We Have in Jesus, confidence: 0.94 }
+  - { id: s20260802-benediction, video_id: 1R4gnCvqrOA, start: 6186.06, end: 6261.78, type: benediction, title: Doxology and blessing from Hebrews 13, confidence: 0.9 }
+  - { id: s20260802-announcements, video_id: 1R4gnCvqrOA, start: 6261.78, end: 6464.981, type: announcement, title: 'Photo directory, fellowship and ministry participation', speaker_id: pastor-yong, confidence: 0.88 }
+passages:
+  - id: p20260802-preparation-opening
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-preparation
+    start: 0
+    end: 49.68
+    type: prayer
+    title: ACTS preparation already underway
+    summary: The opening frames show the ACTS prayer framework before the first clear invitation to confession.
+    questions: ['How does the recording begin?']
+    topics: [prayer, worship]
+    scripture: []
+    transcript: '[Opening prayer/preparation interval; ACTS slide visible. No reliable opening speech beyond an isolated ASR fragment; no adoration wording reconstructed.]'
+    confidence: 0.72
+    review_notes: ['0/30s frames establish preparation context. The isolated Thank you is not treated as established meaningful speech or proof of silence.']
+  - id: p20260802-confession
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-preparation
+    start: 49.68
+    end: 123.74
+    type: prayer
+    title: Confession before worship
+    summary: The leader invites confession, acknowledging that believers are not yet perfect.
+    questions: ['What does the leader ask the congregation to confess?']
+    topics: [prayer, repentance, forgiveness]
+    scripture: []
+    transcript: 'Let us now come together to pray in confession. We know that we are saved, but we are not yet made perfect, so there are many things in our life that we know are not pleasing to God. [Biblical quotation/allusion omitted; exact reference not announced.] Let us confess our sins now. [Personal-prayer interval; no further wording reconstructed.]'
+    confidence: 0.85
+    review_notes: ['ASR safe edited to saved from immediate context; requires listening confirmation.']
+  - id: p20260802-thanksgiving
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-preparation
+    start: 123.74
+    end: 189.36
+    type: prayer
+    title: Thanksgiving in prayer
+    summary: The leader introduces thanksgiving and gives time for personal prayer.
+    questions: ['How is thanksgiving included in the preparation?']
+    topics: [prayer]
+    scripture: []
+    transcript: 'And now we pray in thanksgiving. [Biblical allusion about thanksgiving omitted; exact reference not announced.] Let us give thanks in our prayers now. [Personal-prayer interval.]'
+    confidence: 0.87
+    review_notes: []
+  - id: p20260802-supplication
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-preparation
+    start: 189.36
+    end: 249.9
+    type: prayer
+    title: Bringing personal concerns to God
+    summary: The leader asks worshippers to bring their own concerns to God in supplication.
+    questions: ['What is the invitation during supplication?']
+    topics: [prayer]
+    scripture: []
+    transcript: 'And now we pray in supplication. We come to the Lord and bring to him the issues in our own life and seek his help. Let’s pray in supplication now. [Personal-prayer interval.]'
+    confidence: 0.89
+    review_notes: []
+  - id: p20260802-childlike-prayer
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-preparation
+    start: 249.9
+    end: 300.42
+    type: prayer
+    title: Childlike attention in worship
+    summary: The leader prays for burdens to be set aside and introduces Sister Catherine as worship leader.
+    questions: ['What attitude does the preparation prayer ask for?']
+    topics: [prayer, worship]
+    scripture: []
+    transcript: 'Let us pray together. We thank you, God, for this morning as we come before your throne of grace. We want to ask that you help us to set aside everything that is blocking us from you. Sometimes we come before you with many burdens in our life. And yet, before you, we will always be like a child. So may we be childlike before you, that we may hear your voice and recognize you. May our worship service this morning be pleasing in your sight, and may all glory be unto your holy name. In Jesus’ name we pray. Amen. This morning, our sister Catherine will be leading us. [Transition.]'
+    confidence: 0.87
+    review_notes: ['ASR breathe edited to pray in context. Source ID 15 word starts 0.08s before segment; no cut inside that phrase. Catherine is not expanded to a full identity.']
+  - id: p20260802-meditation
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-welcome
+    start: 300.42
+    end: 372.26
+    type: meditation
+    title: Quiet meditation with an interlude
+    summary: The worship leader invites quiet meditation with an interlude credited to Brother Joshua.
+    questions: ['How are worshippers invited to quiet their minds?']
+    topics: [worship, prayer]
+    scripture: []
+    transcript: 'Hi everyone. With a moment of silent meditation, let us calm our hearts and quiet our minds for today’s worship as we meditate on the interlude played by Brother Joshua. Let’s pray. [Interlude/meditation interval; no words reconstructed.]'
+    confidence: 0.88
+    review_notes: ['300s frame displays 2nd August 2026, 9:30am. Joshua is only the announced partial name.']
+  - id: p20260802-welcome
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-welcome
+    start: 372.26
+    end: 415.3
+    type: welcome
+    title: Welcome and greeting one another
+    summary: The leader welcomes the congregation to the English morning service and invites mutual greetings.
+    questions: ['How does the leader welcome the congregation?']
+    topics: [service-life, worship]
+    scripture: []
+    transcript: 'Happy Sunday, good morning everyone and welcome to the Reformed Evangelical Church English morning service. I’m very happy to be able to worship with everyone here today. Before we begin, may I invite us to rise up and greet one another. [Congregational greetings.]'
+    confidence: 0.91
+    review_notes: []
+  - id: p20260802-call
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-call
+    start: 415.3
+    end: 454.78
+    type: scripture-reading
+    title: Call to worship from Psalms 92
+    summary: The leader announces and reads Psalms 92:1-4 from the ESV.
+    questions: ['Which passage is used for the call to worship?']
+    topics: [worship]
+    scripture: ['Psalms 92:1-4']
+    transcript: 'Today’s call to worship is taken from Psalms, chapter 92, verses 1 to 4. I will be reading from the English Standard Version of the Bible. [Scripture reading omitted: Psalms 92:1-4. Following biblical quotation also omitted; its exact reference is not announced.]'
+    confidence: 0.95
+    review_notes: ['420s slide confirms Psalms 92:1-4.']
+  - id: p20260802-world
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-world
+    start: 454.78
+    end: 582.72
+    type: hymn
+    title: This Is My Father’s World
+    summary: The congregation is invited to sing the opening hymn, This Is My Father’s World.
+    questions: ['What is the opening hymn?']
+    topics: [worship]
+    scripture: []
+    transcript: 'The first hymn of the day is, This Is My Father’s World. Let us rise, sing together, and be renewed by God’s presence. [Hymn lyrics omitted.]'
+    confidence: 0.92
+    review_notes: ['465s frame and spoken title agree. Source IDs 44, 49 and 52 have word-boundary warnings, maximum 0.64s, enclosed within this whole hymn unit.']
+  - id: p20260802-opening-forgiveness
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-opening-prayer
+    start: 582.72
+    end: 643.86
+    type: prayer
+    title: Forgiveness, humility and security
+    summary: The leader prays for forgiveness, describing pride and insecurity in contrast with security in God.
+    questions: ['What concerns are brought into the opening prayer?']
+    topics: [prayer, forgiveness]
+    scripture: []
+    transcript: '[Edited ASR excerpt; opening praise and brief biblical allusions omitted.] We seek your forgiveness when we wilfully hold on to what we believe is ours instead of surrendering them to you. In our weakness, we succumb to sin and temptation. In spite of this, you are ever slow to anger, granting us grace and forgiveness when we repent. Thank you for rescuing us from the burden of our pride, redeeming our identity as your beloved, from which we draw the strength to work towards being gentle and lowly in heart. Because in you, we have nothing to prove to others, no quarrels to make and no insecurities to overcome. You are our source of security and peace within ourselves. [Closing allusion omitted.]'
+    confidence: 0.87
+    review_notes: []
+  - id: p20260802-opening-word
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-opening-prayer
+    start: 643.86
+    end: 734.34
+    type: prayer
+    title: Prayer for Pastor Yong and receptive hearers
+    summary: The leader names Pastor Yong and prays for attentive hearing and perseverance before Communion.
+    questions: ['Who is named as the preacher in the opening prayer?']
+    topics: [prayer, discipleship]
+    scripture: []
+    transcript: '[Edited ASR excerpt.] Whatever concerns and distractions that are weighing on our hearts and minds today, help us to hand them over to you, trusting that you will take care of things during this time that we dedicate to you in this morning’s service. May you anoint the lips of Pastor Yong as he administers your word to us. Please prepare our hearts to listen to your word, that it may be good soil from which the seeds of your word may sprout and bear fruits in our lives. Help us to persevere in hardship and be patient in suffering. [Closing prayer excerpt omitted.] Please be seated. We will now proceed for Holy Communion. [Transition.]'
+    confidence: 0.88
+    review_notes: ['Pastor Yong named at 665.08–669.48s; no full name inferred.']
+  - id: p20260802-communion-community
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-communion
+    start: 734.34
+    end: 826
+    type: communion
+    title: Communion, cell leaders and gathering together
+    summary: The minister recalls a cell-leader gathering and describes pandemic disagreements about Communion at home.
+    questions: ['How does the Communion reflection connect the sacrament with community?']
+    topics: [communion, service-life]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] We are going to be observing the Holy Communion, and yesterday we had a gathering of cell group leaders together at Brother Hadi’s home. It was quite interesting because we keep discussing about the various issues we all encounter as cell leaders and as people who want to shepherd a small group of people. In Holy Communion we are reminded that we all belong to God and we are a community. During the COVID time, there was a lot of argument over how to do Holy Communion. Our church, as you know, this year we decided to do Holy Communion on the first Sunday of every month. [Discussion of differing church practice and arguments for physical or remote participation omitted.]'
+    confidence: 0.86
+    review_notes: ['Source ID 93 has a 0.04s word-start offset. No denominational name silently repaired from ASR Bretton; excerpt omits that wording.']
+  - id: p20260802-communion-belonging
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-communion
+    start: 826
+    end: 902.74
+    type: communion
+    title: More than a ritual
+    summary: The minister presents Communion as a reminder of belonging to Christ’s community and contrasts it with a merely ritual action.
+    questions: ['Why does the minister say Communion is more than a ritual?']
+    topics: [communion, service-life]
+    scripture: []
+    transcript: '[Edited ASR excerpt.] The point is that Holy Communion is not just ritualistic. It’s really a command by our Lord Jesus Christ to remind us that you don’t belong to yourself, you belong to a community, the body of our Lord Jesus Christ. And when it becomes just a simple ritual, then it loses its meaning, actually. [Comparison with early house-church communities omitted.] Nonetheless, in faith we believe that when we come together and serve the Lord together and eat of the bread and drink of the cup, we are again reminded of what we are all about. May this be the case for us in every single Holy Communion.'
+    confidence: 0.88
+    review_notes: []
+  - id: p20260802-communion-prayer-reading
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-communion
+    start: 902.74
+    end: 977.9
+    type: communion
+    title: Lord’s Prayer and Communion institution reading
+    summary: The congregation prays the Lord’s Prayer, then hears the institution reading from 1 Corinthians 11.
+    questions: ['What reading accompanies Communion?']
+    topics: [communion, prayer]
+    scripture: ['1 Corinthians 11:23-26']
+    transcript: 'Let us begin by praying the Lord’s Prayer together. [Lord’s Prayer text omitted.] Now listen to the word of God that is taken from 1 Corinthians chapter 11. [Scripture quotation omitted: 1 Corinthians 11:23-26.]'
+    confidence: 0.94
+    review_notes: ['1000s frame displays the chapter and verses 23–26. Lord’s Prayer reference not guessed from memory.']
+  - id: p20260802-communion-distribution
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-communion
+    start: 977.9
+    end: 1144.34
+    type: communion
+    title: Distribution of bread and cup with a Communion hymn
+    summary: The minister invites baptized Christians to receive the elements and wait to partake together while a hymn accompanies distribution.
+    questions: ['What instructions are given for receiving Communion?']
+    topics: [communion, worship]
+    scripture: []
+    transcript: 'I now invite Sister Cat and Brother Hadi to come and help me to distribute the cup and the bread. For all who have been baptized in the church of Jesus Christ anywhere, you may partake of the bread and the cup, and you hold on to it until everybody has received it, then we will partake it together. [Communion hymn announced; title wording uncertain in ASR. Hymn lyrics omitted.]'
+    confidence: 0.86
+    review_notes: ['ASR renders title break down the bread of life; no exact title normalized from memory. 1030s frame corroborates hymn context, not an inspected title card. Whole distribution/music unit intentionally exceeds 90s.']
+  - id: p20260802-communion-partaking
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-communion
+    start: 1144.34
+    end: 1282.64
+    type: communion
+    title: Partaking together and thanksgiving prayer
+    summary: The minister checks distribution, invites everyone to stand and partake, and asks Brother Hadi to pray.
+    questions: ['How does the Communion observance conclude?']
+    topics: [communion, prayer]
+    scripture: []
+    transcript: 'Anyone who still have not received the bread and the cup, would you raise your hand? [Distribution exchange omitted.] With all who have received the bread and the cup, please stand. [Words over the elements omitted.] Let us partake of it together and have gratitude in our heart. And I’ll ask Brother Hadi later to lead us in a prayer. [Partaking and prayer interval; prayer words not recovered by supplied ASR.] Amen, please be seated. [Transition.]'
+    confidence: 0.8
+    review_notes: ['1215/1240s frames show partaking and another person at the lectern. Identity not inferred from appearance; Hadi is only the spoken partial name. Missing prayer retained as a review gap.']
+  - id: p20260802-proverbs
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-proverbs
+    start: 1282.64
+    end: 1498.06
+    type: scripture-reading
+    title: Responsive reading of Proverbs 1
+    summary: The leader announces Proverbs 1:1-33 and invites alternating congregational reading.
+    questions: ['Which Proverbs chapter is read responsively?']
+    topics: [worship]
+    scripture: ['Proverbs 1:1-33']
+    transcript: 'We will now move on to responsive reading. It is taken from Proverbs chapter 1 verses 1 to 33 and John chapter 16 verses 1 to 15. Again, I will be reading from the English Standard Version of the Bible. I will start reading first and may I invite you to read the next verse responsively. [Scripture reading omitted: Proverbs 1:1-33; congregational verses incompletely captured by ASR.]'
+    confidence: 0.9
+    review_notes: ['Spoken announcement plus 1300/1320/1460/1520s frames establish the range. A 1500s Proverbs 16:1-2 slide is a source mismatch, not a second reading inferred from a single frame. Whole reading retained as one unit.']
+  - id: p20260802-john
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-john
+    start: 1498.06
+    end: 1614.22
+    type: scripture-reading
+    title: Responsive reading of John 16
+    summary: The congregation reads John 16:1-15 responsively.
+    questions: ['Which Gospel passage is read before the sermon?']
+    topics: [worship, holy-spirit]
+    scripture: ['John 16:1-15']
+    transcript: 'Now let us turn to John chapter 16 and read through verses 1 through 15 responsively. [Scripture reading omitted: John 16:1-15; congregational verses incompletely captured by ASR.] Thank God for His Word.'
+    confidence: 0.94
+    review_notes: ['1520s programme slide and 1610s John 16:15 frame corroborate the announced range.']
+  - id: p20260802-reflection-care
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-reflection
+    start: 1614.22
+    end: 1679.6
+    type: reflection
+    title: Instruction and reassurance before the cross
+    summary: The worship leader connects Communion with Jesus’ care for his disciples in the Upper Room Discourse.
+    questions: ['How does the leader connect John 16 with Communion?']
+    topics: [communion, holy-spirit]
+    scripture: ['John 16:1-15']
+    transcript: '[Edited ASR excerpt.] After doing a little bit of research, I found that John 16 verses 1–15 is also known as the Upper Room Discourse. It represents the final intimate moments where Jesus offered profound instruction, solace and exhortation to His disciples before the cross. During this evening, He prepares them for the world’s inevitable enmity, speaks of His coming departure, and offers the comforting promise of the Holy Spirit’s arrival. [Brief reflection omitted.] Even though there is a deep qualitative difference that lies between us and our Creator, Jesus takes care to instruct, comfort, and reassure His followers personally and not as a distant personality at every step even leading till death.'
+    confidence: 0.88
+    review_notes: ['Description of the discourse remains attributed to the leader, not an independently supplied definition.']
+  - id: p20260802-reflection-nearness
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-reflection
+    start: 1679.6
+    end: 1707.4
+    type: reflection
+    title: Small yet loved by God
+    summary: The leader reflects on divine love and introduces a hymn about nearness.
+    questions: ['What personal response does the leader draw from the reading?']
+    topics: [faith, worship]
+    scripture: []
+    transcript: 'What does this mean to you? To me, this illustrates God’s deep selfless love for humanity and makes me appreciate the many paradoxes in our faith where life comes through death. [Biblical quotation attributed to David omitted; exact reference unannounced.] In the grand scheme of things, we are so small, yet we are given the love of God. Thank God that He is always near us.'
+    confidence: 0.87
+    review_notes: ['Short complete thought retained before hymn introduction.']
+  - id: p20260802-nearer
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-nearer
+    start: 1707.4
+    end: 1895.26
+    type: hymn
+    title: Nearer, Still Nearer
+    summary: The congregation sings Nearer, Still Nearer after the leader’s reflection.
+    questions: ['Which hymn follows the responsive readings?']
+    topics: [worship]
+    scripture: []
+    transcript: 'Now let us move on to our third hymn, Nearer, Still Nearer. [Hymn lyrics omitted.]'
+    confidence: 0.94
+    review_notes: ['1710s title card confirms the hymn. Whole musical unit retained.']
+  - id: p20260802-anthem
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-anthem
+    start: 1895.26
+    end: 2072.32
+    type: anthem
+    title: This World Is Not My Home
+    summary: The leader introduces the video anthem This World Is Not My Home.
+    questions: ['Which video anthem is presented?']
+    topics: [worship, eternal-life]
+    scripture: []
+    transcript: 'Our video anthem today is This World Is Not My Home. [Anthem lyrics omitted; transition to scripture reading.]'
+    confidence: 0.94
+    review_notes: ['1900s title card confirms the announcement; no performer identity inferred.']
+  - id: p20260802-ephesians
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-ephesians
+    start: 2072.32
+    end: 2108.78
+    type: scripture-reading
+    title: Ephesians 5:15-17
+    summary: The leader reads Ephesians 5:15-17 before the sermon.
+    questions: ['What supporting passage accompanies the John reading?']
+    topics: [worship, stewardship]
+    scripture: ['Ephesians 5:15-17']
+    transcript: 'Today’s scripture reading is taken from the book of Ephesians, chapter 5, verses 15 to 17. [Scripture reading omitted: Ephesians 5:15-17.] [Transition to sermon.]'
+    confidence: 0.95
+    review_notes: ['2080s reading slide and 2100/2120s sermon title slides corroborate reference.']
+  - id: p20260802-sermon-introduction
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-introduction
+    start: 2108.78
+    end: 2171.92
+    type: sermon
+    title: The Here and Now and an AV-team thank-you
+    summary: Pastor Yong introduces John 16 and Ephesians 5, then thanks the AV team for improving his view of the presentation screen.
+    questions: ['What passages frame The Here and Now?']
+    topics: [service-life]
+    scripture: ['John 16:1-15', 'Ephesians 5:15-17']
+    transcript: 'Happy Sunday. We will now move into a new chapter, in chapter 16 of John, and the supporting verses I’m giving is the one that’s read by Sister Cat earlier, Ephesians 5:15 to 17. But before I start again, I want to do an AMA because it’s a question kind of related. [Question-submission directions omitted.] I want to appreciate Brother Randolph and the AV team for helping me put up the screen behind. [Explanation of the previous difficulty seeing the screen and his habit of turning omitted.]'
+    confidence: 0.9
+    review_notes: ['2100/2120s title is The Here and Now; heading Expository Preaching on The Gospel of John is proposed series metadata only. Source ID 326 has 0.14s word-start offset inside this passage.']
+  - id: p20260802-coworkers
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-introduction
+    start: 2171.92
+    end: 2233.96
+    type: sermon
+    title: Appreciation for spontaneous service
+    summary: The preacher explains the screen’s livestream benefit and appreciates co-workers who serve without micromanagement.
+    questions: ['How does the preacher describe co-workers’ initiative?']
+    topics: [service, service-life]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] Because we livestream the worship service and the livestream later becomes a YouTube thing that you can actually access, my face will appear at the bottom corner. [Screen-position explanation omitted.] My appreciation to all my co-workers for doing all this. This is the way this church has been, a lot of people very spontaneously doing many things, in the cell ministry especially. Because of my understanding of scripture I don’t do a lot of micromanaging, because I believe we are all servants of God. [Comparison with Brethren teaching arrangements omitted.]'
+    confidence: 0.87
+    review_notes: []
+  - id: p20260802-paranormal-question
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-ama
+    start: 2233.96
+    end: 2290.26
+    type: question-answer
+    title: A question about paranormal claims in other faiths
+    summary: The preacher introduces questions about reincarnation, qigong, out-of-body experiences and prophecies in a multireligious setting.
+    questions: ['How does the AMA frame questions about paranormal claims?']
+    topics: [discernment, truth]
+    scripture: []
+    transcript: '[Edited ASR excerpt; question wording checked against displayed AMA slide.] Can you comment on the phenomenon of other faiths’ seemingly paranormal activities, like evidences of reincarnation, remote healing via qigong, out-of-body experiences in tai chi and yoga, prophecies and the like? These are things that we are maybe familiar with, especially if we live in Asia and Singapore, and we have a multiracial, multireligious society. [Examples of online reincarnation claims and educated claimants omitted.]'
+    confidence: 0.88
+    review_notes: ['2400/2520s slide confirms question; ASR compare normalized to displayed comment. Source ID 344 offset 0.04s enclosed. These are reported claims, not endorsements.']
+  - id: p20260802-paranormal-context
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-ama
+    start: 2290.26
+    end: 2354.28
+    type: question-answer
+    title: Mysticism and disagreements during COVID
+    summary: The preacher discusses claimed links between practices and mysticism, then recalls congregational disagreement about vaccination.
+    questions: ['What examples lead into the preacher’s advice about evidence?']
+    topics: [discernment, service-life]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] One of our co-workers, or ex-co-worker, one of the reverends we know is an expert in tai chi, actually. In his church he actually conducts tai chi courses. [The preacher’s claims about mysticism and out-of-body travel omitted.] People ask the question, what does the Bible say about all these things? [Transition to COVID controversies omitted.] During the COVID time there were a couple of families in this congregation, they are anti-vaccine people. So they got very upset because on the pulpit I was encouraging people to be vaccinated. [Introduction of a quotation attributed to Arnold Schwarzenegger.]'
+    confidence: 0.83
+    review_notes: ['Interfaith and medical context is the speaker’s account; no external verification or medical recommendation made here.']
+  - id: p20260802-doctors
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-ama
+    start: 2354.28
+    end: 2446.56
+    type: question-answer
+    title: Acting in good faith on the weight of evidence
+    summary: The preacher uses a quotation attributed to Arnold Schwarzenegger about nineteen doctors and one dissenter, retaining the qualification that the dissenter could be right.
+    questions: ['How does the preacher explain weighing majority expert advice?']
+    topics: [discernment, truth]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] Arnold Schwarzenegger says that if out of twenty good doctors, nineteen good doctors say I should be vaccinated and one good doctor says I should not, I’m going to listen to the nineteen. [Repetition and account of congregational departures omitted.] Now, of course, at the end of the day, that one good doctor could be right. But in good faith, the only way we can move forward in good faith at that time as you discuss all these things is to look at what the nineteen good doctors are in good faith looking at, rather than go for that one good doctor that has very strange theories and conspiracy theories. [Brief reaction omitted.]'
+    confidence: 0.86
+    review_notes: ['Quotation attribution and historical incident are unverified outside the recording. Slightly over 90s to preserve the qualification with the example.']
+  - id: p20260802-objective-evidence
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-ama
+    start: 2446.56
+    end: 2531.76
+    type: question-answer
+    title: Objective evidence and the scope of Scripture
+    summary: The preacher urges objective evidence and reasonable inquiry while describing Scripture’s sufficiency for salvation, faith and life.
+    questions: ['How does the preacher answer questions about qigong and paranormal claims?', 'What scope does he give to biblical sufficiency?']
+    topics: [discernment, truth, faith]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] I do believe that objective truth and objective evidences and even the scientific method is actually very important. [Car engineering and testing illustration omitted.] In all these things too, I do believe that it is important to seek objective truth and to seek a reasonable understanding of where it’s coming from. At the same time, remember that the Bible is sufficient unto faith relating to the category of the will of God in salvation, in faith and in life. The Westminster Confession of Faith says that the Bible is fully sufficient on it. The Bible doesn’t comment on qigong and all these things because it’s not relevant to the whole scheme of things. I do not place a lot of emphasis on all this, and I don’t think that the church should dwell a lot on things that are not covered by the Bible in relation to salvation, faith and life. [Transition to today’s text.]'
+    confidence: 0.88
+    review_notes: ['Claim about the confession is the preacher’s attribution, not a checked quotation.']
+  - id: p20260802-recap-segregation
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-recap
+    start: 2531.76
+    end: 2611.88
+    type: sermon
+    title: Recap of hatred and the danger of segregation
+    summary: The preacher recalls the previous session and criticizes Christian hostility that becomes total separation from others.
+    questions: ['What concern does the preacher raise about holy segregation?']
+    topics: [discernment, discipleship]
+    scripture: ['John 7:7']
+    transcript: '[Edited ASR excerpts.] Last week was about being hated, and we see a very drastic direction in the teaching of our Lord Jesus Christ. He keeps talking about love, and now all of a sudden he turns to talk about how the world will hate us. [Biblical quotation and discussion attributed to John MacArthur omitted.] Sometimes we go to the extreme of saying that only we are right. There are some denominations that advocate things like holy segregation, the idea that we are holy people so we will segregate ourselves from everybody else. [Examples of avoiding non-Christian friends omitted.]'
+    confidence: 0.86
+    review_notes: ['Last Session material is recap, not today’s sermon title. John 7:7 is explicitly cited at 2567.14s. Criticism of named teachers remains attributed.']
+  - id: p20260802-common-good
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-recap
+    start: 2611.88
+    end: 2690.58
+    type: sermon
+    title: Common grace and the fallen world
+    summary: The preacher distinguishes goodness among nonbelievers from the fallen world’s opposition to faith.
+    questions: ['How does the preacher distinguish common grace from the fallen world?']
+    topics: [discernment, faith]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] I don’t think so, because remember that all good is God’s good and God has common grace to all of us. [Biblical allusion omitted.] Everything that is good can be experienced by people who do not know Jesus Christ as well. In the grace of God, even people who do not know Christ can do things that are good as well. When we see the word world as the Bible talks about hating us, we are talking about the fallen world in sin, not the redeemed world. [Discussion of active persecution, Open Doors and social ostracism omitted.]'
+    confidence: 0.87
+    review_notes: ['Source ID 441 word-start offset 0.16s enclosed; no guessed reference for the rain/sun allusion.']
+  - id: p20260802-persecution-reasons
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-recap
+    start: 2690.58
+    end: 2764.4
+    type: sermon
+    title: Why the preacher expects opposition
+    summary: The preacher cites 2 Timothy 3:12 and describes differences in worldview and spiritual allegiance as reasons for opposition.
+    questions: ['What reasons for persecution are recalled from the previous session?']
+    topics: [faith, discipleship]
+    scripture: ['2 Timothy 3:12']
+    transcript: '[Scripture quotation omitted: 2 Timothy 3:12.] One of the key reasons, first one, is that we are just simply different from the fallen world. Our worldviews, our systems, our thinking processes are just very different. What’s important to us, what makes us happy, what makes us sad, quite different from the fallen world. So because of that, there will be persecution and difficulties. [Further discussion of spiritual opposition omitted.] We think that when you become a Christian, it’s a fun thing to do and life will go on with a lot of blessing. Yeah, that’s true to some extent. But at the same time, the devil will be on the move because that’s Satan’s job, to make sure that we stay far away from God.'
+    confidence: 0.87
+    review_notes: ['Theological explanations are attributed to the preacher. Source ID 471 offset 0.12s enclosed.']
+  - id: p20260802-witness-continuation
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-recap
+    start: 2764.4
+    end: 2837.94
+    type: sermon
+    title: Witness, perseverance and the continuation into John 16
+    summary: The preacher describes the cost of witness and explains that John 16 continues the preceding chapter’s thought.
+    questions: ['How does John 16 continue the previous chapter in this sermon?']
+    topics: [mission, discipleship, holy-spirit]
+    scripture: ['John 16:1-15']
+    transcript: '[Edited ASR excerpts; embedded biblical quotations omitted.] Once you witness, it’s an offensive thing. You’re going into the offensive for the truth of God. [Contrast with blending into the world omitted.] In today’s passage as we enter into chapter 16, chapter 16 actually is a continuation of chapter 15 in thoughts. It’s not a brand new kind of thinking process. Remember that the chapters and all these numbers are added in to make it easy for us to refer to. But the original writing is all just one whole writing. It is a kind of continuation as well, but it focuses very much on what the Holy Spirit will do in our life.'
+    confidence: 0.88
+    review_notes: ['Source ID 480 offset 0.16s enclosed. Chapter-number history remains the speaker’s explanation.']
+  - id: p20260802-sermon-prayer
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-sermon-prayer
+    start: 2837.94
+    end: 2879.5
+    type: prayer
+    title: Prayer for attention to God’s truth
+    summary: Pastor Yong prays for focus and receptive hearts before continuing the exposition.
+    questions: ['What does the preacher ask before opening John 16?']
+    topics: [prayer]
+    scripture: []
+    transcript: 'Let’s come before God and commit the time into His almighty hands. Let us pray. We ask, O God, that you help us to focus our mind on you and keep away from the many distractions so that we will hear you. As our sister Catherine was praying just now, may our heart be like good soil so that we will receive your word and be nourished and be convinced and be convicted that you are indeed God of truth. Have special mercy on your unworthy servant. [Biblical prayer allusion omitted.] In Jesus’ name we pray. Amen.'
+    confidence: 0.89
+    review_notes: []
+  - id: p20260802-john-warning
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-persecution
+    start: 2879.5
+    end: 2951.76
+    type: sermon
+    title: Violence committed in God’s name
+    summary: The preacher reads John 16:1-3 and connects its warning with religiously motivated violence and local radicalisation concerns.
+    questions: ['What warning does the preacher emphasize in John 16:2?']
+    topics: [faith, discernment]
+    scripture: ['John 16:1-3']
+    transcript: 'When we look at chapter 16, it opens up with Jesus continuing the thought earlier. [Scripture quotation omitted: John 16:1-3.] This is a prediction or prophecy of our Lord Jesus Christ. Verse 2 especially is of significance. [Restatement of the quotation omitted.] This is a very unusual kind of prediction. [The preacher discusses Singapore security announcements and self-radicalisation; details omitted in this excerpt.] In other countries, there are very real, significant affirmations of the prophecy of Jesus Christ.'
+    confidence: 0.86
+    review_notes: ['Source ID 522 offset 0.07s enclosed. Current-affairs claims not independently checked.']
+  - id: p20260802-coptic-account
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-persecution
+    start: 2951.76
+    end: 3028.38
+    type: sermon
+    title: The preacher’s account of the 2015 Coptic killings
+    summary: The preacher recounts the killing of twenty-one workers in Libya as an illustration of persecution and warns against seeking the violent recording.
+    questions: ['What historical example is used for persecution in John 16?']
+    topics: [faith]
+    scripture: ['John 16:2']
+    transcript: '[Edited ASR excerpts.] The most dramatic one would be the massacre of the twenty-one Coptic Christians in 2015. [Account of workers being captured, asked to renounce their faith and killed in Libya omitted, including graphic details and claims about the recording’s distribution.] I don’t recommend that you go and hunt it out, it’s a very scary thing. [Explanation of different Orthodox church traditions omitted.]'
+    confidence: 0.83
+    review_notes: ['3000s slide labels the incident and gives 21 February 2015; that exact date and the account’s livestream claim are not independently verified. Preserve as speaker attribution.']
+  - id: p20260802-coptic-witness
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-persecution
+    start: 3028.38
+    end: 3122.26
+    type: sermon
+    title: The account’s faith and martyrdom emphasis
+    summary: The preacher describes a Ghanaian worker joining the others in professing Christ, explicitly says he has not watched the video, and connects the narrative with John 16.
+    questions: ['What qualification does the preacher give about his source for the martyr account?']
+    topics: [faith]
+    scripture: ['John 16:2']
+    transcript: '[Edited ASR excerpts.] Out of the twenty-one, twenty were Egyptian Coptic Christians, one was a Ghanaian worker who is actually not a Christian. But because he got captured with all these people, and he looked at all these people’s such strong faith, he also decided that he would proclaim Jesus as Lord. In the video itself, I’ve never watched it, but I read about the transcript. They were each asked one by one, would you renounce your faith and say that you don’t believe in Jesus Christ? And one by one, they refused. [Graphic detail and discussion of sainthood omitted.] It’s a very clear definition of killing someone in the name of their God. [Reported perpetrators’ statement omitted.] This is like the most extreme persecution that we can think of.'
+    confidence: 0.82
+    review_notes: ['Preserves the preacher’s admission that he read an account rather than watched the footage. Biographical and historical assertions need human fact review. Complete anecdote unit slightly exceeds 90s.']
+  - id: p20260802-progressive-revelation
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-progression
+    start: 3122.26
+    end: 3218.5
+    type: sermon
+    title: Revelation unfolding in time
+    summary: The preacher reads John 16:4-6 and contrasts the disciples’ limited knowledge then with readers’ knowledge of later events.
+    questions: ['What does the preacher mean by progressive revelation?']
+    topics: [faith, discipleship]
+    scripture: ['John 16:4-6']
+    transcript: '[Scripture quotation omitted: John 16:4-6.] Here in these three verses, Jesus was talking about the progression of things that is happening. Remember that when Jesus Christ spoke to the disciples, he was not crucified yet, not resurrected, not ascended yet. Today we read the Bible, we already know the whole story, but put yourself in the shoes of the apostles and you don’t know what’s happening. [Further illustration omitted.] The revelation of God is called progressive revelation, that God throughout history revealed his redemption plan and his own character progressively. [Embedded biblical restatement omitted.] We are people who cannot handle the whole plan completely, and progressive revelation is given to us.'
+    confidence: 0.88
+    review_notes: ['Kept slightly over 90s to include reading and explanation without splitting the argument.']
+  - id: p20260802-aging
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-progression
+    start: 3218.5
+    end: 3315.44
+    type: sermon
+    title: Time, aging and a Perth beach
+    summary: The preacher uses aging and a recent difficulty balancing on beach rocks as an illustration of human limits in time and space.
+    questions: ['What personal example illustrates the limits of time and aging?']
+    topics: [discipleship]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] We are all people who are trapped in time-space. We always think about time-space as a science-fiction kind of a thing, but every single one of us here is a creature trapped in time-space. The true sign comes when you grow older. [Reading-glasses and balance examples omitted.] I just went on a short trip to Perth, just last week. [Description of a rocky beach and watching younger visitors omitted.] For the first time in my life I realized that my balance is a little bit off. Then I think, better don’t be a hero, go backwards, and my wife said, don’t go, come back. So it is a progression of time and time-space, very real, and we are stuck here.'
+    confidence: 0.87
+    review_notes: ['Autobiographical detail not independently checked. One complete illustration retained despite length.']
+  - id: p20260802-maturing
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-progression
+    start: 3315.44
+    end: 3365.56
+    type: sermon
+    title: Growing in understanding over a lifetime
+    summary: The preacher applies progressive learning personally, hoping that understanding of God matures with age.
+    questions: ['How does the preacher apply progressive learning to personal growth?']
+    topics: [discipleship]
+    scripture: []
+    transcript: 'But God, of course, is not like this. In the wisdom of God, the way God reveals His will to us from a personal angle is also a progressive revelation for many of us in our life. When you are very young, you learn of God in one way, but as you grow older, prayerfully you learn of God in other ways and you become more mature. The way you think now, prayerfully, is a lot different from the way you think when you are much younger. [Age comparisons omitted.] God progressively reveals His will to us, and in the whole scheme of things that is the case as well.'
+    confidence: 0.87
+    review_notes: ['ASR review his view edited to reveals His will from repeated immediate context; listening confirmation still required.']
+  - id: p20260802-redemptive-plan
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-progression
+    start: 3365.56
+    end: 3444.84
+    type: sermon
+    title: Creation, fall, redemption and consummation
+    summary: The preacher organizes the biblical story into four broad stages and describes Christ’s return as a new beginning.
+    questions: ['What four stages does the preacher use to describe God’s plan?']
+    topics: [faith, eternal-life]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] When we look at the plan of God being revealed to us, generally speaking we think of four great categories. The first would be creation, the creation of all things. The second major event that happened is the fall. [Theological attribution with an uncertain ASR name omitted.] The next set of plan that comes is called redemption. Our Lord Jesus Christ came, was crucified, died and buried, resurrected to redeem His people. Finally the whole plan of God will end, or rather not end but begin in a new beginning, in what we call the consummation, where Jesus Christ will come again and the redeemed will then be lifted up by Him and a new heaven and new earth will begin.'
+    confidence: 0.87
+    review_notes: ['3370s slide confirms God’s Redemptive Plan in History. Source ID 644 ends with a word 0.2s outside its segment; boundary placed at 3444.84 to contain the word.']
+  - id: p20260802-redemption-stage
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-progression
+    start: 3444.84
+    end: 3480.56
+    type: sermon
+    title: A familiar but incomplete presentation of redemption
+    summary: The preacher recalls a childhood evangelistic slogan and says the consummation has not yet arrived.
+    questions: ['What familiar presentation of salvation does the preacher revisit?']
+    topics: [faith, eternal-life]
+    scripture: []
+    transcript: '[Edited ASR excerpt, continuing the discussion of redemption.] People put a lot of emphasis on it today as Christians. People will share the gospel with you and tell you that if you believe in Jesus Christ you will go to heaven, and that’s the most simple idea of redemption. [Childhood church-van slogan, including Chinese wording, omitted rather than reconstructed.] In this concept, consummation of course is not here yet. Our Lord Jesus Christ is not here yet, so we are at the stage of redemption.'
+    confidence: 0.85
+    review_notes: []
+  - id: p20260802-future-religion
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-future
+    start: 3480.56
+    end: 3569.78
+    type: sermon
+    title: Religion as escape into a future life
+    summary: The preacher criticizes a future-only view of religion and introduces Karl Marx’s description of religion as an opiate.
+    questions: ['What future-only understanding of religion does the preacher question?']
+    topics: [faith, eternal-life, discernment]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] Many people actually don’t quite understand faith in its totality, the Christian faith. We are people who live in a world with many religions, especially for Singaporeans, a place where you can hear of other religions. Most religions would project the idea that it is all about the life to come, the eternal life, the future life. [Explanation of enduring present suffering for a better future omitted.] Because of that some people look at faith and think that it’s a very stupid idea. For example, Karl Marx says that religion is the opiate of the people. So it’s used to numb all of you so that you forget your suffering in life. [Further quotation omitted.]'
+    confidence: 0.86
+    review_notes: ['3600s slide corroborates the Marx attribution. Generalizations about religions and quoted author remain the preacher’s account, not archive conclusions.']
+  - id: p20260802-future-song
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-future
+    start: 3569.78
+    end: 3636.94
+    type: sermon
+    title: The anthem and the value of present life
+    summary: The preacher returns to the anthem and warns against interpreting future hope as making present life meaningless.
+    questions: ['Why does the preacher revisit This World Is Not My Home?']
+    topics: [eternal-life, discipleship]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] In the mind of Karl Marx and many other people, that’s what religion is all about. [Imagined criticism of the congregation omitted.] I dare say that even many Christians think like that. For many people, they keep thinking that it is about the future of bliss when Jesus Christ comes again, so in the meantime my life right now is going to be terrible. The anthem just now, for example, This World Is Not My Home. [Quoted lyrics omitted.] Unhappily, sometimes we look at songs like this or we look at the scripture, we keep thinking that for me right now in my life, it doesn’t mean anything. I just need to go to the next life.'
+    confidence: 0.88
+    review_notes: ['Song title retained, quoted lyrics omitted even within sermon commentary.']
+  - id: p20260802-cambodia-project
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-cambodia
+    start: 3636.94
+    end: 3716.46
+    type: sermon
+    title: A housing project and HIV-support partner
+    summary: The preacher recalls Cambodian housing work with an NGO assisting people with HIV and adds medical and administrative claims that need review.
+    questions: ['What project provides the setting for the Cambodia story?']
+    topics: [service, mission]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] Many years ago I was in Siem Reap trying to build houses for the poor there. In the end I built eighteen hundred all over Cambodia. One of the objectives was to work with different partners, and one of the partners is a non-government organization that specializes in helping people with HIV infection. [Medical explanation and claims about treatment, registration and burial procedures omitted from this excerpt; retained as review topics, not verified advice.]'
+    confidence: 0.8
+    review_notes: ['ASR Sian Rep normalized to Siem Reap provisionally. Speaker’s numbers and HIV claims not independently verified. Source ID 700 offset 0.07s falls inside omitted detail.']
+  - id: p20260802-cambodia-assumption
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-cambodia
+    start: 3716.46
+    end: 3821.9
+    type: sermon
+    title: An initial assumption later admitted to be wrong
+    summary: The preacher describes visiting a woman receiving assistance and admits that he initially judged her; his later correction is essential context.
+    questions: ['What initial judgment does the preacher later retract in the Cambodia account?']
+    topics: [discernment, service]
+    scripture: []
+    transcript: '[Edited ASR excerpts; this initial assumption is corrected later in p20260802-cambodia-correction.] There was one woman in my recollection. One of the things we did was we randomly went to different beneficiaries’ places to ascertain that they are actually there, that they need help. This woman’s place was chosen, and my colleague and I drove a long time to find her in the middle of nowhere. [The preacher’s initial inference about the woman’s sexual history omitted; he later acknowledges it was wrong.] Already I was quite unhappy, in a sense a bit judgmental. [Description of living conditions and offered dried fish omitted.]'
+    confidence: 0.81
+    review_notes: ['Do not isolate the mistaken assumption as fact. Longer setup unit retains visit and reaction together; correction at 4060.72–4132.82s is separately linked.']
+  - id: p20260802-cambodia-hospitality
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-cambodia
+    start: 3821.9
+    end: 3893.16
+    type: sermon
+    title: Hospitality from a disabled farmer
+    summary: The preacher recalls a former soldier’s hospitality and his own discomfort accepting a drink.
+    questions: ['What hospitality example appears within the Cambodia recollection?']
+    topics: [service]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] Other than her, of course, we also visited others. I remember one guy, also HIV, but he was an ex-soldier and his limbs got blown off by a landmine. Still he was a very serious farmer, also living in a terrible state. [Description of climbing a palm tree and offering a drink omitted.] My local co-worker said, you must take it, it’s a great honour. So when he was not looking I actually poured it away. Till today I felt a bit bad, because I didn’t drink whatever he was giving to me.'
+    confidence: 0.8
+    review_notes: ['Autobiographical account, not an externally verified description of the beneficiary. Unclear words are edited conservatively or omitted.']
+  - id: p20260802-hospitality-comparison
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-cambodia
+    start: 3893.16
+    end: 3934.12
+    type: sermon
+    title: A comparison from Stephen Tong’s autobiography
+    summary: The preacher recounts a hospitality anecdote attributed to Stephen Tong while returning to the poverty setting.
+    questions: ['Whose autobiography does the preacher mention?']
+    topics: [service]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] I’ve been translating the autobiography of senior pastor. There was one passage, he said that he went to some very remote place in Kalimantan. [Village meal and gift of pork fat described; details omitted.] Stephen Tong said that when he was not looking, I threw it out of the window, because I think I cannot eat that. So when I read that, I said, okay, at least I just threw away one small cup. So it was a serious poverty situation.'
+    confidence: 0.82
+    review_notes: ['Stephen Tong is a quoted anecdotal subject, not a live-speaker identity. Source IDs 754/755 repeat situation across a 0.2s word/segment discrepancy; passage retains the whole phrase before next unit.']
+  - id: p20260802-cambodia-kangkong
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-cambodia
+    start: 3934.12
+    end: 4001.38
+    type: sermon
+    title: Buying vegetables to spare a long walk
+    summary: The preacher says local staff bought the woman’s vegetables for five US dollars, sparing her a walk to market.
+    questions: ['How did local staff help the woman during the visit?']
+    topics: [service]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] The lady that we wanted to help had gathered a lot of kangkong out in the field. She was about to walk three kilometres to the wet market to sell it. We happened to be there when she was about to leave. [Conversation through a translator omitted.] The local Habitat Cambodian staff were very kind. They told her, you don’t have to walk, you just sell us all the kangkong right now, so it saves you a trip. She was very happy because the local Habitat staff then gave her US five dollars, which is a lot of money for her. She was overjoyed, very happy.'
+    confidence: 0.85
+    review_notes: ['Local terms kangkong and wet market normalized from context. Account and amount remain attributed.']
+  - id: p20260802-cambodia-next-life
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-cambodia
+    start: 4001.38
+    end: 4060.72
+    type: sermon
+    title: A gift she wanted to give to the temple
+    summary: The preacher recounts the woman’s insistence on giving the money to a temple because she feared returning to the same hardship in another life.
+    questions: ['Why did the woman in the preacher’s account want to give the money away?']
+    topics: [faith, discernment]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] I keep asking the translator, what are they talking about? The local Habitat staff asked her, what are you going to use the US five dollars for? She said that I’m going to give it to the temple, all of it. The local staff felt that you should save the money for better use. [Repeated persuasion omitted.] Suddenly she broke out into tears and cried. She said, I have to give the money to the temple because I cannot come back in the next life living like this. All of a sudden I realized that something is wrong in the picture.'
+    confidence: 0.85
+    review_notes: ['Reported translated speech within a recollection; not a general authoritative account of Buddhist belief.']
+  - id: p20260802-cambodia-correction
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-cambodia
+    start: 4060.72
+    end: 4132.82
+    type: sermon
+    title: Recognizing the harm of a mistaken judgment
+    summary: The preacher says he learned that the woman had been raped during war, admits shame at his earlier assumption, and returns to his concern about a future-only view of religion.
+    questions: ['How does the preacher correct his initial judgment of the woman?']
+    topics: [repentance, discernment, service]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] I asked the staff, what is it all about? Apparently she got HIV because she was raped by those soldiers in the civil-war situation, and that’s how she ended up in the state she’s in. [The preacher’s interpretation of her hope in another life omitted.] I was so ashamed of myself because you start out thinking that she is a person whose own personal life is terrible and so therefore she ended up with HIV. [Generalization about temples in neighbouring countries omitted.] That was my first encounter with a very deep understanding of what it means by thinking that religion is all about the next life.'
+    confidence: 0.84
+    review_notes: ['Essential correction to p20260802-cambodia-assumption. No victim identity or independently established medical history claimed.']
+  - id: p20260802-sanctification
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-sanctification
+    start: 4132.82
+    end: 4224.8
+    type: sermon
+    title: Sanctification as lifelong growth toward Christ
+    summary: The preacher says redemption includes sanctification and defines it as lifelong growth in likeness to Christ rather than passive waiting for a future life.
+    questions: ['How does the preacher define sanctification?', 'Why is Christian life about the here and now?']
+    topics: [discipleship, faith, sanctification]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] It doesn’t mean that we are people who are stuck and just look forward to the consummation. That’s not what Scripture is talking about. [Reference to Catherine’s earlier prayer omitted.] We are not beloved of God waiting for some consummation and in the meantime struggling in life. Within redemption itself is sanctification. We are redeemed when we are justified before God because of what Jesus Christ has done. In the eyes of God we are just, we are now faultless, not that we are perfect, but because of what Jesus has done for us. From this point onward we then go on a journey of sanctification. There are many definitions, but I think the best definition of sanctification is a lifelong process of growing to be more and more like our Lord Jesus Christ.'
+    confidence: 0.91
+    review_notes: ['4200s slide confirms From Redemption/Justification to Sanctification. Proposed sanctification topic not activated; discipleship is the existing suitable tag. Complete explanation slightly exceeds 90s.']
+  - id: p20260802-renewal
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-sanctification
+    start: 4224.8
+    end: 4298.6
+    type: sermon
+    title: Justification and renewal of life
+    summary: The preacher attributes a statement to Martin Luther and argues against treating faith simply as a ticket to heaven.
+    questions: ['Why does the preacher connect justification with changed living?']
+    topics: [discipleship, faith]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] Every single one of us who says we belong to Jesus Christ, the moment you say that I accept Jesus as my personal Saviour, you begin the journey of a lifelong sanctification process. Martin Luther says there is no justification without sanctification, no forgiveness without renewal of life, no real faith from which the fruit of new obedience do not grow. The problem with religion is that we are always stuck at one stage. Very happy that I believe in Jesus, now I got a ticket to heaven. I just wait for the day I die; in the meantime I just live life like everybody else. But this is not what the Bible is teaching us. [Further restatement omitted.]'
+    confidence: 0.89
+    review_notes: ['Luther wording and attribution recorded as the preacher’s quotation, not independently authenticated.']
+  - id: p20260802-time-resources
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-sanctification
+    start: 4298.6
+    end: 4371.64
+    type: sermon
+    title: Making use of time and entrusted resources
+    summary: The preacher links Ephesians 5 with the talents illustration and urges purposeful use of time rather than drifting toward retirement.
+    questions: ['How does Ephesians 5 shape the preacher’s view of daily life?']
+    topics: [stewardship, discipleship]
+    scripture: ['Ephesians 5:15-17', 'Matthew 25']
+    transcript: 'The Apostle Paul, in today’s alternate verse, says: [Scripture quotation omitted: Ephesians 5:15-17.] To the Apostle Paul, our days on earth are not days where you just drift away or you just struggle like crazy just so as to reach the retirement line and then have a good time after that. You make good use, best use of the time that God has given to you. Jesus talks about the talents in Matthew 25. [Parable details omitted.] How you use your talent or the time and the resources that God has given to you in your life is extremely important. [Brief restatement and transition omitted.]'
+    confidence: 0.89
+    review_notes: ['4400s slide confirms Ephesians 5:15-17. Only Matthew 25 is explicitly announced; no inferred verse range.']
+  - id: p20260802-rich-man
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-sanctification
+    start: 4371.64
+    end: 4402.64
+    type: sermon
+    title: A warning against wasting present life
+    summary: The preacher connects a rich-man illustration with the warning against foolish use of time.
+    questions: ['What warning concludes the discussion of time?']
+    topics: [stewardship]
+    scripture: ['Ephesians 5:17']
+    transcript: '[Edited ASR excerpt; rich-man biblical illustration and quoted speech omitted. The ASR’s Luke chapter reference is unresolved.] Here it’s the same, verse 17, foolish. Foolish if you waste your time and you think that life is just about the future, and you don’t care about whatever is happening to you today.'
+    confidence: 0.8
+    review_notes: ['At 4377.52s ASR says Luke chapter 10. No corrected reference supplied from memory; human listening/source reference check required.']
+  - id: p20260802-helper
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-spirit
+    start: 4402.64
+    end: 4476.26
+    type: sermon
+    title: The promised Helper after Jesus’ departure
+    summary: The preacher reads John 16:7-11 and describes the sequence from Christ’s death and resurrection to the Spirit’s coming.
+    questions: ['Why does the preacher connect Jesus’ departure with the Spirit’s coming?']
+    topics: [holy-spirit]
+    scripture: ['John 16:7-11']
+    transcript: 'In today’s passage, Jesus Christ laid out the processes for us. In verse 7 He says: [Scripture quotation omitted: John 16:7.] God the Holy Spirit will be sent to us. This started in John 14, 15, 16. Jesus Christ began to lay out the process of what happened in the here and now, that He is going to be ascended and then God the Holy Spirit will come. [Scripture quotation omitted: John 16:8-11.] So there is a progressive thing that is happening right here. Our Lord Jesus Christ, right after He said this, a few hours later He will be crucified, He will be dead, and then later He will be resurrected, and then finally He will be ascended.'
+    confidence: 0.9
+    review_notes: []
+  - id: p20260802-spirit-worldwide
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-spirit
+    start: 4476.26
+    end: 4552.24
+    type: sermon
+    title: From a local ministry to the Spirit’s worldwide presence
+    summary: The preacher uses a relay-race analogy to describe the Spirit’s indwelling presence beyond Jesus’ earthly location.
+    questions: ['What does the preacher’s baton-passing illustration mean?']
+    topics: [holy-spirit, mission]
+    scripture: ['John 14:15-17']
+    transcript: '[Edited ASR excerpts.] Up to that point in time, Jesus is just one human being, one person. But His one-body presence will be followed by the indwelling of God the Holy Spirit all over the world. His work will move from the place where He was constrained physically into the rest of the world, where the Holy Spirit dwells in every one of us. Jesus’ ministry then entered into a part where it’s almost like a race where He passed the baton to God the Holy Spirit. From one place in Jerusalem, it now goes all over the world because God the Holy Spirit will dwell in us. [Scripture quotation omitted: John 14:15-17; ASR incompletely captures the reading.]'
+    confidence: 0.88
+    review_notes: ['4550s slide gives John 14:15-17. Source IDs 884/893 have 0.07/0.10s offsets inside passage. Analogy is the preacher’s formulation, not added doctrine.']
+  - id: p20260802-not-alone
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-spirit
+    start: 4552.24
+    end: 4608.4
+    type: sermon
+    title: The believer does not walk alone
+    summary: The preacher applies the Spirit’s indwelling to believers in Singapore and contrasts it with a football slogan.
+    questions: ['Why does the preacher say believers do not walk alone?']
+    topics: [holy-spirit, faith]
+    scripture: ['John 14:15-17']
+    transcript: '[Edited ASR excerpts.] The progression here is that Jesus Christ is about to be crucified. He asks the Father to send God the Holy Spirit, and so we are recipients of that now. Although we are nowhere near Jerusalem, we are in Singapore, God the Holy Spirit dwells in you and dwells with you forever. The one thing that you really need to remember is that you do not walk alone. [Football-slogan comparison and joking about the team name omitted.] But this is real. Every single one of us who believe in Him, we don’t walk alone because God the Holy Spirit is indwelling. [Unclear final word omitted.]'
+    confidence: 0.87
+    review_notes: ['Source ID 919 offset 0.10s enclosed. ASR final entity is not treated as reliable wording.']
+  - id: p20260802-conviction
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-spirit
+    start: 4608.4
+    end: 4677.4
+    type: sermon
+    title: Conviction and persuasion
+    summary: The preacher distinguishes divine conviction from a human attempt to win an argument and introduces a discouraged evangelist’s question.
+    questions: ['How does the preacher explain the word convict?']
+    topics: [holy-spirit, truth, mission]
+    scripture: ['John 16:8-11']
+    transcript: '[Edited ASR excerpts.] Jesus Christ said God the Holy Spirit, on the broader scale, will convict. Convict means not just persuasion, but declare, prove, judge. You go to the court of law, you get convicted of a crime. [Comparison with his own preaching omitted.] It’s a conviction, it’s a declaration, because God of course is sovereign, and human beings often have difficulty understanding this. Just yesterday somebody sent me a very long series of AMA questions, not even from our church. He has been trying to preach the gospel to people and is very unsuccessful. [Unclear wording omitted.] He feels very disillusioned.'
+    confidence: 0.86
+    review_notes: ['Source ID 926 offset 0.05s enclosed. Unclear ASR church hypocrite phrase omitted, not used to accuse the correspondent.']
+  - id: p20260802-arguments
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-spirit
+    start: 4677.4
+    end: 4723.96
+    type: sermon
+    title: Evangelism is not entirely dependent on the speaker
+    summary: The preacher responds to discouragement by arguing that conviction is the Spirit’s work rather than the product of increasingly elaborate arguments.
+    questions: ['What does the preacher say to someone discouraged by unsuccessful evangelism?']
+    topics: [holy-spirit, mission]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] I was trying to tell him that you think like this because you think everything depends on you. You’re thinking like the rest of the world. You’re thinking that our thing is about persuasion. I prove the case to you, I do this argument. So he lists out a lot of arguments. [Genealogy example and embedded biblical phrase omitted.] I tried my best to explain to him that that’s not how it works. When the Bible talks about God the Holy Spirit, it’s not a persuasion thing, it’s a conviction thing. He comes and convicts because He is the power.'
+    confidence: 0.87
+    review_notes: []
+  - id: p20260802-three-convictions
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-spirit
+    start: 4723.96
+    end: 4781.74
+    type: sermon
+    title: Sin, righteousness and judgment
+    summary: The preacher summarizes the Spirit’s conviction concerning rejection of Christ, Christ’s righteousness and Satan’s defeat.
+    questions: ['What three convictions does the preacher draw from John 16?']
+    topics: [holy-spirit, truth]
+    scripture: ['John 16:8-11']
+    transcript: '[Edited ASR excerpts; restated biblical clauses omitted.] When we use the word reject Jesus, it’s not just about rejecting His salvation, but rejecting His truth, everything that is related to Him. And all truth is God’s truth. [The preacher explains righteousness and judgment from John 16:8-11; quoted/restated clauses omitted.] What does this mean? This means that our faith is not just a faith of voices and persuasion, but there is a supernatural element involved in the way we understand the world, because the Holy Spirit speaks to you in our hearts.'
+    confidence: 0.89
+    review_notes: ['4800s slide confirms the three-part interpretation. Source ID 968 offset 0.12s enclosed.']
+  - id: p20260802-spirit-truth
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-spirit
+    start: 4781.74
+    end: 4870.2
+    type: sermon
+    title: The Spirit’s affirmation of truth
+    summary: The preacher contrasts different responses to the same biblical text and rejects the idea that Christianity’s survival depends only on human effort.
+    questions: ['Why does the preacher say truth does not depend entirely on human effort?']
+    topics: [holy-spirit, truth, faith]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] When we read the Word of God, as the Westminster Confession of Faith says, the same words, black letters printed on white paper, to some people it’s nonsense. [Examples about marriage and business honesty omitted.] But for other people, they look at it and say, this is the truth. What’s the difference? The presence of the Holy Spirit speaking in the heart. [Account of another pastor’s warning that Christianity could die omitted.] God the Holy Spirit is not dependent on us. It’s not like we work very hard, then God is glorified. God the Holy Spirit is the reason why truth will always be there, because we know, because He convicts us in our heart.'
+    confidence: 0.88
+    review_notes: ['Source ID 981 offset 0.08s enclosed. Confession attribution and theological claims remain the preacher’s.']
+  - id: p20260802-remembrance
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-spirit
+    start: 4870.2
+    end: 4937.42
+    type: sermon
+    title: Remembering Christ’s teaching
+    summary: The preacher reads John 16:12-15 and John 14:26, explaining that the Spirit affirms truth and brings Christ’s teaching to mind.
+    questions: ['How does the preacher connect the Spirit with remembering Jesus’ words?']
+    topics: [holy-spirit, discipleship]
+    scripture: ['John 16:12-15', 'John 14:26']
+    transcript: 'Then Jesus Christ went on to say: [Scripture quotations omitted: John 16:12-15.] God the Holy Spirit lives in our heart, and when we read the Word of God, the God of truth will affirm to us that this is the truth. Especially He will bring to mind the things that Jesus Christ has taught to us. Earlier in chapter 14 when we studied, remember this verse: [Scripture quotation omitted: John 14:26.]'
+    confidence: 0.93
+    review_notes: ['5100/5270s slides show John 16:14-15 and John 14:26. Source ID 1026 offset 0.06s lies within omitted reading.']
+  - id: p20260802-marriage-study
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-marriage
+    start: 4937.42
+    end: 5039.48
+    type: sermon
+    title: Marriage, expectations and serving a spouse
+    summary: The preacher recalls a cell-group study of Timothy Keller’s The Meaning of Marriage and asks what service to a spouse feels unnatural.
+    questions: ['What question from the marriage study does the preacher bring to the congregation?']
+    topics: [discipleship, service, holy-spirit]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] In the here and now, that’s how we will live. We are people who live by the Word of God, because when we read it, the Holy Spirit speaks to us and reminds us who we are. In my own cell group on Thursday, we were discussing marriage, because we are now studying The Meaning of Marriage by Timothy Keller. [Member’s surprise at marriage and comments about dramas omitted.] A lot of people don’t realize that it’s work, and it’s a lot of work. One of the guiding study notes asks, when is the last time you served your spouse, and can you give illustrations of how difficult it is? What are some of the things that you do for your spouse that are not natural to you?'
+    confidence: 0.89
+    review_notes: ['Book and author are explicitly named in supplied speech, not live-speaker identities or activated taxonomy. Complete setup/question unit intentionally exceeds 90s.']
+  - id: p20260802-making-bed
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-marriage
+    start: 5039.48
+    end: 5109.14
+    type: sermon
+    title: Making the bed as an example of mutual service
+    summary: The preacher uses different preferences about making a bed to illustrate changing habits out of love for a spouse.
+    questions: ['How does the bed-making example illustrate serving a spouse?']
+    topics: [service, discipleship]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] The simplest illustration, for example, you make your bed or not in the morning? [Audience question and comments omitted.] Some people look at the bed and say, I’m going to sleep anyway, so why do I want to make my bed? But there are some people who have a habit of making the bed all their life. If one really must have a bed that is very well made and the other spouse does not like it, then it can be a source of contention. In order for them to serve each other and love each other, either the guy should give up making the bed or the girl should make the bed a little bit more. Then it becomes very unnatural because it’s not what I do. [Restatement omitted.]'
+    confidence: 0.89
+    review_notes: ['Example is hypothetical; no specific spouse identified.']
+  - id: p20260802-spirit-serving
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-marriage
+    start: 5109.14
+    end: 5177.76
+    type: sermon
+    title: The Spirit’s help in daily service
+    summary: The preacher asks whether changed behaviour is achieved alone or through the Spirit’s help, then relates that question to love in marriage.
+    questions: ['How does the preacher connect the Holy Spirit with serving a spouse?']
+    topics: [holy-spirit, service, discipleship]
+    scripture: []
+    transcript: 'The next question that Timothy Keller asks is, is that something you do on your own, or do you think God the Holy Spirit is helping you do this? That’s an interesting question. In the discussion some members say that many times we believe it is God the Holy Spirit that enables me to do this, because if it is left to me, I’m not going to do it. It’s God the Holy Spirit who prompts me and gives me the strength to do this. Not only that, it’s also because God the Holy Spirit speaks to me through His Word. [Biblical quotations/allusions about marital love and love for enemies omitted; references unannounced.] God the Holy Spirit speaks to me and tells me, then how come I hate my spouse? I shouldn’t do that. That’s what it means.'
+    confidence: 0.89
+    review_notes: ['No unannounced verse numbers added from memory.']
+  - id: p20260802-daily-word
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-daily
+    start: 5177.76
+    end: 5263.72
+    type: sermon
+    title: Daily devotion against returning to old habits
+    summary: The preacher reports a member’s experience of forgetting what she has read and urges regular Scripture reading, prayer and consistency.
+    questions: ['Why does the preacher stress daily devotion and repeated reading?']
+    topics: [discipleship, prayer, holy-spirit]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] This other member said that I realize I may read about it now and I believe it, God will speak to me. But as I turn around, all of a sudden I forget, and then I start over again in the old habits. Therefore it’s important for me to keep reading the Word of God and keep going back. Herein lies the importance of the here and now, the discipline that we need to have. You may know about God the Holy Spirit being with you. You need to continually remind yourself by reading the Word of God. So daily devotion, prayer, all these are very important. [Further warning and biblical quotation/list omitted; exact reference unannounced.] You need to do this consistently and not reject God at every turn of your life.'
+    confidence: 0.89
+    review_notes: ['Source IDs 1133/1139 offsets 0.08/0.22s enclosed in one thought-aligned passage.']
+  - id: p20260802-community-joy
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-community
+    start: 5263.72
+    end: 5360.54
+    type: sermon
+    title: Growing together and recognizing joyless ministry
+    summary: The preacher reads John 13:34-35, describes growth as a shared journey and calls joyless, bitter service a sign that something is wrong.
+    questions: ['What does the preacher say about joyless ministry?']
+    topics: [service-life, service, holy-spirit]
+    scripture: ['John 13:34-35']
+    transcript: 'Not only that, it’s not just about you alone. In our walk we don’t just walk on the journey of faith, we walk with other people. In John 13 when we started this final discourse of Jesus Christ: [Scripture quotation omitted: John 13:34-35.] Once we believe in our Lord Jesus Christ, we begin the journey of growth, of becoming more and more like our Lord Jesus Christ. It is a joyous journey. I’m not saying that there are no challenges. [Brief biblical allusion omitted.] Yesterday when we were doing the cell-leaders discussion, I was telling the folks that one of the signs that something is wrong is when you become joyless in ministry. You do ministry work and feel that it’s a chore, that it’s joyless, it’s bitter. Something is wrong. [Examples of church tasks omitted.]'
+    confidence: 0.87
+    review_notes: ['5400s slide confirms John 13:34-35. Source ID 1161 offset 0.16s enclosed. Retain qualification about challenges; not a clinical judgment about a person’s distress.']
+  - id: p20260802-loving-community
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-community
+    start: 5360.54
+    end: 5449.98
+    type: sermon
+    title: Knowing, loving, sharing and living the Word together
+    summary: The preacher encourages a joyful shared life guided by the Spirit and lived out in a loving community of faith.
+    questions: ['What four responses to the Word does the preacher urge?']
+    topics: [discipleship, holy-spirit, service-life]
+    scripture: ['John 13:34-35']
+    transcript: '[Edited ASR excerpts.] I am convinced beyond all doubt that God wants every single one of us, single or married, to live a life of joy. Not that there are no challenges, but the bottom line is that God the Holy Spirit will be with us and assist us along the way. However, you are not to walk alone. Together with fellow brothers and sisters in Christ, we will walk together. [Restatement of the Spirit’s guidance and warning about neglecting Scripture omitted.] I pray that you will know the Word of God, you will love the Word of God, you will share the Word of God, and you will live it out with a loving community of faith, walking together as we approach the consummation of our Lord Jesus Christ. May this be a reflection of our life.'
+    confidence: 0.89
+    review_notes: []
+  - id: p20260802-willing-service
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-community
+    start: 5449.98
+    end: 5508.24
+    type: sermon
+    title: Serving without waiting to be pressed
+    summary: The preacher recalls a conversation about encouraging gifted people to serve and urges a willing response to the Spirit’s prompting.
+    questions: ['What practical call to service closes the sermon?']
+    topics: [service, service-life, holy-spirit]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] I know that it’s especially difficult in an urban setting in the modern world. Yesterday Brother Patrick was talking about getting people to serve, and we were talking about how a lot of you are so talented, really very good at everything, and you should come out and serve. [Description of having to ask and press people omitted.] A lot of us look at the thing and say, I know, but I just won’t do it. Don’t be that person. Listen to the prompting of the Holy Spirit in your life. Seek Him, and He will tell you what to do, and do it. [Nike-slogan aside omitted.] Know the Word of God, love the Word of God, share, live it out. Don’t wait for people to tell you. Go out and live the life that God has meant for you to live.'
+    confidence: 0.89
+    review_notes: ['ASR go away for people edited to wait for people from immediate argument; no identity expansion for Patrick.']
+  - id: p20260802-closing-prayer
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-closing-prayer
+    start: 5508.24
+    end: 5607.58
+    type: prayer
+    title: Prayer for an active, growing life
+    summary: Pastor Yong prays for surrender and obedience rather than passive waiting for death or a future life.
+    questions: ['What response does the closing sermon prayer ask for?']
+    topics: [prayer, discipleship, holy-spirit]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] We thank you, God, for speaking to us through your Word. Many of the things that we heard, we already know, but somehow many of us just live life in a very passive way. May we understand your Word so deeply that we know Jesus Christ came to save us, not just for us to sit around and wait to die and for the next life to come, but to live life in the here and now. We’ve got the Holy Spirit indwelling in us, empowering us, helping us to recall His words and His teaching and giving us the ability to be obedient to it. But we need to surrender. [Further petitions for humility and growth omitted.] Be with us, O God, and help us because we are weak, but you are strong. Listen to our prayers. In Jesus’ name we pray. Amen.'
+    confidence: 0.89
+    review_notes: ['Whole prayer retained as one 99.34s unit.']
+  - id: p20260802-creed
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-creed
+    start: 5607.58
+    end: 5652
+    type: creed
+    title: Affirming faith with the Apostles’ Creed
+    summary: The congregation is invited to stand and affirm its faith with the Apostles’ Creed.
+    questions: ['Which creed follows the sermon?']
+    topics: [faith, worship]
+    scripture: []
+    transcript: 'Would you stand with me as we affirm our faith by reading the Apostles’ Creed? Then we go into a time of prayer. The Apostles’ Creed. [Creed recitation omitted; early portion not recovered in supplied ASR. No familiar wording reconstructed.]'
+    confidence: 0.86
+    review_notes: ['Boundary near 5652s follows a segment that joins final Amen to prayer invitation; human listening may refine this transition.']
+  - id: p20260802-response-prayer
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-pastoral
+    start: 5652
+    end: 5755.56
+    type: prayer
+    title: Personal response and prayer for cell groups
+    summary: The preacher introduces personal response and prayer for more cell leaders and participation in a supporting community.
+    questions: ['What two prayer items follow the sermon?']
+    topics: [prayer, service-life, holy-spirit]
+    scripture: []
+    transcript: 'Let’s come before God to pray. We pray for ourselves and seek God in response to the sermon that has been preached. If you follow Jesus Christ, God the Holy Spirit is in you; you can speak to God and respond to Him. Second prayer item, let us lift up our cell-group ministry to God and ask God to raise up more cell leaders and encourage us to be in a cell so that we will not walk all by ourselves, but together with a community of faith, supporting and encouraging one another. You can pray verbally or you can pray in your heart. Let’s start by praying for ourselves. [Personal-prayer interval.]'
+    confidence: 0.9
+    review_notes: ['5652s transition is approximate within an ASR segment; coherent prayer invitation retained. Isolated Thank you in prayer gap omitted as uncertain.']
+  - id: p20260802-cell-prayer
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-pastoral
+    start: 5755.56
+    end: 5836.32
+    type: prayer
+    title: Prayer for cell ministry and mutual service
+    summary: The congregation is asked to pray for cell leaders and a community that serves one another in love.
+    questions: ['What is requested for the cell-group ministry?']
+    topics: [prayer, service-life]
+    scripture: []
+    transcript: 'Congregation, let us lift up our cell ministry in the hands of God and ask God to raise up cell leaders and also call us to be part of a community of faith, so that we don’t just come here for our own sake but we want to serve one another in love as commanded by Jesus. Let us pray. [Prayer interval; no further words reconstructed.]'
+    confidence: 0.89
+    review_notes: []
+  - id: p20260802-pastoral-prayer
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-pastoral
+    start: 5836.32
+    end: 5883.52
+    type: prayer
+    title: Patience, trust and help for those struggling
+    summary: The minister prays for patience in God’s timing and for the congregation to become ready help for those in difficulty.
+    questions: ['What does the pastoral prayer ask for those who are struggling?']
+    topics: [prayer, faith, service]
+    scripture: []
+    transcript: 'Let us pray together. We thank you, O God, for the privilege of prayer. We know that when we pray, you hear us, and so help us to trust in you. Sometimes we just lack the patience to wait because our timing is so different from your timing. Give us the faith we need to trust that you are God who cannot possibly make any mistake and that we will trust in God the Holy Spirit working in our heart to make all things right. We pray for brothers and sisters in Christ among us who are struggling or have difficulties, and we pray that God the Holy Spirit will strengthen and help them as you send us forth to be ready help as well. Listen to our prayers. In Jesus’ name we pray. Amen. You may be seated.'
+    confidence: 0.9
+    review_notes: []
+  - id: p20260802-offering
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-offering
+    start: 5883.52
+    end: 5967.64
+    type: offering
+    title: Offertory and support for evangelism
+    summary: The minister introduces giving and says the first-Sunday second offering supports evangelism work.
+    questions: ['What is the second offering designated for?']
+    topics: [stewardship, mission, service-life]
+    scripture: []
+    transcript: 'We’re going to move into our offertory now. You may give by the QR codes or by the box in front. This being the first Sunday, the second [offering wording unclear] will go to evangelism work. [Offertory interval; music/lyrics, if any, not transcribed.]'
+    confidence: 0.84
+    review_notes: ['ASR second plaque / Evangelism World interpreted conservatively from context; exact wording needs listening. 5920s slide establishes offertory, but no account or QR details are reproduced.']
+  - id: p20260802-pray-often
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-prayer-exhortation
+    start: 5967.64
+    end: 6061.2
+    type: exhortation
+    title: Pray often — a Korean church recollection
+    summary: The minister introduces What a Friend We Have in Jesus, recalls an early-morning Korean prayer meeting and encourages frequent prayer.
+    questions: ['What encourages the minister to urge frequent prayer before the closing hymn?']
+    topics: [prayer, worship]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] Our closing hymn is a wonderful hymn, What a Friend We Have in Jesus. Every time I sing this hymn I always am touched by that phrase in there. [Quoted hymn lyrics omitted.] It’s such a wonderful thing to be reminded that prayer is important. Prayer meetings in churches are always the least attended event in any church, maybe with the exception of the Korean church. [Anecdote about a Seoul church described as small despite eighteen thousand members, early-morning prayer and claims about Korean Christianity omitted.] Remember to pray often and much. Let’s sing this song, What a Friend We Have in Jesus.'
+    confidence: 0.83
+    review_notes: ['Unclear ASR church name not normalized. Attendance and demographic claims, including half the population is Christian, are unverified speaker assertions requiring human review. Whole introduction/anecdote retained.']
+  - id: p20260802-friend
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-friend
+    start: 6061.2
+    end: 6186.06
+    type: hymn
+    title: What a Friend We Have in Jesus
+    summary: The congregation sings the closing hymn and is invited to rise near its final portion.
+    questions: ['What hymn closes the service?']
+    topics: [worship, prayer]
+    scripture: []
+    transcript: '[Hymn lyrics omitted: What a Friend We Have in Jesus.] Let’s rise. [Remaining hymn lyrics omitted.]'
+    confidence: 0.94
+    review_notes: ['6000/6070s frames and spoken introduction corroborate title. Whole hymn unit retained rather than dividing verses artificially.']
+  - id: p20260802-benediction
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-benediction
+    start: 6186.06
+    end: 6261.78
+    type: benediction
+    title: Doxology and blessing from Hebrews 13
+    summary: The minister invites the doxology and pronounces a blessing introduced as coming from Hebrews 13.
+    questions: ['From which chapter is the closing blessing announced?']
+    topics: [worship]
+    scripture: ['Hebrews 13']
+    transcript: 'Wonderful. Let’s sing doxology in praise of God and in faith receive His blessing taken from Hebrews 13. [Doxology lyrics omitted.] [Scripture blessing omitted: Hebrews 13; verse range not announced.] [Sung response omitted.] Congregation, please be seated.'
+    confidence: 0.91
+    review_notes: ['Chapter is explicitly announced; no verse range supplied from memory. 6240s frame confirms blessing posture, not textual reference.']
+  - id: p20260802-directory
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-announcements
+    start: 6261.78
+    end: 6347.84
+    type: announcement
+    title: Photo-directory update and knowing one another
+    summary: The preacher asks for photo-directory updates and connects them with building warmer relationships in a formal church setting.
+    questions: ['Why is the congregation asked to update the photo directory?']
+    topics: [service-life]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] I have a couple of announcements for you; it’s related to the preaching today too. We had a photo directory done about two years ago, and it’s time to do an update. If you have not sent us your name and photo, please do so. [Contact and QR directions omitted.] You at least know each other, who is who, and we pray that this is a good way for us to start to know each other well in church ministry. [Comparison between house churches and large formal congregations omitted.] We pray that we can at least mitigate a little bit by being more friendly to each other. Send your photo and your name and put it in the directory so everybody knows who they are.'
+    confidence: 0.89
+    review_notes: ['6300s slide confirms directory update. No private directory link, phone number, QR contents or participant photo reproduced.']
+  - id: p20260802-snack-ministry
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-announcements
+    start: 6347.84
+    end: 6424.56
+    type: announcement
+    title: Snack ministry and fellowship after worship
+    summary: The preacher appreciates refreshments, suggests shared participation in a snack ministry and encourages people to stay for fellowship.
+    questions: ['What proposal is made for fellowship after worship?']
+    topics: [service-life, service]
+    scripture: []
+    transcript: '[Edited ASR excerpts.] We pray that we won’t be a place like a movie theatre right after worship service. We think that the snack ministry is important. [Appreciation of a member’s baking and light-hearted remarks omitted.] We appreciate all the wonderful snacks that they have been supporting us with, and we believe that other people should do so too. After worship service, you can hang around. [Coffee-machine anecdote and contact directions omitted.] Then we can have fellowship with each other. I think that’s important. I was thinking that it should be something like the flower ministry: every week somebody is offering the flowers, different people. So snack ministry maybe can be like this too, every week different people come up with different things.'
+    confidence: 0.88
+    review_notes: ['ASR snap normalized to snack from repeated context. Spoken partial names not expanded.']
+  - id: p20260802-lunch-dismissal
+    video_id: 1R4gnCvqrOA
+    section_id: s20260802-announcements
+    start: 6424.56
+    end: 6464.981
+    type: announcement
+    title: August 23 community lunch, serving and dismissal
+    summary: The preacher announces the August 23 community lunch, invites ministry participation and dismisses the congregation to silent meditation.
+    questions: ['When is the announced community lunch?', 'How can people become involved in ministry?']
+    topics: [service-life, service]
+    scripture: []
+    transcript: 'Remember that 23rd of August we’re going to have a community lunch that we have every quarter or so. Thanks, Patrick, for leading this one. [Ordering directions and brief exchange omitted.] Use this to come and get involved with ministry work, Bible reading, chairing, pianist, anything; just use this to contact us. That’s all the announcements I have for you. You may be dismissed with silent meditation. Know that the Lord is with you. [Closing visual context to recording end.]'
+    confidence: 0.91
+    review_notes: ['6430s slide shows 23 Aug (Sun), 11:30am, fellowship lunch after service; order by 20 Aug. Final clear speech ends 6462.86s and 6460s frame retains service contact context. Historical invitation, not a current event.']
