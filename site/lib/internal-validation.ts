@@ -3,6 +3,7 @@ import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { parseYaml, parseWithPath, ServiceSourceSchema } from './archive';
 import { LegacyServiceSourceSchema, type LegacyServiceSource } from './legacy-schema';
+import { PRESERVATION_FILE } from './preservation';
 
 export const MIGRATION_NOTE = 'Chapter-search migration: original passages preserved in passages.internal.yaml; chapter summaries are initial seeds and keywords are spoken-text candidates requiring human review. No editorial approval implied.';
 export const OUTLINE_NOTE = 'Concise service outline: original chapter metadata and boundaries preserved in chapters.internal.yaml; public groups and selective subsections follow the sermon argument and service context. Agent interpretation remains needs_review.';
@@ -74,6 +75,7 @@ export function assertMigrationPreserved(original: RawLegacyService, text: strin
 
 /** Existing quarantine files are byte-immutable, even on unreviewed records. */
 export function assertInternalHistory(before: ReadonlyMap<string, string>, after: ReadonlyMap<string, string>): void {
+  if (before.has(PRESERVATION_FILE) && before.get(PRESERVATION_FILE) !== after.get(PRESERVATION_FILE)) throw new Error('The preservation seal cannot be changed or removed');
   for (const [filename, text] of before) if (filename.startsWith('services/') && filename.endsWith('.internal.yaml')) {
     if (after.get(filename) !== text) throw new Error(`${filename}: internal material preservation forbids rewriting or deleting original bytes`);
     for (const passage of filename.endsWith('/passages.internal.yaml') ? internalPassages(text, filename) : []) if (passage.transcript_file) {

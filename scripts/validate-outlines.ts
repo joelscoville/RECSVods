@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { loadArchive, type Service } from '../site/lib/archive';
-import { isTitleCase } from './outline-services';
+import { isTitleCase } from '../site/lib/outline';
 
 export function validateServiceOutline(service: Service): void {
   for (const chapter of service.chapters) if (!isTitleCase(chapter.title)) throw new Error(`${service.id}/${chapter.id}: public chapter/subsection title must use Title Case`);

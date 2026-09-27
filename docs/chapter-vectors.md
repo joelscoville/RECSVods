@@ -217,7 +217,11 @@ stable timestamp order. Legacy passages have no word alignment, so their chapter
 membership is authoritative; do not fabricate time slicing within their text.
 Remove square-bracket editorial spans from the working copy, including omission,
 uncertainty and reference-only annotations. Original YAML and parsed transcript
-strings are never edited. If neither source has text, emit the honest zero row.
+strings are never edited. Missing evidence fails before any writes. Present evidence
+with no usable speech may produce a zero row, but replacing a previously text-bearing
+row requires the explicit named `--allow-empty <chapter-id,...>` override. That same
+override can deliberately authorize a row with unavailable evidence; it must never
+be added automatically to get a failed run through.
 
 `input_sha256` hashes the ordered tuple of recipe, chapter identity/bounds,
 source kind, source-content hash, and normalized working text. Raw/canonical source
@@ -246,7 +250,9 @@ repairs stale artifacts implicitly.
 Writes use temporary files and atomic per-file replacements. Metadata is checked
 again before replacement. The pair is not a filesystem transaction: interruption
 between binary/manifest replacements produces a checksum mismatch that the loader
-rejects; rerun explicit processing to repair it. Processing/builds should be
+rejects. Restore a coherent binary/manifest pair from the last known-good checkpoint
+before rerunning explicit processing; corrupt prior sidecars fail preflight rather
+than discarding their prior text-bearing status. Processing/builds should be
 sequential. Existing raw/fallback input is read-only throughout.
 
 ## CLI (main/operator runs after metadata is ready)
@@ -273,7 +279,7 @@ windows, reused/written services, skipped semantic rows, and binary bytes. It al
 reports total/model/inference timings and per-service counts/timings. Verification
 returns service/chapter/skipped-semantic counts. Reports contain no transcript text.
 
-Programmatic processing accepts `{root?, service?, all?, transcriptsDir?}`. Select
+Programmatic processing accepts `{root?, service?, all?, transcriptsDir?, allowEmpty?}`. Select
 exactly one service or `all:true`. Tests may supply `fixtureRoot` plus a fake
 `createSession` factory; injecting an encoder without `fixtureRoot` is rejected.
 There is no fixture/encoder CLI override. Merely importing these modules performs

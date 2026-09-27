@@ -48,7 +48,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
           persist-credentials: false
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
@@ -68,7 +68,8 @@ jobs:
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm lint && pnpm typecheck && pnpm test && pnpm validate:archive && pnpm validate:outlines && pnpm index:verify && pnpm verify:tracked
       - name: Build isolated production and review output
-        run: pnpm build && pnpm build:preview
+        # Explicit fixture destination exercises issue context; review output is never deployed.
+        run: pnpm build && PUBLIC_REPOSITORY_URL=https://github.com/example/archive-corrections pnpm build:preview
       - name: Verify non-root production routes and privacy
         run: pnpm verify:pages
       - name: Browser checks without model execution
@@ -81,6 +82,9 @@ jobs:
     needs: [validate, editorial-guard]
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      PUBLIC_CORRECTIONS_URL: ${{ vars.PUBLIC_CORRECTIONS_URL }}
+      PUBLIC_REPOSITORY_URL: ${{ vars.PUBLIC_REPOSITORY_URL }}
     permissions:
       contents: read
       pages: read

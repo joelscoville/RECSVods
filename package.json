@@ -5,7 +5,7 @@
   "type": "module",
   "packageManager": "pnpm@10.17.1",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "tsx scripts/build.ts dev",
@@ -26,6 +26,7 @@
     "captions:source": "python3 scripts/captions.py",
     "verify:pages": "tsx scripts/pages.ts verify",
     "verify:tracked": "tsx scripts/verify-tracked.ts",
+    "verify:preserved": "tsx scripts/verify-preserved.ts",
     "benchmark:search": "tsx scripts/benchmark-search.ts",
     "test:e2e": "playwright test",
     "build": "tsx scripts/build.ts production",
@@ -48,11 +49,11 @@
     "transcripts:cleanup-audio": "python3 scripts/import_transcript.py cleanup-audio"
   },
   "dependencies": {
-    "@astrojs/react": "^4.3.1",
+    "@astrojs/react": "^6.0.6",
     "@fontsource-variable/atkinson-hyperlegible-next": "^5.2.5",
     "@fontsource-variable/domine": "^5.2.6",
-    "@huggingface/transformers": "^3.7.2",
-    "astro": "^5.13.7",
+    "@huggingface/transformers": "3.8.1",
+    "astro": "^7.3.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "yaml": "^2.8.1",
@@ -73,6 +74,6 @@
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.1",
-    "vitest": "^3.2.4"
+    "vitest": "^4.1.11"
   }
 }

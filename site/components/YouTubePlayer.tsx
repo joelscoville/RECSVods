@@ -4,8 +4,8 @@ import { savePlayback } from '../lib/local-state';
 import { youtubeUrl } from '../lib/urls';
 import Icon from './Icon';
 
-export default function YouTubePlayer({ videoId, serviceId, title, range, onTime }: {
-  videoId: string; serviceId: string; title: string; range: PlaybackRange; onTime: (time: number) => void;
+export default function YouTubePlayer({ videoId, serviceId, title, range, seekRequest, onTime }: {
+  videoId: string; serviceId: string; title: string; range: PlaybackRange; seekRequest: number; onTime: (time: number) => void;
 }) {
   const container = useRef<HTMLDivElement>(null);
   const adapter = useRef<PlayerAdapter | null>(null);
@@ -36,7 +36,7 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, onTime
     setContinued(false);
     setBlocked(false);
     lastTime.current = null;
-  }, [range.id, range.start, range.end, range.resumeAt]);
+  }, [range.id, range.start, range.end, range.resumeAt, seekRequest]);
 
   useEffect(() => {
     let lastSavedAt = 0;

@@ -145,23 +145,64 @@ function checkCommit(root: string, parent: string, commit: string, message: stri
   if (approvalTrailers.length && !approvals.length) throw new Error('Editorial-Approval trailer without a reviewed transition');
 }
 
-/** Check every commit reachable from HEAD but not BASE, including every merge parent. */
+/** A merge carries approvals; it cannot manufacture approval for a combined/new interpretation. */
+function checkMerge(root: string, parents: string[], commit: string): void {
+  const afterFiles = treeFiles(root, commit), after = historyArchiveFromFiles(afterFiles);
+  const afterSources = serviceSources(afterFiles), manifest = manifestFromFiles(afterFiles);
+  validateManifestReferences(manifest, after, afterFiles);
+  const snapshots = parents.map(parent => {
+    const files = treeFiles(root, parent), services = historyArchiveFromFiles(files);
+    assertInternalHistory(files, afterFiles);
+    assertManifestDiff(manifestFromFiles(files), manifest);
+    return { files, services, sources: serviceSources(files), workflows: workflowRecords(files, services) };
+  });
+  for (const [id, status] of workflowRecords(afterFiles, after)) {
+    const previous = snapshots.map(snapshot => snapshot.workflows.get(id)).filter((value): value is WorkflowStatus => !!value);
+    if (!previous.includes(status)) previous.forEach(value => assertWorkflowTransition(value, status));
+  }
+  const common = git(root, ['merge-base', '--all', ...parents]).split('\n');
+  if (common.length !== 1) throw new Error('Ambiguous merge ancestry requires a linear resolution before publication');
+  const baseFiles = treeFiles(root, common[0]), baseSources = serviceSources(baseFiles);
+  const related = (files: ReadonlyMap<string, string>, filename: string) => Object.fromEntries([...files]
+    .filter(([name]) => name.startsWith(`${path.posix.dirname(filename)}/`) && /\.(?:bin|json|md)$/.test(name)).sort(([a], [b]) => a.localeCompare(b)));
+  for (const service of after.filter(service => service.editorial_status === 'reviewed')) {
+    const current = afterSources.get(service.id)!;
+    const inherited = snapshots.some(snapshot => {
+      const parent = snapshot.sources.get(service.id);
+      return parent?.source.editorial_status === 'reviewed' && parent.filename === current.filename
+        && isDeepStrictEqual(parent.raw, current.raw)
+        && isDeepStrictEqual(related(snapshot.files, parent.filename), related(afterFiles, current.filename));
+    });
+    if (!inherited) throw new Error(`${current.filename}: merge introduces unapproved interpretation or artifacts; reset to needs_review and approve separately`);
+    // Do not resurrect an approval over a concurrent revision/withdrawal on the other side.
+    const base = baseSources.get(service.id);
+    for (const snapshot of snapshots) {
+      const parent = snapshot.sources.get(service.id);
+      if (base && (!parent || (parent.source.editorial_status !== 'reviewed'
+        && (!isDeepStrictEqual(parent.raw, base.raw) || !isDeepStrictEqual(related(snapshot.files, parent.filename), related(baseFiles, base.filename)))))) {
+        throw new Error(`${current.filename}: concurrent unreviewed revision requires review after merge resolution`);
+      }
+    }
+  }
+}
+
+/** Validate branch commits from the merge base, then validate merge results separately. */
 export function guardEditorial(root: string, base: string, head = 'HEAD'): { commits: number } {
   const baseId = git(root, ['rev-parse', '--verify', '--end-of-options', `${base}^{commit}`]);
   const headId = git(root, ['rev-parse', '--verify', '--end-of-options', `${head}^{commit}`]);
-  try { git(root, ['merge-base', '--is-ancestor', baseId, headId]); }
-  catch { throw new Error('editorial guard BASE must be an ancestor of HEAD'); }
+  const bases = git(root, ['merge-base', '--all', baseId, headId]).split('\n');
+  if (bases.length !== 1) throw new Error('Editorial guard requires an unambiguous merge base');
   // Validate the final tree even for an empty range.
   const finalFiles = treeFiles(root, headId);
   validateManifestReferences(manifestFromFiles(finalFiles), historyArchiveFromFiles(finalFiles), finalFiles);
-  const commits = git(root, ['rev-list', '--reverse', '--topo-order', `${baseId}..${headId}`]).split('\n').filter(Boolean);
+  const commits = git(root, ['rev-list', '--reverse', '--topo-order', `${bases[0]}..${headId}`]).split('\n').filter(Boolean);
   for (const commit of commits) {
     const parents = git(root, ['show', '-s', '--format=%P', commit]).split(' ').filter(Boolean);
     const message = git(root, ['show', '-s', '--format=%B', commit]);
-    for (const parent of parents) {
-      try { checkCommit(root, parent, commit, message); }
-      catch (error) { throw new Error(`${commit}: ${error instanceof Error ? error.message : String(error)}`); }
-    }
+    try {
+      if (parents.length > 1) checkMerge(root, parents, commit);
+      else if (parents.length === 1) checkCommit(root, parents[0], commit, message);
+    } catch (error) { throw new Error(`${commit}: ${error instanceof Error ? error.message : String(error)}`); }
   }
   return { commits: commits.length };
 }

@@ -233,10 +233,11 @@ blocked     -> registered | in_progress
   scores or new transcript fields are required. Never fill missing speech from memory.
 - Compute committed chapter vectors with `scripts/chapter-vectors.ts generate`, using
   the pinned model and overlapping private transcript windows. Verify with `verify`.
-  Never embed summaries as substitute speech. Empty evidence produces an explicit
-  zero row and remains metadata-searchable. See `docs/chapter-vectors.md`.
-- In the frozen migration, derive metadata only from existing passage summaries and
-  spoken keyword evidence; verify against `540abab`. Preserve every internal passage,
+  Never embed summaries as substitute speech. Missing evidence fails closed; replacing
+  a text-bearing row with empty data requires a deliberate named `--allow-empty`
+  override. See `docs/chapter-vectors.md`.
+- The one-time migration is complete. Run `pnpm verify:preserved` against the sealed
+  manifest, without requiring historical Git objects. Preserve every internal passage,
   transcript byte, original ID/boundary, service/video metadata and provenance.
 - Attribute historical, medical, theological and other claims to the speaker; retain
   their qualifications. Recording a doctrinal statement does not endorse it as doctrine.

@@ -8,7 +8,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { approveService, guardEditorial } from '../scripts/editorial';
 import { loadArchive, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
 import { importBackfill, loadBackfill, MANIFEST_PATH, transitionBackfill } from '../site/lib/backfill';
-import { migrateChapters } from '../scripts/migrate-chapters';
+import { MIGRATION_NOTE } from '../site/lib/internal-validation';
 
 const roots: string[] = [];
 const filename = 'services/2026/test-service/service.yaml';
@@ -102,7 +102,52 @@ describe('genuine approval function, in temporary Git repositories only', () => 
   });
 });
 
-describe('per-commit editorial guard', () => {
+describe('per-commit editorial guard', { timeout: 15000 }, () => {
+  it('accepts approval PRs after a normal merge and a base branch advancing independently', () => {
+    const { root, base } = repo();
+    git(root, 'checkout', '-qb', 'approval'); humanApprove(root);
+    const approved = git(root, 'rev-parse', 'HEAD');
+    git(root, 'checkout', '-qb', 'main-test', base);
+    put(root, 'README.md', 'Unrelated main update'); const advanced = commit(root, 'Main advances');
+    expect(guardEditorial(root, advanced, approved).commits).toBe(1);
+    git(root, 'merge', '--no-ff', 'approval', '-m', 'Merge approval PR');
+    expect(guardEditorial(root, advanced).commits).toBe(2);
+    expect(loadArchive(root)[0].editorial_status).toBe('reviewed');
+  });
+  it('rejects a reviewed interpretation introduced only by merge resolution', () => {
+    const { root, base } = repo();
+    git(root, 'checkout', '-qb', 'approval'); humanApprove(root);
+    git(root, 'checkout', '-qb', 'main-test', base);
+    put(root, 'README.md', 'Other branch'); commit(root, 'Main update');
+    git(root, 'merge', '--no-ff', '--no-commit', 'approval');
+    edit(root, source => { source.chapters[0].summary = 'Unreviewed merge invention'; });
+    commit(root, 'Merge with changed interpretation');
+    expect(() => guardEditorial(root, base)).toThrow('merge introduces unapproved');
+  });
+  it('does not combine an approved record with unapproved vectors from another parent', () => {
+    const { root, base } = repo();
+    git(root, 'checkout', '-qb', 'approval'); humanApprove(root);
+    git(root, 'checkout', '-qb', 'main-test', base);
+    put(root, 'services/2026/test-service/chapter-vectors.bin', 'Changed while unreviewed'); commit(root, 'New vector data');
+    git(root, 'merge', '--no-ff', 'approval', '-m', 'Merge approval');
+    expect(() => guardEditorial(root, base)).toThrow('merge introduces unapproved');
+  });
+  it.each(['interpretation', 'artifacts', 'withdrawal'])('rejects resurrecting approval over a concurrent %s change', kind => {
+    const { root, base } = repo();
+    git(root, 'checkout', '-qb', 'approval'); humanApprove(root);
+    const approved = readFileSync(path.join(root, filename), 'utf8');
+    git(root, 'checkout', '-qb', 'main-test', base);
+    const sidecar = 'services/2026/test-service/revision.md';
+    if (kind === 'interpretation') edit(root, source => { source.chapters[0].summary = 'New unreviewed interpretation'; });
+    else if (kind === 'artifacts') put(root, sidecar, 'New unreviewed evidence');
+    else rmSync(path.join(root, filename));
+    commit(root, 'Concurrent revision');
+    git(root, 'merge', '--no-ff', '--no-commit', '-s', 'ours', 'approval');
+    put(root, filename, approved);
+    if (kind === 'artifacts') rmSync(path.join(root, sidecar));
+    commit(root, 'Resolve by restoring the approved parent');
+    expect(() => guardEditorial(root, base)).toThrow('concurrent unreviewed revision');
+  });
   it('validates manifest workflow history across combined claim/completion commits and preserves approval guard', () => {
     const { root, base } = repo();
     put(root, 'inputs/fixture.yaml', stringify({ schema_version: 1, batch_id: 'test-batch', approved_by: 'Fictional Operator',
@@ -242,7 +287,8 @@ describe('per-commit editorial guard', () => {
       summary, topics, scripture, questions: [], transcript: '  Original fictional bytes.\n\n' }] };
     put(root, filename, stringify(legacy)); const base = commit(root, 'Legacy fixture checkpoint');
     expect(guardEditorial(root, base, base).commits).toBe(0);
-    migrateChapters(root, { baseline: base, mode: 'prepare' });
+    put(root, 'services/2026/test-service/passages.internal.yaml', stringify({ passages: legacy.passages }));
+    put(root, filename, stringify({ ...fixture(), review_notes: [MIGRATION_NOTE] }));
     commit(root, 'Migrate fictional fixture\n\nCurated-by: agent');
     expect(guardEditorial(root, base).commits).toBe(1);
     const internal = 'services/2026/test-service/passages.internal.yaml';

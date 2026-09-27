@@ -284,6 +284,8 @@ export interface ChapterVectorProcessOptions {
   service?: string;
   all?: boolean;
   transcriptsDir?: string;
+  /** Explicit acknowledgement for units intentionally lacking speech, never inferred from missing files. */
+  allowEmpty?: string[];
   /** Tests only, requires fixtureRoot. Real callers always use verified pinned weights. */
   createSession?: () => Promise<EmbeddingSession>;
 }
@@ -321,6 +323,33 @@ export async function processChapterVectors(options: ChapterVectorProcessOptions
   const selected = options.all ? paths : paths.filter((filename) => path.basename(path.dirname(filename)) === options.service
     || filename === path.resolve(root, options.service!) || path.dirname(filename) === path.resolve(root, options.service!));
   if (!options.all && selected.length !== 1) throw new Error('Service selector must match exactly one source service');
+  const allowEmpty = new Set(options.allowEmpty ?? []);
+  const plans = [];
+  for (const filename of selected) {
+    const sourceBytes = (await optionalFile(filename))!;
+    const source = record(safeYaml(sourceBytes.toString('utf8'))), chapters = chaptersFromSource(source);
+    const directory = path.dirname(filename), id = typeof source.id === 'string' ? source.id : path.basename(directory);
+    const inputs = await serviceInputs(directory, chapters, options.transcriptsDir, source);
+    const binaryPath = path.join(directory, 'chapter-vectors.bin'), manifestPath = path.join(directory, 'chapter-vectors.json');
+    const previousBytes = await optionalFile(binaryPath), previousManifest = await optionalFile(manifestPath);
+    if (Boolean(previousBytes) !== Boolean(previousManifest)) throw new Error(`Incomplete chapter vector pair for ${id}; restore the last known-good pair before generating.`);
+    let previous: LoadedServiceChapterVectors | undefined;
+    if (previousBytes && previousManifest) {
+      const metadata = safeJson(previousManifest.toString('utf8')) as ChapterVectorManifest;
+      // Preserve knowledge of prior text even when today's bounds differ.
+      previous = validateChapterVectorManifest(metadata, previousBytes, metadata.bindings);
+    }
+    inputs.forEach((input, i) => {
+      const chapter = chapters[i];
+      if (input.source_kind === 'none' && !allowEmpty.has(chapter.id)) throw new Error(`Evidence unavailable for ${chapter.id}; existing vectors were not changed. Supply evidence or explicitly --allow-empty this ID.`);
+      if (!input.text && previous?.manifest.bindings.some(binding => binding.id === chapter.id && binding.has_text) && !allowEmpty.has(chapter.id)) {
+        throw new Error(`Refusing to replace text-bearing vector ${chapter.id} with empty data without --allow-empty`);
+      }
+    });
+    plans.push({ filename, sourceBytes, chapters, directory, id, inputs, binaryPath, manifestPath, previousBytes, previous });
+  }
+  const ids = new Set(plans.flatMap(plan => plan.chapters.map(chapter => chapter.id)));
+  if ([...allowEmpty].some(id => !ids.has(id))) throw new Error('--allow-empty must name a selected chapter');
   const started = performance.now();
   const report: ChapterVectorReport = { services: 0, chapters: 0, windows: 0, embeddedWindows: 0, cachedWindows: 0,
     reusedServices: 0, writtenServices: 0, skippedSemantic: 0, binaryBytes: 0, elapsedSeconds: 0,
@@ -367,19 +396,10 @@ export async function processChapterVectors(options: ChapterVectorProcessOptions
     return vector;
   }
   try {
-    for (const filename of selected) {
-      const serviceStart = performance.now(), sourceBytes = (await optionalFile(filename))!;
-      const source = record(safeYaml(sourceBytes.toString('utf8'))), chapters = chaptersFromSource(source);
-      const directory = path.dirname(filename), id = typeof source.id === 'string' ? source.id : path.basename(directory);
-      const inputs = await serviceInputs(directory, chapters, options.transcriptsDir, source);
-      const binaryPath = path.join(directory, 'chapter-vectors.bin'), manifestPath = path.join(directory, 'chapter-vectors.json');
-      const previousBytes = await optionalFile(binaryPath), previousManifest = await optionalFile(manifestPath);
-      let previous: LoadedServiceChapterVectors | undefined;
-      if (previousBytes && previousManifest) {
-        try { previous = validateChapterVectorManifest(safeJson(previousManifest.toString('utf8')), previousBytes, chapters); }
-        catch { /* Explicit processing replaces stale/corrupt artifacts; build-only loading fails closed. */ }
-      }
-      const reused = Boolean(previous && previous.manifest.bindings.every((binding, i) =>
+    for (const { filename, sourceBytes, chapters, id, inputs, binaryPath, manifestPath, previousBytes, previous } of plans) {
+      const serviceStart = performance.now();
+      const reused = Boolean(previous && previous.rowCount === chapters.length && previous.manifest.bindings.every((binding, i) =>
+        binding.id === chapters[i].id && binding.video_id === chapters[i].video_id && binding.start === chapters[i].start && binding.end === chapters[i].end &&
         binding.input_sha256 === inputs[i].input_sha256 && binding.source_kind === inputs[i].source_kind));
       let manifest: ChapterVectorManifest, bytes: Uint8Array;
       if (reused) { manifest = previous!.manifest; bytes = previousBytes!; report.reusedServices++; }
@@ -416,13 +436,18 @@ export async function chapterVectorsCli(args = process.argv.slice(2)): Promise<C
   const [command, ...flags] = args.filter((arg) => arg !== '--');
   const options: ChapterVectorProcessOptions = {};
   const seen = new Set<string>();
-  const usage = 'Usage: tsx scripts/chapter-vectors.ts generate|verify (--service <id-or-source-path> | --all) [--transcripts-dir <private-directory>]';
+  const usage = 'Usage: tsx scripts/chapter-vectors.ts generate|verify (--service <id-or-source-path> | --all) [--transcripts-dir <private-directory>] [--allow-empty <id,id,...>]';
   if (!['generate', 'verify'].includes(command)) throw new Error(usage);
   for (let i = 0; i < flags.length; i++) {
     const flag = flags[i];
     if (seen.has(flag)) throw new Error(usage);
     seen.add(flag);
     if (flag === '--all') options.all = true;
+    else if (flag === '--allow-empty' && command === 'generate') {
+      const value = flags[++i];
+      if (!value || !value.split(',').every(id => /^[A-Za-z0-9][A-Za-z0-9_-]*$/.test(id))) throw new Error(usage);
+      options.allowEmpty = value.split(',');
+    }
     else if (flag === '--service' || (flag === '--transcripts-dir' && command === 'generate')) {
       const value = flags[++i];
       if (!value || value.startsWith('--')) throw new Error(usage);

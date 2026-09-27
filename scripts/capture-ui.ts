@@ -7,7 +7,7 @@ const milestone3 = process.argv.includes('--milestone3');
 const catalogue = milestone2 || milestone3;
 const output = milestone3 ? '.local/ui-review-m3' : milestone2 ? '.local/ui-review-m2' : '.local/ui-review';
 await mkdir(output, { recursive: true });
-const server = spawn(process.execPath, ['node_modules/astro/astro.js', 'preview', '--host', '127.0.0.1', '--port', '4180'], {
+const server = spawn(process.execPath, ['node_modules/astro/bin/astro.mjs', 'preview', '--ignore-lock', '--host', '127.0.0.1', '--port', '4180'], {
   env: { ...process.env, SITE_BASE_PATH: '/replay-check/', ARCHIVE_MODE: 'preview' }, stdio: 'ignore',
 });
 const base = 'http://127.0.0.1:4180/replay-check/';

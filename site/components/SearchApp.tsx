@@ -95,7 +95,7 @@ export default function SearchApp({ base, initialChapters }: { base: string; ini
       try {
         if (!client.current) return;
         if (vectorCache.current?.metadata !== currentMetadata) {
-          const promise = loadChapterVectors(base).then((index) => {
+          const promise = loadChapterVectors(base, currentMetadata).then((index) => {
             if (index.rowCount !== currentMetadata.chapters.length) throw new Error('Chapter vector row mismatch');
             if (!index.values.some((value) => value !== 0)) throw new Error('No usable chapter vectors');
             return index;

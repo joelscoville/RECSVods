@@ -31,7 +31,9 @@ The operator's [concise service-outline brief](./decisions/2026-09-26-sermon-out
 supersedes chapter granularity and presentation guidance in that decision. Apply it
 to the current migration before M4 acceptance and to M5 weekly curation.
 
-The frozen content baseline is `540abab`. For all remaining acceptance and future
+The historical content baseline is `540abab`; current preservation uses the
+self-contained `services/preserved-files.json` seal (`pnpm verify:preserved`).
+The migration and its rewriting tools are retired. For current acceptance and future
 curation, use `chapters`, `SearchChapter`, `chapters.json` and committed int8 vector
 sidecars. Any older passage/transcript authoring, rendering, edit-link or JSON-vector
 instruction below is historical and superseded, including copied milestone criteria.

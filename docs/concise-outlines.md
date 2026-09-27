@@ -47,31 +47,16 @@ these are not confidential content. Raw transcript evidence remains excluded.
   Hidden branches leave the keyboard sequence. Selecting a child uses its own
   exact video/time range. Service groups and sermon groups share identical styling.
 
-## Existing-content migration
+## Preserved existing content
 
-The 22-service proposal inputs are local, metadata-only files under
-`.local/outline-plans/`. Their contract is `.local/service-outline-contract.md`.
-The one-time `scripts/outline-services.ts` command validates every plan before
-mutation, including contiguous same-video membership, full original coverage,
-source-supported keyword candidates, Title Case and stable cue identity.
-
-```sh
-scripts/devenv-run pnpm exec tsx scripts/outline-services.ts --check --all
-scripts/devenv-run pnpm exec tsx scripts/outline-services.ts --apply --all
-scripts/devenv-run pnpm exec tsx scripts/migrate-chapters.ts --baseline 540abab --verify
-scripts/devenv-run pnpm exec tsx scripts/chapter-vectors.ts generate --all --transcripts-dir <private-evidence-directory>
-scripts/devenv-run pnpm index:verify
-```
-
-Use `--service <id>` instead of `--all` for one explicitly selected proposal. Apply
-is an explicit interpretation rewrite from the proposal, not a routine build step.
-Local proposal files are not needed by builds or by the preservation verifier.
+The one-time migration is complete and its rewriting scripts are retired.
+Use `pnpm verify:preserved` to check original evidence without Git history and
+`pnpm validate:outlines` to check the current outline contract.
 
 `chapters.internal.yaml` preserves all 582 original section IDs, bounds, notes and
 metadata, including the first chapter-stage review work. Existing
-`passages.internal.yaml` files and transcript bytes remain untouched. Verification
-checks the internal originals against Git `540abab`, proves that primary groups
-partition them once in order, and proves every new span stays on its original upload.
+`passages.internal.yaml` files and transcript bytes remain untouched. Their bytes
+are sealed in `services/preserved-files.json`; see [preservation](chapter-migration.md).
 The editorial guard enforces byte immutability for both internal files thereafter.
 
 New public groups have distinct stable IDs; retained cues keep their original IDs.
@@ -84,7 +69,7 @@ windows or the unchanged internal passages. Builds never re-embed.
 
 After discovery proposes an upload in a curator issue, a person invokes the curator, normally on
 Monday to allow captions to appear. Apply the operator’s caption quality gate and
-local whisper.cpp fallback once M5 tooling implements them; no fetching or AI in CI.
+local whisper.cpp fallback; no media fetching or AI in CI.
 Verify identity/duration and the sermon’s context/boundaries. Cover the sermon and
 adjacent material needed for the outline, sampling ambiguous boundaries rather than
 exhaustively transcribing routine service events.

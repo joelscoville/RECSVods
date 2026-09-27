@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { stringify } from 'yaml';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { buildIndex, CHAPTER_ARTIFACTS } from '../scripts/archive';
+import { buildIndex, CHAPTER_ARTIFACTS, artifactFilename } from '../scripts/archive';
 import { createChapterVectorManifest } from '../scripts/chapter-vectors';
 import { packChapterVectors, decodeChapterVectors } from '../site/lib/chapter-vectors';
 import { SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
@@ -33,8 +33,10 @@ function put(root: string, item: Service, axis: number) {
       input_sha256: 'a'.repeat(64), source_kind: 'raw_colab_json' as const })))));
 }
 function artifacts(root: string) {
-  return Object.fromEntries(CHAPTER_ARTIFACTS.flatMap(name => [name, `${name}.gz`]).map(name =>
-    [name, readFileSync(path.join(root, 'site/public/generated', name))]));
+  const directory = path.join(root, 'site/public/generated');
+  const metadata = JSON.parse(readFileSync(path.join(directory, 'chapters.json'), 'utf8'));
+  return Object.fromEntries(CHAPTER_ARTIFACTS.flatMap(name => ['', '.gz'].map(suffix =>
+    [name + suffix, readFileSync(path.join(directory, artifactFilename(name, metadata) + suffix))])));
 }
 describe('committed chapter incremental/full build equivalence', () => {
   it('matches a clean rebuild after metadata and vector updates, without model or transcript inputs', () => {

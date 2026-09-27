@@ -290,20 +290,19 @@ function searchHarness(base: string, profile: Budgets['profile'], queryVectors: 
   return `(async () => {
     const { prepareSearchIndex } = await import(${JSON.stringify(`${base}site/lib/search.ts`)});
     const { isEmbeddingVector } = await import(${JSON.stringify(`${base}site/lib/embedding-config.ts`)});
-    const { parseChapterMetadata, parseScriptureIndex, enrichChapters } = await import(${JSON.stringify(`${base}site/lib/chapter-index.ts`)});
-    const { decodeChapterVectors } = await import(${JSON.stringify(`${base}site/lib/chapter-vectors.ts`)});
+    const { parseChapterMetadata, parseScriptureIndex, enrichChapters, loadChapterVectors } = await import(${JSON.stringify(`${base}site/lib/chapter-index.ts`)});
     const start = performance.now();
     const load = async (file) => {
       const response = await fetch(${JSON.stringify(base)} + 'generated/' + file, { signal: AbortSignal.timeout(120000) });
       if (!response.ok) throw new Error('Missing preview artifact: ' + file);
       return response.arrayBuffer();
     };
-    const [metadataBytes, vectorBytes, scriptureBytes] = await Promise.all([load('chapters.json'), load('vectors.bin'), load('scripture.json')]);
+    const [metadataBytes, scriptureBytes] = await Promise.all([load('chapters.json'), load('scripture.json')]);
     const actualHash = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', metadataBytes)), n => n.toString(16).padStart(2, '0')).join('');
     if (actualHash !== ${JSON.stringify(sha256)}) throw new Error('Stale preview metadata');
     const metadata = parseChapterMetadata(JSON.parse(new TextDecoder().decode(metadataBytes)));
     let chapters = enrichChapters(metadata.chapters, parseScriptureIndex(JSON.parse(new TextDecoder().decode(scriptureBytes))));
-    let vectors = decodeChapterVectors(vectorBytes);
+    let vectors = await loadChapterVectors(${JSON.stringify(base)}, metadata, AbortSignal.timeout(120000));
     if (!chapters.length || vectors.rowCount !== chapters.length) throw new Error('Invalid preview row count');
     const target = ${JSON.stringify(rows)};
     if (target !== null) {
@@ -399,9 +398,9 @@ export async function benchmark(options: { label: string; output?: string }) {
     report.searchSource = sourceHashes;
     const chapterBytes = await readFile(path.join(directory, 'generated/chapters.json'));
     const chapterData = JSON.parse(chapterBytes.toString('utf8'));
-    if (chapterData.schemaVersion !== 2 || !Array.isArray(chapterData.chapters) || !chapterData.chapters.length) throw new Error('Benchmark requires a nonempty real chapter preview index');
+    if (chapterData.schemaVersion !== 3 || !Array.isArray(chapterData.chapters) || !chapterData.chapters.length) throw new Error('Benchmark requires a nonempty real chapter preview index');
     const metadata = sizes(chapterBytes);
-    const vectors = sizes(await readFile(path.join(directory, 'generated/vectors.bin')));
+    const vectors = sizes(await readFile(path.join(directory, 'generated', chapterData.vectors.file)));
     const scripture = sizes(await readFile(path.join(directory, 'generated/scripture.json')));
     const largest = assets.reduce((a, b) => a.rawBytes > b.rawBytes ? a : b);
     report.artifacts = { directory: 'dist/preview', base, rows: chapterData.chapters.length, metadata, vectors, scripture, largest, assets };

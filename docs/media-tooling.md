@@ -100,25 +100,17 @@ owner UID, and a random ownership token. Existing nonempty unowned directories
 are refused. Repository paths (including `.local`), repository ancestors, shared
 temporary roots, the home directory itself, and symlink roots are refused.
 
-Successful stages retain their artifacts for the next stage. An error or handled
-interruption during a processing stage removes the owned workspace. `preflight`
-always removes its nested smoke workspace; only its safe report remains after
-success. Wrap the complete successful workflow in a cleanup trap too:
+Successful stages retain their artifacts for the next stage. Processing uses a
+workspace lock and isolated staging: rejection, failure or a handled interruption
+preserves the existing acquisition, manifest and completed evidence. Publication
+backs up replaced outputs and rolls them back on failure. A journal recovers an
+interrupted publication before the next operation; recovery refuses to overwrite
+later manual edits and retains the backup for inspection. `preflight` removes only
+its newly owned nested smoke workspace. Whole-workspace removal is explicit:
 
 ```sh
-# Run from the repository; replace the temporary parent if appropriate.
-WORK=$(mktemp -d "${TMPDIR:-/tmp}/recs-media.XXXXXX")
-cleanup_media() {
-  if [ -f "$WORK/.recs-media-workdir.json" ]; then
-    python3 scripts/media.py cleanup --work-dir "$WORK"
-  fi
-}
-trap cleanup_media EXIT
-trap 'exit 130' INT
-trap 'exit 143' TERM
-
-# Acquire, sample, inspect the samples, then transcribe the chosen span.
-# Use the explicit authorization file on each processing command.
+# After inspecting/using the evidence and choosing to discard this owned workspace:
+scripts/devenv-run pnpm media:cleanup -- --work-dir <owned-workspace>
 ```
 
 Cleanup needs no media permission, but requires a valid sentinel matching the
@@ -131,7 +123,9 @@ All native invocations use the imported `run_bounded.run(command, timeout)`.
 A small exec launcher records the runner-created process group; media tooling
 also kills remaining group members when a leader exits or fails. The shared
 runner handles timeout and signal termination. SIGKILL or a machine crash cannot
-run Python cleanup; invoke `cleanup` on a surviving owned workspace after restart.
+run Python cleanup. Resume to recover an interrupted publication, or explicitly
+discard the owned workspace with `cleanup`. Unpublished scratch may remain after
+an abrupt kill and is removed by explicit workspace cleanup.
 
 ## Model provenance
 
@@ -206,7 +200,7 @@ When a packaged whisper.cpp CLI exposes no version, its manifest honestly says
 `not exposed by CLI` and records the executable SHA-256; record the exact package
 version from the pinned environment alongside that fingerprint.
 
-The fixed failure recording `wh4mCRKRJ-4` should exit 2 as near-empty and clean its
+The fixed failure recording `wh4mCRKRJ-4` should exit 2 as near-empty and discard its staged
 workspace. Calibration uses `mw4SAoJRZgo`; acquire/sample/transcribe it separately
 and record the reported pipeline real-time factor (including chunk extraction and
 overlap) before deleting its workspace. Smoke and calibration evidence validate

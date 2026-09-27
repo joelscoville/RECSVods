@@ -3,8 +3,9 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { gzipSync, gunzipSync } from 'node:zlib';
 import { stringify } from 'yaml';
+import { createHash } from 'node:crypto';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { buildIndex, CHAPTER_ARTIFACTS, chapterArtifactReport, metadataOutputSize } from '../scripts/archive';
+import { buildIndex, CHAPTER_ARTIFACTS, chapterArtifactReport, metadataOutputSize, artifactFilename } from '../scripts/archive';
 import { createChapterVectorManifest } from '../scripts/chapter-vectors';
 import { CHAPTER_VECTOR_CONFIG, decodeChapterVectors, packChapterVectors } from '../site/lib/chapter-vectors';
 import { enrichChapters, loadChapterMetadata, loadChapterVectors, loadScriptureIndex, parseChapterMetadata,
@@ -53,13 +54,13 @@ describe('chapter artifact generation from committed vectors', () => {
     const directory = root(); source(directory, fixture());
     buildIndex(directory, 'preview');
     const data = metadata(directory);
-    expect(data.schemaVersion).toBe(2); expect(data.model).toEqual(CHAPTER_VECTOR_CONFIG);
+    expect(data.schemaVersion).toBe(3); expect(data.model).toEqual(CHAPTER_VECTOR_CONFIG);
     expect(data.chapters).toHaveLength(1);
     for (const field of ['verseText', 'confidence', 'review_notes', 'transcript', 'questions', 'rawBody']) expect(data.chapters[0]).not.toHaveProperty(field);
     expect(existsSync(path.join(directory, '.local'))).toBe(false);
     expect(existsSync(path.join(directory, 'services/2026/fixture/passages.internal.yaml'))).toBe(false);
     for (const name of CHAPTER_ARTIFACTS) {
-      const filename = path.join(directory, 'site/public/generated', name);
+      const filename = path.join(directory, 'site/public/generated', artifactFilename(name, data));
       const bytes = readFileSync(filename);
       expect(gunzipSync(readFileSync(`${filename}.gz`))).toEqual(bytes);
       if (name.endsWith('.json')) expect(bytes.toString()).toBe(JSON.stringify(JSON.parse(bytes.toString())));
@@ -83,7 +84,7 @@ describe('chapter artifact generation from committed vectors', () => {
     buildIndex(directory, 'production');
     expect(metadata(directory).chapters.map((c) => c.id)).toEqual(['reviewed-chapter']);
     const generated = path.join(directory, 'site/public/generated');
-    const binary = decodeChapterVectors(readFileSync(path.join(generated, 'vectors.bin')));
+    const binary = decodeChapterVectors(readFileSync(path.join(generated, metadata(directory).vectors.file)));
     expect(binary.rowCount).toBe(1); expect([...binary.values]).toEqual(Array(384).fill(63));
     expect(JSON.parse(readFileSync(path.join(generated, 'legacy-chapters.json'), 'utf8'))).toEqual({ 'reviewed-p001': 'reviewed-chapter' });
     expect(existsSync(path.join(generated, 'passages.json'))).toBe(false);
@@ -99,7 +100,7 @@ describe('chapter artifact generation from committed vectors', () => {
     buildIndex(directory);
     expect(metadata(directory).chapters.map((c) => c.id)).toEqual(['mixed-chapter']);
     const generated = path.join(directory, 'site/public/generated');
-    expect(decodeChapterVectors(readFileSync(path.join(generated, 'vectors.bin'))).rowCount).toBe(1);
+    expect(decodeChapterVectors(readFileSync(path.join(generated, metadata(directory).vectors.file))).rowCount).toBe(1);
     expect(JSON.parse(readFileSync(path.join(generated, 'legacy-chapters.json'), 'utf8'))).toEqual({ oldVisible: 'mixed-chapter' });
   });
 
@@ -127,12 +128,13 @@ describe('chapter artifact generation from committed vectors', () => {
   it('writes a valid empty binary and empty scripture index for an empty production archive', () => {
     const directory = root(); buildIndex(directory);
     expect(metadata(directory).chapters).toEqual([]);
-    expect(decodeChapterVectors(readFileSync(path.join(directory, 'site/public/generated/vectors.bin'))).rowCount).toBe(0);
+    expect(decodeChapterVectors(readFileSync(path.join(directory, 'site/public/generated', metadata(directory).vectors.file))).rowCount).toBe(0);
   });
 });
 
 describe('portable independent browser artifact loaders', () => {
-  const empty: ChapterMetadata = { schemaVersion: 2, model: CHAPTER_VECTOR_CONFIG, chapters: [] };
+  const sha256 = createHash('sha256').update(packChapterVectors([])).digest('hex');
+  const empty: ChapterMetadata = { schemaVersion: 3, model: CHAPTER_VECTOR_CONFIG, vectors: { file: `vectors.${sha256}.bin`, sha256 }, chapters: [] };
   it('loads raw gzip without fetching BSB, vectors, compatibility data or a model', async () => {
     const fetcher = vi.fn(async () => new Response(new Uint8Array(gzipSync(JSON.stringify(empty)))));
     vi.stubGlobal('fetch', fetcher);
@@ -159,8 +161,21 @@ describe('portable independent browser artifact loaders', () => {
       .mockResolvedValueOnce(new Response(new Uint8Array(packChapterVectors([]))));
     vi.stubGlobal('fetch', fetcher);
     expect(await loadScriptureIndex('/base/')).toEqual(scripture);
-    expect((await loadChapterVectors('/base/')).rowCount).toBe(0);
-    expect(fetcher.mock.calls.map((call) => call[0])).toEqual(['/base/generated/scripture.json', '/base/generated/vectors.bin']);
+    expect((await loadChapterVectors('/base/', empty)).rowCount).toBe(0);
+    expect(fetcher.mock.calls.map((call) => call[0])).toEqual(['/base/generated/scripture.json', `/base/generated/${empty.vectors.file}`]);
+  });
+  it('rejects another generation with the same row count and never uses an unversioned URL', async () => {
+    const directory = root(); source(directory, fixture(), 127); buildIndex(directory, 'preview');
+    const generationA = metadata(directory);
+    source(directory, fixture(), -127); buildIndex(directory, 'preview');
+    const generationB = metadata(directory);
+    expect(generationA.vectors.file).not.toBe(generationB.vectors.file);
+    const wrong = readFileSync(path.join(directory, 'site/public/generated', generationB.vectors.file));
+    const fetcher = vi.fn(async (_url: string) => new Response(new Uint8Array(wrong)));
+    vi.stubGlobal('fetch', fetcher);
+    await expect(loadChapterVectors('/base/', generationA)).rejects.toThrow('checksum mismatch');
+    expect(fetcher.mock.calls.every(call => String(call[0]).includes(generationA.vectors.file))).toBe(true);
+    expect((await loadChapterVectors('/base/', generationB)).values[0]).toBe(-127);
   });
   it('resolves only own compatibility IDs and propagates aborts without another request', async () => {
     vi.stubGlobal('DecompressionStream', undefined);

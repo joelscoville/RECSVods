@@ -142,7 +142,8 @@ describe('strict public chapter privacy boundary', () => {
 
   it('checks exact binary row correspondence and every compressed companion', async () => {
     const { root, output } = fixture();
-    put(output, 'generated/vectors.bin', packChapterVectors([new Int8Array(384).fill(63)]));
+    const metadata = JSON.parse(readFileSync(path.join(output, 'generated/chapters.json'), 'utf8'));
+    put(output, `generated/${metadata.vectors.file}`, packChapterVectors([new Int8Array(384).fill(63)]));
     await expect(verifyOutput(root, output, 'production')).rejects.toThrow('Binary vectors differ');
     buildIndex(root);
     put(output, 'generated/chapters.json.gz', gzipSync('{}'));

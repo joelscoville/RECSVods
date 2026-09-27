@@ -1,7 +1,7 @@
 /** Build-only module. Import from astro.config.mjs, never from a browser component. */
 import { execFileSync } from 'node:child_process';
 import { loadArchive, publishedServices, type BuildMode, type Service } from './archive';
-import { validateRepositoryUrl, validateSourceRef, type CorrectionConfig } from './corrections';
+import { validateCorrectionUrl, validateRepositoryUrl, validateSourceRef, type CorrectionConfig } from './corrections';
 
 type Environment = Record<string, string | undefined>;
 type GitRead = (args: string[]) => string | undefined;
@@ -12,24 +12,21 @@ export function gitReader(root: string): GitRead {
     } catch { return undefined; } // Never expose Git stderr, a remote credential or a local path.
   };
 }
-function remoteRepository(value: string | undefined): string | undefined {
-  if (!value) return undefined;
-  const ssh = /^(?:git@github\.com:|ssh:\/\/git@github\.com\/)([A-Za-z0-9-]+\/[A-Za-z0-9_.-]+)$/.exec(value);
-  return validateRepositoryUrl(ssh ? `https://github.com/${ssh[1]}` : value);
-}
-export function resolveRepositoryConfig(env: Environment, git: GitRead): Pick<CorrectionConfig, 'repositoryUrl' | 'sourceRef'> {
-  const repositoryUrl = env.PUBLIC_REPOSITORY_URL !== undefined
+export function resolveRepositoryConfig(env: Environment, git: GitRead): Pick<CorrectionConfig, 'repositoryUrl' | 'sourceRef' | 'correctionUrl'> {
+  const repositoryUrl = env.PUBLIC_REPOSITORY_URL
     ? validateRepositoryUrl(env.PUBLIC_REPOSITORY_URL)
-    : env.GITHUB_REPOSITORY ? validateRepositoryUrl(`https://github.com/${env.GITHUB_REPOSITORY}`) : remoteRepository(git(['remote', 'get-url', 'origin']));
-  if (env.PUBLIC_REPOSITORY_URL !== undefined && !repositoryUrl) throw new Error('PUBLIC_REPOSITORY_URL must be an HTTPS github.com owner/repository URL without credentials, query or fragment');
+    : undefined;
+  const correctionUrl = env.PUBLIC_CORRECTIONS_URL ? validateCorrectionUrl(env.PUBLIC_CORRECTIONS_URL) : undefined;
+  if (env.PUBLIC_CORRECTIONS_URL && !correctionUrl) throw new Error('PUBLIC_CORRECTIONS_URL must be an HTTPS contact/form URL or mailto address without credentials');
+  if (env.PUBLIC_REPOSITORY_URL && !repositoryUrl) throw new Error('PUBLIC_REPOSITORY_URL must be an HTTPS github.com owner/repository URL without credentials, query or fragment');
   const ref = env.PUBLIC_SOURCE_REF ?? (env.GITHUB_HEAD_REF || env.GITHUB_REF_NAME || git(['branch', '--show-current']) || env.GITHUB_SHA || git(['rev-parse', '--verify', 'HEAD']));
   const sourceRef = ref ? validateSourceRef(ref) : undefined;
   if (env.PUBLIC_SOURCE_REF !== undefined && !sourceRef) throw new Error('PUBLIC_SOURCE_REF must be a valid branch, tag or commit ref');
-  return { repositoryUrl, sourceRef };
+  return { repositoryUrl, sourceRef, ...(correctionUrl ? { correctionUrl } : {}) };
 }
 
 /** No source re-reading or Git tracking is needed for chapter correction context. */
-export function buildCorrectionConfig(services: Service[], mode: BuildMode, repository: Pick<CorrectionConfig, 'repositoryUrl' | 'sourceRef'>): CorrectionConfig {
+export function buildCorrectionConfig(services: Service[], mode: BuildMode, repository: Pick<CorrectionConfig, 'repositoryUrl' | 'sourceRef' | 'correctionUrl'>): CorrectionConfig {
   const config: CorrectionConfig = { ...repository, services: {}, chapters: {} };
   for (const service of publishedServices(services, mode)) {
     for (const chapter of service.chapters) {

@@ -5,8 +5,9 @@ import { parseScriptureReference } from './scripture';
 import type { SearchChapter } from './types';
 
 export interface ChapterMetadata {
-  schemaVersion: 2;
+  schemaVersion: 3;
   model: typeof CHAPTER_VECTOR_CONFIG;
+  vectors: { file: string; sha256: string };
   chapters: SearchChapter[];
 }
 export interface ScriptureIndex {
@@ -49,8 +50,10 @@ export function sameJson(a: unknown, b: unknown): boolean {
 }
 
 export function parseChapterMetadata(value: unknown): ChapterMetadata {
-  const data = z.object({ schemaVersion: z.literal(2), model: z.unknown(),
+  const data = z.object({ schemaVersion: z.literal(3), model: z.unknown(),
+    vectors: z.object({ file: z.string(), sha256: z.string().regex(/^[a-f0-9]{64}$/) }).strict(),
     chapters: z.array(PublicChapterSchema) }).strict().parse(value);
+  if (data.vectors.file !== `vectors.${data.vectors.sha256}.bin`) throw new Error('Invalid vector asset identity');
   if (!sameJson(data.model, CHAPTER_VECTOR_CONFIG)) throw new Error('Incompatible chapter vector model');
   if (new Set(data.chapters.map((chapter) => chapter.id)).size !== data.chapters.length) throw new Error('Duplicate chapter ID');
   for (const chapter of data.chapters) if (chapter.parentId) {
@@ -90,7 +93,7 @@ function artifactUrl(base: string, name: string): string {
 /** Static hosts may send .gz as raw bytes OR decode it using Content-Encoding.
  * Sniff bytes, not headers, to avoid double-decompression. Older browsers use raw files.
  */
-async function loadArtifact<T>(base: string, name: string, decode: (bytes: Uint8Array) => T, signal?: AbortSignal): Promise<T> {
+async function loadArtifact<T>(base: string, name: string, decode: (bytes: Uint8Array) => T | Promise<T>, signal?: AbortSignal): Promise<T> {
   const fetchBytes = async (filename: string) => {
     const response = await fetch(artifactUrl(base, filename), { signal });
     if (!response.ok) throw new Error(`Unable to load ${filename}: HTTP ${response.status}`);
@@ -99,9 +102,9 @@ async function loadArtifact<T>(base: string, name: string, decode: (bytes: Uint8
   if (typeof DecompressionStream !== 'undefined') {
     try {
       const bytes = await fetchBytes(`${name}.gz`);
-      if (bytes[0] !== 0x1f || bytes[1] !== 0x8b) return decode(bytes);
+      if (bytes[0] !== 0x1f || bytes[1] !== 0x8b) return await decode(bytes);
       const stream = new Blob([new Uint8Array(bytes)]).stream().pipeThrough(new DecompressionStream('gzip'));
-      return decode(new Uint8Array(await new Response(stream).arrayBuffer()));
+      return await decode(new Uint8Array(await new Response(stream).arrayBuffer()));
     } catch (error) {
       if (signal?.aborted || (error as Error).name === 'AbortError') throw error;
       // A missing/corrupt gzip companion must not disable ordinary static hosting.
@@ -128,8 +131,17 @@ export function enrichChapters(chapters: readonly SearchChapter[], scripture: Sc
     return { ...metadata, ...(verseText ? { verseText } : {}) };
   });
 }
-export async function loadChapterVectors(base: string, signal?: AbortSignal): Promise<ChapterVectors> {
-  return loadArtifact(base, 'vectors.bin', decodeChapterVectors, signal);
+export async function loadChapterVectors(base: string, metadata: ChapterMetadata, signal?: AbortSignal): Promise<ChapterVectors> {
+  // Validate even direct callers: neither paths nor a same-sized binary can override identity.
+  parseChapterMetadata(metadata);
+  return loadArtifact(base, metadata.vectors.file, async (bytes) => {
+    const digest = await crypto.subtle.digest('SHA-256', new Uint8Array(bytes));
+    const hash = [...new Uint8Array(digest)].map(value => value.toString(16).padStart(2, '0')).join('');
+    if (hash !== metadata.vectors.sha256) throw new Error('Chapter vector checksum mismatch');
+    const index = decodeChapterVectors(bytes);
+    if (index.rowCount !== metadata.chapters.length) throw new Error('Chapter vector row mismatch');
+    return index;
+  }, signal);
 }
 /** Fetch only when handling an old ?id= URL; unknown/ineligible IDs resolve to undefined. */
 export async function resolveLegacyChapter(base: string, legacyId: string, signal?: AbortSignal): Promise<string | undefined> {

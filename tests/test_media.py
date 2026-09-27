@@ -141,7 +141,7 @@ class MediaTests(unittest.TestCase):
         with self.assertRaises(media.MediaError):
             media.cleanup(root)
 
-    def test_failure_and_interrupt_cleanup_owned_media(self):
+    def test_failure_and_interrupt_do_not_delete_the_workspace(self):
         auth = self.authorization()
         for failure in (media.MediaError("simulated failure"), SystemExit(128 + signal.SIGTERM)):
             with self.subTest(failure=failure), patch.object(media, "acquire", side_effect=failure):
@@ -152,7 +152,7 @@ class MediaTests(unittest.TestCase):
                         self.quiet_main(args)
                 else:
                     self.assertEqual(self.quiet_main(args), 2)
-                self.assertFalse((self.base / "work").exists())
+                self.assertTrue((self.base / 'work' / media.SENTINEL).exists())
 
     def test_cleanup_needs_no_authorization(self):
         root = self.workspace()
@@ -177,7 +177,8 @@ class MediaTests(unittest.TestCase):
             calls.append(argv)
             if "--dump-single-json" in argv:
                 return 0, json.dumps({"id": media.SMOKE, "channel_id": media.CHANNEL, "duration": 189}), ""
-            (root / "source.mkv").write_bytes(b"fixture")
+            output = Path(argv[argv.index('--output') + 1]).parent / 'source.mkv'
+            output.write_bytes(b'fixture')
             return 0, "", ""
         with patch.object(media, "tool_versions", return_value=({"ffmpeg": "fixture"}, "whisper-cli")), \
                 patch.object(media, "check_space"), patch.object(media, "command", side_effect=native), \
@@ -283,6 +284,83 @@ class MediaTests(unittest.TestCase):
             with self.assertRaisesRegex(media.MediaError, "outside"):
                 media.transcribe(root, 0, 60, self.base / "cache", "en", 900)
         command.assert_not_called()
+
+    def test_rejected_cli_commands_preserve_existing_media_and_evidence(self):
+        root = self.workspace(); self.manifest(root, 0, 60)
+        (root / 'evidence.json').write_text('{"existing": true}')
+        (root / 'chunk-0000.wav').write_bytes(b'completed audio evidence')
+        before = {p.name: p.read_bytes() for p in root.iterdir()}
+        auth = self.authorization()
+        for command_args in (['acquire', '--youtube-id', 'ZTDYIJUDb0M'],
+                             ['transcribe', '--start', '0', '--end', '61']):
+            with patch.object(media, 'command') as native:
+                self.assertEqual(self.quiet_main([*command_args, '--work-dir', str(root), '--authorization-file', str(auth)]), 2)
+                native.assert_not_called()
+            self.assertEqual({p.name: p.read_bytes() for p in root.iterdir()}, before)
+
+    def test_partial_processing_failure_preserves_previous_outputs(self):
+        root = self.workspace(); self.manifest(root, 0, 60)
+        (root / 'sample-0000.wav').write_bytes(b'previous sample')
+        (root / 'samples.json').write_text('{"previous": true}')
+        before = {p.name: p.read_bytes() for p in root.iterdir()}
+        def partial(stage, name, *_):
+            (stage / name).write_bytes(b'partial replacement')
+            raise media.MediaError('simulated native failure')
+        with patch.object(media, 'extract_audio', side_effect=partial):
+            with self.assertRaises(media.MediaError): media.sample(root, 900)
+        self.assertEqual({p.name: p.read_bytes() for p in root.iterdir()}, before)
+
+    def test_success_publishes_only_completed_outputs_and_rolls_back_publication_failure(self):
+        root = self.workspace(); self.manifest(root, 0, 60)
+        (root / 'result.txt').write_text('old')
+        @media.transactional
+        def operation(stage):
+            (stage / 'result.txt').write_text('new')
+            (stage / 'second.txt').write_text('new second')
+            return {'ok': True}
+        replace = Path.replace
+        def fail_second(current, target):
+            if current.name == 'second.txt' and current.parent.name == 'work': raise OSError('fixture publication failure')
+            return replace(current, target)
+        before = {p.name: p.read_bytes() for p in root.iterdir()}
+        with patch.object(Path, 'replace', fail_second):
+            with self.assertRaises(OSError): operation(root)
+        self.assertEqual({p.name: p.read_bytes() for p in root.iterdir()}, before)
+        self.assertTrue(operation(root)['ok'])
+        self.assertEqual((root / 'result.txt').read_text(), 'new')
+        self.assertEqual((root / 'source.mkv').read_bytes(), before['source.mkv'])
+
+    def test_interrupted_publication_recovers_before_next_operation(self):
+        root = self.workspace(); self.manifest(root, 0, 60)
+        transaction = root / '.processing-interrupted'
+        (transaction / 'work').mkdir(parents=True); (transaction / 'backup').mkdir()
+        (transaction / 'backup' / 'result.txt').write_text('previous evidence')
+        (root / 'result.txt').write_text('interrupted replacement')
+        media.write_json(transaction / 'journal.json', {'committed': False, 'files': [
+            {'name': 'result.txt', 'existed': True, 'sha256': media.sha256(root / 'result.txt')}]})
+        @media.transactional
+        def operation(stage):
+            return 'complete'
+        self.assertEqual(operation(root), 'complete')
+        self.assertEqual((root / 'result.txt').read_text(), 'previous evidence')
+        self.assertFalse(transaction.exists())
+
+    def test_recovery_preserves_later_edits_and_lock_blocks_cleanup(self):
+        root = self.workspace(); self.manifest(root, 0, 60)
+        transaction = root / '.processing-interrupted'
+        (transaction / 'work').mkdir(parents=True); (transaction / 'backup').mkdir()
+        (transaction / 'backup' / 'result.txt').write_text('previous evidence')
+        (root / 'result.txt').write_text('later manual edit')
+        media.write_json(transaction / 'journal.json', {'committed': False, 'files': [
+            {'name': 'result.txt', 'existed': True, 'sha256': hashlib.sha256(b'interrupted replacement').hexdigest()}]})
+        with self.assertRaisesRegex(media.MediaError, 'later edit'):
+            media.recover_transaction(root, transaction)
+        self.assertEqual((root / 'result.txt').read_text(), 'later manual edit')
+        self.assertEqual((transaction / 'backup' / 'result.txt').read_text(), 'previous evidence')
+        with media.workspace_lock(root):
+            with self.assertRaisesRegex(media.MediaError, 'active operation'):
+                media.cleanup(root)
+        self.assertTrue((root / 'source.mkv').is_file())
 
     def test_authoritative_model_metadata_and_verified_bytes(self):
         content = b"model fixture, not real weights"

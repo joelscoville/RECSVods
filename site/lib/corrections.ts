@@ -7,6 +7,7 @@ export interface CorrectionService { videos: { id: string; duration: number }[] 
 /** Build-produced public identifiers and bounds only. */
 export interface CorrectionConfig {
   repositoryUrl?: string;
+  correctionUrl?: string;
   sourceRef?: string;
   services: Record<string, CorrectionService>;
   chapters: Record<string, CorrectionChapter>;
@@ -23,6 +24,16 @@ export function validateRepositoryUrl(value: string): string | undefined {
   if (!repository || repository === '.' || repository === '..') return undefined;
   return `https://github.com/${match[1]}/${repository}`;
 }
+/** Explicit public contact/form destination. Never derive accessibility from a Git remote. */
+export function validateCorrectionUrl(value: string): string | undefined {
+  if (/[\s\\]/.test(value) || /%0[ad]/i.test(value)) return undefined;
+  if (/^mailto:[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(value)) return value;
+  try {
+    const url = new URL(value);
+    if (url.protocol === 'https:' && !url.username && !url.password && url.hostname) return url.href;
+  } catch { /* Invalid URL. */ }
+  return undefined;
+}
 export function validateSourceRef(value: string): string | undefined {
   if (!value || value === 'HEAD' || value === '@' || /[\s~^:?*[\\]/.test(value)
     || [...value].some((character) => character.charCodeAt(0) < 32 || character.charCodeAt(0) === 127)
@@ -38,7 +49,8 @@ const own = <T,>(map: Record<string, T>, key: string): T | undefined => Object.p
 /** No location, query, history, resume state, free-form text or private archive objects. */
 export function correctionLinks(target: CorrectionTarget, base: string, config = correctionConfig(), kind?: CorrectionKind): { issueUrl?: string } {
   const repository = config.repositoryUrl && validateRepositoryUrl(config.repositoryUrl);
-  if (!repository) return {};
+  const contact = config.correctionUrl && validateCorrectionUrl(config.correctionUrl);
+  if (!repository && !contact) return {};
   let serviceId: string;
   let chapterId = '';
   let videos: { id: string; start: number; end: number }[];
@@ -64,6 +76,7 @@ export function correctionLinks(target: CorrectionTarget, base: string, config =
     return !videoId(video.id) || !known || !Number.isFinite(known.duration) || !Number.isFinite(video.start) || !Number.isFinite(video.end)
       || video.start < 0 || video.end <= video.start || video.end > known.duration;
   })) return {};
+  if (contact) return { issueUrl: contact };
   const params = new URLSearchParams({
     template: 'archive-correction.yml', title: `Archive correction: ${chapterId || serviceId}`,
     'service-id': serviceId, 'video-id': videos.map((video) => video.id).join(', '),

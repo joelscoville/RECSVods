@@ -2,8 +2,8 @@
 
 Each public chapter result/row and each service page offers one **Suggest a
 correction** action. Selected playback offers the selected chapter's action, or a
-service/video action when no chapter contains the position. Native links open a
-GitHub issue draft in the same tab; they do not submit it.
+service/video action for full-recording playback. Native links open the configured
+public contact destination or GitHub issue draft; they do not submit anything.
 
 The six choices are **chapter time**, **title**, **scripture**, **speaker**,
 **topic**, and **other**. There are no transcript-edit links or source editor actions.
@@ -12,22 +12,24 @@ The six choices are **chapter time**, **title**, **scripture**, **speaker**,
 
 | Variable | Meaning and fallback |
 | --- | --- |
-| `PUBLIC_REPOSITORY_URL` | HTTPS GitHub owner/repository; falls back to `GITHUB_REPOSITORY`, then local `origin` |
+| `PUBLIC_CORRECTIONS_URL` | Explicit public HTTPS contact/form URL or `mailto:` address; takes precedence |
+| `PUBLIC_REPOSITORY_URL` | Explicit public GitHub correction repository, which may be separate from the private source repository |
 | `PUBLIC_SOURCE_REF` | Branch/tag/commit; falls back to CI source branch/ref, local branch, CI SHA, then local HEAD commit |
 | `SITE_BASE_PATH` | Existing deployment prefix, including nested previews |
 
 Repository names and refs are resolved at build time, never hardcoded in browser
-code. A rename requires an updated environment or remote and a rebuild. Invalid
+code. A rename requires an updated environment and a rebuild. Invalid
 explicit URLs/refs fail with sanitized messages. Repository validation rejects
 credentials, alternate hosts, ports, queries and URL normalization tricks.
 
 `astro.config.mjs` imports build-only `site/lib/source-links.ts` and defines
 `__RECS_CORRECTIONS__` as a structured object for server rendering and React
-islands. Repository discovery uses bounded argument-array Git calls with suppressed
-stderr. It no longer reads Git tracking, internal text, Markdown pointers or source
-files to determine edit availability. No filesystem/child-process implementation
-belongs in browser bundles. A missing safe repository produces the existing
-unavailable message; a missing ref does not prevent suggestions.
+islands. Git is used only for optional ref information, not to infer a public
+correction destination. Configure the same-named Actions repository variables for
+the Pages build, and verify access while signed out. A private source repository
+does not provide a public issue form. Without a destination the UI displays its
+unavailable message; a missing ref does not prevent suggestions. Generic contact
+URLs are opened unchanged, without attaching browsing state or prefilling context.
 
 ## Public context and privacy
 
@@ -36,6 +38,7 @@ unavailable message; a missing ref does not prevent suggestions.
 ```ts
 interface CorrectionConfig {
   repositoryUrl?: string;
+  correctionUrl?: string;
   sourceRef?: string;
   services: Record<string, { videos: {id: string; duration: number}[] }>;
   chapters: Record<string, {serviceId: string; videoId: string; start: number; end: number}>;
@@ -87,8 +90,7 @@ checks one suggestion per chapter plus one per service in a **fresh non-root
 preview**, and rejects Node imports in browser chunks. It no longer inspects Git
 tracking or transcript editor URLs.
 
-Execution is pending integration; prior passage-era test counts do not establish
-chapter acceptance. Once source/build migration is complete:
+Current acceptance is recorded in the run log. To repeat the focused checks:
 
 ```sh
 scripts/devenv-run pnpm exec vitest run tests/corrections.test.ts tests/browse.test.ts tests/player.test.ts tests/publication-ui.test.ts

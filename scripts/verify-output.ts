@@ -6,7 +6,7 @@ import { gunzipSync } from 'node:zlib';
 import { loadArchive, parseYaml, type BuildMode } from '../site/lib/archive';
 import { decodeChapterVectors } from '../site/lib/chapter-vectors';
 import { parseChapterMetadata, parseLegacyChapterMap, parseScriptureIndex, sameJson } from '../site/lib/chapter-index';
-import { chapterArtifacts, CHAPTER_ARTIFACTS } from './archive';
+import { chapterArtifacts, CHAPTER_ARTIFACTS, artifactFilename } from './archive';
 import { EMBEDDING_CONFIG, MODEL_FILES } from '../site/lib/embedding-config';
 import { verifyModelFile } from './embeddings';
 
@@ -101,14 +101,15 @@ export async function verifyOutput(root: string, output: string, mode: BuildMode
   const metadataTokens = new Set(JSON.stringify(actual).match(/[A-Za-z0-9_-]+/g) ?? []);
   if (Object.keys(legacy).some((id) => metadataTokens.has(id))) throw new Error('Legacy ID in chapter search metadata');
   if (mode === 'production' && actual.chapters.some((chapter) => chapter.preview)) throw new Error('Unreviewed chapter in production');
-  const binary = await readFile(path.join(generated, 'vectors.bin'));
+  const binary = await readFile(path.join(generated, actual.vectors.file));
   const decoded = decodeChapterVectors(binary);
   if (decoded.rowCount !== actual.chapters.length || !binary.equals(expected.files['vectors.bin'])) {
     throw new Error('Binary vectors differ from ordered eligible committed rows');
   }
-  const allowed = new Set<string>(CHAPTER_ARTIFACTS.flatMap((name) => [name, `${name}.gz`]));
+  const filenames = CHAPTER_ARTIFACTS.map(name => artifactFilename(name, actual));
+  const allowed = new Set<string>(filenames.flatMap((name) => [name, `${name}.gz`]));
   for (const name of await readdir(generated)) if (!allowed.has(name)) throw new Error(`Unexpected generated artifact: ${name}`);
-  for (const name of CHAPTER_ARTIFACTS) {
+  for (const name of filenames) {
     const raw = await readFile(path.join(generated, name));
     if (!gunzipSync(await readFile(path.join(generated, `${name}.gz`))).equals(raw)) throw new Error(`Gzip companion differs: ${name}`);
     if (name.endsWith('.json') && raw.toString('utf8') !== JSON.stringify(JSON.parse(raw.toString('utf8')))) {

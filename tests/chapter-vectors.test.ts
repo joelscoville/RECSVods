@@ -170,7 +170,7 @@ async function fixture() {
     { ...chapter, id: 'chapter-c', video_id: OTHER, start: 0, end: 10 }];
   await writeFile(path.join(directory, 'service.yaml'), stringify({ id: 'fixture-service', chapters,
     summary: 'metadata must never be embedded' }));
-  const legacy = `# Preserve this exact file, including comments and block whitespace.\npassages:\n  - id: old-a\n    section_id: chapter-a\n    video_id: ${VIDEO}\n    start: 0\n    end: 10\n    transcript: |\n      legacyspoken [Quotation omitted.]\n      secondline\n  - id: old-b\n    section_id: chapter-b\n    video_id: ${VIDEO}\n    start: 10\n    end: 20\n    transcript: '[Lyrics omitted; reference only.]'\n`;
+  const legacy = `# Preserve this exact file, including comments and block whitespace.\npassages:\n  - id: old-a\n    section_id: chapter-a\n    video_id: ${VIDEO}\n    start: 0\n    end: 10\n    transcript: |\n      legacyspoken [Quotation omitted.]\n      secondline\n  - id: old-b\n    section_id: chapter-b\n    video_id: ${VIDEO}\n    start: 10\n    end: 20\n    transcript: '[Lyrics omitted; reference only.]'\n  - id: old-c\n    section_id: chapter-c\n    video_id: ${OTHER}\n    start: 0\n    end: 10\n    transcript: '[Instrumental; no speech.]'\n`;
   await writeFile(path.join(directory, 'passages.internal.yaml'), legacy);
   const state = { created: 0, disposed: 0, texts: [] as string[], windows: [] as number[][] };
   async function createSession(): Promise<EmbeddingSession> {
@@ -225,7 +225,7 @@ describe('isolated private processor', () => {
     expect(manifestBytes).not.toMatch(/legacyspoken|secondline|metadata must|passages\.internal|transcripts|\.local/u);
     const loaded = loadServiceChapterVectors(f.root, 'services/2026/fixture-service/service.yaml');
     expect(loaded.manifest.bindings.map((item) => [item.windows, item.has_text, item.source_kind])).toEqual([
-      [1, true, 'legacy_passages'], [0, false, 'legacy_passages'], [0, false, 'none'],
+      [1, true, 'legacy_passages'], [0, false, 'legacy_passages'], [0, false, 'legacy_passages'],
     ]);
     const repeat = await processChapterVectors({ fixtureRoot: f.root, service: 'fixture-service', createSession: f.createSession });
     expect(repeat).toMatchObject({ reusedServices: 1, embeddedWindows: 0, writtenServices: 0 });
@@ -295,14 +295,25 @@ describe('isolated private processor', () => {
     // Corrupt the derived cache and remove sidecars: explicit processing must recompute.
     await writeFile(path.join(cacheRoot, recipe, files[0]), '{}');
     await rm(path.join(f.directory, 'chapter-vectors.bin'));
+    await rm(path.join(f.directory, 'chapter-vectors.json'));
     const repaired = await processChapterVectors({ fixtureRoot: f.root, service: 'fixture-service', createSession: f.createSession });
     expect(repaired.embeddedWindows).toBe(1);
   });
 
+  it.each(['bin', 'json'])('does not overwrite the surviving artifact when its %s companion is missing', async suffix => {
+    const f = await fixture();
+    await processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession });
+    const survivor = path.join(f.directory, `chapter-vectors.${suffix === 'bin' ? 'json' : 'bin'}`);
+    const before = await readFile(survivor);
+    await rm(path.join(f.directory, `chapter-vectors.${suffix}`));
+    await expect(processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession })).rejects.toThrow('Incomplete chapter vector pair');
+    expect(await readFile(survivor)).toEqual(before);
+  });
   it('never initializes a model for an entirely no-text service or substitutes chapter metadata', async () => {
     const f = await fixture();
     await rm(path.join(f.directory, 'passages.internal.yaml'));
-    const report = await processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession });
+    await expect(processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession })).rejects.toThrow('Evidence unavailable');
+    const report = await processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession, allowEmpty: f.chapters.map(chapter => chapter.id) });
     expect(report).toMatchObject({ skippedSemantic: 3, windows: 0, embeddedWindows: 0 });
     expect(f.state.created).toBe(0);
     expect(loadServiceChapterVectors(f.directory).values.every((v) => v === 0)).toBe(true);
@@ -321,6 +332,20 @@ describe('isolated private processor', () => {
     await writeFile(path.join(f.directory, 'service.yaml'), stringify({ chapters: [{ ...chapter, end: 11 }, ...f.chapters.slice(1)] }));
     await processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession });
     expect(loadServiceChapterVectors(f.directory).manifest.bindings[0].input_sha256).not.toBe(changed.bindings[0].input_sha256);
+  });
+  it('preserves prior nonzero vectors when private evidence is absent or unexpectedly empty', async () => {
+    const f = await fixture();
+    await processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession });
+    const binary = await readFile(path.join(f.directory, 'chapter-vectors.bin'));
+    const manifest = await readFile(path.join(f.directory, 'chapter-vectors.json'));
+    await rm(path.join(f.directory, 'passages.internal.yaml'));
+    await expect(processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession })).rejects.toThrow('Evidence unavailable');
+    expect(await readFile(path.join(f.directory, 'chapter-vectors.bin'))).toEqual(binary);
+    expect(await readFile(path.join(f.directory, 'chapter-vectors.json'))).toEqual(manifest);
+    await writeFile(path.join(f.directory, 'passages.internal.yaml'), f.legacy.replace('legacyspoken', '[omitted]').replace('secondline', '[omitted]'));
+    await expect(processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession })).rejects.toThrow('text-bearing');
+    expect(await readFile(path.join(f.directory, 'chapter-vectors.bin'))).toEqual(binary);
+    await expect(processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession, allowEmpty: ['chapter-a'] })).resolves.toMatchObject({ skippedSemantic: 3 });
   });
 });
 

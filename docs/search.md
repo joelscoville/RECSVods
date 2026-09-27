@@ -15,8 +15,8 @@ or source path is a public search field. The operator decision is
 
 | Artifact under `generated/` | Contents |
 | --- | --- |
-| `chapters.json` | `{schemaVersion:2, model:CHAPTER_VECTOR_CONFIG, chapters:SearchChapter[]}` |
-| `vectors.bin` | Versioned compact int8 rows, in exactly the metadata array's order |
+| `chapters.json` | `{schemaVersion:3, model:CHAPTER_VECTOR_CONFIG, vectors:{file,sha256}, chapters:SearchChapter[]}` |
+| `vectors.<sha256>.bin` | Content-addressed compact int8 rows, in exactly the metadata array's order |
 | `scripture.json` | Deduplicated public-domain BSB verse keys/text and reference mappings |
 | `legacy-chapters.json` | Old ID → eligible chapter ID compatibility mapping only |
 
@@ -30,7 +30,7 @@ to build an index: the builder selects committed chapter vector rows.
 loadChapterMetadata(base, signal?); // validates schema and full CHAPTER_VECTOR_CONFIG
 loadScriptureIndex(base, signal?);
 enrichChapters(chapters, scripture); // copies, preserves array order
-loadChapterVectors(base, signal?); // decodes binary header, dimension, rows
+loadChapterVectors(base, metadata, signal?); // verifies checksum, header, dimension and row count
 resolveLegacyChapter(base, oldId, signal?); // only for old ?id= links
 ```
 
@@ -38,8 +38,10 @@ Loaders support optional gzip companions with ordinary-file fallback. Metadata
 must validate before vectors are attached. The binary does not carry chapter IDs:
 **never independently filter, sort or remove zero rows from its metadata array**.
 SearchApp rejects a mixed production/preview artifact instead of shifting ordinals.
-It verifies vector row count against the validated metadata. Artifact pairs must
-come from the same build; deploy the generated directory together.
+It fetches the content-addressed filename from that metadata and verifies the
+decoded bytes' SHA-256 and row count before attaching vectors. A same-sized asset
+from another generation is rejected; exact search remains available. Deploy the
+generated directory together.
 
 BSB enrichment happens only in browser memory. The UI neither renders `verseText`
 nor serializes it per chapter. Scripture links remain reference-only ESV links.

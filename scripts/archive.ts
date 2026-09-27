@@ -2,6 +2,7 @@ import { existsSync, lstatSync, mkdirSync, readFileSync, realpathSync, rmSync, w
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { gzipSync } from 'node:zlib';
+import { createHash } from 'node:crypto';
 import { flattenChapters, loadArchive, type BuildMode, type Service } from '../site/lib/archive';
 import { CHAPTER_VECTOR_CONFIG, packChapterVectors } from '../site/lib/chapter-vectors';
 import { validateChapterVectorManifest } from './chapter-vectors';
@@ -11,6 +12,7 @@ import { buildScriptureIndex } from '../bible/chapter-index';
 import { validateBackfill } from '../site/lib/backfill';
 
 export const CHAPTER_ARTIFACTS = ['chapters.json', 'vectors.bin', 'scripture.json', 'legacy-chapters.json'] as const;
+export const artifactFilename = (name: (typeof CHAPTER_ARTIFACTS)[number], metadata: ChapterMetadata) => name === 'vectors.bin' ? metadata.vectors.file : name;
 const compact = (value: unknown) => Buffer.from(JSON.stringify(value));
 
 /** Sidecars may never redirect a build into private ASR/evidence directories. */
@@ -68,9 +70,11 @@ export function eligibleLegacyChapters(root: string, services: readonly Service[
 export function chapterArtifacts(root = process.cwd(), mode: BuildMode = 'production') {
   const services = loadArchive(root);
   validateBackfill(root, services);
-  const metadata: ChapterMetadata = parseChapterMetadata({ schemaVersion: 2, model: CHAPTER_VECTOR_CONFIG,
-    chapters: flattenChapters(services, mode) });
-  const vectors = Buffer.from(packChapterVectors(committedChapterRows(root, services, metadata.chapters)));
+  const chapters = flattenChapters(services, mode);
+  const vectors = Buffer.from(packChapterVectors(committedChapterRows(root, services, chapters)));
+  const sha256 = createHash('sha256').update(vectors).digest('hex');
+  const metadata: ChapterMetadata = parseChapterMetadata({ schemaVersion: 3, model: CHAPTER_VECTOR_CONFIG,
+    vectors: { file: `vectors.${sha256}.bin`, sha256 }, chapters });
   const scripture = buildScriptureIndex(metadata.chapters);
   const legacy = eligibleLegacyChapters(root, services, metadata.chapters);
   const files: Record<(typeof CHAPTER_ARTIFACTS)[number], Buffer> = {
@@ -84,11 +88,12 @@ export function buildIndex(root = process.cwd(), mode: BuildMode = 'production')
   const directory = path.join(root, 'site/public/generated');
   // Clear BEFORE validation, including on a failed build. No stale preview/old index may survive.
   rmSync(directory, { recursive: true, force: true });
-  const { files } = chapterArtifacts(root, mode);
+  const { files, metadata } = chapterArtifacts(root, mode);
   mkdirSync(directory, { recursive: true });
   for (const name of CHAPTER_ARTIFACTS) {
-    writeFileSync(path.join(directory, name), files[name]);
-    writeFileSync(path.join(directory, `${name}.gz`), gzipSync(files[name], { level: 9 }));
+    const filename = artifactFilename(name, metadata);
+    writeFileSync(path.join(directory, filename), files[name]);
+    writeFileSync(path.join(directory, `${filename}.gz`), gzipSync(files[name], { level: 9 }));
   }
   return path.join(directory, 'chapters.json');
 }
@@ -101,8 +106,8 @@ export function metadataOutputSize(chapters: readonly SearchChapter[]) {
 export function chapterArtifactReport(directory: string) {
   const metadata = parseChapterMetadata(JSON.parse(readFileSync(path.join(directory, 'chapters.json'), 'utf8')));
   const artifacts = Object.fromEntries(CHAPTER_ARTIFACTS.map((name) => [name, {
-    bytes: readFileSync(path.join(directory, name)).byteLength,
-    gzipBytes: readFileSync(path.join(directory, `${name}.gz`)).byteLength,
+    bytes: readFileSync(path.join(directory, artifactFilename(name, metadata))).byteLength,
+    gzipBytes: readFileSync(path.join(directory, `${artifactFilename(name, metadata)}.gz`)).byteLength,
   }]));
   const perService = Object.fromEntries([...new Set(metadata.chapters.map((chapter) => chapter.serviceId))].map((id) =>
     [id, metadataOutputSize(metadata.chapters.filter((chapter) => chapter.serviceId === id))]));

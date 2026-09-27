@@ -34,6 +34,7 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
   const [linkError, setLinkError] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const [time, setTime] = useState(0);
+  const [seekRequest, setSeekRequest] = useState(0);
   const generation = useRef(0);
   useEffect(() => {
     let abort: AbortController | undefined;
@@ -51,7 +52,7 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
         }
         const next = resolveSelection(services, target);
         if (generation.current !== version) return;
-        setSelection(next); setTime(next?.start ?? 0); setReady(true);
+        setSelection(next); setTime(next?.start ?? 0); setSeekRequest(value => value + 1); setReady(true);
         if (next) {
           document.title = `${next.chapter?.title ?? next.service.title} | RECS Replay`;
           if (next.chapter) window.history.replaceState({}, '', watchUrl(base, { chapter: next.chapter.id }));
@@ -69,7 +70,9 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
     generation.current++;
     const next = resolveSelection(services, { chapter: chapter.id });
     if (!next) return;
-    window.history.pushState({}, '', watchUrl(base, { chapter: chapter.id }));
+    const url = watchUrl(base, { chapter: chapter.id });
+    if (window.location.pathname + window.location.search !== url) window.history.pushState({}, '', url);
+    setSeekRequest(value => value + 1);
     setSelection(next); setTime(next.start); setReady(true); setLinkError(false);
     document.title = `${chapter.title} | RECS Replay`;
   }
@@ -86,7 +89,7 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
   const { service, video, chapter, start } = selection;
   const title = chapter?.title ?? service.title;
   const range = { id: chapter?.id ?? `${video.id}:${start}`, start: chapter?.start ?? start, end: chapter?.end, resumeAt: start };
-  const shareUrl = chapter ? watchUrl(base, { chapter: chapter.id }) : watchUrl(base, { service: service.id, video: video.id });
+  const shareUrl = chapter ? watchUrl(base, { chapter: chapter.id }) : watchUrl(base, { service: service.id, video: video.id, start });
   const references = chapter?.scripture ?? [...new Set(service.chapters.filter((item) => item.videoId === video.id).flatMap((item) => item.scripture))];
   const displayReferences = chapter?.scriptureDisplay ?? references.map((reference) => {
     const source = service.chapters.find((item) => item.videoId === video.id && item.scripture.includes(reference));
@@ -95,7 +98,7 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
   return <main id="main" className="watch-main" tabIndex={-1}>
     <div className="playback-layout">
       <a className="icon-button back-button playback-back" href={serviceUrl(base, service.id)} aria-label="Back to service"><Icon name="back" /></a>
-      <YouTubePlayer key={video.id} videoId={video.id} serviceId={service.id} title={title} range={range} onTime={setTime} />
+      <YouTubePlayer key={video.id} videoId={video.id} serviceId={service.id} title={title} range={range} seekRequest={seekRequest} onTime={setTime} />
       <section className="playback-details" aria-labelledby="recording-title">
         <h1 id="recording-title">{title}</h1>
         {chapter?.parentId && <p className="metadata">Part of <a href={watchUrl(base, { chapter: chapter.parentId })}>{chapter.parentTitle}</a></p>}

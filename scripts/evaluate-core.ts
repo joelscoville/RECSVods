@@ -223,8 +223,9 @@ export async function evaluate(options: EvaluationOptions = { milestone: 4, impl
   }
   const services = loadArchive(); // Strict source schema also checks sequence, membership and bounds.
   const source = readFileSync(path.join(artifact, 'chapters.json'));
-  const chapters = parseChapterMetadata(JSON.parse(source.toString('utf8'))).chapters;
-  const vectorBytes = readFileSync(path.join(artifact, 'vectors.bin'));
+  const metadata = parseChapterMetadata(JSON.parse(source.toString('utf8')));
+  const chapters = metadata.chapters;
+  const vectorBytes = readFileSync(path.join(artifact, metadata.vectors.file));
   const production = parseChapterMetadata(JSON.parse(readFileSync('dist/production/generated/chapters.json', 'utf8'))).chapters;
   const projected = publishedServices(services, 'preview');
   const physical = services.flatMap((service) => service.videos);

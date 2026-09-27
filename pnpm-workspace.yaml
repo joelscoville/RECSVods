@@ -1,0 +1,7 @@
+packages:
+  - .
+
+# The text-only embedding pipeline does not use Sharp, but its transitive image
+# dependency must still receive the libheif security fixes.
+overrides:
+  '@huggingface/transformers>sharp': ^0.35.4

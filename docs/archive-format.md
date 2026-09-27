@@ -141,9 +141,9 @@ hashes and binary checksum, never transcript text or private paths. The static b
 copies committed int8 rows and does not need evidence. See `docs/chapter-vectors.md`.
 
 Legacy passage arrays and any referenced Markdown are preserved unchanged internally.
-The application loader never materializes them. Migration verification compares
-every original value and transcript byte to Git `540abab`; later editorial checks
-enforce byte immutability. No new passage/transcript files are authored. Only the
+The application loader never materializes them. `verify:preserved` checks their
+sealed byte hashes without historical Git objects; editorial checks additionally
+enforce immutability across commits. No new passage/transcript files are authored. Only the
 minimal `legacy-chapters.json` ID map may be published for old-link compatibility.
 See `docs/chapter-migration.md` for the historical schema and lossless migration.
 
@@ -274,7 +274,7 @@ scripts/devenv-run pnpm exec tsx scripts/editorial.ts guard BASE HEAD
 ```
 
 Both modes clear `site/public/generated/` before validation, removing old or stale
-preview artifacts even on failure. They emit compact `chapters.json`, `vectors.bin`,
+preview artifacts even on failure. They emit compact `chapters.json`, `vectors.<sha256>.bin`,
 deduplicated `scripture.json`, and the minimal `legacy-chapters.json`, with gzip
 companions. Zero eligible chapters produce valid empty envelopes and a header-only
 binary. Production **must regenerate before copying assets**; never deploy preview.

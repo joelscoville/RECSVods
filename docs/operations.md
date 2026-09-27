@@ -14,12 +14,18 @@
    human environment reviewers if the organization requires them.
 4. Enable Actions failure notifications and confirm the discovery schedule/manual
    dispatch permissions. Discovery needs issue writes, not content or Pages writes.
+5. Set `PUBLIC_CORRECTIONS_URL` (public contact/form URL or mailto address), or
+   `PUBLIC_REPOSITORY_URL` for a public correction repository, as an Actions repository
+   variable. Verify access signed out. The private Git remote is not a fallback.
 
 No settings, branch protection, environment, merge or deployment is changed by the
 implementation agent. These are administrator actions, documented for completion.
 The editorial guard checks recorded transitions, source equality and commit shape;
 it cannot prove human listening or reliably identify an author using someone else’s
 credentials. Green checks do not replace human review or appropriate repository access.
+Ordinary merges may inherit a reviewed parent's exact source/artifacts; a merge
+resolution cannot invent approval or restore it over concurrent unreviewed changes.
+PR validation starts at the merge base, allowing the target branch to advance.
 
 ## Pipeline boundaries
 

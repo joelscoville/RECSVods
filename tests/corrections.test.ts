@@ -31,15 +31,24 @@ describe('build-only repository and ref configuration', () => {
     expect(validateRepositoryUrl(value)).toBeUndefined(); expect(correctionLinks({ chapterId: 'chapter-0' }, '/', { ...config(), repositoryUrl: value })).toEqual({});
   });
   it.each(['HEAD', '../main', '-option', 'a//b', 'a/./b', 'a.lock', 'a..b', 'a b', 'a\nb', 'a?b', 'a\\b'])('rejects unsafe ref %s', (ref) => expect(validateSourceRef(ref)).toBeUndefined());
-  it('supports renames and prefers explicit settings then CI then injected local Git', () => {
+  it('requires an explicit public correction repository; never assumes Git or CI repositories are public', () => {
     const git = vi.fn((args: string[]) => args[0] === 'remote' ? 'git@github.com:example/local-name.git' : 'feat/local-branch');
     expect(resolveRepositoryConfig({ PUBLIC_REPOSITORY_URL: repository.repositoryUrl, PUBLIC_SOURCE_REF: 'review/v2', GITHUB_REPOSITORY: 'example/old' }, git)).toEqual({ ...repository, sourceRef: 'review/v2' });
     expect(git).not.toHaveBeenCalled();
-    expect(resolveRepositoryConfig({ GITHUB_REPOSITORY: 'example/new-name', GITHUB_HEAD_REF: 'feat/pr-head' }, git)).toEqual({ repositoryUrl: 'https://github.com/example/new-name', sourceRef: 'feat/pr-head' });
-    expect(resolveRepositoryConfig({}, git)).toEqual({ repositoryUrl: 'https://github.com/example/local-name', sourceRef: 'feat/local-branch' });
+    expect(resolveRepositoryConfig({ GITHUB_REPOSITORY: 'example/new-name', GITHUB_HEAD_REF: 'feat/pr-head' }, git)).toEqual({ repositoryUrl: undefined, sourceRef: 'feat/pr-head' });
+    expect(resolveRepositoryConfig({}, git)).toEqual({ repositoryUrl: undefined, sourceRef: 'feat/local-branch' });
     expect(resolveRepositoryConfig({}, () => undefined)).toEqual({ repositoryUrl: undefined, sourceRef: undefined });
     expect(() => resolveRepositoryConfig({ PUBLIC_REPOSITORY_URL: 'https://secret@github.com/a/b' }, git)).toThrow(/PUBLIC_REPOSITORY_URL/);
     expect(() => resolveRepositoryConfig({ PUBLIC_SOURCE_REF: '../escape' }, git)).toThrow(/PUBLIC_SOURCE_REF/);
+  });
+  it('accepts a separate contact destination and rejects unsafe schemes or credentials', () => {
+    for (const url of ['https://example.org/corrections', 'mailto:editor@example.org']) {
+      const destination = resolveRepositoryConfig({ PUBLIC_CORRECTIONS_URL: url }, () => undefined);
+      expect(correctionLinks({ chapterId: 'chapter-0' }, '/', { ...config(), ...destination })).toEqual({ issueUrl: url });
+    }
+    for (const url of ['javascript:alert(1)', 'http://example.org', 'https://secret@example.org', 'mailto:editor@example.org%0aBcc:private@example.org']) {
+      expect(() => resolveRepositoryConfig({ PUBLIC_CORRECTIONS_URL: url }, () => undefined)).toThrow('PUBLIC_CORRECTIONS_URL');
+    }
   });
 });
 

@@ -120,6 +120,30 @@ test('August ordered uploads, cross-upload chapters and chapter soft-stop use th
   expect(await page.evaluate(() => ({ pauses: window.testPlayer.pauses, state: window.testPlayer.state }))).toEqual({ pauses: before.pauses, state: 1 });
 });
 
+test('selecting the current chapter restarts it without remounting YouTube', async ({ page }) => {
+  const chapter = passages.find(item => !item.parentId)!;
+  await mockYouTube(page);
+  await page.goto(`watch/?chapter=${chapter.id}`);
+  await page.locator('button.play-button').click();
+  await expectPlayer(page, chapter.videoId, chapter.start);
+  await page.evaluate(end => { window.testPlayer.time = end; }, chapter.end);
+  await expect(page.getByText('Chapter finished. Playback is paused.')).toBeVisible();
+  await page.locator('.outline-node-header button.chapter-row').filter({ has: page.getByText(chapter.title, { exact: true }) }).click();
+  await expectPlayer(page, chapter.videoId, chapter.start);
+  expect(await page.evaluate(() => window.testVideoIds)).toEqual([chapter.videoId]);
+  await expect(page.getByText('Chapter finished. Playback is paused.')).toHaveCount(0);
+});
+
+test('copying a full-recording resume link retains its timestamp', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText: async (value: string) => { document.documentElement.dataset.copied = value; } } });
+  });
+  const chapter = passages[0];
+  await page.goto(`watch/?service=${chapter.serviceId}&video=${chapter.videoId}&t=42.5`);
+  await page.getByRole('button', { name: 'Copy link', exact: true }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-copied', new RegExp(`video=${chapter.videoId}&t=42$`));
+});
+
 test('static browse URLs and focused search display ESV references without hidden BSB text or Bible API requests', async ({ page, context }) => {
   const bibleRequests: string[] = [];
   context.on('request', (request) => { if (/esv\.org|bible\./i.test(new URL(request.url()).hostname)) bibleRequests.push(request.url()); });

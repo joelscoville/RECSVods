@@ -4,6 +4,8 @@
 import argparse
 import contextlib
 import datetime
+import fcntl
+import functools
 import hashlib
 import json
 import math
@@ -129,7 +131,111 @@ def owned_workdir(path, create=False):
 def cleanup(path):
     root = owned_workdir(path)
     # shutil.rmtree does not follow directory symlinks; root/sentinel were checked above.
-    shutil.rmtree(root)
+    with workspace_lock(root):
+        shutil.rmtree(root)
+
+
+@contextlib.contextmanager
+def workspace_lock(root):
+    with (root / SENTINEL).open('rb') as handle:
+        try:
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise MediaError('Workspace already has an active operation') from None
+        try:
+            yield
+        finally:
+            fcntl.flock(handle, fcntl.LOCK_UN)
+
+
+def recover_transaction(root, transaction):
+    """Roll back an interrupted publication, never overwrite subsequently edited files."""
+    journal = transaction / 'journal.json'
+    if not journal.exists():
+        return  # Unpublished scratch can be removed by its invocation or explicit cleanup.
+    record = read_json(journal)
+    if record.get('committed'):
+        shutil.rmtree(transaction)
+        return
+    for item in record['files']:
+        name = item['name']
+        if Path(name).name != name or name in (SENTINEL, '.', '..'):
+            raise MediaError('Invalid processing recovery journal')
+        target, backup = root / name, transaction / 'backup' / name
+        installed = not (transaction / 'work' / name).exists()
+        if backup.exists() or (installed and not item['existed']):
+            if target.is_symlink() or (target.exists() and (not target.is_file() or sha256(target) != item['sha256'])):
+                raise MediaError('Processing recovery found a later edit; previous results remain in the transaction backup')
+            if backup.exists():
+                backup.replace(target)
+            elif target.exists():
+                target.unlink()
+    shutil.rmtree(transaction)
+
+
+def transactional(operation):
+    """Run against isolated outputs; existing source/evidence survives rejection or failure.
+
+    Publication has a recovery journal and backups. Abrupt interruption during the
+    small rename phase is recovered on the next operation. Whole-workspace removal
+    is reserved for the explicit cleanup command.
+    """
+    @functools.wraps(operation)
+    def run_transaction(root, *args, **kwargs):
+        root = owned_workdir(root)
+        with workspace_lock(root):
+            for previous in root.glob('.processing-*'):
+                if previous.is_symlink() or not previous.is_dir():
+                    raise MediaError('Invalid processing transaction directory')
+                recover_transaction(root, previous)
+            if any(item.is_symlink() for item in root.iterdir()):
+                raise MediaError('Symlinks are not allowed in a processing workspace')
+            if operation.__name__ == 'acquire' and ((root / 'manifest.json').exists() or any(root.glob('source.*'))):
+                raise MediaError('Work directory already contains an acquisition; use a fresh directory')
+            before = {item.name: item.stat() for item in root.iterdir()}
+            transaction = Path(tempfile.mkdtemp(prefix='.processing-', dir=root))
+            work, backup = transaction / 'work', transaction / 'backup'
+            work.mkdir(); backup.mkdir()
+            source_linked = (root / 'source.mkv').is_file()
+            try:
+                if source_linked:
+                    os.link(root / 'source.mkv', work / 'source.mkv')  # Input only; never published/replaced.
+                if (root / 'manifest.json').is_file():
+                    shutil.copy2(root / 'manifest.json', work / 'manifest.json')
+                result = operation(work, *args, **kwargs)
+                outputs = [item for item in work.iterdir() if not (source_linked and item.name == 'source.mkv')]
+                if any(not item.is_file() or item.is_symlink() for item in outputs):
+                    raise MediaError('Processing produced an unexpected output type')
+                if (work / 'manifest.json').exists():
+                    manifest = read_json(work / 'manifest.json')
+                    manifest['files'] = sorted((set(before) | {item.name for item in outputs}) - {SENTINEL, 'manifest.json'} - {name for name in before if name.startswith('.processing-')})
+                    write_json(work / 'manifest.json', manifest)
+                    if isinstance(result, dict) and 'files' in result:
+                        result['files'] = manifest['files']
+                files = []
+                for output in sorted(outputs, key=lambda item: (item.name == 'manifest.json', item.name)):
+                    target = root / output.name
+                    old = before.get(output.name)
+                    current = target.stat() if target.exists() else None
+                    if target.is_symlink() or (old is None) != (current is None) or old and (old.st_ino, old.st_mtime_ns, old.st_size) != (current.st_ino, current.st_mtime_ns, current.st_size):
+                        raise MediaError('Workspace changed during processing; refusing to replace results')
+                    files.append({'name': output.name, 'existed': old is not None, 'sha256': sha256(output)})
+                write_json(transaction / 'journal.json', {'files': files, 'committed': False})
+                for item in files:
+                    target = root / item['name']
+                    if item['existed']:
+                        target.replace(backup / item['name'])
+                    (work / item['name']).replace(target)
+                write_json(transaction / 'journal.json', {'files': files, 'committed': True})
+            except BaseException:
+                if (transaction / 'journal.json').exists():
+                    recover_transaction(root, transaction)
+                else:
+                    shutil.rmtree(transaction)
+                raise
+            shutil.rmtree(transaction)
+            return result
+    return run_transaction
 
 
 def command(argv, timeout=900, allow_failure=False):
@@ -269,6 +375,7 @@ def probe(path, timeout):
     return duration
 
 
+@transactional
 def acquire(root, video_id, authorization_file, timeout, sections=None, whisper_binary=None, minimum_gib=2):
     authorize(authorization_file)
     youtube_id(video_id)
@@ -342,6 +449,7 @@ def save_manifest(root, data):
     write_json(root / "manifest.json", data)
 
 
+@transactional
 def sample(root, timeout, video_id=None):
     data = manifest_for(root, video_id)
     start, end = data["acquired_span"]["start"], data["acquired_span"]["end"]
@@ -487,6 +595,7 @@ def deadline(timeout):
         signal.signal(signal.SIGALRM, previous)
 
 
+@transactional
 def transcribe(root, start, end, cache_dir, language, timeout, whisper_binary=None, video_id=None):
     data = manifest_for(root, video_id)
     offset, available_end = data["acquired_span"]["start"], data["acquired_span"]["end"]
@@ -538,6 +647,7 @@ def transcribe(root, start, end, cache_dir, language, timeout, whisper_binary=No
             "evidence_files": ["evidence.json", "evidence.txt"]}
 
 
+@transactional
 def preflight(root, args):
     versions, _ = tool_versions(args.whisper_binary)
     free = check_space(root, args.min_free_gib)
@@ -614,22 +724,16 @@ def main(argv=None):
             else:
                 authorize(args.authorization_file)
                 root = owned_workdir(args.work_dir, create=args.command in ("acquire", "preflight"))
-                try:
-                    if any(path.is_symlink() for path in root.iterdir()):
-                        raise MediaError("Symlinks are not allowed in a processing workspace")
-                    if args.command == "preflight":
-                        result = preflight(root, args)
-                    elif args.command == "acquire":
-                        result = acquire(root, args.youtube_id, args.authorization_file, args.timeout,
-                                         args.sections, args.whisper_binary, args.min_free_gib)
-                    elif args.command == "sample":
-                        result = sample(root, args.timeout, args.youtube_id)
-                    else:
-                        result = transcribe(root, args.start, args.end, args.cache_dir, args.language,
-                                            args.timeout, args.whisper_binary, args.youtube_id)
-                except BaseException:
-                    cleanup(root)
-                    raise
+                if args.command == "preflight":
+                    result = preflight(root, args)
+                elif args.command == "acquire":
+                    result = acquire(root, args.youtube_id, args.authorization_file, args.timeout,
+                                     args.sections, args.whisper_binary, args.min_free_gib)
+                elif args.command == "sample":
+                    result = sample(root, args.timeout, args.youtube_id)
+                else:
+                    result = transcribe(root, args.start, args.end, args.cache_dir, args.language,
+                                        args.timeout, args.whisper_binary, args.youtube_id)
             print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False))
         return 0
     except MediaError as error:
