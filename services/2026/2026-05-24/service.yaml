@@ -1,0 +1,498 @@
+id: 2026-05-24
+date: 2026-05-24
+title: 24 May 2026 — The Most Hideous Sin
+sermon_title: The Most Hideous Sin
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - Main batch integration applied the source-backed series using the common ID gospel-of-john. No
+    new topic was needed; all interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - Whole meaningful programme curated from 3.62 to 6600.34 seconds using the supplied English ASR,
+    word timings, coarse frames and targeted boundary frames. Inline transcripts are edited
+    excerpts, not full verbatim transcription. Bible quotations and lyrics are explicitly omitted.
+  - Source title RECS 24 May 2026, upload/release dates 20260524 and opening slide dated 24th May
+    2026 agree with the approved date. Title slide at 1980 seconds says The Most Hideous Sin, John
+    13:21-30, 36-38 and James 1:12-15. Follow the Leader is labelled Last Session, not today's
+    title.
+  - Pastor Yong is identified in the opening prayer at 691 seconds. No full-name speaker identity is
+    asserted. Catherine, Patricia and the reader rendered Yacinta/Jacinta have only partial names;
+    their optional speaker IDs remain absent.
+  - Imported faster-whisper evidence retains 21 word-outside-segment warnings on 21 segments,
+    maximum 0.30 seconds; no backward segment starts or segment overlaps. Twenty zero-duration words
+    retained; no tail clamps. Human listening is still required for wording and precise transitions.
+  - Source ffprobe duration 6603.361 seconds; transcript duration 6603.337125 seconds. Exact receipt
+    archive_provenance retained. Both designated original audio copies were absent;
+    audio_hash_verified is false. Decoded samples and visual inspection are not a listening claim.
+  - Historical, denominational, medical, political and biographical statements are attributed to the
+    recording and not independently verified. Especially review the comparison of sins, statements
+    about suicide, cultural generalizations and anecdotes. The speaker explicitly says suicide is
+    complicated and should not be treated lightly.
+  - "Taxonomy proposal: series gospel-of-john / Expository Preaching on The Gospel of John,
+    displayed at 1980 seconds; supported by p20260524-creed-question and p20260524-betrayal-context.
+    Not activated pending main consistency review. No new topic proposed."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan based on the current service chapters and all 78 supplied passage summaries;
+    all 17 original chapters are assigned in order on uJDdItVGgj8. No new listening or boundary
+    verification is claimed; existing timing gaps and uncertainty remain for main to preserve.
+  - Opening, Worship and Scripture, the independent Creed Q&A, three sermon movements, and Response
+    and Closing are neutral peer entries. Routine prayers, songs, readings, offering and
+    announcements remain grouped rather than becoming individual navigation entries.
+  - The first sermon movement includes the explicitly labelled previous-session recap and
+    preparatory prayer as context for Judas's betrayal, not as a second sermon title. Its betrayal
+    cue provides direct access past that substantial recap. The second combines the responsibility
+    argument with its extension to Peter and the congregation; its denial cue marks that meaningful
+    application rather than the intervening anecdotes.
+  - The special-needs reflection is the sole cue in the worship group because it is a distinct
+    personal application of Scripture, useful independently of the main sermon; its speaker remains
+    the leader without an inferred identity. Opening and closing have no cues, and no incidental
+    announcement receives one.
+  - The Creed's origin story remains uncertain, and denominational comparisons, the ranking of sins,
+    cultural anecdotes, and interpretations of Hebrews remain Pastor Yong's claims rather than
+    independently verified conclusions. His explicit acknowledgement of suicide's complexity is
+    retained; the contrast between Judas and Peter must not become a general verdict about suicide.
+  - The fifty-city ministry remains a stated programme, the Leeds fellowship remains possible, and
+    partial speaker identities and existing ASR/timing limitations are unresolved. The source
+    remains needs_review; this plan is not editorial approval.
+  - Only sermon_description is intended as visible descriptive prose. Parent and cue summaries are
+    internal retrieval/review metadata. Keywords are selected exactly from supplied candidates or
+    current keywords for their corresponding originals; main derives bounds, video, scripture and
+    topics and preserves original records.
+speakers:
+  - id: pastor-yong
+    name: Pastor Yong
+    role: Preacher
+topics:
+  - id: authority
+    name: Authority
+  - id: discernment
+    name: Discernment
+  - id: discipleship
+    name: Discipleship
+  - id: faith
+    name: Faith
+  - id: forgiveness
+    name: Forgiveness
+  - id: hypocrisy
+    name: Hypocrisy
+  - id: mission
+    name: Mission
+  - id: prayer
+    name: Prayer
+  - id: repentance
+    name: Repentance
+  - id: responsibility
+    name: Responsibility
+  - id: sacrifice
+    name: Sacrifice
+  - id: service
+    name: Service
+  - id: service-life
+    name: Church life
+  - id: stewardship
+    name: Stewardship
+  - id: temptation
+    name: Temptation
+  - id: truth
+    name: Truth
+  - id: worship
+    name: Worship
+videos:
+  - id: uJDdItVGgj8
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6603.361
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 6603.337125
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: 06a72cbf81a522d8066405bb07a908c00c76ade9e48605d7ceb35f4be68eb42a
+      duration_seconds: 6603.337125
+      elapsed_seconds: 211.504
+      real_time_factor: 0.03203
+      transcribed_at: 2026-09-25T12:51:47.397283+00:00
+      transcript_sha256: 74adcf6392d76bc4cd870a6512f8651d8b552d624574762eab8669e85078feba
+      source_duration_seconds: 6603.361
+      duration_delta_seconds: -0.023874999999861757
+      audio_hash_verified: false
+chapters:
+  - id: c20260524-opening
+    video_id: uJDdItVGgj8
+    start: 3.62
+    end: 1131.1
+    title: Opening
+    type: opening
+    summary: The leaders guide personal prayer and meditation, welcome the congregation, introduce Psalm
+      67 and opening songs, and pray for forgiveness and receptive hearts.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - silent meditation
+      - psalm 67
+      - gracious king
+    topics:
+      - prayer
+      - worship
+      - repentance
+      - service-life
+      - forgiveness
+    scripture:
+      - Psalms 67:1-4
+    source_chapters:
+      - s20260524-preparation
+      - s20260524-opening
+    review_notes: []
+  - id: c20260524-worship-scripture
+    video_id: uJDdItVGgj8
+    start: 1131.1
+    end: 1963.62
+    title: Worship and Scripture
+    type: worship
+    summary: The congregation reads Proverbs 22 and John 13, the leader reflects on teaching and the
+      need for God's help, and hymns and a video anthem lead into the supporting James 1 reading.
+    keywords:
+      - proverbs 22
+      - john 13
+      - special needs
+      - intervention
+      - paid it all
+      - come every soul
+      - james 1
+    topics:
+      - worship
+      - responsibility
+      - discipleship
+      - faith
+      - forgiveness
+      - temptation
+    scripture:
+      - Proverbs 22:1-29
+      - John 13:21-38
+      - Proverbs 22
+      - James 1:12-15
+    source_chapters:
+      - s20260524-responsive-readings
+      - s20260524-reflection
+      - s20260524-hymns
+      - s20260524-supporting-reading
+    review_notes: []
+  - id: s20260524-reflection
+    video_id: uJDdItVGgj8
+    start: 1475.62
+    end: 1584.74
+    type: reflection
+    title: Teaching and Our Shared Need for God's Help
+    confidence: 0.9
+    scripture:
+      - Proverbs 22
+      - John 13:21-38
+    topics:
+      - responsibility
+      - discipleship
+      - faith
+      - forgiveness
+    summary: The leader applies Proverbs to special education and Sunday school, comparing her students'
+      distress with her own need for gracious intervention.
+    keywords:
+      - special needs
+      - proverbs
+      - hard time
+      - intervention
+    parent_id: c20260524-worship-scripture
+    source_chapters:
+      - s20260524-reflection
+  - id: c20260524-creed-authority
+    video_id: uJDdItVGgj8
+    start: 1980.58
+    end: 2199.56
+    title: The Apostles' Creed, Tradition and Authority
+    type: question-answer
+    summary: Pastor Yong distinguishes the Creed's uncertain authorship tradition from scriptural
+      authority while affirming its declarative and baptismal value and offering his account of
+      denominational differences.
+    keywords:
+      - each apostle
+      - creed
+      - scripture
+      - tradition
+      - authority
+    topics:
+      - authority
+      - truth
+      - faith
+    scripture:
+      - John 13:21-30
+      - John 13:36-38
+      - James 1:12-15
+    source_chapters:
+      - s20260524-ama
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260524-betraying-innocent-christ
+    video_id: uJDdItVGgj8
+    start: 2199.56
+    end: 3362.52
+    title: Judas Betrays the Innocent Christ
+    type: sermon
+    summary: After recalling Jesus' loving service and praying for humble hearts, Pastor Yong presents
+      Judas's betrayal as uniquely grave because of Jesus' innocence and traces the betrayal
+      narrative.
+    keywords:
+      - lowly task
+      - humility
+      - regular confession
+      - judas
+      - betrayal
+      - worst sin
+      - pieces of silver
+      - morsel
+    topics:
+      - discipleship
+      - service
+      - faith
+      - temptation
+      - repentance
+      - forgiveness
+      - prayer
+      - responsibility
+      - sacrifice
+    scripture:
+      - John 13:1-20
+      - John 14
+      - John 13:1-2
+      - John 13:3-9
+      - John 13:6-10
+      - John 13:10
+      - John 13:14-16
+      - Matthew 11:26
+      - Genesis 1
+      - Genesis 4
+      - John 13:21-30
+      - Matthew 26:14-16
+      - Matthew 27:9-10
+      - John 13:21-25
+      - John 13:26-30
+    source_chapters:
+      - s20260524-recap
+      - s20260524-sermon-prayer
+      - s20260524-betrayal
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260524-betrayal
+    video_id: uJDdItVGgj8
+    start: 2761.46
+    end: 3362.52
+    type: sermon
+    title: Why Judas's Betrayal Is So Grave
+    speaker_id: pastor-yong
+    confidence: 0.92
+    scripture:
+      - Matthew 11:26
+      - Genesis 1
+      - Genesis 4
+      - John 13:21-30
+      - Matthew 26:14-16
+      - Matthew 27:9-10
+      - John 13:21-25
+      - John 13:26-30
+    topics:
+      - discipleship
+      - responsibility
+      - sacrifice
+      - faith
+    summary: Pastor Yong moves from a Bible quiz and comparisons of evil to the view that betraying the
+      innocent Jesus is uniquely grave, then follows the silver, morsel and Judas's departure.
+    keywords:
+      - judas
+      - betrayal
+      - worst sin
+      - pieces of silver
+      - morsel
+    parent_id: c20260524-betraying-innocent-christ
+    source_chapters:
+      - s20260524-betrayal
+  - id: c20260524-responsibility-denial
+    video_id: uJDdItVGgj8
+    start: 3363.1
+    end: 5007.64
+    title: Temptation Does Not Excuse Our Denial
+    type: sermon
+    summary: Pastor Yong rejects prophecy and circumstances as excuses for Judas, uses James to
+      distinguish temptation from yielding, and extends responsibility to Peter and to professed
+      faith contradicted by conduct.
+    keywords:
+      - judas
+      - christ superstar
+      - innocent party
+      - temptation
+      - devil
+      - peter
+      - pontius pilate
+      - slogans
+      - godly
+    topics:
+      - responsibility
+      - temptation
+      - discernment
+      - repentance
+      - stewardship
+      - authority
+      - hypocrisy
+      - discipleship
+      - sacrifice
+      - faith
+      - truth
+      - service-life
+    scripture:
+      - John 12:5-6
+      - James 1:12-15
+      - James 1:13-15
+      - Genesis 3
+      - John 13:14
+      - John 13:36-38
+      - John 13:38
+      - Mark 14:50
+      - 1 Peter 3:18
+      - 2 Timothy 3:1-5
+      - 2 Timothy 3:5
+    source_chapters:
+      - s20260524-responsibility
+      - s20260524-denial
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260524-denial
+    video_id: uJDdItVGgj8
+    start: 4144.1
+    end: 5007.64
+    type: sermon
+    title: Denial Extends Beyond Judas
+    speaker_id: pastor-yong
+    confidence: 0.89
+    scripture:
+      - John 13:36-38
+      - John 13:38
+      - Mark 14:50
+      - 1 Peter 3:18
+      - 2 Timothy 3:1-5
+      - 2 Timothy 3:5
+    topics:
+      - responsibility
+      - authority
+      - hypocrisy
+      - discipleship
+      - sacrifice
+      - faith
+      - truth
+      - service-life
+    summary: Pastor Yong includes political and religious participants, Peter and the disciples in
+      responsibility, then challenges himself and the congregation about words, self-reliance and
+      conduct that deny Christ's power.
+    keywords:
+      - peter
+      - pontius pilate
+      - slogans
+      - fled
+      - godly
+    parent_id: c20260524-responsibility-denial
+    source_chapters:
+      - s20260524-denial
+  - id: c20260524-repentance-forgiveness
+    video_id: uJDdItVGgj8
+    start: 5007.64
+    end: 5681.24
+    title: Seek Forgiveness Rather Than Remain in Regret
+    type: sermon
+    summary: Acknowledging suicide's complexity, Pastor Yong contrasts Judas's regret with Peter's
+      restoration, draws on John Stott to reject self-rescue, and urges repentance and forgiveness
+      while warning against outward faith without belief.
+    keywords:
+      - judas
+      - peter
+      - regret
+      - repentance
+      - john stott
+      - forgiveness
+    topics:
+      - repentance
+      - responsibility
+      - faith
+      - discipleship
+      - sacrifice
+      - forgiveness
+      - hypocrisy
+    scripture:
+      - Matthew 27:3-5
+      - John 21:15-17
+      - 1 John 1:9
+      - Hebrews 6:4-6
+    source_chapters:
+      - s20260524-repentance
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260524-response-closing
+    video_id: uJDdItVGgj8
+    start: 5681.24
+    end: 6600.34
+    title: Response and Closing
+    type: closing
+    summary: Pastor Yong leads prayer, the Creed and intercession for Stephen Tong's stated rally
+      programme, explains the offering, introduces the closing hymn and blessing, and announces
+      baptism and ministry opportunities including a possible Leeds fellowship.
+    keywords:
+      - apostles creed
+      - stephen tong
+      - gospel rallies
+      - fourth sunday
+      - offering
+      - sweet to trust
+      - doxology
+      - baptism
+    topics:
+      - prayer
+      - repentance
+      - faith
+      - worship
+      - mission
+      - stewardship
+      - service-life
+      - discipleship
+      - service
+    scripture:
+      - Ephesians 3
+      - 2 Corinthians 13
+    source_chapters:
+      - s20260524-response
+      - s20260524-offertory
+      - s20260524-closing
+      - s20260524-announcements
+    review_notes: []
+    speaker_id: pastor-yong
+sermon_description: Pastor Yong uses Judas's betrayal of the innocent Christ to challenge excuses
+  for sin and the assumption that denial belongs only to Judas. He connects temptation and Peter's
+  failure with the congregation's own words and conduct, then contrasts regret with repentance that
+  seeks God's forgiveness rather than self-rescue. Acknowledging the complexity of suicide, he
+  points to Peter's restoration as encouragement to return after failure.

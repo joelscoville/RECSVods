@@ -1,0 +1,508 @@
+id: 2026-06-28
+date: 2026-06-28
+title: RECS 28 June 2026 — Teaching us all things…
+sermon_title: Teaching us all things…
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - "One logical failed/full-stream case in operator-supplied source order: wh4mCRKRJ-4 first,
+    k27dmsPvmG8 second. The first is an objectively near-empty failed upload, not a searchable
+    passage source. Normal preview playback uses the second upload. No word-level continuity,
+    duplicate-content or gap-length claim links the failed upload to the full recording."
+  - Full-upload 0s slide verifies 28 June 2026 9:30am; 1750/1800s slides verify Teaching us all
+    things… and John 14:25-31 / 2 Timothy 3:14-17. Reader slide at 1655s identifies Johan Pramono
+    but says 1 Timothy 3:14-17, conflicting with his spoken introduction, reading and sermon slide.
+    Canonical metadata uses 2 Timothy; the discrepancy remains for human review.
+  - Preacher full identity is unassigned. ASR introduction says Pastor Yong, and later a
+    hypothetical example includes a similar fuller name; these are not sufficient to silently supply
+    a verified full name. Worship-leader first name sounds like Winston; it is not expanded into an
+    identity.
+  - Imported operator-run faster-whisper evidence, not a completed local whisper.cpp transcript. All
+    1434 segments were reviewed. Transcripts below are edited ASR-derived excerpts with explicit
+    omission and uncertainty markers, not word-perfect or directly audio-verified verbatim
+    transcripts. Punctuation/capitalization normalized; minor alignment warnings affect 15 segments
+    by at most 0.26s. No segment overlap/backtracking or tail clamps were reported.
+  - Programme begins with preparation at physical start and ends with dismissal about 6089.28s.
+    Imported full span is 0–6090.1529375s, bounded by actual ffprobe duration 6090.161s; the nominal
+    6090s metadata is rounded. Two-minute editorial margins clip to the available recording. Source
+    physical clocks are retained; no common clock is fabricated.
+  - Scripture readings and quotations, sung lyrics and creed recitation are explicitly omitted.
+    Short quotation allusions are omitted conservatively too. References are canonical metadata for
+    ESV-labelled links, never reconstructed verse text. Unknown quotation references are not
+    inferred from memory.
+  - Quiet-prayer/music gaps and stray Thank you ASR at 30/124/179/239/419/1475/5272/5360/5533s are
+    not indexed as speech. No claim that every gap is silent. The initial 0–10.2s and Westminster
+    quotation gap 4301.34–4321.7s remain untranscribed; the earlier opening sample corroborates
+    preparation but is not used to invent words in the imported transcript.
+  - Historical, cultural, medical, legal and third-party biographical assertions remain the
+    speaker’s claims, not independently verified facts. Particularly uncertain allegations,
+    hypothetical scandal details and garbled proper names are marked or omitted. Remaining
+    uncertainty is deferred to human review under the operator’s flag-and-continue instruction.
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Plan only, derived from the current service and all 87 supplied passage summaries across 42
+    original chapters; editorial status remains needs_review.
+  - Seven neutral peer groups comprise three routine-service groups, one substantive question-answer
+    group and three argument-led sermon movements; five optional cues provide selective access
+    rather than reproducing the old inventory.
+  - Opening contains preparation and welcome; Worship and Scripture includes the introit through the
+    Timothy reading; Response and Closing includes the response prayer, creed, pastoral prayer,
+    offertory, hymn material, blessing and announcements, with no routine-service cues.
+  - The greeting and invitation to Ask Me Anything stay with the extended Peter-and-Judas answer and
+    its consequences discussion; this is a substantive question-answer peer, while the John 14
+    exposition resumes at the recap. Its one cue locates the distinction between forgiveness and
+    continuing responsibility.
+  - The first sermon movement keeps restoration, the promised Helper, the exposition prayer and the
+    sustained argument about truth together, including its examples and appeal to live truthfully.
+    Two cues locate repeatable evidence and the claim that all truth belongs to God; individual
+    anecdotes do not become chapters.
+  - The next movements follow the shift to the Spirit’s teaching through scripture and then Christ’s
+    peace amid hardship. Humility and the preacher’s Wang Yi account supply one meaningful
+    application cue each; the closing John 14 appeal remains with the peace movement.
+  - Only sermon_description is intended as visible prose beneath the video and in service context;
+    all group and cue summaries are internal retrieval/review text and must not appear in chapter
+    rows, subsection rows or search-result cards.
+  - All source assignments follow original order on k27dmsPvmG8. Derive group bounds, scripture and
+    topics from those originals; retain original cue IDs and bounds. The first upload, wh4mCRKRJ-4,
+    remains failed with workflow_status complete and has no original chapters to assign; no group or
+    inferred continuity is created for it.
+  - Preacher and worship-leader identities remain unassigned. The 1 Timothy slide versus spoken 2
+    Timothy discrepancy remains unresolved; canonical 2 Timothy metadata is retained in the source.
+  - The introit, Praise Him, Praise Him and closing hymn have no supplied passage summaries; their
+    recorded spans remain assigned without inferred lyrics, speech or silence. Existing opening and
+    Westminster quotation gaps and incomplete greeting/responsive reading remain unresolved.
+  - "Religious, cultural, legal and historical comparisons remain speaker claims: the confession
+    example is imagined, the scandal hypothetical, the Augustine and Hus quotations attributed, and
+    the Hus–Luther story a legend. Hypercar figures, Wang Yi recollections and Spafford history are
+    not independently verified; the preacher acknowledges limits to his persecution experience."
+  - The approximate offertory handover, uncertain offering purpose, unconfirmed Hebrews verse range
+    and unclear announcement day order remain for human review; this grouping introduces no new
+    timing or factual claims. Public source, internal passages, vectors and shared files are outside
+    this plan’s write scope.
+speakers:
+  - id: johan-pramono
+    name: Johan Pramono
+    role: Scripture reader
+topics:
+  - id: prayer
+    name: Prayer
+  - id: service-life
+    name: Church life
+  - id: truth
+    name: Truth
+  - id: holy-spirit
+    name: Holy Spirit
+  - id: repentance
+    name: Repentance
+  - id: peace
+    name: Peace
+videos:
+  - id: wh4mCRKRJ-4
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6.561
+    sequence: 1
+    workflow_status: complete
+    media_disposition: failed
+    disposition_evidence: "Full authorized acquisition on 2026-09-25 verified channel/ID, then safe
+      ffprobe reported 6.561s with VP9 video and Opus audio. Original media validator returned exit
+      2: Near-empty or unusable media (6.561s); audio and video of at least 10s required. Workspace
+      removed. This is reproduced technical near-empty evidence, not an access failure or a
+      duration-only duplicate inference. No transcription, sections or passages."
+  - id: k27dmsPvmG8
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6090.161
+    sequence: 2
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: Fresh full acquisition verified exact RECS channel/ID, audio/video and ffprobe
+      6090.161s (metadata 6090s). Prior 21 coarse audio/frame samples, endpoint evidence and fresh
+      frames confirm worship, reading, sermon and announcements. The earlier local-ASR timeout was a
+      processing failure, not failed media; the approved source-verified transcript import resolves
+      processing.
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 6090.1529375
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: bf3df5067418963c4505725dff6c5ab1f98b0eafa95507c573bc87655f9a7faa
+      transcript_sha256: e343a678aac1cb1402d9c81d5f65d24b216683bd0d5c149232248bfbd4e1f07f
+      duration_seconds: 6090.1529375
+      elapsed_seconds: 195.947
+      real_time_factor: 0.03217
+      transcribed_at: 2026-09-25T11:29:41.778506+00:00
+      source_duration_seconds: 6090.161
+      duration_delta_seconds: -0.008062500000050932
+      audio_hash_verified: true
+chapters:
+  - id: c20260628-opening
+    video_id: k27dmsPvmG8
+    start: 0
+    end: 383.28
+    title: Opening
+    type: opening
+    summary: The leaders guide adoration, confession, thanksgiving and supplication, pray for attentive
+      worship, and invite a congregational greeting and meditation.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - supplication
+      - meditation
+    topics:
+      - prayer
+      - repentance
+      - service-life
+    scripture: []
+    source_chapters:
+      - s0628-preparation
+      - s0628-preparation-prayer
+      - s0628-welcome
+    review_notes: []
+  - id: c20260628-worship-scripture
+    video_id: k27dmsPvmG8
+    start: 383.28
+    end: 1715.62
+    title: Worship and Scripture
+    type: worship
+    summary: The leaders introduce worship and prayers for peace, responsive readings in Proverbs 27 and
+      John 14, and Johan Pramono’s reading of 2 Timothy 3:14-17, while introit and hymn evidence
+      gaps remain unresolved.
+    keywords:
+      - psalms 81
+      - peaceful heart
+      - quiet mind
+      - responsive reading
+      - proverbs 27
+      - john 14
+      - wonderful peace
+      - 2 timothy
+    topics:
+      - prayer
+      - peace
+    scripture:
+      - Psalms 81:1-3
+      - Proverbs 27:1-27
+      - John 14:15-31
+      - John 14:27
+      - 2 Timothy 3:14-17
+    source_chapters:
+      - s0628-introit
+      - s0628-call
+      - s0628-praise
+      - s0628-opening-prayer
+      - s0628-behold
+      - s0628-responsive
+      - s0628-shepherd
+      - s0628-wonderful
+      - s0628-reading
+    review_notes: []
+  - id: c20260628-repentance-consequences
+    video_id: k27dmsPvmG8
+    start: 1715.62
+    end: 2574.62
+    title: "Q&A: Forgiveness Does Not Erase Consequences"
+    type: question-answer
+    summary: Following his greeting and question invitation, the preacher contrasts Peter and Judas,
+      challenges transactional views of sin and urges repentance while distinguishing forgiveness
+      from recovery and continuing responsibilities.
+    keywords:
+      - peter and judas
+      - repentance
+      - forgiveness
+      - transactional
+      - quantitative
+      - qualitative
+      - durian tree
+      - consequences
+    topics:
+      - repentance
+      - service-life
+    scripture:
+      - John 14:25-31
+      - John 13
+      - Matthew 5
+    source_chapters:
+      - s0628-intro
+      - s0628-ama
+      - s0628-consequences
+    review_notes: []
+  - id: s0628-consequences
+    video_id: k27dmsPvmG8
+    start: 2254.42
+    end: 2574.62
+    type: sermon
+    title: Forgiveness Leaves Continuing Responsibilities
+    confidence: 0.88
+    scripture: []
+    topics:
+      - repentance
+      - service-life
+    summary: The preacher’s seed-to-tree illustration and account of supporting single mothers
+      distinguish forgiveness from entrenched habits, recovery and ongoing responsibility.
+    keywords:
+      - seed
+      - durian tree
+      - consequences
+    parent_id: c20260628-repentance-consequences
+    source_chapters:
+      - s0628-consequences
+  - id: c20260628-live-by-truth
+    video_id: k27dmsPvmG8
+    start: 2574.62
+    end: 4022.86
+    title: God’s Truth Must Shape How We Live
+    type: sermon
+    summary: Linking restoration and the Spirit of truth, the preacher contrasts evidence and subjective
+      judgments with pragmatism and self-justification, arguing that God’s truth should govern life
+      even under pressure.
+    keywords:
+      - sanctification
+      - spirit of truth
+      - objective truth
+      - hypercar
+      - subjective
+      - pragmatism
+      - bell
+      - absolute truth
+    topics:
+      - holy-spirit
+      - truth
+      - prayer
+    scripture:
+      - John 14:15-24
+      - 2 Timothy 3:16-17
+      - John 14:26
+    source_chapters:
+      - s0628-recap
+      - s0628-sermon-prayer
+      - s0628-truth-culture
+      - s0628-objective
+      - s0628-relative
+      - s0628-pragmatism
+      - s0628-bell
+      - s0628-absolute
+      - s0628-all-truth
+      - s0628-hus
+    review_notes: []
+  - id: s0628-objective
+    video_id: k27dmsPvmG8
+    start: 3110.98
+    end: 3330.86
+    type: sermon
+    title: Objective Claims Depend on Repeatable Evidence
+    confidence: 0.84
+    review_notes:
+      - 3135s frame shows the car; earlier 3300s slide verifies model spelling and S$16 million. ASR
+        later alternates sixteen/sixty; figures and claims are not independently verified.
+    scripture: []
+    topics:
+      - truth
+    summary: The preacher uses a hypercar’s performance and price claims, with traffic-light humor, to
+      illustrate repeatable evidence rather than independently verified figures.
+    keywords:
+      - objective truth
+      - hypercar
+      - traffic light
+    parent_id: c20260628-live-by-truth
+    source_chapters:
+      - s0628-objective
+  - id: s0628-absolute
+    video_id: k27dmsPvmG8
+    start: 3644.34
+    end: 3771.42
+    type: sermon
+    title: All Truth Belongs to God
+    confidence: 0.89
+    scripture:
+      - 2 Timothy 3:16-17
+      - John 14:26
+    topics:
+      - truth
+      - holy-spirit
+    summary: The preacher connects scripture and the Spirit’s teaching with unchanging truth,
+      introducing a statement he attributes to Augustine.
+    keywords:
+      - absolute truth
+      - all truth
+      - scripture
+      - holy spirit
+    parent_id: c20260628-live-by-truth
+    source_chapters:
+      - s0628-absolute
+  - id: c20260628-spirit-teaches-scripture
+    video_id: k27dmsPvmG8
+    start: 4022.86
+    end: 4566.24
+    title: The Spirit Teaches Through Scripture
+    type: sermon
+    summary: The preacher connects communal Bible study and church testimony with the Spirit’s inward
+      conviction, urging humble, willing reading rather than material expectations or dismissive
+      preconceptions.
+    keywords:
+      - bible study
+      - holy spirit
+      - testimony
+      - scripture
+      - prayer requests
+      - hotel
+      - humility
+      - paul
+    topics:
+      - holy-spirit
+      - truth
+      - service-life
+      - prayer
+    scripture:
+      - John 14:25-26
+      - John 14:26
+      - Psalms 138:6
+      - Proverbs 3:34
+      - Proverbs 29:23
+      - Matthew 23:12
+      - Luke 1:52
+      - James 4:6
+      - 1 Peter 5:5
+    source_chapters:
+      - s0628-teaching
+      - s0628-evidence
+      - s0628-illumination
+      - s0628-humility
+    review_notes: []
+  - id: s0628-humility
+    video_id: k27dmsPvmG8
+    start: 4399.9
+    end: 4566.24
+    type: sermon
+    title: Understanding Calls for Humility
+    confidence: 0.9
+    scripture:
+      - Psalms 138:6
+      - Proverbs 3:34
+      - Proverbs 29:23
+      - Matthew 23:12
+      - Luke 1:52
+      - James 4:6
+      - 1 Peter 5:5
+    topics:
+      - holy-spirit
+      - truth
+    summary: The preacher calls for surrender and willingness to learn, treating Paul’s conversion as an
+      exception rather than an experience to demand.
+    keywords:
+      - humility
+      - paul
+    parent_id: c20260628-spirit-teaches-scripture
+    source_chapters:
+      - s0628-humility
+  - id: c20260628-peace-through-hardship
+    video_id: k27dmsPvmG8
+    start: 4566.24
+    end: 5066.78
+    title: Christ’s Peace Sustains Believers Through Hardship
+    type: sermon
+    summary: Contrasting Christ’s peace with material security, the preacher reflects on persecution and
+      his Wang Yi recollection before closing John 14 with his account of Christ’s victory and a
+      call to live by truth and the Spirit.
+    keywords:
+      - peace
+      - security
+      - open doors
+      - persecution
+      - wang yi
+      - john 14
+      - holy spirit
+    topics:
+      - peace
+      - prayer
+      - holy-spirit
+      - truth
+    scripture:
+      - John 14:27
+      - John 14:28-31
+      - John 15-17
+    source_chapters:
+      - s0628-peace
+      - s0628-persecution
+      - s0628-wang
+      - s0628-conclusion
+    review_notes: []
+  - id: s0628-wang
+    video_id: k27dmsPvmG8
+    start: 4812.04
+    end: 4937.74
+    type: sermon
+    title: Wang Yi’s Example of Prayer and Peace
+    confidence: 0.86
+    review_notes:
+      - 4820s slide verifies Rev. Wang Yi and Chengdu Early Rain Covenant Church. He is discussed,
+        not a speaker in this recording. Prison/family claims are attributed and unverified.
+    scripture: []
+    topics:
+      - peace
+      - prayer
+    summary: The preacher recalls receiving Wang Yi’s script after his arrest and attributes a prayer
+      metaphor to him that encourages his own prayer and understanding of Christ’s peace.
+    keywords:
+      - wang yi
+      - prayer
+      - peace
+    parent_id: c20260628-peace-through-hardship
+    source_chapters:
+      - s0628-wang
+  - id: c20260628-response-closing
+    video_id: k27dmsPvmG8
+    start: 5066.78
+    end: 6090.1529375
+    title: Response and Closing
+    type: closing
+    summary: The leaders guide prayer and the creed, announce offerings, introduce the closing hymn
+      through a Spafford account, and offer the doxology, blessing and July notices, with the hymn’s
+      missing summary evidence retained.
+    keywords:
+      - reformed evangelical movement
+      - offertory
+      - closing hymn
+      - spafford
+      - doxology
+      - holy communion
+      - july
+      - senior pastor
+    topics:
+      - prayer
+      - truth
+      - service-life
+      - peace
+    scripture:
+      - Hebrews 13
+    source_chapters:
+      - s0628-response-prayer
+      - s0628-creed
+      - s0628-pastoral
+      - s0628-offering
+      - s0628-hymn-intro
+      - s0628-closing-hymn
+      - s0628-doxology
+      - s0628-blessing
+      - s0628-announcements
+    review_notes: []
+sermon_description: In John 14, the preacher presents the Holy Spirit as the Helper who directs
+  believers toward truth and Christ’s peace. He challenges treating faith as material gain or truth
+  as a matter of convenience, urging humble engagement with scripture and a changed way of living.
+  Reflecting on persecution and prayer, he argues that Christ’s peace reaches beyond the security
+  wealth can offer.

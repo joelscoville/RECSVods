@@ -1,0 +1,497 @@
+id: 2026-08-09
+date: 2026-08-09
+title: RECS English service — 9 August 2026
+sermon_title: We, the citizens...
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - Full meaningful programme curated from all 1378 imported ASR segments, adjacent word timings,
+    coarse frames and selected boundary/metadata frames. Audio samples were decoded, not listened
+    to. Human listening and editorial approval remain required.
+  - Inline transcripts are edited ASR excerpts, not complete verbatim transcriptions. Ellipses mark
+    omitted speech; bracketed markers identify scripture quotations, song lyrics, other quotations,
+    uncertain wording and nonverbal intervals. No missing speech or lyrics have been supplied.
+  - Source title RECS 9 August 2026, upload/release dates 20260809, opening dated slide and repeated
+    61st National Day references agree with the approved service date.
+  - Sermon title and principal readings verified on the 2105-second slide. Its Gospel of John header
+    conflicts with the speaker's explicit announcement of a National Day break from the usual
+    exposition; no series is assigned.
+  - Only partial spoken names Hadi, Sister Cecilia and Pastor Yong/Young are available with
+    confidence. The ASR self-reference at 4836 seconds is unclear; no full identity or speaker ID is
+    inferred from appearance or other services.
+  - Import preserves 24 word-outside-segment warnings on 24 segments, maximum 0.26 seconds, 19
+    zero-duration words, zero backtracks/overlaps and zero tail clamps. Warning regions were checked
+    in surrounding text and word evidence; broader thought units avoid internal warning cuts.
+  - A streaming/copyright restriction card appears during The Night Song at 1200 seconds. The
+    supplied ASR has sparse text and repeated thank-you fragments there; omitted lyrics and
+    source-hidden content are not reconstructed.
+  - Political, historical, demographic, biographical and anecdotal claims are attributed to the
+    speaker and are not independently verified. Especially review the Ceuta numbers/chronology,
+    North Korea and Bonhoeffer anecdotes, Vietnamese refugee dates and quoted attributions.
+  - "Taxonomy proposal only: citizenship / Citizenship, supported by p20260809-050
+    (4137.76–4215.10), p20260809-051 (4215.10–4261.16), and p20260809-069 (5362.82–5459.46).
+    Existing government, responsibility and discipleship tags are used pending main review. No
+    proposed term is activated."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan based on the current service and all 83 existing passage summaries across 30
+    original chapters; no new listening, source verification or editorial approval is implied, and
+    needs_review remains applicable.
+  - Opening, Worship and Scripture, and Response and Closing are neutral peer groups alongside five
+    sermon movements; prayers, songs, readings and announcements are consolidated without altering
+    original chapter membership or timing.
+  - The introductory question about a Christian minority explicitly leads into national identity in
+    the supplied summaries, so it remains with the sermon's contextual argument rather than becoming
+    an independent Q&A; the intervening citizenship prayer stays with that contiguous movement.
+  - The five navigation movements follow the national-allegiance challenge, God's authority,
+    discernment, civic fairness and active contribution; they do not purport to reproduce the
+    preacher's numbered five points verbatim, and the governance and power examples stay together as
+    support for God's highest authority.
+  - "Four cues provide precise access to substantial support: nationalism and immigration within the
+    long contextual movement, the Romans 13 interpretation within the authority movement, and the
+    Vietnamese refugee account within civic fairness; routine service groups and incidental
+    announcements receive no cues."
+  - The preacher remains unnamed because only partial or uncertain names are supported; the National
+    Day sermon is not assigned to the Gospel of John series despite the conflicting slide header.
+  - Political, historical, demographic and biographical claims remain the preacher's unverified
+    accounts, including Ceuta chronology, North Korea, Bonhoeffer, disaster relief and refugee
+    policy; Vietnamese refugee dates and numbers remain expressly uncertain, and statements
+    attributed to Mao, Gandhi, Mark Twain and S. Rajaratnam are not independently authenticated.
+  - Retain the preacher's uncertainty about who belongs to God's kingdom, acknowledgment of
+    immigration complexity, distinction between opposing undocumented entry and opposing
+    immigration, and acknowledgment of older people's integration difficulties.
+  - The Night Song has a source restriction card and sparse ASR; hidden content is not
+    reconstructed, and the Introit label rests on the existing sampled-frame report; all existing
+    source, timing and provenance caveats remain for human review.
+  - Only sermon_description is intended as public descriptive prose; every group and cue summary is
+    internal retrieval/review metadata, and main derives spans, scripture, topics and old-link
+    mappings from the assigned originals.
+speakers: []
+topics:
+  - id: prayer
+    name: Prayer
+  - id: worship
+    name: Worship
+  - id: faith
+    name: Faith
+  - id: government
+    name: Government
+  - id: politics
+    name: Politics
+  - id: authority
+    name: Authority
+  - id: responsibility
+    name: Responsibility
+  - id: service-life
+    name: Church life
+  - id: discipleship
+    name: Discipleship
+  - id: discernment
+    name: Discernment
+  - id: justice
+    name: Justice
+  - id: truth
+    name: Truth
+  - id: stewardship
+    name: Stewardship
+videos:
+  - id: gO6gc5jL-jU
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6564.721
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 6564.699125
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: 990db28e5c0c9b6f19b10bc269703cbf1f93eb58628e642b25ac32da0ccdcae0
+      duration_seconds: 6564.699125
+      elapsed_seconds: 206.5
+      real_time_factor: 0.03146
+      transcribed_at: 2026-09-25T12:37:59.836154+00:00
+      transcript_sha256: 1fc17dcef22657922ff5754ece996a9d77b1d040e4f7cef821676459e3cd8250
+      source_duration_seconds: 6564.721
+      duration_delta_seconds: -0.021874999999454303
+      audio_hash_verified: false
+chapters:
+  - id: c20260809-opening
+    video_id: gO6gc5jL-jU
+    start: 16.04
+    end: 623.6
+    title: Opening
+    type: opening
+    summary: The leaders guide personal adoration, confession, thanksgiving and supplication, welcome
+      the congregation on National Day and invite quiet preparation for worship.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - supplication
+      - national day
+    topics:
+      - prayer
+      - worship
+      - discipleship
+      - service-life
+    scripture: []
+    source_chapters:
+      - s20260809-preparation
+      - s20260809-welcome
+    review_notes: []
+  - id: c20260809-worship-scripture
+    video_id: gO6gc5jL-jU
+    start: 623.6
+    end: 2090.36
+    title: Worship and Scripture
+    type: worship
+    summary: The leaders and congregation share hymns, prayers, a video anthem and readings from Psalms
+      93, Proverbs 2, Romans 13 and 1 Peter 2, including encouragement to endure through singing or
+      silence during the partly restricted Night Song interval.
+    keywords:
+      - hail the power
+      - night song
+      - proverbs
+      - romans
+      - great savior
+      - ages roll
+      - 1 peter 2
+    topics:
+      - worship
+      - faith
+      - prayer
+      - government
+      - discipleship
+      - authority
+    scripture:
+      - Psalms 93
+      - Proverbs 2
+      - Romans 13:1-14
+      - 1 Peter 2:13-17
+    source_chapters:
+      - s20260809-opening-worship
+      - s20260809-night-song
+      - s20260809-responsive-readings
+      - s20260809-great-savior
+      - s20260809-anthem
+      - s20260809-sermon-reading
+    review_notes: []
+  - id: c20260809-national-allegiance
+    video_id: gO6gc5jL-jU
+    start: 2104.7
+    end: 3511.48
+    title: National Allegiance Requires Discernment
+    type: sermon
+    summary: The preacher uses cultural Christianity, national symbolism, migration and changing
+      loyalties to question assumptions about Christian power and national belonging, acknowledging
+      uncertainty about who belongs to God's kingdom and the complexity of immigration.
+    keywords:
+      - national day
+      - cultural christianity
+      - citizenship
+      - nationalism
+      - immigration
+      - enforcement
+      - nationality
+      - religious symbolism
+    topics:
+      - government
+      - service-life
+      - faith
+      - discipleship
+      - discernment
+      - politics
+      - prayer
+      - responsibility
+      - worship
+      - justice
+    scripture:
+      - Matthew 7
+    source_chapters:
+      - s20260809-sermon-introduction
+      - s20260809-sermon-prayer
+      - s20260809-nationalism
+      - s20260809-immigration
+      - s20260809-changing-identities
+    review_notes: []
+  - id: s20260809-nationalism
+    video_id: gO6gc5jL-jU
+    start: 2442.2
+    end: 2860.62
+    type: sermon
+    title: Nationalism Entangles Faith and Power
+    confidence: 0.85
+    scripture: []
+    topics:
+      - politics
+      - government
+      - worship
+      - discernment
+    summary: The preacher recalls religious and political ceremony in Britain, America and Singapore
+      while warning against movements linking Christian faith, patriotism and racial supremacy.
+    keywords:
+      - nationalism
+      - religious symbolism
+      - politicians
+      - right wing
+    parent_id: c20260809-national-allegiance
+    source_chapters:
+      - s20260809-nationalism
+  - id: s20260809-immigration
+    video_id: gO6gc5jL-jU
+    start: 2860.74
+    end: 3354.44
+    type: sermon
+    title: Immigration Tests Law and Compassion
+    confidence: 0.8
+    scripture: []
+    topics:
+      - politics
+      - government
+      - responsibility
+      - justice
+      - discernment
+    summary: Through his accounts of border enforcement, economic consequences, child migration and
+      church responses, the preacher acknowledges competing appeals to law and compassion rather
+      than presenting immigration as simple.
+    keywords:
+      - immigration
+      - enforcement
+      - border
+      - children
+    parent_id: c20260809-national-allegiance
+    source_chapters:
+      - s20260809-immigration
+  - id: c20260809-god-above-government
+    video_id: gO6gc5jL-jU
+    start: 3511.66
+    end: 4442.26
+    title: God's Authority Stands Above Human Government
+    type: sermon
+    summary: The preacher argues from 1 Samuel 8 and Romans 13 that no human system is God's ultimate
+      solution, that allegiance to God limits civil authority, and that governments can nevertheless
+      serve the public good.
+    keywords:
+      - israel
+      - king
+      - dictatorship
+      - romans 13
+      - westminster confession
+      - civil government
+      - law abiding
+      - chengdu
+    topics:
+      - government
+      - service-life
+      - authority
+      - politics
+      - faith
+      - discernment
+      - discipleship
+      - responsibility
+      - justice
+    scripture:
+      - 1 Samuel 8
+      - Romans 13:1
+      - Romans 13:1-2
+      - Romans 13:3-4
+    source_chapters:
+      - s20260809-governance
+      - s20260809-power
+      - s20260809-highest-authority
+      - s20260809-public-good
+    review_notes: []
+  - id: s20260809-highest-authority
+    video_id: gO6gc5jL-jU
+    start: 4002.32
+    end: 4261.16
+    type: sermon
+    title: Allegiance to God Comes First
+    confidence: 0.94
+    scripture:
+      - Romans 13:1
+      - Romans 13:1-2
+    topics:
+      - authority
+      - government
+      - discernment
+      - discipleship
+      - responsibility
+    summary: Reading Romans 13 alongside the Westminster Confession, the preacher places allegiance to
+      God above national and family identities while calling for obedience to laws aligned with
+      God's goodness and justice.
+    keywords:
+      - romans 13
+      - westminster confession
+      - secondary identity
+      - law abiding
+    parent_id: c20260809-god-above-government
+    source_chapters:
+      - s20260809-highest-authority
+  - id: c20260809-discern-fallible-leaders
+    video_id: gO6gc5jL-jU
+    start: 4442.94
+    end: 4851.94
+    title: Discern Authority Without Idealizing Leaders
+    type: sermon
+    summary: The preacher urges caution about both resisting governments and trusting fallible
+      politicians or pastors, drawing on attributed historical accounts and personal activism while
+      grounding faith in Christ rather than human leaders.
+    keywords:
+      - discernment
+      - sun yat sen
+      - bonhoeffer
+      - integrity
+      - christ
+    topics:
+      - discernment
+      - government
+      - responsibility
+      - politics
+      - truth
+      - faith
+    scripture: []
+    source_chapters:
+      - s20260809-discernment
+      - s20260809-skepticism
+    review_notes: []
+  - id: c20260809-civic-fairness
+    video_id: gO6gc5jL-jU
+    start: 4852.66
+    end: 5362.42
+    title: Citizenship Requires Fairness to Others
+    type: sermon
+    summary: The preacher rejects religious exemptions from taxes and civic duties, weighs migrant
+      compassion against public costs and consent, distinguishes objections to undocumented entry
+      from opposition to immigration, and recalls sensitive refugee-policy stories with uncertain
+      dates and numbers.
+    keywords:
+      - conscience
+      - fairness
+      - immigration
+      - vietnamese boat
+      - refugee
+    topics:
+      - government
+      - responsibility
+      - justice
+      - authority
+      - discernment
+    scripture:
+      - Romans 13:5-7
+    source_chapters:
+      - s20260809-live-truth
+      - s20260809-refugees
+    review_notes: []
+  - id: s20260809-refugees
+    video_id: gO6gc5jL-jU
+    start: 5121.32
+    end: 5362.42
+    type: sermon
+    title: Vietnamese Refugees and Civic Responsibility
+    confidence: 0.79
+    scripture: []
+    topics:
+      - government
+      - responsibility
+      - justice
+      - authority
+      - discernment
+    summary: Acknowledging uncertain dates and numbers, the preacher recalls disputed refugee landing
+      restrictions and traumatic enforcement stories before connecting chosen citizenship with
+      authority, fallibility and fairness.
+    keywords:
+      - vietnamese boat
+      - refugee
+    parent_id: c20260809-civic-fairness
+    source_chapters:
+      - s20260809-refugees
+  - id: c20260809-contribute-to-society
+    video_id: gO6gc5jL-jU
+    start: 5362.82
+    end: 5729.26
+    title: Contribute to the Society Where You Live
+    type: sermon
+    summary: Applying Jeremiah 29:7, the preacher calls for honest National Service, prayer for leaders
+      and positive participation in one's host society, acknowledging older people's difficulties as
+      he closes with National Day gratitude.
+    keywords:
+      - seek the welfare
+      - jeremiah 29
+      - national service
+      - doing good
+    topics:
+      - responsibility
+      - discipleship
+      - government
+      - truth
+      - prayer
+      - authority
+    scripture:
+      - Jeremiah 29:7
+      - 1 Peter 2:13-17
+      - Romans 13
+      - 1 Timothy 2
+    source_chapters:
+      - s20260809-city-welfare
+      - s20260809-conclusion
+    review_notes: []
+  - id: c20260809-response-closing
+    video_id: gO6gc5jL-jU
+    start: 5729.54
+    end: 6564.721
+    title: Response and Closing
+    type: closing
+    summary: The preacher and congregation respond with prayer for responsible living and Singapore, the
+      Apostles' Creed, an offering supporting Christian education, Tell It to Jesus, doxology and
+      blessing, followed by fellowship and ministry notices and silent meditation.
+    keywords:
+      - apostles creed
+      - singapore
+      - rule of law
+      - christian education
+      - doxology
+    topics:
+      - prayer
+      - responsibility
+      - justice
+      - faith
+      - worship
+      - government
+      - stewardship
+      - service-life
+    scripture:
+      - 1 Timothy 2
+      - 1 Thessalonians 5
+      - 2 Corinthians 13
+    source_chapters:
+      - s20260809-response-prayer
+      - s20260809-creed
+      - s20260809-national-prayer
+      - s20260809-offertory
+      - s20260809-closing-hymn
+      - s20260809-blessing
+      - s20260809-announcements
+    review_notes: []
+sermon_description: Reflecting on National Day, the preacher argues that allegiance to God should
+  guide citizenship without turning faith into nationalism or excusing civic responsibility. He
+  reads civil authority as accountable to God, urges discernment toward fallible leaders, and weighs
+  compassion for migrants alongside fairness to fellow citizens. His call is to contribute honestly
+  to the society where one lives, seek its welfare and pray for its leaders.

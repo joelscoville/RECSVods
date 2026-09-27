@@ -1,0 +1,456 @@
+id: 2026-05-31
+date: 2026-05-31
+title: 31 May 2026 worship service — What’s New?
+sermon_title: What’s New?
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - Main batch integration applied the source-backed series and cited love topic; worker proposal
+    notes describe the pre-merge stage. All interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - Whole meaningful programme assessed from imported English ASR, word timings, 21 coarse frames
+    and 21 refined frames. Audio samples were decoded, not listened to. Inline transcripts are
+    faithful selected excerpts with explicit omissions, not complete verbatim speech.
+  - Source title RECS 31 May 2026, upload/release date 20260531 and discussion of May 25, 2026
+    support the assigned date. Title slide at 1640 seconds reads What’s New? and John 13:31-35. Last
+    Session / The Most Hideous Sin is recap metadata, not today’s title.
+  - No full live-speaker identity independently verified. Derek is introduced by first name only;
+    speaker IDs remain absent. Quoted authors and named people are not live speakers.
+  - Recording begins during A.C.T.S. prayer preparation, not a waiting slate. Brief isolated ASR
+    thanks during silence/instrumental passages are not treated as verified speech. The final few
+    seconds follow dismissal.
+  - Import preserved all 1262 segments and 13690 words. Fourteen outside-segment word warnings,
+    maximum 0.38 seconds; 17 zero-duration words; no backtracking, segment overlaps or tail clamps.
+    See review report for affected source IDs and intervals. Human listening is still needed.
+  - Original target WebM absent in both designated roots; audio_hash_verified is false. Source
+    identity, channel, checksum and actual duration independently verified. No new ASR performed.
+  - Scripture quotations and song lyrics omitted throughout, including quotations within the sermon.
+    Some readings and music remain intentionally longer than 90 seconds. Short transitional units
+    preserve complete thoughts.
+  - Historical, denominational, medical, cultural, AI and financial claims remain attributed to the
+    speaker, not independently verified. Particularly review suicide/medical discussion, ageing
+    anecdotes, Catholic/Protestant contrasts, Amish description and insurance illustration.
+  - "Taxonomy proposals only: love / Love, supported by p20260531-048 at 4251.22 and p20260531-058
+    at 4993.68; proposed series gospel-of-john / The Gospel of John, supported by title slide at
+    1640 and p20260531-024 at 2281.2. Neither proposal is activated."
+  - "Reference uncertainty: ASR says Leviticus 9.18; omitted as an exact tag pending review. A
+    footwashing slide at 5100 labels John 12:14-15 while spoken context is John 13; use John 13 at
+    chapter level there. Announced blessing is Hebrews 13; exact verses and missing spoken wording
+    require listening."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan based on the current service chapters and all 74 supplied passage summaries;
+    interpretation remains needs_review. All 16 original chapters are assigned once in order on
+    m51rgcZHQmE, with no proposed new numeric boundaries.
+  - Opening, Worship, Scripture and Welcome, and Response and Closing are neutral peer service
+    groups. The brief welcome and invitation for future questions stay with the preceding worship
+    and readings because no substantive Q&A occurs.
+  - "Five sermon movements retain the substantial repentance recap, combine the exposition of glory
+    and childlikeness as preparation for receiving the command, and preserve the preacher’s three
+    explicit emphases: love as identity, shared life, and Christ’s example as the binding model.
+    Illustrations do not become separate primary movements."
+  - The worship cue gives access to a distinctive guitar-ensemble presentation, but its inherited
+    span also includes the preceding congregational hymn; it does not claim a precise ensemble
+    start. The childlikeness cue retains useful access to the sustained application of humility to
+    ageing within the longer preparatory exposition. Routine closing items and incidental
+    announcements have no cues.
+  - Only sermon_description is intended as public descriptive prose; parent and cue summaries are
+    internal retrieval/review metadata. Public titles use Title Case.
+  - Live-speaker and ensemble identities remain unverified; Derek is only a first-name introduction.
+    Sparse opening speech, source-alignment warnings and the prayer-to-creed listening need remain
+    unresolved, and this plan does not reverify source timing or the missing original audio.
+  - Medical and suicidal-distress discussion, ageing anecdotes, the document attributed to Pope Leo
+    XIV, AI and denominational comparisons, and Amish and insurance illustrations remain attributed
+    claims, not independently verified facts. The preacher’s uncertainty about cell-group outcomes
+    is retained.
+  - The uncertain Leviticus reference and footwashing-slide chapter conflict remain unresolved. The
+    blessing is announced as Hebrews 13 but its exact wording and verses remain uncertain; baptism
+    candidate names and venue remain unclear. No identities, scripture corrections or taxonomy
+    additions are inferred.
+speakers: []
+topics:
+  - id: love
+    name: Love
+  - id: prayer
+    name: Prayer
+  - id: worship
+    name: Worship
+  - id: service-life
+    name: Church life
+  - id: faith
+    name: Faith
+  - id: repentance
+    name: Repentance
+  - id: forgiveness
+    name: Forgiveness
+  - id: responsibility
+    name: Responsibility
+  - id: discipleship
+    name: Discipleship
+  - id: glory
+    name: Glory
+  - id: knowing-god
+    name: Knowing God
+  - id: service
+    name: Service
+  - id: mission
+    name: Mission
+  - id: stewardship
+    name: Stewardship
+  - id: eternal-life
+    name: Eternal life
+videos:
+  - id: m51rgcZHQmE
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6160.501
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 6160.4861875
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: d9eacd4d191db341a636c9fd41267d89c0c3c7d622d87573fb77c926887c047b
+      duration_seconds: 6160.4861875
+      elapsed_seconds: 193.852
+      real_time_factor: 0.03147
+      transcribed_at: 2026-09-25T12:44:54.435549+00:00
+      transcript_sha256: 679ce4740ef489b7ce883ebfde22e0759f8f465c658d9350e970b99162f3a27f
+      source_duration_seconds: 6160.501
+      duration_delta_seconds: -0.014812500000516593
+      audio_hash_verified: false
+chapters:
+  - id: c20260531-opening
+    video_id: m51rgcZHQmE
+    start: 0
+    end: 381.94
+    title: Opening
+    type: opening
+    summary: In a sparsely transcribed opening, the leaders guide thanksgiving, personal supplication,
+      readiness to hear God, greetings and silent preparation before the Psalm 68 call to worship.
+    keywords:
+      - thanksgiving
+      - personal needs
+      - supplication
+      - silent meditation
+      - call to worship
+      - psalm 68
+    topics:
+      - prayer
+      - worship
+      - service-life
+    scripture:
+      - Psalms 68
+    source_chapters:
+      - s20260531-opening
+    review_notes: []
+  - id: c20260531-worship-scripture-welcome
+    video_id: m51rgcZHQmE
+    start: 381.94
+    end: 1752.92
+    title: Worship, Scripture and Welcome
+    type: worship
+    summary: The leaders guide hymns, prayer and readings from Proverbs 23, 1 John 4 and John 13 around
+      a guitar-ensemble anthem, followed by the preacher’s welcome and invitation for future
+      questions.
+    keywords:
+      - love divine
+      - christ alone
+      - responsive reading
+      - proverbs 23
+      - 1 john
+      - guitar
+      - risen today
+      - john 13
+    topics:
+      - worship
+      - prayer
+      - forgiveness
+      - discipleship
+      - eternal-life
+      - service-life
+      - faith
+    scripture:
+      - Proverbs 23:1-35
+      - 1 John 4:1-21
+      - John 13:31-35
+    source_chapters:
+      - s20260531-hymns
+      - s20260531-readings
+      - s20260531-music
+      - s20260531-sermon-reading
+      - s20260531-welcome
+    review_notes: []
+  - id: s20260531-music
+    video_id: m51rgcZHQmE
+    start: 1178.28
+    end: 1558.8
+    type: worship
+    title: Congregational Hymn and Guitar Ensemble
+    confidence: 0.89
+    review_notes:
+      - Ensemble names unclear; retain no performer identities.
+    scripture: []
+    topics:
+      - worship
+      - discipleship
+      - eternal-life
+    summary: The congregation sings before a guitar ensemble presents an Easter anthem introduced
+      through hope, eternal life and daily renewal; performer identities remain unclear.
+    keywords:
+      - decided to follow
+      - risen today
+      - guitar
+      - eternal life
+    parent_id: c20260531-worship-scripture-welcome
+    source_chapters:
+      - s20260531-music
+  - id: c20260531-regret-repentance
+    video_id: m51rgcZHQmE
+    start: 1752.92
+    end: 2281.2
+    title: Turn from Regret to Repentance
+    type: sermon
+    summary: Recapping Judas’s betrayal, the preacher extends responsibility for failure beyond Judas,
+      distinguishes regret from repentance, emphasizes forgiveness and sincere commitment, and urges
+      medical help for suicidal distress.
+    keywords:
+      - judas
+      - regret
+      - repentance
+      - forgiveness
+      - medical help
+      - suicidal
+    topics:
+      - responsibility
+      - knowing-god
+      - repentance
+      - forgiveness
+      - faith
+      - discipleship
+    scripture:
+      - John 13
+      - John 12:6
+      - James 1
+    source_chapters:
+      - s20260531-recap
+    review_notes: []
+  - id: c20260531-glory-humility
+    video_id: m51rgcZHQmE
+    start: 2281.2
+    end: 4046.56
+    title: Glorify God in Suffering and Humility
+    type: sermon
+    summary: Explaining the Last Supper setting, the preacher connects glory with the cross, defends
+      human worth and forgiveness through technological and denominational illustrations, and urges
+      everyday faithfulness and childlike humility amid suffering and ageing.
+    keywords:
+      - last supper
+      - glory
+      - suffering
+      - transhumanism
+      - post humanism
+      - chatbot
+      - catholic
+      - protestant
+      - childlikeness
+      - humility
+    topics:
+      - prayer
+      - faith
+      - discipleship
+      - glory
+      - responsibility
+      - forgiveness
+      - worship
+      - knowing-god
+    scripture:
+      - John 13:31-35
+      - John 13
+      - John 13:31-32
+      - John 13:33
+      - 1 John 2-4
+      - Matthew 18
+    source_chapters:
+      - s20260531-glory
+      - s20260531-childlikeness
+    review_notes: []
+  - id: s20260531-childlikeness
+    video_id: m51rgcZHQmE
+    start: 3515.4
+    end: 4046.56
+    type: sermon
+    title: Remain Childlike as You Grow Older
+    confidence: 0.89
+    review_notes:
+      - Review Greek terminology, brief Chinese quotation and medical anecdotes.
+    scripture:
+      - John 13:33
+      - 1 John 2-4
+      - Matthew 18
+    topics:
+      - knowing-god
+      - faith
+      - discipleship
+      - prayer
+    summary: Interpreting Jesus’s affectionate address and Matthew 18, the preacher distinguishes
+      humility from childishness and uses reported later-life examples to encourage openness to God
+      and continuing purpose.
+    keywords:
+      - childlikeness
+      - humility
+      - childish
+    parent_id: c20260531-glory-humility
+    source_chapters:
+      - s20260531-childlikeness
+  - id: c20260531-love-identifies-followers
+    video_id: m51rgcZHQmE
+    start: 4046.56
+    end: 4573.3
+    title: Love Identifies Christ’s Followers
+    type: sermon
+    summary: The preacher argues that the new command makes love the defining mark of Christ’s followers
+      rather than social identity, institutional grandeur or power, urging charities to collaborate
+      rather than compete.
+    keywords:
+      - commandment
+      - love
+      - mark of christ
+      - identity
+      - charities
+      - competitors
+    topics:
+      - discipleship
+      - service-life
+      - knowing-god
+      - love
+      - glory
+      - service
+    scripture:
+      - John 13:34
+      - Deuteronomy 6:4-5
+      - Matthew 22
+      - John 13:34-35
+      - 1 John 4
+      - John 13:35
+    source_chapters:
+      - s20260531-new-mark
+    review_notes: []
+  - id: c20260531-life-beyond-self
+    video_id: m51rgcZHQmE
+    start: 4573.3
+    end: 4993.68
+    title: Share Life Beyond Self and Family
+    type: sermon
+    summary: The preacher calls for forgiveness and practical mutual support beyond self and family,
+      drawing on Amish community life while questioning insularity and proposing cell groups with
+      uncertainty about their outcome.
+    keywords:
+      - greater than self
+      - journey of faith
+      - family
+      - support
+      - amish
+      - community
+    topics:
+      - discipleship
+      - service-life
+      - forgiveness
+      - service
+      - mission
+    scripture:
+      - John 13:34
+    source_chapters:
+      - s20260531-new-life
+    review_notes: []
+  - id: c20260531-love-as-christ-commands
+    video_id: m51rgcZHQmE
+    start: 4993.68
+    end: 5297.72
+    title: Love as Christ Commands
+    type: sermon
+    summary: The preacher presents Jesus’s footwashing as the model for love and forgiveness in everyday
+      relationships, calling for childlike obedience to a command rather than a consumer choice.
+    keywords:
+      - love
+      - command
+      - consumer
+      - childlike
+      - forgiveness
+    topics:
+      - discipleship
+      - service
+      - forgiveness
+      - service-life
+      - responsibility
+      - glory
+    scripture:
+      - John 13
+      - John 13:34-35
+      - John 13:34
+    source_chapters:
+      - s20260531-new-love
+    review_notes: []
+  - id: c20260531-response-closing
+    video_id: m51rgcZHQmE
+    start: 5297.72
+    end: 6160.501
+    title: Response and Closing
+    type: closing
+    summary: The leaders guide response prayer, the Apostles’ Creed and intercessions, a charitable
+      offering, Amazing Grace, doxology and an uncertainly captured Hebrews 13 blessing, then
+      baptism, class and rally notices before silent dismissal.
+    keywords:
+      - strength to obey
+      - apostles creed
+      - baptism
+      - membership
+      - fifth sunday
+      - charitable work
+      - amazing grace
+      - hebrews 13
+      - westminster class
+    topics:
+      - prayer
+      - discipleship
+      - faith
+      - worship
+      - service-life
+      - service
+      - stewardship
+      - repentance
+      - mission
+    scripture:
+      - John 13
+      - Hebrews 13
+    source_chapters:
+      - s20260531-response
+      - s20260531-offering
+      - s20260531-closing
+      - s20260531-announcements
+    review_notes: []
+sermon_description: Reading John 13, the preacher presents Jesus’s command to love as the defining
+  mark of Christ’s followers and a pattern for shared life beyond self and family. Against the
+  background of human failure, suffering and the call to childlike humility, he urges believers to
+  take Christ’s example as their measure, forgiving and supporting others in obedience to a command
+  rather than personal preference.

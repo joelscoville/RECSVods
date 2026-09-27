@@ -1,0 +1,28 @@
+---
+import '@fontsource-variable/atkinson-hyperlegible-next';
+import '@fontsource-variable/domine';
+import '../styles/global.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer.astro';
+interface Props { title: string; description?: string; route?: string; header?: boolean; noindex?: boolean }
+const { title, description = 'Find and replay chapters from the RECS service archive.', route = '', header = true, noindex = false } = Astro.props;
+const preview = import.meta.env.ARCHIVE_MODE === 'preview';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    {(noindex || preview) && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content="#FAFAFF" />
+    <title>{title} | RECS Replay</title>
+  </head>
+  <body class={route}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    {preview && <aside class="preview-banner" aria-label="Preview notice">Editorial preview — some content has not been reviewed.</aside>}
+    {header && <Header base={import.meta.env.BASE_URL} />}
+    <slot />
+    <Footer />
+  </body>
+</html>

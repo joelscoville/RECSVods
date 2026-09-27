@@ -1,0 +1,351 @@
+chapters:
+  - id: s20260830-preparation
+    video_id: M9uwSKpB_gk
+    start: 5.1
+    end: 347.92
+    type: prayer
+    title: Preparatory personal prayer
+    confidence: 0.94
+    review_notes:
+      - ACTS slide at 0s; quiet intervals are retained as prayer units, not invented speech.
+    scripture: []
+    topics:
+      - prayer
+      - worship
+      - forgiveness
+    summary: The leader guides personal prayer through ACTS—adoration, confession, thanksgiving regardless of circumstances, and supplication for personal needs. The leader thanks God for safe worship, asks worshippers to recognize and follow God's voice, and introduces Jason.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+  - id: s20260830-opening
+    video_id: M9uwSKpB_gk
+    start: 347.92
+    end: 804.32
+    type: worship
+    title: Welcome and opening worship
+    confidence: 0.94
+    scripture:
+      - Psalms 97:1-5
+    topics:
+      - worship
+      - service-life
+      - meditation
+      - prayer
+      - holy-spirit
+    summary: The worship leader welcomes the English first service, invites greetings and silent meditation using the e-bulletin, and opens worship with Psalms 97:1-5 in the Triune God's name. The congregation sings Rejoice, the Lord Is King, and the leader thanks the Father, Son and Holy Spirit and prays for the service and Pastor Yong's preaching.
+    keywords:
+      - call to worship
+      - rejoice
+      - king
+      - opening prayer
+      - meditation
+      - holy spirit
+  - id: s20260830-trust
+    video_id: M9uwSKpB_gk
+    start: 804.32
+    end: 1274.78
+    type: worship
+    title: I Will Trust My Savior Jesus
+    confidence: 0.93
+    scripture: []
+    topics:
+      - worship
+      - faith
+    summary: The worship leader introduces a CityAlight hymn with a video demonstration and distinguishes belief in a historical fact from relational trust in Jesus. The congregation follows the video hymn, invited to reflect on that trust while singing.
+    keywords:
+      - trust my savior
+      - believing
+  - id: s20260830-readings-hymns
+    video_id: M9uwSKpB_gk
+    start: 1274.78
+    end: 1911.86
+    type: worship
+    title: Responsive readings and hymns
+    confidence: 0.94
+    scripture:
+      - Proverbs 5
+      - John 16:25-33
+    topics:
+      - worship
+      - peace
+      - faith
+    summary: The leader announces all of Proverbs 5 for alternating reading, and the congregation reads John 16:25-33 responsively, repeating its final three verses together. The congregation sings The Solid Rock, and the leader introduces the video anthem The Lord Is Coming.
+    keywords:
+      - responsive reading
+      - proverbs
+      - john
+      - solid rock
+  - id: s20260830-hebrews
+    video_id: M9uwSKpB_gk
+    start: 1911.86
+    end: 1985
+    type: reading
+    title: Hebrews 11 scripture reading
+    confidence: 0.93
+    scripture:
+      - Hebrews 11:13-16
+    topics:
+      - faith
+    summary: A reader introduced by a partial name reads Hebrews 11:13-16 before the sermon.
+    keywords:
+      - hebrews 11
+  - id: s20260830-introduction
+    video_id: M9uwSKpB_gk
+    start: 1985
+    end: 2586.52
+    type: sermon
+    title: Overcoming — introduction and last-session recap
+    speaker_id: pastor-yong
+    confidence: 0.87
+    review_notes:
+      - Approximate handover within 1978-1995s. ASR resumes at 2006.48s mid-thought; Last Session is recap, not the current title.
+    scripture:
+      - John 16:25-33
+      - Hebrews 11:13-16
+      - John 16
+      - 1 Peter 5:7
+    topics:
+      - service-life
+      - discipleship
+      - knowing-god
+      - holy-spirit
+      - faith
+      - prayer
+      - service
+      - joy
+    summary: With Overcoming displayed, Pastor Yong points to earlier YouTube sermons, welcomes questions, and recaps Jesus' care for confused disciples, departure and return, labour imagery, and the Spirit's coming and access to the Father. Challenging bitter service, he connects joy with the Spirit without requiring constant happiness, illustrates private marital struggles behind public ministry, and prays for humility, attention to God's voice and mercy.
+    keywords:
+      - earlier sermons
+      - questions
+      - holy spirit
+      - disciples
+      - bitterness
+      - humility
+  - id: s20260830-access
+    video_id: M9uwSKpB_gk
+    start: 2586.52
+    end: 3307.62
+    type: sermon
+    title: Direct access to God in prayer
+    speaker_id: pastor-yong
+    confidence: 0.91
+    scripture:
+      - John 13
+      - John 16
+      - 1 Corinthians 2:6-7
+      - John 16:25-26
+      - James 5
+      - John 16:23-24
+    topics:
+      - holy-spirit
+      - knowing-god
+      - prayer
+      - forgiveness
+      - service
+      - faith
+      - discipleship
+    summary: Pastor Yong traces Jesus' suffering, resurrection and return to the Father as a progressively revealed plan, linking the indwelling Spirit at Pentecost with direct prayer and contrasting his Reformed understanding with his account of Catholic confession. Through a requested prayer visit, a qualified rain joke and a George Muller anecdote, he urges regular personal prayer aligned with God's will and joy, denying that pastors or prominent Christians are necessary intermediaries or automatically pray better.
+    keywords:
+      - redemption plan
+      - hidden wisdom
+      - holy spirit
+      - priesthood
+      - intermediary
+      - george muller
+      - pray often
+  - id: s20260830-community
+    video_id: M9uwSKpB_gk
+    start: 3307.62
+    end: 3974.34
+    type: sermon
+    title: Joy and shared life in the church
+    speaker_id: pastor-yong
+    confidence: 0.89
+    scripture:
+      - Acts 2:1-3
+      - Acts 2:44-47
+      - John 16:24
+      - Acts 2
+    topics:
+      - holy-spirit
+      - service-life
+      - discipleship
+      - service
+      - politics
+      - stewardship
+    summary: Pastor Yong links Pentecost and Acts 2 sharing with joy, admiring Amish mutual support while questioning separation from outsiders; his accounts of communist privilege, China's economic changes and online shopping illustrate self-interest's challenge to voluntary sharing. He recommends cell groups and practical help without guaranteeing trustworthy relationships, remaining grateful for shared Christian service despite being cheated and disappointed.
+    keywords:
+      - early church
+      - pentecost
+      - journey of faith
+      - amish
+      - cell
+  - id: s20260830-tribulation
+    video_id: M9uwSKpB_gk
+    start: 3974.34
+    end: 4509.94
+    type: sermon
+    title: Tribulation and the burdens of caring
+    speaker_id: pastor-yong
+    confidence: 0.88
+    scripture:
+      - John 16:33
+    topics:
+      - faith
+      - peace
+      - suffering
+      - service
+      - prayer
+      - service-life
+    summary: Pastor Yong contrasts early Christian joy with Roman persecution and traditions of apostles' deaths depicted on shields; against accounts he attributes to other preachers, he rejects uninterrupted emotional peace and urges recovery from disappointment. He describes anxiety from repeated disaster footage and, through a Christian's concern for a friend, the emotional cost of empathetic pastoral care rather than retreat behind status.
+    keywords:
+      - early church
+      - apostles
+      - shields
+      - suffering
+      - disappointment
+      - social media
+      - empathy
+  - id: s20260830-love
+    video_id: M9uwSKpB_gk
+    start: 4509.94
+    end: 4951.34
+    type: sermon
+    title: Remembering the love of God
+    speaker_id: pastor-yong
+    confidence: 0.92
+    scripture:
+      - 1 Corinthians 13:13
+      - John 16:27-28
+      - Matthew 10
+      - Matthew 10:29-31
+    topics:
+      - faith
+      - peace
+      - knowing-god
+      - love
+      - discipleship
+      - forgiveness
+    summary: Pastor Yong frames overcoming trouble through love, faith and hope, urging trust in God's love and love for Jesus expressed in imperfect obedience, forgiveness and renewed effort. Using a saying attributed on screen to Augustine, a theologian's children's-hymn anecdote, and Jesus' sparrows illustration and a related hymn, he applies this assurance to relational, financial and health insecurity.
+    keywords:
+      - faith and hope
+      - tribulation
+      - augustine
+      - insecurity
+      - sparrows
+      - forgiveness
+  - id: s20260830-faith
+    video_id: M9uwSKpB_gk
+    start: 4951.34
+    end: 5455.66
+    type: sermon
+    title: Weak faith and encouraging examples
+    speaker_id: pastor-yong
+    confidence: 0.91
+    scripture:
+      - John 16:29-32
+      - Mark 9:24
+      - Hebrews 11:13-16
+    topics:
+      - faith
+      - discipleship
+      - temptation
+      - service
+      - stewardship
+      - holy-spirit
+    summary: Pastor Yong contrasts the disciples' premature confidence with their coming failure, using Mark 9:24 and Hebrews 11 to describe God's understanding of weak faith, its growth through trials and encouragement from those trusting beyond their lifetimes. He cites his work on Stephen Tong's autobiography, a university-funding example attributed to Tong that contrasts with his own caution, and the displayed example of Nick Vujicic and Kanae Miyahara.
+    keywords:
+      - weak faith
+      - disciples
+      - hebrews
+      - stephen tong
+      - determination
+      - nick
+      - miyahara
+  - id: s20260830-hope
+    video_id: M9uwSKpB_gk
+    start: 5455.66
+    end: 5749
+    type: sermon
+    title: Hope as assurance in Christ
+    speaker_id: pastor-yong
+    confidence: 0.92
+    scripture:
+      - John 16:33
+      - Romans 8:24-25
+    topics:
+      - faith
+      - peace
+      - hope
+    summary: Pastor Yong interprets John 16:33 as a call to courage grounded in Jesus' victory, death, resurrection and ascension rather than empty reassurance. Using Romans 8:24-25, English and Chinese word comparisons and the earlier hymn's theme of trust, he describes hope as patient assurance of a secure destination amid difficulty, not wishful thinking.
+    keywords:
+      - courageous
+      - victory
+      - patience
+      - assurance
+  - id: s20260830-response
+    video_id: M9uwSKpB_gk
+    start: 5750.1
+    end: 6150.88
+    type: prayer
+    title: Sermon response and pastoral prayer
+    speaker_id: pastor-yong
+    confidence: 0.9
+    review_notes:
+      - Creed ASR is incomplete; no reconstruction from memory.
+    scripture: []
+    topics:
+      - prayer
+      - faith
+      - peace
+      - worship
+      - temptation
+      - service-life
+      - holy-spirit
+    summary: Pastor Yong prays for strength, trust, love, faith, hope, joy and peace amid difficulty, and the congregation is invited to affirm faith with the Apostles' Creed, whose ASR is incomplete. He invites personal response and prayer for young people's protection and guidance amid trials and temptations, then asks for frequent prayer, life in God's will and remembrance of God's love.
+    keywords:
+      - apostles creed
+      - children
+      - teenagers
+      - young adults
+      - walk closely
+  - id: s20260830-closing
+    video_id: M9uwSKpB_gk
+    start: 6154.08
+    end: 6411
+    type: worship
+    title: Offering and closing worship
+    speaker_id: pastor-yong
+    confidence: 0.92
+    scripture:
+      - Jude 1:24-25
+    topics:
+      - stewardship
+      - service
+      - worship
+      - faith
+    summary: Pastor Yong says the second offering is for charitable work on the month's fifth Sunday and introduces the closing hymn as a reminder of Christ's victory. The congregation sings, and he invites the doxology and delivers a blessing from Jude.
+    keywords:
+      - fifth sunday
+      - charitable works
+      - o king eternal
+      - doxology
+      - jude
+  - id: s20260830-announcements
+    video_id: M9uwSKpB_gk
+    start: 6425.08
+    end: 6640.42
+    type: announcement
+    title: Church notices and dismissal
+    speaker_id: pastor-yong
+    confidence: 0.93
+    scripture: []
+    topics:
+      - service-life
+      - service
+      - stewardship
+    summary: Pastor Yong announces Keith A. Evans's English-language talk on church counsel and a financial stewardship talk for teenagers and early-career listeners, encouraging attendance with networking advice attributed to Lee Ka-shing. He invites service in youth, children's and Sunday school ministries with grace and joy, then dismisses the congregation to silent meditation.
+    keywords:
+      - home of counsel
+      - financial stewardship

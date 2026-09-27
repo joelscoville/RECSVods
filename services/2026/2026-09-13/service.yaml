@@ -1,0 +1,460 @@
+id: 2026-09-13
+date: 2026-09-13
+title: RECS English service — 13 September 2026
+sermon_title: Simple but Demanding
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - "First M3 case only: GkmB_KeBlBw. Date verified by upload metadata and opening slide; sermon
+    title and John 17:1-5 / Psalms 1:1-6 verified on the 1905/1925/1950s slides. No metadata
+    imported from another service."
+  - The service introduces the preacher as Pastor Yong and the worship leader as Brother Hadi in
+    supplied ASR. No full-name caption was verified; structured speakers are left empty rather than
+    expanded from memory or appearance.
+  - Full recording ffprobe duration 6628.441s; imported span 0–6628.4146875s. Opening preparation is
+    programme, not discarded waiting. First ASR invitation starts 11.16s; final substantive blessing
+    ends 6610.54s, with visual dismissal context through the recording end. Two-minute context
+    margins clip to 0–6628.441s; no retranscription.
+  - All 1518 source segments reviewed with adjacent context. These are edited ASR-derived excerpts,
+    not verbatim or listening-verified transcripts. Punctuation and clear contextual homophones are
+    edited; uncertain wording, Bible quotations, lyrics and selected digressions have explicit
+    omission markers. Summaries attribute claims to the speaker.
+  - "Source import retains array order and all timestamps: 18 outside-segment word warnings (maximum
+    0.30s), two overlaps (1.36/1.74s), and one 2.82s backward start at source IDs 974/975; 21
+    warnings on 20 IDs. Thirty-six zero-duration words retained; no tail clamps. See regional notes
+    on p0913-meditation-definition and docs/september13-review.md."
+  - Regional frame/word-adjacency review found segment-text/word-array divergence around the short
+    Chinese quotation and Packer definition, approximately 4517.88–4543.90s. IDs 975/976 have empty
+    word arrays. No sorting, invented word timing, silent repair or listening claim. Passage cuts
+    avoid this region; wording/alignment remains for human review.
+  - Frames at 1050s visibly announce temporary muting for copyright/streaming restrictions during
+    Ancient of Days. Repeated isolated Thank you ASR fragments in music/prayer gaps are not treated
+    as established speech or removed as proven decoding loops. Quiet-prayer and music context is
+    preserved in sections; audio was decoded, not listened to.
+  - Bible readings and embedded quotations are reference-only, including the short Chinese scripture
+    quotation; no translation from memory. Hymn/anthem lyrics omitted. Unspecified allusions are not
+    assigned guessed verse ranges. Referenced authors and anecdotal claims remain the preacher’s
+    attributions, not independent fact checks.
+  - Operator-approved flagged uncertainty permits processing complete, not publication. Original
+    batch audio was already absent in both roots; import used --allow-missing-audio. Exact safe
+    receipt projection below records audio_hash_verified false. Raw bundle/model retained; local
+    inspection artifacts cleaned after review. See docs/september13-review.md.
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Plan only, based on the current service metadata and all 91 supplied passage summaries for its
+    40 original chapters; no new media or ASR review and no editorial approval. The service remains
+    needs_review, with structured speaker identity unresolved.
+  - Opening, Worship and Scripture, and Response and Closing are neutral peer entries alongside five
+    argument-led sermon movements. The opening sermon prayer stays with the definition of eternal
+    life; the concluding sermon prayer stays with the call to persistent devotion.
+  - The afterlife and cremation questions develop the John 17 discussion of eternal life and remain
+    within the sermon. The later public-service and ministerial-pay examples support the account of
+    a changed worldview, rather than forming an independent political address or Q&A.
+  - Three cues retain useful access to the preacher’s account of death, his answer on cremation, and
+    his distinction between mental rest and reflective application. Each uses an existing chapter ID
+    and its unchanged bounds; routine service groups and incidental announcements receive no cues.
+  - All groups are contiguous runs on the single existing upload. Main derives bounds, scripture and
+    topics from the assigned originals and preserves their IDs, notes, provenance and evidence
+    internally; this plan supplies no new timing or taxonomy.
+  - The sermon_description is the single public descriptive paragraph for the video and service
+    context. Every group and cue summary is internal retrieval/review metadata and must not render
+    in outline rows, chapter navigation or search-result cards.
+  - The aircraft-accident anecdote remains an explicitly unverified rumour; afterlife detail is
+    limited, and the Dallas Willard transition remains a proposal attributed by the preacher. Burial
+    anecdotes and other named-author, personal and public-life claims are not independently
+    verified; the preacher’s divine simplicity terminology remains his own explanation.
+  - Meditation wording/alignment near the existing Packer-definition region remains uncertain; no
+    boundary is introduced within that region. Ancient of Days retains its documented temporary
+    muting and unknown exact mute bounds; no missing music, reading or speech is reconstructed.
+  - The preacher acknowledges that his criticism of knowledge without care may seem judgmental,
+    allows for depression and physical illness when describing zeal, and presents the markers as
+    directions for imperfect people’s growth. Academic success is qualified, boldness need not mean
+    large projects, and daily practice is not a guarantee of perfection.
+  - Closing announcements remain historical; Communion is announced for the forthcoming anniversary
+    service, not added as an event in this recording. All inherited review caveats remain for human
+    review.
+speakers: []
+topics:
+  - id: prayer
+    name: Prayer
+  - id: worship
+    name: Worship
+  - id: discipleship
+    name: Discipleship
+  - id: faith
+    name: Faith
+  - id: eternal-life
+    name: Eternal life
+  - id: meditation
+    name: Meditation
+  - id: service
+    name: Service
+videos:
+  - id: GkmB_KeBlBw
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6628.441
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: Full authorized acquisition verified exact RECS channel/video, usable
+      audio/video streams and 6628.441s ffprobe duration, independently repeated. Twenty-three
+      coarse windows/frames and eight additional audio windows decoded; 52 refined frames captured.
+      Visual programme, sermon slides, readings and dismissal match imported evidence. The
+      temporary-muted song region remains documented; playability is not a claim of uninterrupted
+      audible content, original-audio byte verification or browser playback.
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 6628.4146875
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: 38454d2075c72843f898464af43cac29dea36187d3e704dadc2a70c9ddb6af7a
+      duration_seconds: 6628.4146875
+      elapsed_seconds: 215.409
+      real_time_factor: 0.0325
+      transcribed_at: 2026-09-25T11:17:24.639192+00:00
+      transcript_sha256: bc67930bf70b25f102e25c01e9f1db573dcd011c449f6c06fd16292ab5bc5e7b
+      source_duration_seconds: 6628.441
+      duration_delta_seconds: -0.026312500000130967
+      audio_hash_verified: false
+chapters:
+  - id: c20260913-opening
+    video_id: GkmB_KeBlBw
+    start: 0
+    end: 453.8
+    title: Opening
+    type: opening
+    summary: The leader guides adoration, confession, thanksgiving and supplication, then offers a
+      gathering prayer, welcomes worshippers and invites greetings and silence.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - newcomers
+    topics:
+      - prayer
+      - worship
+    scripture: []
+    source_chapters:
+      - s0913-preparation
+      - s0913-gathering
+    review_notes: []
+  - id: c20260913-worship-scripture
+    video_id: GkmB_KeBlBw
+    start: 453.8
+    end: 1910.52
+    title: Worship and Scripture
+    type: worship
+    summary: The congregation’s worship includes the call from Psalms 99, hymns, prayer, readings from
+      Proverbs 7 and John 17, a video anthem and Psalms 1 before the preacher is invited to speak.
+    keywords:
+      - call to worship
+      - ancient of days
+      - proverbs 7
+      - john 17
+      - prayer of surrender
+      - new life
+    topics:
+      - worship
+      - faith
+      - prayer
+      - service
+      - discipleship
+      - eternal-life
+      - meditation
+    scripture:
+      - Psalms 99:1-5
+      - Daniel 7
+      - Proverbs 7:1-27
+      - John 17:1-19
+      - Psalms 1:1-6
+    source_chapters:
+      - s0913-call
+      - s0913-glory
+      - s0913-opening-prayer
+      - s0913-ancient
+      - s0913-proverbs
+      - s0913-john-reading
+      - s0913-thine
+      - s0913-anthem
+      - s0913-psalm-reading
+    review_notes: []
+  - id: c20260913-eternal-life-knowing-god
+    video_id: GkmB_KeBlBw
+    start: 1910.52
+    end: 2575.22
+    title: Eternal Life Is Knowing God
+    type: sermon
+    summary: Returning to Jesus’ prayer in John 17, the preacher introduces questions about death and
+      cremation and describes eternal life as intimate knowledge of God rather than physical
+      duration, illustrated by the fruit of the Spirit.
+    keywords:
+      - john 17
+      - eternal life
+      - living physically forever
+      - pray more
+      - glory
+    topics:
+      - discipleship
+      - service
+      - eternal-life
+      - prayer
+      - faith
+      - meditation
+    scripture:
+      - John 17:1-5
+      - Psalms 1:1-6
+      - John 17
+      - John 17:3
+      - John 17:1-3
+      - Galatians 5
+    source_chapters:
+      - s0913-sermon-intro
+      - s0913-review
+      - s0913-sermon-prayer
+      - s0913-eternal-life
+    review_notes: []
+  - id: c20260913-resurrection-hope-life-now
+    video_id: GkmB_KeBlBw
+    start: 2575.22
+    end: 3724.28
+    title: Resurrection Hope Shapes Life Now
+    type: sermon
+    summary: The preacher considers mortality, grief, burial and cremation through his account of
+      resurrection, acknowledges limited knowledge of the future and returns to eternal life
+      beginning with salvation now.
+    keywords:
+      - paradise
+      - hades
+      - resurrection
+      - burial
+      - cremation
+      - mirror
+      - dallas willard
+      - eternal life
+    topics:
+      - eternal-life
+      - service
+      - discipleship
+      - faith
+    scripture:
+      - 1 Corinthians 13:9-12
+    source_chapters:
+      - s0913-mortality
+      - s0913-afterlife
+      - s0913-burial
+      - s0913-cremation
+      - s0913-hope
+      - s0913-life-now
+    review_notes: []
+  - id: s0913-afterlife
+    video_id: GkmB_KeBlBw
+    start: 2766.68
+    end: 2985.5
+    type: sermon
+    title: Hope in Grief amid Limited Knowledge
+    confidence: 0.86
+    scripture: []
+    topics:
+      - eternal-life
+      - service
+    summary: The preacher distinguishes paradise and Hades from final destinations in his Reformed
+      account, connects funeral care with hope and acknowledges limited biblical detail about
+      resurrection and judgment.
+    keywords:
+      - paradise
+      - hades
+      - resurrection
+    parent_id: c20260913-resurrection-hope-life-now
+    source_chapters:
+      - s0913-afterlife
+  - id: s0913-cremation
+    video_id: GkmB_KeBlBw
+    start: 3195.46
+    end: 3451.66
+    type: sermon
+    title: Cremation Need Not Prevent Resurrection
+    confidence: 0.86
+    scripture: []
+    topics:
+      - eternal-life
+      - faith
+    summary: Alongside reported burial preferences and anecdotes, the preacher argues that cremation
+      does not prevent God from resurrecting the body while acknowledging practical and traditional
+      reasons to prefer burial.
+    keywords:
+      - cremation
+      - burial
+      - stephen tong
+    parent_id: c20260913-resurrection-hope-life-now
+    source_chapters:
+      - s0913-cremation
+  - id: c20260913-knowledge-prayer-practice
+    video_id: GkmB_KeBlBw
+    start: 3724.28
+    end: 4932.54
+    title: Turn Knowledge into Prayer and Practice
+    type: sermon
+    summary: Drawing on Packer, Acts 17 and Psalms 1, the preacher treats correct knowledge as a
+      starting point for meditation that engages doubt and becomes prayer, praise and care for
+      others, with local meditation alignment still uncertain.
+    keywords:
+      - packer
+      - simple but demanding
+      - divine simplicity
+      - athens
+      - meditation
+      - doubt
+      - prayer and praise
+    topics:
+      - discipleship
+      - meditation
+      - service
+      - faith
+      - prayer
+      - worship
+    scripture:
+      - 1 John 5:3
+      - Acts 17
+      - Psalms 1:1-2
+      - Psalms 1:1-3
+    source_chapters:
+      - s0913-knowing
+      - s0913-simple
+      - s0913-knowledge
+      - s0913-meditation
+      - s0913-internalizing
+      - s0913-praise
+    review_notes: []
+  - id: s0913-meditation
+    video_id: GkmB_KeBlBw
+    start: 4347.46
+    end: 4595.94
+    type: sermon
+    title: Meditation Applies Truth to Relationships
+    confidence: 0.8
+    review_notes:
+      - Source-ASR text/word divergence and backward start near 4518–4544s; frames corroborate
+        Packer quotation and topic, not audible word order.
+    scripture:
+      - Psalms 1:1-2
+    topics:
+      - meditation
+      - discipleship
+      - service
+    summary: The preacher distinguishes his practice of mental rest from Packer’s reflective application
+      to family, colleagues and others; local ASR wording and alignment remain uncertain.
+    keywords:
+      - meditation
+      - packer
+      - psalms
+    parent_id: c20260913-knowledge-prayer-practice
+    source_chapters:
+      - s0913-meditation
+  - id: c20260913-knowing-god-changes-life
+    video_id: GkmB_KeBlBw
+    start: 4932.54
+    end: 5399.46
+    title: Knowing God Changes How We Live
+    type: sermon
+    summary: The preacher presents energy, a larger worldview, boldness in loving action and contentment
+      as directions for growth in knowing God, with room for depression, illness, small acts and
+      imperfection.
+    keywords:
+      - energy
+      - love of life
+      - livelihood
+      - boldness
+      - small things
+      - great love
+      - contentment
+    topics:
+      - faith
+      - discipleship
+      - service
+    scripture: []
+    source_chapters:
+      - s0913-energy
+      - s0913-thoughts
+      - s0913-boldness
+      - s0913-contentment
+    review_notes: []
+  - id: c20260913-persistent-daily-devotion
+    video_id: GkmB_KeBlBw
+    start: 5399.46
+    end: 5755.3
+    title: Grow Through Persistent Daily Devotion
+    type: sermon
+    summary: Using disciplined study as a qualified analogy, the preacher urges sustained devotional
+      reading, reflection, prayer and action with fellow believers, and closes in prayer for deeper
+      knowledge of God and shared joy.
+    keywords:
+      - daily devotional
+      - demanding
+    topics:
+      - discipleship
+      - meditation
+      - prayer
+      - faith
+      - service
+    scripture:
+      - Psalms 1:1-3
+    source_chapters:
+      - s0913-demanding
+      - s0913-devotional
+      - s0913-closing-prayer
+    review_notes: []
+  - id: c20260913-response-closing
+    video_id: GkmB_KeBlBw
+    start: 5755.3
+    end: 6628.441
+    title: Response and Closing
+    type: closing
+    summary: The congregation is invited to affirm the creed, pray and give, then sing Trust and Obey
+      and receive the closing blessing before historical anniversary and ministry announcements and
+      dismissal.
+    keywords:
+      - apostles
+      - ready help
+      - christian education ministries
+      - trust and obey
+      - doxology
+      - anniversary service
+      - personal financial stewardship
+    topics:
+      - worship
+      - faith
+      - prayer
+      - service
+      - discipleship
+    scripture:
+      - 2 Thessalonians 2
+      - 2 Corinthians 13
+    source_chapters:
+      - s0913-creed
+      - s0913-pastoral
+      - s0913-offertory
+      - s0913-trust
+      - s0913-benediction
+      - s0913-announcements
+    review_notes: []
+sermon_description: Drawing on John 17 and Psalms 1, the preacher presents eternal life as knowing
+  God, beginning now and extending beyond death even where future details remain unclear. He draws
+  on Packer to argue that theological knowledge becomes lived faith through meditation, prayer and
+  praise. This relationship should shape care for others, courage and contentment, cultivated
+  through persistent daily devotion rather than information alone.

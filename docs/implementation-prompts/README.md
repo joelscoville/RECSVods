@@ -12,6 +12,43 @@ The execution order is:
 
 Operator-supplied inputs live in [`inputs/`](./inputs/). Treat them as read-only unless the operator edits them.
 
+## Contract amendments
+
+The current [concise-outline brief](./decisions/2026-09-26-sermon-outline.md) further
+amends the chapter decision: re-outline all 22 migrated services, preserve original
+boundaries internally, use neutral peer service groups and a few sermon movements,
+Title Case, one holistic sermon description, and no rendered per-unit descriptions.
+The user's subsequent UI direction makes subsections an integrated chapter tree
+expanded by a button inside its row. See [implementation and weekly procedure](../concise-outlines.md).
+
+The operator's [2026-09-26 chapter-search decision](./decisions/2026-09-26-chapter-search.md)
+supersedes conflicting passage/transcript requirements below. Freeze the current
+Milestone 4 content checkpoint first; then migrate to chapter-only publication and
+compact committed vectors before further M4 tooling acceptance or Milestone 5.
+Existing passage/transcript material must be preserved unchanged internally.
+
+The operator's [concise service-outline brief](./decisions/2026-09-26-sermon-outline.md)
+supersedes chapter granularity and presentation guidance in that decision. Apply it
+to the current migration before M4 acceptance and to M5 weekly curation.
+
+The historical content baseline is `540abab`; current preservation uses the
+self-contained `services/preserved-files.json` seal (`pnpm verify:preserved`).
+The migration and its rewriting tools are retired. For current acceptance and future
+curation, use `chapters`, `SearchChapter`, `chapters.json` and committed int8 vector
+sidecars. Any older passage/transcript authoring, rendering, edit-link or JSON-vector
+instruction below is historical and superseded, including copied milestone criteria.
+Use [archive format](../archive-format.md), [chapter migration](../chapter-migration.md),
+[chapter vectors](../chapter-vectors.md) and [chapter search](../search.md) as the
+implemented interfaces. Migration acceptance includes unchanged internal hashes,
+chapter-only preview/production output, old-link resolution, actual model evaluation,
+and measured current/700-service downloads. Keep code and migrated content in
+separate signed checkpoints before proceeding to M5.
+
+For work after historical batch 001, also read the operator's
+[caption-source decision](./decisions/2026-09-26-caption-transcripts.md). It does not
+authorize replacing the in-progress batch's recorded ASR history. M5 must implement
+its caption quality gate and local whisper.cpp fallback before claiming weekly readiness.
+
 ## Naming
 
 The user-facing product name is **RECS Replay**. Use it in the site, page titles, metadata, documentation, and the root `README.md`. `RECVods`, `RECSVods`, and `RECS VODS` are placeholder repository and design-file names; never show them to users. The GitHub repository may be renamed, so never hardcode the repository name or base path. Read the base path from one configuration value (for example `SITE_BASE_PATH`) so the same build works under a GitHub Pages project path or at a domain root.
@@ -54,6 +91,25 @@ The application must not call an LLM to maintain the archive. Archive interpreta
 GitHub Actions may run deterministic discovery, validation, testing, index generation, and deployment. It must not invoke an AI model, interpret recordings, or publish unreviewed archive content.
 
 The continuous implementation agent does not approve its own archive interpretation. Human approval is required before any archive content reaches production.
+
+### Historical batch concurrency exception (operator decision, 2026-09-26)
+
+Milestone 4 batch 001 and future explicitly approved historical batches may run in
+parallel, one subagent per logical service, with no fixed worker cap within the
+approved batch. Stagger media-acquisition starts by approximately 1–2 minutes to
+avoid YouTube throttling. Each worker uses its own external work directory and
+writes only its assigned service's `service.yaml` and review document. Workers
+must not edit taxonomy, shared manifests, application code, or the run log. Proposed
+new taxonomy terms belong in their review notes, not in shared taxonomy files.
+
+The main agent owns the shared manifest and run log, merges taxonomy proposals,
+performs cross-service consistency review, and runs repository-wide validation and
+search regressions once after the batch is assembled. Workers still perform source,
+checksum, duration, timing and own-file integrity checks and clean their own media.
+All other rules remain: bounded approved scope, finite tools, `needs_review` only,
+safe cleanup, human approval, and separate code/content commits. The weekly
+single-service workflow remains sequential. This permission does not create
+unattended interpretation or application/CI agent infrastructure.
 
 ## Record Model
 
@@ -175,9 +231,40 @@ Real archive milestones require an explicit authorization confirmation and a wor
 
 ### Transcription settings
 
-- Model: `ggml-large-v3-turbo-q5_0.bin` for all archive transcription. Download it once into a model cache outside the repository, verify its SHA-256 against the value published by the model source, and record the file name, source URL, and hash in documentation.
+- Primary local model: `ggml-large-v3-turbo-q5_0.bin` with whisper.cpp. Download it once into a model cache outside the repository, verify its SHA-256 against the value published by the model source, and record the file name, source URL, and hash in documentation.
 - Language: `--language en` by default. If coarse sampling shows a recording is substantially in another language, transcribe that recording with the detected language and record it on the video. Never silently translate.
-- Do not change the model or engine within a corpus batch. If a change becomes necessary, record it and re-transcribe the whole batch.
+- Keep engine/settings consistent within a processing batch. An explicitly operator-approved imported batch may use the Colab exception below; record the engine per recording and retain the provenance of earlier whisper.cpp recordings. Do not re-transcribe those earlier recordings solely to erase this approved engine difference.
+
+### Operator-run batch exception (approved 2026-09-25)
+
+Local whisper.cpp remains the primary supported engine, including Milestone 5's
+weekly single-service job. Colab faster-whisper is an operator-run option for large
+batches only (roughly three or more full services) when CPU transcription would
+take many hours. It is not application infrastructure, an automatic pipeline, a CI
+job, or a hosted API integration. Propose its use for a future batch and obtain
+operator agreement before staging audio. Keep each batch small.
+
+The operator approved a precomputed batch for `k27dmsPvmG8`, `W2IZ6MUX-Yk`,
+`94fynFHtreg`, `GkmB_KeBlBw`, `D-FyolbxJgk`, `OrsN83j3qxE`, `MZr169xBwrU`, and
+`Z-vRVB-WucA`. Do not transcribe those recordings locally. Its configuration is
+faster-whisper 1.2.1 / CTranslate2 4.8.2, `large-v3-turbo`, float16 on Tesla T4,
+beam size 5, word timestamps enabled, VAD disabled, and
+`condition_on_previous_text=False`. Validate supplied JSON checksums, schema and
+timestamps; compare duration with verified source media; verify supplied source
+audio hashes where the audio is present. Convert to local pipeline evidence and
+record engine/settings, source audio and transcript hashes, timing and RTF per
+recording. Importing evidence does not approve interpretation; all agent-written
+services remain `needs_review`.
+
+For an agreed future large batch, stage only authorized, verified audio in the
+operator-designated Drive `audio/` folder, ask the operator to click **Run all** in
+their notebook, then collect the resulting transcript JSON. Do not execute Colab
+or dispatch to a VM automatically. Both the Drive audio folder and the operator's
+local batch-audio folder are temporary media storage. After each transcript is
+imported and verified, delete that recording's matching audio from both locations.
+Keep raw/imported transcripts local-only; they are evidence, not committed or
+published archive content. Preserve the normal metadata, sampling/frame inspection,
+programme-boundary, competing-upload, curation and cleanup requirements.
 
 ### Keeping transcription short
 
@@ -214,7 +301,7 @@ If any Homebrew installation is used, create or update `docs/toolchain-fallback.
 
 ### Authorization
 
-Require the operator assertion `RECS_MEDIA_AUTHORIZED=1` before `yt-dlp` runs. Only the human operator may set it. The agent must never set, export, prepend, or suggest setting this variable in its own commands, and must never write it into scripts, configuration, `.env` files, or documentation examples that the agent then runs. If it is absent, stop and report the blocker.
+Require explicit operator permission before `yt-dlp` runs. Accept either the operator-set `RECS_MEDIA_AUTHORIZED=1` environment flag or explicit permission in the current conversation. For conversational permission, record its scope in a gitignored local authorization file and pass that file explicitly to the media tools; never treat a committed file or a previous run's log as authorization for a new run. The operator approved this alternative on 2026-09-25. The agent must never set the environment flag itself or infer permission from public availability. If neither authorization method is available, stop and report the blocker. Authorization records must never enter Git or build output. This permission covers media processing only, not editorial approval or publication.
 
 Authentication cookies or credentials must come from an operator-approved environment or local browser profile. They must never enter Git, logs, issue bodies, build artifacts, or the website.
 

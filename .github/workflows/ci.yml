@@ -1,0 +1,135 @@
+name: Validate and Publish RECS Replay
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  editorial-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Validate every actual head commit
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          COMMIT: ${{ github.sha }}
+        run: |
+          if [ "$EVENT_NAME" = pull_request ]; then
+            pnpm editorial:guard "$PR_BASE" "$PR_HEAD"
+          elif [ "$EVENT_NAME" = push ] && [ "$PUSH_BEFORE" != 0000000000000000000000000000000000000000 ]; then
+            pnpm editorial:guard "$PUSH_BEFORE" "$COMMIT"
+          else
+            pnpm editorial:guard "$COMMIT^" "$COMMIT"
+          fi
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      SITE_BASE_PATH: /replay-check/
+      RECS_E2E_NO_MODEL: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/cache@v4
+        with:
+          path: |
+            site/public/models
+            site/public/onnx
+          key: model-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'site/lib/embedding-config.ts') }}
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm lint && pnpm typecheck && pnpm test && pnpm validate:archive && pnpm validate:outlines && pnpm index:verify && pnpm verify:tracked
+      - name: Build isolated production and review output
+        # Explicit fixture destination exercises issue context; review output is never deployed.
+        run: pnpm build && PUBLIC_REPOSITORY_URL=https://github.com/example/archive-corrections pnpm build:preview
+      - name: Verify non-root production routes and privacy
+        run: pnpm verify:pages
+      - name: Browser checks without model execution
+        run: pnpm test:e2e
+      - name: Deterministic exact-search acceptance (semantic acceptance runs locally)
+        run: pnpm evaluate:core -- --exact-only
+      # No review output, traces, media or private evidence is uploaded from this job.
+  build-pages:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: [validate, editorial-guard]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PUBLIC_CORRECTIONS_URL: ${{ vars.PUBLIC_CORRECTIONS_URL }}
+      PUBLIC_REPOSITORY_URL: ${{ vars.PUBLIC_REPOSITORY_URL }}
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/cache@v4
+        with:
+          path: |
+            site/public/models
+            site/public/onnx
+          key: model-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'site/lib/embedding-config.ts') }}
+      - uses: actions/configure-pages@v5
+        id: pages
+      - name: Set the single deployment base-path setting
+        env:
+          CONFIGURED_PAGES_BASE: ${{ steps.pages.outputs.base_path }}
+        run: |
+          base=$(pnpm exec tsx scripts/pages.ts base)
+          echo "SITE_BASE_PATH=$base" >> "$GITHUB_ENV"
+      - run: pnpm build && pnpm verify:pages
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/production
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: [validate, editorial-guard, build-pages]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

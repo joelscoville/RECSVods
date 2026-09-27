@@ -18,7 +18,7 @@ Do not invent the sermon title, speaker, scripture, transcript, boundaries, or s
 
 Before building archive content:
 
-1. Confirm `RECS_MEDIA_AUTHORIZED=1` is present in the environment the operator started. Never set it yourself; if it is absent, stop and report.
+1. Confirm explicit operator authorization using either the operator-set `RECS_MEDIA_AUTHORIZED=1` flag or current-conversation permission recorded in a gitignored local file, as defined in the shared Authorization contract. Never set the flag yourself. If neither is available, stop and report.
 2. Create or verify the committed devenv and its lock file, then enter it through the shared bounded `scripts/devenv-run` wrapper. Do not test only the host `PATH`.
 3. From inside devenv, verify and record versions for `yt-dlp`, `ffmpeg`, `ffprobe`, and whisper.cpp. Download and hash-verify the shared transcription model into the external model cache.
 4. Verify temporary storage and model-cache paths are outside tracked repository content.
@@ -119,7 +119,7 @@ The skill is an agent operating procedure, not executable application logic and 
 
 ## First Recording
 
-Use the skill and authorized pipeline to process `ZTDYIJUDb0M`. Download to the approved temporary root, verify duration, sample coarsely to locate the programme, transcribe the programme span with whisper.cpp, and extract timestamped frames at coarse intervals and around suspected transitions. Use transcript, audio timing, frames, adjacent context, and trusted metadata together to identify waiting/setup material, the actual programme beginning within a target tolerance of 30 seconds, supported major sections, coherent searchable passages, and uncertain decisions requiring review.
+Use the skill and authorized pipeline to process `ZTDYIJUDb0M`. Download to the approved temporary root, verify duration, sample coarsely to locate the programme, transcribe the programme span with the primary whisper.cpp engine, and extract timestamped frames at coarse intervals and around suspected transitions. This first recording retains its original whisper.cpp provenance; the later operator-approved Colab batch does not require reprocessing it. Use transcript, audio timing, frames, adjacent context, and trusted metadata together to identify waiting/setup material, the actual programme beginning within a target tolerance of 30 seconds, supported major sections, coherent searchable passages, and uncertain decisions requiring review.
 
 Never commit recordings, extracted audio, frames, large raw outputs, or caches. Add targeted ignore rules without hiding reviewed content.
 

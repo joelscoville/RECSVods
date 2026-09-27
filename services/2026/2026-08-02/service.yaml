@@ -1,0 +1,552 @@
+id: 2026-08-02
+date: 2026-08-02
+title: RECS English service — 2 August 2026
+sermon_title: The Here and Now
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - Main batch integration applied the source-backed series and cited sanctification topic; worker
+    proposal notes describe the pre-merge stage. All interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - "Historical-001 slot 3: only 1R4gnCvqrOA. Exact source ID/channel verified; source title RECS 2
+    August 2026, upload/release 20260802, and 300s date slide agree. Acquisition began
+    2026-09-26T02:47:41.002890Z."
+  - Full meaningful programme reviewed from all 1437 supplied segments, adjacent word timings, 22
+    coarse frames/audio samples and 32 refined frames. Audio was decoded, not listened to. Inline
+    transcripts are edited ASR excerpts with explicit omissions, not complete verbatim or
+    listening-verified speech. No ASR or inference was run.
+  - Opening ACTS slide at 0/30s shows preparation already underway; no opening adoration speech
+    reconstructed. The programme continues through dismissal at 6462.86s. Closing visual context
+    retained to measured duration 6464.981s.
+  - Title and John 16:1-15 / Ephesians 5:15-17 appear at 2100/2120s. The slide heading Expository
+    Preaching on The Gospel of John is a proposed series only, pending main taxonomy review; no
+    series activated.
+  - Pastor Yong is named in the opening prayer at 665.08–669.48s; use only that verified partial
+    identity. Sister Catherine/Cat, Brother Hadi and Brother Joshua are mentioned, but no full
+    identities were established. Do not expand names or identify people by appearance.
+  - Proverbs 1:1-33 is announced and confirmed by 1300/1320/1460/1520s frames; the 1500s frame
+    briefly shows Proverbs 16:1-2. Retain the mismatch for review rather than changing the reading.
+    Around 4377.52s ASR says Luke chapter 10 for the rich-man illustration; precise reference is
+    withheld pending listening, not silently corrected from memory.
+  - Bible readings, embedded quotations and lyrics are omitted explicitly. No scripture text is
+    supplied from memory. Unannounced allusions do not receive guessed verse ranges. Communion
+    prayer near 1199–1247s and the early creed text are missing from ASR; no reconstruction.
+  - "Import preserves raw segment/word order and timings exactly: 24 outside-segment word warnings,
+    maximum 0.64s, 20 zero-duration words, no segment overlaps, backward starts or tail clamps.
+    Warning contexts reviewed; all remain human-review obligations. Largest discrepancy occurs
+    inside the omitted opening hymn."
+  - Historical, interfaith, medical and demographic assertions are the preacher’s statements, not
+    independently verified facts. In particular review the Coptic-martyr narrative, HIV
+    treatment/burial claims, Cambodia anecdote and Korean Christianity figures. The Cambodia account
+    must retain his later admission of mistaken judgment.
+  - "Taxonomy proposals: sanctification / Sanctification, supported by p20260802-sanctification at
+    4132.82–4224.8s and p20260802-renewal at 4224.8–4298.6s; gospel-of-john / Expository Preaching
+    on The Gospel of John series, displayed at 2100/2120s and supported by
+    p20260802-sermon-introduction. Existing discipleship and holy-spirit tags used pending main
+    review."
+  - Original target WebM absent in both designated audio roots; verified import used
+    --allow-missing-audio and records audio_hash_verified false. Safe provenance is copied exactly
+    from receipt. See docs/historical-001/2026-08-02.md for checks and cleanup.
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan based on the current service and all 82 supplied passage summaries across 33
+    original chapters; interpretation remains needs_review, with no new listening or timing
+    verification.
+  - Opening, Worship, Communion and Scripture, and Response and Closing are neutral peer groups
+    alongside the independent Q&A and four sermon movements; routine readings, songs, prayers and
+    announcements do not become separate primary entries.
+  - The brief sermon introduction and AV-team appreciation stay with the immediately following
+    independent paranormal Q&A to preserve contiguous coverage without inventing an introductory
+    sermon movement; the main exposition resumes with the recap.
+  - The four sermon movements follow witness amid opposition, the value of present growth, the
+    Spirit’s work, and practical loving service; aging, Cambodia, marriage and other illustrations
+    remain within the arguments they support, and the sermon’s concluding prayer stays with its
+    application.
+  - "Four cues provide selective access: the substantial Communion reflection on belonging, the
+    complete Cambodia account including the correction, the positive sanctification argument within
+    the longer present-life movement, and the concrete marriage application; there are no cues for
+    incidental announcements or routine worship items."
+  - "The Cambodia account remains the preacher’s recollection, including his admission of mistaken
+    judgment after learning of wartime rape; its medical, administrative and cultural claims and the
+    Stephen Tong attribution remain unverified. The Coptic account is also unverified: the preacher
+    says he has not watched the video and warns against seeking it."
+  - Retain the AMA qualification that a medical dissenter could be right and the attributed
+    Schwarzenegger quotation; the Luther attribution and Korean recollection also require human
+    review. Existing uncertainty about the Proverbs slide mismatch, rich-man reference, omitted
+    Communion prayer and early creed speech, partial identities and ASR timing remains unresolved.
+  - Only the holistic sermon_description is intended as visible prose; group and cue summaries are
+    internal retrieval/review metadata. All proposed boundaries derive from unchanged original
+    chapter membership on 1R4gnCvqrOA, including the preparation already underway and closing visual
+    context. Main retains all original evidence, notes and provenance.
+speakers:
+  - id: pastor-yong
+    name: Pastor Yong
+    role: Preacher
+topics:
+  - id: sanctification
+    name: Sanctification
+  - id: communion
+    name: Holy Communion
+  - id: discernment
+    name: Discernment
+  - id: discipleship
+    name: Discipleship
+  - id: eternal-life
+    name: Eternal life
+  - id: faith
+    name: Faith
+  - id: forgiveness
+    name: Forgiveness
+  - id: holy-spirit
+    name: Holy Spirit
+  - id: mission
+    name: Mission
+  - id: prayer
+    name: Prayer
+  - id: repentance
+    name: Repentance
+  - id: service
+    name: Service
+  - id: service-life
+    name: Church life
+  - id: stewardship
+    name: Stewardship
+  - id: truth
+    name: Truth
+  - id: worship
+    name: Worship
+videos:
+  - id: 1R4gnCvqrOA
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6464.981
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: Full authorized source has usable audio/video streams; ffprobe independently
+      repeated 6464.981s. Coarse samples decode across the recording, and distributed
+      programme/date/title/reading/dismissal frames correspond to supplied transcript. This
+      establishes technical usability and programme suitability, not uninterrupted audibility or
+      listening verification.
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 6464.9694375
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: 9508a23336ae2a5b3bfbe3dbeb383d9395d8fdb4b496ff13672ebf5fb8bafa24
+      duration_seconds: 6464.9694375
+      elapsed_seconds: 211.082
+      real_time_factor: 0.03265
+      transcribed_at: 2026-09-25T12:12:49.741671+00:00
+      transcript_sha256: 5f3c0bd5498f76f10cabfc4cfda04b8969de1e2cca0ade78eedb0b5466505cc5
+      source_duration_seconds: 6464.981
+      duration_delta_seconds: -0.01156249999985448
+      audio_hash_verified: false
+chapters:
+  - id: c20260802-opening
+    video_id: 1R4gnCvqrOA
+    start: 0
+    end: 415.3
+    title: Opening
+    type: opening
+    summary: With ACTS preparation already underway, the leaders guide confession, thanksgiving and
+      personal prayer, introduce Sister Catherine and welcome the congregation after a meditative
+      interlude credited to Brother Joshua.
+    keywords:
+      - confession
+      - thanksgiving
+      - childlike
+      - meditation
+    topics:
+      - prayer
+      - worship
+      - repentance
+      - forgiveness
+      - service-life
+    scripture: []
+    source_chapters:
+      - s20260802-preparation
+      - s20260802-welcome
+    review_notes: []
+  - id: c20260802-worship-communion-scripture
+    video_id: 1R4gnCvqrOA
+    start: 415.3
+    end: 2108.78
+    title: Worship, Communion and Scripture
+    type: worship
+    summary: The leaders guide hymns, prayer, Communion and readings from Psalms, Proverbs, John and
+      Ephesians, reflecting on belonging to Christ’s community and his care for the disciples
+      alongside the video anthem This World Is Not My Home.
+    keywords:
+      - call to worship
+      - forgiveness
+      - holy communion
+      - responsive reading
+      - proverbs
+      - john 16
+      - nearer still nearer
+      - not my home
+      - ephesians
+    topics:
+      - worship
+      - prayer
+      - forgiveness
+      - discipleship
+      - communion
+      - service-life
+      - holy-spirit
+      - faith
+      - eternal-life
+      - stewardship
+    scripture:
+      - Psalms 92:1-4
+      - 1 Corinthians 11:23-26
+      - Proverbs 1:1-33
+      - John 16:1-15
+      - Ephesians 5:15-17
+    source_chapters:
+      - s20260802-call
+      - s20260802-world
+      - s20260802-opening-prayer
+      - s20260802-communion
+      - s20260802-proverbs
+      - s20260802-john
+      - s20260802-reflection
+      - s20260802-nearer
+      - s20260802-anthem
+      - s20260802-ephesians
+    review_notes: []
+  - id: s20260802-communion
+    video_id: 1R4gnCvqrOA
+    start: 734.34
+    end: 1282.64
+    type: communion
+    title: Communion Expresses Belonging to Christ’s Community
+    confidence: 0.88
+    scripture:
+      - 1 Corinthians 11:23-26
+    topics:
+      - communion
+      - service-life
+      - prayer
+      - worship
+    summary: Recalling pandemic disagreements about Communion at home, the minister presents
+      participation as belonging to Christ’s community rather than mere ritual and leads the
+      congregation in receiving together.
+    keywords:
+      - holy communion
+      - cell leaders
+      - ritual
+      - communion hymn
+    parent_id: c20260802-worship-communion-scripture
+    source_chapters:
+      - s20260802-communion
+  - id: c20260802-introduction-paranormal-questions
+    video_id: 1R4gnCvqrOA
+    start: 2108.78
+    end: 2531.76
+    title: "Introduction and Q&A: Weighing Paranormal Claims"
+    type: question-answer
+    summary: After introducing the sermon texts and thanking co-workers, Pastor Yong addresses
+      paranormal claims, mysticism and vaccination disagreements, urging objective inquiry while
+      allowing that a medical dissenter could be right and describing Scripture’s sufficiency for
+      faith and life.
+    keywords:
+      - paranormal
+      - mysticism
+      - covid
+      - good faith
+      - evidence
+    topics:
+      - service-life
+      - service
+      - discernment
+      - truth
+      - faith
+    scripture:
+      - John 16:1-15
+      - Ephesians 5:15-17
+    source_chapters:
+      - s20260802-introduction
+      - s20260802-ama
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260802-witness-amid-opposition
+    video_id: 1R4gnCvqrOA
+    start: 2531.76
+    end: 3122.26
+    title: Witness Amid Opposition Without Segregation
+    type: sermon
+    summary: Pastor Yong introduces John 16’s warnings through the cost of witness, criticizes
+      segregation and uses his unverified Coptic-martyr account to illustrate faith amid opposition,
+      with prayer for receptive hearing.
+    keywords:
+      - segregation
+      - common grace
+      - fallen world
+      - witness
+      - coptic
+    topics:
+      - discernment
+      - discipleship
+      - faith
+      - mission
+      - holy-spirit
+      - prayer
+    scripture:
+      - John 7:7
+      - 2 Timothy 3:12
+      - John 16:1-15
+      - John 16:1-3
+      - John 16:2
+    source_chapters:
+      - s20260802-recap
+      - s20260802-sermon-prayer
+      - s20260802-persecution
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260802-growth-in-the-present
+    video_id: 1R4gnCvqrOA
+    start: 3122.26
+    end: 4402.64
+    title: Future Hope Calls for Growth in the Present
+    type: sermon
+    summary: Pastor Yong moves from unfolding revelation and human limits to a critique of future-only
+      religion, using his Cambodia recollection and its correction to argue for sanctification and
+      purposeful use of present time.
+    keywords:
+      - revelation
+      - redemption
+      - consummation
+      - future life
+      - temple
+      - sanctification
+      - renewal of life
+      - resources
+    topics:
+      - faith
+      - discipleship
+      - eternal-life
+      - discernment
+      - service
+      - mission
+      - repentance
+      - sanctification
+      - stewardship
+    scripture:
+      - John 16:4-6
+      - Ephesians 5:15-17
+      - Matthew 25
+      - Ephesians 5:17
+    source_chapters:
+      - s20260802-progression
+      - s20260802-future
+      - s20260802-cambodia
+      - s20260802-sanctification
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260802-cambodia
+    video_id: 1R4gnCvqrOA
+    start: 3636.94
+    end: 4132.82
+    type: sermon
+    title: Future Hope and a Mistaken Judgment in Cambodia
+    speaker_id: pastor-yong
+    confidence: 0.82
+    review_notes:
+      - Keep the initial assumption with the later correction; medical, cultural and
+        autobiographical claims are not independently verified.
+    scripture: []
+    topics:
+      - service
+      - mission
+      - discernment
+      - faith
+      - repentance
+    summary: In his unverified Cambodia recollection, Pastor Yong connects a woman’s wish to give money
+      to a temple for a better next life with his criticism of future-only religion, admitting shame
+      at judging her after learning she had been raped during war.
+    keywords:
+      - temple
+      - farmer
+      - stephen tong
+    parent_id: c20260802-growth-in-the-present
+    source_chapters:
+      - s20260802-cambodia
+  - id: s20260802-sanctification
+    video_id: 1R4gnCvqrOA
+    start: 4132.82
+    end: 4402.64
+    type: sermon
+    title: Redemption Includes Lifelong Growth
+    speaker_id: pastor-yong
+    confidence: 0.9
+    scripture:
+      - Ephesians 5:15-17
+      - Matthew 25
+      - Ephesians 5:17
+    topics:
+      - discipleship
+      - faith
+      - sanctification
+      - stewardship
+    summary: Pastor Yong presents sanctification as lifelong growth toward Christ and uses Ephesians 5
+      and the talents and rich-man illustrations to urge purposeful stewardship of time rather than
+      passive waiting for heaven.
+    keywords:
+      - sanctification
+      - renewal of life
+      - justification
+      - time
+      - resources
+    parent_id: c20260802-growth-in-the-present
+    source_chapters:
+      - s20260802-sanctification
+  - id: c20260802-spirit-conviction-remembrance
+    video_id: 1R4gnCvqrOA
+    start: 4402.64
+    end: 4937.42
+    title: The Spirit Convicts and Recalls Christ’s Teaching
+    type: sermon
+    summary: Expounding John 16 and John 14, Pastor Yong presents the Spirit’s worldwide indwelling,
+      conviction and remembrance of Christ’s teaching as the basis of believers’ confidence rather
+      than reliance on persuasive arguments or human effort alone.
+    keywords:
+      - holy spirit
+      - helper
+      - not walk alone
+      - conviction
+      - righteousness and judgment
+    topics:
+      - holy-spirit
+      - mission
+      - faith
+      - truth
+      - discipleship
+    scripture:
+      - John 16:7-11
+      - John 14:15-17
+      - John 16:8-11
+      - John 16:12-15
+      - John 14:26
+    source_chapters:
+      - s20260802-spirit
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260802-spirit-led-loving-service
+    video_id: 1R4gnCvqrOA
+    start: 4937.42
+    end: 5607.58
+    title: Depend on the Spirit for Daily Loving Service
+    type: sermon
+    summary: Pastor Yong applies the Spirit’s help to changing habits in marriage, regular Scripture
+      reading and prayer, and joyful, willing service in a loving community, concluding with prayer
+      for active obedience rather than passive waiting.
+    keywords:
+      - holy spirit
+      - marriage
+      - making the bed
+      - daily devotion
+      - old habits
+      - joyless
+    topics:
+      - discipleship
+      - service
+      - holy-spirit
+      - prayer
+      - service-life
+    scripture:
+      - John 13:34-35
+    source_chapters:
+      - s20260802-marriage
+      - s20260802-daily
+      - s20260802-community
+      - s20260802-closing-prayer
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260802-marriage
+    video_id: 1R4gnCvqrOA
+    start: 4937.42
+    end: 5177.76
+    type: sermon
+    title: Serving a Spouse Through the Spirit’s Help
+    speaker_id: pastor-yong
+    confidence: 0.89
+    scripture: []
+    topics:
+      - discipleship
+      - service
+      - holy-spirit
+    summary: Drawing on a cell-group study of Timothy Keller’s The Meaning of Marriage, Pastor Yong uses
+      differing preferences about making the bed to explore changed habits, love for a spouse and
+      dependence on the Spirit.
+    keywords:
+      - marriage
+      - spouse
+      - making the bed
+      - holy spirit
+    parent_id: c20260802-spirit-led-loving-service
+    source_chapters:
+      - s20260802-marriage
+  - id: c20260802-response-closing
+    video_id: 1R4gnCvqrOA
+    start: 5607.58
+    end: 6464.981
+    title: Response and Closing
+    type: closing
+    summary: The leaders guide the creed, prayer for cell ministry, offerings supporting evangelism, an
+      encouragement to pray often, the closing hymn and blessing, then invite fellowship and
+      ministry participation through photo-directory, refreshments and community-lunch
+      announcements.
+    keywords:
+      - apostles creed
+      - cell ministry
+      - offertory
+      - evangelism
+      - pray often
+      - hebrews 13
+      - doxology
+      - fellowship
+    topics:
+      - faith
+      - worship
+      - prayer
+      - service-life
+      - holy-spirit
+      - service
+      - stewardship
+      - mission
+    scripture:
+      - Hebrews 13
+    source_chapters:
+      - s20260802-creed
+      - s20260802-pastoral
+      - s20260802-offering
+      - s20260802-prayer-exhortation
+      - s20260802-friend
+      - s20260802-benediction
+      - s20260802-announcements
+    review_notes: []
+sermon_description: Pastor Yong connects John 16 and Ephesians 5 to argue that Christian hope should
+  shape life now rather than become passive waiting for heaven. Amid opposition and limited
+  understanding, he presents sanctification as ongoing growth and the Spirit as the one who convicts
+  and recalls Christ’s teaching. He brings dependence on the Spirit into daily devotion, marriage
+  and willing service in a loving community.

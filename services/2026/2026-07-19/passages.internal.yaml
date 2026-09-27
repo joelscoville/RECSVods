@@ -1,0 +1,1107 @@
+passages:
+  - id: p20260719-thanksgiving
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-preparation
+    start: 0
+    end: 112.2
+    type: prayer
+    title: Thanksgiving during preparatory prayer
+    summary: The opening portion invites the congregation to give thanks in their present circumstances, followed by space for prayer.
+    questions: ['How is the congregation invited to prepare in thanksgiving?']
+    topics: [prayer]
+    scripture: []
+    transcript: '[Recording begins during preparation; brief isolated ASR fragments omitted.] We now pray in thanksgiving. [Scriptural allusion omitted.] Let us give thanks in our prayers now. [Space for prayer; no missing speech reconstructed.]'
+    confidence: 0.84
+    review_notes: ['First substantial instruction begins at 43.08 seconds. Initial context and exact quiet-prayer boundaries require listening. Extended prayer unit retained.']
+  - id: p20260719-supplication
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-preparation
+    start: 112.2
+    end: 181.84
+    type: prayer
+    title: Bring personal needs before the Lord
+    summary: The leader invites personal supplication and leaves time for the congregation to pray.
+    questions: ['What is the preparatory supplication invitation?']
+    topics: [prayer]
+    scripture: []
+    transcript: 'And now we pray in supplication. We bring our personal needs before the Lord and seek His help. Let us pray in supplication now. [Space for prayer; isolated ASR fragment omitted.]'
+    confidence: 0.89
+    review_notes: ['ASR spray minimally corrected to pray from immediate wording.']
+  - id: p20260719-preparation-prayer
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-preparation
+    start: 181.84
+    end: 228
+    type: prayer
+    title: Set aside distractions and hear God
+    summary: The leader prays that worshippers can set aside burdens, hear God and entrust the morning service to him, then introduces the worship leader.
+    questions: ['What burdens are acknowledged in the preparation prayer?']
+    topics: [prayer, worship]
+    scripture: []
+    transcript: 'Let us pray together. We thank you and praise you, O God, for this morning as we are all gathered here to worship you. Many of us will come into this place with many baggages in our life, many things that are bugging us and blocking us from you. [Excerpt omitted.] We commit the entire morning’s worship service into your mighty hands. In Jesus’ name we pray. Amen. This morning our brother [Derrick] will be leading us.'
+    confidence: 0.9
+    review_notes: ['Name spelling follows the 500-second caption; introductory leader not identified by appearance.']
+  - id: p20260719-welcome
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-welcome
+    start: 228.9
+    end: 285
+    type: worship
+    title: Welcome and greetings
+    summary: Derrick welcomes the English morning congregation, invites mutual greetings and announces silent meditation followed by a call to worship from Psalms 89.
+    questions: ['Which psalm introduces worship?']
+    topics: [worship, service-life, meditation]
+    scripture: [Psalms 89]
+    transcript: 'So good morning brothers and sisters. Happy Sunday. Welcome to the Reformed Evangelical Church of Singapore English service, morning service. Before we begin, as usual, let me invite everyone to greet everyone around you. [Greetings.] Now let’s prepare our hearts with silent meditation, followed by today’s call to worship from Psalms 89.'
+    confidence: 0.94
+    review_notes: []
+  - id: p20260719-call-to-worship
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-welcome
+    start: 285
+    end: 370
+    type: scripture-reading
+    title: Meditation and call to worship from Psalms 89
+    summary: Silent preparation leads into a reading from Psalms 89.
+    questions: []
+    topics: [meditation, worship]
+    scripture: [Psalms 89]
+    transcript: '[Silent meditation and call to worship. Scripture quotation omitted; Psalms 89. Isolated ASR fragment is not treated as continuous speech.]'
+    confidence: 0.86
+    review_notes: ['Chapter announced at 273.8-279.4; exact verse range not established from a readable reference slide.']
+  - id: p20260719-first-hymn-introduction
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-first-hymn
+    start: 370.82
+    end: 409
+    type: address
+    title: Introducing Isaac Watts’s hymn
+    summary: Derrick introduces I Sing the Mighty Power of God and describes Watts’s use of fresh poetic language alongside metrical psalm singing.
+    questions: ['How does the leader introduce I Sing the Mighty Power of God?']
+    topics: [worship]
+    scripture: []
+    transcript: 'Now, let me give an introduction to the first hymn before we begin. The first hymn is I Sing the Mighty Power of God by Isaac Watts. [Excerpt omitted.] The composer of this hymn, Isaac Watts, sort of revolutionized this by writing hymns and spiritual songs that featured more fresh and poetic language. So let us rise and praise our Lord with the first hymn, I Sing the Mighty Power of God.'
+    confidence: 0.91
+    review_notes: ['Historical description is the worship leader’s account, not independently checked.']
+  - id: p20260719-first-hymn
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-first-hymn
+    start: 409
+    end: 497
+    type: hymn
+    title: I Sing the Mighty Power of God
+    summary: The congregation sings the announced opening hymn.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: '[Congregational hymn: I Sing the Mighty Power of God. Lyrics omitted.]'
+    confidence: 0.93
+    review_notes: []
+  - id: p20260719-opening-prayer
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-opening-prayer
+    start: 497.74
+    end: 529.66
+    type: prayer
+    title: Focus on God and receive the word
+    summary: Derrick gives thanks for gathering in safety and asks for attention, understanding and transformation.
+    questions: ['What does the opening prayer ask for?']
+    topics: [prayer, worship]
+    scripture: []
+    transcript: 'Now let us pray. Our dear Heavenly Father, we want to thank you that we are able to gather here in comfort and safety. [Excerpt omitted.] Prepare our hearts to receive your word. Open our minds so that we can understand your word better and transform us to be more and more like you. You are our rock and our refuge. In Jesus’ most precious name we pray. Amen. Please be seated.'
+    confidence: 0.94
+    review_notes: ['Opening prayer / Derrick Zou caption at 500 seconds independently establishes the leader’s full name.']
+  - id: p20260719-second-hymn
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-second-hymn
+    start: 534.14
+    end: 773
+    type: hymn
+    title: Here Is Love, Vast as the Ocean
+    summary: Derrick introduces the hymn’s ocean and flood imagery as an illustration of grace, and the congregation sings it.
+    questions: ['What imagery does the leader connect with grace?']
+    topics: [worship]
+    scripture: []
+    transcript: 'Now our second hymn is, Here Is Love, Vast as the Ocean. Also a lot of very nice imagery of vast ocean and a massive flood to illustrate God’s overwhelming grace. So let us sing the second hymn, Here Is Love, Vast as the Ocean. [Hymn lyrics omitted.]'
+    confidence: 0.93
+    review_notes: ['Whole hymn unit retained rather than splitting repeated verses into artificial passages.']
+  - id: p20260719-proverbs-reading
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-responsive-readings
+    start: 773
+    end: 1002.18
+    type: scripture-reading
+    title: Responsive reading from Proverbs 30
+    summary: The congregation participates in the responsive reading of Proverbs 30:1-33.
+    questions: ['Which Proverbs passage is read responsively?']
+    topics: [worship]
+    scripture: ['Proverbs 30:1-33']
+    transcript: '[Reading instruction begins mid-phrase in ASR.] Read the even-numbered verses. Proverbs 30. [Scripture reading omitted: Proverbs 30:1-33.]'
+    confidence: 0.96
+    review_notes: ['Exact range visible on responsive-reading slide at 765 and 900 seconds; complete reading unit retained.']
+  - id: p20260719-john-reading
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-responsive-readings
+    start: 1002.18
+    end: 1149
+    type: scripture-reading
+    title: Responsive reading from John 15
+    summary: The responsive readings continue with John 15:1-17, including the wider context of the sermon’s focus.
+    questions: ['What is the full John passage read before the sermon?']
+    topics: [worship]
+    scripture: ['John 15:1-17']
+    transcript: 'Let us continue our reading the book of John chapter 15. [Scripture reading omitted: John 15:1-17.]'
+    confidence: 0.97
+    review_notes: ['Exact range independently displayed; sermon later narrows its focus to verses 12-17.']
+  - id: p20260719-third-hymn
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-third-hymn
+    start: 1149.98
+    end: 1267
+    type: hymn
+    title: Love Divine, All Loves Excelling
+    summary: Derrick introduces Charles Wesley as a prolific hymn writer and leads the announced hymn.
+    questions: []
+    topics: [worship]
+    scripture: []
+    transcript: 'Our third hymn is a hymn by Charles Wesley, co-founder of the Methodist Church. He was a very prolific hymn writer, writing over 6,500 hymns over his lifetime. So let us sing this hymn, Love Divine, All Loves Excelling. [Lyrics omitted.]'
+    confidence: 0.91
+    review_notes: ['Writer statistics are attributed to the introduction. Complete musical unit retained.']
+  - id: p20260719-youth-choir
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-youth-choir
+    start: 1267.52
+    end: 1532
+    type: music
+    title: Youth choir — The Lord Is My Shepherd
+    summary: The youth choir is invited forward and presents The Lord Is My Shepherd, with Psalms 23 identified on the sanctuary screen.
+    questions: ['What does the youth choir present?']
+    topics: [worship, service-life]
+    scripture: [Psalms 23]
+    transcript: 'Now can I invite the youth choir on stage for The Lord Is My Shepherd. [Choir presentation and transition; lyrics omitted. Sparse ASR during music is not reconstructed.]'
+    confidence: 0.93
+    review_notes: ['Spoken introduction and 1500-second sanctuary slide corroborate title and Psalms 23; extended performance unit.']
+  - id: p20260719-corinthians-reading
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-sermon-reading
+    start: 1532.18
+    end: 1596
+    type: scripture-reading
+    title: Scripture reading — 1 Corinthians 13:8-13
+    summary: Derrick announces and reads the supporting sermon passage from 1 Corinthians.
+    questions: ['Which passage accompanies John 15 for The Greatest Love?']
+    topics: [worship]
+    scripture: ['1 Corinthians 13:8-13']
+    transcript: 'Today’s scripture reading is taken from 1 Corinthians chapter 13 verses 8 to 13. [Scripture quotation omitted.] This is the word of the Lord.'
+    confidence: 0.98
+    review_notes: ['Reference slide at 1535 seconds agrees with spoken announcement.']
+  - id: p20260719-sermon-welcome
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-sermon-introduction
+    start: 1596.7
+    end: 1665.66
+    type: address
+    title: The Greatest Love — welcome and appreciation
+    summary: The preacher greets the congregation, makes a football-related opening remark, thanks the youth choir and encourages wider participation in ministry before turning to John 15.
+    questions: ['What is the sermon title on 19 July 2026?']
+    topics: [service-life, service]
+    scripture: ['John 15:12-17', '1 Corinthians 13:8-13']
+    transcript: 'Happy Sunday. [Opening football remarks omitted.] Before I begin, I want my appreciation to the youth choir for presenting item to us. [Pianist’s name unclear; anecdote omitted.] Multiple involvement in ministry. And so, you know, we really should encourage all of us to get more involved as well. Now today we want to go on to the middle portion of John 15 after opening it last week.'
+    confidence: 0.91
+    review_notes: ['Title and references from the 1590-1650-second slide, not inferred from retrospective sermon material. Sports details and unclear pianist attribution require listening.']
+  - id: p20260719-invitation-to-questions
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-sermon-introduction
+    start: 1665.88
+    end: 1720
+    type: address
+    title: Invitation to submit questions of faith
+    summary: The preacher invites written questions and describes the many questions that can accumulate after teaching sessions.
+    questions: ['How are congregants invited to ask questions?']
+    topics: [service-life, faith]
+    scripture: []
+    transcript: 'And I want to first answer a question that has been asked that is a bit relevant to what we are doing today. Remember you can send your question to this number. Put a written question in the box if you don’t want to send. So please take the opportunity to ask anything. Sometimes in faith you have some questions relating to either the sermon or other issues of faith. Please do that. [Anecdote about question-and-answer sessions omitted.]'
+    confidence: 0.91
+    review_notes: ['Contact number not transcribed into archive content.']
+  - id: p20260719-do-good-wisely
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-charity-question
+    start: 1720
+    end: 1791.18
+    type: question-answer
+    title: How can doing good avoid exploitation?
+    summary: The preacher reads a question about being taken advantage of when helping others, recalls his charitable work and begins his answer by stressing wisdom.
+    questions: ['How can Christians do good without being taken advantage of?']
+    topics: [discernment, service]
+    scripture: []
+    transcript: 'So the question asked last week related to what was preached in the sermon itself. You preach about doing good to others. How do we prevent others from taking advantage of us? [Brief correction and recap omitted.] Before I pastored this church, that’s my full-time work in charitable circles of different kind. [Excerpt omitted.] For many people, that’s something which they struggle with because you see a lot of issues with fraud and what have you. And of course, the answer must be that you have to have wisdom.'
+    confidence: 0.94
+    review_notes: ['Question corroborated on the A.M.A. slide. Charitable-work history is autobiographical testimony.']
+  - id: p20260719-gentleness-accountability
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-charity-question
+    start: 1791.18
+    end: 1877.04
+    type: question-answer
+    title: Gentleness, discernment and accountability
+    summary: Referring to Matthew 10, the preacher urges a balance of gentleness and discernment and says charitable work should be thoughtful and accountable rather than merely emotional.
+    questions: ['What balance does the preacher recommend when helping others?']
+    topics: [discernment, responsibility, service]
+    scripture: ['Matthew 10:16']
+    transcript: 'And Jesus Christ said in Matthew 10 [scripture quotation and close repetition omitted]. And the two have to be a balance, not one or the other, and it’s a very difficult balance to keep. And so for me, I’m very careful with the work I’m getting involved with and still, despite the fact that you’re very careful, you’ll find that somewhere down the line there will be some issues, even in church. [Unverified fraud anecdote omitted.] To be careful means also that you do your very best to make sure that you think through the issues deeply and to make sure that things are accountable and practiced in the right way and not just emotionally.'
+    confidence: 0.91
+    review_notes: ['Contains segment 240’s 0.02-second word-boundary warning within the passage. No claim that allegations about fraud have been verified.']
+  - id: p20260719-tissue-sellers
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-charity-question
+    start: 1877.04
+    end: 1965.92
+    type: question-answer
+    title: The preacher’s approach to street appeals
+    summary: The preacher discusses tissue sellers and street begging, explaining his personal preference for organized support and his view of Singapore’s welfare provision.
+    questions: ['Why does the preacher prefer organized charitable support?']
+    topics: [discernment, stewardship]
+    scripture: []
+    transcript: 'So the person who asked this question brought up two examples. [Examples of tissue sellers and children begging overseas omitted.] You may be surprised that I am a person who I do not buy tissue paper from all these people sell tissue paper on the hawker center. [Excerpt omitted.] In Singapore, other countries I don’t want to comment too much, but in Singapore the government has a very robust system to take care of even the poorest of the poor people. [Further explanation of employment and independence omitted.]'
+    confidence: 0.84
+    review_notes: ['Personal practice and welfare claims are the speaker’s position, not archive advice or independently confirmed facts.']
+  - id: p20260719-tissue-anecdote
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-charity-question
+    start: 1965.92
+    end: 2050.18
+    type: question-answer
+    title: An anecdote about money and charitable appearances
+    summary: The preacher illustrates his concern about the incentives surrounding tissue sales with a reported crime anecdote; its details are not verified here.
+    questions: []
+    topics: [discernment]
+    scripture: []
+    transcript: 'And the selling of tissue paper is very lucrative, you know that, because all you very kind, right? [Illustration and reported crime anecdote omitted; details require human listening and source checking.] From this incident you know how lucrative the thing is. [Remainder of the speaker’s financial inference omitted.]'
+    confidence: 0.76
+    review_notes: ['Preserves the programme’s anecdotal turn without presenting its crime, nationality, sentencing or financial details as established.']
+  - id: p20260719-regular-charitable-work
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-charity-question
+    start: 2050.18
+    end: 2135.94
+    type: question-answer
+    title: Commit regularly to an accountable cause
+    summary: The preacher recommends sustained involvement with a properly monitored charitable group and encourages listeners to pray about which needs they can serve.
+    questions: ['What practical alternative to occasional emotional giving is suggested?']
+    topics: [service, stewardship, discernment]
+    scripture: []
+    transcript: '[Continuation of the street-giving discussion omitted.] I get involved in the more legit work that I do, whether it’s Habitat for Humanity or whatever it is, which I know are properly monitored and properly cared for. So one suggestion actually is that if you want to get involved, get involved in a regular basis. Don’t go and do all this warm and fuzzy feeling when I feel like you do something, then you feel good about yourself. That’s not a very good way to do good. You should think through and pray especially as to what is your direction. [Examples of different causes omitted.] Go find a legit group of people who are organized properly.'
+    confidence: 0.9
+    review_notes: ['Edited ASR excerpt; organizational claims remain attributed.']
+  - id: p20260719-faith-and-action
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-charity-question
+    start: 2135.94
+    end: 2202
+    type: question-answer
+    title: Discernment should lead to action
+    summary: The preacher acknowledges that regulation does not eliminate fraud but urges actual participation rather than endless discussion, citing James 2:17 and the congregation’s J217 charity.
+    questions: ['How does the preacher connect charitable action with James 2:17?']
+    topics: [faith, service, responsibility]
+    scripture: ['James 2:17']
+    transcript: '[Comments about charity reporting requirements omitted.] Even like that there’s still fraud, so therefore always be discerning. But I think that my bigger encouragement to you is to go and do something, okay? Keep thinking about it, talk about it, and yeah, yeah, you know, sounds good, but in the end of the day never do anything. You should get involved. [Excerpt omitted.] That’s why our own English service charity, J217. J217, James 2, verse 17. [Scripture quotation omitted.] So get going with that, okay?'
+    confidence: 0.91
+    review_notes: ['J217 rendering follows the immediately spelled-out biblical reference; local organization name remains reviewable.']
+  - id: p20260719-vine-recap
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-recap
+    start: 2202.02
+    end: 2286.46
+    type: sermon
+    title: Recalling the farewell discourse and true vine
+    summary: The preacher explicitly reviews the previous lesson, locating the vine metaphor in the farewell discourse and contrasting Christ with human constructions of truth.
+    questions: ['What is being recapped before the new sermon exposition?']
+    topics: [knowing-god, truth]
+    scripture: ['John 15:1-11']
+    transcript: 'All right, let’s review what was taught in the last lesson. [Recap details omitted.] He then began to give what is called a farewell discourse. And also this was the last of the seven I am in the Gospel of John. [Scripture quotations and further recap omitted.] Jesus Christ himself is the true source of everything. And so because of that, we always need to have full confidence in God.'
+    confidence: 0.93
+    review_notes: ['Explicit retrospective framing: not today’s sermon title or a separately acquired service.']
+  - id: p20260719-fruit-and-pruning
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-recap
+    start: 2286.46
+    end: 2358.06
+    type: sermon
+    title: Dependence, fruitfulness and pruning
+    summary: In the recap, the preacher describes dependence on Christ, relationships among believers and the difficulty of accepting pruning intended for greater fruitfulness.
+    questions: ['How does the recap describe pruning and fruitfulness?']
+    topics: [discipleship, faith]
+    scripture: ['John 15:1-11']
+    transcript: 'Like the vine with many branches, be dependent on the source and at the same time be related to each other. [Scripture quotation and exposition omitted.] The expectation is that we are fruitful, we are vibrant, we are dynamic. [Excerpt omitted.] This is the one that we don’t like because, you know, we want to be fruitful, but we don’t want to be cut, we don’t want to be disciplined, we don’t want to go through difficulties and challenges in life. [Further scriptural recap omitted.]'
+    confidence: 0.91
+    review_notes: []
+  - id: p20260719-goodness-recap
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-recap
+    start: 2358.28
+    end: 2438.06
+    type: sermon
+    title: Goodness, truth and beauty in the recap
+    summary: The preacher recalls the prior claim that nothing has lasting meaning apart from God’s goodness, explains goodness broadly and then introduces deeper exploration of Christian identity.
+    questions: ['What does the preacher mean by goodness beyond religious activities?']
+    topics: [knowing-god, truth]
+    scripture: ['John 15:1-11']
+    transcript: 'Today, I’m going to drill a little bit further to it, because all good is God’s good, and no good is outside of God. [Excerpt omitted.] When I use the word God, goodness is very broad, not just religious stuff, but anything relating to goodness and truth. [Brief Chinese phrase omitted.] Anything that is true, anything that is good, including anything that is beautiful, all these are with God. [Excerpt omitted.] I ended with [C. T. Studd], the missionary’s poem, Only One Life. [Poem quotation omitted.] Today we move on to the center portion where we dig a lot deeper into what it means to be a Christian based on what Jesus Christ said.'
+    confidence: 0.89
+    review_notes: ['Poem attribution garbled in ASR; C. T. Studd independently displayed on the 2430-second Last Session slide. End refined from supplied word timings.']
+  - id: p20260719-sermon-prayer
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-sermon-prayer
+    start: 2438.06
+    end: 2490
+    type: prayer
+    title: Humility amid competing voices
+    summary: The preacher asks for humble, attentive hearts and a focus on God amid competing voices.
+    questions: ['What preparation is requested before the exposition?']
+    topics: [prayer, discernment]
+    scripture: []
+    transcript: 'Let’s come to God and commit the time to him. We ask [Lord] that you keep our hearts humble and childlike almost, that we may hear you and turn and follow you. We know that we do live in a world with many, many voices and sometimes we get lost in all these voices. We ask that you help us to focus on you and you alone. [Remainder of prayer, including scriptural phrasing, omitted.] In Jesus’ name we pray. Amen.'
+    confidence: 0.91
+    review_notes: []
+  - id: p20260719-conditional-friendship
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-difficulties
+    start: 2490.32
+    end: 2581.04
+    type: sermon
+    title: Why does friendship involve commandments?
+    summary: The preacher narrows the focus to John 15:12-17 and raises the apparent difficulty of friendship and love being connected with obedience.
+    questions: ['Why does Jesus connect friendship and love with keeping his commands?']
+    topics: [discipleship, authority]
+    scripture: ['John 15:12-17', 'John 14:15']
+    transcript: 'Now earlier in your second responsive reading, I got you to read from verse 1 onwards, but today the focus is on [the] six verses from verse 12 to verse 17 that you have read. [Scripture quotations omitted.] There are actually some difficulties in this passage traditionally, because some of the things that Christ said is a little bit odd. So at least there are two big difficulties that I want to talk about today. The first one is this whole idea of conditional friendship. [Scripture quotations and repetition omitted.] Our standard understanding is, shouldn’t friendship and love be unconditional, isn’t it?'
+    confidence: 0.94
+    review_notes: ['2600-second slide corroborates Difficulty #1 and John 15:14 / John 14:15. Complete question slightly exceeds 90 seconds.']
+  - id: p20260719-buying-friendship
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-difficulties
+    start: 2581.28
+    end: 2645.98
+    type: sermon
+    title: A child’s attempt to buy friendship
+    summary: The preacher recalls a parent seeking help after her child gave classmates money to become friends, using the anecdote to illustrate transactional relationships.
+    questions: ['What illustration introduces the difficulty of conditional friendship?']
+    topics: [discipleship]
+    scripture: []
+    transcript: 'Many years ago in my previous church, somebody came and talked to me. She said, can you please speak to my daughter? [Dialogue excerpt omitted.] My daughter go around, give the classmate, everybody give one dollar. Be my friend, I give you one dollar. [Excerpt omitted.] Do not buy friendship. Friendship cannot be bought. [The preacher’s speculation and transition to a family anecdote omitted.]'
+    confidence: 0.86
+    review_notes: ['Anecdote is attributed, not independently verified.']
+  - id: p20260719-transactional-relationships
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-difficulties
+    start: 2645.98
+    end: 2703.2
+    type: sermon
+    title: A family anecdote about lending money
+    summary: The preacher continues the illustration with a nephew’s lending and repayment story, then turns from transactional friendship toward the question of divine choice.
+    questions: []
+    topics: [discipleship]
+    scripture: ['John 15:16']
+    transcript: '[Family lending anecdote excerpt.] So he give all the 50 cents to all his classmate friends. Then my late sister said, you cannot do that, you know. Go and ask them back for the money. [Dialogue and jokes omitted.] So this kind of very conditional thing. [Scripture quotation omitted.] The second one that is difficult is in the verse, verse 16. [Scripture quotation omitted.]'
+    confidence: 0.85
+    review_notes: ['Anecdote and humour retained as context rather than financial instruction.']
+  - id: p20260719-did-i-choose
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-difficulties
+    start: 2703.2
+    end: 2781.14
+    type: sermon
+    title: Did I choose this faith?
+    summary: The preacher raises the tension between divine choosing and the ordinary assumption that faith is a voluntary personal selection.
+    questions: ['What difficulty does the preacher raise about choosing to be Christian?']
+    topics: [faith, knowing-god]
+    scripture: ['John 15:16']
+    transcript: '[Scripture quotation omitted.] So herein lies also this idea that choosing God and all that is pretty Reformed, thinking that we are chosen because Jesus Christ said that. [Excerpt omitted.] The difficulty is that I thought I chose to be a Christian and that faith is something which is part of what I do in my own life. [Examples of why people attend church omitted.] We like to think that faith is something that we do because we have chosen.'
+    confidence: 0.93
+    review_notes: ['2700-second slide reads Difficulty #2: Forced Faith?']
+  - id: p20260719-picking-religion
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-difficulties
+    start: 2781.14
+    end: 2842
+    type: sermon
+    title: Treating religion as a set of personal options
+    summary: The preacher uses examples of neighbouring religious institutions and mixed household altars to describe an attitude in which the worshipper remains in control.
+    questions: ['How does the preacher illustrate a consumer approach to religion?']
+    topics: [faith, discernment]
+    scripture: []
+    transcript: 'So in Singapore especially, we have a lot of interesting phenomena. [Examples of religious institutions and household altars omitted; names uncertain in ASR.] But you are in charge, right? You can choose and pick and choose what you want. And that’s the way we think all the time.'
+    confidence: 0.85
+    review_notes: ['Description of other religious practices is the preacher’s characterization; uncertain names are not normalized from memory.']
+  - id: p20260719-fallen-reason
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-human-constructs
+    start: 2842
+    end: 2911.06
+    type: sermon
+    title: Fallen reason and inherited assumptions
+    summary: The preacher attributes distorted reasoning to the fall and describes cultural, linguistic and traditional influences on how people think about faith.
+    questions: ['What does the preacher mean by human constructs?']
+    topics: [discernment, truth]
+    scripture: []
+    transcript: 'The reason why we often would think like that has to do with the fact that we are all products of a fallen reason. [Account of the fall omitted.] It influenced every aspect of our life, everything, everywhere, all kinds of different aspect in culture, in language, religion or custom or tradition, the way we look at the world, technology, many, many things. [Excerpt omitted.] When we think about things and think about issue, think about faith, there is a human construct involved.'
+    confidence: 0.91
+    review_notes: ['Theological explanation attributed to the sermon.']
+  - id: p20260719-worship-and-culture
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-human-constructs
+    start: 2911.06
+    end: 3005.22
+    type: sermon
+    title: Cultural influences on worship forms
+    summary: The preacher describes European and Dutch influences on the congregation’s worship conventions and clothing, using them as examples of inherited forms rather than unquestionable prescriptions.
+    questions: ['How does the sermon distinguish worship traditions from divine prescriptions?']
+    topics: [worship, discernment]
+    scripture: []
+    transcript: 'For example, the way we worship, like right here, right? Right here you’re sitting there, you are watching me down there. [Excerpt omitted.] This is a European style of worship. [Historical account and clothing examples omitted.] I always say that if Jesus Christ were born in Beijing, all churches would look like temple today. [Illustration continued; excerpt omitted.] They bring in their worship style, and so these are all human constructs.'
+    confidence: 0.86
+    review_notes: ['94-second unit preserves one cultural-history illustration. Colonial-history claims are not independently checked.']
+  - id: p20260719-no-fixed-worship-script
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-human-constructs
+    start: 3005.22
+    end: 3078
+    type: sermon
+    title: Questioning assumptions about orderly worship
+    summary: The preacher imagines everyday distractions around Jesus’s teaching and questions whether familiar worship forms and church leaders’ conduct reflect transformed thinking.
+    questions: ['What does the preacher question about familiar worship expectations?']
+    topics: [worship, discernment]
+    scripture: []
+    transcript: 'Not exactly what God would intend it to be for certain. That’s why the Bible doesn’t have a prescription of how you should worship. Number one, do this. Number two, do that. The Bible doesn’t do that. [Imagined teaching scene omitted.] A lot of the things and a lot of our idea about what faith is all about are part of the human construct that’s influenced by our fallen reason. [Excerpt omitted.] Sometimes when I look at senior church leaders fight, quarrel, all of a sudden I realize that, hey man, these people quarrel in a way like anybody else.'
+    confidence: 0.9
+    review_notes: ['Imagined scenes remain illustrations, not historical evidence about Jesus’s audiences.']
+  - id: p20260719-taekwondo-illustration
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-human-constructs
+    start: 3078
+    end: 3175.56
+    type: sermon
+    title: Training routines and behaviour under pressure
+    summary: The preacher recalls childhood taekwondo training and his disappointment with free sparring, using the contrast to introduce a concern about professed faith and actual conduct.
+    questions: ['What does the taekwondo anecdote illustrate?']
+    topics: [discipleship]
+    scripture: []
+    transcript: 'The example I always give is when I was young, I was very skinny. [Account of starting taekwondo and practising routines omitted.] Because you watch a lot of movies, right, you keep expecting the sparring to be movie-like, you know, all kind of very elegant. And I realized that no, when the free sparring started they fight each other like gangsters. [Excerpt omitted.] What happened to all the many effort you put in on the stance or the various technique you use? [End of autobiographical example omitted.]'
+    confidence: 0.88
+    review_notes: ['Complete 98-second anecdote kept together; this is the speaker’s memory, not a characterization independently established about martial arts.']
+  - id: p20260719-conduct-and-scripture
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-human-constructs
+    start: 3175.56
+    end: 3239
+    type: sermon
+    title: Returning to Scripture rather than asserting status
+    summary: Applying the illustration to church leaders, the preacher criticizes reliance on cultural authority and points instead to the word of God, citing John 17:17.
+    questions: ['What should challenge inherited habits of authority?']
+    topics: [authority, truth, discipleship]
+    scripture: ['John 17:17']
+    transcript: 'So it’s the case for much of our faith as well. Many times when you look at the way people behave, you realize that, hey, something is wrong with this picture. You’re a very senior church leader and yet when you reason and when you think, you cannot escape from the human construct. [Colloquial phrase omitted.] Because I say so, so you have to listen to me. It’s a very strange concept. And so in the midst of all this, the Reformed church says we move in with the Word of God. [John 17 quotation and autobiographical denominational comparison omitted.]'
+    confidence: 0.9
+    review_notes: ['Reference recognized from the explicit John 17 citation and quoted verse; Bible text omitted.']
+  - id: p20260719-word-at-crossroads
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-human-constructs
+    start: 3239
+    end: 3289
+    type: sermon
+    title: The word of God at life’s crossroads
+    summary: The preacher urges listeners to let Scripture direct their choices rather than treating background, ethnicity or personal philosophy as final authority.
+    questions: ['What should direct a Christian at a crossroads in life?']
+    topics: [truth, discernment, discipleship]
+    scripture: ['John 17:17']
+    transcript: 'Suddenly you realize that, hey, the correct answer is the word of God. [Excerpt omitted.] You need to go back to the word of God to find the correct direction. And I pray that if anything you can learn from this pulpit, this will stick with you for the rest of your life. [Excerpt omitted.] You will always understand that the word of God is the truth and not how you are brought up, what’s your language, what’s your race, how you think, what’s your logic, what’s your philosophy in life, but the Word of God.'
+    confidence: 0.92
+    review_notes: []
+  - id: p20260719-sovereignty-goodness
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-glory
+    start: 3289
+    end: 3376.36
+    type: sermon
+    title: God’s sovereignty and the meaning of goodness
+    summary: The preacher returns to John 15:5, saying that worldly glory and Christian life cannot be understood apart from God, and includes truth, goodness and beauty beyond explicitly religious settings.
+    questions: ['How does the preacher apply John 15:5 beyond religious activity?']
+    topics: [glory, knowing-god, truth]
+    scripture: ['John 15:5']
+    transcript: 'When we are studying John 15, there are many things that come out that are so very strong, right? One of the key things that we see down from the Word of God is that the sovereignty of God is the most important thing. [John 15:5 quotation omitted.] So this verse is not just about Christians doing things in the name of Jesus Christ. [Excerpt omitted.] All of the world’s glory is nothing apart from God and His goodness. And I’m not even talking about just religious things. [Excerpt omitted.] Things that are true, things that are good, things that are beautiful, they are all of God.'
+    confidence: 0.92
+    review_notes: ['3300-second slide uses To be Nothing in a retrospective sovereignty heading; does not replace the current title.']
+  - id: p20260719-sporting-ambition
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-glory
+    start: 3376.36
+    end: 3440.06
+    type: sermon
+    title: Sporting ambition as an illustration of glory
+    summary: The preacher introduces a sporting illustration about Singapore’s ambitions and recruiting foreign talent, setting up his question about authentic achievement.
+    questions: ['Why does the sermon introduce Singapore’s sporting ambitions?']
+    topics: [glory, truth]
+    scripture: []
+    transcript: 'And of course, digging it further, a Christian would be nothing apart from God. [Excerpt omitted.] Take a very simple example. We talk about soccer and World Cup and all these things. I know that a lot of you are not big fans, but there are a lot of people who are very super big fans. [Claim about a former prime minister’s sporting target omitted; date uncertain.] Back in those days the idea was that if we don’t have local talent, what must we do? We buy talent.'
+    confidence: 0.83
+    review_notes: ['ASR says year 2000 in the recalled target; not independently verified or silently corrected.']
+  - id: p20260719-recruited-athletes
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-glory
+    start: 3440.06
+    end: 3526.2
+    type: sermon
+    title: Recruited athletes and national identification
+    summary: The preacher recounts disputed sporting examples and asks whether formal citizenship alone produces the identification associated with national glory.
+    questions: ['What distinction does the sporting illustration make about belonging?']
+    topics: [glory, truth]
+    scripture: []
+    transcript: '[Recollected account of recruited athletes omitted; names, events and allegations require checking.] That’s the way the world operate, right? [Table-tennis example omitted.] But something is wrong in the picture somewhere, because if they ever win anything and then the Singaporean flag come out, you suddenly realize that they don’t know how to sing [the national anthem]. [Transition to hypothetical recruitment omitted.]'
+    confidence: 0.77
+    review_notes: ['Unverified allegations about athletes are not presented as facts. Segment 665’s 0.06-second overrun and adjacent continuation are enclosed here; ASR workout refers to the World Cup context.']
+  - id: p20260719-buying-a-team
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-glory
+    start: 3526.2
+    end: 3607.06
+    type: sermon
+    title: Could buying a team create genuine glory?
+    summary: In a hypothetical example, the preacher imagines paying star players to form a national team and distinguishes technical eligibility from a meaningful shared achievement.
+    questions: ['What is the purpose of the hypothetical purchased football team?']
+    topics: [glory, truth]
+    scripture: []
+    transcript: 'It’s very simple. From your national reserve take out a billion US dollar, I guess. [Player names, citizenship comparisons and anthem joke omitted; ASR uncertain.] Get all this team together, all the best players in the world, pay 100 million US each, form a national team, get into the finals, yeah?'
+    confidence: 0.82
+    review_notes: ['Hypothetical illustration, not a reported government plan. Boundary follows the segment-665 warning region and its immediate continuation.']
+  - id: p20260719-is-glory-real
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-glory
+    start: 3607.06
+    end: 3662.76
+    type: sermon
+    title: Asking whether a technical victory is real glory
+    summary: The preacher asks whether the imagined team’s win would feel authentic and connects the question to truth and commitment, then recounts an observation about national-anthem singing.
+    questions: ['Why might technical success still feel empty?']
+    topics: [glory, truth]
+    scripture: []
+    transcript: 'And assuming by some miracle they get the final gold cup, is this glory real? Will you be very excited about it? [Rhetorical exchange omitted.] The answer is because this is not real. It’s not linked with truth, it’s not linked with reality and it’s not real. And I told you that I am not interested in the World Cup per se, but I like the human drama. [Unverified match and anthem anecdote omitted.]'
+    confidence: 0.85
+    review_notes: ['Match names and results in ASR have not been checked and are not used to establish the service date.']
+  - id: p20260719-glory-without-truth
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-glory
+    start: 3662.76
+    end: 3718.34
+    type: sermon
+    title: Achievement disconnected from truth and goodness
+    summary: Completing the sporting illustration, the preacher argues that apparent victory is empty when detached from truth, beauty and the way he understands God’s creation.
+    questions: ['What conclusion does the preacher draw from the sporting illustration?']
+    topics: [glory, knowing-god, truth]
+    scripture: []
+    transcript: '[Further sports anecdote omitted.] So when you are divorced with things that are real, things that are true, things that are beautiful, even though you don’t use the word God, it will not work because that’s the way God created the world to be. It doesn’t matter whether you already spent US one billion to form a world-class football team to win the World Cup. Even when you really win it, it doesn’t mean anything. It’s nothing. We all understand this.'
+    confidence: 0.9
+    review_notes: ['Conclusion retained as the speaker’s argument, not an externally established rule about sporting success.']
+  - id: p20260719-christian-without-christ
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-glory
+    start: 3718.34
+    end: 3779
+    type: sermon
+    title: Without Christ, I am nothing
+    summary: The preacher uses a wordplay on Christian to emphasize dependence on Christ rather than self-directed identity.
+    questions: ['What does the Christian / I-A-N wordplay illustrate?']
+    topics: [faith, discipleship]
+    scripture: ['John 15:5']
+    transcript: 'For the Christian, it is even more so that a Christian is really nothing more than anything else, more than the rest of the world, apart from Christ and His goodness. [Excerpt omitted.] When you look at the word Christian, it simply means that without the word Christ, you are left with the letter I-A-N, which stands for I am nothing. Without Christ, I am nothing. And I think this is a very important understanding of what our faith is all about, because our human construct tells us that life is about me, about my choice, about my ability to forge a way to gain whatever it is. [Excerpt omitted.] Conversely, with Christ, then you are everything.'
+    confidence: 0.93
+    review_notes: ['Wordplay is an illustration, not a linguistic derivation.']
+  - id: p20260719-fullness-of-joy
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-full-joy
+    start: 3779
+    end: 3854.9
+    type: sermon
+    title: Full joy rather than temporary comfort
+    summary: Returning to John 15, the preacher contrasts the fullness of joy he finds in Christ’s teaching with treating religion as a small source of comfort or a useful tool.
+    questions: ['How does the sermon contrast full joy with using religion for comfort?']
+    topics: [faith, discipleship]
+    scripture: ['John 15:5', 'John 15:11']
+    transcript: 'When we talked about this last week [scripture quotations omitted]. So apart from Christ we are nothing, but with Christ you are everything. Jesus did not say that I’ve said all these things to you so that you’ll be happy for a little while. You have warm and fuzzy feeling about life. You will be comforted, which is how we think religion is like most of the time, right? [Chinese phrase and explanation omitted.] But that’s not how the Bible portray it to be, right? [Scriptural phrase omitted.] So that you can be more joyful than you can ever imagine.'
+    confidence: 0.91
+    review_notes: ['Segment 755’s 0.10-second word-start warning is internal to this passage.']
+  - id: p20260719-beyond-useful-religion
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-full-joy
+    start: 3854.9
+    end: 3937.42
+    type: sermon
+    title: Beyond a faith chosen only for personal benefit
+    summary: The preacher recalls a previous musical item and asks whether faith is merely a source of personal benefit, arguing that Scripture challenges inherited assumptions about Christian identity.
+    questions: ['Is Christian faith described as merely something useful to choose?']
+    topics: [faith, discipleship, truth]
+    scripture: ['John 15:11']
+    transcript: 'Last week [ensemble name uncertain] played the song, There Is a Hope. [Lyrics and unclear ASR attribution omitted.] It’s not just a little bit of joy here and there. [Further lyric quotation omitted.] We want to dig a little bit deeper today. Looking at the verses that we have just read, how does all these things work? I mean, for many of us, our human construct is that this is a faith, I pick the faith, this is the church I come to because I hear a little bit of good things here and there, maybe pastor can help me do something, there’s something I can gain. Is it just about that alone? The answer must certainly be not. [Excerpt omitted.] What exactly does it mean to be a Christian?'
+    confidence: 0.88
+    review_notes: ['Segment 775’s 0.18-second word-start warning enclosed. Prior-service reference remains the speaker’s recap; no title, performer or lyric supplied from another service.']
+  - id: p20260719-bought-with-price
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-bought
+    start: 3937.42
+    end: 4004.54
+    type: sermon
+    title: Christian identity as belonging to Christ
+    summary: The preacher cites 1 Corinthians 6:19-20 and explains redemption as belonging to Christ because of the price of his life.
+    questions: ['How does the preacher explain being bought with a price?']
+    topics: [sacrifice, discipleship]
+    scripture: ['1 Corinthians 6:19-20']
+    transcript: 'I want to remind you, first of all, from the Bible, that we are people who are bought with a heavy price. [Context and scripture quotations omitted.] What does it mean to be bought with a price? This price, of course, is the life of our Lord Jesus Christ, who died on the cross to redeem us. And Paul used the word bought in a way that we should understand, very simple context. You buy something, that something belongs to you, right? You bought something with a price so that you will own it. [Restatement omitted.]'
+    confidence: 0.94
+    review_notes: ['ASR alternates bought and bored in this exposition; intended term established by repeated explanation, not fresh inference.']
+  - id: p20260719-not-self-owned
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-bought
+    start: 4004.98
+    end: 4073
+    type: sermon
+    title: The challenge to self-ownership
+    summary: Citing Galatians 2:20, the preacher contrasts belonging to Christ with the assumption that people determine their lives entirely for themselves.
+    questions: ['Why does belonging to Christ challenge ordinary ideas of autonomy?']
+    topics: [faith, authority, discipleship]
+    scripture: ['Galatians 2:20']
+    transcript: 'Galatians 2:20 [scripture quotation omitted]. And so the Bible teaches that when you say you are a Christian, you are a [bought] person. And when you are a [bought] person, naturally it means you don’t own yourself anymore. But this is something which we find very difficult to understand or to accept. Because all our human constructs tell us that we live life by ourselves, and we are our own decision maker. Destiny is in our own hands. But when you look at the scripture itself, you find that the scripture actually says otherwise.'
+    confidence: 0.94
+    review_notes: ['Bracketed bought corrects ASR bored using the adjacent explicit buying explanation.']
+  - id: p20260719-doulos-translation
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-doulos
+    start: 4073.08
+    end: 4141.56
+    type: sermon
+    title: Why discuss the translation of doulos?
+    summary: The preacher introduces John 15:15 and argues that translating doulos as servant can soften the force of the disciples’ relationship to Christ.
+    questions: ['What distinction does the preacher make between servant and slave in John 15:15?']
+    topics: [truth, authority, discipleship]
+    scripture: ['John 15:15']
+    transcript: 'But this human construct is so very strong that even Bible translators sometimes would get it wrong and be influenced by the way human beings think. And the key verse that I want to show you today is the verse that you have read, John 15:15. [Scripture quotation omitted.] That’s a beautiful understanding that our relationship with Christ is very intimate. [Excerpt omitted.] The original language for servant here is doulos, which actually means slaves. [Question about translation choices omitted.]'
+    confidence: 0.92
+    review_notes: ['Translation argument belongs to the preacher; no independent linguistic verdict asserted.']
+  - id: p20260719-doulos-historical-context
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-doulos
+    start: 4141.56
+    end: 4209.26
+    type: sermon
+    title: Slavery, the early church and translation sensitivity
+    summary: The preacher describes slavery in the Roman world and early Christian communities, then argues that sensitivity around the word slave has affected translation choices.
+    questions: ['What historical context does the preacher give for doulos?']
+    topics: [truth, discipleship]
+    scripture: ['John 15:15']
+    transcript: 'When the Gospel was written, there were about 12 million slaves all over the Roman Empire. That’s a lot of people. [Further account of early converts omitted.] They would have understood what Jesus Christ said. [Scripture quotation omitted.] And if you check the rest of the Bible, every time the word doulos appears, it’s always translated as slave. Except that when it becomes sensitive, like here, it will be translated as servants. [Quotation omitted.] It’s so very offensive, isn’t it? And the original language doulos, is it servant or is it slave? The answer is technically it’s slave.'
+    confidence: 0.87
+    review_notes: ['Population estimate and categorical translation claim need human fact-checking; recorded as claims. Segment 843’s 0.14-second warning is internal; quoted verse text omitted.']
+  - id: p20260719-macarthur-book
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-doulos
+    start: 4209.26
+    end: 4257.9
+    type: sermon
+    title: John MacArthur’s argument about Christian identity
+    summary: The preacher introduces John MacArthur’s book on slavery and Christian identity and attributes to him the claim that translators have softened the language.
+    questions: ['Whose book does the sermon discuss in connection with doulos?']
+    topics: [discipleship, truth]
+    scripture: ['John 15:15']
+    transcript: 'There’s one person in the Christian Reformed world that really spent much of his life trying to promote the idea. And that person is the late great John MacArthur Jr. [Biographical remark omitted.] In the year 2011, he wrote a book called [Slave]. And the subtitle is The Hidden Truth About Your Identity in Christ. John MacArthur argued that because the word slave is so horrible and so disgusting and so discouraging that even Bible translator was not faithful to the original language and substituted the words to make it more palatable to people. And so the word bondservant or servant is used.'
+    confidence: 0.9
+    review_notes: ['ASR gives Slaves; displayed book cover at 4240 seconds reads Slave. MacArthur is a quoted author, not a speaker in this service.']
+  - id: p20260719-slave-and-bondservant
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-doulos
+    start: 4257.9
+    end: 4341
+    type: sermon
+    title: Slavery, voluntary service and identity
+    summary: Continuing his account of MacArthur’s argument, the preacher contrasts slave with voluntary bondservant and introduces the paradox of freedom in belonging to Christ.
+    questions: ['How does the preacher distinguish slavery from voluntary service?']
+    topics: [discipleship, authority]
+    scripture: []
+    transcript: 'And in his book, John MacArthur put it very simple. What does it mean to be a Christian the way Jesus defined it? MacArthur says it all boils down to just one word, and the word is slave. [Further explanation and reported argument omitted.] So you may have heard the argument that there are slaves who are slave slaves, then there are servants who willingly serve the family. [Historical illustration omitted.] But [MacArthur] said, no, it’s slave. And he argued that to be a Christian is to be a slave of Christ. [Quoted formulation omitted.] And this is something that is quite scary when you think about it, isn’t it? But it’s consistent with what we’ve read.'
+    confidence: 0.89
+    review_notes: ['Segment 869 begins at 4258.36 but its first word starts at 4258.15; both lie within this passage. Quoted author is not assigned as live speaker.']
+  - id: p20260719-choice-and-belonging
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-chosen
+    start: 4341
+    end: 4404.46
+    type: sermon
+    title: Chosen rather than merely volunteering
+    summary: Returning to John 15:15-16, the preacher connects divine choosing with belonging to Christ and endorses the interpretation he has attributed to MacArthur.
+    questions: ['How does the preacher connect being chosen with belonging to Christ?']
+    topics: [faith, authority]
+    scripture: ['John 15:15-16']
+    transcript: 'And when we read the Bible, the Bible talks about being chosen too, right? [Scripture quotation omitted.] This doesn’t make sense if you are just a voluntary servant, that he would choose you. But it makes a lot of sense if you are a slave, because you are already chosen. It is not your choice. And so I do believe that [MacArthur] was right after all, that the original word means slave. That we are slaves of Jesus Christ because we did not have a choice. He already chose us, and this is a key Reformed understanding. And this, of course, permeates the whole of the Bible too.'
+    confidence: 0.92
+    review_notes: ['Theological position attributed explicitly to the preacher.']
+  - id: p20260719-chosen-before-creation
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-chosen
+    start: 4404.46
+    end: 4490
+    type: sermon
+    title: Chosen before creation and the discomfort of belonging
+    summary: The preacher cites Ephesians 1:3-5, applies divine choosing personally and acknowledges listeners’ resistance to the language of slavery.
+    questions: ['Which Ephesians passage supports the discussion of being chosen?']
+    topics: [faith, knowing-god]
+    scripture: ['Ephesians 1:3-5']
+    transcript: 'One of the clearest ideas of being chosen by God is in Ephesians 1, verse 3. [Scripture quotation omitted.] So this is a classic cornerstone idea of the Reformed faith that every single one of us who belong to Jesus Christ has been chosen before the foundation of the world. Something that will blow your mind, no way you can comprehend. [Personal application includes name rendered Yong-Teng Meng by ASR.] Still, the idea of slave is quite terrible to something, isn’t it? Even as I preach, you listen to me, you say, man, I don’t want to be anybody’s slave. This is crazy. Who wants to be a slave to anyone?'
+    confidence: 0.91
+    review_notes: ['4435-second slide displays Ephesians 1:3-5. Full-name self-reference at 4452.86-4458.96 supports reusable yong-teck-meng; pronunciation/spelling requires human confirmation.']
+  - id: p20260719-freedom-paradox
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-paradox
+    start: 4490
+    end: 4554.44
+    type: sermon
+    title: A paradox of freedom and belonging
+    summary: The preacher invokes the need to understand paradox, then contrasts the language of freedom in Christ with the historically horrific associations of slavery.
+    questions: ['Why does the sermon describe belonging to Christ as a paradox?']
+    topics: [faith, knowing-god]
+    scripture: []
+    transcript: '[Opening transition.] You need to understand paradox. If you don’t understand paradox, you cannot enter into the more profound aspect of Christianity. [Quoted formulation omitted.] Every time we think about slavery, we think about slave, rightfully yes, we think of it as a very disgusting and terrible part of life. [Historical and television-series examples begin; excerpt omitted.]'
+    confidence: 0.89
+    review_notes: ['4500-second slide attributes the paradox statement to Rev. Dr. Stephen Tong; he is a quoted source, not the live speaker.']
+  - id: p20260719-rejecting-historical-slavery
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-paradox
+    start: 4554.44
+    end: 4608.2
+    type: sermon
+    title: Rejecting racist justifications of historical slavery
+    summary: The preacher condemns racist biblical interpretations used to justify enslavement and distinguishes that historical abuse from his theological account of belonging to God.
+    questions: ['How does the preacher distinguish his theological metaphor from historical slavery?']
+    topics: [truth, knowing-god]
+    scripture: []
+    transcript: '[Discussion of the television series Roots and historical slavery.] Those are terrible dark days, even in Christianity. The problem was that conservative Christians misinterpret the Bible. [Racist claims quoted by the preacher to reject them are omitted.] That kind of nonsense understanding of the Bible. But for centuries, you know, they suffered greatly. So today we think about slavery, it’s not something that we want to think about. [Excerpt omitted.] And yet, this is not your usual horrible historical slavery.'
+    confidence: 0.9
+    review_notes: ['Condemnatory context retained; historical account not independently checked.']
+  - id: p20260719-perfect-master
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-paradox
+    start: 4608.2
+    end: 4702
+    type: sermon
+    title: Why the master’s character matters
+    summary: Citing MacArthur, the preacher argues that belonging to a perfectly good and wise God differs fundamentally from subjection to an abusive human master.
+    questions: ['Why does the preacher describe belonging to Christ as a blessing?']
+    topics: [knowing-god, authority]
+    scripture: []
+    transcript: '[Quotation attributed to John MacArthur omitted.] Remember, I keep emphasizing to you that some of our biggest problem came about because our doctrine of God is wrong, right? We keep thinking about God the way we think about ourselves, our human construct. We missed it altogether. [Quoted description of God’s character omitted.] Just on perfection alone, God is perfect. And you are obedient to an entity that is perfect, who cannot possibly make any mistake. [Application and quoted conclusion omitted.]'
+    confidence: 0.92
+    review_notes: ['94-second quotation-and-explanation unit preserved. Slide at 4800 corroborates the quoted author and argument, within its later onscreen persistence.']
+  - id: p20260719-submission-and-sacrifice
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-marriage
+    start: 4702.56
+    end: 4799
+    type: sermon
+    title: Challenging the use of submission to excuse bullying
+    summary: The preacher recalls a marital conversation, objects to a husband invoking biblical submission while bullying his wife and stresses the corresponding demand for self-giving love, before returning to God’s perfection.
+    questions: ['How does the preacher challenge a one-sided appeal to marital submission?']
+    topics: [sacrifice, responsibility, authority]
+    scripture: []
+    transcript: 'I was talking to someone just yesterday about some marital problem the person is facing. [Reported complaint about bullying and an appeal to authority omitted.] I said that what your husband did not tell you is that the Bible says [scriptural paraphrase omitted]. So you go ask your husband, are you prepared to give your life for me? Truthfully. [Congregational exchange and application omitted.] You understand what I’m saying? That if the husband truly loved the wife, truly give of himself to the wife, so much like Jesus Christ would give of his entire life for his church, his bride. [Further application omitted.] This, of course, is many levels further than that, that God, who is perfect, is fully worthy to be our master.'
+    confidence: 0.89
+    review_notes: ['Complete 96-second sensitive illustration retained as one contextual unit. This is the preacher’s account and application; no independently verified counselling outcome or generalized archive advice. Biblical book/range not explicitly named here, so no inferred reference assigned.']
+  - id: p20260719-prayer-partner-background
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-prayer-lesson
+    start: 4799
+    end: 4870
+    type: sermon
+    title: A prayer group at a Habitat for Humanity gathering
+    summary: The preacher introduces a gathering in Bangkok and admits initially judging a prayer partner from Papua by appearance and social expectations.
+    questions: ['What setting leads to the preacher’s lesson about calling Jesus Lord?']
+    topics: [prayer, repentance, discernment]
+    scripture: []
+    transcript: 'But we don’t understand this, even for me. All my life long, I have tried to follow Jesus Christ since I was young. [Excerpt omitted.] Many years ago, there was a gathering of Habitat for Humanity leaders in Bangkok. [Account of small prayer groups omitted.] I happen to be a group with some guy who is from Papua, I think. [Description of clothing and the preacher’s judgmental first impression omitted.]'
+    confidence: 0.87
+    review_notes: ['Papua location is qualified by the speaker; no precise identity or branch history inferred.']
+  - id: p20260719-prayer-partner-challenge
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-prayer-lesson
+    start: 4870
+    end: 4935.26
+    type: sermon
+    title: The prayer that challenged the preacher’s assumptions
+    summary: The preacher admits his impatience and describes being humbled by his partner’s prayer about saying no while calling Jesus Lord.
+    questions: ['What prayer challenged the preacher at the Bangkok gathering?']
+    topics: [prayer, repentance, authority]
+    scripture: []
+    transcript: '[The preacher recounts his dismissive inner reaction.] At the back of my mind, I have that thought, you know. So we gathered together to pray, right? [His own prayer and impatient thoughts omitted.] He prayed a prayer I’ll never forget for the rest of my life. [First ASR rendering unclear.] He says, forgive me, forgive us, for we dare to use the word no and Lord in the same sentence. And all of a sudden, I realize that he’s right.'
+    confidence: 0.92
+    review_notes: ['First occurrence at 4909.82 is rendered no and not; repeated occurrence at 4928.02 clearly supplies no and Lord. Repetition, not new inference, supports this excerpt.']
+  - id: p20260719-lord-and-no
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-prayer-lesson
+    start: 4935.26
+    end: 4994
+    type: sermon
+    title: Calling Jesus Lord while resisting him
+    summary: The preacher applies the remembered prayer to requests and refusals in everyday prayer, asking what it means to acknowledge God as master.
+    questions: ['What does the preacher mean by using no and Lord in the same sentence?']
+    topics: [prayer, authority, discipleship]
+    scripture: []
+    transcript: '[Examples of self-centred prayer omitted.] When you use the word Lord, you are saying that he is your master. You are the slave. That’s why he’s the Lord. How dare you use the word no in front of your Lord. [Comparison with emperors in drama omitted.] And we call God our Lord. And yet in front of him, we like big deal. We can argue, we can make a lot of noise, do whatever we want. [Repeated summary omitted.] Our understanding is wrong.'
+    confidence: 0.91
+    review_notes: ['Supports proposed obedience topic; existing authority and discipleship used pending review.']
+  - id: p20260719-love-framework
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-greatest-love
+    start: 4994
+    end: 5068
+    type: sermon
+    title: Love as the framework for belonging and obedience
+    summary: The preacher identifies God’s love as the central element that makes sense of the sermon’s language of belonging, choice and obedience, returning to 1 Corinthians 13.
+    questions: ['How does love make sense of the sermon’s language of belonging to Christ?']
+    topics: [knowing-god, discipleship, love]
+    scripture: ['1 Corinthians 13:13', 'John 15:12-17']
+    transcript: 'But it’s a tough, tough thing, right? Still, why is that you want me to be a slave of Jesus Christ? How does it work? The answer is in one overriding thing that covers all this. And that one overriding element that lifts up all these things into a different arena [unclear word] altogether is the word love. [Excerpt omitted.] Everything came about because of the love of God. [1 Corinthians 13 quotation omitted.] Everything that Jesus Christ said about whether we are slaves of Christ, how we are to love one another, is all encompassed in this whole idea that it’s because of God’s love that everything then makes sense.'
+    confidence: 0.95
+    review_notes: ['Principal support for proposed love topic. The spoken Derek refers back to the reader captioned Derrick Zou.']
+  - id: p20260719-love-friendship-command
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-greatest-love
+    start: 5068
+    end: 5164.62
+    type: sermon
+    title: Christ’s love, friendship and commands
+    summary: Returning through John 15:12-17, the preacher connects the cross, Christ’s commands and the intimacy of being regarded as his friends and children.
+    questions: ['How does the preacher resolve the question of conditional friendship?']
+    topics: [sacrifice, discipleship, knowing-god]
+    scripture: ['John 15:12-17']
+    transcript: '[Scripture quotations interspersed through this exposition are omitted.] Christ will then demonstrate the greatest love ever. Shortly after saying all this, he will be crucified and he will lay down his life for all of us. [Scripture quotation omitted.] Because what he commanded us to do are the right thing, are the good thing, are the true thing, are the beautiful thing, are the perfect thing. [Quotation and repetition omitted.] Not only are we slaves of Jesus Christ, we are happy slaves, we are glad slaves, we are slaves that are considered even his children and his friends. [Remaining John 15 quotations omitted.]'
+    confidence: 0.94
+    review_notes: ['97-second coherent return through the principal scripture kept intact rather than cutting between verse and application.']
+  - id: p20260719-cross-and-love
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-greatest-love
+    start: 5164.62
+    end: 5208.1
+    type: sermon
+    title: Receiving and sharing the greatest love
+    summary: The preacher describes the cross as a reminder that Christians receive God’s love and are called to share that love with others.
+    questions: ['What does the preacher ask listeners to remember about the cross?']
+    topics: [sacrifice, discipleship]
+    scripture: ['John 15:12-17']
+    transcript: 'So, my dear brothers and sisters in Christ, remember always the symbol of the cross of our Lord Jesus Christ. It represents many, many things, but one of the things I want you to remember is that it first represents that we are recipients of this greatest love ever. [Scriptural phrasing omitted.] Not to a life of bitterness and defeat, but a life that is full of the joy that He has meant for us to have. And because of that, we are then commanded to share this love to the many, many people all around us. [Scriptural phrase omitted.]'
+    confidence: 0.95
+    review_notes: ['Segment 1157’s 0.14-second word-start warning enclosed; no cut at its internal alignment boundary. Supports proposed love topic.']
+  - id: p20260719-obedience-in-relationships
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-greatest-love
+    start: 5208.1
+    end: 5275.44
+    type: sermon
+    title: Choosing obedience in everyday relationships
+    summary: The preacher applies the sermon to spouses, relatives, colleagues and friends, urging listeners to let love for Christ shape their responses rather than defaulting to familiar habits.
+    questions: ['How does the sermon apply obedience to relationships?']
+    topics: [discipleship, responsibility]
+    scripture: ['John 15:12-17']
+    transcript: 'Remember always, your identity is that you are the beloved of God. At the same time, you are also a slave of God who will be obedient to whatever it is that is commanded you to do. [Excerpt omitted.] In all your relationship, look at your wife, look at your husband. Do I want to react to this guy the way the world expects me to react, or do I want to look at the word of God? [Scriptural allusion and list of relationships omitted.] Do I want to obey myself or, as a slave of Jesus Christ, obey his commandment because I love him? May God grant us the wisdom and the strength to obey him always, for we belong to him.'
+    confidence: 0.94
+    review_notes: ['Supports proposed obedience topic. Final blessing and prayer share an ASR segment; boundary uses the supplied word-level Let us pray start at 5275.44.']
+  - id: p20260719-response-prayer
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-response-prayer
+    start: 5275.44
+    end: 5356.8
+    type: prayer
+    title: Prayer for reliance on God’s word
+    summary: The preacher asks for obedience grounded in love and for help resisting the tendency to return to old habits under pressure.
+    questions: ['What does the sermon’s closing prayer ask for?']
+    topics: [prayer, discipleship, repentance]
+    scripture: []
+    transcript: 'Let us pray. We thank you God for your word that teaches us that we are people who are no longer of ourselves, that we belong to you, that we are to be obedient to your commandments because we love you and your commandments are all the good things that we should have been doing in our life anyway. [Scriptural phrases and further prayer omitted.] Yet we know that it’s a difficult task even for very senior people who have been in church forever. When difficulties come, when troubles come, first thing we do is we retreat back to our old habits. Help us to have a childlike reliance on your word. [Scripture allusion omitted.] Help us to choose you all the time because you have chosen us. In Jesus’ name we pray. Amen.'
+    confidence: 0.92
+    review_notes: ['Transitions refined using supplied word timings: Let us pray at 5275.44; Congregation at 5356.8. Original segment and word times remain unaltered.']
+  - id: p20260719-creed
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-creed
+    start: 5356.8
+    end: 5402
+    type: creed
+    title: Congregational affirmation of faith
+    summary: The congregation is invited to stand and affirm the Apostles’ Creed before a time of prayer.
+    questions: ['Which creed is affirmed after the sermon?']
+    topics: [faith, worship]
+    scripture: []
+    transcript: 'Congregation, would you stand with me as we affirm our faith by reading the Apostles’ Creed and then we enter into a time of prayer. The Apostles’ Creed. [Creed recitation omitted in this selected transcript.]'
+    confidence: 0.96
+    review_notes: ['Creed confirmed by transcript and 5400-second slide. Omission is editorial scope, not missing source evidence.']
+  - id: p20260719-prayer-instructions
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-intercession
+    start: 5402
+    end: 5462.2
+    type: prayer
+    title: Prayer for personal commitment and young people
+    summary: The preacher introduces prayer for personal response and for youth ministry, including the possibility of supporting a primary-school brigade group.
+    questions: ['Which two prayer concerns follow the sermon?']
+    topics: [prayer, service-life, responsibility]
+    scripture: []
+    transcript: 'Let’s stand before God and go into a time of prayer. We want to first pray for ourselves in response to the sermon preached. Maybe it’s a time for you to reflect upon your commitment to our Lord Jesus Christ and seek Him because He is your Lord. Second prayer item, I want to encourage congregation to pray for our young people, for youth ministry. We are talking to the Boys’ Brigade people to see whether we want to go and support a Boys’ Brigade group in a primary school. [Social-media policy remarks omitted.] We want to commit all our young people into the hands of God and ask God to protect them and also to encourage us to find a way to be involved in youth ministry as well.'
+    confidence: 0.94
+    review_notes: ['Proposed involvement, not an established partnership. Social-policy announcement is not externally verified.']
+  - id: p20260719-personal-prayer
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-intercession
+    start: 5462.2
+    end: 5520.62
+    type: prayer
+    title: Space for personal response
+    summary: The congregation is given time to pray in response to the sermon.
+    questions: []
+    topics: [prayer, meditation]
+    scripture: []
+    transcript: '[Congregational prayer interval following the invitation to pray personally. No continuous spoken prayer is reconstructed from sparse ASR.]'
+    confidence: 0.87
+    review_notes: ['An isolated Thank you is not treated as evidence of a complete spoken prayer. Audio decoded, not listened to.']
+  - id: p20260719-youth-prayer
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-intercession
+    start: 5520.62
+    end: 5597.54
+    type: prayer
+    title: Prayer for youth and brigade involvement
+    summary: The congregation is directed to seek God’s guidance about Boys’ and Girls’ Brigade ministry and protection for young people.
+    questions: ['What youth-ministry guidance is requested in prayer?']
+    topics: [prayer, service-life]
+    scripture: []
+    transcript: 'Congregation, let us now lift up our young people and our youth ministry to God. We seek God’s guidance as to involvement in Boys’ and Girls’ Brigade ministry work and also we ask God to protect our young as we move forward. Let us pray. [Space for congregational prayer; isolated ASR fragment omitted.]'
+    confidence: 0.94
+    review_notes: []
+  - id: p20260719-intercessory-prayer
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-intercession
+    start: 5597.54
+    end: 5652
+    type: prayer
+    title: Ministry, comfort and practical help
+    summary: The preacher prays for engagement in ministry, comfort for those facing difficulties and readiness to help in deeds as well as words.
+    questions: ['How does the closing intercession connect prayer and practical service?']
+    topics: [prayer, service, faith]
+    scripture: ['James 2:17']
+    transcript: 'Let us pray together. We thank you, God, for we know you surely would have heard us in our prayers because we are praying in the name of our Lord Jesus Christ and for His sake. And so we do pray that you help us open our eyes and be engaged in ministry work so that we will see you at work in our lives and therefore be able to give glory to you and understand that we are truly blessed people. [Prayer for those facing challenges omitted.] Guide us and help us to be people who are ready to help, not just in words, but in deeds. [Scripture quotation omitted.] Listen to our prayers. In Jesus’ name we pray. Amen. You may be seated.'
+    confidence: 0.94
+    review_notes: ['Segment 1246’s 0.18-second word-start warning enclosed. James 2:17 repeats the explicitly identified earlier citation.']
+  - id: p20260719-offertory
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-offertory
+    start: 5652.88
+    end: 5739
+    type: offering
+    title: Third-Sunday offering for social causes
+    summary: The preacher explains giving arrangements and says the second offering box is designated for social causes on the third Sunday.
+    questions: ['What is the second offering designated for?']
+    topics: [stewardship, service]
+    scripture: []
+    transcript: 'We’re going to go into our offertory now. You may give [using] the QR code or by the box in front of you. This being the third Sunday, the second box offering will be designated to social causes. [Offertory interval; no missing speech reconstructed.]'
+    confidence: 0.94
+    review_notes: ['Payment details omitted. Third-Sunday remark is consistent with the assigned date, but not the sole dating evidence.']
+  - id: p20260719-love-of-god-hymn
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-closing-hymn
+    start: 5739.58
+    end: 5872
+    type: hymn
+    title: The Love of God
+    summary: The preacher introduces the closing hymn as a reminder of God’s love beyond human understanding, and the congregation sings it.
+    questions: ['Which hymn closes the sermon’s theme of love?']
+    topics: [worship]
+    scripture: []
+    transcript: 'All right, our closing hymn is a grand hymn that reminds us of the love of God as I preached earlier. So let’s sing this song together and be reminded that God’s love is beyond our understanding. Let’s sing it together. [The Love of God: lyrics and brief tempo directions omitted.]'
+    confidence: 0.96
+    review_notes: ['5750-second slide independently displays The Love of God, words and melody Frederick M. Lehman. Whole hymn retained.']
+  - id: p20260719-doxology
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-blessing
+    start: 5872
+    end: 5909.6
+    type: hymn
+    title: Doxology
+    summary: The congregation sings the doxology after an invitation to receive a blessing from Jude.
+    questions: []
+    topics: [worship]
+    scripture: [Jude 1]
+    transcript: 'Marvelous. Let’s sing Doxology in praise of God and in faith receive His blessing taken from Jude. [Doxology lyrics omitted.]'
+    confidence: 0.95
+    review_notes: []
+  - id: p20260719-jude-blessing
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-blessing
+    start: 5909.6
+    end: 5945
+    type: blessing
+    title: Blessing from Jude
+    summary: The preacher pronounces the announced blessing from Jude, followed by the congregation’s concluding response and invitation to sit.
+    questions: ['Which book supplies the closing blessing?']
+    topics: [worship]
+    scripture: ['Jude 1:24-25']
+    transcript: '[Scripture blessing omitted: Jude 1:24-25.] Amen. [Concluding interval.] Congregation, you may be seated.'
+    confidence: 0.94
+    review_notes: ['Book explicitly announced; verse range identified from supplied reading text, not from an inspected reference slide.']
+  - id: p20260719-evening-cancellation
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-announcements
+    start: 5945.74
+    end: 5979.9
+    type: announcement
+    title: Evening expository preaching cancelled
+    summary: The preacher announces cancellation of that evening’s expository preaching and asks listeners to inform anyone planning to attend.
+    questions: ['What change to evening preaching is announced?']
+    topics: [service-life]
+    scripture: []
+    transcript: 'So a couple of announcements for you. To those people who attend the evening expository preaching, please know that Dr. Tong has cancelled this evening’s preaching. [Performance, travel and personal aside omitted.] But if you know of anybody who is attending the evening expository preaching, you may go and tell them.'
+    confidence: 0.95
+    review_notes: ['Time-specific historical announcement, not a current cancellation notice. ASR performance name is unclear and omitted.']
+  - id: p20260719-brigade-proposal
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-announcements
+    start: 5979.9
+    end: 6060.12
+    type: announcement
+    title: Considering support for a school brigade group
+    summary: The preacher describes a possible primary-school brigade partnership and explains why he values uniformed groups for youth formation, contrasting scouting with the brigades’ Christian identity.
+    questions: ['What proposed youth partnership is discussed?']
+    topics: [service-life, responsibility]
+    scripture: []
+    transcript: 'Earlier we prayed, right? We prayed about all this youth ministry. [Excerpt omitted.] One of the things that we are considering to do is to see whether the Lord is leading us to support a brigade group in a primary school in [place name unclear], actually quite far away. This is very interesting and important, actually, because as all of you know, young people are facing a lot of issues now because of the way the world is moving. I have always been a big fan of uniform group. [Personal scouting background and historical explanation omitted.] The brigades are different. Boys’ Brigade and Girls’ Brigade [are a] Christian uniform group.'
+    confidence: 0.9
+    review_notes: ['ASR Bongo may be a place name, but exact location is not inferred. Partnership remains under consideration.']
+  - id: p20260719-support-next-generation
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-announcements
+    start: 6060.12
+    end: 6133
+    type: announcement
+    title: Practical ways to support the next generation
+    summary: The preacher stresses sensitivity in a multireligious school setting and outlines possible chaplaincy, fundraising and teaching support, asking for prayer and readiness to help young people.
+    questions: ['What forms of support might the congregation offer a brigade ministry?']
+    topics: [service-life, service, responsibility]
+    scripture: []
+    transcript: 'When they do their thing in Singapore they have to be very sensitive. [Explanation of religious diversity omitted.] To support them means that we provide chaplaincy service, maybe help them with fundraising, maybe with people to train the kids or to teach Sunday school, [unclear phrase], I don’t know yet. So I’m going to the headquarters to discuss this with their people. And more importantly, the idea that we shouldn’t let our young people float. We should all play a role in nurturing the next generation, because the challenges are many. [Social-media policy claims omitted.] So please pray with me. And when the opportunity comes, please also be prepared to support this ministry. That’s all the announcement I have for you.'
+    confidence: 0.93
+    review_notes: ['Tentative forms of support preserved as tentative; policy claims not verified.']
+  - id: p20260719-dismissal
+    video_id: rM0Oi8-Y8G4
+    section_id: s20260719-dismissal
+    start: 6133.86
+    end: 6196.701
+    type: dismissal
+    title: Dismissal with silent meditation
+    summary: The congregation is dismissed with silent meditation; the recording continues briefly on the closing contact slide.
+    questions: []
+    topics: [meditation, worship]
+    scripture: []
+    transcript: 'You may be dismissed with silent meditation. Know that the Lord is with you. [Closing interval; isolated ASR Thank you fragments omitted rather than treated as a further address.]'
+    confidence: 0.94
+    review_notes: ['Dismissal instruction ends at 6137.1 seconds. 6190-second frame shows the closing contact slide; available recording ends at 6196.701 seconds.']

@@ -1,0 +1,15 @@
+passages:
+  - id: p0712-short-music
+    video_id: MZr169xBwrU
+    section_id: s0712-short-music
+    start: 0
+    end: 188.061
+    type: musical-excerpt
+    title: Short musical and liturgical-display recording
+    summary: The short recording contains apparent musical material while the view changes between an ACTS graphic and an empty lectern. Its relationship to the July 12 service remains unconfirmed.
+    questions: []
+    topics: []
+    scripture: []
+    transcript: '[Reference-only musical/liturgical interval retained for source review. No reliable lyrics or spoken transcript published. Uncorroborated ASR speech and song fragments are omitted, not replaced with invented prayers. Earlier and later programme context is unknown.]'
+    confidence: 0.6
+    review_notes: ['Full clip reviewed, including 60–188.061s beyond the previous smoke-test scope. Long passage preserves one uncertain musical unit rather than manufacturing speech-sized thoughts. Import language en describes the operator ASR, not an independent spoken-language finding.']

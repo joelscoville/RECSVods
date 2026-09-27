@@ -7,6 +7,14 @@ source:
   page_id: 18fa6d94-c385-80af-8008-a5415672a126
 captured_at: 2026-09-23T14:54:19Z
 capture_status: complete
+verification:
+  checked_at: 2026-09-25T02:40:00Z
+  local_artifact_status: verified_all_13
+  local_checks: [sha256, byte_size, pixel_dimensions, visual_inspection, unchanged_from_HEAD]
+  live_status: blocked_suspended_plugin_tab
+  live_frames_exported_this_run: 0
+  persisted_exports_this_run: 0
+  report: live-verification.md
 notes:
   - Frame IDs, names, dimensions, and rendered exports were inspected from the connected Penpot file.
   - Exports are uncropped 1x WebP files generated from the stable shape IDs below.

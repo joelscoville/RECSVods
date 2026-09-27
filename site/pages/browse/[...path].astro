@@ -1,0 +1,18 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import BrowsePage from '../../components/BrowsePage';
+import { displayServices, type DisplayService } from '../../components/archive-display';
+import { loadArchive, publishedServices, flattenChapters } from '../../lib/archive';
+import { buildBrowsePages, type BrowsePage as BrowsePageData } from '../../lib/browse';
+export function getStaticPaths() {
+  const mode = import.meta.env.ARCHIVE_MODE;
+  const eligible = publishedServices(loadArchive(), mode);
+  const services = displayServices(eligible, flattenChapters(eligible, mode));
+  return buildBrowsePages(services).map((page) => ({ params: { path: page.path }, props: { page, services } }));
+}
+interface Props { page: BrowsePageData; services: DisplayService[] }
+const { page, services } = Astro.props;
+---
+<SiteLayout title={page.title} route="browse-route">
+  <BrowsePage page={page} services={services} base={import.meta.env.BASE_URL} />
+</SiteLayout>

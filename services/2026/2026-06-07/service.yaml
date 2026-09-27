@@ -1,0 +1,439 @@
+id: 2026-06-07
+date: 2026-06-07
+title: 7 June 2026 — Only
+sermon_title: Only
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - Main batch integration applied the source-backed series and cited salvation topic; worker
+    proposal notes describe the pre-merge stage. All interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - Whole meaningful programme curated from the supplied English ASR, word timings and inspected
+    frames. Audio samples were decoded, not listened to. Inline transcripts are selected ASR
+    excerpts with explicit omissions, not complete verbatim speech.
+  - Source title RECS 7 June 2026, upload/release date 20260607 and opening frame dated 7th June
+    2026 agree with the approved service date. Recording begins with ACTS prayer preparation, not a
+    waiting slate.
+  - Displayed sermon title Only; John 14:1-7 and Acts 4:8-12. Responsive reading separately covers
+    John 14:1-14. Last Session slides are recap, not the current title.
+  - Pastor Yong is introduced at 34:37; the sermon includes the self-referential name Pastor
+    Yong-Tek-Meng at 93:21-93:35. Reused yong-teck-meng identity rests on this recording, not
+    appearance. The worship leader's name sounds like Darmawan in ASR but remains unassigned pending
+    spelling verification.
+  - Fourteen outside-segment word warnings, maximum 0.36 seconds; no backtracked starts or segment
+    overlaps. Twenty-five zero-duration words retained; no tail clamps. Wider thought units avoid
+    cuts through the warning regions.
+  - All Bible quotations, sung lyrics and recited lyric quotations are omitted. References and
+    surrounding commentary remain; quiet prayer gaps and incomplete congregational text are not
+    reconstructed.
+  - Theological claims and descriptions of other religions are the speaker's interpretations.
+    Political statistics, historical anecdotes, quoted authors and personal names have not been
+    externally verified.
+  - Especially review p20260607-lewis-distinction through p20260607-evangelism-conclusion together.
+    The speaker affirms salvation through Christ, declines to determine individuals' salvation,
+    discusses possible exceptions to the usual model, and explicitly says his imagined deathbed
+    encounter is not taught by scripture and will not be preached as a method.
+  - At approximately 94:56 the ASR and visible Lewis quotation say most reasonable thing is to
+    remain outside yourself. The surrounding exhortation points the other way; retained as an
+    unresolved source/quotation issue, not silently corrected.
+  - "Taxonomy proposals: salvation (Salvation), supported by p20260607-only-introduction at
+    2092.98-2178 and p20260607-lewis-distinction at 5374.12-5452.5; series gospel-of-john
+    (Expository Preaching on the Gospel of John), displayed at 2095 and 2135 seconds. Neither
+    proposal activated; existing faith, truth, eternal-life and mission tags used."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan based on the current service chapters and all 82 existing passage summaries;
+    all interpretation remains needs_review. No new listening, ASR or boundary verification was
+    performed.
+  - Opening combines ACTS preparation with greetings and opening praise; Communion, Worship and
+    Scripture combines Communion, responsive readings, congregational song, the video anthem and the
+    Acts reading. Response and Closing combines prayer, creed, offertory, closing worship and
+    notices. These are neutral peers of the sermon movements, with no routine-service or
+    incidental-announcement cues.
+  - The first sermon movement retains the previous-session recap as context for the question about
+    exclusivity, emphasizing love as the mark of Christ's followers. The suffering comparison and
+    Christ's reassurance form one movement; its sole cue preserves useful access to the sustained
+    turn toward future hope and present help. Religious comparisons and political examples remain
+    within the argument they support, not independent addresses.
+  - Descriptions of Buddhism and Baha'i belief, political claims, historical anecdotes and author
+    attributions remain the pastor's accounts, not independently verified facts. The worship leader
+    remains unidentified. The responsive John 14:1-14 reading remains distinct from the sermon-title
+    slide's John 14:1-7.
+  - The concluding movement must keep the pastor's affirmation of salvation through Christ together
+    with his uncertainty about individuals, including his grandmother, possible exceptions under
+    God's sovereignty, continued loving evangelism and help regardless of conversion. He explicitly
+    says his imagined deathbed encounter is unsupported by scripture and would not be preached as a
+    method.
+  - The existing Lewis quotation/ASR ambiguity near 94:56 remains unresolved; neither that wording
+    nor the Lewis and Wesley attributions were independently verified. Existing import and timing
+    caveats remain for human review. All proposed parents use complete, contiguous original chapters
+    on the same upload, and the cue retains its original chapter span; no finer boundary is
+    inferred. Parent and cue summaries are internal retrieval/review metadata only.
+speakers:
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
+    role: Pastor
+topics:
+  - id: salvation
+    name: Salvation
+  - id: communion
+    name: Holy Communion
+  - id: discipleship
+    name: Discipleship
+  - id: eternal-life
+    name: Eternal life
+  - id: faith
+    name: Faith
+  - id: glory
+    name: Glory
+  - id: holy-spirit
+    name: Holy Spirit
+  - id: knowing-god
+    name: Knowing God
+  - id: meditation
+    name: Meditation
+  - id: mission
+    name: Mission
+  - id: prayer
+    name: Prayer
+  - id: repentance
+    name: Repentance
+  - id: responsibility
+    name: Responsibility
+  - id: service
+    name: Service
+  - id: service-life
+    name: Church life
+  - id: stewardship
+    name: Stewardship
+  - id: truth
+    name: Truth
+  - id: worship
+    name: Worship
+videos:
+  - id: 8Qjfp-2L5d8
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6590.661
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 6590.6358125
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: 73c05845c5df3aa72dc6997577f7f04ed5595a65dcb1945dd0b1700b2bccec28
+      duration_seconds: 6590.6358125
+      elapsed_seconds: 218.23
+      real_time_factor: 0.03311
+      transcribed_at: 2026-09-25T12:16:28.674361+00:00
+      transcript_sha256: c9a54bd00bf077379ee7cf56261c01306042d622106c51dc5d313b740d0591bd
+      source_duration_seconds: 6590.661
+      duration_delta_seconds: -0.025187500000356522
+      audio_hash_verified: false
+chapters:
+  - id: c20260607-opening
+    video_id: 8Qjfp-2L5d8
+    start: 0
+    end: 691
+    title: Opening
+    type: opening
+    summary: The leaders guide ACTS prayer, greetings, silent preparation, the introit, Psalm 69 and How
+      Great Thou Art, then pray for the Holy Spirit's work and introduce Communion.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - personal needs
+      - silent meditation
+      - psalm 69
+      - great thou art
+      - holy spirit
+    topics:
+      - prayer
+      - communion
+      - repentance
+      - worship
+      - meditation
+      - service-life
+      - holy-spirit
+    scripture:
+      - Psalms 69:30-34
+    source_chapters:
+      - s20260607-preparation
+      - s20260607-opening
+    review_notes: []
+  - id: c20260607-communion-worship-scripture
+    video_id: 8Qjfp-2L5d8
+    start: 691
+    end: 2092.98
+    title: Communion, Worship and Scripture
+    type: worship
+    summary: The pastor leads Communion as remembrance of belonging to Christ, followed by responsive
+      readings from Proverbs and John, Jesus, I Come, the video anthem Without the Cross and the
+      Acts 4 reading introducing the sermon.
+    keywords:
+      - holy communion
+      - responsive reading
+      - proverbs
+      - john
+      - without the cross
+      - video anthem
+      - acts
+    topics:
+      - communion
+      - service-life
+      - discipleship
+      - prayer
+      - worship
+    scripture:
+      - John 13-15
+      - John 13:34-35
+      - 1 Corinthians 11:23-26
+      - Proverbs 24:1-34
+      - John 14:1-14
+      - Acts 4:8-12
+    source_chapters:
+      - s20260607-communion
+      - s20260607-readings
+      - s20260607-hymn-anthem
+      - s20260607-acts-reading
+    review_notes: []
+  - id: c20260607-love-marks-christs-followers
+    video_id: 8Qjfp-2L5d8
+    start: 2092.98
+    end: 2881
+    title: Love Marks Christ's Followers
+    type: sermon
+    summary: Introducing the question of Christian exclusivity, the pastor recaps glory, childlike
+      worship and Jesus' command to love beyond social boundaries, presenting shared life rather
+      than isolation as the mark of belonging to Christ.
+    keywords:
+      - only way
+      - glory
+      - suffering
+      - expectation
+      - burdens
+      - love
+      - community
+    topics:
+      - faith
+      - truth
+      - salvation
+      - glory
+      - discipleship
+      - mission
+      - worship
+      - service-life
+      - communion
+    scripture:
+      - John 14:1-7
+      - Acts 4:8-12
+      - John 13:31-35
+      - John 13:33
+      - John 13:34-35
+      - Deuteronomy 6:4
+      - Leviticus 19:18
+      - Matthew 22:37-40
+    source_chapters:
+      - s20260607-sermon-recap
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: c20260607-trust-christ-amid-trouble
+    video_id: 8Qjfp-2L5d8
+    start: 2881
+    end: 4024.74
+    title: Trust Christ Amid Trouble
+    type: sermon
+    summary: The pastor relates the disciples' uncertainty to human suffering, contrasts his account of
+      Buddhist self-effort with trust in Christ, and reads John 14 as promising both a lasting home
+      with the Father and the Spirit's sustaining presence now.
+    keywords:
+      - eight sufferings
+      - self help
+      - meditation
+      - aging
+      - father
+      - home
+      - hope
+      - holy spirit
+    topics:
+      - prayer
+      - discipleship
+      - faith
+      - responsibility
+      - meditation
+      - knowing-god
+      - eternal-life
+      - holy-spirit
+    scripture:
+      - John 13-15
+      - John 13:38
+      - John 14:1
+      - John 14:1-2
+      - John 14:2
+      - John 14:3
+      - John 15-16
+    source_chapters:
+      - s20260607-sermon-troubled
+      - s20260607-sermon-hope
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s20260607-sermon-hope
+    video_id: 8Qjfp-2L5d8
+    start: 3539.72
+    end: 4024.74
+    type: sermon
+    title: Hope for the Future and Help Now
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture:
+      - John 14:1
+      - John 14:1-2
+      - John 14:2
+      - John 14:3
+      - John 15-16
+    topics:
+      - faith
+      - knowing-god
+      - eternal-life
+      - discipleship
+      - holy-spirit
+    summary: The pastor interprets the Father's house as an intimate, permanent home and Christ's
+      promise as both future presence with him and the Holy Spirit's help amid present worries.
+    keywords:
+      - father
+      - home
+      - hotel
+      - hope
+      - holy spirit
+    parent_id: c20260607-trust-christ-amid-trouble
+    source_chapters:
+      - s20260607-sermon-hope
+  - id: c20260607-christ-only-way-to-father
+    video_id: 8Qjfp-2L5d8
+    start: 4024.74
+    end: 4910.88
+    title: Christ Is the Only Way to the Father
+    type: sermon
+    summary: Addressing objections and religious inclusivity, the pastor argues from John 14 and Acts 4
+      that salvation depends on God's revelation in Christ rather than human self-sufficiency, while
+      allowing some knowledge through general grace.
+    keywords:
+      - john 14
+      - thomas
+      - only one way
+      - revelation faith
+      - self help faith
+      - moral leadership
+      - peter and john
+      - acts 4
+    topics:
+      - truth
+      - knowing-god
+      - faith
+      - responsibility
+    scripture:
+      - John 14:4-6
+      - John 14:6
+      - John 14:6-7
+      - Acts 4:8-12
+    source_chapters:
+      - s20260607-sermon-only
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: c20260607-loving-witness-without-judgment
+    video_id: 8Qjfp-2L5d8
+    start: 4910.88
+    end: 5762.32
+    title: Share Christ's Love and Leave Judgment to God
+    type: sermon
+    summary: Affirming Christ as the only way, the pastor urges loving evangelism and help regardless of
+      conversion, leaves individuals' salvation to God and allows possible exceptions to the usual
+      model, explicitly treating his imagined deathbed encounter as unsupported by scripture rather
+      than a method to preach.
+    keywords:
+      - arrogance
+      - hatred
+      - loved ones
+      - c s lewis
+      - usual model
+      - gospel
+      - love
+    topics:
+      - discipleship
+      - mission
+      - responsibility
+      - prayer
+      - eternal-life
+      - knowing-god
+      - faith
+      - service
+    scripture:
+      - John 14:6
+      - Philippians 2:9-11
+    source_chapters:
+      - s20260607-sermon-humility
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: c20260607-response-closing
+    video_id: 8Qjfp-2L5d8
+    start: 5762.32
+    end: 6590.661
+    title: Response and Closing
+    type: closing
+    summary: The pastor leads prayer for patient, loving witness, with the Apostles' Creed, an
+      evangelism offering, All the Way My Saviour Leads Me, doxology, a blessing from Jude and
+      community notices completing the service.
+    keywords:
+      - gratitude
+      - apostles creed
+      - patience
+      - offering
+      - evangelism
+      - saviour leads me
+      - doxology
+      - jude
+      - catechism class
+    topics:
+      - prayer
+      - mission
+      - discipleship
+      - worship
+      - faith
+      - stewardship
+      - service-life
+      - service
+    scripture:
+      - Jude 1:24-25
+    source_chapters:
+      - s20260607-response
+      - s20260607-offertory
+      - s20260607-closing
+      - s20260607-announcements
+    review_notes: []
+    speaker_id: yong-teck-meng
+sermon_description: Rev. Yong Teck Meng argues from John 14 and Acts 4 that Christ is the only way
+  to the Father, grounding faith in God's revelation rather than human self-sufficiency. He presents
+  Christ's presence as comfort for troubled people and urges believers to express conviction through
+  love, continuing evangelism while leaving individuals' final destiny to God rather than claiming
+  to know whom Christ may save.

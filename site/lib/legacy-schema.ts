@@ -1,0 +1,63 @@
+/** Private history/preservation parser. Never import this from a public archive loader. */
+import path from 'node:path';
+import { z } from 'zod';
+import { archiveFromFiles, checkService, parseWithPath, parseYaml, ScriptureInputSchema,
+  segmentFields, serviceFields, ServiceSourceSchema, type Service } from './archive';
+import { stringify } from 'yaml';
+
+const OriginalText = z.string().refine((s) => Boolean(s.trim()), 'required text');
+const originalSegment = { ...segmentFields, title: OriginalText, confidence: z.number().min(0).max(1),
+  review_notes: z.array(OriginalText).default([]) };
+export const LegacySectionSchema = z.object(originalSegment).strict().refine((s) => s.end > s.start, 'end must be greater than start');
+export const LegacyPassageSourceSchema = z.object({ ...originalSegment,
+  section_id: segmentFields.id, summary: OriginalText, questions: z.array(OriginalText),
+  topics: z.array(segmentFields.id), scripture: z.array(ScriptureInputSchema),
+  transcript: OriginalText.optional(),
+  transcript_file: z.string().regex(/^(?!\/)(?!.*(?:^|\/)\.\.?(?:\/|$))[A-Za-z0-9_./-]+\.md$/).optional(),
+}).strict().superRefine((p, ctx) => {
+  if (p.end <= p.start) ctx.addIssue({ code: 'custom', path: ['end'], message: 'must be greater than start' });
+  if (Boolean(p.transcript) === Boolean(p.transcript_file)) ctx.addIssue({ code: 'custom', path: ['transcript'], message: 'provide exactly one of transcript or transcript_file' });
+});
+export const LegacyServiceSourceSchema = z.object({ ...serviceFields,
+  sections: z.array(LegacySectionSchema), passages: z.array(LegacyPassageSourceSchema),
+}).strict().superRefine((s, ctx) => {
+  checkService({ ...s, chapters: s.sections.map((section) => ({ ...section, summary: 'History validation', keywords: [], topics: [], scripture: [] })) }, ctx);
+  const ids = new Set<string>();
+  s.passages.forEach((p, i) => {
+    const issue = (field: string, message: string) => ctx.addIssue({ code: 'custom', path: ['passages', i, field], message });
+    if (ids.has(p.id)) issue('id', 'duplicate passage ID');
+    ids.add(p.id);
+    const section = s.sections.find((section) => section.id === p.section_id);
+    if (!section || section.video_id !== p.video_id || p.start < section.start || p.end > section.end) issue('section_id', 'passage must fit within its section on the same video');
+    if (p.speaker_id && !s.speakers.some((speaker) => speaker.id === p.speaker_id)) issue('speaker_id', 'unknown speaker reference');
+    if (p.topics.some((topic) => !s.topics.some((t) => t.id === topic))) issue('topics', 'unknown topic reference');
+  });
+});
+export type LegacyServiceSource = z.infer<typeof LegacyServiceSourceSchema>;
+export type HistoryService = Service | LegacyServiceSource;
+export function historySource(text: string, filename: string): HistoryService {
+  const raw = parseYaml(text, filename) as Record<string, unknown>;
+  return 'chapters' in raw ? parseWithPath(ServiceSourceSchema, raw, filename) : parseWithPath(LegacyServiceSourceSchema, raw, filename);
+}
+
+/** Validate old Git trees and mixed migration history without enabling a public fallback. */
+export function historyArchiveFromFiles(files: ReadonlyMap<string, string>): HistoryService[] {
+  const projected = new Map(files); const services: HistoryService[] = [];
+  const passageIds = new Set<string>();
+  for (const [filename, text] of files) if (/^services\/\d{4}\/[^/]+\/service\.yaml$/.test(filename)) {
+    const source = historySource(text, filename);
+    if ('passages' in source) {
+      for (const p of source.passages) {
+        if (passageIds.has(p.id)) throw new Error(`${filename}: duplicate global ID ${p.id}`);
+        passageIds.add(p.id);
+        if (p.transcript_file && !files.get(path.posix.join(path.posix.dirname(filename), p.transcript_file))?.trim()) throw new Error(`${filename}: missing transcript_file ${p.transcript_file}`);
+      }
+      const { sections, passages: _passages, ...metadata } = source;
+      projected.set(filename, stringify({ ...metadata, chapters: sections.map((s) => ({ ...s, summary: 'History validation', keywords: [], topics: [], scripture: [] })) }));
+    }
+    services.push(source);
+  }
+  const validated = archiveFromFiles(projected);
+  for (const s of validated) for (const item of [s, ...s.videos, ...s.chapters]) if (passageIds.has(item.id)) throw new Error(`duplicate global ID ${item.id}`);
+  return services;
+}

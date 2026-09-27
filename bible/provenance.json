@@ -1,0 +1,16 @@
+{
+  "translation": "Berean Standard Bible",
+  "abbreviation": "BSB",
+  "version": "Current, updated to 3rd Printing; official text snapshot 2026-09-25",
+  "sourceUrl": "https://bereanbible.com/bsb.txt",
+  "downloadPage": "https://berean.bible/downloads.htm",
+  "termsUrl": "https://berean.bible/terms.htm",
+  "license": "CC0-1.0",
+  "publicDomainSince": "2023-04-30",
+  "checkedDate": "2026-09-25",
+  "lastModified": "Fri, 31 Jul 2026 14:02:14 GMT",
+  "bytes": 4331393,
+  "sha256": "2ac3af1de52d4e68261cba91d85c320b7eadc6560e830d99e591767b8ff5ca96",
+  "hashAuthority": "Locally calculated SHA-256 of the official HTTPS download; not an upstream-signed checksum",
+  "parserVersion": 1
+}

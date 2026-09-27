@@ -24,6 +24,54 @@
 
 schema_version: 1
 batch_id: historical-001
-approved_by: ""
-approved_at: ""
-services: []
+approved_by: "Joel"
+approved_at: "2026-09-25"
+services:
+  - date: 2026-08-30
+    videos:
+      - youtube_id: M9uwSKpB_gk
+    notes: Full-service livestream.
+  - date: 2026-08-23
+    videos:
+      - youtube_id: QCNrRkiFeKw
+    notes: Full-service livestream.
+  - date: 2026-08-09
+    videos:
+      - youtube_id: gO6gc5jL-jU
+    notes: Full-service livestream.
+  - date: 2026-08-02
+    videos:
+      - youtube_id: 1R4gnCvqrOA
+    notes: Full-service livestream.
+  - date: 2026-07-26
+    videos:
+      - youtube_id: D7gXD-Mo25s
+    notes: Full-service livestream.
+  - date: 2026-07-19
+    videos:
+      - youtube_id: rM0Oi8-Y8G4
+    notes: Full-service livestream.
+  - date: 2026-06-21
+    videos:
+      - youtube_id: dNeZD1HUmmE
+    notes: Full-service livestream.
+  - date: 2026-06-14
+    videos:
+      - youtube_id: GlVgMoehT2I
+    notes: Full-service livestream.
+  - date: 2026-06-07
+    videos:
+      - youtube_id: 8Qjfp-2L5d8
+    notes: Full-service livestream.
+  - date: 2026-05-31
+    videos:
+      - youtube_id: m51rgcZHQmE
+    notes: Full-service livestream.
+  - date: 2026-05-24
+    videos:
+      - youtube_id: uJDdItVGgj8
+    notes: Full-service livestream.
+  - date: 2026-05-17
+    videos:
+      - youtube_id: lrRnxGzvPaM
+    notes: Full-service livestream.

@@ -1,0 +1,462 @@
+id: 2026-08-16
+date: 2026-08-16
+title: RECS 16 August 2026 — From Infant to Instrument
+sermon_title: From Infant to Instrument
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - One logical service comprises mw4SAoJRZgo, XWAH9SWFcoo and IcIxBc--VvM in that order, all
+    acquired and reviewed. Upload restarts leave unmeasured gaps; physical timestamps are never
+    concatenated. Part 3 continues the same preacher, presentation and sermon, already discussing
+    Eden/pride after part 2 ends on three categories of people. Missing intervening material is not
+    reconstructed.
+  - Part-2 frame 1200s verifies From Infant to Instrument, Hadi Wijaya, 16 August 2026 and 1
+    Corinthians 3:1-9. Part 2 opens with reflection on the same anthem heard at part-1 cutoff;
+    intervening song material is missing between uploads, with unknown gap length. This supports
+    ordered service continuity, not gapless playback or a duplicate claim.
+  - Transcripts are ASR-derived review drafts, not directly listened-to or audio-verified verbatim
+    transcripts. Punctuation normalized; timestamps are machine estimates. Human listening is
+    required for quiet-prayer gaps, repeated-text artifacts and uncertain names.
+  - Scripture quotations and sung lyrics are omitted with explicit markers. References are
+    ESV-labelled links in the application, not a claim that every spoken quotation uses that
+    translation. Unannounced quotation references are left unknown.
+  - Part 1 programme begins with worship preparation in the first 30 seconds and ends during a music
+    video. Full 0–776s transcription therefore includes legitimate programme throughout, with
+    two-minute margins clipped to recording bounds.
+  - Part 2 programme/transcribed span is 0–1802.801s. Part 3 programme is approximately 0–2991.12s;
+    transcribed span 0–3003s includes clipped two-minute margins. Short final announcement slides
+    remain available in playback. Human review is required for exact prayer/music/setup transitions.
+  - Displayed title, preacher and 1 Corinthians 3:1-9 verified in part 2; ancillary references and
+    quotation attributions checked against slides where available. Part 3 includes a recorded Nick
+    Vujicic testimony, attributed separately from Hadi. Quoted authors and third-party factual
+    claims are the recording’s claims, not independently authenticated facts.
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Plan only, based on the current service metadata and all 72 supplied passage summaries; human
+    editorial review remains required and needs_review is not cleared. The plan proposes eight peer
+    groups, four sermon movements and four supporting cues, covering all 41 original chapters.
+  - Opening, Worship and Scripture, and Response and Closing are neutral peer entries. Part 1
+    preparation and welcome form Opening; its prayer, reading and songs form Worship and Scripture.
+    Part 2 worship, readings and presentation setup remain together until the evidenced sermon
+    introduction. The closing response includes prayer, creed, pastoral prayer, offertory, hymn,
+    dismissal and announcements, with no incidental announcement cues.
+  - The sermon's movement from infancy to service is organized around the call to grow, pride as an
+    obstacle, faithful effort under divine sovereignty, and willing service. Part 2's infancy
+    discussion and part 3's pride discussion are related but remain separate parents because the
+    recording restarts on another physical clock; the missing bridge is not reconstructed.
+  - "All groups are contiguous within one upload: p1 is mw4SAoJRZgo, p2 is XWAH9SWFcoo and p3 is
+    IcIxBc--VvM. Existing chapter IDs determine bounds and membership; no new numerical timing is
+    proposed. Unknown inter-upload gaps, the part 1 song cutoff and the part 3 mid-sentence start
+    remain unresolved."
+  - The sovereignty movement keeps biblical examples, health and exam illustrations, human limits
+    and further reading together because they support the same argument. Its two cues provide access
+    to the ends-and-means explanation and faith amid limited understanding. The service movement
+    keeps Nick Vujicic's recorded testimony, Hadi's response, prison ministry, mission invitation
+    and final application together; two cues locate the substantial testimony and prison-ministry
+    illustration without duplicating the old inventory.
+  - Only sermon_description is intended as public descriptive prose beneath the video and in service
+    context. Every parent and cue summary is internal retrieval/review material, never a
+    chapter-row, subsection-row, navigation or search-card description. Public titles use Title
+    Case.
+  - "Nine originals have no supplied passage summaries: p1 welcome, hymn and anthem; p2 anthem,
+    hymn, video anthem and setup; p3 offering and hymn. They retain coverage through their existing
+    metadata without invented speech, lyrics or claims of silence. The worship leader remains
+    unnamed. Quiet-prayer repetition, music/reading/setup transitions and the part 2 hymn title
+    remain uncertain."
+  - The recorded testimony is attributed to Nick Vujicic, separately from Hadi; Hadi's biographical
+    introduction is not independent verification, and introduction/clip ages must not be used to
+    date the clip. Unverified third-party allegations and the existing marked gap remain for human
+    review. Author quotations and the CityAlight attribution remain reported attributions, not
+    authenticated facts.
+  - Preserve original scripture and translation caveats, including Matthew 7:21 displayed as TLB
+    rather than the application's ESV reference link. The lunch slide's 23 August at 11:30am and
+    ASR's 26th remain an unresolved discrepancy; no date is asserted by this outline.
+  - Main derives upload-local bounds and scripture/topic unions and preserves original IDs, bounds,
+    notes, provenance, passages and transcripts internally. This plan neither changes source records
+    nor recomputes vectors; changed-span vector work and old-link mappings belong to the subsequent
+    migration.
+speakers:
+  - id: hadi-wijaya
+    name: Hadi Wijaya
+    role: Preacher
+  - id: nick-vujicic
+    name: Nick Vujicic
+    role: Recorded testimony speaker
+topics:
+  - id: prayer
+    name: Prayer
+  - id: service-life
+    name: Church life
+videos:
+  - id: mw4SAoJRZgo
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 776
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: Verified channel/ID; ffprobe audio/video duration 776.281s, source metadata
+      776s. Coarse frames at 0/300/600s, targeted 485/700/770s frames and English ASR show prayer,
+      worship and a music video continuing at the end. Quiet-prayer ASR defects do not indicate
+      failed media.
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 776
+  - id: XWAH9SWFcoo
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 1802.801
+    sequence: 2
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: Authorized acquisition verified channel/ID; ffprobe audio/video duration
+      1802.801s, source metadata 1803s. Seven coarse frames and sample-ASR windows show worship,
+      reading and sermon, including title/speaker slide at 1200s and sermon continuing at 1800s.
+      Processing interruption is not failed media.
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 1802.801
+  - id: IcIxBc--VvM
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 3003
+    sequence: 3
+    workflow_status: complete
+    media_disposition: playable
+    disposition_evidence: Verified channel/ID; metadata 3003s and ffprobe audio/video duration
+      3003.381s. Eleven coarse frames/sample-ASR windows show the same sermon continuing, an
+      embedded testimony, concluding worship and announcements. Targeted final 183s confirms
+      announcements through about 2991s.
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 3003
+chapters:
+  - id: c20260816-p1-opening
+    video_id: mw4SAoJRZgo
+    start: 0
+    end: 422.48
+    title: Opening
+    type: opening
+    summary: The leader guides A.C.T.S. prayer through adoration, confession, thanksgiving and
+      supplication, inviting worshippers to entrust joys, burdens and others' needs to God; the
+      welcome has no supplied passage summary.
+    keywords:
+      - confession
+      - needs of others
+      - joys
+      - burdens
+    topics:
+      - prayer
+    scripture: []
+    source_chapters:
+      - s0816-p1-preparation
+      - s0816-p1-welcome
+    review_notes: []
+  - id: c20260816-p1-worship-scripture
+    video_id: mw4SAoJRZgo
+    start: 422.48
+    end: 776
+    title: Worship and Scripture
+    type: worship
+    summary: The worship leader prays for the preacher, children and an absent pastor, reads Psalms
+      95:1-5 and introduces congregational worship and My Labour Is Not In Vain, during which this
+      upload ends.
+    keywords:
+      - psalms
+      - my labour
+      - not in vain
+    topics:
+      - prayer
+      - service-life
+    scripture:
+      - Psalms 95:1-5
+    source_chapters:
+      - s0816-p1-invocation
+      - s0816-p1-call
+      - s0816-p1-hymn
+      - s0816-p1-anthem-intro
+      - s0816-p1-anthem
+    review_notes: []
+  - id: c20260816-p2-worship-scripture
+    video_id: XWAH9SWFcoo
+    start: 0
+    end: 1204.64
+    title: Worship and Scripture
+    type: worship
+    summary: The worship leader reflects on serving beyond online engagement and becoming more
+      Christ-like amid songs and responsive readings, followed by the reading of 1 Corinthians 3:1-9
+      and presentation setup whose details remain uncertain.
+    keywords:
+      - media ministry
+      - engagement
+      - responsive reading
+      - proverbs 3
+      - christ like
+      - 1 corinthians
+    topics:
+      - service-life
+    scripture:
+      - Proverbs 3:1-35
+      - Ephesians 4:1-16
+      - 1 Corinthians 3:1-9
+    source_chapters:
+      - s0816-p2-reflection
+      - s0816-p2-anthem
+      - s0816-p2-responsive
+      - s0816-p2-christlike
+      - s0816-p2-hymn
+      - s0816-p2-video-anthem
+      - s0816-p2-reading
+      - s0816-p2-setup
+    review_notes: []
+  - id: c20260816-p2-grow-beyond-infancy
+    video_id: XWAH9SWFcoo
+    start: 1204.64
+    end: 1802.801
+    title: Believers Are Called to Grow Beyond Infancy
+    type: sermon
+    summary: Hadi introduces spiritual maturity through 1 Corinthians 3:1-9, praying for growth and
+      using Corinth's context and the infancy analogy to distinguish mature faith from persistent
+      immaturity while raising questions about human effort under God's control.
+    keywords:
+      - maturity
+      - stuck
+      - baby stops growing
+      - corinth
+      - fleshly
+      - natural
+    topics:
+      - service-life
+      - prayer
+    scripture:
+      - Ephesians 2:1-10
+      - 1 Corinthians 3:1-9
+      - 1 Corinthians 3:1-6
+      - 1 Corinthians 3:1-2
+      - 1 Corinthians 3:2
+      - 1 Corinthians 3:7-9
+    source_chapters:
+      - s0816-p2-sermon-intro
+      - s0816-p2-sermon-prayer
+      - s0816-p2-context
+      - s0816-p2-corinth
+      - s0816-p2-categories
+    review_notes: []
+    speaker_id: hadi-wijaya
+  - id: c20260816-p3-pride-hinders-growth
+    video_id: IcIxBc--VvM
+    start: 0
+    end: 201.22
+    title: Pride Keeps Believers Immature
+    type: sermon
+    summary: Resuming mid-sentence after an unmeasured recording gap, Hadi identifies pride in
+      personality loyalties, resentment and conditional obedience as resistance to spiritual growth,
+      citing William Barclay on pride as a source of other sins.
+    keywords:
+      - pride
+      - personalities
+      - personal preferences
+      - recognition
+      - other sins
+    topics: []
+    scripture: []
+    source_chapters:
+      - s0816-p3-pride
+    review_notes: []
+    speaker_id: hadi-wijaya
+  - id: c20260816-p3-effort-and-divine-growth
+    video_id: IcIxBc--VvM
+    start: 201.22
+    end: 1282.36
+    title: Work Faithfully and Trust God for Growth
+    type: sermon
+    summary: Hadi argues that human effort matters although God determines growth and its means, using
+      Scripture and practical examples to urge diligence, humble trust and worship without claiming
+      complete understanding of sovereignty and responsibility.
+    keywords:
+      - sovereignty
+      - responsibility
+      - human effort
+      - paradox
+      - lifespan
+      - exam
+      - work diligently
+      - enough for faith
+    topics: []
+    scripture:
+      - 1 Corinthians 3:1-9
+      - 1 Corinthians 3:6
+      - Proverbs 21:31
+      - Proverbs 16:9
+      - Proverbs 16:33
+      - Philippians 2:12-13
+      - Isaiah 55:8-9
+      - Hebrews 11:1
+    source_chapters:
+      - s0816-p3-growth
+      - s0816-p3-paradox
+      - s0816-p3-sovereignty
+      - s0816-p3-limits
+      - s0816-p3-resources
+    review_notes: []
+    speaker_id: hadi-wijaya
+  - id: s0816-p3-sovereignty
+    video_id: IcIxBc--VvM
+    start: 536.7
+    end: 810.68
+    type: sermon
+    title: God Ordains the Means as Well as the Outcome
+    speaker_id: hadi-wijaya
+    confidence: 0.88
+    scripture: []
+    topics: []
+    summary: Hadi uses questions about lifespan and an exam illustration to argue that trust in ordained
+      outcomes still requires responsible care and diligent preparation.
+    keywords:
+      - ordains
+      - lifespan
+      - exam
+      - work diligently
+    parent_id: c20260816-p3-effort-and-divine-growth
+    source_chapters:
+      - s0816-p3-sovereignty
+  - id: s0816-p3-limits
+    video_id: IcIxBc--VvM
+    start: 810.68
+    end: 1067.94
+    type: sermon
+    title: Faith Does Not Require Complete Understanding
+    speaker_id: hadi-wijaya
+    confidence: 0.87
+    scripture:
+      - Isaiah 55:8-9
+      - Hebrews 11:1
+    topics: []
+    summary: Hadi contrasts human limits with God's perspective and argues, citing Scripture, the
+      Westminster Confession and Augustine, that faith can precede fuller understanding without
+      abandoning logic.
+    keywords:
+      - grasp the creator
+      - enough for faith
+    parent_id: c20260816-p3-effort-and-divine-growth
+    source_chapters:
+      - s0816-p3-limits
+  - id: c20260816-p3-willing-service
+    video_id: IcIxBc--VvM
+    start: 1282.36
+    end: 2351.48
+    title: Maturity Takes Shape in Willing Service
+    type: sermon
+    summary: Hadi presents service under God as a privilege, drawing on Nick Vujicic's recorded
+      testimony and his own prison ministry to challenge unwillingness and urge humble, obedient use
+      of one's gifts for others.
+    keywords:
+      - fellow workers
+      - under construction
+      - forgiveness
+      - unwilling
+      - prison ministry
+      - changi
+      - usual circle
+      - matthew 7 21
+      - am i willing
+      - can i offer
+    topics:
+      - service-life
+    scripture:
+      - 1 Corinthians 3:9
+      - Matthew 28:19
+      - 1 Corinthians 3:1-9
+      - Isaiah 55:8-9
+      - Matthew 7:21
+    source_chapters:
+      - s0816-p3-workers
+      - s0816-p3-testimony-intro
+      - s0816-p3-testimony
+      - s0816-p3-willingness
+      - s0816-p3-prison
+      - s0816-p3-mission
+      - s0816-p3-summary
+    review_notes: []
+  - id: s0816-p3-testimony
+    video_id: IcIxBc--VvM
+    start: 1496.86
+    end: 1710.34
+    type: testimony
+    title: Nick Vujicic on Forgiveness and Daily Dependence
+    speaker_id: nick-vujicic
+    confidence: 0.86
+    review_notes:
+      - Embedded video is part of this RECS upload, not a separate acquired source. Serious
+        third-party factual allegations at 1572–1625s are not verified; retain a marked gap pending
+        human review. Hymn lyrics within testimony omitted.
+    scripture: []
+    topics: []
+    summary: In the recorded clip, Nick Vujicic describes disability, questions about suffering and
+      daily dependence on forgiveness; third-party claims remain unverified.
+    keywords:
+      - forgiveness
+      - under construction
+    parent_id: c20260816-p3-willing-service
+    source_chapters:
+      - s0816-p3-testimony
+  - id: s0816-p3-prison
+    video_id: IcIxBc--VvM
+    start: 1820.2
+    end: 2034.48
+    type: testimony
+    title: Beginning Prison Ministry With Trust
+    speaker_id: hadi-wijaya
+    confidence: 0.86
+    scripture: []
+    topics:
+      - service-life
+    summary: Hadi recounts entering prison ministry despite reluctance, encountering inmates' isolation
+      and finding joy in helping them return to society, beginning with trust rather than
+      confidence.
+    keywords:
+      - prison ministry
+      - changi
+      - first step
+    parent_id: c20260816-p3-willing-service
+    source_chapters:
+      - s0816-p3-prison
+  - id: c20260816-p3-response-closing
+    video_id: IcIxBc--VvM
+    start: 2351.48
+    end: 3003
+    title: Response and Closing
+    type: closing
+    summary: Hadi leads prayer, affirmation of faith and pastoral requests, introduces Work for the
+      Night Is Coming around the offertory and closing worship, then gives a dismissal prayer and
+      church announcements whose lunch date remains uncertain.
+    keywords:
+      - apostles creed
+      - stephen tong
+      - batam
+      - orphanage
+    topics:
+      - prayer
+      - service-life
+    scripture: []
+    source_chapters:
+      - s0816-p3-sermon-prayer
+      - s0816-p3-creed
+      - s0816-p3-pastoral
+      - s0816-p3-offering
+      - s0816-p3-hymn-intro
+      - s0816-p3-hymn
+      - s0816-p3-dismissal
+      - s0816-p3-announcements
+    review_notes: []
+sermon_description: "Hadi Wijaya reads 1 Corinthians 3:1-9 as a call to grow beyond spiritual
+  infancy into willing service. He challenges pride and loyalty to personalities, arguing that
+  faithful effort matters even though God gives the growth. Receiving that tension with humility,
+  rather than demanding complete understanding, leads toward practical obedience: trusting God
+  enough to use one's gifts for others, as he illustrates through testimony and his experience in
+  prison ministry."

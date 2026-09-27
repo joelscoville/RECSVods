@@ -1,0 +1,524 @@
+id: 2026-07-19
+date: 2026-07-19
+title: 19 July 2026 English service — The Greatest Love
+sermon_title: The Greatest Love
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - Main batch integration applied the source-backed series and cited love topic; obedience remains
+    covered by existing tags. All interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - "Historical-001: whole available programme inspected through supplied ASR, word timings and
+    source frames; inline transcripts are selected edited excerpts, not a complete verbatim record.
+    Audio samples were decoded, not listened to. Human listening remains required."
+  - "Exact source rM0Oi8-Y8G4: YouTube title RECS 19 July 2026; upload and release dates 20260719.
+    No dated opening slide was found in inspected frames. Recording begins during preparatory prayer
+    and ends after dismissal; preceding preparation is not reconstructed."
+  - "Title and sermon references independently visible at 1590, 1600 and 1650 seconds: The Greatest
+    Love; John 15:12-17; 1 Corinthians 13:8-13. To be Nothing appears in retrospective material, not
+    as today’s title."
+  - "Speaker reuse: sermon self-reference at 4452.86-4458.96 is transcribed Yong-Teng Meng,
+    supporting yong-teck-meng; exact pronunciation/spelling needs human confirmation. Introductory
+    preparation has no separate name caption and remains unattributed."
+  - New local speaker derrick-zou / Derrick Zou is explicitly captioned Opening prayer at 500
+    seconds; this resolves ASR Derek. Main should check cross-service consistency.
+  - Eight source word-outside-segment warnings, maximum 0.21 seconds, were retained. No backward
+    starts, segment overlaps, tail clamps or zero-duration segments; 21 zero-duration words
+    retained. Warning regions are enclosed in wider passages.
+  - Original transcript audio absent in both designated roots; audio_hash_verified remains false.
+    Raw JSON checksum, exact video/channel, acquired duration and converted correspondence verified.
+    Provenance equals the import receipt projection.
+  - Bible quotations and all song lyrics are explicitly omitted. Historical, social-policy, sports,
+    charity, translation and theological claims are attributed to the recording, not independently
+    established. Proper names, anecdotes and colloquial/mixed-language ASR need listening review.
+  - "Taxonomy proposals only: love / Love, supported especially by p20260719-love-framework at
+    4994-5068 and p20260719-cross-and-love at 5164.62-5208.1; obedience / Obedience, supported by
+    p20260719-lord-and-no at 4935.26-4994 and p20260719-obedience-in-relationships at
+    5208.1-5275.44. Neither proposed term is activated."
+  - "Series proposal only: expository-preaching-gospel-john / Expository Preaching on the Gospel of
+    John, visibly headed on the 1600-second title slide and supported by p20260719-sermon-welcome.
+    No series field activated pending main’s taxonomy review."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only proposal based on the current service record and all 79 supplied passage
+    summaries; all 32 original chapters are assigned once in contiguous order on rM0Oi8-Y8G4.
+    Existing boundaries are reused without new listening, timing refinement or editorial approval;
+    interpretation remains needs_review.
+  - Opening, Worship and Scripture, the substantive charity Q&A, four sermon movements and Response
+    and Closing are neutral peer groups. The preacher’s welcome and invitation to questions
+    introduce the Q&A rather than forming another navigation entry; the sermon argument begins with
+    the last-session recap.
+  - The first sermon movement joins the recap, prayer, questions about transactional friendship and
+    critique of inherited assumptions as preparation for Scripture-directed faith. Subsequent
+    boundaries mark dependence on Christ, redemption and the character of the master, then the
+    personal response of loving obedience; illustrative changes within each argument remain
+    together.
+  - Four selective cues preserve access to the distinctive youth choir item, the question connecting
+    friendship with commandments, the substantive doulos translation argument and the concluding
+    application of love. The choir merits a cue as a separately identifiable performance; routine
+    prayers, individual hymns and incidental announcements do not.
+  - The preparatory leader remains unnamed and the recording begins mid-preparation. Existing
+    speaker-spelling, proper-name and mixed-language uncertainties remain unresolved; the plan does
+    not independently confirm any speaker identity.
+  - The charity crime anecdote remains unverified, sporting examples remain disputed and the
+    purchased-team illustration hypothetical. Historical, welfare-policy, translation and
+    theological assertions remain the preacher’s claims, including his presentation of MacArthur;
+    his rejection of racist slavery justifications and marital bullying remains explicit.
+  - The school brigade partnership remains a possibility rather than a confirmed programme. Existing
+    timing warnings, missing-original-audio verification limitation and provenance are unaffected.
+    Parent and cue summaries are internal retrieval/review material only; the single sermon
+    description is the sole proposed public descriptive paragraph.
+speakers:
+  - id: derrick-zou
+    name: Derrick Zou
+    role: Worship leader
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
+    role: Preacher
+topics:
+  - id: love
+    name: Love
+  - id: worship
+    name: Worship
+  - id: prayer
+    name: Prayer
+  - id: meditation
+    name: Meditation
+  - id: service-life
+    name: Church life
+  - id: discernment
+    name: Discernment
+  - id: service
+    name: Service
+  - id: stewardship
+    name: Stewardship
+  - id: faith
+    name: Faith
+  - id: discipleship
+    name: Discipleship
+  - id: knowing-god
+    name: Knowing God
+  - id: truth
+    name: Truth
+  - id: glory
+    name: Glory
+  - id: authority
+    name: Authority
+  - id: sacrifice
+    name: Sacrifice
+  - id: responsibility
+    name: Responsibility
+  - id: repentance
+    name: Repentance
+videos:
+  - id: rM0Oi8-Y8G4
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6196.701
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 6196.6860625
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: 5eb8bf81549ee32cc7bbf4659c267feacc926c564455b88f8d6dbe79b03b1d54
+      duration_seconds: 6196.6860625
+      elapsed_seconds: 200.219
+      real_time_factor: 0.03231
+      transcribed_at: 2026-09-25T12:48:15.429944+00:00
+      transcript_sha256: db3fd2825d06cea8980650bdf2ea7b99641bb9cf7362750be9f6d8ffe98e8905
+      source_duration_seconds: 6196.701
+      duration_delta_seconds: -0.014937500000087311
+      audio_hash_verified: false
+chapters:
+  - id: c20260719-opening
+    video_id: rM0Oi8-Y8G4
+    start: 0
+    end: 370
+    title: Opening
+    type: opening
+    summary: An unnamed leader guides the recorded thanksgiving and supplication before Derrick welcomes
+      the congregation to meditation and a call to worship from Psalms 89.
+    keywords:
+      - thanksgiving
+      - personal needs
+      - call to worship
+      - psalms 89
+    topics:
+      - prayer
+      - worship
+      - service-life
+      - meditation
+    scripture:
+      - Psalms 89
+    source_chapters:
+      - s20260719-preparation
+      - s20260719-welcome
+    review_notes: []
+  - id: c20260719-worship-scripture
+    video_id: rM0Oi8-Y8G4
+    start: 370
+    end: 1596
+    title: Worship and Scripture
+    type: worship
+    summary: Derrick leads hymns, prayer and readings from Proverbs 30, John 15 and 1 Corinthians 13,
+      with a youth choir presentation of The Lord Is My Shepherd.
+    keywords:
+      - isaac watts
+      - mighty power
+      - here is love
+      - proverbs 30
+      - john 15
+      - love divine
+      - all loves excelling
+      - youth choir
+      - my shepherd
+      - 1 corinthians
+    topics:
+      - worship
+      - prayer
+      - service-life
+    scripture:
+      - Proverbs 30:1-33
+      - John 15:1-17
+      - Psalms 23
+      - 1 Corinthians 13:8-13
+    source_chapters:
+      - s20260719-first-hymn
+      - s20260719-opening-prayer
+      - s20260719-second-hymn
+      - s20260719-responsive-readings
+      - s20260719-third-hymn
+      - s20260719-youth-choir
+      - s20260719-sermon-reading
+    review_notes: []
+  - id: s20260719-youth-choir
+    video_id: rM0Oi8-Y8G4
+    start: 1267
+    end: 1532
+    type: music
+    title: "Youth Choir: The Lord Is My Shepherd"
+    confidence: 0.92
+    scripture:
+      - Psalms 23
+    topics:
+      - worship
+      - service-life
+    summary: The youth choir presents The Lord Is My Shepherd, with Psalms 23 identified on the
+      sanctuary screen in the existing account.
+    keywords:
+      - youth choir
+      - my shepherd
+    parent_id: c20260719-worship-scripture
+    source_chapters:
+      - s20260719-youth-choir
+  - id: c20260719-charitable-discernment
+    video_id: rM0Oi8-Y8G4
+    start: 1596
+    end: 2202
+    title: Doing Good with Discernment
+    type: question-answer
+    summary: Following his welcome and invitation to questions, the preacher urges discerning,
+      accountable charitable action rather than paralysis over exploitation, drawing on his welfare
+      views and an unverified crime anecdote.
+    keywords:
+      - doing good
+      - charitable
+      - accountable
+    topics:
+      - service-life
+      - service
+      - faith
+      - discernment
+      - responsibility
+      - stewardship
+    scripture:
+      - John 15:12-17
+      - 1 Corinthians 13:8-13
+      - Matthew 10:16
+      - James 2:17
+    source_chapters:
+      - s20260719-sermon-introduction
+      - s20260719-charity-question
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: c20260719-scripture-directed-faith
+    video_id: rM0Oi8-Y8G4
+    start: 2202
+    end: 3289
+    title: Scripture Challenges Self-Directed Faith
+    type: sermon
+    summary: Recalling dependence on the true vine and praying for humility, the preacher questions
+      transactional friendship and religious self-selection, urging Scripture rather than inherited
+      culture or status to govern belief and conduct.
+    keywords:
+      - farewell discourse
+      - true vine
+      - pruning
+      - commandments
+      - buy friendship
+      - fallen reason
+    topics:
+      - knowing-god
+      - truth
+      - discipleship
+      - faith
+      - prayer
+      - discernment
+      - authority
+      - worship
+    scripture:
+      - John 15:1-11
+      - John 15:12-17
+      - John 14:15
+      - John 15:16
+      - John 17:17
+    source_chapters:
+      - s20260719-recap
+      - s20260719-sermon-prayer
+      - s20260719-difficulties
+      - s20260719-human-constructs
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s20260719-difficulties
+    video_id: rM0Oi8-Y8G4
+    start: 2490
+    end: 2842
+    type: sermon
+    title: Why Does Friendship Involve Commandments?
+    speaker_id: yong-teck-meng
+    confidence: 0.91
+    scripture:
+      - John 15:12-17
+      - John 14:15
+      - John 15:16
+    topics:
+      - discipleship
+      - authority
+      - faith
+      - knowing-god
+      - discernment
+    summary: The preacher uses transactional friendship stories to explore the difficulty of love linked
+      with obedience and divine choosing rather than personal religious selection.
+    keywords:
+      - friendship
+      - commandments
+      - buy friendship
+    parent_id: c20260719-scripture-directed-faith
+    source_chapters:
+      - s20260719-difficulties
+  - id: c20260719-glory-joy-in-christ
+    video_id: rM0Oi8-Y8G4
+    start: 3289
+    end: 3937.42
+    title: True Glory and Joy Depend on Christ
+    type: sermon
+    summary: Through disputed sporting examples and a hypothetical purchased team, the preacher argues
+      that glory requires truth and goodness, connecting dependence on Christ with full joy rather
+      than religion used for personal benefit.
+    keywords:
+      - sovereignty
+      - goodness
+      - glory
+      - truth
+      - without christ
+      - comfort
+    topics:
+      - glory
+      - knowing-god
+      - truth
+      - faith
+      - discipleship
+    scripture:
+      - John 15:5
+      - John 15:11
+    source_chapters:
+      - s20260719-glory
+      - s20260719-full-joy
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: c20260719-freedom-in-belonging
+    video_id: rM0Oi8-Y8G4
+    start: 3937.42
+    end: 4799
+    title: Belonging to a Perfect Master Brings Freedom
+    type: sermon
+    summary: Drawing on redemption, divine choosing and MacArthur’s account of doulos, the preacher
+      locates freedom in belonging to a perfectly good God, distinguishing this from racist
+      enslavement and the use of marital submission to excuse bullying.
+    keywords:
+      - doulos
+      - early church
+      - john macarthur
+      - chosen
+      - paradox
+      - historical slavery
+      - master
+    topics:
+      - sacrifice
+      - discipleship
+      - faith
+      - authority
+      - truth
+      - knowing-god
+      - responsibility
+    scripture:
+      - 1 Corinthians 6:19-20
+      - Galatians 2:20
+      - John 15:15
+      - John 15:15-16
+      - Ephesians 1:3-5
+    source_chapters:
+      - s20260719-bought
+      - s20260719-doulos
+      - s20260719-chosen
+      - s20260719-paradox
+      - s20260719-marriage
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s20260719-doulos
+    video_id: rM0Oi8-Y8G4
+    start: 4073
+    end: 4341
+    type: sermon
+    title: Doulos Challenges Voluntary Service
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture:
+      - John 15:15
+    topics:
+      - truth
+      - authority
+      - discipleship
+    summary: Presenting MacArthur’s argument, the preacher says servant softens doulos and contrasts
+      slavery with voluntary bondservice as a way of understanding belonging to Christ.
+    keywords:
+      - doulos
+      - early church
+      - john macarthur
+    parent_id: c20260719-freedom-in-belonging
+    source_chapters:
+      - s20260719-doulos
+  - id: c20260719-love-shaped-obedience
+    video_id: rM0Oi8-Y8G4
+    start: 4799
+    end: 5356.8
+    title: Christ’s Love Calls for Obedience
+    type: sermon
+    summary: Humbled by a remembered prayer partner’s challenge, the preacher presents Christ’s
+      self-giving love as the basis for friendship and obedience, applying it to everyday
+      relationships and praying for changed responses under pressure.
+    keywords:
+      - habitat for humanity
+      - prayer group
+      - greatest love
+      - obedience
+    topics:
+      - prayer
+      - repentance
+      - discernment
+      - authority
+      - discipleship
+      - knowing-god
+      - love
+      - sacrifice
+      - responsibility
+    scripture:
+      - 1 Corinthians 13:13
+      - John 15:12-17
+    source_chapters:
+      - s20260719-prayer-lesson
+      - s20260719-greatest-love
+      - s20260719-response-prayer
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s20260719-greatest-love
+    video_id: rM0Oi8-Y8G4
+    start: 4994
+    end: 5275.44
+    type: sermon
+    title: Love Shapes Everyday Relationships
+    speaker_id: yong-teck-meng
+    confidence: 0.93
+    scripture:
+      - 1 Corinthians 13:13
+      - John 15:12-17
+    topics:
+      - knowing-god
+      - discipleship
+      - love
+      - sacrifice
+      - responsibility
+    summary: Returning to John 15 and 1 Corinthians 13, the preacher connects the cross with friendship
+      and commands, urging love for Christ to reshape responses to family, colleagues and friends.
+    keywords:
+      - greatest love
+      - obedience
+    parent_id: c20260719-love-shaped-obedience
+    source_chapters:
+      - s20260719-greatest-love
+  - id: c20260719-response-closing
+    video_id: rM0Oi8-Y8G4
+    start: 5356.8
+    end: 6196.701
+    title: Response and Closing
+    type: closing
+    summary: The congregation is invited into creed, intercession, offering and song before the
+      blessing, notices about cancelled evening preaching and a possible school brigade partnership,
+      and dismissal with silent meditation.
+    keywords:
+      - young people
+      - brigade group
+      - third sunday
+      - social causes
+      - doxology
+      - jude
+      - silent meditation
+    topics:
+      - faith
+      - worship
+      - prayer
+      - service-life
+      - responsibility
+      - meditation
+      - service
+      - stewardship
+    scripture:
+      - James 2:17
+      - Jude 1
+      - Jude 1:24-25
+    source_chapters:
+      - s20260719-creed
+      - s20260719-intercession
+      - s20260719-offertory
+      - s20260719-closing-hymn
+      - s20260719-blessing
+      - s20260719-announcements
+      - s20260719-dismissal
+    review_notes: []
+    speaker_id: yong-teck-meng
+sermon_description: The preacher presents Christ’s love as the key to understanding friendship,
+  belonging and obedience in John 15. Challenging faith shaped by personal preference, he argues
+  that lasting joy and genuine glory depend on Christ. His account of redemption and divine choosing
+  locates freedom in belonging to a perfectly good master, whose self-giving love calls Christians
+  to trust his word and respond differently in everyday relationships.

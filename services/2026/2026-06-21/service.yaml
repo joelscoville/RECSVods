@@ -1,0 +1,553 @@
+id: 2026-06-21
+date: 2026-06-21
+title: 21 June 2026 — The Third Person
+sermon_title: The Third Person
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - Main batch integration applied the source-backed series and cited trinity topic; worker proposal
+    notes describe the pre-merge stage. All interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - Whole meaningful recorded programme curated from imported English ASR, word timings and
+    inspected frames; inline transcripts are edited excerpts, not listening-verified verbatim
+    transcripts. Bracketed omissions retain Bible, lyric, quiet-prayer and uncertain-text
+    boundaries.
+  - Source title RECS 21 June 2026, upload date 20260621 and opening frame dated 21st June 2026,
+    9:30am agree with the assigned date. Frame at 2170 seconds identifies The Third Person and Rev
+    Yong Teck Meng; slides at 2210 and 2250 show John 14:15-24 and Romans 8:26-30. Greater Works is
+    explicitly last-session recap.
+  - Worship leader is introduced as Jason; no full identity verified, so no reusable speaker
+    attribution is assigned to his material. The sermon speaker is independently named on the
+    recording slide.
+  - Original target audio absent in both designated roots; audio_hash_verified is false. Supplied
+    transcript checksum, acquired video identity/channel and ffprobe duration passed import checks.
+    Exact receipt archive_provenance preserved.
+  - Eleven outside-segment word warnings affect source IDs 96, 110, 180, 183, 362, 619, 898, 961,
+    1365, 1377 and 1604; maximum offset 0.31 seconds. No segment backtracking, segment overlaps,
+    word overlaps or tail clamps; 22 zero-duration words preserved. Context and word arrays
+    inspected; human listening remains required.
+  - Ancient of Days is interrupted by a copyright/streaming-restriction slate visible at 1170, 1200
+    and 1245 seconds; music-video frames at 1155 and 1260 bracket its onset to 1155-1170 and return
+    to 1245-1260. Exact hidden interval and audible continuity require human review; no missing
+    lyrics or speech reconstructed.
+  - Historical, denominational, medical, demographic, wealth, legal and anecdotal claims are the
+    speakers' claims, not externally verified conclusions. Preserve qualifications and review
+    especially the charismatic-movement discussion, Pat Robertson anecdote and Father's Day
+    gender-role remarks.
+  - "Taxonomy proposal: gospel-of-john — Expository Preaching on The Gospel of John, displayed at
+    2170/2210/2250 seconds; supporting p20260621-sermon-introduction. Series omitted pending main
+    consistency review."
+  - "Taxonomy proposal: trinity — Trinity, supported by p20260621-trinity-mystery at 5135.66-5216.18
+    and p20260621-indwelling at 5538-5590.7; existing holy-spirit and knowing-god used pending main
+    review."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan based on the current service chapters and all 79 supplied passage summaries;
+    all 26 original chapters remain assigned once in order on dNeZD1HUmmE. Existing chapter
+    boundaries supply the proposed group boundaries, without new timing or listening verification.
+    Interpretation remains needs_review.
+  - "Five sermon movements follow the argument: the Greater Works recap establishes humble learning
+    and service; love, restoration and transactional faith form one sustained account of changed
+    life; charismatic history and recollections support the appeal to Scripture; the Spirit's help
+    and presence belong together; truth and the concluding prayer form the final application.
+    Greater Works remains a previous-session recap, not this sermon's title."
+  - Opening, Worship and Scripture, Creed and Father's Day Appreciation, and Offertory and Closing
+    are neutral peer entries. The brief creed is grouped with the adjacent independent Father's Day
+    address to preserve sequence without a routine standalone chapter. That address is not part of
+    the sermon's argument, and its speaker remains unidentified.
+  - "Three cues identify substantial supporting arguments within the two longer sermon movements:
+    restoration beyond rules, faithful love beyond transactions, and Scripture with the limits of
+    Trinitarian understanding. Routine worship, readings, the anthem and closing activities need no
+    additional cues; incidental announcements receive none. Group and cue summaries are internal
+    retrieval/review text only."
+  - Wealth comparisons, church-size estimates, charismatic history, reported manifestations and
+    testimonies, the Pat Robertson account and legal commentary remain the speaker's qualified or
+    unverified claims. Father's Day gender-role remarks remain attributed to their unidentified
+    speaker; no external verification is implied.
+  - Differing interpretations of 'that day' and limits of Trinitarian language remain unresolved.
+    Ancient of Days retains its source-restriction interruption with uncertain exact bounds and
+    audible continuity; Haven of Rest wording does not establish a verified standalone hymn title.
+    Existing creed ASR errors, timing/listening caveats and false original-audio hash verification
+    remain unresolved in the unchanged source records.
+speakers:
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
+    role: Sermon speaker
+topics:
+  - id: trinity
+    name: Trinity
+  - id: prayer
+    name: Prayer
+  - id: worship
+    name: Worship
+  - id: meditation
+    name: Meditation
+  - id: service-life
+    name: Church life
+  - id: authority
+    name: Authority
+  - id: faith
+    name: Faith
+  - id: holy-spirit
+    name: Holy Spirit
+  - id: knowing-god
+    name: Knowing God
+  - id: discipleship
+    name: Discipleship
+  - id: service
+    name: Service
+  - id: mission
+    name: Mission
+  - id: responsibility
+    name: Responsibility
+  - id: repentance
+    name: Repentance
+  - id: hypocrisy
+    name: Hypocrisy
+  - id: truth
+    name: Truth
+  - id: discernment
+    name: Discernment
+  - id: temptation
+    name: Temptation
+  - id: justice
+    name: Justice
+  - id: stewardship
+    name: Stewardship
+videos:
+  - id: dNeZD1HUmmE
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 7054.581
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 7054.5705625
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: 75463bf8a05f2dd22a0614fe1a236f0f054462bd9e81d0af3f68b90f3ddccb0e
+      duration_seconds: 7054.5705625
+      elapsed_seconds: 232.212
+      real_time_factor: 0.03292
+      transcribed_at: 2026-09-25T12:34:32.656657+00:00
+      transcript_sha256: 0ee28d7f33a4097e774cd5d6587909c909fe9e41c8e6c32388fd797f62c46744
+      source_duration_seconds: 7054.581
+      duration_delta_seconds: -0.010437500000080036
+      audio_hash_verified: false
+chapters:
+  - id: c20260621-opening
+    video_id: dNeZD1HUmmE
+    start: 4.76
+    end: 474.8
+    title: Opening
+    type: opening
+    summary: The leaders prepare the congregation through adoration, confession, thanksgiving, personal
+      requests, welcome and silent meditation.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - personal needs
+      - silent meditation
+    topics:
+      - prayer
+      - worship
+      - repentance
+      - service-life
+      - meditation
+    scripture: []
+    source_chapters:
+      - s20260621-preparation
+      - s20260621-welcome
+    review_notes: []
+  - id: c20260621-worship-scripture
+    video_id: dNeZD1HUmmE
+    start: 474.8
+    end: 2173.72
+    title: Worship and Scripture
+    type: worship
+    summary: The congregation joins the call to worship, hymns, prayer, a source-interrupted Ancient of
+      Days video, Proverbs and John readings, and The Lord is My Shepherd anthem before the reader
+      corrects the final reading announcement to Romans 8:26-30.
+    keywords:
+      - call to worship
+      - ages past
+      - ancient of days
+      - responsive reading
+      - proverbs
+      - john
+      - promises
+      - my shepherd
+      - romans 8
+    topics:
+      - worship
+      - prayer
+      - authority
+      - faith
+      - holy-spirit
+    scripture:
+      - Psalms 75:1-3
+      - Daniel 7
+      - Proverbs 26
+      - John 14:15-31
+      - Romans 8:26-30
+    source_chapters:
+      - s20260621-opening
+      - s20260621-ancient-of-days
+      - s20260621-responsive-readings
+      - s20260621-promises
+      - s20260621-anthem
+      - s20260621-romans-reading
+    review_notes: []
+  - id: c20260621-learning-serving
+    video_id: dNeZD1HUmmE
+    start: 2173.72
+    end: 2898.92
+    title: Following Jesus Means Learning and Serving
+    type: sermon
+    summary: Introducing the Spirit's promise, Yong recaps Greater Works as wider ministry reach, urging
+      humble lifelong learning, service by every believer and prayer for God's purposes rather than
+      wealth-based aspirations or formulas.
+    keywords:
+      - third person
+      - farewell discourse
+      - philip
+      - humility
+      - lifelong learning
+      - would jesus do
+      - greater works
+      - start small
+    topics:
+      - service-life
+      - holy-spirit
+      - knowing-god
+      - discipleship
+      - service
+      - discernment
+      - mission
+      - responsibility
+      - prayer
+    scripture:
+      - John 14:15-24
+      - Romans 8:26-30
+      - John 14:8-14
+      - John 14:12
+      - John 14:13-14
+    source_chapters:
+      - s20260621-sermon-introduction
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: c20260621-love-restores-life
+    video_id: dNeZD1HUmmE
+    start: 2898.92
+    end: 4281.02
+    title: Love for Christ Changes How We Live
+    type: sermon
+    summary: Yong argues that love for Christ produces repentant action and lifelong restoration beyond
+      rule-keeping or religious transactions, using kindness and marriage illustrations while
+      acknowledging continuing failure and temptation.
+    keywords:
+      - one way traffic
+      - good deeds
+      - commandments of christ
+      - redemption
+      - restoration
+      - transactional
+      - consumer
+      - vows
+    topics:
+      - discipleship
+      - faith
+      - discernment
+      - service
+      - hypocrisy
+      - repentance
+      - knowing-god
+      - truth
+      - service-life
+      - holy-spirit
+      - responsibility
+      - temptation
+    scripture:
+      - John 14:15
+      - John 14:21
+      - John 14:23-24
+      - Ephesians 2:10
+      - Luke 18
+      - John 14:12
+      - John 14:6
+      - John 10:10
+      - Galatians 5:22-23
+    source_chapters:
+      - s20260621-love-obedience
+      - s20260621-restoration
+      - s20260621-transactional-faith
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s20260621-restoration
+    video_id: dNeZD1HUmmE
+    start: 3307.78
+    end: 3833.96
+    type: sermon
+    title: Christ Restores Life Beyond Rule-Keeping
+    speaker_id: yong-teck-meng
+    confidence: 0.88
+    scripture:
+      - John 14:6
+      - John 10:10
+      - Galatians 5:22-23
+    topics:
+      - discipleship
+      - discernment
+      - knowing-god
+      - truth
+      - service-life
+      - faith
+      - holy-spirit
+    summary: Yong distinguishes redemption from lifelong restoration, presenting Christ's commandments
+      as pointing to Christ himself and a changed identity rather than a checklist.
+    keywords:
+      - commandments of christ
+      - redemption
+      - restoration
+      - fruit
+    parent_id: c20260621-love-restores-life
+    source_chapters:
+      - s20260621-restoration
+  - id: s20260621-transactional-faith
+    video_id: dNeZD1HUmmE
+    start: 3833.96
+    end: 4281.02
+    type: sermon
+    title: Faithful Love Goes Beyond Transactions
+    speaker_id: yong-teck-meng
+    confidence: 0.86
+    scripture: []
+    topics:
+      - faith
+      - discernment
+      - service-life
+      - discipleship
+      - responsibility
+      - temptation
+    summary: Yong challenges religious bargaining and consumer expectations through enduring marriage
+      vows, including an unverified account attributed to Pat Robertson, before returning to
+      transformation amid temptation.
+    keywords:
+      - transactional
+      - consumer
+      - vows
+      - alzheimer
+    parent_id: c20260621-love-restores-life
+    source_chapters:
+      - s20260621-transactional-faith
+  - id: c20260621-knowing-spirit-scripture
+    video_id: dNeZD1HUmmE
+    start: 4281.02
+    end: 5303.86
+    title: Knowing the Spirit Begins With Scripture
+    type: sermon
+    summary: Yong uses qualified church-size estimates, his account of charismatic history and
+      unverified recollections to frame the congregation's position, grounding knowledge of the
+      Spirit in Scripture while acknowledging the Trinity's mystery.
+    keywords:
+      - pneumatology
+      - holy spirit
+      - azusa street
+      - charismatic
+      - army christian fellowship
+      - testimony
+      - sola scriptura
+      - westminster confession
+      - trinity
+    topics:
+      - holy-spirit
+      - knowing-god
+      - service-life
+      - discernment
+      - truth
+      - trinity
+    scripture:
+      - John 14:16
+      - John 14-16
+      - John 17:17
+      - John 14:15-16
+    source_chapters:
+      - s20260621-promise-spirit
+      - s20260621-charismatic-history
+      - s20260621-experiences
+      - s20260621-scripture-trinity
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: s20260621-scripture-trinity
+    video_id: dNeZD1HUmmE
+    start: 5048.46
+    end: 5303.86
+    type: sermon
+    title: Scripture Guides Understanding of the Trinity
+    speaker_id: yong-teck-meng
+    confidence: 0.9
+    scripture:
+      - John 17:17
+      - John 14:15-16
+    topics:
+      - truth
+      - knowing-god
+      - holy-spirit
+      - trinity
+      - discernment
+    summary: Yong appeals to Scripture and the Westminster Confession while recognizing limits of
+      comprehension and translation, contrasting biblical inquiry with reliance on impressions or
+      visions.
+    keywords:
+      - sola scriptura
+      - westminster confession
+      - trinity
+      - human expression
+    parent_id: c20260621-knowing-spirit-scripture
+    source_chapters:
+      - s20260621-scripture-trinity
+  - id: c20260621-spirit-help-presence
+    video_id: dNeZD1HUmmE
+    start: 5303.86
+    end: 5680.56
+    title: The Spirit Helps and Stays With Believers
+    type: sermon
+    summary: Yong presents the divine Spirit's intercession and abiding presence with the Father and Son
+      as help in weakness and loneliness, including practical support through believers and
+      differing readings of 'that day'.
+    keywords:
+      - helper and comforter
+      - holy spirit
+      - weakness
+    topics:
+      - holy-spirit
+      - knowing-god
+      - prayer
+      - service-life
+      - faith
+    scripture:
+      - John 14:16
+      - Romans 8:26-27
+      - John 14:17-20
+      - John 14:21-24
+      - John 14:16-24
+    source_chapters:
+      - s20260621-helper
+      - s20260621-presence
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: c20260621-spirit-truthful-living
+    video_id: dNeZD1HUmmE
+    start: 5680.56
+    end: 6082.74
+    title: The Spirit of Truth Calls Us to Truthful Living
+    type: sermon
+    summary: Yong applies the Spirit of truth to engineering, online opinion and qualified court
+      commentary, urging objective and theological testing of claims before praying for truthful
+      living through the Spirit's help.
+    keywords:
+      - spirit of truth
+      - truth decay
+      - objective
+      - opinion
+      - truth seeking
+      - courts
+      - testimony
+    topics:
+      - holy-spirit
+      - truth
+      - discernment
+      - justice
+      - prayer
+    scripture:
+      - John 14:16-17
+      - Romans 8:26-27
+    source_chapters:
+      - s20260621-truth
+      - s20260621-sermon-prayer
+    review_notes: []
+    speaker_id: yong-teck-meng
+  - id: c20260621-creed-fathers-appreciation
+    video_id: dNeZD1HUmmE
+    start: 6082.74
+    end: 6510.32
+    title: Creed and Father's Day Appreciation
+    type: address
+    summary: The congregation affirms the Apostles' Creed before an unidentified speaker reflects on
+      enduring fatherhood and makes gender-role claims, followed by children's gifts and prayer for
+      fathers and families.
+    keywords:
+      - apostles creed
+      - fatherhood
+      - gender roles
+      - appreciation
+      - children
+    topics:
+      - worship
+      - faith
+      - service-life
+      - responsibility
+      - prayer
+    scripture: []
+    source_chapters:
+      - s20260621-creed
+      - s20260621-fathers
+    review_notes: []
+  - id: c20260621-offertory-closing
+    video_id: dNeZD1HUmmE
+    start: 6510.32
+    end: 7054.581
+    title: Offertory and Closing
+    type: closing
+    summary: The leaders announce an offering for cultural mandate work, guide an unfamiliar hymn with
+      unverified Haven of Rest title wording, and lead doxology, blessing and ministry invitations
+      before dismissal to silent meditation.
+    keywords:
+      - cultural mandate work
+      - offertory
+      - closing hymn
+      - melody
+      - doxology
+      - blessing
+    topics:
+      - stewardship
+      - service-life
+      - worship
+      - service
+      - mission
+      - prayer
+    scripture:
+      - 1 Thessalonians 5
+      - 2 Corinthians 13
+    source_chapters:
+      - s20260621-offertory
+      - s20260621-closing-hymn
+      - s20260621-blessing
+      - s20260621-announcements
+    review_notes: []
+sermon_description: Rev. Yong Teck Meng connects love for Christ with a restored life of obedience
+  and service rather than religious bargaining. Turning to Jesus' promise in John 14, he urges
+  listeners to understand the Holy Spirit through Scripture rather than dramatic experiences alone.
+  He presents the Spirit as divine helper and abiding presence, calling believers to seek truth,
+  test claims and live truthfully amid weakness and continuing temptation.

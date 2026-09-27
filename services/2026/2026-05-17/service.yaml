@@ -1,0 +1,564 @@
+id: 2026-05-17
+date: 2026-05-17
+title: 17 May 2026 — Follow the Leader
+sermon_title: Follow the Leader
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - Main batch integration applied the source-backed series and cited love topic; servant-leadership
+    remains covered by existing tags. All interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - Whole meaningful programme curated from 104.86 to 6805.04 seconds, including preparatory prayer,
+    worship, readings, sermon, response, offering and announcements. Opening holding slide/setup at
+    0–104.86 is not searchable; isolated early ASR thanks are not treated as a programme.
+  - Source title RECS 17 May 2026, upload/release dates 20260517 and visible date at 0/90/450
+    seconds agree with the approved date. Title slide at 2120/2195/2210 seconds reads Follow the
+    Leader, John 13:1-20 and 1 John 4:7-10. Hardened Hearts at 2400 seconds is explicitly Last
+    Session material.
+  - Hadi Wijaya is verified by the 900-second opening-prayer caption and the spoken Hadi
+    introduction. The preacher is called Pastor Yong at 841.40 seconds and refers to that form of
+    address in the announcements. No full-name expansion is justified by inspected source evidence.
+    Preparatory leader remains unattributed.
+  - Evidence method was complete converted-text review, adjacent word-timing inspection, 23 coarse
+    frames and decoded 30-second audio windows every 300 seconds, plus 16 refined frames and 12
+    decoded boundary windows. No audio listening was performed. Playable denotes verified
+    audio/video streams, successful decoding and coherent programme evidence, not verbatim accuracy
+    approval.
+  - Inline transcripts are selected source-ASR excerpts with punctuation normalized and explicit
+    omissions, not complete verbatim transcripts. Scripture quotations and all song lyrics are
+    omitted; no missing Bible text or congregation responses have been reconstructed. Music, reading
+    and silent-prayer units may exceed 90 seconds.
+  - Canonical import retains 1509 segments and 15092 words, including 21 zero-duration words.
+    Fourteen word-outside-segment warnings affect source IDs 84, 85, 106, 110, 162, 166, 189, 210,
+    484, 676, 799, 808, 857 and 1167; maximum offset 0.32 seconds. No segment overlap, backward
+    starts or tail clamps. Wider thought units enclose warnings; human listening remains needed.
+  - Original audio target was already absent in both designated roots; audio_hash_verified is false.
+    JSON checksum and independently acquired source ID/channel/duration passed. Exact safe receipt
+    projection is retained below.
+  - Historical, interfaith, denominational, political, athletic and autobiographical statements are
+    the speakers' claims, not independently verified facts. In particular retain the explicit
+    speculative qualification at 4892.36–4894.62 concerning heavenly rewards.
+  - "Taxonomy proposal: love / Love, supported by p20260517-love-uttermost (3179.16–3258.74),
+    p20260517-beloved-identity (3258.74–3360.22) and p20260517-love-and-leadership
+    (5568.72–5684.24). Not activated; existing faith, knowing-god and service tags used."
+  - "Taxonomy proposal: servant-leadership / Servant leadership, supported by
+    p20260517-lowest-service (4094.86–4167.92) and p20260517-follow-example (5460.80–5568.72). Not
+    activated; existing service, authority and discipleship tags used."
+  - "Series proposal: expository-preaching-on-the-gospel-of-john / Expository Preaching on The
+    Gospel of John, as displayed at 2120/2195/2210 seconds; supporting p20260517-sermon-introduction
+    (2196.00–2231.60). Omitted from active series pending main consistency review."
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan derived from the current service chapters and all 87 supplied passage
+    summaries; all 33 original chapters are assigned in order on lrRnxGzvPaM, with original
+    boundaries left for main to derive and preserve.
+  - Opening, Worship and Scripture, and Response and Closing are neutral peer groups alongside five
+    sermon movements; routine songs, prayers, readings and announcements remain consolidated.
+  - The substantial John 12 recap remains explicitly labelled as recap, with the introduction and
+    sermon prayer attached; Hardened Hearts is not treated as this sermon's title or central
+    argument.
+  - The main John 13 argument moves from assurance of being beloved to Jesus' humble service,
+    continuing confession and accountability, and practical imitation in love; Judas, political
+    remarks, cadet training and church meetings remain supporting material rather than separate
+    movements.
+  - Four cues provide specific access to the distinctive youth anthem, Peter's response to lowly
+    service, the qualified accountability discussion, and the concluding 1 John 4 application;
+    routine activities and incidental announcements receive no cues.
+  - The preparatory leader remains unnamed; the anthem title follows the performance-slide evidence,
+    while the introductory slide has conflicting wording and a likely typo.
+  - Historical, political, denominational, autobiographical and athletic illustrations remain the
+    speakers' unverified claims, including the claimed sub-two-hour marathon; Nouwen, Augustine and
+    Stephen Tong references retain their reported attribution.
+  - Translation limits and the mystery of Jesus' divine and human natures remain acknowledged in the
+    source metadata; future loss is explicitly uncertain, and the discussion of heavenly
+    embarrassment is imagination rather than biblical teaching.
+  - Offertory recipient wording remains unclear in ASR; this plan adds no listening, new boundary
+    verification or editorial approval, and the service remains needs_review.
+  - Only sermon_description is intended as public descriptive prose; group and cue summaries are
+    internal retrieval and review metadata and must not render in navigation or result cards.
+speakers:
+  - id: hadi-wijaya
+    name: Hadi Wijaya
+    role: Worship leader
+  - id: pastor-yong
+    name: Pastor Yong
+    role: Preacher
+topics:
+  - id: love
+    name: Love
+  - id: authority
+    name: Authority
+  - id: discernment
+    name: Discernment
+  - id: discipleship
+    name: Discipleship
+  - id: eternal-life
+    name: Eternal life
+  - id: faith
+    name: Faith
+  - id: forgiveness
+    name: Forgiveness
+  - id: knowing-god
+    name: Knowing God
+  - id: mission
+    name: Mission
+  - id: prayer
+    name: Prayer
+  - id: repentance
+    name: Repentance
+  - id: responsibility
+    name: Responsibility
+  - id: service
+    name: Service
+  - id: service-life
+    name: Church life
+  - id: stewardship
+    name: Stewardship
+  - id: temptation
+    name: Temptation
+  - id: truth
+    name: Truth
+  - id: worship
+    name: Worship
+videos:
+  - id: lrRnxGzvPaM
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6805.181
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 6805.165
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: 584232b1a3295a24ce281b51acbe4e5286169a0a935111dc3291f4d5be362008
+      transcript_sha256: 944fcec7b4847017b575f068dd3a4ae5569d0e5e18c6ad5fb014b886712bba74
+      duration_seconds: 6805.165
+      elapsed_seconds: 219.859
+      real_time_factor: 0.03231
+      transcribed_at: 2026-09-25T12:41:40.178608+00:00
+      source_duration_seconds: 6805.181
+      duration_delta_seconds: -0.01599999999962165
+      audio_hash_verified: false
+chapters:
+  - id: c20260517-opening
+    video_id: lrRnxGzvPaM
+    start: 104.86
+    end: 582.08
+    title: Opening
+    type: opening
+    summary: An unnamed leader guides ACTS preparation through adoration, confession, thanksgiving and
+      personal supplication, followed by Hadi's welcome and invitation to quiet worship.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - personal situations
+    topics:
+      - prayer
+      - worship
+      - repentance
+      - forgiveness
+      - service-life
+    scripture: []
+    source_chapters:
+      - s20260517-preparation
+      - s20260517-welcome
+    review_notes: []
+  - id: c20260517-worship-scripture
+    video_id: lrRnxGzvPaM
+    start: 582.08
+    end: 2106.88
+    title: Worship and Scripture
+    type: worship
+    summary: Hadi leads worship with a Psalms 66 call, prayer, hymns and reflection on Jesus' light,
+      readings from Proverbs 21, John 13 and 1 John 4, and a youth choir anthem.
+    keywords:
+      - call to worship
+      - shine jesus shine
+      - proverbs 21
+      - john 13
+      - walk with thee
+      - youth choir
+      - mighty gates
+      - 1 john 4
+    topics:
+      - worship
+      - authority
+      - prayer
+      - repentance
+      - discipleship
+      - service
+      - service-life
+    scripture:
+      - Psalms 66:1-4
+      - John 8:12
+      - Proverbs 21:1-31
+      - John 13:1-20
+      - 1 John 4:7-10
+    source_chapters:
+      - s20260517-call
+      - s20260517-opening-hymn
+      - s20260517-opening-prayer
+      - s20260517-light
+      - s20260517-responsive
+      - s20260517-master-hymn
+      - s20260517-choir
+      - s20260517-sermon-reading
+    review_notes: []
+  - id: s20260517-choir
+    video_id: lrRnxGzvPaM
+    start: 1865.82
+    end: 2063.4
+    type: anthem
+    title: Youth Choir — Lift Up Your Heads, Ye Mighty Gates
+    confidence: 0.92
+    review_notes:
+      - Performance title verified at 1920 seconds; introductory slide at 1875 seconds has different
+        wording and a likely typo.
+    scripture: []
+    topics:
+      - worship
+      - service-life
+    summary: The youth choir presents the anthem identified on its performance slide as Lift Up Your
+      Heads, Ye Mighty Gates; the introductory slide's wording differs.
+    keywords:
+      - youth choir
+      - mighty gates
+    parent_id: c20260517-worship-scripture
+    source_chapters:
+      - s20260517-choir
+  - id: c20260517-receptive-faith-recap
+    video_id: lrRnxGzvPaM
+    start: 2117.22
+    end: 2840.66
+    title: "Recap: Respond to Jesus with Faith"
+    type: sermon
+    summary: Introducing John 13, Pastor Yong recaps John 12's unbelief, urges scrutiny of miracle
+      claims without denying miracles, rejects blaming God for persistent sin, and prays for
+      receptive faith.
+    keywords:
+      - john 13
+      - unbelief
+      - miracles
+      - prophecy
+      - predestination
+      - hardening
+      - good news
+    topics:
+      - service-life
+      - discipleship
+      - faith
+      - discernment
+      - truth
+      - authority
+      - knowing-god
+      - responsibility
+      - temptation
+      - repentance
+      - prayer
+    scripture:
+      - John 13:1-20
+      - 1 John 4:7-10
+      - John 12:36-50
+      - Romans 1
+      - John 13
+    source_chapters:
+      - s20260517-introduction
+      - s20260517-recap
+      - s20260517-sermon-prayer
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260517-live-as-beloved
+    video_id: lrRnxGzvPaM
+    start: 2841.94
+    end: 3707.8
+    title: Live as Beloved by Jesus
+    type: sermon
+    summary: Explaining John's distinctive account and Jesus' timing and continuing care, Pastor Yong
+      draws on Nouwen to urge trust in being beloved amid unresolved struggles rather than seeking
+      worth in fleeting recognition.
+    keywords:
+      - latter half
+      - timing
+      - uttermost
+      - beloved
+      - worth
+      - affirmation
+    topics:
+      - knowing-god
+      - service
+      - discipleship
+      - faith
+      - love
+      - discernment
+    scripture:
+      - John 13
+      - John 13-17
+      - John 13:1-20
+      - John 13:1
+    source_chapters:
+      - s20260517-john13
+      - s20260517-timing
+      - s20260517-beloved
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260517-authority-in-service
+    video_id: lrRnxGzvPaM
+    start: 3707.8
+    end: 4419.52
+    title: Jesus Uses His Authority to Serve
+    type: sermon
+    summary: Pastor Yong contrasts Judas's responsible choice under temptation with Jesus' authority
+      expressed in lowly foot-washing, interpreting Peter's resistance and the disciples' limited
+      understanding as calls to humility and lifelong learning.
+    keywords:
+      - judas
+      - devil
+      - all authority
+      - washing
+      - peter
+      - lifelong learning
+      - humility
+    topics:
+      - temptation
+      - responsibility
+      - authority
+      - knowing-god
+      - service
+      - discipleship
+      - forgiveness
+    scripture:
+      - John 13:2
+      - John 13:3
+      - John 13:3-5
+      - John 13:1-20
+      - John 13:4-5
+      - John 13:6-11
+    source_chapters:
+      - s20260517-temptation
+      - s20260517-authority
+      - s20260517-feet
+      - s20260517-learning
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260517-feet
+    video_id: lrRnxGzvPaM
+    start: 4014.54
+    end: 4274.4
+    type: sermon
+    title: Peter's Resistance Calls for Humility
+    speaker_id: pastor-yong
+    confidence: 0.91
+    scripture:
+      - John 13:1-20
+      - John 13:4-5
+      - John 13:6-11
+    topics:
+      - authority
+      - service
+      - discipleship
+      - forgiveness
+    summary: Pastor Yong contrasts status rivalry with the lowliness of foot-washing and interprets
+      Peter's request for further washing as an attempt to grasp spiritual cleansing.
+    keywords:
+      - disciples
+      - washing
+      - peter
+    parent_id: c20260517-authority-in-service
+    source_chapters:
+      - s20260517-feet
+  - id: c20260517-forgiveness-and-responsibility
+    video_id: lrRnxGzvPaM
+    start: 4419.52
+    end: 4917.9
+    title: Forgiveness Calls for Confession and Responsible Living
+    type: sermon
+    summary: Pastor Yong argues that salvation does not eliminate daily confession or accountability for
+      one's work, while explicitly qualifying his discussion of future embarrassment as imagination
+      rather than biblical teaching.
+    keywords:
+      - confession
+      - debt
+      - daily cleansing
+      - acts
+      - fire
+      - loss
+      - reward
+    topics:
+      - repentance
+      - forgiveness
+      - discernment
+      - prayer
+      - responsibility
+      - discipleship
+      - stewardship
+      - eternal-life
+    scripture:
+      - John 13:10
+      - 1 Corinthians 3:13-15
+      - 1 Corinthians 3:15
+    source_chapters:
+      - s20260517-confession
+      - s20260517-accountability
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260517-accountability
+    video_id: lrRnxGzvPaM
+    start: 4660.82
+    end: 4917.9
+    type: sermon
+    title: Saved Yet Accountable for One's Work
+    speaker_id: pastor-yong
+    confidence: 0.89
+    scripture:
+      - 1 Corinthians 3:13-15
+      - 1 Corinthians 3:15
+    topics:
+      - responsibility
+      - stewardship
+      - eternal-life
+      - discipleship
+      - discernment
+    summary: Pastor Yong uses 1 Corinthians 3 to challenge an idle life, acknowledging that future loss
+      is unclear and that his discussion with Stephen Tong about embarrassment is speculative.
+    keywords:
+      - work
+      - fire
+      - loss
+      - reward
+    parent_id: c20260517-forgiveness-and-responsibility
+    source_chapters:
+      - s20260517-accountability
+  - id: c20260517-follow-in-practical-love
+    video_id: lrRnxGzvPaM
+    start: 4918.24
+    end: 5810.84
+    title: Follow Jesus in Practical Love
+    type: sermon
+    summary: Contrasting Jesus' example with flawed military and political leadership and unproductive
+      church discussion, Pastor Yong urges practical lowly service rather than a required
+      foot-washing ritual, making love the hallmark of personal and church life.
+    keywords:
+      - teacher
+      - theory
+      - follow me
+      - cadets
+      - exemplary leadership
+      - unloving
+      - love
+      - hallmark
+    topics:
+      - service
+      - discipleship
+      - authority
+      - responsibility
+      - discernment
+      - service-life
+      - knowing-god
+      - mission
+    scripture:
+      - John 13:12-17
+      - John 13:14
+      - John 13:14-16
+      - 1 John 4:7-10
+      - 1 John 4:7-11
+      - John 13:14-20
+    source_chapters:
+      - s20260517-follow
+      - s20260517-cadets
+      - s20260517-example
+      - s20260517-love-action
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260517-love-action
+    video_id: lrRnxGzvPaM
+    start: 5568.72
+    end: 5810.84
+    type: sermon
+    title: Love Marks Those Who Know God
+    speaker_id: pastor-yong
+    confidence: 0.94
+    scripture:
+      - 1 John 4:7-10
+      - 1 John 4:7-11
+      - John 13:14-20
+    topics:
+      - knowing-god
+      - service-life
+      - authority
+      - service
+      - mission
+      - discipleship
+    summary: Using 1 John 4, Pastor Yong challenges unloving leaders' claims to know God and calls the
+      church to follow Jesus in love and service as the apostles are prepared to be sent.
+    keywords:
+      - unloving
+      - love
+      - hallmark
+    parent_id: c20260517-follow-in-practical-love
+    source_chapters:
+      - s20260517-love-action
+  - id: c20260517-response-closing
+    video_id: lrRnxGzvPaM
+    start: 5810.84
+    end: 6805.04
+    title: Response and Closing
+    type: closing
+    summary: Pastor Yong leads response prayer, the creed and outreach intercession, followed by
+      offertory with unclear recipient wording, Love Lifted Me, a blessing from Jude, and fellowship
+      and membership notices.
+    keywords:
+      - creed
+      - pistachio fellowship
+      - outreach
+      - offertory
+      - love lifted me
+      - doxology
+      - jude
+    topics:
+      - prayer
+      - service
+      - discipleship
+      - mission
+      - faith
+      - worship
+      - stewardship
+      - service-life
+    scripture:
+      - John 13:14
+      - Jude 1:24-25
+    source_chapters:
+      - s20260517-response
+      - s20260517-creed
+      - s20260517-pastoral
+      - s20260517-offering
+      - s20260517-closing-hymn
+      - s20260517-blessing
+      - s20260517-announcements
+    review_notes: []
+sermon_description: Pastor Yong presents Jesus' washing of the disciples' feet in John 13 as a call
+  to follow him in practical love. Being beloved by Jesus offers assurance beyond worldly
+  recognition, yet does not remove the need for humility, confession and responsible living.
+  Contrasting Jesus' example with flawed leadership and endless discussion, he urges lowly service
+  to become the hallmark of personal and church life.

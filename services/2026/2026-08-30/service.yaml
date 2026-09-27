@@ -1,0 +1,461 @@
+id: 2026-08-30
+date: 2026-08-30
+title: 30 August 2026 English worship service — Overcoming
+sermon_title: Overcoming
+series:
+  id: gospel-of-john
+  name: Expository Preaching on the Gospel of John
+type: service
+workflow_status: complete
+editorial_status: needs_review
+review_notes:
+  - Main batch integration applied the source-backed series and cited topic additions; worker
+    proposal notes describe the pre-merge stage. All interpretation remains needs_review. See
+    docs/historical-001/integration.md.
+  - "Historical-001: whole meaningful programme interpreted from verified imported English ASR, word
+    timings, adjacent context and source frames. Inline transcripts are edited excerpts, not a
+    complete verbatim transcript; brackets identify omissions and uncertainty. Audio samples were
+    decoded but not listened to."
+  - Source title RECS 30 August 2026 and upload/release dates 20260830 agree with the dated 30th
+    August 2026 9.30am slide at 350s. Title slide at 1995s gives Overcoming, John 16:25-33 and
+    Hebrews 11:13-16.
+  - Pastor Yong is named in the opening prayer at 764s and in the sermon context. Full-name ASR near
+    3908s is uncertain; no full identity is inferred. Jason and Jacinta/Yashinta are partial spoken
+    names only; their optional speaker fields are omitted.
+  - "The title slide says Expository Preaching on The Gospel of John. Taxonomy proposal only: series
+    expository-preaching-gospel-of-john / Expository Preaching on The Gospel of John, supported at
+    1995s and p20260830-017. Not activated pending main review."
+  - "Taxonomy proposals only: joy / Joy (p20260830-021, 2352.06-2444.18); love / Love
+    (p20260830-046, 4605.68-4651.86); hope / Hope (p20260830-059, 5594.16-5674.32); suffering /
+    Suffering (p20260830-041, 4144.22-4265.78). Existing suitable tags are used pending main
+    review."
+  - All 1441 source segments and 15195 words retain import correspondence. Fifteen outside-segment
+    word warnings (maximum 0.36s), 19 zero-duration words, zero backward starts or tail clamps.
+    Warning regions were inspected with neighboring text/words and coarse frames; human listening
+    remains necessary.
+  - Programme begins with preparatory prayer at 5.1s and ends during dismissal at 6640.42s. Sermon
+    handover is bracketed by reading frame 1978s and title frame 1995s; the ASR resumes mid-thought
+    at 2006.48s. No missing introduction is reconstructed.
+  - Original target audio was already absent in both designated roots; audio_hash_verified is false.
+    Acquisition/import integrity does not certify every ASR word. See
+    docs/historical-001/2026-08-30.md for evidence, checks and cleanup.
+  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
+    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
+    editorial approval implied."
+  - "Concise service outline: original chapter metadata and boundaries preserved in
+    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
+    service context. Agent interpretation remains needs_review."
+  - Metadata-only plan derived from the current service chapters and all existing passage summaries
+    in the supplied chapter-review JSON; all interpretation remains needs_review.
+  - Opening combines preparatory prayer with the welcome and opening worship; Worship and Scripture
+    gathers the remaining hymns and readings; Response and Closing combines response prayer, Creed,
+    offering, closing worship and notices as a neutral peer group.
+  - Four sermon movements follow the argument from the Spirit's gift of direct access, through
+    shared joy amid suffering, to love and growing faith, and finally hope grounded in Christ's
+    victory; recap stays with the teaching it prepares, and illustrations do not become separate
+    movements.
+  - The two cues retain useful entry points into sustained teaching on personal prayer and weak
+    faith within broader movements; routine service groups have no cues, and incidental
+    announcements are not promoted to subsections.
+  - Political and economic examples here support the discussion of voluntary Christian sharing; the
+    supplied evidence does not identify a separate political Q&A in this service.
+  - All 15 original chapters are assigned once in order on M9uwSKpB_gk; parent spans must be derived
+    from their originals, retaining existing gaps and evidence without implying silence or inventing
+    finer boundaries.
+  - The sermon handover remains approximate between the reading and title frames, with ASR resuming
+    mid-thought; no missing introduction is reconstructed, and Last Session remains recap rather
+    than the sermon title.
+  - "Partial speaker names remain unresolved, the Creed ASR remains incomplete, and original
+    alignment warnings and audio_hash_verified: false remain applicable; no audio or new ASR was
+    used."
+  - Historical, denominational, economic and biographical examples remain Pastor Yong's accounts,
+    including traditions about apostles' deaths and the saying attributed on screen to Augustine;
+    constant happiness, perfect obedience and trustworthy fellowship are not promised.
+  - Only the holistic sermon description is intended for public descriptive prose; parent and cue
+    summaries are internal retrieval and review metadata, never chapter, subsection or result-card
+    descriptions. Keywords are exact supplied spoken candidates.
+speakers:
+  - id: pastor-yong
+    name: Pastor Yong
+    role: Preacher
+topics:
+  - id: joy
+    name: Joy
+  - id: love
+    name: Love
+  - id: hope
+    name: Hope
+  - id: suffering
+    name: Suffering
+  - id: discipleship
+    name: Discipleship
+  - id: faith
+    name: Faith
+  - id: forgiveness
+    name: Forgiveness
+  - id: holy-spirit
+    name: Holy Spirit
+  - id: knowing-god
+    name: Knowing God
+  - id: meditation
+    name: Meditation
+  - id: peace
+    name: Peace
+  - id: politics
+    name: Politics
+  - id: prayer
+    name: Prayer
+  - id: service
+    name: Service
+  - id: service-life
+    name: Church life
+  - id: stewardship
+    name: Stewardship
+  - id: temptation
+    name: Temptation
+  - id: worship
+    name: Worship
+videos:
+  - id: M9uwSKpB_gk
+    channel_id: UCLjwcZaIkiFEed1VgQYSsrw
+    duration: 6640.561
+    sequence: 1
+    workflow_status: complete
+    media_disposition: playable
+    transcription_language: en
+    transcribed_span:
+      start: 0
+      end: 6640.5355
+    transcription_provenance:
+      engine: faster-whisper
+      engine_version: 1.2.1
+      model: large-v3-turbo
+      backend_version: 4.8.2
+      compute_type: float16
+      device: Tesla T4
+      settings:
+        beam_size: 5
+        word_timestamps: true
+        vad_filter: false
+        condition_on_previous_text: false
+      audio_sha256: fd20d62d935f889fec8e66de20838eb5483f3a8ff4ea54410b96a5a828868114
+      duration_seconds: 6640.5355
+      elapsed_seconds: 212.818
+      real_time_factor: 0.03205
+      transcribed_at: 2026-09-25T12:27:18.691815+00:00
+      transcript_sha256: 37265d7cd338111a7c40aec36a689f1d6f39059a987886bf276ad665001add27
+      source_duration_seconds: 6640.561
+      duration_delta_seconds: -0.025499999999738066
+      audio_hash_verified: false
+chapters:
+  - id: c20260830-opening
+    video_id: M9uwSKpB_gk
+    start: 5.1
+    end: 804.32
+    title: Opening
+    type: opening
+    summary: The leaders guide ACTS prayer, welcome and meditation, the call to worship from Psalms 97,
+      an opening hymn and prayer for the service and preacher.
+    keywords:
+      - adoration
+      - confession
+      - thanksgiving
+      - call to worship
+      - meditation
+      - rejoice
+      - opening prayer
+    topics:
+      - prayer
+      - worship
+      - forgiveness
+      - service-life
+      - meditation
+      - holy-spirit
+    scripture:
+      - Psalms 97:1-5
+    source_chapters:
+      - s20260830-preparation
+      - s20260830-opening
+    review_notes: []
+  - id: c20260830-worship-and-scripture
+    video_id: M9uwSKpB_gk
+    start: 804.32
+    end: 1985
+    title: Worship and Scripture
+    type: worship
+    summary: The worship leader invites relational trust in Jesus through song, the congregation joins
+      hymns and responsive readings from Proverbs 5 and John 16, and a reader known only by a
+      partial name reads Hebrews 11:13-16.
+    keywords:
+      - trust my savior
+      - responsive reading
+      - proverbs
+      - john
+      - solid rock
+      - hebrews 11
+    topics:
+      - worship
+      - faith
+      - peace
+    scripture:
+      - Proverbs 5
+      - John 16:25-33
+      - Hebrews 11:13-16
+    source_chapters:
+      - s20260830-trust
+      - s20260830-readings-hymns
+      - s20260830-hebrews
+    review_notes: []
+  - id: c20260830-spirit-and-direct-access
+    video_id: M9uwSKpB_gk
+    start: 1985
+    end: 3307.62
+    title: The Spirit Opens Direct Access to the Father
+    type: sermon
+    summary: Pastor Yong connects Jesus' departure and the indwelling Spirit with joy and direct prayer
+      in God's will, urging personal prayer without treating prominent Christians as necessary
+      intermediaries or requiring constant happiness.
+    keywords:
+      - holy spirit
+      - redemption plan
+      - hidden wisdom
+      - priesthood
+      - intermediary
+      - george muller
+      - pray often
+      - bitterness
+    topics:
+      - service-life
+      - discipleship
+      - knowing-god
+      - holy-spirit
+      - faith
+      - prayer
+      - service
+      - joy
+      - forgiveness
+    scripture:
+      - John 16:25-33
+      - Hebrews 11:13-16
+      - John 16
+      - 1 Peter 5:7
+      - John 13
+      - 1 Corinthians 2:6-7
+      - John 16:25-26
+      - James 5
+      - John 16:23-24
+    source_chapters:
+      - s20260830-introduction
+      - s20260830-access
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260830-access
+    video_id: M9uwSKpB_gk
+    start: 2586.52
+    end: 3307.62
+    type: sermon
+    title: Prayer Needs No Human Intermediary
+    speaker_id: pastor-yong
+    confidence: 0.91
+    scripture:
+      - John 13
+      - John 16
+      - 1 Corinthians 2:6-7
+      - John 16:25-26
+      - James 5
+      - John 16:23-24
+    topics:
+      - holy-spirit
+      - knowing-god
+      - prayer
+      - forgiveness
+      - service
+      - faith
+      - discipleship
+    summary: Pastor Yong urges regular prayer aligned with God's will, using his Reformed understanding
+      and prayer anecdotes to deny that a pastor's prayer is automatically better.
+    keywords:
+      - priesthood
+      - intermediary
+      - george muller
+      - pray often
+    parent_id: c20260830-spirit-and-direct-access
+    source_chapters:
+      - s20260830-access
+  - id: c20260830-shared-joy-amid-suffering
+    video_id: M9uwSKpB_gk
+    start: 3307.62
+    end: 4509.94
+    title: Shared Joy Does Not Remove Suffering
+    type: sermon
+    summary: Pastor Yong commends voluntary mutual care through Acts 2 while acknowledging
+      self-interest, unreliable relationships, persecution, disappointment and the emotional cost of
+      empathy rather than promising uninterrupted peace.
+    keywords:
+      - early church
+      - pentecost
+      - amish
+      - cell
+      - shields
+      - suffering
+      - disappointment
+      - social media
+      - empathy
+    topics:
+      - holy-spirit
+      - service-life
+      - discipleship
+      - service
+      - politics
+      - stewardship
+      - faith
+      - peace
+      - suffering
+      - prayer
+    scripture:
+      - Acts 2:1-3
+      - Acts 2:44-47
+      - John 16:24
+      - Acts 2
+      - John 16:33
+    source_chapters:
+      - s20260830-community
+      - s20260830-tribulation
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260830-love-and-growing-faith
+    video_id: M9uwSKpB_gk
+    start: 4509.94
+    end: 5455.66
+    title: Remember God's Love and Seek Stronger Faith
+    type: sermon
+    summary: Pastor Yong counters insecurity with God's love and forgiveness, encourages imperfect
+      obedience, and presents the disciples' failures, Hebrews 11 and examples of perseverance as
+      encouragement for faith that grows through trials.
+    keywords:
+      - insecurity
+      - sparrows
+      - forgiveness
+      - augustine
+      - weak faith
+      - disciples
+      - stephen tong
+      - determination
+    topics:
+      - faith
+      - peace
+      - knowing-god
+      - love
+      - discipleship
+      - forgiveness
+      - temptation
+      - service
+      - stewardship
+      - holy-spirit
+    scripture:
+      - 1 Corinthians 13:13
+      - John 16:27-28
+      - Matthew 10
+      - Matthew 10:29-31
+      - John 16:29-32
+      - Mark 9:24
+      - Hebrews 11:13-16
+    source_chapters:
+      - s20260830-love
+      - s20260830-faith
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: s20260830-faith
+    video_id: M9uwSKpB_gk
+    start: 4951.34
+    end: 5455.66
+    type: sermon
+    title: Weak Faith Can Grow Through Trials
+    speaker_id: pastor-yong
+    confidence: 0.91
+    scripture:
+      - John 16:29-32
+      - Mark 9:24
+      - Hebrews 11:13-16
+    topics:
+      - faith
+      - discipleship
+      - temptation
+      - service
+      - stewardship
+      - holy-spirit
+    summary: Pastor Yong says God understands weak faith, drawing encouragement from Mark 9:24, Hebrews
+      11 and examples he attributes to Stephen Tong, Nick Vujicic and Kanae Miyahara.
+    keywords:
+      - weak faith
+      - hebrews
+      - stephen tong
+      - determination
+    parent_id: c20260830-love-and-growing-faith
+    source_chapters:
+      - s20260830-faith
+  - id: c20260830-hope-grounded-in-christ
+    video_id: M9uwSKpB_gk
+    start: 5455.66
+    end: 5749
+    title: Christ's Victory Makes Hope Certain
+    type: sermon
+    summary: Pastor Yong grounds courage in Christ's death, resurrection and ascension, interpreting
+      hope as patient assurance amid difficulty rather than wishful thinking or empty reassurance.
+    keywords:
+      - courageous
+      - victory
+      - patience
+      - assurance
+    topics:
+      - faith
+      - peace
+      - hope
+    scripture:
+      - John 16:33
+      - Romans 8:24-25
+    source_chapters:
+      - s20260830-hope
+    review_notes: []
+    speaker_id: pastor-yong
+  - id: c20260830-response-and-closing
+    video_id: M9uwSKpB_gk
+    start: 5750.1
+    end: 6640.42
+    title: Response and Closing
+    type: closing
+    summary: Pastor Yong leads response and prayer for young people, with the Creed incompletely
+      captured in ASR, followed by the charitable offering, closing hymn, doxology, blessing from
+      Jude, church notices and dismissal.
+    keywords:
+      - apostles creed
+      - young people
+      - fifth sunday
+      - charitable works
+      - o king eternal
+      - doxology
+      - jude
+      - home of counsel
+      - financial stewardship
+    topics:
+      - prayer
+      - faith
+      - peace
+      - worship
+      - temptation
+      - service-life
+      - holy-spirit
+      - stewardship
+      - service
+    scripture:
+      - Jude 1:24-25
+    source_chapters:
+      - s20260830-response
+      - s20260830-closing
+      - s20260830-announcements
+    review_notes: []
+    speaker_id: pastor-yong
+sermon_description: Pastor Yong presents Jesus' promise of overcoming as courage amid trouble, not
+  freedom from suffering. The Spirit gives believers direct access to the Father and draws them into
+  shared life, even when caring is costly. He urges listeners to remember God's love, seek help for
+  weak faith and find patient assurance in Christ's victory rather than expect constant happiness.

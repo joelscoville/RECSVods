@@ -2,6 +2,12 @@
 
 Read `docs/implementation-prompts/README.md` first and follow its shared contracts. Continue from the Milestone 4 checkpoint on the same feature branch and draft PR, reading `docs/run-log.md` first and carrying forward any explicitly documented pending live-backfill item.
 
+**Operator decisions (2026-09-26) that amend this milestone. Read all three before starting:**
+
+- [`decisions/2026-09-26-chapter-search.md`](./decisions/2026-09-26-chapter-search.md): the site, search and review use chapters only; new services get chapters, not passages or committed transcripts. Where this prompt says "passage", read "chapter".
+- [`decisions/2026-09-26-caption-transcripts.md`](./decisions/2026-09-26-caption-transcripts.md): the weekly curator run tries the new service's YouTube `en-orig` captions first (with the quality gate) and falls back to local whisper.cpp; recommend running it the day after the service. CI stays deterministic.
+- [`decisions/2026-09-26-sermon-outline.md`](./decisions/2026-09-26-sermon-outline.md): build a concise outline of the whole service with neutral peer groups such as Opening, Worship and Scripture, and Closing Remarks and Offertory; outline the sermon's major movements without excessive splits. Use Title Case for chapter and subsection titles. Show one holistic sermon description beneath the video; keep chapter/subsection descriptions internal for search and review, never visible.
+
 Create a sustainable weekly operation and verify the complete MVP. Interpretation remains human-triggered: deterministic automation may discover an upload, but it must not invoke an AI coding agent or analyze media unattended.
 
 ## Deterministic Discovery
@@ -23,6 +29,7 @@ Add an operator runbook and optional project command. A person supplies a discov
 3. Branch from the latest default branch.
 4. Register physical videos before interpreting the logical service.
 5. Produce `needs_review` YAML/Markdown using existing schemas and taxonomy; never self-promote it to `reviewed`.
+   Outline the whole service, using neutral peer groups for routine worship and announcements. Within the sermon, identify its central direction and mark only major supporting movements as primary chapters; use optional subordinate search cues for finer retrieval. Use Title Case for every chapter and subsection title. Review the one visible sermon description as natural prose without "Thesis"/"Points" labels or a fixed template, and ensure no internal chapter/subsection descriptions appear on the site before creating the draft PR.
 6. Record uncertainty rather than forcing completion.
 7. Regenerate indexes and reports.
 8. Run validation, search, browser, and build checks.
