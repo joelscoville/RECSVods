@@ -1,9 +1,10 @@
 import type { DisplayService } from '../components/archive-display';
 import { siteUrl } from './urls';
+import { BIBLE_BOOKS } from './scripture';
 
+/** Every recording lives under "All recordings"; the other categories narrow it. */
 export const BROWSE_CATEGORIES = [
-  { path: 'services', title: 'Services' }, { path: 'sermons', title: 'Sermons' },
-  { path: 'speakers', title: 'Speakers' }, { path: 'scripture', title: 'Bible books' },
+  { path: 'all', title: 'All recordings' }, { path: 'scripture', title: 'Bible books' },
   { path: 'topics', title: 'Topics' }, { path: 'series', title: 'Series' }, { path: 'years', title: 'Years' },
 ] as const;
 export interface BrowseLink { path: string; title: string }
@@ -18,9 +19,7 @@ export function scriptureBookId(book: string): string { return book.toLowerCase(
 export function availableBrowseCategories(services: readonly DisplayService[], chapters = services.flatMap((service) => service.chapters)): BrowseLink[] {
   return BROWSE_CATEGORIES.filter(({ path }) => {
     switch (path) {
-      case 'services': case 'years': return services.length > 0 || chapters.length > 0;
-      case 'sermons': return services.some((service) => service.type === 'sermon') || chapters.some((chapter) => chapter.type === 'sermon');
-      case 'speakers': return chapters.some((chapter) => chapter.speaker);
+      case 'all': case 'years': return services.length > 0 || chapters.length > 0;
       case 'scripture': return chapters.some((chapter) => chapter.scripture.length > 0);
       case 'topics': return chapters.some((chapter) => chapter.topics.length > 0);
       case 'series': return services.some((service) => service.series) || chapters.some((chapter) => chapter.series);
@@ -35,30 +34,27 @@ export function buildBrowsePages(services: readonly DisplayService[]): BrowsePag
   const pages: BrowsePage[] = [];
   const category = (path: string) => BROWSE_CATEGORIES.find((item) => item.path === path)!;
   if (!ordered.length) return pages;
-  pages.push({ ...category('services'), serviceIds: ordered.map((service) => service.id) });
-  const sermonChapters = chapters.filter((chapter) => chapter.type === 'sermon');
-  const sermonServices = ordered.filter((service) => service.type === 'sermon' && !service.chapters.some((chapter) => chapter.type === 'sermon'));
-  if (sermonChapters.length || sermonServices.length) pages.push({ ...category('sermons'), chapterIds: sermonChapters.map((chapter) => chapter.id), serviceIds: sermonServices.map((service) => service.id) });
+  pages.push({ ...category('all'), serviceIds: ordered.map((service) => service.id) });
   function addGroups(path: string, groups: Map<string, { title: string; serviceIds?: string[]; chapterIds?: string[] }>) {
     if (!groups.size) return;
     const parent = category(path);
-    const leaves = [...groups].sort(([a, av], [b, bv]) => path === 'years' ? b.localeCompare(a) : av.title.localeCompare(bv.title) || a.localeCompare(b)).map(([id, group]) => ({ path: `${path}/${id}`, ...group, parent }));
+    // Years newest first, Bible books in canonical order, everything else alphabetically.
+    const canon = (title: string) => { const index = (BIBLE_BOOKS as readonly string[]).indexOf(title); return index < 0 ? BIBLE_BOOKS.length : index; };
+    const leaves = [...groups].sort(([a, av], [b, bv]) => path === 'years' ? b.localeCompare(a)
+      : path === 'scripture' ? canon(av.title) - canon(bv.title) || av.title.localeCompare(bv.title)
+        : av.title.localeCompare(bv.title) || a.localeCompare(b)).map(([id, group]) => ({ path: `${path}/${id}`, ...group, parent }));
     pages.push({ ...parent, links: leaves.map(({ path, title }) => ({ path, title })) }, ...leaves);
   }
-  const speakers = new Map<string, { title: string; chapterIds: string[] }>();
   const topics = new Map<string, { title: string; chapterIds: string[] }>();
   for (const service of ordered) {
-    for (const [records, groups] of [[service.speakers, speakers], [service.topics, topics]] as const) {
-      for (const record of records) {
-        const matches = service.chapters.filter((chapter) => record.chapterIds.includes(chapter.id));
-        if (!matches.length) continue;
-        const group = groups.get(record.id) ?? { title: record.name, chapterIds: [] };
-        group.chapterIds.push(...matches.map((chapter) => chapter.id));
-        groups.set(record.id, group);
-      }
+    for (const record of service.topics) {
+      const matches = service.chapters.filter((chapter) => record.chapterIds.includes(chapter.id));
+      if (!matches.length) continue;
+      const group = topics.get(record.id) ?? { title: record.name, chapterIds: [] };
+      group.chapterIds.push(...matches.map((chapter) => chapter.id));
+      topics.set(record.id, group);
     }
   }
-  addGroups('speakers', speakers);
   const books = new Map<string, { title: string; chapterIds: string[] }>();
   for (const chapter of chapters) for (const book of new Set(chapter.scripture.map(scriptureBook))) {
     const id = scriptureBookId(book);
@@ -82,4 +78,11 @@ export function buildBrowsePages(services: readonly DisplayService[]): BrowsePag
   }
   addGroups('years', years);
   return pages;
+}
+
+/** Most frequent topics first, so suggestions reflect the archive rather than file order. */
+export function suggestedTopics(items: readonly { topics: readonly string[] }[], limit = 8): string[] {
+  const counts = new Map<string, number>();
+  for (const item of items) for (const topic of item.topics) counts.set(topic, (counts.get(topic) ?? 0) + 1);
+  return [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, limit).map(([topic]) => topic);
 }

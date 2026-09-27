@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { createChapterController, type PlayerAdapter } from '../site/lib/player';
-import { basePath, formatTime, readWatchTarget, searchUrl, serviceUrl, siteUrl, watchUrl, youtubeUrl } from '../site/lib/urls';
+import { basePath, formatDuration, formatTime, readWatchTarget, searchUrl, serviceUrl, siteUrl, watchUrl, youtubeUrl } from '../site/lib/urls';
 import { clearLocalState, getSavedPlayback, getSearchHistory, savePlayback, saveSearch } from '../site/lib/local-state';
 import { clearSearchHistory } from '../site/lib/local-state';
 
@@ -171,6 +171,11 @@ describe('base-aware shareable URLs', () => {
     expect(youtubeUrl('abcdefghijk', 65.9)).toBe('https://www.youtube.com/watch?v=abcdefghijk&t=65');
     expect(formatTime(3661)).toBe('1:01:01');
     expect(formatTime(61)).toBe('1:01');
+    expect(formatDuration(6628)).toBe('1 h 50 min');
+    expect(formatDuration(7200)).toBe('2 h');
+    expect(formatDuration(76)).toBe('1 min 16 s');
+    expect(formatDuration(725)).toBe('12 min');
+    expect(formatDuration(45)).toBe('45 s');
   });
 });
 

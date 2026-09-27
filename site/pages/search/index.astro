@@ -1,9 +1,13 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import SearchApp from '../../components/SearchApp';
-import { loadArchive, flattenChapters } from '../../lib/archive';
-const chapters = flattenChapters(loadArchive(), import.meta.env.ARCHIVE_MODE);
+import { displayServices, homeItems } from '../../components/archive-display';
+import { loadArchive, flattenChapters, publishedServices } from '../../lib/archive';
+const mode = import.meta.env.ARCHIVE_MODE, archive = loadArchive();
+const chapters = flattenChapters(archive, mode);
+const eligible = publishedServices(archive, mode);
+const recordings = homeItems(displayServices(eligible, flattenChapters(eligible, mode)), import.meta.env.BASE_URL);
 ---
 <SiteLayout title="Search" route="search-route" header={false}>
-  <SearchApp base={import.meta.env.BASE_URL} initialChapters={chapters} client:load />
+  <SearchApp base={import.meta.env.BASE_URL} initialChapters={chapters} recordings={recordings} client:load />
 </SiteLayout>

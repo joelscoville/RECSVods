@@ -189,12 +189,16 @@ export const ChapterSourceSchema = z.object({
   /** Private migration lineage, never serialized to the site. */
   source_chapters: z.array(Id).min(1).optional(),
   summary: Text,
+  /** Optional public one-line summary for a primary chapter; subsections never carry one. */
+  short_summary: Text.refine((value) => value.length <= 90, 'must be one short line (90 characters or fewer)').optional(),
   keywords: z.array(Text).max(10),
   topics: z.array(Id),
   scripture: z.array(ScriptureInputSchema),
   scriptureDisplay: z.array(ScriptureInputSchema).optional(),
 }).strict().refine((v) => v.end > v.start, {
   path: ['end'], message: 'must be greater than start',
+}).refine((chapter) => !(chapter.parent_id && chapter.short_summary), {
+  path: ['short_summary'], message: 'subsections do not carry a public summary',
 }).refine((chapter) => !chapter.scriptureDisplay || (chapter.scriptureDisplay.length === chapter.scripture.length
   && chapter.scriptureDisplay.every((value, index) => parseScriptureReference(value)?.canonical === parseScriptureReference(chapter.scripture[index])?.canonical)),
 { path: ['scriptureDisplay'], message: 'must align with canonical scripture references' })
@@ -281,6 +285,8 @@ export interface SearchChapter {
   parentTitle?: string;
   /** Retrieval-only synopsis. Never render in a chapter, subsection or result. */
   summary: string;
+  /** Public one-line summary shown on primary chapter cards only. */
+  shortSummary?: string;
   keywords: string[];
   topics: string[];
   scripture: string[];
@@ -395,6 +401,7 @@ export function flattenChapters(services: readonly Service[], mode: BuildMode = 
       id: chapter.id, serviceId: service.id, serviceTitle: service.title, videoId: chapter.video_id,
       ...(service.series ? { series: { id: service.series.id, name: service.series.name } } : {}),
       start: chapter.start, end: chapter.end, title: chapter.title, summary: chapter.summary,
+      ...(chapter.short_summary && !chapter.parent_id ? { shortSummary: chapter.short_summary } : {}),
       ...(chapter.parent_id ? { parentId: chapter.parent_id, parentTitle: service.chapters.find((parent) => parent.id === chapter.parent_id)!.title } : {}),
       keywords: [...chapter.keywords],
       topics: chapter.topics.map((id) => service.topics.find((t) => t.id === id)!.name),

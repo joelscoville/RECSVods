@@ -84,12 +84,13 @@ review_notes:
     verification or editorial approval, and the service remains needs_review.
   - Only sermon_description is intended as public descriptive prose; group and cue summaries are
     internal retrieval and review metadata and must not render in navigation or result cards.
+  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
   - id: hadi-wijaya
     name: Hadi Wijaya
     role: Worship leader
-  - id: pastor-yong
-    name: Pastor Yong
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
     role: Preacher
 topics:
   - id: love
@@ -288,7 +289,7 @@ chapters:
       - s20260517-recap
       - s20260517-sermon-prayer
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260517-live-as-beloved
     video_id: lrRnxGzvPaM
     start: 2841.94
@@ -322,7 +323,7 @@ chapters:
       - s20260517-timing
       - s20260517-beloved
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260517-authority-in-service
     video_id: lrRnxGzvPaM
     start: 3707.8
@@ -361,14 +362,14 @@ chapters:
       - s20260517-feet
       - s20260517-learning
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260517-feet
     video_id: lrRnxGzvPaM
     start: 4014.54
     end: 4274.4
     type: sermon
     title: Peter's Resistance Calls for Humility
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.91
     scripture:
       - John 13:1-20
@@ -422,14 +423,14 @@ chapters:
       - s20260517-confession
       - s20260517-accountability
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260517-accountability
     video_id: lrRnxGzvPaM
     start: 4660.82
     end: 4917.9
     type: sermon
     title: Saved Yet Accountable for One's Work
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.89
     scripture:
       - 1 Corinthians 3:13-15
@@ -490,14 +491,14 @@ chapters:
       - s20260517-example
       - s20260517-love-action
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260517-love-action
     video_id: lrRnxGzvPaM
     start: 5568.72
     end: 5810.84
     type: sermon
     title: Love Marks Those Who Know God
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.94
     scripture:
       - 1 John 4:7-10

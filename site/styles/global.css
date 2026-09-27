@@ -55,7 +55,7 @@ ul, ol { padding: 0; margin: 0; }
 .desktop-search { width: min(1033px, 72%); }
 .search-field { width: 100%; height: 66px; display: flex; align-items: stretch; background: var(--burgundy); border-radius: 40px; color: var(--surface); }
 .search-field input { width: 100%; border: 0; background: transparent; color: var(--surface); padding: 12px 48px; border-radius: inherit; font-size: 24px; font-weight: 500; }
-.search-field input::placeholder { color: var(--periwinkle); opacity: 1; }
+.search-field input::placeholder { color: rgb(250 250 255 / 0.72); opacity: 1; }
 .search-field input:focus-visible { outline: 3px solid var(--gold); outline-offset: -4px; }
 .search-field button { width: 136px; flex: 0 0 136px; border: 0; border-radius: inherit; background: var(--periwinkle); color: var(--ink); }
 .search-field button .icon { width: 36px; height: 36px; }
@@ -66,9 +66,8 @@ ul, ol { padding: 0; margin: 0; }
 .site-footer .wordmark { color: var(--surface); }
 .site-footer nav { display: flex; align-items: center; gap: 40px; }
 .site-footer nav a { min-width: 220px; min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: var(--radius); background: var(--periwinkle); color: var(--black); font-size: 24px; font-weight: 500; text-decoration: none; }
-.site-footer nav a:hover { text-decoration: underline; }
 .preview-banner { padding: 12px var(--page-gutter); background: var(--gold); color: var(--ink); font-weight: 600; }
-.preview-label { font-size: 14px; font-weight: 700; display: inline-block; color: var(--burgundy); background: var(--periwinkle); border-radius: 6px; padding: 4px 8px; margin-top: 8px; }
+.preview-label { font-size: 14px; font-weight: 700; display: inline-block; color: var(--ink); background: var(--periwinkle); border-radius: 6px; padding: 4px 8px; margin-top: 8px; }
 .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 20px; border: 0; border-radius: var(--radius); background: var(--burgundy); color: var(--surface); text-decoration: none; font-weight: 600; text-align: center; line-height: 1.3; }
 .button-secondary { background: var(--periwinkle); color: var(--ink); }
 .text-link { min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding-block: 8px; font-weight: 600; }
@@ -86,7 +85,6 @@ ul, ol { padding: 0; margin: 0; }
 .compact-label { display: none; }
 .video-card { min-width: 0; }
 .video-card-link { display: block; text-decoration: none; border-radius: var(--radius); }
-.video-card-link:hover h2 { text-decoration: underline; }
 .video-art { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 387 / 240; border-radius: var(--radius); background: var(--periwinkle); color: var(--ink); }
 .video-art > .icon { width: 34%; height: auto; stroke-width: 2.2; }
 .video-card h2 { font-size: clamp(28px, 2.1vw, 36px); margin-top: 28px; }
@@ -94,14 +92,13 @@ ul, ol { padding: 0; margin: 0; }
 .card-context { font-size: 16px; margin-top: 8px; }
 .supporting-lead { align-self: center; }
 .resume-track { position: absolute; bottom: -4px; left: 0; right: 0; height: 4px; background: var(--navy); }
-.resume-track > span { display: block; height: 100%; background: var(--burgundy); }
+.resume-track > span { display: block; height: 100%; background: #F90101; }
 .category-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .category-grid > a, .category-grid > button { background: var(--indigo); color: var(--surface); border-radius: var(--radius); border: 0; min-height: 72px; padding: 18px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 20px; font-weight: 700; text-decoration: none; overflow-wrap: anywhere; }
 .category-grid > :nth-child(4n + 2) { background: var(--navy); }
 .category-grid > :nth-child(4n + 3) { background: var(--burgundy); }
 .category-grid > :nth-child(4n) { background: var(--periwinkle); color: var(--black); }
 .category-grid > :focus-visible { outline-color: var(--burgundy); }
-.category-grid > a:hover { text-decoration: underline; }
 .home-categories { margin-top: 56px; }
 .home-categories > a { aspect-ratio: 387 / 252; font-size: 36px; }
 .chip-list { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -124,23 +121,25 @@ ul, ol { padding: 0; margin: 0; }
 .category-section { grid-column: 2; grid-row: 1 / span 2; }
 .topics-section { grid-column: 1; grid-row: 2; }
 .search-browse .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 12px; }
-.search-browse .category-grid > :first-child { background: var(--burgundy); }
-.search-browse .category-grid > :nth-child(2) { background: var(--indigo); }
-.search-browse .category-grid > :nth-child(3) { background: var(--navy); }
 .results-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; margin-block: 32px 24px; }
 .results-toolbar h2 { min-width: 0; flex: 1 1 300px; }
 .result-list { list-style: none; }
 .result-list > li { border-top: 1px solid var(--periwinkle); }
-.chapter-result { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 24px; padding-block: 28px; }
-.chapter-time { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; font-size: 16px; font-variant-numeric: tabular-nums; color: var(--indigo); }
-.chapter-time > :first-child { border-radius: 14px; background: var(--periwinkle); color: var(--ink); padding: 8px 12px; }
-.chapter-result h2 { font-size: 28px; margin-bottom: 8px; }
-.chapter-result h2 a { text-decoration: none; }
-.chapter-result h2 a:hover { text-decoration: underline; }
-.chapter-result-body > p { max-width: 75ch; margin-top: 8px; }
+/* A search result is a recording: thumbnail beside its title, then the chapter that matched and the actions. */
+.recording-result { display: grid; grid-template-columns: 240px minmax(0, 1fr); grid-template-areas: 'art head' 'art match'; grid-template-rows: auto 1fr; gap: 4px 24px; padding-block: 28px; }
+.result-art { grid-area: art; align-self: start; display: block; border-radius: var(--radius); text-decoration: none; color: inherit; }
+.result-art:hover .video-art { filter: brightness(0.94); }
+.result-head { grid-area: head; min-width: 0; }
+.result-match { grid-area: match; min-width: 0; }
+.recording-result h2 { font-size: 28px; margin-bottom: 8px; }
+.recording-result h2 a { text-decoration: none; }
+.recording-result h2 a:hover { text-decoration: underline; }
+:is(.result-head, .result-match) > p { max-width: 75ch; margin-top: 8px; }
+.matched-chapter { display: flex; align-items: baseline; gap: 12px; overflow-wrap: anywhere; }
+.matched-chapter > :last-child { min-width: 0; }
+.matched-more { color: var(--indigo); font-weight: 500; }
 .metadata, .scripture { color: var(--indigo); font-weight: 500; }
 .service-context { font-size: 16px; }
-.chapter-result .action-row { margin-top: 18px; }
 .match-reasons { font-size: 16px; color: var(--indigo); }
 .no-results { padding-block: 36px 60px; }
 .no-results p { margin-block: 12px 24px; }
@@ -167,7 +166,6 @@ ul, ol { padding: 0; margin: 0; }
 .player-message p { max-width: 60ch; }
 .player-message .action-row { justify-content: center; }
 .player-message :focus-visible { outline-color: var(--gold); }
-.playback-back { display: none; }
 .playback-notice, .chapter-controls { padding: 16px 0; font-size: 16px; }
 .chapter-controls .action-row, .playback-notice .button { margin-top: 12px; }
 .chapters { grid-column: 2; grid-row: 1; background: var(--indigo); padding: 12px 8px; color: var(--surface); margin-bottom: 30px; max-height: clamp(400px, 38vw, 720px); overflow-y: auto; scrollbar-color: var(--periwinkle) var(--indigo); }
@@ -186,30 +184,10 @@ ul, ol { padding: 0; margin: 0; }
 .playback-details h1 { margin-bottom: 4px; }
 .playback-details .metadata { font-size: 24px; }
 .playback-details .metadata + .metadata { font-size: 18px; }
-.sermon-description { max-width: 70ch; font-size: 18px; line-height: 1.5; margin-block: 16px 24px; }
-.outline-node { border: 1px solid var(--periwinkle); border-radius: var(--radius); background: var(--surface); color: var(--ink); }
-.chapters .outline-node :focus-visible { outline-color: var(--burgundy); }
-.outline-node-header { display: flex; align-items: flex-start; }
-.outline-node-header > .chapter-row { flex: 1; min-width: 0; border: 0; background: transparent; }
-.outline-toggle { flex: 0 0 44px; min-width: 44px; min-height: 44px; margin: 12px 8px 0 0; display: flex; align-items: center; justify-content: center; gap: 2px; border: 0; border-radius: 8px; background: var(--periwinkle); color: var(--indigo); font-size: 14px; font-weight: 700; }
-.outline-toggle .icon { width: 18px; height: 18px; }
-.outline-toggle[aria-expanded='true'] .icon { transform: rotate(90deg); }
-.outline-toggle:hover { background: var(--indigo); color: var(--surface); }
-.chapter-subsections { margin: 0 16px 12px 28px; padding-inline-start: 20px; border-inline-start: 1px solid var(--indigo); }
-.chapter-subsections[hidden] { display: none; }
-.chapter-subsections > li { position: relative; }
-.chapter-subsections > li::before { content: ''; position: absolute; inset-inline-start: -20px; top: 24px; width: 16px; border-block-start: 1px solid var(--indigo); }
-.chapter-subsections .chapter-row { min-height: 48px; padding: 10px 4px; gap: 10px; background: transparent; color: inherit; border: 0; border-radius: 0; }
-.chapter-subsections .chapter-copy strong { font-size: 16px; }
-.chapter-subsections .chapter-copy > span { color: inherit; }
-.chapter-subsections .timestamp { font-size: 12px; min-width: 52px; padding-inline: 6px; }
-.additional-references summary { min-height: 44px; padding-block: 12px; cursor: pointer; }
 .playback-details .action-row { margin-top: 24px; }
-.correction-note { font-size: 14px; color: var(--indigo); }
 .service-main { padding-block: 24px 72px; }
 .service-heading { margin-block: 24px 48px; }
 .service-heading .metadata { font-size: 24px; margin-block: 12px; }
-.service-heading .copy-link { margin-top: 20px; }
 .service-main section + section { margin-top: 48px; }
 .service-main section > h2 { margin-bottom: 18px; }
 .service-recordings { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px; }
@@ -224,18 +202,6 @@ ul, ol { padding: 0; margin: 0; }
 .prose h2 { margin-bottom: 16px; color: var(--indigo); }
 .local-data-controls { margin-top: 24px; }
 .local-data-controls p { margin-top: 12px; }
-@media (min-width: 1024px) and (max-width: 1350px) {
-  .featured { grid-template-columns: minmax(0, 1fr) minmax(0, 44%); padding: 32px; margin-right: 20px; gap: 24px; }
-  .featured h1 { font-size: 48px; }
-  .video-card h2 { font-size: 28px; }
-  .card-metadata { font-size: 20px; }
-  .home-categories > a { font-size: 28px; }
-  .site-header { gap: 36px; }
-  .site-header .wordmark { font-size: 30px; }
-  .search-field input { padding-inline: 24px; font-size: 20px; }
-  .search-field button { flex-basis: 90px; width: 90px; }
-  .playback-layout { gap: 0 20px; }
-}
 @media (max-width: 1023px) {
   :root { --page-gutter: 16px; font-size: 16px; }
   h1 { font-size: 28px; }
@@ -264,7 +230,7 @@ ul, ol { padding: 0; margin: 0; }
   .home-categories { display: none; }
   .empty-archive { padding-block: 48px 80px; }
   .empty-archive p { font-size: 18px; }
-  .search-route .site-header, .watch-route .site-header { display: none; }
+  .search-route .site-header { display: none; }
   .search-main { padding-block: 14px 48px; min-height: calc(100svh - 14px); }
   .search-mobile-heading { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 8px 18px; align-items: center; }
   .search-mobile-heading h1 { font-size: 24px; font-weight: 600; }
@@ -281,11 +247,12 @@ ul, ol { padding: 0; margin: 0; }
   .chip { font-size: 14px; }
   .results-toolbar { align-items: flex-start; gap: 16px; }
   .results-toolbar h2 { flex-basis: 100%; }
-  .chapter-result { display: flex; flex-direction: column; gap: 12px; padding-block: 24px; }
-  .chapter-time { flex-direction: row; align-items: center; font-size: 14px; }
-  .chapter-result h2 { font-size: 24px; }
+  .recording-result { grid-template-columns: minmax(0, 42%) minmax(0, 1fr); grid-template-areas: 'art head' 'match match'; grid-template-rows: auto; gap: 16px 14px; padding-block: 24px; }
+  .recording-result h2 { font-size: 20px; line-height: 1.2; margin-bottom: 4px; }
+  .recording-result .result-head .metadata { font-size: 14px; margin-top: 0; }
+  .result-head .preview-label { margin-top: 6px; }
+  .result-match > p:first-child { margin-top: 0; }
   .playback-layout { display: flex; flex-direction: column; padding: 0; background: var(--surface); }
-  .playback-back { display: inline-flex; margin: 8px 12px; flex: 0 0 44px; }
   .watch-main { background: var(--surface); }
   .player-column { width: 100%; background: var(--black); }
   .player-context { top: 16px; left: 16px; right: 16px; }
@@ -302,9 +269,8 @@ ul, ol { padding: 0; margin: 0; }
   .playback-details { margin: 0; padding: 24px 16px; }
   .playback-details h1 { font-size: 24px; margin-bottom: 12px; }
   .playback-details .metadata, .playback-details .metadata + .metadata { font-size: 16px; }
-  .sermon-description { font-size: 16px; }
   .playback-details .action-row { gap: 8px 20px; }
-  .chapters { margin: 0 16px; padding: 20px 0 24px; background: var(--surface); color: var(--indigo); border-top: 1px solid var(--periwinkle); max-height: none; overflow: visible; }
+  .chapters { margin: 0 16px; padding: 20px 0 24px; background: var(--surface); color: var(--indigo); max-height: none; overflow: visible; }
   .chapters > h2 { font-size: 24px; margin-bottom: 8px; }
   .chapters :focus-visible { outline-color: var(--burgundy); }
   .chapter-row { min-height: 88px; }
@@ -314,6 +280,7 @@ ul, ol { padding: 0; margin: 0; }
   .prose { padding-block: 24px 48px; }
 }
 @media (min-width: 600px) and (max-width: 1023px) {
+  .supporting-lead { align-self: start; margin-top: 0; }
   .home-catalogue { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 16px; margin-inline: 6.6%; }
   .featured { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; padding: 18px 6.6% 36px; margin-inline: -7.61%; align-items: center; }
   .featured h1 { font-family: 'Domine Variable', 'Domine', serif; font-size: clamp(38px, 6.6vw, 56px); font-weight: 700; max-width: 10ch; }
@@ -328,7 +295,6 @@ ul, ol { padding: 0; margin: 0; }
 }
 @media (max-width: 1023px) and (orientation: landscape) {
   .watch-main .playback-layout { display: grid; grid-template-columns: minmax(60px, 1fr) minmax(0, min(177.778svh, calc(100vw - 120px))) minmax(60px, 1fr); background: var(--black); }
-  .playback-back { grid-column: 1; grid-row: 1; margin: 16px 8px; justify-self: center; }
   .player-column { grid-column: 2; grid-row: 1; }
   .player-stage { width: 100%; }
   .player-context strong { font-size: 20px; }
@@ -342,13 +308,325 @@ ul, ol { padding: 0; margin: 0; }
 
 /* Browse reuses the established tiles, chips, chapter rows and result typography. */
 .browse-navigation .chip { text-decoration: none; }
-.browse-navigation .chip:hover { text-decoration: underline; }
 .browse-navigation .chip[aria-current='page'] { background: var(--burgundy); color: var(--surface); }
 .browse-main .browse-service-list { display: flex; flex-direction: column; list-style: none; gap: 12px; }
 .browse-main .service-chapters { margin-top: 24px; }
-.browse-main .chapter-copy .preview-label { color: var(--burgundy); align-self: flex-start; }
+.browse-main .chapter-copy .preview-label { align-self: flex-start; }
 .browse-main .browse-navigation { margin-bottom: 24px; }
 @media (max-width: 1023px) {
   .browse-main .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .search-browse .browse-navigation > a { min-height: 60px; font-size: 14px; }
+}
+
+/* Desktop scale: the Penpot frames were drawn at 1728px, so desktop uses real-site density.
+   Mobile and tablet (below 1024px) keep the Penpot values above unchanged. */
+@media (min-width: 1024px) {
+  :root { font-size: 16px; line-height: 1.5; --content-max: 1600px; --page-gutter: max(clamp(20px, 3vw, 48px), calc((100vw - var(--content-max)) / 2)); --col-gap: 16px; --row-gap: 32px; --feat-pad: clamp(24px, 2.5vw, 36px); }
+  h1 { font-size: 30px; text-wrap: balance; }
+  h2 { font-size: 22px; }
+  h3 { font-size: 18px; }
+  /* The search sits in the page centre, independent of the wordmark's width. */
+  .site-header { min-height: 76px; display: grid; grid-template-columns: minmax(max-content, 1fr) minmax(0, 720px) minmax(0, 1fr); column-gap: 32px; padding: 14px var(--page-gutter); }
+  .wordmark { font-size: 26px; }
+  .desktop-search { width: 100%; }
+  .search-field { height: 48px; }
+  .search-field input { padding: 0 24px; font-size: 17px; }
+  .search-field button { width: 80px; flex: 0 0 80px; }
+  .search-field button .icon { width: 22px; height: 22px; }
+  .site-footer { min-height: 96px; padding: 28px var(--page-gutter); }
+  .site-footer nav { gap: 16px; }
+  .site-footer nav a { min-width: 140px; min-height: 40px; padding: 0 14px; font-size: 16px; }
+  .preview-label { font-size: 12px; padding: 2px 7px; }
+  .empty-archive p { font-size: 19px; }
+  .home-main { padding-block: 8px 48px; }
+  .home-catalogue { grid-template-columns: repeat(var(--columns, 4), minmax(0, 1fr)); gap: var(--row-gap) var(--col-gap); }
+  /* The featured media column equals one catalogue column, so its thumbnail matches the cards beside it. */
+  .featured { --feat-mr: 5px; grid-template-columns: minmax(0, 1fr) calc((100% + var(--feat-mr) + 2 * var(--feat-pad) - 2 * var(--col-gap)) / 3); align-items: start; gap: 28px; padding: var(--feat-pad); margin-right: var(--feat-mr); min-height: 0; }
+  .featured h1 { align-self: center; font-size: clamp(36px, 3vw, 52px); line-height: 1.15; }
+  .video-art > .icon { width: 28%; }
+  .video-card h2 { font-size: 18px; line-height: 1.25; margin-top: 10px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .card-metadata { font-size: 15px; line-height: 1.35; letter-spacing: 0.035em; }
+  /* Penpot's bold titles are tracked about 0.03em tighter than the font's default. */
+  h1, h2, .wordmark, .video-card h2, .category-grid > a, .category-grid > button { letter-spacing: -0.03em; }
+  .featured h1 { letter-spacing: normal; }
+  .card-context { font-size: 13px; margin-top: 2px; color: var(--indigo); }
+  .featured .card-context { color: var(--periwinkle); }
+  .supporting-lead { align-self: start; padding-top: var(--feat-pad); }
+  .category-grid { gap: var(--col-gap); }
+  .category-grid > a, .category-grid > button { min-height: 60px; padding: 14px; font-size: 17px; }
+  .home-categories { margin-top: 40px; }
+  .home-categories > a { aspect-ratio: 16 / 7; font-size: 20px; }
+  .chip { min-height: 40px; padding: 6px 14px; font-size: 15px; }
+  .search-browse { gap: 32px 48px; margin-block: 28px; }
+  .desktop-search-title { margin-bottom: 20px; }
+  .recording-result { grid-template-columns: 220px minmax(0, 1fr); gap: 2px 20px; padding-block: 22px; }
+  .recording-result h2 { font-size: 20px; margin-bottom: 6px; }
+  .service-context, .match-reasons { font-size: 14px; }
+  .playback-layout { grid-template-columns: minmax(0, 1fr) minmax(300px, 25%); gap: 0 24px; padding: 28px var(--page-gutter) 0; }
+  .player-context strong { font-size: 22px; }
+  .play-button { width: 80px; height: 80px; }
+  .play-button .icon { width: 40px; height: 40px; }
+  .playback-notice, .chapter-controls { font-size: 15px; }
+  .chapters > h2 { font-size: 20px; margin: 0 0 12px; padding-inline: 4px; }
+  .chapter-row { min-height: 72px; gap: 12px; padding: 12px; font-size: 15px; }
+  .timestamp { min-width: 58px; padding: 3px 9px; font-size: 13px; }
+  .chapter-copy { gap: 4px; }
+  .chapter-copy strong { font-size: 16px; }
+  .chapter-copy > span { font-size: 13px; }
+  .playback-details { padding: 32px var(--page-gutter) 56px; }
+  .playback-details .metadata { font-size: 18px; }
+  .playback-details .metadata + .metadata { font-size: 16px; }
+  .service-heading { margin-block: 20px 40px; }
+  .service-heading .metadata { font-size: 18px; margin-block: 10px; }
+}
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .featured { gap: 24px; }
+  .featured h1 { font-size: 40px; }
+  .home-categories > a { font-size: 20px; }
+  .site-header { column-gap: 28px; }
+  .wordmark { font-size: 24px; }
+  .search-field input { padding-inline: 20px; font-size: 16px; }
+  .search-field button { flex-basis: 72px; width: 72px; }
+  .playback-layout { gap: 0 20px; }
+}
+/* Five columns: the featured panel keeps three, and two cards share its row. */
+@media (min-width: 1360px) {
+  :root { --columns: 5; }
+  .supporting-lead + .supporting-video { align-self: start; padding-top: var(--feat-pad); }
+  .category-grid.home-categories { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+/* Header search panel mirrors the search page's browse state without leaving the page. */
+.header-search { position: relative; }
+.search-panel { position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 30; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 32px; padding: 24px; background: var(--surface); color: var(--ink); border: 1px solid var(--periwinkle); border-radius: 20px; box-shadow: 0 16px 40px -12px rgb(30 39 73 / 0.28), 0 2px 6px rgb(30 39 73 / 0.08); }
+.search-panel h2 { font-size: 15px; color: var(--indigo); margin-bottom: 10px; }
+.search-panel p { font-size: 15px; }
+.search-panel .category-section { grid-column: 2; grid-row: 1 / span 2; }
+.search-panel .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.search-panel .category-grid > a { min-height: 48px; font-size: 15px; padding: 10px; }
+.search-panel .chip { min-height: 36px; font-size: 14px; text-decoration: none; }
+@media (max-width: 1023px) { .search-panel { display: none; } }
+
+/* Watch metadata: labelled duration and a compact, labelled scripture line. */
+.meta-label { font-weight: 700; }
+.scripture-line { margin-top: 8px; font-size: 15px; line-height: 1.6; color: var(--indigo); }
+.scripture-line a { font-weight: 500; }
+/* A reference never breaks inside itself ("Matthew 28:18-20 / (ESV)"); lines break at the separators. */
+:is(.scripture-line, .scripture) a { white-space: nowrap; }
+.inline-toggle { min-height: 24px; padding: 0 2px; border: 0; background: none; color: var(--burgundy); font-weight: 700; text-decoration: underline; text-underline-offset: 0.2em; }
+@media (max-width: 1023px) { .scripture-line { font-size: 14px; } }
+
+/* Watch details hierarchy: identity (title, one metadata row, scripture) sits tight;
+   the summary and the actions are separated groups; corrections are secondary. */
+.playback-details > p + p { margin-top: 0; }
+.playback-details h1 { margin-bottom: 0; }
+.playback-identity > .metadata { margin-top: 0; line-height: 1.4; }
+.playback-identity > h1 + .metadata { margin-top: 8px; }
+.playback-identity > .preview-label { margin-top: 5px; }
+.playback-details .scripture-line { margin-top: 20px; }
+.playback-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 32px; padding-top: 24px; }
+.playback-footer { grid-column: 1 / -1; background: var(--surface); }
+.playback-actions .action-row { margin-top: 0; }
+.playback-details > .playback-identity:last-child { padding-bottom: 12px; }
+.correction-row { gap: 8px; }
+@media (min-width: 1024px) {
+  .playback-details { padding: 28px var(--page-gutter) 0; }
+  /* The shadow covers the subpixel seam where the black layout background would show between rows. */
+  .playback-footer { grid-row: 3; margin-inline: calc(-1 * var(--page-gutter)); padding: 0 var(--page-gutter) 28px; background: var(--surface); box-shadow: 0 -2px 0 var(--surface); }
+  .playback-details .metadata { font-size: 16px; }
+  .playback-details .metadata + .metadata { font-size: 15px; }
+}
+/* Mobile watch page follows the Penpot portrait frame: 24/600 title, 14/600 metadata,
+   14/500 summary; actions sit after the chapters at the mobile text size. */
+@media (max-width: 1023px) {
+  /* Chapters follow directly on phones, so the details end flush and the chapter section owns the gap. */
+  .playback-details { padding: 20px 16px 0; }
+  .chapters { padding-top: 32px; padding-bottom: 15px; }
+  .playback-details h1 { margin-bottom: 0; font-weight: 600; }
+  .playback-details .metadata, .playback-details .metadata + .metadata { font-size: 14px; font-weight: 600; }
+  .playback-footer { padding: 0 16px 32px; }
+  .playback-actions { justify-content: flex-start; padding-top: 0; gap: 8px; }
+  .playback-footer .button { font-size: 14px; padding: 8px 14px; gap: 6px; }
+  .playback-footer .button .icon { width: 18px; height: 18px; }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+  .playback-footer { grid-row: 4; }
+}
+
+/* Secondary tier beside buttons: outlined, no underline, same 44px target. */
+.service-recordings .button-secondary { background: var(--surface); }
+.nowrap { white-space: nowrap; }
+.playback-actions .action-row, .service-recordings .action-row { gap: 8px; }
+/* Mobile home follows the Penpot 390px frames: tight bold titles, 600-weight subtext,
+   36px chips drawn inside a 44px hit area. */
+@media (max-width: 1023px) {
+  .site-header .wordmark { font-size: 23px; letter-spacing: -0.03em; }
+  .home-filters .chip { position: relative; min-height: 36px; padding: 0 16px; font-weight: 500; margin-block: 4px; }
+  .home-filters .chip::after { content: ''; position: absolute; inset: -4px 0; }
+  .video-card h2 { font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; margin-top: 18px; }
+  .card-metadata { font-size: 23.5px; font-weight: 600; line-height: 1.15; margin-top: 4px; }
+}
+@media (max-width: 599px) {
+  .featured { gap: 8px; }
+  .featured h1 { font-size: 22px; }
+}
+/* Phone landscape: the player fills the first screen (Penpot landscape frame); details follow below. */
+@media (max-width: 1023px) and (orientation: landscape) and (pointer: coarse) {
+  .watch-main .playback-layout { grid-template-rows: minmax(100svh, auto); align-items: center; column-gap: 0; }
+  .player-stage:fullscreen { width: 100%; height: 100%; aspect-ratio: auto; }
+}
+/* Mobile watch actions: a two-column grid; Copy link is desktop-only (phones have native share). */
+@media (max-width: 1023px) {
+  .playback-actions { display: grid; gap: 8px; }
+  .playback-actions .action-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .playback-actions .action-row > * { width: 100%; }
+  .playback-actions .copy-link { display: none; }
+  .playback-footer .button { padding-inline: 8px; }
+}
+
+/* Chapter panel and outline cards (Penpot "Desktop Chapter Panel"): white 12px cards with a 62x28 time
+   chip, 18/700 titles and an optional 14/500 one-line summary; subsections are indented title-only cards;
+   one panel-wide Show/Hide Subsections toggle. Shared by the watch panel and the service outline. */
+.correction-note { font-size: 14px; color: var(--indigo); }
+.outline-list, .chapter-subsections { display: flex; flex-direction: column; gap: 8px; list-style: none; margin: 0; }
+.outline-item { display: flex; flex-direction: column; gap: 8px; }
+.chapter-subsections { padding-inline-start: 33px; }
+.chapter-subsections[hidden] { display: none; }
+.outline .chapter-row { min-height: 56px; width: 100%; display: flex; align-items: flex-start; gap: 14px; padding: 10px 12px 12px; border: 1px solid var(--periwinkle); border-radius: 12px; background: var(--surface); color: var(--ink); text-align: left; text-decoration: none; }
+.outline .chapter-row .timestamp { flex: 0 0 62px; min-width: 62px; height: 28px; margin-top: 4px; padding: 0 6px; display: inline-flex; align-items: center; justify-content: center; border-radius: 14px; background: var(--periwinkle); color: var(--ink); font-size: 14px; font-weight: 600; line-height: 1.2; }
+.outline .chapter-copy { display: flex; flex-direction: column; gap: 1px; min-width: 0; padding-top: 3px; }
+.outline .chapter-copy strong { font-size: 18px; font-weight: 700; line-height: 1.2; }
+.outline .chapter-summary { font-size: 14px; font-weight: 500; line-height: 1.2; color: var(--indigo); }
+.outline .chapter-video { font-size: 13px; line-height: 1.2; color: var(--indigo); }
+.outline .chapter-row[aria-current='true'] { background: var(--periwinkle); border-color: var(--periwinkle); }
+.outline .chapter-row[aria-current='true'] .timestamp { background: var(--indigo); color: var(--surface); }
+.outline .chapter-row[aria-current='true'] .chapter-summary { color: var(--black); }
+.outline .chapter-subsections .chapter-row { min-height: 53px; align-items: center; padding-block: 12px; }
+.outline .chapter-subsections .chapter-row .timestamp { margin-top: 0; }
+/* Services over an hour: one wider chip for every row keeps titles aligned. */
+.outline-hours .chapter-row .timestamp { flex-basis: 76px; min-width: 76px; }
+.outline .chapter-subsections .chapter-copy { padding-top: 0; }
+/* The first title line is centred on the 28px time chip: a one-line card is fully centred and a
+   wrapped title or a summary continues below that shared centre line. */
+.outline .chapter-row { align-items: flex-start; padding-block: 12px; }
+.outline .chapter-row .timestamp, .outline .chapter-subsections .chapter-row .timestamp { margin-top: 0; }
+.outline .chapter-row .chapter-copy, .outline .chapter-subsections .chapter-copy { padding-top: 3px; }
+.outline .chapter-subsections .chapter-row { align-items: flex-start; }
+.subsection-toggle { position: relative; align-self: stretch; height: 24px; margin: 12px 12px 0; padding: 0 12px; border: 0; border-radius: 12px; background: var(--periwinkle); color: var(--black); font-size: 14px; font-weight: 600; line-height: 1.2; }
+.subsection-toggle::after { content: ''; position: absolute; inset: -10px 0; }
+.subsection-toggle[aria-expanded='true'] { background: var(--navy); color: var(--surface); }
+.service-chapters .outline-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: center; }
+.service-chapters .outline { max-width: 900px; }
+
+/* Sermon description: full text on desktop; phones show three lines with Read more. */
+.sermon-description { margin-top: 20px; max-width: 75ch; }
+.sermon-description p { font-size: 14px; font-weight: 500; line-height: 1.45; color: var(--ink); }
+.sermon-description .inline-toggle { margin-top: 4px; }
+@media (max-width: 1023px) {
+  .playback-details .sermon-description:not([data-expanded]) p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+  .chapters > h2 { font-size: 24px; margin-bottom: 12px; }
+  .chapters .subsection-toggle { margin-inline: 0; }
+}
+@media (min-width: 1024px) {
+  .sermon-description p { font-size: 17px; line-height: 1.55; }
+  .sermon-description .inline-toggle { display: none; }
+  /* The panel matches the player's height; its list scrolls and the toggle stays at the bottom. */
+  .player-column { padding-bottom: 28px; }
+  .chapters { align-self: stretch; height: 0; min-height: calc(100% - 28px); max-height: none; margin-bottom: 0; display: flex; flex-direction: column; overflow: hidden; padding: 9px 6px 12px; }
+  .chapters > h2 { font-size: 24px; margin: 0 2px 11px; }
+  .chapters .outline { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+  .chapters .outline-list { position: relative; flex: 1; min-height: 0; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--periwinkle) var(--indigo); }
+}
+
+/* One button system: primary (burgundy) and secondary (periwinkle) actions share one 44px height,
+   and every button-like control shares one hover/press response. Only in-text links underline. */
+.button { min-height: 44px; padding-block: 0; line-height: 1.2; }
+:is(.button, .chip, .category-grid > a, .site-footer nav a, .chapter-row, .subsection-toggle, .search-field button, .video-art) { transition: filter 120ms ease-out; }
+:is(.button, .chip, .category-grid > a, .site-footer nav a, .chapter-row, .subsection-toggle, .search-field button):hover,
+.video-card-link:hover .video-art { filter: brightness(0.94); text-decoration: none; }
+:is(.button, .chip, .category-grid > a, .site-footer nav a, .chapter-row, .subsection-toggle, .search-field button):active,
+.video-card-link:active .video-art { filter: brightness(0.86); }
+.service-heading .action-row { margin-top: 20px; gap: 8px; }
+
+/* Search: the purple button overshoots the red bar by 1px top and bottom (Penpot 66 vs 64) so the
+   curved end reads the same height as the straight bar. */
+.search-field button { margin-block: -1px; }
+
+/* Footer links: wide pills with text left-aligned (operator-tuned padding and full rounding from the
+   Penpot Bottom Bar), scaled with the text; each keeps a 44px tap area. */
+.site-footer nav a { position: relative; width: 9.17em; min-width: 0; height: auto; min-height: 0; padding: 5px 0.46em 5px 0.66em; border-radius: 999px; line-height: 1.2; text-decoration: none; }
+.site-footer nav a::after { content: ''; position: absolute; inset: calc(50% - 22px) 0; }
+@media (max-width: 1023px) { .site-footer nav { gap: 12px; width: auto; } .site-footer nav a { font-size: 24px; } }
+@media (min-width: 1024px) { .site-footer nav { gap: 28px; } .site-footer nav a { font-size: 18px; } }
+
+/* After "Continue watching", the confirmation stays briefly and fades; reduced motion removes it at once. */
+.chapter-controls.is-leaving { animation: chapter-controls-leave 500ms ease-out forwards; }
+@keyframes chapter-controls-leave { to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .chapter-controls.is-leaving { animation: chapter-controls-leave 1ms linear forwards !important; } }
+
+/* Resume progress sits inside the thumbnail, clipped by its rounded corners like a stencil. */
+.video-art { overflow: hidden; }
+.resume-track { bottom: 0; height: 5px; background: rgb(30 39 73 / 0.35); }
+
+/* Home rows: 5 columns show 7 recent + 5 random; 4 columns 5 + 4; tablet and phone 4 + 2. */
+@media (min-width: 1024px) and (max-width: 1359px) { .home-catalogue > :is([data-slot='recent-5'], [data-slot='recent-6'], [data-slot='random-4']) { display: none; } }
+@media (max-width: 1023px) { .home-catalogue > :is([data-slot='recent-4'], [data-slot='recent-5'], [data-slot='recent-6'], [data-slot='random-2'], [data-slot='random-3'], [data-slot='random-4']) { display: none; } }
+
+/* Category pages: breadcrumb, title with a Sort control styled as a secondary button, then the card grid. */
+.browse-heading { padding-block: 0 8px; }
+.breadcrumbs { font-size: 15px; color: var(--indigo); }
+.browse-title-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin-block: 5px 24px; }
+.sort-control select { appearance: none; min-height: 44px; padding: 0 44px 0 16px; border: 0; border-radius: var(--radius); background: var(--periwinkle) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%231D1B20' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E") no-repeat right 16px center; color: var(--ink); font: inherit; font-weight: 600; cursor: pointer; transition: filter 120ms ease-out; }
+.sort-control select:hover { filter: brightness(0.94); }
+/* Category-list tiles (speakers, topics, books, years): the home tile style, shown on phones too. */
+.browse-links { margin-bottom: 40px; }
+@media (min-width: 1024px) { .browse-links > a { aspect-ratio: 16 / 7; font-size: 20px; } }
+@media (min-width: 1360px) { .category-grid.browse-links { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (max-width: 1023px) { .category-grid.browse-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .browse-links > a { min-height: 72px; font-size: 16px; } }
+.browse-grid { padding-bottom: 48px; }
+@media (max-width: 1023px) { .browse-grid { margin-inline: 16px; } .browse-grid .supporting-video, .browse-grid .video-card { margin: 0; } }
+
+/* Watch actions on phones: one uniform 2x2 grid (Show Subsections, View full service, Watch on YouTube,
+   Suggest a correction). Desktop keeps the toggle in the chapter panel. Shown subsections turn it navy. */
+.subsection-button[aria-expanded='true'] { background: var(--navy); color: var(--surface); }
+@media (min-width: 1024px) { .playback-actions .subsection-button { display: none; } }
+@media (max-width: 1023px) {
+  .watch-main .chapters .subsection-toggle { display: none; }
+  .playback-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .playback-actions .action-row { display: contents; }
+  .playback-actions .button { width: 100%; padding-inline: 8px; }
+  .playback-actions:not(:has(.subsection-button)) .correction-row > .button { grid-column: 1 / -1; }
+}
+
+/* Category tiles cycle three colours: 3 shares no factor with 2, 4 or 5 columns, so colours scatter
+   evenly instead of forming stripes. */
+.category-grid > :nth-child(3n + 1) { background: var(--indigo); color: var(--surface); }
+.category-grid > :nth-child(3n + 2) { background: var(--burgundy); color: var(--surface); }
+.category-grid > :nth-child(3n) { background: var(--periwinkle); color: var(--black); }
+
+/* Procedural thumbnails: pattern strip (352:610 of the 939-unit design) on the left, title top-right,
+   date bottom-right, text scaled with the card through container units. */
+.video-art { container-type: inline-size; display: grid; grid-template-columns: 37.5% minmax(0, 1fr); align-items: stretch; justify-content: stretch; background: #FFFFFF; }
+/* Outline drawn above the pattern (an inset shadow would sit beneath it), so a thumbnail whose colours
+   match its background, such as navy cells on the navy featured panel, still reads as one shape. */
+.video-art::after { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; box-shadow: inset 0 0 0 2px var(--art-ring, rgb(39 52 105 / 0.22)); pointer-events: none; }
+.featured .video-art { --art-ring: rgb(250 250 255 / 0.9); }
+.video-art > .icon { display: none; }
+.thumb-pattern { width: 100%; height: 100%; display: block; }
+.thumb-text { display: flex; flex-direction: column; justify-content: space-between; min-width: 0; padding: 5cqw 5cqw 5.5cqw 4cqw; color: #000000; text-align: left; }
+.thumb-title { font-size: 7cqw; font-weight: 700; line-height: 1.02; letter-spacing: -0.03em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; overflow-wrap: anywhere; }
+.thumb-date { font-size: 5.6cqw; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+
+/* Tighter card text (operator-tuned): the date line sits directly under the title and the badge 4px below. */
+.video-card .card-metadata { margin-top: 0; }
+.video-card .preview-label { margin-top: 4px; }
+.video-card .card-metadata time { letter-spacing: -0.02em; }
+
+/* The featured row reserves room below each card for a two-line title and a two-line date line, so
+   swapping in a resumed recording after hydration cannot change the row's height and push the rows
+   below. Spare room falls under the card's last line, never between its lines. */
+.card-text { display: flow-root; }
+@media (min-width: 1024px) {
+  .home-catalogue > :is(.featured, [data-slot='recent-0'], [data-slot='recent-1']) .card-text { min-height: calc(10px + 2 * 1.25 * 18px + 2 * 1.35 * 15px); }
+  .home-catalogue > :is(.featured, [data-slot='recent-0'], [data-slot='recent-1']) .card-text:has(.preview-label) { min-height: calc(10px + 2 * 1.25 * 18px + 2 * 1.35 * 15px + 4px + 1.5 * 12px + 4px); }
 }

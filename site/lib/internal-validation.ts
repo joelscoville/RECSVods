@@ -55,7 +55,7 @@ export function assertMigrationPreserved(original: RawLegacyService, text: strin
   const current = chapterInternal ? preservedChapters(chapterInternal, filename) : chapters as Record<string, unknown>[];
   if (sections.length !== current.length) throw new Error(`${filename}: original section count changed`);
   sections.forEach((section, i) => {
-    const added = new Set(['summary', 'keywords', 'topics', 'scripture', 'scriptureDisplay']);
+    const added = new Set(['summary', 'short_summary', 'keywords', 'topics', 'scripture', 'scriptureDisplay']);
     const retained = Object.fromEntries(Object.entries(current[i]).filter(([key]) => !added.has(key)));
     if (!isDeepStrictEqual(section, retained)) throw new Error(`${filename}: original section fields changed at ${section.id}`);
   });

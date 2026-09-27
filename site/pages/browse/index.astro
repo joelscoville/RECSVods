@@ -1,19 +1,17 @@
 ---
-import SiteLayout from '../../layouts/SiteLayout.astro';
-import BrowseNavigation from '../../components/BrowseNavigation';
-import { displayServices } from '../../components/archive-display';
-import { loadArchive, publishedServices, flattenChapters } from '../../lib/archive';
-import { buildBrowsePages } from '../../lib/browse';
+// Categories live on the home page; the old index address forwards there.
 import { siteUrl } from '../../lib/urls';
-const mode = import.meta.env.ARCHIVE_MODE;
-const eligible = publishedServices(loadArchive(), mode);
-const categories = buildBrowsePages(displayServices(eligible, flattenChapters(eligible, mode))).filter((page) => !page.parent);
-const base = import.meta.env.BASE_URL;
+const home = siteUrl(import.meta.env.BASE_URL);
 ---
-<SiteLayout title="Browse the archive" route="browse-route">
-  <main id="main" class="browse-main service-main page-width" tabindex="-1">
-    <a class="text-link" href={siteUrl(base)}>Back to home</a>
-    <header class="service-heading"><h1>Browse the archive</h1></header>
-    {categories.length ? <BrowseNavigation base={base} categories={categories} /> : <p>No published recordings yet. Browse categories will appear when recordings are ready.</p>}
-  </main>
-</SiteLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content={`0; url=${home}`} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={home} />
+    <title>RECS Replay</title>
+  </head>
+  <body><main id="main"><p><a href={home}>Go to the RECS Replay home page</a></p></main></body>
+</html>

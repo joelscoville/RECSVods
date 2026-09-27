@@ -25,7 +25,7 @@ const reference = text.refine((value) => parseScriptureReference(value)?.canonic
 export const PublicChapterSchema = z.object({
   id, serviceId: id, serviceTitle: text, videoId: z.string().regex(/^[A-Za-z0-9_-]{11}$/),
   start: z.number().finite().nonnegative(), end: z.number().finite().positive(),
-  type: id, title: text, summary: text, keywords: z.array(text).max(10),
+  type: id, title: text, summary: text, shortSummary: text.optional(), keywords: z.array(text).max(10),
   parentId: id.optional(), parentTitle: text.optional(),
   topics: z.array(text), scripture: z.array(reference), scriptureDisplay: z.array(text).optional(),
   speaker: text.optional(), date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
@@ -33,6 +33,7 @@ export const PublicChapterSchema = z.object({
 }).strict().superRefine((chapter, ctx) => {
   if (chapter.end <= chapter.start) ctx.addIssue({ code: 'custom', message: 'Invalid chapter bounds' });
   if (Boolean(chapter.parentId) !== Boolean(chapter.parentTitle)) ctx.addIssue({ code: 'custom', message: 'Subsection parent identity and title must align' });
+  if (chapter.parentId && chapter.shortSummary) ctx.addIssue({ code: 'custom', message: 'Subsections do not carry a public summary' });
   if (chapter.scriptureDisplay && (chapter.scriptureDisplay.length !== chapter.scripture.length
     || chapter.scriptureDisplay.some((value, i) => parseScriptureReference(value)?.canonical !== chapter.scripture[i]))) {
     ctx.addIssue({ code: 'custom', message: 'Scripture display references must align' });

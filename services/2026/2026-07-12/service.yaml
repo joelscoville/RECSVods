@@ -84,12 +84,13 @@ review_notes:
     Jakarta a planned gathering with the proposed January date corrected to the ninth, and September
     7–11 a prior trip follow-up; no offering recipient is inferred. These details remain internal
     context rather than separate navigation entries.
+  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
   - id: belinda-sutan
     name: Belinda Sutan
     role: Worship leader
-  - id: pastor-yong
-    name: Pastor Yong
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
     role: Preacher
   - id: jacinta
     name: Jacinta
@@ -239,14 +240,14 @@ chapters:
       - s0712-divine
       - s0712-culture
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s0712-recap
     video_id: D-FyolbxJgk
     start: 2372.84
     end: 2740.48
     type: sermon
     title: "Recap: Test Signs Against God's Word"
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.9
     scripture:
       - John 14:25-31
@@ -269,7 +270,7 @@ chapters:
     end: 2997.04
     type: sermon
     title: The Vine Describes a Relationship
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.9
     scripture:
       - John 15:1-17
@@ -326,14 +327,14 @@ chapters:
       - s0712-abide
       - s0712-good-fruit
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s0712-pruning
     video_id: D-FyolbxJgk
     start: 4038.38
     end: 4312.52
     type: sermon
     title: Trials Can Prepare Believers for Fruitfulness
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.9
     scripture:
       - John 15:2
@@ -355,7 +356,7 @@ chapters:
     end: 4538.94
     type: sermon
     title: Spiritual Fruit Guides Self-Examination
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.95
     scripture:
       - Galatians 5:22-23
@@ -400,14 +401,14 @@ chapters:
       - s0712-value
       - s0712-ultimate
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s0712-value
     video_id: D-FyolbxJgk
     start: 5183.4
     end: 5333.68
     type: sermon
     title: Small Acts of Service Have Enduring Value
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.95
     scripture:
       - Matthew 10:42
@@ -448,14 +449,14 @@ chapters:
       - s0712-studd
       - s0712-poem
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s0712-poem
     video_id: D-FyolbxJgk
     start: 5738.96
     end: 5867.32
     type: sermon
     title: "Only One Life: Lasting Service to Christ"
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.9
     scripture:
       - John 15:5

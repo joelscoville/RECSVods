@@ -83,9 +83,10 @@ review_notes:
     media or ASR. Existing alignment caveats and unverified original-audio hashes remain unresolved.
     Parent and cue summaries are internal retrieval/review text only; the single sermon description
     is the public prose.
+  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
-  - id: pastor-yong
-    name: Pastor Yong
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
     role: Preacher
 topics:
   - id: persecution
@@ -265,7 +266,7 @@ chapters:
       - s20260726-introduction
       - s20260726-recap
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260726-hostility-common-grace
     video_id: D7gXD-Mo25s
     start: 2907.54
@@ -305,14 +306,14 @@ chapters:
       - s20260726-world
       - s20260726-common-good
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260726-common-good
     video_id: D7gXD-Mo25s
     start: 3467
     end: 4051.66
     type: sermon
     title: Common Grace Makes Goodness Recognizable
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.94
     scripture:
       - Luke 10
@@ -381,14 +382,14 @@ chapters:
       - s20260726-opposition
       - s20260726-traps
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260726-traps
     video_id: D7gXD-Mo25s
     start: 4846.8
     end: 5249.72
     type: sermon
     title: Spiritual Conflict and Greater Accountability
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.85
     scripture:
       - John 15:22-24
@@ -447,7 +448,7 @@ chapters:
     source_chapters:
       - s20260726-witness
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260726-response-closing
     video_id: D7gXD-Mo25s
     start: 5794.6
@@ -486,7 +487,7 @@ chapters:
       - s20260726-closing
       - s20260726-announcements
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
 sermon_description: Pastor Yong challenges the idea that an easy life proves God's blessing, reading
   John 15 as a call to faithful witness amid opposition. He distinguishes the fallen world's
   hostility from the goodness Christians can recognize through common grace, while exploring the

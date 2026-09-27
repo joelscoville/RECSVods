@@ -5,15 +5,16 @@ import { enrichChapters, loadChapterMetadata, loadChapterVectors, loadScriptureI
 import { createSemanticClient, type SemanticClient, type SemanticStatus } from '../lib/semantic';
 import { clearSearchHistory, getSearchHistory, saveSearch } from '../lib/local-state';
 import { searchUrl, siteUrl } from '../lib/urls';
-import { availableBrowseCategories } from '../lib/browse';
+import { availableBrowseCategories, suggestedTopics } from '../lib/browse';
 import BrowseNavigation from './BrowseNavigation';
 import Header from './Header';
 import SearchField from './SearchField';
 import Icon from './Icon';
-import ChapterResult from './ChapterResult';
+import RecordingResult from './RecordingResult';
+import { groupByRecording, type HomeItem } from './archive-display';
 import CopyLink from './CopyLink';
 
-export default function SearchApp({ base, initialChapters }: { base: string; initialChapters: SearchChapter[] }) {
+export default function SearchApp({ base, initialChapters, recordings }: { base: string; initialChapters: SearchChapter[]; recordings: HomeItem[] }) {
   const [query, setQuery] = useState('');
   const [metadata, setMetadata] = useState<{ base: string; index: ChapterMetadata } | null>(null);
   const [scripture, setScripture] = useState<{ base: string; index: ScriptureIndex } | null>(null);
@@ -119,9 +120,10 @@ export default function SearchApp({ base, initialChapters }: { base: string; ini
   const exact = useMemo(() => prepared.search(query), [prepared, query]);
   const hybridResults = useMemo(() => hybrid?.query === query && hybrid.metadata === currentMetadata && hybrid.base === base
     ? prepared.search(query, { queryVector: hybrid.queryVector }) : null, [prepared, hybrid, query, currentMetadata, base]);
-  const results = hybridResults ?? exact;
+  // Results are recordings, ranked by their best chapter; that chapter is offered after the sermon.
+  const results = useMemo(() => groupByRecording(hybridResults ?? exact, recordings, base), [hybridResults, exact, recordings, base]);
   const categories = availableBrowseCategories([], chapters);
-  const topics = [...new Set(chapters.flatMap((chapter) => chapter.topics))].slice(0, 8);
+  const topics = useMemo(() => suggestedTopics(chapters), [chapters]);
 
   function changeQuery(value: string, commit = false) {
     generation.current++;
@@ -149,7 +151,7 @@ export default function SearchApp({ base, initialChapters }: { base: string; ini
       <div className="search-status" role="status" aria-live="polite" aria-atomic="true">
         {indexStatus === 'loading' && <p>Loading the archive…{initialChapters.length > 0 && ' You can search the available chapters now.'}</p>}
         {indexStatus === 'error' && <p>The archive could not be refreshed.{chapters.length > 0 ? ' Search is using the chapters available on this page.' : ' Check your connection and retry.'}</p>}
-        {query.trim() && <p>{results.length} {results.length === 1 ? 'chapter' : 'chapters'} found{hybridResults ? '.' : ' with exact search.'}</p>}
+        {query.trim() && <p>{results.length} {results.length === 1 ? 'recording' : 'recordings'} found{hybridResults ? '.' : ' with exact search.'}</p>}
         {query.trim() && chapters.length > 0 && scriptureStatus === 'loading' && <p>Loading Bible verse search. Chapter keywords and references are ready.</p>}
         {query.trim() && scriptureStatus === 'error' && <p>Bible verse search is unavailable. Chapter keywords and references still work.</p>}
         {query.trim() && chapters.length > 0 && !semanticError && semanticStatus.state === 'loading' && <p>Loading meaning-based search{semanticStatus.progress !== undefined ? ` (${Math.floor(semanticStatus.progress * 100)}%)` : ''}. Exact results are ready below.</p>}
@@ -161,14 +163,14 @@ export default function SearchApp({ base, initialChapters }: { base: string; ini
       {query.trim() && semanticError && <button className="button button-secondary" type="button" onClick={() => setSemanticAttempt((attempt) => attempt + 1)}>Retry meaning-based search</button>}
       {query.trim() ? <section className="search-results" aria-label="Search results">
         <div className="results-toolbar"><h2>Results for “{query}”</h2><CopyLink href={searchUrl(base, query)} label="Share search" /></div>
-        {results.length ? <ol className="result-list">{results.map(({ chapter, reasons }) => <li key={chapter.id}><ChapterResult chapter={chapter} reasons={reasons} base={base} /></li>)}</ol> : <div className="no-results"><h2>{chapters.length ? 'No matching chapters' : 'No published chapters yet'}</h2><p>{chapters.length ? 'Try a speaker’s name, a date, a Bible reference, or fewer words.' : 'Chapters will be searchable when recordings are ready to publish.'}</p><button className="button button-secondary" type="button" onClick={() => choose('')}>Clear search</button></div>}
+        {results.length ? <ol className="result-list">{results.map(({ recording, chapter, reasons }) => <li key={recording.id}><RecordingResult recording={recording} chapter={chapter} reasons={reasons} /></li>)}</ol> : <div className="no-results"><h2>{chapters.length ? 'No matching recordings' : 'No published chapters yet'}</h2><p>{chapters.length ? 'Try a speaker’s name, a date, a Bible reference, or fewer words.' : 'Chapters will be searchable when recordings are ready to publish.'}</p><button className="button button-secondary" type="button" onClick={() => choose('')}>Clear search</button></div>}
       </section> : <div className="search-browse">
         <section className="history-section"><h2>Your history</h2>{history.length ? <div className="chip-list">{history.map((item) => <button className="chip" type="button" key={item} onClick={() => choose(item)}>{item}</button>)}</div> : <p>Your searches will appear here on this device.</p>}<div className="local-data-controls"><button className="button button-secondary" type="button" onClick={() => {
           const cleared = clearSearchHistory();
           if (cleared) setHistory([]);
           setHistoryStatus(cleared ? 'Search history cleared on this device. Playback progress is kept.' : 'Search history could not be cleared. Check your browser storage settings and try again.');
         }}>Clear search history</button><p role="status">{historyStatus}</p></div></section>
-        <section className="category-section"><h2>Search by category</h2><BrowseNavigation base={base} categories={categories} includeIndex />{!categories.length && <p>Categories will appear when chapters are published.</p>}</section>
+        <section className="category-section"><h2>Search by category</h2><BrowseNavigation base={base} categories={categories} />{!categories.length && <p>Categories will appear when chapters are published.</p>}</section>
         <section className="topics-section"><h2>Suggested topics</h2>{topics.length ? <div className="chip-list">{topics.map((topic) => <button className="chip" key={topic} type="button" onClick={() => choose(topic)}>{topic}</button>)}</div> : <p>Topics will come from the published archive.</p>}</section>
       </div>}
       <noscript><p>Interactive chapter search needs JavaScript. <a href={siteUrl(base)}>Browse the published recordings on the home page.</a></p></noscript>

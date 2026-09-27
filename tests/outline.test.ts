@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { flattenChapters, ServiceSourceSchema, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
-import { displayServices } from '../site/components/archive-display';
+import { displayServices, groupByRecording, homeItems } from '../site/components/archive-display';
 import OutlineRows from '../site/components/OutlineRows';
-import ChapterResult from '../site/components/ChapterResult';
+import RecordingResult from '../site/components/RecordingResult';
 
 const source: Service = {
   id: 'fixture', date: '2026-01-04', title: 'Fixture Service', type: 'service', workflow_status: 'complete', editorial_status: 'needs_review',
@@ -28,9 +28,24 @@ describe('current concise outline contract', () => {
     expect(display.sermonDescription).toBe(source.sermon_description);
     expect(display.chapters.every(chapter => !('summary' in chapter) && !('source_chapters' in chapter))).toBe(true);
     const html = renderToStaticMarkup(createElement(OutlineRows, { service: display, base: '/review/' }));
-    expect(html).toContain('Show 1 subsection in Hope Expressed Through Care'); expect(html).toContain('aria-expanded="false"');
+    expect(html).toContain('Show Subsections'); expect(html).toContain('aria-expanded="false"');
+    expect(html).not.toContain('chapter-summary');
     expect(html).toContain('chapter-subsections'); expect(html).not.toContain('<details'); expect(html).not.toContain('INTERNAL');
-    const result = renderToStaticMarkup(createElement(ChapterResult, { chapter: index[1], base: '/review/' }));
+    const [grouped] = groupByRecording([{ chapter: index[1] }], homeItems([display], '/review/'), '/review/');
+    const result = renderToStaticMarkup(createElement(RecordingResult, { recording: grouped.recording, chapter: grouped.chapter }));
     expect(result).toContain('Hope Expressed Through Care'); expect(result).not.toContain('INTERNAL');
+  });
+  it('shows a public one-line summary on primary chapters only', () => {
+    const outlined = structuredClone(source);
+    outlined.chapters[0] = { ...outlined.chapters[0], short_summary: 'Hope shown through patient care.' };
+    const display = displayServices([outlined], flattenChapters([outlined], 'preview'))[0];
+    const html = renderToStaticMarkup(createElement(OutlineRows, { service: display, base: '/review/' }));
+    expect(html).toContain('<span class="chapter-summary">Hope shown through patient care.</span>');
+    expect(html.match(/chapter-summary/g)).toHaveLength(1);
+    expect(html).not.toContain('INTERNAL');
+    expect(ServiceSourceSchema.safeParse(outlined).success).toBe(true);
+    const invalid = structuredClone(outlined);
+    invalid.chapters[1] = { ...invalid.chapters[1], short_summary: 'Subsections never carry one.' };
+    expect(ServiceSourceSchema.safeParse(invalid).success).toBe(false);
   });
 });

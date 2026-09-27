@@ -80,9 +80,10 @@ review_notes:
     offertory's third/fourth-Sunday discrepancy and audio_hash_verified: false. No fuller speaker
     identity, new taxonomy or verification claim is introduced. Main retains source notes,
     provenance and internal evidence unchanged."
+  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
-  - id: pastor-yong
-    name: Pastor Yong
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
     role: Preacher
 topics:
   - id: joy
@@ -262,7 +263,7 @@ chapters:
     source_chapters:
       - s20260823-pulpit-introduction
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260823-christian-citizenship
     video_id: QCNrRkiFeKw
     start: 2102.12
@@ -295,7 +296,7 @@ chapters:
     source_chapters:
       - s20260823-politics-question
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260823-trust-christs-care
     video_id: QCNrRkiFeKw
     start: 2730.08
@@ -335,14 +336,14 @@ chapters:
       - s20260823-recap
       - s20260823-jesus-cares
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260823-jesus-cares
     video_id: QCNrRkiFeKw
     start: 3097.04
     end: 3625.88
     type: sermon
     title: Jesus Addresses the Disciples' Anxiety
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.94
     scripture:
       - John 16:16
@@ -394,7 +395,7 @@ chapters:
     source_chapters:
       - s20260823-labour
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260823-prayer-for-christs-purposes
     video_id: QCNrRkiFeKw
     start: 4068.68
@@ -425,7 +426,7 @@ chapters:
     source_chapters:
       - s20260823-access
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260823-joyful-service-amid-suffering
     video_id: QCNrRkiFeKw
     start: 4423.34
@@ -477,14 +478,14 @@ chapters:
       - s20260823-suffering
       - s20260823-joy
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260823-joy
     video_id: QCNrRkiFeKw
     start: 4847.22
     end: 5556.66
     type: sermon
     title: Joy Grows Through Serving Christ
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.93
     scripture:
       - John 16:24

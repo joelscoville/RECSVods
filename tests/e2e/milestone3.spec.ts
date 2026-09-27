@@ -85,7 +85,7 @@ for (const [label, route] of axeRoutes) test(`axe tagged checks: ${label}`, asyn
   await page.goto(route);
   await expect(page.getByRole('main')).toBeVisible();
   if (label === 'results') await expect(page.locator('.result-list > li').first()).toBeVisible();
-  if (label === 'watch without YouTube') await expect(page.getByRole('heading', { level: 1, name: tracked.title, exact: true })).toBeVisible();
+  if (label === 'watch without YouTube') await expect(page.getByRole('heading', { level: 1, name: tracked.serviceTitle, exact: true })).toBeVisible();
   if (label === 'production publication state') {
     const empty = page.getByRole('heading', { name: 'The archive is being prepared' });
     if (productionHasRecordings) {
@@ -139,19 +139,18 @@ test('chapter correction context, Markdown fallback and transcript exclusion acr
       timestamps: videos.map((video) => `${video.id}: 0–${video.duration} seconds`).join('\n'),
       'chapter-id': 'Not selected (whole recording/service)', page: `/replay-check/services/${service.id}/`,
     });
-    if (passage.parentId) await page.locator('.outline-list > li').filter({ has: page.locator(`.outline-node-header a[href$="chapter=${passage.parentId}"]`) }).locator('.outline-toggle').click();
-    const card = page.locator('.service-chapters li').filter({ has: page.locator(`a.chapter-row[href$="chapter=${passage.id}"]`) }).last();
-    await inspectCorrection(card.getByRole('link', { name: 'Suggest a correction' }), passageFields(passage));
-    await expect(card.getByRole('link', { name: 'Edit this transcript' })).toHaveCount(0);
+    // One correction link per page: chapter rows carry none.
+    await expect(page.locator('.service-chapters').getByRole('link', { name: 'Suggest a correction' })).toHaveCount(0);
+    await expect(page.getByRole('link', { name: 'Suggest a correction' })).toHaveCount(1);
     await page.goto(`watch/?chapter=${passage.id}&q=${privateMarker}&t=3217.123`);
-    await inspectCorrection(page.locator('.playback-details').getByRole('link', { name: 'Suggest a correction' }), passageFields(passage));
+    await inspectCorrection(page.locator('.playback-footer').getByRole('link', { name: 'Suggest a correction' }), passageFields(passage));
     await expect(page.getByRole('link', { name: 'Edit this transcript' })).toHaveCount(0);
     await expect(page.locator('.transcript-panel, .compact-passage-list')).toHaveCount(0);
-    await touchAndSeparation(page.locator('.playback-details .action-row a, .playback-details .action-row button'));
+    await touchAndSeparation(page.locator('.playback-footer .action-row a, .playback-footer .action-row button'));
   }
   await page.goto(`watch/?service=${tracked.serviceId}&video=${tracked.videoId}&t=3217.123&q=${privateMarker}`);
   const fullVideo = source(tracked.serviceId).videos.find((video) => video.id === tracked.videoId)!;
-  await inspectCorrection(page.locator('.playback-details').getByRole('link', { name: 'Suggest a correction' }), {
+  await inspectCorrection(page.locator('.playback-footer').getByRole('link', { name: 'Suggest a correction' }), {
     'service-id': tracked.serviceId, 'video-id': tracked.videoId, 'chapter-id': 'Not selected (whole recording/service)',
     timestamps: `${tracked.videoId}: 0–${fullVideo.duration} seconds`,
     page: `/replay-check/watch/?service=${tracked.serviceId}&video=${tracked.videoId}`,
@@ -159,11 +158,10 @@ test('chapter correction context, Markdown fallback and transcript exclusion acr
   for (const route of ['search/?q=Romans%2013', 'browse/topics/government/']) {
     await page.goto(route);
     const browse = route.startsWith('browse/');
-    const card = page.locator(browse ? '.service-chapters li' : 'article.chapter-result').first();
+    const card = page.locator(browse ? '.browse-grid .video-card' : 'article.recording-result').first();
     await expect(card).toBeVisible();
-    const play = browse ? card.locator('a.chapter-row') : card.getByRole('link', { name: 'Play chapter', exact: true });
-    const id = new URL((await play.getAttribute('href'))!, page.url()).searchParams.get('chapter');
-    await inspectCorrection(card.getByRole('link', { name: 'Suggest a correction' }), passageFields(passages.find((passage) => passage.id === id)!));
+    // Result and browse lists carry no per-item correction links.
+    await expect(page.locator('main').getByRole('link', { name: 'Suggest a correction' })).toHaveCount(0);
   }
 });
 
@@ -189,23 +187,24 @@ test('Tab and Enter journey: skip, named search, result and Play', async ({ page
   await page.keyboard.type('Romans 13');
   await page.keyboard.press('Enter');
   await expect(page.getByRole('region', { name: 'Search results' })).toBeVisible();
-  const play = page.getByRole('link', { name: 'Play chapter', exact: true }).first();
+  const play = page.locator('.recording-result').first().locator('h2 a');
   const id = new URL((await play.getAttribute('href'))!, page.url()).searchParams.get('chapter');
   const passage = passages.find((item) => item.id === id)!;
   await tabTo(page, play);
   await page.keyboard.press('Enter');
-  const button = page.getByRole('button', { name: `Play ${passage.title}`, exact: true });
+  const button = page.getByRole('button', { name: `Play ${passage.serviceTitle}`, exact: true });
   await tabTo(page, button);
   await page.keyboard.press('Enter');
   await expect.poll(() => page.evaluate(() => ({ id: window.testPlayer?.videoId, time: window.testPlayer?.time }))).toEqual({ id: passage.videoId, time: passage.start });
-  await expect(page.locator('.youtube-host iframe')).toHaveAttribute('title', passage.title);
+  await expect(page.locator('.youtube-host iframe')).toHaveAttribute('title', passage.serviceTitle);
   await expect(page.locator('.youtube-host iframe')).toBeFocused();
 });
 
 test('keyboard chapters, correction activation, transcript exclusion and reduced motion', async ({ page }, testInfo) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto(`watch/?chapter=${tracked.id}`);
-  await expect(page.getByRole('heading', { name: tracked.title, level: 1, exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: tracked.serviceTitle, level: 1, exact: true })).toBeVisible();
+  await expect(page.locator('.chapters .chapter-row[aria-current="true"]')).toContainText(tracked.title);
   const chapter = page.locator('.chapter-row').first();
   await tabTo(page, chapter);
   await page.keyboard.press('Enter');
@@ -213,13 +212,13 @@ test('keyboard chapters, correction activation, transcript exclusion and reduced
   await expect(chapter).toContainText('Current chapter');
   await expect(chapter).toBeFocused();
   const section = source(tracked.serviceId).chapters[0];
-  await inspectCorrection(page.locator('.playback-details').getByRole('link', { name: 'Suggest a correction' }), {
+  await inspectCorrection(page.locator('.playback-footer').getByRole('link', { name: 'Suggest a correction' }), {
     'chapter-id': section.id, timestamps: `${section.video_id}: ${section.start}–${section.end} seconds`,
     page: `/replay-check/watch/?chapter=${section.id}`,
   });
   await page.goto(`watch/?chapter=${tracked.id}`);
   await expect(page.locator('.transcript-panel, .compact-passage-list')).toHaveCount(0);
-  const suggestion = page.locator('.playback-details').getByRole('link', { name: 'Suggest a correction' });
+  const suggestion = page.locator('.playback-footer').getByRole('link', { name: 'Suggest a correction' });
   await tabTo(page, suggestion);
   // Observe native Enter navigation at the request boundary; never contact GitHub.
   const requestPromise = page.waitForRequest((request) => new URL(request.url()).hostname === 'github.com');
@@ -229,8 +228,10 @@ test('keyboard chapters, correction activation, transcript exclusion and reduced
   expect((await outgoing.allHeaders()).referer).toBeUndefined();
   await expect(page).toHaveTitle('Synthetic test-only navigation sink');
   await page.goto(`watch/?chapter=${tracked.id}`);
-  await expect(page.locator('.outline-node-header .chapter-row[aria-current="true"]')).toContainText('Current chapter');
-  await touchAndSeparation(page.locator('.playback-details .action-row a, .playback-details .action-row button'));
+  // Opening a subsection directly reveals subsections, so the subsection itself is highlighted.
+  await expect(page.locator('.chapters .chapter-row[aria-current="true"]')).toContainText(tracked.parentId ? 'Current subsection' : 'Current chapter');
+  await expect(page.locator('.chapters .chapter-row[aria-current="true"]')).toContainText(tracked.title);
+  await touchAndSeparation(page.locator('.playback-footer .action-row a, .playback-footer .action-row button'));
   expect(await page.locator('.playback-details').evaluate((element) => {
     const css = getComputedStyle(element);
     return matchMedia('(prefers-reduced-motion: reduce)').matches && css.animationName === 'none' && css.transitionDuration === '0s' && css.scrollBehavior === 'auto';
@@ -255,7 +256,7 @@ test('index failure and retry preserve exact results with semantic model blocked
   await expect(retry).toHaveCount(0);
   expect(attempts).toBe(3);
   await expect(page.getByRole('status').filter({ hasText: 'Meaning-based search is unavailable. Exact search still works.' })).toBeVisible();
-  await expect(page.locator('.result-list')).toContainText(tracked.title);
+  await expect(page.locator(`.recording-result[data-service="${tracked.serviceId}"]`)).toBeVisible();
   await expect(page.getByRole('button', { name: 'Retry meaning-based search' })).toBeVisible();
   await noOverflow(page);
 });
@@ -263,7 +264,7 @@ test('index failure and retry preserve exact results with semantic model blocked
 test('test adapter unavailable-video error exposes retry and timestamped direct link', async ({ page }) => {
   await adapter(page, true);
   await page.goto(`watch/?chapter=${tracked.id}`);
-  await tabTo(page, page.getByRole('button', { name: `Play ${tracked.title}`, exact: true }));
+  await tabTo(page, page.getByRole('button', { name: `Play ${tracked.serviceTitle}`, exact: true }));
   await page.keyboard.press('Enter');
   await expect(page.getByRole('alert')).toHaveText('This recording is unavailable in the embedded player. Try watching on YouTube.');
   const direct = page.locator('.player-message').getByRole('link', { name: 'Watch on YouTube' });
@@ -288,16 +289,16 @@ test('synthetic response-only long titles, names, multiple references and missin
   ];
   await page.route('**/generated/chapters.json*', (route) => route.fulfill({ json: { ...metadata, chapters: fixtures } }));
   await page.goto('search/?q=Synthetic%20layout%20fixture');
-  const cards = page.locator('article.chapter-result');
+  // One result per recording; the synthetic chapter is the match, so its long title sits in the match row.
+  const cards = page.locator('article.recording-result');
   await expect(cards).toHaveCount(2);
-  const longCard = cards.filter({ has: page.getByRole('heading', { name: title, exact: true }) });
-  await expect(longCard.locator('.metadata')).toContainText(speaker);
+  const longCard = cards.filter({ has: page.locator('.matched-chapter', { hasText: title }) });
+  await expect(longCard).toHaveCount(1);
   for (const ref of references.slice(0, 2)) await expect(longCard.getByRole('link', { name: `Read ${ref} in the ESV`, exact: true })).toBeVisible();
   await expect(longCard.locator('.scripture')).toContainText('+2 references');
-  const missing = cards.filter({ hasText: 'Synthetic layout fixture with no speaker' });
+  const missing = cards.filter({ has: page.locator('.matched-chapter', { hasText: 'Synthetic layout fixture with no speaker' }) });
   await expect(missing.locator('.metadata')).not.toContainText(/undefined|null|Unknown speaker/);
   expect((await missing.locator('.metadata').innerText()).trim()).not.toMatch(/·$/);
-  await touchAndSeparation(page.locator('.chapter-result .action-row a'));
   await noOverflow(page);
 });
 
@@ -306,8 +307,8 @@ test('synthetic response-only long playback title keeps Play and consent clear',
   await page.route('**/watch/**', async (route) => {
     const response = await route.fetch();
     const html = await response.text();
-    expect(html).toContain(tracked.title);
-    await route.fulfill({ response, body: html.replaceAll(tracked.title, title) });
+    expect(html).toContain(tracked.serviceTitle);
+    await route.fulfill({ response, body: html.replaceAll(tracked.serviceTitle, title) });
   });
   await page.goto(`watch/?chapter=${tracked.id}`);
   await expect(page.getByRole('heading', { level: 1, name: title, exact: true })).toBeVisible();

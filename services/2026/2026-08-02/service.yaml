@@ -86,9 +86,10 @@ review_notes:
     internal retrieval/review metadata. All proposed boundaries derive from unchanged original
     chapter membership on 1R4gnCvqrOA, including the preparation already underway and closing visual
     context. Main retains all original evidence, notes and provenance.
+  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
-  - id: pastor-yong
-    name: Pastor Yong
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
     role: Preacher
 topics:
   - id: sanctification
@@ -288,7 +289,7 @@ chapters:
       - s20260802-introduction
       - s20260802-ama
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260802-witness-amid-opposition
     video_id: 1R4gnCvqrOA
     start: 2531.76
@@ -322,7 +323,7 @@ chapters:
       - s20260802-sermon-prayer
       - s20260802-persecution
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260802-growth-in-the-present
     video_id: 1R4gnCvqrOA
     start: 3122.26
@@ -362,14 +363,14 @@ chapters:
       - s20260802-cambodia
       - s20260802-sanctification
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260802-cambodia
     video_id: 1R4gnCvqrOA
     start: 3636.94
     end: 4132.82
     type: sermon
     title: Future Hope and a Mistaken Judgment in Cambodia
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.82
     review_notes:
       - Keep the initial assumption with the later correction; medical, cultural and
@@ -397,7 +398,7 @@ chapters:
     end: 4402.64
     type: sermon
     title: Redemption Includes Lifelong Growth
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.9
     scripture:
       - Ephesians 5:15-17
@@ -450,7 +451,7 @@ chapters:
     source_chapters:
       - s20260802-spirit
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260802-spirit-led-loving-service
     video_id: 1R4gnCvqrOA
     start: 4937.42
@@ -481,14 +482,14 @@ chapters:
       - s20260802-community
       - s20260802-closing-prayer
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260802-marriage
     video_id: 1R4gnCvqrOA
     start: 4937.42
     end: 5177.76
     type: sermon
     title: Serving a Spouse Through the Spirit’s Help
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.89
     scripture: []
     topics:
