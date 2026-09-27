@@ -12,8 +12,20 @@ import CorrectionLinks from './CorrectionLinks';
 /** `match` is the chapter a search or category matched, offered as "Chapter only" while the sermon plays. */
 interface Selection { service: DisplayService; video: DisplayService['videos'][number]; chapter?: DisplayChapter; match?: DisplayChapter; start: number }
 /** Where playback softly stops: the end of the service (its last chapter, the closing), the end of the
- * selected chapter, or nowhere. */
-type Stop = 'service' | 'chapter' | 'none';
+ * whole sermon, the end of the selected chapter, or nowhere. */
+type Stop = 'service' | 'sermon' | 'chapter' | 'none';
+
+/** The whole sermon around a chapter: the run of consecutive top-level sermon chapters in its upload.
+ * The archive divides a sermon into several chapters, so one sermon chapter is not the sermon. */
+export function sermonSpan(service: DisplayService, chapter?: DisplayChapter): { first: DisplayChapter; start: number; end: number } | undefined {
+  const top = chapter?.parentId ? service.chapters.find((item) => item.id === chapter.parentId) : chapter;
+  if (top?.type !== 'sermon') return undefined;
+  const run = service.chapters.filter((item) => item.videoId === top.videoId && !item.parentId).sort((a, b) => a.start - b.start);
+  let first = run.findIndex((item) => item.id === top.id), last = first;
+  while (first > 0 && run[first - 1].type === 'sermon') first--;
+  while (last < run.length - 1 && run[last + 1].type === 'sermon') last++;
+  return { first: run[first], start: run[first].start, end: run[last].end };
+}
 export function resolveSelection(services: DisplayService[], target: WatchTarget): Selection | null {
   if (target.chapter) {
     const service = services.find((item) => item.chapters.some((chapter) => chapter.id === target.chapter));
@@ -95,7 +107,8 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
   function watchFull() {
     if (!selection) return;
     generation.current++;
-    const { service, video, match } = selection;
+    // The full service starts at the beginning of its first part, whichever part is playing now.
+    const { service, match } = selection, video = service.videos[0];
     window.history.pushState({}, '', watchUrl(base, { service: service.id, video: video.id }));
     setSelection({ service, video, start: 0, ...(match ? { match } : {}) }); setTime(0); setSeekRequest(value => value + 1);
     setStop('service'); setResumeAt(undefined); setOffer(true);
@@ -121,20 +134,27 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
   const primaries = service.chapters.filter((item) => item.videoId === video.id && !item.parentId);
   const serviceEnd = video.id === lastPart?.id && primaries.length ? Math.max(...primaries.map((item) => item.end)) : undefined;
   const rangeStart = chapter?.start ?? start;
+  const sermon = sermonSpan(service, chapter);
   const end = stop === 'chapter' && chapter ? chapter.end
+    : stop === 'sermon' && sermon ? sermon.end
     : stop === 'service' && serviceEnd !== undefined && serviceEnd < video.duration - 1 && serviceEnd > rangeStart ? serviceEnd : undefined;
   // Changing only the stop keeps the playback position (resumeAt), so the player does not jump back.
   const range = { id: `${chapter?.id ?? `${video.id}:${start}`}:${stop}`, start: rangeStart, end, resumeAt: resumeAt ?? start };
-  const sermonOnly = (item?: DisplayChapter) => item?.type === 'sermon' && !item.parentId;
-  const endLabel = stop === 'chapter' ? (sermonOnly(chapter) ? 'the end of the sermon' : 'the end of this chapter') : 'the end of the service';
-  // "Chapter only" plays the matched chapter; without a match, the chapter (or sermon) being watched.
-  const only = selection.match ?? chapter ?? service.chapters.find((item) => item.type === 'sermon' && !item.parentId);
+  const endLabel = stop === 'sermon' ? 'the end of the sermon' : stop === 'chapter' ? 'the end of this chapter' : 'the end of the service';
+  // A matched chapter is offered as "Chapter only". Otherwise the sermon being watched is offered as
+  // "Sermon only" (all of its chapters), any other chapter as "Chapter only", and the full recording
+  // offers the service's sermon.
+  const matched = selection.match && selection.match.id !== chapter?.id ? selection.match : undefined;
+  const firstSermon = sermonSpan(service, service.chapters.find((item) => item.type === 'sermon' && !item.parentId));
+  const only: PlaybackChoice | undefined = matched ? { label: 'Chapter only', onChoose: () => choose(matched, 'chapter', matched) }
+    : chapter && sermon ? (stop === 'sermon' ? undefined : { label: 'Sermon only', onChoose: () => { setResumeAt(time); setStop('sermon'); } })
+    : chapter ? (stop === 'chapter' ? undefined : { label: 'Chapter only', onChoose: () => { setResumeAt(time); setStop('chapter'); } })
+    : firstSermon ? { label: 'Sermon only', onChoose: () => choose(firstSermon.first, 'sermon') }
+    : undefined;
+  const atServiceStart = !chapter && start <= 1 && video.id === service.videos[0]?.id;
   const choices: PlaybackChoice[] = !offer ? [] : [
-    ...(!chapter && start <= 1 ? [] : [{ label: 'Full service instead', onChoose: watchFull }]),
-    ...(!only || (stop === 'chapter' && chapter?.id === only.id) ? [] : [{
-      label: sermonOnly(only) ? 'Sermon only' : 'Chapter only',
-      onChoose: () => { if (only.id === chapter?.id) { setResumeAt(time); setStop('chapter'); } else choose(only, 'chapter', selection.match); },
-    }]),
+    ...(atServiceStart ? [] : [{ label: 'Full service instead', onChoose: watchFull }]),
+    ...(only ? [only] : []),
   ];
   const shareUrl = chapter ? watchUrl(base, { chapter: chapter.id }) : watchUrl(base, { service: service.id, video: video.id, start });
   const references = [...new Set(service.chapters.filter((item) => item.videoId === video.id).flatMap((item) => item.scripture))];

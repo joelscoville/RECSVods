@@ -1,7 +1,7 @@
 import { test, expect } from './fixtures';
 import { readFileSync } from 'node:fs';
 import type { SearchChapter } from '../../site/lib/types';
-import { chapterFor } from './archive-fixtures';
+import { chapterFor, chooseOnly } from './archive-fixtures';
 
 const chapters = JSON.parse(readFileSync('dist/preview/generated/chapters.json', 'utf8')).chapters as SearchChapter[];
 const production = JSON.parse(readFileSync('dist/production/generated/chapters.json', 'utf8')).chapters as SearchChapter[];
@@ -87,10 +87,11 @@ test('real preview chapter search opens a reload-safe player and soft endpoint',
   await expect.poll(() => page.evaluate(() => (window as unknown as { testPlayer?: { time: number } }).testPlayer?.time)).toBe(opens.start);
   // The sermon plays to the end of the service; "Chapter only" plays just the matched chapter.
   await expect(page.locator('.chapter-controls [role="status"]')).toHaveText(/^(Playback will stop at the end of the service|Playing to the end of the recording)\.$/);
-  await page.locator('.chapter-controls').getByRole('button', { name: /^(Chapter|Sermon) only$/ }).click();
+  const stopAt = await chooseOnly(page, passage);
   await expect(page).toHaveURL(new RegExp(`watch/\\?chapter=${passage.id}$`));
-  await expect.poll(() => page.evaluate(() => (window as unknown as { testPlayer?: { time: number } }).testPlayer?.time)).toBe(passage.start);
-  await page.evaluate((end) => { (window as unknown as { testPlayer: { time: number } }).testPlayer.time = end; }, passage.end);
+  // The same chapter keeps its position; jumping to the match starts at its beginning.
+  if (opens.id !== passage.id) await expect.poll(() => page.evaluate(() => (window as unknown as { testPlayer?: { time: number } }).testPlayer?.time)).toBe(passage.start);
+  await page.evaluate((end) => { (window as unknown as { testPlayer: { time: number } }).testPlayer.time = end; }, stopAt);
   await expect(page.getByText(/^Paused at the end of (this chapter|the sermon)\.$/)).toBeVisible();
   await page.getByRole('button', { name: 'Keep playing', exact: true }).click();
   await expect.poll(() => page.evaluate(() => (window as unknown as { testPlayer: { state: number } }).testPlayer.state)).toBe(1);

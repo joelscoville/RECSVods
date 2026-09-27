@@ -3,7 +3,7 @@ import { test, expect, noModel } from './fixtures';
 import { readFileSync, readdirSync } from 'node:fs';
 import { parse } from 'yaml';
 import type { SearchChapter, ServiceSource } from '../../site/lib/types';
-import { chapterFor } from './archive-fixtures';
+import { chapterFor, chooseOnly, sermonEnd } from './archive-fixtures';
 
 // Built real corpus is required; an empty or missing build fails rather than skips.
 const passages = JSON.parse(readFileSync('dist/preview/generated/chapters.json', 'utf8')).chapters as SearchChapter[];
@@ -113,14 +113,14 @@ test('August ordered uploads, cross-upload chapters and chapter soft-stop use th
     await expectPlayer(page, video.id, passage.start);
   }
   const last = passages.find((item) => item.videoId === august.videos[2].id)!;
-  // A chapter link plays to the end of the service; "Chapter only" restores the stop at the chapter's end.
-  await page.locator('.chapter-controls').getByRole('button', { name: /^(Chapter|Sermon) only$/ }).click();
-  await page.evaluate((end) => { window.testPlayer.time = end; }, last.end);
+  // A chapter link plays to the end of the service; "Chapter/Sermon only" brings the stop forward.
+  const stopAt = await chooseOnly(page, last);
+  await page.evaluate((end) => { window.testPlayer.time = end; }, stopAt);
   await expect(page.getByText(/^Paused at the end of (this chapter|the sermon)\.$/)).toBeVisible();
   await page.getByRole('button', { name: 'Keep playing', exact: true }).click();
   await expect(page.getByText('Playing to the end of the recording.')).toBeVisible();
   const before = await page.evaluate(() => ({ pauses: window.testPlayer.pauses, ticks: window.testPlayer.ticks }));
-  await page.evaluate((end) => { window.testPlayer.time = end + 5; }, last.end);
+  await page.evaluate((end) => { window.testPlayer.time = end + 5; }, stopAt);
   await expect.poll(() => page.evaluate(() => window.testPlayer.ticks)).toBeGreaterThan(before.ticks + 2);
   expect(await page.evaluate(() => ({ pauses: window.testPlayer.pauses, state: window.testPlayer.state }))).toEqual({ pauses: before.pauses, state: 1 });
 });
@@ -132,13 +132,39 @@ test('selecting the current chapter restarts it without remounting YouTube', asy
   await page.locator('button.play-button').click();
   await expectPlayer(page, chapter.videoId, chapter.start);
   // Stop at this chapter's end, reach it, then pick the same chapter again from the outline.
-  await page.locator('.chapter-controls').getByRole('button', { name: /^(Chapter|Sermon) only$/ }).click();
-  await page.evaluate(end => { window.testPlayer.time = end; }, chapter.end);
+  const stopAt = await chooseOnly(page, chapter);
+  await page.evaluate(end => { window.testPlayer.time = end; }, stopAt);
   await expect(page.getByText(/^Paused at the end of (this chapter|the sermon)\.$/)).toBeVisible();
   await page.locator('.outline-list > .outline-item > .outline-entry button.chapter-row').filter({ has: page.getByText(chapter.title, { exact: true }) }).click();
   await expectPlayer(page, chapter.videoId, chapter.start);
   expect(await page.evaluate(() => window.testVideoIds)).toEqual([chapter.videoId]);
   await expect(page.getByText(/^Paused at the end of/)).toHaveCount(0);
+});
+
+test('Sermon only plays every sermon chapter and Full service instead starts at the first part', async ({ page }) => {
+  await mockYouTube(page);
+  // 13 September: the sermon is divided into several chapters; Sermon only must not stop after the first.
+  const sermon = passages.filter(item => item.serviceId === '2026-09-13' && item.type === 'sermon' && !item.parentId).sort((a, b) => a.start - b.start)[0];
+  const end = sermonEnd(sermon);
+  expect(end).toBeGreaterThan(sermon.end);
+  await page.goto(`watch/?chapter=${sermon.id}`);
+  await page.locator('button.play-button').click();
+  await expectPlayer(page, sermon.videoId, sermon.start);
+  await page.locator('.chapter-controls').getByRole('button', { name: 'Sermon only', exact: true }).click();
+  await page.evaluate(time => { window.testPlayer.time = time; }, sermon.end + 1);
+  await page.waitForTimeout(600);
+  expect(await page.evaluate(() => window.testPlayer.state)).toBe(1);
+  await page.evaluate(time => { window.testPlayer.time = time; }, end);
+  await expect(page.getByText('Paused at the end of the sermon.')).toBeVisible();
+  // 16 August: the sermon sits in part 2; the full service starts at the beginning of part 1.
+  const partTwo = passages.find(item => item.videoId === 'XWAH9SWFcoo' && item.type === 'sermon' && !item.parentId)!;
+  await page.goto(`watch/?chapter=${partTwo.id}`);
+  await page.locator('button.play-button').click();
+  await expectPlayer(page, 'XWAH9SWFcoo', partTwo.start);
+  await page.locator('.chapter-controls').getByRole('button', { name: 'Full service instead', exact: true }).click();
+  await expect(page).toHaveURL(/video=mw4SAoJRZgo$/);
+  await page.locator('button.play-button').click();
+  await expectPlayer(page, 'mw4SAoJRZgo', 0);
 });
 
 test('copying a full-recording resume link retains its timestamp', async ({ page, isMobile }) => {

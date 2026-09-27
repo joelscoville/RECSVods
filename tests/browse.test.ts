@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { flattenChapters, publishedServices, ServiceSchema, SOURCE_CHANNEL_ID, type BuildMode, type Service } from '../site/lib/archive';
 import { availableBrowseCategories, browseUrl, buildBrowsePages } from '../site/lib/browse';
 import { browseItems, displayServices, groupByRecording, homeItems, homeSelection } from '../site/components/archive-display';
-import { resolveSelection } from '../site/components/Watch';
+import { resolveSelection, sermonSpan } from '../site/components/Watch';
 import BrowsePage from '../site/components/BrowsePage';
 import Home from '../site/components/Home';
 import ScriptureLinks from '../site/components/ScriptureLinks';
@@ -132,6 +132,14 @@ describe('home and multipart chapter playback', () => {
     expect(grouped[0].recording.match).toMatchObject({ id: best.id, start: best.start, href: `/watch/?chapter=${best.id}`, more: newer.length - 1 });
     // The recording still opens at its sermon (in another part) and carries the match for "Chapter only".
     expect(grouped[0].recording.href).toBe(`/watch/?chapter=chapter-2-0&match=${best.id}`);
+  });
+  it('treats the run of consecutive sermon chapters in an upload as the whole sermon', () => {
+    const [service] = displayed(), chapter = (id: string) => service.chapters.find((item) => item.id === id)!;
+    // Part two holds three sermon chapters (0–20, 30–50, 90–110); any of them spans the whole run.
+    for (const id of ['chapter-2-0', 'chapter-2-1', 'chapter-2-2']) expect(sermonSpan(service, chapter(id))).toMatchObject({ first: { id: 'chapter-2-0' }, start: 0, end: 110 });
+    // A sermon never spills into another upload, and a non-sermon chapter has no sermon span.
+    expect(sermonSpan(service, chapter('chapter-3-0'))).toMatchObject({ first: { id: 'chapter-3-0' }, end: 110 });
+    expect(sermonSpan(service, chapter('chapter-1-0'))).toBeUndefined();
   });
   it('preserves full-recording resume without snapping to a chapter or installing a soft endpoint', () => {
     const services = displayed(), items = homeItems(services, '/review/');
