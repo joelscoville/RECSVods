@@ -1,0 +1,43 @@
+name: Discover RECS Uploads
+on:
+  schedule:
+    - cron: '17 1 * * 1'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Create or update deduplicated curator issues
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: recs-upload-discovery
+  cancel-in-progress: false
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pnpm install --frozen-lockfile
+      - name: Read public feed and reconcile issues only
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+        run: |
+          if [ "$APPLY" = true ]; then
+            pnpm discover --apply
+          else
+            pnpm discover
+          fi

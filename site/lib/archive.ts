@@ -3,6 +3,7 @@ import path from 'node:path';
 import { parseDocument } from 'yaml';
 import { z } from 'zod';
 import { normalizeScriptureReference, parseScriptureReference } from './scripture';
+import captionConfig from '../../scripts/caption-config.json';
 export { BIBLE_BOOKS } from './scripture';
 
 export const SOURCE_CHANNEL_ID = 'UCLjwcZaIkiFEed1VgQYSsrw';
@@ -113,6 +114,23 @@ export const TranscriptionProvenanceSchema = z.object({
 });
 export type TranscriptionProvenance = z.infer<typeof TranscriptionProvenanceSchema>;
 
+export const CaptionProvenanceSchema = z.object({
+  engine: z.literal('youtube-auto-captions'), track: z.literal('en-orig'), gate_version: z.literal(1), video_id: YoutubeIdSchema,
+  yt_dlp_version: Text, dictionary_id: z.literal(captionConfig.dictionary.id),
+  dictionary_blob_sha1: z.literal(captionConfig.dictionary.gitBlobSha1),
+  dictionary_sha256: z.literal(captionConfig.dictionary.sha256), caption_sha256: z.string().regex(/^[0-9a-f]{64}$/),
+  evidence_sha256: z.string().regex(/^[0-9a-f]{64}$/), fetched_at: z.string().datetime({ offset: true }),
+  words: z.number().int().min(captionConfig.minimumWords), dictionary_words: z.number().int().nonnegative(),
+  english_ratio: z.number().min(captionConfig.minimumEnglishRatio).max(1),
+  words_per_minute: z.number().finite().min(captionConfig.minimumWordsPerMinute).max(captionConfig.maximumWordsPerMinute),
+  scope: RangeSchema,
+}).strict().superRefine((v, ctx) => {
+  if (v.dictionary_words > v.words || Math.abs(v.english_ratio - v.dictionary_words / v.words) > 0.000001
+    || Math.abs(v.words_per_minute - v.words * 60 / (v.scope.end - v.scope.start)) > 0.000001) {
+    ctx.addIssue({ code: 'custom', message: 'Caption quality counts, ratio and scoped rate must agree' });
+  }
+});
+
 export const VideoSchema = z.object({
   id: YoutubeIdSchema,
   channel_id: z.literal(SOURCE_CHANNEL_ID),
@@ -121,8 +139,10 @@ export const VideoSchema = z.object({
   ...workflowFields,
   ...mediaFields,
   transcription_language: z.string().regex(/^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/).optional(),
+  transcript_engine: z.enum(['whisper.cpp', 'faster-whisper', 'youtube-auto-captions']).optional(),
   transcribed_span: RangeSchema.optional(),
   transcription_provenance: TranscriptionProvenanceSchema.optional(),
+  caption_provenance: CaptionProvenanceSchema.optional(),
 }).strict().superRefine((v, ctx) => {
   axisChecks(v, ctx);
   if (v.transcribed_span && v.transcribed_span.end > v.duration) {
@@ -134,7 +154,19 @@ export const VideoSchema = z.object({
   if (v.transcription_provenance && (!v.transcription_language || !v.transcribed_span)) {
     ctx.addIssue({ code: 'custom', path: ['transcription_provenance'], message: 'requires original transcription language and transcribed span' });
   }
-  if (['discovered', 'registered'].includes(v.workflow_status) && (v.transcribed_span || v.transcription_language || v.transcription_provenance)) {
+  if (v.caption_provenance && (v.transcription_provenance || v.caption_provenance.video_id !== v.id
+    || v.transcription_language !== 'en' || v.caption_provenance.scope.end > v.duration
+    || v.transcribed_span?.start !== v.caption_provenance.scope.start || v.transcribed_span?.end !== v.caption_provenance.scope.end)) {
+    ctx.addIssue({ code: 'custom', path: ['caption_provenance'], message: 'Caption provenance must match this video and its English caption scope, without conflicting ASR provenance' });
+  }
+  if (v.transcript_engine && (!v.transcribed_span || !v.transcription_language
+    || v.transcript_engine === 'youtube-auto-captions' && !v.caption_provenance
+    || v.caption_provenance && v.transcript_engine !== 'youtube-auto-captions'
+    || v.transcript_engine === 'faster-whisper' && !v.transcription_provenance
+    || v.transcription_provenance && v.transcript_engine !== 'faster-whisper')) {
+    ctx.addIssue({ code: 'custom', path: ['transcript_engine'], message: 'Transcript engine must agree with scoped language and source provenance' });
+  }
+  if (['discovered', 'registered'].includes(v.workflow_status) && (v.transcribed_span || v.transcription_language || v.transcription_provenance || v.caption_provenance || v.transcript_engine)) {
     ctx.addIssue({ code: 'custom', path: ['workflow_status'], message: 'never-interpreted videos cannot contain transcription metadata' });
   }
 });

@@ -1,5 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
-import { test, expect, type Locator, type Page } from '@playwright/test';
+import type { Locator, Page } from '@playwright/test';
+import { test, expect } from './fixtures';
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { parse } from 'yaml';
 import type { SearchChapter, ServiceSource } from '../../site/lib/types';

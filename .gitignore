@@ -33,3 +33,7 @@ playwright-report/
 .claude/agents/impeccable-*
 .opencode/skills/impeccable/
 .opencode/commands/impeccable.md
+*.json3
+*.vtt
+*.srt
+*.ttml

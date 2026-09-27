@@ -85,6 +85,13 @@ chapters:
   settings, hashes, source/transcript durations, timing and verification state. Raw
   receipts and transcripts stay external; display projections omit provenance. See
   [transcript import](transcript-import.md) for the approved recipe and validation.
+- New weekly videos record `transcript_engine` (`whisper.cpp`, `faster-whisper`, or
+  `youtube-auto-captions`) with scoped language/timing. Original-English captions use
+  `caption_provenance` from the safe receipt: gate version, dictionary identity/hashes,
+  source/evidence hashes and consistent quality metrics. It must match that exact
+  video and scope and cannot conflict with ASR provenance. Existing legacy records
+  are not relabelled. All engine/provenance fields stay out of public projections.
+  See [weekly operation](weekly-operation.md).
 - Videos carry independent workflow and media axes. Every physical upload needs
   a positive finite duration and sequence. Duration is measured, never inferred
   from transcript length. `transcribed_span` has absolute recording seconds and

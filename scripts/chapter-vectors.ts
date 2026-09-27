@@ -225,13 +225,24 @@ async function atomicWrite(filename: string, data: Uint8Array | string): Promise
 }
 
 interface WorkingInput { text: string; input_sha256: string; source_kind: ChapterVectorSourceKind }
-async function serviceInputs(directory: string, chapters: WorkingChapter[], transcriptsDir?: string): Promise<WorkingInput[]> {
+async function serviceInputs(directory: string, chapters: WorkingChapter[], transcriptsDir?: string, source?: Record<string, unknown>): Promise<WorkingInput[]> {
   const evidence = new Map<string, { data: ChapterEvidence; hash: string }>();
   if (transcriptsDir) for (const videoId of new Set(chapters.map((item) => item.video_id))) {
     // Flat Colab raw wins over normalized evidence. No recursive scan, fuzzy match, or network.
     for (const relative of [`${videoId}.json`, `${videoId}/evidence.json`, `${videoId}.evidence.json`]) {
       const bytes = await optionalFile(path.join(transcriptsDir, relative));
       if (bytes) { evidence.set(videoId, { data: parseChapterEvidence(safeJson(bytes.toString('utf8')), videoId), hash: sha256(bytes) }); break; }
+    }
+  }
+  // Explicit processing must use the exact caption evidence that passed its gate.
+  // Static artifact loading does not call this function or require private evidence.
+  for (const raw of Array.isArray(source?.videos) ? source.videos : []) {
+    const video = record(raw);
+    if (!video.caption_provenance || !chapters.some(chapter => chapter.video_id === video.id)) continue;
+    const expected = record(video.caption_provenance).evidence_sha256;
+    const actual = evidence.get(String(video.id));
+    if (typeof expected !== 'string' || !HASH.test(expected) || !actual || actual.hash !== expected) {
+      throw new Error('Caption evidence is missing or differs from its accepted provenance; explicit regeneration requires the approved private evidence');
     }
   }
   let passages: Record<string, unknown>[] = [];
@@ -360,7 +371,7 @@ export async function processChapterVectors(options: ChapterVectorProcessOptions
       const serviceStart = performance.now(), sourceBytes = (await optionalFile(filename))!;
       const source = record(safeYaml(sourceBytes.toString('utf8'))), chapters = chaptersFromSource(source);
       const directory = path.dirname(filename), id = typeof source.id === 'string' ? source.id : path.basename(directory);
-      const inputs = await serviceInputs(directory, chapters, options.transcriptsDir);
+      const inputs = await serviceInputs(directory, chapters, options.transcriptsDir, source);
       const binaryPath = path.join(directory, 'chapter-vectors.bin'), manifestPath = path.join(directory, 'chapter-vectors.json');
       const previousBytes = await optionalFile(binaryPath), previousManifest = await optionalFile(manifestPath);
       let previous: LoadedServiceChapterVectors | undefined;

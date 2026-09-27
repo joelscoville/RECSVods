@@ -197,7 +197,9 @@ blocked     -> registered | in_progress
   remain full spans, never fabricated local chunks. For future historical/weekly
   work, quality-gated `en-orig` captions may supply private chapter evidence under
   the caption decision. Missing/failed captions use the existing local whisper.cpp
-  fallback; record the actual engine. M5 must prove this gate before claiming readiness.
+  fallback; record the actual per-video `transcript_engine`. The implemented commands,
+  pinned dictionary, quality thresholds, provenance and failure/cleanup contract are
+  in `docs/weekly-operation.md`. CI/discovery never fetch captions or run inference.
 - Compare candidate dates, release metadata, frames and distributed content together.
   A YouTube title is fallible, a release date is not automatically the service date,
   and recurring prayers/hymns/creeds are not duplication proof. Group multipart uploads
@@ -248,6 +250,17 @@ blocked     -> registered | in_progress
   Preserve review resets; correction affordances never grant agent approval.
 
 ## 7. Quick checks and delivery
+
+- For weekly work, follow `docs/weekly-operation.md` and `docs/operations.md`: start
+  from the latest default branch after implementation, register identifiers, try
+  original-English captions in an authorized fresh external workspace, and invoke
+  existing local ASR only when the declared fallback requires it. Unfinished live
+  recordings wait. Copy only safe source provenance; preserve private evidence until
+  vector verification, then clean owned temporary work. Never alter old engine history.
+- Run `pnpm validate:outlines`, `pnpm index:verify`, `pnpm verify:tracked` and both
+  build modes alongside the existing checks. Keep the discovery issue open until
+  actual publication or explicit rejection. A weekly draft PR stops for human review;
+  agents do not approve or deploy to finish the checklist.
 
 - Check: metadata isolated by video/date; unknown speakers honest; short clips retained;
   failed/rejected/unassessed absent from ordinary results; truthful workflow/coverage;

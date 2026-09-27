@@ -186,6 +186,22 @@ async function fixture() {
 }
 
 describe('isolated private processor', () => {
+  it('binds explicit caption processing to accepted evidence and never replaces it with missing or altered input', async () => {
+    const f = await fixture(), transcripts = path.join(f.root, 'private-captions');
+    await mkdir(path.join(transcripts, VIDEO), { recursive: true });
+    const raw = JSON.stringify({ youtube_id: VIDEO, engine: { name: 'youtube-auto-captions' }, segments: [{ start: 0, end: 10, text: 'acceptedspoken' }] });
+    const { sha256 } = await import('../scripts/embeddings');
+    await writeFile(path.join(f.directory, 'service.yaml'), stringify({ chapters: [chapter],
+      videos: [{ id: VIDEO, caption_provenance: { evidence_sha256: sha256(raw) } }] }));
+    const run = () => processChapterVectors({ fixtureRoot: f.root, all: true, transcriptsDir: transcripts, createSession: f.createSession });
+    await expect(run()).rejects.toThrow('Caption evidence is missing or differs');
+    await writeFile(path.join(transcripts, VIDEO, 'evidence.json'), raw);
+    await expect(run()).resolves.toMatchObject({ chapters: 1, writtenServices: 1 });
+    const before = await readFile(path.join(f.directory, 'chapter-vectors.bin'));
+    await writeFile(path.join(transcripts, VIDEO, 'evidence.json'), raw.replace('acceptedspoken', 'alteredspoken'));
+    await expect(run()).rejects.toThrow('Caption evidence is missing or differs');
+    expect(await readFile(path.join(f.directory, 'chapter-vectors.bin'))).toEqual(before);
+  });
   it('embeds a regrouped span from unchanged legacy section membership rather than its new ID or synopsis', async () => {
     const f = await fixture();
     await writeFile(path.join(f.directory, 'service.yaml'), stringify({ chapters: [{ ...chapter, id: 'new-parent', end: 20,

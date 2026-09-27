@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, noModel } from './fixtures';
 import { readFileSync } from 'node:fs';
 import { parse } from 'yaml';
 import type { ServiceSource } from '../../site/lib/types';
@@ -49,6 +49,7 @@ test('the example has one description and an integrated, keyboard-operable subse
 });
 
 test('metadata and BSB results precede the model; semantic results merge without blocking chapter playback', async ({ page, context }, testInfo) => {
+  test.skip(noModel, 'Real semantic merging is verified locally, never inferred in CI.');
   await context.route('**/*', route => new URL(route.request().url()).hostname === '127.0.0.1' ? route.continue() : route.abort());
   let releaseModel!: () => void, releaseBible!: () => void;
   const model = new Promise<void>(resolve => { releaseModel = resolve; });

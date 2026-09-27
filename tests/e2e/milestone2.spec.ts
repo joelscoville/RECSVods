@@ -1,4 +1,5 @@
-import { test, expect, type Page } from '@playwright/test';
+import type { Page } from '@playwright/test';
+import { test, expect, noModel } from './fixtures';
 import { readFileSync, readdirSync } from 'node:fs';
 import { parse } from 'yaml';
 import type { SearchChapter, ServiceSource } from '../../site/lib/types';
@@ -54,6 +55,7 @@ test.beforeEach(async ({ context }) => {
 });
 
 test('live worker hybrid government query reaches a relevant top-three chapter and its timestamp', async ({ page, context }) => {
+  test.skip(noModel, 'Actual model acceptance is local-only; CI performs no inference.');
   const modelRequests: string[] = [];
   context.on('request', (request) => { if (/\/(models|onnx)\//.test(request.url())) modelRequests.push(request.url()); });
   await mockYouTube(page);

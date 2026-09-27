@@ -35,9 +35,10 @@ playable videos are included. An empty production archive is intentional until
 human approval. `dist/preview` includes clearly labelled unreviewed material and
 is **local review output, never a deployment artifact**.
 
-The implementation is in progress. See [run log](docs/run-log.md) for the current
-milestone, completed checks, and exact next step; do not infer completion from the
-presence of these commands.
+The local MVP and weekly-operation tooling cover Milestones 1–5. Final signed
+delivery, human code/editorial review and repository/Pages setup are tracked in the
+[run log](docs/run-log.md) and [acceptance evidence](docs/milestone5-checks.md).
+Passing local checks is not a claim of human approval or live deployment.
 
 ## Archive operation
 
@@ -46,6 +47,9 @@ presence of these commands.
 - [Static search, model provenance, and budgets](docs/search.md)
 - [Chapter migration and unchanged internal preservation](docs/chapter-migration.md)
 - [Private transcript-window processing and committed vectors](docs/chapter-vectors.md)
+- [Weekly discovery and person-invoked curation](docs/weekly-operation.md)
+- [Repository settings, production deployment and recovery](docs/operations.md)
+- [Final local acceptance and pending human actions](docs/milestone5-checks.md)
 - [Penpot design references](docs/design-reference/penpot/README.md)
 - [Ordered implementation prompts](docs/implementation-prompts/README.md)
 

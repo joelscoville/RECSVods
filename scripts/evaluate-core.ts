@@ -23,7 +23,7 @@ export const CORE_INVENTORY: Readonly<Record<string, readonly string[]>> = {
   '2025-11-02': ['94fynFHtreg'],
 };
 const failedId = 'wh4mCRKRJ-4';
-export interface EvaluationOptions { milestone: 2 | 3 | 4; implementation: boolean }
+export interface EvaluationOptions { milestone: 2 | 3 | 4; implementation: boolean; exactOnly?: boolean }
 export function parseEvaluationArgs(args: readonly string[]): EvaluationOptions {
   const options: EvaluationOptions = { milestone: 4, implementation: false };
   const seen = new Set<string>();
@@ -33,8 +33,9 @@ export function parseEvaluationArgs(args: readonly string[]): EvaluationOptions 
     if (seen.has(arg)) throw new Error(`Duplicate option: ${arg}`);
     seen.add(arg);
     if (arg === '--implementation') options.implementation = true;
+    else if (arg === '--exact-only') options.exactOnly = true;
     else if (arg === '--milestone' && ['2', '3', '4'].includes(tokens[i + 1])) options.milestone = Number(tokens[++i]) as 2 | 3 | 4;
-    else throw new Error('Usage: tsx scripts/evaluate-core.ts [--milestone 2|3|4] [--implementation]');
+    else throw new Error('Usage: tsx scripts/evaluate-core.ts [--milestone 2|3|4] [--implementation] [--exact-only]');
   }
   return options;
 }
@@ -196,13 +197,14 @@ export function reportSearchCase(item: AcceptanceCase, results: readonly SearchR
 }
 
 export function evaluateSearchCases(cases: readonly AcceptanceCase[], chapters: readonly SearchChapter[], vectors: ChapterVectorFile,
-  queryVectors: readonly number[][], excludedIds: ReadonlySet<string>, blocker?: string) {
+  queryVectors: readonly number[][], excludedIds: ReadonlySet<string>, blocker?: string, exactOnly = false) {
   assert.ok(cases.length, 'Evaluation requires cases');
   const hybridBlocker = blocker ?? (vectors.rowCount !== chapters.length || vectors.dimension !== 384
     || vectors.values.length !== chapters.length * 384 || vectors.values.some((value) => value === -128)
     ? 'Invalid chapter vector rows' : queryVectors.length !== cases.length || !queryVectors.every(isEmbeddingVector) ? 'Missing or invalid actual query embeddings' : undefined);
   const prepared = prepareSearchIndex(chapters, vectors);
-  return cases.flatMap((item, index) => (['exact', 'hybrid'] as const).map((mode) => {
+  const modes: ('exact' | 'hybrid')[] = exactOnly ? ['exact'] : ['exact', 'hybrid'];
+  return cases.flatMap((item, index) => modes.map((mode) => {
     const blocked = mode === 'hybrid' ? hybridBlocker : undefined;
     const query = mode === 'exact' && item.kind === 'rank' ? item.exactQuery ?? item.query : item.query;
     const results = blocked ? [] : prepared.search(query, mode === 'hybrid' ? { queryVector: queryVectors[index] } : {});
@@ -302,7 +304,7 @@ export async function evaluate(options: EvaluationOptions = { milestone: 4, impl
   // Invalid artifacts cannot earn hybrid acceptance by silently falling back to exact search.
   let blocker = checks.every((item) => item.pass) ? undefined : 'Blocked by corpus/artifact checks';
   let queryVectors: number[][] = [];
-  if (!blocker) {
+  if (!blocker && !options.exactOnly) {
     try { queryVectors = await embedTexts(cases.map((item) => item.query)); }
     catch (error) { blocker = `Local query embedding failed: ${error instanceof Error ? error.message : String(error)}`; }
   }
@@ -312,11 +314,11 @@ export async function evaluate(options: EvaluationOptions = { milestone: 4, impl
   // Select metadata and binary rows together; binary rows have no independent ID table.
   const rankingVectors = decodeChapterVectors(packChapterVectors(committedChapterRows(process.cwd(), services, rankingChapters)));
   const enriched = enrichChapters(rankingChapters, buildScriptureIndex(rankingChapters));
-  const queries = evaluateSearchCases(cases, enriched, rankingVectors, queryVectors, excludedIds, blocker);
+  const queries = evaluateSearchCases(cases, enriched, rankingVectors, queryVectors, excludedIds, blocker, options.exactOnly);
   const semanticUsed = queries.some((query) => query.mode === 'hybrid' && query.top.some((result) => result.reasons.includes('Similar in meaning')));
-  check('real hybrid contribution', () => assert.ok(!blocker && semanticUsed), 'actual query embeddings contribute semantic similarity to ranked results');
+  if (!options.exactOnly) check('real hybrid contribution', () => assert.ok(!blocker && semanticUsed), 'actual query embeddings contribute semantic similarity to ranked results');
   const failures = checks.filter((item) => !item.pass).length + queries.filter((item) => !item.pass).length;
-  return { artifact, ...options, rankingScope: options.milestone === 2 ? 'core subset' : 'all eligible preview chapters', chaptersSha256: sha256(source), model: EMBEDDING_CONFIG,
+  return { artifact, ...options, semanticStatus: options.exactOnly ? 'not run: exact-only validation without inference' : blocker ? `blocked: ${blocker}` : 'actual local query inference', rankingScope: options.milestone === 2 ? 'core subset' : 'all eligible preview chapters', chaptersSha256: sha256(source), model: EMBEDDING_CONFIG,
     counts: { services: services.length, physical: physical.length, coreServices: Object.keys(CORE_INVENTORY).length, corePhysical: 8,
       preview: chapters.length, production: production.length, rankedChapters: rankingChapters.length },
     exclusions, checks, queries, summary: { passed: checks.length + queries.length - failures, failed: failures, total: checks.length + queries.length } };

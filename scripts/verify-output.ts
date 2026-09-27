@@ -72,7 +72,7 @@ async function privateTranscriptShingles(root: string): Promise<Set<string>> {
   return result;
 }
 
-const privateFields = '(?:passages|transcript|transcript_file|questions|confidence|review_notes|reviewNotes|source_chapters|rawBody|raw_body|raw_hash|rawHash|raw_sha256|audio_sha256|audioSha256|transcript_sha256|transcriptSha256|input_sha256|source_kind|transcription_provenance|transcribed_span|sourceFileRef|source_path|sourcePath|transcriptPath)';
+const privateFields = '(?:passages|transcript|transcript_file|transcript_engine|questions|confidence|review_notes|reviewNotes|source_chapters|rawBody|raw_body|raw_hash|rawHash|raw_sha256|audio_sha256|audioSha256|transcript_sha256|transcriptSha256|caption_provenance|caption_sha256|evidence_sha256|dictionary_sha256|input_sha256|source_kind|transcription_provenance|transcribed_span|sourceFileRef|source_path|sourcePath|transcriptPath)';
 const privateKey = new RegExp(`(?:(?:["']|&quot;|&#34;)${privateFields}(?:["']|&quot;|&#34;)|[,{]\\s*${privateFields})\\s*:`, 'i');
 function privateFieldMatch(text: string, relative: string): RegExpMatchArray | undefined {
   for (const match of text.matchAll(new RegExp(privateKey.source, 'gi'))) {
@@ -120,7 +120,7 @@ export async function verifyOutput(root: string, output: string, mode: BuildMode
   function collectHashes(value: unknown): void {
     if (!value || typeof value !== 'object') return;
     for (const [key, child] of Object.entries(value)) {
-      if (/^(?:audio|transcript|input|raw)_sha256$/.test(key) && typeof child === 'string') privateHashes.add(child);
+      if (/^(?:audio|transcript|input|raw|caption|evidence|dictionary)_sha256$/.test(key) && typeof child === 'string') privateHashes.add(child);
       else collectHashes(child);
     }
   }

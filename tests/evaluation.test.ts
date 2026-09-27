@@ -75,6 +75,7 @@ describe('evaluation case file and command contract', () => {
   });
   it('defaults to the current milestone with human approvals supported; implementation checking is opt-in', () => {
     expect(parseEvaluationArgs([])).toEqual({ milestone: 4, implementation: false });
+    expect(parseEvaluationArgs(['--exact-only'])).toEqual({ milestone: 4, implementation: false, exactOnly: true });
     expect(parseEvaluationArgs(['--', '--milestone', '2', '--implementation'])).toEqual({ milestone: 2, implementation: true });
     for (const args of [['--milestone'], ['--milestone', '5'], ['--unknown'], ['--implementation', '--implementation'], ['--milestone', '2', '--milestone', '3']]) {
       expect(() => parseEvaluationArgs(args)).toThrow();
@@ -209,5 +210,10 @@ describe('rank and failure reports', () => {
     expect(reports.map(({ query, pass }) => ({ query, pass }))).toEqual([
       { query: item.exactQuery, pass: true }, { query: item.query, pass: true },
     ]);
+  });
+  it('runs exact-only CI cases without query inference and never reports a hybrid pass', () => {
+    const reports = evaluateSearchCases([rankCase], [fixture], index([fixture]), [], new Set(), undefined, true);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]).toMatchObject({ mode: 'exact', pass: true });
   });
 });

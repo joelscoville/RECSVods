@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
 import { readFileSync } from 'node:fs';
 import type { SearchChapter } from '../../site/lib/types';
 import { chapterFor } from './archive-fixtures';

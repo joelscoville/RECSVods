@@ -82,7 +82,7 @@ windows or the unchanged internal passages. Builds never re-embed.
 
 ## Weekly procedure
 
-After M5 discovery registers an upload, a person invokes the curator, normally on
+After discovery proposes an upload in a curator issue, a person invokes the curator, normally on
 Monday to allow captions to appear. Apply the operator’s caption quality gate and
 local whisper.cpp fallback once M5 tooling implements them; no fetching or AI in CI.
 Verify identity/duration and the sermon’s context/boundaries. Cover the sermon and
@@ -97,5 +97,6 @@ groups, and an integrated subsection tree. Check retrieval of specific points,
 privacy and ordinary playback, then propose a needs_review draft through the normal
 separate signed checkpoint flow. Human editorial approval remains separate.
 
-M5 automation and caption-gate implementation are still pending; this section
-records its required curator/review procedure, not completed weekly acceptance.
+The M5 tooling and detailed procedure are in `docs/weekly-operation.md` and
+`docs/operations.md`. Live discovery-to-publication and human editorial acceptance
+remain pending human action; see `docs/milestone5-checks.md`.

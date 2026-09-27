@@ -10,7 +10,7 @@ The newer [concise service outline](concise-outlines.md) is now controlling: out
 the whole service with neutral peer groups and a few argument-led sermon movements,
 use Title Case, one holistic sermon description and only meaningful supporting cues.
 Subsections are an integrated button-expanded tree. Never render per-unit synopses.
-The same procedure applies to the pending M5 weekly workflow; older density guidance
+The same procedure applies to the M5 weekly workflow; older density guidance
 in this runbook is superseded.
 
 The [chapter decision](implementation-prompts/decisions/2026-09-26-chapter-search.md)
@@ -26,7 +26,9 @@ The operator's [caption decision](implementation-prompts/decisions/2026-09-26-ca
 applies after batch 001 and to M5: use quality-gated English original captions when
 available, otherwise the existing local whisper.cpp fallback. Prefer weekly curation
 on Monday to allow captions to become available. Discovery/CI never fetches captions
-or interprets recordings. M5 implementation and its quality-gate checks remain pending.
+or interprets recordings. Implemented interfaces, bounds, cleanup and provenance are
+documented in [weekly operation](weekly-operation.md). Live end-to-end publication
+and editorial approval remain human actions.
 
 ## Invocation and scope
 

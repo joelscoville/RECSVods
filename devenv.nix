@@ -8,5 +8,6 @@
     yt-dlp
     ffmpeg
     whisper-cpp
+    actionlint
   ];
 }
