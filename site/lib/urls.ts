@@ -15,10 +15,14 @@ export function searchUrl(base: string, query = ''): string {
   return `${siteUrl(base, 'search/')}${params.size ? `?${params}` : ''}`;
 }
 
-export interface WatchTarget { chapter?: string; /** Legacy input only. */ id?: string; service?: string; video?: string; start?: number }
+export interface WatchTarget {
+  chapter?: string; /** Legacy input only. */ id?: string; service?: string; video?: string; start?: number;
+  /** With a chapter: the chapter a search or category matched, offered as "Chapter only" under the player. */
+  match?: string;
+}
 export function watchUrl(base: string, target: WatchTarget): string {
   const params = new URLSearchParams();
-  if (target.chapter) return `${siteUrl(base, 'watch/')}?${new URLSearchParams({ chapter: target.chapter })}`;
+  if (target.chapter) return `${siteUrl(base, 'watch/')}?${new URLSearchParams({ chapter: target.chapter, ...(target.match && target.match !== target.chapter ? { match: target.match } : {}) })}`;
   if (target.service) params.set('service', target.service);
   if (target.video) params.set('video', target.video);
   if (Number.isFinite(target.start) && target.start! >= 0) params.set('t', String(Math.floor(target.start!)));
@@ -30,6 +34,7 @@ export function readWatchTarget(query: string): WatchTarget {
   const time = params.get('t');
   return {
     chapter: params.get('chapter') || undefined,
+    match: params.get('match') || undefined,
     id: params.get('id') || undefined,
     service: params.get('service') || undefined,
     video: params.get('video') || undefined,
@@ -51,6 +56,17 @@ export function formatTime(seconds: number): string {
   const hours = Math.floor(value / 3600);
   const minutes = Math.floor((value % 3600) / 60);
   return `${hours ? `${hours}:` : ''}${hours ? String(minutes).padStart(2, '0') : minutes}:${String(value % 60).padStart(2, '0')}`;
+}
+
+/** Human duration for labels: "1 h 50 min", "12 min", "1 min 16 s", "45 s". */
+export function formatDuration(seconds: number): string {
+  const value = Math.max(0, Math.round(seconds));
+  const hours = Math.floor(value / 3600);
+  const minutes = Math.floor((value % 3600) / 60);
+  const rest = value % 60;
+  if (hours) return minutes ? `${hours} h ${minutes} min` : `${hours} h`;
+  if (minutes) return minutes < 10 && rest ? `${minutes} min ${rest} s` : `${minutes} min`;
+  return `${rest} s`;
 }
 
 export function formatDate(date: string): string {

@@ -13,18 +13,21 @@ test('the example has one description and an integrated, keyboard-operable subse
     await page.goto(route);
     await expect(page.locator('astro-island[ssr]')).toHaveCount(0);
     await expect(page.locator('.sermon-description')).toHaveCount(1);
-    await expect(page.locator('.sermon-description')).toHaveText(example.sermon_description!);
+    await expect(page.locator('.sermon-description p')).toHaveText(example.sermon_description!);
     const outline = page.locator(route.startsWith('services/') ? '.service-chapters' : '.chapters');
     await expect(outline.locator('.outline-list > .outline-item')).toHaveCount(9);
     await expect(outline.locator('details, summary')).toHaveCount(0);
-    const toggle = outline.getByRole('button', { name: new RegExp(`1 subsection in ${parent.title}$`) });
+    // One toggle reveals every subsection in place: the panel toggle, or the footer toggle on phone watch pages.
+    const toggle = route.startsWith('services/') ? outline.locator('.subsection-toggle') : page.locator('.chapters .subsection-toggle, .playback-footer .subsection-button').locator('visible=true');
+    await expect(toggle).toHaveText('Show Subsections');
     await expect(toggle).toHaveAttribute('aria-expanded', 'false');
-    const branch = page.locator(`[id="${await toggle.getAttribute('aria-controls')}"]`);
+    const branch = outline.locator('.outline-item').filter({ has: page.getByText(parent.title, { exact: true }) }).locator('.chapter-subsections');
     await expect(branch).toBeHidden();
     const url = page.url();
     await toggle.focus(); await page.keyboard.press('Enter');
     await expect(toggle).toBeFocused();
     await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    await expect(toggle).toHaveText('Hide Subsections');
     await expect(branch).toBeVisible();
     await expect(branch.locator('.chapter-row')).toContainText(cue.title);
     expect(page.url()).toBe(url); // Expanding a chapter never starts playback or navigates.
@@ -43,8 +46,8 @@ test('the example has one description and an integrated, keyboard-operable subse
     await toggle.click();
     await branch.locator('.chapter-row').click();
     await expect(page).toHaveURL(new RegExp(`watch/\\?chapter=${cue.id}$`));
-    await expect(page.locator('h1')).toContainText(cue.title);
-    await expect(page.locator('.playback-details')).toContainText(parent.title);
+    await expect(page.locator('h1')).toHaveText(example.title);
+    await expect(page.locator('.chapters .chapter-row[aria-current="true"]')).toContainText(cue.title);
   }
 });
 
@@ -67,7 +70,7 @@ test('metadata and BSB results precede the model; semantic results merge without
     await expect(page.locator('.match-reasons').filter({ hasText: 'Verse-text match (BSB)' }).first()).toBeVisible();
     await expect(page.locator('.search-status')).toContainText('with exact search.');
     releaseModel();
-    await expect(page.locator('.search-status').getByText(/^\d+ chapters? found\.$/)).toBeVisible({ timeout: 30_000 });
+    await expect(page.locator('.search-status').getByText(/^\d+ recordings? found\.$/)).toBeVisible({ timeout: 30_000 });
     await page.screenshot({ path: testInfo.outputPath('chapter-search.png'), fullPage: false });
     await page.goto('watch/?chapter=s0927-romans-order');
     await expect(page.locator('.sermon-description')).toHaveCount(1);

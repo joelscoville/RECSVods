@@ -70,9 +70,10 @@ review_notes:
     internal retrieval/review metadata only. Existing original notes, provenance and needs_review
     remain authoritative. Main owns migration, derived boundaries, old-link mappings and vector
     updates.
+  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
-  - id: pastor-yong
-    name: Pastor Yong
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
     role: Preacher
 topics:
   - id: worship
@@ -276,14 +277,14 @@ chapters:
       - s20260614-10
       - s20260614-11
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260614-11
     video_id: GlVgMoehT2I
     start: 2829.26
     end: 4266.1
     type: sermon
     title: Jesus Reveals the Father
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.88
     scripture:
       - John 14:8-9
@@ -351,7 +352,7 @@ chapters:
     source_chapters:
       - s20260614-12
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260614-pray-and-serve-as-christs-representatives
     video_id: GlVgMoehT2I
     start: 5290.38
@@ -385,7 +386,7 @@ chapters:
     source_chapters:
       - s20260614-13
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260614-response-and-closing
     video_id: GlVgMoehT2I
     start: 5868.72

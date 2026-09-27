@@ -74,9 +74,10 @@ review_notes:
   - Only the holistic sermon description is intended for public descriptive prose; parent and cue
     summaries are internal retrieval and review metadata, never chapter, subsection or result-card
     descriptions. Keywords are exact supplied spoken candidates.
+  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
-  - id: pastor-yong
-    name: Pastor Yong
+  - id: yong-teck-meng
+    name: Rev. Yong Teck Meng
     role: Preacher
 topics:
   - id: joy
@@ -248,14 +249,14 @@ chapters:
       - s20260830-introduction
       - s20260830-access
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260830-access
     video_id: M9uwSKpB_gk
     start: 2586.52
     end: 3307.62
     type: sermon
     title: Prayer Needs No Human Intermediary
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.91
     scripture:
       - John 13
@@ -322,7 +323,7 @@ chapters:
       - s20260830-community
       - s20260830-tribulation
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260830-love-and-growing-faith
     video_id: M9uwSKpB_gk
     start: 4509.94
@@ -364,14 +365,14 @@ chapters:
       - s20260830-love
       - s20260830-faith
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: s20260830-faith
     video_id: M9uwSKpB_gk
     start: 4951.34
     end: 5455.66
     type: sermon
     title: Weak Faith Can Grow Through Trials
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
     confidence: 0.91
     scripture:
       - John 16:29-32
@@ -417,7 +418,7 @@ chapters:
     source_chapters:
       - s20260830-hope
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
   - id: c20260830-response-and-closing
     video_id: M9uwSKpB_gk
     start: 5750.1
@@ -454,7 +455,7 @@ chapters:
       - s20260830-closing
       - s20260830-announcements
     review_notes: []
-    speaker_id: pastor-yong
+    speaker_id: yong-teck-meng
 sermon_description: Pastor Yong presents Jesus' promise of overcoming as courage amid trouble, not
   freedom from suffering. The Spirit gives believers direct access to the Father and draws them into
   shared life, even when caring is costly. He urges listeners to remember God's love, seek help for

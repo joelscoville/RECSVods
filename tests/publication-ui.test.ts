@@ -15,7 +15,7 @@ describe('homepage publication states independent of the live approval count', (
       id: 'abcdefghijk', videoId: 'abcdefghijk', serviceId: 'fixture-service',
       title: 'Fictional state fixture', date: '2026-01-04', type: 'sermon',
       href: '/review/watch/?chapter=fixture-chapter',
-      duration: 120, start: 0, preview,
+      duration: 120, start: 0, preview, parts: [{ id: 'abcdefghijk', duration: 120 }],
     };
     const html = renderToStaticMarkup(createElement(Home, { items: [item], base: '/review/' }));
     expect(html).toContain(item.title);

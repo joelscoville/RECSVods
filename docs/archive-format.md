@@ -104,6 +104,10 @@ chapters:
   `prayer`; this core does not invent a theological taxonomy. Title and summary
   cannot be blank. Summary is one or two attributed sentences. Keywords, topics
   and scripture arrays may be empty. No transcript or questions are source fields.
+- Optional `short_summary` is a public one-line summary (90 characters or fewer)
+  shown on primary chapter cards. Write it as its own short line, not a truncated
+  `summary`. Subsections never carry one; the schema rejects it on `parent_id` chapters.
+  The longer `summary` stays retrieval-only and is never rendered.
 - Optional service-level `sermon_title` preserves a trusted displayed sermon title
   independently of chapter descriptions. Home cards use it when supplied rather
   than mislabelling the first sermon chapter as the whole sermon.

@@ -1,23 +1,34 @@
-import type { DisplayService } from './archive-display';
+import { useMemo, useState } from 'react';
+import type { HomeItem } from './archive-display';
 import { browseUrl, type BrowsePage as BrowsePageData } from '../lib/browse';
-import { displayType, formatDate, formatTime, serviceUrl, watchUrl } from '../lib/urls';
+import { siteUrl } from '../lib/urls';
 import BrowseNavigation from './BrowseNavigation';
-import CorrectionLinks from './CorrectionLinks';
+import VideoCard from './VideoCard';
 
-export default function BrowsePage({ page, services, base }: { page: BrowsePageData; services: DisplayService[]; base: string }) {
-  const selectedServices = new Set(page.serviceIds);
-  const selectedChapters = new Set(page.chapterIds);
-  return <main id="main" className="browse-main service-main page-width" tabIndex={-1}>
-    <nav className="action-row" aria-label="Breadcrumb"><a className="text-link" href={browseUrl(base)}>Browse the archive</a>{page.parent && <><span aria-hidden="true">/</span><a className="text-link" href={browseUrl(base, page.parent.path)}>{page.parent.title}</a></>}</nav>
-    <header className="service-heading"><h1>{page.title}</h1></header>
-    {page.links && <BrowseNavigation base={base} categories={page.links} label={`Browse ${page.title.toLowerCase()}`} />}
-    {!!page.serviceIds?.length && <ul className="browse-service-list">{services.filter((service) => selectedServices.has(service.id)).map((service) => <li key={service.id}>
-      <a className="chapter-row" href={serviceUrl(base, service.id)}><span className="chapter-copy"><strong>{page.path === 'sermons' ? service.sermonTitle ?? service.title : service.title}</strong><span><time dateTime={service.date}>{formatDate(service.date)}</time> · {displayType(service.type)} · {service.videos.length} {service.videos.length === 1 ? 'recording' : 'recordings'}</span>{service.preview && <span className="preview-label">Unreviewed preview</span>}</span></a>
-      {service.series && <a className="text-link" href={browseUrl(base, `series/${service.series.id}`)}>Series: {service.series.name}</a>}
-    </li>)}</ul>}
-    {!!page.chapterIds?.length && <section className="service-chapters" aria-label="Sermons and chapters"><ol>{services.flatMap((service) => service.chapters.filter((chapter) => !chapter.parentId && selectedChapters.has(chapter.id)).map((chapter) => <li key={chapter.id}>
-      <a className="chapter-row" href={watchUrl(base, { chapter: chapter.id })}><span className="timestamp">{formatTime(chapter.start)}</span><span className="chapter-copy"><strong>{chapter.title}</strong><span><time dateTime={service.date}>{formatDate(service.date)}</time> · {displayType(chapter.type)} · {formatTime(chapter.end - chapter.start)}{chapter.speaker && ` · ${chapter.speaker}`}</span>{service.videos.length > 1 && <span>Video {service.videos.find((video) => video.id === chapter.videoId)?.sequence}</span>}{service.preview && <span className="preview-label">Unreviewed preview</span>}</span></a>
-      <div className="action-row"><a className="text-link" href={serviceUrl(base, service.id)}>View full service</a><CorrectionLinks target={{ chapterId: chapter.id }} base={base} /></div>
-    </li>))}</ol></section>}
+const SORTS = {
+  newest: { label: 'Newest first', compare: (a: HomeItem, b: HomeItem) => b.date.localeCompare(a.date) || a.start - b.start },
+  oldest: { label: 'Oldest first', compare: (a: HomeItem, b: HomeItem) => a.date.localeCompare(b.date) || a.start - b.start },
+  title: { label: 'Title A–Z', compare: (a: HomeItem, b: HomeItem) => a.title.localeCompare(b.title) || b.date.localeCompare(a.date) },
+} as const;
+type Sort = keyof typeof SORTS;
+
+/** A category page uses the home page's card grid; list-of-categories pages use its tiles. */
+export default function BrowsePage({ page, items, base }: { page: BrowsePageData; items: HomeItem[]; base: string }) {
+  const [sort, setSort] = useState<Sort>('newest');
+  const sorted = useMemo(() => [...items].sort(SORTS[sort].compare), [items, sort]);
+  return <main id="main" className="browse-main" tabIndex={-1}>
+    <div className="page-width browse-heading">
+      <nav className="breadcrumbs" aria-label="Breadcrumb"><a href={siteUrl(base)}>Home</a>{page.parent && <><span aria-hidden="true"> / </span><a href={browseUrl(base, page.parent.path)}>{page.parent.title}</a></>}</nav>
+      <div className="browse-title-row">
+        <h1>{page.title}</h1>
+        {items.length > 1 && <label className="sort-control"><span className="sr-only">Sort</span>
+          <select value={sort} onChange={(event) => setSort(event.target.value as Sort)}>
+            {Object.entries(SORTS).map(([value, { label }]) => <option key={value} value={value}>{label}</option>)}
+          </select>
+        </label>}
+      </div>
+    </div>
+    {page.links && <BrowseNavigation base={base} categories={page.links} className="category-grid browse-links page-width" label={`Browse ${page.title.toLowerCase()}`} />}
+    {sorted.length > 0 && <div className="home-catalogue browse-grid">{sorted.map((item) => <VideoCard key={item.id} item={item} />)}</div>}
   </main>;
 }

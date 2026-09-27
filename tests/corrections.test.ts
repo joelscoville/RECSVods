@@ -8,9 +8,9 @@ import { flattenChapters, loadArchive, publishedServices, ServiceSchema, SOURCE_
 import { CORRECTION_KINDS, correctionConfig, correctionLinks, validateRepositoryUrl, validateSourceRef, type CorrectionConfig, type CorrectionTarget } from '../site/lib/corrections';
 import { buildCorrectionConfig, loadCorrectionConfig, resolveRepositoryConfig } from '../site/lib/source-links';
 import CorrectionLinks from '../site/components/CorrectionLinks';
-import ChapterResult from '../site/components/ChapterResult';
+import RecordingResult from '../site/components/RecordingResult';
 import BrowsePage from '../site/components/BrowsePage';
-import { displayServices } from '../site/components/archive-display';
+import { browseItems, displayServices, groupByRecording, homeItems } from '../site/components/archive-display';
 import { buildBrowsePages } from '../site/lib/browse';
 
 const repository = { repositoryUrl: 'https://github.com/example/renamed-archive', sourceRef: 'feat/corrections' };
@@ -100,15 +100,17 @@ describe('rendered links and form', () => {
     const unavailable: CorrectionConfig = { services: {}, chapters: {} };
     expect(renderToStaticMarkup(createElement(CorrectionLinks, { target: { serviceId: 'missing' }, base: '/', config: unavailable }))).toContain('Correction links are unavailable');
   });
-  it('covers search and browse callers with one correction per chapter and no source props', () => {
+  it('keeps search results and browse lists free of per-item correction links', () => {
     const serialized = JSON.parse(JSON.stringify(config())); vi.stubGlobal('__RECS_CORRECTIONS__', serialized);
     expect(correctionConfig()).toEqual(serialized);
     const chapters = flattenChapters([fixture()], 'preview');
-    const card = renderToStaticMarkup(createElement(ChapterResult, { chapter: chapters[0], base: '/review/', reasons: ['Private search match sentinel'] }));
-    expect(card.match(/Suggest a correction/g)).toHaveLength(1); expect(card).toContain('/watch/?chapter=chapter-0');
-    const services = displayServices([fixture()], chapters), page = buildBrowsePages(services).find((item) => item.path === 'sermons')!;
-    const html = renderToStaticMarkup(createElement(BrowsePage, { page, services, base: '/review/' }));
-    expect(html.match(/Suggest a correction/g)).toHaveLength(2); expect(html).not.toContain('Edit this transcript');
+    const services = displayServices([fixture()], chapters);
+    const [grouped] = groupByRecording([{ chapter: chapters[0], reasons: ['Private search match sentinel'] }], homeItems(services, '/review/'), '/review/');
+    const card = renderToStaticMarkup(createElement(RecordingResult, grouped));
+    expect(card).not.toContain('Suggest a correction'); expect(card).toContain('/watch/?chapter=chapter-0');
+    const page = buildBrowsePages(services).find((item) => item.path === 'all')!;
+    const html = renderToStaticMarkup(createElement(BrowsePage, { page, items: browseItems(page, services, '/review/'), base: '/review/' }));
+    expect(html).not.toContain('Suggest a correction'); expect(html).not.toContain('Edit this transcript');
     for (const [, href] of card.matchAll(/href="([^"]+\/issues\/new[^"]*)"/g)) expect(href).not.toContain('sentinel');
   });
   it('matches issue-form IDs and the six choices with the Markdown fallback', () => {

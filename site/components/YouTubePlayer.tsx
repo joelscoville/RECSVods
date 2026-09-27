@@ -4,8 +4,15 @@ import { savePlayback } from '../lib/local-state';
 import { youtubeUrl } from '../lib/urls';
 import Icon from './Icon';
 
-export default function YouTubePlayer({ videoId, serviceId, title, range, seekRequest, onTime }: {
+/** A way to watch the recording differently, offered under the player (e.g. "Chapter only"). */
+export interface PlaybackChoice { label: string; onChoose: () => void }
+/** The playback choices fade after this long without a click, key press or focus inside them. */
+const CHOICES_IDLE_MS = 5000;
+
+export default function YouTubePlayer({ videoId, serviceId, title, range, seekRequest, onTime, endLabel = 'the end of this chapter', choices = [] }: {
   videoId: string; serviceId: string; title: string; range: PlaybackRange; seekRequest: number; onTime: (time: number) => void;
+  /** Where the soft stop falls, completing "Playback will stop at …". */
+  endLabel?: string; choices?: PlaybackChoice[];
 }) {
   const container = useRef<HTMLDivElement>(null);
   const adapter = useRef<PlayerAdapter | null>(null);
@@ -19,7 +26,35 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, seekRe
   const [blocked, setBlocked] = useState(false);
   const [ended, setEnded] = useState(false);
   const [continued, setContinued] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const [leaving, setLeaving] = useState(false);
+  const [touched, setTouched] = useState(0);
   const lastTime = useRef<number | null>(null);
+  const stage = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Phones: landscape shows the player full screen, and fullscreen turns the phone to landscape.
+    // Browsers may refuse fullscreen without a tap; the landscape layout still fills the screen.
+    const phone = matchMedia('(max-width: 1023px) and (pointer: coarse)');
+    const landscape = matchMedia('(orientation: landscape)');
+    const orientation = screen.orientation as (ScreenOrientation & { lock?: (type: string) => Promise<void> }) | undefined;
+    const rotated = () => {
+      if (!phone.matches || !stage.current) return;
+      if (landscape.matches) {
+        stage.current.closest('.playback-layout')?.scrollIntoView({ block: 'start' });
+        if (!document.fullscreenElement) stage.current.requestFullscreen?.({ navigationUI: 'hide' }).catch(() => {});
+      } else if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+    };
+    const fullscreen = () => {
+      if (!phone.matches) return;
+      if (document.fullscreenElement) orientation?.lock?.('landscape').catch(() => {});
+      else orientation?.unlock?.();
+    };
+    if (phone.matches && landscape.matches) stage.current?.closest('.playback-layout')?.scrollIntoView({ block: 'start' });
+    landscape.addEventListener('change', rotated);
+    document.addEventListener('fullscreenchange', fullscreen);
+    return () => { landscape.removeEventListener('change', rotated); document.removeEventListener('fullscreenchange', fullscreen); };
+  }, []);
 
   useEffect(() => {
     // onReady fires while the host is still visibility:hidden. Hand keyboard
@@ -34,6 +69,8 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, seekRe
     controller.current?.setChapter(range);
     setEnded(false);
     setContinued(false);
+    setDismissed(false);
+    setLeaving(false);
     setBlocked(false);
     lastTime.current = null;
   }, [range.id, range.start, range.end, range.resumeAt, seekRequest]);
@@ -86,7 +123,8 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, seekRe
       });
       if (request.signal.aborted) return;
       adapter.current = player;
-      controller.current = createChapterController(player, () => setEnded(true));
+      // Reaching the stop brings the choices back and keeps them until the viewer acts.
+      controller.current = createChapterController(player, () => { setEnded(true); setDismissed(false); setLeaving(false); });
       seekSettlesAt.current = Date.now() + 750;
       controller.current.setChapter(currentRange.current);
       setStatus('ready');
@@ -95,8 +133,16 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, seekRe
     }
   }
 
+  const offered = status === 'ready' && !dismissed && (range.end !== undefined || choices.length > 0);
+  useEffect(() => {
+    if (!offered || leaving || ended) return;
+    const timer = setTimeout(() => setLeaving(true), CHOICES_IDLE_MS);
+    return () => clearTimeout(timer);
+  }, [offered, leaving, ended, touched, range.id]);
+  const keep = () => setTouched((count) => count + 1);
+
   return <div className="player-column">
-    <div className="player-stage">
+    <div className="player-stage" ref={stage}>
       <div ref={container} className={`youtube-host ${status !== 'ready' ? 'youtube-host-hidden' : ''}`} />
       {status === 'idle' && <div className="player-consent">
         <div className="player-context"><strong>{title}</strong><span>RECS REPLAY archive</span></div>
@@ -107,9 +153,13 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, seekRe
       {status === 'error' && <div className="player-message"><p role="alert">{error}</p><div className="action-row"><button type="button" className="button button-secondary" onClick={play}>Retry player</button><a className="text-link" href={youtubeUrl(videoId, range.start)}>Watch on YouTube</a></div></div>}
     </div>
     {blocked && <div className="playback-notice"><p role="status">Your browser paused automatic playback. Press Play to start.</p><button className="button button-secondary" type="button" onClick={() => { adapter.current?.playVideo(); }}>Play recording</button></div>}
-    {range.end !== undefined && status === 'ready' && <div className="chapter-controls">
-      <p role="status">{ended ? 'Chapter finished. Playback is paused.' : continued ? 'Continuing through the full recording.' : 'Playback will pause at the end of this chapter.'}</p>
-      <div className="action-row"><button type="button" className="button button-secondary" onClick={() => { seekSettlesAt.current = Date.now() + 750; controller.current?.replay(); setEnded(false); setContinued(false); }}>Replay chapter</button><button type="button" className="button button-secondary" onClick={() => { controller.current?.continueWatching(); setEnded(false); setContinued(true); }}>Continue watching</button></div>
+    {/* Where playback stops and other ways to watch; fades after a few idle seconds, returns at the stop. */}
+    {offered && <div className={`chapter-controls${leaving ? ' is-leaving' : ''}`} onAnimationEnd={() => setDismissed(true)} onPointerDown={keep} onKeyDown={keep} onFocus={keep}>
+      <p role="status">{ended ? `Paused at ${endLabel}.` : continued || range.end === undefined ? 'Playing to the end of the recording.' : `Playback will stop at ${endLabel}.`}</p>
+      <div className="action-row">
+        {range.end !== undefined && !continued && <button type="button" className="button button-secondary" onClick={() => { controller.current?.continueWatching(); setEnded(false); setContinued(true); keep(); }}>Keep playing</button>}
+        {choices.map((choice) => <button key={choice.label} type="button" className="button button-secondary" onClick={choice.onChoose}>{choice.label}</button>)}
+      </div>
     </div>}
   </div>;
 }
