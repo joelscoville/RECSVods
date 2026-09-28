@@ -139,6 +139,15 @@ describe('home and multipart chapter playback', () => {
     expect(referencesFor(chapter, 'Psalms 1')).toEqual({ references: ['Psalms 1:1-6', 'Psalms 99:1-5', 'Daniel 7'], displayReferences: ['Ps 1:1-6', 'Ps 99:1-5', 'Dan 7'] });
     // Without a reference query the chapter's own order stands.
     expect(referencesFor(chapter, 'eternal life').references).toEqual(chapter.scripture);
+    // A verse the search's words match leads, narrowed from its passage to that verse.
+    const bestVerse = (reference: string) => reference === 'Daniel 7' ? { verse: 'Daniel 7:13', score: 4 } : undefined;
+    expect(referencesFor(chapter, 'son of man coming with the clouds', bestVerse)).toEqual({
+      references: ['Daniel 7:13', 'Psalms 99:1-5', 'Psalms 1:1-6'], displayReferences: ['Daniel 7:13', 'Ps 99:1-5', 'Ps 1:1-6'] });
+    // A narrowed verse the chapter also cites on its own is listed once.
+    const repeats = { scripture: ['Romans 13:1-7', 'Romans 13:1'] };
+    expect(referencesFor(repeats, 'governing authorities', () => ({ verse: 'Romans 13:1', score: 3 })).references).toEqual(['Romans 13:1']);
+    // A searched reference still wins over verse wording.
+    expect(referencesFor(chapter, 'Psalms 1', bestVerse).references[0]).toBe('Psalms 1:1-6');
   });
   it('treats the run of consecutive sermon chapters in an upload as the whole sermon', () => {
     const [service] = displayed(), chapter = (id: string) => service.chapters.find((item) => item.id === id)!;

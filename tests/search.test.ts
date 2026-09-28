@@ -3,7 +3,7 @@ import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { EMBEDDING_CONFIG, EMBEDDING_OPTIONS, isCompatibleEmbeddingConfig, isEmbeddingVector, MODEL_FILES, preprocessEmbedding, semanticAssetPaths } from '../site/lib/embedding-config';
-import { parseFullDateQuery, search, SEARCH_WEIGHTS } from '../site/lib/search';
+import { parseFullDateQuery, prepareVerseScorer, search, SEARCH_WEIGHTS } from '../site/lib/search';
 import { CHAPTER_VECTOR_CONFIG, decodeChapterVectors, packChapterVectors } from '../site/lib/chapter-vectors';
 import { enrichChapters, parseChapterMetadata } from '../site/lib/chapter-index';
 import { createSemanticClient, type SemanticRequest, type SemanticResponse, type SemanticStatus } from '../site/lib/semantic';
@@ -105,6 +105,23 @@ describe('transparent chapter ranking', () => {
     const written = { ...fixture, id: 'written', scripture: [], summary: 'Reads Psalm 1 aloud before prayer.' };
     for (const query of ['Psalms 1', 'Psalm 1', 'Ps 1']) expect(search([loose, written, psalmOne], query).map((result) => result.chapter.id)).toEqual(['psalm-one', 'written']);
     expect(search([loose], 'John 3')).toEqual([]);
+  });
+  it('scores the verse a natural-language query is about, ignoring common words alone', () => {
+    const verses = {
+      'Romans 12:1': 'Therefore I urge you, brothers, on account of God’s mercy, to offer your bodies as living sacrifices, holy and pleasing to God.',
+      'Romans 12:2': 'Do not be conformed to this world, but be transformed by the renewing of your mind.',
+      'Psalms 95:1': 'Come, let us sing for joy to the LORD; let us shout to the Rock of our salvation!',
+      ...Object.fromEntries(Array.from({ length: 60 }, (_, i) => [`Filler 1:${i + 1}`, 'The word of God endures forever.'])),
+    };
+    const score = prepareVerseScorer(verses)('offering our bodies as a living sacrifice');
+    expect(score('Romans 12:1')).toBeGreaterThan(score('Romans 12:2'));
+    expect(score('Romans 12:2')).toBe(0);
+    // "God" appears in most verses, so on its own it never picks a verse.
+    expect(prepareVerseScorer(verses)('God')('Filler 1:1')).toBe(0);
+    expect(prepareVerseScorer(verses)('renewing your mind')('Romans 12:2')).toBeGreaterThan(0);
+    // Most of a longer query's words must appear: one shared word is not enough.
+    expect(prepareVerseScorer(verses)('shout for the rock of ages')('Psalms 95:1')).toBeGreaterThan(0);
+    expect(prepareVerseScorer(verses)('holy mountain temple offering')('Romans 12:1')).toBe(0);
   });
   it('keeps per-value phrase boundaries and combines field coverage', () => {
     const separated = { ...fixture, id: 'separated', keywords: ['quiet', 'generosity'], summary: '' };

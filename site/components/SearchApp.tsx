@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { SearchChapter } from '../lib/types';
-import { prepareSearchIndex, type DecodedChapterVectors } from '../lib/search';
+import { prepareSearchIndex, prepareVerseScorer, type DecodedChapterVectors } from '../lib/search';
+import { parseScriptureReference } from '../lib/scripture';
 import { enrichChapters, loadChapterMetadata, loadChapterVectors, loadScriptureIndex, type ChapterMetadata, type ScriptureIndex } from '../lib/chapter-index';
 import { createSemanticClient, type SemanticClient, type SemanticStatus } from '../lib/semantic';
 import { clearSearchHistory, getSearchHistory, saveSearch } from '../lib/local-state';
@@ -10,7 +11,7 @@ import BrowseNavigation from './BrowseNavigation';
 import Header from './Header';
 import SearchField from './SearchField';
 import Icon from './Icon';
-import RecordingResult from './RecordingResult';
+import RecordingResult, { type BestVerse } from './RecordingResult';
 import { groupByRecording, type HomeItem } from './archive-display';
 import CopyLink from './CopyLink';
 
@@ -122,6 +123,21 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
     ? prepared.search(query, { queryVector: hybrid.queryVector }) : null, [prepared, hybrid, query, currentMetadata, base]);
   // Results are recordings, ranked by their best chapter; that chapter is offered after the sermon.
   const results = useMemo(() => groupByRecording(hybridResults ?? exact, recordings, base), [hybridResults, exact, recordings, base]);
+  // Which verse of each cited passage the search's words best match (BSB text; never displayed).
+  const verseScorer = useMemo(() => scripture?.base === base ? prepareVerseScorer(scripture.index.verses) : undefined, [scripture, base]);
+  const bestVerse = useMemo((): BestVerse | undefined => {
+    if (!verseScorer || !scripture || !query.trim()) return undefined;
+    const score = verseScorer(query), references = scripture.index.references, cache = new Map<string, ReturnType<BestVerse>>();
+    return (reference) => {
+      if (!cache.has(reference)) {
+        const keys = references[parseScriptureReference(reference)?.canonical ?? reference] ?? [];
+        let best: ReturnType<BestVerse>;
+        for (const verse of keys) { const value = score(verse); if (value > (best?.score ?? 0)) best = { verse, score: value }; }
+        cache.set(reference, best);
+      }
+      return cache.get(reference);
+    };
+  }, [verseScorer, scripture, query]);
   const categories = availableBrowseCategories([], chapters);
   const topics = useMemo(() => suggestedTopics(chapters), [chapters]);
 
@@ -163,7 +179,7 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
       {query.trim() && semanticError && <button className="button button-secondary" type="button" onClick={() => setSemanticAttempt((attempt) => attempt + 1)}>Retry meaning-based search</button>}
       {query.trim() ? <section className="search-results" aria-label="Search results">
         <div className="results-toolbar"><h2>Results for “{query}”</h2><CopyLink href={searchUrl(base, query)} label="Share search" /></div>
-        {results.length ? <ol className="result-list">{results.map(({ recording, chapter, reasons }) => <li key={recording.id}><RecordingResult recording={recording} chapter={chapter} reasons={reasons} query={query} /></li>)}</ol> : <div className="no-results"><h2>{chapters.length ? 'No matching recordings' : 'No published chapters yet'}</h2><p>{chapters.length ? 'Try a speaker’s name, a date, a Bible reference, or fewer words.' : 'Chapters will be searchable when recordings are ready to publish.'}</p><button className="button button-secondary" type="button" onClick={() => choose('')}>Clear search</button></div>}
+        {results.length ? <ol className="result-list">{results.map(({ recording, chapter, reasons }) => <li key={recording.id}><RecordingResult recording={recording} chapter={chapter} reasons={reasons} query={query} bestVerse={bestVerse} /></li>)}</ol> : <div className="no-results"><h2>{chapters.length ? 'No matching recordings' : 'No published chapters yet'}</h2><p>{chapters.length ? 'Try a speaker’s name, a date, a Bible reference, or fewer words.' : 'Chapters will be searchable when recordings are ready to publish.'}</p><button className="button button-secondary" type="button" onClick={() => choose('')}>Clear search</button></div>}
       </section> : <div className="search-browse">
         <section className="history-section"><h2>Your history</h2>{history.length ? <div className="chip-list">{history.map((item) => <button className="chip" type="button" key={item} onClick={() => choose(item)}>{item}</button>)}</div> : <p>Your searches will appear here on this device.</p>}<div className="local-data-controls"><button className="button button-secondary" type="button" onClick={() => {
           const cleared = clearSearchHistory();

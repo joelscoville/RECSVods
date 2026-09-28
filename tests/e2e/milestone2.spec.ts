@@ -204,10 +204,15 @@ test('static browse URLs and focused search display ESV references without hidde
   await expect(result.locator('.match-reasons')).toContainText('Verse-text match (BSB)');
   const shownId = await result.getAttribute('data-match');
   const shown = passages.find((item) => item.id === shownId)!;
-  for (const reference of shown.scripture.slice(0, 2)) {
-    const link = result.getByRole('link', { name: `Read ${reference} in the ESV`, exact: true });
-    await expect(link).toHaveAttribute('href', `https://www.esv.org/${encodeURIComponent(reference)}/`);
-    await expect(link).toContainText('(ESV)');
+  // The result leads with the verse the words matched, narrowed from a passage the chapter cites.
+  const links = result.locator('.scripture a');
+  const labels = await links.evaluateAll((items) => items.map((item) => item.getAttribute('aria-label')!.replace(/^Read (.*) in the ESV$/, '$1')));
+  const index = scripture as unknown as { references: Record<string, string[]>; verses: Record<string, string> };
+  expect(shown.scripture.some((reference) => index.references[reference]?.includes(labels[0]))).toBe(true);
+  expect(index.verses[labels[0]]).toMatch(/living sacrifice/i);
+  for (const [i, reference] of labels.entries()) {
+    await expect(links.nth(i)).toHaveAttribute('href', `https://www.esv.org/${encodeURIComponent(reference)}/`);
+    await expect(links.nth(i)).toContainText('(ESV)');
   }
   expect(passage).not.toHaveProperty('verseText');
   // BSB is separately deduplicated search input, never rendered in the DOM.

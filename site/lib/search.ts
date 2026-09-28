@@ -106,6 +106,36 @@ function lexicalCoverage(postings: LexicalPostings, terms: readonly string[], co
   return covered;
 }
 
+/** Scores individual Bible verses against a query with search's own words and inflections, so a result
+ * can lead with the verse a natural-language or verse-text search is about. Prepare once per scripture
+ * index; call with a query to get a per-verse scorer. A one-word query must be distinctive (rare across
+ * all verses), so "God" never decides; a longer query must match most of its words, so "love your
+ * enemies" does not pick a verse that only mentions enemies. */
+export function prepareVerseScorer(verses: Readonly<Record<string, string>>): (query: string) => (verseKey: string) => number {
+  const normalized = new Map(Object.entries(verses).map(([key, text]) => [key, normalize(text)]));
+  return (query) => {
+    const queryWords = words(query);
+    const terms = [...new Set(queryWords.filter((word) => !STOP_WORDS.has(word)))].map(inflectionTerm);
+    if (!terms.length) return () => 0;
+    const needles = terms.map((term) => ` ${term} `), phrase = ` ${queryWords.map(inflectionTerm).join(' ')} `;
+    const frequency = needles.map((needle) => { let count = 0; for (const text of normalized.values()) if (text.includes(needle)) count++; return count; });
+    const total = normalized.size;
+    return (verseKey) => {
+      const text = normalized.get(verseKey);
+      if (!text) return 0;
+      let score = 0, hits = 0, distinctive = false;
+      const required = terms.length === 1 ? 1 : Math.max(2, Math.ceil(terms.length * SEARCH_WEIGHTS.minimumTermCoverage));
+      needles.forEach((needle, i) => {
+        if (!text.includes(needle)) return;
+        hits++; score += Math.log((total + 1) / (frequency[i] + 1));
+        if (frequency[i] / total <= 0.02) distinctive = true;
+      });
+      if (hits < required || (terms.length === 1 && !distinctive)) return 0;
+      return score + (queryWords.length > 1 && text.includes(phrase) ? SEARCH_WEIGHTS.referenceBonus : 0);
+    };
+  };
+}
+
 /** Exhaustive, mutable-input API. No global ID cache or metadata-derived embeddings. */
 export function search(chapters: readonly SearchChapter[], query: string, options: SearchOptions = {}): SearchResult[] {
   const rows = chapters.map((chapter) => {

@@ -7,23 +7,34 @@ import { VideoArt } from './VideoCard';
 
 /** One search result per recording. It opens the sermon; the chapter that matched is named here (with its
  * scripture and why it matched) and offered as "Chapter only" under the player. */
-/** A chapter's references with those overlapping the searched reference first, so a result found by
- * "Psalms 1" shows Psalms 1:1-6 rather than whichever references the chapter happens to list first. */
-export function referencesFor(chapter: Pick<SearchChapter, 'scripture' | 'scriptureDisplay'>, query?: string) {
+/** The verse within a cited passage that best matches the search, with its score (see prepareVerseScorer). */
+export type BestVerse = (reference: string) => { verse: string; score: number } | undefined;
+
+/** A chapter's references in the order a search result shows them. A searched reference comes first
+ * ("Psalms 1" shows Psalms 1:1-6, not whichever reference the chapter lists first). Otherwise the passage
+ * holding the verse the search's words best match comes first, narrowed to that verse, so "living
+ * sacrifice" leads with Romans 12:1 rather than Romans 12:1-8 or an unrelated psalm. */
+export function referencesFor(chapter: Pick<SearchChapter, 'scripture' | 'scriptureDisplay'>, query?: string, bestVerse?: BestVerse) {
   const searched = query ? parseScriptureReference(query) : undefined;
-  const matches = (value: string) => { const parsed = searched && parseScriptureReference(value); return Boolean(parsed && scriptureOverlaps(searched!, parsed)); };
-  const order = chapter.scripture.map((_, index) => index).sort((a, b) => Number(matches(chapter.scripture[b])) - Number(matches(chapter.scripture[a])));
-  return { references: order.map((index) => chapter.scripture[index]), displayReferences: order.map((index) => chapter.scriptureDisplay?.[index] ?? chapter.scripture[index]) };
+  const overlaps = (value: string) => { const parsed = searched && parseScriptureReference(value); return Boolean(parsed && scriptureOverlaps(searched!, parsed)); };
+  const ranked = chapter.scripture.map((value, index) => ({ index, value, overlap: overlaps(value), best: searched ? undefined : bestVerse?.(value) }))
+    .sort((a, b) => Number(b.overlap) - Number(a.overlap) || (b.best?.score ?? 0) - (a.best?.score ?? 0) || a.index - b.index);
+  const shown = ranked.map(({ index, value, best }, position) => position === 0 && best && best.score > 0 && best.verse !== value
+    ? { reference: best.verse, display: best.verse }
+    : { reference: value, display: chapter.scriptureDisplay?.[index] ?? value });
+  // Narrowing a passage to one verse can repeat a verse the chapter also cites on its own.
+  const unique = shown.filter((item, position) => shown.findIndex((other) => other.reference === item.reference) === position);
+  return { references: unique.map((item) => item.reference), displayReferences: unique.map((item) => item.display) };
 }
 
-export default function RecordingResult({ recording, chapter, reasons, query }: {
-  recording: HomeItem & { match: RecordingMatch }; chapter: SearchChapter; reasons?: string[]; query?: string;
+export default function RecordingResult({ recording, chapter, reasons, query, bestVerse }: {
+  recording: HomeItem & { match: RecordingMatch }; chapter: SearchChapter; reasons?: string[]; query?: string; bestVerse?: BestVerse;
 }) {
   const primaryReason = reasons?.find(reason => reason.startsWith('Scripture:') || reason === 'Verse-text match (BSB)')
     ?? reasons?.find(reason => reason === 'Keyword') ?? reasons?.[0];
   const conciseReasons = [...new Set([primaryReason, reasons?.includes('Similar in meaning') ? 'Similar in meaning' : undefined].filter(Boolean))];
   const { match } = recording;
-  const { references, displayReferences } = referencesFor(chapter, query);
+  const { references, displayReferences } = referencesFor(chapter, query, bestVerse);
   return <article className="recording-result" data-match={match.id} data-service={recording.serviceId}>
     <a className="result-art" href={recording.href} tabIndex={-1} aria-hidden="true"><VideoArt item={recording} /></a>
     <div className="result-head">
