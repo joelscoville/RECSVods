@@ -3,7 +3,7 @@ import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { EMBEDDING_CONFIG, EMBEDDING_OPTIONS, isCompatibleEmbeddingConfig, isEmbeddingVector, MODEL_FILES, preprocessEmbedding, semanticAssetPaths } from '../site/lib/embedding-config';
-import { parseFullDateQuery, prepareVerseScorer, search, SEARCH_WEIGHTS } from '../site/lib/search';
+import { parseFullDateQuery, prepareSearchIndex, prepareVerseScorer, search, SEARCH_WEIGHTS } from '../site/lib/search';
 import { CHAPTER_VECTOR_CONFIG, decodeChapterVectors, packChapterVectors } from '../site/lib/chapter-vectors';
 import { enrichChapters, parseChapterMetadata } from '../site/lib/chapter-index';
 import { createSemanticClient, type SemanticRequest, type SemanticResponse, type SemanticStatus } from '../site/lib/semantic';
@@ -106,6 +106,19 @@ describe('transparent chapter ranking', () => {
     for (const query of ['Psalms 1', 'Psalm 1', 'Ps 1']) expect(search([loose, written, psalmOne], query).map((result) => result.chapter.id)).toEqual(['psalm-one', 'written']);
     expect(search([loose], 'John 3')).toEqual([]);
   });
+  it('keeps numbered and unnumbered books apart in references written in text', () => {
+    const firstJohn = { ...fixture, id: 'first-john', scripture: ['1 John 3:16'], summary: 'Reading from 1 John 3:16.' };
+    const secondJohn = { ...fixture, id: 'second-john', scripture: [], summary: 'Greeting in 2 John 1:3 and 3 John 1:2.' };
+    const gospel = { ...fixture, id: 'gospel', scripture: [], summary: 'Nicodemus hears John 3:1-21 at night.' };
+    const rows = [firstJohn, secondJohn, gospel], prepared = prepareSearchIndex(rows);
+    for (const query of ['John 3', 'John 3:16']) {
+      // Exhaustive and prepared search agree: only the Gospel of John, written as a range, matches.
+      expect(search(rows, query).map((result) => result.chapter.id)).toEqual(['gospel']);
+      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(['gospel']);
+    }
+    expect(search(rows, '1 John 3').map((result) => result.chapter.id)).toEqual(['first-john']);
+    expect(search(rows, '3 John 1').map((result) => result.chapter.id)).toEqual(['second-john']);
+  });
   it('scores the verse a natural-language query is about, ignoring common words alone', () => {
     const verses = {
       'Romans 12:1': 'Therefore I urge you, brothers, on account of God’s mercy, to offer your bodies as living sacrifices, holy and pleasing to God.',
@@ -122,6 +135,16 @@ describe('transparent chapter ranking', () => {
     // Most of a longer query's words must appear: one shared word is not enough.
     expect(prepareVerseScorer(verses)('shout for the rock of ages')('Psalms 95:1')).toBeGreaterThan(0);
     expect(prepareVerseScorer(verses)('holy mountain temple offering')('Romans 12:1')).toBe(0);
+  });
+  it('keeps a negation attached to what it negates when choosing a verse', () => {
+    const verses = {
+      '1 John 2:15': 'Do not love the world or anything in the world. If anyone loves the world, the love of the Father is not in him.',
+      'John 3:16': 'For God so loved the world that He gave His one and only Son, that everyone who believes in Him shall not perish but have eternal life.',
+    };
+    const score = prepareVerseScorer(verses)('do not love the world');
+    // John 3:16 has "not", "loved" and "world", but not "not love".
+    expect(score('1 John 2:15')).toBeGreaterThan(0);
+    expect(score('John 3:16')).toBe(0);
   });
   it('keeps per-value phrase boundaries and combines field coverage', () => {
     const separated = { ...fixture, id: 'separated', keywords: ['quiet', 'generosity'], summary: '' };

@@ -1,7 +1,7 @@
 import type { SearchChapter } from './types';
 import { isEmbeddingVector, preprocessEmbedding } from './embedding-config';
 import { CHAPTER_VECTOR_CONFIG, cosineChapterVector, type ChapterVectorFile } from './chapter-vectors';
-import { parseScriptureReference, scriptureOverlaps, scriptureCoverage } from './scripture';
+import { parseScriptureReference, scriptureOverlaps, scriptureCoverage, type ScriptureReference } from './scripture';
 
 export const SEARCH_WEIGHTS = Object.freeze({
   date: 16, speaker: 14, scripture: 14, verseText: 2, keyword: 7, topic: 7, title: 6,
@@ -21,6 +21,23 @@ export type PreparedSearchOptions = Omit<SearchOptions, 'vectors'>;
 export interface PreparedSearchIndex { search(query: string, options?: PreparedSearchOptions): SearchResult[] }
 
 const STOP_WORDS = new Set('a about above after again all am an and any are as at be because been before being below between both by can could did do does doing down during each few for from further had has have having he her here hers herself him himself his how i if in into is it its itself just me more most my myself now of off on once or other our ours ourselves out over own same she should so some such than that the their theirs them themselves then there these they this those through to too under until up us very was we were what when where which while who whom why with would you your yours yourself yourselves'.split(' '));
+/** Qualifiers that invert or restrict meaning; a match that drops one is not a match. */
+const NEGATIONS = ['no', 'not', 'never', 'only'];
+/** A book-like word followed by a chapter and optional verse or range, as written in prose. */
+const WRITTEN_REFERENCE = /([A-Za-z][A-Za-z.]*)\s*(\d+(?:\s*:\s*\d+)?(?:\s*[-–]\s*\d+(?:\s*:\s*\d+)?)?)/g;
+const ORDINAL_BEFORE = /(?:^|[^A-Za-z0-9])([1-3])\s*$/;
+/** Whether any text writes out a reference overlapping `query`, keeping each book's full identity:
+ * "Reading from 1 John 3:16" never counts as John 3, and "John 3:1-21" does count for John 3:16. */
+function writesReference(texts: readonly string[], query: ScriptureReference): boolean {
+  return texts.some((text) => {
+    for (const match of text.matchAll(WRITTEN_REFERENCE)) {
+      const ordinal = ORDINAL_BEFORE.exec(text.slice(0, match.index))?.[1];
+      const written = parseScriptureReference(`${ordinal ? `${ordinal} ` : ''}${match[1]} ${match[2]}`);
+      if (written && scriptureOverlaps(query, written)) return true;
+    }
+    return false;
+  });
+}
 function words(text: string): string[] { return preprocessEmbedding(text).toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? []; }
 /** Light English inflection normalization; no synonyms, prefixes, or corpus-specific terms. */
 function inflectionTerm(word: string): string {
@@ -118,11 +135,14 @@ export function prepareVerseScorer(verses: Readonly<Record<string, string>>): (q
     const terms = [...new Set(queryWords.filter((word) => !STOP_WORDS.has(word)))].map(inflectionTerm);
     if (!terms.length) return () => 0;
     const needles = terms.map((term) => ` ${term} `), phrase = ` ${queryWords.map(inflectionTerm).join(' ')} `;
+    // A negation must stay attached to what it negates: "do not love the world" needs "not love", so
+    // John 3:16 ("so loved the world … shall not perish") is not the verse it is about.
+    const negated = queryWords.flatMap((word, i) => NEGATIONS.includes(word) && i + 1 < queryWords.length ? [` ${inflectionTerm(word)} ${inflectionTerm(queryWords[i + 1])} `] : []);
     const frequency = needles.map((needle) => { let count = 0; for (const text of normalized.values()) if (text.includes(needle)) count++; return count; });
     const total = normalized.size;
     return (verseKey) => {
       const text = normalized.get(verseKey);
-      if (!text) return 0;
+      if (!text || negated.some((pair) => !text.includes(pair))) return 0;
       let score = 0, hits = 0, distinctive = false;
       const required = terms.length === 1 ? 1 : Math.max(2, Math.ceil(terms.length * SEARCH_WEIGHTS.minimumTermCoverage));
       needles.forEach((needle, i) => {
@@ -214,7 +234,7 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
     const reasons: string[] = [];
     if (!coverage || referenceMatch || coverage[row] / terms.length >= SEARCH_WEIGHTS.minimumTermCoverage || coverage[row] >= 2) {
       const covered = new Set<number>();
-      let distinctiveMetadata = false, phraseHit = false;
+      let distinctiveMetadata = false;
       for (const [name, values] of fields) {
         if (name === 'scripture' && referenceQuery) {
           if (referenceMatch) {
@@ -233,7 +253,6 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
         }
         if (!found) continue;
         const fullPhrase = values.some((value) => matchText(value).phrase);
-        phraseHit ||= fullPhrase;
         score += SEARCH_WEIGHTS[name] * (found / totalWeight + (fullPhrase ? SEARCH_WEIGHTS.phraseBonus : 0));
         reasons.push(name === 'verseText' ? 'Verse-text match (BSB)' : name === 'keyword' ? 'Keyword'
           : `${name[0].toUpperCase()}${name.slice(1)} match${fullPhrase && queryWords.length > 1 ? ' (exact phrase)' : ''}`);
@@ -242,12 +261,13 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
       // Admit a sparse match only with two terms and a distinctive metadata cue;
       // ordinary partial matches, unknown-only queries and negation remain constrained.
       const sparse = distinctiveMetadata && covered.size >= 2 && covered.size / terms.length >= 1 / 3
-        && !terms.some((term, i) => ['no', 'not', 'never', 'only'].includes(term) && !covered.has(i));
+        && !terms.some((term, i) => NEGATIONS.includes(term) && !covered.has(i));
       if (covered.size / terms.length < SEARCH_WEIGHTS.minimumTermCoverage && !sparse) { score = 0; reasons.length = 0; }
       // A Bible reference is one term, not loose words: "Psalms 1" must not match a chapter that merely
-      // mentions some psalm and the number 1 (Psalms 98:1-3). Without an overlapping reference, only the
-      // reference written out in the chapter's text counts.
-      if (referenceQuery && !referenceMatch && !phraseHit) { score = 0; reasons.length = 0; }
+      // mentions some psalm and the number 1 (Psalms 98:1-3). Without an overlapping cited reference, only
+      // an overlapping reference written out in the chapter's own text counts, book identity included.
+      if (referenceQuery && !referenceMatch && !writesReference([chapter.title, chapter.parentTitle ?? '', chapter.summary,
+        chapter.serviceTitle, chapter.series?.name ?? '', ...chapter.keywords, ...chapter.topics], referenceQuery)) { score = 0; reasons.length = 0; }
     }
     // Exhaustive even for rows with no lexical candidates. Zero rows score 0 and never match.
     if (vectors && queryVector) {
