@@ -119,6 +119,25 @@ describe('transparent chapter ranking', () => {
     expect(search(rows, '1 John 3').map((result) => result.chapter.id)).toEqual(['first-john']);
     expect(search(rows, '3 John 1').map((result) => result.chapter.id)).toEqual(['second-john']);
   });
+  it('reads complete book names in text: multiword names, Roman numerals and aliases', () => {
+    const song = { ...fixture, id: 'song', scripture: [], summary: 'Reading from Song of Solomon 2:1.' };
+    const roman = { ...fixture, id: 'roman', scripture: [], summary: 'Reading from I John 3:16.' };
+    const alias = { ...fixture, id: 'alias', scripture: [], summary: 'See 1 Jn 4:8 and Rom. 13:1.' };
+    const prose = { ...fixture, id: 'prose', scripture: [], summary: 'It is 3 weeks until John returns.' };
+    const rows = [song, roman, alias, prose], prepared = prepareSearchIndex(rows);
+    const ids = (query: string) => {
+      const exhaustive = search(rows, query).map((result) => result.chapter.id);
+      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(exhaustive);
+      return exhaustive;
+    };
+    expect(ids('Song of Solomon 2:1')).toEqual(['song']);
+    // "I John" is 1 John, never the Gospel of John.
+    expect(ids('John 3:16')).toEqual([]);
+    expect(ids('1 John 3:16')).toEqual(['roman']);
+    expect(ids('1 John 4')).toEqual(['alias']);
+    expect(ids('Romans 13')).toEqual(['alias']);
+    expect(ids('Isaiah 3')).toEqual([]);
+  });
   it('scores the verse a natural-language query is about, ignoring common words alone', () => {
     const verses = {
       'Romans 12:1': 'Therefore I urge you, brothers, on account of God’s mercy, to offer your bodies as living sacrifices, holy and pleasing to God.',

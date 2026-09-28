@@ -1,7 +1,7 @@
 import type { SearchChapter } from './types';
 import { isEmbeddingVector, preprocessEmbedding } from './embedding-config';
 import { CHAPTER_VECTOR_CONFIG, cosineChapterVector, type ChapterVectorFile } from './chapter-vectors';
-import { parseScriptureReference, scriptureOverlaps, scriptureCoverage, type ScriptureReference } from './scripture';
+import { canonicalBook, parseScriptureReference, scriptureOverlaps, scriptureCoverage, type ScriptureReference } from './scripture';
 
 export const SEARCH_WEIGHTS = Object.freeze({
   date: 16, speaker: 14, scripture: 14, verseText: 2, keyword: 7, topic: 7, title: 6,
@@ -23,19 +23,31 @@ export interface PreparedSearchIndex { search(query: string, options?: PreparedS
 const STOP_WORDS = new Set('a about above after again all am an and any are as at be because been before being below between both by can could did do does doing down during each few for from further had has have having he her here hers herself him himself his how i if in into is it its itself just me more most my myself now of off on once or other our ours ourselves out over own same she should so some such than that the their theirs them themselves then there these they this those through to too under until up us very was we were what when where which while who whom why with would you your yours yourself yourselves'.split(' '));
 /** Qualifiers that invert or restrict meaning; a match that drops one is not a match. */
 const NEGATIONS = ['no', 'not', 'never', 'only'];
-/** A book-like word followed by a chapter and optional verse or range, as written in prose. */
-const WRITTEN_REFERENCE = /([A-Za-z][A-Za-z.]*)\s*(\d+(?:\s*:\s*\d+)?(?:\s*[-–]\s*\d+(?:\s*:\s*\d+)?)?)/g;
-const ORDINAL_BEFORE = /(?:^|[^A-Za-z0-9])([1-3])\s*$/;
-/** Whether any text writes out a reference overlapping `query`, keeping each book's full identity:
- * "Reading from 1 John 3:16" never counts as John 3, and "John 3:1-21" does count for John 3:16. */
-function writesReference(texts: readonly string[], query: ScriptureReference): boolean {
-  return texts.some((text) => {
-    for (const match of text.matchAll(WRITTEN_REFERENCE)) {
-      const ordinal = ORDINAL_BEFORE.exec(text.slice(0, match.index))?.[1];
-      const written = parseScriptureReference(`${ordinal ? `${ordinal} ` : ''}${match[1]} ${match[2]}`);
-      if (written && scriptureOverlaps(query, written)) return true;
+/** A chapter number with an optional verse or range, as written in prose ("3:16", "13:1-7", "2"). */
+const WRITTEN_CHAPTER = /(?<![0-9:])(\d+(?:\s*:\s*\d+)?(?:\s*[-–]\s*\d+(?:\s*:\s*\d+)?)?)(?![0-9])/g;
+/** References written out in a chapter's own text (not its cited scripture). Before each chapter number,
+ * the longest run of up to four preceding words that the parser's own alias table names as a book is taken,
+ * so book identity is complete: "1 John", "I John", "1 Jn" and "Song of Solomon" are read in full, and
+ * "Reading from 1 John 3:16" is never John. Names must be capitalised as written, so prose such as "it is
+ * 3 weeks" is not Isaiah 3. Query-independent, so parsed once per row, and only texts with digits. */
+function writtenReferences(chapter: SearchChapter): ScriptureReference[] {
+  const texts = [chapter.title, chapter.parentTitle ?? '', chapter.summary, chapter.serviceTitle, chapter.series?.name ?? '', ...chapter.keywords, ...chapter.topics];
+  return texts.flatMap((text) => {
+    if (!/\d/.test(text)) return [];
+    const found: ScriptureReference[] = [];
+    for (const match of text.matchAll(WRITTEN_CHAPTER)) {
+      const before = text.slice(Math.max(0, match.index - 40), match.index);
+      if (!/[A-Za-z]\.?\s*$/.test(before)) continue;
+      const tokens = before.match(/[A-Za-z0-9]+/g)?.slice(-4) ?? [];
+      for (let count = tokens.length; count >= 1; count--) {
+        const name = tokens.slice(-count).join(' '), book = /^[A-Z0-9]/.test(name) ? canonicalBook(name) : undefined;
+        if (!book) continue;
+        const reference = parseScriptureReference(`${book} ${match[1]}`);
+        if (reference) found.push(reference);
+        break;
+      }
     }
-    return false;
+    return found;
   });
 }
 function words(text: string): string[] { return preprocessEmbedding(text).toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? []; }
@@ -76,7 +88,7 @@ function dateTerms(date: string): string[] {
   return [date, `${Number(day)} ${name} ${year}`, `${name} ${Number(day)} ${year}`, `${Number(day)} ${name?.slice(0, 3)} ${year}`];
 }
 type FieldName = 'date' | 'speaker' | 'scripture' | 'verseText' | 'keyword' | 'topic' | 'title' | 'service' | 'series' | 'summary' | 'type';
-interface SearchRow { chapter: SearchChapter; references: ReturnType<typeof parseScriptureReference>[]; fields: [FieldName, string[]][] }
+interface SearchRow { chapter: SearchChapter; references: ReturnType<typeof parseScriptureReference>[]; written: ScriptureReference[]; fields: [FieldName, string[]][] }
 function fields(chapter: SearchChapter, references: SearchRow['references']): SearchRow['fields'] {
   return [
     ['date', dateTerms(chapter.date)], ['speaker', chapter.speaker ? [chapter.speaker] : []],
@@ -160,7 +172,7 @@ export function prepareVerseScorer(verses: Readonly<Record<string, string>>): (q
 export function search(chapters: readonly SearchChapter[], query: string, options: SearchOptions = {}): SearchResult[] {
   const rows = chapters.map((chapter) => {
     const references = chapter.scripture.map(parseScriptureReference);
-    return { chapter, references, fields: fields(chapter, references).map(([name, values]): [FieldName, string[]] => [name, values.map(normalize)]) };
+    return { chapter, references, written: writtenReferences(chapter), fields: fields(chapter, references).map(([name, values]): [FieldName, string[]] => [name, values.map(normalize)]) };
   });
   return rank(rows, validVectors(options.vectors, chapters.length) ? options.vectors : undefined, undefined, query, options);
 }
@@ -190,7 +202,7 @@ export function prepareSearchIndex(chapters: readonly SearchChapter[], vectors?:
       if (!parsed.has(value)) parsed.set(value, parseScriptureReference(value));
       return parsed.get(value);
     });
-    return { chapter, references, fields: fields(chapter, references).map(([name, values]) => [name, values.map((value) => {
+    return { chapter, references, written: writtenReferences(chapter), fields: fields(chapter, references).map(([name, values]) => [name, values.map((value) => {
       const cache = name === 'verseText' ? verse : raw;
       if (!cache.has(value)) cache.set(value, normalize(value));
       return cache.get(value)!;
@@ -227,12 +239,15 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
   };
   const results: SearchResult[] = [];
   for (let row = 0; row < rows.length; row++) {
-    const { chapter, references, fields } = rows[row];
+    const { chapter, references, written, fields } = rows[row];
     if (dateQuery && chapter.date !== dateQuery) continue;
     const referenceMatch = referenceQuery && references.some((reference) => reference && scriptureOverlaps(referenceQuery, reference));
+    // Without a cited match, a reference written in the chapter's text still counts, however it is
+    // abbreviated ("Rom. 13:1" for Romans 13), so it admits the row without the query's exact words.
+    const writtenMatch = referenceQuery && !referenceMatch && written.some((reference) => scriptureOverlaps(referenceQuery, reference));
     let score = 0;
     const reasons: string[] = [];
-    if (!coverage || referenceMatch || coverage[row] / terms.length >= SEARCH_WEIGHTS.minimumTermCoverage || coverage[row] >= 2) {
+    if (!coverage || referenceMatch || writtenMatch || coverage[row] / terms.length >= SEARCH_WEIGHTS.minimumTermCoverage || coverage[row] >= 2) {
       const covered = new Set<number>();
       let distinctiveMetadata = false;
       for (const [name, values] of fields) {
@@ -242,6 +257,10 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
             score += SEARCH_WEIGHTS.referenceBonus * scriptureCoverage(referenceQuery, references.filter(reference => reference !== undefined))
               + SEARCH_WEIGHTS.scripture * (1 + SEARCH_WEIGHTS.phraseBonus);
             reasons.push(`Scripture: ${referenceQuery.canonical}`);
+          } else if (writtenMatch) {
+            terms.forEach((_, i) => covered.add(i));
+            score += SEARCH_WEIGHTS.scripture;
+            reasons.push(`Mentions ${referenceQuery.canonical}`);
           }
           continue;
         }
@@ -266,8 +285,7 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
       // A Bible reference is one term, not loose words: "Psalms 1" must not match a chapter that merely
       // mentions some psalm and the number 1 (Psalms 98:1-3). Without an overlapping cited reference, only
       // an overlapping reference written out in the chapter's own text counts, book identity included.
-      if (referenceQuery && !referenceMatch && !writesReference([chapter.title, chapter.parentTitle ?? '', chapter.summary,
-        chapter.serviceTitle, chapter.series?.name ?? '', ...chapter.keywords, ...chapter.topics], referenceQuery)) { score = 0; reasons.length = 0; }
+      if (referenceQuery && !referenceMatch && !writtenMatch) { score = 0; reasons.length = 0; }
     }
     // Exhaustive even for rows with no lexical candidates. Zero rows score 0 and never match.
     if (vectors && queryVector) {
