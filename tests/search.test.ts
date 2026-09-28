@@ -138,7 +138,7 @@ describe('transparent chapter ranking', () => {
     expect(ids('Romans 13')).toEqual(['alias']);
     expect(ids('Isaiah 3')).toEqual([]);
   });
-  it('keeps each written reference to its own words: separators and earlier citations never lend a book number', () => {
+  it('reads each written reference as a whole chapter:verse unit, so its numbers never start the next one', () => {
     const listed = { ...fixture, id: 'listed', scripture: [], summary: 'Read Romans 12:1; John 3:16.' };
     const spaced = { ...fixture, id: 'spaced', scripture: [], summary: 'Read Romans 12:1 John 3:16 together.' };
     const numbered = { ...fixture, id: 'numbered', scripture: [], summary: 'Compare Romans 12; 1 John 3 and Romans 12:1 and 1 John 4:8.' };
@@ -152,6 +152,14 @@ describe('transparent chapter ranking', () => {
     expect(ids('1 John 3:16')).toEqual(['numbered']);
     expect(ids('1 John 4')).toEqual(['numbered']);
     expect(ids('Romans 12').sort()).toEqual(['listed', 'numbered', 'spaced']);
+    // Without any punctuation, a chapter-only reference ends at its chapter: the next number starts 1 John.
+    const bare = [{ ...fixture, id: 'bare', scripture: [], summary: 'Romans 12 1 John 3 tonight.' }];
+    expect(search(bare, '1 John 3').map((result) => result.chapter.id)).toEqual(['bare']);
+    expect(search(bare, 'John 3')).toEqual([]);
+    // A book name with an invalid chapter is skipped whole: 1 John has five chapters, so this is not John 9.
+    expect(search([{ ...fixture, id: 'invalid', scripture: [], summary: 'Compare 1 John 9 with nothing.' }], 'John 9')).toEqual([]);
+    // Cross-chapter ranges are one unit too.
+    expect(search([{ ...fixture, id: 'range', scripture: [], summary: 'Reading Romans 12:21-13:2 aloud.' }], 'Romans 13:1').map((result) => result.chapter.id)).toEqual(['range']);
   });
   it('reads unambiguous lowercase book names but not everyday words', () => {
     const rows = [

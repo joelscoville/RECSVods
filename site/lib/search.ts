@@ -23,45 +23,79 @@ export interface PreparedSearchIndex { search(query: string, options?: PreparedS
 const STOP_WORDS = new Set('a about above after again all am an and any are as at be because been before being below between both by can could did do does doing down during each few for from further had has have having he her here hers herself him himself his how i if in into is it its itself just me more most my myself now of off on once or other our ours ourselves out over own same she should so some such than that the their theirs them themselves then there these they this those through to too under until up us very was we were what when where which while who whom why with would you your yours yourself yourselves'.split(' '));
 /** Qualifiers that invert or restrict meaning; a match that drops one is not a match. */
 const NEGATIONS = ['no', 'not', 'never', 'only'];
-/** A chapter number with an optional verse or range, as written in prose ("3:16", "13:1-7", "2"). */
-const WRITTEN_CHAPTER = /(?<![0-9:])(\d+(?:\s*:\s*\d+)?(?:\s*[-–]\s*\d+(?:\s*:\s*\d+)?)?)(?![0-9])/g;
 /** Book names that are also everyday words; written in lowercase they are prose, not references. */
 const EVERYDAY_WORDS = new Set(['acts', 'cant', 'job', 'judges', 'mark', 'numbers', 'song', 'songs']);
 /** The book a written name denotes. Capitalised or numbered names may be any alias ("Is", "Rom", "1 Jn");
  * a lowercase name must be unambiguous (four or more letters, not an everyday word), so "john 3:16"
  * counts while "it is 3 weeks" (Isaiah) and "mark 3 items" (Mark) do not. */
+const bookCache = new Map<string, string | undefined>();
 function writtenBook(name: string): string | undefined {
+  if (bookCache.has(name)) return bookCache.get(name);
+  const book = lookupWrittenBook(name);
+  bookCache.set(name, book);
+  return book;
+}
+function lookupWrittenBook(name: string): string | undefined {
   const book = canonicalBook(name);
   if (!book || /^[A-Z0-9]/.test(name)) return book;
   const word = name.toLowerCase();
   return word.replace(/[^a-z]/g, '').length >= 4 && !EVERYDAY_WORDS.has(word) ? book : undefined;
 }
-/** References written out in a chapter's own text (not its cited scripture). Before each chapter number,
- * the longest run of up to four preceding words that the parser's own alias table names as a book is
- * taken, so book identity is complete: "1 John", "I John", "1 Jn" and "Song of Solomon" are read in full.
- * The words come only from the same contiguous reference, after the last separator (; , brackets) and
- * after the previous reference found, so in "Romans 12:1; John 3:16" the 1 of 12:1 never makes 1 John.
+/** References written out in a chapter's own text (not its cited scripture), read forward as whole units
+ * in the chapter:verse format: a book name (up to four words, per the parser's alias table, so "1 John",
+ * "I John", "1 Jn" and "Song of Solomon" are complete), then a chapter, then optionally ":verse" and a
+ * "-" range ("12", "12:1", "12:1-8", "12:21-13:2"). Each reference consumes its own numbers, so in
+ * "Romans 12:1 John 3:16" the ":1" belongs to Romans 12:1 and can never make "1 John". A book name whose
+ * numbers are not a valid reference is skipped whole ("1 John 9" is never read as John 9).
  * Query-independent, so parsed once per row, and only texts with digits are scanned. */
 function writtenReferences(chapter: SearchChapter): ScriptureReference[] {
   const texts = [chapter.title, chapter.parentTitle ?? '', chapter.summary, chapter.serviceTitle, chapter.series?.name ?? '', ...chapter.keywords, ...chapter.topics];
-  return texts.flatMap((text) => {
-    if (!/\d/.test(text)) return [];
-    const found: ScriptureReference[] = [];
-    let previousEnd = 0;
-    for (const match of text.matchAll(WRITTEN_CHAPTER)) {
-      const before = text.slice(Math.max(previousEnd, match.index - 40), match.index).split(/[;,()[\]{}/]/).pop()!;
-      if (!/[A-Za-z]\.?\s*$/.test(before)) continue;
-      const tokens = before.match(/[A-Za-z0-9]+/g)?.slice(-4) ?? [];
-      for (let count = tokens.length; count >= 1; count--) {
-        const book = writtenBook(tokens.slice(-count).join(' '));
-        if (!book) continue;
-        const reference = parseScriptureReference(`${book} ${match[1]}`);
-        if (reference) { found.push(reference); previousEnd = match.index + match[0].length; }
-        break;
+  return texts.flatMap(referencesInText);
+}
+// Service titles, series names and topics repeat across every chapter of a service; parse each text once.
+const textCache = new Map<string, ScriptureReference[]>();
+function referencesInText(text: string): ScriptureReference[] {
+  if (!/\d/.test(text)) return [];
+  let cached = textCache.get(text);
+  if (!cached) { cached = scanReferences(text); textCache.set(text, cached); }
+  return cached;
+}
+function scanReferences(text: string): ScriptureReference[] {
+  // Periods stay in the gaps between tokens, so an abbreviation such as "Rom. 13:1" still reads as one unit.
+  const tokens = [...text.matchAll(/\d+|[A-Za-z]+|[^\s.A-Za-z\d]/g)].map((match) => ({ value: match[0], start: match.index, end: match.index + match[0].length }));
+  const joined = (a: number, b: number) => /^\.?\s*$/.test(text.slice(tokens[a].end, tokens[b].start));
+  const isNumber = (i: number) => i < tokens.length && /^\d+$/.test(tokens[i].value);
+  const isWord = (i: number) => i < tokens.length && /^[A-Za-z]+$/.test(tokens[i].value);
+  const punctuation = (i: number, marks: string) => i < tokens.length && marks.includes(tokens[i].value) && joined(i - 1, i);
+  const found: ScriptureReference[] = [];
+  for (let i = 0; i < tokens.length;) {
+    let next = i + 1;
+    for (let words = 4; words >= 1 && (isWord(i) || isNumber(i)); words--) {
+      const last = i + words - 1;
+      // Cheap checks first: a chapter number must directly follow a contiguous run of words.
+      if (!isNumber(last + 1) || !joined(last, last + 1)) continue;
+      let name = tokens[i].value, contiguous = true;
+      for (let k = i + 1; k <= last && contiguous; k++) {
+        contiguous = isWord(k) && joined(k - 1, k);
+        name += ` ${tokens[k].value}`;
       }
+      const book = contiguous ? writtenBook(name) : undefined;
+      if (!book) continue;
+      // The chapter:verse block: chapter, optional :verse, optional -end with its own optional :verse.
+      let j = last + 1, block = tokens[j].value;
+      if (punctuation(j + 1, ':') && isNumber(j + 2)) { block += `:${tokens[j + 2].value}`; j += 2; }
+      if (punctuation(j + 1, '-–') && isNumber(j + 2)) {
+        block += `-${tokens[j + 2].value}`; j += 2;
+        if (punctuation(j + 1, ':') && isNumber(j + 2)) { block += `:${tokens[j + 2].value}`; j += 2; }
+      }
+      const reference = parseScriptureReference(`${book} ${block}`);
+      if (reference) found.push(reference);
+      next = j + 1;
+      break;
     }
-    return found;
-  });
+    i = next;
+  }
+  return found;
 }
 function words(text: string): string[] { return preprocessEmbedding(text).toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? []; }
 /** Light English inflection normalization; no synonyms, prefixes, or corpus-specific terms. */
