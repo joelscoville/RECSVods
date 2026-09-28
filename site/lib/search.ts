@@ -184,7 +184,7 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
     const reasons: string[] = [];
     if (!coverage || referenceMatch || coverage[row] / terms.length >= SEARCH_WEIGHTS.minimumTermCoverage || coverage[row] >= 2) {
       const covered = new Set<number>();
-      let distinctiveMetadata = false;
+      let distinctiveMetadata = false, phraseHit = false;
       for (const [name, values] of fields) {
         if (name === 'scripture' && referenceQuery) {
           if (referenceMatch) {
@@ -203,6 +203,7 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
         }
         if (!found) continue;
         const fullPhrase = values.some((value) => matchText(value).phrase);
+        phraseHit ||= fullPhrase;
         score += SEARCH_WEIGHTS[name] * (found / totalWeight + (fullPhrase ? SEARCH_WEIGHTS.phraseBonus : 0));
         reasons.push(name === 'verseText' ? 'Verse-text match (BSB)' : name === 'keyword' ? 'Keyword'
           : `${name[0].toUpperCase()}${name.slice(1)} match${fullPhrase && queryWords.length > 1 ? ' (exact phrase)' : ''}`);
@@ -213,6 +214,10 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
       const sparse = distinctiveMetadata && covered.size >= 2 && covered.size / terms.length >= 1 / 3
         && !terms.some((term, i) => ['no', 'not', 'never', 'only'].includes(term) && !covered.has(i));
       if (covered.size / terms.length < SEARCH_WEIGHTS.minimumTermCoverage && !sparse) { score = 0; reasons.length = 0; }
+      // A Bible reference is one term, not loose words: "Psalms 1" must not match a chapter that merely
+      // mentions some psalm and the number 1 (Psalms 98:1-3). Without an overlapping reference, only the
+      // reference written out in the chapter's text counts.
+      if (referenceQuery && !referenceMatch && !phraseHit) { score = 0; reasons.length = 0; }
     }
     // Exhaustive even for rows with no lexical candidates. Zero rows score 0 and never match.
     if (vectors && queryVector) {

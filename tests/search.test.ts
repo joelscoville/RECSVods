@@ -98,6 +98,14 @@ describe('transparent chapter ranking', () => {
     expect(result[0].reasons.some((reason) => reason.startsWith('Scripture: '))).toBe(true);
     expect(search([referenced], 'Romans 13:8')).toEqual([]);
   });
+  it('treats a reference as one term: loose book words and numbers do not match', () => {
+    const psalmOne = { ...fixture, id: 'psalm-one', scripture: ['Psalms 1:1-6'] };
+    // Mentions a psalm and the number 1 (and cites Psalms 98:1-3), but not Psalm 1.
+    const loose = { ...fixture, id: 'loose', scripture: ['Psalms 98:1-3'], keywords: ['psalms'], summary: 'Sing a new song from Psalms 98:1-3 and 1 Corinthians 11.' };
+    const written = { ...fixture, id: 'written', scripture: [], summary: 'Reads Psalm 1 aloud before prayer.' };
+    for (const query of ['Psalms 1', 'Psalm 1', 'Ps 1']) expect(search([loose, written, psalmOne], query).map((result) => result.chapter.id)).toEqual(['psalm-one', 'written']);
+    expect(search([loose], 'John 3')).toEqual([]);
+  });
   it('keeps per-value phrase boundaries and combines field coverage', () => {
     const separated = { ...fixture, id: 'separated', keywords: ['quiet', 'generosity'], summary: '' };
     const phrase = { ...separated, id: 'phrase', keywords: ['quiet generosity'] };

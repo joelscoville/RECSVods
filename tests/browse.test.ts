@@ -9,6 +9,7 @@ import BrowsePage from '../site/components/BrowsePage';
 import Home from '../site/components/Home';
 import ScriptureLinks from '../site/components/ScriptureLinks';
 import SearchApp from '../site/components/SearchApp';
+import { referencesFor } from '../site/components/RecordingResult';
 import { readWatchTarget } from '../site/lib/urls';
 
 // Fictional metadata only, never archive interpretation.
@@ -132,6 +133,12 @@ describe('home and multipart chapter playback', () => {
     expect(grouped[0].recording.match).toMatchObject({ id: best.id, start: best.start, href: `/watch/?chapter=${best.id}`, more: newer.length - 1 });
     // The recording still opens at its sermon (in another part) and carries the match for "Chapter only".
     expect(grouped[0].recording.href).toBe(`/watch/?chapter=chapter-2-0&match=${best.id}`);
+  });
+  it('lists the references matching a searched reference first in a result', () => {
+    const chapter = { scripture: ['Psalms 99:1-5', 'Daniel 7', 'Psalms 1:1-6'], scriptureDisplay: ['Ps 99:1-5', 'Dan 7', 'Ps 1:1-6'] };
+    expect(referencesFor(chapter, 'Psalms 1')).toEqual({ references: ['Psalms 1:1-6', 'Psalms 99:1-5', 'Daniel 7'], displayReferences: ['Ps 1:1-6', 'Ps 99:1-5', 'Dan 7'] });
+    // Without a reference query the chapter's own order stands.
+    expect(referencesFor(chapter, 'eternal life').references).toEqual(chapter.scripture);
   });
   it('treats the run of consecutive sermon chapters in an upload as the whole sermon', () => {
     const [service] = displayed(), chapter = (id: string) => service.chapters.find((item) => item.id === id)!;
