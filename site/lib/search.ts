@@ -25,25 +25,38 @@ const STOP_WORDS = new Set('a about above after again all am an and any are as a
 const NEGATIONS = ['no', 'not', 'never', 'only'];
 /** A chapter number with an optional verse or range, as written in prose ("3:16", "13:1-7", "2"). */
 const WRITTEN_CHAPTER = /(?<![0-9:])(\d+(?:\s*:\s*\d+)?(?:\s*[-–]\s*\d+(?:\s*:\s*\d+)?)?)(?![0-9])/g;
+/** Book names that are also everyday words; written in lowercase they are prose, not references. */
+const EVERYDAY_WORDS = new Set(['acts', 'cant', 'job', 'judges', 'mark', 'numbers', 'song', 'songs']);
+/** The book a written name denotes. Capitalised or numbered names may be any alias ("Is", "Rom", "1 Jn");
+ * a lowercase name must be unambiguous (four or more letters, not an everyday word), so "john 3:16"
+ * counts while "it is 3 weeks" (Isaiah) and "mark 3 items" (Mark) do not. */
+function writtenBook(name: string): string | undefined {
+  const book = canonicalBook(name);
+  if (!book || /^[A-Z0-9]/.test(name)) return book;
+  const word = name.toLowerCase();
+  return word.replace(/[^a-z]/g, '').length >= 4 && !EVERYDAY_WORDS.has(word) ? book : undefined;
+}
 /** References written out in a chapter's own text (not its cited scripture). Before each chapter number,
- * the longest run of up to four preceding words that the parser's own alias table names as a book is taken,
- * so book identity is complete: "1 John", "I John", "1 Jn" and "Song of Solomon" are read in full, and
- * "Reading from 1 John 3:16" is never John. Names must be capitalised as written, so prose such as "it is
- * 3 weeks" is not Isaiah 3. Query-independent, so parsed once per row, and only texts with digits. */
+ * the longest run of up to four preceding words that the parser's own alias table names as a book is
+ * taken, so book identity is complete: "1 John", "I John", "1 Jn" and "Song of Solomon" are read in full.
+ * The words come only from the same contiguous reference, after the last separator (; , brackets) and
+ * after the previous reference found, so in "Romans 12:1; John 3:16" the 1 of 12:1 never makes 1 John.
+ * Query-independent, so parsed once per row, and only texts with digits are scanned. */
 function writtenReferences(chapter: SearchChapter): ScriptureReference[] {
   const texts = [chapter.title, chapter.parentTitle ?? '', chapter.summary, chapter.serviceTitle, chapter.series?.name ?? '', ...chapter.keywords, ...chapter.topics];
   return texts.flatMap((text) => {
     if (!/\d/.test(text)) return [];
     const found: ScriptureReference[] = [];
+    let previousEnd = 0;
     for (const match of text.matchAll(WRITTEN_CHAPTER)) {
-      const before = text.slice(Math.max(0, match.index - 40), match.index);
+      const before = text.slice(Math.max(previousEnd, match.index - 40), match.index).split(/[;,()[\]{}/]/).pop()!;
       if (!/[A-Za-z]\.?\s*$/.test(before)) continue;
       const tokens = before.match(/[A-Za-z0-9]+/g)?.slice(-4) ?? [];
       for (let count = tokens.length; count >= 1; count--) {
-        const name = tokens.slice(-count).join(' '), book = /^[A-Z0-9]/.test(name) ? canonicalBook(name) : undefined;
+        const book = writtenBook(tokens.slice(-count).join(' '));
         if (!book) continue;
         const reference = parseScriptureReference(`${book} ${match[1]}`);
-        if (reference) found.push(reference);
+        if (reference) { found.push(reference); previousEnd = match.index + match[0].length; }
         break;
       }
     }

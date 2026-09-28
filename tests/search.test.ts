@@ -138,6 +138,33 @@ describe('transparent chapter ranking', () => {
     expect(ids('Romans 13')).toEqual(['alias']);
     expect(ids('Isaiah 3')).toEqual([]);
   });
+  it('keeps each written reference to its own words: separators and earlier citations never lend a book number', () => {
+    const listed = { ...fixture, id: 'listed', scripture: [], summary: 'Read Romans 12:1; John 3:16.' };
+    const spaced = { ...fixture, id: 'spaced', scripture: [], summary: 'Read Romans 12:1 John 3:16 together.' };
+    const numbered = { ...fixture, id: 'numbered', scripture: [], summary: 'Compare Romans 12; 1 John 3 and Romans 12:1 and 1 John 4:8.' };
+    const rows = [listed, spaced, numbered], prepared = prepareSearchIndex(rows);
+    const ids = (query: string) => {
+      const exhaustive = search(rows, query).map((result) => result.chapter.id);
+      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(exhaustive);
+      return exhaustive;
+    };
+    expect(ids('John 3:16')).toEqual(['listed', 'spaced']);
+    expect(ids('1 John 3:16')).toEqual(['numbered']);
+    expect(ids('1 John 4')).toEqual(['numbered']);
+    expect(ids('Romans 12').sort()).toEqual(['listed', 'numbered', 'spaced']);
+  });
+  it('reads unambiguous lowercase book names but not everyday words', () => {
+    const rows = [
+      { ...fixture, id: 'lower-john', scripture: [], summary: 'Reading from john 3:16.' },
+      { ...fixture, id: 'lower-psalm', scripture: [], summary: 'A reading of psalm 23 before prayer.' },
+      { ...fixture, id: 'prose', scripture: [], summary: 'It is 3 weeks away; mark 3 items and note the acts 2 cast list.' },
+    ];
+    const prepared = prepareSearchIndex(rows);
+    for (const [query, expected] of [['John 3:16', ['lower-john']], ['Psalms 23', ['lower-psalm']], ['Isaiah 3', []], ['Mark 3', []], ['Acts 2', []]] as const) {
+      expect(search(rows, query).map((result) => result.chapter.id)).toEqual(expected);
+      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(expected);
+    }
+  });
   it('scores the verse a natural-language query is about, ignoring common words alone', () => {
     const verses = {
       'Romans 12:1': 'Therefore I urge you, brothers, on account of God’s mercy, to offer your bodies as living sacrifices, holy and pleasing to God.',
