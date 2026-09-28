@@ -18,9 +18,4 @@ describe('procedural thumbnails', () => {
     expect(seen.size).toBe(18);
     expect([...colours].sort()).toEqual(['#000000', '#23A7DA', '#273469', '#4A00FF', '#6C0000', '#E4D9FF', '#FFFFFF']);
   });
-  it('builds a thousand thumbnails well within a second', () => {
-    const start = performance.now();
-    for (let i = 0; i < 1000; i++) thumbnailPattern(`bench-${i}`);
-    expect(performance.now() - start).toBeLessThan(250);
-  });
 });

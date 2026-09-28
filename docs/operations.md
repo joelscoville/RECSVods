@@ -30,15 +30,18 @@ PR validation starts at the merge base, allowing the target branch to advance.
 ## Pipeline boundaries
 
 `ci.yml` runs on PRs, default-branch pushes and manual dispatch. Separate
-`editorial-guard` and `validate` jobs must succeed before the Pages build/upload and
-deployment jobs. PR jobs have only `contents: read`; no `pull_request_target` is used.
+code-quality, unit/Python, browser/build and `editorial-guard` jobs run independently.
+The required `validate` aggregation rejects failed, cancelled or skipped groups;
+it and `editorial-guard` must succeed before Pages build/upload and deployment.
+PR jobs have only `contents: read`; no `pull_request_target` is used.
 Only main-branch push/manual runs can upload/deploy. **Manual CI dispatch on main
 can deploy after checks pass**; use local checks or a PR when testing without deployment.
 
 Validation builds production and preview under `/replay-check/`, checks direct routes
 and assets, validates committed vectors and privacy, and exercises the browser.
 CI uses `--exact-only` acceptance and `RECS_E2E_NO_MODEL=1`: semantic worker/model
-execution is blocked and the two real-inference browser cases are explicitly skipped.
+execution is blocked and real-inference browser cases belong to the separately selected
+`pnpm test:e2e:model` project. See [testing](testing.md) for local parallelism and reruns.
 Model/Bible assets may be verified/prepared as static files, but no captions, ASR,
 LLM or embedding inference runs in Actions. Full semantic acceptance remains a local
 person-invoked command. Fixture tests cannot substitute for real media review.

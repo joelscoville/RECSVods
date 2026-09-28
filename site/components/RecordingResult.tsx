@@ -4,12 +4,10 @@ import { formatDate, formatTime } from '../lib/urls';
 import { parseScriptureReference, scriptureOverlaps } from '../lib/scripture';
 import ScriptureLinks from './ScriptureLinks';
 import { VideoArt } from './VideoCard';
+import type { BestVerse } from '../lib/verse-selection';
 
 /** One search result per recording. It opens the sermon; the chapter that matched is named here (with its
  * scripture and why it matched) and offered as "Chapter only" under the player. */
-/** The verse within a cited passage that best matches the search, with its score (see prepareVerseScorer). */
-export type BestVerse = (reference: string) => { verse: string; score: number } | undefined;
-
 /** A chapter's references in the order a search result shows them. A searched reference comes first
  * ("Psalms 1" shows Psalms 1:1-6, not whichever reference the chapter lists first). Otherwise the passage
  * holding the verse the search's words best match comes first, narrowed to that verse, so "living

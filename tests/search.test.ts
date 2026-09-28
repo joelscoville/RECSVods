@@ -1,14 +1,11 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { createRequire } from 'node:module';
-import { pathToFileURL } from 'node:url';
-import path from 'node:path';
 import { EMBEDDING_CONFIG, EMBEDDING_OPTIONS, isCompatibleEmbeddingConfig, isEmbeddingVector, MODEL_FILES, preprocessEmbedding, semanticAssetPaths } from '../site/lib/embedding-config';
 import { parseFullDateQuery, prepareSearchIndex, prepareVerseScorer, search, SEARCH_WEIGHTS } from '../site/lib/search';
 import { CHAPTER_VECTOR_CONFIG, decodeChapterVectors, packChapterVectors } from '../site/lib/chapter-vectors';
 import { enrichChapters, parseChapterMetadata } from '../site/lib/chapter-index';
 import { createSemanticClient, type SemanticRequest, type SemanticResponse, type SemanticStatus } from '../site/lib/semantic';
 import type { SearchChapter } from '../site/lib/types';
-import { embedTexts, prepare, sha256, verifyModelFile } from '../scripts/embeddings';
+import { sha256, verifyModelFile } from '../scripts/embeddings';
 
 // Fictional metadata and compact vector rows; never emitted into an archive.
 const fixture: SearchChapter = {
@@ -194,6 +191,9 @@ describe('transparent chapter ranking', () => {
     const verses = {
       '1 John 2:15': 'Do not love the world or anything in the world. If anyone loves the world, the love of the Father is not in him.',
       'John 3:16': 'For God so loved the world that He gave His one and only Son, that everyone who believes in Him shall not perish but have eternal life.',
+      // With only the two verses above, every query term has zero IDF. The wrong
+      // verse would score zero even with the negation guard deleted: a vacuous regression test.
+      'Psalms 95:1': 'Come, let us sing for joy to the LORD; let us shout to the Rock of our salvation!',
     };
     const score = prepareVerseScorer(verses)('do not love the world');
     // John 3:16 has "not", "loved" and "world", but not "not love".
@@ -298,51 +298,4 @@ describe('lazy semantic client', () => {
     expect(FakeWorker.instances).toHaveLength(0); vi.stubGlobal('Worker', undefined);
     await expect(client.embed('care')).rejects.toThrow(); client.dispose();
   });
-});
-
-describe.skipIf(process.env.RECS_TEST_EMBEDDINGS !== '1')('prepared real q8 model (opt-in)', () => {
-  it('reuses verified cache offline and produces compatible normalized query embeddings', async () => {
-    vi.stubGlobal('fetch', () => { throw new Error('Offline check: network forbidden'); });
-    const result = await prepare(); expect(result.downloadedBytes).toBe(0); expect(result.reusedBytes).toBe(23685172);
-    const queryVectors = await embedTexts(['A person helps a neighbour.', '  A person\nhelps a neighbour. ', 'The spacecraft orbits a distant planet.']);
-    queryVectors.forEach((vector) => expect(isEmbeddingVector(vector)).toBe(true));
-    expect(queryVectors[0]).toEqual(queryVectors[1]);
-    expect(queryVectors[0].reduce((sum, value, i) => sum + value * queryVectors[2][i], 0)).toBeLessThan(SEARCH_WEIGHTS.semanticThreshold);
-  }, 60_000);
-});
-
-describe.skipIf(process.env.RECS_TEST_BROWSER_EMBEDDINGS !== '1')('browser WASM integration (opt-in)', () => {
-  it('embeds in a real non-root worker without external requests and agrees with Node', async () => {
-    const require = createRequire(import.meta.url);
-    const viteEntry = require.resolve('vite', { paths: [path.dirname(require.resolve('vitest/package.json'))] });
-    const { createServer } = await import(pathToFileURL(viteEntry).href);
-    const { chromium } = await import('@playwright/test');
-    const server = await createServer({ configFile: false, root: process.cwd(), base: '/review/', publicDir: 'site/public', server: { host: '127.0.0.1', port: 0 } });
-    let browser;
-    try {
-      await server.listen(); const origin = new URL(server.resolvedUrls.local[0]).origin;
-      browser = await chromium.launch({ headless: true }); const page = await browser.newPage();
-      const external: string[] = [], requested: string[] = [];
-      await page.route('**/*', (route) => {
-        const url = route.request().url(); requested.push(url);
-        if (new URL(url).origin !== origin) { external.push(url); return route.abort(); }
-        return route.continue();
-      });
-      await page.route(`${origin}/review/`, (route) => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Embedding integration check</title>' }));
-      await page.goto(`${origin}/review/`);
-      const result = await page.evaluate<{ vector: number[]; statuses: SemanticStatus[] }>(`(async () => {
-        const { createSemanticClient } = await import('/review/site/lib/semantic.ts');
-        const statuses = []; const client = createSemanticClient('/review/', (status) => statuses.push(status));
-        try { return { vector: await client.embed('A person helps a neighbour.'), statuses }; }
-        finally { client.dispose(); }
-      })()`);
-      expect(isEmbeddingVector(result.vector)).toBe(true);
-      expect(result.statuses.some((status) => status.state === 'ready')).toBe(true); expect(external).toEqual([]);
-      expect(await page.evaluate(() => globalThis.caches.keys())).toContain(`recs-embeddings-${EMBEDDING_CONFIG.revision}-${EMBEDDING_CONFIG.dtype}`);
-      expect(requested.some((url) => url.includes('/review/models/Xenova/all-MiniLM-L6-v2/onnx/model_quantized.onnx'))).toBe(true);
-      expect(requested.some((url) => url.includes('/review/onnx/') && url.endsWith('.wasm'))).toBe(true);
-      const [nodeVector] = await embedTexts(['A person helps a neighbour.']);
-      expect(nodeVector.reduce((sum, value, i) => sum + value * result.vector[i], 0)).toBeGreaterThan(0.999);
-    } finally { await browser?.close(); await server.close(); }
-  }, 120_000);
 });

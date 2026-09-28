@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { SearchChapter } from '../lib/types';
-import { prepareSearchIndex, prepareVerseScorer, type DecodedChapterVectors } from '../lib/search';
-import { parseScriptureReference } from '../lib/scripture';
+import { prepareSearchIndex, type DecodedChapterVectors } from '../lib/search';
+import { prepareVerseSelection } from '../lib/verse-selection';
 import { enrichChapters, loadChapterMetadata, loadChapterVectors, loadScriptureIndex, type ChapterMetadata, type ScriptureIndex } from '../lib/chapter-index';
 import { createSemanticClient, type SemanticClient, type SemanticStatus } from '../lib/semantic';
 import { clearSearchHistory, getSearchHistory, saveSearch } from '../lib/local-state';
@@ -11,7 +11,7 @@ import BrowseNavigation from './BrowseNavigation';
 import Header from './Header';
 import SearchField from './SearchField';
 import Icon from './Icon';
-import RecordingResult, { type BestVerse } from './RecordingResult';
+import RecordingResult from './RecordingResult';
 import { groupByRecording, type HomeItem } from './archive-display';
 import CopyLink from './CopyLink';
 
@@ -124,20 +124,8 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
   // Results are recordings, ranked by their best chapter; that chapter is offered after the sermon.
   const results = useMemo(() => groupByRecording(hybridResults ?? exact, recordings, base), [hybridResults, exact, recordings, base]);
   // Which verse of each cited passage the search's words best match (BSB text; never displayed).
-  const verseScorer = useMemo(() => scripture?.base === base ? prepareVerseScorer(scripture.index.verses) : undefined, [scripture, base]);
-  const bestVerse = useMemo((): BestVerse | undefined => {
-    if (!verseScorer || !scripture || !query.trim()) return undefined;
-    const score = verseScorer(query), references = scripture.index.references, cache = new Map<string, ReturnType<BestVerse>>();
-    return (reference) => {
-      if (!cache.has(reference)) {
-        const keys = references[parseScriptureReference(reference)?.canonical ?? reference] ?? [];
-        let best: ReturnType<BestVerse>;
-        for (const verse of keys) { const value = score(verse); if (value > (best?.score ?? 0)) best = { verse, score: value }; }
-        cache.set(reference, best);
-      }
-      return cache.get(reference);
-    };
-  }, [verseScorer, scripture, query]);
+  const verseSelection = useMemo(() => scripture?.base === base ? prepareVerseSelection(scripture.index) : undefined, [scripture, base]);
+  const bestVerse = useMemo(() => query.trim() ? verseSelection?.(query) : undefined, [verseSelection, query]);
   const categories = availableBrowseCategories([], chapters);
   const topics = useMemo(() => suggestedTopics(chapters), [chapters]);
 

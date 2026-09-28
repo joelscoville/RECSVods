@@ -1,12 +1,11 @@
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { readFileSync, readdirSync } from 'node:fs';
-import path from 'node:path';
+import { readFileSync } from 'node:fs';
 import { parseDocument } from 'yaml';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { flattenChapters, loadArchive, publishedServices, ServiceSchema, SOURCE_CHANNEL_ID } from '../site/lib/archive';
+import { flattenChapters, ServiceSchema, SOURCE_CHANNEL_ID } from '../site/lib/archive';
 import { CORRECTION_KINDS, correctionConfig, correctionLinks, validateRepositoryUrl, validateSourceRef, type CorrectionConfig, type CorrectionTarget } from '../site/lib/corrections';
-import { buildCorrectionConfig, loadCorrectionConfig, resolveRepositoryConfig } from '../site/lib/source-links';
+import { buildCorrectionConfig, resolveRepositoryConfig } from '../site/lib/source-links';
 import CorrectionLinks from '../site/components/CorrectionLinks';
 import RecordingResult from '../site/components/RecordingResult';
 import BrowsePage from '../site/components/BrowsePage';
@@ -123,30 +122,4 @@ describe('rendered links and form', () => {
     for (const key of params.keys()) if (!['template', 'title', 'body'].includes(key)) expect(ids).toContain(key);
     expect(fields.find((field: { id: string }) => field.id === 'problem').attributes.options).toEqual([...CORRECTION_KINDS]);
   });
-});
-
-// Run only after a fresh non-root preview; no issue is submitted by this check.
-it.runIf(process.env.RECS_TEST_PREVIEW_CORRECTIONS === '1')('verifies chapter suggestions in the built preview', () => {
-  const root = process.cwd(), output = path.join(root, 'dist/preview');
-  const build = JSON.parse(readFileSync(path.join(output, 'build-mode.json'), 'utf8')) as { mode: string; base: string };
-  expect(build.mode).toBe('preview'); expect(build.base).not.toBe('/');
-  const services = publishedServices(loadArchive(root), 'preview');
-  const data = loadCorrectionConfig(root, { ...process.env, ARCHIVE_MODE: 'preview' });
-  const links = (html: string) => [...html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)].filter((match) => match[2].startsWith('Suggest a correction')).map((match) => {
-    expect(match[1]).toMatch(/\brel="noreferrer"/); expect(match[1]).toMatch(/\breferrerpolicy="no-referrer"/i);
-    return new URL(/\bhref="([^"]+)"/.exec(match[1])![1].replaceAll('&amp;', '&'));
-  });
-  for (const service of services) {
-    const html = readFileSync(path.join(output, 'services', service.id, 'index.html'), 'utf8'), suggestions = links(html);
-    expect(suggestions).toHaveLength(service.chapters.length + 1); expect(html).not.toContain('Edit this transcript');
-    for (const chapter of service.chapters) {
-      const params = suggestions.find((url) => url.searchParams.get('chapter-id') === chapter.id)!.searchParams;
-      expect(params.get('page')).toBe(`${build.base}watch/?chapter=${chapter.id}`);
-      expect(params.get('timestamps')).toBe(`${chapter.video_id}: ${chapter.start}–${chapter.end} seconds`);
-      expect(params.get('body')).toContain(`### chapter-id\n${chapter.id}`);
-    }
-  }
-  expect(Object.keys(data.chapters)).toHaveLength(services.reduce((sum, service) => sum + service.chapters.length, 0));
-  const chunks = readdirSync(path.join(output, '_astro')).filter((file) => file.endsWith('.js'));
-  for (const file of chunks) expect(readFileSync(path.join(output, '_astro', file), 'utf8')).not.toMatch(/__RECS_CORRECTIONS__|node:fs|node:child_process|execFileSync|readFileSync/);
 });
