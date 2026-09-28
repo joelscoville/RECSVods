@@ -158,6 +158,27 @@ describe('transparent chapter ranking', () => {
     // Cross-chapter ranges are one unit too.
     expect(search([{ ...fixture, id: 'range', scripture: [], summary: 'Reading Romans 12:21-13:2 aloud.' }], 'Romans 13:1').map((result) => result.chapter.id)).toEqual(['range']);
   });
+  it('normalises written references as the scripture parser does: Unicode book numbers and every dash', () => {
+    const rows = [
+      { ...fixture, id: 'roman-numeral', scripture: [], summary: 'Reading from Ⅰ John 3:16.' },
+      { ...fixture, id: 'full-width', scripture: [], summary: 'Reading from １ John 4:8.' },
+      { ...fixture, id: 'em-dash', scripture: [], summary: 'Reading Romans 12:21—13:2 aloud.' },
+      { ...fixture, id: 'en-dash', scripture: [], summary: 'Reading Romans 8:28–30 aloud.' },
+    ];
+    const prepared = prepareSearchIndex(rows);
+    const ids = (query: string) => {
+      const exhaustive = search(rows, query).map((result) => result.chapter.id);
+      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(exhaustive);
+      return exhaustive;
+    };
+    // "Ⅰ" and "１" keep their book number: these are 1 John, never the Gospel of John.
+    expect(ids('John 3:16')).toEqual([]);
+    expect(ids('1 John 3:16')).toEqual(['roman-numeral']);
+    expect(ids('1 John 4')).toEqual(['full-width']);
+    // An em-dash range is read whole, so it reaches Romans 13; an en-dash range still works.
+    expect(ids('Romans 13')).toEqual(['em-dash']);
+    expect(ids('Romans 8:30')).toEqual(['en-dash']);
+  });
   it('reads unambiguous lowercase book names but not everyday words', () => {
     const rows = [
       { ...fixture, id: 'lower-john', scripture: [], summary: 'Reading from john 3:16.' },

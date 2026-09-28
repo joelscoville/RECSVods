@@ -47,6 +47,7 @@ function lookupWrittenBook(name: string): string | undefined {
  * "-" range ("12", "12:1", "12:1-8", "12:21-13:2"). Each reference consumes its own numbers, so in
  * "Romans 12:1 John 3:16" the ":1" belongs to Romans 12:1 and can never make "1 John". A book name whose
  * numbers are not a valid reference is skipped whole ("1 John 9" is never read as John 9).
+ * Text is normalised as the scripture parser normalises references (NFKC, every dash to a hyphen).
  * Query-independent, so parsed once per row, and only texts with digits are scanned. */
 function writtenReferences(chapter: SearchChapter): ScriptureReference[] {
   const texts = [chapter.title, chapter.parentTitle ?? '', chapter.summary, chapter.serviceTitle, chapter.series?.name ?? '', ...chapter.keywords, ...chapter.topics];
@@ -54,10 +55,16 @@ function writtenReferences(chapter: SearchChapter): ScriptureReference[] {
 }
 // Service titles, series names and topics repeat across every chapter of a service; parse each text once.
 const textCache = new Map<string, ScriptureReference[]>();
-function referencesInText(text: string): ScriptureReference[] {
-  if (!/\d/.test(text)) return [];
-  let cached = textCache.get(text);
-  if (!cached) { cached = scanReferences(text); textCache.set(text, cached); }
+function referencesInText(raw: string): ScriptureReference[] {
+  let cached = textCache.get(raw);
+  if (!cached) {
+    // Normalised exactly as parseScriptureReference normalises its input: NFKC turns "Ⅰ John" and "１ John"
+    // into "I John" and "1 John" (so the book number is never dropped), and every dash becomes a hyphen
+    // (so "12:21—13:2" stays one range).
+    const text = raw.normalize('NFKC').replace(/[–—]/g, '-');
+    cached = /\d/.test(text) ? scanReferences(text) : [];
+    textCache.set(raw, cached);
+  }
   return cached;
 }
 function scanReferences(text: string): ScriptureReference[] {
@@ -84,7 +91,7 @@ function scanReferences(text: string): ScriptureReference[] {
       // The chapter:verse block: chapter, optional :verse, optional -end with its own optional :verse.
       let j = last + 1, block = tokens[j].value;
       if (punctuation(j + 1, ':') && isNumber(j + 2)) { block += `:${tokens[j + 2].value}`; j += 2; }
-      if (punctuation(j + 1, '-–') && isNumber(j + 2)) {
+      if (punctuation(j + 1, '-') && isNumber(j + 2)) {
         block += `-${tokens[j + 2].value}`; j += 2;
         if (punctuation(j + 1, ':') && isNumber(j + 2)) { block += `:${tokens[j + 2].value}`; j += 2; }
       }
