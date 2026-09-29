@@ -8,6 +8,7 @@ import CopyLink from './CopyLink';
 import Icon from './Icon';
 import { ScriptureLine } from './ScriptureLinks';
 import CorrectionLinks from './CorrectionLinks';
+import VideoQuirks from './VideoQuirks';
 
 /** `match` is the chapter a search or category matched, offered as "Chapter only" while the sermon plays. */
 interface Selection { service: DisplayService; video: DisplayService['videos'][number]; chapter?: DisplayChapter; match?: DisplayChapter; start: number }
@@ -156,6 +157,12 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
     ...(atServiceStart ? [] : [{ label: 'Full service instead', onChoose: watchFull }]),
     ...(only ? [only] : []),
   ];
+  // External YouTube links cannot enforce a soft endpoint. Offer navigation, not an
+  // inaccurate promise that a "Chapter only" link will stop YouTube at that boundary.
+  const externalChoices: PlaybackChoice[] = [
+    ...(matched ? [{ label: 'Go to matching chapter', onChoose: () => choose(matched, 'chapter', matched) }] : []),
+    ...(atServiceStart ? [] : [{ label: 'Start full service', onChoose: watchFull }]),
+  ];
   const shareUrl = chapter ? watchUrl(base, { chapter: chapter.id }) : watchUrl(base, { service: service.id, video: video.id, start });
   const references = [...new Set(service.chapters.filter((item) => item.videoId === video.id).flatMap((item) => item.scripture))];
   const displayReferences = references.map((reference) => {
@@ -164,7 +171,7 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
   });
   return <main id="main" className="watch-main" tabIndex={-1}>
     <div className="playback-layout">
-      <YouTubePlayer key={video.id} videoId={video.id} serviceId={service.id} title={title} range={range} seekRequest={seekRequest} onTime={setTime} endLabel={endLabel} choices={choices} />
+      <YouTubePlayer key={video.id} videoId={video.id} serviceId={service.id} title={title} range={range} seekRequest={seekRequest} onTime={setTime} endLabel={endLabel} choices={choices} externalChoices={externalChoices} quirks={video.quirks} />
       <section className="playback-details" aria-labelledby="recording-title">
         <div className="playback-identity">
           <h1 id="recording-title">{title}</h1>
@@ -174,6 +181,7 @@ export default function Watch({ services, base }: { services: DisplayService[]; 
         </div>
         {references.length > 0 && <ScriptureLine references={references} displayReferences={displayReferences} />}
         {service.sermonDescription && <SermonDescription text={service.sermonDescription} />}
+        <VideoQuirks quirks={video.quirks} />
       </section>
       <Chapters service={service} videoId={video.id} time={time} onChoose={choose} base={base} selectedId={chapter?.id} subsections={{ shown: showSubsections, toggle: () => setShowSubsections((shown) => !shown) }} listId={outlineId} />
       {/* After the chapters on mobile; placed beneath the details on desktop. */}

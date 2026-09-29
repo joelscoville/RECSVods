@@ -1,7 +1,7 @@
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { stringify } from 'yaml';
+import { stringify } from './service-fixtures';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { buildIndex, CHAPTER_ARTIFACTS, artifactFilename } from '../scripts/archive';
 import { createChapterVectorManifest } from '../scripts/chapter-vectors';
@@ -15,10 +15,10 @@ afterEach(() => { roots.splice(0).forEach(root => rmSync(root, { recursive: true
 function root() { const value = mkdtempSync(path.join(tmpdir(), 'recs-chapter-rebuild-')); roots.push(value); return value; }
 function service(id: string, videoId: string): Service {
   return { id, date: '2026-01-04', title: 'Fixture service', type: 'service', workflow_status: 'complete',
-    editorial_status: 'needs_review', speakers: [], topics: [], review_notes: [],
+    editorial_status: 'needs_review', speakers: [], topics: [],
     videos: [{ id: videoId, channel_id: SOURCE_CHANNEL_ID, duration: 120, sequence: 1, workflow_status: 'complete', media_disposition: 'playable' }],
     chapters: [{ id: `${id}-chapter`, video_id: videoId, start: 0, end: 60, title: 'Fixture chapter', type: 'sermon',
-      summary: 'A fixture summary.', keywords: ['hope'], topics: [], scripture: [], review_notes: [] }],
+      summary: 'A fixture summary.', keywords: ['hope'], topics: [], scripture: [] }],
   };
 }
 function put(root: string, item: Service, axis: number) {

@@ -1,82 +1,16 @@
+# yaml-language-server: $schema=../../../schema/service.schema.json
+# Editing guide: ../../../docs/editing-services.md
+# Times are quoted MM:SS or HH:MM:SS, optionally with fractional seconds. Keep existing IDs stable.
+
 id: 2026-07-05
 date: 2026-07-05
-title: RECS English service — 5 July 2026
-sermon_title: Signs and Wonders
+title: Signs and Wonders
 type: service
 workflow_status: complete
 editorial_status: needs_review
-review_notes:
-  - Selected physical upload OrsN83j3qxE. Title, release/upload metadata and opening slide agree on
-    5 July 2026; opening slide specifies 9:30am. The 2400s sermon slide reads Signs and Wonders,
-    John 14:25-31, Deuteronomy 13:1-4. No metadata from the distinct July 12 programme D-FyolbxJgk
-    is used here.
-  - The worship leader is introduced as Brother Hadi and the preacher as Pastor Yong in this
-    recording. Full names were not verified on a source caption; structured speakers remain empty.
-    Source anecdotes and descriptions of other churches are attributed claims, not independently
-    established history or doctrine.
-  - Whole programme reviewed from opening hymn fragment through dismissal. Retain prelude at 0–24s;
-    preparation begins at 24s; sermon introduction at 2366.82s; sermon prayer ends at 6278.90s;
-    dismissal ends at 7107.32s. Programme/context spans the acquired recording; two-minute margins
-    clip to its bounds. The imported full span 0–7109.346375s is retained without local inference.
-  - All 1702 source segments reviewed with adjacent context. Passages contain explicitly edited ASR
-    excerpts, not complete verbatim or listening-verified transcripts. Ellipsis markers identify
-    omitted speech; Bible readings/quotations and hymn lyrics have explicit omission markers. Music,
-    distribution and quiet-prayer sections retain timing rather than manufactured words. Some
-    marker-only or brief liturgical units intentionally depart from 30–90s guidance.
-  - Twenty-four coarse 30s audio samples/frames at 0,300,...,6900s; refined date/title/programme
-    frames, aligned PCM comparisons and twelve additional boundary/gap windows were decoded. No
-    audio listening or browser playback is claimed. Frames and ASR corroborate programme content;
-    sample decoding alone does not verify every spoken word.
-  - Original English metadata and ASR agree. Nine outside-segment word warnings (maximum 0.40s), 26
-    zero-duration words, no segment overlaps/backward starts/tail clamps. Authentic timings are
-    retained; boundaries follow source thoughts rather than silently repairing alignments.
-  - "Human review priorities: unclear opening supplication wording and Communion distribution
-    speech; source-ASR reversal of the audience explanation around 5192.90–5207.00s relative to the
-    displayed 1 Corinthians 14:22; unsupported external historical/medical statistics; uncertain
-    proper names; prayer/music gaps. These are flagged, not doctrinally corrected from memory."
-  - Original batch audio was already absent in both designated roots. Import used
-    --allow-missing-audio; exact receipt projection records audio_hash_verified false. JSON hash,
-    exact recipe, identity, duration, bounds and converted segment/word correspondence passed.
-    Supplied raw bundle remains unchanged and external.
-  - Operator-approved completion with flagged uncertainty is processing completion only. Human
-    editorial approval remains required. See docs/july5-comparison.md for the independent-upload
-    comparison, evidence limits, validation and cleanup.
-  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
-    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
-    editorial approval implied."
-  - "Concise service outline: original chapter metadata and boundaries preserved in
-    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
-    service context. Agent interpretation remains needs_review."
-  - Plan only, based on the current service and all 98 supplied passage summaries for its 36
-    original chapters; no new media or ASR evidence and no editorial approval. The service remains
-    needs_review.
-  - "Seven peer groups preserve the original order on OrsN83j3qxE: Opening, Worship and Communion,
-    four sermon movements, and Response and Closing. The sermon’s welcome, review, prayer and
-    resource caveats stay with its foundation in the Spirit’s abiding presence; examples and
-    historical recollections stay within the argument they support."
-  - Five selective cues provide access to the distinctive anthem, the Spirit’s continuing presence,
-    public intelligibility, the Acts argument against formulas, and the concluding Deuteronomy
-    application. The anthem merits the sole routine-service cue as a distinct musical item
-    identified on screen; routine prayers, songs and announcements receive no separate cues.
-  - Only sermon_description is intended as public descriptive prose beneath the video and in service
-    context; every group and cue summary is internal retrieval/review metadata and must not render
-    in navigation, outlines or result cards. Main derives timing, video membership, scripture and
-    topics from the assigned originals and preserves their IDs, bounds, notes and provenance
-    internally.
-  - The source audience explanation around 5192.90–5207.00s reverses the displayed 1 Corinthians
-    14:22 wording; this remains unresolved in the public-worship source chapter and its cue. No
-    doctrinal correction is inferred.
-  - Descriptions of charismatic practices, religious-medium comparisons, historical accounts and
-    anecdotes remain the preacher’s claims, with extreme practice distinguished from the wider
-    movement. The recovery-rate comparison is unsourced, and reported healing or resurrection is not
-    verified. His disagreement with cessationism, allowance for private tongues and refusal to label
-    observed expressions satanic remain qualified positions.
-  - Opening supplication and Communion instructions remain unclear; prayer/music gaps and existing
-    timing caveats remain. Full speaker identities and some proper names are unverified, so no
-    speaker identity is assigned. The anthem title is an on-screen identification, the blessing
-    references are announced, and Boys’ Brigade support remains a possibility rather than a
-    commitment.
-speakers: []
+speakers:
+  # Full speaker identities remain unconfirmed.
+  []
 topics:
   - id: worship
     name: Worship
@@ -95,47 +29,18 @@ topics:
 videos:
   - id: OrsN83j3qxE
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
-    duration: 7109.366
+    duration: "1:58:29.366"
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    disposition_evidence: Authorized full acquisition verified exact RECS channel and ID. Acquisition
-      and independent ffprobe measured 7109.366s with usable audio/video. Twenty-four coarse
-      windows/frames, refined programme frames and additional PCM windows decoded successfully.
-      Opening July 5 slide, Communion, sermon title/reading slides and final announcements
-      corroborate supplied evidence throughout. Selected for July 5 on content/date evidence, not
-      duration; not a duplicate rejection of the other upload. Playable is not a listening,
-      uninterrupted-content or browser-playback guarantee.
-    transcription_language: en
-    transcribed_span:
-      start: 0
-      end: 7109.346375
-    transcription_provenance:
-      engine: faster-whisper
-      engine_version: 1.2.1
-      model: large-v3-turbo
-      backend_version: 4.8.2
-      compute_type: float16
-      device: Tesla T4
-      settings:
-        beam_size: 5
-        word_timestamps: true
-        vad_filter: false
-        condition_on_previous_text: false
-      audio_sha256: 9dba5d18e5b71de5cd490d920aba103e14d68624c2f1909d9cf6dbe71cb77867
-      duration_seconds: 7109.346375
-      elapsed_seconds: 234.624
-      real_time_factor: 0.033
-      transcribed_at: 2026-09-25T11:21:25.009952+00:00
-      transcript_sha256: 2c2ddbc63307e8ac864e09143abd056652474f95538fa2d50d0fac87fef9a978
-      source_duration_seconds: 7109.366
-      duration_delta_seconds: -0.019624999999905413
-      audio_hash_verified: false
+    quirks:
+      - embed_blocked
 chapters:
+  # Listen to the unclear opening supplication and Communion distribution instructions.
   - id: c20260705-opening
     video_id: OrsN83j3qxE
-    start: 0
-    end: 486.6
+    start: "0:00"
+    end: "8:06.6"
     title: Opening
     type: opening
     summary: An opening hymn fragment leads into guided preparation for Communion and the leader’s
@@ -150,15 +55,10 @@ chapters:
       - prayer
       - communion
     scripture: []
-    source_chapters:
-      - s0705-prelude
-      - s0705-preparation
-      - s0705-welcome
-    review_notes: []
   - id: c20260705-worship-communion
     video_id: OrsN83j3qxE
-    start: 486.6
-    end: 2366.82
+    start: "8:06.6"
+    end: "39:26.82"
     title: Worship and Communion
     type: worship
     summary: The congregation shares hymns, prayer, Communion and readings from Psalms, Proverbs, John
@@ -186,27 +86,12 @@ chapters:
       - Proverbs 28:1-28
       - John 14:15-31
       - Deuteronomy 13:1-4
-    source_chapters:
-      - s0705-call
-      - s0705-king
-      - s0705-opening-prayer
-      - s0705-communion-intro
-      - s0705-communion-prayer
-      - s0705-distribution
-      - s0705-communion-response
-      - s0705-proverbs
-      - s0705-john
-      - s0705-teach
-      - s0705-anthem
-      - s0705-deuteronomy
-    review_notes: []
   - id: s0705-anthem
     video_id: OrsN83j3qxE
-    start: 2100
-    end: 2290.24
+    start: "35:00"
+    end: "38:10.24"
     type: anthem
     title: Come, Gracious Spirit
-    confidence: 0.92
     scripture: []
     topics:
       - worship
@@ -215,12 +100,10 @@ chapters:
     keywords:
       - come gracious spirit
     parent_id: c20260705-worship-communion
-    source_chapters:
-      - s0705-anthem
   - id: c20260705-abiding-spirit
     video_id: OrsN83j3qxE
-    start: 2366.82
-    end: 3690.02
+    start: "39:26.82"
+    end: "1:01:30.02"
     title: The Spirit Abides and Leads Believers into Truth
     type: sermon
     summary: Responding to a question about charismatic churches, the preacher grounds discernment in
@@ -246,20 +129,12 @@ chapters:
       - John 14:27
       - John 14:16
       - John 14:23
-    source_chapters:
-      - s0705-sermon-intro
-      - s0705-review
-      - s0705-sermon-prayer
-      - s0705-resources
-      - s0705-spirit
-    review_notes: []
   - id: s0705-spirit
     video_id: OrsN83j3qxE
-    start: 3285.32
-    end: 3690.02
+    start: "54:45.32"
+    end: "1:01:30.02"
     type: sermon
     title: Live in the Spirit’s Continuing Presence
-    confidence: 0.88
     scripture:
       - John 14:16
       - John 14:23
@@ -274,12 +149,10 @@ chapters:
       - fullness
       - fear
     parent_id: c20260705-abiding-spirit
-    source_chapters:
-      - s0705-spirit
   - id: c20260705-scripture-and-experience
     video_id: OrsN83j3qxE
-    start: 3690.02
-    end: 4732.9
+    start: "1:01:30.02"
+    end: "1:18:52.9"
     title: Test Spiritual Experience by Scripture
     type: sermon
     summary: Distinguishing extreme charismatic practice from the wider movement, the preacher contrasts
@@ -303,14 +176,10 @@ chapters:
       - truth
     scripture:
       - John 14
-    source_chapters:
-      - s0705-movement
-      - s0705-differences
-    review_notes: []
   - id: c20260705-tongues-and-understanding
     video_id: OrsN83j3qxE
-    start: 4732.9
-    end: 5732.5
+    start: "1:18:52.9"
+    end: "1:35:32.5"
     title: Tongues Must Build Up the Church
     type: sermon
     summary: The preacher allows private tongues but requires public interpretation and intelligible
@@ -346,22 +215,13 @@ chapters:
       - Acts 10
       - Acts 19
       - 1 Corinthians 14:2
-    source_chapters:
-      - s0705-tongues
-      - s0705-worship-order
-      - s0705-acts
-      - s0705-signs-summary
-    review_notes: []
+  # Listen at 1:26:32.90–1:26:47: ASR reverses the audience in the displayed 1 Corinthians 14:22 quotation.
   - id: s0705-worship-order
     video_id: OrsN83j3qxE
-    start: 5052.44
-    end: 5415.84
+    start: "1:24:12.44"
+    end: "1:30:15.84"
     type: sermon
     title: Public Worship Should Build Understanding
-    confidence: 0.84
-    review_notes:
-      - 5192.90–5207.00s source ASR reverses the audience described in the displayed quotation.
-        Preserve this discrepancy for human review rather than correcting doctrine.
     scripture:
       - 1 Corinthians 14:5
       - 1 Corinthians 14:18-19
@@ -384,15 +244,12 @@ chapters:
       - order
       - confusion
     parent_id: c20260705-tongues-and-understanding
-    source_chapters:
-      - s0705-worship-order
   - id: s0705-acts
     video_id: OrsN83j3qxE
-    start: 5415.84
-    end: 5584.7
+    start: "1:30:15.84"
+    end: "1:33:04.7"
     type: sermon
     title: Acts Does Not Supply a Formula for Tongues
-    confidence: 0.88
     scripture:
       - Acts 2
       - Acts 1:8
@@ -411,12 +268,10 @@ chapters:
       - formula
       - manual
     parent_id: c20260705-tongues-and-understanding
-    source_chapters:
-      - s0705-acts
   - id: c20260705-testing-wonders
     video_id: OrsN83j3qxE
-    start: 5732.5
-    end: 6278.9
+    start: "1:35:32.5"
+    end: "1:44:38.9"
     title: Test Wonders and Hold Fast to God’s Word
     type: sermon
     summary: The preacher calls for verifiable evidence of wonders, cites an unsourced medical
@@ -435,19 +290,12 @@ chapters:
       - Acts 9:36-42
       - Acts 20:7-12
       - Deuteronomy 13:1-4
-    source_chapters:
-      - s0705-wonders
-      - s0705-miracles
-      - s0705-conclusion
-      - s0705-closing-prayer
-    review_notes: []
   - id: s0705-conclusion
     video_id: OrsN83j3qxE
-    start: 6123.44
-    end: 6204.2
+    start: "1:42:03.44"
+    end: "1:43:24.2"
     type: sermon
     title: Impressive Signs Do Not Replace Obedience
-    confidence: 0.92
     scripture:
       - Deuteronomy 13:1-4
     topics:
@@ -458,12 +306,10 @@ chapters:
     keywords:
       - testing
     parent_id: c20260705-testing-wonders
-    source_chapters:
-      - s0705-conclusion
   - id: c20260705-response-closing
     video_id: OrsN83j3qxE
-    start: 6278.9
-    end: 7109.366
+    start: "1:44:38.9"
+    end: "1:58:29.366"
     title: Response and Closing
     type: closing
     summary: The congregation affirms its faith and prays for the church, then shares offerings, a
@@ -485,14 +331,6 @@ chapters:
     scripture:
       - Romans 15
       - 2 Corinthians 13
-    source_chapters:
-      - s0705-creed
-      - s0705-pastoral
-      - s0705-offertory
-      - s0705-breathe
-      - s0705-blessing
-      - s0705-announcements
-    review_notes: []
 sermon_description: The preacher argues that the Spirit’s abiding presence draws believers toward
   truth and obedience rather than dependence on impressive experiences. Reading John 14 alongside
   Acts and 1 Corinthians 14, he allows private tongues while prioritizing intelligible worship and

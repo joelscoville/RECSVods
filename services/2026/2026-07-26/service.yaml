@@ -1,90 +1,18 @@
+# yaml-language-server: $schema=../../../schema/service.schema.json
+# Editing guide: ../../../docs/editing-services.md
+# Times are quoted MM:SS or HH:MM:SS, optionally with fractional seconds. Keep existing IDs stable.
+
 id: 2026-07-26
 date: 2026-07-26
-title: 26 July 2026 — To be Hated
-sermon_title: To be Hated
+title: To Be Hated
 series:
   id: gospel-of-john
   name: Expository Preaching on the Gospel of John
 type: service
 workflow_status: complete
 editorial_status: needs_review
-review_notes:
-  - Main batch integration applied the source-backed series and cited persecution topic;
-    common-grace remains a deferred proposal. All interpretation remains needs_review. See
-    docs/historical-001/integration.md.
-  - Full meaningful programme curated from this recording only, including preparation, worship,
-    readings, sermon, prayers, offering, closing and announcements. The opening music and final
-    meditation are retained as programme units.
-  - YouTube title RECS 26 July 2026, upload date 20260726 and opening slide 26th July 2026 9:30am
-    agree with the assigned service date. Current sermon title and references are visible at 2100
-    seconds. Last Session / The Greatest Love is a recap, not today's title.
-  - Inline transcripts are selected, lightly punctuated ASR excerpts and explicit omission
-    descriptions, not a full verbatim or listening-verified transcript. Scripture quotations and
-    song lyrics are omitted throughout; surrounding commentary and reference metadata are retained.
-    Excerpt markers identify untranscribed surrounding speech.
-  - Evidence method was full converted-text review, flagged word-timing inspection and
-    coarse/refined video frames. Twenty-three 30-second audio samples were decoded every five
-    minutes; no actual listening is claimed.
-  - Speaker is independently introduced as Pastor Yong at 935 seconds and again before the anthem.
-    Use only pastor-yong; the phonetic self-name in the 3849-second anecdote does not establish
-    full-name spelling. Worship leader's partial name varies as Chai Yadi/Jayadi in ASR; no speaker
-    entity assigned to that role.
-  - Import preserved 1470 segments and 15439 words, including 20 zero-duration words. Fifteen
-    outside-segment word warnings affect IDs 52, 148, 150, 157, 160, 162, 164, 166, 175, 181, 555,
-    799, 1106, 1223 and 1305, maximum 0.32 seconds. No backtracking, overlaps or tail clamps were
-    reported. Human listening remains needed.
-  - Both exact original-audio targets were absent at import; audio_hash_verified is false.
-    Reacquired media confirms source identity and duration, not the deleted original audio bytes.
-  - Historical, legal, political and personal anecdotes are attributed to the preacher and not
-    independently corroborated. Particular review priorities are MacArthur and Pope claims,
-    persecution figures, housing claims and the Fuller allegation narrative. Do not treat quoted
-    people's names as live-speaker identities.
-  - "Taxonomy proposal only: persecution — Persecution, supported by p20260726-047 through
-    p20260726-055, especially 4051.66-4231.24 and 4315.08-4499.66. Existing faith, discipleship,
-    justice and mission tags used pending main review."
-  - "Taxonomy proposal only: common-grace — Common grace, supported by p20260726-039 through
-    p20260726-046 at 3467-4051.66. Existing truth, service and mission tags used pending main
-    review."
-  - "Series proposal only: expository-preaching-gospel-john — Expository Preaching on The Gospel of
-    John, displayed on this recording at 2100 seconds and supported by p20260726-023. No series
-    activated pending shared consistency review."
-  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
-    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
-    editorial approval implied."
-  - "Concise service outline: original chapter metadata and boundaries preserved in
-    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
-    service context. Agent interpretation remains needs_review."
-  - Metadata-only plan from the current service record and all 76 existing passage summaries; all 20
-    original chapters remain assigned in order on D7gXD-Mo25s. The service remains needs_review, and
-    this plan does not approve or modify its source.
-  - Opening, Worship and Scripture, and Response and Closing are neutral peer groups. Four sermon
-    movements follow the argument from Scripture-shaped assumptions through interpreting the world's
-    hostility, facing opposition responsibly, and persevering in active witness; examples and
-    citations do not become separate primary chapters.
-  - The introductory voluntary-service remarks and previous-session recap stay with the sermon's
-    challenge to comfortable assumptions. The Greatest Love is a recap, not the current sermon
-    title. The existing response chapter combines sermon prayer, creed and pastoral intercession, so
-    it remains intact in Response and Closing.
-  - "Two cues preserve useful entry points into substantial supporting arguments: common grace
-    qualifies the preceding condemnation discussion, and spiritual conflict leads into
-    accountability within the opposition movement. Each uses an original chapter's full bounds; the
-    accountability discussion begins later within its cue, and no finer timestamp is inferred.
-    Routine service groups have no cues."
-  - Opening music and anthem titles remain unverified, the worship leader's identity remains
-    unresolved, and the second offering's destination remains unclear. Closing announcements
-    describe future Communion and hoped-for orphanage capacity, not Communion celebrated here or
-    completed capacity.
-  - MacArthur/Pope/legal accounts, persecution figures, reported detentions, housing claims and
-    personal anecdotes remain attributed and uncorroborated. The Habitat founder allegation retains
-    the reported denial; the knowledge/accountability discussion retains theological difficulty and
-    rejects ignorance as guaranteed exemption. Recognizing goodness outside Christianity is not
-    presented as a salvation claim.
-  - Timing and spoken keyword support are inherited from existing metadata, without new listening,
-    media or ASR. Existing alignment caveats and unverified original-audio hashes remain unresolved.
-    Parent and cue summaries are internal retrieval/review text only; the single sermon description
-    is the public prose.
-  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
+  # Worship-leader identity remains unconfirmed.
   - id: yong-teck-meng
     name: Rev. Yong Teck Meng
     role: Preacher
@@ -134,40 +62,16 @@ topics:
 videos:
   - id: D7gXD-Mo25s
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
-    duration: 6650.861
+    duration: "1:50:50.861"
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    transcription_language: en
-    transcribed_span:
-      start: 0
-      end: 6650.8451875
-    transcription_provenance:
-      engine: faster-whisper
-      engine_version: 1.2.1
-      model: large-v3-turbo
-      backend_version: 4.8.2
-      compute_type: float16
-      device: Tesla T4
-      settings:
-        beam_size: 5
-        word_timestamps: true
-        vad_filter: false
-        condition_on_previous_text: false
-      audio_sha256: 3eee08778dd11fa4c21d4449a8b922037d5af69109e950a80b75b98d23ce3d15
-      duration_seconds: 6650.8451875
-      elapsed_seconds: 217.698
-      real_time_factor: 0.03273
-      transcribed_at: 2026-09-25T12:20:06.823215+00:00
-      transcript_sha256: a59adfc512e5084ac76e48004011802fbd5cee8668e2e24a45bdfaec74d518fd
-      source_duration_seconds: 6650.861
-      duration_delta_seconds: -0.015812499999810825
-      audio_hash_verified: false
 chapters:
+  # Confirm opening/anthem titles and the second offering destination. Closing announcements describe future Communion, not Communion celebrated here.
   - id: c20260726-opening
     video_id: D7gXD-Mo25s
-    start: 0
-    end: 595.52
+    start: "0:00"
+    end: "9:55.52"
     title: Opening
     type: opening
     summary: Unidentified opening music leads into the leaders' guided adoration, confession,
@@ -185,15 +89,10 @@ chapters:
       - service-life
       - peace
     scripture: []
-    source_chapters:
-      - s20260726-prelude
-      - s20260726-preparation
-      - s20260726-welcome
-    review_notes: []
   - id: c20260726-worship-scripture
     video_id: D7gXD-Mo25s
-    start: 595.52
-    end: 2062.98
+    start: "9:55.52"
+    end: "34:22.98"
     title: Worship and Scripture
     type: worship
     summary: The worship leader guides the congregation through a Psalms 91 call, hymns and prayers of
@@ -222,18 +121,10 @@ chapters:
       - John 15:18-27
       - 2 Timothy 3:12-15
       - 1 Thessalonians 5:18
-    source_chapters:
-      - s20260726-call
-      - s20260726-hymns
-      - s20260726-readings
-      - s20260726-rock
-      - s20260726-scripture
-      - s20260726-anthem
-    review_notes: []
   - id: c20260726-scripture-shaped-faith
     video_id: D7gXD-Mo25s
-    start: 2062.98
-    end: 2907.54
+    start: "34:22.98"
+    end: "48:27.54"
     title: Let Scripture Challenge Comfortable Assumptions
     type: sermon
     summary: Pastor Yong moves from voluntary family service and the question of an easy life to
@@ -262,15 +153,11 @@ chapters:
       - John 15:12-17
       - Matthew 5:9
       - John 15:5
-    source_chapters:
-      - s20260726-introduction
-      - s20260726-recap
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20260726-hostility-common-grace
     video_id: D7gXD-Mo25s
-    start: 2907.54
-    end: 4051.66
+    start: "48:27.54"
+    end: "1:07:31.66"
     title: Recognize Goodness Amid the World's Hostility
     type: sermon
     summary: Pastor Yong questions sweeping condemnation through attributed MacArthur accounts, then
@@ -302,19 +189,14 @@ chapters:
       - John 7:7
       - John 15:18-19
       - Luke 10
-    source_chapters:
-      - s20260726-world
-      - s20260726-common-good
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s20260726-common-good
     video_id: D7gXD-Mo25s
-    start: 3467
-    end: 4051.66
+    start: "57:47"
+    end: "1:07:31.66"
     type: sermon
     title: Common Grace Makes Goodness Recognizable
     speaker_id: yong-teck-meng
-    confidence: 0.94
     scripture:
       - Luke 10
       - John 15:18-19
@@ -334,12 +216,10 @@ chapters:
       - good samaritan
       - habitat for humanity
     parent_id: c20260726-hostility-common-grace
-    source_chapters:
-      - s20260726-common-good
   - id: c20260726-opposition-responsibility
     video_id: D7gXD-Mo25s
-    start: 4051.66
-    end: 5249.72
+    start: "1:07:31.66"
+    end: "1:27:29.72"
     title: Following Christ Brings Opposition and Responsibility
     type: sermon
     summary: Pastor Yong presents reported persecution, conflicting values and spiritual conflict as
@@ -378,19 +258,14 @@ chapters:
       - John 12:31
       - John 15:22-24
       - Acts 17:30-31
-    source_chapters:
-      - s20260726-opposition
-      - s20260726-traps
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s20260726-traps
     video_id: D7gXD-Mo25s
-    start: 4846.8
-    end: 5249.72
+    start: "1:20:46.8"
+    end: "1:27:29.72"
     type: sermon
     title: Spiritual Conflict and Greater Accountability
     speaker_id: yong-teck-meng
-    confidence: 0.85
     scripture:
       - John 15:22-24
       - Acts 17:30-31
@@ -408,12 +283,10 @@ chapters:
       - ignorance
       - knowledge
     parent_id: c20260726-opposition-responsibility
-    source_chapters:
-      - s20260726-traps
   - id: c20260726-persevering-witness
     video_id: D7gXD-Mo25s
-    start: 5249.72
-    end: 5794.6
+    start: "1:27:29.72"
+    end: "1:36:34.6"
     title: Persevere as Active Witnesses
     type: sermon
     summary: Pastor Yong connects the Spirit's witness with lifelong salt-and-light service, urging
@@ -445,14 +318,11 @@ chapters:
       - Matthew 5:16
       - 2 Timothy 3:12-15
       - 1 Timothy 6:12
-    source_chapters:
-      - s20260726-witness
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20260726-response-closing
     video_id: D7gXD-Mo25s
-    start: 5794.6
-    end: 6650.861
+    start: "1:36:34.6"
+    end: "1:50:50.861"
     title: Response and Closing
     type: closing
     summary: Pastor Yong leads prayer for perseverance, members and the Batam orphanage alongside the
@@ -481,12 +351,6 @@ chapters:
     scripture:
       - 1 Thessalonians 5
       - 2 Corinthians 13
-    source_chapters:
-      - s20260726-response
-      - s20260726-offering
-      - s20260726-closing
-      - s20260726-announcements
-    review_notes: []
     speaker_id: yong-teck-meng
 sermon_description: Pastor Yong challenges the idea that an easy life proves God's blessing, reading
   John 15 as a call to faithful witness amid opposition. He distinguishes the fallen world's

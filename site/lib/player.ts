@@ -66,6 +66,13 @@ interface YouTubeAPI {
 type YouTubeWindow = Window & { YT?: YouTubeAPI; onYouTubeIframeAPIReady?: () => void };
 let apiPromise: Promise<YouTubeAPI> | undefined;
 
+export function youtubeErrorMessage(code: number): string {
+  if (code === 101 || code === 150) return 'YouTube has blocked embedded playback for this recording. Open it on YouTube instead.';
+  if (code === 100) return 'This recording is unavailable on YouTube. It may be private or removed.';
+  if (code === 153) return 'YouTube could not verify this player’s website. Retry or open the recording on YouTube.';
+  return 'YouTube could not play this recording. Retry or watch on YouTube.';
+}
+
 function loadYouTubeAPI(): Promise<YouTubeAPI> {
   const browser = window as YouTubeWindow;
   if (browser.YT?.Player) return Promise.resolve(browser.YT);
@@ -97,7 +104,7 @@ function loadYouTubeAPI(): Promise<YouTubeAPI> {
 /** Call only following a user play action. Native YouTube controls own captions and fullscreen. */
 export async function mountYouTubePlayer(container: HTMLElement, options: {
   videoId: string; title: string; start: number; signal?: AbortSignal;
-  onError(message: string): void; onAutoplayBlocked(): void;
+  onError(message: string, code?: number): void; onAutoplayBlocked(): void;
 }): Promise<PlayerAdapter> {
   const api = await loadYouTubeAPI();
   if (options.signal?.aborted) throw new Error('Playback cancelled');
@@ -106,9 +113,9 @@ export async function mountYouTubePlayer(container: HTMLElement, options: {
   return new Promise((resolve, reject) => {
     let ready = false;
     const timeout = setTimeout(() => fail('YouTube did not respond. Please retry.'), 20_000);
-    const fail = (message: string) => {
+    const fail = (message: string, code?: number) => {
       clearTimeout(timeout);
-      options.onError(message);
+      options.onError(message, code);
       if (!ready) { player.destroy(); reject(new Error(message)); }
     };
     const player = new api.Player(host, {
@@ -124,7 +131,7 @@ export async function mountYouTubePlayer(container: HTMLElement, options: {
           target.getIframe().focus();
           resolve(target);
         },
-        onError({ data }) { fail(data === 100 || data === 101 || data === 150 ? 'This recording is unavailable in the embedded player. Try watching on YouTube.' : 'YouTube could not play this recording. Retry or watch on YouTube.'); },
+        onError({ data }) { fail(youtubeErrorMessage(data), data); },
         onAutoplayBlocked: options.onAutoplayBlocked,
       },
     });

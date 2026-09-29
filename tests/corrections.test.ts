@@ -17,7 +17,7 @@ const repository = { repositoryUrl: 'https://github.com/example/renamed-archive'
 function fixture() {
   return ServiceSchema.parse({
     id: 'fixture-service', date: '2026-07-12', title: 'Fictional service', type: 'service', workflow_status: 'complete', editorial_status: 'needs_review',
-    review_notes: ['PRIVATE REVIEW SENTINEL'], speakers: [], topics: [],
+    speakers: [], topics: [],
     videos: ['VIDEO000001', 'VIDEO000002'].map((id, index) => ({ id, channel_id: SOURCE_CHANNEL_ID, duration: 189.25, sequence: index + 1, workflow_status: 'complete', media_disposition: 'playable' })),
     chapters: ['VIDEO000001', 'VIDEO000002'].map((video_id, index) => ({ id: `chapter-${index}`, video_id, start: 12.5, end: 42.75, title: 'Fictional chapter', type: 'sermon',
       summary: 'Fictional summary', keywords: ['example'], scripture: [], topics: [] })),
@@ -27,6 +27,10 @@ function config() { return buildCorrectionConfig([fixture()], 'preview', reposit
 afterEach(() => vi.unstubAllGlobals());
 
 describe('build-only repository and ref configuration', () => {
+  it('uses the operator-configured project destination in ordinary builds', () => {
+    expect(loadCorrectionConfig(process.cwd(), {}).repositoryUrl).toBe('https://github.com/joelscoville/RECSVods');
+    expect(loadCorrectionConfig(process.cwd(), { PUBLIC_REPOSITORY_URL: repository.repositoryUrl }).repositoryUrl).toBe(repository.repositoryUrl);
+  });
   it.each(['http://github.com/a/b', 'https://elsewhere.test/a/b', 'https://github.com.evil.test/a/b', 'https://user:secret@github.com/a/b', 'https://github.com:443/a/b', 'https://github.com/a/b?token=x', 'https://github.com/a/b#x', 'https://github.com/a/../b', 'https://github.com/a/%2e%2e', '//github.com/a/b', 'javascript:alert(1)'])('rejects unsafe repository %s', (value) => {
     expect(validateRepositoryUrl(value)).toBeUndefined(); expect(correctionLinks({ chapterId: 'chapter-0' }, '/', { ...config(), repositoryUrl: value })).toEqual({});
   });
@@ -55,20 +59,20 @@ describe('build-only repository and ref configuration', () => {
 describe('stable chapter correction context and privacy', () => {
   it.each(['/', '/renamed/', '/nested/review/'])('uses canonical chapter and service paths under %s', (base) => {
     const params = new URL(correctionLinks({ chapterId: 'chapter-1' }, base, config(), 'chapter time').issueUrl!).searchParams;
-    expect(Object.fromEntries(params)).toMatchObject({ template: 'archive-correction.yml', 'service-id': 'fixture-service', 'video-id': 'VIDEO000002', 'chapter-id': 'chapter-1', timestamps: 'VIDEO000002: 12.5–42.75 seconds', page: `${base}watch/?chapter=chapter-1`, problem: 'chapter time' });
+    expect(Object.fromEntries(params)).toMatchObject({ template: 'archive-correction.yml', 'service-id': 'fixture-service', 'video-id': 'VIDEO000002', 'chapter-id': 'chapter-1', timestamps: 'VIDEO000002: 0:12.5–0:42.75', page: `${base}watch/?chapter=chapter-1`, problem: 'chapter time' });
     for (const field of ['service-id', 'video-id', 'chapter-id', 'timestamps', 'page']) expect(params.get('body')).toContain(`### ${field}\n${params.get(field)}`);
     for (const choice of CORRECTION_KINDS) expect(params.get('body')).toContain(`- [${choice === 'chapter time' ? 'x' : ' '}] ${choice}`);
     expect(params.has('passage-id')).toBe(false); expect(params.has('section-id')).toBe(false);
     const service = new URL(correctionLinks({ serviceId: 'fixture-service' }, base, config()).issueUrl!).searchParams;
     expect(service.get('page')).toBe(`${base}services/fixture-service/`); expect(service.get('video-id')).toBe('VIDEO000001, VIDEO000002');
-    expect(service.get('timestamps')).toBe('VIDEO000001: 0–189.25 seconds\nVIDEO000002: 0–189.25 seconds');
+    expect(service.get('timestamps')).toBe('VIDEO000001: 0:00–3:09.25\nVIDEO000002: 0:00–3:09.25');
   });
   it('ignores unrelated properties, private query/history and resume time', () => {
     const target = { serviceId: 'fixture-service', videoId: 'VIDEO000002', start: 77, time: 88, q: 'PRIVATE QUERY', history: ['PRIVATE HISTORY'], resume: 'PRIVATE RESUME', body: 'PRIVATE BODY', page: '/search/?q=PRIVATE', localPath: '/Users/private/file' };
     const links = correctionLinks(target, '/review/', config());
     const params = new URL(links.issueUrl!).searchParams;
     expect(params.get('page')).toBe('/review/watch/?service=fixture-service&video=VIDEO000002');
-    expect(params.get('timestamps')).toBe('VIDEO000002: 0–189.25 seconds');
+    expect(params.get('timestamps')).toBe('VIDEO000002: 0:00–3:09.25');
     expect(params.get('body')).not.toMatch(/PRIVATE|77|88|Users|q=|history|resume/);
     expect(new URL(correctionLinks(target, '/', config(), 'PRIVATE KIND' as never).issueUrl!).searchParams.has('problem')).toBe(false);
     expect(JSON.stringify(config())).not.toMatch(/PRIVATE|review_notes|sourcePath|workflow_status|confidence/);
@@ -113,7 +117,7 @@ describe('rendered links and form', () => {
     expect(html).not.toContain('Suggest a correction'); expect(html).not.toContain('Edit this transcript');
     for (const [, href] of card.matchAll(/href="([^"]+\/issues\/new[^"]*)"/g)) expect(href).not.toContain('sentinel');
   });
-  it('matches issue-form IDs and the six choices with the Markdown fallback', () => {
+  it('matches issue-form IDs and choices with the Markdown fallback', () => {
     const document = parseDocument(readFileSync(new URL('../.github/ISSUE_TEMPLATE/archive-correction.yml', import.meta.url), 'utf8'), { uniqueKeys: true });
     expect(document.errors).toEqual([]); const form = document.toJS(); expect(form.labels).toBeUndefined();
     const fields = form.body.filter((field: { id?: string }) => field.id), ids = fields.map((field: { id: string }) => field.id);

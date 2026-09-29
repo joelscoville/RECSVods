@@ -3,7 +3,8 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { parse } from 'yaml';
 import { describe, expect, it } from 'vitest';
-import { CaptionProvenanceSchema, VideoSchema, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
+import { SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
+import { CaptionProvenanceSchema, HistoricalVideoSchema as VideoSchema } from '../site/lib/processing-provenance';
 import { validateServiceOutline } from '../scripts/validate-outlines';
 import captionConfig from '../scripts/caption-config.json';
 import { pagesBase, verifyPages } from '../scripts/pages';
@@ -22,12 +23,12 @@ const provenance = {
 describe('weekly caption provenance', () => {
   it('requires one natural sermon description and Title Case without imposing a chapter quota', () => {
     const service: Service = { id: 'fixture', date: '2026-01-04', title: 'Fixture Sermon', type: 'sermon', workflow_status: 'complete', editorial_status: 'needs_review',
-      review_notes: [], speakers: [], topics: [], videos: [], chapters: [], sermon_description: 'The speaker connects hope with care for others.' };
+      speakers: [], topics: [], videos: [], chapters: [], sermon_description: 'The speaker connects hope with care for others.' };
     expect(() => validateServiceOutline(service)).not.toThrow();
     for (const sermon_description of [undefined, 'Thesis: hope. Points: care.', '1. Hope', 'First paragraph.\n\nSecond paragraph.']) {
       expect(() => validateServiceOutline({ ...service, sermon_description })).toThrow();
     }
-    service.chapters = [{ id: 'fixture-chapter', video_id: 'AAAAAAAAAAA', start: 0, end: 60, type: 'sermon', title: 'hope and care', summary: 'Internal.', keywords: [], topics: [], scripture: [], review_notes: [] }];
+    service.chapters = [{ id: 'fixture-chapter', video_id: 'AAAAAAAAAAA', start: 0, end: 60, type: 'sermon', title: 'hope and care', summary: 'Internal.', keywords: [], topics: [], scripture: [] }];
     expect(() => validateServiceOutline(service)).toThrow('Title Case');
   });
   it('requires the original English track, pinned dictionary and internally consistent quality metrics', () => {
@@ -93,6 +94,13 @@ describe('production deployment boundary', () => {
 describe('workflow policy (configuration, not a live deployment)', () => {
   const ci = parse(readFileSync('.github/workflows/ci.yml', 'utf8'));
   const discovery = parse(readFileSync('.github/workflows/discovery.yml', 'utf8'));
+  it('keeps weekly video checks read-only and separate from deployment and audio acquisition', () => {
+    const checks = parse(readFileSync('.github/workflows/video-quirks.yml', 'utf8'));
+    expect(checks.permissions).toEqual({ contents: 'read' });
+    const commands = checks.jobs.embeds.steps.map((step: { run?: string }) => step.run ?? '').join('\n');
+    expect(commands).toContain('check-embeds --all');
+    expect(commands).not.toMatch(/--apply|check-audio|git (?:commit|push)|editorial:approve/);
+  });
   it('gates the sole production artifact and deployment on both required checks and main', () => {
     expect(ci.on.pull_request_target).toBeUndefined();
     expect(ci.permissions).toEqual({ contents: 'read' });

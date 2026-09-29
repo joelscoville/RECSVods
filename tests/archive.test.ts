@@ -2,29 +2,28 @@ import { mkdtempSync, mkdirSync, rmSync, symlinkSync, writeFileSync } from 'node
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { stringify } from 'yaml';
+import { stringify, sourceValue } from './service-fixtures';
 import { afterEach, describe, expect, it } from 'vitest';
 import {
   archiveFromFiles, assertWorkflowTransition, canTransitionWorkflow, flattenChapters,
   IdentifierRecordSchema, loadArchive, parseYaml, publishedServices, ScriptureReferenceSchema,
-  ServiceSchema, ServiceSourceSchema, SOURCE_CHANNEL_ID, TranscriptionProvenanceSchema, WorkflowStatusSchema, type Service, type WorkflowStatus,
+  ServiceSchema, ServiceSourceSchema, SOURCE_CHANNEL_ID, WorkflowStatusSchema, type Service, type WorkflowStatus,
 } from '../site/lib/archive';
+import { TranscriptionProvenanceSchema, HistoricalVideoSchema } from '../site/lib/processing-provenance';
 
 const roots: string[] = [];
 const filename = 'services/2026/fixture-service/service.yaml';
 function fixture(): Service {
   return {
     id: 'fixture-service', date: '2026-01-04', title: 'Fictional test service', type: 'service',
-    workflow_status: 'complete', editorial_status: 'needs_review', review_notes: [],
+    workflow_status: 'complete', editorial_status: 'needs_review',
     speakers: [{ id: 'fixture-speaker', name: 'Fictional speaker' }],
     topics: [{ id: 'fixture-topic', name: 'Fictional topic' }],
     videos: [{ id: 'AAAAAAAAAAA', channel_id: SOURCE_CHANNEL_ID, duration: 120, sequence: 1,
-      workflow_status: 'complete', media_disposition: 'playable', transcription_language: 'en',
-      transcribed_span: { start: 0, end: 100 } }],
+      workflow_status: 'complete', media_disposition: 'playable' }],
     chapters: [{ id: 'fixture-chapter', video_id: 'AAAAAAAAAAA', speaker_id: 'fixture-speaker',
       start: 10, end: 60, type: 'address', title: 'Fictional passage', summary: 'The fictional speaker discusses a test example.',
-      keywords: ['test example'], topics: ['fixture-topic'], scripture: ['Romans 13:1-7'],
-      confidence: 0.7, review_notes: [] }],
+      keywords: ['test example'], topics: ['fixture-topic'], scripture: ['Romans 13:1-7'] }],
   };
 }
 function root(): string {
@@ -54,9 +53,8 @@ print(json.dumps(archive_provenance(payload, verification, True)))
   it('accepts the exact safe Python receipt projection and keeps old local evidence optional', () => {
     expect(TranscriptionProvenanceSchema.parse(projection)).toEqual(projection);
     expect(ServiceSchema.parse(fixture())).toEqual(fixture());
-    const service = fixture();
-    service.videos[0].transcription_provenance = projection;
-    expect(ServiceSchema.parse(service).videos[0].transcription_provenance).toEqual(projection);
+    const video = { ...fixture().videos[0], transcription_language: 'en', transcribed_span: { start: 0, end: 100 }, transcription_provenance: projection };
+    expect(HistoricalVideoSchema.parse(video).transcription_provenance).toEqual(projection);
     expect(TranscriptionProvenanceSchema.parse({ ...projection, audio_hash_verified: false }).audio_hash_verified).toBe(false);
   });
 
@@ -80,18 +78,14 @@ print(json.dumps(archive_provenance(payload, verification, True)))
   });
 
   it('requires transcription context and forbids provenance on never-interpreted videos', () => {
-    const service = fixture();
-    service.videos[0].transcription_provenance = projection;
-    delete service.videos[0].transcribed_span;
-    expect(ServiceSchema.safeParse(service).success).toBe(false);
-    service.videos[0].transcribed_span = { start: 0, end: 100 };
-    service.videos[0].workflow_status = 'registered';
-    expect(ServiceSchema.safeParse(service).success).toBe(false);
+    const video = { ...fixture().videos[0], transcription_language: 'en', transcription_provenance: projection };
+    expect(HistoricalVideoSchema.safeParse(video).success).toBe(false);
+    expect(HistoricalVideoSchema.safeParse({ ...video, transcribed_span: { start: 0, end: 100 }, workflow_status: 'registered' }).success).toBe(false);
   });
 
   it('never serializes provenance through the public DTO', () => {
     const service = fixture();
-    service.videos[0].transcription_provenance = projection;
+    const video = Object.assign(service.videos[0], { transcription_provenance: projection });
     const chapters = flattenChapters([service], 'preview');
     for (const serialized of [JSON.stringify(chapters)]) {
       expect(serialized).not.toContain('transcription_provenance');
@@ -99,7 +93,7 @@ print(json.dumps(archive_provenance(payload, verification, True)))
       expect(serialized).not.toContain(projection.audio_sha256);
       expect(serialized).not.toContain(projection.transcript_sha256);
     }
-    expect(service.videos[0].transcription_provenance).toEqual(projection);
+    expect(video.transcription_provenance).toEqual(projection);
   });
 });
 
@@ -120,8 +114,9 @@ describe('strict schemas', () => {
   it('accepts optional factual series with exactly a stable ID and nonblank name', () => {
     const series = { id: 'fixture-series', name: 'Fictional series' };
     for (const schema of [ServiceSchema, ServiceSourceSchema]) {
-      expect(schema.parse({ ...fixture(), series }).series).toEqual(series);
-      expect(schema.parse(fixture())).not.toHaveProperty('series');
+      const input = schema === ServiceSourceSchema ? sourceValue(fixture()) : fixture();
+      expect(schema.parse({ ...(input as object), series }).series).toEqual(series);
+      expect(schema.parse(input)).not.toHaveProperty('series');
       for (const invalid of [null, {}, { id: series.id }, { name: series.name },
         { ...series, id: '../invalid' }, { ...series, name: ' ' },
         { ...series, description: 'Extra metadata' }, { ...series, provenance: 'Private evidence' }]) {
@@ -175,17 +170,14 @@ describe('strict schemas', () => {
     ['videos.0.duration', (s) => { s.videos[0].duration = 0; }],
     ['videos.0.duration', (s) => { s.videos[0].duration = Infinity; }],
     ['videos.0.sequence', (s) => { s.videos[0].sequence = 2; }],
-    ['videos.0.transcribed_span.end', (s) => { s.videos[0].transcribed_span!.end = 121; }],
-    ['videos.0.transcribed_span.end', (s) => { s.videos[0].transcribed_span!.end = 0; }],
-    ['videos.0.transcription_language', (s) => { delete s.videos[0].transcription_language; }],
-    ['videos.0.workflow_status', (s) => { s.videos[0].workflow_status = 'registered'; }],
+    ['chapters.0.video_id', (s) => { s.videos[0].workflow_status = 'registered'; }],
     ['chapters.0.start', (s) => { s.chapters[0].start = -1; }],
     ['chapters.0.end', (s) => { s.chapters[0].end = 10; }],
     ['chapters.0.end', (s) => { s.chapters[0].end = 121; }],
     ['chapters.0.video_id', (s) => { s.chapters[0].video_id = 'BBBBBBBBBBB'; }],
     ['chapters.0.speaker_id', (s) => { s.chapters[0].speaker_id = 'missing'; }],
     ['chapters.0.topics.0', (s) => { s.chapters[0].topics = ['missing']; }],
-    ['chapters.0.confidence', (s) => { s.chapters[0].confidence = 1.1; }],
+    ['chapters.0.type', (s) => { Object.assign(s.chapters[0], { type: 'Sermon' }); }],
     ['chapters.0.summary', (s) => { s.chapters[0].summary = ''; }],
     ['chapters.0.keywords', (s) => { s.chapters[0].keywords = Array(11).fill('excess'); }],
     ['date', (s) => { s.date = '2026-02-30'; }],
@@ -240,8 +232,7 @@ describe('loader and global validation', () => {
     for (const field of ['transcript', 'transcript_file', 'questions']) {
       expect(ServiceSourceSchema.safeParse({ ...metadata, chapters: [{ ...chapters[0], [field]: 'private' }] }).success).toBe(false);
     }
-    const chapter = { ...chapters[0] }; delete chapter.confidence;
-    expect(ServiceSourceSchema.safeParse({ ...metadata, chapters: [chapter] }).success).toBe(true);
+    expect(ServiceSourceSchema.safeParse(sourceValue({ ...metadata, chapters })).success).toBe(true);
   });
   it('rejects symlinks', () => {
     const directory = root();

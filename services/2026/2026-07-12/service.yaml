@@ -1,91 +1,17 @@
+# yaml-language-server: $schema=../../../schema/service.schema.json
+# Editing guide: ../../../docs/editing-services.md
+# Times are quoted MM:SS or HH:MM:SS, optionally with fractional seconds. Keep existing IDs stable.
+
 id: 2026-07-12
-date: 2026-07-12
-title: RECS English service — 12 July 2026
-sermon_title: To be Nothing
+date:
+  # YouTube labels this 5 July, but the dated slide and release evidence indicate 12 July. Confirm this discrepancy during review.
+  2026-07-12
+title: To Be Nothing
 type: service
 workflow_status: complete
 editorial_status: needs_review
-review_notes:
-  - Full July 12 programme curation supersedes the temporary, uncommitted July 5 comparison record.
-    Renamed before first commit to date-backed ID 2026-07-12; physical upload and provenance
-    preserved. Evidence history remains in docs/july5-comparison.md; final review is
-    docs/july12-review.md.
-  - Trusted YouTube title is RECS 5 July 2026, but verified upload_date and release_date are
-    20260712. The source frame at 30s visibly reads 12th July 2026 9:30am. The date field follows
-    convergent source-slide and release evidence; this agent-authored correction needs human review.
-    Source title conflict is retained rather than silently overwritten.
-  - Title slide at 2340s reads To be Nothing, John 15:1-11 and Matthew 10:40-42. Signs and Wonders
-    at 2400s is explicitly Last Session, not this sermon title. No July 5 interpretation or metadata
-    is imported into this service.
-  - Reacquired full source; ffprobe 6676.361s and complete audio/video decode passed. Coarse 30s
-    samples every 300s, refined frames and complete supplied transcript inspected. No
-    audio-listening or browser-playback claim. English metadata/ASR with brief Chinese quotations;
-    uncertain code-switching is omitted explicitly, not translated.
-  - Retain 0–105.06s as prelude/setup context; first substantive ASR invitation at 105.06s, frame
-    90s shows dated welcome and 120s ACTS leader. Programme continues through dismissal at 6646.66s
-    and closing meditation to source end. Full imported span is not a claim of continuous speech or
-    complete verbatim transcription.
-  - Belinda Sutan is captioned at 900s. Pastor Yong and Jacinta are named in this source; unknown
-    full names are not borrowed from other dates. The initial prayer leader and ensemble introducer
-    are left unidentified.
-  - Transcripts are edited ASR excerpts, with explicit omitted material. Scripture
-    readings/quotations are reference-only ESV, not reconstructed text; hymn/poem words and
-    uncertain speech are withheld with markers. Listen to source before approving wording, speaker
-    assignments, boundaries and external claims.
-  - MZr169xBwrU remains a separate candidate 2026-07-12-mzr169xbwru. Its July 16 release metadata,
-    changing ACTS layouts and empty lectern do not establish a July 12 multipart order. Shared slide
-    or possible background-song similarity is not global duplication evidence. This independently
-    suitable full programme remains playable.
-  - Imported all 1605 source segments / 14481 words without inference or timestamp scaling. Exact
-    segment/text/word correspondence passed. Eleven outside-segment word warnings, maximum 0.42s; 42
-    zero-duration words; no segment overlap, backward start or tail clamp. Import span is full
-    source evidence, not a curated programme interval.
-  - Exact safe receipt projection retained below. Both original batch-audio copies were already
-    absent; audio_hash_verified is false. Newly acquired or decoded audio is not proof of original
-    Colab input bytes. Raw operator bundle remains external and unchanged.
-  - Complete means full bounded agent processing is finished with the operator-permitted flagged
-    uncertainties, not human approval. Every section and passage inherits needs_review.
-  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
-    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
-    editorial approval implied."
-  - "Concise service outline: original chapter metadata and boundaries preserved in
-    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
-    service context. Agent interpretation remains needs_review."
-  - Plan only, based on the current service metadata and all 94 supplied passage summaries for 43
-    original chapters; no media or ASR review. All agent-authored proposals remain needs_review.
-  - Seven peer groups comprise Opening, Worship and Scripture, four argument-led sermon movements,
-    and Response and Closing. Each original is assigned once in physical timestamp order on the
-    existing single upload; bounds, scripture and topics are to be derived from those originals.
-  - The sermon moves from knowing the true vine beyond cultural assumptions, through dependence and
-    fruitfulness under the Father's care, to the lasting value of God's goodness and its expression
-    in loving obedience. Introductory illustrations, the previous-session recap and the preparatory
-    prayer remain with the first movement rather than becoming separate primary entries.
-  - "Seven optional cues retain only selected original spans: the distinctive guitar ensemble item,
-    the substantial Signs and Wonders recap, entry into the vine exposition, pruning through trials,
-    self-examination by spiritual fruit, small service's enduring value, and the concluding poem's
-    appeal. The ensemble warrants precise access as a distinct musical contribution whose hope amid
-    suffering is discussed in the sermon; routine prayers, songs and announcements receive no
-    individual cues."
-  - The single sermon_description is intended for the video/service context; every group and cue
-    summary is internal retrieval/review material and must not appear beneath outline entries or on
-    search-result cards. All proposed public titles use Title Case.
-  - The July 5 upload-title versus July 12 service-date conflict, unidentified initial prayer leader
-    and ensemble introducer, setup speech uncertainty, omitted code-switching, original timing
-    warnings and unverified original audio hash remain unresolved. No new speaker identity, timing
-    or source verification is implied.
-  - The Signs and Wonders material is a recap, not this sermon's title or an independent address.
-    Healing assertions remain the preacher's unverified account; he affirms prayer for healing and
-    explicitly disavows an instruction to stone anyone. The Gethsemane setting remains proposed, the
-    wealthy-parent analogy limited, reported Stephen Tong and Socrates remarks unverified, and
-    Antilia's amenities and staffing purported.
-  - The preacher's salvation and judgment interpretations remain attributed; fruitfulness does not
-    promise wealth, health or constant happiness. Missionary history and the hymn's Fanny Crosby
-    attribution are not independently verified. South America remains a possible 2027 rally/trip,
-    Jakarta a planned gathering with the proposed January date corrected to the ninth, and September
-    7–11 a prior trip follow-up; no offering recipient is inferred. These details remain internal
-    context rather than separate navigation entries.
-  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
+  # The initial prayer leader and ensemble introducer remain unidentified.
   - id: belinda-sutan
     name: Belinda Sutan
     role: Worship leader
@@ -99,44 +25,15 @@ topics: []
 videos:
   - id: D-FyolbxJgk
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
-    duration: 6676.361
+    duration: "1:51:16.361"
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    disposition_evidence: Full 6676.361s source has audio and video; complete decode passed. Source date
-      at 30s/105s agrees with July 12 release; distributed worship, sermon, prayer and dismissal
-      frames/ASR establish expected English-service content. Separate from July 5; no forced join to
-      MZr169xBwrU. Suitability verified independently; editorial approval remains pending.
-    transcription_language: en
-    transcribed_span:
-      start: 0
-      end: 6676.3406875
-    transcription_provenance:
-      engine: faster-whisper
-      engine_version: 1.2.1
-      model: large-v3-turbo
-      backend_version: 4.8.2
-      compute_type: float16
-      device: Tesla T4
-      settings:
-        beam_size: 5
-        word_timestamps: true
-        vad_filter: false
-        condition_on_previous_text: false
-      audio_sha256: 75db02d5f38183ec69508d764dd83d9cebcdbe4930714725147cca0edc8a451b
-      duration_seconds: 6676.3406875
-      elapsed_seconds: 220.672
-      real_time_factor: 0.03305
-      transcribed_at: 2026-09-25T11:13:48.845647+00:00
-      transcript_sha256: 9ba1f1e2b0e822a89e0bbdce87965b732455950ce028007dcac52d31d4cb1712
-      source_duration_seconds: 6676.361
-      duration_delta_seconds: -0.0203124999998181
-      audio_hash_verified: false
 chapters:
   - id: c20260712-opening
     video_id: D-FyolbxJgk
-    start: 0
-    end: 577.36
+    start: "0:00"
+    end: "9:37.36"
     title: Opening
     type: opening
     summary: Sanctuary preparation leads into the unidentified leader's ACTS prayers, followed by
@@ -148,15 +45,10 @@ chapters:
       - silent meditation
     topics: []
     scripture: []
-    source_chapters:
-      - s0712-prelude
-      - s0712-acts
-      - s0712-welcome
-    review_notes: []
   - id: c20260712-worship-and-scripture
     video_id: D-FyolbxJgk
-    start: 577.36
-    end: 2111.14
+    start: "9:37.36"
+    end: "35:11.14"
     title: Worship and Scripture
     type: worship
     summary: Belinda leads worship centered on God's faithfulness and dependence on Christ, with
@@ -177,23 +69,12 @@ chapters:
       - John 15:1-17
       - John 15:5
       - Matthew 10:40-42
-    source_chapters:
-      - s0712-call
-      - s0712-faithfulness
-      - s0712-opening-prayer
-      - s0712-christ-liveth
-      - s0712-responsive
-      - s0712-need
-      - s0712-anthem
-      - s0712-matthew
-    review_notes: []
   - id: s0712-anthem
     video_id: D-FyolbxJgk
-    start: 1719.86
-    end: 2026.56
+    start: "28:39.86"
+    end: "33:46.56"
     type: anthem
     title: Guitar Ensemble — There Is a Hope
-    confidence: 0.95
     scripture: []
     topics: []
     summary: The worship leader and an ensemble representative introduce hope amid suffering and beyond
@@ -201,12 +82,10 @@ chapters:
     keywords:
       - hope
     parent_id: c20260712-worship-and-scripture
-    source_chapters:
-      - s0712-anthem
   - id: c20260712-know-the-true-vine
     video_id: D-FyolbxJgk
-    start: 2111.14
-    end: 3420.52
+    start: "35:11.14"
+    end: "57:00.52"
     title: Know Christ as the True Vine
     type: sermon
     summary: After reflections on hope, a recap distinguishing obedience from impressive signs, and
@@ -232,23 +111,14 @@ chapters:
       - John 13
       - John 14
       - John 15:1
-    source_chapters:
-      - s0712-introduction
-      - s0712-recap
-      - s0712-sermon-prayer
-      - s0712-background
-      - s0712-divine
-      - s0712-culture
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s0712-recap
     video_id: D-FyolbxJgk
-    start: 2372.84
-    end: 2740.48
+    start: "39:32.84"
+    end: "45:40.48"
     type: sermon
     title: "Recap: Test Signs Against God's Word"
     speaker_id: yong-teck-meng
-    confidence: 0.9
     scripture:
       - John 14:25-31
       - 1 Corinthians 14
@@ -262,16 +132,13 @@ chapters:
       - miraculous healing
       - signs
     parent_id: c20260712-know-the-true-vine
-    source_chapters:
-      - s0712-recap
   - id: s0712-background
     video_id: D-FyolbxJgk
-    start: 2780.42
-    end: 2997.04
+    start: "46:20.42"
+    end: "49:57.04"
     type: sermon
     title: The Vine Describes a Relationship
     speaker_id: yong-teck-meng
-    confidence: 0.9
     scripture:
       - John 15:1-17
       - John 13
@@ -285,12 +152,10 @@ chapters:
       - metaphor
       - parable
     parent_id: c20260712-know-the-true-vine
-    source_chapters:
-      - s0712-background
   - id: c20260712-dependence-and-fruitfulness
     video_id: D-FyolbxJgk
-    start: 3420.52
-    end: 4538.94
+    start: "57:00.52"
+    end: "1:15:38.94"
     title: Depend on God's Care for a Fruitful Life
     type: sermon
     summary: Pastor Yong connects the Father's active care with confidence, mutual dependence and
@@ -318,24 +183,14 @@ chapters:
       - John 15:3-5
       - John 15:5
       - Galatians 5:22-23
-    source_chapters:
-      - s0712-father
-      - s0712-confidence
-      - s0712-community
-      - s0712-fruit
-      - s0712-pruning
-      - s0712-abide
-      - s0712-good-fruit
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s0712-pruning
     video_id: D-FyolbxJgk
-    start: 4038.38
-    end: 4312.52
+    start: "1:07:18.38"
+    end: "1:11:52.52"
     type: sermon
     title: Trials Can Prepare Believers for Fruitfulness
     speaker_id: yong-teck-meng
-    confidence: 0.9
     scripture:
       - John 15:2
       - 2 Timothy 3
@@ -348,16 +203,13 @@ chapters:
       - gardening
       - trials
     parent_id: c20260712-dependence-and-fruitfulness
-    source_chapters:
-      - s0712-pruning
   - id: s0712-good-fruit
     video_id: D-FyolbxJgk
-    start: 4432.08
-    end: 4538.94
+    start: "1:13:52.08"
+    end: "1:15:38.94"
     type: sermon
     title: Spiritual Fruit Guides Self-Examination
     speaker_id: yong-teck-meng
-    confidence: 0.95
     scripture:
       - Galatians 5:22-23
     topics: []
@@ -367,12 +219,10 @@ chapters:
       - fruit
       - spirit
     parent_id: c20260712-dependence-and-fruitfulness
-    source_chapters:
-      - s0712-good-fruit
   - id: c20260712-lasting-value-in-goodness
     video_id: D-FyolbxJgk
-    start: 4538.94
-    end: 5395.68
+    start: "1:15:38.94"
+    end: "1:29:55.68"
     title: Lasting Value Comes from God's Goodness
     type: sermon
     summary: Pastor Yong argues that all truth and goodness belong to God, contrasting wealth and
@@ -393,23 +243,14 @@ chapters:
       - Luke 12
       - Matthew 10:42
       - John 15:6
-    source_chapters:
-      - s0712-goodness
-      - s0712-without
-      - s0712-retirement
-      - s0712-wealth
-      - s0712-value
-      - s0712-ultimate
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s0712-value
     video_id: D-FyolbxJgk
-    start: 5183.4
-    end: 5333.68
+    start: "1:26:23.4"
+    end: "1:28:53.68"
     type: sermon
     title: Small Acts of Service Have Enduring Value
     speaker_id: yong-teck-meng
-    confidence: 0.95
     scripture:
       - Matthew 10:42
     topics: []
@@ -419,12 +260,10 @@ chapters:
       - eternal value
       - lasting impact
     parent_id: c20260712-lasting-value-in-goodness
-    source_chapters:
-      - s0712-value
   - id: c20260712-love-obedience-and-joy
     video_id: D-FyolbxJgk
-    start: 5395.68
-    end: 5867.32
+    start: "1:29:55.68"
+    end: "1:37:47.32"
     title: Love and Obedience Express Life in Christ
     type: sermon
     summary: Pastor Yong connects prayer aligned with God's will, loving obedience and joy amid
@@ -443,21 +282,14 @@ chapters:
       - 1 Samuel 15:22
       - John 15:11
       - John 15:5
-    source_chapters:
-      - s0712-highest
-      - s0712-joy
-      - s0712-studd
-      - s0712-poem
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s0712-poem
     video_id: D-FyolbxJgk
-    start: 5738.96
-    end: 5867.32
+    start: "1:35:38.96"
+    end: "1:37:47.32"
     type: sermon
     title: "Only One Life: Lasting Service to Christ"
     speaker_id: yong-teck-meng
-    confidence: 0.9
     scripture:
       - John 15:5
     topics: []
@@ -466,12 +298,10 @@ chapters:
     keywords:
       - only one life
     parent_id: c20260712-love-obedience-and-joy
-    source_chapters:
-      - s0712-poem
   - id: c20260712-response-and-closing
     video_id: D-FyolbxJgk
-    start: 5867.32
-    end: 6676.361
+    start: "1:37:47.32"
+    end: "1:51:16.361"
     title: Response and Closing
     type: closing
     summary: The congregation responds with prayer and the creed, followed by pastoral intercession,
@@ -487,17 +317,6 @@ chapters:
     scripture:
       - John 15:1-11
       - Hebrews 13
-    source_chapters:
-      - s0712-response-prayer
-      - s0712-creed
-      - s0712-pastoral
-      - s0712-offering
-      - s0712-closing-hymn
-      - s0712-doxology
-      - s0712-blessing
-      - s0712-announcements
-      - s0712-dismissal
-    review_notes: []
 sermon_description: Pastor Yong reads John 15 as a call to find life's meaning in Christ and God's
   goodness rather than achievement or wealth. The Father's care invites confidence, shared
   dependence and fruitfulness through pruning, not guaranteed prosperity or freedom from suffering.

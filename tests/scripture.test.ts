@@ -1,7 +1,7 @@
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { stringify } from 'yaml';
+import { stringify } from './service-fixtures';
 import { describe, expect, it } from 'vitest';
 import { BOOKS } from '../bible/books';
 import counts from '../bible/verse-counts.json';

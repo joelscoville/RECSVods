@@ -5,6 +5,6 @@ export default function CorrectionLinks({ target, base, config }: { target: Corr
   const { issueUrl } = correctionLinks(target, base, config);
   if (!issueUrl) return <span className="correction-note">Correction links are unavailable in this build.</span>;
   return <>
-    <a className="button button-secondary" href={issueUrl} rel="noreferrer" referrerPolicy="no-referrer">Suggest a correction<span className="sr-only"> on GitHub</span></a>
+    <a className="button button-secondary" href={issueUrl} rel="noreferrer" referrerPolicy="no-referrer">Suggest a correction</a>
   </>;
 }

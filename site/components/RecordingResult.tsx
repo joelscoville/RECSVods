@@ -3,6 +3,7 @@ import type { SearchChapter } from '../lib/types';
 import { formatDate, formatTime } from '../lib/urls';
 import ScriptureLinks from './ScriptureLinks';
 import { VideoArt } from './VideoCard';
+import { QuirkBadges } from './VideoQuirks';
 
 /** One search result per recording. It opens the sermon; the chapter that matched is named here (with its
  * scripture and why it matched) and offered as "Chapter only" under the player. */
@@ -19,6 +20,7 @@ export default function RecordingResult({ recording, chapter, reasons }: {
       <h2><a href={recording.href}>{recording.title}</a></h2>
       <p className="metadata"><time dateTime={recording.date}>{formatDate(recording.date)}</time>{recording.speaker && <> · {recording.speaker}</>}</p>
       {recording.preview && <p className="preview-label">Unreviewed preview</p>}
+      <QuirkBadges quirks={recording.quirks} multipart={recording.parts.length > 1} />
     </div>
     <div className="result-match">
       <p className="matched-chapter"><span className="timestamp">{formatTime(match.start)}</span><span><strong>{match.title}</strong>

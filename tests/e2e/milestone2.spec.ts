@@ -1,9 +1,8 @@
 import type { Page } from '@playwright/test';
 import { test, expect, noModel } from './fixtures';
 import { readFileSync, readdirSync } from 'node:fs';
-import { parse } from 'yaml';
-import type { SearchChapter, ServiceSource } from '../../site/lib/types';
-import { chapterFor, chooseOnly, sermonEnd } from './archive-fixtures';
+import type { SearchChapter } from '../../site/lib/types';
+import { chapterFor, chooseOnly, sermonEnd, readServiceFixture } from './archive-fixtures';
 
 // Built real corpus is required; an empty or missing build fails rather than skips.
 const passages = JSON.parse(readFileSync('dist/preview/generated/chapters.json', 'utf8')).chapters as SearchChapter[];
@@ -11,10 +10,10 @@ const scripture = JSON.parse(readFileSync('dist/preview/generated/scripture.json
 // The CLI validates these against the strict source schema. Keep browser fixtures
 // free of build-only imports (including JSON modules handled by Astro/tsx).
 const services = ['2026-09-06', '2026-08-16', '2026-06-28', '2020-09-27', '2025-11-02']
-  .map((id) => parse(readFileSync(`services/${id.slice(0, 4)}/${id}/service.yaml`, 'utf8')) as ServiceSource);
+  .map((id) => readServiceFixture(`services/${id.slice(0, 4)}/${id}/service.yaml`));
 const allSources = (readdirSync('services', { recursive: true }) as string[])
   .filter((file) => file.endsWith('/service.yaml'))
-  .map((file) => parse(readFileSync(`services/${file}`, 'utf8')) as ServiceSource);
+  .map((file) => readServiceFixture(`services/${file}`));
 const latestSermon = allSources
   .filter((service) => ['needs_review', 'reviewed'].includes(service.editorial_status ?? ''))
   .sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id))
@@ -88,7 +87,7 @@ test('August ordered uploads, cross-upload chapters and chapter soft-stop use th
     .toEqual(['mw4SAoJRZgo', 'XWAH9SWFcoo', 'IcIxBc--VvM']);
   await uploads.first().click();
   await page.reload();
-  await page.locator('button.play-button').click();
+  await page.locator('button.play-button, button.try-embedded').click();
   await expectPlayer(page, august.videos[0].id, 0);
   await expect(page).toHaveURL(/video=mw4SAoJRZgo$/);
   for (const video of august.videos.slice(1)) {
@@ -99,7 +98,7 @@ test('August ordered uploads, cross-upload chapters and chapter soft-stop use th
     await expect(button).toContainText('Current chapter');
     await expect(page.locator('.youtube-host iframe')).toHaveCount(0);
     // A different upload remounts idle and requires Play; no automatic-play claim.
-    await page.locator('button.play-button').click();
+    await page.locator('button.play-button, button.try-embedded').click();
     await expectPlayer(page, video.id, chapter.start);
   }
   expect(await page.evaluate(() => window.testVideoIds)).toEqual(august.videos.map((video) => video.id));
@@ -109,7 +108,7 @@ test('August ordered uploads, cross-upload chapters and chapter soft-stop use th
     await page.reload();
     await expect(page.getByRole('heading', { level: 1, name: passage.serviceTitle, exact: true })).toBeVisible();
     await expect(page.locator('.chapters .chapter-row[aria-current="true"]')).toContainText(passage.title);
-    await page.locator('button.play-button').click();
+    await page.locator('button.play-button, button.try-embedded').click();
     await expectPlayer(page, video.id, passage.start);
   }
   const last = passages.find((item) => item.videoId === august.videos[2].id)!;
@@ -129,7 +128,7 @@ test('selecting the current chapter restarts it without remounting YouTube', asy
   const chapter = passages.find(item => !item.parentId)!;
   await mockYouTube(page);
   await page.goto(`watch/?chapter=${chapter.id}`);
-  await page.locator('button.play-button').click();
+  await page.locator('button.play-button, button.try-embedded').click();
   await expectPlayer(page, chapter.videoId, chapter.start);
   // Stop at this chapter's end, reach it, then pick the same chapter again from the outline.
   const stopAt = await chooseOnly(page, chapter);
@@ -148,7 +147,7 @@ test('Sermon only plays every sermon chapter and Full service instead starts at 
   const end = sermonEnd(sermon);
   expect(end).toBeGreaterThan(sermon.end);
   await page.goto(`watch/?chapter=${sermon.id}`);
-  await page.locator('button.play-button').click();
+  await page.locator('button.play-button, button.try-embedded').click();
   await expectPlayer(page, sermon.videoId, sermon.start);
   await page.locator('.chapter-controls').getByRole('button', { name: 'Sermon only', exact: true }).click();
   await page.evaluate(time => { window.testPlayer.time = time; }, sermon.end + 1);
@@ -159,11 +158,11 @@ test('Sermon only plays every sermon chapter and Full service instead starts at 
   // 16 August: the sermon sits in part 2; the full service starts at the beginning of part 1.
   const partTwo = passages.find(item => item.videoId === 'XWAH9SWFcoo' && item.type === 'sermon' && !item.parentId)!;
   await page.goto(`watch/?chapter=${partTwo.id}`);
-  await page.locator('button.play-button').click();
+  await page.locator('button.play-button, button.try-embedded').click();
   await expectPlayer(page, 'XWAH9SWFcoo', partTwo.start);
   await page.locator('.chapter-controls').getByRole('button', { name: 'Full service instead', exact: true }).click();
   await expect(page).toHaveURL(/video=mw4SAoJRZgo$/);
-  await page.locator('button.play-button').click();
+  await page.locator('button.play-button, button.try-embedded').click();
   await expectPlayer(page, 'mw4SAoJRZgo', 0);
 });
 
@@ -250,7 +249,7 @@ test('new and returning home use local progress; clearing search history preserv
   await mockYouTube(page);
   await featured.locator('a.video-card-link').click();
   await page.reload();
-  await page.locator('button.play-button').click();
+  await page.locator('button.play-button, button.try-embedded').click();
   await expectPlayer(page, saved.videoId, saved.time);
   await expect(page).toHaveURL(/video=ZTDYIJUDb0M&t=3200$/);
 });

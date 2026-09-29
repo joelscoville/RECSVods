@@ -66,7 +66,7 @@ jobs:
             site/public/onnx
           key: model-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'site/lib/embedding-config.ts') }}
       - run: pnpm exec playwright install --with-deps chromium
-      - run: pnpm lint && pnpm typecheck && pnpm test && pnpm validate:archive && pnpm validate:outlines && pnpm index:verify && pnpm verify:tracked
+      - run: pnpm lint && pnpm typecheck && pnpm schema:service -- --check && pnpm test && pnpm validate:archive && pnpm validate:outlines && pnpm index:verify && pnpm verify:tracked
       - name: Build isolated production and review output
         # Explicit fixture destination exercises issue context; review output is never deployed.
         run: pnpm build && PUBLIC_REPOSITORY_URL=https://github.com/example/archive-corrections pnpm build:preview

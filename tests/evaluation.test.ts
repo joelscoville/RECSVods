@@ -19,11 +19,11 @@ const fixture: SearchChapter = {
 function service(id = fixture.serviceId, videoId = fixture.videoId): Service {
   return {
     id, date: fixture.date, title: fixture.serviceTitle, type: 'service', workflow_status: 'complete', editorial_status: 'needs_review',
-    speakers: [], topics: [], review_notes: [],
+    speakers: [], topics: [],
     videos: [{ id: videoId, channel_id: 'UCLjwcZaIkiFEed1VgQYSsrw', duration: 100, sequence: 1, workflow_status: 'complete', media_disposition: 'playable' }],
     chapters: [{ id: `${id}-chapter`, video_id: videoId, start: 0, end: 100,
       title: fixture.title, summary: fixture.summary, keywords: fixture.keywords, topics: [], scripture: fixture.scripture,
-      type: 'sermon', review_notes: [] }],
+      type: 'sermon' }],
   };
 }
 const rankCase: AcceptanceCase = {

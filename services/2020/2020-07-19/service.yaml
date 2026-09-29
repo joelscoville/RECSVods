@@ -1,81 +1,13 @@
+# yaml-language-server: $schema=../../../schema/service.schema.json
+# Editing guide: ../../../docs/editing-services.md
+# Times are quoted MM:SS or HH:MM:SS, optionally with fractional seconds. Keep existing IDs stable.
+
 id: 2020-07-19
 date: 2020-07-19
 title: Tripping
-sermon_title: Tripping
 type: sermon
 workflow_status: complete
 editorial_status: needs_review
-review_notes:
-  - Trusted title, date, Rev. Yong Teck Meng and Luke 17:1-9 / Matthew 18:5-7 preserved. Frames at
-    0, 10 and 40s confirm title and references. Date and preacher identity are operator-attributed,
-    not inferred from appearance.
-  - "Sermon-focused upload: online greeting, pandemic worship remarks, previous-sermon recap,
-    prayer, exposition with an embedded marshmallow-test video, and closing prayer. No missing
-    worship service, scripture reading or creed recitation is invented. The closing creed slide
-    appears while the supplied speech remains prayer."
-  - Programme spans the physical upload, 0–4005.801s. First ASR speech starts 1.84s; final Amen ends
-    4004.64s. Full imported span is 0–4005.778875s. Context margins clip to upload bounds.
-    Mixed-segment prayer cuts at 930 and 3937s are approximate.
-  - All 753 supplied segments and 11457 words passed complete import scanning and raw/imported
-    correspondence checks. Eighteen word-boundary warnings on 18 segments, maximum 0.28s, remain
-    flagged; no segment overlap, backtracking or tail clamp. Passage text is edited ASR-derived
-    speech, with repetition reduced, punctuation normalized and uncertain words marked, not a
-    listening-verified verbatim transcript.
-  - Fourteen coarse audio/frame windows, 29 refined frames and seven boundary audio windows were
-    extracted. All frames inspected and full audio stream decoded successfully; audio was not
-    listened to. Short-video quiet gaps remain within the illustration rather than being treated as
-    missing sermon speech.
-  - Original target audio is absent from both designated batch roots. Import used the approved
-    missing-audio exception; transcript checksum, source identity and duration passed. Supplied
-    audio hash is retained with audio_hash_verified false, never represented as a newly verified
-    byte match.
-  - Scripture quotations and embedded repetitions are replaced with explicit reference-only markers.
-    Surrounding exposition and prayer remain. Additional references come from spoken citations or
-    inspected slides; unidentified biblical allusions are not completed from memory. Trusted Luke
-    17:1-9 is retained although exposition stops at verse 6.
-  - Descriptions of research, theologians, political news, casino policy, dress and assault, church
-    scandals, and Gandhi are the preacher’s claims. They have not been independently established as
-    factual or endorsed by the archive. Garbled proper names and the Gandhi anecdote need review.
-  - Complete under the operator’s flag-and-continue instruction, not editorial approval. See
-    docs/tripping-review.md for evidence, limitations, source retry and candidate passage IDs.
-  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
-    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
-    editorial approval implied."
-  - "Concise service outline: original chapter metadata and boundaries preserved in
-    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
-    service context. Agent interpretation remains needs_review."
-  - Plan only, based on the current service metadata and all 59 supplied passage summaries across 26
-    original chapters; no media, listening or ASR was used. Editorial status remains needs_review.
-  - Seven peer groups comprise Opening, five sermon movements and Closing Prayer. Opening contains
-    the online greeting and pandemic worship reflections; no separate worship set, reading,
-    offertory or spoken creed is inferred.
-  - The Lazarus recap, prayer for teachability and discussion of reading Luke coherently form the
-    scriptural foundation. The transition from Lazarus to trials begins the next movement, which
-    keeps the marriage examples, marshmallow illustration, fallen-world explanation and growth
-    argument together.
-  - "The remaining movements distinguish resisting personal temptation, avoiding harm to others, and
-    practicing restoration and forgiveness through faith. Six cues mark substantive support:
-    omission, delayed gratification, consequences, gambling harm, rights and small faith; routine
-    service groups have no cues."
-  - The sermon_description is the sole public description, intended beneath the video and in service
-    context. All group and cue summaries are internal retrieval/review metadata and must not appear
-    in chapter rows, navigation or search-result cards.
-  - Every original chapter is assigned once in its existing order on the same upload. Main derives
-    group bounds, unions existing scripture/topics, preserves original records and old-link
-    mappings, and handles any vector changes; this plan supplies no new numeric bounds or speaker
-    assignments.
-  - The existing prayer transitions remain approximate. The opening prayer stays within the
-    scriptural-foundation movement rather than becoming a separate navigation item; the closing
-    prayer remains a peer service group. Existing ASR, proper-name and unverified-original-audio
-    limitations remain unresolved.
-  - The preacher’s questioned purple-dye shellfish figure, attributed Yancey, Tong and Luther
-    material, media judgments and theological interpretations are not independently verified. His
-    marshmallow discussion acknowledges competing family-background and trust explanations; the
-    embedded clip’s unidentified adult is not attributed to the preacher.
-  - The stumbling-block movement includes the preacher’s disputed dress/assault reasoning and an
-    unverified Gandhi exclusion anecdote, alongside industry and church-conduct examples; grouping
-    does not endorse those claims or establish causation. His mustard-seed reading remains his
-    interpretation.
 speakers:
   - id: yong-teck-meng
     name: Rev. Yong Teck Meng
@@ -102,45 +34,16 @@ topics:
 videos:
   - id: Z-vRVB-WucA
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
-    duration: 4005.801
+    duration: "1:06:45.801"
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    disposition_evidence: Full authorized acquisition verified RECS channel/ID and audio/video streams.
-      Acquisition and repeated ffprobe measured 4005.801s; metadata reports 4006s. Full audio decode
-      succeeded. Distributed and refined frames show the expected sermon title, exposition, embedded
-      illustration and closing prayer. Assessment is based on decoding, visual inspection and
-      matching supplied transcript, not direct listening or original batch-audio hash verification.
-    transcription_language: en
-    transcribed_span:
-      start: 0
-      end: 4005.778875
-    transcription_provenance:
-      engine: faster-whisper
-      engine_version: 1.2.1
-      model: large-v3-turbo
-      backend_version: 4.8.2
-      compute_type: float16
-      device: Tesla T4
-      settings:
-        beam_size: 5
-        word_timestamps: true
-        vad_filter: false
-        condition_on_previous_text: false
-      audio_sha256: 9ebb1d6a7faebb8607b365f0d1c30fbd04903560ab5ef9fb0fa95837706d36fd
-      duration_seconds: 4005.778875
-      elapsed_seconds: 131.099
-      real_time_factor: 0.03273
-      transcribed_at: 2026-09-25T11:25:45.022549+00:00
-      transcript_sha256: fcee2e5cb423e6e347445bb7aab1882f83bc65a2df8a669b75f194a2c356a1bb
-      source_duration_seconds: 4005.801
-      duration_delta_seconds: -0.022124999999959982
-      audio_hash_verified: false
 chapters:
+  # Review the prayer boundaries near 15:30 and 1:05:37; the existing cuts are approximate.
   - id: c20200719-opening
     video_id: Z-vRVB-WucA
-    start: 0
-    end: 291.72
+    start: "0:00"
+    end: "4:51.72"
     title: Opening
     type: opening
     summary: Rev. Yong Teck Meng welcomes online participants and reflects on pandemic worship
@@ -154,15 +57,11 @@ chapters:
       - discernment
       - discipleship
     scripture: []
-    source_chapters:
-      - s0719-welcome
-      - s0719-worship
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20200719-scripture-warnings
     video_id: Z-vRVB-WucA
-    start: 291.72
-    end: 1257.06
+    start: "4:51.72"
+    end: "20:57.06"
     title: Take Scripture’s Warnings Seriously
     type: sermon
     summary: The preacher uses Lazarus and judgment to warn against neglect, prays for teachability and
@@ -189,22 +88,14 @@ chapters:
       - Luke 17:1-9
       - Romans 1:17
       - Romans 1:16-17
-    source_chapters:
-      - s0719-recap-rich-man
-      - s0719-recap-judgment
-      - s0719-recap-word
-      - s0719-opening-prayer
-      - s0719-interpretation
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s0719-recap-judgment
     video_id: Z-vRVB-WucA
-    start: 516.76
-    end: 795.6
+    start: "8:36.76"
+    end: "13:15.6"
     type: sermon
     title: Neglect Has Eternal Consequences
     speaker_id: yong-teck-meng
-    confidence: 0.85
     scripture:
       - Luke 16:19-31
       - Matthew 25
@@ -220,12 +111,10 @@ chapters:
       - omission
       - irreversible
     parent_id: c20200719-scripture-warnings
-    source_chapters:
-      - s0719-recap-judgment
   - id: c20200719-trials-and-growth
     video_id: Z-vRVB-WucA
-    start: 1257.06
-    end: 2392.88
+    start: "20:57.06"
+    end: "39:52.88"
     title: Expect Trials and Learn Through Them
     type: sermon
     summary: Reading Luke 17 as a continuation of Lazarus, the preacher uses marriage and the debated
@@ -252,23 +141,13 @@ chapters:
       - Luke 17:1-9
       - Genesis 3:17-18
       - 1 Peter 5:8
-    source_chapters:
-      - s0719-continuity
-      - s0719-realism
-      - s0719-test-introduction
-      - s0719-test-video
-      - s0719-test-discussion
-      - s0719-fallen-world
-      - s0719-growth
-    review_notes: []
   - id: s0719-test-discussion
     video_id: Z-vRVB-WucA
-    start: 1915.7
-    end: 2060.94
+    start: "31:55.7"
+    end: "34:20.94"
     type: sermon
     title: Delayed Gratification and Competing Explanations
     speaker_id: yong-teck-meng
-    confidence: 0.87
     scripture: []
     topics:
       - discernment
@@ -282,12 +161,10 @@ chapters:
       - delayed gratification
       - discipline
     parent_id: c20200719-trials-and-growth
-    source_chapters:
-      - s0719-test-discussion
   - id: c20200719-resist-through-truth
     video_id: Z-vRVB-WucA
-    start: 2392.88
-    end: 2888.84
+    start: "39:52.88"
+    end: "48:08.84"
     title: Resist Temptation by Believing the Truth
     type: sermon
     summary: The preacher distinguishes encountering temptation from dwelling on it and argues that
@@ -307,20 +184,14 @@ chapters:
     scripture:
       - John 8:31-32
       - Psalms 119
-    source_chapters:
-      - s0719-resistance
-      - s0719-truth
-      - s0719-discipline
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s0719-truth
     video_id: Z-vRVB-WucA
-    start: 2537.06
-    end: 2755.74
+    start: "42:17.06"
+    end: "45:55.74"
     type: sermon
     title: Recognize the Cost of Giving In
     speaker_id: yong-teck-meng
-    confidence: 0.89
     scripture:
       - John 8:31-32
       - Psalms 119
@@ -337,12 +208,10 @@ chapters:
       - adultery
       - temptation
     parent_id: c20200719-resist-through-truth
-    source_chapters:
-      - s0719-truth
   - id: c20200719-avoid-stumbling-blocks
     video_id: Z-vRVB-WucA
-    start: 2888.84
-    end: 3639.54
+    start: "48:08.84"
+    end: "1:00:39.54"
     title: Do Not Become a Stumbling Block
     type: sermon
     summary: The preacher applies Luke 17 and Matthew 18 to harmful work, hypocrisy and personal rights,
@@ -368,22 +237,14 @@ chapters:
       - Luke 16:19-31
       - 1 Corinthians 8:8-9
       - 1 Corinthians 8:13
-    source_chapters:
-      - s0719-warning
-      - s0719-industry
-      - s0719-lifestyle
-      - s0719-hypocrisy
-      - s0719-rights
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s0719-industry
     video_id: Z-vRVB-WucA
-    start: 2984.46
-    end: 3140.94
+    start: "49:44.46"
+    end: "52:20.94"
     type: sermon
     title: Jobs Do Not Justify Gambling Harm
     speaker_id: yong-teck-meng
-    confidence: 0.86
     scripture:
       - Luke 17:1-9
       - Matthew 18:5-7
@@ -396,16 +257,13 @@ chapters:
       - gambling
       - jobs
     parent_id: c20200719-avoid-stumbling-blocks
-    source_chapters:
-      - s0719-industry
   - id: s0719-rights
     video_id: Z-vRVB-WucA
-    start: 3521.68
-    end: 3639.54
+    start: "58:41.68"
+    end: "1:00:39.54"
     type: sermon
     title: Consider Others Rather Than Insist on Rights
     speaker_id: yong-teck-meng
-    confidence: 0.92
     scripture:
       - 1 Corinthians 8:8-9
       - Luke 17:1-9
@@ -422,12 +280,10 @@ chapters:
       - right
       - think beyond
     parent_id: c20200719-avoid-stumbling-blocks
-    source_chapters:
-      - s0719-rights
   - id: c20200719-faith-and-forgiveness
     video_id: Z-vRVB-WucA
-    start: 3639.54
-    end: 3937
+    start: "1:00:39.54"
+    end: "1:05:37"
     title: Practice Faith by Restoring and Forgiving
     type: sermon
     summary: The preacher links restoration and forgiveness with the apostles’ request for faith,
@@ -452,20 +308,14 @@ chapters:
       - Luke 17:6
       - Luke 18:8
       - John 8:31-32
-    source_chapters:
-      - s0719-recovery
-      - s0719-faith
-      - s0719-conclusion
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s0719-faith
     video_id: Z-vRVB-WucA
-    start: 3696.88
-    end: 3883.92
+    start: "1:01:36.88"
+    end: "1:04:43.92"
     type: sermon
     title: Small Faith and the Call to Forgive
     speaker_id: yong-teck-meng
-    confidence: 0.89
     scripture:
       - Luke 17:1-9
       - Luke 17:5-6
@@ -484,12 +334,10 @@ chapters:
       - hyperbole
       - faith
     parent_id: c20200719-faith-and-forgiveness
-    source_chapters:
-      - s0719-faith
   - id: c20200719-closing-prayer
     video_id: Z-vRVB-WucA
-    start: 3937
-    end: 4005.801
+    start: "1:05:37"
+    end: "1:06:45.801"
     title: Closing Prayer
     type: closing
     summary: The preacher prays for care in conduct, humility and genuine faith so that listeners will
@@ -500,9 +348,6 @@ chapters:
       - prayer
       - responsibility
     scripture: []
-    source_chapters:
-      - s0719-closing-prayer
-    review_notes: []
     speaker_id: yong-teck-meng
 sermon_description: Rev. Yong Teck Meng reads Luke 17 as a connected call to take faith seriously
   amid unavoidable trials and temptations. Drawing on the rich man’s neglect, delayed gratification
