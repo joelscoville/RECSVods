@@ -78,6 +78,16 @@ download audio samples, approve content or deploy the site. To update the websit
 apply verified flags locally, commit the service changes when ready, and rebuild. Ordinary
 PR tests use deterministic fixtures; live YouTube availability is not a merge gate.
 
+Archive embedding checks use batches of at most 50 uploads with a **shared 600-second
+probing budget**, rather than a 50-upload archive limit. Each upload gets at most 20 seconds
+across navigation and playback. Use `--budget-seconds N` (1–900) to adjust the total;
+browser cleanup may take additional time. A partial run exits with code 2 and reports
+`skippedVideoIds` and `nextStartAt` in its JSON output. Unchecked uploads retain their
+flags and previous reports. Resume with `pnpm quirks check-embeds --all --start-at VIDEO_ID`;
+the order wraps around so a sufficiently quick run still visits every upload. The weekly
+workflow explicitly uses 600 seconds and uploads partial results even when the budget is
+exhausted. For a growing archive, use its reported `nextStartAt` to check the remaining uploads.
+
 ## Development
 
 Install Nix and devenv, then run commands through the bounded environment wrapper:

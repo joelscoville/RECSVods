@@ -1,3 +1,4 @@
+import type { Page } from '@playwright/test';
 import { test, expect } from './fixtures';
 import { probeEmbeds } from '../../scripts/probe-embeds';
 import { previewChapters, readServiceFixture } from './archive-fixtures';
@@ -46,4 +47,20 @@ test('the live checker requires advancing playback and does not mistake 153 or r
     const [result] = await probeEmbeds(['AAAAAAAAAAA'], { browser: instrumented, timeoutMs: 1800 });
     expect(result.observation.outcome).toBe(expected);
   }
+});
+
+test('the checker closes a stalled page at the shared deadline and leaves later uploads untested', async ({ browser }) => {
+  const opened: Page[] = [];
+  const instrumented = Object.create(browser) as typeof browser;
+  instrumented.newPage = async () => {
+    const page = await browser.newPage();
+    opened.push(page);
+    await page.route('**/*', route => new URL(route.request().url()).hostname === '127.0.0.1' ? route.continue() : route.abort());
+    page.evaluate = () => new Promise<never>(() => {});
+    return page;
+  };
+  const results = await probeEmbeds(['AAAAAAAAAAA', 'BBBBBBBBBBB'], { browser: instrumented, timeoutMs: 10000, deadlineMs: Date.now() + 2000 });
+  expect(results).toHaveLength(1);
+  expect(results[0]).toMatchObject({ videoId: 'AAAAAAAAAAA', observation: { outcome: 'inconclusive', reason: 'timeout' } });
+  expect(opened).toHaveLength(1); expect(opened[0].isClosed()).toBe(true);
 });

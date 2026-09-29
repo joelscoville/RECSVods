@@ -26,7 +26,7 @@ jobs:
       - name: Check live embedding without changing service metadata
         run: |
           mkdir -p .local
-          pnpm exec tsx scripts/video-quirks.ts check-embeds --all > .local/embed-check.json
+          pnpm exec tsx scripts/video-quirks.ts check-embeds --all --budget-seconds 600 > .local/embed-check.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:

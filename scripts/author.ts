@@ -1,8 +1,9 @@
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { parseArgs } from 'node:util';
 import { Document, isSeq } from 'yaml';
-import { ChapterSchema, loadArchive, ServiceSchema, type Service } from '../site/lib/archive';
+import { ChapterSchema, loadArchive, ServiceSchema, type Chapter, type Service } from '../site/lib/archive';
 import { editServiceDocument, quoteClockNodes, serviceFilename } from '../site/lib/service-document';
 import { formatTimecode, parseTimecode } from '../site/lib/timecode';
 import { CHAPTER_TYPE_HELP, SERVICE_TYPE_HELP } from '../site/lib/service-types';
@@ -10,6 +11,7 @@ import { QUIRK_LABELS } from '../site/lib/video-quirks';
 import { loadServiceChapterVectors } from './chapter-vectors';
 import { validateServiceOutline } from './validate-outlines';
 import { formatReviewTable } from './check-reports';
+import { assertCommandOptions } from './cli-options';
 
 const HELP = `Usage:
   pnpm author types
@@ -22,7 +24,50 @@ add-chapter prints a proposal unless --apply is present. IDs are generated once 
 Editing an approved service with this command returns it to needs_review. Nothing approves content.
 See docs/editing-services.md for the review steps and optional fields.`;
 
-export function proposeChapter(services: readonly Service[], serviceId: string, values: { video: string; title: string; type: string; start: string; end: string; summary: string; parent?: string }, reserved: Iterable<string> = []) {
+export interface ChapterDraft {
+  video: string;
+  title: string;
+  type: string;
+  start: string;
+  end: string;
+  summary: string;
+  parent?: string;
+}
+export type AuthorCommand =
+  | { command: 'help' | 'types' }
+  | { command: 'check'; selector: string }
+  | { command: 'add-chapter'; serviceId: string; chapter: ChapterDraft; apply: boolean };
+
+export function parseAuthorArgs(args: readonly string[]): AuthorCommand {
+  const [command, selector, ...rest] = args.filter(arg => arg !== '--');
+  if (command === 'help' || command === '--help' || command === 'types') {
+    if (selector) throw new Error(HELP);
+    return { command: command === 'types' ? 'types' : 'help' };
+  }
+  if (!selector) throw new Error(HELP);
+  if (command === 'check') {
+    if (rest.length) throw new Error(HELP);
+    return { command, selector };
+  }
+  if (command !== 'add-chapter' || selector.startsWith('--')) throw new Error(HELP);
+  const { values, tokens } = parseArgs({ args: rest, strict: true, tokens: true, options: {
+    video: { type: 'string' }, title: { type: 'string' }, type: { type: 'string' },
+    start: { type: 'string' }, end: { type: 'string' }, summary: { type: 'string' },
+    parent: { type: 'string' }, apply: { type: 'boolean' },
+  } });
+  assertCommandOptions(tokens, ['video', 'title', 'type', 'start', 'end', 'summary', 'parent', 'apply'], HELP);
+  const required = (key: 'video' | 'title' | 'type' | 'start' | 'end' | 'summary') => {
+    const value = values[key];
+    if (!value) throw new Error(`Missing --${key}\n${HELP}`);
+    return value;
+  };
+  return { command, serviceId: selector, apply: values.apply ?? false, chapter: {
+    video: required('video'), title: required('title'), type: required('type'), start: required('start'),
+    end: required('end'), summary: required('summary'), parent: values.parent,
+  } };
+}
+
+export function proposeChapter(services: readonly Service[], serviceId: string, values: ChapterDraft, reserved: Iterable<string> = []) {
   const service = services.find(service => service.id === serviceId);
   if (!service) throw new Error(`Unknown service ${serviceId}`);
   const used = new Set([...reserved, ...services.flatMap(service => [service.id, ...service.videos.map(video => video.id), ...service.chapters.map(chapter => chapter.id)])]);
@@ -37,64 +82,86 @@ export function proposeChapter(services: readonly Service[], serviceId: string, 
 }
 export function checkAuthoring(service: Service, root = process.cwd()) {
   const issues: string[] = [];
-  try { validateServiceOutline(service); } catch (error) { issues.push(String(error instanceof Error ? error.message : error)); }
-  if (service.chapters.length) try { loadServiceChapterVectors(serviceFilename(root, service)); }
-  catch { issues.push(`Search vectors need attention. Run pnpm chapters:vectors generate --service ${service.id} --transcripts-dir <private-evidence-directory>, then recheck. Do not hand-edit vector files or replace missing evidence with empty rows.`); }
+  try {
+    validateServiceOutline(service);
+  } catch (error) {
+    issues.push(String(error instanceof Error ? error.message : error));
+  }
+  if (service.chapters.length) {
+    try {
+      loadServiceChapterVectors(serviceFilename(root, service));
+    } catch {
+      issues.push(`Search vectors need attention. Run pnpm chapters:vectors generate --service ${service.id} --transcripts-dir <private-evidence-directory>, then recheck. Do not hand-edit vector files or replace missing evidence with empty rows.`);
+    }
+  }
   return { serviceId: service.id, title: service.title, ready: issues.length === 0, issues, editorialStatus: service.editorial_status };
 }
-export function authorCli(args = process.argv.slice(2), root = process.cwd()): void {
-  const [command, selector, ...rest] = args.filter(arg => arg !== '--');
-  if (command === 'types' && !selector) {
-    for (const [label, values] of [['Recording types', SERVICE_TYPE_HELP], ['Chapter types', CHAPTER_TYPE_HELP], ['Quirks', QUIRK_LABELS]] as const) {
-      console.log(`\n${label}\n${Object.entries(values).map(([key, description]) => `  ${key}: ${description}`).join('\n')}`);
-    }
-    return;
+function printAuthorTypes(): void {
+  for (const [label, values] of [['Recording types', SERVICE_TYPE_HELP], ['Chapter types', CHAPTER_TYPE_HELP], ['Quirks', QUIRK_LABELS]] as const) {
+    console.log(`\n${label}\n${Object.entries(values).map(([key, description]) => `  ${key}: ${description}`).join('\n')}`);
   }
-  if (command === 'help' || command === '--help') { console.log(HELP); return; }
-  if (!['check', 'add-chapter'].includes(command) || !selector) throw new Error(HELP);
-  const services = loadArchive(root);
-  if (command === 'check') {
-    if (rest.length) throw new Error(HELP);
-    const selected = selector === '--all' ? services : services.filter(service => service.id === selector);
-    if (!selected.length) throw new Error(`Unknown service ${selector}`);
-    const reports = selected.map(service => checkAuthoring(service, root));
-    for (const report of reports) {
-      console.log(`${report.ready ? 'READY FOR HUMAN REVIEW' : 'NEEDS ATTENTION'}: ${report.serviceId} — ${report.title}\n  Editorial status: ${report.editorialStatus}`);
-      report.issues.forEach(issue => console.log(`  - ${issue}`));
-    }
-    if (selected.length === 1) console.log(`\n${formatReviewTable(selected[0])}\n\nRead nearby YAML comments, check the published metadata/navigation, then commit your corrections before running the human editorial:approve command. Passing checks does not approve the service.`);
-    if (reports.some(report => !report.ready)) process.exitCode = 1;
-    return;
+}
+function checkServices(selector: string, services: readonly Service[], root: string): void {
+  const selected = selector === '--all' ? services : services.filter(service => service.id === selector);
+  if (!selected.length) throw new Error(`Unknown service ${selector}`);
+  const reports = selected.map(service => checkAuthoring(service, root));
+  for (const report of reports) {
+    console.log(`${report.ready ? 'READY FOR HUMAN REVIEW' : 'NEEDS ATTENTION'}: ${report.serviceId} — ${report.title}\n  Editorial status: ${report.editorialStatus}`);
+    report.issues.forEach(issue => console.log(`  - ${issue}`));
   }
-  const values = new Map<string, string>(); let apply = false;
-  for (let i = 0; i < rest.length; i++) {
-    const key = rest[i];
-    if (key === '--apply') { if (apply) throw new Error(HELP); apply = true; continue; }
-    if (!['--video', '--title', '--type', '--start', '--end', '--summary', '--parent'].includes(key) || values.has(key) || !rest[i + 1] || rest[i + 1].startsWith('--')) throw new Error(HELP);
-    values.set(key, rest[++i]);
+  if (selected.length === 1) {
+    console.log(`\n${formatReviewTable(selected[0])}\n\nRead nearby YAML comments, check the published metadata/navigation, then commit your corrections before running the human editorial:approve command. Passing checks does not approve the service.`);
   }
-  for (const key of ['--video', '--title', '--type', '--start', '--end', '--summary']) if (!values.has(key)) throw new Error(`Missing ${key}\n${HELP}`);
+  if (reports.some(report => !report.ready)) process.exitCode = 1;
+}
+function reservedChapterIds(services: readonly Service[], root: string): Set<string> {
   const reserved = new Set<string>();
   for (const filename of ['services/legacy-chapters.json', ...services.map(service => `services/${service.date.slice(0, 4)}/${service.id}/legacy-chapters.json`)]) {
-    if (existsSync(path.join(root, filename))) Object.keys(JSON.parse(readFileSync(path.join(root, filename), 'utf8'))).forEach(id => reserved.add(id));
+    const fullPath = path.join(root, filename);
+    if (existsSync(fullPath)) {
+      Object.keys(JSON.parse(readFileSync(fullPath, 'utf8'))).forEach(id => reserved.add(id));
+    }
   }
-  const chapter = proposeChapter(services, selector, { video: values.get('--video')!, title: values.get('--title')!, type: values.get('--type')!, start: values.get('--start')!, end: values.get('--end')!, summary: values.get('--summary')!, parent: values.get('--parent') }, reserved);
+  return reserved;
+}
+export function applyChapterAddition(root: string, service: Service, chapter: Chapter): void {
   const sourceChapter = { ...chapter, start: formatTimecode(chapter.start), end: formatTimecode(chapter.end) };
-  const proposal = new Document({ chapters: [sourceChapter] }); quoteClockNodes(proposal);
-  if (!apply) { console.log(`${proposal.toString({ lineWidth: 100 })}\nProposal only. Add --apply to insert this chapter.`); return; }
-  const service = services.find(service => service.id === selector)!;
   const before = readFileSync(serviceFilename(root, service), 'utf8');
   editServiceDocument(root, service, document => {
-    const chapters = document.get('chapters'); if (!isSeq(chapters)) throw new Error('Missing chapter list');
+    const chapters = document.get('chapters');
+    if (!isSeq(chapters)) throw new Error('Missing chapter list');
     const sequence = service.videos.find(video => video.id === chapter.video_id)!.sequence;
     const index = service.chapters.findIndex(item => {
       const other = service.videos.find(video => video.id === item.video_id)!.sequence;
       return other > sequence || other === sequence && item.start > chapter.start;
     });
     chapters.items.splice(index < 0 ? chapters.items.length : index, 0, document.createNode(sourceChapter));
-    if (service.editorial_status === 'reviewed') { document.set('editorial_status', 'needs_review'); document.delete('reviewed_by'); document.delete('reviewed_at'); }
+    if (service.editorial_status === 'reviewed') {
+      document.set('editorial_status', 'needs_review');
+      document.delete('reviewed_by');
+      document.delete('reviewed_at');
+    }
   }, before);
   console.log(`Added ${chapter.id}. Run pnpm author check ${service.id} before review/publication.`);
+}
+function addChapter(options: Extract<AuthorCommand, { command: 'add-chapter' }>, services: readonly Service[], root: string): void {
+  const chapter = proposeChapter(services, options.serviceId, options.chapter, reservedChapterIds(services, root));
+  if (options.apply) {
+    applyChapterAddition(root, services.find(service => service.id === options.serviceId)!, chapter);
+    return;
+  }
+  const proposal = new Document({ chapters: [{ ...chapter, start: formatTimecode(chapter.start), end: formatTimecode(chapter.end) }] });
+  quoteClockNodes(proposal);
+  console.log(`${proposal.toString({ lineWidth: 100 })}\nProposal only. Add --apply to insert this chapter.`);
+}
+export function authorCli(args = process.argv.slice(2), root = process.cwd()): void {
+  const options = parseAuthorArgs(args);
+  switch (options.command) {
+    case 'help': console.log(HELP); return;
+    case 'types': printAuthorTypes(); return;
+    case 'check': checkServices(options.selector, loadArchive(root), root); return;
+    case 'add-chapter': addChapter(options, loadArchive(root), root); return;
+  }
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   try { authorCli(); } catch (error) { console.error(error instanceof Error ? error.message : String(error)); process.exitCode = 1; }

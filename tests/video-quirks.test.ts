@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
@@ -20,10 +20,12 @@ const fixture = () => ServiceSchema.parse({ id: 'fixture', title: 'Fixture', dat
   videos: [{ id: 'AAAAAAAAAAA', channel_id: SOURCE_CHANNEL_ID, sequence: 1, duration: 180, workflow_status: 'complete', media_disposition: 'playable' }],
   chapters: [{ id: 'chapter', title: 'Chapter', summary: 'Example', keywords: [], topics: [], scripture: [], type: 'sermon', video_id: 'AAAAAAAAAAA', start: 10, end: 80 }] });
 const roots: string[] = [];
-function repo() {
+function repo(videoCount = 1) {
   const root = mkdtempSync(path.join(tmpdir(), 'recs-simple-quirks-')); roots.push(root);
   const file = path.join(root, 'services/2026/fixture/service.yaml'); mkdirSync(path.dirname(file), { recursive: true });
-  writeFileSync(file, stringifyService(fixture())); return { root, file };
+  const service = fixture();
+  for (let i = 1; i < videoCount; i++) service.videos.push({ ...service.videos[0], id: `V${String(i).padStart(10, '0')}`, sequence: i + 1 });
+  writeFileSync(file, stringifyService(service)); return { root, file };
 }
 afterEach(() => { roots.splice(0).forEach(root => rmSync(root, { recursive: true, force: true })); vi.restoreAllMocks(); process.exitCode = undefined; });
 
@@ -60,6 +62,27 @@ describe('simple source quirks', () => {
 });
 
 describe('checks are reports, not persistent quirk state machines', () => {
+  it('checks all 51 uploads through the CLI without exceeding the per-batch limit or editing metadata', async () => {
+    const log = vi.spyOn(console, 'log').mockImplementation(() => {});
+    const { root, file } = repo(51), before = readFileSync(file, 'utf8');
+    const probe = vi.spyOn(probes, 'probeEmbeds').mockImplementation(async ids => ids.map(videoId => ({ videoId, observation: probes.classifyEmbedProbe({ advanced: true }, when) })));
+    await quirksCli(['check-embeds', '--all'], root);
+    expect(probe.mock.calls.map(([batch]) => batch.length)).toEqual([50, 1]);
+    const report = JSON.parse(log.mock.calls.at(-1)![0]);
+    expect(report.results).toHaveLength(51); expect(report.skippedVideoIds).toEqual([]); expect(report.nextStartAt).toBeNull();
+    expect(readFileSync(file, 'utf8')).toBe(before);
+    expect(readFileSync(path.join(root, 'docs/checks/fixture.md'), 'utf8')).toContain('V0000000050');
+  });
+  it('reports an exhausted budget without inventing observations or changing flags on unchecked videos', async () => {
+    const log = vi.spyOn(console, 'log').mockImplementation(() => {});
+    const { root, file } = repo(2), before = readFileSync(file, 'utf8');
+    vi.spyOn(probes, 'probeEmbeds').mockResolvedValue([]);
+    await quirksCli(['check-embeds', '--all', '--apply', '--budget-seconds', '1'], root);
+    const report = JSON.parse(log.mock.calls.at(-1)![0]);
+    expect(report.results).toEqual([]); expect(report.skippedVideoIds).toEqual(['AAAAAAAAAAA', 'V0000000001']);
+    expect(report.nextStartAt).toBe('AAAAAAAAAAA'); expect(process.exitCode).toBe(2);
+    expect(readFileSync(file, 'utf8')).toBe(before); expect(existsSync(path.join(root, 'docs/checks/fixture.md'))).toBe(false);
+  });
   it('only proposes hard restrictions as automatic additions', () => {
     expect(embeddingAdditions([], probes.classifyEmbedProbe({ code: 150 }, when))).toEqual(['embed_blocked']);
     expect(embeddingAdditions(['embed_blocked'], probes.classifyEmbedProbe({ code: 150 }, when))).toEqual([]);

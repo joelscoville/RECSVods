@@ -5,7 +5,7 @@ import path from 'node:path';
 import { parse } from 'yaml';
 import { describe, expect, it } from 'vitest';
 import { SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
-import { CaptionProvenanceSchema, HistoricalVideoSchema as VideoSchema } from '../site/lib/processing-provenance';
+import { CaptionProvenanceSchema, HistoricalVideoSchema } from '../site/lib/processing-provenance';
 import { validateServiceOutline } from '../scripts/validate-outlines';
 import captionConfig from '../scripts/caption-config.json';
 import { pagesBase, verifyPages } from '../scripts/pages';
@@ -43,14 +43,14 @@ describe('weekly caption provenance', () => {
     const video = { id: 'AAAAAAAAAAA', channel_id: SOURCE_CHANNEL_ID, duration: 120, sequence: 1,
       workflow_status: 'complete', media_disposition: 'playable', transcription_language: 'en',
       transcribed_span: { start: 0, end: 60 }, caption_provenance: provenance };
-    expect(VideoSchema.safeParse(video).success).toBe(true);
-    expect(VideoSchema.safeParse({ ...video, transcript_engine: 'youtube-auto-captions' }).success).toBe(true);
-    expect(VideoSchema.safeParse({ ...video, transcript_engine: 'whisper.cpp' }).success).toBe(false);
-    expect(VideoSchema.safeParse({ ...video, caption_provenance: undefined, transcript_engine: 'whisper.cpp' }).success).toBe(true);
-    expect(VideoSchema.safeParse({ ...video, caption_provenance: undefined, transcript_engine: 'youtube-auto-captions' }).success).toBe(false);
+    expect(HistoricalVideoSchema.safeParse(video).success).toBe(true);
+    expect(HistoricalVideoSchema.safeParse({ ...video, transcript_engine: 'youtube-auto-captions' }).success).toBe(true);
+    expect(HistoricalVideoSchema.safeParse({ ...video, transcript_engine: 'whisper.cpp' }).success).toBe(false);
+    expect(HistoricalVideoSchema.safeParse({ ...video, caption_provenance: undefined, transcript_engine: 'whisper.cpp' }).success).toBe(true);
+    expect(HistoricalVideoSchema.safeParse({ ...video, caption_provenance: undefined, transcript_engine: 'youtube-auto-captions' }).success).toBe(false);
     for (const change of [{ id: 'BBBBBBBBBBB' }, { duration: 50 }, { transcription_language: 'zh' },
       { transcribed_span: { start: 0, end: 120 } }, { workflow_status: 'registered' }]) {
-      expect(VideoSchema.safeParse({ ...video, ...change }).success).toBe(false);
+      expect(HistoricalVideoSchema.safeParse({ ...video, ...change }).success).toBe(false);
     }
   });
 });

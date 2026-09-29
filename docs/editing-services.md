@@ -144,6 +144,14 @@ Timeouts and other inconclusive attempts change nothing. Audio measurements are
 suggestions requiring listening and cannot be automatically applied as flags.
 Technical flag/comment edits do not invalidate otherwise unchanged content approval.
 
+`check-embeds --all` works in batches of at most 50 uploads, within a shared 600-second
+probing budget (override with `--budget-seconds 1` through `--budget-seconds 900`).
+When time runs out, the JSON output lists `skippedVideoIds` and `nextStartAt`, and the
+command exits with code 2. Skipped uploads have not been checked; their flags and reports
+are left alone. Continue with `check-embeds --all --start-at VIDEO_ID`, using `nextStartAt`.
+This starts at that upload and wraps through the rest of the archive. Browser cleanup
+may take additional time beyond the probing budget.
+
 Review questions are plain comments, not a `review_notes` field:
 
 ```yaml
