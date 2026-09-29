@@ -1,6 +1,6 @@
 import { test, expect, noModel } from './fixtures';
 
-test('meaning search verifies vectors without secure-context Web Crypto', async ({ page, context }) => {
+test('meaning search verifies vectors without secure-context Web Crypto', { tag: '@model' }, async ({ page, context }) => {
   test.skip(noModel, 'Real model execution is checked locally.');
   await context.route('**/*', route => new URL(route.request().url()).hostname === '127.0.0.1' ? route.continue() : route.abort());
   await page.addInitScript(() => { Object.defineProperty(window.crypto, 'subtle', { value: undefined }); });

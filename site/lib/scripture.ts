@@ -10,9 +10,15 @@ export interface ScriptureReference {
   end: { chapter: number; verse: number };
 }
 
+/** The one normalisation of reference syntax, shared by every reader of references: NFKC folds Unicode
+ * forms ("Ⅰ John", "１ John" → "I John", "1 John") and every dash becomes a hyphen ("12:21—13:2"). */
+export function normalizeReferenceSyntax(input: string): string {
+  return input.normalize('NFKC').replace(/[–—]/g, '-');
+}
+
 /** One reference per string: chapter(s), verse(s), or a cross-chapter range. */
 export function parseScriptureReference(input: string): ScriptureReference | undefined {
-  const value = input.normalize('NFKC').trim().replace(/[–—]/g, '-');
+  const value = normalizeReferenceSyntax(input).trim();
   const match = /^(.*?)\s*([1-9]\d*)\s*(?::\s*([1-9]\d*))?\s*(?:-\s*([1-9]\d*)\s*(?::\s*([1-9]\d*))?)?$/.exec(value);
   if (!match) return undefined;
   const book = canonicalBook(match[1]);

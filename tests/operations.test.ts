@@ -1,4 +1,5 @@
 import { mkdtempSync, mkdirSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { parse } from 'yaml';
@@ -110,8 +111,19 @@ describe('workflow policy (configuration, not a live deployment)', () => {
     const artifacts = Object.values(ci.jobs).flatMap((job: unknown) => (job as { steps: { uses?: string; with?: unknown }[] }).steps).filter(step => step.uses?.includes('upload'));
     expect(artifacts).toEqual([{ uses: 'actions/upload-pages-artifact@v3', with: { path: 'dist/production' } }]);
     expect(ci.jobs.deploy.permissions).toEqual({ pages: 'write', 'id-token': 'write' });
-    expect(ci.jobs.validate.env.RECS_E2E_NO_MODEL).toBe('1');
-    expect(ci.jobs.validate.steps.some((step: { run?: string }) => step.run === 'pnpm evaluate:core -- --exact-only')).toBe(true);
+    expect(ci.jobs.browser.env.RECS_E2E_NO_MODEL).toBe('1');
+    expect(ci.jobs.browser.steps.some((step: { run?: string }) => step.run === 'pnpm evaluate:core -- --exact-only')).toBe(true);
+    expect(ci.jobs.validate.if).toBe('always()');
+    expect(ci.jobs.validate.needs).toEqual(['quality', 'tests', 'browser', 'editorial-guard']);
+    for (const name of ci.jobs.validate.needs) expect(ci.jobs[name].needs).toBeUndefined();
+    // Execute the actual gate, not just a string assertion: any failed/skipped/cancelled lane must block.
+    const command = ci.jobs.validate.steps[0].run;
+    for (const result of ['success', 'failure', 'cancelled', 'skipped']) {
+      const needs = Object.fromEntries(ci.jobs.validate.needs.map((name: string) => [name, { result: name === 'tests' ? result : 'success' }]));
+      const run = () => execFileSync('sh', ['-c', command], { env: { ...process.env, CHECK_RESULTS: JSON.stringify(needs) }, stdio: 'pipe' });
+      if (result === 'success') expect(run).not.toThrow();
+      else expect(run).toThrow();
+    }
   });
   it('limits serialized discovery to public metadata issues, with no content writes or inference', () => {
     expect(discovery.permissions).toEqual({ contents: 'read', issues: 'write' });

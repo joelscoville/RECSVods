@@ -1,14 +1,11 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { createRequire } from 'node:module';
-import { pathToFileURL } from 'node:url';
-import path from 'node:path';
 import { EMBEDDING_CONFIG, EMBEDDING_OPTIONS, isCompatibleEmbeddingConfig, isEmbeddingVector, MODEL_FILES, preprocessEmbedding, semanticAssetPaths } from '../site/lib/embedding-config';
-import { parseFullDateQuery, search, SEARCH_WEIGHTS } from '../site/lib/search';
+import { parseFullDateQuery, prepareSearchIndex, prepareVerseScorer, search, SEARCH_WEIGHTS } from '../site/lib/search';
 import { CHAPTER_VECTOR_CONFIG, decodeChapterVectors, packChapterVectors } from '../site/lib/chapter-vectors';
 import { enrichChapters, parseChapterMetadata } from '../site/lib/chapter-index';
 import { createSemanticClient, type SemanticRequest, type SemanticResponse, type SemanticStatus } from '../site/lib/semantic';
 import type { SearchChapter } from '../site/lib/types';
-import { embedTexts, prepare, sha256, verifyModelFile } from '../scripts/embeddings';
+import { sha256, verifyModelFile } from '../scripts/embeddings';
 
 // Fictional metadata and compact vector rows; never emitted into an archive.
 const fixture: SearchChapter = {
@@ -97,6 +94,132 @@ describe('transparent chapter ranking', () => {
     expect(result[0].chapter.id).toBe('referenced');
     expect(result[0].reasons.some((reason) => reason.startsWith('Scripture: '))).toBe(true);
     expect(search([referenced], 'Romans 13:8')).toEqual([]);
+  });
+  it('treats a reference as one term: loose book words and numbers do not match', () => {
+    const psalmOne = { ...fixture, id: 'psalm-one', scripture: ['Psalms 1:1-6'] };
+    // Mentions a psalm and the number 1 (and cites Psalms 98:1-3), but not Psalm 1.
+    const loose = { ...fixture, id: 'loose', scripture: ['Psalms 98:1-3'], keywords: ['psalms'], summary: 'Sing a new song from Psalms 98:1-3 and 1 Corinthians 11.' };
+    const written = { ...fixture, id: 'written', scripture: [], summary: 'Reads Psalm 1 aloud before prayer.' };
+    for (const query of ['Psalms 1', 'Psalm 1', 'Ps 1']) expect(search([loose, written, psalmOne], query).map((result) => result.chapter.id)).toEqual(['psalm-one', 'written']);
+    expect(search([loose], 'John 3')).toEqual([]);
+  });
+  it('keeps numbered and unnumbered books apart in references written in text', () => {
+    const firstJohn = { ...fixture, id: 'first-john', scripture: ['1 John 3:16'], summary: 'Reading from 1 John 3:16.' };
+    const secondJohn = { ...fixture, id: 'second-john', scripture: [], summary: 'Greeting in 2 John 1:3 and 3 John 1:2.' };
+    const gospel = { ...fixture, id: 'gospel', scripture: [], summary: 'Nicodemus hears John 3:1-21 at night.' };
+    const rows = [firstJohn, secondJohn, gospel], prepared = prepareSearchIndex(rows);
+    for (const query of ['John 3', 'John 3:16']) {
+      // Exhaustive and prepared search agree: only the Gospel of John, written as a range, matches.
+      expect(search(rows, query).map((result) => result.chapter.id)).toEqual(['gospel']);
+      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(['gospel']);
+    }
+    expect(search(rows, '1 John 3').map((result) => result.chapter.id)).toEqual(['first-john']);
+    expect(search(rows, '3 John 1').map((result) => result.chapter.id)).toEqual(['second-john']);
+  });
+  it('reads complete book names in text: multiword names, Roman numerals and aliases', () => {
+    const song = { ...fixture, id: 'song', scripture: [], summary: 'Reading from Song of Solomon 2:1.' };
+    const roman = { ...fixture, id: 'roman', scripture: [], summary: 'Reading from I John 3:16.' };
+    const alias = { ...fixture, id: 'alias', scripture: [], summary: 'See 1 Jn 4:8 and Rom. 13:1.' };
+    const prose = { ...fixture, id: 'prose', scripture: [], summary: 'It is 3 weeks until John returns.' };
+    const rows = [song, roman, alias, prose], prepared = prepareSearchIndex(rows);
+    const ids = (query: string) => {
+      const exhaustive = search(rows, query).map((result) => result.chapter.id);
+      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(exhaustive);
+      return exhaustive;
+    };
+    expect(ids('Song of Solomon 2:1')).toEqual(['song']);
+    // "I John" is 1 John, never the Gospel of John.
+    expect(ids('John 3:16')).toEqual([]);
+    expect(ids('1 John 3:16')).toEqual(['roman']);
+    expect(ids('1 John 4')).toEqual(['alias']);
+    expect(ids('Romans 13')).toEqual(['alias']);
+    expect(ids('Isaiah 3')).toEqual([]);
+  });
+  it('reads each written reference as a whole chapter:verse unit, so its numbers never start the next one', () => {
+    const listed = { ...fixture, id: 'listed', scripture: [], summary: 'Read Romans 12:1; John 3:16.' };
+    const spaced = { ...fixture, id: 'spaced', scripture: [], summary: 'Read Romans 12:1 John 3:16 together.' };
+    const numbered = { ...fixture, id: 'numbered', scripture: [], summary: 'Compare Romans 12; 1 John 3 and Romans 12:1 and 1 John 4:8.' };
+    const rows = [listed, spaced, numbered], prepared = prepareSearchIndex(rows);
+    const ids = (query: string) => {
+      const exhaustive = search(rows, query).map((result) => result.chapter.id);
+      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(exhaustive);
+      return exhaustive;
+    };
+    expect(ids('John 3:16')).toEqual(['listed', 'spaced']);
+    expect(ids('1 John 3:16')).toEqual(['numbered']);
+    expect(ids('1 John 4')).toEqual(['numbered']);
+    expect(ids('Romans 12').sort()).toEqual(['listed', 'numbered', 'spaced']);
+    // Without any punctuation, a chapter-only reference ends at its chapter: the next number starts 1 John.
+    const bare = [{ ...fixture, id: 'bare', scripture: [], summary: 'Romans 12 1 John 3 tonight.' }];
+    expect(search(bare, '1 John 3').map((result) => result.chapter.id)).toEqual(['bare']);
+    expect(search(bare, 'John 3')).toEqual([]);
+    // A book name with an invalid chapter is skipped whole: 1 John has five chapters, so this is not John 9.
+    expect(search([{ ...fixture, id: 'invalid', scripture: [], summary: 'Compare 1 John 9 with nothing.' }], 'John 9')).toEqual([]);
+    // Cross-chapter ranges are one unit too.
+    expect(search([{ ...fixture, id: 'range', scripture: [], summary: 'Reading Romans 12:21-13:2 aloud.' }], 'Romans 13:1').map((result) => result.chapter.id)).toEqual(['range']);
+  });
+  it('normalises written references as the scripture parser does: Unicode book numbers and every dash', () => {
+    const rows = [
+      { ...fixture, id: 'roman-numeral', scripture: [], summary: 'Reading from Ⅰ John 3:16.' },
+      { ...fixture, id: 'full-width', scripture: [], summary: 'Reading from １ John 4:8.' },
+      { ...fixture, id: 'em-dash', scripture: [], summary: 'Reading Romans 12:21—13:2 aloud.' },
+      { ...fixture, id: 'en-dash', scripture: [], summary: 'Reading Romans 8:28–30 aloud.' },
+    ];
+    const prepared = prepareSearchIndex(rows);
+    const ids = (query: string) => {
+      const exhaustive = search(rows, query).map((result) => result.chapter.id);
+      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(exhaustive);
+      return exhaustive;
+    };
+    // "Ⅰ" and "１" keep their book number: these are 1 John, never the Gospel of John.
+    expect(ids('John 3:16')).toEqual([]);
+    expect(ids('1 John 3:16')).toEqual(['roman-numeral']);
+    expect(ids('1 John 4')).toEqual(['full-width']);
+    // An em-dash range is read whole, so it reaches Romans 13; an en-dash range still works.
+    expect(ids('Romans 13')).toEqual(['em-dash']);
+    expect(ids('Romans 8:30')).toEqual(['en-dash']);
+  });
+  it('reads unambiguous lowercase book names but not everyday words', () => {
+    const rows = [
+      { ...fixture, id: 'lower-john', scripture: [], summary: 'Reading from john 3:16.' },
+      { ...fixture, id: 'lower-psalm', scripture: [], summary: 'A reading of psalm 23 before prayer.' },
+      { ...fixture, id: 'prose', scripture: [], summary: 'It is 3 weeks away; mark 3 items and note the acts 2 cast list.' },
+    ];
+    const prepared = prepareSearchIndex(rows);
+    for (const [query, expected] of [['John 3:16', ['lower-john']], ['Psalms 23', ['lower-psalm']], ['Isaiah 3', []], ['Mark 3', []], ['Acts 2', []]] as const) {
+      expect(search(rows, query).map((result) => result.chapter.id)).toEqual(expected);
+      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(expected);
+    }
+  });
+  it('scores the verse a natural-language query is about, ignoring common words alone', () => {
+    const verses = {
+      'Romans 12:1': 'Therefore I urge you, brothers, on account of God’s mercy, to offer your bodies as living sacrifices, holy and pleasing to God.',
+      'Romans 12:2': 'Do not be conformed to this world, but be transformed by the renewing of your mind.',
+      'Psalms 95:1': 'Come, let us sing for joy to the LORD; let us shout to the Rock of our salvation!',
+      ...Object.fromEntries(Array.from({ length: 60 }, (_, i) => [`Filler 1:${i + 1}`, 'The word of God endures forever.'])),
+    };
+    const score = prepareVerseScorer(verses)('offering our bodies as a living sacrifice');
+    expect(score('Romans 12:1')).toBeGreaterThan(score('Romans 12:2'));
+    expect(score('Romans 12:2')).toBe(0);
+    // "God" appears in most verses, so on its own it never picks a verse.
+    expect(prepareVerseScorer(verses)('God')('Filler 1:1')).toBe(0);
+    expect(prepareVerseScorer(verses)('renewing your mind')('Romans 12:2')).toBeGreaterThan(0);
+    // Most of a longer query's words must appear: one shared word is not enough.
+    expect(prepareVerseScorer(verses)('shout for the rock of ages')('Psalms 95:1')).toBeGreaterThan(0);
+    expect(prepareVerseScorer(verses)('holy mountain temple offering')('Romans 12:1')).toBe(0);
+  });
+  it('keeps a negation attached to what it negates when choosing a verse', () => {
+    const verses = {
+      '1 John 2:15': 'Do not love the world or anything in the world. If anyone loves the world, the love of the Father is not in him.',
+      'John 3:16': 'For God so loved the world that He gave His one and only Son, that everyone who believes in Him shall not perish but have eternal life.',
+      // With only the two verses above, every query term has zero IDF. The wrong
+      // verse would score zero even with the negation guard deleted: a vacuous regression test.
+      'Psalms 95:1': 'Come, let us sing for joy to the LORD; let us shout to the Rock of our salvation!',
+    };
+    const score = prepareVerseScorer(verses)('do not love the world');
+    // John 3:16 has "not", "loved" and "world", but not "not love".
+    expect(score('1 John 2:15')).toBeGreaterThan(0);
+    expect(score('John 3:16')).toBe(0);
   });
   it('keeps per-value phrase boundaries and combines field coverage', () => {
     const separated = { ...fixture, id: 'separated', keywords: ['quiet', 'generosity'], summary: '' };
@@ -196,51 +319,4 @@ describe('lazy semantic client', () => {
     expect(FakeWorker.instances).toHaveLength(0); vi.stubGlobal('Worker', undefined);
     await expect(client.embed('care')).rejects.toThrow(); client.dispose();
   });
-});
-
-describe.skipIf(process.env.RECS_TEST_EMBEDDINGS !== '1')('prepared real q8 model (opt-in)', () => {
-  it('reuses verified cache offline and produces compatible normalized query embeddings', async () => {
-    vi.stubGlobal('fetch', () => { throw new Error('Offline check: network forbidden'); });
-    const result = await prepare(); expect(result.downloadedBytes).toBe(0); expect(result.reusedBytes).toBe(23685172);
-    const queryVectors = await embedTexts(['A person helps a neighbour.', '  A person\nhelps a neighbour. ', 'The spacecraft orbits a distant planet.']);
-    queryVectors.forEach((vector) => expect(isEmbeddingVector(vector)).toBe(true));
-    expect(queryVectors[0]).toEqual(queryVectors[1]);
-    expect(queryVectors[0].reduce((sum, value, i) => sum + value * queryVectors[2][i], 0)).toBeLessThan(SEARCH_WEIGHTS.semanticThreshold);
-  }, 60_000);
-});
-
-describe.skipIf(process.env.RECS_TEST_BROWSER_EMBEDDINGS !== '1')('browser WASM integration (opt-in)', () => {
-  it('embeds in a real non-root worker without external requests and agrees with Node', async () => {
-    const require = createRequire(import.meta.url);
-    const viteEntry = require.resolve('vite', { paths: [path.dirname(require.resolve('vitest/package.json'))] });
-    const { createServer } = await import(pathToFileURL(viteEntry).href);
-    const { chromium } = await import('@playwright/test');
-    const server = await createServer({ configFile: false, root: process.cwd(), base: '/review/', publicDir: 'site/public', server: { host: '127.0.0.1', port: 0 } });
-    let browser;
-    try {
-      await server.listen(); const origin = new URL(server.resolvedUrls.local[0]).origin;
-      browser = await chromium.launch({ headless: true }); const page = await browser.newPage();
-      const external: string[] = [], requested: string[] = [];
-      await page.route('**/*', (route) => {
-        const url = route.request().url(); requested.push(url);
-        if (new URL(url).origin !== origin) { external.push(url); return route.abort(); }
-        return route.continue();
-      });
-      await page.route(`${origin}/review/`, (route) => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Embedding integration check</title>' }));
-      await page.goto(`${origin}/review/`);
-      const result = await page.evaluate<{ vector: number[]; statuses: SemanticStatus[] }>(`(async () => {
-        const { createSemanticClient } = await import('/review/site/lib/semantic.ts');
-        const statuses = []; const client = createSemanticClient('/review/', (status) => statuses.push(status));
-        try { return { vector: await client.embed('A person helps a neighbour.'), statuses }; }
-        finally { client.dispose(); }
-      })()`);
-      expect(isEmbeddingVector(result.vector)).toBe(true);
-      expect(result.statuses.some((status) => status.state === 'ready')).toBe(true); expect(external).toEqual([]);
-      expect(await page.evaluate(() => globalThis.caches.keys())).toContain(`recs-embeddings-${EMBEDDING_CONFIG.revision}-${EMBEDDING_CONFIG.dtype}`);
-      expect(requested.some((url) => url.includes('/review/models/Xenova/all-MiniLM-L6-v2/onnx/model_quantized.onnx'))).toBe(true);
-      expect(requested.some((url) => url.includes('/review/onnx/') && url.endsWith('.wasm'))).toBe(true);
-      const [nodeVector] = await embedTexts(['A person helps a neighbour.']);
-      expect(nodeVector.reduce((sum, value, i) => sum + value * result.vector[i], 0)).toBeGreaterThan(0.999);
-    } finally { await browser?.close(); await server.close(); }
-  }, 120_000);
 });

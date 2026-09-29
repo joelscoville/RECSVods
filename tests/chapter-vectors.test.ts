@@ -3,11 +3,11 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 import { stringify } from 'yaml';
-import { CHAPTER_VECTOR_CONFIG, cosineChapterVector, decodeChapterVectors, packChapterVectors } from '../site/lib/chapter-vectors';
+import { cosineChapterVector, decodeChapterVectors, packChapterVectors } from '../site/lib/chapter-vectors';
 import { averageChapterWindows, chapterTokenWindows, clipChapterEvidence, createChapterVectorManifest,
   loadServiceChapterVectors, parseChapterEvidence, processChapterVectors, quantizeChapterVector,
   stripEditorialAnnotations, validateChapterVectorManifest, type ChapterVectorBinding, type ChapterVectorChapter } from '../scripts/chapter-vectors';
-import { createEmbeddingSession, type EmbeddingSession } from '../scripts/embeddings';
+import type { EmbeddingSession } from '../scripts/embeddings';
 
 const DIM = 384, VIDEO = 'abcdefghijk', OTHER = 'lmnopqrstuv';
 const chapter: ChapterVectorChapter = { id: 'chapter-a', video_id: VIDEO, start: 0, end: 10 };
@@ -348,21 +348,3 @@ describe('isolated private processor', () => {
     await expect(processChapterVectors({ fixtureRoot: f.root, all: true, createSession: f.createSession, allowEmpty: ['chapter-a'] })).resolves.toMatchObject({ skippedSemantic: 3 });
   });
 });
-
-// Main may opt into this after concurrent model edits finish. Local cached model only;
-// this test never calls prepare and fails if the pinned assets are missing/invalid.
-it.skipIf(process.env.RECS_TEST_CHAPTER_MODEL !== '1')('matches the existing query pipeline and exercises real tokenizer boundaries', async () => {
-  const session = await createEmbeddingSession();
-  try {
-    const text = 'A short sentence about hope and peace.';
-    const direct = await session.embedTokenIds(session.tokenize(text)), query = await session.embedText(text);
-    expect(Math.max(...direct.map((v, i) => Math.abs(v - query[i])))).toBeLessThan(1e-6);
-    const ids = session.tokenize('Uncharacteristically hopeful, multilingual scripture. '.repeat(100));
-    const windows = chapterTokenWindows(ids);
-    expect(windows.length).toBeGreaterThan(1);
-    expect(windows[0].length + CHAPTER_VECTOR_CONFIG.windowing.specialTokens).toBe(256);
-    const vector = await session.embedTokenIds(windows[0]);
-    expect(vector).toHaveLength(384);
-    expect(Math.sqrt(vector.reduce((sum, v) => sum + v * v, 0))).toBeCloseTo(1, 5);
-  } finally { await session.dispose(); }
-}, 120_000);

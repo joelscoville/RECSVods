@@ -5,7 +5,10 @@ import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import type { SearchChapter } from '../../site/lib/types';
 import { chapterFor, readServiceFixture } from './archive-fixtures';
 import { formatTimecode } from '../../site/lib/timecode';
+import { browserEndpoints } from '../../scripts/testing-config';
 
+// Every check here includes viewport-sensitive accessibility, keyboard or layout assertions.
+test.describe('responsive accessibility and recovery', { tag: '@responsive' }, () => {
 const metadata = JSON.parse(readFileSync('dist/preview/generated/chapters.json', 'utf8'));
 const passages = metadata.chapters as SearchChapter[];
 // Build validation owns schema parsing; avoid Astro/tsx-only JSON-module imports here.
@@ -76,7 +79,7 @@ async function adapter(page: Page, failFirst = false) {
 const axeRoutes = [
   ['home', ''], ['search', 'search/'], ['results', 'search/?q=Romans%2013'],
   ['watch without YouTube', `watch/?chapter=${tracked.id}`], ['service', `services/${newPassage.serviceId}/`],
-  ['browse', 'browse/topics/government/'], ['production publication state', 'http://127.0.0.1:4174/replay-check/'],
+  ['browse', 'browse/topics/government/'], ['production publication state', browserEndpoints().production],
 ];
 for (const [label, route] of axeRoutes) test(`axe tagged checks: ${label}`, async ({ page }, testInfo) => {
   await exactOnly(page);
@@ -326,4 +329,6 @@ test('synthetic response-only long playback title keeps Play and consent clear',
   });
   expect(clear, 'Title and connection notice do not overlap Play').toBe(true);
   await noOverflow(page);
+});
+
 });
