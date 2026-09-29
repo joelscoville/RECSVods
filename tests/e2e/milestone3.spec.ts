@@ -258,9 +258,10 @@ test('index failure and retry preserve exact results with semantic model blocked
   await page.keyboard.press('Enter');
   await expect(retry).toHaveCount(0);
   expect(attempts).toBe(3);
-  await expect(page.getByRole('status').filter({ hasText: 'Meaning-based search is unavailable. Exact search still works.' })).toBeVisible();
+  // Installation is unavailable in this fixture. An intentionally unstarted model is not an error.
+  await expect(page.getByRole('status').filter({ hasText: 'with exact search.' })).toBeVisible();
   await expect(page.locator(`.recording-result[data-service="${tracked.serviceId}"]`)).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Retry meaning-based search' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Retry meaning-based search' })).toHaveCount(0);
   await noOverflow(page);
 });
 

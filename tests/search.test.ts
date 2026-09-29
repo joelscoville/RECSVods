@@ -287,6 +287,21 @@ function setupClient() {
   return { client: createSemanticClient('/review/', (state) => statuses.push(state)), statuses };
 }
 describe('lazy semantic client', () => {
+  it('prepares without a fake query and cancels obsolete requests without destroying the worker', async () => {
+    const { client } = setupClient();
+    const preparing = client.prepare();
+    const worker = FakeWorker.instances[0];
+    expect(worker.requests[0]).toEqual({ type: 'prepare', id: 1, base: '/review/' });
+    worker.receive({ type: 'prepared', id: 1 }); await preparing;
+    const obsolete = expect(client.embed('old query')).rejects.toMatchObject({ name: 'AbortError' });
+    client.cancel(); await obsolete;
+    expect(worker.requests.at(-1)).toEqual({ type: 'cancel', id: 2 });
+    expect(worker.terminated).toBe(false);
+    const latest = client.embed('latest');
+    worker.receive({ type: 'result', id: 2, vector: unit() });
+    worker.receive({ type: 'result', id: 3, vector: unit(1) });
+    expect(await latest).toEqual(unit(1)); client.dispose();
+  });
   it('initializes only on embed and correlates out-of-order replies', async () => {
     const { client, statuses } = setupClient();
     expect(FakeWorker.instances).toHaveLength(0); expect(statuses).toEqual([{ state: 'idle' }]);

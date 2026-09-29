@@ -105,6 +105,7 @@ export default function YouTubePlayer({ videoId, serviceId, title, range, seekRe
   }, [serviceId, videoId]);
 
   async function play() {
+    window.dispatchEvent(new Event('recs-playback-start'));
     if (!container.current) return;
     abort.current?.abort();
     adapter.current = null;

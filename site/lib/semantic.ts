@@ -1,20 +1,23 @@
 import { isEmbeddingVector, preprocessEmbedding, semanticAssetPaths } from './embedding-config';
 
 export interface SemanticStatus { state: 'idle' | 'loading' | 'ready' | 'error'; progress?: number }
-export interface SemanticRequest { type: 'embed'; id: number; query: string; base: string }
+export type SemanticRequest = { type: 'embed'; id: number; query: string; base: string; cacheOnly?: boolean }
+  | { type: 'prepare'; id: number; base: string; cacheOnly?: boolean } | { type: 'cancel'; id: number };
 export type SemanticResponse =
   | { type: 'status'; status: SemanticStatus }
   | { type: 'result'; id: number; vector: number[] }
+  | { type: 'prepared'; id: number }
+  | { type: 'cancelled'; id: number }
   | { type: 'error'; id: number; message: string };
-export interface SemanticClient { embed(query: string): Promise<number[]>; dispose(): void }
+export interface SemanticClient { embed(query: string): Promise<number[]>; prepare(): Promise<void>; cancel(): void; dispose(): void }
 
 /** Lazy module worker; a rejected embed leaves lexical results usable. Next embed retries. */
-export function createSemanticClient(base: string, onStatus: (status: SemanticStatus) => void = () => {}): SemanticClient {
+export function createSemanticClient(base: string, onStatus: (status: SemanticStatus) => void = () => {}, cacheOnly = false): SemanticClient {
   semanticAssetPaths(base);
   let worker: Worker | undefined;
   let disposed = false;
   let nextId = 0;
-  const pending = new Map<number, { resolve: (vector: number[]) => void; reject: (error: Error) => void; timeout: ReturnType<typeof setTimeout> }>();
+  const pending = new Map<number, { kind: 'prepare' | 'embed'; resolve: (vector: number[]) => void; reject: (error: Error) => void; timeout: ReturnType<typeof setTimeout> }>();
   const fail = (message: string) => {
     worker?.terminate();
     worker = undefined;
@@ -23,15 +26,14 @@ export function createSemanticClient(base: string, onStatus: (status: SemanticSt
     onStatus({ state: 'error' });
   };
   onStatus({ state: 'idle' });
-  return {
-    embed(query) {
+  function request(kind: 'prepare' | 'embed', query = '') {
       if (disposed) return Promise.reject(new Error('Semantic client is disposed'));
       const text = preprocessEmbedding(query);
-      if (!text) return Promise.reject(new Error('Cannot embed an empty query'));
+      if (kind === 'embed' && !text) return Promise.reject(new Error('Cannot embed an empty query'));
       return new Promise<number[]>((resolve, reject) => {
         const id = ++nextId;
         const timeout = setTimeout(() => fail('Semantic model request timed out; retry is available'), 120_000);
-        pending.set(id, { resolve, reject, timeout });
+        pending.set(id, { kind, resolve, reject, timeout });
         try {
           if (!worker) {
             onStatus({ state: 'loading', progress: 0 });
@@ -41,17 +43,29 @@ export function createSemanticClient(base: string, onStatus: (status: SemanticSt
               if (data.type === 'error') { fail(data.message); return; }
               const request = pending.get(data.id);
               if (!request) return;
-              if (!isEmbeddingVector(data.vector)) { fail('Semantic worker returned an incompatible vector'); return; }
               clearTimeout(request.timeout);
               pending.delete(data.id);
+              if (data.type === 'cancelled') { request.reject(new DOMException('Superseded query', 'AbortError')); return; }
+              if (data.type === 'prepared') { request.resolve([]); return; }
+              if (!isEmbeddingVector(data.vector)) { request.reject(new Error('Incompatible vector')); fail('Semantic worker returned an incompatible vector'); return; }
               request.resolve(data.vector);
             };
             worker.onerror = (event) => { event.preventDefault(); fail('Semantic model unavailable; exact search is still available'); };
             worker.onmessageerror = () => fail('Could not read semantic worker response');
           }
-          worker.postMessage({ type: 'embed', id, query: text, base } satisfies SemanticRequest);
+          worker.postMessage({ type: kind, id, ...(kind === 'embed' ? { query: text } : {}), base,
+            ...(cacheOnly ? { cacheOnly: true } : {}) } as SemanticRequest);
         } catch (error) { fail(error instanceof Error ? error.message : 'Semantic worker unavailable'); }
       });
+  }
+  return {
+    embed: query => request('embed', query),
+    prepare: () => request('prepare').then(() => {}),
+    cancel() {
+      for (const [id, item] of pending) if (item.kind === 'embed') {
+        clearTimeout(item.timeout); item.reject(new DOMException('Superseded query', 'AbortError')); pending.delete(id);
+        worker?.postMessage({ type: 'cancel', id } satisfies SemanticRequest);
+      }
     },
     dispose() {
       disposed = true;

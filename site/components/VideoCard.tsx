@@ -1,14 +1,16 @@
 import type { HomeItem } from './archive-display';
 import { formatDate, formatTime } from '../lib/urls';
 import { thumbnailPattern } from '../lib/thumbnail';
+import { usePerformanceMode } from '../lib/use-performance-mode';
 
 /** "13 September 2026", as in the thumbnail design. */
 const formatThumbDate = (date: string) => new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`));
 
 /** Decorative procedural thumbnail; the same title and date are repeated as real text beside it. */
 export function VideoArt({ item, progress }: { item: HomeItem; progress?: number }) {
+  const mode = usePerformanceMode();
   return <div className="video-art" aria-hidden="true">
-    <svg className="thumb-pattern" viewBox="0 0 352 610" preserveAspectRatio="xMidYMid slice" shapeRendering="crispEdges" dangerouslySetInnerHTML={{ __html: thumbnailPattern(item.id) }} />
+    {mode.compute === 'normal' && mode.data === 'normal' && <svg className="thumb-pattern" viewBox="0 0 352 610" preserveAspectRatio="xMidYMid slice" shapeRendering="crispEdges" dangerouslySetInnerHTML={{ __html: thumbnailPattern(item.id) }} />}
     {/* A resumable card shows its resume point in place of the thumbnail date (the date is repeated
         below), so the saved state, known only after hydration, never changes the card's height. */}
     <span className="thumb-text"><span className="thumb-title">{item.title}</span><span className="thumb-date">{progress !== undefined ? `Resume at ${formatTime(progress)}` : formatThumbDate(item.date)}</span></span>

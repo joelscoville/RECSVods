@@ -1,5 +1,9 @@
 # Static search measurement
 
+For the current adaptive loading policy, browser installation tests, initial-payload
+reduction and unresolved 5,000-row stress failures, see [Adaptive loading](adaptive-loading.md).
+The historical checkpoints below retain their original measurements.
+
 **Current result:** concise outlines use compact committed rows, not the passage-
 era artifacts described in the historical investigation below. All **53/53** declared
 budgets passed in `.local/performance-outlines-cached.json`: 233 real search units,
