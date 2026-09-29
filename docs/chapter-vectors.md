@@ -300,7 +300,7 @@ pnpm exec vitest run tests/chapter-vectors.test.ts
 pnpm exec eslint site/lib/chapter-vectors.ts scripts/chapter-vectors.ts scripts/embeddings.ts tests/chapter-vectors.test.ts
 
 # Optional cached-model integration check; never downloads model files:
-RECS_TEST_CHAPTER_MODEL=1 pnpm exec vitest run tests/chapter-vectors.test.ts
+pnpm test:model
 
 # Coordinated project type check after all caller/schema cutovers:
 pnpm exec tsc --noEmit

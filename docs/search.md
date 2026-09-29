@@ -166,14 +166,15 @@ containing chapters; September 13 also accepts `s0913-knowledge`, whose preserve
 After integration is ready:
 
 ```sh
-scripts/devenv-run pnpm exec vitest run tests/search.test.ts tests/prepared-search.test.ts
+scripts/devenv-run pnpm test:search
 scripts/devenv-run pnpm typecheck
 scripts/devenv-run pnpm lint
 ```
 
-The search suite retains opt-in offline model-cache and real browser-worker checks
-through `RECS_TEST_EMBEDDINGS=1` and `RECS_TEST_BROWSER_EMBEDDINGS=1`. Prepare local
-assets and Chromium before enabling those. Evaluation and benchmark consumers use
+`pnpm test:model` explicitly runs offline model-cache, tokenizer and real browser-worker
+checks; `pnpm test:e2e:model` selects the real semantic browser acceptance cases.
+Prepare local assets and Chromium first. Ordinary tests do not run inference.
+See [testing contracts and parallel feedback](testing.md). Evaluation and benchmark consumers use
 ordered chapter rows, including zero rows. Use `pnpm evaluate:core -- --implementation`
 for this all-needs-review implementation checkpoint, `pnpm benchmark:search` for
 the declared browser budgets, and `pnpm exec tsx scripts/chapter-report.ts` for

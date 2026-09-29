@@ -39,16 +39,29 @@ jobs:
           else
             pnpm editorial:guard "$COMMIT^" "$COMMIT"
           fi
-  validate:
+  quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
-    env:
-      SITE_BASE_PATH: /replay-check/
-      RECS_E2E_NO_MODEL: '1'
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check lint types
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      RECS_TEST_JOBS: '3'
+      RECS_TEST_WORKERS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
           persist-credentials: false
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
@@ -59,6 +72,25 @@ jobs:
         with:
           python-version: '3.12'
       - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      SITE_BASE_PATH: /replay-check/
+      RECS_E2E_NO_MODEL: '1'
+      RECS_E2E_WORKERS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       - uses: actions/cache@v4
         with:
           path: |
@@ -66,17 +98,29 @@ jobs:
             site/public/onnx
           key: model-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'site/lib/embedding-config.ts') }}
       - run: pnpm exec playwright install --with-deps chromium
-      - run: pnpm lint && pnpm typecheck && pnpm test && pnpm validate:archive && pnpm validate:outlines && pnpm index:verify && pnpm verify:tracked
+      - run: pnpm test:archive
       - name: Build isolated production and review output
         # Explicit fixture destination exercises issue context; review output is never deployed.
         run: pnpm build && PUBLIC_REPOSITORY_URL=https://github.com/example/archive-corrections pnpm build:preview
       - name: Verify non-root production routes and privacy
-        run: pnpm verify:pages
+        run: pnpm test:built && pnpm verify:pages
       - name: Browser checks without model execution
         run: pnpm test:e2e
       - name: Deterministic exact-search acceptance (semantic acceptance runs locally)
         run: pnpm evaluate:core -- --exact-only
       # No review output, traces, media or private evidence is uploaded from this job.
+  # Keep the required check name stable. A failed, cancelled or skipped dependency is never green.
+  validate:
+    if: always()
+    needs: [quality, tests, browser, editorial-guard]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Require every validation group
+        env:
+          CHECK_RESULTS: ${{ toJSON(needs) }}
+        run: |
+          node -e 'const jobs=JSON.parse(process.env.CHECK_RESULTS); for(const [name,job] of Object.entries(jobs)) console.log(`${name}: ${job.result}`); if(Object.values(jobs).some(job=>job.result!=="success")) process.exit(1)'
   build-pages:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: [validate, editorial-guard]

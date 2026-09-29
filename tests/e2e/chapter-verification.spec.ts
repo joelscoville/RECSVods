@@ -5,7 +5,7 @@ import type { ServiceSource } from '../../site/lib/types';
 
 const example = parse(readFileSync('services/2026/2026-08-23/service.yaml', 'utf8')) as ServiceSource;
 
-test('the example has one description and an integrated, keyboard-operable subsection tree', async ({ page, context }, testInfo) => {
+test('the example has one description and an integrated, keyboard-operable subsection tree', { tag: '@responsive' }, async ({ page, context }, testInfo) => {
   await context.route('**/*', route => new URL(route.request().url()).hostname === '127.0.0.1' ? route.continue() : route.abort());
   const parent = example.chapters.find(chapter => chapter.id === 'c20260823-worship-scripture')!;
   const cue = example.chapters.find(chapter => chapter.parent_id === parent.id)!;
@@ -51,7 +51,7 @@ test('the example has one description and an integrated, keyboard-operable subse
   }
 });
 
-test('metadata and BSB results precede the model; semantic results merge without blocking chapter playback', async ({ page, context }, testInfo) => {
+test('metadata and BSB results precede the model; semantic results merge without blocking chapter playback', { tag: '@model' }, async ({ page, context }, testInfo) => {
   test.skip(noModel, 'Real semantic merging is verified locally, never inferred in CI.');
   await context.route('**/*', route => new URL(route.request().url()).hostname === '127.0.0.1' ? route.continue() : route.abort());
   let releaseModel!: () => void, releaseBible!: () => void;

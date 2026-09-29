@@ -4,6 +4,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { parse } from 'yaml';
 import type { SearchChapter, ServiceSource } from '../../site/lib/types';
 import { chapterFor, chooseOnly, sermonEnd } from './archive-fixtures';
+import { browserEndpoints } from '../../scripts/testing-config';
 
 // Built real corpus is required; an empty or missing build fails rather than skips.
 const passages = JSON.parse(readFileSync('dist/preview/generated/chapters.json', 'utf8')).chapters as SearchChapter[];
@@ -54,7 +55,7 @@ test.beforeEach(async ({ context }) => {
   });
 });
 
-test('live worker hybrid government query reaches a relevant top-three chapter and its timestamp', async ({ page, context }) => {
+test('live worker hybrid government query reaches a relevant top-three chapter and its timestamp', { tag: '@model' }, async ({ page, context }) => {
   test.skip(noModel, 'Actual model acceptance is local-only; CI performs no inference.');
   const modelRequests: string[] = [];
   context.on('request', (request) => { if (/\/(models|onnx)\//.test(request.url())) modelRequests.push(request.url()); });
@@ -67,7 +68,7 @@ test('live worker hybrid government query reaches a relevant top-three chapter a
   const accepted = topIds.find((id) => id && governmentIds.includes(id));
   expect(accepted, `Actual hybrid top 3: ${topIds.join(', ')}`).toBeTruthy();
   expect(modelRequests.some((url) => url.endsWith('model_quantized.onnx'))).toBe(true);
-  expect(modelRequests.every((url) => new URL(url).origin === 'http://127.0.0.1:4173')).toBe(true);
+  expect(modelRequests.every((url) => new URL(url).origin === new URL(browserEndpoints().preview).origin)).toBe(true);
   const passage = passages.find((item) => item.id === accepted)!;
   expect(passage.serviceId).toBe('2020-09-27');
   const result = page.locator(`.recording-result[data-match="${accepted}"]`);
@@ -151,8 +152,8 @@ test('Sermon only plays every sermon chapter and Full service instead starts at 
   await page.locator('button.play-button').click();
   await expectPlayer(page, sermon.videoId, sermon.start);
   await page.locator('.chapter-controls').getByRole('button', { name: 'Sermon only', exact: true }).click();
-  await page.evaluate(time => { window.testPlayer.time = time; }, sermon.end + 1);
-  await page.waitForTimeout(600);
+  const ticks = await page.evaluate(time => { window.testPlayer.time = time; return window.testPlayer.ticks; }, sermon.end + 1);
+  await expect.poll(() => page.evaluate(() => window.testPlayer.ticks)).toBeGreaterThan(ticks + 1);
   expect(await page.evaluate(() => window.testPlayer.state)).toBe(1);
   await page.evaluate(time => { window.testPlayer.time = time; }, end);
   await expect(page.getByText('Paused at the end of the sermon.')).toBeVisible();
@@ -179,7 +180,7 @@ test('copying a full-recording resume link retains its timestamp', async ({ page
   await expect(page.locator('html')).toHaveAttribute('data-copied', new RegExp(`video=${chapter.videoId}&t=42$`));
 });
 
-test('static browse URLs and focused search display ESV references without hidden BSB text or Bible API requests', async ({ page, context }) => {
+test('static browse URLs and focused search display ESV references without hidden BSB text or Bible API requests', { tag: '@responsive' }, async ({ page, context }) => {
   const bibleRequests: string[] = [];
   context.on('request', (request) => { if (/esv\.org|bible\./i.test(new URL(request.url()).hostname)) bibleRequests.push(request.url()); });
   await page.route('**/models/**', (route) => route.abort());
@@ -204,10 +205,15 @@ test('static browse URLs and focused search display ESV references without hidde
   await expect(result.locator('.match-reasons')).toContainText('Verse-text match (BSB)');
   const shownId = await result.getAttribute('data-match');
   const shown = passages.find((item) => item.id === shownId)!;
-  for (const reference of shown.scripture.slice(0, 2)) {
-    const link = result.getByRole('link', { name: `Read ${reference} in the ESV`, exact: true });
-    await expect(link).toHaveAttribute('href', `https://www.esv.org/${encodeURIComponent(reference)}/`);
-    await expect(link).toContainText('(ESV)');
+  // The result leads with the verse the words matched, narrowed from a passage the chapter cites.
+  const links = result.locator('.scripture a');
+  const labels = await links.evaluateAll((items) => items.map((item) => item.getAttribute('aria-label')!.replace(/^Read (.*) in the ESV$/, '$1')));
+  const index = scripture as unknown as { references: Record<string, string[]>; verses: Record<string, string> };
+  expect(shown.scripture.some((reference) => index.references[reference]?.includes(labels[0]))).toBe(true);
+  expect(index.verses[labels[0]]).toMatch(/living sacrifice/i);
+  for (const [i, reference] of labels.entries()) {
+    await expect(links.nth(i)).toHaveAttribute('href', `https://www.esv.org/${encodeURIComponent(reference)}/`);
+    await expect(links.nth(i)).toContainText('(ESV)');
   }
   expect(passage).not.toHaveProperty('verseText');
   // BSB is separately deduplicated search input, never rendered in the DOM.
@@ -216,7 +222,7 @@ test('static browse URLs and focused search display ESV references without hidde
   expect(bibleRequests).toEqual([]);
 });
 
-test('new and returning home use local progress; clearing search history preserves resume', async ({ page }) => {
+test('new and returning home use local progress; clearing search history preserves resume', { tag: '@responsive' }, async ({ page }) => {
   await page.goto('');
   await expect(page.getByRole('heading', { level: 1, name: 'Watch the latest sermon', exact: true })).toBeVisible();
   const featured = page.locator('section.featured');
@@ -276,7 +282,7 @@ test('failed stream stays out of ordinary links/index and production excludes ev
   await expect(page.getByRole('link', { name: 'Play full recording', exact: true })).toHaveAttribute('href', /video=k27dmsPvmG8$/);
   await page.goto(`watch/?video=${failedId}`);
   await expect(page.getByRole('heading', { level: 1, name: 'Recording not found', exact: true })).toBeVisible();
-  const production = 'http://127.0.0.1:4174/replay-check/';
+  const production = browserEndpoints().production;
   const productionIndex = await request.get(`${production}generated/chapters.json`);
   expect(productionIndex.ok()).toBe(true);
   // The CLI independently verifies this built preview against public source metadata.

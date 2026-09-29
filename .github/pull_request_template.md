@@ -12,7 +12,8 @@
 - [ ] Failed, rejected and unresolved media excluded from ordinary playback/search; production excludes unreviewed content.
 - [ ] No media, credentials, private paths/evidence, provenance hashes or ESV verse text in public build artifacts; no media or ESV verse text added to Git.
 - [ ] Reproducible indexes, search evaluation and `editorial-guard` pass.
-- [ ] `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm validate:archive`, `pnpm test:search` and `pnpm test:e2e` pass.
+- [ ] `pnpm check` passes against the final source (quality, unit/Python, archive, fresh-build browser and exact-search acceptance).
+- [ ] Behavior changes have focused regression coverage; search changes pass `pnpm test:search`, including relevant inclusion/exclusion and visible-reference assertions.
 - [ ] `pnpm build` and `pnpm build:preview` pass with a non-root `SITE_BASE_PATH`.
 - [ ] Affected keyboard, accessibility, empty/error and responsive states checked against the established Penpot reference.
 - [ ] Correction links use stable public IDs, correct source files and the configured repository/ref without local state.

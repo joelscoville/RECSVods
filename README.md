@@ -21,6 +21,14 @@ The default environment timeout is 900 seconds; see [development setup](docs/dev
 The pinned environment supports Intel macOS. Native media preflight, calibration,
 and model provenance are recorded in [preflight evidence](docs/preflight-evidence.md).
 
+### Testing
+
+Use `pnpm test:search` for focused search feedback, `pnpm test:watch` while editing,
+and `pnpm test` for parallel unit/Python checks. `pnpm check` runs the full validation
+groups, reports failures independently, and prints focused rerun commands. Browser
+checks default to two workers; responsive/accessibility checks retain three viewports.
+See [testing workflow, worker limits and regression contracts](docs/testing.md).
+
 ## Build and review
 
 ```sh
