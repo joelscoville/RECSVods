@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { enrichChapters, PublicChapterSchema, parseScriptureIndex } from '../site/lib/chapter-index';
 import { prepareSearchIndex } from '../site/lib/search';
 import { prepareVerseSelection } from '../site/lib/verse-selection';
-import RecordingResult, { referencesFor } from '../site/components/RecordingResult';
+import RecordingResult, { selectResultReferences } from '../site/components/RecordingResult';
 import { groupByRecording, type HomeItem } from '../site/components/archive-display';
 
 const index = parseScriptureIndex({ schemaVersion: 1, references: {
@@ -40,8 +40,8 @@ describe('real search evidence to rendered result', () => {
     const results = groupByRecording(prepareSearchIndex(enriched).search(query), [recording], '/');
     expect(results).toHaveLength(1);
     expect(results[0].chapter.id).toBe('match');
-    const bestVerse = prepareVerseSelection(index)(query);
-    const html = renderToStaticMarkup(createElement(RecordingResult, { ...results[0], query, bestVerse }));
+    const findBestVerse = prepareVerseSelection(index)(query);
+    const html = renderToStaticMarkup(createElement(RecordingResult, { ...results[0], query, findBestVerse }));
     const referenceLabels = [...html.matchAll(/aria-label="Read ([^"]+) in the ESV"/g)].map(match => match[1]);
     expect(referenceLabels[0]).toBe(expected);
     expect(html).toContain(`https://www.esv.org/${encodeURIComponent(expected)}/`);
@@ -53,10 +53,10 @@ describe('real search evidence to rendered result', () => {
   });
   it('deduplicates real narrowed choices and keeps caches query-local', () => {
     const select = prepareVerseSelection(index), first = select('living sacrifice');
-    expect(first('Rom 12:1-2')?.verse).toBe('Romans 12:1');
-    expect(select('renewing your mind')('Romans 12:1-2')?.verse).toBe('Romans 12:2');
-    expect(first('Romans 12:1-2')?.verse).toBe('Romans 12:1');
-    const shown = referencesFor(chapter, 'living sacrifice', first);
+    expect(first('Rom 12:1-2')?.reference).toBe('Romans 12:1');
+    expect(select('renewing your mind')('Romans 12:1-2')?.reference).toBe('Romans 12:2');
+    expect(first('Romans 12:1-2')?.reference).toBe('Romans 12:1');
+    const shown = selectResultReferences(chapter, 'living sacrifice', first);
     expect(shown.references.filter(ref => ref === 'Romans 12:1')).toHaveLength(1);
     expect(first('Unknown 1')).toBeUndefined();
   });
@@ -65,11 +65,11 @@ describe('real search evidence to rendered result', () => {
     // The misleading verse contains all three significant words. It must get no evidence,
     // even when a chapter does not cite the correct verse as a higher-scoring alternative.
     expect(select('John 3:16-17')).toBeUndefined();
-    expect(select('1 John 2:15-16')?.verse).toBe('1 John 2:15');
-    expect(referencesFor({ scripture: ['John 3:16-17'] }, query, select).references).toEqual(['John 3:16-17']);
+    expect(select('1 John 2:15-16')?.reference).toBe('1 John 2:15');
+    expect(selectResultReferences({ scripture: ['John 3:16-17'] }, query, select).references).toEqual(['John 3:16-17']);
   });
   it('retains source order and labels when no verse provides evidence', () => {
-    expect(referencesFor(chapter, 'unknown terms', prepareVerseSelection(index)('unknown terms'))).toEqual({
+    expect(selectResultReferences(chapter, 'unknown terms', prepareVerseSelection(index)('unknown terms'))).toEqual({
       references: chapter.scripture, displayReferences: chapter.scriptureDisplay,
     });
   });

@@ -125,7 +125,7 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
   const results = useMemo(() => groupByRecording(hybridResults ?? exact, recordings, base), [hybridResults, exact, recordings, base]);
   // Which verse of each cited passage the search's words best match (BSB text; never displayed).
   const verseSelection = useMemo(() => scripture?.base === base ? prepareVerseSelection(scripture.index) : undefined, [scripture, base]);
-  const bestVerse = useMemo(() => query.trim() ? verseSelection?.(query) : undefined, [verseSelection, query]);
+  const findBestVerse = useMemo(() => query.trim() ? verseSelection?.(query) : undefined, [verseSelection, query]);
   const categories = availableBrowseCategories([], chapters);
   const topics = useMemo(() => suggestedTopics(chapters), [chapters]);
 
@@ -167,7 +167,7 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
       {query.trim() && semanticError && <button className="button button-secondary" type="button" onClick={() => setSemanticAttempt((attempt) => attempt + 1)}>Retry meaning-based search</button>}
       {query.trim() ? <section className="search-results" aria-label="Search results">
         <div className="results-toolbar"><h2>Results for “{query}”</h2><CopyLink href={searchUrl(base, query)} label="Share search" /></div>
-        {results.length ? <ol className="result-list">{results.map(({ recording, chapter, reasons }) => <li key={recording.id}><RecordingResult recording={recording} chapter={chapter} reasons={reasons} query={query} bestVerse={bestVerse} /></li>)}</ol> : <div className="no-results"><h2>{chapters.length ? 'No matching recordings' : 'No published chapters yet'}</h2><p>{chapters.length ? 'Try a speaker’s name, a date, a Bible reference, or fewer words.' : 'Chapters will be searchable when recordings are ready to publish.'}</p><button className="button button-secondary" type="button" onClick={() => choose('')}>Clear search</button></div>}
+        {results.length ? <ol className="result-list">{results.map(({ recording, chapter, reasons }) => <li key={recording.id}><RecordingResult recording={recording} chapter={chapter} reasons={reasons} query={query} findBestVerse={findBestVerse} /></li>)}</ol> : <div className="no-results"><h2>{chapters.length ? 'No matching recordings' : 'No published chapters yet'}</h2><p>{chapters.length ? 'Try a speaker’s name, a date, a Bible reference, or fewer words.' : 'Chapters will be searchable when recordings are ready to publish.'}</p><button className="button button-secondary" type="button" onClick={() => choose('')}>Clear search</button></div>}
       </section> : <div className="search-browse">
         <section className="history-section"><h2>Your history</h2>{history.length ? <div className="chip-list">{history.map((item) => <button className="chip" type="button" key={item} onClick={() => choose(item)}>{item}</button>)}</div> : <p>Your searches will appear here on this device.</p>}<div className="local-data-controls"><button className="button button-secondary" type="button" onClick={() => {
           const cleared = clearSearchHistory();
