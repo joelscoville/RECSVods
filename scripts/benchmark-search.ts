@@ -219,14 +219,16 @@ async function waitForEmbedding(page: Page, count: number) {
   }, count);
   return (await observation(page)).results[count];
 }
-async function query(page: Page, text: string) {
+async function query(page: Page, text: string, workerUrl: string, base: string) {
   const before = (await observation(page)).results.length;
-  const started = await page.evaluate((q) => {
+  const started = await page.evaluate(({ q, workerUrl, base, id }) => {
     const start = performance.now();
-    const url = new URL(window.location.href); url.searchParams.set('q', q);
-    window.history.pushState({}, '', url); window.dispatchEvent(new PopStateEvent('popstate'));
+    // Explicit kernel measurement, independent of the adaptive UI's decision to install/run.
+    const state = window as unknown as { __kernelWorker?: Worker };
+    state.__kernelWorker ??= new Worker(workerUrl, { type: 'module' });
+    state.__kernelWorker.postMessage({ type: 'embed', id, query: q, base });
     return start;
-  }, text);
+  }, { q: text, workerUrl, base, id: before + 1 });
   const result = await waitForEmbedding(page, before);
   return { vector: result.vector, ms: result.at - started, workerMs: result.elapsedMs, requestAt: result.requestAt };
 }
@@ -364,6 +366,7 @@ export async function benchmark(options: { label: string; output?: string }) {
       '4x Chromium main-thread CPU slowdown on this host; mobile viewport, not a physical phone or calibrated device.',
       'Loopback HTTP/1 identity responses, no bandwidth/RTT shaping; offline gzip-9 sizes are estimates, not observed compressed transfers.',
       'Worker inference CPU is not claimed throttled; exhaustive exact/hybrid ranking is on the throttled page.',
+      'Model timing explicitly drives the emitted worker kernel, not adaptive UI query-to-paint. Adaptive loading has a separate browser suite.',
       'Ranking reuses the product prepared snapshot; preparation is reported separately and included in initialization.',
       'Fresh isolated context for cold; same context reload for CacheStorage warm, HTTP cache disabled in both.',
       'JS heap snapshots are not peak process memory, WASM linear memory, native allocations, GPU memory or RSS.',
@@ -435,7 +438,10 @@ export async function benchmark(options: { label: string; output?: string }) {
     check('real', 'initial.gzipBytes', initialAssets.reduce((sum, a) => sum + a.gzipBytes, 0));
     check('real', 'initial.modelRequests', initialRequests.filter(r => /^(models|onnx)\//.test(r.path) || r.path.includes('semantic.worker')).length);
     phase = 'cold-model';
-    const cold = await query(page, budgets.profile.queries[0]);
+    const workerPath = assets.find(asset => /semantic\.worker.*\.js$/.test(asset.path))?.path;
+    if (!workerPath) throw new Error('Missing emitted semantic worker');
+    const workerUrl = `${origin}${base}${workerPath}`;
+    const cold = await query(page, budgets.profile.queries[0], workerUrl, base);
     check('real', 'model.coldMs', cold.workerMs);
     const heap = await coldHeap(browser, page);
     check('real', 'model.coldJsHeapBytes', heap);
@@ -445,7 +451,7 @@ export async function benchmark(options: { label: string; output?: string }) {
     phase = 'warm-inference';
     // These are real browser-model query embeddings, computed outside rank timers.
     for (const text of budgets.profile.queries.slice(1)) {
-      const result = await query(page, text); queryVectors.push(result.vector); warmInferenceMs.push(result.workerMs);
+      const result = await query(page, text, workerUrl, base); queryVectors.push(result.vector); warmInferenceMs.push(result.workerMs);
     }
     check('real', 'model.warmInferenceP95Ms', percentile(warmInferenceMs, 0.95));
     let cache: Awaited<ReturnType<typeof cacheInventory>> = [];
@@ -458,7 +464,8 @@ export async function benchmark(options: { label: string; output?: string }) {
       check('real', 'model.cacheWeightEntries', missing); check('real', 'model.cacheBytes', missing);
     }
     phase = 'warm-cache';
-    await page.goto(`${origin}${base}search/?q=${encodeURIComponent(budgets.profile.queries[0])}`, { waitUntil: 'domcontentloaded' });
+    await page.goto(`${origin}${base}search/`, { waitUntil: 'networkidle' });
+    await query(page, budgets.profile.queries[0], workerUrl, base);
     const warm = await waitForEmbedding(page, 0);
     check('real', 'model.warmCacheMs', warm.elapsedMs);
     const weights = (scope: string) => requests.filter(r => r.phase === scope && r.path.endsWith('/model_quantized.onnx') && r.status === 200);

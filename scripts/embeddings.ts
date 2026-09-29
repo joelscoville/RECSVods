@@ -4,6 +4,7 @@ import { createRequire } from 'node:module';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { EMBEDDING_CONFIG, EMBEDDING_OPTIONS, isEmbeddingVector, MODEL_FILES, preprocessEmbedding } from '../site/lib/embedding-config';
+import { SEMANTIC_ASSETS } from '../site/lib/semantic-assets';
 
 type ModelFile = (typeof MODEL_FILES)[number];
 interface ManifestFile {
@@ -85,6 +86,12 @@ export async function prepare(root = process.cwd()) {
     files.push({ path: relative, bytes: data.byteLength, sha256: sha256(data), source: `npm:onnxruntime-web@${EMBEDDING_CONFIG.runtimeVersion}/dist/${name}` });
   }
   const manifest = { schemaVersion: 1, model: EMBEDDING_CONFIG, files };
+  for (const asset of SEMANTIC_ASSETS) {
+    const actual = files.find(file => file.path === asset.path);
+    if (!actual || actual.bytes !== asset.bytes || actual.sha256 !== asset.sha256) {
+      throw new Error(`Semantic installer contract differs from prepared asset: ${asset.path}`);
+    }
+  }
   await atomicWrite(path.join(publicRoot, 'models/manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
   return {
     modelBytes: MODEL_FILES.reduce((sum, file) => sum + file.bytes, 0),

@@ -42,6 +42,7 @@
     "quirks": "tsx scripts/video-quirks.ts",
     "validate:quirks": "tsx scripts/video-quirks.ts validate",
     "benchmark:search": "tsx scripts/benchmark-search.ts",
+    "benchmark:adaptive": "tsx scripts/benchmark-adaptive.ts",
     "test:e2e": "playwright test",
     "test:e2e:model": "RECS_E2E_NO_MODEL=0 playwright test --project=model",
     "build": "tsx scripts/build.ts production",

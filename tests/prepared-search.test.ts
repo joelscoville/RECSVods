@@ -72,6 +72,27 @@ describe('prepared and exhaustive ranking equivalence', () => {
 });
 
 describe('owned snapshot lifecycle', () => {
+  it.each(['append', 'remove'] as const)('attaches against owned rows after callers %s chapters', (mutation) => {
+    const chapters = [structuredClone(fixture)], vectors = vectorIndex(chapters);
+    const prepared = prepareSearchIndex(chapters);
+    if (mutation === 'append') chapters.push({ ...structuredClone(fixture), id: 'later' });
+    else chapters.length = 0;
+    const attached = prepared.withVectors(vectors);
+    expect(attached.search('zxqvpl', { queryVector: unit() }).map(result => result.chapter.id)).toEqual(['fixture']);
+    expect(attached.withVectors(vectorIndex([fixture, { ...fixture, id: 'extra' }])).search('zxqvpl', { queryVector: unit() })).toEqual([]);
+    expect(prepared.search('community')).toHaveLength(1);
+  });
+  it('attaches vectors while retaining the exact same frozen lexical snapshot', () => {
+    const chapters = [structuredClone(fixture)], vectors = vectorIndex(chapters);
+    const lexical = prepareSearchIndex(chapters), hybrid = lexical.withVectors(vectors);
+    expect(hybrid.search('community')[0].chapter).toBe(lexical.search('community')[0].chapter);
+    expect(lexical.search('zxqvpl', { queryVector: unit() })).toEqual([]);
+    expect(hybrid.search('zxqvpl', { queryVector: unit() })).toHaveLength(1);
+    vectors.values.fill(0);
+    expect(hybrid.search('zxqvpl', { queryVector: unit() })).toHaveLength(1);
+    expect(hybrid.withVectors().search('zxqvpl', { queryVector: unit() })).toEqual([]);
+    expect(hybrid.withVectors({ ...vectors, rowCount: 2 }).search('zxqvpl', { queryVector: unit() })).toEqual([]);
+  });
   it('isolates nested metadata and compact row mutations without freezing caller inputs', () => {
     const chapters = [structuredClone(fixture)], vectors = vectorIndex(chapters);
     const prepared = prepareSearchIndex(chapters, vectors), expected = structuredClone(prepared.search('community', { queryVector: unit() }));

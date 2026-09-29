@@ -18,7 +18,11 @@ export interface SearchOptions {
 }
 export interface SearchResult { chapter: SearchChapter; score: number; reasons: string[] }
 export type PreparedSearchOptions = Omit<SearchOptions, 'vectors'>;
-export interface PreparedSearchIndex { search(query: string, options?: PreparedSearchOptions): SearchResult[] }
+export interface PreparedSearchIndex {
+  search(query: string, options?: PreparedSearchOptions): SearchResult[];
+  /** New immutable view sharing lexical preparation; copies/validates the attached rows. */
+  withVectors(vectors?: DecodedChapterVectors): PreparedSearchIndex;
+}
 
 const STOP_WORDS = new Set('a about above after again all am an and any are as at be because been before being below between both by can could did do does doing down during each few for from further had has have having he her here hers herself him himself his how i if in into is it its itself just me more most my myself now of off on once or other our ours ourselves out over own same she should so some such than that the their theirs them themselves then there these they this those through to too under until up us very was we were what when where which while who whom why with would you your yours yourself yourselves'.split(' '));
 /** Words that negate or restrict a query's meaning ("not", "only"). A match that drops one is not a match. */
@@ -323,9 +327,12 @@ export function prepareSearchIndex(chapters: readonly SearchChapter[], vectors?:
       return cache.get(value)!;
     })]) };
   });
-  const ownedVectors = validVectors(vectors, chapters.length) ? { dimension: vectors.dimension, rowCount: vectors.rowCount, values: vectors.values.slice() } : undefined;
   const postings = prepareLexicalPostings(rows);
-  return Object.freeze({ search: rank.bind(undefined, rows, ownedVectors, postings) });
+  function withVectors(input?: DecodedChapterVectors): PreparedSearchIndex {
+    const owned = validVectors(input, rows.length) ? { dimension: input.dimension, rowCount: input.rowCount, values: input.values.slice() } : undefined;
+    return Object.freeze({ search: rank.bind(undefined, rows, owned, postings), withVectors });
+  }
+  return withVectors(vectors);
 }
 
 function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undefined, postings: LexicalPostings | undefined, query: string, options: PreparedSearchOptions = {}): SearchResult[] {

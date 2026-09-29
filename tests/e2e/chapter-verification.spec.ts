@@ -57,7 +57,8 @@ test('metadata and BSB results precede the model; semantic results merge without
   let releaseModel!: () => void, releaseBible!: () => void;
   const model = new Promise<void>(resolve => { releaseModel = resolve; });
   const bible = new Promise<void>(resolve => { releaseBible = resolve; });
-  await page.route('**/models/**', async route => { await model; await route.continue(); });
+  // Asset installation lives in a service worker; hold the inference worker, not its SW-owned fetches.
+  await page.route('**/*semantic.worker*', async route => { await model; await route.continue(); });
   await page.route('**/generated/scripture.json*', async route => { await bible; await route.continue(); });
   try {
     await page.goto('search/?q=Romans%2013', { waitUntil: 'domcontentloaded' });
