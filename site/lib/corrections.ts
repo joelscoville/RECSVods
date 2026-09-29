@@ -1,6 +1,7 @@
 import { serviceUrl, watchUrl } from './urls';
+import { formatTimecode } from './timecode';
 
-export const CORRECTION_KINDS = ['chapter time', 'title', 'scripture', 'speaker', 'topic', 'other'] as const;
+export const CORRECTION_KINDS = ['chapter time', 'title', 'scripture', 'speaker', 'topic', 'playback or audio', 'other'] as const;
 export type CorrectionKind = typeof CORRECTION_KINDS[number];
 export interface CorrectionChapter { serviceId: string; videoId: string; start: number; end: number }
 export interface CorrectionService { videos: { id: string; duration: number }[] }
@@ -81,7 +82,7 @@ export function correctionLinks(target: CorrectionTarget, base: string, config =
     template: 'archive-correction.yml', title: `Archive correction: ${chapterId || serviceId}`,
     'service-id': serviceId, 'video-id': videos.map((video) => video.id).join(', '),
     'chapter-id': chapterId || 'Not selected (whole recording/service)',
-    timestamps: videos.map((video) => `${video.id}: ${video.start}–${video.end} seconds`).join('\n'), page,
+    timestamps: videos.map((video) => `${video.id}: ${formatTimecode(video.start)}–${formatTimecode(video.end)}`).join('\n'), page,
   });
   if (kind && CORRECTION_KINDS.includes(kind)) params.set('problem', kind);
   // GitHub installs forms from the default branch only; retain a Markdown fallback.

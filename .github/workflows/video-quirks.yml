@@ -1,0 +1,38 @@
+name: Recheck video embedding
+on:
+  schedule:
+    - cron: '47 2 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: video-quirks-check
+  cancel-in-progress: false
+jobs:
+  embeds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - name: Check live embedding without changing service metadata
+        run: |
+          mkdir -p .local
+          pnpm exec tsx scripts/video-quirks.ts check-embeds --all --budget-seconds 600 > .local/embed-check.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: video-embedding-report
+          path: |
+            .local/embed-check.json
+            docs/checks/*.md
+          retention-days: 14
+          if-no-files-found: ignore

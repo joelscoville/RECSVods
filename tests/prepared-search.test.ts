@@ -72,6 +72,16 @@ describe('prepared and exhaustive ranking equivalence', () => {
 });
 
 describe('owned snapshot lifecycle', () => {
+  it.each(['append', 'remove'] as const)('attaches against owned rows after callers %s chapters', (mutation) => {
+    const chapters = [structuredClone(fixture)], vectors = vectorIndex(chapters);
+    const prepared = prepareSearchIndex(chapters);
+    if (mutation === 'append') chapters.push({ ...structuredClone(fixture), id: 'later' });
+    else chapters.length = 0;
+    const attached = prepared.withVectors(vectors);
+    expect(attached.search('zxqvpl', { queryVector: unit() }).map(result => result.chapter.id)).toEqual(['fixture']);
+    expect(attached.withVectors(vectorIndex([fixture, { ...fixture, id: 'extra' }])).search('zxqvpl', { queryVector: unit() })).toEqual([]);
+    expect(prepared.search('community')).toHaveLength(1);
+  });
   it('attaches vectors while retaining the exact same frozen lexical snapshot', () => {
     const chapters = [structuredClone(fixture)], vectors = vectorIndex(chapters);
     const lexical = prepareSearchIndex(chapters), hybrid = lexical.withVectors(vectors);

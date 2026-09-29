@@ -3,7 +3,10 @@ import path from 'node:path';
 import { parseDocument } from 'yaml';
 import { z } from 'zod';
 import { normalizeScriptureReference, parseScriptureReference } from './scripture';
-import captionConfig from '../../scripts/caption-config.json';
+import { recordingTitle } from './recording-title';
+import { ClockSchema } from './timecode';
+import { ChapterTypeSchema, ServiceTypeSchema } from './service-types';
+import { QuirkKindSchema } from './video-quirks';
 export { BIBLE_BOOKS } from './scripture';
 
 export const SOURCE_CHANNEL_ID = 'UCLjwcZaIkiFEed1VgQYSsrw';
@@ -26,7 +29,7 @@ export function assertWorkflowTransition(from: WorkflowStatus, to: WorkflowStatu
   if (!canTransitionWorkflow(from, to)) throw new Error(`workflow_status: forbidden transition ${from} -> ${to}`);
 }
 
-const Text = z.string().refine((value) => Boolean(value.trim()), 'required nonblank text');
+const Text = z.string().min(1).regex(/\S/u, 'required nonblank text');
 const compareText = (a: string, b: string): number => a < b ? -1 : a > b ? 1 : 0;
 const Id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_-]*$/, 'expected a stable identifier');
 export const YoutubeIdSchema = z.string().regex(/^[A-Za-z0-9_-]{11}$/, 'expected an 11-character YouTube ID');
@@ -35,10 +38,6 @@ const DateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine((s) => {
   const d = new Date(`${s}T00:00:00Z`);
   return Number.isFinite(d.getTime()) && d.toISOString().slice(0, 10) === s;
 }, 'expected a real ISO calendar date');
-const Confidence = z.number().finite().min(0).max(1);
-const RangeSchema = z.object({ start: Seconds, end: Seconds }).strict().refine((v) => v.end > v.start, {
-  path: ['end'], message: 'must be greater than start',
-});
 const workflowFields = {
   workflow_status: WorkflowStatusSchema,
   blocked_reason: Text.optional(),
@@ -47,7 +46,7 @@ const mediaFields = {
   media_disposition: MediaDispositionSchema,
   disposition_evidence: Text.optional(),
 };
-function axisChecks(v: { workflow_status: WorkflowStatus; blocked_reason?: string; media_disposition?: string; disposition_evidence?: string }, ctx: z.RefinementCtx) {
+export function axisChecks(v: { workflow_status: WorkflowStatus; blocked_reason?: string; media_disposition?: string; disposition_evidence?: string }, ctx: z.RefinementCtx) {
   if ((v.workflow_status === 'blocked') !== Boolean(v.blocked_reason)) {
     ctx.addIssue({ code: 'custom', path: ['blocked_reason'], message: 'required exactly when workflow_status is blocked; clear when resolved' });
   }
@@ -83,149 +82,77 @@ export const ScriptureInputSchema = z.string().min(1).refine((reference) => Bool
 export const ScriptureReferenceSchema = ScriptureInputSchema.refine((reference) => parseScriptureReference(reference)?.canonical === reference,
   'expected a canonical scripture reference');
 
-/** Safe archive projection of the local manual-import receipt; no paths or transcript text. */
-export const TranscriptionProvenanceSchema = z.object({
-  engine: z.literal('faster-whisper'),
-  engine_version: z.literal('1.2.1'),
-  model: z.literal('large-v3-turbo'),
-  backend_version: z.literal('4.8.2'),
-  compute_type: z.literal('float16'),
-  device: z.literal('Tesla T4'),
-  settings: z.object({
-    beam_size: z.literal(5), word_timestamps: z.literal(true),
-    vad_filter: z.literal(false), condition_on_previous_text: z.literal(false),
-  }).strict(),
-  audio_sha256: z.string().regex(/^[0-9a-f]{64}$/),
-  transcript_sha256: z.string().regex(/^[0-9a-f]{64}$/),
-  duration_seconds: z.number().finite().positive(),
-  elapsed_seconds: z.number().finite().positive(),
-  real_time_factor: z.number().finite().positive(),
-  transcribed_at: z.string().datetime({ offset: true }),
-  source_duration_seconds: z.number().finite().positive(),
-  duration_delta_seconds: z.number().finite().min(-2).max(2),
-  audio_hash_verified: z.boolean(),
-}).strict().superRefine((v, ctx) => {
-  if (Math.abs(v.real_time_factor - v.elapsed_seconds / v.duration_seconds) > 0.0000051) {
-    ctx.addIssue({ code: 'custom', path: ['real_time_factor'], message: 'inconsistent with elapsed/duration (five-decimal rounding tolerance)' });
-  }
-  if (Math.abs(v.duration_delta_seconds - (v.duration_seconds - v.source_duration_seconds)) > 1e-9) {
-    ctx.addIssue({ code: 'custom', path: ['duration_delta_seconds'], message: 'must equal transcript duration minus ffprobe source duration' });
-  }
-});
-export type TranscriptionProvenance = z.infer<typeof TranscriptionProvenanceSchema>;
-
-export const CaptionProvenanceSchema = z.object({
-  engine: z.literal('youtube-auto-captions'), track: z.literal('en-orig'), gate_version: z.literal(1), video_id: YoutubeIdSchema,
-  yt_dlp_version: Text, dictionary_id: z.literal(captionConfig.dictionary.id),
-  dictionary_blob_sha1: z.literal(captionConfig.dictionary.gitBlobSha1),
-  dictionary_sha256: z.literal(captionConfig.dictionary.sha256), caption_sha256: z.string().regex(/^[0-9a-f]{64}$/),
-  evidence_sha256: z.string().regex(/^[0-9a-f]{64}$/), fetched_at: z.string().datetime({ offset: true }),
-  words: z.number().int().min(captionConfig.minimumWords), dictionary_words: z.number().int().nonnegative(),
-  english_ratio: z.number().min(captionConfig.minimumEnglishRatio).max(1),
-  words_per_minute: z.number().finite().min(captionConfig.minimumWordsPerMinute).max(captionConfig.maximumWordsPerMinute),
-  scope: RangeSchema,
-}).strict().superRefine((v, ctx) => {
-  if (v.dictionary_words > v.words || Math.abs(v.english_ratio - v.dictionary_words / v.words) > 0.000001
-    || Math.abs(v.words_per_minute - v.words * 60 / (v.scope.end - v.scope.start)) > 0.000001) {
-    ctx.addIssue({ code: 'custom', message: 'Caption quality counts, ratio and scoped rate must agree' });
-  }
-});
-
-export const VideoSchema = z.object({
-  id: YoutubeIdSchema,
+export const videoFields = {
+  id: YoutubeIdSchema.describe('The 11-character YouTube upload ID, not a URL. Each upload has its own clock.'),
   channel_id: z.literal(SOURCE_CHANNEL_ID),
   duration: z.number().finite().positive(),
   sequence: z.number().int().positive(),
   ...workflowFields,
   ...mediaFields,
-  transcription_language: z.string().regex(/^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/).optional(),
-  transcript_engine: z.enum(['whisper.cpp', 'faster-whisper', 'youtube-auto-captions']).optional(),
-  transcribed_span: RangeSchema.optional(),
-  transcription_provenance: TranscriptionProvenanceSchema.optional(),
-  caption_provenance: CaptionProvenanceSchema.optional(),
-}).strict().superRefine((v, ctx) => {
-  axisChecks(v, ctx);
-  if (v.transcribed_span && v.transcribed_span.end > v.duration) {
-    ctx.addIssue({ code: 'custom', path: ['transcribed_span', 'end'], message: 'exceeds video duration' });
-  }
-  if (v.transcribed_span && !v.transcription_language) {
-    ctx.addIssue({ code: 'custom', path: ['transcription_language'], message: 'required with transcribed_span' });
-  }
-  if (v.transcription_provenance && (!v.transcription_language || !v.transcribed_span)) {
-    ctx.addIssue({ code: 'custom', path: ['transcription_provenance'], message: 'requires original transcription language and transcribed span' });
-  }
-  if (v.caption_provenance && (v.transcription_provenance || v.caption_provenance.video_id !== v.id
-    || v.transcription_language !== 'en' || v.caption_provenance.scope.end > v.duration
-    || v.transcribed_span?.start !== v.caption_provenance.scope.start || v.transcribed_span?.end !== v.caption_provenance.scope.end)) {
-    ctx.addIssue({ code: 'custom', path: ['caption_provenance'], message: 'Caption provenance must match this video and its English caption scope, without conflicting ASR provenance' });
-  }
-  if (v.transcript_engine && (!v.transcribed_span || !v.transcription_language
-    || v.transcript_engine === 'youtube-auto-captions' && !v.caption_provenance
-    || v.caption_provenance && v.transcript_engine !== 'youtube-auto-captions'
-    || v.transcript_engine === 'faster-whisper' && !v.transcription_provenance
-    || v.transcription_provenance && v.transcript_engine !== 'faster-whisper')) {
-    ctx.addIssue({ code: 'custom', path: ['transcript_engine'], message: 'Transcript engine must agree with scoped language and source provenance' });
-  }
-  if (['discovered', 'registered'].includes(v.workflow_status) && (v.transcribed_span || v.transcription_language || v.transcription_provenance || v.caption_provenance || v.transcript_engine)) {
-    ctx.addIssue({ code: 'custom', path: ['workflow_status'], message: 'never-interpreted videos cannot contain transcription metadata' });
-  }
-});
+  quirks: z.array(QuirkKindSchema).refine(items => new Set(items).size === items.length, 'duplicate quirk').optional()
+    .describe('Known playback quirks. Omit when none are recorded; no timestamps or measurements are required.'),
+};
+export const VideoSchema = z.object(videoFields).strict().superRefine(axisChecks);
+export const VideoSourceSchema = z.object({ ...videoFields, duration: ClockSchema.refine(value => value > 0, 'duration must be positive') }).strict().superRefine(axisChecks);
 export type Video = z.infer<typeof VideoSchema>;
 
 export const segmentFields = {
-  id: Id,
-  video_id: YoutubeIdSchema,
+  id: Id.describe('Stable chapter ID. Keep existing IDs; for new chapters use <service-id>-<short-slug>. Never rename it just because the title or time changes.'),
+  video_id: YoutubeIdSchema.describe('The physical upload containing this chapter. Times use that upload’s own clock.'),
   start: Seconds,
   end: Seconds,
-  type: Id,
+  type: ChapterTypeSchema,
   title: Text,
-  confidence: Confidence.optional(),
-  review_notes: z.array(z.string().min(1)).default([]),
   speaker_id: Id.optional(),
 };
-export const ChapterSourceSchema = z.object({
+export const chapterFields = {
   ...segmentFields,
-  parent_id: Id.optional(),
-  /** Private migration lineage, never serialized to the site. */
-  source_chapters: z.array(Id).min(1).optional(),
-  summary: Text,
+  parent_id: Id.describe('Optional subsection parent: a top-level chapter in this same upload whose time range contains this chapter.').optional(),
+  summary: Text.describe('A concise retrieval synopsis used by search. This is not the public paragraph under the video.'),
   /** Optional public one-line summary for a primary chapter; subsections never carry one. */
-  short_summary: Text.refine((value) => value.length <= 90, 'must be one short line (90 characters or fewer)').optional(),
+  short_summary: Text.max(90, 'must be one short line (90 characters or fewer)').optional(),
   keywords: z.array(Text).max(10),
   topics: z.array(Id),
   scripture: z.array(ScriptureInputSchema),
   scriptureDisplay: z.array(ScriptureInputSchema).optional(),
-}).strict().refine((v) => v.end > v.start, {
-  path: ['end'], message: 'must be greater than start',
-}).refine((chapter) => !(chapter.parent_id && chapter.short_summary), {
-  path: ['short_summary'], message: 'subsections do not carry a public summary',
-}).refine((chapter) => !chapter.scriptureDisplay || (chapter.scriptureDisplay.length === chapter.scripture.length
-  && chapter.scriptureDisplay.every((value, index) => parseScriptureReference(value)?.canonical === parseScriptureReference(chapter.scripture[index])?.canonical)),
-{ path: ['scriptureDisplay'], message: 'must align with canonical scripture references' })
-  .transform((chapter) => {
-    const scripture = chapter.scripture.map(normalizeScriptureReference);
-    return { ...chapter, scripture, ...(scripture.some((value, index) => value !== chapter.scripture[index])
-      ? { scriptureDisplay: chapter.scriptureDisplay ?? [...chapter.scripture] } : {}) };
-  });
-export type Chapter = z.infer<typeof ChapterSourceSchema>;
+};
+const ChapterObject = z.object(chapterFields).strict();
+function checkChapter(chapter: z.infer<typeof ChapterObject>, ctx: z.RefinementCtx) {
+  if (chapter.end <= chapter.start) ctx.addIssue({ code: 'custom', path: ['end'], message: 'must be later than start' });
+  if (chapter.parent_id && chapter.short_summary) ctx.addIssue({ code: 'custom', path: ['short_summary'], message: 'subsections do not carry a public summary' });
+  if (chapter.scriptureDisplay && (chapter.scriptureDisplay.length !== chapter.scripture.length || chapter.scriptureDisplay.some((value, index) => parseScriptureReference(value)?.canonical !== parseScriptureReference(chapter.scripture[index])?.canonical))) {
+    ctx.addIssue({ code: 'custom', path: ['scriptureDisplay'], message: 'must align with canonical scripture references' });
+  }
+}
+function canonicalReferences(chapter: z.infer<typeof ChapterObject>) {
+  const scripture = chapter.scripture.map(normalizeScriptureReference);
+  return { ...chapter, scripture, ...(scripture.some((value, index) => value !== chapter.scripture[index])
+    ? { scriptureDisplay: chapter.scriptureDisplay ?? [...chapter.scripture] } : {}) };
+}
+export const ChapterSchema = ChapterObject.superRefine(checkChapter).transform(canonicalReferences);
+export const ChapterSourceSchema = ChapterObject.extend({ start: ClockSchema, end: ClockSchema }).superRefine(checkChapter).transform(canonicalReferences);
+export type Chapter = z.infer<typeof ChapterSchema>;
 export const serviceFields = {
-  id: Id,
+  id: Id.describe('Stable recording ID matching its folder name. Keep it when correcting the title or date.'),
   date: DateSchema,
-  title: Text,
-  sermon_title: Text.optional(),
-  sermon_description: Text.optional(),
+  title: Text.describe('The one recording title used everywhere on the site. Do not prefix it with RECS or the date.'),
+  sermon_description: Text.describe('One natural paragraph shown under the recording. Required for recordings containing a sermon.').optional(),
   series: SeriesSchema.optional(),
-  type: Id,
+  type: ServiceTypeSchema,
   ...workflowFields,
-  editorial_status: EditorialStatusSchema,
-  reviewed_by: Text.optional(),
-  reviewed_at: z.string().datetime({ offset: true }).optional(),
-  review_notes: z.array(Text).default([]),
+  editorial_status: EditorialStatusSchema.describe('needs_review is visible only in preview; reviewed is eligible for production. Approval is a separate human decision.'),
+  reviewed_by: Text.describe('Written by the human editorial:approve command.').optional(),
+  reviewed_at: z.string().datetime({ offset: true }).describe('Written by the human editorial:approve command.').optional(),
   speakers: z.array(SpeakerSchema).default([]),
   topics: z.array(TopicSchema).default([]),
   videos: z.array(VideoSchema).min(1),
 };
-type ServiceCheck = z.infer<z.ZodObject<typeof serviceFields>> & { chapters: Chapter[] };
+type ServiceCheck = {
+  workflow_status: WorkflowStatus; blocked_reason?: string; editorial_status: 'needs_review' | 'reviewed'; reviewed_by?: string; reviewed_at?: string;
+  videos: { id: string; sequence: number; duration: number; workflow_status: WorkflowStatus }[];
+  speakers: { id: string }[]; topics: { id: string }[];
+  chapters: { id: string; video_id: string; start: number; end: number; speaker_id?: string; parent_id?: string; topics: string[] }[];
+};
 export function checkService(v: ServiceCheck, ctx: z.RefinementCtx) {
   axisChecks(v, ctx);
   const issue = (field: (string | number)[], message: string) => ctx.addIssue({ code: 'custom', path: field, message });
@@ -267,10 +194,10 @@ export function checkService(v: ServiceCheck, ctx: z.RefinementCtx) {
     });
   });
 }
-export const ServiceSourceSchema = z.object({ ...serviceFields, chapters: z.array(ChapterSourceSchema) }).strict().superRefine(checkService);
-export const ServiceSchema = ServiceSourceSchema;
+export const ServiceSchema = z.object({ ...serviceFields, chapters: z.array(ChapterSchema) }).strict().superRefine(checkService);
+export const ServiceSourceSchema = z.object({ ...serviceFields, videos: z.array(VideoSourceSchema).min(1), chapters: z.array(ChapterSourceSchema) }).strict().superRefine(checkService);
 export type Service = z.infer<typeof ServiceSchema>;
-export type ServiceSource = z.infer<typeof ServiceSourceSchema>;
+export type ServiceSource = z.input<typeof ServiceSourceSchema>;
 
 export interface SearchChapter {
   id: string;
@@ -308,13 +235,22 @@ export function parseYaml(text: string, filename: string): unknown {
 }
 export function parseWithPath<S extends z.ZodTypeAny>(schema: S, value: unknown, filename: string): z.infer<S> {
   const result = schema.safeParse(value);
-  if (!result.success) throw new Error(result.error.issues.map((i) => `${filename}:${i.path.join('.') || '<record>'}: ${i.message}`).join('\n'));
+  if (!result.success) throw new Error(result.error.issues.map(i => {
+    const collection = i.path[0], index = i.path[1];
+    const entries = value && typeof value === 'object' && (collection === 'chapters' || collection === 'videos') ? (value as Record<string, unknown>)[collection] : undefined;
+    const entry = Array.isArray(entries) && typeof index === 'number' ? entries[index] as Record<string, unknown> | undefined : undefined;
+    const context = entry && typeof entry === 'object' && typeof entry.id === 'string' ? ` [${JSON.stringify(entry.id)}${typeof entry.title === 'string' ? `: ${JSON.stringify(entry.title)}` : ''}]` : '';
+    return `${filename}:${i.path.join('.') || '<record>'}${context}: ${i.message}`;
+  }).join('\n'));
   return result.data;
 }
 
 /** Also used by the editorial guard to validate immutable Git trees. Keys are repository-relative POSIX paths. */
-export function archiveFromFiles(files: ReadonlyMap<string, string>): Service[] {
-  const services: Service[] = [];
+type ArchiveIdentity = { id: string; date: string; series?: { id: string; name: string }; videos: { id: string }[]; chapters: { id: string }[] };
+export function archiveFromFiles(files: ReadonlyMap<string, string>): Service[];
+export function archiveFromFiles<T extends ArchiveIdentity>(files: ReadonlyMap<string, string>, reader: (text: string, filename: string) => T): T[];
+export function archiveFromFiles(files: ReadonlyMap<string, string>, reader: (text: string, filename: string) => ArchiveIdentity = (text, filename) => parseWithPath(ServiceSourceSchema, parseYaml(text, filename), filename)): ArchiveIdentity[] {
+  const services: ArchiveIdentity[] = [];
   const globalIds = new Map<string, string>();
   const seriesNames = new Map<string, { name: string; filename: string }>();
   const corpusIds = new Map<string, { filename: string; record: IdentifierRecord }>();
@@ -333,7 +269,7 @@ export function archiveFromFiles(files: ReadonlyMap<string, string>): Service[] 
     if (!filename.startsWith('services/') || !/\.ya?ml$/.test(filename) || filename.endsWith('.internal.yaml')) continue;
     const match = /^services\/(\d{4})\/([^/]+)\/service\.yaml$/.exec(filename);
     if (!match) throw new Error(`${filename}: expected services/YYYY/<service-id>/service.yaml`);
-    const source = parseWithPath(ServiceSourceSchema, parseYaml(text, filename), filename);
+    const source = reader(text, filename);
     if (source.id !== match[2]) throw new Error(`${filename}:id: must match service directory`);
     if (!source.date.startsWith(match[1])) throw new Error(`${filename}:date: must match year directory`);
     const service = source;
@@ -398,7 +334,7 @@ export function flattenChapters(services: readonly Service[], mode: BuildMode = 
     const speakerId = chapter.speaker_id;
     const speaker = service.speakers.find((s) => s.id === speakerId)?.name;
     return {
-      id: chapter.id, serviceId: service.id, serviceTitle: service.title, videoId: chapter.video_id,
+      id: chapter.id, serviceId: service.id, serviceTitle: recordingTitle(service), videoId: chapter.video_id,
       ...(service.series ? { series: { id: service.series.id, name: service.series.name } } : {}),
       start: chapter.start, end: chapter.end, title: chapter.title, summary: chapter.summary,
       ...(chapter.short_summary && !chapter.parent_id ? { shortSummary: chapter.short_summary } : {}),

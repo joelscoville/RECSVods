@@ -2,7 +2,7 @@ import { existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { gzipSync, gunzipSync } from 'node:zlib';
-import { stringify } from 'yaml';
+import { stringify } from './service-fixtures';
 import { createHash } from 'node:crypto';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { buildIndex, CHAPTER_ARTIFACTS, chapterArtifactReport, metadataOutputSize, artifactFilename } from '../scripts/archive';
@@ -23,12 +23,12 @@ function fixture(id = 'fixture', reviewed = false, videoId = 'AAAAAAAAAAA'): Ser
   return { id, date: '2026-01-04', title: 'Fixture service', type: 'service', workflow_status: 'complete',
     editorial_status: reviewed ? 'reviewed' : 'needs_review',
     ...(reviewed ? { reviewed_by: 'Fixture Reviewer', reviewed_at: '2026-01-05T00:00:00Z' } : {}),
-    review_notes: ['Private editorial note'], speakers: [], topics: [],
+    speakers: [], topics: [],
     videos: [{ id: videoId, channel_id: SOURCE_CHANNEL_ID, duration: 120, sequence: 1,
       workflow_status: 'complete', media_disposition: 'playable' }],
     chapters: [{ id: `${id}-chapter`, video_id: videoId, start: 0, end: 100, type: 'address',
       title: 'Reading the passage', summary: 'An introduction to the reading.', keywords: ['steadfast love'],
-      topics: [], scripture: ['John 3:16-17'], confidence: 0.8, review_notes: ['Private uncertainty'] }],
+      topics: [], scripture: ['John 3:16-17'] }],
   };
 }
 function source(root: string, service: Service, vectorValue = 127) {

@@ -240,24 +240,19 @@ export function editorialReviewAids(services: readonly Service[], baseline?: rea
   const aids: ReviewAid[] = [];
   for (const service of services) {
     const add = (code: string, refs: string[], detail: string) => aids.push({ service_id: service.id, code, refs, detail });
-    for (const chapter of service.chapters) {
-      if (chapter.confidence !== undefined && chapter.confidence < 0.8) add('low_confidence_boundary', [chapter.id], `legacy confidence ${chapter.confidence}; ${chapter.start}–${chapter.end}s`);
-      if (chapter.review_notes.length) add('chapter_review_notes', [chapter.id], chapter.review_notes.join('; '));
-    }
     if (!service.speakers.length) add('metadata_gap', [], 'No speaker metadata');
-    if (!service.sermon_title) add('metadata_gap', [], 'No sermon title; may be intentional');
     if (!service.chapters.some((p) => p.scripture.length)) add('metadata_gap', [], 'No scripture references; may be intentional');
     if (service.videos.length > 3) add('unusual_video_count', service.videos.map((v) => v.id), `${service.videos.length} physical videos`);
     if (service.topics.length > 12 || service.topics.length > Math.max(4, service.chapters.length)) add('topic_proliferation', service.topics.map((t) => t.id), `${service.topics.length} topics / ${service.chapters.length} chapters`);
     for (const chapter of service.chapters) if (chapter.end - chapter.start < 15 || chapter.end - chapter.start > 1800) add('unusual_chapter_length', [chapter.id], `${chapter.end - chapter.start}s`);
     for (const video of service.videos) {
       const sections = service.chapters.filter((s) => s.video_id === video.id && !s.parent_id).sort((a, b) => a.start - b.start || a.end - b.end);
-      let end = video.transcribed_span?.start ?? 0; let previous = video.id;
+      let end = 0; let previous = video.id;
       for (const section of sections) {
         if (section.start !== end) add(section.start > end ? 'chapter_gap' : 'chapter_overlap', [previous, section.id], `${Math.min(end, section.start)}–${Math.max(end, section.start)}s`);
         if (section.end > end) { end = section.end; previous = section.id; }
       }
-      const last = video.transcribed_span?.end ?? video.duration;
+      const last = video.duration;
       if (end < last) add('chapter_gap', [previous, video.id], `${end}–${last}s (coverage edge; may be intentional)`);
     }
   }

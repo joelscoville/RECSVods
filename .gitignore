@@ -18,6 +18,8 @@ test-results/
 playwright-report/
 .env
 .env.*
+/services/**/service.yaml.lock
+/services/**/service.yaml.*.tmp
 !.env.example
 
 # Local agent-harness setup (personal tooling, not part of RECS Replay).

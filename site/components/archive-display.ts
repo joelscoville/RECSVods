@@ -2,23 +2,23 @@ import type { SearchChapter, Service } from '../lib/types';
 import { displayType, watchUrl } from '../lib/urls';
 import { availableBrowseCategories } from '../lib/browse';
 import type { SavedPlayback } from '../lib/local-state';
+import { recordingTitle } from '../lib/recording-title';
+import { publicQuirks, type PublicQuirk } from '../lib/video-quirks';
 
 export type DisplayChapter = Omit<SearchChapter, 'summary' | 'verseText'>;
 export interface DisplayService {
   id: string; title: string; date: string; type: string; preview: boolean;
-  sermonTitle?: string;
   sermonDescription?: string;
   series?: Service['series'];
   speakers: { id: string; name: string; chapterIds: string[] }[];
   topics: { id: string; name: string; chapterIds: string[] }[];
-  videos: { id: string; duration: number; sequence: number }[];
+  videos: { id: string; duration: number; sequence: number; quirks?: PublicQuirk[] }[];
   chapters: DisplayChapter[];
 }
 /** Explicit allowlist at the server/client boundary: editorial notes and workflow never serialize. */
 export function displayServices(services: Service[], chapters: SearchChapter[]): DisplayService[] {
   return services.map((service) => ({
-    id: service.id, title: service.title, date: service.date, type: service.type,
-    sermonTitle: service.sermon_title,
+    id: service.id, title: recordingTitle(service), date: service.date, type: service.type,
     ...(service.sermon_description ? { sermonDescription: service.sermon_description } : {}),
     ...(service.series ? { series: { id: service.series.id, name: service.series.name } } : {}),
     preview: service.editorial_status !== 'reviewed',
@@ -26,7 +26,10 @@ export function displayServices(services: Service[], chapters: SearchChapter[]):
       .filter((speaker) => speaker.chapterIds.length > 0),
     topics: service.topics.map(({ id, name }) => ({ id, name, chapterIds: service.chapters.filter((chapter) => chapter.topics.includes(id)).map((chapter) => chapter.id) }))
       .filter((topic) => topic.chapterIds.length > 0),
-    videos: service.videos.map(({ id, duration, sequence }) => ({ id, duration, sequence })).sort((a, b) => a.sequence - b.sequence),
+    videos: service.videos.map(({ id, duration, sequence, quirks }) => {
+      const flags = publicQuirks(quirks);
+      return { id, duration, sequence, ...(flags.length ? { quirks: flags } : {}) };
+    }).sort((a, b) => a.sequence - b.sequence),
     chapters: chapters.filter((chapter) => chapter.serviceId === service.id && service.videos.some((video) => video.id === chapter.videoId))
       .map(({ id, serviceId, serviceTitle, videoId, start, end, type, title, shortSummary, parentId, parentTitle, keywords, topics, scripture, scriptureDisplay, speaker, date, series, preview }) => ({
         id, serviceId, serviceTitle, videoId, start, end, type, title, keywords: [...keywords], topics: [...topics], scripture: [...scripture],
@@ -51,6 +54,7 @@ export interface HomeItem {
   /** Every YouTube upload of the recording, in order. A livestream split into parts is still one recording:
    * one card, one search result. `videoId` and `duration` describe the part the card opens. */
   parts: { id: string; duration: number }[];
+  quirks?: PublicQuirk[];
 }
 export interface RecordingMatch { id: string; title: string; start: number; href: string; parentTitle?: string; more: number }
 /** One item per recording (service), however many parts YouTube split it into. It opens at the sermon,
@@ -61,11 +65,12 @@ export function homeItems(services: DisplayService[], base: string): HomeItem[] 
     const videos = [...service.videos].sort((a, b) => a.sequence - b.sequence);
     if (!videos.length) return [];
     const first = service.chapters[0];
-    const sermon = service.chapters.find((chapter) => chapter.type === 'sermon');
+    const sermon = service.chapters.find((chapter) => chapter.type === 'sermon' && !chapter.parentId);
     const opens = sermon ?? first, video = videos.find((item) => item.id === opens?.videoId) ?? videos[0];
     return [{
       id: videos[0].id, serviceId: service.id, videoId: video.id, parts: videos.map(({ id, duration }) => ({ id, duration })),
-      title: sermon || service.type === 'sermon' ? service.sermonTitle ?? sermon?.title ?? service.title : service.title, date: service.date, type: sermon?.type ?? service.type,
+      ...(videos.some(part => part.quirks?.length) ? { quirks: [...new Map(videos.flatMap(part => part.quirks ?? []).map(flag => [flag.kind, flag])).values()] } : {}),
+      title: service.title, date: service.date, type: sermon?.type ?? service.type,
       speaker: sermon?.speaker, href: watchUrl(base, opens ? { chapter: opens.id } : { service: service.id, video: video.id }),
       duration: video.duration, preview: service.preview, start: opens?.start ?? 0,
       ...(sermon ? { sermonId: sermon.id } : {}),

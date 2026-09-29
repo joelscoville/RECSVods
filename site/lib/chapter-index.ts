@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { CHAPTER_VECTOR_CONFIG, decodeChapterVectors } from './chapter-vectors';
 import { parseScriptureReference } from './scripture';
 import type { SearchChapter } from './types';
+import { artifactSha256 } from './integrity';
 
 export interface ChapterMetadata {
   schemaVersion: 3;
@@ -136,8 +137,7 @@ export async function loadChapterVectors(base: string, metadata: ChapterMetadata
   // Validate even direct callers: neither paths nor a same-sized binary can override identity.
   parseChapterMetadata(metadata);
   return loadArtifact(base, metadata.vectors.file, async (bytes) => {
-    const digest = await crypto.subtle.digest('SHA-256', new Uint8Array(bytes));
-    const hash = [...new Uint8Array(digest)].map(value => value.toString(16).padStart(2, '0')).join('');
+    const hash = await artifactSha256(bytes);
     if (hash !== metadata.vectors.sha256) throw new Error('Chapter vector checksum mismatch');
     const index = decodeChapterVectors(bytes);
     if (index.rowCount !== metadata.chapters.length) throw new Error('Chapter vector row mismatch');

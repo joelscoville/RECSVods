@@ -1,26 +1,26 @@
 import { describe, expect, it } from 'vitest';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { flattenChapters, ServiceSourceSchema, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
+import { flattenChapters, ServiceSchema, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
 import { displayServices, groupByRecording, homeItems } from '../site/components/archive-display';
 import OutlineRows from '../site/components/OutlineRows';
 import RecordingResult from '../site/components/RecordingResult';
 
 const source: Service = {
   id: 'fixture', date: '2026-01-04', title: 'Fixture Service', type: 'service', workflow_status: 'complete', editorial_status: 'needs_review',
-  sermon_description: 'The speaker connects hope with patient care for others.', review_notes: [], speakers: [], topics: [],
+  sermon_description: 'The speaker connects hope with patient care for others.', speakers: [], topics: [],
   videos: [{ id: 'AAAAAAAAAAA', channel_id: SOURCE_CHANNEL_ID, duration: 120, sequence: 1, workflow_status: 'complete', media_disposition: 'playable' }],
   chapters: [
-    { id: 'group', video_id: 'AAAAAAAAAAA', start: 0, end: 90, type: 'sermon', title: 'Hope Expressed Through Care', summary: 'INTERNAL PARENT SYNOPSIS', keywords: ['hope'], scripture: [], topics: [], review_notes: [] },
-    { id: 'cue', parent_id: 'group', video_id: 'AAAAAAAAAAA', start: 30, end: 60, type: 'sermon', title: 'Patient Care for Others', summary: 'INTERNAL CUE SYNOPSIS', keywords: ['hope'], scripture: [], topics: [], review_notes: [] },
+    { id: 'group', video_id: 'AAAAAAAAAAA', start: 0, end: 90, type: 'sermon', title: 'Hope Expressed Through Care', summary: 'INTERNAL PARENT SYNOPSIS', keywords: ['hope'], scripture: [], topics: [] },
+    { id: 'cue', parent_id: 'group', video_id: 'AAAAAAAAAAA', start: 30, end: 60, type: 'sermon', title: 'Patient Care for Others', summary: 'INTERNAL CUE SYNOPSIS', keywords: ['hope'], scripture: [], topics: [] },
   ],
 };
 describe('current concise outline contract', () => {
   it('requires same-video containment and one-level parents', () => {
-    expect(ServiceSourceSchema.safeParse(source).success).toBe(true);
+    expect(ServiceSchema.safeParse(source).success).toBe(true);
     for (const change of [{ parent_id: 'missing' }, { parent_id: 'cue' }, { end: 91 }, { video_id: 'BBBBBBBBBBB' }]) {
       const changed = structuredClone(source); Object.assign(changed.chapters[1], change);
-      expect(ServiceSourceSchema.safeParse(changed).success).toBe(false);
+      expect(ServiceSchema.safeParse(changed).success).toBe(false);
     }
   });
   it('renders compact expandable parent rows and excludes per-unit synopses', () => {
@@ -43,9 +43,9 @@ describe('current concise outline contract', () => {
     expect(html).toContain('<span class="chapter-summary">Hope shown through patient care.</span>');
     expect(html.match(/chapter-summary/g)).toHaveLength(1);
     expect(html).not.toContain('INTERNAL');
-    expect(ServiceSourceSchema.safeParse(outlined).success).toBe(true);
+    expect(ServiceSchema.safeParse(outlined).success).toBe(true);
     const invalid = structuredClone(outlined);
     invalid.chapters[1] = { ...invalid.chapters[1], short_summary: 'Subsections never carry one.' };
-    expect(ServiceSourceSchema.safeParse(invalid).success).toBe(false);
+    expect(ServiceSchema.safeParse(invalid).success).toBe(false);
   });
 });

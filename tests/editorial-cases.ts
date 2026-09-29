@@ -3,10 +3,11 @@ import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'nod
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { setImmediate as yieldToRunner } from 'node:timers/promises';
-import { parse, stringify } from 'yaml';
+import { parse, stringify as historicalYaml } from 'yaml';
+import { stringify } from './service-fixtures';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { approveService, guardEditorial } from '../scripts/editorial';
-import { loadArchive, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
+import { loadArchive, ServiceSourceSchema, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
 import { importBackfill, loadBackfill, MANIFEST_PATH, transitionBackfill } from '../site/lib/backfill';
 import { MIGRATION_NOTE } from '../site/lib/internal-validation';
 
@@ -28,12 +29,12 @@ function git(root: string, ...args: string[]) {
 }
 function fixture(): Service {
   return { id: 'test-service', date: '2026-01-04', title: 'Fictional test service', type: 'service',
-    workflow_status: 'complete', editorial_status: 'needs_review', review_notes: [], speakers: [], topics: [],
+    workflow_status: 'complete', editorial_status: 'needs_review', speakers: [], topics: [],
     videos: [{ id: 'AAAAAAAAAAA', channel_id: SOURCE_CHANNEL_ID, duration: 100, sequence: 1,
       workflow_status: 'complete', media_disposition: 'playable' }],
     chapters: [{ id: 'test-section', video_id: 'AAAAAAAAAAA', start: 0, end: 100, type: 'address',
       title: 'Fictional section', summary: 'A fictional test statement.', keywords: ['fictional'],
-      topics: [], scripture: [], confidence: 0.9, review_notes: [] }] };
+      topics: [], scripture: [] }] };
 }
 function put(root: string, file: string, text: string) {
   mkdirSync(path.dirname(path.join(root, file)), { recursive: true }); writeFileSync(path.join(root, file), text);
@@ -52,7 +53,7 @@ function commit(root: string, message: string): string {
   git(root, 'add', '.'); git(root, 'commit', '-qm', message); return git(root, 'rev-parse', 'HEAD');
 }
 function edit(root: string, change: (record: Service) => void) {
-  const record = parse(readFileSync(path.join(root, filename), 'utf8')) as Service;
+  const record = ServiceSourceSchema.parse(parse(readFileSync(path.join(root, filename), 'utf8')));
   change(record); put(root, filename, stringify(record));
 }
 function setReviewed(root: string) {
@@ -204,11 +205,12 @@ export const guardCases = () => describe('per-commit editorial guard', { timeout
     commit(root, 'Approve test\n\nEditorial-Approval: test-service\nCo-Authored-By: Another Human <human@example.invalid>');
     expect(guardEditorial(root, base).commits).toBe(1);
   });
-  it.each(['interpretation', 'unrelated file', 'transcript'])('rejects approval mixed with %s', (mixed) => {
+  it.each(['interpretation', 'unrelated file', 'transcript', 'quirks'])('rejects approval mixed with %s', (mixed) => {
     const { root, base } = repo(true); setReviewed(root);
     if (mixed === 'interpretation') edit(root, (s) => { s.chapters[0].summary = 'Changed test statement'; });
     if (mixed === 'unrelated file') put(root, 'unrelated.txt', 'unrelated change');
     if (mixed === 'transcript') put(root, 'services/2026/test-service/transcript.md', 'Changed test transcript');
+    if (mixed === 'quirks') edit(root, s => { s.videos[0].quirks = ['embed_blocked']; });
     commit(root, 'Approve test\n\nEditorial-Approval: test-service');
     expect(() => guardEditorial(root, base)).toThrow('approval commit must change only');
   });
@@ -249,11 +251,36 @@ export const guardCases = () => describe('per-commit editorial guard', { timeout
     commit(root, 'Reformat YAML\n\nMechanical-Change: formatting');
     expect(guardEditorial(root, base).commits).toBe(2);
   });
-  it('requires mechanical changes to be declared', () => {
+  it('allows human comments without changing approval or requiring a formatting trailer', () => {
     const { root, base } = repo(); humanApprove(root);
     put(root, filename, `# A new comment\n${readFileSync(path.join(root, filename), 'utf8')}`);
     commit(root, 'Undeclared formatting');
-    expect(() => guardEditorial(root, base)).toThrow('Mechanical-Change');
+    expect(guardEditorial(root, base).commits).toBe(2);
+  });
+  it('allows simple technical flags on reviewed content and carries them through a merge', () => {
+    const { root } = repo(); humanApprove(root); const base = git(root, 'rev-parse', 'HEAD');
+    git(root, 'checkout', '-qb', 'technical-flags');
+    edit(root, source => { source.videos[0].quirks = ['embed_blocked', 'audio_choppy']; });
+    commit(root, 'Flag playback issues');
+    expect(guardEditorial(root, base).commits).toBe(1);
+    git(root, 'checkout', '-qb', 'main-flags', base); put(root, 'README.md', 'Unrelated change'); const advanced = commit(root, 'Main advances');
+    git(root, 'merge', '--no-ff', 'technical-flags', '-m', 'Merge technical flags');
+    expect(guardEditorial(root, advanced).commits).toBe(2);
+    expect(loadArchive(root)[0].editorial_status).toBe('reviewed');
+    expect(loadArchive(root)[0].videos[0].quirks).toEqual(['embed_blocked', 'audio_choppy']);
+  });
+  it('preserves approval through an equivalent legacy-to-authoring format migration', () => {
+    const { root } = repo();
+    const old = { ...fixture(), title: 'RECS dated administrative label', sermon_title: fixture().title,
+      review_notes: ['Old processing diary'], chapters: fixture().chapters.map(chapter => ({ ...chapter, confidence: .9, review_notes: [], source_chapters: ['original-section'] })) };
+    put(root, filename, historicalYaml(old)); const before = commit(root, 'Old source format');
+    const approved = { ...old, editorial_status: 'reviewed', reviewed_by: 'Fictional Reviewer', reviewed_at: '2026-01-05T00:00:00Z' };
+    put(root, filename, historicalYaml(approved)); const approval = commit(root, 'Approve old fixture\n\nEditorial-Approval: test-service');
+    expect(guardEditorial(root, before, approval).commits).toBe(1);
+    put(root, filename, stringify({ ...fixture(), editorial_status: 'reviewed', reviewed_by: approved.reviewed_by, reviewed_at: approved.reviewed_at }));
+    commit(root, 'Use human authoring format');
+    expect(guardEditorial(root, approval).commits).toBe(1);
+    expect(loadArchive(root)[0]).toMatchObject({ title: fixture().title, editorial_status: 'reviewed' });
   });
   it('checks workflow edges in Git history independently of editorial status', () => {
     const { root, base } = repo();
@@ -288,13 +315,14 @@ export const guardCases = () => describe('per-commit editorial guard', { timeout
   it('validates legacy history and migration without approval, then rejects internal rewrites', () => {
     const { root } = repo();
     const { chapters, ...metadata } = fixture();
-    const { summary, keywords: _keywords, topics, scripture, ...section } = chapters[0];
-    const legacy = { ...metadata, sections: [section], passages: [{ ...section, id: 'old-passage', section_id: section.id,
+    const oldChapter = { ...chapters[0], confidence: 0.9, review_notes: [] };
+    const { summary, keywords: _keywords, topics, scripture, ...section } = oldChapter;
+    const legacy = { ...metadata, review_notes: [], sections: [section], passages: [{ ...section, id: 'old-passage', section_id: section.id,
       summary, topics, scripture, questions: [], transcript: '  Original fictional bytes.\n\n' }] };
-    put(root, filename, stringify(legacy)); const base = commit(root, 'Legacy fixture checkpoint');
+    put(root, filename, historicalYaml(legacy)); const base = commit(root, 'Legacy fixture checkpoint');
     expect(guardEditorial(root, base, base).commits).toBe(0);
     put(root, 'services/2026/test-service/passages.internal.yaml', stringify({ passages: legacy.passages }));
-    put(root, filename, stringify({ ...fixture(), review_notes: [MIGRATION_NOTE] }));
+    put(root, filename, historicalYaml({ ...fixture(), chapters: [oldChapter], review_notes: [MIGRATION_NOTE] }));
     commit(root, 'Migrate fictional fixture\n\nCurated-by: agent');
     expect(guardEditorial(root, base).commits).toBe(1);
     const internal = 'services/2026/test-service/passages.internal.yaml';

@@ -1,77 +1,18 @@
+# yaml-language-server: $schema=../../../schema/service.schema.json
+# Editing guide: ../../../docs/editing-services.md
+# Times are quoted MM:SS or HH:MM:SS, optionally with fractional seconds. Keep existing IDs stable.
+
 id: 2026-06-14
 date: 2026-06-14
-title: 14 June 2026 worship service
-sermon_title: Greater Works
+title: Greater Works
 series:
   id: gospel-of-john
   name: Expository Preaching on the Gospel of John
 type: service
 workflow_status: complete
 editorial_status: needs_review
-review_notes:
-  - Main batch integration applied the source-backed series using the common ID gospel-of-john. No
-    new topic was needed; all interpretation remains needs_review. See
-    docs/historical-001/integration.md.
-  - Whole meaningful programme curated from the verified imported English ASR, its word timings and
-    source frames; audio samples were decoded, not listened to. Inline transcripts are selected
-    faithful excerpts with explicit omissions, not a complete verbatim transcript.
-  - Opening frame at 0 and 20 seconds says 14th June 2026 9:30am; source title, upload date and
-    release date agree. Retain the approved date despite the ambiguous closing statement that June
-    is over.
-  - Greater Works and John 14:8-14 / Hebrews 1:1-4 are displayed at 2140 and 2295 seconds. Last
-    Session / Only is recap material, not today's title.
-  - Pastor Yong is explicitly introduced at 803.26 and 2059.76 seconds. The malformed ASR rendering
-    of a full name in the bank illustration does not establish a fuller identity. Hadi and the
-    scripture reader's inconsistent partial name remain unassigned.
-  - Imported evidence has 16 outside-segment word warnings on 16 segments, maximum 0.18 seconds; no
-    backward starts, overlaps or tail clamps. Twenty zero-duration words remain unchanged. Exact
-    warning regions and correspondence checks are in the review report.
-  - Scripture quotations and all song lyrics, including quoted lyrics within the sermon, are
-    omitted. Prayer and music units retain longer natural spans; quiet prayer and ASR gaps are not
-    filled with invented speech.
-  - Historical, political, medical, interreligious and personal claims are the speaker's assertions,
-    not independently verified facts. Human listening is needed for names, mixed-language anecdotes
-    and technical interruptions.
-  - "Taxonomy proposal only: expository-preaching-gospel-john / Expository Preaching on The Gospel
-    of John, displayed at 2140 and 2295 seconds; supporting p20260614-019 and p20260614-021. No
-    series activated; existing topics suffice."
-  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
-    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
-    editorial approval implied."
-  - "Concise service outline: original chapter metadata and boundaries preserved in
-    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
-    service context. Agent interpretation remains needs_review."
-  - Metadata-only plan based on the current service record and all 80 existing passage summaries
-    across 19 original chapters; interpretation remains needs_review and no new listening or timing
-    verification is claimed.
-  - Six peer groups consolidate the opening prayer and welcome, worship and readings, three sermon
-    movements, and the response through dismissal; every original chapter is assigned once in order
-    on GlVgMoehT2I.
-  - The John 14 recap and sustained exposition form one foundation for the central call to share
-    Christ's work; the next boundaries mark the explicit move to John 14:12 and then prayer in John
-    14:13–14. Sports anecdotes, political recruitment and other illustrations support these
-    arguments rather than becoming independent chapters.
-  - "Two cues retain original chapter bounds: Wonderful Savior Redeemer provides direct access to a
-    distinctive anthem, while Jesus Reveals the Father marks the sustained exposition after the
-    recap and develops the foundation for discipleship. No finer timing is inferred for examples
-    within an original chapter."
-  - Opening, Worship and Scripture, and Response and Closing are neutral peer entries. Routine
-    songs, prayers, readings, offering and incidental announcements are consolidated without
-    separate cues; the concluding prayer begins the response group.
-  - The precise O Hover Me Holy Spirit title and punctuation and the second-Sunday offering
-    destination remain uncertain. Unknown leaders and the scripture reader remain unidentified; the
-    ambiguous closing date statement does not revise the established service date.
-  - The golf anecdote remains explicitly possibly untrue; positions and words attributed to C. S.
-    Lewis and Teresa of Avila retain the preacher's qualifications. His criticism of animal activism
-    does not endorse cruelty, and his greater-works interpretation concerns reach rather than
-    surpassing Christ in quality. Medical, political, religious and personal anecdotes remain his
-    accounts, not independently verified findings.
-  - The single sermon description is public-facing natural prose; all group and cue summaries are
-    internal retrieval/review metadata only. Existing original notes, provenance and needs_review
-    remain authoritative. Main owns migration, derived boundaries, old-link mappings and vector
-    updates.
-  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
+  # The partial Hadi/reader introductions need confirmation before adding further identities.
   - id: yong-teck-meng
     name: Rev. Yong Teck Meng
     role: Preacher
@@ -111,40 +52,16 @@ topics:
 videos:
   - id: GlVgMoehT2I
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
-    duration: 6704.201
+    duration: "1:51:44.201"
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    transcription_language: en
-    transcribed_span:
-      start: 0
-      end: 6704.1814375
-    transcription_provenance:
-      engine: faster-whisper
-      engine_version: 1.2.1
-      model: large-v3-turbo
-      backend_version: 4.8.2
-      compute_type: float16
-      device: Tesla T4
-      settings:
-        beam_size: 5
-        word_timestamps: true
-        vad_filter: false
-        condition_on_previous_text: false
-      audio_sha256: ecb2367529df0ea77be915d1d4daccbd4b27f32da574fa7faeece5a6b4eda9b5
-      duration_seconds: 6704.1814375
-      elapsed_seconds: 217.882
-      real_time_factor: 0.0325
-      transcribed_at: 2026-09-25T12:23:45.414466+00:00
-      transcript_sha256: 4ea0f2f09678f921a70f58e468df84c9c77e12e1ce6d6a85406ef4b0140ab7d8
-      source_duration_seconds: 6704.201
-      duration_delta_seconds: -0.019562499999665306
-      audio_hash_verified: false
 chapters:
+  # Confirm the anthem title and the second-Sunday offering destination.
   - id: c20260614-opening
     video_id: GlVgMoehT2I
-    start: 26.54
-    end: 613.66
+    start: "0:26.54"
+    end: "10:13.66"
     title: Opening
     type: opening
     summary: The leaders guide personal adoration, confession, thanksgiving and supplication, welcome
@@ -163,14 +80,10 @@ chapters:
       - service-life
     scripture:
       - Psalms 71
-    source_chapters:
-      - s20260614-01
-      - s20260614-02
-    review_notes: []
   - id: c20260614-worship-and-scripture
     video_id: GlVgMoehT2I
-    start: 621.5
-    end: 2123.72
+    start: "10:21.5"
+    end: "35:23.72"
     title: Worship and Scripture
     type: worship
     summary: The congregation joins songs and prayer for faithful living, hears readings from Proverbs
@@ -194,22 +107,12 @@ chapters:
       - Proverbs 25:1-28
       - John 14:8-31
       - Hebrews 1:1-4
-    source_chapters:
-      - s20260614-03
-      - s20260614-04
-      - s20260614-05
-      - s20260614-06
-      - s20260614-07
-      - s20260614-08
-      - s20260614-09
-    review_notes: []
   - id: s20260614-08
     video_id: GlVgMoehT2I
-    start: 1896.16
-    end: 2047.94
+    start: "31:36.16"
+    end: "34:07.94"
     type: music
     title: Wonderful Savior Redeemer
-    confidence: 0.91
     scripture: []
     topics:
       - worship
@@ -218,12 +121,10 @@ chapters:
     keywords:
       - wonderful savior redeemer
     parent_id: c20260614-worship-and-scripture
-    source_chapters:
-      - s20260614-08
   - id: c20260614-knowing-jesus-shapes-our-lives
     video_id: GlVgMoehT2I
-    start: 2142.12
-    end: 4266.1
+    start: "35:42.12"
+    end: "1:11:06.1"
     title: Knowing Jesus Shapes Our Lives
     type: sermon
     summary: Recapping trust in Christ and the Spirit's present help, Pastor Yong urges humble learning
@@ -273,19 +174,14 @@ chapters:
       - Colossians 1:15-17
       - Colossians 1:18-20
       - John 14:8-11
-    source_chapters:
-      - s20260614-10
-      - s20260614-11
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s20260614-11
     video_id: GlVgMoehT2I
-    start: 2829.26
-    end: 4266.1
+    start: "47:09.26"
+    end: "1:11:06.1"
     type: sermon
     title: Jesus Reveals the Father
     speaker_id: yong-teck-meng
-    confidence: 0.88
     scripture:
       - John 14:8-9
       - John 14:9
@@ -321,12 +217,10 @@ chapters:
       - colossians
       - wwjd
     parent_id: c20260614-knowing-jesus-shapes-our-lives
-    source_chapters:
-      - s20260614-11
   - id: c20260614-christs-work-belongs-to-every-believer
     video_id: GlVgMoehT2I
-    start: 4266.1
-    end: 5290.38
+    start: "1:11:06.1"
+    end: "1:28:10.38"
     title: Christ's Work Is Entrusted to Every Believer
     type: sermon
     summary: Pastor Yong reads John 14:12 as a call for ordinary believers to use their gifts in
@@ -349,14 +243,11 @@ chapters:
       - discernment
     scripture:
       - John 14:12
-    source_chapters:
-      - s20260614-12
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20260614-pray-and-serve-as-christs-representatives
     video_id: GlVgMoehT2I
-    start: 5290.38
-    end: 5868.72
+    start: "1:28:10.38"
+    end: "1:37:48.72"
     title: Pray and Serve as Christ's Representatives
     type: sermon
     summary: Pastor Yong explains prayer in Christ's name as representing his cause, using accounts of
@@ -383,14 +274,11 @@ chapters:
       - John 14:13-14
       - John 14:12-14
       - John 14:12
-    source_chapters:
-      - s20260614-13
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20260614-response-and-closing
     video_id: GlVgMoehT2I
-    start: 5868.72
-    end: 6703.86
+    start: "1:37:48.72"
+    end: "1:51:43.86"
     title: Response and Closing
     type: closing
     summary: Pastor Yong leads prayer for active service and seminary students as the congregation
@@ -416,14 +304,6 @@ chapters:
       - mission
     scripture:
       - Hebrews 13
-    source_chapters:
-      - s20260614-14
-      - s20260614-15
-      - s20260614-16
-      - s20260614-17
-      - s20260614-18
-      - s20260614-19
-    review_notes: []
 sermon_description: "Pastor Yong presents knowing Jesus as the foundation for sharing in his work:
   believers learn from the one who reveals the Father and follow his example in daily life. He
   understands the greater works of John 14 as wider reach, entrusted to ordinary believers. Prayer

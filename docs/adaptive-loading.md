@@ -1,6 +1,7 @@
 # Adaptive loading and local search
 
-Implemented against `main` at `e2946c7`. The model and transcript-vector recipe are unchanged.
+Originally implemented against `main` at `e2946c7`; the review follow-up integrates
+PR #4 from `main` at `d1fbd1d`. The model and transcript-vector recipe are unchanged.
 
 ## Two independent automatic modes
 
@@ -41,6 +42,20 @@ Transformers import**. It waits for load, eager Astro island hydration, two fram
 a quiet interval and idle scheduling before considering installation. Input delays
 the start; hidden pages and playback pause installation. Low-compute/data-saving
 downgrades also pause it. Empty production archives do not install anything.
+
+The coordinator has separate explicit page and installation phases. Page phases are
+`loading`, `ready`, and `suspended`; installation phases distinguish `scheduled`,
+`registering`, `installing`, `pausing`, `suspended`, `cached`, `unavailable`, and `idle`.
+Registering is not treated as an installation request. Suspension invalidates the
+attempt token; delayed registration/activation can complete but cannot start work
+for a stale attempt. A visible resume reuses registration and can schedule a fresh
+attempt. A late worker pause acknowledgement also reschedules eligible work.
+
+On BFCache restoration, long-task observation reconnects with `buffered: false`.
+The previous two-second sample window and counters are cleared, and entries starting
+before restoration are rejected. Existing session classifications, including a
+previously established low-compute mode, remain sticky. Interrupted essential
+hydration resumes separately from optional installation.
 
 Font variables use system/Georgia defaults. Custom fonts apply only when both modes
 are normal. `VideoArt` server output contains no procedural SVG. Eligible clients
@@ -86,6 +101,19 @@ test tooling. Application/worker JavaScript still uses ordinary HTTP caching. Sm
 metadata and vector requests can occur on search intent even when semantic weights
 are cached; data saver does not promise zero network traffic.
 
+### Plain LAN HTTP
+
+The confirmed product policy is **exact/lexical-only search on non-localhost HTTP**,
+such as `http://192.168.x.x`. Browsers cannot provide the required service-worker
+cache on these insecure origins. Meaning-based search is supported on HTTPS and
+the browser's trusted localhost development origins. PR #4's Web Crypto fallback
+continues to support artifact hashing, but does not bypass this semantic-cache
+requirement. The site sends no automatic model/runtime requests on LAN HTTP.
+
+`tests/e2e/lan-search.spec.ts` uses a real HTTP origin outside localhost, resolved
+to a local test server, and checks the browser's actual secure-context APIs rather
+than deleting them. Metadata/BSB lexical search remains usable there.
+
 ## Search responsiveness
 
 `SearchApp` keeps server-provided metadata search available in every mode:
@@ -95,6 +123,8 @@ are cached; data saver does not promise zero network traffic.
   semantics can fetch the metadata/vector binding in data saver, without BSB.
 - `prepareSearchIndex().withVectors()` shares lexical rows/postings and creates an
   immutable vector attachment. It does not renormalize text or reparse scripture.
+  Validation uses the owned row count, even if callers subsequently grow or shrink
+  the source chapter array.
 - `prepare` initializes the inference pipeline without embedding a fake query.
 - Committed queries have no intentional debounce; typing waits 175 ms.
 - Cancellation removes obsolete pending client work. The worker keeps only the
@@ -196,6 +226,28 @@ does not establish that a 600-recording archive is instant on every device.
 Local reports: `.local/performance-adaptive-before.json`,
 `.local/performance-adaptive-after.json`, `.local/performance-adaptive-final.json`,
 and `.local/performance-adaptive-browser.json`.
+
+### Review regression coverage
+
+Before applying the review fixes, new tests reproduced all three reported bugs:
+hidden-during-registration installation never resumed, BFCache restore no longer
+observed long tasks, and caller-array mutation rejected valid vector attachments.
+The snapshot test covers both append and removal. Coordinator tests additionally
+cover visibility returning before registration resolves, late pause acknowledgement,
+registration failure/retry, suspended registration continuations, pre-readiness
+restoration, a fresh observation window, and sticky low-compute classification.
+
+The PR #4 conflict resolution preserves quirk badges and shared date formatting
+alongside performance-aware artwork. Historical performance results above are not
+relabelled as an overall budget pass: the 5,000-row scaling failures remain open.
+
+Combined-source verification after integration: 757 unit tests and 89 browser tests
+passed, including PR #4's recording-title/playback/quirk cases, real semantic
+installation/inference, and the new insecure-origin LAN test. Both static builds,
+lint and typecheck passed. Additional activation-wait regression coverage was added
+and checked separately after that full run (96 focused tests passed). Actual-model
+retrieval acceptance remained 110/110; Pages, built-output and archive checks passed.
+The combined Python suite ran 105 tests successfully, with one optional skip.
 
 ## Operations
 

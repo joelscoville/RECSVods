@@ -1,11 +1,11 @@
 name: Archive correction
-description: Suggest a correction to a chapter time, title, reference or archive description.
+description: Report a playback/audio problem or suggest a correction to archive metadata.
 title: 'Archive correction: '
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for helping improve RECS Replay. This is a public issue and a suggestion for human review, not an automatic edit or approval.
+        Thank you for helping improve RECS Replay. This repository issue is visible to people with repository access. It is a suggestion, not an automatic edit or approval.
         Keep the prefilled archive identifiers. Do not paste search history, saved playback progress, private filesystem paths, raw evidence, credentials or private editorial notes.
   - type: dropdown
     id: problem
@@ -17,6 +17,7 @@ body:
         - scripture
         - speaker
         - topic
+        - playback or audio
         - other
     validations:
       required: true
@@ -40,7 +41,7 @@ body:
     id: timestamps
     attributes:
       label: Recording timestamps
-      description: Original recording bounds in seconds, not your saved playback position. Add a more precise proposed boundary in the correction below if needed.
+      description: Bounds in the upload’s own clock (MM:SS or HH:MM:SS, optional fractional seconds), not your saved playback position. Add a proposed correction below if needed.
   - type: input
     id: page
     attributes:

@@ -1,8 +1,8 @@
 /** Preservation checks are deliberately separate from the chapter-only public loader. */
 import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
-import { parseYaml, parseWithPath, ServiceSourceSchema } from './archive';
-import { LegacyServiceSourceSchema, type LegacyServiceSource } from './legacy-schema';
+import { parseYaml, parseWithPath } from './archive';
+import { HistoricalServiceSchema, LegacyServiceSourceSchema, type LegacyServiceSource } from './legacy-schema';
 import { PRESERVATION_FILE } from './preservation';
 
 export const MIGRATION_NOTE = 'Chapter-search migration: original passages preserved in passages.internal.yaml; chapter summaries are initial seeds and keywords are spoken-text candidates requiring human review. No editorial approval implied.';
@@ -39,7 +39,7 @@ export function outlineLegacyMap(original: RawLegacyService, chapters: readonly 
 }
 export function assertMigrationPreserved(original: RawLegacyService, text: string, internal: string, filename: string, chapterInternal?: string): void {
   const raw = parseYaml(text, filename) as Record<string, unknown>;
-  parseWithPath(ServiceSourceSchema, raw, filename);
+  parseWithPath(HistoricalServiceSchema, raw, filename);
   const { sections, passages, ...metadata } = original;
   const { chapters, ...currentMetadata } = raw;
   const expectedMetadata = { ...metadata, review_notes: [...(metadata.review_notes ?? []), MIGRATION_NOTE] };
@@ -60,7 +60,7 @@ export function assertMigrationPreserved(original: RawLegacyService, text: strin
     if (!isDeepStrictEqual(section, retained)) throw new Error(`${filename}: original section fields changed at ${section.id}`);
   });
   if (chapterInternal) {
-    const publicChapters = parseWithPath(ServiceSourceSchema, raw, filename).chapters;
+    const publicChapters = parseWithPath(HistoricalServiceSchema, raw, filename).chapters;
     const parents = publicChapters.filter((chapter) => !chapter.parent_id);
     if (!isDeepStrictEqual(parents.flatMap((chapter) => chapter.source_chapters ?? []), sections.map((section) => section.id))) throw new Error(`${filename}: outline groups must partition originals once in order`);
     for (const chapter of publicChapters) {

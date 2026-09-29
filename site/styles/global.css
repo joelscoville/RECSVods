@@ -626,6 +626,23 @@ html[data-data-mode="normal"][data-compute-mode="normal"] { --body-font: 'Atkins
 .video-card .preview-label { margin-top: 4px; }
 .video-card .card-metadata time { letter-spacing: -0.02em; }
 
+/* Technical notes are independent of editorial status and remain readable without playback. */
+.quirk-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.quirk-badge { display: inline-block; padding: 3px 8px; border-radius: 6px; background: var(--periwinkle); color: var(--ink); font-size: 13px; line-height: 1.35; }
+.video-quirks { margin-top: 20px; color: var(--ink); }
+.video-quirks h2 { font-size: 18px; margin-bottom: 8px; }
+.video-quirks ul { list-style: none; display: grid; gap: 12px; }
+.video-quirks li { font-size: 15px; }
+.player-message.external-playback { gap: 12px; padding: 24px; }
+.external-playback h2 { font-size: 24px; }
+.external-playback .button { background: var(--periwinkle); color: var(--ink); }
+.external-playback .button-secondary { background: var(--surface); color: var(--ink); }
+.player-error-code { font-size: 14px; }
+@media (max-width: 599px) {
+  .player-stage:has(.external-playback) { aspect-ratio: auto; min-height: 300px; }
+  .player-message.external-playback { position: relative; min-height: 300px; }
+}
+
 /* The featured row reserves room below each card for a two-line title and a two-line date line, so
    swapping in a resumed recording after hydration cannot change the row's height and push the rows
    below. Spare room falls under the card's last line, never between its lines. */

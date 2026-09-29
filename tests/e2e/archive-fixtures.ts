@@ -1,6 +1,16 @@
 import { readFileSync } from 'node:fs';
 import type { Page } from '@playwright/test';
 import type { SearchChapter } from '../../site/lib/types';
+import type { Service, ServiceSource } from '../../site/lib/types';
+import { parse } from 'yaml';
+import { parseTimecode } from '../../site/lib/timecode';
+
+/** Build validation checks the full schema; these browser fixtures just normalize source clocks. */
+export function readServiceFixture(filename: string): Service {
+  const source = parse(readFileSync(filename, 'utf8')) as ServiceSource;
+  return { ...source, speakers: source.speakers ?? [], topics: source.topics ?? [], videos: source.videos.map(video => ({ ...video, duration: parseTimecode(video.duration) })),
+    chapters: source.chapters.map(chapter => ({ ...chapter, start: parseTimecode(chapter.start), end: parseTimecode(chapter.end) })) };
+}
 
 export const chapterMetadata = JSON.parse(readFileSync('dist/preview/generated/chapters.json', 'utf8'));
 export const previewChapters = chapterMetadata.chapters as SearchChapter[];

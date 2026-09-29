@@ -2,9 +2,9 @@ import AxeBuilder from '@axe-core/playwright';
 import type { Locator, Page } from '@playwright/test';
 import { test, expect } from './fixtures';
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
-import { parse } from 'yaml';
-import type { SearchChapter, ServiceSource } from '../../site/lib/types';
-import { chapterFor } from './archive-fixtures';
+import type { SearchChapter } from '../../site/lib/types';
+import { chapterFor, readServiceFixture } from './archive-fixtures';
+import { formatTimecode } from '../../site/lib/timecode';
 import { browserEndpoints } from '../../scripts/testing-config';
 
 // Every check here includes viewport-sensitive accessibility, keyboard or layout assertions.
@@ -14,12 +14,12 @@ const passages = metadata.chapters as SearchChapter[];
 // Build validation owns schema parsing; avoid Astro/tsx-only JSON-module imports here.
 const productionHasRecordings = (readdirSync('services', { recursive: true }) as string[])
   .filter((file) => file.endsWith('/service.yaml'))
-  .map((file) => parse(readFileSync(`services/${file}`, 'utf8')) as ServiceSource)
+  .map((file) => readServiceFixture(`services/${file}`))
   .some((service) => service.editorial_status === 'reviewed' && service.videos.some((video) => video.media_disposition === 'playable'));
 const tracked = chapterFor('s0927-romans-order');
 const newPassage = passages.find((passage) => passage.serviceId === '2026-09-13')!;
-const source = (id: string) => parse(readFileSync(`services/${id.slice(0, 4)}/${id}/service.yaml`, 'utf8')) as ServiceSource;
-const choices = ['chapter time', 'title', 'scripture', 'speaker', 'topic', 'other'];
+const source = (id: string) => readServiceFixture(`services/${id.slice(0, 4)}/${id}/service.yaml`);
+const choices = ['chapter time', 'title', 'scripture', 'speaker', 'topic', 'playback or audio', 'other'];
 const privateMarker = 'PRIVATE_M3_SENTINEL';
 const tags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
@@ -123,7 +123,7 @@ async function inspectCorrection(link: Locator, fields: Record<string, string>) 
 }
 function passageFields(passage: SearchChapter) {
   return { 'service-id': passage.serviceId, 'video-id': passage.videoId, 'chapter-id': passage.id,
-    timestamps: `${passage.videoId}: ${passage.start}–${passage.end} seconds`, page: `/replay-check/watch/?chapter=${passage.id}` };
+    timestamps: `${passage.videoId}: ${formatTimecode(passage.start)}–${formatTimecode(passage.end)}`, page: `/replay-check/watch/?chapter=${passage.id}` };
 }
 
 test('chapter correction context, Markdown fallback and transcript exclusion across service, watch, search and browse', async ({ page }) => {
@@ -139,7 +139,7 @@ test('chapter correction context, Markdown fallback and transcript exclusion acr
     const videos = service.videos.filter((video) => video.media_disposition === 'playable');
     await inspectCorrection(page.locator('.service-heading').getByRole('link', { name: 'Suggest a correction' }), {
       'service-id': service.id, 'video-id': videos.map((video) => video.id).join(', '),
-      timestamps: videos.map((video) => `${video.id}: 0–${video.duration} seconds`).join('\n'),
+      timestamps: videos.map((video) => `${video.id}: 0:00–${formatTimecode(video.duration)}`).join('\n'),
       'chapter-id': 'Not selected (whole recording/service)', page: `/replay-check/services/${service.id}/`,
     });
     // One correction link per page: chapter rows carry none.
@@ -155,7 +155,7 @@ test('chapter correction context, Markdown fallback and transcript exclusion acr
   const fullVideo = source(tracked.serviceId).videos.find((video) => video.id === tracked.videoId)!;
   await inspectCorrection(page.locator('.playback-footer').getByRole('link', { name: 'Suggest a correction' }), {
     'service-id': tracked.serviceId, 'video-id': tracked.videoId, 'chapter-id': 'Not selected (whole recording/service)',
-    timestamps: `${tracked.videoId}: 0–${fullVideo.duration} seconds`,
+    timestamps: `${tracked.videoId}: 0:00–${formatTimecode(fullVideo.duration)}`,
     page: `/replay-check/watch/?service=${tracked.serviceId}&video=${tracked.videoId}`,
   });
   for (const route of ['search/?q=Romans%2013', 'browse/topics/government/']) {
@@ -195,7 +195,8 @@ test('Tab and Enter journey: skip, named search, result and Play', async ({ page
   const passage = passages.find((item) => item.id === id)!;
   await tabTo(page, play);
   await page.keyboard.press('Enter');
-  const button = page.getByRole('button', { name: `Play ${passage.serviceTitle}`, exact: true });
+  const button = page.getByRole('button', { name: `Play ${passage.serviceTitle}`, exact: true })
+    .or(page.getByRole('button', { name: 'Try embedded player', exact: true }));
   await tabTo(page, button);
   await page.keyboard.press('Enter');
   await expect.poll(() => page.evaluate(() => ({ id: window.testPlayer?.videoId, time: window.testPlayer?.time }))).toEqual({ id: passage.videoId, time: passage.start });
@@ -216,7 +217,7 @@ test('keyboard chapters, correction activation, transcript exclusion and reduced
   await expect(chapter).toBeFocused();
   const section = source(tracked.serviceId).chapters[0];
   await inspectCorrection(page.locator('.playback-footer').getByRole('link', { name: 'Suggest a correction' }), {
-    'chapter-id': section.id, timestamps: `${section.video_id}: ${section.start}–${section.end} seconds`,
+    'chapter-id': section.id, timestamps: `${section.video_id}: ${formatTimecode(section.start)}–${formatTimecode(section.end)}`,
     page: `/replay-check/watch/?chapter=${section.id}`,
   });
   await page.goto(`watch/?chapter=${tracked.id}`);
@@ -270,7 +271,7 @@ test('test adapter unavailable-video error exposes retry and timestamped direct 
   await page.goto(`watch/?chapter=${tracked.id}`);
   await tabTo(page, page.getByRole('button', { name: `Play ${tracked.serviceTitle}`, exact: true }));
   await page.keyboard.press('Enter');
-  await expect(page.getByRole('alert')).toHaveText('This recording is unavailable in the embedded player. Try watching on YouTube.');
+  await expect(page.getByRole('alert')).toHaveText('This recording is unavailable on YouTube. It may be private or removed.');
   const direct = page.locator('.player-message').getByRole('link', { name: 'Watch on YouTube' });
   await expect(direct).toHaveAttribute('href', `https://www.youtube.com/watch?v=${tracked.videoId}&t=${Math.floor(tracked.start)}`);
   await touchAndSeparation(page.locator('.player-message a, .player-message button'));
