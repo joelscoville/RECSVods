@@ -12,15 +12,19 @@ YouTube channel, starting at the right moment.
 
 ## How it works
 
-- **YouTube hosts and plays every video.** This repository only holds chapter information:
-  titles, times, speakers, Bible references, topics and short summaries.
+- **YouTube hosts and plays every video.** The website shows chapter information: titles,
+  times, speakers, Bible references, topics and short summaries. The repository also keeps
+  internal source records that are not shown on the site, such as earlier passage-level
+  records with transcript excerpts, and the public-domain Berean Standard Bible text used for
+  search.
 - **A person reviews every service before it appears on the site.** Chapters can be drafted
   with help from tools, but nothing is published without human approval.
 - **Search runs entirely in your browser.** There are no accounts and no server. Exact and
   Bible-reference matches appear immediately; "similar in meaning" results are added once a
   small search model has loaded.
-- **Bible references link to [esv.org](https://www.esv.org).** Verse text is not copied into
-  the site.
+- **ESV passages are linked to [esv.org](https://www.esv.org), not reproduced.**
+  Public-domain Berean Standard Bible text supports verse-text search and is not displayed
+  as ESV.
 
 ## Found a mistake?
 

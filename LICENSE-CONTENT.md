@@ -5,10 +5,14 @@
 The archive content written for RECS Replay is licensed under the
 [Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
 
-"Archive content" means the metadata in this repository that describes recordings: service
-and chapter titles, chapter times and types, summaries, keywords, topics, series and speaker
-labels, Bible references as listed for each chapter, and the internal passage records kept
-alongside them (`services/`, `taxonomy/`, `evaluation/` and similar data files).
+"Archive content" means the metadata and annotations written for this project to describe
+recordings: service and chapter titles, chapter times and types, summaries, keywords, topics,
+series and speaker labels, the Bible references listed for each chapter, and the
+project-authored parts of internal records (for example passage titles, summaries and
+review notes), in `services/`, `taxonomy/`, `evaluation/` and similar data files.
+
+It does **not** include transcript text or other wording taken from the recordings, which some
+internal records (such as `passages.internal.yaml`) contain; see below.
 
 The software is licensed separately under the [MIT licence](LICENSE).
 
@@ -27,8 +31,9 @@ you must say so and share your adapted version under CC BY-SA 4.0.
 This licence applies only to material created for this project. It does **not** grant any
 rights to:
 
-- **The recordings, sermons, songs and other content of the services themselves.** They belong
-  to their speakers, performers and the church, and are played from YouTube under YouTube's
+- **The recordings, sermons, songs and other content of the services themselves**, including
+  any transcript text or excerpts of what was said kept in internal records. They belong to
+  their speakers, performers and the church, and are played from YouTube under YouTube's
   terms. Summaries describe what was said; they are not a licence to reproduce it.
 - **Quoted or paraphrased third-party material** that may appear in summaries or internal
   records, such as book excerpts or song lyrics, which remain under their owners' terms.
