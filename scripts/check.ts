@@ -5,9 +5,11 @@ import { runChecks, type CheckTask } from './test-runner';
 import { browserWorkers, testBudget, unitWorkers } from './testing-config';
 
 const budget = testBudget(), unit = Math.min(budget, unitWorkers()), browser = Math.min(budget, browserWorkers());
-const offline = { PYTHONDONTWRITEBYTECODE: '1', RECS_MEDIA_AUTHORIZED: '' };
+/** Environment every check group runs with: Python writes no bytecode files, and media tooling is not
+ * authorised (RECS_MEDIA_AUTHORIZED empty). It does not by itself guarantee there is no network access. */
+const checkEnvironment = { PYTHONDONTWRITEBYTECODE: '1', RECS_MEDIA_AUTHORIZED: '' };
 const task = (name: string, script: string, slots = 1, env = {}): CheckTask => ({
-  name, command: 'pnpm', args: [script], slots, env: { ...offline, ...env }, timeoutMs: name === 'browser' ? 15 * 60_000 : 10 * 60_000,
+  name, command: 'pnpm', args: [script], slots, env: { ...checkEnvironment, ...env }, timeoutMs: name === 'browser' ? 15 * 60_000 : 10 * 60_000,
   // astro check and astro build both write .astro/. Other independent jobs may overlap either.
   resources: ['types', 'browser'].includes(name) ? ['astro-generated'] : [],
 });
