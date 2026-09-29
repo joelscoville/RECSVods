@@ -1,79 +1,13 @@
+# yaml-language-server: $schema=../../../schema/service.schema.json
+# Editing guide: ../../../docs/editing-services.md
+# Times are quoted MM:SS or HH:MM:SS, optionally with fractional seconds. Keep existing IDs stable.
+
 id: 2020-09-27
 date: 2020-09-27
 title: Authority
-sermon_title: Authority
 type: sermon
 workflow_status: complete
 editorial_status: needs_review
-review_notes:
-  - Trusted operator date, title, Rev. Yong Teck Meng and Luke 20:19-26 / Romans 13:1-7 preserved.
-    Opening frames at 0/10/40s confirm title and both references. No date or preacher-name caption
-    was observed; those fields remain operator-attributed, not independently identified from
-    appearance.
-  - This is a sermon-focused upload with an opening greeting, convention announcements, recap,
-    prayers and exposition. References to earlier readings are not evidence that those readings
-    occur in this upload. No missing worship, reading or creed sections are invented.
-  - Programme begins at physical start with Happy Sunday and ends with closing prayer, whose last
-    ASR endpoint is 3906s. Final frames at 3870/3900/3905.9s display an Apostles’ Creed slide while
-    imported speech is still prayer. No creed recitation is inferred from the slide. Full imported
-    span 0–3906.8154375s retained; actual ffprobe duration 3906.841s. Two-minute context margins
-    clip to the recording.
-  - All 696 imported segments were inspected. Passage transcripts are edited ASR-derived excerpts,
-    with punctuation/capitalization normalized and explicit omission/uncertainty markers; they are
-    not complete verbatim or listening-verified transcripts. Audio windows were extracted but not
-    listened to. Ten word-boundary warnings, at most 0.19s, remain for human review; no segment
-    overlap/backtracking or tail clamping. Boundaries follow source thoughts and absolute
-    timestamps, with mixed-segment cuts approximate.
-  - Original batch audio was already absent from both designated roots. Operator explicitly
-    authorized --allow-missing-audio. Transcript byte checksum, source identity/duration and import
-    validation passed; supplied audio SHA-256 is provenance only and was not independently
-    reverified. Exact safe receipt projection is retained with audio_hash_verified false.
-  - Scripture quotations, including brief embedded repetitions, are replaced by reference-only
-    markers; no ESV verse text or reconstructed quotation is stored. Lyrics and longer third-party
-    quotations are omitted explicitly. Original names are retained only when supplied or legible in
-    evidence; garbled names/phrases remain marked rather than reconstructed.
-  - The 400s slide and ASR label the quoted Psalm as 18:27; this may be an off-by-one reference.
-    Preserve the displayed reference and flag for human verification. Historical, political,
-    denominational and biographical assertions, reported Facebook stories, and quotation
-    attributions remain the preacher’s claims, not independently verified facts.
-  - Processing complete under the operator’s flag-and-continue instruction; all interpretation
-    remains needs_review. See docs/authority-review.md for boundary evidence, verification,
-    limitations and search candidates.
-  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
-    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
-    editorial approval implied."
-  - "Concise service outline: original chapter metadata and boundaries preserved in
-    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
-    service context. Agent interpretation remains needs_review."
-  - Plan only, based on the current service and all 63 supplied passage summaries for its 32
-    original chapters; all proposed metadata remains needs_review.
-  - Seven peer groups comprise Opening, five argument-led sermon movements and Closing Prayer,
-    preserving one contiguous assignment of every original chapter on W2IZ6MUX-Yk; timing and video
-    membership are inherited, not newly estimated.
-  - The substantial recap remains a sermon movement about accountable response to God’s authority;
-    its concluding prayer stays with that preparation rather than becoming a separate navigation
-    entry. The later shifts are to competing political claims, Jesus’ response to deception and
-    tribute, Romans 13 and civil conscience, then active engagement under God’s higher authority.
-  - Six cues provide selective access to self-examination, practical fairness, conscience beyond
-    party loyalty, the Great Commission, institutional responsibilities and exceptional resistance
-    to evil. Examples and citations otherwise remain within their arguments; routine opening
-    announcements and closing prayer have no cues.
-  - The single sermon description is the only public descriptive prose; every group and cue summary
-    is internal retrieval/review material and must not render in navigation or result cards. No
-    missing worship, separate reading or creed recitation is inferred.
-  - "Historical, political, denominational and biographical accounts remain the preacher’s claims:
-    Facebook reports about China and quotation attributions to Kuyper or associated with Bonhoeffer
-    are unverified. The mask-refusal and national-leader-visit examples remain hypothetical, not
-    instructions or reported events; the Myanmar leader and destructive-ruler distinction are not
-    expanded into unsupported identities."
-  - Retain the possibly off-by-one Psalms 18:27 reference, weed/wheat ASR ambiguity and questionable
-    coin-person identification for human review; no correction is inferred from the summaries.
-    Source identity/date remain operator-attributed, the audio hash unverified, and existing
-    approximate cuts and word-boundary warnings unresolved.
-  - The final prayer begins at an approximate mixed-segment cut and concerns perceived injustice; a
-    visible creed slide supplies no evidence of creed speech. Civil obedience remains qualified by
-    conscience and the possibility that grave evil requires action, not blanket endorsement or
-    blanket rejection of government.
 speakers:
   - id: yong-teck-meng
     name: Rev. Yong Teck Meng
@@ -100,47 +34,16 @@ topics:
 videos:
   - id: W2IZ6MUX-Yk
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
-    duration: 3906.841
+    duration: "1:05:06.841"
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    disposition_evidence: Authorized full acquisition verified RECS channel/ID and usable audio/video
-      streams; acquisition and repeat ffprobe measured 3906.841s (metadata 3907s). Fourteen coarse
-      frame/audio windows and fifteen refined frames were extracted; all frames inspected, showing
-      continuous sermon presentation, the expected title/references and closing prayer posture.
-      Import matches all 696 source segments. Playability assessment is based on successful media
-      decoding, visual inspection and matching transcript content, not direct listening or an
-      original-audio hash match.
-    transcription_language: en
-    transcribed_span:
-      start: 0
-      end: 3906.8154375
-    transcription_provenance:
-      engine: faster-whisper
-      engine_version: 1.2.1
-      model: large-v3-turbo
-      backend_version: 4.8.2
-      compute_type: float16
-      device: Tesla T4
-      settings:
-        beam_size: 5
-        word_timestamps: true
-        vad_filter: false
-        condition_on_previous_text: false
-      audio_sha256: 54ea3e82512cd92b57f5e50fccf089a464178586d9dc99113059964cb927984f
-      duration_seconds: 3906.8154375
-      elapsed_seconds: 128.254
-      real_time_factor: 0.03283
-      transcribed_at: 2026-09-25T11:23:33.536446+00:00
-      transcript_sha256: ee87fa6fcb0336b7fc40f17d0ed2047b598df66f1013b9fd941f8154b5ffa97c
-      source_duration_seconds: 3906.841
-      duration_delta_seconds: -0.025562499999978172
-      audio_hash_verified: false
 chapters:
+  # Confirm the Psalms 18:27 reference (possibly off by one verse) and the coin identification.
   - id: c20200927-opening
     video_id: W2IZ6MUX-Yk
-    start: 0
-    end: 276.4
+    start: "0:00"
+    end: "4:36.4"
     title: Opening
     type: opening
     summary: The preacher welcomes online participants and announces the international convention, its
@@ -152,15 +55,11 @@ chapters:
     topics:
       - church-life
     scripture: []
-    source_chapters:
-      - s0927-welcome
-      - s0927-convention
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20200927-accountable-stewardship
     video_id: W2IZ6MUX-Yk
-    start: 276.4
-    end: 768.72
+    start: "4:36.4"
+    end: "12:48.72"
     title: God’s Authority Calls for Accountable Stewardship
     type: sermon
     summary: The preacher revisits scripture’s authority over credentials and the vineyard’s call to
@@ -182,17 +81,11 @@ chapters:
       - Psalms 18:27
       - Luke 20:9-19
       - Isaiah 5
-    source_chapters:
-      - s0927-word
-      - s0927-vineyard
-      - s0927-warning
-      - s0927-opening-prayer
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20200927-test-political-claims
     video_id: W2IZ6MUX-Yk
-    start: 768.72
-    end: 1581.62
+    start: "12:48.72"
+    end: "26:21.62"
     title: Test Political Claims by Scripture
     type: sermon
     summary: Using contemporary political settings, the preacher tests claims that God backs a party,
@@ -213,18 +106,11 @@ chapters:
     scripture:
       - Luke 20:19-26
       - Psalms 109:8
-    source_chapters:
-      - s0927-world-politics
-      - s0927-singapore
-      - s0927-with-politics
-      - s0927-under-politics
-      - s0927-above-politics
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20200927-discernment-and-fairness
     video_id: W2IZ6MUX-Yk
-    start: 1581.62
-    end: 2284.22
+    start: "26:21.62"
+    end: "38:04.22"
     title: Recognize Deception and Give Back Fairly
     type: sermon
     summary: The preacher follows Luke 20’s deceptive challenge through self-examination and Jesus’
@@ -258,27 +144,15 @@ chapters:
       - Luke 20:24-25
       - Luke 20:22-25
       - Luke 20:25
-    source_chapters:
-      - s0927-spies
-      - s0927-weeds
-      - s0927-tax-trap
-      - s0927-wise
-      - s0927-denarius
-      - s0927-fairness
-      - s0927-public-services
-    review_notes: []
     speaker_id: yong-teck-meng
+  # Check weed/wheat wording; ASR confuses the two.
   - id: s0927-weeds
     video_id: W2IZ6MUX-Yk
-    start: 1720.38
-    end: 1877.56
+    start: "28:40.38"
+    end: "31:17.56"
     type: sermon
     title: Examine Your Own Sincerity
     speaker_id: yong-teck-meng
-    confidence: 0.83
-    review_notes:
-      - ASR repeatedly confuses weed/wheat. Ambiguous clauses are omitted rather than reversed by
-        guesswork.
     scripture:
       - Matthew 13:24-30
       - Matthew 13:27-30
@@ -290,16 +164,13 @@ chapters:
       unresolved.
     keywords: []
     parent_id: c20200927-discernment-and-fairness
-    source_chapters:
-      - s0927-weeds
   - id: s0927-fairness
     video_id: W2IZ6MUX-Yk
-    start: 2091.48
-    end: 2190.52
+    start: "34:51.48"
+    end: "36:30.52"
     type: sermon
     title: Fairness Applies Beyond Religious Affiliation
     speaker_id: yong-teck-meng
-    confidence: 0.88
     scripture:
       - Luke 20:22-25
       - Luke 20:25
@@ -312,12 +183,10 @@ chapters:
       - giving back
       - fairness
     parent_id: c20200927-discernment-and-fairness
-    source_chapters:
-      - s0927-fairness
   - id: c20200927-civil-order-and-conscience
     video_id: W2IZ6MUX-Yk
-    start: 2284.22
-    end: 2792.1
+    start: "38:04.22"
+    end: "46:32.1"
     title: Support Civil Order with a Fair Conscience
     type: sermon
     summary: The preacher reads Romans 13 as a call to sustain public order with conscience beyond party
@@ -345,21 +214,14 @@ chapters:
       - Romans 13:4-5
       - Romans 13:5-7
       - Romans 13:7
-    source_chapters:
-      - s0927-romans-order
-      - s0927-romans-conscience
-      - s0927-expectations
-      - s0927-kuyper
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s0927-romans-order
     video_id: W2IZ6MUX-Yk
-    start: 2284.22
-    end: 2431.08
+    start: "38:04.22"
+    end: "40:31.08"
     type: sermon
     title: Civil Government Maintains Public Order
     speaker_id: yong-teck-meng
-    confidence: 0.9
     scripture:
       - Romans 13:1-7
       - 1 Peter 2
@@ -378,16 +240,13 @@ chapters:
       - order
       - personal life
     parent_id: c20200927-civil-order-and-conscience
-    source_chapters:
-      - s0927-romans-order
   - id: s0927-romans-conscience
     video_id: W2IZ6MUX-Yk
-    start: 2431.08
-    end: 2619.3
+    start: "40:31.08"
+    end: "43:39.3"
     type: sermon
     title: Let Conscience Judge Beyond Party Loyalty
     speaker_id: yong-teck-meng
-    confidence: 0.88
     scripture:
       - Romans 13:2-4
       - Romans 13:4-5
@@ -405,12 +264,10 @@ chapters:
       - conscience
       - anti establishment
     parent_id: c20200927-civil-order-and-conscience
-    source_chapters:
-      - s0927-romans-conscience
   - id: c20200927-wise-political-engagement
     video_id: W2IZ6MUX-Yk
-    start: 2792.1
-    end: 3820.34
+    start: "46:32.1"
+    end: "1:03:40.34"
     title: Serve God through Wise Political Engagement
     type: sermon
     summary: The preacher grounds active public engagement in Christ’s higher authority, warning against
@@ -435,26 +292,14 @@ chapters:
       - Luke 20:25
       - Luke 20:19-26
       - Romans 13:1-7
-    source_chapters:
-      - s0927-highest
-      - s0927-servant
-      - s0927-commission
-      - s0927-apathy
-      - s0927-sellout
-      - s0927-spheres
-      - s0927-distance
-      - s0927-bonhoeffer
-      - s0927-conclusion
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s0927-commission
     video_id: W2IZ6MUX-Yk
-    start: 2944.74
-    end: 3073.92
+    start: "49:04.74"
+    end: "51:13.92"
     type: sermon
     title: Christ’s Authority Sends His Followers into the World
     speaker_id: yong-teck-meng
-    confidence: 0.86
     scripture:
       - Matthew 28:18-20
     topics:
@@ -464,16 +309,13 @@ chapters:
       uses a hypothetical leader’s visit to question excessive deference to human office.
     keywords: []
     parent_id: c20200927-wise-political-engagement
-    source_chapters:
-      - s0927-commission
   - id: s0927-spheres
     video_id: W2IZ6MUX-Yk
-    start: 3373.56
-    end: 3497.22
+    start: "56:13.56"
+    end: "58:17.22"
     type: sermon
     title: Respect the Distinct Responsibilities of Institutions
     speaker_id: yong-teck-meng
-    confidence: 0.83
     scripture: []
     topics:
       - authority
@@ -483,16 +325,13 @@ chapters:
       illustrating confused responsibilities through an account of purchasable academic credentials.
     keywords: []
     parent_id: c20200927-wise-political-engagement
-    source_chapters:
-      - s0927-spheres
   - id: s0927-bonhoeffer
     video_id: W2IZ6MUX-Yk
-    start: 3544
-    end: 3658.5
+    start: "59:04"
+    end: "1:00:58.5"
     type: sermon
     title: Grave Evil May Require Resistance
     speaker_id: yong-teck-meng
-    confidence: 0.82
     scripture:
       - Luke 20:25
     topics:
@@ -507,12 +346,10 @@ chapters:
       - face of evil
       - silence
     parent_id: c20200927-wise-political-engagement
-    source_chapters:
-      - s0927-bonhoeffer
   - id: c20200927-closing-prayer
     video_id: W2IZ6MUX-Yk
-    start: 3820.34
-    end: 3906.8154375
+    start: "1:03:40.34"
+    end: "1:05:06.8154375"
     title: Closing Prayer
     type: closing
     summary: The preacher thanks God for teaching about public responsibilities and prays for truthful
@@ -527,9 +364,6 @@ chapters:
       - discipleship
     scripture:
       - Matthew 28:18-20
-    source_chapters:
-      - s0927-closing-prayer
-    review_notes: []
     speaker_id: yong-teck-meng
 sermon_description: Rev. Yong Teck Meng reads Jesus’ answer about Caesar alongside Romans 13 as a
   call to meet civil obligations fairly while reserving highest allegiance for God. He challenges

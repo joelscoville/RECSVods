@@ -16,14 +16,14 @@ import { readWatchTarget } from '../site/lib/urls';
 function fixture(): Service {
   const ids = ['FAILEDVIDEO', 'PARTONE0001', 'PARTTWO0002', 'PARTTHREE03', 'REJECTEDVID'];
   return ServiceSchema.parse({
-    id: 'fixture-multipart', date: '2026-08-16', title: 'Fictional multipart service', sermon_title: 'Fictional sermon', type: 'service',
-    workflow_status: 'complete', editorial_status: 'needs_review', review_notes: ['Private editorial note'],
+    id: 'fixture-multipart', date: '2026-08-16', title: 'Fictional sermon', type: 'service',
+    workflow_status: 'complete', editorial_status: 'needs_review',
     speakers: [{ id: 'speaker-stable-id', name: 'Fictional speaker' }, { id: 'excluded-speaker', name: 'Excluded speaker' }, { id: 'unused-speaker', name: 'Unused speaker' }],
     topics: [{ id: 'topic-stable-id', name: 'Fictional topic' }, { id: 'excluded-topic', name: 'Excluded topic' }],
     videos: ids.map((id, index) => ({ id, channel_id: SOURCE_CHANNEL_ID, duration: 180, sequence: index + 1, workflow_status: 'complete',
       media_disposition: index === 0 ? 'failed' : index === 4 ? 'rejected' : 'playable', ...([0, 4].includes(index) ? { disposition_evidence: 'Fictional failure evidence' } : {}) })),
     chapters: ids.flatMap((video_id, index) => [0, 30, 90].map((start, part) => ({ id: `chapter-${index}-${part}`, video_id, start, end: start + 20,
-      type: index === 1 ? 'prayer' : 'sermon', title: `Fictional chapter ${index}-${part}`, summary: 'Fictional summary.', keywords: ['example'],
+      type: index === 1 ? 'worship' : 'sermon', title: `Fictional chapter ${index}-${part}`, summary: 'Fictional summary.', keywords: ['example'],
       speaker_id: [0, 4].includes(index) ? 'excluded-speaker' : 'speaker-stable-id',
       topics: [[0, 4].includes(index) ? 'excluded-topic' : 'topic-stable-id'], scripture: [[0, 4].includes(index) ? 'Jude 1:1' : 'Romans 13:1-7', '1 John 1:1'] }))),
   });

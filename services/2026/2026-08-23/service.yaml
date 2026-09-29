@@ -1,86 +1,16 @@
+# yaml-language-server: $schema=../../../schema/service.schema.json
+# Editing guide: ../../../docs/editing-services.md
+# Times are quoted MM:SS or HH:MM:SS, optionally with fractional seconds. Keep existing IDs stable.
+
 id: 2026-08-23
 date: 2026-08-23
-title: 23 August 2026 — In Labour
-sermon_title: In Labour
+title: In Labour
 series:
   id: gospel-of-john
   name: Expository Preaching on the Gospel of John
 type: service
 workflow_status: complete
 editorial_status: needs_review
-review_notes:
-  - Main batch integration applied the source-backed series and cited topic additions; worker
-    proposal notes describe the pre-merge stage. All interpretation remains needs_review. See
-    docs/historical-001/integration.md.
-  - Full meaningful programme reviewed from supplied English ASR, word timings and source frames,
-    from opening prayer at 8.9s through dismissal at 6427.68s. Inline transcripts are selected
-    faithful excerpts with explicit omissions, not a complete verbatim transcript. Audio samples
-    were decoded, not listened to.
-  - Date slide at 0s says 23rd August 2026 9:30am; source title and upload date agree. The offertory
-    ASR says third Sunday at 5968-5970s although August 23 is the fourth Sunday; retain this
-    discrepancy for listening review, not a service-date change.
-  - Sermon title and John 16:16-24 / Romans 8:20-23 are displayed at 1955s and 2100s. Last Session
-    at 2738s is recap, not today's title. The slide series wording is proposed below rather than
-    activated.
-  - Pastor Yong is independently introduced at 704.68-709.04s and 1894.76-1897.28s. His full name is
-    not established here. Belinda and Jordan are only partial spoken introductions; no full
-    identities assigned. No person identified from appearance.
-  - Verified import preserves 1245 segments, 14545 words and 12 zero-duration words in source order.
-    There are 22 outside-segment word warnings, maximum 0.30s; no segment overlaps, backward starts
-    or tail clamps. Adjacent words/text were checked; warning regions remain for human listening.
-  - Original source audio was absent in both designated roots. JSON integrity and reacquired source
-    identity/duration passed; audio_hash_verified remains false. Exact safe receipt provenance is
-    preserved below.
-  - Historical, political, medical, denominational and third-party anecdotes are the speaker's
-    claims, not independently verified facts. Particular review is needed for the Trump question,
-    geopolitical examples, childbirth/child-health anecdotes and descriptions of other churches.
-  - "Taxonomy proposal: joy / Joy, supported by p20260823-joy-through-service (4847.22-4953.18s),
-    p20260823-joy-and-despair (5142.28-5243.26s), and p20260823-journey-of-joy (5493.9-5556.66s).
-    Not activated."
-  - "Taxonomy proposal: suffering / Suffering, supported by p20260823-already-not-yet
-    (4522.3-4607.96s) and p20260823-health-and-hope (4754.12-4847.22s). Not activated."
-  - "Series proposal: gospel-of-john / Expository Preaching on The Gospel of John, displayed at
-    1955s and 2100s; supported by p20260823-disciples-confusion (3097.04-3178.64s). Main must review
-    consistency before activation."
-  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
-    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
-    editorial approval implied."
-  - "Concise service outline: original chapter metadata and boundaries preserved in
-    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
-    service context. Agent interpretation remains needs_review."
-  - Metadata-only plan derived from the current service metadata and all 79 supplied passage
-    summaries; no new listening, media or ASR verification. Interpretation remains needs_review.
-  - Nine neutral peer groups cover all 22 original chapters in order on QCNrRkiFeKw. Source
-    assignments retain every original boundary for main's migration; small existing gaps are not
-    interpreted as silence or retimed.
-  - Opening combines A.C.T.S. preparation and welcome; Worship and Scripture combines songs, prayer,
-    choir and readings; Response and Closing combines sermon-response prayer, creed, intercession,
-    offertory, hymn, blessing and announcements in their actual order.
-  - The ministry address remains a peer because its invitation to discover gifts and serve is
-    distinct from both the political answer and the John 16 argument. Its generic keyword candidates
-    are omitted. The substantial National Day political Q&A is an independent question-answer peer,
-    excluded from the holistic sermon description.
-  - "Four sermon movements follow the argument: trust amid uncertainty, sorrow before promised joy,
-    access to the Father for Christ's purposes, and joyful service during continuing suffering.
-    Recap and anxiety belong together as the foundation for trust; Romans 8 and the concluding joy
-    application belong together as the response to present suffering."
-  - "Only three cues are retained: the distinctive youth choir item for direct musical access, the
-    start of today's John 16 exposition after the recap, and the development of joyful service
-    within the final movement. Routine items, incidental announcements and individual anecdotes are
-    not reproduced as subsections."
-  - All parent and cue titles use Title Case. Only sermon_description is intended as rendered
-    descriptive prose beneath the video and in service context; every group or cue summary is
-    internal retrieval/review material and must not render in navigation, outlines or search-result
-    cards.
-  - The John 16 death-and-resurrection reading remains an interpretation; the Trinity's mystery and
-    alternative descriptions of Jesus recognizing anxiety remain unresolved. Childbirth and medical
-    anecdotes, political examples and denominational comparisons remain the speaker's claims. He
-    acknowledges lacking a mother's experience and allows despair alongside joy.
-  - "Preserve existing uncertainty about partial speaker identities, timing warnings, the
-    offertory's third/fourth-Sunday discrepancy and audio_hash_verified: false. No fuller speaker
-    identity, new taxonomy or verification claim is introduced. Main retains source notes,
-    provenance and internal evidence unchanged."
-  - 'Operator 2026-09-27: Pastor Yong and Rev. Yong Teck Meng are the same speaker; speaker records are merged under yong-teck-meng.'
 speakers:
   - id: yong-teck-meng
     name: Rev. Yong Teck Meng
@@ -131,40 +61,18 @@ topics:
 videos:
   - id: QCNrRkiFeKw
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
-    duration: 6428.361
+    duration: "1:47:08.361"
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    transcription_language: en
-    transcribed_span:
-      start: 0
-      end: 6428.3515625
-    transcription_provenance:
-      engine: faster-whisper
-      engine_version: 1.2.1
-      model: large-v3-turbo
-      backend_version: 4.8.2
-      compute_type: float16
-      device: Tesla T4
-      settings:
-        beam_size: 5
-        word_timestamps: true
-        vad_filter: false
-        condition_on_previous_text: false
-      audio_sha256: d75381cc2042eb05060fa08a17c8c6a2ba3b3400eb76b5d128926247d7710334
-      duration_seconds: 6428.3515625
-      elapsed_seconds: 200.887
-      real_time_factor: 0.03125
-      transcribed_at: 2026-09-25T12:30:39.987657+00:00
-      transcript_sha256: 1eef148d6e212ad7666fc346f4c2f0de6d8c7de4100723f2eb0db567313d177e
-      source_duration_seconds: 6428.361
-      duration_delta_seconds: -0.009437499999876309
-      audio_hash_verified: false
+    quirks:
+      - embed_blocked
 chapters:
+  # Listen near 1:39:28–1:39:30: the offertory says third Sunday, but 23 August is the fourth Sunday. This does not change the service date.
   - id: c20260823-opening
     video_id: QCNrRkiFeKw
-    start: 8.9
-    end: 492
+    start: "0:08.9"
+    end: "8:12"
     title: Opening
     type: opening
     summary: The leaders guide personal prayer through A.C.T.S., welcome worshippers, invite mutual
@@ -182,14 +90,10 @@ chapters:
       - meditation
     scripture:
       - Psalms 96:1-4
-    source_chapters:
-      - s20260823-preparation
-      - s20260823-welcome
-    review_notes: []
   - id: c20260823-worship-scripture
     video_id: QCNrRkiFeKw
-    start: 499.38
-    end: 1943.86
+    start: "8:19.38"
+    end: "32:23.86"
     title: Worship and Scripture
     type: worship
     summary: The congregation sings hymns and joins prayer and readings from Proverbs 4, John 16 and
@@ -218,22 +122,12 @@ chapters:
       - Proverbs 4
       - John 16:16-24
       - Romans 8:20-23
-    source_chapters:
-      - s20260823-joyful
-      - s20260823-invocation
-      - s20260823-higher-throne
-      - s20260823-responsive-reading
-      - s20260823-cross
-      - s20260823-choir
-      - s20260823-romans
-    review_notes: []
   - id: s20260823-choir
     video_id: QCNrRkiFeKw
-    start: 1667.16
-    end: 1897.28
+    start: "27:47.16"
+    end: "31:37.28"
     type: music
     title: "Youth Choir: Bound for the Promised Land"
-    confidence: 0.92
     scripture: []
     topics:
       - worship
@@ -244,12 +138,10 @@ chapters:
       - youth choir
       - promised land
     parent_id: c20260823-worship-scripture
-    source_chapters:
-      - s20260823-choir
   - id: c20260823-gifts-for-ministry
     video_id: QCNrRkiFeKw
-    start: 1962.3
-    end: 2101.92
+    start: "32:42.3"
+    end: "35:01.92"
     title: Discovering Gifts for Faithful Ministry
     type: address
     summary: Pastor Yong describes learning through sermon preparation and encourages listeners to
@@ -260,14 +152,11 @@ chapters:
       - discipleship
       - service-life
     scripture: []
-    source_chapters:
-      - s20260823-pulpit-introduction
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20260823-christian-citizenship
     video_id: QCNrRkiFeKw
-    start: 2102.12
-    end: 2729.62
+    start: "35:02.12"
+    end: "45:29.62"
     title: Christian Allegiance and Civic Responsibility
     type: question-answer
     summary: Answering a National Day follow-up, Pastor Yong urges civic participation under allegiance
@@ -293,14 +182,11 @@ chapters:
       - justice
       - discernment
     scripture: []
-    source_chapters:
-      - s20260823-politics-question
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20260823-trust-christs-care
     video_id: QCNrRkiFeKw
-    start: 2730.08
-    end: 3625.88
+    start: "45:30.08"
+    end: "1:00:25.88"
     title: Trusting Christ's Care in Uncertainty
     type: sermon
     summary: Revisiting the Farewell Discourse and the Spirit's presence, Pastor Yong interprets the
@@ -332,19 +218,14 @@ chapters:
       - John 16:17-18
       - John 16:19
       - 1 Peter 5:7
-    source_chapters:
-      - s20260823-recap
-      - s20260823-jesus-cares
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s20260823-jesus-cares
     video_id: QCNrRkiFeKw
-    start: 3097.04
-    end: 3625.88
+    start: "51:37.04"
+    end: "1:00:25.88"
     type: sermon
     title: Jesus Addresses the Disciples' Anxiety
     speaker_id: yong-teck-meng
-    confidence: 0.94
     scripture:
       - John 16:16
       - John 16:16-18
@@ -369,12 +250,10 @@ chapters:
       - pentecost
       - trust
     parent_id: c20260823-trust-christs-care
-    source_chapters:
-      - s20260823-jesus-cares
   - id: c20260823-sorrow-to-joy
     video_id: QCNrRkiFeKw
-    start: 3626.08
-    end: 4068.5
+    start: "1:00:26.08"
+    end: "1:07:48.5"
     title: Sorrow Gives Way to Promised Joy
     type: sermon
     summary: Pastor Yong uses Jesus' childbirth illustration and family memories to discuss sorrow
@@ -392,14 +271,11 @@ chapters:
       - Revelation 3:14
       - John 16:21
       - John 16:22
-    source_chapters:
-      - s20260823-labour
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20260823-prayer-for-christs-purposes
     video_id: QCNrRkiFeKw
-    start: 4068.68
-    end: 4422.02
+    start: "1:07:48.68"
+    end: "1:13:42.02"
     title: Ask the Father for Christ's Purposes
     type: sermon
     summary: Pastor Yong interprets asking in Jesus' name as seeking Christ's purposes, treasuring
@@ -423,14 +299,11 @@ chapters:
       - Hebrews 10:23
       - Hebrews 10:20
       - John 16:16-24
-    source_chapters:
-      - s20260823-access
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: c20260823-joyful-service-amid-suffering
     video_id: QCNrRkiFeKw
-    start: 4423.34
-    end: 5556.66
+    start: "1:13:43.34"
+    end: "1:32:36.66"
     title: Serving With Joy While Awaiting Restoration
     type: sermon
     summary: Pastor Yong uses Romans 8 to acknowledge continuing suffering and urges patient hope and
@@ -474,19 +347,14 @@ chapters:
       - Matthew 5:11-12
       - Hebrews 1:9
       - Galatians 5:22-23
-    source_chapters:
-      - s20260823-suffering
-      - s20260823-joy
-    review_notes: []
     speaker_id: yong-teck-meng
   - id: s20260823-joy
     video_id: QCNrRkiFeKw
-    start: 4847.22
-    end: 5556.66
+    start: "1:20:47.22"
+    end: "1:32:36.66"
     type: sermon
     title: Joy Grows Through Serving Christ
     speaker_id: yong-teck-meng
-    confidence: 0.93
     scripture:
       - John 16:24
       - 1 Thessalonians 5:16
@@ -517,12 +385,10 @@ chapters:
       - third millennium
       - journey of faith
     parent_id: c20260823-joyful-service-amid-suffering
-    source_chapters:
-      - s20260823-joy
   - id: c20260823-response-closing
     video_id: QCNrRkiFeKw
-    start: 5556.66
-    end: 6427.68
+    start: "1:32:36.66"
+    end: "1:47:07.68"
     title: Response and Closing
     type: closing
     summary: Pastor Yong leads prayer for trust, joy and theological training, followed by the service's
@@ -553,13 +419,6 @@ chapters:
       - John 16:23-24
       - Romans 15
       - 2 Corinthians 13
-    source_chapters:
-      - s20260823-response
-      - s20260823-offertory
-      - s20260823-footprints
-      - s20260823-blessing
-      - s20260823-announcements
-    review_notes: []
 sermon_description: Pastor Yong reads John 16:16-24 as encouragement to trust Christ's care when
   sorrow obscures what lies ahead. He connects the disciples' promised joy with access to the Father
   through Christ and the Spirit, directing prayer toward Christ's purposes. Drawing on Romans 8, he

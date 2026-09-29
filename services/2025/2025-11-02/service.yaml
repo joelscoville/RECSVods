@@ -1,81 +1,13 @@
+# yaml-language-server: $schema=../../../schema/service.schema.json
+# Editing guide: ../../../docs/editing-services.md
+# Times are quoted MM:SS or HH:MM:SS, optionally with fractional seconds. Keep existing IDs stable.
+
 id: 2025-11-02
 date: 2025-11-02
 title: "The Death That Brings Life: Sacrifice"
-sermon_title: "The Death That Brings Life: Sacrifice"
 type: sermon
 workflow_status: complete
 editorial_status: needs_review
-review_notes:
-  - Pre-trimmed sermon. Trusted title, date, Genesis 22:1-19 and Romans 12:1-2 preserved. Title and
-    references confirmed by opening frames at 0/10/70s. The title is not shortened to Sacrifice in
-    display metadata.
-  - "Speaker unknown: no name caption found in inspected slides. Opening speech says Reverend Yong
-    is away and refers to Brother Hadi; neither is identified as this preacher. No identification
-    from appearance."
-  - Chapters describe the sermon itself, including its own opening and closing prayers. References
-    to earlier responsive reading, worship songs and Romans reading do not establish those service
-    sections in this upload. The Apostles’ Creed slide at 3103s is not evidence of a creed
-    recitation; none is invented.
-  - Full imported span 0–3104.1706875s retained; acquisition and repeat ffprobe measured 3104.181s.
-    Programme starts with the greeting at 0s; closing Amen ends at 3100.14s in ASR. Context margins
-    clip to this pre-trimmed recording.
-  - All 758 segments / 6152 words reviewed in timestamped pipeline evidence with adjacent context.
-    Transcripts below are edited ASR-derived excerpts, not complete verbatim or listening-verified
-    transcripts. Audio samples decoded successfully but were not listened to. Punctuation is
-    normalized; uncertain words and omitted material are marked without reconstruction or
-    translation.
-  - "Source-alignment warning retained, including the region around 16 minutes: 14 outside-segment
-    word warnings on source IDs 30, 87, 167, 210, 216, 227, 229, 432, 488, 490, 655, 658, 663, 749;
-    maximum 0.36s. One zero-duration word; no segment overlaps, backward starts or tail clamps.
-    Slides around 940–1000s corroborate topic progression, not word-level alignment. No timestamps
-    shifted."
-  - "Additional source-alignment uncertainty: 1460.08–1477.46s has no ASR segment (17.38s, over
-    16s); frames show Genesis 22:5-6 reading slides. Do not invent the missing words or call this
-    silence. The 2416.24–2435.92s segment spans 19.68s with few words; its timing needs listening
-    review. See the affected passage notes."
-  - At 2167.12–2181.44s the speaker introduces Sacrifice by Bob Fitts and returns to slides almost
-    immediately. The 2175s slide confirms title/artist; no complete song performance or omitted
-    duration is inferred. No lyrics retained.
-  - Bible readings and embedded quotations are replaced by explicit reference-only markers.
-    References come from supplied metadata, transcript announcements or inspected slides, never
-    Bible memory. Historical, geographical, chronological and theological statements remain the
-    speaker’s claims. Speculation about Abraham’s feelings, Isaac’s age and voluntary submission is
-    not presented as established fact.
-  - Original audio already absent from both designated roots. Explicit --allow-missing-audio import
-    passed transcript checksum, approved engine/schema/timing, source identity and duration checks.
-    Exact safe receipt projection copied below; supplied audio hash was not reverified. Processing
-    complete, interpretation needs_review; see docs/sacrifice-review.md.
-  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
-    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
-    editorial approval implied."
-  - "Concise service outline: original chapter metadata and boundaries preserved in
-    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
-    service context. Agent interpretation remains needs_review."
-  - Plan only, based on the current service metadata and all 47 supplied passage summaries across 21
-    original chapters; interpretation remains needs_review and the speaker remains unidentified.
-  - "Five sermon movements follow the argument: sacrifice and developing faith, the cost of
-    surrendering Isaac, mature trust expressed in obedience, surrendered loyalties and provision
-    pointing to Christ, and the response of daily surrender. Boundaries use existing chapter
-    transitions, not new timing estimates."
-  - This upload is a pre-trimmed sermon with its own greeting and opening and closing prayers, which
-    remain within the first and last movements. Earlier service references and the final Creed slide
-    do not establish additional recorded liturgy. The Bob Fitts song introduction does not establish
-    a complete performance or separate music group.
-  - Five optional cues preserve useful access to the child-sacrifice objection, the speaker’s
-    interpretation of Isaac’s submission, the Isaac–Christ comparison, everyday worship and
-    preparation for trials. Other examples and the age discussion stay within their parent movements
-    rather than reproducing the old inventory as subsections.
-  - Abraham’s imagined feelings, Isaac’s voluntary submission, historical and geographical
-    connections, and theological conclusions remain the speaker’s interpretations. Isaac’s age is
-    unspecified; the conditional calculation, unknown interval between chapters, Josephus
-    attribution and physical-strength inference are not independently established.
-  - Existing source-alignment uncertainties remain, including the 17.38-second ASR gap at
-    1460.08–1477.46s and the sparse segment at 2416.24–2435.92s. No missing words, silence or
-    revised boundaries are inferred; no media or ASR was used for this plan.
-  - The sermon description is the single public paragraph beneath the video and in service context.
-    All group and cue summaries are internal retrieval/review metadata and must not render in
-    navigation, outlines or search-result cards. Source IDs retain their original upload membership
-    and bounds for downstream derivation and preservation.
 speakers: []
 topics:
   - id: sacrifice
@@ -89,47 +21,16 @@ topics:
 videos:
   - id: 94fynFHtreg
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
-    duration: 3104.181
+    duration: "51:44.181"
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    disposition_evidence: "Authorized full acquisition verified RECS channel/ID and usable audio/video;
-      acquisition and repeat ffprobe measured 3104.181s (metadata 3104s). Eleven coarse 30-second
-      audio windows and frames at 0–3000s plus eighteen refined frames and five additional 30-second
-      audio windows decoded. All twenty-nine frames inspected: expected title/references, sermon
-      slides and closing prayer. Imported text matches expected content. Assessment is based on
-      decoding, visual inspection and transcript correspondence, not direct listening,
-      embedded-player testing or original-audio hash verification."
-    transcription_language: en
-    transcribed_span:
-      start: 0
-      end: 3104.1706875
-    transcription_provenance:
-      engine: faster-whisper
-      engine_version: 1.2.1
-      model: large-v3-turbo
-      backend_version: 4.8.2
-      compute_type: float16
-      device: Tesla T4
-      settings:
-        beam_size: 5
-        word_timestamps: true
-        vad_filter: false
-        condition_on_previous_text: false
-      audio_sha256: 64d38620b9dd4da1be134cebd3c9ae51e3d067a27bf5624a864471459350f37a
-      duration_seconds: 3104.1706875
-      elapsed_seconds: 97.754
-      real_time_factor: 0.03149
-      transcribed_at: 2026-09-25T11:10:07.695862+00:00
-      transcript_sha256: e3ef25792ddfea1f8cc53a277548f95a6da8e492e1b87e5473a0734a369942c0
-      source_duration_seconds: 3104.181
-      duration_delta_seconds: -0.01031250000005457
-      audio_hash_verified: false
 chapters:
+  # Check boundaries around 24:20.08–24:37.46 and 40:16.24–40:35.92; source-ASR gaps make alignment uncertain.
   - id: c20251102-sacrifice-and-growing-faith
     video_id: 94fynFHtreg
-    start: 0
-    end: 461.52
+    start: "0:00"
+    end: "7:41.52"
     title: Sacrifice Begins with Hope and Growing Faith
     type: sermon
     summary: After greeting and prayer, the speaker distinguishes chosen sacrifice from involuntary loss
@@ -154,15 +55,10 @@ chapters:
       - Genesis 16
       - Genesis 18
       - Genesis 20
-    source_chapters:
-      - s1102-opening
-      - s1102-sacrifice
-      - s1102-earlier-tests
-    review_notes: []
   - id: c20251102-testing-what-abraham-treasures
     video_id: 94fynFHtreg
-    start: 461.52
-    end: 1031.56
+    start: "7:41.52"
+    end: "17:11.56"
     title: The Test Concerns What Abraham Treasures
     type: sermon
     summary: The speaker presents Isaac as Abraham’s promised heir and greatest delight, interpreting
@@ -188,19 +84,12 @@ chapters:
       - Genesis 22:2
       - 2 Samuel 24
       - Leviticus 20:1-3
-    source_chapters:
-      - s1102-promise
-      - s1102-joy
-      - s1102-moriah
-      - s1102-heart
-    review_notes: []
   - id: s1102-moriah
     video_id: 94fynFHtreg
-    start: 840.22
-    end: 976.66
+    start: "14:00.22"
+    end: "16:16.66"
     type: sermon
     title: God Opposes Child Sacrifice
-    confidence: 0.85
     scripture:
       - Genesis 22:2
       - 2 Samuel 24
@@ -213,12 +102,10 @@ chapters:
       - mount moriah
       - child sacrifice
     parent_id: c20251102-testing-what-abraham-treasures
-    source_chapters:
-      - s1102-moriah
   - id: c20251102-mature-trust-and-costly-obedience
     video_id: 94fynFHtreg
-    start: 1031.56
-    end: 1791.3
+    start: "17:11.56"
+    end: "29:51.3"
     title: Mature Trust Enables Costly Obedience
     type: sermon
     summary: The speaker attributes Abraham’s costly obedience to trust matured through experience,
@@ -244,20 +131,12 @@ chapters:
       - Genesis 23
       - Genesis 22:7-8
       - Genesis 22:9
-    source_chapters:
-      - s1102-obedience
-      - s1102-mature-faith
-      - s1102-journey
-      - s1102-age
-      - s1102-trust
-    review_notes: []
   - id: s1102-trust
     video_id: 94fynFHtreg
-    start: 1640.72
-    end: 1791.3
+    start: "27:20.72"
+    end: "29:51.3"
     type: sermon
     title: Isaac’s Submission as Trust in His Father
-    confidence: 0.86
     scripture:
       - Genesis 22:7-8
       - Genesis 22:9
@@ -271,12 +150,10 @@ chapters:
       - affection
       - provision
     parent_id: c20251102-mature-trust-and-costly-obedience
-    source_chapters:
-      - s1102-trust
   - id: c20251102-surrender-and-provision-in-christ
     video_id: 94fynFHtreg
-    start: 1791.3
-    end: 2165.94
+    start: "29:51.3"
+    end: "36:05.94"
     title: Divided Loyalties Die as Provision Points to Christ
     type: sermon
     summary: The speaker interprets the mountain episode as the ending of divided allegiance and
@@ -306,18 +183,12 @@ chapters:
       - Matthew 12:40
       - Hebrews 11:19
       - 1 Corinthians 15:3-4
-    source_chapters:
-      - s1102-surrender
-      - s1102-provision
-      - s1102-christ
-    review_notes: []
   - id: s1102-christ
     video_id: 94fynFHtreg
-    start: 2023.62
-    end: 2165.94
+    start: "33:43.62"
+    end: "36:05.94"
     type: sermon
     title: Isaac Is Spared; Christ Dies and Rises
-    confidence: 0.86
     scripture:
       - Genesis 22:2
       - Matthew 3:17
@@ -336,12 +207,10 @@ chapters:
       - call to sacrifice
       - resurrection
     parent_id: c20251102-surrender-and-provision-in-christ
-    source_chapters:
-      - s1102-christ
   - id: c20251102-mercy-and-daily-surrender
     video_id: 94fynFHtreg
-    start: 2165.94
-    end: 3104.181
+    start: "36:05.94"
+    end: "51:44.181"
     title: Mercy Calls for Daily Surrender
     type: sermon
     summary: Turning to Romans 12, the speaker urges grateful daily surrender through remembered mercy,
@@ -374,21 +243,12 @@ chapters:
       - Romans 5
       - Genesis 22:1-19
       - John 10:10
-    source_chapters:
-      - s1102-response
-      - s1102-daily
-      - s1102-renewal
-      - s1102-training
-      - s1102-conclusion
-      - s1102-closing
-    review_notes: []
   - id: s1102-daily
     video_id: 94fynFHtreg
-    start: 2399.24
-    end: 2616.64
+    start: "39:59.24"
+    end: "43:36.64"
     type: sermon
     title: Surrender Extends Beyond Sunday Worship
-    confidence: 0.84
     scripture:
       - Romans 12:1-2
       - Matthew 16
@@ -406,15 +266,12 @@ chapters:
       - sunday service
       - selfish desires
     parent_id: c20251102-mercy-and-daily-surrender
-    source_chapters:
-      - s1102-daily
   - id: s1102-training
     video_id: 94fynFHtreg
-    start: 2713.78
-    end: 2947.64
+    start: "45:13.78"
+    end: "49:07.64"
     type: sermon
     title: Ordinary Obedience Prepares Faith for Trials
-    confidence: 0.88
     scripture:
       - Genesis 22
       - Romans 5
@@ -428,8 +285,6 @@ chapters:
       - trials
       - resistance training
     parent_id: c20251102-mercy-and-daily-surrender
-    source_chapters:
-      - s1102-training
 sermon_description: The speaker presents Abraham’s test as a surrender of treasured gifts and
   divided loyalties, sustained by trust developed through imperfect experience. He connects the
   provision for Isaac with Christ’s sacrifice, while distinguishing Isaac’s spared life from Jesus’

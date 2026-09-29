@@ -8,7 +8,7 @@ import {
   assertWorkflowTransition, IdentifierRecordSchema, loadArchive,
   parseWithPath, parseYaml, ServiceSourceSchema, type WorkflowStatus,
 } from '../site/lib/archive';
-import { historyArchiveFromFiles, historySource, type HistoryService } from '../site/lib/legacy-schema';
+import { historyArchiveFromFiles, historySource, isAuthoringSource, type HistoryService } from '../site/lib/legacy-schema';
 import { assertInternalHistory } from '../site/lib/internal-validation';
 import { assertManifestDiff, BackfillManifestSchema, MANIFEST_PATH, manifestFromFiles, validateManifestReferences } from '../site/lib/backfill';
 
@@ -18,6 +18,27 @@ function git(root: string, args: string[], input?: string): string {
 }
 function withoutApproval(value: Record<string, unknown>): Record<string, unknown> {
   return Object.fromEntries(Object.entries(value).filter(([key]) => !(APPROVAL_FIELDS as readonly string[]).includes(key)));
+}
+/** Technical flags and YAML comments do not approve or change the interpretation. */
+function withoutQuirks(value: Record<string, unknown>): Record<string, unknown> {
+  return { ...value, ...(Array.isArray(value.videos) ? { videos: value.videos.map(video => {
+    const { quirks: _quirks, ...rest } = video as Record<string, unknown>; return rest;
+  }) } : {}) };
+}
+function editorialView(value: HistoryService, modernize: boolean): Record<string, unknown> {
+  if (!modernize || !('chapters' in value)) return withoutQuirks(value as unknown as Record<string, unknown>);
+  const { sermon_title, review_notes: _notes, ...rest } = value as unknown as Record<string, unknown>;
+  const processing = new Set(['transcription_language', 'transcript_engine', 'transcribed_span', 'transcription_provenance', 'caption_provenance', 'disposition_evidence', 'quirks']);
+  return { ...rest, title: typeof sermon_title === 'string' ? sermon_title : value.title,
+    videos: value.videos.map(video => Object.fromEntries(Object.entries(video).filter(([key]) => !processing.has(key)))),
+    chapters: value.chapters.map(chapter => Object.fromEntries(Object.entries(chapter).filter(([key]) => !['review_notes', 'confidence', 'source_chapters'].includes(key)))) };
+}
+function sameEditorial(a: HistoryService, b: HistoryService, approval = true): boolean {
+  // Only a transition between old and current source formats normalizes historical bookkeeping.
+  // Two historical trees still receive the original, full-content comparison.
+  const modernize = ('review_notes' in a) !== ('review_notes' in b);
+  const left = editorialView(a, modernize), right = editorialView(b, modernize);
+  return isDeepStrictEqual(approval ? left : withoutApproval(left), approval ? right : withoutApproval(right));
 }
 function treeFiles(root: string, revision: string): Map<string, string> {
   const files = new Map<string, string>();
@@ -117,7 +138,7 @@ function checkCommit(root: string, parent: string, commit: string, message: stri
         throw new Error(`${source.filename}: agent/AI-attributed commits cannot approve interpretation`);
       }
     } else {
-      if (!isDeepStrictEqual(withoutApproval(previous), withoutApproval(service))) {
+      if (!sameEditorial(previous, service, false)) {
         throw new Error(`${source.filename}: reviewed interpretation changed; reset to needs_review and clear review metadata`);
       }
       if (previous.reviewed_by !== service.reviewed_by || previous.reviewed_at !== service.reviewed_at) {
@@ -136,7 +157,7 @@ function checkCommit(root: string, parent: string, commit: string, message: stri
       if (changed.some((filename) => directories.some((directory) => filename.startsWith(directory)) && /\.(bin|json)$/.test(filename))) {
         throw new Error(`${source.filename}: reviewed vector/compatibility sidecar changed; reset to needs_review and clear review metadata`);
       }
-      if (changed.some((filename) => related.has(filename))
+      if (!isAuthoringSource(source.raw) && changed.some((filename) => related.has(filename))
         && !commitTrailers.some((t) => /^Mechanical-Change:\s*(formatting|schema-migration)$/i.test(t))) {
         throw new Error(`${source.filename}: mechanical changes retaining reviewed require Mechanical-Change: formatting (or schema-migration)`);
       }
@@ -170,7 +191,7 @@ function checkMerge(root: string, parents: string[], commit: string): void {
     const inherited = snapshots.some(snapshot => {
       const parent = snapshot.sources.get(service.id);
       return parent?.source.editorial_status === 'reviewed' && parent.filename === current.filename
-        && isDeepStrictEqual(parent.raw, current.raw)
+        && sameEditorial(parent.source, current.source)
         && isDeepStrictEqual(related(snapshot.files, parent.filename), related(afterFiles, current.filename));
     });
     if (!inherited) throw new Error(`${current.filename}: merge introduces unapproved interpretation or artifacts; reset to needs_review and approve separately`);
@@ -179,7 +200,7 @@ function checkMerge(root: string, parents: string[], commit: string): void {
     for (const snapshot of snapshots) {
       const parent = snapshot.sources.get(service.id);
       if (base && (!parent || (parent.source.editorial_status !== 'reviewed'
-        && (!isDeepStrictEqual(parent.raw, base.raw) || !isDeepStrictEqual(related(snapshot.files, parent.filename), related(baseFiles, base.filename)))))) {
+        && (!sameEditorial(parent.source, base.source) || !isDeepStrictEqual(related(snapshot.files, parent.filename), related(baseFiles, base.filename)))))) {
         throw new Error(`${current.filename}: concurrent unreviewed revision requires review after merge resolution`);
       }
     }

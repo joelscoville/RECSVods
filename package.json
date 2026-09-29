@@ -20,11 +20,13 @@
     "test:performance": "vitest run --config vitest.performance.config.ts",
     "test:built": "PUBLIC_REPOSITORY_URL=https://github.com/example/archive-corrections vitest run --config vitest.built.config.ts",
     "check": "tsx scripts/check.ts",
-    "test:archive": "pnpm validate:archive && pnpm validate:outlines && pnpm index:verify && pnpm verify:tracked && pnpm verify:preserved",
+    "test:archive": "pnpm schema:service -- --check && pnpm validate:archive && pnpm validate:outlines && pnpm index:verify && pnpm verify:tracked && pnpm verify:preserved",
     "build:test": "SITE_BASE_PATH=/replay-check/ pnpm build && SITE_BASE_PATH=/replay-check/ PUBLIC_REPOSITORY_URL=https://github.com/example/archive-corrections pnpm build:preview",
     "test:browser": "pnpm build:test && pnpm test:built && SITE_BASE_PATH=/replay-check/ pnpm verify:pages && pnpm test:e2e && pnpm evaluate:core -- --exact-only",
     "validate:archive": "tsx scripts/archive.ts validate",
     "validate:outlines": "tsx scripts/validate-outlines.ts",
+    "author": "tsx scripts/author.ts",
+    "schema:service": "tsx scripts/service-schema.ts",
     "test:search": "vitest run tests/search.test.ts tests/search-contract.test.ts tests/search-presentation.test.ts tests/scripture-reference.test.ts tests/prepared-search.test.ts",
     "evaluate:core": "tsx scripts/evaluate-core.ts",
     "backfill": "tsx scripts/backfill.ts",
@@ -37,6 +39,8 @@
     "verify:pages": "tsx scripts/pages.ts verify",
     "verify:tracked": "tsx scripts/verify-tracked.ts",
     "verify:preserved": "tsx scripts/verify-preserved.ts",
+    "quirks": "tsx scripts/video-quirks.ts",
+    "validate:quirks": "tsx scripts/video-quirks.ts validate",
     "benchmark:search": "tsx scripts/benchmark-search.ts",
     "test:e2e": "playwright test",
     "test:e2e:model": "RECS_E2E_NO_MODEL=0 playwright test --project=model",
@@ -64,6 +68,7 @@
     "@fontsource-variable/atkinson-hyperlegible-next": "^5.2.5",
     "@fontsource-variable/domine": "^5.2.6",
     "@huggingface/transformers": "3.8.1",
+    "@noble/hashes": "^2.4.0",
     "astro": "^7.3.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -85,6 +90,7 @@
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.1",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.11",
+    "zod-to-json-schema": "^3.25.2"
   }
 }

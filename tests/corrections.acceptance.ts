@@ -4,6 +4,12 @@ import { expect, it } from 'vitest';
 import { loadArchive, publishedServices } from '../site/lib/archive';
 import { loadCorrectionConfig } from '../site/lib/source-links';
 
+it('uses the operator-configured project destination in ordinary builds', () => {
+  const repositoryUrl = 'https://github.com/example/renamed-archive';
+  expect(loadCorrectionConfig(process.cwd(), {}).repositoryUrl).toBe('https://github.com/joelscoville/RECSVods');
+  expect(loadCorrectionConfig(process.cwd(), { PUBLIC_REPOSITORY_URL: repositoryUrl }).repositoryUrl).toBe(repositoryUrl);
+});
+
 // Explicit built-artifact lane: missing output fails rather than silently skipping.
 it('verifies one service suggestion per built page and build-only configuration exclusion', () => {
   const root = process.cwd(), output = path.join(root, 'dist/preview');

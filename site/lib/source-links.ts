@@ -2,6 +2,7 @@
 import { execFileSync } from 'node:child_process';
 import { loadArchive, publishedServices, type BuildMode, type Service } from './archive';
 import { validateCorrectionUrl, validateRepositoryUrl, validateSourceRef, type CorrectionConfig } from './corrections';
+import defaults from '../config/corrections.json';
 
 type Environment = Record<string, string | undefined>;
 type GitRead = (args: string[]) => string | undefined;
@@ -40,6 +41,7 @@ export function buildCorrectionConfig(services: Service[], mode: BuildMode, repo
 }
 export function loadCorrectionConfig(root = process.cwd(), env: Environment = process.env): CorrectionConfig {
   const git = gitReader(root);
-  const repository = resolveRepositoryConfig(env, git);
+  // Explicit project destination, chosen by the operator; never infer it from a remote.
+  const repository = resolveRepositoryConfig({ ...env, PUBLIC_REPOSITORY_URL: env.PUBLIC_REPOSITORY_URL || defaults.repositoryUrl }, git);
   return buildCorrectionConfig(loadArchive(root), env.ARCHIVE_MODE === 'preview' ? 'preview' : 'production', repository);
 }

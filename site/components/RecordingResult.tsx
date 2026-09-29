@@ -4,6 +4,7 @@ import { formatDate, formatTime } from '../lib/urls';
 import { parseScriptureReference, scriptureOverlaps } from '../lib/scripture';
 import ScriptureLinks from './ScriptureLinks';
 import { VideoArt } from './VideoCard';
+import { QuirkBadges } from './VideoQuirks';
 import type { BestVerseSelector } from '../lib/verse-selection';
 
 interface ShownReference { reference: string; display: string }
@@ -54,6 +55,7 @@ export default function RecordingResult({ recording, chapter, reasons, query, fi
       <h2><a href={recording.href}>{recording.title}</a></h2>
       <p className="metadata"><time dateTime={recording.date}>{formatDate(recording.date)}</time>{recording.speaker && <> · {recording.speaker}</>}</p>
       {recording.preview && <p className="preview-label">Unreviewed preview</p>}
+      <QuirkBadges quirks={recording.quirks} multipart={recording.parts.length > 1} />
     </div>
     <div className="result-match">
       <p className="matched-chapter"><span className="timestamp">{formatTime(match.start)}</span><span><strong>{match.title}</strong>

@@ -8,6 +8,10 @@ import { parse } from 'yaml';
 import { CHAPTER_VECTOR_CONFIG, decodeChapterVectors, packChapterVectors, type ChapterVectorFile } from '../site/lib/chapter-vectors';
 import { isEmbeddingVector, preprocessEmbedding } from '../site/lib/embedding-config';
 import { createEmbeddingSession, prepare, privateDirectory, sha256, type EmbeddingSession } from './embeddings';
+import { timeInSeconds } from '../site/lib/timecode';
+import { loadArchive } from '../site/lib/archive';
+import { readProcessingContext } from './check-reports';
+import { HistoricalVideoSchema } from '../site/lib/processing-provenance';
 
 export interface ChapterVectorChapter { id: string; video_id: string; start: number; end: number }
 export type ChapterVectorSourceKind = 'raw_colab_json' | 'canonical_evidence_json' | 'legacy_passages' | 'none';
@@ -52,7 +56,7 @@ function chaptersFromSource(source: unknown): WorkingChapter[] {
   const value = record(source);
   if (!Array.isArray(value.chapters)) throw new Error('Chapter metadata must be ready before vector generation');
   const chapters = value.chapters.map((raw): WorkingChapter => {
-    const item = record(raw), identity = chapter(raw);
+    const item = record(raw), identity = chapter({ ...item, start: timeInSeconds(item.start), end: timeInSeconds(item.end) });
     if (item.source_chapters !== undefined && (!Array.isArray(item.source_chapters) || !item.source_chapters.length
       || item.source_chapters.some((id) => typeof id !== 'string' || !id))) throw new Error('Invalid preserved chapter lineage');
     return { ...identity, ...(item.source_chapters ? { source_chapters: item.source_chapters as string[] } : {}) };
@@ -318,6 +322,7 @@ export async function processChapterVectors(options: ChapterVectorProcessOptions
   if (Boolean(options.service) === Boolean(options.all)) throw new Error('Select exactly one service or all services');
   if (options.createSession && !options.fixtureRoot) throw new Error('Injected encoders require fixtureRoot');
   const root = path.resolve(options.fixtureRoot ?? options.root ?? process.cwd());
+  if (!options.fixtureRoot) loadArchive(root); // Current authoring files must satisfy the clock-based schema.
   if (options.transcriptsDir && !(await lstat(options.transcriptsDir)).isDirectory()) throw new Error('Transcript input must be a directory');
   const paths = await servicePaths(root);
   const selected = options.all ? paths : paths.filter((filename) => path.basename(path.dirname(filename)) === options.service
@@ -327,9 +332,17 @@ export async function processChapterVectors(options: ChapterVectorProcessOptions
   const plans = [];
   for (const filename of selected) {
     const sourceBytes = (await optionalFile(filename))!;
-    const source = record(safeYaml(sourceBytes.toString('utf8'))), chapters = chaptersFromSource(source);
+    const source = record(safeYaml(sourceBytes.toString('utf8')));
     const directory = path.dirname(filename), id = typeof source.id === 'string' ? source.id : path.basename(directory);
-    const inputs = await serviceInputs(directory, chapters, options.transcriptsDir, source);
+    // Only explicit processing consults the diagnostic appendix. Static builds/verification do not.
+    const context = readProcessingContext(root, id);
+    const chapters = chaptersFromSource(source).map(item => ({ ...item,
+      ...(!item.source_chapters && context?.chapters[item.id]?.source_chapters ? { source_chapters: context.chapters[item.id].source_chapters } : {}) }));
+    const processingSource = context && Array.isArray(source.videos) ? { ...source, videos: source.videos.map(raw => {
+      const video = record(raw);
+      return HistoricalVideoSchema.parse({ ...context.videos[String(video.id)], ...video, duration: timeInSeconds(video.duration) });
+    }) } : source;
+    const inputs = await serviceInputs(directory, chapters, options.transcriptsDir, processingSource);
     const binaryPath = path.join(directory, 'chapter-vectors.bin'), manifestPath = path.join(directory, 'chapter-vectors.json');
     const previousBytes = await optionalFile(binaryPath), previousManifest = await optionalFile(manifestPath);
     if (Boolean(previousBytes) !== Boolean(previousManifest)) throw new Error(`Incomplete chapter vector pair for ${id}; restore the last known-good pair before generating.`);

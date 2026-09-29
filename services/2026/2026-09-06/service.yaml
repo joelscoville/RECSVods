@@ -1,73 +1,13 @@
+# yaml-language-server: $schema=../../../schema/service.schema.json
+# Editing guide: ../../../docs/editing-services.md
+# Times are quoted MM:SS or HH:MM:SS, optionally with fractional seconds. Keep existing IDs stable.
+
 id: 2026-09-06
 date: 2026-09-06
-title: RECS 6 September 2026 — Eternal Life
-sermon_title: Eternal Life
+title: Eternal Life
 type: service
 workflow_status: complete
 editorial_status: needs_review
-review_notes:
-  - Only physical upload ZTDYIJUDb0M was processed. Date and 9:30am service are displayed at 0s;
-    sermon title Eternal Life and references John 17:1-5 and 1 John 5:10-12 are displayed at 1920s
-    and 1940s.
-  - Full English CPU transcription succeeded for 0–6759s. Source duration 6759s; ffprobe container
-    duration 6759.281s. Programme begins at the recording start and continues through dismissal; no
-    waiting interval was discarded.
-  - "One bounded same-model recovery pass recovered the opening, Communion sequence and pastoral
-    prayer. On 2026-09-25 the operator instructed the agent to flag the remaining 251.08–318.34s
-    uncertainty for human editorial review and continue. Agent processing is complete, not a claim
-    of a complete verbatim transcript: human listening must distinguish quiet prayer from missing
-    spoken lead-in. No further automatic retry was run; editorial_status remains needs_review."
-  - All transcript text is an ASR-derived review draft, not an audio-verified verbatim edition.
-    Punctuation/capitalization normalized; unresolved words marked rather than completed from
-    memory. Segment timestamps are machine estimates, not word-level guarantees.
-  - All sung lyrics, creed/liturgical recitations and scripture quotations are omitted with explicit
-    markers. A few spoken biblical allusions without an announced or displayed verse are marked
-    reference uncertain rather than assigned guessed references. Commentary is retained separately.
-    Recovery outputs retain local offsets externally; absolute time equals filename start plus raw
-    millisecond offset divided by 1000.
-  - No reliable displayed full speaker name was found. Spoken introductions sound like Pastor Yong,
-    Patrick and Brother Joseph; these are review leads only, not verified speaker records. speakers
-    is intentionally empty.
-  - Sections preserve music, Communion, readings, prayer and announcements in playback. Search
-    passages cover coherent spoken material and reference-only readings; gaps and longer passages
-    are explained in docs/first-recording-review.md.
-  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
-    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
-    editorial approval implied."
-  - "Concise service outline: original chapter metadata and boundaries preserved in
-    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
-    service context. Agent interpretation remains needs_review."
-  - Plan only, based on the current service metadata and all 77 supplied passage summaries under the
-    current concise-service-outline brief; editorial status remains needs_review and speaker
-    identities remain unverified.
-  - Seven equal peer entries comprise Opening, Worship and Scripture, four argument-led sermon
-    movements, and Response and Closing; all 22 original chapters are assigned once in physical
-    order on the single upload ZTDYIJUDb0M.
-  - The sermon introduction and recording-access notice stay with the John 16 recap establishing
-    confidence in God’s love; the study prayer, John 17 background and prayer-practice illustrations
-    form one movement; the cross and glory illustrations stay together; the question about eternal
-    life, its relational answer, application and concluding prayer form the final movement.
-  - "Two cues provide useful access within those movements: prayer practice moves from Jesus’
-    example to daily discipline, and Knowing God Changes Daily Life marks the answer in John 17:3
-    and its application after the question and church anecdotes. Each cue retains its original
-    chapter span; no finer timestamp is inferred."
-  - Routine service material has no cues; songs, readings, Communion, congregational prayers,
-    offerings and notices remain accessible through their neutral parent groups. No independent
-    address is evidenced, and incidental announcements do not become subsections.
-  - Only the holistic sermon description is intended for display beneath the video and in service
-    context; all parent and cue summaries are internal retrieval/review material, never public
-    chapter, subsection or search-result descriptions.
-  - "Existing timing and source qualifications remain unresolved: the opening prayer lead-in at
-    251.08–318.34s, machine-estimated boundaries, incomplete responsive-reading recognition,
-    unconfirmed hymn title, Communion translation uncertainty and pastoral-prayer onset refinement.
-    Hebrews 13 remains a chapter-level reference; the endpoint remains the recording bound."
-  - The proposed setting of John 17, Greek-word interpretation, doctrinal and denominational
-    comparisons, personal stories and historical claims remain the preacher’s account, not
-    independently verified conclusions; the Billy Graham answer remains attributed. Announcements
-    are historical, and anniversary logistics were still being considered.
-  - Migration must derive bounds, upload membership, scripture and topics from these source
-    assignments, preserve original IDs, notes and provenance internally, retain old-link mappings,
-    and recompute vectors for changed spans; this plan does not perform that migration.
 speakers: []
 topics:
   - id: prayer
@@ -87,23 +27,16 @@ topics:
 videos:
   - id: ZTDYIJUDb0M
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
-    duration: 6759
+    duration: "1:52:39"
     sequence: 1
     workflow_status: complete
     media_disposition: playable
-    disposition_evidence: Authorized acquisition verified channel and ID; ffprobe found audio/video,
-      6759.281s. All 23 coarse frames and full-span ASR inspected; worship, sermon and announcements
-      corroborate expected service. ASR gaps are transcription defects, not evidence of unusable
-      media.
-    transcription_language: en
-    transcribed_span:
-      start: 0
-      end: 6759
 chapters:
+  # Listen at 4:11.08–5:18.34 to distinguish quiet prayer from missing speech. Confirm the hymn title and prayer/Communion transitions.
   - id: c20260906-opening
     video_id: ZTDYIJUDb0M
-    start: 0
-    end: 459.96
+    start: "0:00"
+    end: "7:39.96"
     title: Opening
     type: opening
     summary: The leaders prepare the congregation through adoration, confession, thanksgiving and
@@ -118,14 +51,10 @@ chapters:
       - communion
       - service-life
     scripture: []
-    source_chapters:
-      - s0906-preparation
-      - s0906-welcome
-    review_notes: []
   - id: c20260906-worship-and-scripture
     video_id: ZTDYIJUDb0M
-    start: 459.96
-    end: 1919.2
+    start: "7:39.96"
+    end: "31:59.2"
     title: Worship and Scripture
     type: worship
     summary: The leaders guide worship, prayer and Communion as remembrance of Christ, with responsive
@@ -152,18 +81,10 @@ chapters:
       - John 17:1-19
       - Psalms 27:4
       - 1 John 5:10-12
-    source_chapters:
-      - s0906-call-hymn
-      - s0906-invocation
-      - s0906-communion
-      - s0906-responsive
-      - s0906-hymn-anthem
-      - s0906-scripture
-    review_notes: []
   - id: c20260906-trusting-gods-love
     video_id: ZTDYIJUDb0M
-    start: 1919.2
-    end: 2706.78
+    start: "31:59.2"
+    end: "45:06.78"
     title: Trusting God’s Love amid Imperfect Faith
     type: sermon
     summary: Introducing John 17 through a recap of John 16, the preacher encourages confidence in
@@ -187,14 +108,10 @@ chapters:
       - Mark 9
       - John 16:33
       - John 17
-    source_chapters:
-      - s0906-sermon-intro
-      - s0906-recap
-    review_notes: []
   - id: c20260906-learning-prayer-from-jesus
     video_id: ZTDYIJUDb0M
-    start: 2706.78
-    end: 3412.82
+    start: "45:06.78"
+    end: "56:52.82"
     title: Learning to Pray from Jesus’ Example
     type: sermon
     summary: After praying for humility, the preacher considers Jesus’ intercession in John 17 and urges
@@ -216,18 +133,12 @@ chapters:
       - Matthew 6
       - John 17:1-5
       - Hebrews 7:25
-    source_chapters:
-      - s0906-sermon-prayer
-      - s0906-high-priestly
-      - s0906-prayer-example
-    review_notes: []
   - id: s0906-prayer-example
     video_id: ZTDYIJUDb0M
-    start: 3133.66
-    end: 3412.82
+    start: "52:13.66"
+    end: "56:52.82"
     type: sermon
     title: Prayer Is Learned through Practice
-    confidence: 0.88
     scripture:
       - John 17
     topics:
@@ -240,12 +151,10 @@ chapters:
       - billy graham
       - discipline of prayer
     parent_id: c20260906-learning-prayer-from-jesus
-    source_chapters:
-      - s0906-prayer-example
   - id: c20260906-glory-and-the-cross
     video_id: ZTDYIJUDb0M
-    start: 3412.82
-    end: 4247.7
+    start: "56:52.82"
+    end: "1:10:47.7"
     title: Christ’s Path to Glory Leads through the Cross
     type: sermon
     summary: The preacher contrasts human recognition with God’s inherent glory, connects Christ’s
@@ -266,13 +175,10 @@ chapters:
       - John 17:1
       - Psalms 19:1
       - John 17:1-5
-    source_chapters:
-      - s0906-glory
-    review_notes: []
   - id: c20260906-eternal-life-as-knowing-god
     video_id: ZTDYIJUDb0M
-    start: 4247.7
-    end: 5718.3
+    start: "1:10:47.7"
+    end: "1:35:18.3"
     title: Eternal Life Means Knowing God Now
     type: sermon
     summary: Questioning eternal life as duration alone, the preacher interprets John 17:3 through
@@ -302,22 +208,13 @@ chapters:
       - John 17
       - John 17:4-5
       - 1 John 5:10-12
-    source_chapters:
-      - s0906-eternal-life
-      - s0906-knowing-god
-      - s0906-response-prayer
-    review_notes: []
+  # Keep linguistic and doctrinal claims attributed to the preacher.
   - id: s0906-knowing-god
     video_id: ZTDYIJUDb0M
-    start: 4756.04
-    end: 5623.56
+    start: "1:19:16.04"
+    end: "1:33:43.56"
     type: sermon
     title: Knowing God Changes Daily Life
-    confidence: 0.9
-    review_notes:
-      - John 17:3 at 4800s, Greek ginóskó at 4880s, Luke 1:34 at 4950s, J. I. Packer at 5100s and
-        5400s. Do not turn the preacher’s linguistic or doctrinal assertions into archive
-        conclusions.
     scripture:
       - John 17:3
       - Luke 1:34
@@ -341,12 +238,10 @@ chapters:
       - here and now
       - gifts
     parent_id: c20260906-eternal-life-as-knowing-god
-    source_chapters:
-      - s0906-knowing-god
   - id: c20260906-response-and-closing
     video_id: ZTDYIJUDb0M
-    start: 5718.3
-    end: 6759
+    start: "1:35:18.3"
+    end: "1:52:39"
     title: Response and Closing
     type: closing
     summary: The minister leads the creed, congregational prayer, offertory and closing worship, then
@@ -369,13 +264,6 @@ chapters:
       - knowing-god
     scripture:
       - Hebrews 13
-    source_chapters:
-      - s0906-creed-prayers
-      - s0906-offering
-      - s0906-closing-worship
-      - s0906-announcements
-      - s0906-teachers-dismissal
-    review_notes: []
 sermon_description: In John 17, the preacher presents eternal life as knowing God, not merely living
   forever. Jesus’ prayer and his path to glory through the cross frame a call to trust God’s love
   and cultivate prayer. Drawing on the distinction between knowing God and knowing about God, he

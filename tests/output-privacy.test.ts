@@ -2,7 +2,7 @@ import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'nod
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { gzipSync } from 'node:zlib';
-import { stringify } from 'yaml';
+import { stringify } from './service-fixtures';
 import { afterEach, describe, expect, it } from 'vitest';
 import { buildIndex } from '../scripts/archive';
 import { createChapterVectorManifest } from '../scripts/chapter-vectors';
@@ -18,9 +18,9 @@ function put(root: string, filename: string, data: string | Uint8Array) {
 }
 function fixture() {
   const root = mkdtempSync(path.join(tmpdir(), 'recs-output-privacy-')); roots.push(root);
-  const chapter = { id: 'fixture-chapter', video_id: 'AAAAAAAAAAA', start: 0, end: 90, type: 'reading',
+  const chapter = { id: 'fixture-chapter', video_id: 'AAAAAAAAAAA', start: 0, end: 90, type: 'worship',
     title: 'A passage of scripture', summary: 'Introducing the reading.', keywords: ['extraordinary lanterns'],
-    scripture: ['Acts 8:32'], topics: [], review_notes: ['Private notes'], confidence: 0.7 };
+    scripture: ['Acts 8:32'], topics: [] };
   const service = { id: 'fixture', date: '2026-01-04', title: 'Fixture service', type: 'service',
     workflow_status: 'complete', editorial_status: 'reviewed', reviewed_by: 'Fixture Reviewer', reviewed_at: '2026-01-05T00:00:00Z',
     videos: [{ id: 'AAAAAAAAAAA', duration: 120, sequence: 1, channel_id: SOURCE_CHANNEL_ID,

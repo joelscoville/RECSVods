@@ -1,5 +1,14 @@
 # RECS Replay archive and editorial core
 
+> **Historical reference.** The current authoring contract is
+> [Editing and reviewing a recording](editing-services.md), enforced by
+> `ServiceSourceSchema` and `schema/service.schema.json`. The numeric timestamps,
+> `sermon_title`, structured `review_notes`, and inline processing receipts shown
+> below describe older formats. Do not copy them into new service files.
+> Current files use one `title`, quoted clock times, review comments and simple video
+> `quirks`; diagnostic details are in `docs/checks/`. Historical readers retain this
+> older format only to validate Git history and preservation.
+
 The current [concise-outline contract](concise-outlines.md) adds one service-level
 sermon description, neutral peer groups and selective nested cues. It supersedes
 the earlier 8–15-chapter guidance below; original boundaries are preserved internally,

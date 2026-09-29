@@ -212,20 +212,24 @@ function validVectors(vectors: DecodedChapterVectors | undefined, count: number)
     && vectors.values instanceof Int8Array && vectors.values.length === count * vectors.dimension
     && !vectors.values.some((value) => value === -128);
 }
-interface LexicalPostings { raw: Map<string, Uint32Array>; verse: Map<string, Uint32Array> }
+const CHAPTER_FIELDS = new Set<FieldName>(['title', 'keyword', 'summary']);
+interface LexicalPostings { raw: Map<string, Uint32Array>; verse: Map<string, Uint32Array>; chapter: Map<string, Uint32Array> }
 function prepareLexicalPostings(rows: readonly SearchRow[]): LexicalPostings {
-  const raw = new Map<string, number[]>(), verse = new Map<string, number[]>();
+  const raw = new Map<string, number[]>(), verse = new Map<string, number[]>(), chapter = new Map<string, number[]>();
+  const add = (map: Map<string, number[]>, term: string, row: number) => {
+    const ids = map.get(term);
+    if (!ids) map.set(term, [row]);
+    else if (ids[ids.length - 1] !== row) ids.push(row);
+  };
   rows.forEach(({ fields }, row) => {
     for (const [name, values] of fields) for (const value of values) for (const term of value.split(' ')) {
       if (!term) continue;
-      const map = name === 'verseText' ? verse : raw;
-      const ids = map.get(term);
-      if (!ids) map.set(term, [row]);
-      else if (ids[ids.length - 1] !== row) ids.push(row);
+      add(name === 'verseText' ? verse : raw, term, row);
+      if (CHAPTER_FIELDS.has(name)) add(chapter, term, row);
     }
   });
   const compact = (map: Map<string, number[]>) => new Map([...map].map(([term, ids]) => [term, Uint32Array.from(ids)]));
-  return { raw: compact(raw), verse: compact(verse) };
+  return { raw: compact(raw), verse: compact(verse), chapter: compact(chapter) };
 }
 function lexicalCoverage(postings: LexicalPostings, terms: readonly string[], count: number): Uint32Array {
   const covered = new Uint32Array(count);
@@ -379,7 +383,9 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
         let found = 0;
         for (let i = 0; i < fieldNeedles.length; i++) if (values.some((value) => matchText(value).terms[i])) {
           found += weights[i]; covered.add(i);
-          if (['title', 'keyword', 'summary'].includes(name) && (frequencies.raw.get(terms[i])?.length ?? rows.length) / rows.length <= 0.05) distinctiveMetadata = true;
+          // A shared recording/series title must not erase the distinctiveness of
+          // a term found in an individual chapter's title, keywords or synopsis.
+          if (CHAPTER_FIELDS.has(name) && (frequencies.chapter.get(terms[i])?.length ?? rows.length) / rows.length <= 0.05) distinctiveMetadata = true;
         }
         if (!found) continue;
         const fullPhrase = values.some((value) => matchText(value).phrase);

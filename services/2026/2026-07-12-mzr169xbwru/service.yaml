@@ -1,74 +1,22 @@
+# yaml-language-server: $schema=../../../schema/service.schema.json
+# Editing guide: ../../../docs/editing-services.md
+# Times are quoted MM:SS or HH:MM:SS, optionally with fractional seconds. Keep existing IDs stable.
+
 id: 2026-07-12-mzr169xbwru
-date: 2026-07-12
+date:
+  # Provisional date from the upload title; release is 16 July and no dated slide was found.
+  2026-07-12
 title: RECS 12 July 2026 — short musical recording; relationship unconfirmed
 type: recording-excerpt
 workflow_status: complete
 editorial_status: needs_review
-review_notes:
-  - Full M3 interpretation of all 188.061s, not the earlier first-60s tooling smoke test. Both
-    streams decoded completely; all seven supplied ASR segments, twenty frames across the clip, full
-    audio spectrum and seven consecutive PCM windows inspected. No new inference or audio listening
-    performed.
-  - YouTube title is RECS 12 July 2026; upload_date and release_date are 20260716, unlike
-    D-FyolbxJgk whose release is July 12. Date field provisionally preserves the human source title,
-    not a verified event date. No dated slide appears in the inspected short-clip frames. Human
-    review must resolve the title/release discrepancy.
-  - Frames show an ACTS prayer graphic in changing layouts, a brief dark branded frame at 80s, and
-    an empty lectern/monitor at 120/130/160/170/180/187s. An ACTS slide alone does not prove that an
-    audible ACTS prayer is taking place. Possible musical worship/preparation material is retained,
-    not rejected for shortness or lack of publishable lyrics.
-  - Sustained harmonic bands and nonzero decoded audio throughout the sampled windows are consistent
-    with musical material; supplied ASR contains song-like fragments. These measurements do not
-    establish a hymn title, instrumentation, exact lyrics or absence of every spoken word. No
-    speaker identity, scripture or sermon is inferred.
-  - Source ASR at 0–29.98s contains a purported web-address instruction, with the first word
-    probability 0.0028, one word stretched over 21.8s and three zero-duration trailing tokens. It
-    has no corroborating source-frame evidence. Treat as suspected hallucination; omitted entirely
-    from public title, summary, questions and transcript. Isolated thanks and uncertain song
-    fragments also withheld, not promoted into prayers or announcements.
-  - "Relationship to D-FyolbxJgk remains unresolved: full-window RMS-envelope search does not
-    establish a constant-offset match. One 30s interval has stronger correlation with D prelude but
-    neighboring intervals fail the same offset. Shared musical material remains possible; repeated
-    songs/graphics alone cannot prove duplication or multipart continuity. See docs/july12-review.md
-    for temporal anchors and hashes."
-  - Separate ID preserves the candidate without inventing an ordering or joining clocks. Unassessed
-    records unresolved intended-programme suitability and relationship, not missing technical
-    inspection. No failed/rejected classification is proposed. D remains independently playable as
-    the full July 12 programme. This candidate and its reference-only passage remain excluded from
-    ordinary preview/production until disposition is resolved.
-  - Imported full span 0–188.0351875s; last ASR segment ends 185.86s. This is partial programme
-    content beginning mid musical/liturgical context, not a complete service. Unknown earlier/later
-    context is not reconstructed. Three zero-duration words; no alignment warning, backward start or
-    tail clamp.
-  - Exact receipt archive_provenance retained. Both original audio copies were absent at import;
-    audio_hash_verified is false. Fresh source decode and comparison hashes do not verify original
-    Colab input bytes. Original JSON retained unchanged; full local receipt and converted evidence
-    cleaned after safe checks.
-  - "Chapter-search migration: original passages preserved in passages.internal.yaml; chapter
-    summaries are initial seeds and keywords are spoken-text candidates requiring human review. No
-    editorial approval implied."
-  - "Concise service outline: original chapter metadata and boundaries preserved in
-    chapters.internal.yaml; public groups and selective subsections follow the sermon argument and
-    service context. Agent interpretation remains needs_review."
-  - Plan only, based on the current service and all supplied passage summaries; no media review or
-    new ASR was performed.
-  - Retain the sole original chapter as one neutral music group covering the existing clip; no
-    evidence supports additional boundaries or useful subsection cues.
-  - No sermon is evidenced, so sermon_description is omitted. Musical classification remains
-    provisional; no hymn, speaker or spoken prayer is identified.
-  - The relationship to the July 12 service, the title/release-date discrepancy and
-    intended-programme suitability remain unresolved; no ordering or continuity with another upload
-    is inferred.
-  - "Preserve media_disposition: unassessed and editorial_status: needs_review, including existing
-    publication exclusions. This plan does not approve or reclassify the recording."
-  - No supplied keyword candidates exist; keywords remain empty. The summary is internal
-    retrieval/review metadata only and must not be displayed.
 speakers: []
 topics: []
 videos:
+  # Relationship to the full 12 July service and programme suitability are unresolved. Do not merge this excerpt into the multipart service by assumption.
   - id: MZr169xBwrU
     channel_id: UCLjwcZaIkiFEed1VgQYSsrw
-    duration: 188.061
+    duration: "3:08.061"
     sequence: 1
     workflow_status: complete
     media_disposition: unassessed
@@ -77,36 +25,11 @@ videos:
       audio evidence throughout, no corroborated speech programme. July 12 title conflicts with July
       16 release metadata. Relationship and intended-programme suitability unresolved; preserve
       candidate without a forced join, duplicate rejection or duration-based failure.
-    transcription_language: en
-    transcribed_span:
-      start: 0
-      end: 188.0351875
-    transcription_provenance:
-      engine: faster-whisper
-      engine_version: 1.2.1
-      model: large-v3-turbo
-      backend_version: 4.8.2
-      compute_type: float16
-      device: Tesla T4
-      settings:
-        beam_size: 5
-        word_timestamps: true
-        vad_filter: false
-        condition_on_previous_text: false
-      audio_sha256: 3b80a4aabd75a88a4e828ba1521cc97ee800b4a81f6069026d730b774b0911c5
-      duration_seconds: 188.0351875
-      elapsed_seconds: 5.261
-      real_time_factor: 0.02798
-      transcribed_at: 2026-09-25T11:17:29.974727+00:00
-      transcript_sha256: 7029d354d90ff56361d33010c1058c71876c551044968ef604a91f99a66bbbaa
-      source_duration_seconds: 188.061
-      duration_delta_seconds: -0.025812500000000682
-      audio_hash_verified: false
 chapters:
   - id: c20260712-clip-musical-interval
     video_id: MZr169xBwrU
-    start: 0
-    end: 188.061
+    start: "0:00"
+    end: "3:08.061"
     title: Musical Interval
     type: music
     summary: The existing passage review describes apparent musical material with views of an ACTS
@@ -115,6 +38,3 @@ chapters:
     keywords: []
     topics: []
     scripture: []
-    source_chapters:
-      - s0712-short-music
-    review_notes: []

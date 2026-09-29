@@ -1,7 +1,7 @@
 import { mkdtempSync, mkdirSync, readFileSync, readdirSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { stringify } from 'yaml';
+import { stringify } from './service-fixtures';
 import { afterEach, describe, expect, it } from 'vitest';
 import { archiveFromFiles, flattenChapters, loadArchive, SOURCE_CHANNEL_ID, type Service } from '../site/lib/archive';
 import { assertManifestDiff, BackfillManifestSchema, editorialReviewAids, importBackfill, loadBackfill,
@@ -27,10 +27,10 @@ function fixture(count = 3, approver = 'Fictional Operator') {
 }
 function source(id = '2026-01-01', video = videos[0]): Service {
   return { id, date: id, title: 'Fictional interpreted title', type: 'service', workflow_status: 'complete', editorial_status: 'needs_review',
-    review_notes: [], speakers: [], topics: [], videos: [{ id: video, channel_id: SOURCE_CHANNEL_ID, sequence: 1, duration: 300,
+    speakers: [], topics: [], videos: [{ id: video, channel_id: SOURCE_CHANNEL_ID, sequence: 1, duration: 300,
       workflow_status: 'complete', media_disposition: 'playable' }],
     chapters: [{ id: `${id}-section`, video_id: video, type: 'address', title: 'Fictional chapter',
-      start: 10, end: 290, confidence: 0.7, review_notes: [], summary: 'The speaker discusses a fictional example.',
+      start: 10, end: 290, summary: 'The speaker discusses a fictional example.',
       keywords: ['fictional'], topics: [], scripture: [] }] };
 }
 function putSource(root: string, service = source()) { put(root, `services/${service.date.slice(0, 4)}/${service.id}/service.yaml`, stringify(service)); }
@@ -214,12 +214,12 @@ describe('source references, integrated build gate, read-only reports', () => {
   });
   it('reports all review aids with references rather than duplicating or rewriting interpretation', () => {
     const service = source();
-    service.chapters.push({ ...service.chapters[0], id: 'overlap', start: 280, end: 285, review_notes: ['Boundary needs review'] });
+    service.chapters.push({ ...service.chapters[0], id: 'overlap', start: 280, end: 285 });
     service.topics = Array.from({ length: 13 }, (_, i) => ({ id: `topic-${i}`, name: `Topic ${i}` }));
     for (let i = 1; i <= 3; i++) service.videos.push({ ...service.videos[0], id: `VID${String(i).padStart(8, '0')}`, sequence: i + 1 });
     const baseline = structuredClone(service); baseline.editorial_status = 'reviewed'; baseline.reviewed_by = 'Fictional human'; baseline.reviewed_at = '2026-01-02T00:00:00Z';
     const before = structuredClone(service); const aids = editorialReviewAids([service], [baseline]);
-    expect(new Set(aids.map((a) => a.code))).toEqual(new Set(['low_confidence_boundary', 'chapter_review_notes', 'metadata_gap', 'chapter_gap', 'chapter_overlap', 'topic_proliferation', 'unusual_video_count', 'unusual_chapter_length', 'changed_reviewed_record']));
+    expect(new Set(aids.map((a) => a.code))).toEqual(new Set(['metadata_gap', 'chapter_gap', 'chapter_overlap', 'topic_proliferation', 'unusual_video_count', 'unusual_chapter_length', 'changed_reviewed_record']));
     expect(JSON.stringify(aids)).not.toContain('transcript'); expect(service).toEqual(before);
     expect(editorialReviewAids([], [baseline])[0].detail).toContain('absent');
   });

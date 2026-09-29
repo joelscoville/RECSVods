@@ -1,0 +1,355 @@
+{
+  "$ref": "#/definitions/Service",
+  "definitions": {
+    "Service": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$",
+          "description": "Stable recording ID matching its folder name. Keep it when correcting the title or date."
+        },
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "The one recording title used everywhere on the site. Do not prefix it with RECS or the date."
+        },
+        "sermon_description": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "One natural paragraph shown under the recording. Required for recordings containing a sermon."
+        },
+        "series": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "id",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "service",
+            "sermon",
+            "recording-excerpt"
+          ],
+          "description": "Recording type: service, sermon-only, or recording-excerpt.",
+          "markdownEnumDescriptions": [
+            "A full service recording, possibly split into several uploads.",
+            "A sermon-only recording.",
+            "A partial recording or isolated excerpt."
+          ]
+        },
+        "workflow_status": {
+          "type": "string",
+          "enum": [
+            "discovered",
+            "registered",
+            "in_progress",
+            "complete",
+            "blocked"
+          ]
+        },
+        "blocked_reason": {
+          "$ref": "#/definitions/Service/properties/series/properties/name"
+        },
+        "editorial_status": {
+          "type": "string",
+          "enum": [
+            "needs_review",
+            "reviewed"
+          ],
+          "description": "needs_review is visible only in preview; reviewed is eligible for production. Approval is a separate human decision."
+        },
+        "reviewed_by": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "Written by the human editorial:approve command."
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Written by the human editorial:approve command."
+        },
+        "speakers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/Service/properties/series/properties/id"
+              },
+              "name": {
+                "$ref": "#/definitions/Service/properties/series/properties/name"
+              },
+              "role": {
+                "$ref": "#/definitions/Service/properties/series/properties/name"
+              }
+            },
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/Service/properties/series/properties/id"
+              },
+              "name": {
+                "$ref": "#/definitions/Service/properties/series/properties/name"
+              },
+              "description": {
+                "$ref": "#/definitions/Service/properties/series/properties/name"
+              }
+            },
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "videos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]{11}$",
+                "description": "The 11-character YouTube upload ID, not a URL. Each upload has its own clock."
+              },
+              "channel_id": {
+                "type": "string",
+                "const": "UCLjwcZaIkiFEed1VgQYSsrw"
+              },
+              "duration": {
+                "type": "string",
+                "pattern": "^(\\d+):([0-5]\\d)(?::([0-5]\\d))?(?:\\.(\\d{1,9}))?$",
+                "description": "Use a quoted clock time such as \"42:54.62\" or \"1:02:03\" (MM:SS or HH:MM:SS, optional fractional seconds)"
+              },
+              "sequence": {
+                "type": "integer",
+                "exclusiveMinimum": 0
+              },
+              "workflow_status": {
+                "$ref": "#/definitions/Service/properties/workflow_status"
+              },
+              "blocked_reason": {
+                "$ref": "#/definitions/Service/properties/blocked_reason"
+              },
+              "media_disposition": {
+                "type": "string",
+                "enum": [
+                  "unassessed",
+                  "playable",
+                  "failed",
+                  "rejected"
+                ]
+              },
+              "disposition_evidence": {
+                "$ref": "#/definitions/Service/properties/series/properties/name"
+              },
+              "quirks": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "embed_blocked",
+                    "video_unavailable",
+                    "audio_choppy",
+                    "audio_left_only",
+                    "audio_right_only",
+                    "audio_clipping",
+                    "audio_missing",
+                    "audio_out_of_sync",
+                    "video_freezes",
+                    "other"
+                  ],
+                  "markdownEnumDescriptions": [
+                    "Opens on YouTube",
+                    "Video unavailable",
+                    "Choppy audio",
+                    "Audio on the left only",
+                    "Audio on the right only",
+                    "Audio clipping",
+                    "No audio track",
+                    "Audio out of sync",
+                    "Video freezes",
+                    "Playback issue"
+                  ]
+                },
+                "description": "Known playback quirks. Omit when none are recorded; no timestamps or measurements are required."
+              }
+            },
+            "required": [
+              "id",
+              "channel_id",
+              "duration",
+              "sequence",
+              "workflow_status",
+              "media_disposition"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "chapters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$",
+                "description": "Stable chapter ID. Keep existing IDs; for new chapters use <service-id>-<short-slug>. Never rename it just because the title or time changes."
+              },
+              "video_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]{11}$",
+                "description": "The physical upload containing this chapter. Times use that upload’s own clock."
+              },
+              "start": {
+                "$ref": "#/definitions/Service/properties/videos/items/properties/duration"
+              },
+              "end": {
+                "$ref": "#/definitions/Service/properties/videos/items/properties/duration"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "opening",
+                  "worship",
+                  "sermon",
+                  "question-answer",
+                  "communion",
+                  "anthem",
+                  "music",
+                  "testimony",
+                  "reflection",
+                  "address",
+                  "closing"
+                ],
+                "description": "Chapter type. Use sermon for chapters within the sermon, including its illustrations; use question-answer/testimony/etc. only for distinct service items.",
+                "markdownEnumDescriptions": [
+                  "Welcome, introduction or opening preparation.",
+                  "A grouped worship segment, including singing, prayer or readings.",
+                  "A chapter within the main sermon; consecutive sermon chapters form the sermon playback span.",
+                  "A distinct question-and-answer segment outside the sermon.",
+                  "Communion.",
+                  "A standalone choir or anthem item.",
+                  "Other standalone musical material.",
+                  "A personal testimony.",
+                  "A separate devotional reflection outside the main sermon.",
+                  "A non-sermon address.",
+                  "Closing response, prayers, announcements or dismissal."
+                ]
+              },
+              "title": {
+                "$ref": "#/definitions/Service/properties/series/properties/name"
+              },
+              "speaker_id": {
+                "$ref": "#/definitions/Service/properties/series/properties/id"
+              },
+              "parent_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$",
+                "description": "Optional subsection parent: a top-level chapter in this same upload whose time range contains this chapter."
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S",
+                "description": "A concise retrieval synopsis used by search. This is not the public paragraph under the video."
+              },
+              "short_summary": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S",
+                "maxLength": 90
+              },
+              "keywords": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Service/properties/series/properties/name"
+                },
+                "maxItems": 10
+              },
+              "topics": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Service/properties/series/properties/id"
+                }
+              },
+              "scripture": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "scriptureDisplay": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Service/properties/chapters/items/properties/scripture/items"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "video_id",
+              "start",
+              "end",
+              "type",
+              "title",
+              "summary",
+              "keywords",
+              "topics",
+              "scripture"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "id",
+        "date",
+        "title",
+        "type",
+        "workflow_status",
+        "editorial_status",
+        "videos",
+        "chapters"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
