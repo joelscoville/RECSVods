@@ -36,8 +36,8 @@ chapters:
   - id: c20260906-opening
     video_id: ZTDYIJUDb0M
     start: "0:00"
-    end: "7:39.96"
-    title: Opening
+    end: "6:00"
+    title: ACTS Prayer
     type: opening
     summary: The leaders prepare the congregation through adoration, confession, thanksgiving and
       supplication, then welcome worshippers into greetings and silent meditation; the
@@ -53,8 +53,8 @@ chapters:
     scripture: []
   - id: c20260906-worship-and-scripture
     video_id: ZTDYIJUDb0M
-    start: "7:39.96"
-    end: "31:59.2"
+    start: "6:00"
+    end: "32:00.54"
     title: Worship and Scripture
     type: worship
     summary: The leaders guide worship, prayer and Communion as remembrance of Christ, with responsive
@@ -81,11 +81,26 @@ chapters:
       - John 17:1-19
       - Psalms 27:4
       - 1 John 5:10-12
+  # Summary copied from c20260906-worship-and-scripture when this chapter was split; revise it.
+  - id: 2026-09-06-holy-communion
+    video_id: ZTDYIJUDb0M
+    start: "11:46.55"
+    end: "19:54.73"
+    title: Holy Communion
+    type: communion
+    summary: The leaders guide worship, prayer and Communion as remembrance of Christ, with responsive
+      readings, a hymn and video anthem, and the reading of 1 John 5:10-12.
+    keywords:
+      - holy communion
+    topics: []
+    scripture:
+      - 1 Corinthians 11
+    parent_id: c20260906-worship-and-scripture
   - id: c20260906-trusting-gods-love
     video_id: ZTDYIJUDb0M
-    start: "31:59.2"
-    end: "45:06.78"
-    title: Trusting God’s Love amid Imperfect Faith
+    start: "32:00.54"
+    end: "45:05.94"
+    title: Overcoming
     type: sermon
     summary: Introducing John 17 through a recap of John 16, the preacher encourages confidence in
       prayer and God’s love despite tribulation and imperfect faith, contrasting wishful hope with
@@ -110,7 +125,7 @@ chapters:
       - John 17
   - id: c20260906-learning-prayer-from-jesus
     video_id: ZTDYIJUDb0M
-    start: "45:06.78"
+    start: "45:05.94"
     end: "56:52.82"
     title: Learning to Pray from Jesus’ Example
     type: sermon
@@ -145,11 +160,12 @@ chapters:
       - prayer
       - faith
     summary: The preacher urges regular prayer and meditation rather than learning only through reading
-      or listening, using Billy Graham illustrations whose claims remain attributed.
+      or listening, as Jesus prayed often and much.
     keywords:
       - prayer by praying
       - billy graham
       - discipline of prayer
+      - lord's prayer
     parent_id: c20260906-learning-prayer-from-jesus
   - id: c20260906-glory-and-the-cross
     video_id: ZTDYIJUDb0M
@@ -158,8 +174,8 @@ chapters:
     title: Christ’s Path to Glory Leads through the Cross
     type: sermon
     summary: The preacher contrasts human recognition with God’s inherent glory, connects Christ’s
-      mission and return to glory with the cross, and recalls encouragement from continued service
-      despite suffering.
+      mission and return to the original state of glory with the cross, and recalls encouragement
+      from continued service despite suffering.
     keywords:
       - glory
       - cross
@@ -178,12 +194,14 @@ chapters:
   - id: c20260906-eternal-life-as-knowing-god
     video_id: ZTDYIJUDb0M
     start: "1:10:47.7"
-    end: "1:35:18.3"
-    title: Eternal Life Means Knowing God Now
+    end: "1:35:18.42"
+    title: What Is Eternal Life
     type: sermon
     summary: Questioning eternal life as duration alone, the preacher interprets John 17:3 through
       relational knowledge of God and urges meditation, changed conduct and purposeful service,
       closing in prayer.
+
+      Everyone who believes in Jesus Christ is called by the father and be saved.
     keywords:
       - eternal life
       - living forever
@@ -191,10 +209,10 @@ chapters:
       - significance
       - ginóskó
       - intimacy
-      - j i packer
       - meditation
       - here and now
       - gifts
+      - predestination
     topics:
       - eternal-life
       - service-life
@@ -212,9 +230,9 @@ chapters:
   - id: s0906-knowing-god
     video_id: ZTDYIJUDb0M
     start: "1:19:16.04"
-    end: "1:33:43.56"
+    end: "1:31:21.22"
     type: sermon
-    title: Knowing God Changes Daily Life
+    title: Knowing God Vs Knowing About God
     scripture:
       - John 17:3
       - Luke 1:34
@@ -226,9 +244,10 @@ chapters:
       - knowing-god
       - prayer
       - glory
-    summary: The preacher uses John 17:3, his account of ginóskó and Packer’s distinction between
-      knowing God and knowing about God to urge lived relationship, reflection and use of one’s
-      gifts.
+    summary: Eternal life is to know God, the only true God, and Jesus Christ. Knowing God vs Knowing
+      about God. The preacher uses John 17:3, his account of ginóskó and Packer’s distinction
+      between knowing God and knowing about God to urge lived relationship, reflection and use of
+      one’s gifts. Eternal life is oneness with God.
     keywords:
       - john 17
       - ginóskó
@@ -237,10 +256,11 @@ chapters:
       - meditation
       - here and now
       - gifts
+      - knowing God
     parent_id: c20260906-eternal-life-as-knowing-god
   - id: c20260906-response-and-closing
     video_id: ZTDYIJUDb0M
-    start: "1:35:18.3"
+    start: "1:35:18.42"
     end: "1:52:39"
     title: Response and Closing
     type: closing
