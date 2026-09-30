@@ -203,8 +203,8 @@ chapters:
   # Review wording/order around 1:15:18–1:15:44; the source-ASR text and word alignment diverge.
   - id: s0913-meditation
     video_id: GkmB_KeBlBw
-    start: "1:12:27.46"
-    end: "1:16:35.94"
+    start: "1:12:33.44"
+    end: "1:18:25.6"
     type: sermon
     title: Meditation Applies Truth to Relationships
     scripture:
