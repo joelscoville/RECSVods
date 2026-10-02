@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { SearchChapter } from '../lib/types';
+import type { SearchUnit } from '../lib/display';
 import { prepareSearchIndex, type DecodedChapterVectors } from '../lib/search';
 import { prepareVerseSelection } from '../lib/verse-selection';
-import { enrichChapters, loadChapterMetadata, loadChapterVectors, loadScriptureIndex, type ChapterMetadata, type ScriptureIndex } from '../lib/chapter-index';
+import { enrichUnits, loadChapterMetadata, loadChapterVectors, loadScriptureIndex, type ChapterMetadata, type ScriptureIndex } from '../lib/chapter-index';
 import { createSemanticClient, type SemanticClient, type SemanticStatus } from '../lib/semantic';
 import { clearSearchHistory, getSearchHistory, saveSearch } from '../lib/local-state';
 import { searchUrl, siteUrl } from '../lib/urls';
@@ -17,12 +17,12 @@ import CopyLink from './CopyLink';
 import { usePerformanceMode } from '../lib/use-performance-mode';
 import { canRunSemantic } from '../lib/performance-mode';
 
-export default function SearchApp({ base, initialChapters, recordings }: { base: string; initialChapters: SearchChapter[]; recordings: HomeItem[] }) {
+export default function SearchApp({ base, initialUnits, recordings }: { base: string; initialUnits: SearchUnit[]; recordings: HomeItem[] }) {
   const mode = usePerformanceMode();
   const semanticAllowed = mode.ready && canRunSemantic(mode, mode.cached);
   const enrichAllowed = mode.ready && mode.data === 'normal' && mode.compute === 'normal';
   const [visiblePages, setVisiblePages] = useState(1);
-  const visibleResults = visiblePages * (mode.compute === 'low-compute' ? 8 : 20);
+  const visibleResults = visiblePages * 20;
   const submitted = useRef(false);
   const [query, setQuery] = useState('');
   const [metadata, setMetadata] = useState<{ base: string; index: ChapterMetadata } | null>(null);
@@ -30,10 +30,10 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
   const [scriptureStatus, setScriptureStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle');
   const [scriptureAttempt, setScriptureAttempt] = useState(0);
   const currentMetadata = metadata?.base === base ? metadata.index : undefined;
-  const chapters = useMemo(() => {
-    const available = currentMetadata?.chapters ?? initialChapters;
-    return scripture?.base === base ? enrichChapters(available, scripture.index) : available;
-  }, [currentMetadata, initialChapters, scripture, base]);
+  const units = useMemo(() => {
+    const available = currentMetadata?.units ?? initialUnits;
+    return scripture?.base === base ? enrichUnits(available, scripture.index) : available;
+  }, [currentMetadata, initialUnits, scripture, base]);
   const [history, setHistory] = useState<string[]>([]);
   const [historyStatus, setHistoryStatus] = useState('');
   const [indexStatus, setIndexStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle');
@@ -43,7 +43,7 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
   const [semanticAttempt, setSemanticAttempt] = useState(0);
   const [vectors, setVectors] = useState<{ metadata: ChapterMetadata; index: DecodedChapterVectors } | null>(null);
   const [hybrid, setHybrid] = useState<{ query: string; queryVector: number[]; metadata: ChapterMetadata; base: string } | null>(null);
-  const lexical = useMemo(() => prepareSearchIndex(chapters), [chapters]);
+  const lexical = useMemo(() => prepareSearchIndex(units), [units]);
   const prepared = useMemo(() => lexical.withVectors(vectors?.metadata === currentMetadata ? vectors?.index : undefined), [lexical, vectors, currentMetadata]);
   const hasUnavailableRows = useMemo(() => {
     if (!vectors || vectors.metadata !== currentMetadata) return false;
@@ -88,7 +88,7 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
     setIndexStatus('loading');
     loadChapterMetadata(base, abort.signal).then((data) => {
       // Reject a mixed-mode artifact rather than filtering and shifting binary row ordinals.
-      if (import.meta.env.ARCHIVE_MODE !== 'preview' && data.chapters.some((chapter) => chapter.preview)) throw new Error('Ineligible archive index');
+      if (import.meta.env.ARCHIVE_MODE !== 'preview' && data.units.some((unit) => unit.preview)) throw new Error('Ineligible archive index');
       if (!abort.signal.aborted) {
         setMetadata({ base, index: data });
         setIndexStatus('ready');
@@ -111,14 +111,14 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
     const version = ++generation.current;
     client.current?.cancel();
     setSemanticError(false);
-    if (!semanticAllowed || !query.trim() || !currentMetadata?.chapters.length) return;
+    if (!semanticAllowed || !query.trim() || !currentMetadata?.units.length) return;
     const timer = setTimeout(async () => {
       try {
         if (!client.current) return;
         if (vectorCache.current?.metadata !== currentMetadata) {
           const promise = loadChapterVectors(base, currentMetadata).then((index) => {
-            if (index.rowCount !== currentMetadata.chapters.length) throw new Error('Chapter vector row mismatch');
-            if (!index.values.some((value) => value !== 0)) throw new Error('No usable chapter vectors');
+            if (index.rowCount !== currentMetadata.units.length) throw new Error('Search vector row mismatch');
+            if (!index.values.some((value) => value !== 0)) throw new Error('No usable search vectors');
             return index;
           });
           const entry = { metadata: currentMetadata, promise };
@@ -140,17 +140,17 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
   const exact = useMemo(() => prepared.search(query), [prepared, query]);
   const hybridResults = useMemo(() => hybrid?.query === query && hybrid.metadata === currentMetadata && hybrid.base === base
     ? prepared.search(query, { queryVector: hybrid.queryVector }) : null, [prepared, hybrid, query, currentMetadata, base]);
-  // Results are recordings, ranked by their best chapter; that chapter is offered after the sermon.
+  // Results are recordings, ranked by their best match; a matched point or part is offered under the player.
   const results = useMemo(() => groupByRecording(hybridResults ?? exact, recordings, base), [hybridResults, exact, recordings, base]);
   // Which verse of each cited passage the search's words best match (BSB text; never displayed).
   const verseSelection = useMemo(() => scripture?.base === base ? prepareVerseSelection(scripture.index) : undefined, [scripture, base]);
   const findBestVerse = useMemo(() => query.trim() ? verseSelection?.(query) : undefined, [verseSelection, query]);
   // Loading/progress messages must not rerender every recording and reparse its references.
-  const resultItems = useMemo(() => results.slice(0, visibleResults).map(({ recording, chapter, reasons }) =>
-    <li key={recording.id}><RecordingResult recording={recording} chapter={chapter} reasons={reasons} query={query} findBestVerse={findBestVerse} /></li>),
-  [results, visibleResults, query, findBestVerse]);
-  const categories = availableBrowseCategories([], chapters);
-  const topics = useMemo(() => suggestedTopics(chapters), [chapters]);
+  const resultItems = useMemo(() => results.slice(0, visibleResults).map(({ recording, unit, reasons }) =>
+    <li key={recording.id}><RecordingResult recording={recording} unit={unit} units={units} reasons={reasons} query={query} findBestVerse={findBestVerse} /></li>),
+  [results, visibleResults, query, findBestVerse, units]);
+  const categories = availableBrowseCategories(units.filter((unit) => unit.kind === 'recording'));
+  const topics = useMemo(() => suggestedTopics(units), [units]);
 
   function changeQuery(value: string, commit = false) {
     submitted.current = commit;
@@ -181,14 +181,14 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
       <div className="search-status" role="status" aria-live="polite" aria-atomic="true">
         {mode.compute === 'low-compute' ? <p>Search is optimized for this device. Meaning-based search is off.</p>
           : mode.data === 'save-data' && <p>Search is saving data.{mode.cached ? ' Cached meaning-based search is available.' : ' Meaning-based search has not been downloaded.'}</p>}
-        {indexStatus === 'loading' && (semanticAllowed || enrichAllowed) && <p>Loading the archive…{initialChapters.length > 0 && ' You can search the available chapters now.'}</p>}
-        {indexStatus === 'error' && <p>The archive could not be refreshed.{chapters.length > 0 ? ' Search is using the chapters available on this page.' : ' Check your connection and retry.'}</p>}
+        {indexStatus === 'loading' && (semanticAllowed || enrichAllowed) && <p>Loading the archive…{initialUnits.length > 0 && ' You can search the available recordings now.'}</p>}
+        {indexStatus === 'error' && <p>The archive could not be refreshed.{units.length > 0 ? ' Search is using the recordings available on this page.' : ' Check your connection and retry.'}</p>}
         {query.trim() && <p>{results.length} {results.length === 1 ? 'recording' : 'recordings'} found{hybridResults ? '.' : ' with exact search.'}</p>}
-        {query.trim() && enrichAllowed && chapters.length > 0 && scriptureStatus === 'loading' && <p>Loading Bible verse search. Chapter keywords and references are ready.</p>}
-        {query.trim() && scriptureStatus === 'error' && <p>Bible verse search is unavailable. Chapter keywords and references still work.</p>}
-        {query.trim() && semanticAllowed && chapters.length > 0 && !semanticError && semanticStatus.state === 'loading' && <p>Loading meaning-based search{semanticStatus.progress !== undefined ? ` (${Math.floor(semanticStatus.progress * 100)}%)` : ''}. Exact results are ready below.</p>}
+        {query.trim() && enrichAllowed && units.length > 0 && scriptureStatus === 'loading' && <p>Loading Bible verse search. Titles, summaries and references are ready.</p>}
+        {query.trim() && scriptureStatus === 'error' && <p>Bible verse search is unavailable. Titles, summaries and references still work.</p>}
+        {query.trim() && semanticAllowed && units.length > 0 && !semanticError && semanticStatus.state === 'loading' && <p>Loading meaning-based search{semanticStatus.progress !== undefined ? ` (${Math.floor(semanticStatus.progress * 100)}%)` : ''}. Exact results are ready below.</p>}
         {query.trim() && semanticAllowed && semanticError && <p>Meaning-based search is unavailable. Exact search still works.</p>}
-        {query.trim() && hybridResults && hasUnavailableRows && <p>Some chapters have no meaning-based match data. They remain available through exact search.</p>}
+        {query.trim() && hybridResults && hasUnavailableRows && <p>Some recordings have no meaning-based match data. They remain available through exact search.</p>}
       </div>
       {indexStatus === 'error' && (semanticAllowed || enrichAllowed) && <button className="button button-secondary" type="button" onClick={() => setIndexAttempt((attempt) => attempt + 1)}>Retry loading the archive</button>}
       {query.trim() && enrichAllowed && scriptureStatus === 'error' && <button className="button button-secondary" type="button" onClick={() => setScriptureAttempt((attempt) => attempt + 1)}>Retry Bible verse search</button>}
@@ -196,17 +196,17 @@ export default function SearchApp({ base, initialChapters, recordings }: { base:
       {query.trim() ? <section className="search-results" aria-label="Search results">
         <div className="results-toolbar"><h2>Results for “{query}”</h2><CopyLink href={searchUrl(base, query)} label="Share search" /></div>
         {results.length ? <><ol className="result-list">{resultItems}</ol>
-          {results.length > visibleResults && <button type="button" className="button button-secondary" onClick={() => setVisiblePages(count => count + 1)}>Show more recordings</button>}</> : <div className="no-results"><h2>{chapters.length ? 'No matching recordings' : 'No published chapters yet'}</h2><p>{chapters.length ? 'Try a speaker’s name, a date, a Bible reference, or fewer words.' : 'Chapters will be searchable when recordings are ready to publish.'}</p><button className="button button-secondary" type="button" onClick={() => choose('')}>Clear search</button></div>}
+          {results.length > visibleResults && <button type="button" className="button button-secondary" onClick={() => setVisiblePages(count => count + 1)}>Show more recordings</button>}</> : <div className="no-results"><h2>{units.length ? 'No matching recordings' : 'No published recordings yet'}</h2><p>{units.length ? 'Try a date, a Bible reference, a topic, or fewer words.' : 'Recordings will be searchable when they are ready to publish.'}</p><button className="button button-secondary" type="button" onClick={() => choose('')}>Clear search</button></div>}
       </section> : <div className="search-browse">
         <section className="history-section"><h2>Your history</h2>{history.length ? <div className="chip-list">{history.map((item) => <button className="chip" type="button" key={item} onClick={() => choose(item)}>{item}</button>)}</div> : <p>Your searches will appear here on this device.</p>}<div className="local-data-controls"><button className="button button-secondary" type="button" onClick={() => {
           const cleared = clearSearchHistory();
           if (cleared) setHistory([]);
           setHistoryStatus(cleared ? 'Search history cleared on this device. Playback progress is kept.' : 'Search history could not be cleared. Check your browser storage settings and try again.');
         }}>Clear search history</button><p role="status">{historyStatus}</p></div></section>
-        <section className="category-section"><h2>Search by category</h2><BrowseNavigation base={base} categories={categories} />{!categories.length && <p>Categories will appear when chapters are published.</p>}</section>
+        <section className="category-section"><h2>Search by category</h2><BrowseNavigation base={base} categories={categories} />{!categories.length && <p>Categories will appear when recordings are published.</p>}</section>
         <section className="topics-section"><h2>Suggested topics</h2>{topics.length ? <div className="chip-list">{topics.map((topic) => <button className="chip" key={topic} type="button" onClick={() => choose(topic)}>{topic}</button>)}</div> : <p>Topics will come from the published archive.</p>}</section>
       </div>}
-      <noscript><p>Interactive chapter search needs JavaScript. <a href={siteUrl(base)}>Browse the published recordings on the home page.</a></p></noscript>
+      <noscript><p>Interactive search needs JavaScript. <a href={siteUrl(base)}>Browse the published recordings on the home page.</a></p></noscript>
     </main>
   </>;
 }

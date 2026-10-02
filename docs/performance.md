@@ -4,16 +4,15 @@ For the current adaptive loading policy, browser installation tests, initial-pay
 reduction and unresolved 5,000-row stress failures, see [Adaptive loading](adaptive-loading.md).
 The historical checkpoints below retain their original measurements.
 
-**Current result:** concise outlines use compact committed rows, not the passage-
-era artifacts described in the historical investigation below. All **53/53** declared
+**Earlier concise-outline checkpoint:** all **53/53** declared
 budgets passed in `.local/performance-outlines-cached.json`: 233 real search units,
 plus 2,000/5,000-row synthetic stress. See
-[`migrations/concise-outline-verification.md`](migrations/concise-outline-verification.md)
-for current latency, preparation cost, sizes, hardware assumptions and limits.
-`pnpm index:verify` now validates committed per-service artifacts; incremental/full
-build equivalence is covered by `tests/incremental.test.ts`. No build/CI transcription
-or inference is required. `scripts/benchmark-search.ts` measures current binary rows
-and deduplicated BSB through the same product search path.
+[`history/migrations/concise-outline-verification.md`](history/migrations/concise-outline-verification.md)
+for that checkpoint's latency, preparation cost, sizes, hardware assumptions and limits.
+Those measurements predate the current recording format. Builds now generate rows
+from published text, cached by recipe and input; see [search artifacts](chapter-search-artifacts.md).
+`scripts/benchmark-search.ts` measures current binary rows and deduplicated BSB
+through the product search path. A fresh benchmark is required for current performance claims.
 
 ## Status and scope
 

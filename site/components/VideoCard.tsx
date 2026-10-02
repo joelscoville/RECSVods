@@ -12,24 +12,24 @@ export function VideoArt({ item, progress }: { item: HomeItem; progress?: number
     {/* A resumable card shows its resume point in place of the thumbnail date (the date is repeated
         below), so the saved state, known only after hydration, never changes the card's height. */}
     <span className="thumb-text"><span className="thumb-title">{item.title}</span><span className="thumb-date">{progress !== undefined ? `Resume at ${formatTime(progress)}` : formatDate(item.date)}</span></span>
-    {progress !== undefined && <span className="resume-track"><span style={{ width: `${Math.min(100, Math.max(0, progress / item.duration * 100))}%` }} /></span>}
+    {progress !== undefined && <span className="resume-track"><span style={{ width: `${Math.min(100, Math.max(0, progress / item.length * 100))}%` }} /></span>}
   </div>;
 }
 
 export default function VideoCard({ item, progress }: { item: HomeItem; progress?: number }) {
-  // A matched recording names the chapter that placed it here; the watch page offers it under the player.
-  const chapter = item.match && item.match.id !== item.sermonId ? item.match : undefined;
+  // A matched recording names the point or part that placed it here; the watch page offers it under the player.
+  const chapter = item.match;
   return <article className="video-card">
     <a className="video-card-link" href={item.href}>
       <VideoArt item={item} progress={progress} />
       <div className="card-text">
         <h2>{item.title}</h2>
         <p className="card-metadata"><time dateTime={item.date}>{formatDate(item.date)}</time>{item.speaker && <> · {item.speaker}</>}{progress !== undefined && <span className="sr-only"> · Resume at {formatTime(progress)}</span>}</p>
-        {/* No type line: only useful context (the service a chapter belongs to, or the chapter that matched). */}
+        {/* No type line: only useful context (a series position, or the point that matched). */}
         {item.context && <p className="card-context">{item.context}</p>}
         {chapter && <p className="card-context">Chapter: {chapter.title}</p>}
         {item.preview && <span className="preview-label">Unreviewed preview</span>}
-        <QuirkBadges quirks={item.quirks} multipart={item.parts.length > 1} />
+        <QuirkBadges quirks={item.quirks} />
       </div>
     </a>
   </article>;

@@ -1,0 +1,235 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Authority
+serviceDate: 2020-09-27
+status: draft
+sermonDescription: Rev. Yong Teck Meng reads Jesus’ answer about Caesar alongside Romans 13 as a
+  call to meet civil obligations fairly while reserving highest allegiance for God. He challenges
+  partisan uses of religion and urges informed participation rather than apathy or deference to
+  power. Christians, he argues, should keep conscience and the church’s calling distinct from
+  political loyalty, discerning when grave wrongdoing requires action.
+sermonScripture:
+  - Luke 20:19-26
+  - Luke 20:25
+  - Romans 13:1-7
+sermonTopics:
+  - authority
+  - discernment
+  - discipleship
+uploads:
+  - youtubeId: W2IZ6MUX-Yk
+    uploadDuration: "1:05:06.841"
+chapters:
+  - chapterId: c20200927-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "4:36.4"
+    points:
+      - pointTime: "0:00"
+        pointText: The preacher welcomes online participants and announces the international convention, its
+          translation and volunteer support, and the replacement of next Sunday’s usual meeting,
+          while questioning what online view counts mean.
+  - chapterId: c20200927-accountable-stewardship
+    chapterTitle: God’s Authority Calls for Accountable Stewardship
+    chapterKind: sermon
+    chapterStart: "4:36.4"
+    chapterEnd: "12:48.72"
+    points:
+      - pointTime: "4:36.4"
+        pointText: The preacher revisits scripture’s authority over credentials and the vineyard’s call to
+          generous, accountable stewardship and creation care, holding love with righteousness
+          before praying for humble attention.
+    chapterScripture:
+      - Luke 20:1-19
+      - Psalms 18:27
+      - Luke 20:9-19
+      - Isaiah 5
+  - chapterId: c20200927-test-political-claims
+    chapterTitle: Test Political Claims by Scripture
+    chapterKind: sermon
+    chapterStart: "12:48.72"
+    chapterEnd: "26:21.62"
+    points:
+      - pointTime: "12:48.72"
+        pointText: Using contemporary political settings, the preacher tests claims that God backs a party,
+          religion serves rulers or divine supremacy excuses rejecting civil rules, with Facebook
+          reports remaining unverified and mask refusal explicitly hypothetical.
+    chapterScripture:
+      - Luke 20:19-26
+      - Psalms 109:8
+  - chapterId: c20200927-discernment-and-fairness
+    chapterTitle: Recognize Deception and Give Back Fairly
+    chapterKind: sermon
+    chapterStart: "26:21.62"
+    chapterEnd: "38:04.22"
+    points:
+      - pointTime: "26:21.62"
+        pointText: The preacher follows Luke 20’s deceptive challenge through self-examination and Jesus’
+          response about Caesar, interpreting tribute and ordinary commerce as matters of fairness
+          toward the people sustaining public life.
+    subchapters:
+      - chapterId: s0927-weeds
+        chapterTitle: Examine Your Own Sincerity
+        chapterKind: sermon
+        chapterStart: "28:40.38"
+        chapterEnd: "31:17.56"
+        points:
+          - pointTime: "28:40.38"
+            pointText: The preacher turns the wheat-and-weeds warning toward listeners’ own sincerity rather
+              than surprise at religious appearances or church scandals; the existing ASR ambiguity
+              remains unresolved.
+        chapterScripture:
+          - Matthew 13:24-30
+          - Matthew 13:27-30
+      - chapterId: s0927-fairness
+        chapterTitle: Fairness Applies Beyond Religious Affiliation
+        chapterKind: sermon
+        chapterStart: "34:51.48"
+        chapterEnd: "36:30.52"
+        points:
+          - pointTime: "34:51.48"
+            pointText: The preacher reads Jesus’ answer as giving back fairly and rejects cheating or
+              preferential commerce based on a seller’s Christian identity.
+        chapterScripture:
+          - Luke 20:22-25
+          - Luke 20:25
+    chapterScripture:
+      - Luke 20:19-20
+      - Matthew 13:24-26
+      - Matthew 13:24-30
+      - Matthew 13:27-30
+      - Luke 20:21-22
+      - Luke 20:19-26
+      - Matthew 22:18
+      - Mark 12
+      - Matthew 10:16
+      - Luke 20:24-25
+      - Luke 20:22-25
+      - Luke 20:25
+  - chapterId: c20200927-civil-order-and-conscience
+    chapterTitle: Support Civil Order with a Fair Conscience
+    chapterKind: sermon
+    chapterStart: "38:04.22"
+    chapterEnd: "46:32.1"
+    points:
+      - pointTime: "38:04.22"
+        pointText: The preacher reads Romans 13 as a call to sustain public order with conscience beyond
+          party loyalty, temper expectations of leaders and engage meaningfully, presenting Kuyper
+          as an example.
+    subchapters:
+      - chapterId: s0927-romans-order
+        chapterTitle: Civil Government Maintains Public Order
+        chapterKind: sermon
+        chapterStart: "38:04.22"
+        chapterEnd: "40:31.08"
+        points:
+          - pointTime: "38:04.22"
+            pointText: Relating Romans 13 to Christians' responsibilities toward government, the preacher
+              recognizes civil authority even under Rome because it maintains public order, and
+              connects that principle with personal discipline.
+        chapterScripture:
+          - Romans 13:1-7
+          - 1 Peter 2
+          - Romans 13:1
+          - 1 Corinthians 14:33
+      - chapterId: s0927-romans-conscience
+        chapterTitle: Let Conscience Judge Beyond Party Loyalty
+        chapterKind: sermon
+        chapterStart: "40:31.08"
+        chapterEnd: "43:39.3"
+        points:
+          - pointTime: "40:31.08"
+            pointText: The preacher rejects political dissatisfaction as a blanket exemption from law, urging
+              fair judgment and support for shared systems while retaining a senior pastor’s
+              distinction about a destructive ruler.
+        chapterScripture:
+          - Romans 13:2-4
+          - Romans 13:4-5
+          - Romans 13:5-7
+          - Romans 13:7
+    chapterScripture:
+      - Romans 13:1-7
+      - 1 Peter 2
+      - Romans 13:1
+      - 1 Corinthians 14:33
+      - Romans 13:2-4
+      - Romans 13:4-5
+      - Romans 13:5-7
+      - Romans 13:7
+  - chapterId: c20200927-wise-political-engagement
+    chapterTitle: Serve God through Wise Political Engagement
+    chapterKind: sermon
+    chapterStart: "46:32.1"
+    chapterEnd: "1:03:40.34"
+    points:
+      - pointTime: "46:32.1"
+        pointText: The preacher grounds active public engagement in Christ’s higher authority, warning
+          against servility, apathy and compromising church alliances while allowing that grave evil
+          may require carefully discerned action.
+    subchapters:
+      - chapterId: s0927-commission
+        chapterTitle: Christ’s Authority Sends His Followers into the World
+        chapterKind: sermon
+        chapterStart: "49:04.74"
+        chapterEnd: "51:13.92"
+        points:
+          - pointTime: "49:04.74"
+            pointText: The preacher connects the Great Commission with changed lives rather than arrogance and
+              uses a hypothetical leader’s visit to question excessive deference to human office.
+        chapterScripture:
+          - Matthew 28:18-20
+      - chapterId: s0927-spheres
+        chapterTitle: Respect the Distinct Responsibilities of Institutions
+        chapterKind: sermon
+        chapterStart: "56:13.56"
+        chapterEnd: "58:17.22"
+        points:
+          - pointTime: "56:13.56"
+            pointText: The preacher applies a quotation attributed to Kuyper to church, state and education,
+              illustrating confused responsibilities through an account of purchasable academic
+              credentials.
+      - chapterId: s0927-bonhoeffer
+        chapterTitle: Grave Evil May Require Resistance
+        chapterKind: sermon
+        chapterStart: "59:04"
+        chapterEnd: "1:00:58.5"
+        points:
+          - pointTime: "59:04"
+            pointText: The preacher presents Bonhoeffer’s resistance to Nazism as exceptional action against
+              grave evil, with his biographical account and quotation about silence remaining
+              attributed rather than independently verified.
+        chapterScripture:
+          - Luke 20:25
+    chapterScripture:
+      - Luke 20:24-26
+      - Matthew 28:18-20
+      - Luke 20:25
+      - Luke 20:19-26
+      - Romans 13:1-7
+  - chapterId: c20200927-closing-prayer
+    chapterTitle: Closing Prayer
+    chapterKind: closing
+    chapterStart: "1:03:40.34"
+    chapterEnd: "1:05:06.8154375"
+    points:
+      - pointTime: "1:03:40.34"
+        pointText: The preacher thanks God for teaching about public responsibilities and prays for truthful
+          lives, wise responses to perceived injustice and freedom from passive inaction.
+    chapterScripture:
+      - Matthew 28:18-20
+markers:
+  - markerTime: "0:00"
+    markerNote: "Older recording: check this opening really is the ACTS prayer."
+  - markerTime: "4:36.4"
+    markerNote: "Also cited in the sermon: Luke 20:1-19; Psalms 18:27; Luke 20:9-19; Isaiah 5; Psalms
+      109:8; Luke 20:19-20; Matthew 13:24-26; Matthew 13:24-30; Matthew 13:27-30; Luke 20:21-22;
+      Matthew 22:18; Mark 12; Matthew 10:16; Luke 20:24-25; Luke 20:22-25; 1 Peter 2; Romans 13:1; 1
+      Corinthians 14:33; Romans 13:2-4; Romans 13:4-5; Romans 13:5-7; Romans 13:7; Luke 20:24-26;
+      Matthew 28:18-20. Keep only the main passages above."
+  - markerTime: "4:36.4"
+    markerNote: "Other topics it touched: government, politics, justice, stewardship, prayer."
+  - markerTime: "28:40.38"
+    markerNote: "Old review note: Check weed/wheat wording; ASR confuses the two."
+recordingSpeaker: Rev. Yong Teck Meng

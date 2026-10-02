@@ -6,7 +6,7 @@ import { EMBEDDING_CONFIG, isEmbeddingVector } from '../site/lib/embedding-confi
 import { CHAPTER_VECTOR_CONFIG } from '../site/lib/chapter-vectors';
 import { SEARCH_WEIGHTS } from '../site/lib/search';
 import { createEmbeddingSession, embedTexts, prepare } from '../scripts/embeddings';
-import { chapterTokenWindows } from '../scripts/chapter-vectors';
+import { tokenWindows } from '../scripts/search-vectors';
 import type { SemanticStatus } from '../site/lib/semantic';
 
 afterEach(() => vi.unstubAllGlobals());
@@ -26,7 +26,7 @@ it('matches the query pipeline and exercises real tokenizer boundaries', async (
     const text = 'A short sentence about hope and peace.';
     const direct = await session.embedTokenIds(session.tokenize(text)), query = await session.embedText(text);
     expect(Math.max(...direct.map((v, i) => Math.abs(v - query[i])))).toBeLessThan(1e-6);
-    const windows = chapterTokenWindows(session.tokenize('Uncharacteristically hopeful, multilingual scripture. '.repeat(100)));
+    const windows = tokenWindows(session.tokenize('Uncharacteristically hopeful, multilingual scripture. '.repeat(100)));
     expect(windows.length).toBeGreaterThan(1);
     expect(windows[0].length + CHAPTER_VECTOR_CONFIG.windowing.specialTokens).toBe(256);
     const vector = await session.embedTokenIds(windows[0]);

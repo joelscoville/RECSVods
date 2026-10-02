@@ -1,0 +1,201 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Most Hideous Sin
+serviceDate: 2026-05-24
+status: draft
+sermonDescription: Pastor Yong uses Judas's betrayal of the innocent Christ to challenge excuses for
+  sin and the assumption that denial belongs only to Judas. He connects temptation and Peter's
+  failure with the congregation's own words and conduct, then contrasts regret with repentance that
+  seeks God's forgiveness rather than self-rescue. Acknowledging the complexity of suicide, he
+  points to Peter's restoration as encouragement to return after failure.
+sermonScripture:
+  - John 13:1-20
+  - John 14
+  - John 13:1-2
+sermonTopics:
+  - discipleship
+  - faith
+  - repentance
+uploads:
+  - youtubeId: uJDdItVGgj8
+    uploadDuration: "1:50:03.361"
+chapters:
+  - chapterId: c20260524-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:03.62"
+    chapterEnd: "18:51.1"
+    points:
+      - pointTime: "0:03.62"
+        pointText: The leaders guide personal prayer and meditation, welcome the congregation, introduce
+          Psalm 67 and opening songs, and pray for forgiveness and receptive hearts.
+    chapterScripture:
+      - Psalms 67:1-4
+  - chapterId: c20260524-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "18:51.1"
+    chapterEnd: "32:43.62"
+    points:
+      - pointTime: "18:51.1"
+        pointText: The congregation reads Proverbs 22 and John 13, the leader reflects on teaching and the
+          need for God's help, and hymns and a video anthem lead into the supporting James 1
+          reading.
+    subchapters:
+      - chapterId: s20260524-reflection
+        chapterTitle: Teaching and Our Shared Need for God's Help
+        chapterKind: other
+        chapterStart: "24:35.62"
+        chapterEnd: "26:24.74"
+        points:
+          - pointTime: "24:35.62"
+            pointText: The leader applies Proverbs to special education and Sunday school, comparing her
+              students' distress with her own need for gracious intervention.
+        chapterScripture:
+          - Proverbs 22
+          - John 13:21-38
+    chapterScripture:
+      - Proverbs 22:1-29
+      - John 13:21-38
+      - Proverbs 22
+      - James 1:12-15
+  - chapterId: c20260524-creed-authority
+    chapterTitle: The Apostles' Creed, Tradition and Authority
+    chapterKind: qa
+    chapterStart: "33:00.58"
+    chapterEnd: "36:39.56"
+    points:
+      - pointTime: "33:00.58"
+        pointText: Pastor Yong distinguishes the Creed's uncertain authorship tradition from scriptural
+          authority while affirming its declarative and baptismal value and offering his account of
+          denominational differences.
+    chapterScripture:
+      - John 13:21-30
+      - John 13:36-38
+      - James 1:12-15
+  - chapterId: c20260524-betraying-innocent-christ
+    chapterTitle: Judas Betrays the Innocent Christ
+    chapterKind: sermon
+    chapterStart: "36:39.56"
+    chapterEnd: "56:02.52"
+    points:
+      - pointTime: "36:39.56"
+        pointText: After recalling Jesus' loving service and praying for humble hearts, Pastor Yong presents
+          Judas's betrayal as uniquely grave because of Jesus' innocence and traces the betrayal
+          narrative.
+    subchapters:
+      - chapterId: s20260524-betrayal
+        chapterTitle: Why Judas's Betrayal Is So Grave
+        chapterKind: sermon
+        chapterStart: "46:01.46"
+        chapterEnd: "56:02.52"
+        points:
+          - pointTime: "46:01.46"
+            pointText: Pastor Yong moves from a Bible quiz and comparisons of evil to the view that betraying
+              the innocent Jesus is uniquely grave, then follows the silver, morsel and Judas's
+              departure.
+        chapterScripture:
+          - Matthew 11:26
+          - Genesis 1
+          - Genesis 4
+          - John 13:21-30
+          - Matthew 26:14-16
+          - Matthew 27:9-10
+          - John 13:21-25
+          - John 13:26-30
+    chapterScripture:
+      - John 13:1-20
+      - John 14
+      - John 13:1-2
+      - John 13:3-9
+      - John 13:6-10
+      - John 13:10
+      - John 13:14-16
+      - Matthew 11:26
+      - Genesis 1
+      - Genesis 4
+      - John 13:21-30
+      - Matthew 26:14-16
+      - Matthew 27:9-10
+      - John 13:21-25
+      - John 13:26-30
+  - chapterId: c20260524-responsibility-denial
+    chapterTitle: Temptation Does Not Excuse Our Denial
+    chapterKind: sermon
+    chapterStart: "56:03.1"
+    chapterEnd: "1:23:27.64"
+    points:
+      - pointTime: "56:03.1"
+        pointText: Pastor Yong rejects prophecy and circumstances as excuses for Judas, uses James to
+          distinguish temptation from yielding, and extends responsibility to Peter and to professed
+          faith contradicted by conduct.
+    subchapters:
+      - chapterId: s20260524-denial
+        chapterTitle: Denial Extends Beyond Judas
+        chapterKind: sermon
+        chapterStart: "1:09:04.1"
+        chapterEnd: "1:23:27.64"
+        points:
+          - pointTime: "1:09:04.1"
+            pointText: Pastor Yong includes political and religious participants, Peter and the disciples in
+              responsibility, then challenges himself and the congregation about words,
+              self-reliance and conduct that deny Christ's power.
+        chapterScripture:
+          - John 13:36-38
+          - John 13:38
+          - Mark 14:50
+          - 1 Peter 3:18
+          - 2 Timothy 3:1-5
+          - 2 Timothy 3:5
+    chapterScripture:
+      - John 12:5-6
+      - James 1:12-15
+      - James 1:13-15
+      - Genesis 3
+      - John 13:14
+      - John 13:36-38
+      - John 13:38
+      - Mark 14:50
+      - 1 Peter 3:18
+      - 2 Timothy 3:1-5
+      - 2 Timothy 3:5
+  - chapterId: c20260524-repentance-forgiveness
+    chapterTitle: Seek Forgiveness Rather Than Remain in Regret
+    chapterKind: sermon
+    chapterStart: "1:23:27.64"
+    chapterEnd: "1:34:41.24"
+    points:
+      - pointTime: "1:23:27.64"
+        pointText: Acknowledging suicide's complexity, Pastor Yong contrasts Judas's regret with Peter's
+          restoration, draws on John Stott to reject self-rescue, and urges repentance and
+          forgiveness while warning against outward faith without belief.
+    chapterScripture:
+      - Matthew 27:3-5
+      - John 21:15-17
+      - 1 John 1:9
+      - Hebrews 6:4-6
+  - chapterId: c20260524-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:34:41.24"
+    chapterEnd: "1:50:00.34"
+    points:
+      - pointTime: "1:34:41.24"
+        pointText: Pastor Yong leads prayer, the Creed and intercession for Stephen Tong's stated rally
+          programme, explains the offering, introduces the closing hymn and blessing, and announces
+          baptism and ministry opportunities including a possible Leeds fellowship.
+    chapterScripture:
+      - Ephesians 3
+      - 2 Corinthians 13
+markers:
+  - markerTime: "36:39.56"
+    markerNote: "Also cited in the sermon: John 13:3-9; John 13:6-10; John 13:10; John 13:14-16; Matthew
+      11:26; Genesis 1; Genesis 4; John 13:21-30; Matthew 26:14-16; Matthew 27:9-10; John 13:21-25;
+      John 13:26-30; John 12:5-6; James 1:12-15; James 1:13-15; Genesis 3; John 13:14; John
+      13:36-38; John 13:38; Mark 14:50; 1 Peter 3:18; 2 Timothy 3:1-5; 2 Timothy 3:5; Matthew
+      27:3-5; John 21:15-17; 1 John 1:9; Hebrews 6:4-6. Keep only the main passages above."
+  - markerTime: "36:39.56"
+    markerNote: "Other topics it touched: responsibility, sacrifice, temptation, forgiveness, hypocrisy,
+      service, prayer, discernment, stewardship, authority, truth, service-life."
+recordingSpeaker: Rev. Yong Teck Meng

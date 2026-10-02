@@ -12,10 +12,8 @@ describe('homepage publication states independent of the live approval count', (
   });
   it.each([true, false])('labels a fictional featured recording only when preview=%s', (preview) => {
     const item: HomeItem = {
-      id: 'abcdefghijk', videoId: 'abcdefghijk', serviceId: 'fixture-service',
-      title: 'Fictional state fixture', date: '2026-01-04', type: 'sermon',
-      href: '/review/watch/?chapter=fixture-chapter',
-      duration: 120, start: 0, preview, parts: [{ id: 'abcdefghijk', duration: 120 }],
+      id: 'abcdefghijk', recordingId: '2026-01-04', title: 'Fictional state fixture', date: '2026-01-04', hasSermon: true,
+      href: '/review/watch/?r=2026-01-04', length: 120, start: 0, preview,
     };
     const html = renderToStaticMarkup(createElement(Home, { items: [item], base: '/review/' }));
     expect(html).toContain(item.title);

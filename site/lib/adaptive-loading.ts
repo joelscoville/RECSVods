@@ -1,17 +1,23 @@
-import { canInstall, classifyPerformance, constrainedConnection, currentPerformanceMode, PERFORMANCE_EVENT, POLICY, publishPerformanceMode, type ConnectionHint } from './performance-mode';
-import { SEMANTIC_INSTALL_BYTES, semanticAssetsCached } from './semantic-assets';
+import { canInstall, classifyPerformance, constrainedConnection, currentPerformanceMode, measuredPerformanceMode, PERFORMANCE_EVENT, POLICY, publishPerformanceMode, type ConnectionHint } from './performance-mode';
+import { semanticAssetsCached } from './semantic-assets';
 
+const OBSERVE_AFTER_READY_MS = 2000;
 type PagePhase = 'loading' | 'ready' | 'suspended';
 type InstallPhase = 'idle' | 'scheduled' | 'registering' | 'installing' | 'pausing' | 'suspended' | 'cached' | 'unavailable';
 
 /** Tiny global coordinator. No Transformers import and no inference outside search. */
-export function startAdaptiveLoading(base: string, hasSearchContent: boolean): void {
+/** `measureCompute` is off on the dev server, where unbundled modules and React's development build make
+ * every page look slow. */
+export function startAdaptiveLoading(base: string, hasSearchContent: boolean, { measureCompute = true } = {}): void {
   const connection = (navigator as Navigator & { connection?: ConnectionHint & EventTarget }).connection;
   const workerUrl = new URL(`${base}semantic-sw.js`, location.origin).href;
   let pagePhase: PagePhase = 'loading';
   let installPhase: InstallPhase = 'idle';
-  let readyAt = 0, lastBusy = performance.now(), playback = false;
+  let lastBusy = performance.now(), playback = false;
   let blockingMs = 0, longestTaskMs = 0, observationStart = 0;
+  // The device is judged by how it loads a page, not by one busy moment later in a visit (an editor
+  // drag, a video starting): tasks count until shortly after the page is ready, and again after a restore.
+  let observationEnd = Infinity;
   let recentTasks: { startTime: number; duration: number }[] = [];
   let registration: ServiceWorkerRegistration | undefined;
   let registrationTask: Promise<ServiceWorkerRegistration> | undefined;
@@ -44,15 +50,10 @@ export function startAdaptiveLoading(base: string, hasSearchContent: boolean): v
   function update() {
     if (pagePhase !== 'ready') return;
     const nav = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
-    const resources = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
-    const result = classifyPerformance({ connection,
-      samples: [nav, ...resources].filter((entry): entry is PerformanceResourceTiming => !!entry && new URL(entry.name).origin === location.origin
-        && !/\/(models|onnx)\//.test(entry.name)), installBytes: SEMANTIC_INSTALL_BYTES,
-      blockingMs, longestTaskMs, processingMs: nav ? Math.max(0, nav.domInteractive - nav.responseEnd) : 0, readyMs: readyAt });
-    const previous = currentPerformanceMode();
-    // A restored page keeps its session classification, but not its old measurement window.
+    const result = classifyPerformance({ connection, blockingMs, longestTaskMs, processingMs: nav && measureCompute ? Math.max(0, nav.domInteractive - nav.responseEnd) : 0 });
+    const previous = measuredPerformanceMode();
+    // A download the service worker found too slow keeps the session in save-data.
     if (previous.data === 'save-data') result.data = 'save-data';
-    else if (result.data === 'unknown' && previous.data === 'normal') result.data = 'normal';
     if (previous.compute === 'low-compute') result.compute = 'low-compute';
     publishPerformanceMode(result);
     if (!canInstall(result)) suspendInstallation();
@@ -63,10 +64,12 @@ export function startAdaptiveLoading(base: string, hasSearchContent: boolean): v
       observer ??= new PerformanceObserver(list => {
         if (pagePhase === 'suspended') return;
         const now = performance.now();
-        recentTasks = [...recentTasks, ...list.getEntries()].filter(entry => entry.startTime >= observationStart && entry.startTime + entry.duration >= now - 2000);
+        lastBusy = now;
+        if (!measureCompute) return;
+        recentTasks = [...recentTasks, ...list.getEntries()].filter(entry => entry.startTime >= observationStart && entry.startTime <= observationEnd
+          && entry.startTime + entry.duration >= now - 2000);
         blockingMs = recentTasks.reduce((sum, entry) => sum + Math.max(0, entry.duration - 50), 0);
         longestTaskMs = Math.max(0, ...recentTasks.map(entry => entry.duration));
-        lastBusy = now;
         if (blockingMs > POLICY.blockingMs || longestTaskMs > POLICY.taskMs) update();
       });
       observer.observe({ type: 'longtask', buffered });
@@ -113,7 +116,7 @@ export function startAdaptiveLoading(base: string, hasSearchContent: boolean): v
     const epoch = pageEpoch;
     requestAnimationFrame(() => requestAnimationFrame(() => {
       if (pagePhase !== 'loading' || epoch !== pageEpoch) return;
-      readyAt = performance.now(); pagePhase = 'ready'; update();
+      pagePhase = 'ready'; observationEnd = performance.now() + OBSERVE_AFTER_READY_MS; update();
       document.documentElement.dataset.essentialReady = 'true';
       window.dispatchEvent(new Event(PERFORMANCE_EVENT)); performance.mark('recs-essential-ready');
       window.dispatchEvent(new Event('recs-essential-ready')); schedule();
@@ -121,13 +124,13 @@ export function startAdaptiveLoading(base: string, hasSearchContent: boolean): v
   }
   observeTasks(true);
   if (document.readyState === 'complete') loaded(); else window.addEventListener('load', loaded, { once: true });
-  if (constrainedConnection(connection)) publishPerformanceMode({ ...currentPerformanceMode(), data: 'save-data' });
+  if (constrainedConnection(connection)) publishPerformanceMode({ ...measuredPerformanceMode(), data: 'save-data' });
   void publishCached();
   navigator.serviceWorker?.addEventListener('message', event => {
     if (event.data?.type !== 'recs-semantic-install') return;
     if (event.data.state === 'cached') { installPhase = 'cached'; void publishCached(); }
     if (event.data.state === 'slow' || event.data.state === 'error') {
-      installPhase = 'unavailable'; publishPerformanceMode({ ...currentPerformanceMode(), data: 'save-data' });
+      installPhase = 'unavailable'; publishPerformanceMode({ ...measuredPerformanceMode(), data: 'save-data' });
     }
     if (event.data.state === 'paused') {
       installPhase = 'suspended';
@@ -149,6 +152,7 @@ export function startAdaptiveLoading(base: string, hasSearchContent: boolean): v
     pagePhase = document.documentElement.dataset.essentialReady === 'true' ? 'ready' : 'loading';
     // Never replay buffered pre-freeze work or add it to a fresh two-second window.
     observationStart = performance.now(); lastBusy = observationStart;
+    observationEnd = pagePhase === 'ready' ? observationStart + OBSERVE_AFTER_READY_MS : Infinity;
     recentTasks = []; blockingMs = 0; longestTaskMs = 0;
     observeTasks(false);
     // Pause/completion notifications may have been missed while frozen. Sending install again

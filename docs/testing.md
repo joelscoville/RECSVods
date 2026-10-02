@@ -61,15 +61,16 @@ RECS_TEST_PORT=4273 pnpm check browser # use 4273 + 4274 in another worktree
 The scheduler counts nested runner workers against its budget. It also serializes
 `astro check` and the browser-build group, because both write `.astro/`.
 Production and preview builds are sequential: they share `site/public/generated/`.
+The Astro configuration keeps Vite dependency caches separate for dev, build and
+sync/check commands, so checks do not invalidate imports in an open dev-server tab.
 Run one build/browser-validation invocation per worktree; use separate worktrees,
 port pairs and output roots for simultaneous independent invocations. Never reuse
 an arbitrary server already listening on the selected ports.
 
-Vitest retains file isolation and sequential cases within a file. Editorial tests
-register approval, merge/history and guard groups in separate entry files, each
-with its own environment and disposable Git repositories. All mutating fixtures
-must own their temporary roots. Model and timing suites run separately from the
-ordinary concurrent pool.
+Vitest retains file isolation and sequential cases within a file. Recording-schema,
+editor, search-index and privacy fixtures use disposable archive roots. All mutating
+fixtures must own their temporary roots. Model and timing suites run separately
+from the ordinary concurrent pool.
 
 ## Browser coverage policy
 
@@ -128,11 +129,11 @@ understanding is not the contract of the lexical verse selector.
 
 ## CI and deployment
 
-Code quality, unit/Python tests, archive/build/browser validation and editorial
-guard start as independent jobs. Code tests do not wait for Chromium installation.
+Code quality, unit/Python tests and archive/build/browser validation start as
+independent jobs. Code tests do not wait for Chromium installation.
 The existing required `validate` check aggregates **all** jobs with `if: always()`;
 failure, cancellation or an unexpected skip blocks it. Deployment still depends
-on `validate` and `editorial-guard`, and only production output is uploaded.
+on `validate`, and only production output is uploaded.
 
 ## Measurement checkpoint
 

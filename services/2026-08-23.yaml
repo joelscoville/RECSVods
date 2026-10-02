@@ -1,0 +1,212 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: In Labour
+serviceDate: 2026-08-23
+status: draft
+sermonDescription: Pastor Yong reads John 16:16-24 as encouragement to trust Christ's care when
+  sorrow obscures what lies ahead. He connects the disciples' promised joy with access to the Father
+  through Christ and the Spirit, directing prayer toward Christ's purposes. Drawing on Romans 8, he
+  acknowledges continuing suffering and periods of despair while urging patient hope, mutual
+  encouragement and the joy of participating in God's work.
+sermonScripture:
+  - John 16:21
+  - John 16
+  - John 16:16
+sermonTopics:
+  - faith
+  - holy-spirit
+  - discernment
+uploads:
+  - youtubeId: QCNrRkiFeKw
+    uploadDuration: "1:47:08.361"
+chapters:
+  - chapterId: c20260823-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:08.9"
+    chapterEnd: "8:12"
+    points:
+      - pointTime: "0:08.9"
+        pointText: The leaders guide personal prayer through A.C.T.S., welcome worshippers, invite mutual
+          encouragement and meditation, and call for praise from Psalms 96.
+    chapterScripture:
+      - Psalms 96:1-4
+  - chapterId: c20260823-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "8:19.38"
+    chapterEnd: "32:23.86"
+    points:
+      - pointTime: "8:19.38"
+        pointText: The congregation sings hymns and joins prayer and readings from Proverbs 4, John 16 and
+          Romans 8, with the youth choir's ministry in song.
+    subchapters:
+      - chapterId: s20260823-choir
+        chapterTitle: "Youth Choir: Bound for the Promised Land"
+        chapterKind: music
+        chapterStart: "27:47.16"
+        chapterEnd: "31:37.28"
+        points:
+          - pointTime: "27:47.16"
+            pointText: The youth choir ministers in song before invitations to Brother Jordan to read scripture
+              and Pastor Yong to preach.
+    chapterScripture:
+      - Proverbs 4
+      - John 16:16-24
+      - Romans 8:20-23
+  - chapterId: c20260823-gifts-for-ministry
+    chapterTitle: Discovering Gifts for Faithful Ministry
+    chapterKind: other
+    chapterStart: "32:42.3"
+    chapterEnd: "35:01.92"
+    points:
+      - pointTime: "32:42.3"
+        pointText: Pastor Yong describes learning through sermon preparation and encourages listeners to
+          discover their gifts for ministry, with biblical faithfulness as the criterion.
+  - chapterId: c20260823-christian-citizenship
+    chapterTitle: Christian Allegiance and Civic Responsibility
+    chapterKind: qa
+    chapterStart: "35:02.12"
+    chapterEnd: "45:29.62"
+    points:
+      - pointTime: "35:02.12"
+        pointText: Answering a National Day follow-up, Pastor Yong urges civic participation under
+          allegiance to God's kingdom, using political examples to distinguish discerning
+          citizenship from partisan trust or pulpit mobilization.
+  - chapterId: c20260823-trust-christs-care
+    chapterTitle: Trusting Christ's Care in Uncertainty
+    chapterKind: sermon
+    chapterStart: "45:30.08"
+    chapterEnd: "1:00:25.88"
+    points:
+      - pointTime: "45:30.08"
+        pointText: Revisiting the Farewell Discourse and the Spirit's presence, Pastor Yong interprets the
+          disciples' confusion in light of Christ's death and resurrection and urges trust despite
+          loneliness and anxiety.
+    subchapters:
+      - chapterId: s20260823-jesus-cares
+        chapterTitle: Jesus Addresses the Disciples' Anxiety
+        chapterKind: sermon
+        chapterStart: "51:37.04"
+        chapterEnd: "1:00:25.88"
+        points:
+          - pointTime: "51:37.04"
+            pointText: Pastor Yong presents a common interpretation of John 16:16, describes Jesus recognizing
+              anxiety through discernment or supernatural knowledge, and acknowledges the difficulty
+              of trusting God's care.
+        chapterScripture:
+          - John 16:16
+          - John 16:16-18
+          - Romans 8
+          - John 16:17-18
+          - John 16:19
+          - 1 Peter 5:7
+    chapterScripture:
+      - John 16
+      - John 16:16
+      - John 16:16-18
+      - Romans 8
+      - John 16:17-18
+      - John 16:19
+      - 1 Peter 5:7
+  - chapterId: c20260823-sorrow-to-joy
+    chapterTitle: Sorrow Gives Way to Promised Joy
+    chapterKind: sermon
+    chapterStart: "1:00:26.08"
+    chapterEnd: "1:07:48.5"
+    points:
+      - pointTime: "1:00:26.08"
+        pointText: Pastor Yong uses Jesus' childbirth illustration and family memories to discuss sorrow
+          before promised joy, acknowledging his lack of maternal experience and cautioning against
+          minimizing pain.
+    chapterScripture:
+      - John 16:20
+      - Revelation 3:14
+      - John 16:21
+      - John 16:22
+  - chapterId: c20260823-prayer-for-christs-purposes
+    chapterTitle: Ask the Father for Christ's Purposes
+    chapterKind: sermon
+    chapterStart: "1:07:48.68"
+    chapterEnd: "1:13:42.02"
+    points:
+      - pointTime: "1:07:48.68"
+        pointText: Pastor Yong interprets asking in Jesus' name as seeking Christ's purposes, treasuring
+          access to the Father through Christ's death and the Spirit rather than treating prayer as
+          a formula for personal gain.
+    chapterScripture:
+      - John 16:23
+      - Hebrews 10:19-20
+      - Hebrews 10:23
+      - Hebrews 10:20
+      - John 16:16-24
+  - chapterId: c20260823-joyful-service-amid-suffering
+    chapterTitle: Serving With Joy While Awaiting Restoration
+    chapterKind: sermon
+    chapterStart: "1:13:43.34"
+    chapterEnd: "1:32:36.66"
+    points:
+      - pointTime: "1:13:43.34"
+        pointText: Pastor Yong uses Romans 8 to acknowledge continuing suffering and urges patient hope and
+          fulfilment in serving Christ, distinguishing joy from manufactured enthusiasm while
+          allowing periods of despair.
+    subchapters:
+      - chapterId: s20260823-joy
+        chapterTitle: Joy Grows Through Serving Christ
+        chapterKind: sermon
+        chapterStart: "1:20:47.22"
+        chapterEnd: "1:32:36.66"
+        points:
+          - pointTime: "1:20:47.22"
+            pointText: Pastor Yong connects John 16:24 with joyful participation in God's work, using biblical
+              and ministry examples while acknowledging despair and criticizing manufactured
+              enthusiasm.
+        chapterScripture:
+          - John 16:24
+          - 1 Thessalonians 5:16
+          - Philippians 4:4
+          - Matthew 11
+          - Matthew 5:11-12
+          - Hebrews 1:9
+          - Galatians 5:22-23
+    chapterScripture:
+      - Romans 8:20-21
+      - Romans 8:20-23
+      - Romans 8:22-23
+      - Romans 8:23-25
+      - John 16:21
+      - John 16:24
+      - 1 Thessalonians 5:16
+      - Philippians 4:4
+      - Matthew 11
+      - Matthew 5:11-12
+      - Hebrews 1:9
+      - Galatians 5:22-23
+  - chapterId: c20260823-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:32:36.66"
+    chapterEnd: "1:47:07.68"
+    points:
+      - pointTime: "1:32:36.66"
+        pointText: Pastor Yong leads prayer for trust, joy and theological training, followed by the
+          service's offering, closing hymn and blessing, with announcements encouraging community
+          lunch, practical ministry and study.
+    chapterScripture:
+      - 1 Peter 5:7
+      - Hebrews 10:19-20
+      - John 16:23-24
+      - Romans 15
+      - 2 Corinthians 13
+markers:
+  - markerTime: "45:30.08"
+    markerNote: "Also cited in the sermon: John 16:16-18; Romans 8; John 16:17-18; John 16:19; 1 Peter
+      5:7; John 16:20; Revelation 3:14; John 16:22; John 16:23; Hebrews 10:19-20; Hebrews 10:23;
+      Hebrews 10:20; John 16:16-24; Romans 8:20-21; Romans 8:20-23; Romans 8:22-23; Romans 8:23-25;
+      John 16:24; 1 Thessalonians 5:16; Philippians 4:4; Matthew 11; Matthew 5:11-12; Hebrews 1:9;
+      Galatians 5:22-23. Keep only the main passages above."
+  - markerTime: "45:30.08"
+    markerNote: "Other topics it touched: prayer, discipleship, worship, politics, authority, sacrifice,
+      service, service-life, responsibility, eternal-life, suffering, joy, mission."
+recordingSpeaker: Rev. Yong Teck Meng

@@ -37,7 +37,9 @@ Blocked storage degrades to in-memory DOM state.
 ## Page lifecycle
 
 `SiteLayout.astro` sets unknown modes in server HTML and restores a valid session
-classification before styles select fonts. The small global coordinator has **no
+classification, then applies any switch forced on the hidden `/dev` page (kept in
+`localStorage` under `recs-dev:performance`; a "Dev settings on" badge shows while one is
+set). Switches change the modes in use, never the stored measurement. The small global coordinator has **no
 Transformers import**. It waits for load, eager Astro island hydration, two frames,
 a quiet interval and idle scheduling before considering installation. Input delays
 the start; hidden pages and playback pause installation. Low-compute/data-saving
@@ -54,14 +56,15 @@ attempt. A late worker pause acknowledgement also reschedules eligible work.
 On BFCache restoration, long-task observation reconnects with `buffered: false`.
 The previous two-second sample window and counters are cleared, and entries starting
 before restoration are rejected. Existing session classifications, including a
-previously established low-compute mode, remain sticky. Interrupted essential
-hydration resumes separately from optional installation.
+previously established low-compute mode, remain sticky. Long tasks count only while a
+page loads and for two seconds after it is ready (and again after a restore), so one busy
+moment later in a visit does not mark the device slow. The dev server does not measure at
+all: unbundled modules and React's development build make every page look slow. Interrupted
+essential hydration resumes separately from optional installation.
 
-Font variables use system/Georgia defaults. Custom fonts apply only when both modes
-are normal. `VideoArt` server output contains no procedural SVG. Eligible clients
-add the deterministic pattern after classification; others keep a simple colored
-strip with the same grid geometry. This reduces HTML/DOM work rather than image
-requests: these thumbnails were always inline SVGs, not downloaded image files.
+The modes govern only the search model: its download, the worker and meaning-based
+search. Fonts and the procedural thumbnails always load; they cost little, and hiding them
+made ordinary sessions look broken whenever a measurement misfired.
 
 ## Semantic asset cache
 
@@ -130,8 +133,7 @@ than deleting them. Metadata/BSB lexical search remains usable there.
 - Cancellation removes obsolete pending client work. The worker keeps only the
   latest queued request. Active ONNX computation may finish; stale results are
   discarded. A low-compute downgrade terminates the worker entirely.
-- Result rendering is initially bounded to 20 recordings, or eight in low-compute
-  mode, with Show more. Status/progress updates reuse memoized result elements.
+- Result rendering is initially bounded to 20 recordings, with Show more. Status/progress updates reuse memoized result elements.
 - In reduced modes, intentionally deferred features do not show endless loading or
   nonfunctional retry controls.
 

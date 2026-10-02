@@ -1,84 +1,67 @@
-# Browse, chapter playback, and local history
+# Browse, playback and local history
 
 ## Static routes and publication boundary
 
-Browse routes load `loadArchive`, `publishedServices`, and `flattenChapters` on the
-server for the current `ARCHIVE_MODE`. Only the allowlisted `displayServices`
-projection reaches components. Production contains reviewed services and playable
-videos; preview additionally contains labelled needs-review services. Metadata used
-only by excluded uploads produces no browse links.
+Routes call `loadPublicArchive` for the current `ARCHIVE_MODE`. It loads the
+recording files, filters production to `status: published` and derives
+`DisplayRecording` and `SearchUnit` projections. Preview includes labelled drafts.
+Markers and transcripts never enter those projections.
 
 | Route, relative to the deployment base | Content |
 | --- | --- |
-| `browse/` | Available categories or the honest empty state |
-| `browse/services/` | Logical services, newest first |
-| `browse/sermons/` | Sermon chapters, or a sermon recording without invented chapters |
-| `browse/speakers/<speaker-id>/` | Chapters assigned that speaker |
-| `browse/scripture/<canonical-book-slug>/` | Chapters referencing that Bible book |
-| `browse/topics/<topic-id>/` | Chapters assigned that topic |
-| `browse/series/<series-id>/` | Services in that factual series, newest first |
-| `browse/years/<YYYY>/` | Services in that year |
+| `browse/` | Available categories or an empty state |
+| `browse/all/` | All recordings, newest first |
+| `browse/scripture/<canonical-book-slug>/` | Recordings citing that Bible book |
+| `browse/topics/<topic-id>/` | Recordings assigned that topic |
+| `browse/series/<series-id>/` | Recordings in the series' playlist order |
+| `browse/years/<YYYY>/` | Recordings in that year, newest first |
 
-Speakers, books, topics, series and years have category indexes when data exists.
-IDs come from archive metadata, not display-name guesses. Conflicting series names
-under one ID are rejected. `BrowsePage` uses `chapterIds` and `serviceIds` only.
-`DisplayService` has `chapters: SearchChapter[]`, and speaker/topic records contain
-`chapterIds`. It excludes private metadata and browser-only BSB enrichment.
+Books, topics, series and years have category indexes when data exists. Books use
+Bible order, years run newest first and other category labels sort alphabetically.
+`BrowsePage` contains links or `recordingIds`; it does not carry chapter-ID lists.
+The source loader validates topic IDs and series membership against the shared
+taxonomy files. Series playlists include only recordings visible in that build.
 
-Chapter rows retain the existing component styles and show the short summary.
-Service pages list chapters once, with a single correction link per chapter and
-per service. Browse pages work without JavaScript and use deployment-aware URLs.
+Recording pages show the stored chapter titles and times, with subchapters under
+**Show Subchapters**, plus one **Suggest a change** action. Timestamped point notes
+support search rather than being rendered. Browse pages use base-aware URLs.
 
-## Playback and compatibility
+## One recording clock
 
-Canonical chapter links are `/watch/?chapter=<stable-id>`. IDs are the original
-chapter/section IDs. A chapter selects its physical upload and exact start/end.
-The player remains keyed by video ID, so changing uploads disposes the old player.
+Canonical watch links use `watch/?r=<recording-id>&t=<seconds>`. An optional
+`focus=<chapter-id>` identifies a named chapter or subchapter for bounded playback.
+Times are on the recording clock, not an individual upload's clock. Uploads are
+laid end to end with `uploadSkip` deducted from restarted uploads. The player maps
+recording time to the correct upload and advances across upload boundaries.
 
-`resolveSelection(services, target)` is synchronous for chapter and service/video
-targets. Only old `?id=` links call `resolveLegacyChapter(base, oldId, signal)`;
-the returned ID must exist in the current public services before Watch replaces
-the URL. No old text or segment objects are fetched. Unknown IDs show not-found;
-network failure shows a retry action. New links never emit `?id=`.
+Selecting an entry plays its range. Replay returns to the range start; continuing
+past its endpoint allows the rest of the recording. An unavailable upload keeps
+its position on the clock and is handled by the player rather than shifting every
+later chapter. YouTube errors offer timestamped external playback where possible.
 
-Existing service/video/time links still work. Valid times are bounded to the video
-and select a chapter only when `start <= time < end` on that same upload. Gaps
-remain full-recording positions with no invented chapter or endpoint. Known
-chapter selections replace the address with their canonical chapter URL; the
-initial resume position remains only in component state.
+The earlier `?chapter=`, service/video and passage `?id=` link schemes are not the
+current routing contract. New links use a recording ID and time so that editing the
+outline does not change their time target.
 
-`createChapterController` exposes `setChapter`, `tick`, `replay`,
-`continueWatching` and `ended`. A `PlaybackRange` has `{id,start,end?,resumeAt?}`.
-A valid in-range resume seeks to `resumeAt`, while Replay always seeks the full
-chapter's `start`. The endpoint soft-pauses an actively playing video once, without
-rewinding manual seeks. Continue disables the current endpoint; Replay or selecting
-a new chapter rearms it. No transcript panel or secondary segment list remains.
-
-`ScriptureLinks` still displays only references, with canonical ESV URLs and
-optional original display spelling. Hidden BSB search text is never displayed.
+`ScriptureLinks` renders reference-only ESV links with canonical URLs and original
+display spelling where provided. Hidden BSB search text is never displayed.
 
 ## Home and local state
 
-Home keeps one card per eligible upload and the established featured layout. New
-users see the latest eligible sermon; cards link to its chapter when available.
-Returning users resume only a known, unfinished service/video using the existing
-local progress record. The watch resolver then safely identifies the chapter.
+Home shows one card per recording, rather than one per physical upload. Returning
+viewers can resume a known unfinished recording on its combined clock. Search
+history and playback progress stay in browser storage; there is no account or
+remote history service. Search-history clearing leaves playback progress alone;
+the policies page offers broader local-data clearing.
 
-Search history and playback progress keep the existing local-storage keys.
-**Clear search history** preserves playback and unrelated storage. Policies'
-clear-all action removes both RECS records and reports storage failure honestly.
-No account, remote history or correction-link history is introduced.
+The optional developer switch for unapproved recordings loads drafts live from
+GitHub and opens them in the dev player. Those drafts are not bundled in production
+pages or search artifacts. See [developer tools](README.md#developer-tools-dev).
 
-## Verification handoff
+## Verification
 
-`tests/browse.test.ts` covers publication filtering, categories, stable IDs,
-non-root URLs, hidden BSB exclusion, unknown metadata, home selection, multipart
-selection, time containment and gaps. Player tests cover endpoint, Continue,
-resume/full Replay, malformed times and local-state behavior.
-
-The existing desktop, portrait and landscape Penpot references and checked-in CSS
-remain the visual authority. CSS changes are semantic selector renames and removal
-of unused panel/list rules, with existing tokens, spacing, typography and layout
-values preserved. Fresh browser, keyboard, screen-reader and responsive checks are
-pending the integrating owner's post-migration run; unit coverage is not visual or
-WCAG conformance evidence.
+`tests/browse.test.ts` covers categories, publication filtering, playlist order and
+base-aware URLs. Recording/player tests cover the combined clock, upload boundaries,
+selection, replay and resume. Browser suites exercise actual hydration, playback
+adapters, keyboard operation and responsive layouts. Automated adapters do not
+establish actual YouTube availability; axe checks are not formal conformance evidence.

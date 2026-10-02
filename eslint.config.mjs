@@ -7,6 +7,7 @@ export default ts.config(
   js.configs.recommended,
   ...ts.configs.recommended,
   ...astro.configs.recommended,
+  { files: ['**/*.astro'], languageOptions: { parserOptions: { parser: ts.parser } } },
   { rules: { '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_', argsIgnorePattern: '^_' }] } },
   { languageOptions: { globals: { process: 'readonly', console: 'readonly', URL: 'readonly', fetch: 'readonly', setTimeout: 'readonly', clearTimeout: 'readonly', document: 'readonly', window: 'readonly' } } },
 );

@@ -1,194 +1,122 @@
 import { useEffect, useId, useRef, useState } from 'react';
-import type { DisplayChapter, DisplayService } from './archive-display';
-import { displayType, formatDate, formatDuration, readWatchTarget, serviceUrl, siteUrl, watchUrl, youtubeUrl, type WatchTarget } from '../lib/urls';
-import { resolveLegacyChapter } from '../lib/chapter-index';
+import type { DisplayEntry, DisplayRecording } from './archive-display';
+import { sermonOf } from '../lib/display';
+import { formatDate, formatDuration, readWatchTarget, serviceUrl, siteUrl, watchUrl, type WatchTarget } from '../lib/urls';
 import Chapters from './Chapters';
-import YouTubePlayer, { type PlaybackChoice } from './YouTubePlayer';
+import YouTubePlayer, { youtubeAt, type PlaybackChoice } from './YouTubePlayer';
 import CopyLink from './CopyLink';
 import Icon from './Icon';
 import { ScriptureLine } from './ScriptureLinks';
 import CorrectionLinks from './CorrectionLinks';
 import VideoQuirks from './VideoQuirks';
 
-/** `match` is the chapter a search or category matched, offered as "Chapter only" while the sermon plays. */
-interface Selection { service: DisplayService; video: DisplayService['videos'][number]; chapter?: DisplayChapter; match?: DisplayChapter; start: number }
-/** Where playback softly stops: the end of the service (its last chapter, the closing), the end of the
- * whole sermon, the end of the selected chapter, or nowhere. */
-type Stop = 'service' | 'sermon' | 'chapter' | 'none';
+/** A named chapter or subchapter, never a key-point range. */
+interface Selection { recording: DisplayRecording; start: number; focus?: DisplayEntry }
+/** Where playback softly stops: the end of the sermon, the end of the focused point or part, or nowhere. */
+type Stop = 'none' | 'sermon' | 'focus';
 
-/** The whole sermon around a chapter: the run of consecutive top-level sermon chapters in its upload.
- * The archive divides a sermon into several chapters, so one sermon chapter is not the sermon. */
-export function sermonSpan(service: DisplayService, chapter?: DisplayChapter): { first: DisplayChapter; start: number; end: number } | undefined {
-  const top = chapter?.parentId ? service.chapters.find((item) => item.id === chapter.parentId) : chapter;
-  if (top?.type !== 'sermon') return undefined;
-  const run = service.chapters.filter((item) => item.videoId === top.videoId && !item.parentId).sort((a, b) => a.start - b.start);
-  let first = run.findIndex((item) => item.id === top.id), last = first;
-  while (first > 0 && run[first - 1].type === 'sermon') first--;
-  while (last < run.length - 1 && run[last + 1].type === 'sermon') last++;
-  return { first: run[first], start: run[first].start, end: run[last].end };
-}
-export function resolveSelection(services: DisplayService[], target: WatchTarget): Selection | null {
-  if (target.chapter) {
-    const service = services.find((item) => item.chapters.some((chapter) => chapter.id === target.chapter));
-    const chapter = service?.chapters.find((item) => item.id === target.chapter);
-    const video = service?.videos.find((item) => item.id === chapter?.videoId);
-    // The match may sit in another part of a split recording; "Chapter only" then switches part.
-    const match = target.match ? service?.chapters.find((item) => item.id === target.match) : undefined;
-    return service && chapter && video ? { service, chapter, video, start: chapter.start, ...(match && match.id !== chapter.id ? { match } : {}) } : null;
-  }
-  if (target.id) return null; // Resolve old IDs asynchronously, never guess from their spelling.
-  const service = target.service ? services.find((item) => item.id === target.service) : services.find((item) => item.videos.some((video) => video.id === target.video));
-  const video = target.video ? service?.videos.find((item) => item.id === target.video) : service?.videos[0];
-  if (!service || !video) return null;
-  const requested = Number.isFinite(target.start) ? Math.max(0, target.start!) : 0;
-  const start = Math.min(requested, Math.max(0, video.duration - 1));
-  // A full-recording/resume URL retains its exact offset and has no soft endpoint.
-  // The chapter list still highlights the span containing the playback clock.
-  return { service, video, start };
+export function resolveSelection(recordings: readonly DisplayRecording[], target: WatchTarget): Selection | null {
+  const recording = recordings.find((item) => item.id === target.recording);
+  if (!recording) return null;
+  const focus = target.focus ? recording.entries.find((entry) => entry.id === target.focus) : undefined;
+  // Without a time, a recording opens at its sermon. Links carry whole seconds, so a focused point or part
+  // opens exactly at its start rather than a fraction before it (in the entry before).
+  const requested = focus && (target.start === undefined || Math.abs(target.start - focus.start) < 1) ? focus.start
+    : target.start ?? 0;
+  return { recording, start: Math.min(Math.max(0, requested), Math.max(0, recording.length - 1)), ...(focus ? { focus } : {}) };
 }
 
-export default function Watch({ services, base }: { services: DisplayService[]; base: string }) {
+/** `servicePages` is false where the recording pages do not exist (the developer view of drafts). */
+export default function Watch({ recordings, base, servicePages = true, homeHref }: { recordings: DisplayRecording[]; base: string; servicePages?: boolean; homeHref?: string }) {
   const [selection, setSelection] = useState<Selection | null>(null);
   const [ready, setReady] = useState(false);
-  const [linkError, setLinkError] = useState(false);
-  const [attempt, setAttempt] = useState(0);
   const [time, setTime] = useState(0);
   const [seekRequest, setSeekRequest] = useState(0);
-  // One subsection state drives both the panel toggle (desktop) and the footer toggle (phones).
+  // One key-point state drives both the panel toggle (desktop) and the footer toggle (phones).
   const [showSubsections, setShowSubsections] = useState(false);
-  // A chapter link plays to the end of the service; the choices under the player change that.
   const [stop, setStop] = useState<Stop>('none');
   const [resumeAt, setResumeAt] = useState<number>();
   const [offer, setOffer] = useState(false);
   const outlineId = useId();
   const generation = useRef(0);
   useEffect(() => {
-    let abort: AbortController | undefined;
-    const sync = async () => {
-      const version = ++generation.current;
-      abort?.abort(); abort = new AbortController();
-      setReady(false); setLinkError(false);
-      let target = readWatchTarget(window.location.search);
-      try {
-        if ((!target.chapter && target.id) || (target.chapter && !resolveSelection(services, target))) {
-          setSelection(null);
-          const chapter = await resolveLegacyChapter(base, target.chapter ?? target.id!, abort.signal);
-          if (generation.current !== version) return;
-          target = chapter ? { chapter } : target;
-        }
-        const next = resolveSelection(services, target);
-        if (generation.current !== version) return;
-        setSelection(next); setTime(next?.start ?? 0); setSeekRequest(value => value + 1); setReady(true);
-        setStop(next?.chapter ? 'service' : 'none'); setResumeAt(undefined); setOffer(Boolean(next?.chapter));
-        if (next?.chapter?.parentId) setShowSubsections(true);
-        if (next) {
-          document.title = `${next.service.title} | RECS Replay`;
-          if (next.chapter) window.history.replaceState({}, '', watchUrl(base, { chapter: next.chapter.id, match: next.match?.id }));
-        }
-      } catch {
-        if (generation.current === version) { setSelection(null); setReady(true); setLinkError(true); }
-      }
+    const sync = () => {
+      ++generation.current;
+      const next = resolveSelection(recordings, readWatchTarget(window.location.search));
+      setSelection(next); setTime(next?.start ?? 0); setSeekRequest(value => value + 1); setReady(true);
+      setStop('none'); setResumeAt(undefined); setOffer(Boolean(next));
+      if (next?.focus?.parentId) setShowSubsections(true);
+      if (next) document.title = `${next.recording.title} | RECS Replay`;
     };
-    void sync();
+    sync();
     window.addEventListener('popstate', sync);
-    return () => { generation.current++; abort?.abort(); window.removeEventListener('popstate', sync); };
-  }, [services, base, attempt]);
+    return () => { generation.current++; window.removeEventListener('popstate', sync); };
+  }, [recordings, base]);
 
-  function choose(chapter: DisplayChapter, nextStop: Stop = 'service', match?: DisplayChapter) {
+  function go(next: Selection, nextStop: Stop) {
     generation.current++;
-    const next = resolveSelection(services, { chapter: chapter.id, match: match?.id });
-    if (!next) return;
-    const url = watchUrl(base, { chapter: chapter.id, match: next.match?.id });
+    const url = watchUrl(base, { recording: next.recording.id, start: next.start, focus: next.focus?.id });
     if (window.location.pathname + window.location.search !== url) window.history.pushState({}, '', url);
     setSeekRequest(value => value + 1);
-    setSelection(next); setTime(next.start); setReady(true); setLinkError(false);
+    setSelection(next); setTime(next.start); setReady(true);
     setStop(nextStop); setResumeAt(undefined); setOffer(true);
-    document.title = `${next.service.title} | RECS Replay`;
   }
-  function watchFull() {
+  function choose(entry: DisplayEntry, nextStop: Stop = 'none') {
     if (!selection) return;
-    generation.current++;
-    // The full service starts at the beginning of its first part, whichever part is playing now.
-    const { service, match } = selection, video = service.videos[0];
-    window.history.pushState({}, '', watchUrl(base, { service: service.id, video: video.id }));
-    setSelection({ service, video, start: 0, ...(match ? { match } : {}) }); setTime(0); setSeekRequest(value => value + 1);
-    setStop('service'); setResumeAt(undefined); setOffer(true);
+    go({ recording: selection.recording, start: entry.start, focus: entry }, nextStop);
   }
 
   if (!selection) return <main id="main" className="page-width empty-archive" tabIndex={-1}>
-    <a className="text-link" href={siteUrl(base)}><Icon name="back" />Back to home</a>
-    <h1>{!ready ? 'Watch a recording' : linkError ? 'Recording link unavailable' : services.length ? 'Recording not found' : 'No published recordings yet'}</h1>
-    <p role="status">{!ready ? 'Loading the selected recording…' : linkError ? 'This older link could not be resolved. Check your connection and retry.' : services.length ? 'This link does not match a published chapter or recording. Browse the archive to find one.' : 'Recordings will be available here once they are ready to publish.'}</p>
-    {linkError && <button className="button button-secondary" type="button" onClick={() => setAttempt((value) => value + 1)}>Retry recording link</button>}
-    {services.length > 0 && <ul className="plain-service-list">{services.map((service) => <li key={service.id}><a href={serviceUrl(base, service.id)}>{service.title} · {formatDate(service.date)}</a></li>)}</ul>}
-    <noscript><p>Playback needs JavaScript. Open a service page for its direct YouTube links.</p></noscript>
+    <a className="text-link" href={homeHref ?? siteUrl(base)}><Icon name="back" />Back to home</a>
+    <h1>{!ready ? 'Watch a recording' : recordings.length ? 'Recording not found' : 'No published recordings yet'}</h1>
+    <p role="status">{!ready ? 'Loading the selected recording…' : recordings.length ? 'This link does not match a published recording. Browse the archive to find one.' : 'Recordings will be available here once they are ready to publish.'}</p>
+    {recordings.length > 0 && <ul className="plain-service-list">{recordings.map((recording) => <li key={recording.id}><a href={servicePages ? serviceUrl(base, recording.id) : watchUrl(base, { recording: recording.id })}>{recording.title} · {formatDate(recording.date)}</a></li>)}</ul>}
+    <noscript><p>Playback needs JavaScript. Open a recording page for its direct YouTube links.</p></noscript>
   </main>;
 
-  const { service, video, chapter, start } = selection;
-  // The heading, details and description describe the recording; the chapter shows only in the panel.
-  const title = service.title;
-  const speaker = service.chapters.find((item) => item.videoId === video.id && item.type === 'sermon' && item.speaker)?.speaker
-    ?? service.chapters.find((item) => item.videoId === video.id && item.speaker)?.speaker;
-  // The service ends with its last chapter (the closing); anything recorded after it is not the service.
-  // A livestream split into parts ends in its last part, so earlier parts play through to their end.
-  const lastPart = service.videos[service.videos.length - 1];
-  const primaries = service.chapters.filter((item) => item.videoId === video.id && !item.parentId);
-  const serviceEnd = video.id === lastPart?.id && primaries.length ? Math.max(...primaries.map((item) => item.end)) : undefined;
-  const rangeStart = chapter?.start ?? start;
-  const sermon = sermonSpan(service, chapter);
-  const end = stop === 'chapter' && chapter ? chapter.end
-    : stop === 'sermon' && sermon ? sermon.end
-    : stop === 'service' && serviceEnd !== undefined && serviceEnd < video.duration - 1 && serviceEnd > rangeStart ? serviceEnd : undefined;
-  // Changing only the stop keeps the playback position (resumeAt), so the player does not jump back.
-  const range = { id: `${chapter?.id ?? `${video.id}:${start}`}:${stop}`, start: rangeStart, end, resumeAt: resumeAt ?? start };
-  const endLabel = stop === 'sermon' ? 'the end of the sermon' : stop === 'chapter' ? 'the end of this chapter' : 'the end of the service';
-  // A matched chapter is offered as "Chapter only". Otherwise the sermon being watched is offered as
-  // "Sermon only" (all of its chapters), any other chapter as "Chapter only", and the full recording
-  // offers the service's sermon.
-  const matched = selection.match && selection.match.id !== chapter?.id ? selection.match : undefined;
-  const firstSermon = sermonSpan(service, service.chapters.find((item) => item.type === 'sermon' && !item.parentId));
-  const only: PlaybackChoice | undefined = matched ? { label: 'Chapter only', onChoose: () => choose(matched, 'chapter', matched) }
-    : chapter && sermon ? (stop === 'sermon' ? undefined : { label: 'Sermon only', onChoose: () => { setResumeAt(time); setStop('sermon'); } })
-    : chapter ? (stop === 'chapter' ? undefined : { label: 'Chapter only', onChoose: () => { setResumeAt(time); setStop('chapter'); } })
-    : firstSermon ? { label: 'Sermon only', onChoose: () => choose(firstSermon.first, 'sermon') }
-    : undefined;
-  const atServiceStart = !chapter && start <= 1 && video.id === service.videos[0]?.id;
+  const { recording, start, focus } = selection;
+  const sermon = sermonOf(recording);
+  const range = {
+    id: `${recording.id}:${start}:${stop}`,
+    start: stop === 'focus' && focus ? focus.start : stop === 'sermon' && sermon ? sermon.start : start,
+    end: stop === 'focus' && focus ? focus.end : stop === 'sermon' && sermon ? sermon.end : undefined,
+    // Changing only the stop keeps the playback position, so the player does not jump back.
+    resumeAt: resumeAt ?? start,
+  };
+  const endLabel = stop === 'sermon' ? 'the end of the sermon' : `the end of “${focus?.title ?? 'this part'}”`;
+  const inSermon = sermon && time >= sermon.start && time < sermon.end;
   const choices: PlaybackChoice[] = !offer ? [] : [
-    ...(atServiceStart ? [] : [{ label: 'Full service instead', onChoose: watchFull }]),
-    ...(only ? [only] : []),
+    ...(start > 1 || stop !== 'none' ? [{ label: 'Full service instead', onChoose: () => go({ recording, start: 0 }, 'none') }] : []),
+    ...(focus && (focus.parentId || focus.type !== 'sermon') && stop !== 'focus' ? [{ label: 'Chapter only', onChoose: () => choose(focus, 'focus') }]
+      : sermon && stop !== 'sermon' ? [{ label: 'Sermon only', onChoose: () => { if (inSermon) { setResumeAt(time); setStop('sermon'); } else choose(sermon, 'sermon'); } }] : []),
   ];
-  // External YouTube links cannot enforce a soft endpoint. Offer navigation, not an
-  // inaccurate promise that a "Chapter only" link will stop YouTube at that boundary.
+  // YouTube links cannot enforce a soft stop: offer navigation instead.
   const externalChoices: PlaybackChoice[] = [
-    ...(matched ? [{ label: 'Go to matching chapter', onChoose: () => choose(matched, 'chapter', matched) }] : []),
-    ...(atServiceStart ? [] : [{ label: 'Start full service', onChoose: watchFull }]),
+    ...(focus ? [{ label: `Go to “${focus.title}”`, onChoose: () => choose(focus, 'focus') }] : []),
+    ...(start > 1 ? [{ label: 'Start full service', onChoose: () => go({ recording, start: 0 }, 'none') }] : []),
   ];
-  const shareUrl = chapter ? watchUrl(base, { chapter: chapter.id }) : watchUrl(base, { service: service.id, video: video.id, start });
-  const references = [...new Set(service.chapters.filter((item) => item.videoId === video.id).flatMap((item) => item.scripture))];
-  const displayReferences = references.map((reference) => {
-    const source = service.chapters.find((item) => item.videoId === video.id && item.scripture.includes(reference));
-    return source?.scriptureDisplay?.[source.scripture.indexOf(reference)] ?? reference;
-  });
+  const shareUrl = watchUrl(base, { recording: recording.id, start, focus: focus?.id });
+  const quirks = [...new Map(recording.uploads.flatMap((upload) => upload.quirks ?? []).map((flag) => [flag.kind, flag])).values()];
   return <main id="main" className="watch-main" tabIndex={-1}>
     <div className="playback-layout">
-      <YouTubePlayer key={video.id} videoId={video.id} serviceId={service.id} title={title} range={range} seekRequest={seekRequest} onTime={setTime} endLabel={endLabel} choices={choices} externalChoices={externalChoices} quirks={video.quirks} />
+      <YouTubePlayer key={recording.id} uploads={recording.uploads} recordingId={recording.id} title={recording.title} range={range} seekRequest={seekRequest} onTime={setTime} endLabel={endLabel} choices={choices} externalChoices={externalChoices} />
       <section className="playback-details" aria-labelledby="recording-title">
         <div className="playback-identity">
-          <h1 id="recording-title">{title}</h1>
-          <p className="metadata"><time dateTime={service.date}>{formatDate(service.date)}</time>{speaker && <> · {speaker}</>}{service.videos.length > 1 && <> · Recording {service.videos.findIndex((item) => item.id === video.id) + 1} of {service.videos.length}</>}</p>
-          <p className="metadata">{displayType(service.type)} · <span className="nowrap"><span className="meta-label">Duration</span> {formatDuration(video.duration)}</span></p>
-          {service.preview && <p className="preview-label">Unreviewed preview</p>}
+          <h1 id="recording-title">{recording.title}</h1>
+          <p className="metadata"><time dateTime={recording.date}>{formatDate(recording.date)}</time>{recording.speaker && <> · {recording.speaker}</>}</p>
+          <p className="metadata">{sermon ? 'Service' : 'Recording'} · <span className="nowrap"><span className="meta-label">Duration</span> {formatDuration(recording.length)}</span></p>
+          {recording.preview && <p className="preview-label">Unreviewed preview</p>}
         </div>
-        {references.length > 0 && <ScriptureLine references={references} displayReferences={displayReferences} />}
-        {service.sermonDescription && <SermonDescription text={service.sermonDescription} />}
-        <VideoQuirks quirks={video.quirks} />
+        {recording.scripture.length > 0 && <ScriptureLine references={recording.scripture} displayReferences={recording.scriptureDisplay} />}
+        {recording.description && <SermonDescription text={recording.description} />}
+        <VideoQuirks quirks={quirks} />
       </section>
-      <Chapters service={service} videoId={video.id} time={time} onChoose={choose} base={base} selectedId={chapter?.id} subsections={{ shown: showSubsections, toggle: () => setShowSubsections((shown) => !shown) }} listId={outlineId} />
+      <Chapters recording={recording} time={time} onChoose={(entry) => choose(entry)} base={base} selectedId={focus?.id} subsections={{ shown: showSubsections, toggle: () => setShowSubsections((shown) => !shown) }} listId={outlineId} />
       {/* After the chapters on mobile; placed beneath the details on desktop. */}
       <div className="playback-footer" role="group" aria-label="Recording actions">
         <div className="playback-actions">
-          <div className="action-row">{service.chapters.some((item) => item.parentId) && <button type="button" className="button button-secondary subsection-button" aria-expanded={showSubsections} aria-controls={outlineId} onClick={() => setShowSubsections((shown) => !shown)}>{showSubsections ? 'Hide Subsections' : 'Show Subsections'}</button>}<a className="button button-secondary" href={serviceUrl(base, service.id)}>View full service</a><a className="button" href={youtubeUrl(video.id, chapter?.start ?? start)}>Watch on YouTube</a><CopyLink href={shareUrl} /></div>
-          <div className="action-row correction-row"><CorrectionLinks target={chapter ? { chapterId: chapter.id } : { serviceId: service.id, videoId: video.id }} base={base} /></div>
+          <div className="action-row">{recording.entries.some((entry) => entry.parentId) && <button type="button" className="button button-secondary subsection-button" aria-expanded={showSubsections} aria-controls={outlineId} onClick={() => setShowSubsections((shown) => !shown)}>{showSubsections ? 'Hide Subchapters' : 'Show Subchapters'}</button>}{servicePages && <a className="button button-secondary" href={serviceUrl(base, recording.id)}>View full service</a>}<a className="button" href={youtubeAt(recording.uploads, time)}>Watch on YouTube</a><CopyLink href={shareUrl} /></div>
+          {servicePages && <div className="action-row correction-row"><CorrectionLinks recordingId={recording.id} start={time} base={base} /></div>}
         </div>
       </div>
     </div>

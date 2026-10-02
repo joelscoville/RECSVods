@@ -1,45 +1,75 @@
-# Curator reuse guide. Service-local definitions remain authoritative and need review
-# with their logical service. This file does not rewrite existing assignments or add
-# runtime search aliases. Main alone merges proposals from historical workers.
-schema_version: 1
-topics:
-  - { id: authority, name: Authority }
-  - { id: communion, name: Holy Communion }
-  - { id: discernment, name: Discernment }
-  - { id: discipleship, name: Discipleship }
-  - { id: eternal-life, name: Eternal life }
-  - { id: faith, name: Faith }
-  - { id: forgiveness, name: Forgiveness }
-  - { id: glory, name: Glory }
-  - { id: government, name: Government }
-  - { id: holy-spirit, name: Holy Spirit }
-  - { id: hope, name: Hope }
-  - { id: hypocrisy, name: Hypocrisy }
-  - { id: justice, name: Justice }
-  - { id: joy, name: Joy }
-  - { id: knowing-god, name: Knowing God }
-  - { id: love, name: Love }
-  - { id: meditation, name: Meditation }
-  - { id: mission, name: Mission }
-  - { id: peace, name: Peace }
-  - { id: persecution, name: Persecution }
-  - { id: politics, name: Politics }
-  - { id: prayer, name: Prayer }
-  - { id: repentance, name: Repentance }
-  - { id: responsibility, name: Responsibility }
-  - { id: sacrifice, name: Sacrifice }
-  - { id: salvation, name: Salvation }
-  - { id: sanctification, name: Sanctification }
-  - { id: service, name: Service }
-  - { id: service-life, name: Church life }
-  - { id: stewardship, name: Stewardship }
-  - { id: suffering, name: Suffering }
-  - { id: temptation, name: Temptation }
-  - { id: trinity, name: Trinity }
-  - { id: truth, name: Truth }
-  - { id: worship, name: Worship }
-legacy_variants:
-  - { id: church-life, name: Church life, preferred_for_new_records: service-life }
-  - { id: communion, name: Communion, preferred_label_for_new_records: Holy Communion }
-series:
-  - { id: gospel-of-john, name: Expository Preaching on the Gospel of John }
+# yaml-language-server: $schema=../schema/topics.schema.json
+# Every topic a sermon may use. Add a topic here before using it in sermonTopics.
+
+- topicId: authority
+  topicName: Authority
+- topicId: church-life
+  topicName: Church life
+- topicId: communion
+  topicName: Holy Communion
+- topicId: discernment
+  topicName: Discernment
+- topicId: discipleship
+  topicName: Discipleship
+- topicId: eternal-life
+  topicName: Eternal life
+- topicId: faith
+  topicName: Faith
+- topicId: forgiveness
+  topicName: Forgiveness
+- topicId: glory
+  topicName: Glory
+- topicId: government
+  topicName: Government
+- topicId: holy-spirit
+  topicName: Holy Spirit
+- topicId: hope
+  topicName: Hope
+- topicId: hypocrisy
+  topicName: Hypocrisy
+- topicId: joy
+  topicName: Joy
+- topicId: justice
+  topicName: Justice
+- topicId: knowing-god
+  topicName: Knowing God
+- topicId: love
+  topicName: Love
+- topicId: meditation
+  topicName: Meditation
+- topicId: mission
+  topicName: Mission
+- topicId: peace
+  topicName: Peace
+- topicId: persecution
+  topicName: Persecution
+- topicId: politics
+  topicName: Politics
+- topicId: prayer
+  topicName: Prayer
+- topicId: repentance
+  topicName: Repentance
+- topicId: responsibility
+  topicName: Responsibility
+- topicId: sacrifice
+  topicName: Sacrifice
+- topicId: salvation
+  topicName: Salvation
+- topicId: sanctification
+  topicName: Sanctification
+- topicId: service
+  topicName: Service
+- topicId: service-life
+  topicName: Church life
+- topicId: stewardship
+  topicName: Stewardship
+- topicId: suffering
+  topicName: Suffering
+- topicId: temptation
+  topicName: Temptation
+- topicId: trinity
+  topicName: Trinity
+- topicId: truth
+  topicName: Truth
+- topicId: worship
+  topicName: Worship

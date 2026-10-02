@@ -1,0 +1,169 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Overcoming
+serviceDate: 2026-08-30
+status: draft
+sermonDescription: Pastor Yong presents Jesus' promise of overcoming as courage amid trouble, not
+  freedom from suffering. The Spirit gives believers direct access to the Father and draws them into
+  shared life, even when caring is costly. He urges listeners to remember God's love, seek help for
+  weak faith and find patient assurance in Christ's victory rather than expect constant happiness.
+sermonScripture:
+  - Hebrews 11:13-16
+  - John 16:33
+  - John 16:25-33
+sermonTopics:
+  - faith
+  - discipleship
+  - holy-spirit
+uploads:
+  - youtubeId: M9uwSKpB_gk
+    uploadDuration: "1:50:40.561"
+chapters:
+  - chapterId: c20260830-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:05.1"
+    chapterEnd: "13:24.32"
+    points:
+      - pointTime: "0:05.1"
+        pointText: The leaders guide ACTS prayer, welcome and meditation, the call to worship from Psalms
+          97, an opening hymn and prayer for the service and preacher.
+    chapterScripture:
+      - Psalms 97:1-5
+  - chapterId: c20260830-worship-and-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "13:24.32"
+    chapterEnd: "33:05"
+    points:
+      - pointTime: "13:24.32"
+        pointText: The worship leader invites relational trust in Jesus through song, the congregation joins
+          hymns and responsive readings from Proverbs 5 and John 16, and a reader known only by a
+          partial name reads Hebrews 11:13-16.
+    chapterScripture:
+      - Proverbs 5
+      - John 16:25-33
+      - Hebrews 11:13-16
+  - chapterId: c20260830-spirit-and-direct-access
+    chapterTitle: The Spirit Opens Direct Access to the Father
+    chapterKind: sermon
+    chapterStart: "33:05"
+    chapterEnd: "55:07.62"
+    points:
+      - pointTime: "33:05"
+        pointText: Pastor Yong connects Jesus' departure and the indwelling Spirit with joy and direct
+          prayer in God's will, urging personal prayer without treating prominent Christians as
+          necessary intermediaries or requiring constant happiness.
+    subchapters:
+      - chapterId: s20260830-access
+        chapterTitle: Prayer Needs No Human Intermediary
+        chapterKind: sermon
+        chapterStart: "43:06.52"
+        chapterEnd: "55:07.62"
+        points:
+          - pointTime: "43:06.52"
+            pointText: Pastor Yong urges regular prayer aligned with God's will, using his Reformed
+              understanding and prayer anecdotes to deny that a pastor's prayer is automatically
+              better.
+        chapterScripture:
+          - John 13
+          - John 16
+          - 1 Corinthians 2:6-7
+          - John 16:25-26
+          - James 5
+          - John 16:23-24
+    chapterScripture:
+      - John 16:25-33
+      - Hebrews 11:13-16
+      - John 16
+      - 1 Peter 5:7
+      - John 13
+      - 1 Corinthians 2:6-7
+      - John 16:25-26
+      - James 5
+      - John 16:23-24
+  - chapterId: c20260830-shared-joy-amid-suffering
+    chapterTitle: Shared Joy Does Not Remove Suffering
+    chapterKind: sermon
+    chapterStart: "55:07.62"
+    chapterEnd: "1:15:09.94"
+    points:
+      - pointTime: "55:07.62"
+        pointText: Pastor Yong commends voluntary mutual care through Acts 2 while acknowledging
+          self-interest, unreliable relationships, persecution, disappointment and the emotional
+          cost of empathy rather than promising uninterrupted peace.
+    chapterScripture:
+      - Acts 2:1-3
+      - Acts 2:44-47
+      - John 16:24
+      - Acts 2
+      - John 16:33
+  - chapterId: c20260830-love-and-growing-faith
+    chapterTitle: Remember God's Love and Seek Stronger Faith
+    chapterKind: sermon
+    chapterStart: "1:15:09.94"
+    chapterEnd: "1:30:55.66"
+    points:
+      - pointTime: "1:15:09.94"
+        pointText: Pastor Yong counters insecurity with God's love and forgiveness, encourages imperfect
+          obedience, and presents the disciples' failures, Hebrews 11 and examples of perseverance
+          as encouragement for faith that grows through trials.
+    subchapters:
+      - chapterId: s20260830-faith
+        chapterTitle: Weak Faith Can Grow Through Trials
+        chapterKind: sermon
+        chapterStart: "1:22:31.34"
+        chapterEnd: "1:30:55.66"
+        points:
+          - pointTime: "1:22:31.34"
+            pointText: Pastor Yong says God understands weak faith, drawing encouragement from Mark 9:24,
+              Hebrews 11 and examples he attributes to Stephen Tong, Nick Vujicic and Kanae
+              Miyahara.
+        chapterScripture:
+          - John 16:29-32
+          - Mark 9:24
+          - Hebrews 11:13-16
+    chapterScripture:
+      - 1 Corinthians 13:13
+      - John 16:27-28
+      - Matthew 10
+      - Matthew 10:29-31
+      - John 16:29-32
+      - Mark 9:24
+      - Hebrews 11:13-16
+  - chapterId: c20260830-hope-grounded-in-christ
+    chapterTitle: Christ's Victory Makes Hope Certain
+    chapterKind: sermon
+    chapterStart: "1:30:55.66"
+    chapterEnd: "1:35:49"
+    points:
+      - pointTime: "1:30:55.66"
+        pointText: Pastor Yong grounds courage in Christ's death, resurrection and ascension, interpreting
+          hope as patient assurance amid difficulty rather than wishful thinking or empty
+          reassurance.
+    chapterScripture:
+      - John 16:33
+      - Romans 8:24-25
+  - chapterId: c20260830-response-and-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:35:50.1"
+    chapterEnd: "1:50:40.42"
+    points:
+      - pointTime: "1:35:50.1"
+        pointText: Pastor Yong leads response and prayer for young people, with the Creed incompletely
+          captured in ASR, followed by the charitable offering, closing hymn, doxology, blessing
+          from Jude, church notices and dismissal.
+    chapterScripture:
+      - Jude 1:24-25
+markers:
+  - markerTime: "33:05"
+    markerNote: "Also cited in the sermon: John 16; 1 Peter 5:7; John 13; 1 Corinthians 2:6-7; John
+      16:25-26; James 5; John 16:23-24; Acts 2:1-3; Acts 2:44-47; John 16:24; Acts 2; 1 Corinthians
+      13:13; John 16:27-28; Matthew 10; Matthew 10:29-31; John 16:29-32; Mark 9:24; Romans 8:24-25.
+      Keep only the main passages above."
+  - markerTime: "33:05"
+    markerNote: "Other topics it touched: service, peace, service-life, knowing-god, prayer,
+      forgiveness, stewardship, joy, politics, suffering, love, temptation, hope."
+recordingSpeaker: Rev. Yong Teck Meng

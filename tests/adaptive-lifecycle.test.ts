@@ -180,6 +180,32 @@ describe('adaptive browser lifecycle', () => {
     expect(browser.observations).toEqual([{ type: 'longtask', buffered: true }, { type: 'longtask', buffered: false }, { type: 'longtask', buffered: false }]);
   });
 
+  it('judges the device by loading, not by one busy moment later in the visit', async () => {
+    const browser = browserFixture();
+    startAdaptiveLoading('/review/', true);
+    await vi.advanceTimersByTimeAsync(100);
+    browser.task(300);
+    expect(browser.dataset.computeMode).toBe('normal');
+    await vi.advanceTimersByTimeAsync(5000);
+    // An editor drag or a video starting minutes later does not downgrade the session.
+    browser.task(900);
+    expect(browser.dataset.computeMode).toBe('normal');
+    // A slow load still does.
+    const slow = browserFixture();
+    startAdaptiveLoading('/review/', true);
+    slow.task(900);
+    await vi.advanceTimersByTimeAsync(100);
+    expect(slow.dataset.computeMode).toBe('low-compute');
+  });
+
+  it('does not measure the device on the dev server', async () => {
+    const browser = browserFixture();
+    startAdaptiveLoading('/review/', true, { measureCompute: false });
+    browser.task(900);
+    await vi.advanceTimersByTimeAsync(100);
+    expect(browser.dataset.computeMode).toBe('normal');
+  });
+
   it('does not register on HTTP-style environments without service workers or caching', async () => {
     const browser = browserFixture();
     vi.stubGlobal('navigator', {}); vi.stubGlobal('caches', undefined);

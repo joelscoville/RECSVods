@@ -2,41 +2,37 @@
 import { z } from 'zod';
 import { CHAPTER_VECTOR_CONFIG, decodeChapterVectors } from './chapter-vectors';
 import { parseScriptureReference } from './scripture';
-import type { SearchChapter } from './types';
+import type { SearchUnit } from './display';
 import { artifactSha256 } from './integrity';
 
+/** The public search data: one row per unit, in the same order as the vector rows. */
 export interface ChapterMetadata {
-  schemaVersion: 3;
+  schemaVersion: 5;
   model: typeof CHAPTER_VECTOR_CONFIG;
   vectors: { file: string; sha256: string };
-  chapters: SearchChapter[];
+  units: SearchUnit[];
 }
 export interface ScriptureIndex {
   schemaVersion: 1;
   references: Record<string, string[]>;
   verses: Record<string, string>;
 }
-export type LegacyChapterMap = Record<string, string>;
 export type ChapterVectors = ReturnType<typeof decodeChapterVectors>;
 
-const id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_-]*$/);
+const id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_/-]*$/);
 const text = z.string().trim().min(1);
 const reference = text.refine((value) => parseScriptureReference(value)?.canonical === value);
 /** Deliberately excludes even the optional browser-only verseText property. */
-export const PublicChapterSchema = z.object({
-  id, serviceId: id, serviceTitle: text, videoId: z.string().regex(/^[A-Za-z0-9_-]{11}$/),
-  start: z.number().finite().nonnegative(), end: z.number().finite().positive(),
-  type: id, title: text, summary: text, shortSummary: text.optional(), keywords: z.array(text).max(10),
-  parentId: id.optional(), parentTitle: text.optional(),
-  topics: z.array(text), scripture: z.array(reference), scriptureDisplay: z.array(text).optional(),
-  speaker: text.optional(), date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  series: z.object({ id, name: text }).strict().optional(), preview: z.boolean(),
-}).strict().superRefine((chapter, ctx) => {
-  if (chapter.end <= chapter.start) ctx.addIssue({ code: 'custom', message: 'Invalid chapter bounds' });
-  if (Boolean(chapter.parentId) !== Boolean(chapter.parentTitle)) ctx.addIssue({ code: 'custom', message: 'Subsection parent identity and title must align' });
-  if (chapter.parentId && chapter.shortSummary) ctx.addIssue({ code: 'custom', message: 'Subsections do not carry a public summary' });
-  if (chapter.scriptureDisplay && (chapter.scriptureDisplay.length !== chapter.scripture.length
-    || chapter.scriptureDisplay.some((value, i) => parseScriptureReference(value)?.canonical !== chapter.scripture[i]))) {
+export const PublicUnitSchema = z.object({
+  id, recordingId: id, recordingTitle: text, date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  kind: z.enum(['recording', 'chapter', 'subchapter', 'point']), title: text, text: text.optional(), speaker: text.optional(), entryId: id.optional(),
+  start: z.number().finite().nonnegative(), end: z.number().finite().positive().optional(),
+  scripture: z.array(reference), scriptureDisplay: z.array(text).optional(), topics: z.array(text),
+  series: z.object({ id, title: text }).strict().optional(), preview: z.boolean(),
+}).strict().superRefine((unit, ctx) => {
+  if (unit.kind === 'point' ? unit.end !== undefined : unit.end === undefined || unit.end <= unit.start) ctx.addIssue({ code: 'custom', message: 'Points have a time only; chapters require valid start and end times' });
+  if (unit.scriptureDisplay && (unit.scriptureDisplay.length !== unit.scripture.length
+    || unit.scriptureDisplay.some((value, i) => parseScriptureReference(value)?.canonical !== unit.scripture[i]))) {
     ctx.addIssue({ code: 'custom', message: 'Scripture display references must align' });
   }
 });
@@ -52,17 +48,12 @@ export function sameJson(a: unknown, b: unknown): boolean {
 }
 
 export function parseChapterMetadata(value: unknown): ChapterMetadata {
-  const data = z.object({ schemaVersion: z.literal(3), model: z.unknown(),
+  const data = z.object({ schemaVersion: z.literal(5), model: z.unknown(),
     vectors: z.object({ file: z.string(), sha256: z.string().regex(/^[a-f0-9]{64}$/) }).strict(),
-    chapters: z.array(PublicChapterSchema) }).strict().parse(value);
+    units: z.array(PublicUnitSchema) }).strict().parse(value);
   if (data.vectors.file !== `vectors.${data.vectors.sha256}.bin`) throw new Error('Invalid vector asset identity');
   if (!sameJson(data.model, CHAPTER_VECTOR_CONFIG)) throw new Error('Incompatible chapter vector model');
-  if (new Set(data.chapters.map((chapter) => chapter.id)).size !== data.chapters.length) throw new Error('Duplicate chapter ID');
-  for (const chapter of data.chapters) if (chapter.parentId) {
-    const parent = data.chapters.find((candidate) => candidate.id === chapter.parentId);
-    if (!parent || parent.parentId || parent.serviceId !== chapter.serviceId || parent.videoId !== chapter.videoId
-      || parent.title !== chapter.parentTitle || chapter.start < parent.start || chapter.end > parent.end) throw new Error('Invalid public subsection parent');
-  }
+  if (new Set(data.units.map((unit) => unit.id)).size !== data.units.length) throw new Error('Duplicate search unit ID');
   return { ...data, model: CHAPTER_VECTOR_CONFIG };
 }
 
@@ -82,10 +73,6 @@ export function parseScriptureIndex(value: unknown): ScriptureIndex {
   }
   if (Object.keys(data.verses).some((key) => !used.has(key))) throw new Error('Unreferenced BSB verse');
   return data;
-}
-
-export function parseLegacyChapterMap(value: unknown): LegacyChapterMap {
-  return z.record(id, id).parse(value);
 }
 
 function artifactUrl(base: string, name: string): string {
@@ -125,10 +112,10 @@ export async function loadScriptureIndex(base: string, signal?: AbortSignal): Pr
   return loadJson(base, 'scripture.json', parseScriptureIndex, signal);
 }
 /** Returns copies; hidden BSB search text must never be displayed as ESV or reserialized. */
-export function enrichChapters(chapters: readonly SearchChapter[], scripture: ScriptureIndex): SearchChapter[] {
-  return chapters.map((chapter) => {
-    const { verseText: _previous, ...metadata } = chapter;
-    const keys = new Set(chapter.scripture.flatMap((ref) => scripture.references[parseScriptureReference(ref)?.canonical ?? ref] ?? []));
+export function enrichUnits(units: readonly SearchUnit[], scripture: ScriptureIndex): SearchUnit[] {
+  return units.map((unit) => {
+    const { verseText: _previous, ...metadata } = unit;
+    const keys = new Set(unit.scripture.flatMap((ref) => scripture.references[parseScriptureReference(ref)?.canonical ?? ref] ?? []));
     const verseText = [...keys].map((key) => scripture.verses[key]).filter(Boolean).join('\n');
     return { ...metadata, ...(verseText ? { verseText } : {}) };
   });
@@ -140,12 +127,7 @@ export async function loadChapterVectors(base: string, metadata: ChapterMetadata
     const hash = await artifactSha256(bytes);
     if (hash !== metadata.vectors.sha256) throw new Error('Chapter vector checksum mismatch');
     const index = decodeChapterVectors(bytes);
-    if (index.rowCount !== metadata.chapters.length) throw new Error('Chapter vector row mismatch');
+    if (index.rowCount !== metadata.units.length) throw new Error('Chapter vector row mismatch');
     return index;
   }, signal);
-}
-/** Fetch only when handling an old ?id= URL; unknown/ineligible IDs resolve to undefined. */
-export async function resolveLegacyChapter(base: string, legacyId: string, signal?: AbortSignal): Promise<string | undefined> {
-  const mapping = await loadJson(base, 'legacy-chapters.json', parseLegacyChapterMap, signal);
-  return Object.hasOwn(mapping, legacyId) ? mapping[legacyId] : undefined;
 }

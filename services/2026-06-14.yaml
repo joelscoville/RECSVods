@@ -1,0 +1,164 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Greater Works
+serviceDate: 2026-06-14
+status: draft
+sermonDescription: "Pastor Yong presents knowing Jesus as the foundation for sharing in his work:
+  believers learn from the one who reveals the Father and follow his example in daily life. He
+  understands the greater works of John 14 as wider reach, entrusted to ordinary believers. Prayer
+  supports that calling without guaranteeing desired outcomes, freeing listeners to begin with
+  practical kindness and serve beyond themselves."
+sermonScripture:
+  - John 14:12
+  - John 14
+  - John 14:1-7
+sermonTopics:
+  - responsibility
+  - faith
+  - discipleship
+uploads:
+  - youtubeId: GlVgMoehT2I
+    uploadDuration: "1:51:44.201"
+chapters:
+  - chapterId: c20260614-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:26.54"
+    chapterEnd: "10:13.66"
+    points:
+      - pointTime: "0:26.54"
+        pointText: The leaders guide personal adoration, confession, thanksgiving and supplication, welcome
+          visitors and call the congregation to a joyful response to God's faithfulness through
+          Psalms 71.
+    chapterScripture:
+      - Psalms 71
+  - chapterId: c20260614-worship-and-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "10:21.5"
+    chapterEnd: "35:23.72"
+    points:
+      - pointTime: "10:21.5"
+        pointText: The congregation joins songs and prayer for faithful living, hears readings from Proverbs
+          25, John 14 and Hebrews 1, and receives the anthem Wonderful Savior Redeemer; the precise
+          title of O Hover Me Holy Spirit remains for review.
+    subchapters:
+      - chapterId: s20260614-08
+        chapterTitle: Wonderful Savior Redeemer
+        chapterKind: music
+        chapterStart: "31:36.16"
+        chapterEnd: "34:07.94"
+        points:
+          - pointTime: "31:36.16"
+            pointText: The service presents the anthem Wonderful Savior Redeemer, identified by its displayed
+              title in the existing evidence.
+    chapterScripture:
+      - Proverbs 25:1-28
+      - John 14:8-31
+      - Hebrews 1:1-4
+  - chapterId: c20260614-knowing-jesus-shapes-our-lives
+    chapterTitle: Knowing Jesus Shapes Our Lives
+    chapterKind: sermon
+    chapterStart: "35:42.12"
+    chapterEnd: "1:11:06.1"
+    points:
+      - pointTime: "35:42.12"
+        pointText: Recapping trust in Christ and the Spirit's present help, Pastor Yong urges humble
+          learning from Jesus as the Father's revelation and a Bible-grounded pattern for
+          forgiveness and daily life rather than self-sufficiency or celebrity imitation.
+    subchapters:
+      - chapterId: s20260614-11
+        chapterTitle: Jesus Reveals the Father
+        chapterKind: sermon
+        chapterStart: "47:09.26"
+        chapterEnd: "1:11:06.1"
+        points:
+          - pointTime: "47:09.26"
+            pointText: Beginning with Philip's request, Pastor Yong develops Jesus' revelation of the Father
+              into a call for lifelong learning, discernment about signs and following Christ's
+              example.
+        chapterScripture:
+          - John 14:8-9
+          - John 14:9
+          - John 8
+          - Luke 6:46
+          - Mark 4:40
+          - Matthew 17:17
+          - Mark 8:17-18
+          - Matthew 26:40
+          - Luke 18:8
+          - Acts 1:6
+          - John 14:10-11
+          - Hebrews 1:1-4
+          - Colossians 1:15-17
+          - Colossians 1:18-20
+          - John 14:8-11
+    chapterScripture:
+      - John 14
+      - John 14:1-7
+      - John 14:6
+      - Acts 4:12
+      - John 14:8-9
+      - John 14:9
+      - John 8
+      - Luke 6:46
+      - Mark 4:40
+      - Matthew 17:17
+      - Mark 8:17-18
+      - Matthew 26:40
+      - Luke 18:8
+      - Acts 1:6
+      - John 14:10-11
+      - Hebrews 1:1-4
+      - Colossians 1:15-17
+      - Colossians 1:18-20
+      - John 14:8-11
+  - chapterId: c20260614-christs-work-belongs-to-every-believer
+    chapterTitle: Christ's Work Is Entrusted to Every Believer
+    chapterKind: sermon
+    chapterStart: "1:11:06.1"
+    chapterEnd: "1:28:10.38"
+    points:
+      - pointTime: "1:11:06.1"
+        pointText: Pastor Yong reads John 14:12 as a call for ordinary believers to use their gifts in
+          compassionate service, interpreting greater works as wider reach through evangelism,
+          travel and communication rather than surpassing Christ's work in quality.
+    chapterScripture:
+      - John 14:12
+  - chapterId: c20260614-pray-and-serve-as-christs-representatives
+    chapterTitle: Pray and Serve as Christ's Representatives
+    chapterKind: sermon
+    chapterStart: "1:28:10.38"
+    chapterEnd: "1:37:48.72"
+    points:
+      - pointTime: "1:28:10.38"
+        pointText: Pastor Yong explains prayer in Christ's name as representing his cause, using accounts of
+          failed declarations and disappointment to affirm Christ's support without guaranteed
+          outcomes and urge small acts of service.
+    chapterScripture:
+      - John 14:13-14
+      - John 14:12-14
+      - John 14:12
+  - chapterId: c20260614-response-and-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:37:48.72"
+    chapterEnd: "1:51:43.86"
+    points:
+      - pointTime: "1:37:48.72"
+        pointText: Pastor Yong leads prayer for active service and seminary students as the congregation
+          responds with the creed, an offering whose destination remains unclear, Trust and Obey,
+          doxology and blessing, followed by ministry invitations and dismissal.
+    chapterScripture:
+      - Hebrews 13
+markers:
+  - markerTime: "35:42.12"
+    markerNote: "Also cited in the sermon: John 14:6; Acts 4:12; John 14:8-9; John 14:9; John 8; Luke
+      6:46; Mark 4:40; Matthew 17:17; Mark 8:17-18; Matthew 26:40; Luke 18:8; Acts 1:6; John
+      14:10-11; Hebrews 1:1-4; Colossians 1:15-17; Colossians 1:18-20; John 14:8-11; John 14:13-14;
+      John 14:12-14. Keep only the main passages above."
+  - markerTime: "35:42.12"
+    markerNote: "Other topics it touched: discernment, service-life, mission, prayer, glory, service,
+      worship, knowing-god, holy-spirit, forgiveness, stewardship, peace."
+recordingSpeaker: Rev. Yong Teck Meng

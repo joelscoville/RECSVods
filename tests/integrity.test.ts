@@ -15,7 +15,7 @@ describe('artifact checksums outside secure contexts', () => {
   it('still refuses corrupt vectors on an HTTP preview', async () => {
     vi.stubGlobal('crypto', {}); vi.stubGlobal('DecompressionStream', undefined);
     const bytes = packChapterVectors([]), sha256 = createHash('sha256').update(bytes).digest('hex');
-    const metadata = { schemaVersion: 3 as const, model: CHAPTER_VECTOR_CONFIG, chapters: [], vectors: { file: `vectors.${sha256}.bin`, sha256 } };
+    const metadata = { schemaVersion: 5 as const, model: CHAPTER_VECTOR_CONFIG, units: [], vectors: { file: `vectors.${sha256}.bin`, sha256 } };
     vi.stubGlobal('fetch', vi.fn(async () => new Response(new Uint8Array(bytes))));
     expect((await loadChapterVectors('/', metadata)).rowCount).toBe(0);
     const corrupt = bytes.slice(); corrupt[0] ^= 1;

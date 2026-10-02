@@ -1,14 +1,14 @@
-import type { SearchChapter } from './types';
+import type { SearchUnit } from './display';
 import { isEmbeddingVector, preprocessEmbedding } from './embedding-config';
 import { CHAPTER_VECTOR_CONFIG, cosineChapterVector, type ChapterVectorFile } from './chapter-vectors';
 import { canonicalBook, normalizeReferenceSyntax, parseScriptureReference, scriptureOverlaps, scriptureCoverage, type ScriptureReference } from './scripture';
 
 export const SEARCH_WEIGHTS = Object.freeze({
-  date: 16, speaker: 14, scripture: 14, verseText: 2, keyword: 7, topic: 7, title: 6,
-  referenceBonus: 32, service: 4, series: 4, summary: 3, type: 2,
+  date: 16, scripture: 14, speaker: 14, verseText: 2, topic: 7, title: 6,
+  referenceBonus: 32, service: 4, series: 4, summary: 4,
   phraseBonus: 1, semantic: 6, semanticThreshold: 0.45, minimumTermCoverage: 0.6,
 });
-/** Rows MUST retain the order of validated ChapterMetadata.chapters, including zero rows.
+/** Rows MUST retain the order of validated ChapterMetadata.units, including zero rows.
  * loadChapterMetadata validates CHAPTER_VECTOR_CONFIG before vectors are attached.
  * The binary has no IDs; callers must never independently filter or reorder its metadata.
  */
@@ -16,7 +16,7 @@ export type DecodedChapterVectors = ChapterVectorFile;
 export interface SearchOptions {
   queryVector?: number[]; vectors?: DecodedChapterVectors; limit?: number; semanticThreshold?: number;
 }
-export interface SearchResult { chapter: SearchChapter; score: number; reasons: string[] }
+export interface SearchResult { unit: SearchUnit; score: number; reasons: string[] }
 export type PreparedSearchOptions = Omit<SearchOptions, 'vectors'>;
 export interface PreparedSearchIndex {
   search(query: string, options?: PreparedSearchOptions): SearchResult[];
@@ -137,11 +137,11 @@ function scanReferenceMentions(text: string, bookNamed: (name: string) => string
   return mentions;
 }
 
-/** Reads the references a chapter mentions in its own text (title, summary, service, series, keywords and
+/** Reads the references a unit mentions in its own text (title, summary, recording title, series and
  * topics), normalised as the scripture parser normalises references. Create one reader per index build:
- * it caches per build, because service titles and topics repeat across a service's chapters, and the
- * caches are released with the index. */
-function createMentionReader(): (chapter: SearchChapter) => ScriptureReference[] {
+ * it caches per build, because recording titles repeat across a recording's units, and the caches are
+ * released with the index. */
+function createMentionReader(): (unit: SearchUnit) => ScriptureReference[] {
   const bookByName = new Map<string, string | undefined>();
   const mentionsByText = new Map<string, ScriptureReference[]>();
   const bookNamed = (name: string) => {
@@ -157,8 +157,7 @@ function createMentionReader(): (chapter: SearchChapter) => ScriptureReference[]
     }
     return mentions;
   };
-  return (chapter) => [chapter.title, chapter.parentTitle ?? '', chapter.summary, chapter.serviceTitle,
-    chapter.series?.name ?? '', ...chapter.keywords, ...chapter.topics].flatMap(mentionsIn);
+  return (unit) => [unit.title, unit.text ?? '', unit.recordingTitle, unit.series?.title ?? '', ...unit.topics].flatMap(mentionsIn);
 }
 
 function words(text: string): string[] { return preprocessEmbedding(text).toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? []; }
@@ -198,16 +197,15 @@ function dateTerms(date: string): string[] {
   const name = MONTHS[Number(month) - 1];
   return [date, `${Number(day)} ${name} ${year}`, `${name} ${Number(day)} ${year}`, `${Number(day)} ${name?.slice(0, 3)} ${year}`];
 }
-type FieldName = 'date' | 'speaker' | 'scripture' | 'verseText' | 'keyword' | 'topic' | 'title' | 'service' | 'series' | 'summary' | 'type';
-/** `citedReferences` come from the chapter's scripture list; `mentionedReferences` are written in its text. */
-interface SearchRow { chapter: SearchChapter; citedReferences: ReturnType<typeof parseScriptureReference>[]; mentionedReferences: ScriptureReference[]; fields: [FieldName, string[]][] }
-function fields(chapter: SearchChapter, citedReferences: SearchRow['citedReferences']): SearchRow['fields'] {
+type FieldName = 'date' | 'scripture' | 'speaker' | 'verseText' | 'topic' | 'title' | 'service' | 'series' | 'summary';
+/** `citedReferences` come from the unit's scripture list; `mentionedReferences` are written in its text. */
+interface SearchRow { unit: SearchUnit; citedReferences: ReturnType<typeof parseScriptureReference>[]; mentionedReferences: ScriptureReference[]; fields: [FieldName, string[]][] }
+function fields(unit: SearchUnit, citedReferences: SearchRow['citedReferences']): SearchRow['fields'] {
   return [
-    ['date', dateTerms(chapter.date)], ['speaker', chapter.speaker ? [chapter.speaker] : []],
-    ['scripture', citedReferences.flatMap((ref) => ref ? [ref.canonical] : [])],
-    ['verseText', chapter.verseText ? [chapter.verseText] : []], ['keyword', chapter.keywords],
-    ['topic', chapter.topics], ['title', [chapter.title, ...(chapter.parentTitle ? [chapter.parentTitle] : [])]], ['service', [chapter.serviceTitle]],
-    ['series', chapter.series ? [chapter.series.name] : []], ['summary', [chapter.summary]], ['type', [chapter.type]],
+    ['date', dateTerms(unit.date)], ['scripture', citedReferences.flatMap((ref) => ref ? [ref.canonical] : [])],
+    ['speaker', unit.speaker ? [unit.speaker] : []],
+    ['verseText', unit.verseText ? [unit.verseText] : []], ['topic', unit.topics], ['title', [unit.title]],
+    ['service', [unit.recordingTitle]], ['series', unit.series ? [unit.series.title] : []], ['summary', unit.text ? [unit.text] : []],
   ];
 }
 function normalize(value: string): string { return ` ${words(value).map(inflectionTerm).join(' ')} `; }
@@ -216,7 +214,7 @@ function validVectors(vectors: DecodedChapterVectors | undefined, count: number)
     && vectors.values instanceof Int8Array && vectors.values.length === count * vectors.dimension
     && !vectors.values.some((value) => value === -128);
 }
-const CHAPTER_FIELDS = new Set<FieldName>(['title', 'keyword', 'summary']);
+const CHAPTER_FIELDS = new Set<FieldName>(['title', 'summary']);
 interface LexicalPostings { raw: Map<string, Uint32Array>; verse: Map<string, Uint32Array>; chapter: Map<string, Uint32Array> }
 function prepareLexicalPostings(rows: readonly SearchRow[]): LexicalPostings {
   const raw = new Map<string, number[]>(), verse = new Map<string, number[]>(), chapter = new Map<string, number[]>();
@@ -286,42 +284,42 @@ export function prepareVerseScorer(verses: Readonly<Record<string, string>>): (q
 }
 
 /** Exhaustive, mutable-input API. No global ID cache or metadata-derived embeddings. */
-export function search(chapters: readonly SearchChapter[], query: string, options: SearchOptions = {}): SearchResult[] {
+export function search(units: readonly SearchUnit[], query: string, options: SearchOptions = {}): SearchResult[] {
   const readMentions = createMentionReader();
-  const rows = chapters.map((chapter) => {
-    const citedReferences = chapter.scripture.map(parseScriptureReference);
-    return { chapter, citedReferences, mentionedReferences: readMentions(chapter), fields: fields(chapter, citedReferences).map(([name, values]): [FieldName, string[]] => [name, values.map(normalize)]) };
+  const rows = units.map((unit) => {
+    const citedReferences = unit.scripture.map(parseScriptureReference);
+    return { unit, citedReferences, mentionedReferences: readMentions(unit), fields: fields(unit, citedReferences).map(([name, values]): [FieldName, string[]] => [name, values.map(normalize)]) };
   });
-  return rank(rows, validVectors(options.vectors, chapters.length) ? options.vectors : undefined, undefined, query, options);
+  return rank(rows, validVectors(options.vectors, units.length) ? options.vectors : undefined, undefined, query, options);
 }
 
-function snapshot(source: SearchChapter): SearchChapter {
+function snapshot(source: SearchUnit): SearchUnit {
   // Explicit allowlist prevents accidental retention of private fields in a prepared index.
-  const { id, serviceId, serviceTitle, videoId, start, end, type, title, summary, speaker, date, preview, verseText } = source;
-  const chapter: SearchChapter = { id, serviceId, serviceTitle, videoId, start, end, type, title, summary, date, preview,
-    keywords: [...source.keywords], topics: [...source.topics], scripture: [...source.scripture],
-    ...(source.parentId ? { parentId: source.parentId, parentTitle: source.parentTitle } : {}),
-    ...(Object.hasOwn(source, 'speaker') ? { speaker } : {}), ...(Object.hasOwn(source, 'verseText') ? { verseText } : {}),
-    ...(Object.hasOwn(source, 'scriptureDisplay') ? { scriptureDisplay: source.scriptureDisplay ? [...source.scriptureDisplay] : undefined } : {}),
-    ...(Object.hasOwn(source, 'series') ? { series: source.series ? { id: source.series.id, name: source.series.name } : undefined } : {}),
+  const { id, recordingId, recordingTitle, date, kind, title, text, start, end, preview, verseText } = source;
+  const unit: SearchUnit = { id, recordingId, recordingTitle, date, kind, title, start, end, preview,
+    ...(source.entryId ? { entryId: source.entryId } : {}), ...(source.speaker ? { speaker: source.speaker } : {}),
+    ...(text !== undefined ? { text } : {}), ...(verseText !== undefined ? { verseText } : {}),
+    scripture: [...source.scripture], topics: [...source.topics],
+    ...(source.scriptureDisplay ? { scriptureDisplay: [...source.scriptureDisplay] } : {}),
+    ...(source.series ? { series: { id: source.series.id, title: source.series.title } } : {}),
   };
-  Object.freeze(chapter.keywords); Object.freeze(chapter.topics); Object.freeze(chapter.scripture);
-  if (chapter.scriptureDisplay) Object.freeze(chapter.scriptureDisplay);
-  if (chapter.series) Object.freeze(chapter.series);
-  return Object.freeze(chapter);
+  Object.freeze(unit.topics); Object.freeze(unit.scripture);
+  if (unit.scriptureDisplay) Object.freeze(unit.scriptureDisplay);
+  if (unit.series) Object.freeze(unit.series);
+  return Object.freeze(unit);
 }
 /** Owns a frozen metadata snapshot and a copy of compact rows. Rebuild for new artifact pairs. */
-export function prepareSearchIndex(chapters: readonly SearchChapter[], vectors?: DecodedChapterVectors): PreparedSearchIndex {
+export function prepareSearchIndex(units: readonly SearchUnit[], vectors?: DecodedChapterVectors): PreparedSearchIndex {
   const raw = new Map<string, string>(), verse = new Map<string, string>();
   const parsed = new Map<string, ReturnType<typeof parseScriptureReference>>();
   const readMentions = createMentionReader();
-  const rows = chapters.map((source): SearchRow => {
-    const chapter = snapshot(source);
-    const citedReferences = chapter.scripture.map((value) => {
+  const rows = units.map((source): SearchRow => {
+    const unit = snapshot(source);
+    const citedReferences = unit.scripture.map((value) => {
       if (!parsed.has(value)) parsed.set(value, parseScriptureReference(value));
       return parsed.get(value);
     });
-    return { chapter, citedReferences, mentionedReferences: readMentions(chapter), fields: fields(chapter, citedReferences).map(([name, values]) => [name, values.map((value) => {
+    return { unit, citedReferences, mentionedReferences: readMentions(unit), fields: fields(unit, citedReferences).map(([name, values]) => [name, values.map((value) => {
       const cache = name === 'verseText' ? verse : raw;
       if (!cache.has(value)) cache.set(value, normalize(value));
       return cache.get(value)!;
@@ -361,8 +359,8 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
   };
   const results: SearchResult[] = [];
   for (let row = 0; row < rows.length; row++) {
-    const { chapter, citedReferences, mentionedReferences, fields } = rows[row];
-    if (dateQuery && chapter.date !== dateQuery) continue;
+    const { unit, citedReferences, mentionedReferences, fields } = rows[row];
+    if (dateQuery && unit.date !== dateQuery) continue;
     const citedMatch = referenceQuery && citedReferences.some((reference) => reference && scriptureOverlaps(referenceQuery, reference));
     // Without a cited match, a reference mentioned in the chapter's text still counts, however it is
     // abbreviated ("Rom. 13:1" for Romans 13), so it admits the row without the query's exact words.
@@ -391,13 +389,13 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
         for (let i = 0; i < fieldNeedles.length; i++) if (values.some((value) => matchText(value).terms[i])) {
           found += weights[i]; covered.add(i);
           // A shared recording/series title must not erase the distinctiveness of
-          // a term found in an individual chapter's title, keywords or synopsis.
+          // a term found in an individual unit's title or summary.
           if (CHAPTER_FIELDS.has(name) && (frequencies.chapter.get(terms[i])?.length ?? rows.length) / rows.length <= 0.05) distinctiveMetadata = true;
         }
         if (!found) continue;
         const fullPhrase = values.some((value) => matchText(value).phrase);
         score += SEARCH_WEIGHTS[name] * (found / totalWeight + (fullPhrase ? SEARCH_WEIGHTS.phraseBonus : 0));
-        reasons.push(name === 'verseText' ? 'Verse-text match (BSB)' : name === 'keyword' ? 'Keyword'
+        reasons.push(name === 'verseText' ? 'Verse-text match (BSB)'
           : `${name[0].toUpperCase()}${name.slice(1)} match${fullPhrase && queryWords.length > 1 ? ' (exact phrase)' : ''}`);
       }
       // Short metadata cannot reproduce every word of a natural-language question.
@@ -416,10 +414,9 @@ function rank(rows: readonly SearchRow[], vectors: DecodedChapterVectors | undef
       const cosine = cosineChapterVector(vectors, row, queryVector);
       if (cosine > 0 && cosine >= threshold) { score += SEARCH_WEIGHTS.semantic * cosine; reasons.push('Similar in meaning'); }
     }
-    if (score > 0) results.push({ chapter, score, reasons });
+    if (score > 0) results.push({ unit, score, reasons });
   }
-  results.sort((a, b) => b.score - a.score || compare(b.chapter.date, a.chapter.date)
-    || compare(a.chapter.serviceId, b.chapter.serviceId) || compare(a.chapter.videoId, b.chapter.videoId)
-    || a.chapter.start - b.chapter.start || compare(a.chapter.id, b.chapter.id));
+  results.sort((a, b) => b.score - a.score || compare(b.unit.date, a.unit.date)
+    || compare(a.unit.recordingId, b.unit.recordingId) || a.unit.start - b.unit.start || compare(a.unit.id, b.unit.id));
   return options.limit === undefined ? results : results.slice(0, Math.max(0, Math.floor(options.limit)));
 }

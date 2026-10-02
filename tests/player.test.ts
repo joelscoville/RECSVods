@@ -142,7 +142,7 @@ describe('base-aware shareable URLs', () => {
     const expected = base === '/' ? '/' : '/review/';
     expect(basePath(base)).toBe(expected);
     expect(siteUrl(base, '/search/')).toBe(`${expected}search/`);
-    expect(watchUrl(base, { chapter: 'chapter_1', service: 'ignored', start: 42 })).toBe(`${expected}watch/?chapter=chapter_1`);
+    expect(watchUrl(base, { recording: '2026-09-06', start: 42.9, focus: 'sermon-point-1' })).toBe(`${expected}watch/?r=2026-09-06&t=42&focus=sermon-point-1`);
   });
   it('rejects external and traversal deployment bases', () => {
     expect(() => basePath('https://external.example/')).toThrow();
@@ -154,13 +154,14 @@ describe('base-aware shareable URLs', () => {
     expect(url.searchParams.get('q')).toBe('John 3:16 & hope');
     expect(url.pathname).toBe('/review/search/');
   });
-  it('reads legacy IDs but only creates chapter and full-video targets', () => {
-    const target = { service: 'service-1', video: 'abcdefghijk', start: 87.5 };
+  it('links by recording and time, with an optional focus', () => {
+    const target = { recording: '2026-09-06', start: 87.5 };
     const url = new URL(watchUrl('/review/', target), 'https://example.test');
-    expect(readWatchTarget(url.search)).toEqual({ ...target, start: 87, id: undefined, chapter: undefined });
-    expect(readWatchTarget('?id=stable-id')).toEqual({ id: 'stable-id', chapter: undefined, service: undefined, video: undefined, start: undefined });
-    expect(readWatchTarget('?chapter=chapter-1').chapter).toBe('chapter-1');
-    expect(watchUrl('/', { id: 'old-id' })).toBe('/watch/');
+    expect(readWatchTarget(url.search)).toEqual({ recording: '2026-09-06', start: 87, focus: undefined });
+    expect(watchUrl('/', { recording: '2026-09-06', start: 0 })).toBe('/watch/?r=2026-09-06');
+    // Old chapter and passage links are no longer read.
+    expect(readWatchTarget('?chapter=chapter-1&id=stable-id')).toEqual({ recording: undefined, focus: undefined, start: undefined });
+    expect(readWatchTarget('?r=2026-09-06&focus=sermon-point-2').focus).toBe('sermon-point-2');
     expect(readWatchTarget('?t=-1').start).toBeUndefined();
     expect(readWatchTarget('?t=Infinity').start).toBeUndefined();
     expect(readWatchTarget('?t=1e10').start).toBeUndefined();
@@ -186,10 +187,10 @@ describe('local-only history and resume state', () => {
     vi.stubGlobal('window', { localStorage: { getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => values.set(key, value), removeItem: (key: string) => values.delete(key) }, dispatchEvent });
     try {
       saveSearch('Romans 13');
-      savePlayback({ serviceId: 's1', videoId: 'abcdefghijk', time: 40 });
+      savePlayback({ recordingId: '2026-09-06', time: 40 });
       expect(clearSearchHistory()).toBe(true);
       expect(getSearchHistory()).toEqual([]);
-      expect(getSavedPlayback()).toEqual({ serviceId: 's1', videoId: 'abcdefghijk', time: 40 });
+      expect(getSavedPlayback()).toEqual({ recordingId: '2026-09-06', time: 40 });
       expect(values.get('another-site-key')).toBe('keep');
       expect(dispatchEvent.mock.calls[0][0].type).toBe('recs-search-history-cleared');
       expect(clearSearchHistory()).toBe(true);
@@ -212,7 +213,7 @@ describe('local-only history and resume state', () => {
     try {
       saveSearch('Hope'); saveSearch('Romans 8'); saveSearch('hope');
       expect(getSearchHistory()).toEqual(['hope', 'Romans 8']);
-      expect(savePlayback({ serviceId: 's1', videoId: 'abcdefghijk', time: 32.8 })).toBe(true);
+      expect(savePlayback({ recordingId: '2026-09-06', time: 32.8 })).toBe(true);
       expect(getSavedPlayback()?.time).toBe(32);
       expect(clearLocalState()).toBe(true);
       expect(getSearchHistory()).toEqual([]);
@@ -225,7 +226,7 @@ describe('local-only history and resume state', () => {
     try {
       expect(getSavedPlayback()).toBeNull();
       expect(getSearchHistory()).toEqual([]);
-      expect(savePlayback({ serviceId: 's1', videoId: 'abcdefghijk', time: 32 })).toBe(false);
+      expect(savePlayback({ recordingId: '2026-09-06', time: 32 })).toBe(false);
       expect(clearLocalState()).toBe(false);
     } finally { vi.unstubAllGlobals(); }
     vi.stubGlobal('window', { localStorage: { getItem: () => '{invalid' } });

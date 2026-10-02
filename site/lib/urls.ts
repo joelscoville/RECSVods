@@ -15,17 +15,14 @@ export function searchUrl(base: string, query = ''): string {
   return `${siteUrl(base, 'search/')}${params.size ? `?${params}` : ''}`;
 }
 
-export interface WatchTarget {
-  chapter?: string; /** Legacy input only. */ id?: string; service?: string; video?: string; start?: number;
-  /** With a chapter: the chapter a search or category matched, offered as "Chapter only" under the player. */
-  match?: string;
-}
+/** A recording and a moment in it (on the recording clock). `focus` is the point or part a search or
+ * category matched, offered as "Only this" under the player. */
+export interface WatchTarget { recording?: string; start?: number; focus?: string }
 export function watchUrl(base: string, target: WatchTarget): string {
   const params = new URLSearchParams();
-  if (target.chapter) return `${siteUrl(base, 'watch/')}?${new URLSearchParams({ chapter: target.chapter, ...(target.match && target.match !== target.chapter ? { match: target.match } : {}) })}`;
-  if (target.service) params.set('service', target.service);
-  if (target.video) params.set('video', target.video);
-  if (Number.isFinite(target.start) && target.start! >= 0) params.set('t', String(Math.floor(target.start!)));
+  if (target.recording) params.set('r', target.recording);
+  if (Number.isFinite(target.start) && target.start! > 0) params.set('t', String(Math.floor(target.start!)));
+  if (target.focus) params.set('focus', target.focus);
   return `${siteUrl(base, 'watch/')}${params.size ? `?${params}` : ''}`;
 }
 
@@ -33,11 +30,8 @@ export function readWatchTarget(query: string): WatchTarget {
   const params = new URLSearchParams(query);
   const time = params.get('t');
   return {
-    chapter: params.get('chapter') || undefined,
-    match: params.get('match') || undefined,
-    id: params.get('id') || undefined,
-    service: params.get('service') || undefined,
-    video: params.get('video') || undefined,
+    recording: params.get('r') || undefined,
+    focus: params.get('focus') || undefined,
     start: time !== null && /^\d+(?:\.\d+)?$/.test(time) && Number.isFinite(Number(time)) ? Number(time) : undefined,
   };
 }
@@ -75,4 +69,10 @@ export function formatDate(date: string): string {
 
 export function displayType(type: string): string {
   return type.replace(/[_-]+/g, ' ').replace(/^\w/, (letter) => letter.toUpperCase());
+}
+
+/** The chapter editor behind "Suggest a change"; it opens at the moment being watched. */
+export function editUrl(base: string, recordingId: string, start?: number): string {
+  const time = Number.isFinite(start) && start! > 0 ? `?t=${Math.floor(start!)}` : '';
+  return `${siteUrl(base, `edit/${encodeURIComponent(recordingId)}/`)}${time}`;
 }

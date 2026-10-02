@@ -10,35 +10,6 @@ concurrency:
   group: validate-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
-  editorial-guard:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - name: Validate every actual head commit
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          PR_BASE: ${{ github.event.pull_request.base.sha }}
-          PR_HEAD: ${{ github.event.pull_request.head.sha }}
-          PUSH_BEFORE: ${{ github.event.before }}
-          COMMIT: ${{ github.sha }}
-        run: |
-          if [ "$EVENT_NAME" = pull_request ]; then
-            pnpm editorial:guard "$PR_BASE" "$PR_HEAD"
-          elif [ "$EVENT_NAME" = push ] && [ "$PUSH_BEFORE" != 0000000000000000000000000000000000000000 ]; then
-            pnpm editorial:guard "$PUSH_BEFORE" "$COMMIT"
-          else
-            pnpm editorial:guard "$COMMIT^" "$COMMIT"
-          fi
   quality:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -112,7 +83,7 @@ jobs:
   # Keep the required check name stable. A failed, cancelled or skipped dependency is never green.
   validate:
     if: always()
-    needs: [quality, tests, browser, editorial-guard]
+    needs: [quality, tests, browser]
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
@@ -123,7 +94,7 @@ jobs:
           node -e 'const jobs=JSON.parse(process.env.CHECK_RESULTS); for(const [name,job] of Object.entries(jobs)) console.log(`${name}: ${job.result}`); if(Object.values(jobs).some(job=>job.result!=="success")) process.exit(1)'
   build-pages:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    needs: [validate, editorial-guard]
+    needs: [validate]
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
@@ -162,7 +133,7 @@ jobs:
           path: dist/production
   deploy:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    needs: [validate, editorial-guard, build-pages]
+    needs: [validate, build-pages]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:

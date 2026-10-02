@@ -1,0 +1,214 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Signs and Wonders
+serviceDate: 2026-07-05
+status: draft
+sermonDescription: The preacher argues that the Spirit’s abiding presence draws believers toward
+  truth and obedience rather than dependence on impressive experiences. Reading John 14 alongside
+  Acts and 1 Corinthians 14, he allows private tongues while prioritizing intelligible worship and
+  rejecting a required second baptism. His appeal to Deuteronomy 13 calls listeners to test claims
+  of wonders, trust God’s sovereignty and hold fast to scripture.
+sermonScripture:
+  - Ecclesiastes 12
+  - John 14:25-31
+  - John 14:15-17
+sermonTopics:
+  - discernment
+  - truth
+  - holy-spirit
+uploads:
+  - youtubeId: OrsN83j3qxE
+    uploadDuration: "1:58:29.366"
+chapters:
+  - chapterId: c20260705-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "8:06.6"
+    points:
+      - pointTime: "0:00"
+        pointText: An opening hymn fragment leads into guided preparation for Communion and the leader’s
+          welcome, with some supplication wording still unclear.
+  - chapterId: c20260705-worship-communion
+    chapterTitle: Worship and Communion
+    chapterKind: opening
+    chapterStart: "8:06.6"
+    chapterEnd: "39:26.82"
+    points:
+      - pointTime: "8:06.6"
+        pointText: The congregation shares hymns, prayer, Communion and readings from Psalms, Proverbs, John
+          and Deuteronomy, including the anthem identified on screen as Come, Gracious Spirit.
+    subchapters:
+      - chapterId: s0705-anthem
+        chapterTitle: Come, Gracious Spirit
+        chapterKind: music
+        chapterStart: "35:00"
+        chapterEnd: "38:10.24"
+        points:
+          - pointTime: "35:00"
+            pointText: The service presents the anthem identified on screen as Come, Gracious Spirit.
+    chapterScripture:
+      - Psalms 84:1-4
+      - 1 Corinthians 11:23
+      - 1 Corinthians 11:17
+      - 1 Corinthians 11
+      - 1 Corinthians 11:23-26
+      - Proverbs 28:1-28
+      - John 14:15-31
+      - Deuteronomy 13:1-4
+  - chapterId: c20260705-abiding-spirit
+    chapterTitle: The Spirit Abides and Leads Believers into Truth
+    chapterKind: sermon
+    chapterStart: "39:26.82"
+    chapterEnd: "1:01:30.02"
+    points:
+      - pointTime: "39:26.82"
+        pointText: Responding to a question about charismatic churches, the preacher grounds discernment in
+          the Spirit’s illumination, peace and continuing presence, while qualifying his recommended
+          resources and illustrating his argument about fear.
+    subchapters:
+      - chapterId: s0705-spirit
+        chapterTitle: Live in the Spirit’s Continuing Presence
+        chapterKind: sermon
+        chapterStart: "54:45.32"
+        chapterEnd: "1:01:30.02"
+        points:
+          - pointTime: "54:45.32"
+            pointText: The preacher reads John 14 as promising the Spirit’s continuing presence and challenges
+              fear and repeated requests for the Spirit to return.
+        chapterScripture:
+          - John 14:16
+          - John 14:23
+          - John 14:26
+    chapterScripture:
+      - Ecclesiastes 12
+      - John 14:25-31
+      - John 14:15-17
+      - John 14:26
+      - John 14:27
+      - John 14:16
+      - John 14:23
+  - chapterId: c20260705-scripture-and-experience
+    chapterTitle: Test Spiritual Experience by Scripture
+    chapterKind: sermon
+    chapterStart: "1:01:30.02"
+    chapterEnd: "1:18:52.9"
+    points:
+      - pointTime: "1:01:30.02"
+        pointText: Distinguishing extreme charismatic practice from the wider movement, the preacher
+          contrasts accounts of outward signs and worship expectations with his emphasis on
+          scriptural authority, God’s sovereignty and holy living.
+    chapterScripture:
+      - John 14
+  - chapterId: c20260705-tongues-and-understanding
+    chapterTitle: Tongues Must Build Up the Church
+    chapterKind: sermon
+    chapterStart: "1:18:52.9"
+    chapterEnd: "1:35:32.5"
+    points:
+      - pointTime: "1:18:52.9"
+        pointText: The preacher allows private tongues but requires public interpretation and intelligible
+          teaching, using Acts to reject tongues as a required sign of a second baptism while an
+          audience-wording discrepancy remains unresolved.
+    subchapters:
+      - chapterId: s0705-worship-order
+        chapterTitle: Public Worship Should Build Understanding
+        chapterKind: sermon
+        chapterStart: "1:24:12.44"
+        chapterEnd: "1:30:15.84"
+        points:
+          - pointTime: "1:24:12.44"
+            pointText: The preacher prioritizes interpretation and intelligible preaching for members and
+              visitors, but the source explanation reverses the audiences on the displayed 1
+              Corinthians 14:22 slide.
+        chapterScripture:
+          - 1 Corinthians 14:5
+          - 1 Corinthians 14:18-19
+          - 1 Corinthians 14:22
+          - 1 Corinthians 14:22-25
+          - 1 Corinthians 14:24-25
+          - 1 Corinthians 14:33
+          - 1 Corinthians 14:39
+      - chapterId: s0705-acts
+        chapterTitle: Acts Does Not Supply a Formula for Tongues
+        chapterKind: sermon
+        chapterStart: "1:30:15.84"
+        chapterEnd: "1:33:04.7"
+        points:
+          - pointTime: "1:30:15.84"
+            pointText: The preacher uses an interpretation attributed to Stephen Tong and his recollection of
+              pressure to follow a manual to question fixed techniques for receiving the Spirit.
+        chapterScripture:
+          - Acts 2
+          - Acts 1:8
+          - Acts 8
+          - Acts 10
+          - Acts 19
+    chapterScripture:
+      - Acts 2:1-6
+      - Acts 2
+      - 1 Corinthians 14:1-2
+      - 1 Corinthians 14:5
+      - 1 Corinthians 14:18-19
+      - 1 Corinthians 14:22
+      - 1 Corinthians 14:22-25
+      - 1 Corinthians 14:24-25
+      - 1 Corinthians 14:33
+      - 1 Corinthians 14:39
+      - Acts 1:8
+      - Acts 8
+      - Acts 10
+      - Acts 19
+      - 1 Corinthians 14:2
+  - chapterId: c20260705-testing-wonders
+    chapterTitle: Test Wonders and Hold Fast to God’s Word
+    chapterKind: sermon
+    chapterStart: "1:35:32.5"
+    chapterEnd: "1:44:38.9"
+    points:
+      - pointTime: "1:35:32.5"
+        pointText: The preacher calls for verifiable evidence of wonders, cites an unsourced medical
+          comparison, and urges prayer that trusts God’s sovereignty and obedience to scripture
+          rather than impressive signs or popular teaching.
+    subchapters:
+      - chapterId: s0705-conclusion
+        chapterTitle: Impressive Signs Do Not Replace Obedience
+        chapterKind: sermon
+        chapterStart: "1:42:03.44"
+        chapterEnd: "1:43:24.2"
+        points:
+          - pointTime: "1:42:03.44"
+            pointText: Returning to Deuteronomy 13, the preacher argues that impressive signs do not replace
+              obedience to God’s word.
+        chapterScripture:
+          - Deuteronomy 13:1-4
+    chapterScripture:
+      - Acts 9:36-42
+      - Acts 20:7-12
+      - Deuteronomy 13:1-4
+  - chapterId: c20260705-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:44:38.9"
+    chapterEnd: "1:58:29.366"
+    points:
+      - pointTime: "1:44:38.9"
+        pointText: The congregation affirms its faith and prays for the church, then shares offerings, a
+          closing hymn and blessing before the pastor’s outreach invitations and request for prayer
+          about possible Boys’ Brigade support.
+    chapterScripture:
+      - Romans 15
+      - 2 Corinthians 13
+markers:
+  - markerTime: "39:26.82"
+    markerNote: "Also cited in the sermon: John 14:26; John 14:27; John 14:16; John 14:23; John 14; Acts
+      2:1-6; Acts 2; 1 Corinthians 14:1-2; 1 Corinthians 14:5; 1 Corinthians 14:18-19; 1 Corinthians
+      14:22; 1 Corinthians 14:22-25; 1 Corinthians 14:24-25; 1 Corinthians 14:33; 1 Corinthians
+      14:39; Acts 1:8; Acts 8; Acts 10; Acts 19; 1 Corinthians 14:2; Acts 9:36-42; Acts 20:7-12;
+      Deuteronomy 13:1-4. Keep only the main passages above."
+  - markerTime: "39:26.82"
+    markerNote: "Other topics it touched: prayer, mission, worship."
+  - markerTime: "1:24:12.44"
+    markerNote: "Old review note: Listen at 1:26:32.90–1:26:47: ASR reverses the audience in the
+      displayed 1 Corinthians 14:22 quotation."

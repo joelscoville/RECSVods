@@ -1,13 +1,13 @@
 import { readFileSync } from 'node:fs';
 import type { Page } from '@playwright/test';
 import { test, expect } from './fixtures';
-import type { SearchChapter } from '../../site/lib/types';
+import type { SearchUnit } from '../../site/lib/display';
 
 const metadata = JSON.parse(readFileSync('dist/preview/generated/chapters.json', 'utf8'));
-// Reuse a real recording identity so grouping cannot silently discard the synthetic chapter.
-const source = (metadata.chapters as SearchChapter[]).find(chapter => !chapter.parentId)!;
-const chapter = { ...source, title: 'Synthetic search contract', summary: 'Read Romans 12:1; John 3:16.',
-  keywords: [], topics: [], scripture: [], scriptureDisplay: [] };
+// Reuse a real recording identity so grouping cannot silently discard the synthetic key point.
+const source = (metadata.units as SearchUnit[]).find(unit => unit.kind === 'point')!;
+const chapter = { ...source, title: 'Synthetic search contract', text: 'Read Romans 12:1; John 3:16.',
+  topics: [], scripture: [], scriptureDisplay: [] };
 const scripture = { schemaVersion: 1, references: {
   'John 3:16': ['John 3:16'], '1 John 2:15-16': ['1 John 2:15'],
 }, verses: {
@@ -24,7 +24,7 @@ async function ready(page: Page) {
 }
 
 test('separate written references retain identity after metadata loads', async ({ page }) => {
-  await page.route('**/generated/chapters.json*', route => route.fulfill({ json: { ...metadata, chapters: [chapter] } }));
+  await page.route('**/generated/chapters.json*', route => route.fulfill({ json: { ...metadata, units: [chapter] } }));
   await page.route('**/generated/scripture.json*', route => route.fulfill({ json: { schemaVersion: 1, references: {}, verses: {} } }));
   await page.goto('search/?q=John%203%3A16');
   await ready(page);
@@ -37,7 +37,7 @@ test('separate written references retain identity after metadata loads', async (
 
 test('negation selects the right visible verse and explicit references take priority', async ({ page }) => {
   const references = Object.keys(scripture.references);
-  await page.route('**/generated/chapters.json*', route => route.fulfill({ json: { ...metadata, chapters: [{ ...chapter, summary: 'A reading.', scripture: references, scriptureDisplay: references }] } }));
+  await page.route('**/generated/chapters.json*', route => route.fulfill({ json: { ...metadata, units: [{ ...chapter, text: 'A reading.', scripture: references, scriptureDisplay: references }] } }));
   await page.route('**/generated/scripture.json*', route => route.fulfill({ json: scripture }));
   await page.goto('search/?q=do%20not%20love%20the%20world');
   await ready(page);
@@ -51,7 +51,7 @@ test('negation selects the right visible verse and explicit references take prio
 
 test('delayed verse text enriches the current query rather than restoring an older selection', async ({ page }) => {
   const references = Object.keys(scripture.references);
-  await page.route('**/generated/chapters.json*', route => route.fulfill({ json: { ...metadata, chapters: [{ ...chapter, scripture: references, scriptureDisplay: references }] } }));
+  await page.route('**/generated/chapters.json*', route => route.fulfill({ json: { ...metadata, units: [{ ...chapter, scripture: references, scriptureDisplay: references }] } }));
   let release!: () => void;
   const gate = new Promise<void>(resolve => { release = resolve; });
   await page.route('**/generated/scripture.json*', async route => { await gate; await route.fulfill({ json: scripture }); });

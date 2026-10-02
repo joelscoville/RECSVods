@@ -3,9 +3,9 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import SearchApp from '../../components/SearchApp';
 import { homeItems } from '../../components/archive-display';
 import { loadPublicArchive } from '../../lib/public-archive';
-const { chapters, services } = loadPublicArchive(import.meta.env.ARCHIVE_MODE);
-const recordings = homeItems(services, import.meta.env.BASE_URL);
+const { units, recordings: all } = loadPublicArchive(import.meta.env.ARCHIVE_MODE);
+const recordings = homeItems(all, import.meta.env.BASE_URL);
 ---
 <SiteLayout title="Search" route="search-route" header={false}>
-  <SearchApp base={import.meta.env.BASE_URL} initialChapters={chapters} recordings={recordings} client:load />
+  <SearchApp base={import.meta.env.BASE_URL} initialUnits={units} recordings={recordings} client:load />
 </SiteLayout>

@@ -4,8 +4,8 @@ import Home from '../components/Home';
 import { loadPublicArchive } from '../lib/public-archive';
 import { homeItems } from '../components/archive-display';
 const mode = import.meta.env.ARCHIVE_MODE;
-const { services } = loadPublicArchive(mode);
-const items = homeItems(services, import.meta.env.BASE_URL);
+const { recordings } = loadPublicArchive(mode);
+const items = homeItems(recordings, import.meta.env.BASE_URL);
 ---
 <SiteLayout title="Home" route="home-route">
   <Home items={items} base={import.meta.env.BASE_URL} client:load />

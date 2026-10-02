@@ -2,17 +2,16 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { EMBEDDING_CONFIG, EMBEDDING_OPTIONS, isCompatibleEmbeddingConfig, isEmbeddingVector, MODEL_FILES, preprocessEmbedding, semanticAssetPaths } from '../site/lib/embedding-config';
 import { parseFullDateQuery, prepareSearchIndex, prepareVerseScorer, search, SEARCH_WEIGHTS } from '../site/lib/search';
 import { CHAPTER_VECTOR_CONFIG, decodeChapterVectors, packChapterVectors } from '../site/lib/chapter-vectors';
-import { enrichChapters, parseChapterMetadata } from '../site/lib/chapter-index';
+import { enrichUnits, parseChapterMetadata } from '../site/lib/chapter-index';
 import { createSemanticClient, type SemanticRequest, type SemanticResponse, type SemanticStatus } from '../site/lib/semantic';
-import type { SearchChapter } from '../site/lib/types';
+import type { SearchUnit } from '../site/lib/display';
 import { sha256, verifyModelFile } from '../scripts/embeddings';
 
 // Fictional metadata and compact vector rows; never emitted into an archive.
-const fixture: SearchChapter = {
-  id: 'fixture', serviceId: 'fixture-service', videoId: 'abcdefghijk', start: 60, end: 120,
-  serviceTitle: 'Fixture gathering', title: 'Serving our neighbours', summary: 'Practical care and quiet generosity.',
-  keywords: ['generosity', 'daily practice'], topics: ['Community'], scripture: ['Romans 12:1-2'],
-  speaker: 'Example Speaker', date: '2026-09-06', type: 'sermon', preview: true,
+const fixture: SearchUnit = {
+  id: 'fixture', recordingId: 'fixture-service', kind: 'point', start: 60,
+  recordingTitle: 'Fixture gathering', title: 'Serving our neighbours', text: 'Practical care and quiet generosity, a daily practice.',
+  topics: ['Community'], scripture: ['Romans 12:1-2'], date: '2026-09-06', preview: true,
 };
 function unit(index = 0): number[] { return Array.from({ length: 384 }, (_, i) => i === index ? 1 : 0); }
 function vectors(indices = [0]) {
@@ -32,10 +31,10 @@ describe('embedding and chapter metadata contracts', () => {
   });
   it('validates the full chapter recipe before a binary row can be paired with metadata', () => {
     const hash = sha256(packChapterVectors([new Int8Array(384).fill(127)]));
-    const metadata = { schemaVersion: 3, model: CHAPTER_VECTOR_CONFIG, vectors: { file: `vectors.${hash}.bin`, sha256: hash }, chapters: [fixture] };
-    expect(parseChapterMetadata(metadata).chapters).toEqual([fixture]);
+    const metadata = { schemaVersion: 5, model: CHAPTER_VECTOR_CONFIG, vectors: { file: `vectors.${hash}.bin`, sha256: hash }, units: [fixture] };
+    expect(parseChapterMetadata(metadata).units).toEqual([fixture]);
     for (const key of Object.keys(CHAPTER_VECTOR_CONFIG)) expect(() => parseChapterMetadata({ ...metadata, model: { ...CHAPTER_VECTOR_CONFIG, [key]: 'different' } })).toThrow();
-    expect(() => parseChapterMetadata({ ...metadata, chapters: [{ ...fixture, verseText: 'browser-only' }] })).toThrow();
+    expect(() => parseChapterMetadata({ ...metadata, units: [{ ...fixture, verseText: 'browser-only' }] })).toThrow();
   });
   it('builds same-origin model assets under any deployment path', () => {
     expect(semanticAssetPaths('/review/')).toEqual({ models: '/review/models/', onnx: '/review/onnx/' });
@@ -49,82 +48,81 @@ describe('embedding and chapter metadata contracts', () => {
 
 describe('transparent chapter ranking', () => {
   it('finds metadata immediately without BSB, vectors or a model', () => {
-    expect(search([fixture], 'daily practice')[0].reasons).toEqual(['Keyword']);
-    expect(search([fixture], 'quiet generosity')[0].reasons).toEqual(['Keyword', 'Summary match (exact phrase)']);
+    expect(search([fixture], 'daily practice')[0].reasons).toEqual(['Summary match (exact phrase)']);
     expect(search([fixture], 'Community')[0].reasons).toEqual(['Topic match']);
-    expect(search([fixture], 'Example Speaker')[0].reasons).toEqual(['Speaker match (exact phrase)']);
+    expect(search([fixture], 'fixture gathering')[0].reasons).toEqual(['Service match (exact phrase)']);
     expect(search([fixture], 'neighbours')[0].reasons).toEqual(['Title match']);
     expect(search([fixture], 'neigh')).toEqual([]);
   });
   it('ignores question scaffolding but preserves negation and meaningful title words', () => {
-    const records = ['Daily practice', 'Not willing', 'Willing', 'Only'].map((title, i) => ({ ...fixture, id: String(i), title, keywords: [], summary: 'A musician describes practice.' }));
-    expect(search(records, 'Should my daily practice matter if I am being a musician?').map((r) => r.chapter.id)).toEqual(['0']);
-    expect(search(records, 'not willing').map((r) => r.chapter.id)).toEqual(['1']);
-    expect(search(records, 'only')[0].chapter.id).toBe('3');
+    const records = ['Daily practice', 'Not willing', 'Willing', 'Only'].map((title, i) => ({ ...fixture, id: String(i), title, text: 'A musician describes practice.' }));
+    expect(search(records, 'Should my daily practice matter if I am being a musician?').map((r) => r.unit.id)).toEqual(['0']);
+    expect(search(records, 'not willing').map((r) => r.unit.id)).toEqual(['1']);
+    expect(search(records, 'only')[0].unit.id).toBe('3');
   });
   it('matches optional series as a general metadata field', () => {
-    const chapter = { ...fixture, series: { id: 'orchard', name: 'Fictional orchard' } };
+    const chapter = { ...fixture, series: { id: 'orchard', title: 'Fictional orchard' } };
     expect(search([chapter], 'fictional orchard')[0].reasons).toEqual(['Series match (exact phrase)']);
     expect(search([chapter], 'orchard')[0].score).toBe(SEARCH_WEIGHTS.series * (1 + SEARCH_WEIGHTS.phraseBonus));
     expect(search([fixture], 'fictional orchard')).toEqual([]);
   });
   it('matches inflected metadata words without prefix matching or changing source text', () => {
-    const chapter = { ...fixture, keywords: ['stumbling', 'gardeners'], title: 'Restoring the garden', summary: 'Plants need careful tending.' };
-    for (const query of ['stumble', 'gardener', 'restore', 'plant']) expect(search([chapter], query)[0]?.chapter).toBe(chapter);
+    const chapter = { ...fixture, title: 'Restoring the garden', text: 'Plants need careful tending by stumbling gardeners.' };
+    for (const query of ['stumble', 'gardener', 'restore', 'plant']) expect(search([chapter], query)[0]?.unit).toBe(chapter);
     expect(search([chapter], 'gard')).toEqual([]);
-    expect(chapter.keywords).toEqual(['stumbling', 'gardeners']);
+    expect(chapter.text).toBe('Plants need careful tending by stumbling gardeners.');
   });
   it('admits distinctive two-term metadata cues in longer questions without generic partial flooding', () => {
-    const target = { ...fixture, id: 'target', title: 'Orchard pruning', summary: 'Annual care for trees.', keywords: ['orchard'], scripture: [] };
-    const common = Array.from({ length: 50 }, (_, i) => ({ ...fixture, id: `other-${i}`, title: 'Annual care', summary: 'Care for our community.', keywords: [], scripture: [] }));
-    expect(search([target, ...common], 'What does annual orchard pruning mean for a healthy future?')[0]?.chapter.id).toBe('target');
+    const target = { ...fixture, id: 'target', title: 'Orchard pruning', text: 'Annual care for trees in the orchard.', scripture: [] };
+    const common = Array.from({ length: 50 }, (_, i) => ({ ...fixture, id: `other-${i}`, title: 'Annual care', text: 'Care for our community.', scripture: [] }));
+    expect(search([target, ...common], 'What does annual orchard pruning mean for a healthy future?')[0]?.unit.id).toBe('target');
     expect(search([target, ...common], 'orchard unknownone unknowntwo')).toEqual([]);
   });
   it('adds hidden BSB matches only after enrichment, without mutating metadata', () => {
     const original = structuredClone(fixture);
-    const [enriched] = enrichChapters([fixture], { schemaVersion: 1, references: { 'Romans 12:1-2': ['Romans 12:1'] }, verses: { 'Romans 12:1': 'living sacrifices' } });
+    const [enriched] = enrichUnits([fixture], { schemaVersion: 1, references: { 'Romans 12:1-2': ['Romans 12:1'] }, verses: { 'Romans 12:1': 'living sacrifices' } });
     expect(search([fixture], 'living sacrifice')).toEqual([]);
     expect(search([enriched], 'living sacrifice')[0].reasons).toEqual(['Verse-text match (BSB)']);
     expect(fixture).toEqual(original);
   });
   it.each(['Romans 13', 'Rom 13', 'Rom13', 'ROM.13:3', 'Romans 12:21-13:2'])('prioritizes overlapping scripture for %s', (query) => {
     const referenced = { ...fixture, id: 'referenced', scripture: ['Romans 13:1-7'] };
-    const other = { ...fixture, id: 'other', scripture: [], summary: 'Romans 13' };
+    const other = { ...fixture, id: 'other', scripture: [], text: 'Romans 13' };
     const result = search([other, referenced], query, { vectors: vectors([0, -1]), queryVector: unit() });
-    expect(result[0].chapter.id).toBe('referenced');
+    expect(result[0].unit.id).toBe('referenced');
     expect(result[0].reasons.some((reason) => reason.startsWith('Scripture: '))).toBe(true);
     expect(search([referenced], 'Romans 13:8')).toEqual([]);
   });
   it('treats a reference as one term: loose book words and numbers do not match', () => {
     const psalmOne = { ...fixture, id: 'psalm-one', scripture: ['Psalms 1:1-6'] };
     // Mentions a psalm and the number 1 (and cites Psalms 98:1-3), but not Psalm 1.
-    const loose = { ...fixture, id: 'loose', scripture: ['Psalms 98:1-3'], keywords: ['psalms'], summary: 'Sing a new song from Psalms 98:1-3 and 1 Corinthians 11.' };
-    const written = { ...fixture, id: 'written', scripture: [], summary: 'Reads Psalm 1 aloud before prayer.' };
-    for (const query of ['Psalms 1', 'Psalm 1', 'Ps 1']) expect(search([loose, written, psalmOne], query).map((result) => result.chapter.id)).toEqual(['psalm-one', 'written']);
+    const loose = { ...fixture, id: 'loose', scripture: ['Psalms 98:1-3'], text: 'Psalms: sing a new song from Psalms 98:1-3 and 1 Corinthians 11.' };
+    const written = { ...fixture, id: 'written', scripture: [], text: 'Reads Psalm 1 aloud before prayer.' };
+    for (const query of ['Psalms 1', 'Psalm 1', 'Ps 1']) expect(search([loose, written, psalmOne], query).map((result) => result.unit.id)).toEqual(['psalm-one', 'written']);
     expect(search([loose], 'John 3')).toEqual([]);
   });
   it('keeps numbered and unnumbered books apart in references written in text', () => {
-    const firstJohn = { ...fixture, id: 'first-john', scripture: ['1 John 3:16'], summary: 'Reading from 1 John 3:16.' };
-    const secondJohn = { ...fixture, id: 'second-john', scripture: [], summary: 'Greeting in 2 John 1:3 and 3 John 1:2.' };
-    const gospel = { ...fixture, id: 'gospel', scripture: [], summary: 'Nicodemus hears John 3:1-21 at night.' };
+    const firstJohn = { ...fixture, id: 'first-john', scripture: ['1 John 3:16'], text: 'Reading from 1 John 3:16.' };
+    const secondJohn = { ...fixture, id: 'second-john', scripture: [], text: 'Greeting in 2 John 1:3 and 3 John 1:2.' };
+    const gospel = { ...fixture, id: 'gospel', scripture: [], text: 'Nicodemus hears John 3:1-21 at night.' };
     const rows = [firstJohn, secondJohn, gospel], prepared = prepareSearchIndex(rows);
     for (const query of ['John 3', 'John 3:16']) {
       // Exhaustive and prepared search agree: only the Gospel of John, written as a range, matches.
-      expect(search(rows, query).map((result) => result.chapter.id)).toEqual(['gospel']);
-      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(['gospel']);
+      expect(search(rows, query).map((result) => result.unit.id)).toEqual(['gospel']);
+      expect(prepared.search(query).map((result) => result.unit.id)).toEqual(['gospel']);
     }
-    expect(search(rows, '1 John 3').map((result) => result.chapter.id)).toEqual(['first-john']);
-    expect(search(rows, '3 John 1').map((result) => result.chapter.id)).toEqual(['second-john']);
+    expect(search(rows, '1 John 3').map((result) => result.unit.id)).toEqual(['first-john']);
+    expect(search(rows, '3 John 1').map((result) => result.unit.id)).toEqual(['second-john']);
   });
   it('reads complete book names in text: multiword names, Roman numerals and aliases', () => {
-    const song = { ...fixture, id: 'song', scripture: [], summary: 'Reading from Song of Solomon 2:1.' };
-    const roman = { ...fixture, id: 'roman', scripture: [], summary: 'Reading from I John 3:16.' };
-    const alias = { ...fixture, id: 'alias', scripture: [], summary: 'See 1 Jn 4:8 and Rom. 13:1.' };
-    const prose = { ...fixture, id: 'prose', scripture: [], summary: 'It is 3 weeks until John returns.' };
+    const song = { ...fixture, id: 'song', scripture: [], text: 'Reading from Song of Solomon 2:1.' };
+    const roman = { ...fixture, id: 'roman', scripture: [], text: 'Reading from I John 3:16.' };
+    const alias = { ...fixture, id: 'alias', scripture: [], text: 'See 1 Jn 4:8 and Rom. 13:1.' };
+    const prose = { ...fixture, id: 'prose', scripture: [], text: 'It is 3 weeks until John returns.' };
     const rows = [song, roman, alias, prose], prepared = prepareSearchIndex(rows);
     const ids = (query: string) => {
-      const exhaustive = search(rows, query).map((result) => result.chapter.id);
-      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(exhaustive);
+      const exhaustive = search(rows, query).map((result) => result.unit.id);
+      expect(prepared.search(query).map((result) => result.unit.id)).toEqual(exhaustive);
       return exhaustive;
     };
     expect(ids('Song of Solomon 2:1')).toEqual(['song']);
@@ -136,13 +134,13 @@ describe('transparent chapter ranking', () => {
     expect(ids('Isaiah 3')).toEqual([]);
   });
   it('reads each written reference as a whole chapter:verse unit, so its numbers never start the next one', () => {
-    const listed = { ...fixture, id: 'listed', scripture: [], summary: 'Read Romans 12:1; John 3:16.' };
-    const spaced = { ...fixture, id: 'spaced', scripture: [], summary: 'Read Romans 12:1 John 3:16 together.' };
-    const numbered = { ...fixture, id: 'numbered', scripture: [], summary: 'Compare Romans 12; 1 John 3 and Romans 12:1 and 1 John 4:8.' };
+    const listed = { ...fixture, id: 'listed', scripture: [], text: 'Read Romans 12:1; John 3:16.' };
+    const spaced = { ...fixture, id: 'spaced', scripture: [], text: 'Read Romans 12:1 John 3:16 together.' };
+    const numbered = { ...fixture, id: 'numbered', scripture: [], text: 'Compare Romans 12; 1 John 3 and Romans 12:1 and 1 John 4:8.' };
     const rows = [listed, spaced, numbered], prepared = prepareSearchIndex(rows);
     const ids = (query: string) => {
-      const exhaustive = search(rows, query).map((result) => result.chapter.id);
-      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(exhaustive);
+      const exhaustive = search(rows, query).map((result) => result.unit.id);
+      expect(prepared.search(query).map((result) => result.unit.id)).toEqual(exhaustive);
       return exhaustive;
     };
     expect(ids('John 3:16')).toEqual(['listed', 'spaced']);
@@ -150,25 +148,25 @@ describe('transparent chapter ranking', () => {
     expect(ids('1 John 4')).toEqual(['numbered']);
     expect(ids('Romans 12').sort()).toEqual(['listed', 'numbered', 'spaced']);
     // Without any punctuation, a chapter-only reference ends at its chapter: the next number starts 1 John.
-    const bare = [{ ...fixture, id: 'bare', scripture: [], summary: 'Romans 12 1 John 3 tonight.' }];
-    expect(search(bare, '1 John 3').map((result) => result.chapter.id)).toEqual(['bare']);
+    const bare = [{ ...fixture, id: 'bare', scripture: [], text: 'Romans 12 1 John 3 tonight.' }];
+    expect(search(bare, '1 John 3').map((result) => result.unit.id)).toEqual(['bare']);
     expect(search(bare, 'John 3')).toEqual([]);
     // A book name with an invalid chapter is skipped whole: 1 John has five chapters, so this is not John 9.
-    expect(search([{ ...fixture, id: 'invalid', scripture: [], summary: 'Compare 1 John 9 with nothing.' }], 'John 9')).toEqual([]);
+    expect(search([{ ...fixture, id: 'invalid', scripture: [], text: 'Compare 1 John 9 with nothing.' }], 'John 9')).toEqual([]);
     // Cross-chapter ranges are one unit too.
-    expect(search([{ ...fixture, id: 'range', scripture: [], summary: 'Reading Romans 12:21-13:2 aloud.' }], 'Romans 13:1').map((result) => result.chapter.id)).toEqual(['range']);
+    expect(search([{ ...fixture, id: 'range', scripture: [], text: 'Reading Romans 12:21-13:2 aloud.' }], 'Romans 13:1').map((result) => result.unit.id)).toEqual(['range']);
   });
   it('normalises written references as the scripture parser does: Unicode book numbers and every dash', () => {
     const rows = [
-      { ...fixture, id: 'roman-numeral', scripture: [], summary: 'Reading from Ⅰ John 3:16.' },
-      { ...fixture, id: 'full-width', scripture: [], summary: 'Reading from １ John 4:8.' },
-      { ...fixture, id: 'em-dash', scripture: [], summary: 'Reading Romans 12:21—13:2 aloud.' },
-      { ...fixture, id: 'en-dash', scripture: [], summary: 'Reading Romans 8:28–30 aloud.' },
+      { ...fixture, id: 'roman-numeral', scripture: [], text: 'Reading from Ⅰ John 3:16.' },
+      { ...fixture, id: 'full-width', scripture: [], text: 'Reading from １ John 4:8.' },
+      { ...fixture, id: 'em-dash', scripture: [], text: 'Reading Romans 12:21—13:2 aloud.' },
+      { ...fixture, id: 'en-dash', scripture: [], text: 'Reading Romans 8:28–30 aloud.' },
     ];
     const prepared = prepareSearchIndex(rows);
     const ids = (query: string) => {
-      const exhaustive = search(rows, query).map((result) => result.chapter.id);
-      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(exhaustive);
+      const exhaustive = search(rows, query).map((result) => result.unit.id);
+      expect(prepared.search(query).map((result) => result.unit.id)).toEqual(exhaustive);
       return exhaustive;
     };
     // "Ⅰ" and "１" keep their book number: these are 1 John, never the Gospel of John.
@@ -181,14 +179,14 @@ describe('transparent chapter ranking', () => {
   });
   it('reads unambiguous lowercase book names but not everyday words', () => {
     const rows = [
-      { ...fixture, id: 'lower-john', scripture: [], summary: 'Reading from john 3:16.' },
-      { ...fixture, id: 'lower-psalm', scripture: [], summary: 'A reading of psalm 23 before prayer.' },
-      { ...fixture, id: 'prose', scripture: [], summary: 'It is 3 weeks away; mark 3 items and note the acts 2 cast list.' },
+      { ...fixture, id: 'lower-john', scripture: [], text: 'Reading from john 3:16.' },
+      { ...fixture, id: 'lower-psalm', scripture: [], text: 'A reading of psalm 23 before prayer.' },
+      { ...fixture, id: 'prose', scripture: [], text: 'It is 3 weeks away; mark 3 items and note the acts 2 cast list.' },
     ];
     const prepared = prepareSearchIndex(rows);
     for (const [query, expected] of [['John 3:16', ['lower-john']], ['Psalms 23', ['lower-psalm']], ['Isaiah 3', []], ['Mark 3', []], ['Acts 2', []]] as const) {
-      expect(search(rows, query).map((result) => result.chapter.id)).toEqual(expected);
-      expect(prepared.search(query).map((result) => result.chapter.id)).toEqual(expected);
+      expect(search(rows, query).map((result) => result.unit.id)).toEqual(expected);
+      expect(prepared.search(query).map((result) => result.unit.id)).toEqual(expected);
     }
   });
   it('scores the verse a natural-language query is about, ignoring common words alone', () => {
@@ -222,10 +220,10 @@ describe('transparent chapter ranking', () => {
     expect(score('John 3:16')).toBe(0);
   });
   it('keeps per-value phrase boundaries and combines field coverage', () => {
-    const separated = { ...fixture, id: 'separated', keywords: ['quiet', 'generosity'], summary: '' };
-    const phrase = { ...separated, id: 'phrase', keywords: ['quiet generosity'] };
-    expect(search([separated, phrase], 'quiet generosity').map((r) => r.chapter.id)).toEqual(['phrase', 'separated']);
-    expect(search([fixture], 'Example Speaker community')[0].reasons).toEqual(['Speaker match', 'Topic match']);
+    const separated = { ...fixture, id: 'separated', topics: ['Quiet', 'Generosity'], text: undefined };
+    const phrase = { ...separated, id: 'phrase', topics: ['Quiet generosity'] };
+    expect(search([separated, phrase], 'quiet generosity').map((r) => r.unit.id)).toEqual(['phrase', 'separated']);
+    expect(search([fixture], 'fixture community')[0].reasons).toEqual(['Topic match', 'Service match']);
   });
   it('scores int8 cosine, skips zero rows, rejects mismatched shape and invalid query vectors', () => {
     expect(search([fixture], 'unrelated', { vectors: vectors(), queryVector: unit() })[0].reasons).toEqual(['Similar in meaning']);
@@ -240,7 +238,7 @@ describe('transparent chapter ranking', () => {
   it('has honest empty results and deterministic ties with limits applied after ranking', () => {
     for (const query of ['', '  ', '?!', 'the and', 'zxqvpl']) expect(search([fixture], query)).toEqual([]);
     const chapters = [{ ...fixture, id: 'b' }, { ...fixture, id: 'a' }, { ...fixture, id: 'early', start: 1 }, { ...fixture, id: 'old', date: '2025-09-06' }];
-    expect(search(chapters, 'community').map((r) => r.chapter.id)).toEqual(['early', 'a', 'b', 'old']);
+    expect(search(chapters, 'community').map((r) => r.unit.id)).toEqual(['early', 'a', 'b', 'old']);
     expect(search([...chapters].reverse(), 'community')).toEqual(search(chapters, 'community'));
     expect(search(chapters, 'community', { limit: 2 })).toHaveLength(2);
     expect(search(chapters, 'community', { limit: 0 })).toEqual([]);
@@ -248,11 +246,11 @@ describe('transparent chapter ranking', () => {
   it('reevaluates caller edits; metadata edits do not fabricate or invalidate transcript-derived rows', () => {
     const chapter = structuredClone(fixture), index = vectors();
     const options = { vectors: index, queryVector: unit() };
-    chapter.summary = 'An edited public summary.'; chapter.topics = ['Orchard'];
+    chapter.text = 'An edited public summary.'; chapter.topics = ['Orchard'];
     expect(search([chapter], 'unrelated', options)[0].reasons).toEqual(['Similar in meaning']);
     index.values[0] = 0;
     expect(search([chapter], 'unrelated', options)).toEqual([]);
-    expect(search([chapter], 'orchard')[0].chapter).toBe(chapter);
+    expect(search([chapter], 'orchard')[0].unit).toBe(chapter);
     expect(Object.isFrozen(chapter)).toBe(false);
   });
 });
@@ -262,7 +260,7 @@ describe('whole-query calendar scope', () => {
     expect(parseFullDateQuery(query)).toBe(date);
     const target = { ...fixture, date };
     const incidental = { ...fixture, id: 'other', date: '2025-01-01', title: query };
-    expect(search([incidental, target], query, { vectors: vectors([0, 0]), queryVector: unit() }).map((r) => r.chapter.id)).toEqual(['fixture']);
+    expect(search([incidental, target], query, { vectors: vectors([0, 0]), queryVector: unit() }).map((r) => r.unit.id)).toEqual(['fixture']);
   });
   it.each(['2026-02-29', '29 February 1900', '31 Apr 2024', '2026-13-05', '2026-00-05', '2026-07-00', '32 July 2026', '5 Jule 2026', '5 July 0000', 'July', '2026-7-5', 'on 5 July 2026', '5 July 2026 prayer'])('keeps %s ordinary text without rolling over', (query) => {
     expect(parseFullDateQuery(query)).toBeUndefined();

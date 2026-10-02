@@ -1,6 +1,7 @@
 const HISTORY_KEY = 'recs-replay:search-history:v1';
-const RESUME_KEY = 'recs-replay:resume:v1';
-export interface SavedPlayback { serviceId: string; videoId: string; time: number }
+const RESUME_KEY = 'recs-replay:resume:v2';
+/** Where a recording was left, on its own clock. */
+export interface SavedPlayback { recordingId: string; time: number }
 
 function read(key: string): unknown {
   try { return JSON.parse(window.localStorage.getItem(key) ?? 'null'); } catch { return null; }
@@ -27,8 +28,8 @@ export function clearSearchHistory(): boolean {
 }
 export function getSavedPlayback(): SavedPlayback | null {
   const value = read(RESUME_KEY) as Partial<SavedPlayback> | null;
-  if (!value || typeof value.serviceId !== 'string' || typeof value.videoId !== 'string' || typeof value.time !== 'number' || !Number.isFinite(value.time) || value.time < 0) return null;
-  return { serviceId: value.serviceId, videoId: value.videoId, time: value.time };
+  if (!value || typeof value.recordingId !== 'string' || typeof value.time !== 'number' || !Number.isFinite(value.time) || value.time < 0) return null;
+  return { recordingId: value.recordingId, time: value.time };
 }
 export function savePlayback(value: SavedPlayback): boolean {
   if (!Number.isFinite(value.time) || value.time < 0) return false;
@@ -38,6 +39,7 @@ export function clearLocalState(): boolean {
   try {
     window.localStorage.removeItem(HISTORY_KEY);
     window.localStorage.removeItem(RESUME_KEY);
+    window.localStorage.removeItem('recs-replay:resume:v1');
     window.dispatchEvent(new Event('recs-local-state-cleared'));
     return true;
   } catch { return false; }

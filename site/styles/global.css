@@ -651,3 +651,10 @@ html[data-data-mode="normal"][data-compute-mode="normal"] { --body-font: 'Atkins
   .home-catalogue > :is(.featured, [data-slot='recent-0'], [data-slot='recent-1']) .card-text { min-height: calc(10px + 2 * 1.25 * 18px + 2 * 1.35 * 15px); }
   .home-catalogue > :is(.featured, [data-slot='recent-0'], [data-slot='recent-1']) .card-text:has(.preview-label) { min-height: calc(10px + 2 * 1.25 * 18px + 2 * 1.35 * 15px + 4px + 1.5 * 12px + 4px); }
 }
+
+/* Developer views of recordings waiting for approval (switched on at /dev). */
+.chip-dev { border-style: dashed; }
+.unapproved-view { display: grid; gap: 24px; padding-block: 12px 60px; }
+.unapproved-view h1 { font-family: var(--display-font); font-size: 36px; }
+.dev-watch-note { margin-top: 12px; padding: 6px 12px; width: fit-content; border-radius: 999px; background: var(--gold); font-size: 14px; font-weight: 700; }
+.dev-categories { display: flex; gap: 8px; padding-top: 12px; }

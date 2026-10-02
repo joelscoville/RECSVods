@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { HomeItem } from './archive-display';
-import { homeSelection } from './archive-display';
+import { homeItems, homeSelection } from './archive-display';
 import { getSavedPlayback, type SavedPlayback } from '../lib/local-state';
 import { searchUrl, siteUrl } from '../lib/urls';
 import { BROWSE_CATEGORIES, browseUrl } from '../lib/browse';
@@ -8,8 +8,39 @@ import BrowseNavigation from './BrowseNavigation';
 import VideoCard from './VideoCard';
 import Icon from './Icon';
 
+type Unapproved = { status: 'loading' } | { status: 'error'; message: string } | { status: 'ready'; items: HomeItem[] };
+/** Developer switch (set on /dev): recordings waiting for approval, loaded live from GitHub into an
+ * "Unapproved" category. The loader is only downloaded while the switch is on. */
+function useUnapproved(items: HomeItem[], base: string): Unapproved | undefined {
+  const [state, setState] = useState<Unapproved>();
+  useEffect(() => {
+    let on = false;
+    try { on = localStorage.getItem('recs-dev:unapproved') === '1'; } catch { /* storage blocked */ }
+    if (!on) return;
+    setState({ status: 'loading' });
+    import('../lib/github-archive').then(async archive => {
+      const repository = archive.repositoryUrl();
+      if (!repository) throw new Error('This build has no GitHub repository set.');
+      const display = archive.unapprovedDisplay(await archive.loadArchiveOnce(repository)).filter(recording => !items.some(item => item.recordingId === recording.id));
+      // Fetched ones open in the dev-only player, which loads them the same way. A preview build already
+      // has some of its own; they keep their normal pages.
+      const all = [...items.filter(item => item.preview), ...homeItems(display, `${base}dev/`)].sort((x, y) => y.date.localeCompare(x.date));
+      setState({ status: 'ready', items: all });
+    }).catch(error => setState({ status: 'error', message: error instanceof Error ? error.message : String(error) }));
+  }, [items, base]);
+  return state;
+}
+
 export default function Home({ items, base }: { items: HomeItem[]; base: string }) {
   const [saved, setSaved] = useState<SavedPlayback | null>(null);
+  const unapproved = useUnapproved(items, base);
+  const [hash, setHash] = useState('');
+  useEffect(() => {
+    const read = () => setHash(window.location.hash);
+    read(); window.addEventListener('hashchange', read);
+    return () => window.removeEventListener('hashchange', read);
+  }, []);
+  const showingUnapproved = Boolean(unapproved) && hash === '#unapproved';
   useEffect(() => {
     const refresh = () => setSaved(getSavedPlayback());
     refresh();
@@ -35,14 +66,26 @@ export default function Home({ items, base }: { items: HomeItem[]; base: string 
       <a className="chip" href={siteUrl(base)} aria-current="page"><Icon name="check" />All</a>
       {categories.filter(({ path }) => path !== 'all').map(({ path, title }) => <a className="chip" key={path} href={browseUrl(base, path)}>{title}</a>)}
     </nav>
-    {!featured ? <section className="empty-archive page-width">
+    {unapproved && <nav className="dev-categories page-width" aria-label="Developer categories">
+      <a className="chip chip-dev" href={showingUnapproved ? '#' : '#unapproved'} aria-current={showingUnapproved ? 'page' : undefined}>{showingUnapproved && <Icon name="check" />}Unapproved
+        {unapproved.status === 'ready' ? ` (${unapproved.items.length})` : ''}</a>
+    </nav>}
+    {showingUnapproved ? <section className="unapproved-view" aria-labelledby="unapproved-title">
+      <div className="page-width"><h1 id="unapproved-title">Waiting for approval</h1>
+        <p>Developer view, loaded live from GitHub. Not published; turn it off on the <a href={`${base}dev/`}>developer page</a>.</p>
+        {unapproved!.status === 'loading' && <p role="status">Loading from GitHub…</p>}
+        {unapproved!.status === 'error' && <p role="alert">{unapproved!.message}</p>}
+        {unapproved!.status === 'ready' && !unapproved!.items.length && <p>Nothing is waiting for approval.</p>}
+      </div>
+      {unapproved!.status === 'ready' && unapproved!.items.length > 0 && <div className="home-catalogue browse-grid">{unapproved!.items.map(item => <VideoCard key={item.id} item={item} />)}</div>}
+    </section> : !featured ? <section className="empty-archive page-width">
       <h1>The archive is being prepared</h1>
       <p>There are no published recordings to watch yet. Services will appear here when they are ready.</p>
       <a className="button" href={searchUrl(base)}>Explore search</a>
     </section> : <>
       <div className="home-catalogue">
         <section className={`featured ${returning ? 'featured-returning' : ''}`} aria-labelledby="featured-title">
-          <h1 id="featured-title">{returning ? <><span className="editorial-label">Pick up where you left off</span><span className="compact-label">Continue watching</span></> : <>Watch the latest {featured.type === 'sermon' ? 'sermon' : 'service'}</>}</h1>
+          <h1 id="featured-title">{returning ? <><span className="editorial-label">Pick up where you left off</span><span className="compact-label">Continue watching</span></> : <>Watch the latest {featured.hasSermon ? 'sermon' : 'service'}</>}</h1>
           <VideoCard item={featured} progress={returning ? saved!.time : undefined} />
         </section>
         {/* Keyed by slot, not recording, so a swapped or shuffled card updates in place instead of moving. */}

@@ -1,126 +1,80 @@
-import type { SearchChapter, Service } from '../lib/types';
-import { displayType, watchUrl } from '../lib/urls';
+import type { DisplayRecording, SearchUnit } from '../lib/display';
+import { sermonOf } from '../lib/display';
+import { watchUrl } from '../lib/urls';
 import { availableBrowseCategories } from '../lib/browse';
 import type { SavedPlayback } from '../lib/local-state';
-import { recordingTitle } from '../lib/recording-title';
-import { publicQuirks, type PublicQuirk } from '../lib/video-quirks';
+import type { PublicQuirk } from '../lib/video-quirks';
 
-export type DisplayChapter = Omit<SearchChapter, 'summary' | 'verseText'>;
-export interface DisplayService {
-  id: string; title: string; date: string; type: string; preview: boolean;
-  sermonDescription?: string;
-  series?: Service['series'];
-  speakers: { id: string; name: string; chapterIds: string[] }[];
-  topics: { id: string; name: string; chapterIds: string[] }[];
-  videos: { id: string; duration: number; sequence: number; quirks?: PublicQuirk[] }[];
-  chapters: DisplayChapter[];
-}
-/** Explicit allowlist at the server/client boundary: editorial notes and workflow never serialize. */
-export function displayServices(services: Service[], chapters: SearchChapter[]): DisplayService[] {
-  return services.map((service) => ({
-    id: service.id, title: recordingTitle(service), date: service.date, type: service.type,
-    ...(service.sermon_description ? { sermonDescription: service.sermon_description } : {}),
-    ...(service.series ? { series: { id: service.series.id, name: service.series.name } } : {}),
-    preview: service.editorial_status !== 'reviewed',
-    speakers: service.speakers.map(({ id, name }) => ({ id, name, chapterIds: service.chapters.filter((chapter) => chapter.speaker_id === id).map((chapter) => chapter.id) }))
-      .filter((speaker) => speaker.chapterIds.length > 0),
-    topics: service.topics.map(({ id, name }) => ({ id, name, chapterIds: service.chapters.filter((chapter) => chapter.topics.includes(id)).map((chapter) => chapter.id) }))
-      .filter((topic) => topic.chapterIds.length > 0),
-    videos: service.videos.map(({ id, duration, sequence, quirks }) => {
-      const flags = publicQuirks(quirks);
-      return { id, duration, sequence, ...(flags.length ? { quirks: flags } : {}) };
-    }).sort((a, b) => a.sequence - b.sequence),
-    chapters: chapters.filter((chapter) => chapter.serviceId === service.id && service.videos.some((video) => video.id === chapter.videoId))
-      .map(({ id, serviceId, serviceTitle, videoId, start, end, type, title, shortSummary, parentId, parentTitle, keywords, topics, scripture, scriptureDisplay, speaker, date, series, preview }) => ({
-        id, serviceId, serviceTitle, videoId, start, end, type, title, keywords: [...keywords], topics: [...topics], scripture: [...scripture],
-        ...(shortSummary && !parentId ? { shortSummary } : {}),
-        ...(parentId ? { parentId, parentTitle } : {}),
-        ...(scriptureDisplay ? { scriptureDisplay: [...scriptureDisplay] } : {}), ...(speaker ? { speaker } : {}), date,
-        ...(series ? { series: { id: series.id, name: series.name } } : {}), preview,
-      })).sort((a, b) => service.videos.find((video) => video.id === a.videoId)!.sequence - service.videos.find((video) => video.id === b.videoId)!.sequence || a.start - b.start || a.id.localeCompare(b.id)),
-  }));
-}
+export type { DisplayEntry, DisplayRecording, DisplayUpload } from '../lib/display';
+
+/** One card per recording, however many uploads it took. */
 export interface HomeItem {
-  id: string; serviceId: string; videoId: string; title: string; date: string; type: string;
-  speaker?: string; href: string; duration: number; preview: boolean; start: number;
+  /** The first upload's id: it seeds the thumbnail pattern. */
+  id: string; recordingId: string; title: string; date: string; hasSermon: boolean;
+  href: string; length: number; preview: boolean; start: number;
   browseCategories?: string[];
-  /** Replaces the type line, e.g. the service a chapter card belongs to. */
+  /** Replaces the type line, e.g. a series position. */
   context?: string;
-  /** The sermon chapter the card opens, if the recording has one. */
-  sermonId?: string;
-  /** The chapter a topic, Bible book or search matched. The card still opens the sermon; the watch page
-   * offers this chapter as "Chapter only" under the player. */
+  /** The point or part a topic, Bible book or search matched. The card still opens the sermon. */
   match?: RecordingMatch;
-  /** Every YouTube upload of the recording, in order. A livestream split into parts is still one recording:
-   * one card, one search result. `videoId` and `duration` describe the part the card opens. */
-  parts: { id: string; duration: number }[];
   quirks?: PublicQuirk[];
+  speaker?: string;
 }
-export interface RecordingMatch { id: string; title: string; start: number; href: string; parentTitle?: string; more: number }
-/** One item per recording (service), however many parts YouTube split it into. It opens at the sermon,
- * in whichever part holds it, or at the first chapter. Its ID is the first part's, so thumbnails of
- * single-upload recordings stay the same. */
-export function homeItems(services: DisplayService[], base: string): HomeItem[] {
-  return [...services].sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id)).flatMap((service): HomeItem[] => {
-    const videos = [...service.videos].sort((a, b) => a.sequence - b.sequence);
-    if (!videos.length) return [];
-    const first = service.chapters[0];
-    const sermon = service.chapters.find((chapter) => chapter.type === 'sermon' && !chapter.parentId);
-    const opens = sermon ?? first, video = videos.find((item) => item.id === opens?.videoId) ?? videos[0];
-    return [{
-      id: videos[0].id, serviceId: service.id, videoId: video.id, parts: videos.map(({ id, duration }) => ({ id, duration })),
-      ...(videos.some(part => part.quirks?.length) ? { quirks: [...new Map(videos.flatMap(part => part.quirks ?? []).map(flag => [flag.kind, flag])).values()] } : {}),
-      title: service.title, date: service.date, type: sermon?.type ?? service.type,
-      speaker: sermon?.speaker, href: watchUrl(base, opens ? { chapter: opens.id } : { service: service.id, video: video.id }),
-      duration: video.duration, preview: service.preview, start: opens?.start ?? 0,
-      ...(sermon ? { sermonId: sermon.id } : {}),
-      browseCategories: availableBrowseCategories([service]).map((category) => category.path),
-    }];
+export interface RecordingMatch { id: string; title: string; start: number; href: string; more: number }
+
+/** Cards open at the sermon when there is one, else at the start. */
+export function homeItems(recordings: readonly DisplayRecording[], base: string): HomeItem[] {
+  return [...recordings].sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id)).map((recording): HomeItem => {
+    const sermon = sermonOf(recording), start = sermon?.start ?? 0;
+    const quirks = [...new Map(recording.uploads.flatMap(upload => upload.quirks ?? []).map(flag => [flag.kind, flag])).values()];
+    return {
+      id: recording.uploads[0].id, recordingId: recording.id, title: recording.title, date: recording.date, hasSermon: Boolean(sermon),
+      href: watchUrl(base, { recording: recording.id, start }), length: recording.length, preview: recording.preview, start,
+      ...(recording.speaker ? { speaker: recording.speaker } : {}),
+      ...(quirks.length ? { quirks } : {}),
+      browseCategories: availableBrowseCategories([recording]).map((category) => category.path),
+    };
   });
-}
-export function archiveCategories(items: { type: string }[]): { value: string; label: string }[] {
-  return [...new Set(items.map((item) => item.type))].map((value) => ({ value, label: displayType(value) }));
 }
 
 export function homeSelection(items: HomeItem[], saved: SavedPlayback | null, base: string) {
-  // Resume may be in any part of a split recording; the featured card then opens (and measures) that part.
-  const part = saved ? (item: HomeItem) => item.serviceId === saved.serviceId ? item.parts.find((candidate) => candidate.id === saved.videoId) : undefined : () => undefined;
-  const returning = saved ? items.find((item) => { const resumed = part(item); return resumed && saved.time > 0 && saved.time < resumed.duration - 2; }) : undefined;
-  const latest = items.find((item) => item.type === 'sermon') ?? items[0];
-  const featured = returning ? { ...returning, videoId: saved!.videoId, duration: part(returning)!.duration, href: watchUrl(base, { service: returning.serviceId, video: saved!.videoId, start: saved!.time }) } : latest;
+  const returning = saved ? items.find((item) => item.recordingId === saved.recordingId && saved.time > 0 && saved.time < item.length - 2) : undefined;
+  const latest = items.find((item) => item.hasSermon) ?? items[0];
+  const featured = returning ? { ...returning, href: watchUrl(base, { recording: returning.recordingId, start: saved!.time }) } : latest;
   // A resumed recording swaps places with the latest one, so the saved state (read only after hydration)
   // changes one card's content instead of reflowing every card after it.
   const supporting = latest ? items.filter((item) => item.id !== latest.id).map((item) => item.id === returning?.id ? latest : item) : [];
   return { returning, featured, supporting };
 }
 
-/** Groups ranked chapter matches into one entry per recording, in the rank of each recording's best
- * chapter. The recording carries that chapter as its match and counts the other matching chapters. */
-export function groupByRecording<T extends { chapter: Pick<DisplayChapter, 'id' | 'videoId' | 'title' | 'start' | 'parentTitle'> }>(
+/** Groups ranked matches into one entry per recording, in the rank of each recording's best match. A match on
+ * a point or part rides along, offered under the player; the recording still opens at its sermon. */
+export function groupByRecording<T extends { unit: Pick<SearchUnit, 'id' | 'recordingId' | 'kind' | 'title' | 'start' | 'entryId'> }>(
   ranked: readonly T[], recordings: readonly HomeItem[], base: string,
-): (T & { recording: HomeItem & { match: RecordingMatch } })[] {
-  // Every part of a split recording maps to that one recording.
-  const byVideo = new Map(recordings.flatMap((recording) => recording.parts.map((part) => [part.id, recording] as const)));
-  const groups = new Map<string, T & { recording: HomeItem & { match: RecordingMatch } }>();
+): (T & { recording: HomeItem & { match?: RecordingMatch } })[] {
+  const byId = new Map(recordings.map((recording) => [recording.recordingId, recording]));
+  const groups = new Map<string, T & { recording: HomeItem & { match?: RecordingMatch } }>();
   for (const entry of ranked) {
-    const recording = byVideo.get(entry.chapter.videoId);
+    const recording = byId.get(entry.unit.recordingId);
     if (!recording) continue;
-    const group = groups.get(recording.id);
-    if (group) { group.recording.match.more++; continue; }
-    const { id, title, start, parentTitle } = entry.chapter;
-    // The recording opens at its sermon (or the matched chapter when it has none), carrying the match along.
-    const href = watchUrl(base, { chapter: recording.sermonId ?? id, match: id });
-    groups.set(recording.id, { ...entry, recording: { ...recording, href, match: { id, title, start, href: watchUrl(base, { chapter: id }), ...(parentTitle ? { parentTitle } : {}), more: 0 } } });
+    const group = groups.get(recording.recordingId);
+    if (group) { if (group.recording.match) group.recording.match.more++; continue; }
+    const { id, kind, title, start } = entry.unit;
+    if (kind === 'recording') { groups.set(recording.recordingId, { ...entry, recording }); continue; }
+    const focus = entry.unit.entryId ?? id.slice(recording.recordingId.length + 1);
+    groups.set(recording.recordingId, { ...entry, recording: { ...recording, href: watchUrl(base, { recording: recording.recordingId, start: recording.start, focus }),
+      match: { id: focus, title, start, href: watchUrl(base, { recording: recording.recordingId, start, focus }), more: 0 } } });
   }
   return [...groups.values()];
 }
 
-/** Cards for a browse category page, in the same shape as the home page cards: one per recording.
- * On topic and Bible-book pages each card also names the chapter that placed it there. */
-export function browseItems(page: { path: string; serviceIds?: string[]; chapterIds?: string[] }, services: DisplayService[], base: string): HomeItem[] {
-  const recordings = homeItems(services, base);
-  const serviceIds = new Set(page.serviceIds), chapterIds = new Set(page.chapterIds);
-  if (!page.chapterIds?.length) return recordings.filter((item) => serviceIds.has(item.serviceId));
-  const matches = services.flatMap((service) => service.chapters.filter((chapter) => !chapter.parentId && chapterIds.has(chapter.id)).map((chapter) => ({ chapter })));
-  return groupByRecording(matches, recordings, base).map(({ recording }) => recording);
+/** Cards for a browse category page, in the page's order (a series keeps its playlist order). */
+export function browseItems(page: { recordingIds?: string[]; path: string }, recordings: readonly DisplayRecording[], base: string): HomeItem[] {
+  const cards = new Map(homeItems(recordings, base).map((item) => [item.recordingId, item]));
+  const series = page.path.startsWith('series/');
+  return (page.recordingIds ?? []).flatMap((id) => {
+    const card = cards.get(id), recording = recordings.find((item) => item.id === id);
+    if (!card) return [];
+    return [series && recording?.series ? { ...card, context: `Part ${recording.series.position} of ${recording.series.total}` } : card];
+  });
 }

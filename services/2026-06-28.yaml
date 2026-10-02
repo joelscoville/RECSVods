@@ -1,0 +1,194 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Teaching Us All Things…
+serviceDate: 2026-06-28
+status: draft
+sermonDescription: In John 14, the preacher presents the Holy Spirit as the Helper who directs
+  believers toward truth and Christ’s peace. He challenges treating faith as material gain or truth
+  as a matter of convenience, urging humble engagement with scripture and a changed way of living.
+  Reflecting on persecution and prayer, he argues that Christ’s peace reaches beyond the security
+  wealth can offer.
+sermonScripture:
+  - John 14:26
+  - John 14:15-24
+  - 2 Timothy 3:16-17
+sermonTopics:
+  - holy-spirit
+  - truth
+  - prayer
+uploads:
+  - youtubeId: k27dmsPvmG8
+    uploadDuration: "1:41:30.161"
+chapters:
+  - chapterId: c20260628-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "6:23.28"
+    points:
+      - pointTime: "0:00"
+        pointText: The leaders guide adoration, confession, thanksgiving and supplication, pray for
+          attentive worship, and invite a congregational greeting and meditation.
+  - chapterId: c20260628-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "6:23.28"
+    chapterEnd: "28:35.62"
+    points:
+      - pointTime: "6:23.28"
+        pointText: The leaders introduce worship and prayers for peace, responsive readings in Proverbs 27
+          and John 14, and Johan Pramono’s reading of 2 Timothy 3:14-17, while introit and hymn
+          evidence gaps remain unresolved.
+    chapterScripture:
+      - Psalms 81:1-3
+      - Proverbs 27:1-27
+      - John 14:15-31
+      - John 14:27
+      - 2 Timothy 3:14-17
+  - chapterId: c20260628-repentance-consequences
+    chapterTitle: "Q&A: Forgiveness Does Not Erase Consequences"
+    chapterKind: qa
+    chapterStart: "28:35.62"
+    chapterEnd: "42:54.62"
+    points:
+      - pointTime: "28:35.62"
+        pointText: Following his greeting and question invitation, the preacher contrasts Peter and Judas,
+          challenges transactional views of sin and urges repentance while distinguishing
+          forgiveness from recovery and continuing responsibilities.
+    subchapters:
+      - chapterId: s0628-consequences
+        chapterTitle: Forgiveness Leaves Continuing Responsibilities
+        chapterKind: sermon
+        chapterStart: "37:34.42"
+        chapterEnd: "42:54.62"
+        points:
+          - pointTime: "37:34.42"
+            pointText: The preacher’s seed-to-tree illustration and account of supporting single mothers
+              distinguish forgiveness from entrenched habits, recovery and ongoing responsibility.
+    chapterScripture:
+      - John 14:25-31
+      - John 13
+      - Matthew 5
+  - chapterId: c20260628-live-by-truth
+    chapterTitle: God’s Truth Must Shape How We Live
+    chapterKind: sermon
+    chapterStart: "42:54.62"
+    chapterEnd: "1:07:02.86"
+    points:
+      - pointTime: "42:54.62"
+        pointText: Linking restoration and the Spirit of truth, the preacher contrasts evidence and
+          subjective judgments with pragmatism and self-justification, arguing that God’s truth
+          should govern life even under pressure.
+    subchapters:
+      - chapterId: s0628-objective
+        chapterTitle: Objective Claims Depend on Repeatable Evidence
+        chapterKind: sermon
+        chapterStart: "51:50.98"
+        chapterEnd: "55:30.86"
+        points:
+          - pointTime: "51:50.98"
+            pointText: The preacher uses a hypercar’s performance and price claims, with traffic-light humor, to
+              illustrate repeatable evidence rather than independently verified figures.
+      - chapterId: s0628-absolute
+        chapterTitle: All Truth Belongs to God
+        chapterKind: sermon
+        chapterStart: "1:00:44.34"
+        chapterEnd: "1:02:51.42"
+        points:
+          - pointTime: "1:00:44.34"
+            pointText: The preacher connects scripture and the Spirit’s teaching with unchanging truth,
+              introducing a statement he attributes to Augustine.
+        chapterScripture:
+          - 2 Timothy 3:16-17
+          - John 14:26
+    chapterScripture:
+      - John 14:15-24
+      - 2 Timothy 3:16-17
+      - John 14:26
+  - chapterId: c20260628-spirit-teaches-scripture
+    chapterTitle: The Spirit Teaches Through Scripture
+    chapterKind: sermon
+    chapterStart: "1:07:02.86"
+    chapterEnd: "1:16:06.24"
+    points:
+      - pointTime: "1:07:02.86"
+        pointText: The preacher connects communal Bible study and church testimony with the Spirit’s inward
+          conviction, urging humble, willing reading rather than material expectations or dismissive
+          preconceptions.
+    subchapters:
+      - chapterId: s0628-humility
+        chapterTitle: Understanding Calls for Humility
+        chapterKind: sermon
+        chapterStart: "1:13:19.9"
+        chapterEnd: "1:16:06.24"
+        points:
+          - pointTime: "1:13:19.9"
+            pointText: The preacher calls for surrender and willingness to learn, treating Paul’s conversion as
+              an exception rather than an experience to demand.
+        chapterScripture:
+          - Psalms 138:6
+          - Proverbs 3:34
+          - Proverbs 29:23
+          - Matthew 23:12
+          - Luke 1:52
+          - James 4:6
+          - 1 Peter 5:5
+    chapterScripture:
+      - John 14:25-26
+      - John 14:26
+      - Psalms 138:6
+      - Proverbs 3:34
+      - Proverbs 29:23
+      - Matthew 23:12
+      - Luke 1:52
+      - James 4:6
+      - 1 Peter 5:5
+  - chapterId: c20260628-peace-through-hardship
+    chapterTitle: Christ’s Peace Sustains Believers Through Hardship
+    chapterKind: sermon
+    chapterStart: "1:16:06.24"
+    chapterEnd: "1:24:26.78"
+    points:
+      - pointTime: "1:16:06.24"
+        pointText: Contrasting Christ’s peace with material security, the preacher reflects on persecution
+          and his Wang Yi recollection before closing John 14 with his account of Christ’s victory
+          and a call to live by truth and the Spirit.
+    subchapters:
+      - chapterId: s0628-wang
+        chapterTitle: Wang Yi’s Example of Prayer and Peace
+        chapterKind: sermon
+        chapterStart: "1:20:12.04"
+        chapterEnd: "1:22:17.74"
+        points:
+          - pointTime: "1:20:12.04"
+            pointText: The preacher recalls receiving Wang Yi’s script after his arrest and attributes a prayer
+              metaphor to him that encourages his own prayer and understanding of Christ’s peace.
+    chapterScripture:
+      - John 14:27
+      - John 14:28-31
+      - John 15-17
+  - chapterId: c20260628-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:24:26.78"
+    chapterEnd: "1:41:30.1529375"
+    points:
+      - pointTime: "1:24:26.78"
+        pointText: The leaders guide prayer and the creed, announce offerings, introduce the closing hymn
+          through a Spafford account, and offer the doxology, blessing and July notices, with the
+          hymn’s missing summary evidence retained.
+    chapterScripture:
+      - Hebrews 13
+markers:
+  - markerTime: "42:54.62"
+    markerNote: "Also cited in the sermon: John 14:25-26; Psalms 138:6; Proverbs 3:34; Proverbs 29:23;
+      Matthew 23:12; Luke 1:52; James 4:6; 1 Peter 5:5; John 14:27; John 14:28-31; John 15-17. Keep
+      only the main passages above."
+  - markerTime: "42:54.62"
+    markerNote: "Other topics it touched: service-life, peace."
+  - markerTime: "51:50.98"
+    markerNote: "Old review note: Check sixteen/sixty million wording; the slide at 55:00 shows S$16 million."
+  - markerTime: "1:20:12.04"
+    markerNote: "Old review note: Wang Yi is discussed, not a speaker here. Keep the prison/family
+      accounts attributed rather than presenting them as independently verified facts."

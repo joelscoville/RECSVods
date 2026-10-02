@@ -1,0 +1,181 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Eternal Life
+serviceDate: 2026-09-06
+status: draft
+sermonDescription: In John 17, the preacher presents eternal life as knowing God, not merely living
+  forever. Jesus’ prayer and his path to glory through the cross frame a call to trust God’s love
+  and cultivate prayer. Drawing on the distinction between knowing God and knowing about God, he
+  urges listeners to turn reflection into daily conduct and use their gifts in service.
+sermonScripture:
+  - John 17:1-5
+  - John 17
+  - John 16:33
+sermonTopics:
+  - prayer
+  - faith
+  - service-life
+uploads:
+  - youtubeId: ZTDYIJUDb0M
+    uploadDuration: "1:52:39"
+chapters:
+  - chapterId: c20260906-opening
+    chapterTitle: ACTS Prayer
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "6:00"
+    points:
+      - pointTime: "0:00"
+        pointText: The leaders prepare the congregation through adoration, confession, thanksgiving and
+          supplication, then welcome worshippers into greetings and silent meditation; the
+          collective-prayer lead-in remains uncertain.
+  - chapterId: c20260906-worship-and-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "6:00"
+    chapterEnd: "32:00.54"
+    points:
+      - pointTime: "6:00"
+        pointText: The leaders guide worship, prayer and Communion as remembrance of Christ, with responsive
+          readings, a hymn and video anthem, and the reading of 1 John 5:10-12.
+    subchapters:
+      - chapterId: 2026-09-06-holy-communion
+        chapterTitle: Holy Communion
+        chapterKind: communion
+        chapterStart: "11:46.55"
+        chapterEnd: "19:54.73"
+        points:
+          - pointTime: "11:46.55"
+            pointText: The leaders guide worship, prayer and Communion as remembrance of Christ, with responsive
+              readings, a hymn and video anthem, and the reading of 1 John 5:10-12.
+        chapterScripture:
+          - 1 Corinthians 11
+    chapterScripture:
+      - Psalms 98:1-3
+      - 1 Corinthians 11:23-26
+      - Proverbs 6:1-35
+      - John 17:1-19
+      - Psalms 27:4
+      - 1 John 5:10-12
+  - chapterId: c20260906-trusting-gods-love
+    chapterTitle: Overcoming
+    chapterKind: sermon
+    chapterStart: "32:00.54"
+    chapterEnd: "45:05.94"
+    points:
+      - pointTime: "32:00.54"
+        pointText: Introducing John 17 through a recap of John 16, the preacher encourages confidence in
+          prayer and God’s love despite tribulation and imperfect faith, contrasting wishful hope
+          with assurance.
+    chapterScripture:
+      - John 17:1-5
+      - John 16:25-33
+      - James 5
+      - Acts 2
+      - Mark 9
+      - John 16:33
+      - John 17
+  - chapterId: c20260906-learning-prayer-from-jesus
+    chapterTitle: Learning to Pray from Jesus’ Example
+    chapterKind: sermon
+    chapterStart: "45:05.94"
+    chapterEnd: "56:52.82"
+    points:
+      - pointTime: "45:05.94"
+        pointText: After praying for humility, the preacher considers Jesus’ intercession in John 17 and
+          urges learning prayer through daily practice, drawing on an answer attributed to Billy
+          Graham.
+    subchapters:
+      - chapterId: s0906-prayer-example
+        chapterTitle: Prayer Is Learned through Practice
+        chapterKind: sermon
+        chapterStart: "52:13.66"
+        chapterEnd: "56:52.82"
+        points:
+          - pointTime: "52:13.66"
+            pointText: The preacher urges regular prayer and meditation rather than learning only through
+              reading or listening, as Jesus prayed often and much.
+        chapterScripture:
+          - John 17
+    chapterScripture:
+      - John 13-16
+      - John 17
+      - Matthew 6
+      - John 17:1-5
+      - Hebrews 7:25
+  - chapterId: c20260906-glory-and-the-cross
+    chapterTitle: Christ’s Path to Glory Leads through the Cross
+    chapterKind: sermon
+    chapterStart: "56:52.82"
+    chapterEnd: "1:10:47.7"
+    points:
+      - pointTime: "56:52.82"
+        pointText: The preacher contrasts human recognition with God’s inherent glory, connects Christ’s
+          mission and return to the original state of glory with the cross, and recalls encouragement
+          from continued service despite suffering.
+    chapterScripture:
+      - John 16:33
+      - John 17:1
+      - Psalms 19:1
+      - John 17:1-5
+  - chapterId: c20260906-eternal-life-as-knowing-god
+    chapterTitle: What Is Eternal Life
+    chapterKind: sermon
+    chapterStart: "1:10:47.7"
+    chapterEnd: "1:35:18.42"
+    points:
+      - pointTime: "1:10:47.7"
+        pointText: Questioning eternal life as duration alone, the preacher interprets John 17:3 through
+          relational knowledge of God and urges meditation, changed conduct and purposeful service,
+          closing in prayer.
+
+          Everyone who believes in Jesus Christ is called by the father and be saved.
+    subchapters:
+      - chapterId: s0906-knowing-god
+        chapterTitle: Knowing God Vs Knowing About God
+        chapterKind: sermon
+        chapterStart: "1:19:16.04"
+        chapterEnd: "1:31:21.22"
+        points:
+          - pointTime: "1:19:16.04"
+            pointText: Eternal life is to know God, the only true God, and Jesus Christ. Knowing God vs Knowing
+              about God. The preacher uses John 17:3, his account of ginóskó and Packer’s distinction
+              between knowing God and knowing about God to urge lived relationship, reflection and use of
+              one’s gifts. Eternal life is oneness with God.
+        chapterScripture:
+          - John 17:3
+          - Luke 1:34
+          - John 17
+          - John 17:4-5
+          - 1 John 5:10-12
+    chapterScripture:
+      - John 17:2
+      - John 17:3
+      - Luke 1:34
+      - John 17
+      - John 17:4-5
+      - 1 John 5:10-12
+  - chapterId: c20260906-response-and-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:35:18.42"
+    chapterEnd: "1:52:39"
+    points:
+      - pointTime: "1:35:18.42"
+        pointText: The minister leads the creed, congregational prayer, offertory and closing worship, then
+          shares historical ministry notices and thanks teachers before prayer and dismissal.
+    chapterScripture:
+      - Hebrews 13
+markers:
+  - markerTime: "11:46.55"
+    markerNote: "PR #7: Holy Communion's description was copied from Worship and Scripture when
+      the section was split; revise it."
+  - markerTime: "32:00.54"
+    markerNote: "Also cited in the sermon: John 16:25-33; James 5; Acts 2; Mark 9; John 13-16; Matthew
+      6; Hebrews 7:25; John 17:1; Psalms 19:1; John 17:2; John 17:3; Luke 1:34; John 17:4-5; 1 John
+      5:10-12. Keep only the main passages above."
+  - markerTime: "32:00.54"
+    markerNote: "Other topics it touched: knowing-god, glory, eternal-life."
+  - markerTime: "1:19:16.04"
+    markerNote: "Old review note: Keep linguistic and doctrinal claims attributed to the preacher."

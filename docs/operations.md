@@ -5,11 +5,11 @@
 1. Enable GitHub Actions. In **Settings → Pages**, select **GitHub Actions** as the
    source. Configure a custom domain there if desired; do not introduce a second
    application base-path variable.
-2. Protect the default branch with required PR/code review and checks **validate**
-   and **editorial-guard**. Require current checks, block force pushes/deletions and
-   avoid broad bypass rights. Keep approvals in dedicated linear commits; prefer
-   regular merge/rebase preserving per-commit provenance rather than squashing away
-   approval-only history. A code review is not service editorial approval.
+2. Protect the default branch with required PR/code review and check **validate**.
+   Remove the retired **editorial-guard** requirement if it is still configured.
+   Require current checks, block force pushes/deletions and avoid broad bypass rights.
+   Merging a pull request that marks a recording `published`
+   publishes it; any merge method works.
 3. Restrict the `github-pages` deployment environment to the default branch. Add
    human environment reviewers if the organization requires them.
 4. Enable Actions failure notifications and confirm the discovery schedule/manual
@@ -20,30 +20,27 @@
 
 No settings, branch protection, environment, merge or deployment is changed by the
 implementation agent. These are administrator actions, documented for completion.
-The editorial guard checks recorded transitions, source equality and commit shape;
-it cannot prove human listening or reliably identify an author using someone else’s
-credentials. Green checks do not replace human review or appropriate repository access.
-Ordinary merges may inherit a reviewed parent's exact source/artifacts; a merge
-resolution cannot invent approval or restore it over concurrent unreviewed changes.
-PR validation starts at the merge base, allowing the target branch to advance.
+Approval is a person's reviewed pull request. Archive validation checks the recording
+schema and cross-file rules; there is no separate editorial-state/history guard.
 
 ## Pipeline boundaries
 
 `ci.yml` runs on PRs, default-branch pushes and manual dispatch. Separate
-code-quality, unit/Python, browser/build and `editorial-guard` jobs run independently.
+code-quality, unit/Python and browser/build jobs run independently.
 The required `validate` aggregation rejects failed, cancelled or skipped groups;
-it and `editorial-guard` must succeed before Pages build/upload and deployment.
+it must succeed before Pages build/upload and deployment.
 PR jobs have only `contents: read`; no `pull_request_target` is used.
 Only main-branch push/manual runs can upload/deploy. **Manual CI dispatch on main
 can deploy after checks pass**; use local checks or a PR when testing without deployment.
 
 Validation builds production and preview under `/replay-check/`, checks direct routes
-and assets, validates committed vectors and privacy, and exercises the browser.
+and assets, validates generated vectors and privacy, and exercises the browser.
 CI uses `--exact-only` acceptance and `RECS_E2E_NO_MODEL=1`: semantic worker/model
 execution is blocked and real-inference browser cases belong to the separately selected
 `pnpm test:e2e:model` project. See [testing](testing.md) for local parallelism and reruns.
-Model/Bible assets may be verified/prepared as static files, but no captions, ASR,
-LLM or embedding inference runs in Actions. Full semantic acceptance remains a local
+Builds generate search vectors from public metadata and cited BSB text, using the
+pinned embedding model when rows are not cached. No captions, ASR or LLM drafting
+runs in Actions. Full semantic query acceptance remains a local
 person-invoked command. Fixture tests cannot substitute for real media review.
 
 The Pages build independently runs `pnpm build` after validation; it never reuses
@@ -63,10 +60,10 @@ against every possible disguised secret. Never stage secrets in the first place.
 
 Record reviewer, date, device/browser, deployed commit and observed result. Check:
 
-- Root, `/search/`, `/watch/`, `/browse/`, `/policies/`, a reviewed service URL, and
+- Root, `/search/`, `/watch/`, `/browse/`, `/policies/`, a published service URL, and
   their assets under the actual Pages prefix, including reload/direct navigation.
-- Only reviewed/playable content is searchable. No orange preview banner or
-  needs_review service data appears in production.
+- Only published recordings appear in the built search index. No draft recording
+  data or preview banner appears in ordinary production pages.
 - Exact/reference results precede the model, first-load and cached semantic behavior,
   multipart timing, player errors, replay/continue, and local data clearing.
 - Actual YouTube playback with audio at representative starts/endpoints. Automated
@@ -76,26 +73,24 @@ Record reviewer, date, device/browser, deployed commit and observed result. Chec
 
 ## Corrections and unavailable videos
 
-Use the service/chapter “Suggest a correction” issue context; no transcript editor
-is published. Interpretive changes reset `needs_review` and remove `reviewed_by` /
-`reviewed_at` before changing metadata or vector sidecars. Regenerate vectors if the
-speech span changes; title/description-only edits do not fabricate new speech vectors.
-Human review/approval and successful default-branch deployment restore publication.
+Use **Suggest a change** to open the recording editor. A person checks the change
+and sends it as a pull request; sending from the editor sets `status: published`.
+The default-branch deployment publishes the merged correction. The next build
+automatically regenerates rows whose published text changed.
 
-For unavailable media, verify the problem and update the independent per-video
-disposition with objective evidence. Do not rewrite `complete` as `blocked` merely
-because a previously processed upload later becomes unavailable. Shortness is not
-failure; unclear candidates stay unassessed. Preserve stable IDs, old-link mappings
-and original internal evidence. Do not silently replace one upload’s clock with another.
+For an upload that has gone from YouTube, set `uploadUnavailable: true`. Confirmed
+audio problems belong in `uploadQuirks`; diagnostic sampling does not set flags.
+Keep upload durations and order accurate: chapter times use the recording clock
+across all uploads. See [the format](editing-services.md) and [quirks](quirks.md).
 
 ## Roll-forward recovery
 
-Inspect the failed check/log or deployed commit first. A failed validation/guard must
+Inspect the failed check/log or deployed commit first. A failed validation must
 not deploy. Fix code/configuration on a branch, run the same checks, obtain review,
 and merge a corrective commit. If a prior implementation must be restored, use a
 reviewed revert/new commit rather than force-pushing or rewriting approval history.
-If bad reviewed interpretation is involved, reset it to needs_review and re-review;
-do not create an agent approval to expedite recovery. Re-run main's workflow only
+If bad published interpretation is involved, set it back to `draft` until a person
+has fixed it. Re-run main's workflow only
 when a deployment is intended. Preview is never an emergency deployment substitute.
 
 Discovery failure is independent: inspect the Actions failure, retry a dry run, and
@@ -104,10 +99,10 @@ The feed is recent-only; manually supply missed IDs rather than assuming complet
 
 ## Model, Bible and dictionary updates
 
-- Embeddings: deliberately update the pinned recipe/integrity metadata and source
-  processor, regenerate affected committed vectors from authorized private evidence,
-  reset reviewed services when sidecars change, and rerun actual-model retrieval,
-  browser parity, size and performance checks locally. CI never regenerates vectors.
+- Embeddings: deliberately update the pinned recipe/integrity metadata and
+  `scripts/search-vectors.ts`, then rebuild both modes. The recipe is part of each
+  cached row's key. Rerun actual-model retrieval, browser parity, size and
+  performance checks locally before accepting a model change.
 - BSB: follow `docs/bible.md`, verify the source/license/hash and verse-count rebuild,
   rerun normalization/enrichment/output checks, then review. ESV stays outbound
   reference-only; never fetch/cache ESV verse text.
