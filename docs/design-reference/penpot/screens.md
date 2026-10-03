@@ -73,4 +73,4 @@ The source file has no complete desktop result-list frame. Build desktop results
 - The mobile search chip and match-state language.
 - The standard footer.
 
-Each result must display title, date, service/section type, speaker when known, scripture, summary, relevant timestamp range, match reason, `Play passage`, and `View full sermon`. Preserve the existing palette and spacing rhythm; do not introduce generic dashboard cards.
+Each result must display title, date, service/section type, scripture, summary, relevant timestamp range, match reason, `Play passage`, and `View full sermon`. Preserve the existing palette and spacing rhythm; do not introduce generic dashboard cards.

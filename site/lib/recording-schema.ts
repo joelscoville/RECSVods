@@ -57,7 +57,6 @@ const RecordingObject = z.object({
   recordingTitle: Text,
   serviceDate: z.string().date('a real calendar date in YYYY-MM-DD form'),
   status: z.enum(['draft', 'published']),
-  recordingSpeaker: Text.optional(),
   sermonDescription: Text.describe('The single paragraph shown under the video.').optional(),
   sermonScripture: z.array(Scripture).optional(),
   sermonTopics: z.array(TopicId).optional(),

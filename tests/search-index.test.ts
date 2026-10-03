@@ -10,6 +10,7 @@ import { enrichUnits, loadChapterMetadata, loadChapterVectors, loadScriptureInde
 import { buildScriptureIndex } from '../bible/chapter-index';
 import { loadBible } from '../scripts/bible';
 import { fakeRows, source, writeArchive } from './recording-fixtures';
+import { prepareSearchIndex, search } from '../site/lib/search';
 
 const roots: string[] = [];
 function root() { const value = mkdtempSync(path.join(tmpdir(), 'recs-search-index-')); roots.push(value); return value; }
@@ -29,7 +30,7 @@ describe('search artifacts built from the recording files', () => {
     const directory = root(); writeArchive(directory, { '2026-09-06': source() });
     await buildIndex(directory, 'production', fakeRows);
     const data = metadata(directory);
-    expect(data.schemaVersion).toBe(5); expect(data.model).toEqual(CHAPTER_VECTOR_CONFIG);
+    expect(data.schemaVersion).toBe(6); expect(data.model).toEqual(CHAPTER_VECTOR_CONFIG);
     expect(data.units.filter(unit => unit.kind === 'subchapter').map(unit => unit.title)).toEqual(['Holy Communion', 'Practise Small Hospitality']);
     expect(data.units.filter(unit => unit.kind === 'point')).toHaveLength(3);
     expect(data.units.filter(unit => unit.kind === 'point').every(unit => unit.end === undefined)).toBe(true);
@@ -67,6 +68,19 @@ describe('search artifacts built from the recording files', () => {
     expect(existsSync(path.join(generated(directory), 'chapters.json'))).toBe(false);
   });
 
+  it('rejects retired speaker fields and searches names only when they occur in ordinary text', async () => {
+    const directory = root(); writeArchive(directory, { '2026-09-06': source() });
+    await buildIndex(directory, 'production', fakeRows);
+    const data = metadata(directory), unit = data.units[0];
+    expect(data.units.every(unit => !('speaker' in unit))).toBe(true);
+    expect(() => parseChapterMetadata({ ...data, schemaVersion: 5 })).toThrow();
+    const legacy = { ...unit, speaker: 'RetiredIdentityToken' };
+    expect(() => parseChapterMetadata({ ...data, units: [legacy] })).toThrow();
+    expect(search([legacy], 'RetiredIdentityToken')).toEqual([]);
+    expect(prepareSearchIndex([legacy]).search('RetiredIdentityToken')).toEqual([]);
+    expect(search([{ ...unit, text: 'Avery Example explains hospitality.' }], 'Avery Example')).toHaveLength(1);
+  });
+
   it('deduplicates overlapping references and enriches copies only', async () => {
     const directory = root(); writeArchive(directory, { '2026-09-06': source({ sermonScripture: ['John 3:16-17'] }) });
     await buildIndex(directory, 'production', fakeRows);
@@ -91,7 +105,7 @@ describe('search artifacts built from the recording files', () => {
 
 describe('portable independent browser artifact loaders', () => {
   const sha256 = createHash('sha256').update(packChapterVectors([])).digest('hex');
-  const empty: ChapterMetadata = { schemaVersion: 5, model: CHAPTER_VECTOR_CONFIG, vectors: { file: `vectors.${sha256}.bin`, sha256 }, units: [] };
+  const empty: ChapterMetadata = { schemaVersion: 6, model: CHAPTER_VECTOR_CONFIG, vectors: { file: `vectors.${sha256}.bin`, sha256 }, units: [] };
   it('loads raw gzip without fetching BSB, vectors, compatibility data or a model', async () => {
     const fetcher = vi.fn(async () => new Response(new Uint8Array(gzipSync(JSON.stringify(empty)))));
     vi.stubGlobal('fetch', fetcher);

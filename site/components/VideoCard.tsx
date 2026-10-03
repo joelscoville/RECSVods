@@ -24,7 +24,7 @@ export default function VideoCard({ item, progress }: { item: HomeItem; progress
       <VideoArt item={item} progress={progress} />
       <div className="card-text">
         <h2>{item.title}</h2>
-        <p className="card-metadata"><time dateTime={item.date}>{formatDate(item.date)}</time>{item.speaker && <> · {item.speaker}</>}{progress !== undefined && <span className="sr-only"> · Resume at {formatTime(progress)}</span>}</p>
+        <p className="card-metadata"><time dateTime={item.date}>{formatDate(item.date)}</time>{progress !== undefined && <span className="sr-only"> · Resume at {formatTime(progress)}</span>}</p>
         {/* No type line: only useful context (a series position, or the point that matched). */}
         {item.context && <p className="card-context">{item.context}</p>}
         {chapter && <p className="card-context">Chapter: {chapter.title}</p>}

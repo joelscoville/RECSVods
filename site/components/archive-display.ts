@@ -18,7 +18,6 @@ export interface HomeItem {
   /** The point or part a topic, Bible book or search matched. The card still opens the sermon. */
   match?: RecordingMatch;
   quirks?: PublicQuirk[];
-  speaker?: string;
 }
 export interface RecordingMatch { id: string; title: string; start: number; href: string; more: number }
 
@@ -30,7 +29,6 @@ export function homeItems(recordings: readonly DisplayRecording[], base: string)
     return {
       id: recording.uploads[0].id, recordingId: recording.id, title: recording.title, date: recording.date, hasSermon: Boolean(sermon),
       href: watchUrl(base, { recording: recording.id, start }), length: recording.length, preview: recording.preview, start,
-      ...(recording.speaker ? { speaker: recording.speaker } : {}),
       ...(quirks.length ? { quirks } : {}),
       browseCategories: availableBrowseCategories([recording]).map((category) => category.path),
     };

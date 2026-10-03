@@ -14,8 +14,8 @@ export function useEditorSession(base: EditorRecording) {
     dispatch({ type: 'load', original, draft }); setRestored(Boolean(draft)); setLoaded(base);
   }, [base, original]);
   useEffect(() => {
-    if (loaded === base && (history.past.length || restored)) writeEditorDraft(base, history.present === original ? undefined : history.present);
-  }, [base, loaded, original, history.present, history.past.length, restored]);
+    if (loaded === base) writeEditorDraft(base, history.present === original ? undefined : history.present);
+  }, [base, loaded, original, history.present]);
   const apply = useCallback((next: EditorState, key?: string) => dispatch({ type: 'apply', next, key }), []);
   const resetDraft = useCallback(() => {
     dispatch({ type: 'reset', state: original }); setRestored(false); writeEditorDraft(base, undefined);

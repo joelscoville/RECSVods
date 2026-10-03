@@ -23,7 +23,7 @@ export async function chapterArtifacts(root = process.cwd(), mode: BuildMode = '
   const scripture = buildScriptureIndex(units);
   const vectors = Buffer.from(packChapterVectors(await rows(root, units, scripture)));
   const sha256 = createHash('sha256').update(vectors).digest('hex');
-  const metadata: ChapterMetadata = parseChapterMetadata({ schemaVersion: 5, model: CHAPTER_VECTOR_CONFIG,
+  const metadata: ChapterMetadata = parseChapterMetadata({ schemaVersion: 6, model: CHAPTER_VECTOR_CONFIG,
     vectors: { file: `vectors.${sha256}.bin`, sha256 }, units });
   const files: Record<(typeof CHAPTER_ARTIFACTS)[number], Buffer> = {
     'chapters.json': compact(metadata), 'vectors.bin': vectors, 'scripture.json': compact(scripture),

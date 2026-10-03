@@ -18,7 +18,7 @@ describe('editor session boundaries', () => {
     history = editorHistory(history, { type: 'apply', next: { ...original, title: 'ABC' }, key: 'title' });
     history = editorHistory(history, { type: 'undo' });
     expect(history.present.title).toBe('AB');
-    history = editorHistory(history, { type: 'apply', next: { ...history.present, speaker: 'A speaker' } });
+    history = editorHistory(history, { type: 'apply', next: { ...history.present, description: 'A revised description' } });
     expect(history.future).toEqual([]);
   });
   it('makes draft restoration and reset undoable, but discards a previous recording history on load', () => {

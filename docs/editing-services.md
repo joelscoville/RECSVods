@@ -8,7 +8,7 @@ a title, creates a chapter, or rearranges the outline.
 
 ## The structure
 
-- **Recording:** title, date, speaker, the overall sermon description, scripture,
+- **Recording:** title, date, the overall sermon description, scripture,
   topics and the ordered YouTube uploads.
 - **Chapter:** its own title, type, start and end. A recording may have several
   chapters of the same type, including several sermon chapters.
@@ -25,7 +25,6 @@ a title, creates a chapter, or rearranges the outline.
 recordingTitle: Serving Our Neighbours
 serviceDate: 2026-09-06
 status: draft
-recordingSpeaker: The preacher
 sermonDescription: A paragraph describing the sermon as a whole.
 sermonScripture:
   - Romans 12:9-13

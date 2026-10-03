@@ -104,7 +104,7 @@ export default function Watch({ recordings, base, servicePages = true, homeHref 
       <section className="playback-details" aria-labelledby="recording-title">
         <div className="playback-identity">
           <h1 id="recording-title">{recording.title}</h1>
-          <p className="metadata"><time dateTime={recording.date}>{formatDate(recording.date)}</time>{recording.speaker && <> · {recording.speaker}</>}</p>
+          <p className="metadata"><time dateTime={recording.date}>{formatDate(recording.date)}</time></p>
           <p className="metadata">{sermon ? 'Service' : 'Recording'} · <span className="nowrap"><span className="meta-label">Duration</span> {formatDuration(recording.length)}</span></p>
           {recording.preview && <p className="preview-label">Unreviewed preview</p>}
         </div>

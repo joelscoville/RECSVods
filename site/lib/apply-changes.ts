@@ -6,8 +6,8 @@ import { RecordingSchema, type Recording, type RecordingSource } from './recordi
 import { parseFile } from './parse-file';
 
 /** The order of a recording file's top-level fields. */
-const ORDER = ['recordingTitle', 'serviceDate', 'status', 'recordingSpeaker', 'sermonDescription', 'sermonScripture', 'sermonTopics', 'uploads', 'chapters', 'markers'];
-const FIELDS = { recordingTitle: 'title', recordingSpeaker: 'speaker', sermonDescription: 'sermon description', sermonScripture: 'scripture', sermonTopics: 'topics', markers: 'markers' } as const;
+const ORDER = ['recordingTitle', 'serviceDate', 'status', 'sermonDescription', 'sermonScripture', 'sermonTopics', 'uploads', 'chapters', 'markers'];
+const FIELDS = { recordingTitle: 'title', sermonDescription: 'sermon description', sermonScripture: 'scripture', sermonTopics: 'topics', markers: 'markers' } as const;
 const CHAPTER_FIELDS = { chapterTitle: 'title', chapterKind: 'type', chapterStart: 'start', chapterEnd: 'end', chapterScripture: 'scripture', subchapters: 'subchapters', points: 'points' } as const;
 const equal = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
 

@@ -54,7 +54,7 @@ export default function RecordingResult({ recording, unit, units, reasons, query
     <a className="result-art" href={recording.href} tabIndex={-1} aria-hidden="true"><VideoArt item={recording} /></a>
     <div className="result-head">
       <h2><a href={recording.href}>{recording.title}</a></h2>
-      <p className="metadata"><time dateTime={recording.date}>{formatDate(recording.date)}</time>{recording.speaker && <> · {recording.speaker}</>}</p>
+      <p className="metadata"><time dateTime={recording.date}>{formatDate(recording.date)}</time></p>
       {recording.preview && <p className="preview-label">Unreviewed preview</p>}
       <QuirkBadges quirks={recording.quirks} />
     </div>

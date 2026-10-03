@@ -128,6 +128,19 @@ test('saving and restoring a draft retains undo, redo and an undoable start over
   await page.reload(); await expect(page.getByText('Draft restored')).toHaveCount(0);
 });
 
+test('undoing every edit clears the saved draft and reload cannot restore discarded changes', async ({ page }) => {
+  await openEditor(page); await rename(page, sermon.chapterId, 'A correction that will be undone');
+  await expect.poll(() => page.evaluate(({ key, id }) => JSON.parse(localStorage.getItem(key) ?? 'null')?.state.chapters.find((chapter: { id: string }) => chapter.id === id)?.title,
+    { key: draftKey, id: sermon.chapterId })).toBe('A correction that will be undone');
+  await page.getByRole('button', { name: 'Undo', exact: true }).click();
+  await expect(currentTitle(page)).toHaveText(sermon.chapterTitle);
+  await expect(page.getByRole('button', { name: 'Undo', exact: true })).toBeDisabled();
+  await expect.poll(() => page.evaluate(key => localStorage.getItem(key), draftKey)).toBeNull();
+  await page.reload();
+  await expect(row(page, sermon.chapterId).locator(':scope > .ce-row .ce-title')).toHaveText(sermon.chapterTitle);
+  await expect(page.getByText('Draft restored')).toHaveCount(0);
+});
+
 test('editing without video or sending makes no external requests', async ({ page }) => {
   const external: string[] = []; page.on('request', request => { if (new URL(request.url()).hostname !== '127.0.0.1') external.push(request.url()); });
   await openEditor(page); await rename(page, sermon.chapterId, 'A Changed Title');

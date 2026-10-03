@@ -17,7 +17,6 @@ export interface SeriesPlace { id: string; title: string; position: number; tota
 export interface DisplayRecording {
   id: string; title: string; date: string; preview: boolean; length: number;
   description?: string;
-  speaker?: string;
   /** Canonical references, with the wording as entered alongside. */
   scripture: string[]; scriptureDisplay: string[];
   topics: { id: string; name: string }[];
@@ -30,7 +29,7 @@ export interface DisplayRecording {
 export interface SearchUnit {
   id: string; recordingId: string; recordingTitle: string; date: string;
   kind: 'recording' | 'chapter' | 'subchapter' | 'point';
-  title: string; text?: string; speaker?: string; start: number; end?: number; entryId?: string;
+  title: string; text?: string; start: number; end?: number; entryId?: string;
   scripture: string[]; scriptureDisplay?: string[]; topics: string[];
   series?: { id: string; title: string };
   preview: boolean;
@@ -68,7 +67,6 @@ export function displayRecordings(recordings: readonly StoredRecordingLike[], to
       id: recording.recordingId, title: recording.recordingTitle, date: recording.serviceDate, preview: recording.status !== 'published',
       length: recordingLength(recording),
       ...(recording.sermonDescription ? { description: recording.sermonDescription } : {}),
-      ...(recording.recordingSpeaker ? { speaker: recording.recordingSpeaker } : {}),
       scripture: scriptureDisplay.map(normalizeScriptureReference), scriptureDisplay: [...scriptureDisplay],
       topics: (recording.sermonTopics ?? []).map(id => ({ id, name: names.get(id) ?? id })),
       ...(playlist && position >= 0 ? { series: { id: playlist.seriesId, title: playlist.seriesTitle, position: position + 1, total: members.length } } : {}),
@@ -91,8 +89,7 @@ export const sermonOf = (recording: Pick<DisplayRecording, 'entries'>) => {
 export function searchUnits(recordings: readonly DisplayRecording[], sources: readonly StoredRecordingLike[] = []): SearchUnit[] {
   return recordings.flatMap(recording => {
     const sermon = sermonOf(recording);
-    const base = { recordingId: recording.id, recordingTitle: recording.title, date: recording.date, preview: recording.preview,
-      ...(recording.speaker ? { speaker: recording.speaker } : {}) };
+    const base = { recordingId: recording.id, recordingTitle: recording.title, date: recording.date, preview: recording.preview };
     const whole: SearchUnit = { ...base, id: recording.id, kind: 'recording', title: recording.title, ...(recording.description ? { text: recording.description } : {}),
       start: sermon?.start ?? 0, end: sermon?.end ?? recording.length,
       scripture: [...recording.scripture], ...(recording.scriptureDisplay.some((value, i) => value !== recording.scripture[i]) ? { scriptureDisplay: [...recording.scriptureDisplay] } : {}),

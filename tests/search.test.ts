@@ -31,7 +31,7 @@ describe('embedding and chapter metadata contracts', () => {
   });
   it('validates the full chapter recipe before a binary row can be paired with metadata', () => {
     const hash = sha256(packChapterVectors([new Int8Array(384).fill(127)]));
-    const metadata = { schemaVersion: 5, model: CHAPTER_VECTOR_CONFIG, vectors: { file: `vectors.${hash}.bin`, sha256: hash }, units: [fixture] };
+    const metadata = { schemaVersion: 6, model: CHAPTER_VECTOR_CONFIG, vectors: { file: `vectors.${hash}.bin`, sha256: hash }, units: [fixture] };
     expect(parseChapterMetadata(metadata).units).toEqual([fixture]);
     for (const key of Object.keys(CHAPTER_VECTOR_CONFIG)) expect(() => parseChapterMetadata({ ...metadata, model: { ...CHAPTER_VECTOR_CONFIG, [key]: 'different' } })).toThrow();
     expect(() => parseChapterMetadata({ ...metadata, units: [{ ...fixture, verseText: 'browser-only' }] })).toThrow();

@@ -7,7 +7,7 @@ import { artifactSha256 } from './integrity';
 
 /** The public search data: one row per unit, in the same order as the vector rows. */
 export interface ChapterMetadata {
-  schemaVersion: 5;
+  schemaVersion: 6;
   model: typeof CHAPTER_VECTOR_CONFIG;
   vectors: { file: string; sha256: string };
   units: SearchUnit[];
@@ -25,7 +25,7 @@ const reference = text.refine((value) => parseScriptureReference(value)?.canonic
 /** Deliberately excludes even the optional browser-only verseText property. */
 export const PublicUnitSchema = z.object({
   id, recordingId: id, recordingTitle: text, date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  kind: z.enum(['recording', 'chapter', 'subchapter', 'point']), title: text, text: text.optional(), speaker: text.optional(), entryId: id.optional(),
+  kind: z.enum(['recording', 'chapter', 'subchapter', 'point']), title: text, text: text.optional(), entryId: id.optional(),
   start: z.number().finite().nonnegative(), end: z.number().finite().positive().optional(),
   scripture: z.array(reference), scriptureDisplay: z.array(text).optional(), topics: z.array(text),
   series: z.object({ id, title: text }).strict().optional(), preview: z.boolean(),
@@ -48,7 +48,7 @@ export function sameJson(a: unknown, b: unknown): boolean {
 }
 
 export function parseChapterMetadata(value: unknown): ChapterMetadata {
-  const data = z.object({ schemaVersion: z.literal(5), model: z.unknown(),
+  const data = z.object({ schemaVersion: z.literal(6), model: z.unknown(),
     vectors: z.object({ file: z.string(), sha256: z.string().regex(/^[a-f0-9]{64}$/) }).strict(),
     units: z.array(PublicUnitSchema) }).strict().parse(value);
   if (data.vectors.file !== `vectors.${data.vectors.sha256}.bin`) throw new Error('Invalid vector asset identity');

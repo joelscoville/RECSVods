@@ -4,7 +4,7 @@ import { CHAPTER_VECTOR_CONFIG, cosineChapterVector, type ChapterVectorFile } fr
 import { canonicalBook, normalizeReferenceSyntax, parseScriptureReference, scriptureOverlaps, scriptureCoverage, type ScriptureReference } from './scripture';
 
 export const SEARCH_WEIGHTS = Object.freeze({
-  date: 16, scripture: 14, speaker: 14, verseText: 2, topic: 7, title: 6,
+  date: 16, scripture: 14, verseText: 2, topic: 7, title: 6,
   referenceBonus: 32, service: 4, series: 4, summary: 4,
   phraseBonus: 1, semantic: 6, semanticThreshold: 0.45, minimumTermCoverage: 0.6,
 });
@@ -197,13 +197,12 @@ function dateTerms(date: string): string[] {
   const name = MONTHS[Number(month) - 1];
   return [date, `${Number(day)} ${name} ${year}`, `${name} ${Number(day)} ${year}`, `${Number(day)} ${name?.slice(0, 3)} ${year}`];
 }
-type FieldName = 'date' | 'scripture' | 'speaker' | 'verseText' | 'topic' | 'title' | 'service' | 'series' | 'summary';
+type FieldName = 'date' | 'scripture' | 'verseText' | 'topic' | 'title' | 'service' | 'series' | 'summary';
 /** `citedReferences` come from the unit's scripture list; `mentionedReferences` are written in its text. */
 interface SearchRow { unit: SearchUnit; citedReferences: ReturnType<typeof parseScriptureReference>[]; mentionedReferences: ScriptureReference[]; fields: [FieldName, string[]][] }
 function fields(unit: SearchUnit, citedReferences: SearchRow['citedReferences']): SearchRow['fields'] {
   return [
     ['date', dateTerms(unit.date)], ['scripture', citedReferences.flatMap((ref) => ref ? [ref.canonical] : [])],
-    ['speaker', unit.speaker ? [unit.speaker] : []],
     ['verseText', unit.verseText ? [unit.verseText] : []], ['topic', unit.topics], ['title', [unit.title]],
     ['service', [unit.recordingTitle]], ['series', unit.series ? [unit.series.title] : []], ['summary', unit.text ? [unit.text] : []],
   ];
@@ -297,7 +296,7 @@ function snapshot(source: SearchUnit): SearchUnit {
   // Explicit allowlist prevents accidental retention of private fields in a prepared index.
   const { id, recordingId, recordingTitle, date, kind, title, text, start, end, preview, verseText } = source;
   const unit: SearchUnit = { id, recordingId, recordingTitle, date, kind, title, start, end, preview,
-    ...(source.entryId ? { entryId: source.entryId } : {}), ...(source.speaker ? { speaker: source.speaker } : {}),
+    ...(source.entryId ? { entryId: source.entryId } : {}),
     ...(text !== undefined ? { text } : {}), ...(verseText !== undefined ? { verseText } : {}),
     scripture: [...source.scripture], topics: [...source.topics],
     ...(source.scriptureDisplay ? { scriptureDisplay: [...source.scriptureDisplay] } : {}),

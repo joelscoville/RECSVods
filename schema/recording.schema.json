@@ -19,9 +19,6 @@
             "published"
           ]
         },
-        "recordingSpeaker": {
-          "$ref": "#/definitions/Recording/properties/recordingTitle"
-        },
         "sermonDescription": {
           "type": "string",
           "pattern": "\\S",

@@ -14,6 +14,20 @@ const file = (value = source()) => recordingText(value).replace('recordingTitle:
 const send = (text: string, state: EditorState, from = base()) => applyChanges({ text, base: from.recording, edited: toRecording(from, state).source, filename: 'services/2026-09-06.yaml' });
 
 describe('named editor sections', () => {
+  it('rejects structured speaker metadata while preserving names in ordinary descriptions', () => {
+    const description = 'Avery Example explains how hospitality serves neighbours.';
+    expect(RecordingSchema.safeParse({ ...source(), recordingSpeaker: 'Avery Example' }).success).toBe(false);
+    const from = base({ sermonDescription: description }), state = initialState(from);
+    expect(state).not.toHaveProperty('speaker');
+    const restored = DraftStateSchema.parse({ ...state, speaker: 'Retired draft metadata' });
+    expect(restored).not.toHaveProperty('speaker');
+    const result = toRecording(from, restored).source;
+    expect(result).not.toHaveProperty('recordingSpeaker');
+    expect(result.sermonDescription).toBe(description);
+    const display = displayRecordings([{ ...RecordingSchema.parse(result), recordingId: from.id }], TOPICS, []);
+    expect(display[0]).not.toHaveProperty('speaker');
+    expect(searchUnits(display, [{ ...RecordingSchema.parse(result), recordingId: from.id }]).every(unit => !('speaker' in unit))).toBe(true);
+  });
   it('retains the stored names and nests subchapters and point notes under their owners', () => {
     const state = initialState(base()), list = outline(state, LENGTH);
     expect(list.filter(item => item.lane === 'chapter').map(item => item.title)).toEqual(['ACTS Prayer', 'Opening and Scripture', 'Serving Our Neighbours', 'Response and Closing']);

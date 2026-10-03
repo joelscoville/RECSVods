@@ -14,7 +14,7 @@ confidence and source paths are not search fields.
 
 | Artifact under `generated/` | Contents |
 | --- | --- |
-| `chapters.json` | `{schemaVersion:5, model:CHAPTER_VECTOR_CONFIG, vectors:{file,sha256}, units:SearchUnit[]}` |
+| `chapters.json` | `{schemaVersion:6, model:CHAPTER_VECTOR_CONFIG, vectors:{file,sha256}, units:SearchUnit[]}` |
 | `vectors.<sha256>.bin` | Content-addressed compact int8 rows, in exactly the metadata array's order |
 | `scripture.json` | Deduplicated public-domain BSB verse keys/text and reference mappings |
 
@@ -82,7 +82,6 @@ content-addressed binary binds those rebuilt rows to the new metadata.
 | --- | ---: |
 | Date | 16 |
 | Scripture | 14 |
-| Speaker | 14 |
 | Browser-only BSB verse text | 2 |
 | Topic | 7 |
 | Unit title | 6 |

@@ -11,7 +11,7 @@ export interface EditorSubchapter extends EditorChapter { parentId: string }
 export interface EditorPoint { id: string; parentId: string; time: number; text: string }
 export interface EditorMarker { id: string; at: number; end?: number; note: string; include: boolean }
 export interface EditorState {
-  title: string; speaker: string; description: string; scripture: string[]; topics: string[];
+  title: string; description: string; scripture: string[]; topics: string[];
   chapters: EditorChapter[]; subchapters: EditorSubchapter[]; points: EditorPoint[];
   markers: EditorMarker[]; checked: string[];
 }
@@ -39,7 +39,7 @@ export function initialState({ recording }: EditorRecording): EditorState {
     chapters.push(convert(chapter));
     for (const child of chapter.subchapters ?? []) subchapters.push({ ...convert(child), parentId: chapter.chapterId });
   }
-  return { title: recording.recordingTitle, speaker: recording.recordingSpeaker ?? '', description: recording.sermonDescription ?? '',
+  return { title: recording.recordingTitle, description: recording.sermonDescription ?? '',
     scripture: [...(recording.sermonScripture ?? [])], topics: [...(recording.sermonTopics ?? [])], chapters, subchapters, points,
     markers: (recording.markers ?? []).map((marker, i) => ({ id: `file-${i}`, at: marker.markerTime,
       ...(marker.markerEnd !== undefined ? { end: marker.markerEnd } : {}), note: marker.markerNote, include: true })), checked: [] };
@@ -194,7 +194,6 @@ export function toRecording(base: EditorRecording, state: EditorState): { source
   });
   const markers = state.markers.filter(marker => isFileMarker(marker) || marker.include).sort((a, b) => a.at - b.at);
   const source: RecordingSource = { recordingTitle: state.title.trim(), serviceDate: base.recording.serviceDate, status: 'published',
-    ...(state.speaker.trim() ? { recordingSpeaker: state.speaker.trim() } : {}),
     ...(state.description.trim() ? { sermonDescription: state.description.trim().replace(/\s+/gu, ' ') } : {}),
     ...(state.scripture.length ? { sermonScripture: state.scripture } : {}), ...(state.topics.length ? { sermonTopics: state.topics } : {}),
     uploads: base.recording.uploads.map(({ uploadSkip, ...upload }) => ({ ...upload, uploadDuration: formatTimecode(upload.uploadDuration), ...(uploadSkip !== undefined ? { uploadSkip: formatTimecode(uploadSkip) } : {}) })),
@@ -220,7 +219,7 @@ export function validateEditor(base: EditorRecording, state: EditorState): Edito
 }
 export function describeChanges(base: EditorRecording, state: EditorState): string[] {
   const before = initialState(base), lines: string[] = [];
-  for (const [field, label] of [['title', 'Title'], ['speaker', 'Speaker'], ['description', 'Sermon description'], ['scripture', 'Scripture'], ['topics', 'Topics']] as const) {
+  for (const [field, label] of [['title', 'Title'], ['description', 'Sermon description'], ['scripture', 'Scripture'], ['topics', 'Topics']] as const) {
     if (JSON.stringify(before[field]) !== JSON.stringify(state[field])) lines.push(`${label} changed`);
   }
   const compare = <T extends { id: string }>(label: string, was: T[], now: T[], name: (item: T) => string) => {
@@ -246,7 +245,7 @@ export function formatClock(seconds: number): string { return formatTimecode(rou
 const Seconds = z.number().finite().nonnegative();
 const LocalChapter = z.object({ id: z.string(), kind: z.enum(CHAPTER_KINDS), title: z.string(), start: Seconds, end: Seconds, scripture: z.array(z.string()).default([]) });
 export const DraftStateSchema = z.object({
-  title: z.string(), speaker: z.string(), description: z.string(), scripture: z.array(z.string()), topics: z.array(z.string()),
+  title: z.string(), description: z.string(), scripture: z.array(z.string()), topics: z.array(z.string()),
   chapters: z.array(LocalChapter).min(1), subchapters: z.array(LocalChapter.extend({ parentId: z.string() })),
   points: z.array(z.object({ id: z.string(), parentId: z.string(), time: Seconds, text: z.string() })),
   markers: z.array(z.object({ id: z.string(), at: Seconds, end: Seconds.optional(), note: z.string(), include: z.boolean() })), checked: z.array(z.string()),

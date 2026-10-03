@@ -173,7 +173,6 @@ passages:
     start: 910.84
     end: 954.24
     type: hymn-introduction
-    speaker_id: belinda-sutan
     title: Depending on Christ's presence
     summary: Belinda introduces the hymn as an answer to the insufficiency of relying on one's own strength.
     questions: []
@@ -230,7 +229,6 @@ passages:
     start: 1540.02
     end: 1573.66
     type: hymn-introduction
-    speaker_id: belinda-sutan
     title: A prayer of hourly dependence
     summary: Belinda connects the John 15 reading with the hymn I Need Thee Every Hour and dependence on Christ throughout daily life.
     questions: []
@@ -287,7 +285,6 @@ passages:
     start: 2026.56
     end: 2111.14
     type: scripture-reading
-    speaker_id: jacinta
     title: Matthew 10:40-42
     summary: Jacinta is invited to read Matthew 10:40-42 before the pulpit is handed to Pastor Yong.
     questions: []
@@ -1226,7 +1223,6 @@ passages:
     start: 6339.52
     end: 6371.88
     type: hymn-introduction
-    speaker_id: pastor-yong
     title: Introducing Thou my everlasting portion
     summary: Pastor Yong introduces a hymn attributed to Fanny Crosby and explains its older expression of God as provider and sustainer.
     questions: []

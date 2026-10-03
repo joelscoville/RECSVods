@@ -13,7 +13,7 @@ Failed input validation leaves no stale preview index.
 
 | File | Contract |
 | --- | --- |
-| `chapters.json` | `{schemaVersion: 5, model: CHAPTER_VECTOR_CONFIG, vectors: {file, sha256}, units: SearchUnit[]}` |
+| `chapters.json` | `{schemaVersion: 6, model: CHAPTER_VECTOR_CONFIG, vectors: {file, sha256}, units: SearchUnit[]}` |
 | `vectors.<sha256>.bin` | `RECSCH01` header and ordered 384-dimensional int8 rows; row `i` belongs to `units[i]` |
 | `scripture.json` | `{schemaVersion: 1, references: {[canonicalReference]: verseKeys[]}, verses: {[verseKey]: BSBText}}` |
 

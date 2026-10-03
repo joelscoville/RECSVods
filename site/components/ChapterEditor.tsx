@@ -602,8 +602,6 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
       details: <div className="ce-window-body ce-details-window">
               <label className="ce-field"><span className="ce-label">Title <span className="ce-muted">the sermon title as announced</span></span>
                 <input id="ce-details-title" value={state.title} onChange={event => apply({ ...state, title: event.target.value }, 'recording-title')} /></label>
-              <label className="ce-field"><span className="ce-label">Speaker</span>
-                <input value={state.speaker} onChange={event => apply({ ...state, speaker: event.target.value }, 'recording-speaker')} /></label>
                 <label className="ce-field ce-grow"><span className="ce-label">Sermon description <WordCount text={state.description} /></span>
                   <textarea rows={8} value={state.description} placeholder="What the sermon argues and asks of the listener, in one paragraph." onChange={event => apply({ ...state, description: event.target.value }, 'recording-description')} /></label>
                 <ChipList label="Scripture" items={state.scripture} placeholder="e.g. John 15:1-11" onChange={list => apply({ ...state, scripture: list })}
