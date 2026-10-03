@@ -102,7 +102,11 @@ html[data-data-mode="normal"][data-compute-mode="normal"] { --body-font: 'Atkins
 .category-grid > :nth-child(4n + 3) { background: var(--burgundy); }
 .category-grid > :nth-child(4n) { background: var(--periwinkle); color: var(--black); }
 .category-grid > :focus-visible { outline-color: var(--burgundy); }
+.category-grid > a { gap: 10px; }
+.category-grid > a .icon { flex: none; width: 24px; height: 24px; }
+.category-grid > a[aria-current='page'] { outline: 2px solid var(--burgundy); outline-offset: 3px; }
 .home-categories { margin-top: 56px; }
+.home-categories.home-categories-top { margin-top: 16px; margin-bottom: 32px; }
 .home-categories > a { aspect-ratio: 387 / 252; font-size: 36px; }
 .chip-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 8px 16px; background: var(--periwinkle); color: var(--ink); font-weight: 600; border-radius: 14px; border: 0; font-size: 16px; overflow-wrap: anywhere; }
@@ -653,9 +657,7 @@ html[data-data-mode="normal"][data-compute-mode="normal"] { --body-font: 'Atkins
 }
 
 /* Developer views of recordings waiting for approval (switched on at /dev). */
-.chip-dev { border-style: dashed; }
 .unapproved-view { display: grid; gap: 24px; padding-block: 12px 60px; }
 .unapproved-view h1 { font-family: var(--display-font); font-size: 36px; }
 .dev-watch-note { margin-top: 12px; padding: 6px 12px; width: fit-content; border-radius: 999px; background: var(--gold); font-size: 14px; font-weight: 700; }
-.dev-categories { display: flex; gap: 8px; padding-top: 12px; }
 .player-message.unavailable-message { overflow: auto; align-content: start; }

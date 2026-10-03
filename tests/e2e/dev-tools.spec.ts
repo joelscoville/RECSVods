@@ -56,6 +56,25 @@ test('/dev switches force the search modes on every page until set back', async 
   await expect(page.locator('.dev-badge')).toBeHidden();
 });
 
+test('Unapproved belongs to the existing category tiles and mobile category row @responsive', async ({ page, isMobile }) => {
+  await serveRepository(page);
+  await page.goto(`${browserEndpoints().production}dev/`); await page.getByText('On the home page', { exact: true }).click();
+  await page.goto(browserEndpoints().production);
+  const navigation = page.locator(isMobile ? '.home-filters' : '.home-categories');
+  const unapproved = navigation.getByRole('link', { name: /^Unapproved/ });
+  await expect(unapproved).toHaveText('Unapproved (1)');
+  await expect(navigation.getByRole('link', { name: isMobile ? 'All' : 'All recordings', exact: true })).toBeVisible();
+  await expect(page.locator('.dev-categories, .chip-dev')).toHaveCount(0);
+  await unapproved.click();
+  await expect(page.getByRole('heading', { name: 'Waiting for approval', exact: true })).toBeVisible();
+  await expect(unapproved).toHaveAttribute('aria-current', 'page');
+  if (isMobile) await expect(navigation.getByRole('link', { name: 'All', exact: true })).not.toHaveAttribute('aria-current', 'page');
+  await page.goBack();
+  await expect(page.getByRole('heading', { name: 'Waiting for approval', exact: true })).toHaveCount(0);
+  if (isMobile) await expect(navigation.getByRole('link', { name: 'All', exact: true })).toHaveAttribute('aria-current', 'page');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
 test('the Unapproved switch adds a home page category that opens recordings in the dev player', async ({ page }) => {
   await serveRepository(page);
   await page.route('https://www.youtube.com/**', route => route.abort());

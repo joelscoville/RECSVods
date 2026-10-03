@@ -20,19 +20,22 @@ export function unitFor(id: string): SearchUnit {
 
 /** A stand-in for YouTube's IFrame API: records seeks and the upload loaded, and never plays anything.
  * It exercises the real player code; it does not replace a manual check of actual YouTube playback. */
-const fakeYouTubeScript = (failFirst: boolean) => `let attempts=0;window.YT={Player:class{
-  constructor(host,options){this.options=options;this.videoId=options.videoId;this.time=options.playerVars.start||0;this.state=2;this.ticks=0;this.loads=[options.videoId];
+interface FakeYouTubeOptions { failFirst?: boolean; readyDelay?: number; playbackRates?: number[]; rejectRate?: number }
+const fakeYouTubeScript = ({ failFirst = false, readyDelay = 0, playbackRates = [0.5, 1, 1.5, 2], rejectRate = -1 }: FakeYouTubeOptions) => `let attempts=0;window.YT={Player:class{
+  constructor(host,options){this.options=options;this.videoId=options.videoId;this.time=options.playerVars.start||0;this.state=2;this.ticks=0;this.loads=[options.videoId];this.rate=1;this.rateRequests=[];
     this.iframe=document.createElement('iframe');host.replaceWith(this.iframe);window.testPlayer=this;
-    setTimeout(()=>${failFirst}&&attempts++===0?options.events.onError({data:100}):options.events.onReady({target:this}),0)}
-  change(state){this.state=state;setTimeout(()=>this.options.events.onStateChange&&this.options.events.onStateChange({data:state}),0)}
+    setTimeout(()=>${failFirst}&&attempts++===0?options.events.onError({data:100}):options.events.onReady({target:this}),${readyDelay})}
+  change(state,resetRate=false){this.state=state;setTimeout(()=>{if(resetRate)this.rate=1;this.options.events.onStateChange&&this.options.events.onStateChange({data:state})},0)}
   seekTo(time){this.time=time}playVideo(){this.change(1)}pauseVideo(){this.change(2)}
-  loadVideoById(t){this.videoId=t.videoId;this.time=t.startSeconds;this.loads.push(t.videoId);this.change(1)}
-  cueVideoById(t){this.videoId=t.videoId;this.time=t.startSeconds;this.loads.push(t.videoId);this.change(5)}
-  setPlaybackRate(rate){this.rate=rate}getCurrentTime(){this.ticks++;return this.time}getPlayerState(){return this.state}getIframe(){return this.iframe}destroy(){this.iframe.remove()}
+  loadVideoById(t){this.videoId=t.videoId;this.time=t.startSeconds;this.loads.push(t.videoId);this.change(1,true)}
+  cueVideoById(t){this.videoId=t.videoId;this.time=t.startSeconds;this.loads.push(t.videoId);this.change(5,true)}
+  setPlaybackRate(rate){this.rateRequests.push(rate);if(${JSON.stringify(playbackRates)}.includes(rate)&&rate!==${rejectRate})this.rate=rate}
+  getPlaybackRate(){return this.rate}getAvailablePlaybackRates(){return ${JSON.stringify(playbackRates)}}
+  getCurrentTime(){this.ticks++;return this.time}getPlayerState(){return this.state}getIframe(){return this.iframe}destroy(){this.iframe.remove()}
 }};window.onYouTubeIframeAPIReady();`;
 /** `failFirst`: the first player reports the video unavailable, as YouTube does for a removed upload. */
-export async function fakeYouTube(page: Page, options: { failFirst?: boolean } = {}) {
-  await page.route('https://www.youtube.com/iframe_api', route => route.fulfill({ contentType: 'application/javascript', body: fakeYouTubeScript(Boolean(options.failFirst)) }));
+export async function fakeYouTube(page: Page, options: FakeYouTubeOptions = {}) {
+  await page.route('https://www.youtube.com/iframe_api', route => route.fulfill({ contentType: 'application/javascript', body: fakeYouTubeScript(options) }));
 }
 /** The upload holding a recording time, and the time within it. */
 export function uploadAt(recordingId: string, time: number): { id: string; time: number } {
@@ -45,6 +48,6 @@ export function uploadAt(recordingId: string, time: number): { id: string; time:
   }
   throw new Error(`${recordingId} has no uploads`);
 }
-export interface TestPlayer { time: number; state: number; ticks: number; videoId: string; loads: string[] }
+export interface TestPlayer { time: number; state: number; ticks: number; videoId: string; loads: string[]; rate: number; rateRequests: number[] }
 export const player = (page: Page) => page.evaluate(() => (window as unknown as { testPlayer?: TestPlayer }).testPlayer);
 export const setPlayerTime = (page: Page, time: number) => page.evaluate(value => { (window as unknown as { testPlayer: TestPlayer }).testPlayer.time = value; }, time);

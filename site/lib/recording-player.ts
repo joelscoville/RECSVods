@@ -36,13 +36,16 @@ export async function createRecordingPlayer(options: {
   };
   let current = locate(options.start).index, heldTime = options.start, loadedIndex = -1;
   let player: YouTubePlayer | undefined, pending: Promise<YouTubePlayer> | undefined;
-  let destroyed = false, generation = 0, switching = false, wantsPlay = false, rate = 1;
+  let destroyed = false, generation = 0, switching = false, wantsPlay = false, rate = 1, rateRequested = false;
   const report = (error: unknown, request: number) => {
     if (!destroyed && request === generation) options.onError(error instanceof Error ? error.message : 'The player could not be loaded.');
   };
   const stateChanged = (state: number) => {
     if (destroyed || !player || uploads[current].unavailable) return;
     if (state === 1 || state === 2 || state === 5) switching = false;
+    // YouTube resets rates while cueing/loading an upload, sometimes after the
+    // initial setter. Apply the preference again when the new media is ready.
+    if (rateRequested && (state === 1 || state === 5) && player.getPlaybackRate?.() !== rate) player.setPlaybackRate?.(rate);
     if (state === 5 && wantsPlay) player.playVideo();
     if (state === 0 && current < uploads.length - 1) {
       const task = position(uploads[current + 1].start, true, true), request = generation;
@@ -84,7 +87,7 @@ export async function createRecordingPlayer(options: {
       switching = false;
       if (wantsPlay) player.playVideo(); else player.pauseVideo();
     }
-    if (rate !== 1) player.setPlaybackRate?.(rate);
+    if (rateRequested) player.setPlaybackRate?.(rate);
     options.onAvailability?.(undefined);
   }
   const adapter: RecordingAdapter = {
@@ -99,7 +102,9 @@ export async function createRecordingPlayer(options: {
     pauseVideo() { wantsPlay = false; player?.pauseVideo(); },
     getCurrentTime() { return !player || switching || uploads[current].unavailable ? heldTime : uploads[current].start + Math.max(0, player.getCurrentTime() - uploads[current].offset); },
     getPlayerState() { return uploads[current].unavailable ? 2 : switching ? 3 : player?.getPlayerState() ?? 2; },
-    setPlaybackRate(value) { rate = value; player?.setPlaybackRate?.(value); },
+    setPlaybackRate(value) { rate = value; rateRequested = true; player?.setPlaybackRate?.(value); },
+    getPlaybackRate() { return player?.getPlaybackRate?.() ?? rate; },
+    getAvailablePlaybackRates() { return player?.getAvailablePlaybackRates?.() ?? []; },
     destroy() { destroyed = true; generation++; player?.destroy(); },
   };
   await position(options.start, false, true);

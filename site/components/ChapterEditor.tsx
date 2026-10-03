@@ -124,7 +124,7 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
   const root = useRef<HTMLDivElement>(null);
   const { original, history, state, dispatch, apply, restored, resetDraft, hydrated } = useEditorSession(base);
   const playback = useEditorPlayback(base, root);
-  const { time, playing, speed, player, playerError, file, fileWarning, host, uploads, load, togglePlay, useFile, useYouTube, changeSpeed, unavailable } = playback;
+  const { time, playing, speed, availableSpeeds, speedNotice, player, playerError, file, fileWarning, host, uploads, load, togglePlay, useFile, useYouTube, changeSpeed, unavailable } = playback;
   const isChapter = (id: string) => state.chapters.some(chapter => chapter.id === id);
   const [linked, setLinked] = useState(true);
   const [snapping, setSnapping] = useState(true);
@@ -625,9 +625,12 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
         <button type="button" className="ce-tool ce-play" onClick={togglePlay} disabled={Boolean(unavailable)} aria-label={playing ? 'Pause' : 'Play'} title={unavailable ? 'Choose an available part to play' : `${playing ? 'Pause' : 'Play'}${shortcutHint('play')}`}><Icon name={playing ? 'pause' : 'play'} /></button>
         <TimeReadout time={time} duration={length} onSeek={seconds => seekTo(seconds)} onScrub={seconds => seekTo(seconds, { live: true })} />
         <div className="ce-segmented" role="group" aria-label="Playback speed">
-          {SPEEDS.map(rate => <button type="button" key={rate} aria-pressed={speed === rate} onClick={() => changeSpeed(rate)}>{rate}×</button>)}
+          {SPEEDS.map(rate => <button type="button" key={rate} aria-pressed={speed === rate}
+            disabled={availableSpeeds.length > 0 && !availableSpeeds.includes(rate)} title={availableSpeeds.length > 0 && !availableSpeeds.includes(rate) ? 'Not supported by this video' : `Play at ${rate}× speed`}
+            onClick={() => changeSpeed(rate)}>{rate}×</button>)}
         </div>
       </div>
+      {speedNotice && <span className="ce-notice-inline" role="status">{speedNotice}</span>}
       <button type="button" className="ce-tool ce-mobile-tools" aria-expanded={mobileTools} onClick={() => setMobileTools(value => !value)}>Timeline tools</button>
       <div className="ce-tool-group">
         <button type="button" className="ce-tool" onClick={() => setItemEdge('start', playhead)} disabled={!canSetEdge(selected, 'start', playhead)} title={`Start the selected item at the playhead${shortcutHint('setStart')}`}><Icon name="setStart" />Start here</button>

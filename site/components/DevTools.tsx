@@ -172,7 +172,9 @@ function Unapproved({ base, mode }: Props) {
 function RecordingCard({ item, archive, base, mode, repository }: { item: LoadedRecording; archive: LoadedArchive; base: string; mode: Props['mode']; repository: string }) {
   const { recording, problems } = item;
   const file = <a href={`${repository}/blob/${SOURCE_BRANCH}/${item.path}`}>File on GitHub</a>;
-  if (!recording) return <article className="dev-card"><h3>{item.path}</h3><p className="dev-error">{problems.join('; ')}</p>{file}</article>;
+  const invalid = (message: string) => <article className="dev-card"><h3>{item.path}</h3><p className="dev-error" role="alert">{message}</p>{file}</article>;
+  if (!recording) return invalid(problems.join('; '));
+  try {
   const display = displayRecordings([recording], archive.topics, archive.series)[0];
   const draft = recording.status !== 'published';
   return <article className="dev-card">
@@ -195,16 +197,21 @@ function RecordingCard({ item, archive, base, mode, repository }: { item: Loaded
       {file}<a href={githubEditUrl(repository, SOURCE_BRANCH, item.path)}>Edit on GitHub</a>
       {mode === 'preview' && <><a href={serviceUrl(base, display.id)}>Open here</a><a href={`${base}edit/${display.id}/`}>Chapter editor</a></>}</div>
   </article>;
+  } catch (error) {
+    return invalid(`Could not display this recording: ${error instanceof Error ? error.message : String(error)}`);
+  }
 }
 
 /* ---------- Saved in this browser ---------- */
 
 function describeKey(key: string): string {
+  if (key.startsWith('recs-recording-editor:v3:')) return `Editor draft (${key.slice('recs-recording-editor:v3:'.length)})`;
   if (key.startsWith('recs-recording-editor:v2:')) return `Editor draft (${key.slice('recs-recording-editor:v2:'.length)})`;
   if (key.startsWith('recs-chapter-editor:v1:')) return `Old editor draft, no longer opened (${key.slice('recs-chapter-editor:v1:'.length)})`;
   return ({
     'recs-chapter-editor:github-ready': 'Editor: GitHub intro answered',
     'recs-chapter-editor:layout:v1': 'Editor window layout',
+    'recs-chapter-editor:layout:v2': 'Editor panel layout',
     'recs-dev:performance': 'Switches on this page',
     'recs-performance:v1': 'Speed measurement (this tab)',
     'recs-replay:resume:v2': 'Resume point',

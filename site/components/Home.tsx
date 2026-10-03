@@ -3,10 +3,9 @@ import type { HomeItem } from './archive-display';
 import { homeItems, homeSelection } from './archive-display';
 import { getSavedPlayback, type SavedPlayback } from '../lib/local-state';
 import { searchUrl, siteUrl } from '../lib/urls';
-import { BROWSE_CATEGORIES, browseUrl } from '../lib/browse';
+import { BROWSE_CATEGORIES } from '../lib/browse';
 import BrowseNavigation from './BrowseNavigation';
 import VideoCard from './VideoCard';
-import Icon from './Icon';
 
 type Unapproved = { status: 'loading' } | { status: 'error'; message: string } | { status: 'ready'; items: HomeItem[] };
 /** Developer switch (set on /dev): recordings waiting for approval, loaded live from GitHub into an
@@ -41,6 +40,7 @@ export default function Home({ items, base }: { items: HomeItem[]; base: string 
     return () => window.removeEventListener('hashchange', read);
   }, []);
   const showingUnapproved = Boolean(unapproved) && hash === '#unapproved';
+  useEffect(() => { if (showingUnapproved) window.scrollTo({ top: 0, behavior: 'instant' }); }, [showingUnapproved]);
   useEffect(() => {
     const refresh = () => setSaved(getSavedPlayback());
     refresh();
@@ -49,6 +49,11 @@ export default function Home({ items, base }: { items: HomeItem[]; base: string 
     return () => { window.removeEventListener('storage', refresh); window.removeEventListener('recs-local-state-cleared', refresh); };
   }, []);
   const categories = BROWSE_CATEGORIES.filter(({ path }) => items.some((item) => item.browseCategories?.includes(path)));
+  const extraCategories = unapproved ? [{ path: 'unapproved', title: `Unapproved${unapproved.status === 'ready' ? ` (${unapproved.items.length})` : ''}`, href: `${siteUrl(base)}#unapproved` }] : [];
+  const mobileCategories = [{ path: 'all', title: 'All', href: siteUrl(base) }, ...categories.filter(({ path }) => path !== 'all'), ...extraCategories];
+  const desktopCategories = [...categories, ...extraCategories];
+  const desktopNavigation = desktopCategories.length > 0 && <BrowseNavigation base={base} categories={desktopCategories}
+    currentPath={showingUnapproved ? 'unapproved' : undefined} className={`category-grid home-categories page-width${showingUnapproved ? ' home-categories-top' : ''}`} />;
   const { returning, featured, supporting } = homeSelection(items, saved, base);
   // Three rows on desktop: the featured row and the next row are the most recent recordings; the third row
   // is chosen at random from the rest. Server HTML uses the next few so hydration matches, then shuffles.
@@ -62,14 +67,8 @@ export default function Home({ items, base }: { items: HomeItem[]; base: string 
     // Reshuffle only when the candidate set changes, not on every render.
   }, [poolKey]);
   return <main id="main" className="home-main" tabIndex={-1}>
-    <nav className="home-filters browse-navigation" aria-label="Browse the archive by category">
-      <a className="chip" href={siteUrl(base)} aria-current="page"><Icon name="check" />All</a>
-      {categories.filter(({ path }) => path !== 'all').map(({ path, title }) => <a className="chip" key={path} href={browseUrl(base, path)}>{title}</a>)}
-    </nav>
-    {unapproved && <nav className="dev-categories page-width" aria-label="Developer categories">
-      <a className="chip chip-dev" href={showingUnapproved ? '#' : '#unapproved'} aria-current={showingUnapproved ? 'page' : undefined}>{showingUnapproved && <Icon name="check" />}Unapproved
-        {unapproved.status === 'ready' ? ` (${unapproved.items.length})` : ''}</a>
-    </nav>}
+    <BrowseNavigation base={base} categories={mobileCategories} currentPath={showingUnapproved ? 'unapproved' : 'all'} className="home-filters" />
+    {showingUnapproved && desktopNavigation}
     {showingUnapproved ? <section className="unapproved-view" aria-labelledby="unapproved-title">
       <div className="page-width"><h1 id="unapproved-title">Waiting for approval</h1>
         <p>Developer view, loaded live from GitHub. Not published; turn it off on the <a href={`${base}dev/`}>developer page</a>.</p>
@@ -92,7 +91,7 @@ export default function Home({ items, base }: { items: HomeItem[]; base: string 
         {recent.map((item, index) => <div key={`recent-${index}`} data-slot={`recent-${index}`} className={`supporting-video ${index === 0 ? 'supporting-lead' : ''}`}><VideoCard item={item} /></div>)}
         {random.map((item, index) => <div key={`random-${index}`} data-slot={`random-${index}`} className="supporting-video home-random"><VideoCard item={item} /></div>)}
       </div>
-      {categories.length > 0 && <BrowseNavigation base={base} categories={categories} className="category-grid home-categories page-width" />}
     </>}
+    {!showingUnapproved && desktopNavigation}
   </main>;
 }
