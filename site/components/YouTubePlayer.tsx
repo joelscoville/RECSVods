@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { createChapterController, mountRecordingPlayer, type ChapterController, type PlaybackRange, type RecordingAdapter, type RecordingUpload } from '../lib/player';
+import { createChapterController, mountRecordingPlayer, unavailableAt, type UnavailableSpan, type ChapterController, type PlaybackRange, type RecordingAdapter, type RecordingUpload } from '../lib/player';
+import UnavailableRecording from './UnavailableRecording';
 import { savePlayback } from '../lib/local-state';
 import { formatTime, youtubeUrl } from '../lib/urls';
 
@@ -16,8 +17,9 @@ export interface PlaybackChoice { label: string; onChoose: () => void }
 const CHOICES_IDLE_MS = 5000;
 
 /** Plays a whole recording, however many uploads it took, on the recording's own clock. */
-export default function YouTubePlayer({ uploads, recordingId, title, range, seekRequest, onTime, endLabel = 'the end of this chapter', choices = [], externalChoices = [] }: {
+export default function YouTubePlayer({ uploads, recordingId, title, range, seekRequest, onTime, onNavigate, endLabel = 'the end of this chapter', choices = [], externalChoices = [] }: {
   uploads: readonly RecordingUpload[]; recordingId: string; title: string; range: PlaybackRange; seekRequest: number; onTime: (time: number) => void;
+  onNavigate: (time: number) => void;
   /** Where the soft stop falls, completing "Playback will stop at …". */
   endLabel?: string; choices?: PlaybackChoice[];
   externalChoices?: PlaybackChoice[];
@@ -32,6 +34,7 @@ export default function YouTubePlayer({ uploads, recordingId, title, range, seek
   const [status, setStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle');
   const [error, setError] = useState('');
   const [errorCode, setErrorCode] = useState<number>();
+  const [unavailable, setUnavailable] = useState<UnavailableSpan>();
   const [blocked, setBlocked] = useState(false);
   const [ended, setEnded] = useState(false);
   const [continued, setContinued] = useState(false);
@@ -117,6 +120,7 @@ export default function YouTubePlayer({ uploads, recordingId, title, range, seek
     window.dispatchEvent(new Event('recs-playback-start'));
     if (!container.current) return;
     abort.current?.abort();
+    adapter.current?.destroy();
     adapter.current = null;
     controller.current = null;
     const request = new AbortController();
@@ -131,6 +135,12 @@ export default function YouTubePlayer({ uploads, recordingId, title, range, seek
         uploads, title, start: currentRange.current.resumeAt ?? currentRange.current.start, signal: request.signal,
         onError(message, code) { if (!request.signal.aborted) { setError(message); setErrorCode(code); setStatus('error'); adapter.current?.pauseVideo(); } },
         onAutoplayBlocked() { if (!request.signal.aborted) setBlocked(true); },
+        onLoading() { if (!request.signal.aborted) setStatus('loading'); },
+        onAvailability(span) {
+          if (request.signal.aborted) return;
+          setUnavailable(span); setStatus('ready');
+          if (span) { timeListener.current(span.time); lastTime.current = span.time; setBlocked(false); }
+        },
       });
       if (request.signal.aborted) return;
       adapter.current = player;
@@ -144,7 +154,8 @@ export default function YouTubePlayer({ uploads, recordingId, title, range, seek
     }
   }
 
-  const offered = status === 'ready' && !dismissed && (range.end !== undefined || choices.length > 0);
+  const missing = unavailable ?? (status === 'idle' ? unavailableAt(uploads, range.resumeAt ?? range.start) : undefined);
+  const offered = status === 'ready' && !missing && !dismissed && (range.end !== undefined || choices.length > 0);
   useEffect(() => {
     if (!offered || leaving || ended) return;
     const timer = setTimeout(() => setLeaving(true), CHOICES_IDLE_MS);
@@ -154,15 +165,16 @@ export default function YouTubePlayer({ uploads, recordingId, title, range, seek
 
   return <div className="player-column">
     <div className="player-stage" ref={stage}>
-      <div ref={container} className={`youtube-host ${status !== 'ready' ? 'youtube-host-hidden' : ''}`} />
-      {status === 'idle' && <div className="player-consent">
+      <div ref={container} className={`youtube-host ${status !== 'ready' || missing ? 'youtube-host-hidden' : ''}`} />
+      {missing && <div className="player-message unavailable-message"><UnavailableRecording span={missing} onGo={time => { setUnavailable(undefined); onNavigate(time); }} /></div>}
+      {status === 'idle' && !missing && <div className="player-consent">
         <div className="player-context"><strong>{title}</strong></div>
         <button className="play-button" type="button" onClick={play} aria-label={`Play ${title}`}><Icon name="play" /></button>
         <p>Play to load YouTube. YouTube will receive connection information.</p>
       </div>}
-      {status === 'loading' && <div className="player-message" role="status"><p>Loading YouTube…</p></div>}
+      {status === 'loading' && !missing && <div className="player-message" role="status"><p>Loading YouTube…</p></div>}
       {/* Only when YouTube actually refuses or fails: the recording still opens on YouTube itself. */}
-      {status === 'error' && <div className="player-message external-playback">
+      {status === 'error' && !missing && <div className="player-message external-playback">
         <h2>Watch on YouTube</h2>
         <p role="alert">{error}</p>{errorCode !== undefined && <p className="player-error-code">YouTube error {errorCode}</p>}
         <div className="action-row"><a className="button" href={youtubeAt(uploads, lastTime.current ?? range.resumeAt ?? range.start)}>Watch on YouTube from {formatTime(lastTime.current ?? range.resumeAt ?? range.start)}</a>

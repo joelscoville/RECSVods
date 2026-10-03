@@ -75,6 +75,7 @@ test('scrolling away holds the reading position until Return to now, while playb
 test('keyboard scrolling browses without seeking, and returning resumes following @responsive', async ({ page }) => {
   await open(page);
   const list = page.getByRole('list', { name: 'Transcript lines', exact: true });
+  await list.evaluate(element => { element.style.scrollBehavior = 'smooth'; });
   await list.focus(); await page.keyboard.press('Home');
   await expect(page.getByRole('button', { name: 'Return to now', exact: true })).toBeEnabled();
   await expect(page.getByLabel('Playhead', { exact: true })).toHaveText('6:40');
@@ -109,9 +110,10 @@ test('reopening and resizing follow the scrubber, but preserve an intentionally 
   const splitter = page.getByRole('separator', { name: 'Resize Chapters and Transcript', exact: true });
   await splitter.focus(); await page.keyboard.press('Shift+ArrowDown');
   await expect.poll(() => currentVisible(page)).toBe(true);
-  await page.locator('.ce-tr-lines').focus(); await page.keyboard.press('Home');
+  await page.locator('.ce-tr-lines').focus(); await page.keyboard.press('PageUp'); await page.keyboard.press('PageUp');
   await expect(page.getByRole('button', { name: 'Return to now', exact: true })).toBeEnabled();
   const readingAt = await scrollTop(page);
+  expect(readingAt).toBeGreaterThan(0);
   await toggleTranscript(page); await scrub(page, 450); await toggleTranscript(page);
   expect(await scrollTop(page)).toBeCloseTo(readingAt, 0);
   await expect(page.getByRole('button', { name: 'Return to now', exact: true })).toBeEnabled();

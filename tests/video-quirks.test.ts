@@ -33,7 +33,7 @@ describe('playback quirks', () => {
 });
 
 it('tries the embedded player first, and shows simple recording notes', () => {
-  const html = renderToStaticMarkup(createElement(YouTubePlayer, { uploads: display()[0].uploads, recordingId: '2026-09-06', title: 'Fixture', range: { id: 'x', start: 42.5 }, seekRequest: 0, onTime: () => {} }));
+  const html = renderToStaticMarkup(createElement(YouTubePlayer, { uploads: display()[0].uploads, recordingId: '2026-09-06', title: 'Fixture', range: { id: 'x', start: 42.5 }, seekRequest: 0, onTime: () => {}, onNavigate: () => {} }));
   // "Watch on YouTube" appears only if YouTube actually refuses; until then it is the ordinary Play button.
   expect(html).toContain('Play Fixture'); expect(html).not.toContain('Watch on YouTube'); expect(html).not.toContain('<iframe');
   const notes = renderToStaticMarkup(createElement(VideoQuirks, { quirks: publicQuirks(['video_unavailable', 'audio_left_only']) }));

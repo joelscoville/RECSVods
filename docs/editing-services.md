@@ -156,6 +156,13 @@ a later upload; it is never used on the first. Upload lengths must be positive.
 `uploadUnavailable: true` records a removed upload; `uploadQuirks` records confirmed
 playback problems. See [quirks](quirks.md).
 
+Unavailable uploads keep their duration and position on the recording clock. A
+seek into one, or playback reaching its start, shows an unavailable state without
+requesting that upload or silently skipping time. Previous/next available-part
+actions navigate on the same clock, including upload-skip offsets. The editor can
+still inspect and edit metadata in those spans. A recording with no available
+uploads shows that explicitly instead of offering a play action.
+
 ## Drafts, review and markers
 
 An agent writes `status: draft`. A person reviews the recording and proposes a

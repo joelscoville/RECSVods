@@ -1,12 +1,15 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useReducer, useRef, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
-  addMarker, addSubchapterAt, addPointAt, chapterAt, chapterTitle, describeChanges, DraftStateSchema, edgeLimits, editMarker, editChapter, editPoint, edges,
+  addMarker, addSubchapterAt, addPointAt, chapterAt, chapterTitle, describeChanges, edgeLimits, editMarker, editChapter, editPoint, edges,
   formatClock, githubEditUrl, githubRawUrl, initialState, isFileMarker, items, lengthOf, outline, recordingFilePath, removeItem, removeMarker, roundTime,
   setEdge, SOURCE_BRANCH, startChapterAt, toggleChecked, toRecording, validateEditor,
-  type AddResult, type Edge, type EditorIssue, type EditorItem, type EditorMarker, type EditorRecording, type EditorState,
+  type AddResult, type EditorIssue, type EditorItem, type EditorMarker, type EditorRecording, type EditorState,
 } from '../lib/recording-editor';
-import { CHAPTER_TITLES, CHAPTER_KINDS, locate, recordingTime, uploadSpans, words, type ChapterKind } from '../lib/recording-schema';
-import { mountFilePlayer, mountRecordingPlayer, type PlayerAdapter } from '../lib/player';
+import { CHAPTER_TITLES, CHAPTER_KINDS, locate, recordingTime, words, type ChapterKind } from '../lib/recording-schema';
+import { useEditorSession } from './use-editor-session';
+import { useEditorPlayback } from './use-editor-playback';
+import { useEditorSelection } from './use-editor-selection';
+import UnavailableRecording from './UnavailableRecording';
 import { isMac, keyText, matchShortcut, SHORTCUTS, shortcutHint, type EditorAction } from '../lib/editor-keys';
 import { applyChanges, ChangeConflictError, type AppliedChanges } from '../lib/apply-changes';
 import { diffHunks } from '../lib/line-diff';
@@ -23,51 +26,6 @@ import Icon from './Icon';
 import { MIN_TIMELINE, MIN_TOP, Splitter, useEditorLayout, WINDOW_TITLES, WINDOWS, type EditorWindow } from './editor-layout';
 import { MarkersWindow, TranscriptWindow } from './EditorWindows';
 import { SendSteps, SetupGuide } from './GitHubGuide';
-
-/* ---------- Undo history ---------- */
-
-interface History { past: EditorState[]; present: EditorState; future: EditorState[]; key?: string }
-type HistoryAction = { type: 'apply'; next: EditorState; key?: string } | { type: 'undo' } | { type: 'redo' } | { type: 'break' } | { type: 'reset'; state: EditorState };
-const LIMIT = 200;
-function historyReducer(history: History, action: HistoryAction): History {
-  switch (action.type) {
-    case 'break': return history.key === undefined ? history : { ...history, key: undefined };
-    case 'apply':
-      if (action.next === history.present) return history;
-      // Typing in one field is one undo step.
-      if (action.key && action.key === history.key) return { ...history, present: action.next };
-      return { past: [...history.past, history.present].slice(-LIMIT), present: action.next, future: [], key: action.key };
-    case 'undo':
-      return history.past.length ? { past: history.past.slice(0, -1), present: history.past.at(-1)!, future: [history.present, ...history.future] } : history;
-    case 'redo':
-      return history.future.length ? { past: [...history.past, history.present], present: history.future[0], future: history.future.slice(1) } : history;
-    case 'reset':
-      return { past: [...history.past, history.present].slice(-LIMIT), present: action.state, future: [] };
-  }
-}
-
-/* ---------- Local draft (a per-browser convenience, never the record) ---------- */
-
-const draftKey = (id: string) => `recs-recording-editor:v3:${id}`;
-function fingerprint(base: EditorRecording): string {
-  const text = JSON.stringify(base.recording);
-  let hash = 5381;
-  for (let i = 0; i < text.length; i++) hash = (hash * 33 + text.charCodeAt(i)) >>> 0;
-  return hash.toString(36);
-}
-function readDraft(base: EditorRecording): EditorState | undefined {
-  try {
-    const saved = JSON.parse(localStorage.getItem(draftKey(base.id)) ?? 'null');
-    const parsed = DraftStateSchema.safeParse(saved?.state);
-    return saved?.fingerprint === fingerprint(base) && parsed.success ? parsed.data : undefined;
-  } catch { return undefined; }
-}
-function writeDraft(base: EditorRecording, state: EditorState | undefined): void {
-  try {
-    if (state) localStorage.setItem(draftKey(base.id), JSON.stringify({ fingerprint: fingerprint(base), state }));
-    else localStorage.removeItem(draftKey(base.id));
-  } catch { /* Storage is optional. */ }
-}
 
 /* ---------- Small pieces ---------- */
 
@@ -163,32 +121,19 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
   const back = backHref ?? serviceUrl(siteBase, base.id);
   const { recording } = base;
   const length = useMemo(() => lengthOf(base), [base]);
-  const uploads = useMemo(() => uploadSpans(recording).map(span => ({ id: span.upload.youtubeId, start: span.start, end: span.end, offset: span.offset, duration: span.upload.uploadDuration })), [recording]);
-  const original = useMemo(() => initialState(base), [base]);
-  const [history, dispatch] = useReducer(historyReducer, undefined, () => ({ past: [], present: original, future: [] }));
-  const state = history.present;
+  const root = useRef<HTMLDivElement>(null);
+  const { original, history, state, dispatch, apply, restored, resetDraft, hydrated } = useEditorSession(base);
+  const playback = useEditorPlayback(base, root);
+  const { time, playing, speed, player, playerError, file, fileWarning, host, uploads, load, togglePlay, useFile, useYouTube, changeSpeed, unavailable } = playback;
   const isChapter = (id: string) => state.chapters.some(chapter => chapter.id === id);
-  const [restored, setRestored] = useState(false);
-  const [selectedId, setSelectedId] = useState<string | undefined>(original.chapters.find(chapter => chapter.kind === 'sermon')?.id ?? original.chapters[0]?.id);
-  const [expanded, setExpanded] = useState<Set<string>>(() => new Set([original.chapters.find(chapter => chapter.kind === 'sermon')?.id ?? original.chapters[0].id]));
-  const [time, setTime] = useState(0);
-  const [playing, setPlaying] = useState(false);
-  const [speed, setSpeed] = useState(1);
   const [linked, setLinked] = useState(true);
   const [snapping, setSnapping] = useState(true);
   const [view, setView] = useState<TimelineView>(() => fitView(length));
-  const [activeBoundary, setActiveBoundary] = useState<Edge>();
   const [preview, setPreview] = useState<EditorState>();
-  const [player, setPlayer] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle');
-  const [playerError, setPlayerError] = useState('');
-  const [file, setFile] = useState<File>();
-  const [fileWarning, setFileWarning] = useState<string>();
   const [notice, setNotice] = useState<string>();
   const [dialog, setDialog] = useState<'help' | 'finish' | 'account' | undefined>();
   const [focusTitle, setFocusTitle] = useState(0);
-  const [mobileList, setMobileList] = useState(false);
   const [mobileTools, setMobileTools] = useState(false);
-  const [selectionRequest, setSelectionRequest] = useState<{ id: string; anchorTop?: number }>();
   const [menu, setMenu] = useState<MenuRequest>();
   const [selectedMarkerId, setSelectedMarkerId] = useState<string>();
   const [focusMarker, setFocusMarker] = useState<string>();
@@ -200,87 +145,20 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
   };
   const main = useRef<HTMLDivElement>(null);
   const [sizes, setSizes] = useState({ width: 1200, height: 420, timeline: 300 });
-  const adapter = useRef<PlayerAdapter | null>(null);
-  const abort = useRef<AbortController | null>(null);
-  const host = useRef<HTMLDivElement>(null);
-  const list = useRef<HTMLOListElement>(null);
-  const root = useRef<HTMLDivElement>(null);
   const titleInput = useRef<HTMLTextAreaElement>(null);
-  const editPane = useRef<HTMLDivElement>(null);
   const pointInput = useRef<HTMLTextAreaElement>(null);
   const windowsButton = useRef<HTMLButtonElement>(null);
   const focusedRequest = useRef(0);
   const fileInput = useRef<HTMLInputElement>(null);
-  // Player time lags a seek for a moment; ignore it until the seek settles so the playhead does not jump back.
-  const settleUntil = useRef(0);
-  const lastSeek = useRef(0);
-  const stopAt = useRef<number>(undefined);
   const userViewAt = useRef(0);
   const dragBase = useRef<EditorState>(undefined);
   const previewRef = useRef<EditorState>(undefined);
 
-  // Restore a draft and an optional ?t= from "Suggest a change".
-  useEffect(() => {
-    const draft = readDraft(base);
-    if (draft) { dispatch({ type: 'reset', state: draft }); setRestored(true); }
-    const requested = new URLSearchParams(window.location.search).get('t');
-    if (requested?.trim() && Number.isFinite(Number(requested))) {
-      const at = Math.min(Math.max(0, Number(requested)), length);
-      setTime(at);
-      const under = outline(draft ?? original, length).filter(item => item.start <= at && at < item.end).at(-1);
-      if (under) { setSelectedId(under.id); setSelectionRequest({ id: under.id }); revealParents(under.id, outline(draft ?? original, length)); }
-    }
-  }, [base, original, length]);
-  useEffect(() => { if (history.past.length || restored) writeDraft(base, state === original ? undefined : state); }, [state, base, original, history.past.length, restored]);
-
   const shown = preview ?? state;
   const rows = useMemo(() => outline(shown, length), [shown, length]);
-  const revealParents = useCallback((id: string, from = rows) => {
-    const parents: string[] = [];
-    let parent = from.find(item => item.id === id)?.parentId;
-    while (parent) { parents.push(parent); parent = from.find(item => item.id === parent)?.parentId; }
-    setExpanded(current => parents.some(id => !current.has(id)) ? new Set([...current, ...parents]) : current);
-  }, [rows]);
-  const toggleExpanded = (id: string) => setExpanded(current => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; });
-  const selected = rows.find(item => item.id === selectedId);
-  const selectedSection = selected?.lane === 'point' ? rows.find(item => item.id === selected.parentId) : selected;
-  useLayoutEffect(() => {
-    const pane = editPane.current;
-    if (!pane) return;
-    if (selected?.lane === 'point') {
-      const note = pane.querySelector<HTMLElement>(`[data-entry="${selected.id}"]`);
-      if (note) {
-        const box = pane.getBoundingClientRect(), target = note.getBoundingClientRect();
-        if (target.top < box.top || target.bottom > box.bottom) pane.scrollTop += target.top - box.top - 12;
-      }
-    } else pane.scrollTop = 0;
-  }, [selectedId]);
-  useLayoutEffect(() => {
-    if (!selectionRequest) return;
-    if (window.matchMedia('(max-width: 760px)').matches && !mobileList) {
-      const target = editPane.current?.querySelector<HTMLElement>(`[data-entry="${selectionRequest.id}"]`) ?? editPane.current;
-      if (target && !target.contains(document.activeElement)) {
-        const toolbarHeight = root.current?.querySelector('.ce-toolbar')?.getBoundingClientRect().height ?? 0;
-        window.scrollTo({ top: window.scrollY + target.getBoundingClientRect().top - toolbarHeight - 16 });
-      }
-      setSelectionRequest(undefined);
-      return;
-    }
-    if (!list.current) { setSelectionRequest(undefined); return; }
-    const container = list.current;
-    const target = rows.find(item => item.id === selectionRequest.id);
-    const header = container.querySelector<HTMLElement>(`[data-entry="${target?.lane === 'point' ? target.parentId : selectionRequest.id}"] > [data-entry-header]`);
-    if (!header?.getClientRects().length) return;
-    // Only move the sidebar's own scrollbar. Never scroll the whole page or an
-    // unrelated pane. Sidebar clicks keep the clicked description/header in place.
-    if (container.scrollHeight > container.clientHeight + 1) {
-      const box = container.getBoundingClientRect(), row = header.getBoundingClientRect();
-      if (selectionRequest.anchorTop !== undefined) container.scrollTop += row.top - box.top - selectionRequest.anchorTop;
-      else if (row.top < box.top) container.scrollTop += row.top - box.top;
-      else if (row.bottom > box.bottom) container.scrollTop += row.top + Math.min(row.height, box.height) - box.bottom;
-    }
-    setSelectionRequest(undefined);
-  }, [selectionRequest, expanded, rows, mobileList]);
+  const selection = useEditorSelection({ original, rows, length, hydrated, root });
+  const { selectedId, setSelectedId, selected, selectedSection, expanded, toggleExpanded, revealParents, activeBoundary, setActiveBoundary,
+    mobileList, setMobileList, setSelectionRequest, list, editPane } = selection;
   const issues = useMemo(() => validateEditor(base, state), [base, state]);
   const errors = issues.filter(issue => issue.level === 'error');
   const before = useMemo(() => new Map(items(original, length).map(item => [item.id, JSON.stringify(valueOf(original, item.id))])), [original, length]);
@@ -292,82 +170,18 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
   const playhead = roundTime(time);
   const here = locate(recording, time);
 
-  const apply = useCallback((next: EditorState, key?: string) => dispatch({ type: 'apply', next, key }), []);
   const flash = useCallback((message: string) => { setNotice(message); }, []);
   useEffect(() => { if (!notice) return; const timer = setTimeout(() => setNotice(undefined), 4000); return () => clearTimeout(timer); }, [notice]);
-
-  /* ---------- Player: the recording from YouTube without its own controls, or a file from this computer ---------- */
-  const load = useCallback(async (start: number, local: File | null | undefined = file) => {
-    abort.current?.abort(); adapter.current?.destroy(); adapter.current = null;
-    if (!host.current) return;
-    const request = new AbortController(); abort.current = request;
-    setPlayer('loading'); setPlayerError(''); setFileWarning(undefined);
-    const onError = (message: string) => { if (!request.signal.aborted) { setPlayerError(message); setPlayer('error'); } };
-    try {
-      let mounted: PlayerAdapter;
-      if (local) {
-        const played = await mountFilePlayer(host.current, { file: local, title: recording.recordingTitle, start, onError });
-        if (Math.abs(played.duration - length) > 2) {
-          setFileWarning(`This file is ${formatClock(played.duration)} long, but the recording is ${formatClock(length)}. Times follow the YouTube recording, so they only line up with a copy of it.`);
-        }
-        mounted = played;
-      } else {
-        mounted = await mountRecordingPlayer(host.current, { uploads, title: recording.recordingTitle, start, signal: request.signal, controls: false, onError, onAutoplayBlocked() {} });
-      }
-      if (request.signal.aborted) { mounted.destroy(); return; }
-      adapter.current = mounted;
-      mounted.seekTo(start, true);
-      settleUntil.current = performance.now() + 600;
-      if (speed !== 1) mounted.setPlaybackRate?.(speed);
-      mounted.playVideo();
-      setPlayer('ready');
-      root.current?.focus({ preventScroll: true });
-    } catch (failure) {
-      if (!request.signal.aborted) onError(failure instanceof Error ? failure.message : 'The player could not be loaded.');
-    }
-  }, [file, recording.recordingTitle, uploads, length, speed]);
-  useEffect(() => () => { abort.current?.abort(); adapter.current?.destroy(); }, []);
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const current = adapter.current;
-      if (!current) return;
-      const isPlaying = current.getPlayerState() === 1;
-      setPlaying(isPlaying);
-      if (performance.now() < settleUntil.current) return;
-      const value = current.getCurrentTime();
-      if (!Number.isFinite(value)) return;
-      setTime(value);
-      if (stopAt.current !== undefined && isPlaying && value >= stopAt.current) { current.pauseVideo(); stopAt.current = undefined; }
-    }, 80);
-    return () => clearInterval(timer);
-  }, []);
-  const useFile = (chosen: File) => { setFile(chosen); void load(time, chosen); };
-  const useYouTube = () => { setFile(undefined); void load(time, null); };
 
   /* ---------- Moving the playhead ---------- */
   /** `reveal: false` for seeks made on the timeline itself: the spot is already in view, so the view stays put. */
   const seekTo = useCallback((seconds: number, options: { play?: boolean; live?: boolean; reveal?: boolean } = {}) => {
     const target = Math.min(Math.max(0, seconds), Math.max(0, length - 0.05));
-    setTime(target);
-    settleUntil.current = performance.now() + 600;
     if (!options.live && options.reveal !== false) setView(current => revealTime(current, target, length));
-    const current = adapter.current;
-    if (!current) { if (options.play) void load(target); return; }
-    // While dragging, seek at most ~12 times a second and without fetching ahead (YouTube's advice).
-    const now = performance.now();
-    if (options.live && now - lastSeek.current < 80) return;
-    lastSeek.current = now;
-    current.seekTo(target, !options.live);
-    if (options.play) current.playVideo();
-  }, [length, load]);
-  const togglePlay = useCallback(() => {
-    stopAt.current = undefined;
-    if (!adapter.current) { void load(time); return; }
-    if (adapter.current.getPlayerState() === 1) adapter.current.pauseVideo(); else adapter.current.playVideo();
-  }, [time, load]);
-  const changeSpeed = (rate: number) => { setSpeed(rate); adapter.current?.setPlaybackRate?.(rate); };
+    playback.seek(target, options);
+  }, [length, playback.seek]);
   /** Plays from 3 seconds before a moment to 2 seconds after, then stops. */
-  const hear = useCallback((seconds: number, lead = 3) => { seekTo(seconds - lead, { play: true }); stopAt.current = seconds + 2; }, [seekTo]);
+  const hear = (seconds: number, lead = 3) => { seekTo(seconds - lead, { play: true }); playback.stopAfter(seconds + 2); };
   // While playing, a zoomed-in timeline turns the page when the playhead reaches its right edge (as in video
   // editors) instead of re-centring on every tick, so clicking somewhere never makes the view jump.
   useEffect(() => {
@@ -379,15 +193,8 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
   /** Selecting never moves the playhead unless asked (`jump`). */
   const select = (item: EditorItem, jump = false, origin: 'sidebar' | 'external' = 'external') => {
     activatePanel('editor');
-    setMobileList(false);
-    setActiveBoundary(undefined);
-    const header = list.current?.querySelector<HTMLElement>(`[data-entry="${item.id}"] > [data-entry-header]`);
-    const anchorTop = origin === 'sidebar' && header?.getClientRects().length
-      ? header.getBoundingClientRect().top - list.current!.getBoundingClientRect().top : undefined;
-    if (item.id !== selectedId || mobileList || jump) setSelectionRequest({ id: item.id, anchorTop });
-    revealParents(item.id);
+    selection.select(item, origin, jump);
     if (jump) seekTo(item.start);
-    setSelectedId(item.id);
   };
 
   /* ---------- Edits ---------- */
@@ -485,9 +292,8 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
   const onBoundaryCommit = useCallback(() => {
     if (previewRef.current) apply(previewRef.current);
     previewRef.current = undefined; dragBase.current = undefined; setPreview(undefined);
-    settleUntil.current = performance.now() + 600;
-    adapter.current?.seekTo(time, true);
-  }, [apply, time]);
+    playback.commitSeek();
+  }, [apply, playback.commitSeek]);
   const onBoundaryCancel = useCallback(() => { previewRef.current = undefined; dragBase.current = undefined; setPreview(undefined); }, []);
 
   /* ---------- Keyboard: one table (lib/editor-keys) ---------- */
@@ -736,7 +542,7 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
         <span>{checkedCount}/{sectionRows.length} checked</span>
         <span>{changes} change{changes === 1 ? '' : 's'}</span>
         {errors.length > 0 && <span className="ce-error-text">{errors.length} to fix</span>}
-        {restored && <span className="ce-restored">Draft restored · <button type="button" className="ce-link" onClick={() => { dispatch({ type: 'reset', state: original }); setRestored(false); writeDraft(base, undefined); }}>Start over</button></span>}
+        {restored && <span className="ce-restored">Draft restored · <button type="button" className="ce-link" onClick={resetDraft}>Start over</button></span>}
       </p>
       <div className="ce-bar-actions">
         <button type="button" className="ce-icon" onClick={() => dispatch({ type: 'undo' })} disabled={!history.past.length} aria-label="Undo" title={`Undo${shortcutHint('undo')}`}><Icon name="undo" /></button>
@@ -775,9 +581,10 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
       </section>,
       video: <section className="ce-player-pane" aria-label="Video player">
         <div className="ce-stage-wrap"><div className="ce-stage">
-          <div ref={host} className={`ce-host${player === 'ready' ? '' : ' youtube-host-hidden'}`} />
-          {player === 'ready' && <button type="button" className="ce-click-layer" onClick={togglePlay} aria-label={playing ? 'Pause' : 'Play'} tabIndex={-1} />}
-          {player !== 'ready' && <div className="ce-stage-message">
+          <div ref={host} className={`ce-host${player === 'ready' && !unavailable ? '' : ' youtube-host-hidden'}`} />
+          {player === 'ready' && !unavailable && <button type="button" className="ce-click-layer" onClick={togglePlay} aria-label={playing ? 'Pause' : 'Play'} tabIndex={-1} />}
+          {unavailable && <div className="ce-stage-message ce-unavailable"><UnavailableRecording span={unavailable} onGo={at => seekTo(at)} /></div>}
+          {player !== 'ready' && !unavailable && <div className="ce-stage-message">
             {player === 'idle' && <><button type="button" className="ce-load" onClick={() => load(time)} aria-label="Load video"><Icon name="play" /></button>
               <p>{file ? `Plays ${file.name} from this computer.` : 'Plays from YouTube. YouTube will receive connection information.'}</p></>}
             {player === 'loading' && <p role="status">Loading the video…</p>}
@@ -817,7 +624,7 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
 
     <div className={`ce-toolbar${mobileTools ? ' is-open' : ''}`} role="toolbar" aria-label="Timeline tools">
       <div className="ce-tool-group">
-        <button type="button" className="ce-tool ce-play" onClick={togglePlay} aria-label={playing ? 'Pause' : 'Play'} title={`${playing ? 'Pause' : 'Play'}${shortcutHint('play')}`}><Icon name={playing ? 'pause' : 'play'} /></button>
+        <button type="button" className="ce-tool ce-play" onClick={togglePlay} disabled={Boolean(unavailable)} aria-label={playing ? 'Pause' : 'Play'} title={unavailable ? 'Choose an available part to play' : `${playing ? 'Pause' : 'Play'}${shortcutHint('play')}`}><Icon name={playing ? 'pause' : 'play'} /></button>
         <TimeReadout time={time} duration={length} onSeek={seconds => seekTo(seconds)} onScrub={seconds => seekTo(seconds, { live: true })} />
         <div className="ce-segmented" role="group" aria-label="Playback speed">
           {SPEEDS.map(rate => <button type="button" key={rate} aria-pressed={speed === rate} onClick={() => changeSpeed(rate)}>{rate}×</button>)}
@@ -867,7 +674,7 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
     {dialog === 'finish' && <FinishDialog base={base} state={state} issues={issues} nameOf={nameOf}
       onClose={() => setDialog(undefined)} onGoTo={id => { const item = rows.find(row => row.id === id); if (item) { select(item); setFocusTitle(value => value + 1); } setDialog(undefined); }}
       onDetails={() => { toggleWindow('details', true); setDialog(undefined); }}
-      onClear={() => { writeDraft(base, undefined); dispatch({ type: 'reset', state: original }); setRestored(false); setDialog(undefined); }}
+      onClear={() => { resetDraft(); setDialog(undefined); }}
       onIncludeMarkers={include => apply({ ...state, markers: state.markers.map(marker => isFileMarker(marker) ? marker : { ...marker, include }) })} backHref={back} />}
   </div>;
 }

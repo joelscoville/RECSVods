@@ -35,7 +35,8 @@ const sermon = sermonOf(recording);
       <ul class="service-recordings">{recording.uploads.map((upload, index) => <li>
         <h3>{recording.uploads.length > 1 ? `Video ${index + 1}` : recording.title}</h3><p>{formatTime(upload.duration)}</p>
         <VideoQuirks quirks={upload.quirks} />
-        <div class="action-row"><a class="button" href={watchUrl(base, { recording: recording.id, start: upload.start })}>Play full recording</a><a class="button button-secondary" href={youtubeUrl(upload.id, upload.offset)}>Watch on YouTube</a></div>
+        {upload.unavailable && <p>This upload is unavailable. Its time remains part of the recording.</p>}
+        <div class="action-row"><a class="button" href={watchUrl(base, { recording: recording.id, start: upload.start })}>{upload.unavailable ? 'Open recording at this gap' : 'Play full recording'}</a>{!upload.unavailable && <a class="button button-secondary" href={youtubeUrl(upload.id, upload.offset)}>Watch on YouTube</a>}</div>
       </li>)}</ul>
     </section>
     <section class="service-chapters" aria-labelledby="service-chapters-heading"><h2 id="service-chapters-heading">Chapters</h2>

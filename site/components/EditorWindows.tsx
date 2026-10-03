@@ -34,9 +34,10 @@ export function TranscriptWindow({ videoId, time, onSeek, onMark }: {
   const [following, setFollowing] = useState(true), [returnRequest, setReturnRequest] = useState(0);
   const input = useRef<HTMLInputElement>(null), list = useRef<HTMLOListElement>(null);
   const manualScroll = useRef(false), programmaticTop = useRef<number | undefined>(undefined);
+  const readingTop = useRef(0), wasVisible = useRef(false);
   useEffect(() => {
     setTranscript(readSavedTranscript(videoId)); setProblem(undefined); setQuery(''); setFollowing(true);
-    manualScroll.current = false; programmaticTop.current = undefined;
+    manualScroll.current = false; programmaticTop.current = undefined; readingTop.current = 0;
   }, [videoId]);
 
   const choose = async (file: File) => {
@@ -57,13 +58,19 @@ export function TranscriptWindow({ videoId, time, onSeek, onMark }: {
     const container = list.current;
     if (!container) return;
     const reveal = () => {
-      if (!following || words || !container.clientHeight) return;
+      if (!container.clientHeight) { wasVisible.current = false; return; }
+      const reopened = !wasVisible.current;
+      wasVisible.current = true;
+      if (!following || words) {
+        if (reopened) container.scrollTo({ top: readingTop.current, behavior: 'instant' });
+        return;
+      }
       const line = container.querySelector<HTMLElement>('.is-current') ?? (current < 0 ? container.firstElementChild as HTMLElement | null : null);
       if (!line) return;
       const viewport = container.getBoundingClientRect(), box = line.getBoundingClientRect();
       const fits = box.height <= viewport.height;
       if (box.top < viewport.top - 1 || (fits && box.bottom > viewport.bottom + 1) || box.top >= viewport.bottom) {
-        container.scrollTop += box.top - viewport.top - Math.max(0, (viewport.height - box.height) / 2);
+        container.scrollTo({ top: container.scrollTop + box.top - viewport.top - Math.max(0, (viewport.height - box.height) / 2), behavior: 'instant' });
         programmaticTop.current = container.scrollTop;
         manualScroll.current = false;
       }
@@ -77,7 +84,9 @@ export function TranscriptWindow({ videoId, time, onSeek, onMark }: {
   const browseIntent = () => { manualScroll.current = true; programmaticTop.current = undefined; };
   const scrolled = () => {
     const container = list.current;
-    if (!following || !manualScroll.current || !container?.clientHeight || words) return;
+    if (!container?.clientHeight) return;
+    if (!following || manualScroll.current) readingTop.current = container.scrollTop;
+    if (!following || !manualScroll.current || words) return;
     if (programmaticTop.current !== undefined && Math.abs(container.scrollTop - programmaticTop.current) < 1) return;
     const line = container.querySelector<HTMLElement>('.is-current') ?? (current < 0 ? container.firstElementChild as HTMLElement | null : null);
     if (!line) return;
@@ -118,7 +127,16 @@ export function TranscriptWindow({ videoId, time, onSeek, onMark }: {
       onKeyDown={event => {
         if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)
           && (event.target === event.currentTarget || event.key !== ' ')) {
-          browseIntent(); event.stopPropagation();
+          // Native keyboard scrolling may animate after Return to now or after
+          // the panel closes. Own the scroll so its position is settled immediately.
+          browseIntent(); event.preventDefault(); event.stopPropagation();
+          const container = event.currentTarget, page = Math.max(24, container.clientHeight - 24);
+          const delta = event.key === 'ArrowUp' ? -40 : event.key === 'ArrowDown' ? 40
+            : event.key === 'PageUp' || event.key === ' ' && event.shiftKey ? -page : page;
+          const top = event.key === 'Home' ? 0 : event.key === 'End' ? container.scrollHeight : container.scrollTop + delta;
+          container.scrollTo({ top, behavior: 'instant' });
+          readingTop.current = container.scrollTop;
+          scrolled();
         }
       }}>
       {shown.map(({ line, index }) => <Line key={index} line={line} current={index === current} onSeek={seek} onMark={mark} />)}

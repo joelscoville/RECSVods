@@ -98,6 +98,18 @@ describe('one clock across uploads', () => {
   it('allows a skip only on a later upload, shorter than it', () => {
     expect(problems(source({ uploads: [{ youtubeId: 'AAAAAAAAAAA', uploadDuration: '1:30:00', uploadSkip: '0:05' }] })).join()).toContain('only for a later upload');
   });
+  it('retains unavailable spans and skip offsets on the recording clock', () => {
+    const value = RecordingSchema.parse(source({ uploads: [
+      { youtubeId: 'AAAAAAAAAAA', uploadDuration: '30:00' },
+      { youtubeId: 'BBBBBBBBBBB', uploadDuration: '30:00', uploadUnavailable: true },
+      { youtubeId: 'CCCCCCCCCCC', uploadDuration: '30:05', uploadSkip: '0:05' },
+    ] }));
+    expect(recordingLength(value)).toBe(5400);
+    expect(uploadSpans(value).map(span => [span.start, span.end])).toEqual([[0, 1800], [1800, 3600], [3600, 5400]]);
+    expect(locate(value, 1900).upload.uploadUnavailable).toBe(true);
+    expect(locate(value, 3600).uploadTime).toBe(5);
+    expect(recordingTime(value, 'CCCCCCCCCCC', 15)).toBe(3610);
+  });
 });
 describe('archive and generated schemas', () => {
   it('loads by file name and checks dates, topics, upload ownership and series', () => {

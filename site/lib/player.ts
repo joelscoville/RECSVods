@@ -1,3 +1,7 @@
+import { createRecordingPlayer, type RecordingAdapter, type RecordingUpload, type UnavailableSpan } from './recording-player';
+export { unavailableAt } from './recording-player';
+export type { RecordingAdapter, RecordingUpload, UnavailableSpan } from './recording-player';
+
 export interface PlayerAdapter {
   seekTo(seconds: number, allowSeekAhead: boolean): void;
   playVideo(): void;
@@ -57,7 +61,7 @@ export function createChapterController(player: PlayerAdapter, onEnd: () => void
   };
 }
 
-interface YouTubePlayer extends PlayerAdapter {
+export interface YouTubePlayer extends PlayerAdapter {
   getIframe(): HTMLIFrameElement;
   loadVideoById(options: { videoId: string; startSeconds: number }): void;
   cueVideoById(options: { videoId: string; startSeconds: number }): void;
@@ -154,58 +158,21 @@ export async function mountYouTubePlayer(container: HTMLElement, options: {
   });
 }
 
-/** One upload of a recording, placed on the recording clock. */
-export interface RecordingUpload { id: string; start: number; end: number; offset: number; duration: number }
-export interface RecordingAdapter extends PlayerAdapter { readonly uploadId: string; uploadTime(time: number): { id: string; time: number } }
-
 /** Plays a recording made of several uploads as one video, on the recording's own clock. When an upload ends,
- * the next one starts by itself; seeking anywhere loads the right upload. (YouTube needs a second or two at
+ * the next one starts unless marked unavailable; seeking anywhere retains the recording time. (YouTube needs a second or two at
  * each cut; there is no gapless switch.) Call only following a user play action. */
 export async function mountRecordingPlayer(container: HTMLElement, options: {
   uploads: readonly RecordingUpload[]; title: string; start: number; signal?: AbortSignal;
   onError(message: string, code?: number): void; onAutoplayBlocked(): void; controls?: boolean;
+  onAvailability?: (span: UnavailableSpan | undefined) => void; onLoading?: () => void;
 }): Promise<RecordingAdapter> {
-  const uploads = options.uploads;
-  if (!uploads.length) throw new Error('A recording needs at least one upload');
-  const locate = (time: number) => {
-    const found = uploads.findIndex(upload => time < upload.end), index = found === -1 ? uploads.length - 1 : found, upload = uploads[index];
-    return { index, local: Math.min(upload.offset + Math.max(0, time - upload.start), upload.duration) };
-  };
-  let current = locate(options.start).index, rate = 1, switching = false;
-  // eslint-disable-next-line prefer-const -- assigned once the player exists; the state handler needs it.
-  let player: YouTubePlayer;
-  const switchTo = (index: number, local: number, play: boolean) => {
-    current = index; switching = true;
-    const target = { videoId: uploads[index].id, startSeconds: local };
-    if (play) player.loadVideoById(target); else player.cueVideoById(target);
-    if (rate !== 1) player.setPlaybackRate?.(rate);
-  };
-  player = await mountYouTubePlayer(container, {
-    videoId: uploads[current].id, title: options.title, start: locate(options.start).local, signal: options.signal, controls: options.controls,
-    onError: options.onError, onAutoplayBlocked: options.onAutoplayBlocked,
-    onStateChange(state) {
-      if (state === 1 || state === 2 || state === 5) switching = false;
-      // The upload finished: carry on with the next one, from after any repeated seconds.
-      if (state === 0 && current < uploads.length - 1) switchTo(current + 1, uploads[current + 1].offset, true);
-    },
+  return createRecordingPlayer({ uploads: options.uploads, start: options.start,
+    onError: options.onError, onAvailability: options.onAvailability, onLoading: options.onLoading,
+    mount: (upload, start, onStateChange) => mountYouTubePlayer(container, {
+      videoId: upload.id, title: options.title, start, signal: options.signal, controls: options.controls,
+      onError: options.onError, onAutoplayBlocked: options.onAutoplayBlocked, onStateChange,
+    }),
   });
-  const clock = (index: number, local: number) => uploads[index].start + Math.max(0, local - uploads[index].offset);
-  return {
-    get uploadId() { return uploads[current].id; },
-    uploadTime(time) { const { index, local } = locate(time); return { id: uploads[index].id, time: local }; },
-    seekTo(seconds, allowSeekAhead) {
-      const { index, local } = locate(seconds);
-      if (index === current && !switching) player.seekTo(local, allowSeekAhead);
-      else switchTo(index, local, player.getPlayerState() === 1 || switching);
-    },
-    playVideo() { player.playVideo(); },
-    pauseVideo() { player.pauseVideo(); },
-    getCurrentTime() { return clock(current, player.getCurrentTime()); },
-    // An upload ending is not the recording ending; report buffering while the next one loads.
-    getPlayerState() { const state = player.getPlayerState(); return switching || (state === 0 && current < uploads.length - 1) ? 3 : state; },
-    setPlaybackRate(value) { rate = value; player.setPlaybackRate?.(value); },
-    destroy() { player.destroy(); },
-  };
 }
 
 /** A video file from the viewer's own computer, played in the page: nothing is uploaded. Same adapter as

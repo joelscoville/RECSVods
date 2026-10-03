@@ -97,6 +97,10 @@
 .ce-root .ce-load .icon { width: 30px; height: 30px; }
 .ce-source { font-size: 13px; color: var(--ce-muted); }
 .ce-warning { padding: 6px 10px; border-radius: 8px; background: #fff4d6; font-size: 14px; }
+.ce-stage-message.ce-unavailable { display: block; overflow: auto; text-align: left; }
+.ce-unavailable h2 { font-size: 18px; margin-bottom: 8px; }
+.ce-unavailable .action-row { margin-top: 12px; }
+.ce-unavailable .button { min-height: 36px; padding: 6px 10px; font-size: 14px; }
 
 /* Toolbar between the panes and the timeline */
 .ce-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; padding: 6px 16px; border-top: 1px solid var(--ce-line); background: #fff; }

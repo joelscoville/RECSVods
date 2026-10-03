@@ -9,6 +9,7 @@ import Icon from './Icon';
 import { ScriptureLine } from './ScriptureLinks';
 import CorrectionLinks from './CorrectionLinks';
 import VideoQuirks from './VideoQuirks';
+import { unavailableAt } from '../lib/player';
 
 /** A named chapter or subchapter, never a key-point range. */
 interface Selection { recording: DisplayRecording; start: number; focus?: DisplayEntry }
@@ -99,7 +100,7 @@ export default function Watch({ recordings, base, servicePages = true, homeHref 
   const quirks = [...new Map(recording.uploads.flatMap((upload) => upload.quirks ?? []).map((flag) => [flag.kind, flag])).values()];
   return <main id="main" className="watch-main" tabIndex={-1}>
     <div className="playback-layout">
-      <YouTubePlayer key={recording.id} uploads={recording.uploads} recordingId={recording.id} title={recording.title} range={range} seekRequest={seekRequest} onTime={setTime} endLabel={endLabel} choices={choices} externalChoices={externalChoices} />
+      <YouTubePlayer key={recording.id} uploads={recording.uploads} recordingId={recording.id} title={recording.title} range={range} seekRequest={seekRequest} onTime={setTime} onNavigate={start => go({ recording, start }, 'none')} endLabel={endLabel} choices={choices} externalChoices={externalChoices} />
       <section className="playback-details" aria-labelledby="recording-title">
         <div className="playback-identity">
           <h1 id="recording-title">{recording.title}</h1>
@@ -115,7 +116,7 @@ export default function Watch({ recordings, base, servicePages = true, homeHref 
       {/* After the chapters on mobile; placed beneath the details on desktop. */}
       <div className="playback-footer" role="group" aria-label="Recording actions">
         <div className="playback-actions">
-          <div className="action-row">{recording.entries.some((entry) => entry.parentId) && <button type="button" className="button button-secondary subsection-button" aria-expanded={showSubsections} aria-controls={outlineId} onClick={() => setShowSubsections((shown) => !shown)}>{showSubsections ? 'Hide Subchapters' : 'Show Subchapters'}</button>}{servicePages && <a className="button button-secondary" href={serviceUrl(base, recording.id)}>View full service</a>}<a className="button" href={youtubeAt(recording.uploads, time)}>Watch on YouTube</a><CopyLink href={shareUrl} /></div>
+          <div className="action-row">{recording.entries.some((entry) => entry.parentId) && <button type="button" className="button button-secondary subsection-button" aria-expanded={showSubsections} aria-controls={outlineId} onClick={() => setShowSubsections((shown) => !shown)}>{showSubsections ? 'Hide Subchapters' : 'Show Subchapters'}</button>}{servicePages && <a className="button button-secondary" href={serviceUrl(base, recording.id)}>View full service</a>}{!unavailableAt(recording.uploads, time) && <a className="button" href={youtubeAt(recording.uploads, time)}>Watch on YouTube</a>}<CopyLink href={shareUrl} /></div>
           {servicePages && <div className="action-row correction-row"><CorrectionLinks recordingId={recording.id} start={time} base={base} /></div>}
         </div>
       </div>
