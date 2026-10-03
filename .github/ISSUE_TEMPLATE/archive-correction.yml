@@ -15,7 +15,6 @@ body:
         - chapter time
         - title
         - scripture
-        - speaker
         - topic
         - playback or audio
         - other
@@ -57,5 +56,4 @@ body:
   - type: markdown
     attributes:
       value: |
-        A human checks the recording and proposed change in `pnpm build:preview`. Interpretation changes return the logical service to `needs_review`; merging code does not approve content.
-        After reviewing the entire service, only a human may run `pnpm editorial:approve -- <service-id> --reviewer <name>`. The approval-only commit records that separate decision.
+        A person checks the proposed change. The quickest way to fix it yourself is **Suggest a change** on the recording, which opens the chapter editor; merging its pull request publishes the fix.

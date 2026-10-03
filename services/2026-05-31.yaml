@@ -1,0 +1,175 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: What’s New?
+serviceDate: 2026-05-31
+status: draft
+sermonDescription: Reading John 13, the preacher presents Jesus’s command to love as the defining
+  mark of Christ’s followers and a pattern for shared life beyond self and family. Against the
+  background of human failure, suffering and the call to childlike humility, he urges believers to
+  take Christ’s example as their measure, forgiving and supporting others in obedience to a command
+  rather than personal preference.
+sermonScripture:
+  - John 13
+  - John 13:34
+  - John 13:34-35
+sermonTopics:
+  - discipleship
+  - forgiveness
+  - responsibility
+uploads:
+  - youtubeId: m51rgcZHQmE
+    uploadDuration: "1:42:40.501"
+chapters:
+  - chapterId: c20260531-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "6:21.94"
+    points:
+      - pointTime: "0:00"
+        pointText: In a sparsely transcribed opening, the leaders guide thanksgiving, personal supplication,
+          readiness to hear God, greetings and silent preparation before the Psalm 68 call to
+          worship.
+    chapterScripture:
+      - Psalms 68
+  - chapterId: c20260531-worship-scripture-welcome
+    chapterTitle: Worship, Scripture and Welcome
+    chapterKind: opening
+    chapterStart: "6:21.94"
+    chapterEnd: "29:12.92"
+    points:
+      - pointTime: "6:21.94"
+        pointText: The leaders guide hymns, prayer and readings from Proverbs 23, 1 John 4 and John 13
+          around a guitar-ensemble anthem, followed by the preacher’s welcome and invitation for
+          future questions.
+    subchapters:
+      - chapterId: s20260531-music
+        chapterTitle: Congregational Hymn and Guitar Ensemble
+        chapterKind: opening
+        chapterStart: "19:38.28"
+        chapterEnd: "25:58.8"
+        points:
+          - pointTime: "19:38.28"
+            pointText: The congregation sings before a guitar ensemble presents an Easter anthem introduced
+              through hope, eternal life and daily renewal; performer identities remain unclear.
+    chapterScripture:
+      - Proverbs 23:1-35
+      - 1 John 4:1-21
+      - John 13:31-35
+  - chapterId: c20260531-regret-repentance
+    chapterTitle: Turn from Regret to Repentance
+    chapterKind: sermon
+    chapterStart: "29:12.92"
+    chapterEnd: "38:01.2"
+    points:
+      - pointTime: "29:12.92"
+        pointText: Recapping Judas’s betrayal, the preacher extends responsibility for failure beyond Judas,
+          distinguishes regret from repentance, emphasizes forgiveness and sincere commitment, and
+          urges medical help for suicidal distress.
+    chapterScripture:
+      - John 13
+      - John 12:6
+      - James 1
+  - chapterId: c20260531-glory-humility
+    chapterTitle: Glorify God in Suffering and Humility
+    chapterKind: sermon
+    chapterStart: "38:01.2"
+    chapterEnd: "1:07:26.56"
+    points:
+      - pointTime: "38:01.2"
+        pointText: Explaining the Last Supper setting, the preacher connects glory with the cross, defends
+          human worth and forgiveness through technological and denominational illustrations, and
+          urges everyday faithfulness and childlike humility amid suffering and ageing.
+    subchapters:
+      - chapterId: s20260531-childlikeness
+        chapterTitle: Remain Childlike as You Grow Older
+        chapterKind: sermon
+        chapterStart: "58:35.4"
+        chapterEnd: "1:07:26.56"
+        points:
+          - pointTime: "58:35.4"
+            pointText: Interpreting Jesus’s affectionate address and Matthew 18, the preacher distinguishes
+              humility from childishness and uses reported later-life examples to encourage openness
+              to God and continuing purpose.
+        chapterScripture:
+          - John 13:33
+          - 1 John 2-4
+          - Matthew 18
+    chapterScripture:
+      - John 13:31-35
+      - John 13
+      - John 13:31-32
+      - John 13:33
+      - 1 John 2-4
+      - Matthew 18
+  - chapterId: c20260531-love-identifies-followers
+    chapterTitle: Love Identifies Christ’s Followers
+    chapterKind: sermon
+    chapterStart: "1:07:26.56"
+    chapterEnd: "1:16:13.3"
+    points:
+      - pointTime: "1:07:26.56"
+        pointText: The preacher argues that the new command makes love the defining mark of Christ’s
+          followers rather than social identity, institutional grandeur or power, urging charities
+          to collaborate rather than compete.
+    chapterScripture:
+      - John 13:34
+      - Deuteronomy 6:4-5
+      - Matthew 22
+      - John 13:34-35
+      - 1 John 4
+      - John 13:35
+  - chapterId: c20260531-life-beyond-self
+    chapterTitle: Share Life Beyond Self and Family
+    chapterKind: sermon
+    chapterStart: "1:16:13.3"
+    chapterEnd: "1:23:13.68"
+    points:
+      - pointTime: "1:16:13.3"
+        pointText: The preacher calls for forgiveness and practical mutual support beyond self and family,
+          drawing on Amish community life while questioning insularity and proposing cell groups
+          with uncertainty about their outcome.
+    chapterScripture:
+      - John 13:34
+  - chapterId: c20260531-love-as-christ-commands
+    chapterTitle: Love as Christ Commands
+    chapterKind: sermon
+    chapterStart: "1:23:13.68"
+    chapterEnd: "1:28:17.72"
+    points:
+      - pointTime: "1:23:13.68"
+        pointText: The preacher presents Jesus’s footwashing as the model for love and forgiveness in
+          everyday relationships, calling for childlike obedience to a command rather than a
+          consumer choice.
+    chapterScripture:
+      - John 13
+      - John 13:34-35
+      - John 13:34
+  - chapterId: c20260531-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:28:17.72"
+    chapterEnd: "1:42:40.501"
+    points:
+      - pointTime: "1:28:17.72"
+        pointText: The leaders guide response prayer, the Apostles’ Creed and intercessions, a charitable
+          offering, Amazing Grace, doxology and an uncertainly captured Hebrews 13 blessing, then
+          baptism, class and rally notices before silent dismissal.
+    chapterScripture:
+      - John 13
+      - Hebrews 13
+markers:
+  - markerTime: "19:38.28"
+    markerNote: "Old review note: Ensemble names are unclear; do not assign performer identities without
+      confirmation."
+  - markerTime: "29:12.92"
+    markerNote: "Also cited in the sermon: John 12:6; James 1; John 13:31-35; John 13:31-32; John 13:33;
+      1 John 2-4; Matthew 18; Deuteronomy 6:4-5; Matthew 22; 1 John 4; John 13:35. Keep only the
+      main passages above."
+  - markerTime: "29:12.92"
+    markerNote: "Other topics it touched: knowing-god, glory, service-life, service, faith, repentance,
+      prayer, worship, love, mission."
+  - markerTime: "58:35.4"
+    markerNote: "Old review note: Check Greek terminology and the brief Chinese quotation. Keep medical
+      anecdotes attributed to the speaker."

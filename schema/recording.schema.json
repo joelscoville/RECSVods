@@ -1,0 +1,260 @@
+{
+  "$ref": "#/definitions/Recording",
+  "definitions": {
+    "Recording": {
+      "type": "object",
+      "properties": {
+        "recordingTitle": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "serviceDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "published"
+          ]
+        },
+        "sermonDescription": {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "The single paragraph shown under the video."
+        },
+        "sermonScripture": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Recording/properties/recordingTitle"
+          }
+        },
+        "sermonTopics": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          }
+        },
+        "uploads": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "youtubeId": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_-]{11}$"
+              },
+              "uploadDuration": {
+                "type": "string",
+                "pattern": "^(\\d+):([0-5]\\d)(?::([0-5]\\d))?(?:\\.(\\d{1,9}))?$",
+                "description": "The upload’s full length."
+              },
+              "uploadSkip": {
+                "$ref": "#/definitions/Recording/properties/uploads/items/properties/uploadDuration",
+                "description": "Repeated seconds to skip at the start of a later upload."
+              },
+              "uploadUnavailable": {
+                "type": "boolean",
+                "const": true
+              },
+              "uploadQuirks": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "video_unavailable",
+                    "audio_choppy",
+                    "audio_left_only",
+                    "audio_right_only",
+                    "audio_clipping",
+                    "audio_missing",
+                    "audio_out_of_sync",
+                    "video_freezes",
+                    "other"
+                  ],
+                  "markdownEnumDescriptions": [
+                    "Video unavailable",
+                    "Choppy audio",
+                    "Audio on the left only",
+                    "Audio on the right only",
+                    "Audio clipping",
+                    "No audio track",
+                    "Audio out of sync",
+                    "Video freezes",
+                    "Playback issue"
+                  ]
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "youtubeId",
+              "uploadDuration"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "chapters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "chapterId": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$",
+                "description": "Stable within this recording. Keep it when editing the title, type or times."
+              },
+              "chapterTitle": {
+                "type": "string",
+                "pattern": "\\S",
+                "description": "The name viewers see. Editable independently of its type."
+              },
+              "chapterKind": {
+                "type": "string",
+                "enum": [
+                  "acts",
+                  "opening",
+                  "sermon",
+                  "closing",
+                  "communion",
+                  "music",
+                  "qa",
+                  "other"
+                ],
+                "markdownEnumDescriptions": [
+                  "Prayer in adoration, confession, thanksgiving and supplication.",
+                  "Opening worship, welcome, prayers or scripture readings.",
+                  "Teaching within the sermon.",
+                  "Response, notices or closing worship.",
+                  "Holy Communion.",
+                  "A choir item or other musical section.",
+                  "Questions and answers.",
+                  "Another kind of section."
+                ]
+              },
+              "chapterStart": {
+                "$ref": "#/definitions/Recording/properties/uploads/items/properties/uploadDuration"
+              },
+              "chapterEnd": {
+                "$ref": "#/definitions/Recording/properties/uploads/items/properties/uploadDuration"
+              },
+              "chapterScripture": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Recording/properties/sermonScripture/items"
+                },
+                "description": "Bible passage references belonging to this chapter or subchapter."
+              },
+              "points": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "pointTime": {
+                      "$ref": "#/definitions/Recording/properties/uploads/items/properties/uploadDuration",
+                      "description": "The moment this note refers to. A point has no end time."
+                    },
+                    "pointText": {
+                      "type": "string",
+                      "pattern": "\\S",
+                      "description": "A short summary of what happens at this moment. Used by search and shown in the editor, not the public outline."
+                    }
+                  },
+                  "required": [
+                    "pointTime",
+                    "pointText"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Timestamped notes for search and maintainers. Aim for 5–10 when useful; fewer are fine."
+              },
+              "subchapters": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "chapterId": {
+                      "$ref": "#/definitions/Recording/properties/chapters/items/properties/chapterId"
+                    },
+                    "chapterTitle": {
+                      "$ref": "#/definitions/Recording/properties/chapters/items/properties/chapterTitle"
+                    },
+                    "chapterKind": {
+                      "$ref": "#/definitions/Recording/properties/chapters/items/properties/chapterKind"
+                    },
+                    "chapterStart": {
+                      "$ref": "#/definitions/Recording/properties/uploads/items/properties/uploadDuration"
+                    },
+                    "chapterEnd": {
+                      "$ref": "#/definitions/Recording/properties/uploads/items/properties/uploadDuration"
+                    },
+                    "chapterScripture": {
+                      "$ref": "#/definitions/Recording/properties/chapters/items/properties/chapterScripture"
+                    },
+                    "points": {
+                      "$ref": "#/definitions/Recording/properties/chapters/items/properties/points"
+                    }
+                  },
+                  "required": [
+                    "chapterId",
+                    "chapterTitle",
+                    "chapterKind",
+                    "chapterStart",
+                    "chapterEnd"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "chapterId",
+              "chapterTitle",
+              "chapterKind",
+              "chapterStart",
+              "chapterEnd"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "markers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "markerTime": {
+                "$ref": "#/definitions/Recording/properties/uploads/items/properties/uploadDuration"
+              },
+              "markerEnd": {
+                "$ref": "#/definitions/Recording/properties/uploads/items/properties/uploadDuration",
+                "description": "Use a quoted clock time such as \"42:54.62\" or \"1:02:03\" (MM:SS or HH:MM:SS, optional fractional seconds)"
+              },
+              "markerNote": {
+                "type": "string",
+                "pattern": "\\S",
+                "description": "A review note visible to people using the editor, not on watch pages or in search."
+              }
+            },
+            "required": [
+              "markerTime",
+              "markerNote"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "recordingTitle",
+        "serviceDate",
+        "status",
+        "uploads",
+        "chapters"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

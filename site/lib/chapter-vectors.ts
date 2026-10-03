@@ -1,15 +1,13 @@
 import { EMBEDDING_CONFIG } from './embedding-config';
 
-/** Browser-safe, versioned recipe. Any change deliberately invalidates source sidecars. */
+/** Browser-safe, versioned recipe. Any change invalidates cached search rows. */
 export const CHAPTER_VECTOR_CONFIG = Object.freeze({
   ...EMBEDDING_CONFIG,
   windowing: Object.freeze({ contentTokens: 254, overlapTokens: 64, specialTokens: 2, maxTokens: 256,
     algorithm: 'token-id-slices-v1' }),
   aggregation: 'mean-normalized-windows-then-l2-v1',
   quantization: 'symmetric-maxabs-int8-127-round-half-away-from-zero-v1',
-  clipping: 'word-midpoint-else-segment-midpoint-start-inclusive-end-exclusive-v1',
-  fallbackPreprocessing: 'strip-square-bracket-editorial-annotations-nfkc-whitespace-v1',
-  usableText: 'contains-unicode-letter-or-number-v1',
+  sourceText: 'published-unit-title-text-topics-scripture-bsb-v1',
   binary: Object.freeze({ magic: 'RECSCH01', version: 1, headerBytes: 16, dimension: 384 }),
 });
 
@@ -53,7 +51,7 @@ export function decodeChapterVectors(input: ChapterVectorBytes): ChapterVectorFi
   return { dimension, rowCount, values };
 }
 
-/** Zero rows return 0; callers must skip them (has_text=false), not label them semantic matches. */
+/** Zero rows return 0; callers must skip them, not label them semantic matches. */
 export function cosineChapterVector(file: ChapterVectorFile, rowIndex: number, queryVector: ArrayLike<number>): number {
   if (file.dimension !== 384 || file.values.length !== file.rowCount * file.dimension
     || !Number.isInteger(rowIndex) || rowIndex < 0 || rowIndex >= file.rowCount) throw new Error('Invalid chapter vector row');

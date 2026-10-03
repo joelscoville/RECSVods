@@ -1,6 +1,5 @@
 /** Build-only module. Import from astro.config.mjs, never from a browser component. */
 import { execFileSync } from 'node:child_process';
-import { loadArchive, publishedServices, type BuildMode, type Service } from './archive';
 import { validateCorrectionUrl, validateRepositoryUrl, validateSourceRef, type CorrectionConfig } from './corrections';
 import defaults from '../config/corrections.json';
 
@@ -26,22 +25,9 @@ export function resolveRepositoryConfig(env: Environment, git: GitRead): Pick<Co
   return { repositoryUrl, sourceRef, ...(correctionUrl ? { correctionUrl } : {}) };
 }
 
-/** No source re-reading or Git tracking is needed for chapter correction context. */
-export function buildCorrectionConfig(services: Service[], mode: BuildMode, repository: Pick<CorrectionConfig, 'repositoryUrl' | 'sourceRef' | 'correctionUrl'>): CorrectionConfig {
-  const config: CorrectionConfig = { ...repository, services: {}, chapters: {} };
-  for (const service of publishedServices(services, mode)) {
-    for (const chapter of service.chapters) {
-      config.chapters[chapter.id] = { serviceId: service.id, videoId: chapter.video_id, start: chapter.start, end: chapter.end };
-    }
-    config.services[service.id] = {
-      videos: service.videos.map(({ id, duration }) => ({ id, duration })),
-    };
-  }
-  return config;
-}
 export function loadCorrectionConfig(root = process.cwd(), env: Environment = process.env): CorrectionConfig {
   const git = gitReader(root);
   // Explicit project destination, chosen by the operator; never infer it from a remote.
   const repository = resolveRepositoryConfig({ ...env, PUBLIC_REPOSITORY_URL: env.PUBLIC_REPOSITORY_URL || defaults.repositoryUrl }, git);
-  return buildCorrectionConfig(loadArchive(root), env.ARCHIVE_MODE === 'preview' ? 'preview' : 'production', repository);
+  return repository;
 }

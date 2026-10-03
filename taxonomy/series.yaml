@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../schema/series.schema.json
+# Sermon series as playlists: each lists its recordings in order. A recording is in at most one series.
+
+- seriesId: gospel-of-john
+  seriesTitle: Expository Preaching on the Gospel of John
+  seriesRecordings:
+    - 2026-05-17
+    - 2026-05-24
+    - 2026-05-31
+    - 2026-06-07
+    - 2026-06-14
+    - 2026-06-21
+    - 2026-07-19
+    - 2026-07-26
+    - 2026-08-02
+    - 2026-08-23
+    - 2026-08-30

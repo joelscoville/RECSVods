@@ -1,0 +1,195 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Greatest Love
+serviceDate: 2026-07-19
+status: draft
+sermonDescription: The preacher presents Christ’s love as the key to understanding friendship,
+  belonging and obedience in John 15. Challenging faith shaped by personal preference, he argues
+  that lasting joy and genuine glory depend on Christ. His account of redemption and divine choosing
+  locates freedom in belonging to a perfectly good master, whose self-giving love calls Christians
+  to trust his word and respond differently in everyday relationships.
+sermonScripture:
+  - John 15:12-17
+  - John 15:1-11
+  - John 14:15
+sermonTopics:
+  - knowing-god
+  - discipleship
+  - truth
+uploads:
+  - youtubeId: rM0Oi8-Y8G4
+    uploadDuration: "1:43:16.701"
+chapters:
+  - chapterId: c20260719-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "6:10"
+    points:
+      - pointTime: "0:00"
+        pointText: An unnamed leader guides the recorded thanksgiving and supplication before Derrick
+          welcomes the congregation to meditation and a call to worship from Psalms 89.
+    chapterScripture:
+      - Psalms 89
+  - chapterId: c20260719-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "6:10"
+    chapterEnd: "26:36"
+    points:
+      - pointTime: "6:10"
+        pointText: Derrick leads hymns, prayer and readings from Proverbs 30, John 15 and 1 Corinthians 13,
+          with a youth choir presentation of The Lord Is My Shepherd.
+    subchapters:
+      - chapterId: s20260719-youth-choir
+        chapterTitle: "Youth Choir: The Lord Is My Shepherd"
+        chapterKind: music
+        chapterStart: "21:07"
+        chapterEnd: "25:32"
+        points:
+          - pointTime: "21:07"
+            pointText: The youth choir presents The Lord Is My Shepherd, with Psalms 23 identified on the
+              sanctuary screen in the existing account.
+        chapterScripture:
+          - Psalms 23
+    chapterScripture:
+      - Proverbs 30:1-33
+      - John 15:1-17
+      - Psalms 23
+      - 1 Corinthians 13:8-13
+  - chapterId: c20260719-charitable-discernment
+    chapterTitle: Doing Good with Discernment
+    chapterKind: qa
+    chapterStart: "26:36"
+    chapterEnd: "36:42"
+    points:
+      - pointTime: "26:36"
+        pointText: Following his welcome and invitation to questions, the preacher urges discerning,
+          accountable charitable action rather than paralysis over exploitation, drawing on his
+          welfare views and an unverified crime anecdote.
+    chapterScripture:
+      - John 15:12-17
+      - 1 Corinthians 13:8-13
+      - Matthew 10:16
+      - James 2:17
+  - chapterId: c20260719-scripture-directed-faith
+    chapterTitle: Scripture Challenges Self-Directed Faith
+    chapterKind: sermon
+    chapterStart: "36:42"
+    chapterEnd: "54:49"
+    points:
+      - pointTime: "36:42"
+        pointText: Recalling dependence on the true vine and praying for humility, the preacher questions
+          transactional friendship and religious self-selection, urging Scripture rather than
+          inherited culture or status to govern belief and conduct.
+    subchapters:
+      - chapterId: s20260719-difficulties
+        chapterTitle: Why Does Friendship Involve Commandments?
+        chapterKind: sermon
+        chapterStart: "41:30"
+        chapterEnd: "47:22"
+        points:
+          - pointTime: "41:30"
+            pointText: The preacher uses transactional friendship stories to explore the difficulty of love
+              linked with obedience and divine choosing rather than personal religious selection.
+        chapterScripture:
+          - John 15:12-17
+          - John 14:15
+          - John 15:16
+    chapterScripture:
+      - John 15:1-11
+      - John 15:12-17
+      - John 14:15
+      - John 15:16
+      - John 17:17
+  - chapterId: c20260719-glory-joy-in-christ
+    chapterTitle: True Glory and Joy Depend on Christ
+    chapterKind: sermon
+    chapterStart: "54:49"
+    chapterEnd: "1:05:37.42"
+    points:
+      - pointTime: "54:49"
+        pointText: Through disputed sporting examples and a hypothetical purchased team, the preacher argues
+          that glory requires truth and goodness, connecting dependence on Christ with full joy
+          rather than religion used for personal benefit.
+    chapterScripture:
+      - John 15:5
+      - John 15:11
+  - chapterId: c20260719-freedom-in-belonging
+    chapterTitle: Belonging to a Perfect Master Brings Freedom
+    chapterKind: sermon
+    chapterStart: "1:05:37.42"
+    chapterEnd: "1:19:59"
+    points:
+      - pointTime: "1:05:37.42"
+        pointText: Drawing on redemption, divine choosing and MacArthur’s account of doulos, the preacher
+          locates freedom in belonging to a perfectly good God, distinguishing this from racist
+          enslavement and the use of marital submission to excuse bullying.
+    subchapters:
+      - chapterId: s20260719-doulos
+        chapterTitle: Doulos Challenges Voluntary Service
+        chapterKind: sermon
+        chapterStart: "1:07:53"
+        chapterEnd: "1:12:21"
+        points:
+          - pointTime: "1:07:53"
+            pointText: Presenting MacArthur’s argument, the preacher says servant softens doulos and contrasts
+              slavery with voluntary bondservice as a way of understanding belonging to Christ.
+        chapterScripture:
+          - John 15:15
+    chapterScripture:
+      - 1 Corinthians 6:19-20
+      - Galatians 2:20
+      - John 15:15
+      - John 15:15-16
+      - Ephesians 1:3-5
+  - chapterId: c20260719-love-shaped-obedience
+    chapterTitle: Christ’s Love Calls for Obedience
+    chapterKind: sermon
+    chapterStart: "1:19:59"
+    chapterEnd: "1:29:16.8"
+    points:
+      - pointTime: "1:19:59"
+        pointText: Humbled by a remembered prayer partner’s challenge, the preacher presents Christ’s
+          self-giving love as the basis for friendship and obedience, applying it to everyday
+          relationships and praying for changed responses under pressure.
+    subchapters:
+      - chapterId: s20260719-greatest-love
+        chapterTitle: Love Shapes Everyday Relationships
+        chapterKind: sermon
+        chapterStart: "1:23:14"
+        chapterEnd: "1:27:55.44"
+        points:
+          - pointTime: "1:23:14"
+            pointText: Returning to John 15 and 1 Corinthians 13, the preacher connects the cross with
+              friendship and commands, urging love for Christ to reshape responses to family,
+              colleagues and friends.
+        chapterScripture:
+          - 1 Corinthians 13:13
+          - John 15:12-17
+    chapterScripture:
+      - 1 Corinthians 13:13
+      - John 15:12-17
+  - chapterId: c20260719-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:29:16.8"
+    chapterEnd: "1:43:16.701"
+    points:
+      - pointTime: "1:29:16.8"
+        pointText: The congregation is invited into creed, intercession, offering and song before the
+          blessing, notices about cancelled evening preaching and a possible school brigade
+          partnership, and dismissal with silent meditation.
+    chapterScripture:
+      - James 2:17
+      - Jude 1
+      - Jude 1:24-25
+markers:
+  - markerTime: "36:42"
+    markerNote: "Also cited in the sermon: John 15:16; John 17:17; John 15:5; John 15:11; 1 Corinthians
+      6:19-20; Galatians 2:20; John 15:15; John 15:15-16; Ephesians 1:3-5; 1 Corinthians 13:13. Keep
+      only the main passages above."
+  - markerTime: "36:42"
+    markerNote: "Other topics it touched: faith, authority, prayer, discernment, sacrifice,
+      responsibility, worship, glory, repentance, love."

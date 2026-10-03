@@ -191,7 +191,7 @@ export async function privateDirectory(root: string, parts: string[]): Promise<s
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const args = process.argv.slice(2).filter((arg) => arg !== '--');
   try {
-    if (args.length !== 1 || args[0] !== 'prepare') throw new Error('Usage: tsx scripts/embeddings.ts prepare. Chapter vectors: tsx scripts/chapter-vectors.ts generate|verify --all');
+    if (args.length !== 1 || args[0] !== 'prepare') throw new Error('Usage: tsx scripts/embeddings.ts prepare. Search vectors are generated during pnpm build or pnpm build:preview.');
     console.log(JSON.stringify(await prepare(), null, 2));
   } catch (error) { console.error(error instanceof Error ? error.message : error); process.exitCode = 1; }
 }

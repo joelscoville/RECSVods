@@ -1,200 +1,128 @@
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
-import { flattenChapters, publishedServices, ServiceSchema, SOURCE_CHANNEL_ID, type BuildMode, type Service } from '../site/lib/archive';
 import { availableBrowseCategories, browseUrl, buildBrowsePages } from '../site/lib/browse';
-import { browseItems, displayServices, groupByRecording, homeItems, homeSelection } from '../site/components/archive-display';
-import { resolveSelection, sermonSpan } from '../site/components/Watch';
+import { publishable, searchUnits } from '../site/lib/display';
+import { browseItems, groupByRecording, homeItems, homeSelection } from '../site/components/archive-display';
+import { resolveSelection } from '../site/components/Watch';
 import BrowsePage from '../site/components/BrowsePage';
 import Home from '../site/components/Home';
 import ScriptureLinks from '../site/components/ScriptureLinks';
 import SearchApp from '../site/components/SearchApp';
 import { selectResultReferences } from '../site/components/RecordingResult';
 import { readWatchTarget } from '../site/lib/urls';
+import type { Series } from '../site/lib/recording-schema';
+import { display, source, stored } from './recording-fixtures';
 
-// Fictional metadata only, never archive interpretation.
-function fixture(): Service {
-  const ids = ['FAILEDVIDEO', 'PARTONE0001', 'PARTTWO0002', 'PARTTHREE03', 'REJECTEDVID'];
-  return ServiceSchema.parse({
-    id: 'fixture-multipart', date: '2026-08-16', title: 'Fictional sermon', type: 'service',
-    workflow_status: 'complete', editorial_status: 'needs_review',
-    speakers: [{ id: 'speaker-stable-id', name: 'Fictional speaker' }, { id: 'excluded-speaker', name: 'Excluded speaker' }, { id: 'unused-speaker', name: 'Unused speaker' }],
-    topics: [{ id: 'topic-stable-id', name: 'Fictional topic' }, { id: 'excluded-topic', name: 'Excluded topic' }],
-    videos: ids.map((id, index) => ({ id, channel_id: SOURCE_CHANNEL_ID, duration: 180, sequence: index + 1, workflow_status: 'complete',
-      media_disposition: index === 0 ? 'failed' : index === 4 ? 'rejected' : 'playable', ...([0, 4].includes(index) ? { disposition_evidence: 'Fictional failure evidence' } : {}) })),
-    chapters: ids.flatMap((video_id, index) => [0, 30, 90].map((start, part) => ({ id: `chapter-${index}-${part}`, video_id, start, end: start + 20,
-      type: index === 1 ? 'worship' : 'sermon', title: `Fictional chapter ${index}-${part}`, summary: 'Fictional summary.', keywords: ['example'],
-      speaker_id: [0, 4].includes(index) ? 'excluded-speaker' : 'speaker-stable-id',
-      topics: [[0, 4].includes(index) ? 'excluded-topic' : 'topic-stable-id'], scripture: [[0, 4].includes(index) ? 'Jude 1:1' : 'Romans 13:1-7', '1 John 1:1'] }))),
-  });
-}
-/** Another recording with its own uploads and chapter IDs, so two recordings can be compared. */
-function separateFixture(date = '2020-09-27'): Service {
-  const service = fixture();
-  Object.assign(service, { id: 'separate-service', date });
-  service.videos.forEach((video) => { video.id = `S${video.id.slice(1)}`; });
-  service.chapters.forEach((chapter) => { chapter.id = `separate-${chapter.id}`; chapter.video_id = `S${chapter.video_id.slice(1)}`; });
-  return service;
-}
-function displayed(services = [fixture()], mode: BuildMode = 'preview') {
-  const eligible = publishedServices(services, mode);
-  return displayServices(eligible, flattenChapters(eligible, mode));
-}
+// Fictional recordings only. A three-upload recording, and an older one.
+const multipart = () => stored(source({ status: 'draft', sermonScripture: ['Romans 13:1-7', '1 John 1:1'], sermonTopics: ['service-life', 'hope'], uploads: [
+  { youtubeId: 'PARTONE0001', uploadDuration: '20:00' }, { youtubeId: 'PARTTWO0002', uploadDuration: '40:00' }, { youtubeId: 'PARTTHREE03', uploadDuration: '30:00' },
+] }));
+const older = (date = '2020-09-27') => stored(source({ serviceDate: date, recordingTitle: 'An Older Sermon', uploads: [{ youtubeId: 'OLDERVIDEO1', uploadDuration: '1:30:00' }] }));
+const SERIES: Series[] = [{ seriesId: 'romans', seriesTitle: 'Romans', seriesRecordings: ['2026-09-06', '2020-09-27'] }];
 
 describe('static browse publication boundary', () => {
-  it('has an honest empty production catalogue and no invented Series', () => {
-    const services = displayed(undefined, 'production');
-    expect(buildBrowsePages(services)).toEqual([]); expect(availableBrowseCategories(services)).toEqual([]);
-    expect(renderToStaticMarkup(createElement(Home, { items: homeItems(services, '/review/'), base: '/review/' }))).toContain('There are no published recordings');
-    expect(buildBrowsePages(displayed()).some((page) => page.path.startsWith('series'))).toBe(false);
-    expect(availableBrowseCategories([], displayed()[0].chapters).some((category) => category.path === 'series')).toBe(false);
+  it('has an honest empty production catalogue', () => {
+    const recordings = display(publishable([multipart()], 'production'));
+    expect(buildBrowsePages(recordings)).toEqual([]); expect(availableBrowseCategories(recordings)).toEqual([]);
+    expect(renderToStaticMarkup(createElement(Home, { items: homeItems(recordings, '/review/'), base: '/review/' }))).toContain('There are no published recordings');
   });
-  it('builds stable series and newest-first service groups; rejects conflicting names', () => {
-    const newer = fixture(); newer.series = { id: 'shared-series', name: 'Fictional shared series' };
-    const older: Service = { ...fixture(), id: 'older-service', date: '2020-09-27', series: { ...newer.series } };
-    const services = displayed([older, newer]), pages = buildBrowsePages(services);
-    expect(pages.find((page) => page.path === 'series/shared-series')).toMatchObject({ serviceIds: ['fixture-multipart', 'older-service'], title: newer.series.name });
-    expect(buildBrowsePages([...services].reverse())).toEqual(pages);
-    expect(availableBrowseCategories(services).map((category) => category.path)).toEqual(pages.filter((page) => !page.parent).map((page) => page.path));
-    older.series!.name = 'Conflicting name';
-    expect(() => buildBrowsePages(displayed([older, newer]))).toThrow('Conflicting name for series ID shared-series');
+  it('generates only the categories that have recordings, in a stable order', () => {
+    const pages = buildBrowsePages(display([multipart()]));
+    expect(pages.map((page) => page.path)).toEqual(['all', 'scripture', 'scripture/romans', 'scripture/1-john', /* canonical Bible order */
+      'topics', 'topics/hope', 'topics/service-life', 'years', 'years/2026']);
+    expect(pages.find((page) => page.path === 'topics/hope')).toMatchObject({ title: 'Hope', recordingIds: ['2026-09-06'] });
   });
-  it('supports eligible services with no chapter metadata, without inventing chapters', () => {
-    const source = fixture(); source.type = 'sermon'; source.chapters = [];
-    source.series = { id: 'fixture-series', name: 'Fictional series' };
-    const services = displayed([source]);
-    expect(buildBrowsePages(services).find((page) => page.path === 'all')).toMatchObject({ serviceIds: [source.id] });
-    expect(buildBrowsePages(services).find((page) => page.path === 'series/fixture-series')?.serviceIds).toEqual([source.id]);
-    expect(services[0].chapters).toEqual([]);
-    source.videos.forEach((video) => { video.media_disposition = 'unassessed'; });
-    expect(buildBrowsePages(displayed([source]))).toEqual([]);
+  it('keeps a series in its playlist order, not newest first', () => {
+    const recordings = display([multipart(), older()], SERIES), pages = buildBrowsePages(recordings);
+    expect(pages.find((page) => page.path === 'series/romans')).toMatchObject({ title: 'Romans', recordingIds: ['2026-09-06', '2020-09-27'] });
+    expect(pages.find((page) => page.path === 'all')?.recordingIds).toEqual(['2026-09-06', '2020-09-27']);
+    expect(pages.find((page) => page.path === 'years')?.links?.map((link) => link.title)).toEqual(['2026', '2020']);
+    const page = pages.find((item) => item.path === 'series/romans')!;
+    expect(browseItems(page, recordings, '/').map((item) => item.context)).toEqual(['Part 1 of 2', 'Part 2 of 2']);
+    expect(recordings[1].series).toMatchObject({ position: 2, total: 2 });
+    expect(recordings[1].series).not.toHaveProperty('previous');
   });
-  it('derives SearchApp navigation from chapter metadata without rendering hidden enrichment', () => {
-    const source = fixture(); source.series = { id: 'fixture-series', name: 'Fictional series' };
-    const chapters = flattenChapters([source], 'preview');
-    chapters[0].verseText = 'HIDDEN BSB SENTINEL';
-    const html = renderToStaticMarkup(createElement(SearchApp, { initialChapters: chapters, recordings: homeItems(displayServices([source], chapters), '/review/'), base: '/review/' }));
-    expect(html).toContain('href="/review/browse/series/"'); expect(html).not.toContain('HIDDEN BSB SENTINEL');
-  });
-  it('generates only eligible categories and stable chapter IDs', () => {
-    const services = displayed(), pages = buildBrowsePages(services);
-    expect(pages.map((page) => page.path)).toEqual(['all', 'scripture', 'scripture/romans', 'scripture/1-john', /* canonical Bible order */ 'topics', 'topics/topic-stable-id', 'years', 'years/2026']);
-    expect(pages.find((page) => page.path === 'scripture/romans')?.chapterIds).toHaveLength(9);
-    expect(pages.find((page) => page.path === 'topics/topic-stable-id')?.chapterIds).toHaveLength(9);
-    expect(JSON.stringify(services)).not.toMatch(/excluded-speaker|excluded-topic|unused-speaker|Private editorial note|workflow_status|Fictional failure evidence/);
-  });
-  it.each(['/', '/review/', '/nested/review'])('keeps all routes and canonical chapter links under %s', (base) => {
-    const services = displayed(), pages = buildBrowsePages(services);
+  it.each(['/', '/review/', '/nested/review'])('keeps all routes and recording links under %s', (base) => {
+    const recordings = display([multipart(), older()], SERIES), pages = buildBrowsePages(recordings);
     const prefix = base === '/' ? '/' : `${base.replace(/\/$/, '')}/`;
     expect(browseUrl(base)).toBe(`${prefix}browse/`);
     for (const page of pages) {
-      const html = renderToStaticMarkup(createElement(BrowsePage, { page, items: browseItems(page, services, base), base }));
+      const html = renderToStaticMarkup(createElement(BrowsePage, { page, items: browseItems(page, recordings, base), base }));
       for (const [, href] of html.matchAll(/href="([^"]+)"/g)) if (!href.startsWith('https://')) expect(href.startsWith(prefix)).toBe(true);
       for (const link of page.links ?? []) expect(pages.some((candidate) => candidate.path === link.path)).toBe(true);
-      if (page.chapterIds?.length) expect(html).toContain(`${prefix}watch/?chapter=`);
-      expect(html).not.toContain('?id=');
+      if (page.recordingIds?.length) expect(html).toContain(`${prefix}watch/?r=`);
     }
-  });
-  it('orders years and services newest-first', () => {
-    const older = fixture(); older.id = 'older-service'; older.date = '2020-09-27';
-    const pages = buildBrowsePages(displayed([older, fixture()]));
-    expect(pages.find((page) => page.path === 'years')?.links?.map((link) => link.title)).toEqual(['2026', '2020']);
-    expect(pages.find((page) => page.path === 'all')?.serviceIds).toEqual(['fixture-multipart', 'older-service']);
   });
   it('shows date and preview labels while keeping hidden verse text out of markup', () => {
-    const services = displayed(); Object.assign(services[0].chapters[0], { verseText: 'HIDDEN BSB SENTINEL', summary: 'HIDDEN SYNOPSIS SENTINEL' });
-    const pages = buildBrowsePages(services);
-    for (const path of ['all', 'scripture/romans', 'topics/topic-stable-id', 'years/2026']) {
+    const recordings = display([multipart()]), pages = buildBrowsePages(recordings);
+    for (const path of ['all', 'scripture/romans', 'topics/hope', 'years/2026']) {
       const page = pages.find((candidate) => candidate.path === path)!;
-      const html = renderToStaticMarkup(createElement(BrowsePage, { page, items: browseItems(page, services, '/review/'), base: '/review/' }));
-      expect(html).toMatch(/datetime="2026-08-16"/i); expect(html).toContain('Unreviewed preview');
-      expect(html).not.toMatch(/HIDDEN BSB SENTINEL|HIDDEN SYNOPSIS SENTINEL|FAILEDVIDEO|REJECTEDVID/);
+      const html = renderToStaticMarkup(createElement(BrowsePage, { page, items: browseItems(page, recordings, '/review/'), base: '/review/' }));
+      expect(html).toMatch(/datetime="2026-09-06"/i); expect(html).toContain('Unreviewed preview');
     }
+    const units = searchUnits(recordings); units[0].verseText = 'HIDDEN BSB SENTINEL';
+    const html = renderToStaticMarkup(createElement(SearchApp, { initialUnits: units, recordings: homeItems(recordings, '/review/'), base: '/review/' }));
+    expect(html).toContain('href="/review/browse/topics/"'); expect(html).not.toContain('HIDDEN BSB SENTINEL');
   });
 });
 
-describe('home and multipart chapter playback', () => {
-  it('keeps one card per recording however many uploads it was split into, and features the latest sermon', () => {
-    const items = homeItems(displayed(), '/review/'), selected = homeSelection(items, null, '/review/');
+describe('one recording across uploads', () => {
+  it('keeps one card per recording however many uploads it took, opening at the sermon', () => {
+    const items = homeItems(display([multipart()]), '/review/'), selected = homeSelection(items, null, '/review/');
     expect(items).toHaveLength(1);
-    expect(items[0].parts.map((part) => part.id)).toEqual(['PARTONE0001', 'PARTTWO0002', 'PARTTHREE03']);
-    // It opens the sermon in whichever part holds it; its thumbnail ID stays the first part's.
-    expect(items[0]).toMatchObject({ id: 'PARTONE0001', videoId: 'PARTTWO0002', title: 'Fictional sermon' });
-    expect(selected.featured?.href).toBe('/review/watch/?chapter=chapter-2-0'); expect(selected.supporting).toHaveLength(0);
+    // The thumbnail pattern comes from the first upload; the card opens at the sermon on the recording clock.
+    expect(items[0]).toMatchObject({ id: 'PARTONE0001', recordingId: '2026-09-06', length: 5400, start: 1800, hasSermon: true });
+    expect(selected.featured?.href).toBe('/review/watch/?r=2026-09-06&t=1800'); expect(selected.supporting).toHaveLength(0);
   });
-  it('groups chapter matches from every part into one result per recording, ranked by its best chapter', () => {
-    const services = displayed([separateFixture(), fixture()]), items = homeItems(services, '/');
-    const primaries = (id: string) => services.find((service) => service.id === id)!.chapters.filter((chapter) => !chapter.parentId);
-    const newer = primaries('fixture-multipart'), older = primaries('separate-service');
-    // The best match sits in the newer recording's last part; its other parts' matches count as "more".
-    const best = newer.at(-1)!;
-    const grouped = groupByRecording([{ chapter: best }, { chapter: older[0] }, ...newer.slice(0, -1).map((chapter) => ({ chapter }))], items, '/');
-    expect(grouped.map(({ recording }) => recording.serviceId)).toEqual(['fixture-multipart', 'separate-service']);
-    expect(grouped[0].recording.match).toMatchObject({ id: best.id, start: best.start, href: `/watch/?chapter=${best.id}`, more: newer.length - 1 });
-    // The recording still opens at its sermon (in another part) and carries the match for "Chapter only".
-    expect(grouped[0].recording.href).toBe(`/watch/?chapter=chapter-2-0&match=${best.id}`);
+  it('groups matching point notes under their named chapter, without creating a public point range', () => {
+    const sources = [multipart(), older()], recordings = display(sources), items = homeItems(recordings, '/'), units = searchUnits(recordings, sources);
+    const find = (id: string) => units.find((unit) => unit.id === id)!;
+    const best = find('2026-09-06/hospitality/point-1');
+    const grouped = groupByRecording([{ unit: best }, { unit: find('2020-09-27') }, { unit: find('2026-09-06/sermon/point-1') }, { unit: find('2026-09-06') }], items, '/');
+    expect(grouped.map(({ recording }) => recording.recordingId)).toEqual(['2026-09-06', '2020-09-27']);
+    expect(grouped[0].recording.match).toMatchObject({ id: 'hospitality', start: 3600, href: '/watch/?r=2026-09-06&t=3600&focus=hospitality', more: 2 });
+    // The recording still opens at its sermon and carries the match for "This point only".
+    expect(grouped[0].recording.href).toBe('/watch/?r=2026-09-06&t=1800&focus=hospitality');
+    // A whole-recording match opens as the card does.
+    expect(grouped[1].recording.match).toBeUndefined();
   });
-  it('lists the references matching a searched reference first in a result', () => {
+  it('resumes where you left off on the recording clock', () => {
+    const recordings = display([multipart(), older('2026-08-30')]), items = homeItems(recordings, '/review/');
+    const saved = { recordingId: '2026-09-06', time: 2500 };
+    const selected = homeSelection(items, saved, '/review/');
+    const target = readWatchTarget(new URL(selected.featured!.href, 'https://example.test').search);
+    expect(target).toEqual({ recording: '2026-09-06', start: 2500 });
+    expect(resolveSelection(recordings, target)).toMatchObject({ start: 2500 });
+    expect(resolveSelection(recordings, target)?.focus).toBeUndefined();
+    for (const override of [{ recordingId: 'withdrawn' }, { time: 5399 }, { time: 0 }]) expect(homeSelection(items, { ...saved, ...override }, '/').returning).toBeUndefined();
+  });
+  it('opens full recordings at zero, explicit chapter links at the chapter, and clamps times', () => {
+    const recordings = display([multipart()]);
+    expect(resolveSelection(recordings, { recording: '2026-09-06' })?.start).toBe(0);
+    expect(resolveSelection(recordings, { recording: '2026-09-06', focus: 'hospitality' })).toMatchObject({ start: 3600, focus: { title: 'Practise Small Hospitality' } });
+    expect(resolveSelection(recordings, { recording: '2026-09-06', start: 30 })?.start).toBe(30);
+    expect(resolveSelection(recordings, { recording: '2026-09-06', start: 99999 })?.start).toBe(5399);
+    expect(resolveSelection(recordings, { recording: '2026-09-06', focus: 'sermon' })?.focus?.id).toBe('sermon');
+    expect(resolveSelection(recordings, { recording: 'missing' })).toBeNull();
+  });
+});
+
+describe('result references', () => {
+  it('lists the references matching a searched reference or verse first', () => {
     const chapter = { scripture: ['Psalms 99:1-5', 'Daniel 7', 'Psalms 1:1-6'], scriptureDisplay: ['Ps 99:1-5', 'Dan 7', 'Ps 1:1-6'] };
     expect(selectResultReferences(chapter, 'Psalms 1')).toEqual({ references: ['Psalms 1:1-6', 'Psalms 99:1-5', 'Daniel 7'], displayReferences: ['Ps 1:1-6', 'Ps 99:1-5', 'Dan 7'] });
-    // Without a reference query the chapter's own order stands.
     expect(selectResultReferences(chapter, 'eternal life').references).toEqual(chapter.scripture);
-    // A verse the search's words match leads, narrowed from its passage to that verse.
     const findBestVerse = (reference: string) => reference === 'Daniel 7' ? { reference: 'Daniel 7:13', score: 4 } : undefined;
     expect(selectResultReferences(chapter, 'son of man coming with the clouds', findBestVerse)).toEqual({
       references: ['Daniel 7:13', 'Psalms 99:1-5', 'Psalms 1:1-6'], displayReferences: ['Daniel 7:13', 'Ps 99:1-5', 'Ps 1:1-6'] });
-    // A narrowed verse the chapter also cites on its own is listed once.
     const repeats = { scripture: ['Romans 13:1-7', 'Romans 13:1'] };
     expect(selectResultReferences(repeats, 'governing authorities', () => ({ reference: 'Romans 13:1', score: 3 })).references).toEqual(['Romans 13:1']);
-    // A searched reference still wins over verse wording.
     expect(selectResultReferences(chapter, 'Psalms 1', findBestVerse).references[0]).toBe('Psalms 1:1-6');
   });
-  it('treats the run of consecutive sermon chapters in an upload as the whole sermon', () => {
-    const [service] = displayed(), chapter = (id: string) => service.chapters.find((item) => item.id === id)!;
-    // Part two holds three sermon chapters (0–20, 30–50, 90–110); any of them spans the whole run.
-    for (const id of ['chapter-2-0', 'chapter-2-1', 'chapter-2-2']) expect(sermonSpan(service, chapter(id))).toMatchObject({ first: { id: 'chapter-2-0' }, start: 0, end: 110 });
-    // A sermon never spills into another upload, and a non-sermon chapter has no sermon span.
-    expect(sermonSpan(service, chapter('chapter-3-0'))).toMatchObject({ first: { id: 'chapter-3-0' }, end: 110 });
-    expect(sermonSpan(service, chapter('chapter-1-0'))).toBeUndefined();
+  it('links canonical scripture while retaining original display spelling', () => {
+    const html = renderToStaticMarkup(createElement(ScriptureLinks, { references: ['Romans 13:1-7', 'Genesis 22:1-19'], displayReferences: ['Rom 13:1–7'] }));
+    expect(html).toContain('https://www.esv.org/Romans%2013%3A1-7/'); expect(html).toContain('Rom 13:1–7 (ESV)');
+    expect(html).toContain('Genesis 22:1-19 (ESV)'); expect(html).toContain('Read Romans 13:1-7 in the ESV');
   });
-  it('preserves full-recording resume without snapping to a chapter or installing a soft endpoint', () => {
-    const services = displayed(), items = homeItems(services, '/review/');
-    const saved = { serviceId: 'fixture-multipart', videoId: 'PARTTHREE03', time: 45 };
-    const selected = homeSelection(items, saved, '/review/');
-    const target = readWatchTarget(new URL(selected.featured!.href, 'https://example.test').search);
-    expect(target).toMatchObject({ service: saved.serviceId, video: saved.videoId, start: 45 });
-    // Resume in any part features the whole recording, measured against the resumed part.
-    expect(selected.featured).toMatchObject({ id: 'PARTONE0001', videoId: saved.videoId, duration: 180 });
-    const withOlder = homeItems(displayed([separateFixture('2026-08-30'), fixture()]), '/review/');
-    // The resumed card and the latest sermon trade places; every other card keeps its slot.
-    expect(homeSelection(withOlder, saved, '/review/').supporting.map((item) => item.serviceId)).toEqual(['separate-service']);
-    expect(resolveSelection(services, target)).toMatchObject({ start: 45, video: { id: saved.videoId } });
-    expect(resolveSelection(services, target)?.chapter).toBeUndefined();
-    for (const override of [{ videoId: 'FAILEDVIDEO' }, { serviceId: 'withdrawn' }, { time: 179 }, { time: 0 }]) expect(homeSelection(items, { ...saved, ...override }, '/').returning).toBeUndefined();
-  });
-  it('resolves each chapter to its own upload and rejects unknown or unresolved old IDs', () => {
-    const services = displayed();
-    expect(resolveSelection(services, { service: 'fixture-multipart' })?.video.id).toBe('PARTONE0001');
-    for (const chapter of services[0].chapters) expect(resolveSelection(services, { chapter: chapter.id, video: 'FAILEDVIDEO' })).toMatchObject({ chapter, video: { id: chapter.videoId }, start: chapter.start });
-    expect(resolveSelection(services, { video: 'FAILEDVIDEO' })).toBeNull();
-    expect(resolveSelection(services, { chapter: 'chapter-0-0' })).toBeNull();
-    expect(resolveSelection(services, { id: 'old-link', service: 'fixture-multipart' })).toBeNull();
-    expect(resolveSelection(services, { service: 'missing', video: 'PARTTWO0002' })).toBeNull();
-  });
-  it('retains full-recording offsets inside chapters and gaps, clamping only at the video bounds', () => {
-    const services = displayed();
-    const target = { service: 'fixture-multipart', video: 'PARTTWO0002' };
-    expect(resolveSelection(services, { ...target, start: 30 })).toMatchObject({ start: 30, video: { id: target.video } });
-    expect(resolveSelection(services, { ...target, start: 30 })?.chapter).toBeUndefined();
-    expect(resolveSelection(services, { ...target, start: 50 })?.chapter).toBeUndefined();
-    expect(resolveSelection(services, { ...target, start: 25 })?.start).toBe(25);
-    expect(resolveSelection(services, { ...target, start: 900 })?.start).toBe(179);
-    expect(resolveSelection(services, { ...target, start: NaN })?.start).toBe(0);
-  });
-});
-
-it('links canonical scripture while retaining original display spelling', () => {
-  const html = renderToStaticMarkup(createElement(ScriptureLinks, { references: ['Romans 13:1-7', 'Genesis 22:1-19'], displayReferences: ['Rom 13:1–7'] }));
-  expect(html).toContain('https://www.esv.org/Romans%2013%3A1-7/'); expect(html).toContain('Rom 13:1–7 (ESV)');
-  expect(html).toContain('Genesis 22:1-19 (ESV)'); expect(html).toContain('Read Romans 13:1-7 in the ESV');
 });

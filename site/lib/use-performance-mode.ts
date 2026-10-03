@@ -10,6 +10,7 @@ const snapshot = () => {
   const mode = currentPerformanceMode();
   return `${mode.data}/${mode.compute}/${document.documentElement.dataset.semanticCached === 'true'}/${document.documentElement.dataset.essentialReady === 'true'}`;
 };
+/** The modes only decide whether the search model may download and run. */
 export function usePerformanceMode(): PerformanceMode & { cached: boolean; ready: boolean } {
   const state = useSyncExternalStore(subscribe, snapshot, () => `${INITIAL_MODE.data}/${INITIAL_MODE.compute}/false/false`);
   const [data, compute, cached, ready] = state.split('/');

@@ -1,0 +1,171 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: To Be Hated
+serviceDate: 2026-07-26
+status: draft
+sermonDescription: Pastor Yong challenges the idea that an easy life proves God's blessing, reading
+  John 15 as a call to faithful witness amid opposition. He distinguishes the fallen world's
+  hostility from the goodness Christians can recognize through common grace, while exploring the
+  conflicting values and responsibilities of following Christ. He urges lifelong service and
+  perseverance grounded in Scripture rather than retreat into comfort or passivity.
+sermonScripture:
+  - 2 Timothy 3:12-15
+  - John 15:18-19
+  - John 15:18-27
+sermonTopics:
+  - discipleship
+  - service
+  - faith
+uploads:
+  - youtubeId: D7gXD-Mo25s
+    uploadDuration: "1:50:50.861"
+chapters:
+  - chapterId: c20260726-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "9:55.52"
+    points:
+      - pointTime: "0:00"
+        pointText: Unidentified opening music leads into the leaders' guided adoration, confession,
+          thanksgiving and supplication, welcome and silent meditation.
+  - chapterId: c20260726-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "9:55.52"
+    chapterEnd: "34:22.98"
+    points:
+      - pointTime: "9:55.52"
+        pointText: The worship leader guides the congregation through a Psalms 91 call, hymns and prayers of
+          trust, responsive Proverbs and John readings, Rock of Ages, 2 Timothy and an anthem whose
+          title remains unverified.
+    chapterScripture:
+      - Psalms 91:1-6
+      - Isaiah 55
+      - Proverbs 31:1-31
+      - John 15:18-27
+      - 2 Timothy 3:12-15
+      - 1 Thessalonians 5:18
+  - chapterId: c20260726-scripture-shaped-faith
+    chapterTitle: Let Scripture Challenge Comfortable Assumptions
+    chapterKind: sermon
+    chapterStart: "34:22.98"
+    chapterEnd: "48:27.54"
+    points:
+      - pointTime: "34:22.98"
+        pointText: Pastor Yong moves from voluntary family service and the question of an easy life to
+          challenging cultural churchgoing, placing Scripture above inherited assumptions and
+          recalling dependence on Christ's love.
+    chapterScripture:
+      - John 15:18-27
+      - 2 Timothy 3:12-15
+      - John 15:12-17
+      - Matthew 5:9
+      - John 15:5
+  - chapterId: c20260726-hostility-common-grace
+    chapterTitle: Recognize Goodness Amid the World's Hostility
+    chapterKind: sermon
+    chapterStart: "48:27.54"
+    chapterEnd: "1:07:31.66"
+    points:
+      - pointTime: "48:27.54"
+        pointText: Pastor Yong questions sweeping condemnation through attributed MacArthur accounts, then
+          uses the Good Samaritan, common grace and interfaith service to distinguish the fallen
+          world's hostility from recognizable goodness without making a salvation claim.
+    subchapters:
+      - chapterId: s20260726-common-good
+        chapterTitle: Common Grace Makes Goodness Recognizable
+        chapterKind: sermon
+        chapterStart: "57:47"
+        chapterEnd: "1:07:31.66"
+        points:
+          - pointTime: "57:47"
+            pointText: Pastor Yong distinguishes common from special grace and uses Habitat volunteers and an
+              atheist musician to recognize goodness outside Christianity without equating it with
+              salvation.
+        chapterScripture:
+          - Luke 10
+          - John 15:18-19
+    chapterScripture:
+      - John 15:12-19
+      - John 7:7
+      - John 15:18-19
+      - Luke 10
+  - chapterId: c20260726-opposition-responsibility
+    chapterTitle: Following Christ Brings Opposition and Responsibility
+    chapterKind: sermon
+    chapterStart: "1:07:31.66"
+    chapterEnd: "1:27:29.72"
+    points:
+      - pointTime: "1:07:31.66"
+        pointText: Pastor Yong presents reported persecution, conflicting values and spiritual conflict as
+          challenges of following Jesus, recounts allegations denied by Habitat's founder, and
+          explores greater knowledge's accountability while rejecting ignorance as guaranteed
+          exemption.
+    subchapters:
+      - chapterId: s20260726-traps
+        chapterTitle: Spiritual Conflict and Greater Accountability
+        chapterKind: sermon
+        chapterStart: "1:20:46.8"
+        chapterEnd: "1:27:29.72"
+        points:
+          - pointTime: "1:20:46.8"
+            pointText: Pastor Yong recounts a disputed allegation and the Habitat founder's denial before
+              advocating precautions and discussing knowledge's accountability with acknowledged
+              theological difficulty, rejecting ignorance as guaranteed exemption.
+        chapterScripture:
+          - John 15:22-24
+          - Acts 17:30-31
+    chapterScripture:
+      - 2 Timothy 3:12-13
+      - John 15:18-19
+      - John 15:19
+      - 1 Thessalonians 5:5
+      - Ephesians 5:7-8
+      - John 15:20-21
+      - 1 John 5:19
+      - John 12:31
+      - John 15:22-24
+      - Acts 17:30-31
+  - chapterId: c20260726-persevering-witness
+    chapterTitle: Persevere as Active Witnesses
+    chapterKind: sermon
+    chapterStart: "1:27:29.72"
+    chapterEnd: "1:36:34.6"
+    points:
+      - pointTime: "1:27:29.72"
+        pointText: Pastor Yong connects the Spirit's witness with lifelong salt-and-light service, urging
+          contribution despite limitations and perseverance in Scripture rather than passive
+          comfort.
+    chapterScripture:
+      - John 15:25-27
+      - Psalms 35
+      - Psalms 69
+      - Matthew 5:13-16
+      - Matthew 5:16
+      - 2 Timothy 3:12-15
+      - 1 Timothy 6:12
+  - chapterId: c20260726-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:36:34.6"
+    chapterEnd: "1:50:50.861"
+    points:
+      - pointTime: "1:36:34.6"
+        pointText: Pastor Yong leads prayer for perseverance, members and the Batam orphanage alongside the
+          congregation's creed, followed by offertory with an unclear second destination, the
+          closing hymn, doxology, blessing and Communion, orphanage and lunch announcements.
+    chapterScripture:
+      - 1 Thessalonians 5
+      - 2 Corinthians 13
+markers:
+  - markerTime: "34:22.98"
+    markerNote: "Also cited in the sermon: John 15:12-17; Matthew 5:9; John 15:5; John 15:12-19; John
+      7:7; Luke 10; 2 Timothy 3:12-13; John 15:19; 1 Thessalonians 5:5; Ephesians 5:7-8; John
+      15:20-21; 1 John 5:19; John 12:31; John 15:22-24; Acts 17:30-31; John 15:25-27; Psalms 35;
+      Psalms 69; Matthew 5:13-16; Matthew 5:16; 1 Timothy 6:12. Keep only the main passages above."
+  - markerTime: "34:22.98"
+    markerNote: "Other topics it touched: discernment, truth, peace, mission, responsibility, worship,
+      prayer, government, stewardship, justice, service-life, persecution, temptation, repentance,
+      holy-spirit, glory."

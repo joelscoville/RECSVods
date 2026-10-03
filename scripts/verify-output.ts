@@ -3,16 +3,19 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { gunzipSync } from 'node:zlib';
-import { loadArchive, parseYaml, type BuildMode } from '../site/lib/archive';
+import { parse } from 'yaml';
+import type { BuildMode } from '../site/lib/display';
 import { decodeChapterVectors } from '../site/lib/chapter-vectors';
-import { parseChapterMetadata, parseLegacyChapterMap, parseScriptureIndex, sameJson } from '../site/lib/chapter-index';
-import { chapterArtifacts, CHAPTER_ARTIFACTS, artifactFilename } from './archive';
+import { parseChapterMetadata, parseScriptureIndex, sameJson } from '../site/lib/chapter-index';
+import { chapterArtifacts, CHAPTER_ARTIFACTS, artifactFilename, type VectorRows } from './archive';
 import { EMBEDDING_CONFIG, MODEL_FILES } from '../site/lib/embedding-config';
 import { verifyModelFile } from './embeddings';
 
 export interface OutputPrivacyOptions {
-  /** Defaults on. Reads preserved internal transcripts ONLY in this verification step, if present. */
+  /** Defaults on. Reads the kept transcripts (transcripts/) ONLY in this verification step, if present. */
   deepTranscriptScan?: boolean;
+  /** Makes the expected vector rows; tests pass their own instead of loading the model. */
+  rows?: VectorRows;
 }
 export const TRANSCRIPT_SHINGLE_WORDS = 12;
 export const TRANSCRIPT_SHINGLE_CHARACTERS = 64;
@@ -41,34 +44,24 @@ export function assertNoTranscriptLeak(publicText: string, privateShingles: Read
   }
 }
 
+/** The kept transcripts (transcripts/<id>.yaml): no run of their words may appear in the built site. */
 async function privateTranscriptShingles(root: string): Promise<Set<string>> {
   const result = new Set<string>();
   const add = (text: string) => { for (const shingle of shingles(text)) result.add(shingle); };
-  const extract = async (value: unknown, directory: string): Promise<void> => {
-    if (Array.isArray(value)) { for (const item of value) await extract(item, directory); return; }
+  const extract = (value: unknown): void => {
+    if (Array.isArray(value)) { value.forEach(extract); return; }
     if (!value || typeof value !== 'object') return;
     for (const [key, child] of Object.entries(value)) {
       if (key === 'transcript' && typeof child === 'string') add(child);
-      else if (key === 'transcript_file' && typeof child === 'string') {
-        const filename = path.resolve(directory, child);
-        if (!filename.startsWith(`${directory}${path.sep}`)) throw new Error('Internal transcript path escapes service directory');
-        // The archive walker rejects symlinks before this extraction runs.
-        if (existsSync(filename)) add(await readFile(filename, 'utf8'));
-      } else await extract(child, directory);
+      else extract(child);
     }
   };
-  const internals: string[] = [];
-  async function walk(directory: string): Promise<void> {
-    if (!existsSync(directory)) return;
-    for (const entry of await readdir(directory, { withFileTypes: true })) {
-      const full = path.join(directory, entry.name);
-      if (entry.isSymbolicLink()) throw new Error('Privacy validation refuses service symlinks');
-      if (entry.isDirectory()) await walk(full);
-      else if (entry.name === 'passages.internal.yaml') internals.push(full);
-    }
+  const directory = path.join(root, 'transcripts');
+  if (!existsSync(directory)) return result;
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    if (entry.isSymbolicLink()) throw new Error('Privacy validation refuses transcript symlinks');
+    if (entry.isFile() && entry.name.endsWith('.yaml')) extract(parse(await readFile(path.join(directory, entry.name), 'utf8')));
   }
-  await walk(path.join(root, 'services'));
-  for (const filename of internals) await extract(parseYaml(await readFile(filename, 'utf8'), filename), path.dirname(filename));
   return result;
 }
 
@@ -90,21 +83,17 @@ const forbiddenNames = /(?:^|\/)(?:\.env[^/]*|\.local|\.git|corpus|transcripts?|
 
 export async function verifyOutput(root: string, output: string, mode: BuildMode, options: OutputPrivacyOptions = {}) {
   const generated = path.join(output, 'generated');
-  const expected = chapterArtifacts(root, mode);
+  const expected = await chapterArtifacts(root, mode, options.rows);
   const actual = parseChapterMetadata(JSON.parse(await readFile(path.join(generated, 'chapters.json'), 'utf8')));
   const scripture = parseScriptureIndex(JSON.parse(await readFile(path.join(generated, 'scripture.json'), 'utf8')));
-  const legacy = parseLegacyChapterMap(JSON.parse(await readFile(path.join(generated, 'legacy-chapters.json'), 'utf8')));
-  if (!sameJson(actual, expected.metadata)) throw new Error('Built chapter index differs from publication-filtered source');
+  if (!sameJson(actual, expected.metadata)) throw new Error('Built search index differs from the recording files');
   // Rebuilt from hash-pinned BSB source, so legitimate Bible text has a precise, isolated exception.
   if (!sameJson(scripture, expected.scripture)) throw new Error('BSB index differs from pinned source');
-  if (!sameJson(legacy, expected.legacy)) throw new Error('Legacy mapping differs from eligible chapters');
-  const metadataTokens = new Set(JSON.stringify(actual).match(/[A-Za-z0-9_-]+/g) ?? []);
-  if (Object.keys(legacy).some((id) => metadataTokens.has(id))) throw new Error('Legacy ID in chapter search metadata');
-  if (mode === 'production' && actual.chapters.some((chapter) => chapter.preview)) throw new Error('Unreviewed chapter in production');
+  if (mode === 'production' && actual.units.some((unit) => unit.preview)) throw new Error('Draft recording in production');
   const binary = await readFile(path.join(generated, actual.vectors.file));
   const decoded = decodeChapterVectors(binary);
-  if (decoded.rowCount !== actual.chapters.length || !binary.equals(expected.files['vectors.bin'])) {
-    throw new Error('Binary vectors differ from ordered eligible committed rows');
+  if (decoded.rowCount !== actual.units.length || !binary.equals(expected.files['vectors.bin'])) {
+    throw new Error('Binary vectors differ from the rows built for the published units');
   }
   const filenames = CHAPTER_ARTIFACTS.map(name => artifactFilename(name, actual));
   const allowed = new Set<string>(filenames.flatMap((name) => [name, `${name}.gz`]));
@@ -117,24 +106,9 @@ export async function verifyOutput(root: string, output: string, mode: BuildMode
     }
   }
   const privateShingles = options.deepTranscriptScan === false ? new Set<string>() : await privateTranscriptShingles(root);
-  const privateHashes = new Set<string>();
-  function collectHashes(value: unknown): void {
-    if (!value || typeof value !== 'object') return;
-    for (const [key, child] of Object.entries(value)) {
-      if (/^(?:audio|transcript|input|raw|caption|evidence|dictionary)_sha256$/.test(key) && typeof child === 'string') privateHashes.add(child);
-      else collectHashes(child);
-    }
-  }
-  const services = loadArchive(root);
-  collectHashes(services);
-  for (const service of services) {
-    const filename = path.join(root, 'services', service.date.slice(0, 4), service.id, 'chapter-vectors.json');
-    if (existsSync(filename)) collectHashes(JSON.parse(await readFile(filename, 'utf8')));
-  }
   function inspectText(text: string, relative: string): void {
     const privateMatch = privateFieldMatch(text, relative);
     if (privateMatch) throw new Error(`Private field or legacy object in output: ${relative} (${privateMatch[0]})`);
-    for (const hash of privateHashes) if (text.includes(hash)) throw new Error(`Private provenance hash in output: ${relative}`);
     assertNoTranscriptLeak(text, privateShingles, relative);
     if (relative.endsWith('.json')) {
       const walkStrings = (value: unknown): void => {
@@ -150,9 +124,8 @@ export async function verifyOutput(root: string, output: string, mode: BuildMode
       for (const match of text.matchAll(/\bhref\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/gi)) {
         const href = (match[1] ?? match[2] ?? match[3]).replace(/&amp;/g, '&');
         const url = new URL(href, 'https://archive.invalid');
-        if ((/\/watch\/?$/.test(url.pathname) && url.searchParams.has('id'))
-          || [...url.searchParams.values()].some((value) => Object.hasOwn(legacy, value))) {
-          throw new Error(`Current HTML links to legacy unit: ${relative}`);
+        if (/\/watch\/?$/.test(url.pathname) && url.searchParams.has('id')) {
+          throw new Error(`Current HTML links to a retired passage URL: ${relative}`);
         }
       }
     }
@@ -173,8 +146,8 @@ export async function verifyOutput(root: string, output: string, mode: BuildMode
         if (!verifyModelFile(await readFile(full), modelFile)) throw new Error(`Pinned model integrity failure: ${relative}`);
         continue;
       }
-      // Other content exemptions are verified deduplicated BSB and the exact ID map.
-      if (['generated/scripture.json', 'generated/scripture.json.gz', 'generated/legacy-chapters.json', 'generated/legacy-chapters.json.gz'].includes(relative)) continue;
+      // The only other content exemption is the verified deduplicated BSB index.
+      if (['generated/scripture.json', 'generated/scripture.json.gz'].includes(relative)) continue;
       const textName = relative.replace(/\.gz$/, '');
       if (/\.(?:html?|json|js|mjs|cjs|css|txt|xml|svg|map|md)$/i.test(textName)) {
         const bytes = await readFile(full);
@@ -183,8 +156,8 @@ export async function verifyOutput(root: string, output: string, mode: BuildMode
     }
   }
   await inspect(output);
-  console.log(`${mode} output verified: ${actual.chapters.length} eligible chapters; exact BSB and int8 rows; gzip verified; ${privateShingles.size} private transcript shingles checked.`);
-  return { chapters: actual.chapters.length, privateShingles: privateShingles.size };
+  console.log(`${mode} output verified: ${actual.units.length} search units; exact BSB and int8 rows; gzip verified; ${privateShingles.size} private transcript shingles checked.`);
+  return { units: actual.units.length, privateShingles: privateShingles.size };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {

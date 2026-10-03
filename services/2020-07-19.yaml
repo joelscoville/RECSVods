@@ -1,0 +1,205 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Tripping
+serviceDate: 2020-07-19
+status: draft
+sermonDescription: Rev. Yong Teck Meng reads Luke 17 as a connected call to take faith seriously
+  amid unavoidable trials and temptations. Drawing on the rich man’s neglect, delayed gratification
+  and everyday choices, he argues that believing God’s Word helps people resist temptation and
+  recognize the harm they can cause others. He urges listeners to put others’ faith ahead of
+  personal rights and to practice restoration and forgiveness rather than become stumbling blocks.
+sermonScripture:
+  - Luke 17:1-9
+  - Luke 16:19-31
+  - John 8:31-32
+sermonTopics:
+  - discernment
+  - discipleship
+  - faith
+uploads:
+  - youtubeId: Z-vRVB-WucA
+    uploadDuration: "1:06:45.801"
+chapters:
+  - chapterId: c20200719-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "4:51.72"
+    points:
+      - pointTime: "0:00"
+        pointText: Rev. Yong Teck Meng welcomes online participants and reflects on pandemic worship
+          restrictions through a wedding account and Yancey’s account of a silent retreat.
+  - chapterId: c20200719-scripture-warnings
+    chapterTitle: Take Scripture’s Warnings Seriously
+    chapterKind: sermon
+    chapterStart: "4:51.72"
+    chapterEnd: "20:57.06"
+    points:
+      - pointTime: "4:51.72"
+        pointText: The preacher uses Lazarus and judgment to warn against neglect, prays for teachability
+          and argues that faith in Scripture reveals coherence in Luke’s teachings.
+    subchapters:
+      - chapterId: s0719-recap-judgment
+        chapterTitle: Neglect Has Eternal Consequences
+        chapterKind: sermon
+        chapterStart: "8:36.76"
+        chapterEnd: "13:15.6"
+        points:
+          - pointTime: "8:36.76"
+            pointText: The preacher connects common grace, judgment and sins of omission with his warning that
+              present choices have irreversible eternal consequences.
+        chapterScripture:
+          - Luke 16:19-31
+          - Matthew 25
+    chapterScripture:
+      - Luke 16:19-31
+      - Matthew 8:11-12
+      - Matthew 25
+      - Luke 17:1-9
+      - Romans 1:17
+      - Romans 1:16-17
+  - chapterId: c20200719-trials-and-growth
+    chapterTitle: Expect Trials and Learn Through Them
+    chapterKind: sermon
+    chapterStart: "20:57.06"
+    chapterEnd: "39:52.88"
+    points:
+      - pointTime: "20:57.06"
+        pointText: Reading Luke 17 as a continuation of Lazarus, the preacher uses marriage and the debated
+          marshmallow findings to discuss temptation in a fallen world and attributes to Stephen
+          Tong the paradox that trials are necessary for growth.
+    subchapters:
+      - chapterId: s0719-test-discussion
+        chapterTitle: Delayed Gratification and Competing Explanations
+        chapterKind: sermon
+        chapterStart: "31:55.7"
+        chapterEnd: "34:20.94"
+        points:
+          - pointTime: "31:55.7"
+            pointText: The preacher favors delayed gratification’s practical value while acknowledging family
+              background and trust as competing explanations for the apparent link between waiting
+              and later success.
+    chapterScripture:
+      - Luke 16:19-31
+      - Luke 17:1-9
+      - Genesis 3:17-18
+      - 1 Peter 5:8
+  - chapterId: c20200719-resist-through-truth
+    chapterTitle: Resist Temptation by Believing the Truth
+    chapterKind: sermon
+    chapterStart: "39:52.88"
+    chapterEnd: "48:08.84"
+    points:
+      - pointTime: "39:52.88"
+        pointText: The preacher distinguishes encountering temptation from dwelling on it and argues that
+          believing God’s Word and recognizing harmful consequences underlie practical safeguards.
+    subchapters:
+      - chapterId: s0719-truth
+        chapterTitle: Recognize the Cost of Giving In
+        chapterKind: sermon
+        chapterStart: "42:17.06"
+        chapterEnd: "45:55.74"
+        points:
+          - pointTime: "42:17.06"
+            pointText: Applying John 8 to everyday temptation, the preacher draws on adultery counseling and
+              harmful habits while acknowledging the difficulty of stopping smoking.
+        chapterScripture:
+          - John 8:31-32
+          - Psalms 119
+    chapterScripture:
+      - John 8:31-32
+      - Psalms 119
+  - chapterId: c20200719-avoid-stumbling-blocks
+    chapterTitle: Do Not Become a Stumbling Block
+    chapterKind: sermon
+    chapterStart: "48:08.84"
+    chapterEnd: "1:00:39.54"
+    points:
+      - pointTime: "48:08.84"
+        pointText: The preacher applies Luke 17 and Matthew 18 to harmful work, hypocrisy and personal
+          rights, also presenting disputed dress/assault reasoning and an unverified Gandhi anecdote
+          in his warning against damaging others’ faith.
+    subchapters:
+      - chapterId: s0719-industry
+        chapterTitle: Jobs Do Not Justify Gambling Harm
+        chapterKind: sermon
+        chapterStart: "49:44.46"
+        chapterEnd: "52:20.94"
+        points:
+          - pointTime: "49:44.46"
+            pointText: The preacher rejects job creation as sufficient justification for casinos, citing
+              ministry encounters with gambling debt when asking whether work harms others.
+        chapterScripture:
+          - Luke 17:1-9
+          - Matthew 18:5-7
+      - chapterId: s0719-rights
+        chapterTitle: Consider Others Rather Than Insist on Rights
+        chapterKind: sermon
+        chapterStart: "58:41.68"
+        chapterEnd: "1:00:39.54"
+        points:
+          - pointTime: "58:41.68"
+            pointText: The preacher applies Paul’s willingness to forgo meat to urge caution when exercising a
+              legitimate right could harm another believer’s faith.
+        chapterScripture:
+          - 1 Corinthians 8:8-9
+          - Luke 17:1-9
+          - Matthew 18:5-7
+          - 1 Corinthians 8:13
+    chapterScripture:
+      - Luke 17:1-9
+      - Matthew 18:5-7
+      - Luke 16:19-31
+      - 1 Corinthians 8:8-9
+      - 1 Corinthians 8:13
+  - chapterId: c20200719-faith-and-forgiveness
+    chapterTitle: Practice Faith by Restoring and Forgiving
+    chapterKind: sermon
+    chapterStart: "1:00:39.54"
+    chapterEnd: "1:05:37"
+    points:
+      - pointTime: "1:00:39.54"
+        pointText: The preacher links restoration and forgiveness with the apostles’ request for faith,
+          interprets the mustard-seed imagery as exposing small faith and urges listeners to
+          practice the Word without causing others to fall.
+    subchapters:
+      - chapterId: s0719-faith
+        chapterTitle: Small Faith and the Call to Forgive
+        chapterKind: sermon
+        chapterStart: "1:01:36.88"
+        chapterEnd: "1:04:43.92"
+        points:
+          - pointTime: "1:01:36.88"
+            pointText: The preacher includes himself among those with small faith and reads the mustard-seed
+              saying as hyperbole tied to resisting temptation, loving and forgiving.
+        chapterScripture:
+          - Luke 17:1-9
+          - Luke 17:5-6
+          - Luke 17:6
+          - Luke 18:8
+    chapterScripture:
+      - Luke 17:1-9
+      - Luke 17:3-4
+      - Luke 17:5-6
+      - Luke 17:6
+      - Luke 18:8
+      - John 8:31-32
+  - chapterId: c20200719-closing-prayer
+    chapterTitle: Closing Prayer
+    chapterKind: closing
+    chapterStart: "1:05:37"
+    chapterEnd: "1:06:45.801"
+    points:
+      - pointTime: "1:05:37"
+        pointText: The preacher prays for care in conduct, humility and genuine faith so that listeners will
+          not become a source of temptation to others.
+markers:
+  - markerTime: "0:00"
+    markerNote: "Older recording: check this opening really is the ACTS prayer."
+  - markerTime: "4:51.72"
+    markerNote: "Also cited in the sermon: Matthew 8:11-12; Matthew 25; Romans 1:17; Romans 1:16-17;
+      Genesis 3:17-18; 1 Peter 5:8; Psalms 119; Matthew 18:5-7; 1 Corinthians 8:8-9; 1 Corinthians
+      8:13; Luke 17:3-4; Luke 17:5-6; Luke 17:6; Luke 18:8. Keep only the main passages above."
+  - markerTime: "4:51.72"
+    markerNote: "Other topics it touched: responsibility, temptation, prayer, forgiveness, hypocrisy."

@@ -1,22 +1,17 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { canInstall, canRunSemantic, classifyPerformance, observedBytesPerSecond, parsePerformanceMode, type PerformanceEvidence } from '../site/lib/performance-mode';
+import { createHash } from 'node:crypto';
+import { applyOverride, canInstall, canRunSemantic, classifyPerformance, parsePerformanceMode, parsePerformanceOverride, type PerformanceEvidence } from '../site/lib/performance-mode';
 import { SEMANTIC_ASSETS, SEMANTIC_INSTALL_BYTES, semanticCacheName } from '../site/lib/semantic-assets';
 import { semanticCacheWorker } from '../site/workers/semantic-cache';
 
 afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers(); });
-const evidence: PerformanceEvidence = { installBytes: SEMANTIC_INSTALL_BYTES, samples: [{ transferSize: 1_000_000, responseStart: 10, responseEnd: 110 }],
-  readyMs: 900, processingMs: 100, blockingMs: 0, longestTaskMs: 20 };
+const evidence: PerformanceEvidence = { processingMs: 100, blockingMs: 0, longestTaskMs: 20 };
 describe('independent data and compute policy', () => {
-  it('requires observed transfer evidence, not a fast cached load or a 4g label', () => {
+  it('lets the measured download decide: page loads never veto it', () => {
+    // Small page files measure request delay, not bandwidth, so they are not evidence either way.
     expect(classifyPerformance(evidence)).toEqual({ data: 'normal', compute: 'normal' });
-    expect(classifyPerformance({ ...evidence, samples: [], connection: { effectiveType: '4g' } }).data).toBe('unknown');
-    expect(observedBytesPerSecond([{ transferSize: 0, responseStart: 0, responseEnd: 5 }])).toBeUndefined();
-    expect(observedBytesPerSecond([{ transferSize: 2000, responseStart: 0, responseEnd: 1 }])).toBeUndefined();
-    expect(observedBytesPerSecond([{ transferSize: Infinity, responseStart: 0, responseEnd: 1 }])).toBeUndefined();
-  });
-  it('uses enclosing duration for parallel transfers', () => {
-    expect(observedBytesPerSecond([{ transferSize: 100_000, responseStart: 0, responseEnd: 100 },
-      { transferSize: 100_000, responseStart: 0, responseEnd: 200 }])).toBe(1_000_000);
+    expect(classifyPerformance({ ...evidence, connection: { effectiveType: '4g' } }).data).toBe('normal');
+    expect(canInstall(classifyPerformance(evidence))).toBe(true);
   });
   it('honors Save-Data and 3G independently of fast CPU evidence', () => {
     for (const connection of [{ saveData: true }, { effectiveType: '3g' }, { effectiveType: '2g' }]) {
@@ -26,12 +21,6 @@ describe('independent data and compute policy', () => {
       expect(canRunSemantic(result, true)).toBe(true);
       expect(canRunSemantic(result, false)).toBe(false);
     }
-  });
-  it('uses the ten-second raw-payload forecast, including the runtime', () => {
-    const samples = [{ transferSize: SEMANTIC_INSTALL_BYTES / 10, responseStart: 0, responseEnd: 1000 }];
-    expect(classifyPerformance({ ...evidence, samples }).data).toBe('normal');
-    expect(classifyPerformance({ ...evidence, samples: [{ ...samples[0], responseEnd: 1001 }] }).data).toBe('save-data');
-    expect(classifyPerformance({ ...evidence, readyMs: 4000 }).data).toBe('save-data');
   });
   it('never runs or installs a model on low compute, even if cached', () => {
     expect(classifyPerformance({ ...evidence, longestTaskMs: 250, blockingMs: 200 }).compute).toBe('normal');
@@ -44,6 +33,15 @@ describe('independent data and compute policy', () => {
     expect(parsePerformanceMode({ data: 'bogus', compute: 'normal' })).toBeUndefined();
     expect(parsePerformanceMode(null)).toBeUndefined();
   });
+  it('lets /dev switches force either mode without trusting junk', () => {
+    const measured = { data: 'normal', compute: 'normal' } as const;
+    expect(applyOverride(measured, { compute: 'low-compute' })).toEqual({ data: 'normal', compute: 'low-compute' });
+    expect(applyOverride({ data: 'save-data', compute: 'low-compute' }, { data: 'normal', compute: 'normal' })).toEqual(measured);
+    expect(applyOverride(measured, {})).toEqual(measured);
+    expect(parsePerformanceOverride({ data: 'unknown', compute: 'fast', extra: 1 })).toEqual({});
+    expect(parsePerformanceOverride(null)).toEqual({});
+    expect(parsePerformanceOverride({ data: 'save-data' })).toEqual({ data: 'save-data' });
+  });
   it('uses base-scoped versioned cache names and installs only the used JSEP runtime', () => {
     expect(semanticCacheName('/review/')).not.toBe(semanticCacheName('/other/'));
     expect(() => semanticCacheName('//outside/')).toThrow();
@@ -53,7 +51,7 @@ describe('independent data and compute policy', () => {
 });
 
 /** Executes the exact serialized SW function with a tiny, real-hashed asset contract. */
-function workerFixture() {
+function workerFixture(content = 'hello') {
   type Handler = (event: unknown) => void;
   const handlers = new Map<string, Handler>();
   const stores = new Map<string, Map<string, Response>>();
@@ -69,12 +67,12 @@ function workerFixture() {
   vi.stubGlobal('addEventListener', (type: string, handler: Handler) => handlers.set(type, handler));
   vi.stubGlobal('clients', { claim: async () => {}, matchAll: async () => [{ url: 'https://example.test/review/search/', postMessage: (data: { state: string }) => notifications.push(data) }] });
   vi.stubGlobal('skipWaiting', async () => {});
-  const fetcher = vi.fn(async (_url?: string, _options?: RequestInit) => new Response('hello'));
+  const fetcher = vi.fn(async (_url?: string, _options?: RequestInit) => new Response(content));
   vi.stubGlobal('fetch', fetcher);
   const cache = 'recs-semantic:%2Freview%2F:v1:test';
   const path = 'models/test.onnx';
-  const sha256 = '2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824';
-  semanticCacheWorker({ base: '/review/', cache, assets: [{ path, bytes: 5, sha256 }] });
+  const sha256 = createHash('sha256').update(content).digest('hex');
+  semanticCacheWorker({ base: '/review/', cache, assets: [{ path, bytes: Buffer.byteLength(content), sha256 }] });
   const message = (type: string, url = 'https://example.test/review/') => {
     let task: Promise<unknown> = Promise.resolve();
     handlers.get('message')!({ data: { type }, source: { url }, waitUntil: (promise: Promise<unknown>) => { task = promise; } });
@@ -103,16 +101,49 @@ describe('semantic-only asset worker', () => {
     expect(fixture.notifications.at(-1)?.state).toBe('cached');
     expect(fixture.fetcher).toHaveBeenCalledTimes(2);
   });
-  it('bounds a misclassified slow installation', async () => {
+  it('stops a download that goes silent', async () => {
     vi.useFakeTimers();
     const fixture = workerFixture();
     fixture.fetcher.mockImplementation((_url, options) => new Promise((_resolve, reject) => {
-      options!.signal!.addEventListener('abort', () => reject(new Error('deadline')));
+      options!.signal!.addEventListener('abort', () => reject(new Error('stalled')));
     }));
     const install = fixture.message('recs-semantic-install');
-    await vi.advanceTimersByTimeAsync(15_000);
+    await vi.advanceTimersByTimeAsync(9_000);
+    expect(fixture.notifications.at(-1)?.state).toBe('installing');
+    await vi.advanceTimersByTimeAsync(3_000);
     await install;
     expect(fixture.notifications.at(-1)?.state).toBe('slow');
+  });
+  it('measures the real download like a speed test: fast finishes, too slow stops', async () => {
+    vi.useFakeTimers();
+    const content = 'x'.repeat(8 * 1024 * 1024);
+    /** Streams `content` in 64 KB chunks at `bytesPerSecond`, after a 400 ms connection delay. */
+    const stream = (bytesPerSecond: number) => (_url?: string, options?: RequestInit) => new Promise<Response>(resolve => setTimeout(() => {
+      let offset = 0;
+      const chunk = 64 * 1024, gap = Math.max(1, Math.round(chunk / bytesPerSecond * 1000));
+      resolve(new Response(new ReadableStream({
+        pull: controller => new Promise(done => setTimeout(() => {
+          if (options?.signal?.aborted) controller.error(new Error('aborted'));
+          else if (offset >= content.length) controller.close();
+          else { controller.enqueue(new TextEncoder().encode(content.slice(offset, offset + chunk))); offset += chunk; }
+          done();
+        }, gap)),
+      })));
+    }, 400));
+    // 8 MB at 1 MB/s projects about 8.4 s: well inside the 60 s budget, so it completes.
+    const fast = workerFixture(content);
+    fast.fetcher.mockImplementation(stream(1024 * 1024));
+    const done = fast.message('recs-semantic-install');
+    await vi.advanceTimersByTimeAsync(12_000);
+    await done;
+    expect(fast.notifications.at(-1)?.state).toBe('cached');
+    // 8 MB at 64 KB/s projects about 2 minutes: stopped once the warm-up gives a reliable rate.
+    const slow = workerFixture(content);
+    slow.fetcher.mockImplementation(stream(64 * 1024));
+    const stopped = slow.message('recs-semantic-install');
+    await vi.advanceTimersByTimeAsync(12_000);
+    await stopped;
+    expect(slow.notifications.at(-1)?.state).toBe('slow');
   });
   it('verifies and reuses complete files, leaving navigation and other bases alone', async () => {
     const fixture = workerFixture();

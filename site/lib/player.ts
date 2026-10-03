@@ -1,9 +1,15 @@
+import { createRecordingPlayer, type RecordingAdapter, type RecordingUpload, type UnavailableSpan } from './recording-player';
+export { unavailableAt } from './recording-player';
+export type { RecordingAdapter, RecordingUpload, UnavailableSpan } from './recording-player';
+
 export interface PlayerAdapter {
   seekTo(seconds: number, allowSeekAhead: boolean): void;
   playVideo(): void;
   pauseVideo(): void;
   getCurrentTime(): number;
   getPlayerState(): number;
+  /** Supported by the YouTube player; optional so simple test doubles need not implement it. */
+  setPlaybackRate?(rate: number): void;
   destroy(): void;
 }
 export interface PlaybackRange { id: string; start: number; end?: number; resumeAt?: number }
@@ -55,12 +61,16 @@ export function createChapterController(player: PlayerAdapter, onEnd: () => void
   };
 }
 
-interface YouTubePlayer extends PlayerAdapter { getIframe(): HTMLIFrameElement }
+export interface YouTubePlayer extends PlayerAdapter {
+  getIframe(): HTMLIFrameElement;
+  loadVideoById(options: { videoId: string; startSeconds: number }): void;
+  cueVideoById(options: { videoId: string; startSeconds: number }): void;
+}
 interface YouTubeAPI {
   Player: new (element: HTMLElement, options: {
     videoId: string; host: string; width: string; height: string;
     playerVars: Record<string, string | number>;
-    events: { onReady(event: { target: YouTubePlayer }): void; onError(event: { data: number }): void; onAutoplayBlocked(): void };
+    events: { onReady(event: { target: YouTubePlayer }): void; onError(event: { data: number }): void; onAutoplayBlocked(): void; onStateChange?(event: { data: number }): void };
   }) => YouTubePlayer;
 }
 type YouTubeWindow = Window & { YT?: YouTubeAPI; onYouTubeIframeAPIReady?: () => void };
@@ -105,7 +115,10 @@ function loadYouTubeAPI(): Promise<YouTubeAPI> {
 export async function mountYouTubePlayer(container: HTMLElement, options: {
   videoId: string; title: string; start: number; signal?: AbortSignal;
   onError(message: string, code?: number): void; onAutoplayBlocked(): void;
-}): Promise<PlayerAdapter> {
+  /** False hides YouTube's controls and keyboard handling, for pages that provide their own. */
+  controls?: boolean;
+  onStateChange?(state: number): void;
+}): Promise<YouTubePlayer> {
   const api = await loadYouTubeAPI();
   if (options.signal?.aborted) throw new Error('Playback cancelled');
   const host = document.createElement('div');
@@ -120,7 +133,8 @@ export async function mountYouTubePlayer(container: HTMLElement, options: {
     };
     const player = new api.Player(host, {
       videoId: options.videoId, host: 'https://www.youtube-nocookie.com', width: '100%', height: '100%',
-      playerVars: { controls: 1, playsinline: 1, rel: 0, start: Math.floor(options.start), origin: window.location.origin },
+      playerVars: { controls: options.controls === false ? 0 : 1, ...(options.controls === false ? { disablekb: 1, iv_load_policy: 3 } : {}),
+        playsinline: 1, rel: 0, start: Math.floor(options.start), origin: window.location.origin },
       events: {
         onReady({ target }) {
           clearTimeout(timeout);
@@ -133,12 +147,60 @@ export async function mountYouTubePlayer(container: HTMLElement, options: {
         },
         onError({ data }) { fail(youtubeErrorMessage(data), data); },
         onAutoplayBlocked: options.onAutoplayBlocked,
+        onStateChange({ data }) { options.onStateChange?.(data); },
       },
     });
     options.signal?.addEventListener('abort', () => {
       clearTimeout(timeout);
       player.destroy();
       if (!ready) reject(new Error('Playback cancelled'));
+    }, { once: true });
+  });
+}
+
+/** Plays a recording made of several uploads as one video, on the recording's own clock. When an upload ends,
+ * the next one starts unless marked unavailable; seeking anywhere retains the recording time. (YouTube needs a second or two at
+ * each cut; there is no gapless switch.) Call only following a user play action. */
+export async function mountRecordingPlayer(container: HTMLElement, options: {
+  uploads: readonly RecordingUpload[]; title: string; start: number; signal?: AbortSignal;
+  onError(message: string, code?: number): void; onAutoplayBlocked(): void; controls?: boolean;
+  onAvailability?: (span: UnavailableSpan | undefined) => void; onLoading?: () => void;
+}): Promise<RecordingAdapter> {
+  return createRecordingPlayer({ uploads: options.uploads, start: options.start,
+    onError: options.onError, onAvailability: options.onAvailability, onLoading: options.onLoading,
+    mount: (upload, start, onStateChange) => mountYouTubePlayer(container, {
+      videoId: upload.id, title: options.title, start, signal: options.signal, controls: options.controls,
+      onError: options.onError, onAutoplayBlocked: options.onAutoplayBlocked, onStateChange,
+    }),
+  });
+}
+
+/** A video file from the viewer's own computer, played in the page: nothing is uploaded. Same adapter as
+ * YouTube, so the editor does not care which one it drives; seeking is instant and exact. */
+export function mountFilePlayer(container: HTMLElement, options: {
+  file: Blob; title: string; start: number; onError(message: string): void;
+}): Promise<PlayerAdapter & { duration: number }> {
+  const url = URL.createObjectURL(options.file);
+  const video = document.createElement('video');
+  video.src = url; video.preload = 'auto'; video.playsInline = true; video.title = options.title;
+  container.replaceChildren(video);
+  return new Promise((resolve, reject) => {
+    const fail = () => { URL.revokeObjectURL(url); video.remove(); const message = 'This file could not be played. Try an MP4 (H.264) or WebM file.'; options.onError(message); reject(new Error(message)); };
+    video.addEventListener('error', fail, { once: true });
+    video.addEventListener('loadedmetadata', () => {
+      video.removeEventListener('error', fail);
+      video.addEventListener('error', () => options.onError('The file stopped playing.'));
+      video.currentTime = options.start;
+      resolve({
+        duration: video.duration,
+        seekTo(seconds) { video.currentTime = Math.max(0, seconds); },
+        playVideo() { void video.play().catch(() => {}); },
+        pauseVideo() { video.pause(); },
+        getCurrentTime() { return video.currentTime; },
+        getPlayerState() { return video.ended ? 0 : video.paused ? 2 : 1; },
+        setPlaybackRate(rate) { video.playbackRate = rate; },
+        destroy() { video.pause(); video.removeAttribute('src'); video.load(); video.remove(); URL.revokeObjectURL(url); },
+      });
     }, { once: true });
   });
 }

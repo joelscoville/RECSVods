@@ -1,0 +1,200 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Third Person
+serviceDate: 2026-06-21
+status: draft
+sermonDescription: Rev. Yong Teck Meng connects love for Christ with a restored life of obedience
+  and service rather than religious bargaining. Turning to Jesus' promise in John 14, he urges
+  listeners to understand the Holy Spirit through Scripture rather than dramatic experiences alone.
+  He presents the Spirit as divine helper and abiding presence, calling believers to seek truth,
+  test claims and live truthfully amid weakness and continuing temptation.
+sermonScripture:
+  - John 14:12
+  - John 14:16
+  - Romans 8:26-27
+sermonTopics:
+  - holy-spirit
+  - service-life
+  - knowing-god
+uploads:
+  - youtubeId: dNeZD1HUmmE
+    uploadDuration: "1:57:34.581"
+chapters:
+  - chapterId: c20260621-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:04.76"
+    chapterEnd: "7:54.8"
+    points:
+      - pointTime: "0:04.76"
+        pointText: The leaders prepare the congregation through adoration, confession, thanksgiving,
+          personal requests, welcome and silent meditation.
+  - chapterId: c20260621-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "7:54.8"
+    chapterEnd: "36:13.72"
+    points:
+      - pointTime: "7:54.8"
+        pointText: The congregation joins the call to worship, hymns, prayer, a source-interrupted Ancient
+          of Days video, Proverbs and John readings, and The Lord is My Shepherd anthem before the
+          reader corrects the final reading announcement to Romans 8:26-30.
+    chapterScripture:
+      - Psalms 75:1-3
+      - Daniel 7
+      - Proverbs 26
+      - John 14:15-31
+      - Romans 8:26-30
+  - chapterId: c20260621-learning-serving
+    chapterTitle: Following Jesus Means Learning and Serving
+    chapterKind: sermon
+    chapterStart: "36:13.72"
+    chapterEnd: "48:18.92"
+    points:
+      - pointTime: "36:13.72"
+        pointText: Introducing the Spirit's promise, Yong recaps Greater Works as wider ministry reach,
+          urging humble lifelong learning, service by every believer and prayer for God's purposes
+          rather than wealth-based aspirations or formulas.
+    chapterScripture:
+      - John 14:15-24
+      - Romans 8:26-30
+      - John 14:8-14
+      - John 14:12
+      - John 14:13-14
+  - chapterId: c20260621-love-restores-life
+    chapterTitle: Love for Christ Changes How We Live
+    chapterKind: sermon
+    chapterStart: "48:18.92"
+    chapterEnd: "1:11:21.02"
+    points:
+      - pointTime: "48:18.92"
+        pointText: Yong argues that love for Christ produces repentant action and lifelong restoration
+          beyond rule-keeping or religious transactions, using kindness and marriage illustrations
+          while acknowledging continuing failure and temptation.
+    subchapters:
+      - chapterId: s20260621-restoration
+        chapterTitle: Christ Restores Life Beyond Rule-Keeping
+        chapterKind: sermon
+        chapterStart: "55:07.78"
+        chapterEnd: "1:03:53.96"
+        points:
+          - pointTime: "55:07.78"
+            pointText: Yong distinguishes redemption from lifelong restoration, presenting Christ's commandments
+              as pointing to Christ himself and a changed identity rather than a checklist.
+        chapterScripture:
+          - John 14:6
+          - John 10:10
+          - Galatians 5:22-23
+      - chapterId: s20260621-transactional-faith
+        chapterTitle: Faithful Love Goes Beyond Transactions
+        chapterKind: sermon
+        chapterStart: "1:03:53.96"
+        chapterEnd: "1:11:21.02"
+        points:
+          - pointTime: "1:03:53.96"
+            pointText: Yong challenges religious bargaining and consumer expectations through enduring marriage
+              vows, including an unverified account attributed to Pat Robertson, before returning to
+              transformation amid temptation.
+    chapterScripture:
+      - John 14:15
+      - John 14:21
+      - John 14:23-24
+      - Ephesians 2:10
+      - Luke 18
+      - John 14:12
+      - John 14:6
+      - John 10:10
+      - Galatians 5:22-23
+  - chapterId: c20260621-knowing-spirit-scripture
+    chapterTitle: Knowing the Spirit Begins With Scripture
+    chapterKind: sermon
+    chapterStart: "1:11:21.02"
+    chapterEnd: "1:28:23.86"
+    points:
+      - pointTime: "1:11:21.02"
+        pointText: Yong uses qualified church-size estimates, his account of charismatic history and
+          unverified recollections to frame the congregation's position, grounding knowledge of the
+          Spirit in Scripture while acknowledging the Trinity's mystery.
+    subchapters:
+      - chapterId: s20260621-scripture-trinity
+        chapterTitle: Scripture Guides Understanding of the Trinity
+        chapterKind: sermon
+        chapterStart: "1:24:08.46"
+        chapterEnd: "1:28:23.86"
+        points:
+          - pointTime: "1:24:08.46"
+            pointText: Yong appeals to Scripture and the Westminster Confession while recognizing limits of
+              comprehension and translation, contrasting biblical inquiry with reliance on
+              impressions or visions.
+        chapterScripture:
+          - John 17:17
+          - John 14:15-16
+    chapterScripture:
+      - John 14:16
+      - John 14-16
+      - John 17:17
+      - John 14:15-16
+  - chapterId: c20260621-spirit-help-presence
+    chapterTitle: The Spirit Helps and Stays With Believers
+    chapterKind: sermon
+    chapterStart: "1:28:23.86"
+    chapterEnd: "1:34:40.56"
+    points:
+      - pointTime: "1:28:23.86"
+        pointText: Yong presents the divine Spirit's intercession and abiding presence with the Father and
+          Son as help in weakness and loneliness, including practical support through believers and
+          differing readings of 'that day'.
+    chapterScripture:
+      - John 14:16
+      - Romans 8:26-27
+      - John 14:17-20
+      - John 14:21-24
+      - John 14:16-24
+  - chapterId: c20260621-spirit-truthful-living
+    chapterTitle: The Spirit of Truth Calls Us to Truthful Living
+    chapterKind: sermon
+    chapterStart: "1:34:40.56"
+    chapterEnd: "1:41:22.74"
+    points:
+      - pointTime: "1:34:40.56"
+        pointText: Yong applies the Spirit of truth to engineering, online opinion and qualified court
+          commentary, urging objective and theological testing of claims before praying for truthful
+          living through the Spirit's help.
+    chapterScripture:
+      - John 14:16-17
+      - Romans 8:26-27
+  - chapterId: c20260621-creed-fathers-appreciation
+    chapterTitle: Creed and Father's Day Appreciation
+    chapterKind: other
+    chapterStart: "1:41:22.74"
+    chapterEnd: "1:48:30.32"
+    points:
+      - pointTime: "1:41:22.74"
+        pointText: The congregation affirms the Apostles' Creed before an unidentified speaker reflects on
+          enduring fatherhood and makes gender-role claims, followed by children's gifts and prayer
+          for fathers and families.
+  - chapterId: c20260621-offertory-closing
+    chapterTitle: Offertory and Closing
+    chapterKind: closing
+    chapterStart: "1:48:30.32"
+    chapterEnd: "1:57:34.581"
+    points:
+      - pointTime: "1:48:30.32"
+        pointText: The leaders announce an offering for cultural mandate work, guide an unfamiliar hymn with
+          unverified Haven of Rest title wording, and lead doxology, blessing and ministry
+          invitations before dismissal to silent meditation.
+    chapterScripture:
+      - 1 Thessalonians 5
+      - 2 Corinthians 13
+markers:
+  - markerTime: "36:13.72"
+    markerNote: "Also cited in the sermon: John 14:15-24; Romans 8:26-30; John 14:8-14; John 14:13-14;
+      John 14:15; John 14:21; John 14:23-24; Ephesians 2:10; Luke 18; John 14:6; John 10:10;
+      Galatians 5:22-23; John 14-16; John 17:17; John 14:15-16; John 14:17-20; John 14:21-24; John
+      14:16-24; John 14:16-17. Keep only the main passages above."
+  - markerTime: "36:13.72"
+    markerNote: "Other topics it touched: discernment, prayer, truth, discipleship, service,
+      responsibility, faith, mission, hypocrisy, repentance, temptation, trinity, justice."
+  - markerTime: "1:34:40.56"
+    markerNote: Point title shortened from "The Spirit of Truth Calls Us to Truthful Living" to fit 3–8 words.

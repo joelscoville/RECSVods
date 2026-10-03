@@ -42,50 +42,40 @@ cases:
     milestone: 2
     kind: rank
     query: Romans 13
-    acceptableServiceIds: ['2020-09-27', '2026-08-09']
+    acceptableServiceIds: [ 2020-09-27, 2026-08-09 ]
     reason: 'Scripture: Romans 13'
     maxRank: 1
-    note: Authority's exposition or the August 9 source-backed Romans 13 reading/exposition must outrank incidental mentions. The latter is a genuine whole-service scripture destination, not an incidental mention; M2's core-only ranking still requires Authority.
+    note: Authority's exposition or the August 9 source-backed Romans 13 reading/exposition must outrank incidental
+      mentions. The latter is a genuine whole-service scripture destination, not an incidental mention; M2's core-only
+      ranking still requires Authority.
   - id: romans-alias
     milestone: 2
     kind: rank
     query: Rom 13
-    acceptableServiceIds: ['2020-09-27', '2026-08-09']
+    acceptableServiceIds: [ 2020-09-27, 2026-08-09 ]
     reason: 'Scripture: Romans 13'
     maxRank: 1
     note: Common book abbreviation uses the shared reference parser.
-  - id: speaker-yong
-    milestone: 2
-    kind: rank
-    query: Yong Teck Meng
-    acceptableServiceIds: ['2020-09-27', '2020-07-19', '2026-07-19', '2026-06-21', '2026-06-07']
-    speaker: Rev. Yong Teck Meng
-    reason: Speaker match
-    maxRank: 3
-    note: Records with the exact trusted speaker metadata are valid, including the source-backed 2026 records added in historical batch 001; an incidental name is insufficient.
   - id: government-question
     milestone: 2
     kind: rank
     query: How should Christians relate to government?
     exactQuery: Romans 13 government
-    acceptableServiceIds: ['2020-09-27']
-    acceptableChapterIds: [c20200927-civil-order-and-conscience, c20200927-wise-political-engagement, s0927-romans-order]
+    acceptableServiceIds: [ 2020-09-27 ]
     maxRank: 3
     note: Evidence-backed relevant segments, not any greeting in Authority.
   - id: abraham-isaac
     milestone: 2
     kind: rank
     query: Abraham and Isaac
-    acceptableServiceIds: ['2025-11-02']
-    acceptableChapterIds: [s1102-trust]
+    acceptableServiceIds: [ 2025-11-02 ]
     maxRank: 3
     note: Sacrifice's father-son exchange, original physical-upload clock.
   - id: living-sacrifice
     milestone: 2
     kind: rank
     query: living sacrifice
-    acceptableServiceIds: ['2025-11-02']
-    acceptableChapterIds: [s1102-daily]
+    acceptableServiceIds: [ 2025-11-02 ]
     reason: Verse-text match (BSB)
     maxRank: 3
     note: Hidden sourced BSB text contributes an honestly labelled match.
@@ -94,7 +84,7 @@ cases:
     kind: date
     query: 16 August 2026
     expectedDate: '2026-08-16'
-    acceptableServiceIds: ['2026-08-16']
+    acceptableServiceIds: [ 2026-08-16 ]
     reason: Date match
     maxRank: 1
     note: All three ordered physical uploads share one service date.
@@ -103,7 +93,7 @@ cases:
     kind: date
     query: 27 September 2020
     expectedDate: '2020-09-27'
-    acceptableServiceIds: ['2020-09-27']
+    acceptableServiceIds: [ 2020-09-27 ]
     reason: Date match
     maxRank: 1
     note: Historical years use exactly the same calendar-date behavior.
@@ -111,56 +101,29 @@ cases:
     milestone: 2
     kind: rank
     query: learn about prayer by praying
-    acceptableChapterIds: [s0906-prayer-example]
     maxRank: 3
-    note: Baseline relevant segment from docs/first-recording-review.md.
-  - id: august-first-upload
-    milestone: 2
-    kind: rank
-    query: A.C.T.S. prayer
-    acceptableChapterIds: [c20260816-p1-opening]
-    acceptableVideoIds: [mw4SAoJRZgo]
-    maxRank: 3
-    note: First multipart upload candidate from docs/august-multipart-review.md.
-  - id: august-second-upload
-    milestone: 2
-    kind: rank
-    query: media ministry engagement
-    acceptableChapterIds: [c20260816-p2-worship-scripture]
-    acceptableVideoIds: [XWAH9SWFcoo]
-    maxRank: 3
-    note: Second physical upload must preserve its own timeline.
+    note: Baseline relevant segment from docs/history/first-recording-review.md.
+    acceptableServiceIds: [ 2026-09-06 ]
   - id: august-third-upload
     milestone: 2
     kind: rank
     query: God ordains ends means
-    acceptableChapterIds: [s0816-p3-sovereignty]
-    acceptableVideoIds: [IcIxBc--VvM]
     maxRank: 3
     note: Third physical upload candidate from the multipart evidence.
-  - id: june-full-upload
-    milestone: 2
-    kind: rank
-    query: Hotel-room prayer requests
-    acceptableChapterIds: [c20260628-spirit-teaches-scripture]
-    acceptableVideoIds: [k27dmsPvmG8]
-    maxRank: 3
-    note: Only the full stream carries the evidenced chapter; failed upload remains in source.
+    acceptableServiceIds: [ 2026-08-16 ]
   - id: tripping-question
     milestone: 3
     kind: rank
     query: How can we avoid causing others to stumble?
-    acceptableServiceIds: ['2020-07-19']
-    acceptableVideoIds: [Z-vRVB-WucA]
-    acceptableChapterIds: [s0719-rights, c20200719-faith-and-forgiveness, c20200719-avoid-stumbling-blocks]
+    acceptableServiceIds: [ 2020-07-19 ]
     maxRank: 3
-    note: Evidence-backed discussion of rights, considering others, hypocrisy and restoring people, from docs/tripping-review.md.
+    note: Evidence-backed discussion of rights, considering others, hypocrisy and restoring people, from
+      docs/history/tripping-review.md.
   - id: tripping-luke
     milestone: 3
     kind: rank
     query: Luke 17:1-9
-    acceptableServiceIds: ['2020-07-19']
-    acceptableVideoIds: [Z-vRVB-WucA]
+    acceptableServiceIds: [ 2020-07-19 ]
     reason: 'Scripture: Luke 17:1-9'
     maxRank: 3
     note: Operator-supplied Tripping reference; actual curated metadata must support it.
@@ -168,170 +131,157 @@ cases:
     milestone: 3
     kind: rank
     query: Matthew 18:5-7
-    acceptableServiceIds: ['2020-07-19']
-    acceptableVideoIds: [Z-vRVB-WucA]
-    reason: 'Scripture: Matthew 18:5-7'
+    acceptableServiceIds: [ 2020-07-19 ]
     maxRank: 3
-    note: Second known Tripping reference, evaluated against the entire eligible corpus.
+    note: Second known Tripping reference. A sermon lists at most three passages, so this one is found through its key
+      point text rather than as listed scripture.
   - id: july-iso
     milestone: 3
     kind: date
     query: '2026-07-05'
     expectedDate: '2026-07-05'
-    acceptableVideoIds: [OrsN83j3qxE]
     reason: Date match
     maxRank: 1
     note: July 5 is OrsN83j3qxE; D-FyolbxJgk's misleading title cannot override its July 12 source date.
+    acceptableServiceIds: [ 2026-07-05 ]
   - id: july-day-first
     milestone: 3
     kind: date
     query: 5 July 2026
     expectedDate: '2026-07-05'
-    acceptableVideoIds: [OrsN83j3qxE]
     reason: Date match
     maxRank: 1
     note: Regression for the documented incidental partial-date false positives.
+    acceptableServiceIds: [ 2026-07-05 ]
   - id: july-month-first
     milestone: 3
     kind: date
     query: July 5, 2026
     expectedDate: '2026-07-05'
-    acceptableVideoIds: [OrsN83j3qxE]
     reason: Date match
     maxRank: 1
     note: Common English month-first form has the identical date constraint.
+    acceptableServiceIds: [ 2026-07-05 ]
   - id: july-abbreviated
     milestone: 3
     kind: date
     query: 5 Jul. 2026
     expectedDate: '2026-07-05'
-    acceptableVideoIds: [OrsN83j3qxE]
     reason: Date match
     maxRank: 1
     note: Common month abbreviations use general parsing, not query-specific aliases.
+    acceptableServiceIds: [ 2026-07-05 ]
   - id: july-corrected-date
     milestone: 3
     kind: date
     query: 12 July 2026
     expectedDate: '2026-07-12'
-    acceptableVideoIds: [D-FyolbxJgk]
     reason: Date match
     maxRank: 3
-    note: Distinct July 12 programme after full curation. Service ID may change; no assumption about grouping with short MZr169xBwrU or its disposition.
+    note: Distinct July 12 programme after full curation. Service ID may change; no assumption about grouping with short
+      MZr169xBwrU or its disposition.
+    acceptableServiceIds: [ 2026-07-12 ]
   - id: september-baseline
     milestone: 3
     kind: rank
     query: How can knowledge about God become knowledge of God?
     exactQuery: knowledge prayer practice
-    acceptableChapterIds: [c20260913-knowledge-prayer-practice]
-    acceptableVideoIds: [GkmB_KeBlBw]
     maxRank: 3
-    note: The original introduction remains valid; the substantive answer in s0913-knowledge also qualifies. Its preserved p0913-two-movements explicitly describes turning learned truth into meditation, prayer and praise (4123.72–4347.46s); this is source-supported answer coverage, not merely a title match.
-  - id: excluded-candidates
-    milestone: 3
-    kind: excluded-media
-    query: July 2026
-    note: Broad ordinary query; every failed/rejected/unassessed source ID is forbidden. Separate per-ID checks cover complete indexes and both navigation projections even when a query returns nothing.
+    note: The original introduction remains valid; the substantive answer in s0913-knowledge also qualifies. Its preserved
+      p0913-two-movements explicitly describes turning learned truth into meditation, prayer and praise
+      (4123.72–4347.46s); this is source-supported answer coverage, not merely a title match.
+    acceptableServiceIds: [ 2026-09-13 ]
   - id: no-match
     milestone: 3
     kind: empty
     query: zxqvpl-no-match
-    note: Lexical and real semantic search must both be empty. This is an out-of-vocabulary test, not a claim that the archive answers or rejects any theological question.
+    note: Lexical and real semantic search must both be empty. This is an out-of-vocabulary test, not a claim that the
+      archive answers or rejects any theological question.
   - id: historical-0830
     milestone: 4
     kind: rank
     query: Do I need a pastor to pray for me?
-    acceptableChapterIds: [s20260830-access]
-    acceptableVideoIds: [M9uwSKpB_gk]
     maxRank: 5
-    note: Source-backed prayer discussion in the August 30 worker report; historical expansion target set before measuring ranks.
+    note: Source-backed prayer discussion in the August 30 worker report; historical expansion target set before measuring
+      ranks.
+    acceptableServiceIds: [ 2026-08-30 ]
   - id: historical-0823
     milestone: 4
     kind: rank
     query: Does Christian joy mean never feeling despair?
     exactQuery: fullness of joy despair
-    acceptableChapterIds: [s20260823-joy]
-    acceptableVideoIds: [QCNrRkiFeKw]
     maxRank: 5
     note: Keeps the speaker's qualification attached to the joy claim.
+    acceptableServiceIds: [ 2026-08-23 ]
   - id: historical-0809
     milestone: 4
     kind: rank
     query: Should my national identity come before being a Christian?
     exactQuery: civil government citizenship
-    acceptableChapterIds: [s20260809-highest-authority, c20260809-god-above-government]
-    acceptableVideoIds: [gO6gc5jL-jU]
     maxRank: 5
     note: Explicit national and primary identity distinction, with speaker attribution.
+    acceptableServiceIds: [ 2026-08-09 ]
   - id: historical-0802
     milestone: 4
     kind: rank
     query: What is sanctification and why is Christian life about the here and now?
-    acceptableChapterIds: [s20260802-sanctification]
-    acceptableVideoIds: [1R4gnCvqrOA]
     maxRank: 5
     note: Source definition and explicit rejection of passive waiting, from the worker's cited range.
+    acceptableServiceIds: [ 2026-08-02 ]
   - id: historical-0726
     milestone: 4
     kind: rank
     query: 26 July 2026 refusing bribes at work
-    acceptableChapterIds: [c20260726-opposition-responsibility]
-    acceptableVideoIds: [D7gXD-Mo25s]
     maxRank: 5
     note: Date-qualified workplace anecdote; no factual endorsement of the reported events.
+    acceptableServiceIds: [ 2026-07-26 ]
   - id: historical-0719
     milestone: 4
     kind: rank
     query: The Greatest Love no and Lord in the same sentence
-    acceptableChapterIds: [c20260719-love-shaped-obedience]
-    acceptableVideoIds: [rM0Oi8-Y8G4]
     maxRank: 5
     note: The 2026 service's prayer-partner illustration and immediate application, not 2020 Tripping.
+    acceptableServiceIds: [ 2026-07-19 ]
   - id: historical-0621
     milestone: 4
     kind: rank
     query: 21 June 2026 Holy Spirit help when I cannot pray
-    acceptableChapterIds: [c20260621-spirit-help-presence]
-    acceptableVideoIds: [dNeZD1HUmmE]
     maxRank: 5
     note: Source-backed intercession discussion with date context.
+    acceptableServiceIds: [ 2026-06-21 ]
   - id: historical-0614
     milestone: 4
     kind: rank
     query: Does greater works mean doing greater miracles than Jesus?
-    acceptableChapterIds: [c20260614-christs-work-belongs-to-every-believer]
-    acceptableVideoIds: [GlVgMoehT2I]
     maxRank: 5
     note: Keeps the comparative explanation and its adjacent qualification.
+    acceptableServiceIds: [ 2026-06-14 ]
   - id: historical-0607
     milestone: 4
     kind: rank
     query: Why should Jesus be the only way is that arrogant or intolerant?
-    acceptableChapterIds: [c20260607-love-marks-christs-followers]
-    acceptableVideoIds: [8Qjfp-2L5d8]
     maxRank: 5
     note: The recorded introductory question in Only, with trusted title and references.
+    acceptableServiceIds: [ 2026-06-07 ]
   - id: historical-0531
     milestone: 4
     kind: rank
     query: 31 May 2026 What's New love identifies Christ's followers
-    acceptableChapterIds: [c20260531-love-identifies-followers]
-    acceptableVideoIds: [m51rgcZHQmE]
     maxRank: 5
     note: The worker's dated candidate about the identifying mark of followers.
+    acceptableServiceIds: [ 2026-05-31 ]
   - id: historical-0524
     milestone: 4
     kind: rank
     query: What is the difference between regret and repentance in The Most Hideous Sin?
-    acceptableChapterIds: [c20260524-repentance-forgiveness]
-    acceptableVideoIds: [uJDdItVGgj8]
     maxRank: 5
     note: Source-backed distinction in the May 24 report.
+    acceptableServiceIds: [ 2026-05-24 ]
   - id: historical-0517
     milestone: 4
     kind: rank
     query: Why confess sins daily if I am already saved?
-    acceptableChapterIds: [c20260517-forgiveness-and-responsibility]
-    acceptableVideoIds: [lrRnxGzvPaM]
+    exactQuery: daily confession
     maxRank: 5
     note: The May 17 explanation, with the original upload's timing and reviewed-source requirement unchanged.
+    acceptableServiceIds: [ 2026-05-17 ]

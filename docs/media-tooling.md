@@ -7,13 +7,13 @@ media commands. Run native media operations **inside devenv**, through
 
 This tool produces local evidence, not archive interpretations or editorial
 approval. Live preflight, the model hash, and calibration measurements are recorded
-in [preflight-evidence.md](preflight-evidence.md); offline tests are separate evidence.
+in [preflight evidence](history/preflight-evidence.md); offline tests are separate evidence.
 
-Local whisper.cpp remains primary. For an explicitly operator-approved large batch,
-the manual [Colab transcript importer](transcript-import.md) verifies supplied JSON,
-source duration and audio hashes, records per-recording provenance, and cleans the
-matching batch audio after import. It does not run Colab or replace weekly local
-transcription. Do not locally retranscribe the eight supplied M2/M3 recordings.
+Local whisper.cpp remains available for authorized transcription. Supplied captions
+or Whisper files can also be opened locally in the recording editor; they are not
+uploaded or committed. The earlier [Colab importer](history/transcript-import.md)
+is historical and its CLI has been removed. See [weekly operation](weekly-operation.md)
+for the current drafting workflow.
 
 ## Command interface
 

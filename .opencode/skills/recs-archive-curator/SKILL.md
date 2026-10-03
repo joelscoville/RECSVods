@@ -1,6 +1,6 @@
 ---
 name: recs-archive-curator
-description: Use ONLY when a person explicitly asks to curate RECS Replay recordings by date, YouTube ID, or a bounded manifest for human review.
+description: Use ONLY when a person explicitly asks to draft RECS Replay recordings by date, YouTube ID, or a bounded manifest for human review.
 ---
 
 # OpenCode adapter

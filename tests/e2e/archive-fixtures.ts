@@ -1,40 +1,50 @@
 import { readFileSync } from 'node:fs';
 import type { Page } from '@playwright/test';
-import type { SearchChapter } from '../../site/lib/types';
-import type { Service, ServiceSource } from '../../site/lib/types';
+import type { SearchUnit } from '../../site/lib/display';
 import { parse } from 'yaml';
+import type { RecordingSource } from '../../site/lib/recording-schema';
 import { parseTimecode } from '../../site/lib/timecode';
 
-/** Build validation checks the full schema; these browser fixtures just normalize source clocks. */
-export function readServiceFixture(filename: string): Service {
-  const source = parse(readFileSync(filename, 'utf8')) as ServiceSource;
-  return { ...source, speakers: source.speakers ?? [], topics: source.topics ?? [], videos: source.videos.map(video => ({ ...video, duration: parseTimecode(video.duration) })),
-    chapters: source.chapters.map(chapter => ({ ...chapter, start: parseTimecode(chapter.start), end: parseTimecode(chapter.end) })) };
+/** A recording file as written. (The build checks it in full; tests only read it.) */
+export function readRecording(id: string): RecordingSource {
+  return parse(readFileSync(`services/${id}.yaml`, 'utf8')) as RecordingSource;
+}
+export const seconds = parseTimecode;
+export const searchMetadata = JSON.parse(readFileSync('dist/preview/generated/chapters.json', 'utf8'));
+export const previewUnits = searchMetadata.units as SearchUnit[];
+export function unitFor(id: string): SearchUnit {
+  const unit = previewUnits.find(item => item.id === id);
+  if (!unit) throw new Error(`Missing required search unit: ${id}`);
+  return unit;
 }
 
-export const chapterMetadata = JSON.parse(readFileSync('dist/preview/generated/chapters.json', 'utf8'));
-export const previewChapters = chapterMetadata.chapters as SearchChapter[];
-const legacy = JSON.parse(readFileSync('dist/preview/generated/legacy-chapters.json', 'utf8')) as Record<string, string>;
-export function chapterFor(id: string): SearchChapter {
-  const chapter = previewChapters.find(chapter => chapter.id === id) ?? previewChapters.find(chapter => chapter.id === legacy[id]);
-  if (!chapter) throw new Error(`Missing required chapter/legacy target: ${id}`);
-  return chapter;
+/** A stand-in for YouTube's IFrame API: records seeks and the upload loaded, and never plays anything.
+ * It exercises the real player code; it does not replace a manual check of actual YouTube playback. */
+const fakeYouTubeScript = (failFirst: boolean) => `let attempts=0;window.YT={Player:class{
+  constructor(host,options){this.options=options;this.videoId=options.videoId;this.time=options.playerVars.start||0;this.state=2;this.ticks=0;this.loads=[options.videoId];
+    this.iframe=document.createElement('iframe');host.replaceWith(this.iframe);window.testPlayer=this;
+    setTimeout(()=>${failFirst}&&attempts++===0?options.events.onError({data:100}):options.events.onReady({target:this}),0)}
+  change(state){this.state=state;setTimeout(()=>this.options.events.onStateChange&&this.options.events.onStateChange({data:state}),0)}
+  seekTo(time){this.time=time}playVideo(){this.change(1)}pauseVideo(){this.change(2)}
+  loadVideoById(t){this.videoId=t.videoId;this.time=t.startSeconds;this.loads.push(t.videoId);this.change(1)}
+  cueVideoById(t){this.videoId=t.videoId;this.time=t.startSeconds;this.loads.push(t.videoId);this.change(5)}
+  setPlaybackRate(rate){this.rate=rate}getCurrentTime(){this.ticks++;return this.time}getPlayerState(){return this.state}getIframe(){return this.iframe}destroy(){this.iframe.remove()}
+}};window.onYouTubeIframeAPIReady();`;
+/** `failFirst`: the first player reports the video unavailable, as YouTube does for a removed upload. */
+export async function fakeYouTube(page: Page, options: { failFirst?: boolean } = {}) {
+  await page.route('https://www.youtube.com/iframe_api', route => route.fulfill({ contentType: 'application/javascript', body: fakeYouTubeScript(Boolean(options.failFirst)) }));
 }
-
-/** Where the player's stop falls after "Sermon only": the end of every consecutive top-level sermon
- * chapter around `chapter` in its upload (the archive divides a sermon into several chapters). */
-export function sermonEnd(chapter: SearchChapter): number {
-  const top = chapter.parentId ? previewChapters.find(item => item.id === chapter.parentId)! : chapter;
-  const run = previewChapters.filter(item => item.videoId === top.videoId && !item.parentId).sort((a, b) => a.start - b.start);
-  let last = run.findIndex(item => item.id === top.id);
-  while (last < run.length - 1 && run[last + 1].type === 'sermon') last++;
-  return run[last].end;
+/** The upload holding a recording time, and the time within it. */
+export function uploadAt(recordingId: string, time: number): { id: string; time: number } {
+  let start = 0;
+  const uploads = readRecording(recordingId).uploads;
+  for (const [i, upload] of uploads.entries()) {
+    const skip = parseTimecode(upload.uploadSkip ?? '0:00'), end = start + parseTimecode(upload.uploadDuration) - skip;
+    if (time < end || i === uploads.length - 1) return { id: upload.youtubeId, time: skip + time - start };
+    start = end;
+  }
+  throw new Error(`${recordingId} has no uploads`);
 }
-
-/** Clicks the under-player "Chapter only" / "Sermon only" choice and returns where playback will stop. */
-export async function chooseOnly(page: Page, chapter: SearchChapter): Promise<number> {
-  const button = page.locator('.chapter-controls').getByRole('button', { name: /^(Chapter|Sermon) only$/ });
-  const label = await button.textContent();
-  await button.click();
-  return label === 'Sermon only' ? sermonEnd(chapter) : chapter.end;
-}
+export interface TestPlayer { time: number; state: number; ticks: number; videoId: string; loads: string[] }
+export const player = (page: Page) => page.evaluate(() => (window as unknown as { testPlayer?: TestPlayer }).testPlayer);
+export const setPlayerTime = (page: Page, time: number) => page.evaluate(value => { (window as unknown as { testPlayer: TestPlayer }).testPlayer.time = value; }, time);

@@ -17,7 +17,7 @@ const hasSearchContent = search.hasSearchContent;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script is:inline>
-      // Runs before styles select optional fonts; unknown starts with system fonts.
+      // Restores this session's device check and honours Data Saver/2G/3G before any search-model work starts.
       try {
         const mode = JSON.parse(sessionStorage.getItem('recs-performance:v1') || 'null');
         if (mode && ['normal', 'save-data', 'unknown'].includes(mode.data) && ['normal', 'low-compute', 'unknown'].includes(mode.compute)) {
@@ -25,13 +25,19 @@ const hasSearchContent = search.hasSearchContent;
           document.documentElement.dataset.computeMode = mode.compute;
         }
       } catch { /* Storage is optional. */ }
-      if (navigator.connection?.saveData || ['slow-2g', '2g', '3g'].includes(navigator.connection?.effectiveType)) {
-        document.documentElement.dataset.dataMode = 'save-data';
-      }
+      const constrained = navigator.connection?.saveData || ['slow-2g', '2g', '3g'].includes(navigator.connection?.effectiveType);
+      if (constrained) document.documentElement.dataset.dataMode = 'save-data';
+      // Modes forced on the hidden /dev page win, and a badge says so.
+      try {
+        const forced = JSON.parse(localStorage.getItem('recs-dev:performance') || 'null');
+        if (forced && (forced.data === 'normal' || forced.data === 'save-data')) document.documentElement.dataset.dataMode = forced.data;
+        if (forced && (forced.compute === 'normal' || forced.compute === 'low-compute')) document.documentElement.dataset.computeMode = forced.compute;
+        if ((forced && (forced.data || forced.compute)) || localStorage.getItem('recs-dev:unapproved') === '1') document.documentElement.dataset.devOverride = 'true';
+      } catch { /* Storage is optional. */ }
     </script>
     <script>
       import { startAdaptiveLoading } from '../lib/adaptive-loading';
-      startAdaptiveLoading(document.documentElement.dataset.base!, document.documentElement.dataset.searchContent === 'true');
+      startAdaptiveLoading(document.documentElement.dataset.base!, document.documentElement.dataset.searchContent === 'true', { measureCompute: !import.meta.env.DEV });
     </script>
     <meta name="description" content={description} />
     {(noindex || preview) && <meta name="robots" content="noindex, nofollow" />}

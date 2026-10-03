@@ -1,8 +1,9 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import { loadPublicArchive } from '../../lib/public-archive';
-import { type DisplayService } from '../../components/archive-display';
-import { displayType, formatDate, formatTime, siteUrl, serviceUrl, watchUrl, youtubeUrl } from '../../lib/urls';
+import { type DisplayRecording } from '../../components/archive-display';
+import { sermonOf } from '../../lib/display';
+import { formatDate, formatTime, siteUrl, serviceUrl, watchUrl, youtubeUrl } from '../../lib/urls';
 import CopyLink from '../../components/CopyLink';
 import CorrectionLinks from '../../components/CorrectionLinks';
 import { browseUrl } from '../../lib/browse';
@@ -10,32 +11,36 @@ import OutlineRows from '../../components/OutlineRows';
 import VideoQuirks from '../../components/VideoQuirks';
 export function getStaticPaths() {
   const mode = import.meta.env.ARCHIVE_MODE;
-  return loadPublicArchive(mode).services.map((service) => ({ params: { id: service.id }, props: { service } }));
+  return loadPublicArchive(mode).recordings.map((recording) => ({ params: { id: recording.id }, props: { recording } }));
 }
-interface Props { service: DisplayService }
-const { service } = Astro.props;
+interface Props { recording: DisplayRecording }
+const { recording } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const sermon = sermonOf(recording);
 ---
-<SiteLayout title={service.title} route="service-route">
+<SiteLayout title={recording.title} route="service-route">
   <main id="main" class="service-main page-width" tabindex="-1">
     <a class="text-link" href={siteUrl(base)}>Back to archive</a>
     <header class="service-heading">
-      <h1>{service.title}</h1>
-      {service.sermonDescription && <div class="sermon-description"><p>{service.sermonDescription}</p></div>}
-      <p class="metadata"><time datetime={service.date}>{formatDate(service.date)}</time> · {displayType(service.type)}</p>
-      {service.series && <a class="text-link" href={browseUrl(base, `series/${service.series.id}`)}>Series: {service.series.name}</a>}
-      {service.preview && <p class="preview-label">Unreviewed preview</p>}
-      <div class="action-row"><CopyLink href={serviceUrl(base, service.id)} client:load /><CorrectionLinks target={{ serviceId: service.id }} base={base} /></div>
+      <h1>{recording.title}</h1>
+      {recording.description && <div class="sermon-description"><p>{recording.description}</p></div>}
+      <p class="metadata"><time datetime={recording.date}>{formatDate(recording.date)}</time> · {sermon ? 'Service' : 'Recording'}</p>
+      {recording.series && <a class="text-link" href={browseUrl(base, `series/${recording.series.id}`)}>Series: {recording.series.title}</a>}
+      {recording.preview && <p class="preview-label">Unreviewed preview</p>}
+      <div class="action-row">
+        <CopyLink href={serviceUrl(base, recording.id)} client:load /><CorrectionLinks recordingId={recording.id} base={base} />
+      </div>
     </header>
-    <section aria-labelledby="recordings-heading"><h2 id="recordings-heading">{service.videos.length > 1 ? 'Recordings' : 'Full recording'}</h2>
-      <ul class="service-recordings">{service.videos.map((video) => <li>
-        <h3>{service.videos.length > 1 ? `Video ${video.sequence}` : service.title}</h3><p>{formatTime(video.duration)}</p>
-        <VideoQuirks quirks={video.quirks} />
-        <div class="action-row"><a class="button" href={watchUrl(base, { service: service.id, video: video.id })}>Play full recording</a><a class="button button-secondary" href={youtubeUrl(video.id)}>Watch on YouTube</a></div>
+    <section aria-labelledby="recordings-heading"><h2 id="recordings-heading">{recording.uploads.length > 1 ? 'Recordings' : 'Full recording'}</h2>
+      <ul class="service-recordings">{recording.uploads.map((upload, index) => <li>
+        <h3>{recording.uploads.length > 1 ? `Video ${index + 1}` : recording.title}</h3><p>{formatTime(upload.duration)}</p>
+        <VideoQuirks quirks={upload.quirks} />
+        {upload.unavailable && <p>This upload is unavailable. Its time remains part of the recording.</p>}
+        <div class="action-row"><a class="button" href={watchUrl(base, { recording: recording.id, start: upload.start })}>{upload.unavailable ? 'Open recording at this gap' : 'Play full recording'}</a>{!upload.unavailable && <a class="button button-secondary" href={youtubeUrl(upload.id, upload.offset)}>Watch on YouTube</a>}</div>
       </li>)}</ul>
     </section>
     <section class="service-chapters" aria-labelledby="service-chapters-heading"><h2 id="service-chapters-heading">Chapters</h2>
-      {service.chapters.length > 0 ? <OutlineRows service={service} base={base} client:load /> : <p>No chapters have been published for this service.</p>}
+      {recording.entries.length > 0 ? <OutlineRows recording={recording} base={base} client:load /> : <p>No chapters have been published for this recording.</p>}
     </section>
   </main>
 </SiteLayout>

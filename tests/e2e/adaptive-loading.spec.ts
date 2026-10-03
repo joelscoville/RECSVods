@@ -1,10 +1,10 @@
-import { test, expect } from '@playwright/test';
+import { browserTest as test, expect } from './fixtures';
 import { performanceEvidence } from './performance-fixture';
 
-test('data saver sends no optional requests and keeps exact search usable @responsive', async ({ page }, testInfo) => {
+test('data saver preserves main’s system-font fallback and skips optional search assets @responsive', async ({ page }, testInfo) => {
   await performanceEvidence(page, 'slow');
   const optional: string[] = [];
-  page.on('request', request => { if (/\/(models|onnx)\/|\.woff2|scripture\.json|semantic\.worker|chapters\.json/.test(request.url())) optional.push(request.url()); });
+  page.on('request', request => { if (/\/(models|onnx)\/|scripture\.json|semantic\.worker|chapters\.json/.test(request.url())) optional.push(request.url()); });
   await page.goto('search/?q=Romans%2013');
   await expect(page.locator('html')).toHaveAttribute('data-data-mode', 'save-data');
   await expect(page.locator('.result-list')).toContainText('Authority');
@@ -12,32 +12,33 @@ test('data saver sends no optional requests and keeps exact search usable @respo
   await expect(page.locator('html')).toHaveAttribute('data-essential-ready', 'true');
   await page.waitForTimeout(1200);
   expect(optional).toEqual([]);
-  expect(await page.locator('.thumb-pattern').count()).toBe(0);
+  await expect(page.locator('body')).toHaveCSS('font-family', /system-ui/);
   await page.screenshot({ path: testInfo.outputPath('saver-search.png'), fullPage: true });
 });
 
-test('low compute suppresses model and patterns independently of fast data @responsive', async ({ page }, testInfo) => {
+test('low compute suppresses only the model, independently of fast data @responsive', async ({ page }, testInfo) => {
   await performanceEvidence(page, 'fast', 'low');
   const optional: string[] = [];
-  page.on('request', request => { if (/\/(models|onnx)\/|semantic\.worker|\.woff2/.test(request.url())) optional.push(request.url()); });
+  page.on('request', request => { if (/\/(models|onnx)\/|semantic\.worker/.test(request.url())) optional.push(request.url()); });
   await page.goto('');
   await expect(page.locator('html')).toHaveAttribute('data-compute-mode', 'low-compute');
   await page.waitForTimeout(1200);
   expect(optional).toEqual([]);
   await expect(page.locator('.video-card').first()).toBeVisible();
-  expect(await page.locator('.thumb-pattern').count()).toBe(0);
+  await expect(page.locator('.thumb-pattern')).toHaveCount(0);
+  await expect(page.locator('body')).toHaveCSS('font-family', /system-ui/);
   await page.screenshot({ path: testInfo.outputPath('low-compute-home.png'), fullPage: true });
 });
 
-test('unknown bandwidth does not turn a cache-fast page into an automatic download', async ({ page }) => {
+test('an unconstrained page starts the measured download without guessing from page timings', async ({ page }) => {
+  // Page loads cannot tell bandwidth from request delay; the service worker measures the real download instead.
   await performanceEvidence(page, 'unknown');
   const requests: string[] = [];
-  page.on('request', request => requests.push(request.url()));
+  page.context().on('request', request => requests.push(request.url()));
   await page.goto('');
   await expect(page.locator('html')).toHaveAttribute('data-essential-ready', 'true');
-  await page.waitForTimeout(1200);
-  await expect(page.locator('html')).toHaveAttribute('data-data-mode', 'unknown');
-  expect(requests.filter(url => /semantic-sw|\/(models|onnx)\//.test(url))).toEqual([]);
+  await expect(page.locator('html')).toHaveAttribute('data-data-mode', 'normal');
+  await expect.poll(() => requests.some(url => url.includes('semantic-sw')), { timeout: 10_000 }).toBe(true);
 });
 
 test('fast home installs once; data saver uses the real cached model; low compute does not @model', async ({ page, context }) => {

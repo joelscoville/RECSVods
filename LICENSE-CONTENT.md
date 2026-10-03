@@ -7,12 +7,12 @@ The archive content written for RECS Replay is licensed under the
 
 "Archive content" means the metadata and annotations written for this project to describe
 recordings: service and chapter titles, chapter times and types, summaries, keywords, topics,
-series and speaker labels, the Bible references listed for each chapter, and the
+series labels, the Bible references listed for each chapter, and the
 project-authored parts of internal records (for example passage titles, summaries and
 review notes), in `services/`, `taxonomy/`, `evaluation/` and similar data files.
 
 It does **not** include transcript text or other wording taken from the recordings, which some
-internal records (such as `passages.internal.yaml`) contain; see below.
+retained records in `transcripts/` contain; see below.
 
 The software is licensed separately under the [MIT licence](LICENSE).
 

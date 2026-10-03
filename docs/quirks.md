@@ -1,35 +1,24 @@
 # Corrections and recording quirks
 
-Moved from the root README. How correction links are configured, and how per-video playback and audio quirks are recorded and checked.
+How upload playback and audio quirks are recorded and checked. For the recording
+editor and its GitHub destination, see [corrections](corrections.md).
 
-The correction destination is explicitly configured in `site/config/corrections.json`.
-It currently points to this repository's issue form, which requires repository access
-while the repository is private. `PUBLIC_REPOSITORY_URL` or `PUBLIC_CORRECTIONS_URL`
-can override it at build time (the latter accepts an HTTPS form or `mailto:` address).
-
-Each video's optional `quirks` list in `service.yaml` records its active playback flags.
-It does not change editorial approval or remove a recording from search. A known embedding
-restriction shows a timestamped YouTube link immediately, with an optional embedded
-retry. Human audio flags show recording notes; automatic sample findings stay in the
-diagnostic report until someone listens and chooses to add a flag.
+Each upload's optional `uploadQuirks` list in `services/<id>.yaml` records known playback problems,
+shown as recording notes. It does not change approval or remove a recording from search.
+Embedding needs no flag: the player always tries the embedded video, and only if YouTube
+refuses or fails does it show "Watch on YouTube" with a timestamped link. Automatic audio
+findings stay in the diagnostic report until someone listens and chooses to add a flag.
 
 ```sh
 pnpm quirks report
-pnpm quirks flag --video VIDEO_ID --kind audio_choppy --note "Dropouts during speech"
-pnpm quirks flag --video VIDEO_ID --kind audio_left_only
-pnpm quirks clear --video VIDEO_ID --kind audio_choppy
-pnpm quirks check-embeds --all             # write reports only; needs Playwright Chromium
-pnpm quirks check-embeds --all --apply     # add confirmed restrictions only
-pnpm validate:quirks
+pnpm validate:archive
 ```
 
-`clear` explicitly removes a flag. `--note` adds a human YAML comment. There are no
-separate manual/automatic flag lists or required timestamps. Checks write dated reports
-to `docs/checks/<service-id>.md`. A timeout, player error 153, silent sample, missing tool
-or network failure is **inconclusive** and never changes flags. Successful checks
-suggest reviewing existing restrictions for removal, but never silently erase them.
-An absent flag does not certify a healthy recording. Results reflect the checker's
-browser/network/location, not every region.
+Add or remove flags by editing `uploadQuirks` on the matching upload, after listening.
+For example, `uploadQuirks: [audio_choppy, audio_left_only]`; use a YAML comment for
+additional context. There are no separate manual/automatic flag lists or required
+timestamps. Audio checks write dated reports to `docs/checks/<recording-id>.md`.
+An absent flag does not certify a healthy recording.
 
 Optional audio sampling works with a full-length local source or short YouTube downloads:
 
@@ -48,21 +37,3 @@ an earlier fault. Silence produces an inconclusive result. Audio is temporary an
 removed after checking; no audio or signed media URLs are stored in Git or reports.
 The `--youtube` option explicitly enables these bounded downloads; ffmpeg, ffprobe and
 yt-dlp are supplied by devenv. Audio checks never run during a site build.
-
-The separate **Recheck video embedding** workflow runs weekly or on manual dispatch.
-Embedding checks briefly stream muted playback to verify it advances; no media files are saved.
-It uploads diagnostic reports; it does not edit/commit service metadata,
-download audio samples, approve content or deploy the site. To update the website,
-apply verified flags locally, commit the service changes when ready, and rebuild. Ordinary
-PR tests use deterministic fixtures; live YouTube availability is not a merge gate.
-
-Archive embedding checks use batches of at most 50 uploads with a **shared 600-second
-probing budget**, rather than a 50-upload archive limit. Each upload gets at most 20 seconds
-across navigation and playback. Use `--budget-seconds N` (1–900) to adjust the total;
-browser cleanup may take additional time. A partial run exits with code 2 and reports
-`skippedVideoIds` and `nextStartAt` in its JSON output. Unchecked uploads retain their
-flags and previous reports. Resume with `pnpm quirks check-embeds --all --start-at VIDEO_ID`;
-the order wraps around so a sufficiently quick run still visits every upload. The weekly
-workflow explicitly uses 600 seconds and uploads partial results even when the budget is
-exhausted. For a growing archive, use its reported `nextStartAt` to check the remaining uploads.
-

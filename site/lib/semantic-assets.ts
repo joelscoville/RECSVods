@@ -11,7 +11,14 @@ export const SEMANTIC_ASSETS: readonly SemanticAsset[] = [
   { path: 'onnx/ort-wasm-simd-threaded.jsep.mjs', bytes: 44484, sha256: '08fb86ec433c78bfb032c5d84a68b8e8e5a8d81268fa39e24314179a5767a5b9' },
   { path: 'onnx/ort-wasm-simd-threaded.jsep.wasm', bytes: 21596019, sha256: 'c46655e8a94afc45338d4cb2b840475f88e5012d524509916e505079c00bfa39' },
 ];
-// Use raw bytes for a conservative forecast; compressed delivery is not assumed.
+/** The model downloads automatically unless the connection is really slow. Like a speed test, the service
+ * worker measures the real download (excluding connection setup) after a short warm-up, projects the time
+ * left from recent throughput, and stops if the whole install would take longer than `budgetMs`.
+ * 45 MB within 60 s needs about 0.75 MB/s (6 Mbit/s). Finished files stay cached, so a later visit resumes. */
+export const INSTALL_POLICY = Object.freeze({
+  budgetMs: 60_000, warmupBytes: 512 * 1024, warmupMs: 1_000, windowMs: 3_000, stallMs: 10_000, ceilingMs: 300_000,
+});
+export type InstallPolicy = typeof INSTALL_POLICY;
 export const SEMANTIC_INSTALL_BYTES = SEMANTIC_ASSETS.reduce((sum, file) => sum + file.bytes, 0);
 export function semanticCacheName(base: string): string {
   semanticAssetPaths(base);

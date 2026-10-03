@@ -1,0 +1,155 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Only
+serviceDate: 2026-06-07
+status: draft
+sermonDescription: Rev. Yong Teck Meng argues from John 14 and Acts 4 that Christ is the only way to
+  the Father, grounding faith in God's revelation rather than human self-sufficiency. He presents
+  Christ's presence as comfort for troubled people and urges believers to express conviction through
+  love, continuing evangelism while leaving individuals' final destiny to God rather than claiming
+  to know whom Christ may save.
+sermonScripture:
+  - Acts 4:8-12
+  - John 14:6
+  - John 14:1-7
+sermonTopics:
+  - faith
+  - discipleship
+  - responsibility
+uploads:
+  - youtubeId: 8Qjfp-2L5d8
+    uploadDuration: "1:49:50.661"
+chapters:
+  - chapterId: c20260607-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "11:31"
+    points:
+      - pointTime: "0:00"
+        pointText: The leaders guide ACTS prayer, greetings, silent preparation, the introit, Psalm 69 and
+          How Great Thou Art, then pray for the Holy Spirit's work and introduce Communion.
+    chapterScripture:
+      - Psalms 69:30-34
+  - chapterId: c20260607-communion-worship-scripture
+    chapterTitle: Communion, Worship and Scripture
+    chapterKind: opening
+    chapterStart: "11:31"
+    chapterEnd: "34:52.98"
+    points:
+      - pointTime: "11:31"
+        pointText: The pastor leads Communion as remembrance of belonging to Christ, followed by responsive
+          readings from Proverbs and John, Jesus, I Come, the video anthem Without the Cross and the
+          Acts 4 reading introducing the sermon.
+    chapterScripture:
+      - John 13-15
+      - John 13:34-35
+      - 1 Corinthians 11:23-26
+      - Proverbs 24:1-34
+      - John 14:1-14
+      - Acts 4:8-12
+  - chapterId: c20260607-love-marks-christs-followers
+    chapterTitle: Love Marks Christ's Followers
+    chapterKind: sermon
+    chapterStart: "34:52.98"
+    chapterEnd: "48:01"
+    points:
+      - pointTime: "34:52.98"
+        pointText: Introducing the question of Christian exclusivity, the pastor recaps glory, childlike
+          worship and Jesus' command to love beyond social boundaries, presenting shared life rather
+          than isolation as the mark of belonging to Christ.
+    chapterScripture:
+      - John 14:1-7
+      - Acts 4:8-12
+      - John 13:31-35
+      - John 13:33
+      - John 13:34-35
+      - Deuteronomy 6:4
+      - Leviticus 19:18
+      - Matthew 22:37-40
+  - chapterId: c20260607-trust-christ-amid-trouble
+    chapterTitle: Trust Christ Amid Trouble
+    chapterKind: sermon
+    chapterStart: "48:01"
+    chapterEnd: "1:07:04.74"
+    points:
+      - pointTime: "48:01"
+        pointText: The pastor relates the disciples' uncertainty to human suffering, contrasts his account
+          of Buddhist self-effort with trust in Christ, and reads John 14 as promising both a
+          lasting home with the Father and the Spirit's sustaining presence now.
+    subchapters:
+      - chapterId: s20260607-sermon-hope
+        chapterTitle: Hope for the Future and Help Now
+        chapterKind: sermon
+        chapterStart: "58:59.72"
+        chapterEnd: "1:07:04.74"
+        points:
+          - pointTime: "58:59.72"
+            pointText: The pastor interprets the Father's house as an intimate, permanent home and Christ's
+              promise as both future presence with him and the Holy Spirit's help amid present
+              worries.
+        chapterScripture:
+          - John 14:1
+          - John 14:1-2
+          - John 14:2
+          - John 14:3
+          - John 15-16
+    chapterScripture:
+      - John 13-15
+      - John 13:38
+      - John 14:1
+      - John 14:1-2
+      - John 14:2
+      - John 14:3
+      - John 15-16
+  - chapterId: c20260607-christ-only-way-to-father
+    chapterTitle: Christ Is the Only Way to the Father
+    chapterKind: sermon
+    chapterStart: "1:07:04.74"
+    chapterEnd: "1:21:50.88"
+    points:
+      - pointTime: "1:07:04.74"
+        pointText: Addressing objections and religious inclusivity, the pastor argues from John 14 and Acts
+          4 that salvation depends on God's revelation in Christ rather than human self-sufficiency,
+          while allowing some knowledge through general grace.
+    chapterScripture:
+      - John 14:4-6
+      - John 14:6
+      - John 14:6-7
+      - Acts 4:8-12
+  - chapterId: c20260607-loving-witness-without-judgment
+    chapterTitle: Share Christ's Love and Leave Judgment to God
+    chapterKind: sermon
+    chapterStart: "1:21:50.88"
+    chapterEnd: "1:36:02.32"
+    points:
+      - pointTime: "1:21:50.88"
+        pointText: Affirming Christ as the only way, the pastor urges loving evangelism and help regardless
+          of conversion, leaves individuals' salvation to God and allows possible exceptions to the
+          usual model, explicitly treating his imagined deathbed encounter as unsupported by
+          scripture rather than a method to preach.
+    chapterScripture:
+      - John 14:6
+      - Philippians 2:9-11
+  - chapterId: c20260607-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:36:02.32"
+    chapterEnd: "1:49:50.661"
+    points:
+      - pointTime: "1:36:02.32"
+        pointText: The pastor leads prayer for patient, loving witness, with the Apostles' Creed, an
+          evangelism offering, All the Way My Saviour Leads Me, doxology, a blessing from Jude and
+          community notices completing the service.
+    chapterScripture:
+      - Jude 1:24-25
+markers:
+  - markerTime: "34:52.98"
+    markerNote: "Also cited in the sermon: John 13:31-35; John 13:33; John 13:34-35; Deuteronomy 6:4;
+      Leviticus 19:18; Matthew 22:37-40; John 13-15; John 13:38; John 14:1; John 14:1-2; John 14:2;
+      John 14:3; John 15-16; John 14:4-6; John 14:6-7; Philippians 2:9-11. Keep only the main
+      passages above."
+  - markerTime: "34:52.98"
+    markerNote: "Other topics it touched: knowing-god, truth, mission, prayer, eternal-life, salvation,
+      glory, worship, service-life, communion, meditation, holy-spirit, service."

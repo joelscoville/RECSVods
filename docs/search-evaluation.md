@@ -1,36 +1,41 @@
 # Search evaluation
 
 The acceptance set is [`evaluation/search-cases.yaml`](../evaluation/search-cases.yaml).
-The evaluator uses the same chapter ranking and weights as the browser, checks
-both publication-filtered builds, and reports actual top results and failures.
-Run production and preview builds sequentially before evaluating.
+The evaluator uses the product's ranking and weights on `dist/preview/generated`
+(falling back to `site/public/generated` when no preview exists). Build a fresh
+preview before evaluating; build/privacy checks validate publication separately.
 
 ```sh
-# CI-safe: exact metadata/reference/BSB matching, no model inference.
+scripts/devenv-run pnpm build:preview
+# Exact metadata/reference/BSB matching, without query-model inference.
 scripts/devenv-run pnpm evaluate:core -- --exact-only
-
-# Local: exact plus hybrid matching with actual pinned-model query embeddings.
+# Exact plus hybrid matching with actual pinned-model query embeddings.
 scripts/devenv-run pnpm evaluate:core
 ```
 
-Default coverage is milestone 4 (all current cases). `--milestone 2` scopes ranking
-to the five core services; `--milestone 3` includes the later M3 cases. All modes
-validate the current archive and built artifacts. `--implementation` additionally
-requires every interpreted service to remain needs_review and production to be
-empty; this is an implementation-run gate, not a permanent publication policy.
+Default coverage is milestone 4 (all current cases). `--milestone 2` or
+`--milestone 3` selects cases and source-date checks up to that milestone; it does
+not remove other recordings from the index. `--implementation` is no longer an option.
 
-Metadata schema 3 binds the binary filename/checksum to the ordered chapter array.
-BSB remains separate, deduplicated retrieval text. Public results never render
-transcripts or per-chapter synopses. Invalid artifacts block hybrid acceptance;
-fixture embeddings never count as real-model acceptance.
+Metadata schema 5 binds the binary filename/checksum to the ordered `SearchUnit[]`.
+BSB remains separate, deduplicated retrieval text. Search results are ranked as
+recordings, matching the UI: a recording's own row, chapter, subchapter or point can
+satisfy an `acceptableServiceIds` target. Some cases supply an `exactQuery`
+companion; passing that query does not establish exact recall for the longer
+natural-language question used in hybrid mode.
 
-Cases cover rank thresholds, full calendar dates, excluded media and honest empty
-results. Valid whole-query dates (ISO or English day/month forms) constrain all
-results to that exact date before ranking. Invalid/partial dates remain ordinary
-queries; no recording-specific aliases occur in the ranking algorithm.
+Cases cover rank thresholds, full calendar dates, match reasons and honest empty
+results. Full ISO/English dates constrain every result to that date. Source-date
+checks verify the date of each upload still present in the archive; deliberately
+omitted uploads are reported as left out. No recording-specific query aliases
+occur in the ranking algorithm.
 
-JSON reports include corpus counts, artifact checks, each query/mode's pass status,
-accepted rank and actual top three results. Failures set exit code 1. Tests of the
-reporting contract use fictional fixtures; current real-corpus results belong in
-the [run log](run-log.md). Performance is measured separately by `benchmark:search`
-against the checked-in budgets, with preparation and query time reported separately.
+JSON reports include the artifact path and metadata hash, unit count, source-date
+checks, actual query for each mode, accepted recording rank and top three results.
+Failures set exit code 1. Missing or invalid query embeddings block hybrid
+acceptance; fixture embeddings do not count as real-model evidence.
+
+`tests/evaluation.test.ts` checks reporting with fictional fixtures. Earlier
+real-corpus results are retained in the [historical run log](history/run-log.md),
+not evidence for the current format. Measure current performance separately with
+`pnpm benchmark:search` against the checked-in budgets.

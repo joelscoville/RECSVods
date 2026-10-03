@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import DevEdit from '../../../components/DevEdit';
+import '../../../styles/editor.css';
+// Unlisted and never indexed; the recording loads from GitHub in the browser, never from the build.
+---
+<SiteLayout title="Check a draft" route="editor-route" header={false} noindex>
+  <main id="main" tabindex="-1">
+    <DevEdit base={import.meta.env.BASE_URL} client:only="react" />
+    <noscript><p class="page-width">The chapter editor needs JavaScript.</p></noscript>
+  </main>
+</SiteLayout>

@@ -1,8 +1,10 @@
-import type { SemanticAsset } from '../lib/semantic-assets';
+import type { InstallPolicy, SemanticAsset } from '../lib/semantic-assets';
 
 /** Serialized by the static endpoint. All runtime dependencies must be inside this function.
  * This worker owns ONLY immutable semantic assets: never navigation, metadata or media. */
-export function semanticCacheWorker(config: { cache: string; base: string; assets: readonly SemanticAsset[] }) {
+export function semanticCacheWorker(config: { cache: string; base: string; assets: readonly SemanticAsset[]; policy?: Partial<InstallPolicy> }) {
+  // Defaults mirror INSTALL_POLICY; the endpoint passes the real values.
+  const policy = { budgetMs: 60_000, warmupBytes: 512 * 1024, warmupMs: 1_000, windowMs: 3_000, stallMs: 10_000, ceilingMs: 300_000, ...config.policy };
   type Client = { id: string; url: string; postMessage(data: unknown): void };
   const scope = globalThis as unknown as {
     location: Location; skipWaiting(): Promise<void>;
@@ -21,24 +23,57 @@ export function semanticCacheWorker(config: { cache: string; base: string; asset
   async function install() {
     const controller = new AbortController();
     abort = controller;
-    // A misclassified connection must not silently download for minutes.
-    const deadline = setTimeout(() => controller.abort('deadline'), 15_000);
+    const started = Date.now();
+    // A safety net only; the meter below normally decides long before this.
+    const ceiling = setTimeout(() => controller.abort('slow'), policy.ceilingMs);
+    let meter: ReturnType<typeof setInterval> | undefined;
     try {
       const cache = await caches.open(config.cache);
       await notify('installing');
+      // Only what is still missing counts: a resumed install measures the remaining bytes.
+      const missing: [string, SemanticAsset][] = [];
       for (const [url, file] of assets) {
+        if ((await cache.match(url))?.headers.get('x-recs-sha256') !== file.sha256) missing.push([url, file]);
+      }
+      const total = missing.reduce((sum, [, file]) => sum + file.bytes, 0);
+      // A speed test on the real download: throughput counts from the first byte (connection setup excluded),
+      // over a recent window, and projects the time left. Too slow, or silent for too long, stops it.
+      let received = 0, firstByte: number | undefined, lastByte = Date.now();
+      const history: [number, number][] = [];
+      meter = setInterval(() => {
+        const now = Date.now();
+        if (now - lastByte > policy.stallMs) { controller.abort('slow'); return; }
+        if (firstByte === undefined || received < policy.warmupBytes || now - firstByte < policy.warmupMs) return;
+        while (history.length > 1 && now - history[1][0] >= policy.windowMs) history.shift();
+        const [since, before] = history[0];
+        const bytesPerMs = (received - before) / Math.max(1, now - since);
+        if (bytesPerMs > 0 && now - started + (total - received) / bytesPerMs > policy.budgetMs) controller.abort('slow');
+      }, 1_000);
+      for (const [url, file] of missing) {
         controller.signal.throwIfAborted();
-        const existing = await cache.match(url);
-        if (existing?.headers.get('x-recs-sha256') === file.sha256) continue;
         const response = await fetch(url, { signal: controller.signal, cache: 'no-cache' });
         if (!response.ok) throw new Error('Asset unavailable');
-        const bytes = await response.arrayBuffer();
+        const parts: Uint8Array[] = [];
+        const reader = response.body?.getReader();
+        if (!reader) throw new Error('Asset unavailable');
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          parts.push(value);
+          const now = Date.now();
+          if (firstByte === undefined) { firstByte = now; history.push([now, received]); }
+          received += value.byteLength; lastByte = now; history.push([now, received]);
+        }
+        const bytes = new Uint8Array(parts.reduce((sum, part) => sum + part.byteLength, 0));
+        parts.reduce((offset, part) => { bytes.set(part, offset); return offset + part.byteLength; }, 0);
         const hash = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), n => n.toString(16).padStart(2, '0')).join('');
         if (bytes.byteLength !== file.bytes || hash !== file.sha256) throw new Error('Asset integrity mismatch');
         controller.signal.throwIfAborted();
         // Reconstructed response contains decoded bytes: never retain Content-Encoding.
         await cache.put(url, new Response(bytes, { headers: { 'content-type': file.path.endsWith('.wasm') ? 'application/wasm'
           : file.path.endsWith('.mjs') ? 'text/javascript' : 'application/octet-stream', 'x-recs-sha256': hash } }));
+        // Hashing and caching are local work, not a stalled connection.
+        lastByte = Date.now();
       }
       // Keep one previous generation for open tabs; never touch another Pages application's cache.
       const prefix = `recs-semantic:${encodeURIComponent(config.base)}:`;
@@ -46,8 +81,8 @@ export function semanticCacheWorker(config: { cache: string; base: string; asset
       for (const name of older.slice(0, -1)) await caches.delete(name);
       await notify('cached');
     } catch {
-      await notify(controller.signal.reason === 'deadline' ? 'slow' : controller.signal.aborted ? 'paused' : 'error');
-    } finally { clearTimeout(deadline); abort = undefined; }
+      await notify(controller.signal.reason === 'slow' ? 'slow' : controller.signal.aborted ? 'paused' : 'error');
+    } finally { clearTimeout(ceiling); clearInterval(meter); abort = undefined; }
   }
   scope.addEventListener('install', (event: { waitUntil(promise: Promise<unknown>): void }) => event.waitUntil(scope.skipWaiting()));
   scope.addEventListener('activate', (event: { waitUntil(promise: Promise<unknown>): void }) => event.waitUntil(scope.clients.claim()));

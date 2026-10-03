@@ -13,7 +13,16 @@ export default defineConfig({
   base,
   trailingSlash: 'always',
   output: 'static',
-  integrations: [react()],
+  integrations: [react(), {
+    name: 'isolated-vite-caches',
+    hooks: {
+      // Astro's build/check commands also create a temporary Vite server. Sharing
+      // its dependency cache with a running dev server invalidates live imports.
+      'astro:config:setup': ({ command, updateConfig }) => {
+        updateConfig({ vite: { cacheDir: `./node_modules/.vite/recs-${command}` } });
+      },
+    },
+  }],
   vite: { define: {
     'import.meta.env.ARCHIVE_MODE': JSON.stringify(process.env.ARCHIVE_MODE || 'production'),
     __RECS_CORRECTIONS__: JSON.stringify(loadCorrectionConfig()),

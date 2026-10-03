@@ -1,5 +1,5 @@
 import { spawn } from 'node:child_process';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { buildIndex } from './archive';
 import { prepare } from './embeddings';
@@ -9,11 +9,10 @@ const command = process.argv[2];
 if (!['production', 'preview', 'dev'].includes(command)) throw new Error('Usage: build.ts production | preview | dev');
 const mode = command === 'production' ? 'production' : 'preview';
 const root = process.cwd();
-// buildIndex always recreates generated and copies only committed, eligible int8 rows.
-const metadataFile = buildIndex(root, mode);
-const metadata = JSON.parse(await readFile(metadataFile, 'utf8'));
-// Query inference still needs pinned self-hosted weights. Never infer chapter vectors here.
-if (metadata.chapters.length) await prepare(root);
+// The pinned model embeds search units now and queries in the browser later.
+await prepare(root);
+// buildIndex always recreates generated/ from the recording files.
+await buildIndex(root, mode);
 const child = spawn('pnpm', ['exec', 'astro', command === 'dev' ? 'dev' : 'build', ...process.argv.slice(3)], {
   stdio: 'inherit', env: { ...process.env, ARCHIVE_MODE: mode },
 });

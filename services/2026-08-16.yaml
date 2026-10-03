@@ -1,0 +1,187 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: From Infant to Instrument
+serviceDate: 2026-08-16
+status: draft
+sermonDescription: "Hadi Wijaya reads 1 Corinthians 3:1-9 as a call to grow beyond spiritual infancy
+  into willing service. He challenges pride and loyalty to personalities, arguing that faithful
+  effort matters even though God gives the growth. Receiving that tension with humility, rather than
+  demanding complete understanding, leads toward practical obedience: trusting God enough to use
+  one's gifts for others, as he illustrates through testimony and his experience in prison
+  ministry."
+sermonScripture:
+  - 1 Corinthians 3:1-9
+  - Isaiah 55:8-9
+  - Ephesians 2:1-10
+sermonTopics:
+  - service-life
+  - prayer
+uploads:
+  - youtubeId: mw4SAoJRZgo
+    uploadDuration: "12:56"
+  - youtubeId: XWAH9SWFcoo
+    uploadDuration: "30:02.801"
+  - youtubeId: IcIxBc--VvM
+    uploadDuration: "50:03"
+chapters:
+  - chapterId: c20260816-p1-opening
+    chapterTitle: Opening
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "7:02.48"
+    points:
+      - pointTime: "0:00"
+        pointText: The leader guides A.C.T.S. prayer through adoration, confession, thanksgiving and
+          supplication, inviting worshippers to entrust joys, burdens and others' needs to God; the
+          welcome has no supplied passage summary.
+  - chapterId: c20260816-p1-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "7:02.48"
+    chapterEnd: "12:56"
+    points:
+      - pointTime: "7:02.48"
+        pointText: The worship leader prays for the preacher, children and an absent pastor, reads Psalms
+          95:1-5 and introduces congregational worship and My Labour Is Not In Vain, during which
+          this upload ends.
+    chapterScripture:
+      - Psalms 95:1-5
+  - chapterId: c20260816-p2-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "12:56"
+    chapterEnd: "33:00.64"
+    points:
+      - pointTime: "12:56"
+        pointText: The worship leader reflects on serving beyond online engagement and becoming more
+          Christ-like amid songs and responsive readings, followed by the reading of 1 Corinthians
+          3:1-9 and presentation setup whose details remain uncertain.
+    chapterScripture:
+      - Proverbs 3:1-35
+      - Ephesians 4:1-16
+      - 1 Corinthians 3:1-9
+  - chapterId: c20260816-p2-grow-beyond-infancy
+    chapterTitle: Believers Are Called to Grow Beyond Infancy
+    chapterKind: sermon
+    chapterStart: "33:00.64"
+    chapterEnd: "42:58.801"
+    points:
+      - pointTime: "33:00.64"
+        pointText: Hadi introduces spiritual maturity through 1 Corinthians 3:1-9, praying for growth and
+          using Corinth's context and the infancy analogy to distinguish mature faith from
+          persistent immaturity while raising questions about human effort under God's control.
+    chapterScripture:
+      - Ephesians 2:1-10
+      - 1 Corinthians 3:1-9
+      - 1 Corinthians 3:1-6
+      - 1 Corinthians 3:1-2
+      - 1 Corinthians 3:2
+      - 1 Corinthians 3:7-9
+  - chapterId: c20260816-p3-pride-hinders-growth
+    chapterTitle: Pride Keeps Believers Immature
+    chapterKind: sermon
+    chapterStart: "42:58.801"
+    chapterEnd: "46:20.021"
+    points:
+      - pointTime: "42:58.801"
+        pointText: Resuming mid-sentence after an unmeasured recording gap, Hadi identifies pride in
+          personality loyalties, resentment and conditional obedience as resistance to spiritual
+          growth, citing William Barclay on pride as a source of other sins.
+  - chapterId: c20260816-p3-effort-and-divine-growth
+    chapterTitle: Work Faithfully and Trust God for Growth
+    chapterKind: sermon
+    chapterStart: "46:20.021"
+    chapterEnd: "1:04:21.161"
+    points:
+      - pointTime: "46:20.021"
+        pointText: Hadi argues that human effort matters although God determines growth and its means, using
+          Scripture and practical examples to urge diligence, humble trust and worship without
+          claiming complete understanding of sovereignty and responsibility.
+    subchapters:
+      - chapterId: s0816-p3-sovereignty
+        chapterTitle: God Ordains the Means as Well as the Outcome
+        chapterKind: sermon
+        chapterStart: "51:55.501"
+        chapterEnd: "56:29.481"
+        points:
+          - pointTime: "51:55.501"
+            pointText: Hadi uses questions about lifespan and an exam illustration to argue that trust in
+              ordained outcomes still requires responsible care and diligent preparation.
+      - chapterId: s0816-p3-limits
+        chapterTitle: Faith Does Not Require Complete Understanding
+        chapterKind: sermon
+        chapterStart: "56:29.481"
+        chapterEnd: "1:00:46.741"
+        points:
+          - pointTime: "56:29.481"
+            pointText: Hadi contrasts human limits with God's perspective and argues, citing Scripture, the
+              Westminster Confession and Augustine, that faith can precede fuller understanding
+              without abandoning logic.
+        chapterScripture:
+          - Isaiah 55:8-9
+          - Hebrews 11:1
+    chapterScripture:
+      - 1 Corinthians 3:1-9
+      - 1 Corinthians 3:6
+      - Proverbs 21:31
+      - Proverbs 16:9
+      - Proverbs 16:33
+      - Philippians 2:12-13
+      - Isaiah 55:8-9
+      - Hebrews 11:1
+  - chapterId: c20260816-p3-willing-service
+    chapterTitle: Maturity Takes Shape in Willing Service
+    chapterKind: sermon
+    chapterStart: "1:04:21.161"
+    chapterEnd: "1:22:10.281"
+    points:
+      - pointTime: "1:04:21.161"
+        pointText: Hadi presents service under God as a privilege, drawing on Nick Vujicic's recorded
+          testimony and his own prison ministry to challenge unwillingness and urge humble, obedient
+          use of one's gifts for others.
+    subchapters:
+      - chapterId: s0816-p3-testimony
+        chapterTitle: Nick Vujicic on Forgiveness and Daily Dependence
+        chapterKind: other
+        chapterStart: "1:07:55.661"
+        chapterEnd: "1:11:29.141"
+        points:
+          - pointTime: "1:07:55.661"
+            pointText: In the recorded clip, Nick Vujicic describes disability, questions about suffering and
+              daily dependence on forgiveness; third-party claims remain unverified.
+      - chapterId: s0816-p3-prison
+        chapterTitle: Beginning Prison Ministry With Trust
+        chapterKind: other
+        chapterStart: "1:13:19.001"
+        chapterEnd: "1:16:53.281"
+        points:
+          - pointTime: "1:13:19.001"
+            pointText: Hadi recounts entering prison ministry despite reluctance, encountering inmates'
+              isolation and finding joy in helping them return to society, beginning with trust
+              rather than confidence.
+    chapterScripture:
+      - 1 Corinthians 3:9
+      - Matthew 28:19
+      - 1 Corinthians 3:1-9
+      - Isaiah 55:8-9
+      - Matthew 7:21
+  - chapterId: c20260816-p3-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:22:10.281"
+    chapterEnd: "1:33:01.801"
+    points:
+      - pointTime: "1:22:10.281"
+        pointText: Hadi leads prayer, affirmation of faith and pastoral requests, introduces Work for the
+          Night Is Coming around the offertory and closing worship, then gives a dismissal prayer
+          and church announcements whose lunch date remains uncertain.
+markers:
+  - markerTime: "33:00.64"
+    markerNote: "Also cited in the sermon: 1 Corinthians 3:1-6; 1 Corinthians 3:1-2; 1 Corinthians 3:2;
+      1 Corinthians 3:7-9; 1 Corinthians 3:6; Proverbs 21:31; Proverbs 16:9; Proverbs 16:33;
+      Philippians 2:12-13; Hebrews 11:1; 1 Corinthians 3:9; Matthew 28:19; Matthew 7:21. Keep only
+      the main passages above."
+  - markerTime: "1:07:55.66"
+    markerNote: "Old review note: In Part 3, review the allegations at 26:12–27:05; do not fill the
+      retained source-ASR gap by guessing."

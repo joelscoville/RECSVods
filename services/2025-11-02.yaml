@@ -1,0 +1,213 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: "The Death That Brings Life: Sacrifice"
+serviceDate: 2025-11-02
+status: draft
+sermonDescription: The speaker presents Abraham’s test as a surrender of treasured gifts and divided
+  loyalties, sustained by trust developed through imperfect experience. He connects the provision
+  for Isaac with Christ’s sacrifice, while distinguishing Isaac’s spared life from Jesus’ death and
+  resurrection. Turning to Romans 12, he urges a grateful response to mercy through daily surrender,
+  renewed priorities and ordinary acts of obedience that prepare faith for trials.
+sermonScripture:
+  - Genesis 22:1-19
+  - Genesis 18
+  - Romans 12:1-2
+sermonTopics:
+  - sacrifice
+  - faith
+  - prayer
+uploads:
+  - youtubeId: 94fynFHtreg
+    uploadDuration: "51:44.181"
+chapters:
+  - chapterId: c20251102-sacrifice-and-growing-faith
+    chapterTitle: Sacrifice Begins with Hope and Growing Faith
+    chapterKind: sermon
+    chapterStart: "0:00"
+    chapterEnd: "7:41.52"
+    points:
+      - pointTime: "0:00"
+        pointText: After greeting and prayer, the speaker distinguishes chosen sacrifice from involuntary
+          loss and introduces Abraham’s developing faith through imperfect responses to earlier
+          tests.
+    chapterScripture:
+      - Genesis 22:1-19
+      - Romans 12:1-2
+      - Genesis 22:1
+      - Genesis 12
+      - Genesis 15
+      - Genesis 16
+      - Genesis 18
+      - Genesis 20
+  - chapterId: c20251102-testing-what-abraham-treasures
+    chapterTitle: The Test Concerns What Abraham Treasures
+    chapterKind: sermon
+    chapterStart: "7:41.52"
+    chapterEnd: "17:11.56"
+    points:
+      - pointTime: "7:41.52"
+        pointText: The speaker presents Isaac as Abraham’s promised heir and greatest delight, interpreting
+          the test as a question of allegiance rather than a desire for Isaac’s death.
+    subchapters:
+      - chapterId: s1102-moriah
+        chapterTitle: God Opposes Child Sacrifice
+        chapterKind: sermon
+        chapterStart: "14:00.22"
+        chapterEnd: "16:16.66"
+        points:
+          - pointTime: "14:00.22"
+            pointText: The speaker connects Moriah with later worship sites and appeals to Leviticus 20 against
+              child sacrifice, saying Abraham did not yet have these scriptures.
+        chapterScripture:
+          - Genesis 22:2
+          - 2 Samuel 24
+          - Leviticus 20:1-3
+    chapterScripture:
+      - Genesis 22:1-19
+      - Genesis 12
+      - Genesis 17:1-6
+      - Genesis 17
+      - Genesis 18
+      - Genesis 21
+      - Genesis 22:2
+      - 2 Samuel 24
+      - Leviticus 20:1-3
+  - chapterId: c20251102-mature-trust-and-costly-obedience
+    chapterTitle: Mature Trust Enables Costly Obedience
+    chapterKind: sermon
+    chapterStart: "17:11.56"
+    chapterEnd: "29:51.3"
+    points:
+      - pointTime: "17:11.56"
+        pointText: The speaker attributes Abraham’s costly obedience to trust matured through experience,
+          imagines the journey’s emotional burden and interprets Isaac’s submission as trust while
+          acknowledging uncertainty about his age.
+    subchapters:
+      - chapterId: s1102-trust
+        chapterTitle: Isaac’s Submission as Trust in His Father
+        chapterKind: sermon
+        chapterStart: "27:20.72"
+        chapterEnd: "29:51.3"
+        points:
+          - pointTime: "27:20.72"
+            pointText: The speaker interprets Isaac’s lack of resistance as voluntary trust in his father and
+              compares it with Abraham’s trust in God’s provision.
+        chapterScripture:
+          - Genesis 22:7-8
+          - Genesis 22:9
+    chapterScripture:
+      - Genesis 22:3
+      - Genesis 18
+      - Genesis 22:1-19
+      - Hebrews 11
+      - Genesis 22:4
+      - Genesis 22:5-6
+      - Genesis 23
+      - Genesis 22:7-8
+      - Genesis 22:9
+  - chapterId: c20251102-surrender-and-provision-in-christ
+    chapterTitle: Divided Loyalties Die as Provision Points to Christ
+    chapterKind: sermon
+    chapterStart: "29:51.3"
+    chapterEnd: "36:05.94"
+    points:
+      - pointTime: "29:51.3"
+        pointText: The speaker interprets the mountain episode as the ending of divided allegiance and
+          connects the substitute ram and promised offspring with Christ, distinguishing Isaac’s
+          spared life from Jesus’ death and resurrection.
+    subchapters:
+      - chapterId: s1102-christ
+        chapterTitle: Isaac Is Spared; Christ Dies and Rises
+        chapterKind: sermon
+        chapterStart: "33:43.62"
+        chapterEnd: "36:05.94"
+        points:
+          - pointTime: "33:43.62"
+            pointText: The speaker compares Isaac and Christ through paternal love, obedience and the carried
+              burden while distinguishing their outcomes.
+        chapterScripture:
+          - Genesis 22:2
+          - Matthew 3:17
+          - John 3:16
+          - Romans 8:32
+          - Genesis 22
+          - Luke 22:42
+          - Matthew 12:40
+          - Hebrews 11:19
+          - 1 Corinthians 15:3-4
+    chapterScripture:
+      - Genesis 22:10-12
+      - Genesis 22:13-14
+      - Romans 8
+      - Genesis 22:15-19
+      - Genesis 22:2
+      - Matthew 3:17
+      - John 3:16
+      - Romans 8:32
+      - Genesis 22
+      - Luke 22:42
+      - Matthew 12:40
+      - Hebrews 11:19
+      - 1 Corinthians 15:3-4
+  - chapterId: c20251102-mercy-and-daily-surrender
+    chapterTitle: Mercy Calls for Daily Surrender
+    chapterKind: sermon
+    chapterStart: "36:05.94"
+    chapterEnd: "51:44.181"
+    points:
+      - pointTime: "36:05.94"
+        pointText: Turning to Romans 12, the speaker urges grateful daily surrender through remembered
+          mercy, renewed priorities and ordinary obedience, concluding with reflection and prayer
+          for growth through trials.
+    subchapters:
+      - chapterId: s1102-daily
+        chapterTitle: Surrender Extends Beyond Sunday Worship
+        chapterKind: sermon
+        chapterStart: "39:59.24"
+        chapterEnd: "43:36.64"
+        points:
+          - pointTime: "39:59.24"
+            pointText: The speaker describes daily thoughts and choices as worship and connects self-denial with
+              renewed living, sharing the gospel and discipling others.
+        chapterScripture:
+          - Romans 12:1-2
+          - Matthew 16
+          - Galatians 2
+          - Romans 6
+      - chapterId: s1102-training
+        chapterTitle: Ordinary Obedience Prepares Faith for Trials
+        chapterKind: sermon
+        chapterStart: "45:13.78"
+        chapterEnd: "49:07.64"
+        points:
+          - pointTime: "45:13.78"
+            pointText: The speaker compares faith’s growth with resistance training and recommends forgiving,
+              giving, praying, reading scripture and serving as preparation for trials.
+        chapterScripture:
+          - Genesis 22
+          - Romans 5
+    chapterScripture:
+      - Romans 12:1-2
+      - Hebrews 10:10
+      - Matthew 16
+      - Galatians 2
+      - Romans 6
+      - John 12
+      - Matthew 13:23
+      - Matthew 13:22
+      - Genesis 22
+      - Romans 5
+      - Genesis 22:1-19
+      - John 10:10
+markers:
+  - markerTime: "0:00"
+    markerNote: "Also cited in the sermon: Genesis 12; Genesis 22:2; Genesis 22; Genesis 22:1; Genesis
+      15; Genesis 16; Genesis 20; Genesis 17:1-6; Genesis 17; Genesis 21; 2 Samuel 24; Leviticus
+      20:1-3; Genesis 22:3; Hebrews 11; Genesis 22:4; Genesis 22:5-6; Genesis 23; Genesis 22:7-8;
+      Genesis 22:9; Genesis 22:10-12; Genesis 22:13-14; Romans 8; Genesis 22:15-19; Matthew 3:17;
+      John 3:16; Romans 8:32; Luke 22:42; Matthew 12:40; Hebrews 11:19; 1 Corinthians 15:3-4;
+      Hebrews 10:10; Matthew 16; Galatians 2; Romans 6; John 12; Matthew 13:23; Matthew 13:22;
+      Romans 5; John 10:10. Keep only the main passages above."
+  - markerTime: "0:00"
+    markerNote: "Other topics it touched: discipleship."

@@ -35,28 +35,28 @@ scriptureOverlaps(a: ScriptureReference, b: ScriptureReference): boolean;
 
 `ScriptureReference` contains `display` (entered string), `canonical`, `book`, and inclusive `start`/`end` chapter/verse coordinates. `BIBLE_BOOKS` and the aliases in `bible/books.ts` cover all 66 books. Names are case-insensitive; common abbreviations, periods, joined forms (`Rom13`, `1Jn1:1`), Roman numbered books (`II Tim 3:16`), and en/em dashes are accepted. Supported ranges include `Genesis 1-2`, `Romans 12:1-2`, and `John 3:36-4:2`. All endpoints are checked against sourced BSB counts. These are BSB numbering bounds, not a claim of text equivalence with ESV.
 
-Keep editable YAML as `scripture: string[]`, one reference per entry. Comma/semicolon lists and implicit single-chapter-book verse notation are intentionally not accepted; use explicit chapter/verse and separate array entries. `ScriptureInputSchema` accepts aliases; the retained `ScriptureReferenceSchema` validates canonical output for existing callers.
+Keep editable YAML as `sermonScripture: string[]`, one reference per entry. Comma/semicolon lists and implicit single-chapter-book verse notation are intentionally not accepted; use explicit chapter/verse and separate array entries. The recording schema validates aliases through `parseScriptureReference`.
 
-The archive loader normalizes `Passage.scripture`; when normalization changes an entered reference, it preserves the original array in `Passage.scriptureDisplay`. `flattenArchive` carries the same optional aligned array to `SearchPassage`. For unchanged canonical references the array can be absent. UI code should use:
+`displayRecordings` normalizes `sermonScripture` into `DisplayRecording.scripture` and retains entered labels in `scriptureDisplay`. `searchUnits` carries an aligned `scriptureDisplay` array when normalization changed a label. UI code should use:
 
 ```ts
-const label = passage.scriptureDisplay?.[index] ?? passage.scripture[index];
-const href = scriptureUrl(passage.scripture[index]);
+const label = unit.scriptureDisplay?.[index] ?? unit.scripture[index];
+const href = scriptureUrl(unit.scripture[index]);
 // Render the reference with an ESV label, not verseText.
 ```
 
 ## Build order and search boundary
 
 1. Verify the committed Bible source/counts with `scripts/devenv-run pnpm exec tsx scripts/bible.ts verify` (offline).
-2. `scripts/archive.ts build-index [--mode production|preview]` loads and normalizes the editable archive, applies existing publication filtering, then calls `enrichPassages` from `bible/enrich.ts`. Only the generated `site/public/generated/passages.json` receives optional `SearchPassage.verseText`.
-3. Run `scripts/embeddings.ts index` **after** that enriched index is written. The existing build orchestrator already uses this order. It replaces all vectors, not just changed IDs.
-4. Build the site using the matching mode. Display loaders/projections do not call enrichment. The complete Bible is not a browser dependency; only referenced verse text is present in the fetched search JSON.
+2. `scripts/archive.ts build-index [--mode production|preview]` loads the recording files, applies publication filtering and derives search units. `buildScriptureIndex` in `bible/chapter-index.ts` selects the referenced BSB rows into a separate `scripture.json`.
+3. `scripts/search-vectors.ts` embeds each unit's public text and cited BSB passages, reusing rows cached by recipe and input. The build writes `chapters.json` and content-addressed `vectors.<sha256>.bin` alongside the scripture index.
+4. Build the site using the matching mode (`pnpm build` or `pnpm build:preview` handles the whole sequence). The browser loads BSB separately and `enrichUnits` adds `verseText` only in memory. The complete Bible is not a browser dependency.
 
 Hidden means **not rendered**, not private: the generated JSON and vectors are public browser inputs. Never spread `verseText` into transcript, summary, preview snippets, structured metadata, or ESV quotations. Source schemas reject author-supplied `verseText`. Enrichment selects exact source rows, skips blank rows, deduplicates overlapping references in stable first-seen order, and does not mutate display records.
 
-`buildEmbeddingDocument` is shared by index generation and browser vector validation. Its stable order is title, summary, questions, topics, canonical scripture references, BSB verse text, transcript, followed by the existing shared NFKC/whitespace preprocessing. The model's existing 256-token truncation still applies. Rebuild all vectors after adding/changing Bible input. Exact document equality rejects previously generated vectors without the new BSB input; the existing `passagesSha256` additionally fingerprints the enriched JSON. The source hash is pinned separately in provenance, and the model/tokenizer config is unchanged.
+`unitText` builds vector input in the order title, text, topics, canonical references and deduplicated BSB text. Transcripts and review markers are never input. Overlapping token windows fit the model's 256-token limit; their normalized vectors are averaged and quantized. The browser verifies the resulting binary against its metadata checksum. Changed cited BSB text changes the cache key automatically on the next build; the Bible source hash is pinned separately in provenance.
 
-Search normalizes complete reference queries and matches inclusive reference overlap, so `Romans 13`, `Rom 13`, and `Rom13` agree. `SEARCH_WEIGHTS` centralizes scoring: referenced scripture receives weight 14 plus a 32-point reference bonus, BSB text weight 8, and semantic similarity remains bounded at 3. BSB uses conservative terminal-plural folding for recall: the actual Romans 12:1 source says **“living sacrifices”**, so the singular query `living sacrifice` matches without changing the stored text. That reason is exactly **`Verse-text match (BSB)`**, never an ESV quotation or a claim of exact wording. No acceptance query has special-cased ranking code.
+Search normalizes complete reference queries and matches inclusive reference overlap, so `Romans 13`, `Rom 13`, and `Rom13` agree. `SEARCH_WEIGHTS` centralizes scoring: scripture weight 14, reference bonus 32, BSB text weight 2 and semantic weight 6. BSB uses light English inflection normalization for recall: the actual Romans 12:1 source says **“living sacrifices”**, so the singular query `living sacrifice` matches without changing the stored text. That reason is exactly **`Verse-text match (BSB)`**, never an ESV quotation or a claim of exact wording. See [search](search.md) for ranking details.
 
 ## Reproduction and updates
 
@@ -70,6 +70,6 @@ scripts/devenv-run pnpm exec tsx scripts/bible.ts verify
 scripts/devenv-run pnpm exec vitest run tests/scripture.test.ts tests/search.test.ts
 ```
 
-For an intentional source update: re-read official ESV and BSB terms and the official download listing; record the new check date/version and any material changes. Inspect the new official source separately, calculate its byte size/hash, and review its differences before changing `provenance.json`. Then run the pinned downloader, regenerate counts, run reference/enrichment/search tests, regenerate the complete passage index and **all** vectors, and rebuild both publication modes. Review any newly invalid references; never silently clamp them or substitute text. Update this document's version/hash alongside provenance. A routine build neither downloads a Bible nor updates the pin automatically.
+For an intentional source update: re-read official ESV and BSB terms and the official download listing; record the new check date/version and any material changes. Inspect the new official source separately, calculate its byte size/hash, and review its differences before changing `provenance.json`. Then run the pinned downloader, regenerate counts, run reference/enrichment/search tests, and rebuild both publication modes. Changed vector inputs are embedded automatically. Review any newly invalid references; never silently clamp them or substitute text. Update this document's version/hash alongside provenance. A routine build neither downloads a Bible nor updates the pin automatically.
 
 Tests use synthetic archive metadata and actual pinned BSB rows. They cover aliases across all books, Roman numbers, chapter/verse bounds, cross-chapter ranges, original display preservation, canonical ESV links, source integrity, source blank rows, generated-only enrichment, publication filtering, repeatable indexes, overlap ranking, and singular `living sacrifice` retrieval. `pnpm test:search` adds independent reference and visible-verse contracts without requiring a build. `pnpm test:model` selects real model integration, and `pnpm test:e2e:model` checks real archive semantic behavior; see [testing](testing.md).

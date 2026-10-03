@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { prepareSearchIndex, search } from '../site/lib/search';
 import { parseScriptureReference, scriptureCoverage, scriptureOverlaps } from '../site/lib/scripture';
-import type { SearchChapter } from '../site/lib/types';
+import type { SearchUnit } from '../site/lib/display';
 
 // Independent truth table: do not derive expected identities from the parser under test.
 const books = [
@@ -11,20 +11,20 @@ const books = [
   { book: '3 John', names: ['3 John', 'III John', 'iii john', '3Jn'] },
   { book: 'Song of Solomon', names: ['Song of Solomon', 'Song of Songs', 'song of solomon', 'SOS'] },
 ];
-const fixture: SearchChapter = {
-  id: 'target', serviceId: 'fixture', videoId: 'abcdefghijk', start: 10, end: 20,
-  title: 'Reading', serviceTitle: 'Gathering', summary: 'A reading.', date: '2026-01-04',
-  type: 'sermon', preview: true, scripture: [], keywords: [], topics: [],
+const fixture: SearchUnit = {
+  id: 'target', recordingId: 'fixture', kind: 'point', start: 10, end: 20,
+  title: 'Reading', recordingTitle: 'Gathering', text: 'A reading.', date: '2026-01-04',
+  preview: true, scripture: [], topics: [],
 };
 const engines = {
-  exhaustive: (rows: SearchChapter[]) => (query: string) => search(rows, query),
-  prepared: (rows: SearchChapter[]) => prepareSearchIndex(rows).search,
+  exhaustive: (rows: SearchUnit[]) => (query: string) => search(rows, query),
+  prepared: (rows: SearchUnit[]) => prepareSearchIndex(rows).search,
 };
 
 describe.each(Object.entries(engines))('%s search contracts', (_name, prepare) => {
   for (const { book, names } of books) it.each(names)('keeps the full identity of %s', (name) => {
-    const run = prepare([{ ...fixture, summary: `Read ${name} 1:2.` }]);
-    expect(run(`${book} 1:2`).map(({ chapter }) => chapter.id)).toEqual(['target']);
+    const run = prepare([{ ...fixture, text: `Read ${name} 1:2.` }]);
+    expect(run(`${book} 1:2`).map(({ unit }) => unit.id)).toEqual(['target']);
     expect(run(`${book} 1:2`)[0].reasons).toContain(`Mentions ${book} 1:2`);
     for (const other of books.filter(item => item.book !== book)) expect(run(`${other.book} 1:2`)).toEqual([]);
   });
@@ -32,49 +32,48 @@ describe.each(Object.entries(engines))('%s search contracts', (_name, prepare) =
   it.each([';', ', ', ' / ', ' (', '\n', '. ', ' ', ';\n'])('never borrows a number across %j', (separator) => {
     for (const compact of [false, true]) {
       const john = compact ? 'John3:16' : 'John 3:16';
-      const run = prepare([{ ...fixture, summary: `Read Romans 12:1${separator}${john}.` }]);
+      const run = prepare([{ ...fixture, text: `Read Romans 12:1${separator}${john}.` }]);
       expect(run('John 3:16')).toHaveLength(1);
       expect(run('Romans 12:1')).toHaveLength(1);
       expect(run('1 John 3:16')).toEqual([]);
       // Adding a genuinely numbered reference is not the same as borrowing a number.
-      const numbered = prepare([{ ...fixture, summary: `Romans 12:1${separator}1 ${john}.` }]);
+      const numbered = prepare([{ ...fixture, text: `Romans 12:1${separator}1 ${john}.` }]);
       expect(numbered('1 John 3:16')).toHaveLength(1);
       expect(numbered('John 3:16')).toEqual([]);
     }
   });
 
-  const fields: [string, Partial<SearchChapter>][] = [
-    ['title', { title: 'Read John 3:16' }], ['summary', { summary: 'Read John 3:16' }],
-    ['parent', { parentId: 'parent', parentTitle: 'Read John 3:16' }],
-    ['service', { serviceTitle: 'Read John 3:16' }], ['series', { series: { id: 'series', name: 'Read John 3:16' } }],
-    ['keywords', { keywords: ['Read John 3:16'] }], ['topics', { topics: ['Read John 3:16'] }],
+  const fields: [string, Partial<SearchUnit>][] = [
+    ['title', { title: 'Read John 3:16' }], ['text', { text: 'Read John 3:16' }],
+    ['recording', { recordingTitle: 'Read John 3:16' }], ['series', { series: { id: 'series', title: 'Read John 3:16' } }],
+    ['topics', { topics: ['Read John 3:16'] }],
   ];
   it.each(fields)('recognizes references in %s independently of structured citations', (_field, values) => {
     expect(prepare([{ ...fixture, ...values }])('John 3:16')).toHaveLength(1);
   });
   it('does not join distinct metadata values into references', () => {
-    const run = prepare([{ ...fixture, title: '1', keywords: ['1', 'John 3:16'], topics: ['John', '4:8'] }]);
+    const run = prepare([{ ...fixture, title: '1', topics: ['1', 'John 3:16', 'John', '4:8'] }]);
     expect(run('John 3:16')).toHaveLength(1);
     expect(run('1 John 3:16')).toEqual([]);
     expect(run('John 4:8')).toEqual([]);
   });
-  it.each(['It is 3 weeks away.', 'mark 3 items', 'the acts 2 cast list'])('does not invent a reference in %s', (summary) => {
-    const run = prepare([{ ...fixture, summary }]);
+  it.each(['It is 3 weeks away.', 'mark 3 items', 'the acts 2 cast list'])('does not invent a reference in %s', (text) => {
+    const run = prepare([{ ...fixture, text }]);
     for (const query of ['Isaiah 3', 'Mark 3', 'Acts 2']) expect(run(query)).toEqual([]);
   });
   it('rejects loose book/number coverage and preserves citation provenance', () => {
     const rows = [
-      { ...fixture, id: 'loose', scripture: ['Psalms 98:1-3'], summary: 'Psalms 98:1-3 and 1 Corinthians 11.' },
-      { ...fixture, id: 'written', summary: 'Reads Psalm 1 aloud.' },
+      { ...fixture, id: 'loose', scripture: ['Psalms 98:1-3'], text: 'Psalms 98:1-3 and 1 Corinthians 11.' },
+      { ...fixture, id: 'written', text: 'Reads Psalm 1 aloud.' },
       { ...fixture, id: 'cited', scripture: ['Psalms 1:1-6'] },
     ];
     const results = prepare(rows)('Psalms 1');
-    expect(results.map(({ chapter }) => chapter.id)).toEqual(['cited', 'written']);
+    expect(results.map(({ unit }) => unit.id)).toEqual(['cited', 'written']);
     expect(results[0].reasons).toContain('Scripture: Psalms 1');
     expect(results[1].reasons).toContain('Mentions Psalms 1');
   });
   it.each(['John 3:0', 'John 3:37', 'John 3:20-16', 'John 99:16'])('does not salvage an invalid written range: %s', (reference) => {
-    expect(prepare([{ ...fixture, summary: `Read ${reference}.` }])('John 3:16')).toEqual([]);
+    expect(prepare([{ ...fixture, text: `Read ${reference}.` }])('John 3:16')).toEqual([]);
   });
 });
 
@@ -98,7 +97,7 @@ describe('generated reference contracts', () => {
       expect(scriptureOverlaps(parsed, passage), context).toBe(hits > 0);
       expect(scriptureCoverage(parsed, [passage, passage]), context).toBe(hits / requested.size);
       const summary = `Romans 12:1; ${i % 2 ? ref.toLowerCase() : ref}.`;
-      for (const prepare of Object.values(engines)) expect(prepare([{ ...fixture, summary }])(q).length, context).toBe(hits ? 1 : 0);
+      for (const prepare of Object.values(engines)) expect(prepare([{ ...fixture, text: summary }])(q).length, context).toBe(hits ? 1 : 0);
     }
   });
 });

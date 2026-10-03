@@ -1,94 +1,41 @@
-import { existsSync, lstatSync, mkdirSync, readFileSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { gzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
-import { flattenChapters, loadArchive, type BuildMode, type Service } from '../site/lib/archive';
+import type { BuildMode, SearchUnit } from '../site/lib/display';
+import { loadPublicArchive } from '../site/lib/public-archive';
+import { loadRecordings } from '../site/lib/recordings';
 import { CHAPTER_VECTOR_CONFIG, packChapterVectors } from '../site/lib/chapter-vectors';
-import { validateChapterVectorManifest } from './chapter-vectors';
-import { parseChapterMetadata, parseLegacyChapterMap, type ChapterMetadata, type LegacyChapterMap } from '../site/lib/chapter-index';
-import type { SearchChapter } from '../site/lib/types';
+import { parseChapterMetadata, type ChapterMetadata, type ScriptureIndex } from '../site/lib/chapter-index';
 import { buildScriptureIndex } from '../bible/chapter-index';
-import { validateBackfill } from '../site/lib/backfill';
+import { searchVectorRows } from './search-vectors';
 
-export const CHAPTER_ARTIFACTS = ['chapters.json', 'vectors.bin', 'scripture.json', 'legacy-chapters.json'] as const;
+export const CHAPTER_ARTIFACTS = ['chapters.json', 'vectors.bin', 'scripture.json'] as const;
 export const artifactFilename = (name: (typeof CHAPTER_ARTIFACTS)[number], metadata: ChapterMetadata) => name === 'vectors.bin' ? metadata.vectors.file : name;
 const compact = (value: unknown) => Buffer.from(JSON.stringify(value));
 
-/** Sidecars may never redirect a build into private ASR/evidence directories. */
-function readSidecar(root: string, filename: string): Buffer {
-  const absolute = path.resolve(root, filename);
-  if (realpathSync(absolute) !== path.join(realpathSync(root), filename) || !lstatSync(absolute).isFile()) {
-    throw new Error(`Sidecar must be a regular file without symlinks: ${filename}`);
-  }
-  return readFileSync(absolute);
-}
-function serviceDirectory(service: Service): string {
-  return `services/${service.date.slice(0, 4)}/${service.id}`;
-}
-
-/** Only committed quantized rows are read. No inference, tokenization or transcript inputs. */
-export function committedChapterRows(root: string, services: readonly Service[], chapters: readonly SearchChapter[]): Int8Array[] {
-  const selected = new Set(chapters.map((chapter) => chapter.serviceId));
-  const rows = new Map<string, Int8Array>();
-  for (const service of services.filter((candidate) => selected.has(candidate.id))) {
-    const directory = serviceDirectory(service);
-    const bytes = readSidecar(root, `${directory}/chapter-vectors.bin`);
-    const manifest = JSON.parse(readSidecar(root, `${directory}/chapter-vectors.json`).toString('utf8'));
-    const decoded = validateChapterVectorManifest(manifest, bytes, service.chapters);
-    for (const [i, binding] of decoded.manifest.bindings.entries()) {
-      const row = decoded.values.slice(i * decoded.dimension, (i + 1) * decoded.dimension);
-      rows.set(binding.id, row);
-    }
-  }
-  return chapters.map((chapter) => {
-    const row = rows.get(chapter.id);
-    if (!row) throw new Error(`Missing committed vector for ${chapter.id}`);
-    return row;
-  });
-}
-
-/** Accept the shared source map and/or service-local maps; all are ID-only, never internal YAML. */
-export function eligibleLegacyChapters(root: string, services: readonly Service[], chapters: readonly SearchChapter[]): LegacyChapterMap {
-  const eligible = new Set(chapters.map((chapter) => chapter.id));
-  const known = new Set(services.flatMap((service) => service.chapters.map((chapter) => chapter.id)));
-  const source: LegacyChapterMap = Object.create(null);
-  for (const filename of ['services/legacy-chapters.json', ...services.map((service) => `${serviceDirectory(service)}/legacy-chapters.json`)]) {
-    if (!existsSync(path.join(root, filename))) continue;
-    const mapping = parseLegacyChapterMap(JSON.parse(readSidecar(root, filename).toString('utf8')));
-    for (const [legacy, chapter] of Object.entries(mapping)) {
-      if (!known.has(chapter) || known.has(legacy) || (Object.hasOwn(source, legacy) && source[legacy] !== chapter)) {
-        throw new Error(`Invalid or conflicting legacy chapter mapping: ${legacy}`);
-      }
-      source[legacy] = chapter;
-    }
-  }
-  return Object.fromEntries(Object.entries(source).filter(([, chapter]) => eligible.has(chapter)).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0));
-}
-
-/** Pure artifact calculation shared with output verification; does not read internal material. */
-export function chapterArtifacts(root = process.cwd(), mode: BuildMode = 'production') {
-  const services = loadArchive(root);
-  validateBackfill(root, services);
-  const chapters = flattenChapters(services, mode);
-  const vectors = Buffer.from(packChapterVectors(committedChapterRows(root, services, chapters)));
+/** Makes one vector row per unit; tests pass their own instead of loading the model. */
+export type VectorRows = (root: string, units: readonly SearchUnit[], scripture: ScriptureIndex) => Promise<Int8Array[]>;
+/** The public search data: units, their BSB passages, and vectors embedded from that same text. */
+export async function chapterArtifacts(root = process.cwd(), mode: BuildMode = 'production', rows: VectorRows = searchVectorRows) {
+  const { units } = loadPublicArchive(mode, root);
+  const scripture = buildScriptureIndex(units);
+  const vectors = Buffer.from(packChapterVectors(await rows(root, units, scripture)));
   const sha256 = createHash('sha256').update(vectors).digest('hex');
-  const metadata: ChapterMetadata = parseChapterMetadata({ schemaVersion: 3, model: CHAPTER_VECTOR_CONFIG,
-    vectors: { file: `vectors.${sha256}.bin`, sha256 }, chapters });
-  const scripture = buildScriptureIndex(metadata.chapters);
-  const legacy = eligibleLegacyChapters(root, services, metadata.chapters);
+  const metadata: ChapterMetadata = parseChapterMetadata({ schemaVersion: 6, model: CHAPTER_VECTOR_CONFIG,
+    vectors: { file: `vectors.${sha256}.bin`, sha256 }, units });
   const files: Record<(typeof CHAPTER_ARTIFACTS)[number], Buffer> = {
-    'chapters.json': compact(metadata), 'vectors.bin': vectors,
-    'scripture.json': compact(scripture), 'legacy-chapters.json': compact(legacy),
+    'chapters.json': compact(metadata), 'vectors.bin': vectors, 'scripture.json': compact(scripture),
   };
-  return { metadata, scripture, legacy, files };
+  return { metadata, scripture, files };
 }
 
-export function buildIndex(root = process.cwd(), mode: BuildMode = 'production'): string {
+export async function buildIndex(root = process.cwd(), mode: BuildMode = 'production', rows?: VectorRows): Promise<string> {
   const directory = path.join(root, 'site/public/generated');
   // Clear BEFORE validation, including on a failed build. No stale preview/old index may survive.
   rmSync(directory, { recursive: true, force: true });
-  const { files, metadata } = chapterArtifacts(root, mode);
+  const { files, metadata } = await chapterArtifacts(root, mode, rows);
   mkdirSync(directory, { recursive: true });
   for (const name of CHAPTER_ARTIFACTS) {
     const filename = artifactFilename(name, metadata);
@@ -99,9 +46,9 @@ export function buildIndex(root = process.cwd(), mode: BuildMode = 'production')
 }
 
 /** Actual compact public metadata bytes, useful for measuring per-service curation output. */
-export function metadataOutputSize(chapters: readonly SearchChapter[]) {
-  const bytes = compact(chapters);
-  return { chapters: chapters.length, bytes: bytes.byteLength, gzipBytes: gzipSync(bytes, { level: 9 }).byteLength };
+export function metadataOutputSize(units: readonly SearchUnit[]) {
+  const bytes = compact(units);
+  return { units: units.length, bytes: bytes.byteLength, gzipBytes: gzipSync(bytes, { level: 9 }).byteLength };
 }
 export function chapterArtifactReport(directory: string) {
   const metadata = parseChapterMetadata(JSON.parse(readFileSync(path.join(directory, 'chapters.json'), 'utf8')));
@@ -109,15 +56,15 @@ export function chapterArtifactReport(directory: string) {
     bytes: readFileSync(path.join(directory, artifactFilename(name, metadata))).byteLength,
     gzipBytes: readFileSync(path.join(directory, `${artifactFilename(name, metadata)}.gz`)).byteLength,
   }]));
-  const perService = Object.fromEntries([...new Set(metadata.chapters.map((chapter) => chapter.serviceId))].map((id) =>
-    [id, metadataOutputSize(metadata.chapters.filter((chapter) => chapter.serviceId === id))]));
+  const perService = Object.fromEntries([...new Set(metadata.units.map((unit) => unit.recordingId))].map((id) =>
+    [id, metadataOutputSize(metadata.units.filter((unit) => unit.recordingId === id))]));
   const searchNames = ['chapters.json', 'vectors.bin', 'scripture.json'] as const;
-  return { services: Object.keys(perService).length, chapters: metadata.chapters.length, artifacts, perService,
+  return { recordings: Object.keys(perService).length, units: metadata.units.length, artifacts, perService,
     search: { bytes: searchNames.reduce((sum, name) => sum + artifacts[name].bytes, 0),
       gzipBytes: searchNames.reduce((sum, name) => sum + artifacts[name].gzipBytes, 0) } };
 }
 
-export function archiveCli(args = process.argv.slice(2)): void {
+export async function archiveCli(args = process.argv.slice(2)): Promise<void> {
   const [command, ...options] = args.filter((arg) => arg !== '--');
   const mode = options.length === 0 ? 'production'
     : options.length === 2 && options[0] === '--mode' ? options[1] : undefined;
@@ -126,12 +73,11 @@ export function archiveCli(args = process.argv.slice(2)): void {
     throw new Error('Usage: tsx scripts/archive.ts validate | build-index [--mode production|preview] | report');
   }
   if (command === 'validate') {
-    const services = loadArchive();
-    validateBackfill(process.cwd(), services);
-    console.log(`Archive valid: ${services.length} interpreted service(s).`);
+    const { recordings } = loadRecordings();
+    console.log(`Archive valid: ${recordings.length} recording(s).`);
   } else if (command === 'report') console.log(JSON.stringify(chapterArtifactReport(path.join(process.cwd(), 'site/public/generated')), null, 2));
-  else console.log(buildIndex(process.cwd(), mode as BuildMode));
+  else console.log(await buildIndex(process.cwd(), mode as BuildMode));
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  try { archiveCli(); } catch (error) { console.error(error instanceof Error ? error.message : error); process.exitCode = 1; }
+  try { await archiveCli(); } catch (error) { console.error(error instanceof Error ? error.message : error); process.exitCode = 1; }
 }
