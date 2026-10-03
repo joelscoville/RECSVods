@@ -18,13 +18,15 @@ export function useEditorPlayback(base: EditorRecording, root: RefObject<HTMLDiv
   const [time, setTime] = useState(() => requestedEditorTime(length) ?? 0), [playing, setPlaying] = useState(false), [speed, setSpeed] = useState(1);
   const [player, setPlayer] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle'), [playerError, setPlayerError] = useState('');
   const [file, setFile] = useState<File>(), [fileWarning, setFileWarning] = useState<string>();
+  const [availableSpeeds, setAvailableSpeeds] = useState<number[]>([]), [speedNotice, setSpeedNotice] = useState<string>();
+  const requestedSpeed = useRef(1), speedSettlesAt = useRef(0);
   const adapter = useRef<PlayerAdapter | null>(null), abort = useRef<AbortController | null>(null), host = useRef<HTMLDivElement>(null);
   const settleUntil = useRef(0), lastSeek = useRef(0), stopAt = useRef<number>(undefined);
   const load = useCallback(async (start: number, local: File | null | undefined = file) => {
     abort.current?.abort(); adapter.current?.destroy(); adapter.current = null;
     if (!host.current) return;
     const request = new AbortController(); abort.current = request;
-    setPlayer('loading'); setPlayerError(''); setFileWarning(undefined);
+    setPlayer('loading'); setPlayerError(''); setFileWarning(undefined); setAvailableSpeeds([]); setSpeedNotice(undefined);
     const onError = (message: string) => { if (!request.signal.aborted) { setPlayerError(message); setPlayer('error'); } };
     try {
       let mounted: PlayerAdapter;
@@ -34,17 +36,19 @@ export function useEditorPlayback(base: EditorRecording, root: RefObject<HTMLDiv
         mounted = played;
       } else mounted = await mountRecordingPlayer(host.current, { uploads, title: recording.recordingTitle, start, signal: request.signal, controls: false, onError, onAutoplayBlocked() {},
         onLoading() { if (!request.signal.aborted) setPlayer('loading'); },
-        onAvailability(span) { if (!request.signal.aborted) { setPlayer('ready'); if (span) { setTime(span.time); setPlaying(false); } } },
+        onAvailability(span) { if (!request.signal.aborted) { setPlayer('ready'); speedSettlesAt.current = performance.now() + 1200; if (span) { setTime(span.time); setPlaying(false); } } },
       });
       if (request.signal.aborted) { mounted.destroy(); return; }
       adapter.current = mounted;
       mounted.seekTo(start, true); settleUntil.current = performance.now() + 600;
-      if (speed !== 1) mounted.setPlaybackRate?.(speed);
+      mounted.setPlaybackRate?.(requestedSpeed.current);
+      speedSettlesAt.current = performance.now() + 1200;
       mounted.playVideo(); setPlayer('ready'); root.current?.focus({ preventScroll: true });
     } catch (failure) { if (!request.signal.aborted) onError(failure instanceof Error ? failure.message : 'The player could not be loaded.'); }
-  }, [file, recording.recordingTitle, uploads, length, speed, root]);
+  }, [file, recording.recordingTitle, uploads, length, root]);
   useEffect(() => {
     setTime(requestedEditorTime(length) ?? 0); setPlaying(false); setPlayer('idle'); setFile(undefined); setFileWarning(undefined); stopAt.current = undefined;
+    requestedSpeed.current = 1; setSpeed(1); setAvailableSpeeds([]); setSpeedNotice(undefined);
     return () => { abort.current?.abort(); adapter.current?.destroy(); adapter.current = null; };
   }, [base, length]);
   useEffect(() => {
@@ -52,6 +56,17 @@ export function useEditorPlayback(base: EditorRecording, root: RefObject<HTMLDiv
       const current = adapter.current;
       if (!current) return;
       const active = current.getPlayerState() === 1; setPlaying(active);
+      const rates = current.getAvailablePlaybackRates?.() ?? [];
+      setAvailableSpeeds(previous => previous.length === rates.length && previous.every((rate, i) => rate === rates[i]) ? previous : rates);
+      const actualRate = current.getPlaybackRate?.();
+      if (actualRate && Number.isFinite(actualRate) && (actualRate === requestedSpeed.current || performance.now() >= speedSettlesAt.current)) {
+        setSpeed(actualRate);
+        if (actualRate !== requestedSpeed.current) {
+          setSpeedNotice(`This video is playing at ${actualRate}×; ${requestedSpeed.current}× could not be applied.`);
+          requestedSpeed.current = actualRate;
+          current.setPlaybackRate?.(actualRate);
+        }
+      }
       if (performance.now() < settleUntil.current) return;
       const value = current.getCurrentTime(); if (!Number.isFinite(value)) return;
       setTime(value);
@@ -62,6 +77,7 @@ export function useEditorPlayback(base: EditorRecording, root: RefObject<HTMLDiv
   const seek = useCallback((seconds: number, options: EditorSeekOptions = {}) => {
     const target = Math.min(Math.max(0, seconds), Math.max(0, length - 0.05));
     setTime(target); settleUntil.current = performance.now() + 600;
+    speedSettlesAt.current = performance.now() + 1200;
     const current = adapter.current;
     if (!current) { if (options.play) void load(target); return; }
     const now = performance.now();
@@ -74,11 +90,15 @@ export function useEditorPlayback(base: EditorRecording, root: RefObject<HTMLDiv
     if (!adapter.current) { void load(time); return; }
     if (adapter.current.getPlayerState() === 1) adapter.current.pauseVideo(); else adapter.current.playVideo();
   };
-  return { time, playing, speed, player, playerError, file, fileWarning, host, uploads, load, seek, togglePlay,
+  return { time, playing, speed, availableSpeeds, speedNotice, player, playerError, file, fileWarning, host, uploads, load, seek, togglePlay,
     unavailable: file ? undefined : unavailableAt(uploads, time),
     useFile: (chosen: File) => { setFile(chosen); void load(time, chosen); },
     useYouTube: () => { setFile(undefined); void load(time, null); },
-    changeSpeed: (rate: number) => { setSpeed(rate); adapter.current?.setPlaybackRate?.(rate); },
+    changeSpeed: (rate: number) => {
+      requestedSpeed.current = rate; setSpeedNotice(undefined); speedSettlesAt.current = performance.now() + 1200;
+      if (!adapter.current) setSpeed(rate);
+      else adapter.current.setPlaybackRate?.(rate);
+    },
     stopAfter: (at: number) => { stopAt.current = at; },
     commitSeek: () => { settleUntil.current = performance.now() + 600; adapter.current?.seekTo(time, true); },
   };

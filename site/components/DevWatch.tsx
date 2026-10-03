@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import type { DisplayRecording } from './archive-display';
 import { loadArchiveOnce, repositoryUrl, unapprovedDisplay } from '../lib/github-archive';
 import Watch from './Watch';
+import { recordingFilePath } from '../lib/recording-editor';
 
 export default function DevWatch({ base }: { base: string }) {
   const [recordings, setRecordings] = useState<DisplayRecording[]>();
@@ -11,7 +12,12 @@ export default function DevWatch({ base }: { base: string }) {
   useEffect(() => {
     const repository = repositoryUrl();
     if (!repository) { setProblem('This build has no GitHub repository set.'); return; }
-    loadArchiveOnce(repository).then(loaded => setRecordings(unapprovedDisplay(loaded)))
+    loadArchiveOnce(repository).then(loaded => {
+      const id = new URLSearchParams(window.location.search).get('r');
+      const found = id ? loaded.recordings.find(item => item.path === recordingFilePath(id)) : undefined;
+      if (found && !found.recording) throw new Error(`${found.path} has problems: ${found.problems.join('; ')}`);
+      setRecordings(unapprovedDisplay(loaded));
+    })
       .catch(error => setProblem(error instanceof Error ? error.message : String(error)));
   }, []);
   if (problem) return <main id="main" className="page-width" tabIndex={-1}><h1>Could not load from GitHub</h1><p role="alert">{problem}</p></main>;

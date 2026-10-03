@@ -24,6 +24,20 @@ describe('clocks', () => {
     expect(ClockSchema.safeParse(90).success).toBe(false);
     expect(ClockSchema.safeParse('1:5').success).toBe(false);
   });
+  it('formats calculated millisecond clocks without leaking floating-point residue', () => {
+    const total = ['12:56', '30:02.801', '50:03'].reduce((sum, clock) => sum + parseTimecode(clock), 0);
+    expect(total).toBe(5581.8009999999995);
+    expect(formatTimecode(total)).toBe('1:33:01.801');
+    expect(formatTimecode(0.1 + 0.2)).toBe('0:00.3');
+    expect(formatTimecode(59.9999999999)).toBe('1:00');
+    expect(formatTimecode(parseTimecode('0:01.123456789'))).toBe('0:01.123456789');
+  });
+  it('reports unsupported or unrepresentable input precision as validation errors', () => {
+    for (const clock of ['0:01.1234567890', '100000000:00.000000001', '9999999999999999:00']) {
+      expect(() => ClockSchema.safeParse(clock)).not.toThrow();
+      expect(ClockSchema.safeParse(clock).success).toBe(false);
+    }
+  });
 });
 describe('named chapters and subchapters', () => {
   it('accepts complete recordings and does not generate or rewrite titles', () => {
@@ -67,6 +81,13 @@ describe('named chapters and subchapters', () => {
   });
   it('returns errors rather than crashing on empty chapter lists', () => {
     expect(problems(source({ chapters: [] })).join()).toContain('chapters');
+  });
+  it('rejects combined upload clocks that exceed numeric safety even if each upload is valid', () => {
+    const value = source({ uploads: [
+      { youtubeId: 'AAAAAAAAAAA', uploadDuration: '90000000000000:00' },
+      { youtubeId: 'BBBBBBBBBBB', uploadDuration: '90000000000000:00' },
+    ] });
+    expect(problems(value).join()).toContain('combined upload duration is too large');
   });
   it.each(['2026-02-29', '2026-04-31', '2026-00-10', '2026-13-01'])('rejects impossible date %s', serviceDate => {
     expect(problems(source({ serviceDate })).join()).toContain('serviceDate');

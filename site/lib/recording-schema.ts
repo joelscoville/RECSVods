@@ -67,6 +67,9 @@ const RecordingObject = z.object({
 export const RecordingSchema = RecordingObject.superRefine((recording, ctx) => {
   const issue = (path: (string | number)[], message: string) => ctx.addIssue({ code: 'custom', path, message });
   const length = recordingLength(recording);
+  if (!Number.isFinite(length) || !Number.isSafeInteger(Math.floor(length))) {
+    issue(['uploads'], 'the combined upload duration is too large to represent safely');
+  }
   recording.uploads.forEach((upload, i) => {
     if (upload.uploadSkip !== undefined && (i === 0 || upload.uploadSkip >= upload.uploadDuration)) issue(['uploads', i, 'uploadSkip'], 'only for a later upload, and shorter than it');
   });

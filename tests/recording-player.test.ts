@@ -8,18 +8,33 @@ const uploads: RecordingUpload[] = [
   { id: 'AVAILABLE02', start: 160, end: 220, offset: 5, duration: 65 },
 ];
 function setup() {
-  let time = 0, state = 2, onState: (state: number) => void = () => {};
+  let time = 0, state = 2, rate = 1, onState: (state: number) => void = () => {};
   const change = (value: number) => { state = value; queueMicrotask(() => onState(value)); };
+  const load = (value: number) => { state = 3; queueMicrotask(() => { rate = 1; change(value); }); };
   const video: YouTubePlayer = {
     seekTo: vi.fn(value => { time = value; }), playVideo: vi.fn(() => change(1)), pauseVideo: vi.fn(() => change(2)),
-    loadVideoById: vi.fn(value => { time = value.startSeconds; change(1); }), cueVideoById: vi.fn(value => { time = value.startSeconds; change(5); }),
-    getCurrentTime: () => time, getPlayerState: () => state, getIframe: () => null!, destroy: vi.fn(), setPlaybackRate: vi.fn(),
+    loadVideoById: vi.fn(value => { time = value.startSeconds; load(1); }), cueVideoById: vi.fn(value => { time = value.startSeconds; load(5); }),
+    getCurrentTime: () => time, getPlayerState: () => state, getIframe: () => null!, destroy: vi.fn(),
+    setPlaybackRate: vi.fn(value => { rate = value; }), getPlaybackRate: () => rate, getAvailablePlaybackRates: () => [0.5, 1, 1.5, 2],
   };
   const mount = vi.fn(async (_upload: RecordingUpload, local: number, listener: (state: number) => void) => { time = local; onState = listener; return video; });
   return { mount, video, change, onError: vi.fn(), onAvailability: vi.fn() };
 }
 
 describe('unavailable recording spans', () => {
+  it('reapplies a requested speed after an upload resets it asynchronously', async () => {
+    const env = setup(), adapter = await createRecordingPlayer({ uploads, start: 20, ...env });
+    adapter.setPlaybackRate!(2); adapter.seekTo(175, true); adapter.playVideo();
+    await vi.waitFor(() => { expect(adapter.getPlayerState()).toBe(1); expect(adapter.getPlaybackRate!()).toBe(2); });
+    expect(vi.mocked(env.video.setPlaybackRate!).mock.calls.filter(([value]) => value === 2).length).toBeGreaterThanOrEqual(2);
+    expect(adapter.getAvailablePlaybackRates!()).toEqual([0.5, 1, 1.5, 2]);
+  });
+  it('does not override native watch-page speed changes without an explicit editor preference', async () => {
+    const env = setup(); await createRecordingPlayer({ uploads, start: 20, ...env });
+    env.video.setPlaybackRate!(1.5); env.change(1);
+    await Promise.resolve();
+    expect(env.video.getPlaybackRate!()).toBe(1.5);
+  });
   it('holds a direct seek inside a gap without loading any provider', async () => {
     const env = setup(), adapter = await createRecordingPlayer({ uploads, start: 125, ...env });
     expect(env.mount).not.toHaveBeenCalled();

@@ -10,6 +10,8 @@ export interface PlayerAdapter {
   getPlayerState(): number;
   /** Supported by the YouTube player; optional so simple test doubles need not implement it. */
   setPlaybackRate?(rate: number): void;
+  getPlaybackRate?(): number;
+  getAvailablePlaybackRates?(): number[];
   destroy(): void;
 }
 export interface PlaybackRange { id: string; start: number; end?: number; resumeAt?: number }
@@ -199,6 +201,7 @@ export function mountFilePlayer(container: HTMLElement, options: {
         getCurrentTime() { return video.currentTime; },
         getPlayerState() { return video.ended ? 0 : video.paused ? 2 : 1; },
         setPlaybackRate(rate) { video.playbackRate = rate; },
+        getPlaybackRate() { return video.playbackRate; },
         destroy() { video.pause(); video.removeAttribute('src'); video.load(); video.remove(); URL.revokeObjectURL(url); },
       });
     }, { once: true });

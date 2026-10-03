@@ -1,13 +1,13 @@
 /* The hidden /dev page: plain, dense and readable. */
-.dev { display: grid; gap: 28px; padding-block: 32px 64px; }
+.dev { display: grid; min-width: 0; gap: 28px; padding-block: 32px 64px; }
 .dev-head { display: grid; gap: 8px; }
 .dev-head h1 { font-family: var(--display-font); font-size: 36px; }
 .dev-head nav ul { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
 .dev-head nav a { display: inline-block; padding: 4px 12px; border-radius: 999px; background: var(--periwinkle); color: var(--indigo); font-size: 15px; font-weight: 600; text-decoration: none; }
-.dev-section { display: grid; gap: 14px; padding: 22px; border-radius: 16px; background: #fff; box-shadow: 0 1px 0 rgb(39 52 105 / 0.14), 0 8px 28px rgb(30 39 73 / 0.07); scroll-margin-top: 16px; }
+.dev-section { display: grid; min-width: 0; gap: 14px; padding: 22px; border-radius: 16px; background: #fff; box-shadow: 0 1px 0 rgb(39 52 105 / 0.14), 0 8px 28px rgb(30 39 73 / 0.07); scroll-margin-top: 16px; }
 .dev-section h2 { font-size: 22px; }
 .dev-hint { color: rgb(29 27 32 / 0.66); font-size: 15px; }
-.dev-error { color: #9b1c1c; }
+.dev-error { color: #9b1c1c; overflow-wrap: anywhere; }
 ul.dev-error { padding-left: 20px; font-size: 15px; }
 .dev-choice { display: grid; gap: 6px; margin: 0; padding: 0; border: 0; }
 .dev-choice legend { margin-bottom: 6px; font-weight: 700; }
@@ -16,7 +16,8 @@ ul.dev-error { padding-left: 20px; font-size: 15px; }
 .dev-segmented label.is-on { background: var(--indigo); color: #fff; }
 .dev-segmented input { position: absolute; opacity: 0; pointer-events: none; }
 .dev-segmented label:has(input:focus-visible) { outline: 2px solid var(--indigo); outline-offset: 2px; }
-.dev-facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 20px; }
+.dev-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 20px; }
+.dev-facts dd, .dev-card h3 { min-width: 0; overflow-wrap: anywhere; }
 .dev-facts dt { font-weight: 700; }
 .dev-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
 .dev-services { display: grid; gap: 12px; padding: 0; list-style: none; }
@@ -31,7 +32,8 @@ ul.dev-error { padding-left: 20px; font-size: 15px; }
 .dev-chapters li.is-sub { padding-left: 24px; }
 .dev-chapters a { min-width: 5.5em; font-variant-numeric: tabular-nums; }
 .dev-links { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 15px; }
-.dev-table { border-collapse: collapse; }
+.dev-table { border-collapse: collapse; table-layout: fixed; width: 100%; overflow-wrap: anywhere; }
+.dev-table th { width: 50%; }
 .dev-table th, .dev-table td { padding: 6px 16px 6px 0; border-top: 1px solid rgb(39 52 105 / 0.14); text-align: left; font-weight: 400; }
 .dev button.text-link { min-height: 0; padding: 0; border: 0; background: none; color: var(--indigo); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }
 @media (max-width: 640px) { .dev-section { padding: 16px; } .dev-facts { grid-template-columns: 1fr; gap: 2px; } .dev-facts dd { margin-bottom: 8px; } }
