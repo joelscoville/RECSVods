@@ -7,21 +7,63 @@ const uploads: RecordingUpload[] = [
   { id: 'MISSING0001', start: 100, end: 160, offset: 20, duration: 80, unavailable: true },
   { id: 'AVAILABLE02', start: 160, end: 220, offset: 5, duration: 65 },
 ];
-function setup() {
-  let time = 0, state = 2, rate = 1, onState: (state: number) => void = () => {};
+function setup(transitionDelay = 0) {
+  let time = 0, state = 2, rate = 1, loading = false;
+  let onState: (state: number) => void = () => {}, onRate: (rate: number) => void = () => {};
   const change = (value: number) => { state = value; queueMicrotask(() => onState(value)); };
-  const load = (value: number) => { state = 3; queueMicrotask(() => { rate = 1; change(value); }); };
+  const load = (value: number) => {
+    state = 3; rate = 1; loading = true;
+    const ready = () => { loading = false; rate = 1; change(value); };
+    if (transitionDelay) setTimeout(ready, transitionDelay); else queueMicrotask(ready);
+  };
   const video: YouTubePlayer = {
     seekTo: vi.fn(value => { time = value; }), playVideo: vi.fn(() => change(1)), pauseVideo: vi.fn(() => change(2)),
     loadVideoById: vi.fn(value => { time = value.startSeconds; load(1); }), cueVideoById: vi.fn(value => { time = value.startSeconds; load(5); }),
     getCurrentTime: () => time, getPlayerState: () => state, getIframe: () => null!, destroy: vi.fn(),
-    setPlaybackRate: vi.fn(value => { rate = value; }), getPlaybackRate: () => rate, getAvailablePlaybackRates: () => [0.5, 1, 1.5, 2],
+    setPlaybackRate: vi.fn(value => { if (!loading) { rate = value; queueMicrotask(() => onRate(value)); } }), getPlaybackRate: () => rate, getAvailablePlaybackRates: () => [0.5, 1, 1.5, 2],
   };
-  const mount = vi.fn(async (_upload: RecordingUpload, local: number, listener: (state: number) => void) => { time = local; onState = listener; return video; });
+  const mount = vi.fn(async (_upload: RecordingUpload, local: number, listener: (state: number) => void, rateListener: (rate: number) => void) => {
+    time = local; onState = listener; onRate = rateListener; return video;
+  });
   return { mount, video, change, onError: vi.fn(), onAvailability: vi.fn() };
 }
 
 describe('unavailable recording spans', () => {
+  it.each([true, false])('confirms rates only after a slow target is ready (playing=%s)', async playing => {
+    vi.useFakeTimers(); vi.setSystemTime(0);
+    try {
+      const env = setup(3000), ready = vi.fn(() => Date.now()), confirmed = vi.fn();
+      const adapter = await createRecordingPlayer({ uploads, start: 20, ...env, onPlaybackRateReady: ready, onPlaybackRateChange: confirmed });
+      adapter.setPlaybackRate!(2); if (playing) adapter.playVideo();
+      await vi.advanceTimersByTimeAsync(0);
+      ready.mockClear(); confirmed.mockClear();
+      adapter.seekTo(175, true);
+      // A paused notification from the old media is not proof that the new upload is ready.
+      env.change(2); await vi.advanceTimersByTimeAsync(0);
+      expect(adapter.isPlaybackRateReady!()).toBe(false);
+      env.change(3); await vi.advanceTimersByTimeAsync(1600);
+      expect(adapter.getPlaybackRate!()).toBe(1);
+      expect(ready).not.toHaveBeenCalled(); expect(confirmed).not.toHaveBeenCalled();
+      // Changes and another seek during buffering retain the latest preference.
+      adapter.setPlaybackRate!(1.5); adapter.seekTo(180, true);
+      expect(adapter.isPlaybackRateReady!()).toBe(false);
+      await vi.advanceTimersByTimeAsync(1400);
+      expect(adapter.isPlaybackRateReady!()).toBe(true);
+      expect(adapter.getPlaybackRate!()).toBe(1.5);
+      expect(ready.mock.results.at(-1)?.value).toBe(3000);
+      expect(confirmed).toHaveBeenLastCalledWith(1.5);
+    } finally { vi.useRealTimers(); }
+  });
+  it('reapplies the preference after ordinary buffering ends in a paused state', async () => {
+    const env = setup(), ready = vi.fn();
+    const adapter = await createRecordingPlayer({ uploads, start: 20, ...env, onPlaybackRateReady: ready });
+    adapter.setPlaybackRate!(2); await Promise.resolve(); ready.mockClear();
+    env.change(3); env.video.setPlaybackRate!(1); await Promise.resolve();
+    expect(adapter.isPlaybackRateReady!()).toBe(false); expect(ready).not.toHaveBeenCalled();
+    env.change(2); await Promise.resolve();
+    expect(adapter.isPlaybackRateReady!()).toBe(true);
+    expect(adapter.getPlaybackRate!()).toBe(2); expect(ready).toHaveBeenCalled();
+  });
   it('reapplies a requested speed after an upload resets it asynchronously', async () => {
     const env = setup(), adapter = await createRecordingPlayer({ uploads, start: 20, ...env });
     adapter.setPlaybackRate!(2); adapter.seekTo(175, true); adapter.playVideo();
@@ -38,6 +80,7 @@ describe('unavailable recording spans', () => {
   it('holds a direct seek inside a gap without loading any provider', async () => {
     const env = setup(), adapter = await createRecordingPlayer({ uploads, start: 125, ...env });
     expect(env.mount).not.toHaveBeenCalled();
+    expect(adapter.isPlaybackRateReady!()).toBe(false);
     expect(adapter.getCurrentTime()).toBe(125);
     expect(adapter.unavailable).toMatchObject({ start: 100, end: 160, previous: 0, next: 160 });
     adapter.playVideo(); expect(env.mount).not.toHaveBeenCalled(); expect(adapter.getPlayerState()).toBe(2);

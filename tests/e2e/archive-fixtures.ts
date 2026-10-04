@@ -20,16 +20,19 @@ export function unitFor(id: string): SearchUnit {
 
 /** A stand-in for YouTube's IFrame API: records seeks and the upload loaded, and never plays anything.
  * It exercises the real player code; it does not replace a manual check of actual YouTube playback. */
-interface FakeYouTubeOptions { failFirst?: boolean; readyDelay?: number; playbackRates?: number[]; rejectRate?: number }
-const fakeYouTubeScript = ({ failFirst = false, readyDelay = 0, playbackRates = [0.5, 1, 1.5, 2], rejectRate = -1 }: FakeYouTubeOptions) => `let attempts=0;window.YT={Player:class{
-  constructor(host,options){this.options=options;this.videoId=options.videoId;this.time=options.playerVars.start||0;this.state=2;this.ticks=0;this.loads=[options.videoId];this.rate=1;this.rateRequests=[];
+interface FakeYouTubeOptions { failFirst?: boolean; readyDelay?: number; transitionDelay?: number; playbackRates?: number[]; rejectRate?: number; rejectRateAfterTransition?: number }
+const fakeYouTubeScript = ({ failFirst = false, readyDelay = 0, transitionDelay = 0, playbackRates = [0.5, 1, 1.5, 2], rejectRate = -1, rejectRateAfterTransition = -1 }: FakeYouTubeOptions) => `let attempts=0;window.YT={Player:class{
+  constructor(host,options){this.options=options;this.videoId=options.videoId;this.time=options.playerVars.start||0;this.state=2;this.ticks=0;this.loads=[options.videoId];this.rate=1;this.rateRequests=[];this.transitioning=false;this.transition=0;
     this.iframe=document.createElement('iframe');host.replaceWith(this.iframe);window.testPlayer=this;
     setTimeout(()=>${failFirst}&&attempts++===0?options.events.onError({data:100}):options.events.onReady({target:this}),${readyDelay})}
-  change(state,resetRate=false){this.state=state;setTimeout(()=>{if(resetRate)this.rate=1;this.options.events.onStateChange&&this.options.events.onStateChange({data:state})},0)}
+  change(state){this.state=state;setTimeout(()=>{this.options.events.onStateChange&&this.options.events.onStateChange({data:state})},0)}
   seekTo(time){this.time=time}playVideo(){this.change(1)}pauseVideo(){this.change(2)}
-  loadVideoById(t){this.videoId=t.videoId;this.time=t.startSeconds;this.loads.push(t.videoId);this.change(1,true)}
-  cueVideoById(t){this.videoId=t.videoId;this.time=t.startSeconds;this.loads.push(t.videoId);this.change(5,true)}
-  setPlaybackRate(rate){this.rateRequests.push(rate);if(${JSON.stringify(playbackRates)}.includes(rate)&&rate!==${rejectRate})this.rate=rate}
+  transitionTo(t,state){const generation=++this.transition;this.transitioning=true;this.videoId=t.videoId;this.time=t.startSeconds;this.loads.push(t.videoId);this.rate=1;this.change(3);
+    setTimeout(()=>{if(generation!==this.transition)return;this.rate=1;this.transitioning=false;this.change(state)},${transitionDelay})}
+  loadVideoById(t){this.transitionTo(t,1)}
+  cueVideoById(t){this.transitionTo(t,5)}
+  setPlaybackRate(rate){this.rateRequests.push(rate);if(!this.transitioning&&${JSON.stringify(playbackRates)}.includes(rate)&&rate!==${rejectRate}&&!(this.loads.length>1&&rate===${rejectRateAfterTransition})){
+    this.rate=rate;setTimeout(()=>this.options.events.onPlaybackRateChange&&this.options.events.onPlaybackRateChange({data:rate}),0)}}
   getPlaybackRate(){return this.rate}getAvailablePlaybackRates(){return ${JSON.stringify(playbackRates)}}
   getCurrentTime(){this.ticks++;return this.time}getPlayerState(){return this.state}getIframe(){return this.iframe}destroy(){this.iframe.remove()}
 }};window.onYouTubeIframeAPIReady();`;
@@ -48,6 +51,6 @@ export function uploadAt(recordingId: string, time: number): { id: string; time:
   }
   throw new Error(`${recordingId} has no uploads`);
 }
-export interface TestPlayer { time: number; state: number; ticks: number; videoId: string; loads: string[]; rate: number; rateRequests: number[] }
+export interface TestPlayer { time: number; state: number; ticks: number; videoId: string; loads: string[]; rate: number; rateRequests: number[]; transitioning: boolean }
 export const player = (page: Page) => page.evaluate(() => (window as unknown as { testPlayer?: TestPlayer }).testPlayer);
 export const setPlayerTime = (page: Page, time: number) => page.evaluate(value => { (window as unknown as { testPlayer: TestPlayer }).testPlayer.time = value; }, time);

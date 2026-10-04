@@ -12,6 +12,8 @@ export interface PlayerAdapter {
   setPlaybackRate?(rate: number): void;
   getPlaybackRate?(): number;
   getAvailablePlaybackRates?(): number[];
+  /** False while the target upload is switching, buffering, or unavailable. */
+  isPlaybackRateReady?(): boolean;
   destroy(): void;
 }
 export interface PlaybackRange { id: string; start: number; end?: number; resumeAt?: number }
@@ -72,7 +74,7 @@ interface YouTubeAPI {
   Player: new (element: HTMLElement, options: {
     videoId: string; host: string; width: string; height: string;
     playerVars: Record<string, string | number>;
-    events: { onReady(event: { target: YouTubePlayer }): void; onError(event: { data: number }): void; onAutoplayBlocked(): void; onStateChange?(event: { data: number }): void };
+    events: { onReady(event: { target: YouTubePlayer }): void; onError(event: { data: number }): void; onAutoplayBlocked(): void; onStateChange?(event: { data: number }): void; onPlaybackRateChange?(event: { data: number }): void };
   }) => YouTubePlayer;
 }
 type YouTubeWindow = Window & { YT?: YouTubeAPI; onYouTubeIframeAPIReady?: () => void };
@@ -120,6 +122,7 @@ export async function mountYouTubePlayer(container: HTMLElement, options: {
   /** False hides YouTube's controls and keyboard handling, for pages that provide their own. */
   controls?: boolean;
   onStateChange?(state: number): void;
+  onPlaybackRateChange?(rate: number): void;
 }): Promise<YouTubePlayer> {
   const api = await loadYouTubeAPI();
   if (options.signal?.aborted) throw new Error('Playback cancelled');
@@ -150,6 +153,7 @@ export async function mountYouTubePlayer(container: HTMLElement, options: {
         onError({ data }) { fail(youtubeErrorMessage(data), data); },
         onAutoplayBlocked: options.onAutoplayBlocked,
         onStateChange({ data }) { options.onStateChange?.(data); },
+        onPlaybackRateChange({ data }) { options.onPlaybackRateChange?.(data); },
       },
     });
     options.signal?.addEventListener('abort', () => {
@@ -167,12 +171,14 @@ export async function mountRecordingPlayer(container: HTMLElement, options: {
   uploads: readonly RecordingUpload[]; title: string; start: number; signal?: AbortSignal;
   onError(message: string, code?: number): void; onAutoplayBlocked(): void; controls?: boolean;
   onAvailability?: (span: UnavailableSpan | undefined) => void; onLoading?: () => void;
+  onPlaybackRateReady?: () => void; onPlaybackRateChange?: (rate: number) => void;
 }): Promise<RecordingAdapter> {
   return createRecordingPlayer({ uploads: options.uploads, start: options.start,
     onError: options.onError, onAvailability: options.onAvailability, onLoading: options.onLoading,
-    mount: (upload, start, onStateChange) => mountYouTubePlayer(container, {
+    onPlaybackRateReady: options.onPlaybackRateReady, onPlaybackRateChange: options.onPlaybackRateChange,
+    mount: (upload, start, onStateChange, onPlaybackRateChange) => mountYouTubePlayer(container, {
       videoId: upload.id, title: options.title, start, signal: options.signal, controls: options.controls,
-      onError: options.onError, onAutoplayBlocked: options.onAutoplayBlocked, onStateChange,
+      onError: options.onError, onAutoplayBlocked: options.onAutoplayBlocked, onStateChange, onPlaybackRateChange,
     }),
   });
 }

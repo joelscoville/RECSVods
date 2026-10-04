@@ -169,6 +169,9 @@ uploads shows that explicitly instead of offering a play action.
 Editor speed controls apply the selected rate after loading and after multipart
 upload changes. They reflect the player's reported rate; unsupported rates are
 disabled, and a rejected change is reported instead of shown as successfully applied.
+The requested rate is retained during switching, buffering and unavailable spans.
+Rejection detection starts only once the target media is ready and the preference
+has been reapplied; temporary loading rates do not replace the selection.
 
 ## Drafts, review and markers
 
