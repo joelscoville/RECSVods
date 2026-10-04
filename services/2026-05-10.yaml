@@ -1,0 +1,201 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: RECS 10 May 2026
+serviceDate: 2026-05-10
+status: draft
+sermonDescription: Reading John 12, the preacher asks why impressive signs do not necessarily lead to belief. He distinguishes God's sovereign grace from blaming God for personal sin, interpreting hardened hearts through persistent resistance and a numbed conscience. The message concludes with Christ's invitation to walk in the light and 1 John's assurance of forgiveness through confession, urging obedience rather than merely hearing the word.
+sermonScripture:
+  - John 12:36-50
+  - 1 John 1:5-10
+  - James 1:13-15
+sermonTopics:
+  - faith
+  - repentance
+  - discernment
+uploads:
+  - youtubeId: TbEiXzaPEIo
+    uploadDuration: "20:39.04"
+  - youtubeId: lPaoYWB0uW4
+    uploadDuration: "1:31:47.448"
+chapters:
+  - chapterId: c20260510-opening
+    chapterTitle: Prayer and Mother's Day Welcome
+    chapterKind: opening
+    chapterStart: "0:59.6"
+    chapterEnd: "8:42.5"
+    points:
+      - pointTime: "1:00"
+        pointText: Personal prayer begins with adoration before worship.
+      - pointTime: "2:30"
+        pointText: Confession seeks sincere forgiveness from God.
+      - pointTime: "3:38.76"
+        pointText: Thanksgiving reflects on the gifts received in life.
+      - pointTime: "4:43.34"
+        pointText: Supplication brings personal circumstances before God.
+      - pointTime: "6:37.82"
+        pointText: Belinda welcomes worshippers and gives thanks for mothers and grandmothers.
+  - chapterId: c20260510-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "8:42.5"
+    chapterEnd: "36:46.04"
+    chapterScripture:
+      - Psalms 65:1-4
+      - Proverbs 20
+      - John 12:36-50
+      - 1 John 1:5-10
+    points:
+      - pointTime: "8:42.88"
+        pointText: Psalms 65 introduces worship through God's mercy rather than personal merit.
+      - pointTime: "14:09.5"
+        pointText: The God We Love is introduced through knowing God as revealed in Scripture.
+      - pointTime: "20:40.6"
+        pointText: The restarted upload begins responsive reading from Proverbs 20.
+      - pointTime: "24:05.86"
+        pointText: John 12 supplies the passage about unbelief and Christ as light.
+      - pointTime: "31:03.44"
+        pointText: Never Alone introduces reflection on Christ's presence before the supporting Scripture reading.
+  - chapterId: c20260510-afterlife-question
+    chapterTitle: What Happens after Death?
+    chapterKind: qa
+    chapterStart: "36:46.04"
+    chapterEnd: "46:05.42"
+    chapterScripture:
+      - Luke 16
+    points:
+      - pointTime: "36:46.36"
+        pointText: The preacher explains continuing expository preaching on Mother's Day before introducing a submitted question.
+      - pointTime: "39:41.14"
+        pointText: His former soul-sleep view is contrasted with his present understanding of the afterlife.
+      - pointTime: "41:17.16"
+        pointText: He presents paradise as an immediate intermediate state rather than the final kingdom.
+      - pointTime: "43:03.6"
+        pointText: Hope in grief is distinguished from being devastated by a loved one's death.
+      - pointTime: "45:15.74"
+        pointText: The preacher states a personal inclination toward annihilation while urging belonging to Christ rather than fear of judgment.
+  - chapterId: c20260510-signs-unbelief
+    chapterTitle: Signs Do Not Compel Belief
+    chapterKind: sermon
+    chapterStart: "46:05.42"
+    chapterEnd: "1:15:23.04"
+    chapterScripture:
+      - John 12:36-43
+      - Isaiah 53
+      - Isaiah 6
+      - Ephesians 1
+    points:
+      - pointTime: "46:05.42"
+        pointText: The previous lesson is recalled through Christ's grief, glory and call to believe in the light.
+      - pointTime: "49:48.7"
+        pointText: Glorifying God is connected with Christ being lifted up and the defeat of the world's ruler.
+      - pointTime: "54:21.04"
+        pointText: John's account of many signs raises the question of continuing unbelief.
+      - pointTime: "1:03:22.32"
+        pointText: Reported paranormal claims are discussed through the need for verifiable evidence.
+      - pointTime: "1:11:56.14"
+        pointText: Double predestination is examined alongside the rejected excuse that sin is God's fault.
+    subchapters:
+      - chapterId: s20260510-miracles
+        chapterTitle: Miracles, Prayer and Evidence
+        chapterKind: sermon
+        chapterStart: "59:56.24"
+        chapterEnd: "1:06:49.08"
+        points:
+          - pointTime: "59:56.5"
+            pointText: The congregation's position allows miracles while rejecting healing on demand.
+          - pointTime: "1:01:40.74"
+            pointText: A recovery story is attributed to the preacher as an illustration of earnest prayer.
+          - pointTime: "1:03:22.32"
+            pointText: A skeptic's challenge introduces testing claims rather than trusting publicity.
+          - pointTime: "1:05:04.26"
+            pointText: The preacher distinguishes God's freedom to work miracles from a person's claimed power to produce them.
+  - chapterId: c20260510-goodness-responsibility
+    chapterTitle: God's Goodness and Our Responsibility
+    chapterKind: sermon
+    chapterStart: "1:15:23.04"
+    chapterEnd: "1:34:15.16"
+    chapterScripture:
+      - Deuteronomy 29:29
+      - James 1:13-15
+      - Romans 1
+    points:
+      - pointTime: "1:15:23.26"
+        pointText: Understanding the passage begins with the distinction between perfect Creator and fallen creatures.
+      - pointTime: "1:18:44.38"
+        pointText: Revealed truth is sufficient for faith and life without removing every mystery.
+      - pointTime: "1:22:27.9"
+        pointText: James 1 excludes God as the source of temptation while retaining human responsibility.
+      - pointTime: "1:23:49.74"
+        pointText: Desire for human approval is contrasted with receiving grace and acknowledging God's justice.
+      - pointTime: "1:29:43.44"
+        pointText: Continuing sin is described as numbing the conscience rather than proof that God forces people to sin.
+    subchapters:
+      - chapterId: s20260510-numb-conscience
+        chapterTitle: Persistent Sin Numbs the Conscience
+        chapterKind: sermon
+        chapterStart: "1:29:43.04"
+        chapterEnd: "1:34:15.16"
+        points:
+          - pointTime: "1:29:43.44"
+            pointText: Repeated wrongdoing is compared with losing awareness of its seriousness.
+          - pointTime: "1:30:40.14"
+            pointText: Childhood theft illustrates how conscience can become less sensitive through repetition.
+          - pointTime: "1:31:14.42"
+            pointText: The preacher attributes escalating harmful conduct to unchecked desires.
+          - pointTime: "1:32:37.98"
+            pointText: Lewis is cited to contrast seeking God's will with insisting on one's own.
+  - chapterId: c20260510-walk-light
+    chapterTitle: Walk in the Light and Seek Forgiveness
+    chapterKind: sermon
+    chapterStart: "1:34:15.16"
+    chapterEnd: "1:39:26.44"
+    chapterScripture:
+      - John 12:44-50
+      - 1 John 1:5-10
+    points:
+      - pointTime: "1:34:15.16"
+        pointText: Christ's invitation to believe is presented as good news rather than condemnation alone.
+      - pointTime: "1:36:06.92"
+        pointText: 1 John connects walking in the light with truth and fellowship.
+      - pointTime: "1:36:59.04"
+        pointText: Confession and God's forgiveness are contrasted with claiming to have no sin.
+      - pointTime: "1:37:47.4"
+        pointText: Prayer asks for obedience and a life reflecting Christ rather than merely hearing his words.
+  - chapterId: c20260510-mothers-appreciation
+    chapterTitle: Creed and Mother's Day Appreciation
+    chapterKind: other
+    chapterStart: "1:39:26.44"
+    chapterEnd: "1:44:01.04"
+    points:
+      - pointTime: "1:39:26.84"
+        pointText: The congregation stands to affirm the Apostles' Creed.
+      - pointTime: "1:40:11.36"
+        pointText: The preacher reflects on the privilege and difficulty of motherhood.
+      - pointTime: "1:41:21.04"
+        pointText: Mothers stand while young people distribute tokens of appreciation.
+      - pointTime: "1:42:43.58"
+        pointText: Prayer asks for protection, wisdom and strength for mothers and their households.
+  - chapterId: c20260510-closing
+    chapterTitle: Offering and Closing
+    chapterKind: closing
+    chapterStart: "1:44:01.04"
+    chapterEnd: "1:52:26.488"
+    points:
+      - pointTime: "1:44:01.26"
+        pointText: The second-Sunday second offering is designated for Christian education.
+      - pointTime: "1:45:21.86"
+        pointText: The closing hymn celebrates Christ as the risen Savior.
+      - pointTime: "1:48:27.04"
+        pointText: Doxology and a blessing from 1 Thessalonians 5 and 2 Corinthians 13 conclude worship.
+      - pointTime: "1:49:41.88"
+        pointText: Historical notices congratulate families and announce forthcoming baptism and membership arrangements.
+      - pointTime: "1:51:10.26"
+        pointText: The catechism course and opportunities for ministry involvement are explained before dismissal.
+markers:
+  - markerTime: "20:39.04"
+    markerNote: "Restart follows an unfinished hymn in Part 1 and begins responsive reading in Part 2. No repeated opening speech was found; any missing interval remains unmeasured."
+  - markerTime: "36:46.04"
+    markerNote: "Working title uses the channel's dated recording title; confirm the announced sermon title. Upload lengths and all anchors come from supplied faster-whisper audio evidence, not freshly checked video durations or listening."
+  - markerTime: "45:15.74"
+    markerNote: "Keep the preacher's stated annihilation preference attributed; do not harmonize it with different dates' accounts of judgment."
