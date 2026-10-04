@@ -31,6 +31,14 @@ chapters:
         pointText: In a sparsely transcribed opening, the leaders guide thanksgiving, personal supplication,
           readiness to hear God, greetings and silent preparation before the Psalm 68 call to
           worship.
+      - pointTime: "1:52.5"
+        pointText: Worshippers bring personal needs before God.
+      - pointTime: "2:59.02"
+        pointText: The opening prayer asks for hearts ready to hear and follow God.
+      - pointTime: "3:41.62"
+        pointText: The leader invites mutual greetings and silent preparation.
+      - pointTime: "5:47.76"
+        pointText: Psalms 68 supplies the call to worship.
     chapterScripture:
       - Psalms 68
   - chapterId: c20260531-worship-scripture-welcome
@@ -43,6 +51,14 @@ chapters:
         pointText: The leaders guide hymns, prayer and readings from Proverbs 23, 1 John 4 and John 13
           around a guitar-ensemble anthem, followed by the preacher’s welcome and invitation for
           future questions.
+      - pointTime: "8:21.68"
+        pointText: Prayer gives thanks for salvation and gathering safely, asking for forgiveness and attention.
+      - pointTime: "13:12.76"
+        pointText: Proverbs 23:1-35 is introduced for alternating reading.
+      - pointTime: "16:43.7"
+        pointText: The responsive reading continues with 1 John 4:1-21.
+      - pointTime: "25:58.8"
+        pointText: John 13:31-35 is read before the preacher's welcome.
     subchapters:
       - chapterId: s20260531-music
         chapterTitle: Congregational Hymn and Guitar Ensemble
@@ -53,6 +69,10 @@ chapters:
           - pointTime: "19:38.28"
             pointText: The congregation sings before a guitar ensemble presents an Easter anthem introduced
               through hope, eternal life and daily renewal; performer identities remain unclear.
+          - pointTime: "20:54.16"
+            pointText: The ensemble introduction connects Easter hope with daily renewal and eternal life.
+          - pointTime: "22:09.22"
+            pointText: The guitar ensemble presents the announced anthem.
     chapterScripture:
       - Proverbs 23:1-35
       - 1 John 4:1-21
@@ -67,6 +87,14 @@ chapters:
         pointText: Recapping Judas’s betrayal, the preacher extends responsibility for failure beyond Judas,
           distinguishes regret from repentance, emphasizes forgiveness and sincere commitment, and
           urges medical help for suicidal distress.
+      - pointTime: "30:31.74"
+        pointText: Sympathetic portrayals of Judas are contrasted with the preacher's reading of theft and responsibility.
+      - pointTime: "33:27.38"
+        pointText: Failure extends to Peter and the congregation as regret is distinguished from repentance.
+      - pointTime: "35:06.96"
+        pointText: The preacher urges serious medical help for people experiencing suicidal distress.
+      - pointTime: "37:03.82"
+        pointText: Sincere commitment and repentance are urged instead of testing whether one is saved.
     chapterScripture:
       - John 13
       - John 12:6
@@ -81,6 +109,14 @@ chapters:
         pointText: Explaining the Last Supper setting, the preacher connects glory with the cross, defends
           human worth and forgiveness through technological and denominational illustrations, and
           urges everyday faithfulness and childlike humility amid suffering and ageing.
+      - pointTime: "43:07.7"
+        pointText: Glory through the cross is contrasted with ordinary expectations of victory.
+      - pointTime: "50:36.84"
+        pointText: Human weakness should not diminish life's worth or the need for forgiveness.
+      - pointTime: "54:45.7"
+        pointText: Glorifying God is applied to every activity, including suffering.
+      - pointTime: "1:01:12.58"
+        pointText: Childlikeness is explained as humility rather than loss of maturity.
     subchapters:
       - chapterId: s20260531-childlikeness
         chapterTitle: Remain Childlike as You Grow Older
@@ -92,6 +128,14 @@ chapters:
             pointText: Interpreting Jesus’s affectionate address and Matthew 18, the preacher distinguishes
               humility from childishness and uses reported later-life examples to encourage openness
               to God and continuing purpose.
+          - pointTime: "59:55.9"
+            pointText: Being beloved by God introduces a saying from Matthew 18.
+          - pointTime: "1:01:12.58"
+            pointText: Humility is considered alongside burdens accumulated with age.
+          - pointTime: "1:03:35.1"
+            pointText: Childlikeness is distinguished from childishness.
+          - pointTime: "1:06:06.64"
+            pointText: Reported examples of later-life work encourage openness and continuing purpose.
         chapterScripture:
           - John 13:33
           - 1 John 2-4
@@ -113,6 +157,14 @@ chapters:
         pointText: The preacher argues that the new command makes love the defining mark of Christ’s
           followers rather than social identity, institutional grandeur or power, urging charities
           to collaborate rather than compete.
+      - pointTime: "1:08:22.52"
+        pointText: The new commandment is compared with earlier biblical commands.
+      - pointTime: "1:10:51.22"
+        pointText: Love is contrasted with nationality, dialect and profession as the defining Christian identity.
+      - pointTime: "1:12:31.62"
+        pointText: An impressive church building raises questions about how God is glorified.
+      - pointTime: "1:15:05.16"
+        pointText: Competition among charities is challenged through the command to love.
     chapterScripture:
       - John 13:34
       - Deuteronomy 6:4-5
@@ -124,24 +176,38 @@ chapters:
     chapterTitle: Share Life Beyond Self and Family
     chapterKind: sermon
     chapterStart: "1:16:13.3"
-    chapterEnd: "1:23:13.68"
+    chapterEnd: "1:23:06.58"
     points:
       - pointTime: "1:16:13.3"
         pointText: The preacher calls for forgiveness and practical mutual support beyond self and family,
           drawing on Amish community life while questioning insularity and proposing cell groups
           with uncertainty about their outcome.
+      - pointTime: "1:17:34.18"
+        pointText: Loving others is distinguished from self-hatred and isolated faith.
+      - pointTime: "1:19:03.62"
+        pointText: Online sermons should not replace forgiving and supporting people in community.
+      - pointTime: "1:20:44.04"
+        pointText: A mutually supportive community is imagined as a source of reduced anxiety.
+      - pointTime: "1:22:44.26"
+        pointText: Cell groups are proposed as a way to cultivate shared life without guaranteeing outcomes.
     chapterScripture:
       - John 13:34
   - chapterId: c20260531-love-as-christ-commands
     chapterTitle: Love as Christ Commands
     chapterKind: sermon
-    chapterStart: "1:23:13.68"
+    chapterStart: "1:23:06.58"
     chapterEnd: "1:28:17.72"
     points:
-      - pointTime: "1:23:13.68"
+      - pointTime: "1:23:06.58"
         pointText: The preacher presents Jesus’s footwashing as the model for love and forgiveness in
           everyday relationships, calling for childlike obedience to a command rather than a
           consumer choice.
+      - pointTime: "1:24:44.26"
+        pointText: Jesus' model is applied to loving and forgiving family, colleagues and community.
+      - pointTime: "1:26:28.9"
+        pointText: Conflict among Christian leaders illustrates why love is a command, not an optional suggestion.
+      - pointTime: "1:27:26.66"
+        pointText: The conclusion calls for visible love beyond one's own household.
     chapterScripture:
       - John 13
       - John 13:34-35
@@ -156,10 +222,20 @@ chapters:
         pointText: The leaders guide response prayer, the Apostles’ Creed and intercessions, a charitable
           offering, Amazing Grace, doxology and an uncertainly captured Hebrews 13 blessing, then
           baptism, class and rally notices before silent dismissal.
+      - pointTime: "1:29:48.7"
+        pointText: The congregation stands to affirm the Apostles' Creed.
+      - pointTime: "1:32:16.44"
+        pointText: Prayer asks for lifelong faith among baptism, confirmation and membership candidates.
+      - pointTime: "1:34:25.38"
+        pointText: The fifth-Sunday second offering is designated for charitable work.
+      - pointTime: "1:40:17.12"
+        pointText: Historical notices explain the evening baptism and membership events and the class pause.
     chapterScripture:
       - John 13
       - Hebrews 13
 markers:
+  - markerTime: "1:23:06.58"
+    markerNote: "Love-as-command starts at the complete 'But the third thing' transition instead of its later recap. Supplied word timing only; check audio."
   - markerTime: "19:38.28"
     markerNote: "Old review note: Ensemble names are unclear; do not assign performer identities without
       confirmation."
