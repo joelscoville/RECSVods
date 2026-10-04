@@ -31,16 +31,32 @@ chapters:
         pointText: The preacher welcomes online participants and announces the international convention, its
           translation and volunteer support, and the replacement of next Sunday’s usual meeting,
           while questioning what online view counts mean.
+      - pointTime: "0:41.22"
+        pointText: An October online convention is announced with international participation and translation work.
+      - pointTime: "2:06.92"
+        pointText: The following Sunday's usual meeting will be replaced by joining convention worship from Jakarta.
+      - pointTime: "2:58.5"
+        pointText: Online reach is contrasted with physical conventions, with caution about interpreting view counts.
+      - pointTime: "4:01.64"
+        pointText: Local volunteers will support audiovisual and online convention work.
   - chapterId: c20200927-accountable-stewardship
     chapterTitle: God’s Authority Calls for Accountable Stewardship
     chapterKind: sermon
     chapterStart: "4:36.4"
-    chapterEnd: "12:48.72"
+    chapterEnd: "12:45.22"
     points:
       - pointTime: "4:36.4"
         pointText: The preacher revisits scripture’s authority over credentials and the vineyard’s call to
           generous, accountable stewardship and creation care, holding love with righteousness
           before praying for humble attention.
+      - pointTime: "5:40.18"
+        pointText: Teaching should be assessed by Scripture rather than academic or institutional status.
+      - pointTime: "7:08.46"
+        pointText: The vineyard illustrates stewardship of what belongs to God.
+      - pointTime: "9:17.1"
+        pointText: Environmental responsibility is described as creation care.
+      - pointTime: "11:17.9"
+        pointText: God's love and righteousness are held together in a call to serious, active faith.
     chapterScripture:
       - Luke 20:1-19
       - Psalms 18:27
@@ -49,37 +65,55 @@ chapters:
   - chapterId: c20200927-test-political-claims
     chapterTitle: Test Political Claims by Scripture
     chapterKind: sermon
-    chapterStart: "12:48.72"
-    chapterEnd: "26:21.62"
+    chapterStart: "12:45.22"
+    chapterEnd: "26:21.02"
     points:
-      - pointTime: "12:48.72"
+      - pointTime: "12:45.22"
         pointText: Using contemporary political settings, the preacher tests claims that God backs a party,
           religion serves rulers or divine supremacy excuses rejecting civil rules, with Facebook
           reports remaining unverified and mask refusal explicitly hypothetical.
+      - pointTime: "17:08.28"
+        pointText: Identifying God with a political party or national system is questioned.
+      - pointTime: "20:55.28"
+        pointText: Chess pieces illustrate a second view in which religion serves political rulers.
+      - pointTime: "24:07.34"
+        pointText: A hypothetical mask refusal tests whether divine supremacy excuses rejecting civil rules.
+      - pointTime: "25:25.26"
+        pointText: Scripture is called upon to decide among competing approaches to civil authority.
     chapterScripture:
       - Luke 20:19-26
       - Psalms 109:8
   - chapterId: c20200927-discernment-and-fairness
     chapterTitle: Recognize Deception and Give Back Fairly
     chapterKind: sermon
-    chapterStart: "26:21.62"
-    chapterEnd: "38:04.22"
+    chapterStart: "26:21.02"
+    chapterEnd: "38:00.84"
     points:
-      - pointTime: "26:21.62"
+      - pointTime: "26:21.02"
         pointText: The preacher follows Luke 20’s deceptive challenge through self-examination and Jesus’
           response about Caesar, interpreting tribute and ordinary commerce as matters of fairness
           toward the people sustaining public life.
+      - pointTime: "29:53.18"
+        pointText: Religious scandals lead to self-examination rather than abandonment of faith.
+      - pointTime: "32:20.86"
+        pointText: The tax question is explained as a trap designed to turn people against either answer.
+      - pointTime: "34:51.48"
+        pointText: Jesus' answer is interpreted as giving back fairly rather than making every obligation a religious dispute.
+      - pointTime: "36:30.52"
+        pointText: Taxation sustains public services supplied by people of many beliefs.
     subchapters:
       - chapterId: s0927-weeds
         chapterTitle: Examine Your Own Sincerity
         chapterKind: sermon
         chapterStart: "28:40.38"
-        chapterEnd: "31:17.56"
+        chapterEnd: "31:13.32"
         points:
           - pointTime: "28:40.38"
             pointText: The preacher turns the wheat-and-weeds warning toward listeners’ own sincerity rather
               than surprise at religious appearances or church scandals; the existing ASR ambiguity
               remains unresolved.
+          - pointTime: "29:53.18"
+            pointText: The wheat-and-weeds image directs attention to one's own sincerity.
         chapterScripture:
           - Matthew 13:24-30
           - Matthew 13:27-30
@@ -92,6 +126,8 @@ chapters:
           - pointTime: "34:51.48"
             pointText: The preacher reads Jesus’ answer as giving back fairly and rejects cheating or
               preferential commerce based on a seller’s Christian identity.
+          - pointTime: "36:00.46"
+            pointText: Commerce should remain fair whether or not a seller shares one's faith.
         chapterScripture:
           - Luke 20:22-25
           - Luke 20:25
@@ -111,24 +147,34 @@ chapters:
   - chapterId: c20200927-civil-order-and-conscience
     chapterTitle: Support Civil Order with a Fair Conscience
     chapterKind: sermon
-    chapterStart: "38:04.22"
-    chapterEnd: "46:32.1"
+    chapterStart: "38:00.84"
+    chapterEnd: "46:32.92"
     points:
-      - pointTime: "38:04.22"
+      - pointTime: "38:00.84"
         pointText: The preacher reads Romans 13 as a call to sustain public order with conscience beyond
           party loyalty, temper expectations of leaders and engage meaningfully, presenting Kuyper
           as an example.
+      - pointTime: "39:18.42"
+        pointText: Order in public administration is connected with discipline in personal life.
+      - pointTime: "42:12.92"
+        pointText: Conscience should judge right and wrong beyond automatic approval of a favored party.
+      - pointTime: "43:05.64"
+        pointText: Taxes and respect sustain the system from which Christians benefit.
+      - pointTime: "44:58.44"
+        pointText: Kuyper's political and theological work is offered as an example of meaningful engagement.
     subchapters:
       - chapterId: s0927-romans-order
         chapterTitle: Civil Government Maintains Public Order
         chapterKind: sermon
-        chapterStart: "38:04.22"
+        chapterStart: "38:00.84"
         chapterEnd: "40:31.08"
         points:
-          - pointTime: "38:04.22"
+          - pointTime: "38:00.84"
             pointText: Relating Romans 13 to Christians' responsibilities toward government, the preacher
               recognizes civil authority even under Rome because it maintains public order, and
               connects that principle with personal discipline.
+          - pointTime: "39:18.42"
+            pointText: 1 Corinthians 14:33 is applied to public order and personal discipline.
         chapterScripture:
           - Romans 13:1-7
           - 1 Peter 2
@@ -144,6 +190,12 @@ chapters:
             pointText: The preacher rejects political dissatisfaction as a blanket exemption from law, urging
               fair judgment and support for shared systems while retaining a senior pastor’s
               distinction about a destructive ruler.
+          - pointTime: "41:26.56"
+            pointText: Dissatisfaction with a party does not by itself excuse rejecting civil rules.
+          - pointTime: "42:12.92"
+            pointText: Conscience should judge fairly across party loyalties.
+          - pointTime: "43:05.64"
+            pointText: Romans 13:7 connects taxes and respect with support for shared systems.
         chapterScripture:
           - Romans 13:2-4
           - Romans 13:4-5
@@ -161,45 +213,59 @@ chapters:
   - chapterId: c20200927-wise-political-engagement
     chapterTitle: Serve God through Wise Political Engagement
     chapterKind: sermon
-    chapterStart: "46:32.1"
-    chapterEnd: "1:03:40.34"
+    chapterStart: "46:32.92"
+    chapterEnd: "1:03:40.66"
     points:
-      - pointTime: "46:32.1"
+      - pointTime: "46:32.92"
         pointText: The preacher grounds active public engagement in Christ’s higher authority, warning
           against servility, apathy and compromising church alliances while allowing that grave evil
           may require carefully discerned action.
+      - pointTime: "49:04.74"
+        pointText: The Great Commission calls for changed lives and influence rather than arrogance.
+      - pointTime: "52:28.38"
+        pointText: Electoral incentives and influence make political alliances risky for the church's calling.
+      - pointTime: "58:17.22"
+        pointText: Private political activity is distinguished from endorsements in the church's name.
+      - pointTime: "1:02:06.04"
+        pointText: Severe wrongdoing may require action, with discernment rather than automatic destructive reactions.
     subchapters:
       - chapterId: s0927-commission
         chapterTitle: Christ’s Authority Sends His Followers into the World
         chapterKind: sermon
         chapterStart: "49:04.74"
-        chapterEnd: "51:13.92"
+        chapterEnd: "51:15.9"
         points:
           - pointTime: "49:04.74"
             pointText: The preacher connects the Great Commission with changed lives rather than arrogance and
               uses a hypothetical leader’s visit to question excessive deference to human office.
+          - pointTime: "50:03.66"
+            pointText: A hypothetical national leader's visit challenges excessive deference when serving Christ.
         chapterScripture:
           - Matthew 28:18-20
       - chapterId: s0927-spheres
         chapterTitle: Respect the Distinct Responsibilities of Institutions
         chapterKind: sermon
-        chapterStart: "56:13.56"
-        chapterEnd: "58:17.22"
+        chapterStart: "56:15.74"
+        chapterEnd: "58:15.76"
         points:
-          - pointTime: "56:13.56"
+          - pointTime: "56:15.74"
             pointText: The preacher applies a quotation attributed to Kuyper to church, state and education,
               illustrating confused responsibilities through an account of purchasable academic
               credentials.
+          - pointTime: "56:58.8"
+            pointText: Purchasable credentials illustrate education losing its purpose when reduced to a business.
       - chapterId: s0927-bonhoeffer
         chapterTitle: Grave Evil May Require Resistance
         chapterKind: sermon
-        chapterStart: "59:04"
-        chapterEnd: "1:00:58.5"
+        chapterStart: "59:06.4"
+        chapterEnd: "1:00:42.46"
         points:
-          - pointTime: "59:04"
+          - pointTime: "59:06.54"
             pointText: The preacher presents Bonhoeffer’s resistance to Nazism as exceptional action against
               grave evil, with his biographical account and quotation about silence remaining
               attributed rather than independently verified.
+          - pointTime: "1:00:19.84"
+            pointText: A quotation attributed to Bonhoeffer connects silence in the face of evil with responsibility to act.
         chapterScripture:
           - Luke 20:25
     chapterScripture:
@@ -211,17 +277,19 @@ chapters:
   - chapterId: c20200927-closing-prayer
     chapterTitle: Closing Prayer
     chapterKind: closing
-    chapterStart: "1:03:40.34"
+    chapterStart: "1:03:40.66"
     chapterEnd: "1:05:06.8154375"
     points:
-      - pointTime: "1:03:40.34"
+      - pointTime: "1:03:40.66"
         pointText: The preacher thanks God for teaching about public responsibilities and prays for truthful
           lives, wise responses to perceived injustice and freedom from passive inaction.
+      - pointTime: "1:04:23.86"
+        pointText: Prayer asks for wisdom in responding to perceived injustice and freedom from apathy.
     chapterScripture:
       - Matthew 28:18-20
 markers:
-  - markerTime: "0:00"
-    markerNote: "Older recording: check this opening really is the ACTS prayer."
+  - markerTime: "12:45.22"
+    markerNote: "Reviewed opening is an online welcome and notices, not ACTS prayer. Political exposition, public order, Kuyper, Bonhoeffer and prayer cuts now use complete clauses from supplied word timings; check audio."
   - markerTime: "4:36.4"
     markerNote: "Also cited in the sermon: Luke 20:1-19; Psalms 18:27; Luke 20:9-19; Isaiah 5; Psalms
       109:8; Luke 20:19-20; Matthew 13:24-26; Matthew 13:24-30; Matthew 13:27-30; Luke 20:21-22;
