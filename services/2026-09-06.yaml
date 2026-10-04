@@ -27,9 +27,11 @@ chapters:
     chapterEnd: "6:00"
     points:
       - pointTime: "0:00"
-        pointText: The leaders prepare the congregation through adoration, confession, thanksgiving and
-          supplication, then welcome worshippers into greetings and silent meditation; the
-          collective-prayer lead-in remains uncertain.
+        pointText: The leader prepares the congregation for worship and Communion, inviting adoration and confession.
+      - pointTime: "2:48"
+        pointText: Thanksgiving and supplication turn attention to God's gifts and personal needs.
+      - pointTime: "5:18.34"
+        pointText: The gathering prayer asks that remembering Christ's death will direct the congregation's lives toward God.
   - chapterId: c20260906-worship-and-scripture
     chapterTitle: Worship and Scripture
     chapterKind: opening
@@ -39,6 +41,14 @@ chapters:
       - pointTime: "6:00"
         pointText: The leaders guide worship, prayer and Communion as remembrance of Christ, with responsive
           readings, a hymn and video anthem, and the reading of 1 John 5:10-12.
+      - pointTime: "7:39.96"
+        pointText: Psalms 98:1-3 is announced as the call to worship before the opening hymn.
+      - pointTime: "19:55.68"
+        pointText: The congregation begins an alternating reading from Proverbs 6.
+      - pointTime: "23:44.48"
+        pointText: The responsive New Testament reading turns to John 17:1-19.
+      - pointTime: "30:57.2"
+        pointText: The reader announces 1 John 5:10-12 before the sermon.
     subchapters:
       - chapterId: 2026-09-06-holy-communion
         chapterTitle: Holy Communion
@@ -47,8 +57,15 @@ chapters:
         chapterEnd: "19:54.73"
         points:
           - pointTime: "11:46.55"
-            pointText: The leaders guide worship, prayer and Communion as remembrance of Christ, with responsive
-              readings, a hymn and video anthem, and the reading of 1 John 5:10-12.
+            pointText: The minister introduces Holy Communion as remembrance of Christ's sacrifice.
+          - pointTime: "13:35.9"
+            pointText: The minister leads the Lord's Prayer and reads from 1 Corinthians 11.
+          - pointTime: "15:05.06"
+            pointText: Baptized participants are invited to share Communion as the hymn begins.
+          - pointTime: "17:30.94"
+            pointText: Participants are invited to give thanks before sharing the bread and cup.
+          - pointTime: "19:00"
+            pointText: The prayer asks that remembering redemption will lead to a life dedicated to knowing God.
         chapterScripture:
           - 1 Corinthians 11
     chapterScripture:
@@ -68,6 +85,14 @@ chapters:
         pointText: Introducing John 17 through a recap of John 16, the preacher encourages confidence in
           prayer and God’s love despite tribulation and imperfect faith, contrasting wishful hope
           with assurance.
+      - pointTime: "34:33.2"
+        pointText: Believers are encouraged to approach God confidently in prayer as his children.
+      - pointTime: "37:24.2"
+        pointText: God's love is presented as encouragement amid persecution and personal difficulties.
+      - pointTime: "40:56.78"
+        pointText: The disciples' confusion and failure offer encouragement to people conscious of imperfect faith.
+      - pointTime: "43:38.78"
+        pointText: The preacher contrasts wishful hope with assurance before introducing John 17.
     chapterScripture:
       - John 17:1-5
       - John 16:25-33
@@ -86,6 +111,14 @@ chapters:
         pointText: After praying for humility, the preacher considers Jesus’ intercession in John 17 and
           urges learning prayer through daily practice, drawing on an answer attributed to Billy
           Graham.
+      - pointTime: "47:33.94"
+        pointText: John 17 reveals an extended communication between the Son and the Father.
+      - pointTime: "48:46.32"
+        pointText: Jesus' own prayer is distinguished from the prayer taught to his followers in Matthew 6.
+      - pointTime: "50:13.02"
+        pointText: The portions of Jesus' prayer are connected with his intercession in Hebrews 7.
+      - pointTime: "55:58.98"
+        pointText: Morning and evening devotional practices illustrate regular prayer and meditation.
     subchapters:
       - chapterId: s0906-prayer-example
         chapterTitle: Prayer Is Learned through Practice
@@ -96,6 +129,12 @@ chapters:
           - pointTime: "52:13.66"
             pointText: The preacher urges regular prayer and meditation rather than learning only through
               reading or listening, as Jesus prayed often and much.
+          - pointTime: "53:40.74"
+            pointText: Billy Graham's ministry illustrates the reach and responsibilities of Christian leadership.
+          - pointTime: "55:00.22"
+            pointText: The preacher recalls Graham's reported wish to have prayed more if he began ministry again.
+          - pointTime: "55:58.98"
+            pointText: Listeners are encouraged to practise prayer and meditation regularly.
         chapterScripture:
           - John 17
     chapterScripture:
@@ -114,6 +153,14 @@ chapters:
         pointText: The preacher contrasts human recognition with God’s inherent glory, connects Christ’s
           mission and return to the original state of glory with the cross, and recalls encouragement
           from continued service despite suffering.
+      - pointTime: "58:14.36"
+        pointText: Jesus' prayer before crucifixion is contrasted with the disciples' fear.
+      - pointTime: "1:00:26.26"
+        pointText: Awards illustrate a human idea of glory as recognition for achievement.
+      - pointTime: "1:03:07.26"
+        pointText: Psalms 19:1 supports the preacher's distinction between human inadequacy and God's inherent glory.
+      - pointTime: "1:09:56.74"
+        pointText: The preacher recalls his first pastor continuing to translate despite severe vision loss.
     chapterScripture:
       - John 16:33
       - John 17:1
@@ -131,6 +178,14 @@ chapters:
           closing in prayer.
 
           Everyone who believes in Jesus Christ is called by the father and be saved.
+      - pointTime: "1:11:58.58"
+        pointText: Preserved flowers and a workplace conversation challenge the idea of eternal life as duration alone.
+      - pointTime: "1:19:16.04"
+        pointText: John 17:3 locates eternal life in knowing God and Jesus Christ.
+      - pointTime: "1:26:36.12"
+        pointText: Learned truths are to become meditation, prayer, praise and changes in daily conduct.
+      - pointTime: "1:32:45.06"
+        pointText: Listeners are urged to use their gifts, talents and resources in service as members of Christ's body.
     subchapters:
       - chapterId: s0906-knowing-god
         chapterTitle: Knowing God Vs Knowing About God
@@ -143,6 +198,14 @@ chapters:
               about God. The preacher uses John 17:3, his account of ginóskó and Packer’s distinction
               between knowing God and knowing about God to urge lived relationship, reflection and use of
               one’s gifts. Eternal life is oneness with God.
+          - pointTime: "1:20:32.5"
+            pointText: The preacher uses Luke 1:34 to illustrate his explanation of knowing as intimate relationship.
+          - pointTime: "1:23:38.02"
+            pointText: Packer's Knowing God distinguishes personal relationship from knowledge about God.
+          - pointTime: "1:26:36.12"
+            pointText: Reflection on learned truth should lead to prayer, praise and practical response.
+          - pointTime: "1:30:07.72"
+            pointText: Knowing God gives purpose to present life rather than only a future beyond death.
         chapterScripture:
           - John 17:3
           - Luke 1:34
@@ -165,12 +228,17 @@ chapters:
       - pointTime: "1:35:18.42"
         pointText: The minister leads the creed, congregational prayer, offertory and closing worship, then
           shares historical ministry notices and thanks teachers before prayer and dismissal.
+      - pointTime: "1:36:04.34"
+        pointText: The congregation is invited to pray in response to the sermon and for church leaders.
+      - pointTime: "1:40:12.8"
+        pointText: The offertory is introduced with the second offering designated for evangelism.
+      - pointTime: "1:44:59.92"
+        pointText: The doxology is followed by a blessing from Hebrews 13.
+      - pointTime: "1:49:54.44"
+        pointText: Children give tokens of appreciation to the church's teachers after Teachers' Day.
     chapterScripture:
       - Hebrews 13
 markers:
-  - markerTime: "11:46.55"
-    markerNote: "PR #7: Holy Communion's description was copied from Worship and Scripture when
-      the section was split; revise it."
   - markerTime: "32:00.54"
     markerNote: "Also cited in the sermon: John 16:25-33; James 5; Acts 2; Mark 9; John 13-16; Matthew
       6; Hebrews 7:25; John 17:1; Psalms 19:1; John 17:2; John 17:3; Luke 1:34; John 17:4-5; 1 John
@@ -179,3 +247,5 @@ markers:
     markerNote: "Other topics it touched: knowing-god, glory, eternal-life."
   - markerTime: "1:19:16.04"
     markerNote: "Old review note: Keep linguistic and doctrinal claims attributed to the preacher."
+  - markerTime: "31:59.2"
+    markerNote: "Supplied ASR and local YouTube captions disagree by several seconds at the sermon and Creed introductions. Preserve the human-edited boundaries until checked against audio; captions alone are not a reliable retiming source."
