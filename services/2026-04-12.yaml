@@ -1,0 +1,167 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: RECS 12 April 2026
+serviceDate: 2026-04-12
+status: draft
+sermonDescription: Reading the dinner at Bethany in John 12, the preacher contrasts Martha's practical service, Mary's costly devotion and Judas' false concern for the poor. Different gifts have a place in faithful ministry, while real devotion recognizes Christ's worth beyond social expectations and possessions. The treasure, pearl and sower parables lead to a call for receptive hearts that surrender choking cares and bear fruit despite weak faith.
+sermonScripture:
+  - John 12:1-11
+  - Matthew 13:44-46
+  - Matthew 13:1-23
+sermonTopics:
+  - service
+  - faith
+  - discipleship
+uploads:
+  - youtubeId: -K2h6Tv5f1g
+    uploadDuration: "1:47:13.042"
+chapters:
+  - chapterId: c20260412-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "0:10.9"
+    chapterEnd: "7:56.6"
+    points:
+      - pointTime: "0:11.24"
+        pointText: The leader invites quiet prayer and adoration before worship.
+      - pointTime: "1:33.62"
+        pointText: Confession acknowledges salvation without yet being perfect.
+      - pointTime: "2:42.56"
+        pointText: Thanksgiving recalls gratitude in every circumstance.
+      - pointTime: "3:52.58"
+        pointText: Supplication seeks help and guidance for individual needs.
+      - pointTime: "5:00.44"
+        pointText: Prayer asks for childlike humility before Jason welcomes the congregation.
+  - chapterId: c20260412-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "7:56.6"
+    chapterEnd: "32:49.2"
+    chapterScripture:
+      - Psalms 50:1-6
+      - Proverbs 16
+      - John 12:1-11
+      - Matthew 13:44-46
+    points:
+      - pointTime: "7:56.98"
+        pointText: Psalms 50 introduces God's glory and judgment as the call to worship.
+      - pointTime: "18:33.16"
+        pointText: Proverbs 16 is read responsively.
+      - pointTime: "22:04.22"
+        pointText: John 12 introduces Mary's anointing of Jesus at Bethany.
+      - pointTime: "24:12"
+        pointText: The leader reflects on being beloved by God before Jesus Paid It All.
+      - pointTime: "32:06.36"
+        pointText: The treasure and pearl parables introduce the kingdom's incomparable worth.
+  - chapterId: c20260412-questions-recap
+    chapterTitle: Resurrection, True Humanity and God's Grace
+    chapterKind: qa
+    chapterStart: "32:49.2"
+    chapterEnd: "49:24.2"
+    chapterScripture:
+      - John 11
+    points:
+      - pointTime: "32:49.54"
+        pointText: The preacher corrects a supplementary-passage typo and reflects on the recent gospel rallies.
+      - pointTime: "37:17.06"
+        pointText: A question asks why Lazarus was raised temporarily when he would die again.
+      - pointTime: "38:58.8"
+        pointText: The final resurrection is distinguished from temporary signs before a question about Jesus' perfect humanity.
+      - pointTime: "42:27.58"
+        pointText: Christ remains the ultimate example while believers grow despite weakness.
+      - pointTime: "44:07.86"
+        pointText: The recap emphasizes grace that precedes incomplete faith and warns against pride and self-interest.
+  - chapterId: c20260412-three-devotions
+    chapterTitle: Three Devotions at Bethany
+    chapterKind: sermon
+    chapterStart: "49:24.2"
+    chapterEnd: "1:23:26.8"
+    chapterScripture:
+      - John 12:1-11
+      - Luke 10:38-42
+      - Matthew 25
+    points:
+      - pointTime: "49:24.54"
+        pointText: Different anointing accounts and historical settings are distinguished before the Bethany dinner.
+      - pointTime: "54:16.34"
+        pointText: Reclining at meals explains the scene and challenges later cultural images.
+      - pointTime: "1:01:33.76"
+        pointText: The talents parable supports serving faithfully with one's own gifts rather than copying another person's role.
+      - pointTime: "1:09:24.92"
+        pointText: Mary's costly act is interpreted as putting social honor beneath devotion to Christ.
+      - pointTime: "1:19:37.16"
+        pointText: Judas' apparent concern is contrasted with theft and Jesus' defense of Mary's preparation for burial.
+    subchapters:
+      - chapterId: s20260412-martha
+        chapterTitle: Practical Service Has a Place
+        chapterKind: sermon
+        chapterStart: "56:54.8"
+        chapterEnd: "1:05:58.2"
+        points:
+          - pointTime: "56:54.92"
+            pointText: Martha's familiar serving role is considered alongside the earlier call to listen to Jesus.
+          - pointTime: "59:03.92"
+            pointText: Her continuing service is recognized without a repeated rebuke in John 12.
+          - pointTime: "1:01:33.76"
+            pointText: Every servant receives a gift and is accountable for using what was entrusted.
+          - pointTime: "1:02:40.84"
+            pointText: Logistics, food and audiovisual work illustrate essential ministry behind the scenes.
+          - pointTime: "1:04:20.94"
+            pointText: A welcoming elder's faithful coffee and personal greetings illustrate the value of ordinary service.
+      - chapterId: s20260412-mary
+        chapterTitle: Costly Love Goes beyond Social Expectations
+        chapterKind: sermon
+        chapterStart: "1:05:58.2"
+        chapterEnd: "1:11:53.52"
+        points:
+          - pointTime: "1:05:58.54"
+            pointText: Mary's anointing becomes the central example of devotion.
+          - pointTime: "1:07:39.64"
+            pointText: The perfume's cost is described as roughly a year's wages.
+          - pointTime: "1:07:44.44"
+            pointText: The preacher asks listeners to consider giving such a costly gift for Christ.
+          - pointTime: "1:09:24.92"
+            pointText: Letting down her hair is explained through historical norms of honor and modesty.
+          - pointTime: "1:11:07.5"
+            pointText: David's joy over the ark is compared with Mary's abandonment of status for love of God.
+  - chapterId: c20260412-treasure-fruit
+    chapterTitle: Recognize the Treasure and Become Good Soil
+    chapterKind: sermon
+    chapterStart: "1:23:26.8"
+    chapterEnd: "1:32:50.9"
+    chapterScripture:
+      - Matthew 13:1-23
+      - Matthew 13:44-46
+    points:
+      - pointTime: "1:23:27.06"
+        pointText: The three devotions lead to the question of why Christ is worth such costly love.
+      - pointTime: "1:24:46.02"
+        pointText: The treasure and pearl parables describe a discovery worth giving everything to receive.
+      - pointTime: "1:28:11.52"
+        pointText: The sower parable explains different responses to the word.
+      - pointTime: "1:29:53.34"
+        pointText: Cares, riches and pleasures are described as thorns that choke fruitful devotion.
+      - pointTime: "1:31:34.82"
+        pointText: Good soil hears and understands, leading to fruitfulness and surrendered priorities.
+  - chapterId: c20260412-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:32:50.9"
+    chapterEnd: "1:47:13.042"
+    points:
+      - pointTime: "1:32:51.16"
+        pointText: Prayer asks for transformed devotion despite little faith and misplaced security.
+      - pointTime: "1:37:46.16"
+        pointText: Intercession asks for strength and comfort for Stephen Tong's travel and ministry.
+      - pointTime: "1:40:14.9"
+        pointText: The second-Sunday second offering is designated for Christian education.
+      - pointTime: "1:42:03.24"
+        pointText: Close to Thee is introduced as trust amid the challenges of a pilgrim's life.
+      - pointTime: "1:45:37"
+        pointText: Historical notices encourage exploring gifts and practical ministry, including a new bridging fellowship.
+markers:
+  - markerTime: "32:49.2"
+    markerNote: "Working title uses the channel's dated title; confirm the announced sermon title. Duration and anchors come from supplied faster-whisper audio evidence, not fresh video checks or listening."
+  - markerTime: "49:24.2"
+    markerNote: "Keep proposed anointing dates, locations and identities attributed to the preacher; do not turn his speculation about the unnamed woman into established identity."
