@@ -1,0 +1,171 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: RECS 26 April 2026
+serviceDate: 2026-04-26
+status: draft
+sermonDescription: The preacher follows the Greeks seeking Jesus in John 12 into Christ's announcement of glory through death and fruitful sacrifice. He challenges treating sacrificial service as the work of specially gifted leaders alone. Distinguishing the fallen world from the life God redeems, he urges every believer to follow Christ, enjoy God's gifts within his design and live beyond self and family through renewed priorities and practical service.
+sermonScripture:
+  - John 12:20-26
+  - Romans 12:1-2
+  - John 10:10
+sermonTopics:
+  - sacrifice
+  - discipleship
+  - service
+uploads:
+  - youtubeId: mfiAFUTgOEg
+    uploadDuration: "1:44:11.996"
+chapters:
+  - chapterId: c20260426-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "0:13.7"
+    chapterEnd: "7:02.1"
+    points:
+      - pointTime: "0:14.06"
+        pointText: The leader invites personal prayer in adoration.
+      - pointTime: "1:05.58"
+        pointText: Confession seeks cleansing through Christ.
+      - pointTime: "2:34.56"
+        pointText: Thanksgiving recognizes God's gifts in life.
+      - pointTime: "3:40.88"
+        pointText: Supplication brings individual situations before God.
+      - pointTime: "4:48.14"
+        pointText: Prayer asks for hearts like good soil before the welcome and greetings.
+  - chapterId: c20260426-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "7:02.1"
+    chapterEnd: "27:26.1"
+    chapterScripture:
+      - Psalms 61:1-4
+      - Proverbs 18:1-24
+      - John 12:20-36
+      - Romans 12:1-2
+    points:
+      - pointTime: "7:02.48"
+        pointText: Psalms 61 introduces God as refuge and shelter.
+      - pointTime: "12:11.26"
+        pointText: Francis of Assisi's hymn is introduced as praise amid weakness and suffering.
+      - pointTime: "15:59.6"
+        pointText: Proverbs 18 is introduced for responsive reading.
+      - pointTime: "18:57.32"
+        pointText: John 12 connects the Greeks seeking Jesus with his approaching death and glory.
+      - pointTime: "26:34.98"
+        pointText: Romans 12:1-2 supplies the supporting reading about living sacrifice and renewal.
+  - chapterId: c20260426-israel-question
+    chapterTitle: What Does All Israel Mean?
+    chapterKind: qa
+    chapterStart: "27:26.1"
+    chapterEnd: "33:04.36"
+    chapterScripture:
+      - Romans 11:25-27
+    points:
+      - pointTime: "27:26.44"
+        pointText: A submitted question connects Romans 11 with current claims about Israel.
+      - pointTime: "28:12.5"
+        pointText: The passage's partial hardening and the fullness of the Gentiles are read together.
+      - pointTime: "29:19.08"
+        pointText: Automatic political support or salvation based on race is questioned.
+      - pointTime: "30:59.9"
+        pointText: Repentance is considered as one explanation of the phrase all Israel.
+      - pointTime: "32:12.82"
+        pointText: The preacher states his preference for understanding Israel spiritually as those belonging to Christ.
+  - chapterId: c20260426-recap-peace
+    chapterTitle: God's Way Differs from Worldly Power
+    chapterKind: sermon
+    chapterStart: "33:04.36"
+    chapterEnd: "42:51"
+    chapterScripture:
+      - John 12:12-19
+      - Zechariah 9:9
+      - Isaiah 9:6
+    points:
+      - pointTime: "33:04.36"
+        pointText: The triumphal entry is reviewed through the crowd's expectations and Jesus' humble arrival.
+      - pointTime: "36:07.46"
+        pointText: Love and peace are presented as God's nature rather than a tactical choice.
+      - pointTime: "37:48.14"
+        pointText: Redeemed community requires accommodation and forgiveness rather than isolation.
+      - pointTime: "39:34.16"
+        pointText: Just-war reasoning is distinguished from allowing evil to prosper.
+      - pointTime: "41:16.84"
+        pointText: A bias toward gentleness is urged while awaiting Christ's final peace.
+  - chapterId: c20260426-greeks-glory
+    chapterTitle: Gentiles Seek Jesus as the Hour of Glory Arrives
+    chapterKind: sermon
+    chapterStart: "42:51"
+    chapterEnd: "1:03:16.9"
+    chapterScripture:
+      - John 12:20-24
+      - Acts 10
+    points:
+      - pointTime: "42:51.32"
+        pointText: The Greeks seeking Jesus introduce the gospel reaching beyond the Jewish community.
+      - pointTime: "44:47.42"
+        pointText: Cornelius illustrates Gentiles who feared God before this wider mission unfolded.
+      - pointTime: "48:20.28"
+        pointText: Jesus' announcement that the hour has come is explained through God's timing.
+      - pointTime: "52:14.78"
+        pointText: Glorification includes suffering and crucifixion as well as resurrection and ascension.
+      - pointTime: "54:58.38"
+        pointText: The grain of wheat illustrates fruitful life through Christ's death.
+  - chapterId: c20260426-every-believer
+    chapterTitle: Every Believer Is Called to Follow Christ
+    chapterKind: sermon
+    chapterStart: "1:03:16.9"
+    chapterEnd: "1:31:24.76"
+    chapterScripture:
+      - John 12:25-26
+      - John 10:10
+      - Romans 12:1-2
+    points:
+      - pointTime: "1:03:17.22"
+        pointText: Sacrifice is not limited to Jesus, apostles or an unusually gifted class of people.
+      - pointTime: "1:08:33.16"
+        pointText: Francis Chan's critique of sermon-centered church life introduces participation by every believer.
+      - pointTime: "1:11:59.64"
+        pointText: Whoever is read as a universal call rather than permission for passive spectatorship.
+      - pointTime: "1:25:41.54"
+        pointText: Serving Christ means following and obeying him, with honor from the Father.
+      - pointTime: "1:29:03.4"
+        pointText: Romans 12 connects living sacrifice with renewed minds and a cause larger than self and family.
+    subchapters:
+      - chapterId: s20260426-redeemed-life
+        chapterTitle: Enjoy God's Gifts and Reject the Fallen Life
+        chapterKind: sermon
+        chapterStart: "1:13:39.2"
+        chapterEnd: "1:25:41.2"
+        points:
+          - pointTime: "1:13:39.2"
+            pointText: Hating the fallen life is distinguished from ascetic rejection of all earthly gifts.
+          - pointTime: "1:17:11.34"
+            pointText: Good things in life are affirmed as part of God's design.
+          - pointTime: "1:20:00.92"
+            pointText: John 10:10 contrasts destructive life with the abundant life Christ gives.
+          - pointTime: "1:20:35.88"
+            pointText: Marriage and moderation illustrate enjoying gifts within God's intended boundaries.
+          - pointTime: "1:24:16.84"
+            pointText: A personal recollection connects rejection of exploitation with compassion for vulnerable women.
+  - chapterId: c20260426-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:31:24.76"
+    chapterEnd: "1:44:11.996"
+    points:
+      - pointTime: "1:31:24.76"
+        pointText: Prayer asks for a transformed life following Christ rather than the fallen world's values.
+      - pointTime: "1:35:09.32"
+        pointText: Intercession asks for God's protection and wisdom for young people.
+      - pointTime: "1:37:31.1"
+        pointText: The fourth-Sunday second offering is designated for social causes.
+      - pointTime: "1:38:49.54"
+        pointText: Teach Me Thy Way is introduced through guidance in both difficult and good times.
+      - pointTime: "1:42:03.78"
+        pointText: Historical notices announce the following week's first-May Communion and May 31 baptism preparations.
+markers:
+  - markerTime: "1:42:03.78"
+    markerNote: "YouTube title and thumbnail incorrectly say 19 April. The recording states this is the fourth Sunday and next week is the first Sunday of May, identifying 26 April 2026. It also refers to the previous week's entry-into-Jerusalem clip; do not concatenate it with the April 19 restarts."
+  - markerTime: "27:26.1"
+    markerNote: "Working title uses the established service date; confirm the announced sermon title. Duration and anchors use supplied faster-whisper audio evidence, not freshly checked video duration or listening."
