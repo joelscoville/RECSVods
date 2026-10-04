@@ -30,6 +30,14 @@ chapters:
       - pointTime: "0:03.62"
         pointText: The leaders guide personal prayer and meditation, welcome the congregation, introduce
           Psalm 67 and opening songs, and pray for forgiveness and receptive hearts.
+      - pointTime: "1:31.66"
+        pointText: The leader calls the congregation to confession.
+      - pointTime: "3:52.96"
+        pointText: Supplication seeks God's help in personal situations.
+      - pointTime: "7:07.78"
+        pointText: Psalms 67:1-4 introduces The Love of God.
+      - pointTime: "12:06.26"
+        pointText: Good and Gracious King is introduced with a short demonstration.
     chapterScripture:
       - Psalms 67:1-4
   - chapterId: c20260524-worship-scripture
@@ -42,16 +50,26 @@ chapters:
         pointText: The congregation reads Proverbs 22 and John 13, the leader reflects on teaching and the
           need for God's help, and hymns and a video anthem lead into the supporting James 1
           reading.
+      - pointTime: "21:58.46"
+        pointText: The John reading covers betrayal, the new commandment and Peter's predicted denial.
+      - pointTime: "24:35.62"
+        pointText: The worship leader relates Proverbs 22 to special education and Sunday school.
+      - pointTime: "28:41.2"
+        pointText: Come Every Soul by Sin Oppressed is introduced as the video anthem.
+      - pointTime: "32:03.04"
+        pointText: James 1:12-15 is announced as the supporting sermon passage.
     subchapters:
       - chapterId: s20260524-reflection
         chapterTitle: Teaching and Our Shared Need for God's Help
         chapterKind: other
         chapterStart: "24:35.62"
-        chapterEnd: "26:24.74"
+        chapterEnd: "26:21.5"
         points:
           - pointTime: "24:35.62"
             pointText: The leader applies Proverbs to special education and Sunday school, comparing her
               students' distress with her own need for gracious intervention.
+          - pointTime: "25:41.6"
+            pointText: The leader compares her students' distress with her own difficult emotions and a shared need for God's help.
         chapterScripture:
           - Proverbs 22
           - John 13:21-38
@@ -64,12 +82,16 @@ chapters:
     chapterTitle: The Apostles' Creed, Tradition and Authority
     chapterKind: qa
     chapterStart: "33:00.58"
-    chapterEnd: "36:39.56"
+    chapterEnd: "36:40.86"
     points:
       - pointTime: "33:00.58"
         pointText: Pastor Yong distinguishes the Creed's uncertain authorship tradition from scriptural
           authority while affirming its declarative and baptismal value and offering his account of
           denominational differences.
+      - pointTime: "34:07.3"
+        pointText: Historical traditions should be labelled clearly and distinguished from scriptural authority.
+      - pointTime: "35:21.4"
+        pointText: The Creed's declarative and baptismal significance is affirmed without certainty about its traditional origin story.
     chapterScripture:
       - John 13:21-30
       - John 13:36-38
@@ -77,13 +99,21 @@ chapters:
   - chapterId: c20260524-betraying-innocent-christ
     chapterTitle: Judas Betrays the Innocent Christ
     chapterKind: sermon
-    chapterStart: "36:39.56"
+    chapterStart: "36:40.86"
     chapterEnd: "56:02.52"
     points:
-      - pointTime: "36:39.56"
+      - pointTime: "36:40.86"
         pointText: After recalling Jesus' loving service and praying for humble hearts, Pastor Yong presents
           Judas's betrayal as uniquely grave because of Jesus' innocence and traces the betrayal
           narrative.
+      - pointTime: "39:14.2"
+        pointText: Foot washing is explained as lowly service that surprised Peter.
+      - pointTime: "42:44.7"
+        pointText: The washing image is connected with regular confession by saved but imperfect people.
+      - pointTime: "49:06.56"
+        pointText: Jesus' innocence is presented as the reason Judas' betrayal is uniquely grave.
+      - pointTime: "54:05.76"
+        pointText: The morsel, Judas' departure and the other disciples' misunderstanding are traced in John.
     subchapters:
       - chapterId: s20260524-betrayal
         chapterTitle: Why Judas's Betrayal Is So Grave
@@ -95,6 +125,14 @@ chapters:
             pointText: Pastor Yong moves from a Bible quiz and comparisons of evil to the view that betraying
               the innocent Jesus is uniquely grave, then follows the silver, morsel and Judas's
               departure.
+          - pointTime: "47:13.04"
+            pointText: Questions about the first commandment and Cain lead to the question of the most hideous sin.
+          - pointTime: "49:06.56"
+            pointText: The preacher argues that betraying the innocent Jesus is uniquely grave.
+          - pointTime: "50:43.62"
+            pointText: The betrayal agreement is connected with Matthew's account of silver and fulfilled prophecy.
+          - pointTime: "54:05.76"
+            pointText: John's private exchange and the disciples' misunderstanding explain Judas' departure.
         chapterScripture:
           - Matthew 11:26
           - Genesis 1
@@ -124,23 +162,39 @@ chapters:
     chapterTitle: Temptation Does Not Excuse Our Denial
     chapterKind: sermon
     chapterStart: "56:03.1"
-    chapterEnd: "1:23:27.64"
+    chapterEnd: "1:23:28"
     points:
       - pointTime: "56:03.1"
         pointText: Pastor Yong rejects prophecy and circumstances as excuses for Judas, uses James to
           distinguish temptation from yielding, and extends responsibility to Peter and to professed
           faith contradicted by conduct.
+      - pointTime: "59:55.6"
+        pointText: The musical's portrayal of Judas introduces a warning against shifting blame for sin.
+      - pointTime: "1:05:16.04"
+        pointText: James 1 excludes God as tempter while retaining responsibility for following personal desire.
+      - pointTime: "1:12:15.32"
+        pointText: Peter's promise is compared with extravagant worship words that may not be reflected in action.
+      - pointTime: "1:20:56.28"
+        pointText: Outward godliness without transformation is interpreted as denial of Christ's power.
     subchapters:
       - chapterId: s20260524-denial
         chapterTitle: Denial Extends Beyond Judas
         chapterKind: sermon
-        chapterStart: "1:09:04.1"
-        chapterEnd: "1:23:27.64"
+        chapterStart: "1:09:05.44"
+        chapterEnd: "1:23:28"
         points:
-          - pointTime: "1:09:04.1"
+          - pointTime: "1:09:05.44"
             pointText: Pastor Yong includes political and religious participants, Peter and the disciples in
               responsibility, then challenges himself and the congregation about words,
               self-reliance and conduct that deny Christ's power.
+          - pointTime: "1:11:01.1"
+            pointText: Pilate's name in the Creed is connected with the wider authority involved in the crucifixion.
+          - pointTime: "1:16:33.96"
+            pointText: Military slogans illustrate a gap between strong words and corresponding actions.
+          - pointTime: "1:18:14.58"
+            pointText: Peter's denial and the disciples' flight show that failure was not confined to Judas.
+          - pointTime: "1:20:56.28"
+            pointText: The preacher applies denial to self-reliance and conduct that contradicts professed faith.
         chapterScripture:
           - John 13:36-38
           - John 13:38
@@ -163,13 +217,21 @@ chapters:
   - chapterId: c20260524-repentance-forgiveness
     chapterTitle: Seek Forgiveness Rather Than Remain in Regret
     chapterKind: sermon
-    chapterStart: "1:23:27.64"
-    chapterEnd: "1:34:41.24"
+    chapterStart: "1:23:28"
+    chapterEnd: "1:34:40.5"
     points:
-      - pointTime: "1:23:27.64"
+      - pointTime: "1:23:28.2"
         pointText: Acknowledging suicide's complexity, Pastor Yong contrasts Judas's regret with Peter's
           restoration, draws on John Stott to reject self-rescue, and urges repentance and
           forgiveness while warning against outward faith without belief.
+      - pointTime: "1:24:54.34"
+        pointText: Judas' regret is distinguished from repentance that seeks God's help.
+      - pointTime: "1:28:20.3"
+        pointText: A quotation attributed to John Stott contrasts self-substitution with God's saving substitution.
+      - pointTime: "1:30:27.48"
+        pointText: Peter's restoration and 1 John 1:9 encourage seeking forgiveness after failure.
+      - pointTime: "1:32:59.58"
+        pointText: Hebrews 6:4-6 is interpreted as a warning against outward participation without true belief.
     chapterScripture:
       - Matthew 27:3-5
       - John 21:15-17
@@ -178,17 +240,27 @@ chapters:
   - chapterId: c20260524-response-closing
     chapterTitle: Response and Closing
     chapterKind: closing
-    chapterStart: "1:34:41.24"
+    chapterStart: "1:34:40.5"
     chapterEnd: "1:50:00.34"
     points:
-      - pointTime: "1:34:41.24"
+      - pointTime: "1:34:40.6"
         pointText: Pastor Yong leads prayer, the Creed and intercession for Stephen Tong's stated rally
           programme, explains the offering, introduces the closing hymn and blessing, and announces
           baptism and ministry opportunities including a possible Leeds fellowship.
+      - pointTime: "1:35:44.26"
+        pointText: The congregation stands to affirm the Apostles' Creed.
+      - pointTime: "1:38:20.46"
+        pointText: Prayer concerns Stephen Tong's stated gospel-rally programme.
+      - pointTime: "1:40:04.5"
+        pointText: The fourth-Sunday second offering is designated for social causes.
+      - pointTime: "1:45:38.78"
+        pointText: Historical notices explain baptism and membership requirements and invite ministry participation.
     chapterScripture:
       - Ephesians 3
       - 2 Corinthians 13
 markers:
+  - markerTime: "36:40.86"
+    markerNote: "Recap, denial, repentance and response cuts moved out of sentences to complete transitions using supplied word timings. Reflection ends before the next hymn invitation; check audio."
   - markerTime: "36:39.56"
     markerNote: "Also cited in the sermon: John 13:3-9; John 13:6-10; John 13:10; John 13:14-16; Matthew
       11:26; Genesis 1; Genesis 4; John 13:21-30; Matthew 26:14-16; Matthew 27:9-10; John 13:21-25;
