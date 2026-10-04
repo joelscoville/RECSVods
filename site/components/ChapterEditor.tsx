@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
   addMarker, addSubchapterAt, addPointAt, chapterAt, chapterTitle, describeChanges, edgeLimits, editMarker, editChapter, editPoint, edges,
-  formatClock, githubEditUrl, githubRawUrl, initialState, isFileMarker, items, lengthOf, outline, recordingFilePath, removeItem, removeMarker, roundTime,
-  setEdge, SOURCE_BRANCH, startChapterAt, toggleChecked, toRecording, validateEditor,
-  type AddResult, type EditorIssue, type EditorItem, type EditorMarker, type EditorRecording, type EditorState,
+  formatClock, isFileMarker, items, lengthOf, outline, removeItem, removeMarker, roundTime,
+  setEdge, startChapterAt, toggleChecked, validateEditor,
+  type AddResult, type EditorItem, type EditorMarker, type EditorRecording, type EditorState,
 } from '../lib/recording-editor';
 import { CHAPTER_TITLES, CHAPTER_KINDS, locate, recordingTime, words, type ChapterKind } from '../lib/recording-schema';
 import { useEditorSession } from './use-editor-session';
@@ -11,21 +11,20 @@ import { useEditorPlayback } from './use-editor-playback';
 import { useEditorSelection } from './use-editor-selection';
 import UnavailableRecording from './UnavailableRecording';
 import { isMac, keyText, matchShortcut, SHORTCUTS, shortcutHint, type EditorAction } from '../lib/editor-keys';
-import { applyChanges, ChangeConflictError, type AppliedChanges } from '../lib/apply-changes';
-import { diffHunks } from '../lib/line-diff';
+import Modal from './EditorDialog';
+import EditorSubmissionDialog from './EditorSubmissionDialog';
 import EditorTimeline, { type BoundaryMove, type TimelineContext } from './EditorTimeline';
 import { ContextMenu, TimeInput, useScrubbable, type MenuItem, type MenuRequest } from './editor-controls';
 import EditorPointNote from './EditorPointNote';
 import EditorTitleField from './EditorTitleField';
 import EditorDock from './EditorDock';
 import { clampView, fitView, revealTime, zoomView, type TimelineView } from '../lib/timeline-view';
-import { correctionConfig, validateRepositoryUrl } from '../lib/corrections';
 import { parseScriptureReference } from '../lib/scripture';
 import { formatDate, serviceUrl } from '../lib/urls';
 import Icon from './Icon';
 import { MIN_TIMELINE, MIN_TOP, Splitter, useEditorLayout, WINDOW_TITLES, WINDOWS, type EditorWindow } from './editor-layout';
 import { MarkersWindow, TranscriptWindow } from './EditorWindows';
-import { SendSteps, SetupGuide } from './GitHubGuide';
+import { SetupGuide } from './GitHubGuide';
 
 /* ---------- Small pieces ---------- */
 
@@ -672,7 +671,7 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
 
     {dialog === 'help' && <HelpDialog onClose={() => setDialog(undefined)} onAccount={() => setDialog('account')} />}
     {dialog === 'account' && <Modal title="Make a free GitHub account" onClose={() => setDialog(undefined)}><SetupGuide onDone={() => setDialog(undefined)} doneLabel="Back to editing" /></Modal>}
-    {dialog === 'finish' && <FinishDialog base={base} state={state} issues={issues} nameOf={nameOf}
+    {dialog === 'finish' && <EditorSubmissionDialog base={base} state={state} issues={issues} nameOf={nameOf}
       onClose={() => setDialog(undefined)} onGoTo={id => { const item = rows.find(row => row.id === id); if (item) { select(item); setFocusTitle(value => value + 1); } setDialog(undefined); }}
       onDetails={() => { toggleWindow('details', true); setDialog(undefined); }}
       onClear={() => { resetDraft(); setDialog(undefined); }}
@@ -686,15 +685,6 @@ function valueOf(state: EditorState, id: string): unknown {
 }
 
 /* ---------- Dialogs ---------- */
-
-function Modal({ title, onClose, children }: { title: string; onClose: () => void; children: ReactNode }) {
-  const ref = useRef<HTMLDialogElement>(null);
-  useEffect(() => { const dialog = ref.current; if (dialog && !dialog.open) dialog.showModal(); return () => dialog?.close(); }, []);
-  return <dialog ref={ref} className="ce-dialog" aria-labelledby="ce-dialog-title" onCancel={event => { event.preventDefault(); onClose(); }}>
-    <div className="ce-dialog-head"><h2 id="ce-dialog-title">{title}</h2><button type="button" className="icon-button ce-icon" onClick={onClose} aria-label="Close"><Icon name="close" /></button></div>
-    {children}
-  </dialog>;
-}
 
 function HelpDialog({ onClose, onAccount }: { onClose: () => void; onAccount: () => void }) {
   const groups = [...new Set(SHORTCUTS.map(shortcut => shortcut.group))];
@@ -717,116 +707,4 @@ function HelpDialog({ onClose, onAccount }: { onClose: () => void; onAccount: ()
     <p className="ce-muted">{isMac() ? 'While dragging an edge: Option moves it alone, Cmd turns snapping off, Esc cancels. Cmd + scroll zooms the timeline.'
       : 'While dragging an edge: Alt moves it alone, Ctrl turns snapping off, Esc cancels. Ctrl + scroll zooms the timeline.'}</p>
   </Modal>;
-}
-
-/** Copies text; returns false when the browser refuses. */
-async function copyText(text: string): Promise<boolean> {
-  try { await navigator.clipboard.writeText(text); return true; } catch { return false; }
-}
-function saveFile(name: string, text: string, type: string) {
-  const url = URL.createObjectURL(new Blob([text], { type }));
-  Object.assign(document.createElement('a'), { href: url, download: name }).click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-type Build =
-  | { status: 'loading' }
-  | { status: 'ready'; applied: AppliedChanges; original: string }
-  | { status: 'conflict'; problems: string[] }
-  | { status: 'error'; message: string };
-
-/** Builds the finished recording file from the live file on GitHub, then hands it to GitHub's own editor. */
-function FinishDialog({ base, state, issues, nameOf, onClose, onGoTo, onDetails, onClear, onIncludeMarkers, backHref }: {
-  base: EditorRecording; state: EditorState; issues: EditorIssue[]; nameOf: (id?: string) => string;
-  onClose: () => void; onGoTo: (id: string) => void; onDetails: () => void; onClear: () => void; onIncludeMarkers: (include: boolean) => void; backHref: string;
-}) {
-  // Your markers stay private unless included; say so here, where it is decided.
-  const mine = state.markers.filter(marker => !isFileMarker(marker)), unsent = mine.filter(marker => !marker.include).length;
-  const errors = issues.filter(issue => issue.level === 'error'), warnings = issues.filter(issue => issue.level === 'warning');
-  const edited = useMemo(() => errors.length ? undefined : toRecording(base, state).source, [errors.length, base, state]);
-  const lines = useMemo(() => describeChanges(base, state), [base, state]);
-  const config = correctionConfig();
-  const repository = config.repositoryUrl ? validateRepositoryUrl(config.repositoryUrl) : undefined;
-  const filePath = recordingFilePath(base.id), fileName = filePath.split('/').at(-1)!;
-  const [build, setBuild] = useState<Build>({ status: 'loading' });
-  const [attempt, setAttempt] = useState(0);
-  const [step, setStep] = useState<'copied' | 'blocked'>();
-  useEffect(() => {
-    // Fetched even with no edits: checking a draft is itself worth sending.
-    if (!edited || !repository) return;
-    const abort = new AbortController();
-    setBuild({ status: 'loading' });
-    (async () => {
-      const response = await fetch(githubRawUrl(repository, SOURCE_BRANCH, filePath), { cache: 'no-store', signal: abort.signal });
-      if (!response.ok) throw new Error(`GitHub answered ${response.status} for ${filePath}.`);
-      const original = await response.text();
-      const applied = applyChanges({ text: original, base: base.recording, edited, filename: filePath });
-      if (!abort.signal.aborted) setBuild({ status: 'ready', applied, original });
-    })().catch(error => {
-      if (abort.signal.aborted) return;
-      setBuild(error instanceof ChangeConflictError ? { status: 'conflict', problems: error.problems }
-        : { status: 'error', message: error instanceof Error ? error.message : String(error) });
-    });
-    return () => abort.abort();
-  }, [edited, repository, filePath, base, attempt]);
-
-  const [account, setAccount] = useState(false);
-  const copyFile = async (text: string) => setStep(await copyText(text) ? 'copied' : 'blocked');
-  const repo = repository?.replace('https://github.com/', '') ?? '';
-  const unchanged = build.status === 'ready' && build.original === build.applied.text;
-
-  return <Modal title={account ? 'Make a free GitHub account' : 'Send your changes'} onClose={onClose}>
-    {mine.length > 0 && !account && <label className="ce-send-markers">
-      <input type="checkbox" checked={unsent === 0} onChange={event => onIncludeMarkers(event.target.checked)} />
-      <span>Send my {mine.length === 1 ? 'marker' : `${mine.length} markers`} too<span className="ce-muted"> · {unsent === 0 ? 'included' : unsent === mine.length ? 'not included yet' : `${unsent} not included yet`}</span></span>
-    </label>}
-    {errors.length > 0 ? <>
-      <p>A few things need fixing first:</p>
-      <ul className="ce-issues">{errors.map(issue => <li key={`${issue.itemId}-${issue.message}`} className="is-error">
-        {issue.itemId ? <button type="button" className="text-link" onClick={() => onGoTo(issue.itemId!)}>{nameOf(issue.itemId)}</button>
-          : /^Marker/.test(issue.message) ? 'Marker' : <button type="button" className="text-link" onClick={onDetails}>Details</button>}: {issue.message}
-      </li>)}</ul>
-    </> : account ? <SetupGuide onDone={() => setAccount(false)} onExit={() => setAccount(false)} doneLabel="Back to sending" />
-    : unchanged ? <p>You haven’t changed anything yet, and this recording is already on the website.</p>
-    : <>
-      {build.status === 'ready' && build.applied.published && <p className="ce-publish-note"><Icon name="check" />Sending this also marks the recording as checked: it goes on the website when the pull request is merged.</p>}
-      <details className="ce-more"><summary>See what you changed ({lines.length + (build.status === 'ready' && build.applied.published ? 1 : 0)})</summary>
-        <ul className="ce-change-list">{build.status === 'ready' && build.applied.published && <li>Marked as checked, ready for the website</li>}{lines.map((line, i) => <li key={i}>{line}</li>)}</ul>
-        {warnings.length > 0 && <><p className="ce-muted">Worth a second look (optional):</p>
-          <ul className="ce-issues">{warnings.map(issue => <li key={`${issue.itemId}-${issue.message}`} className="is-warning">
-            {issue.itemId && <button type="button" className="text-link" onClick={() => onGoTo(issue.itemId!)}>{nameOf(issue.itemId)}</button>}: {issue.message}</li>)}</ul></>}
-        {build.status === 'ready' && <><p className="ce-muted">The exact change to <code>{filePath}</code>:</p><FileDiff before={build.original} after={build.applied.text} /></>}
-      </details>
-      {!repository ? <p>This copy of the site is not connected to a GitHub repository.</p>
-        : build.status === 'loading' ? <p role="status" className="ce-muted">Getting ready…</p>
-        : build.status === 'conflict' ? <div className="ce-issues"><p className="is-error">Someone changed this recording on GitHub in the same places you did:</p>
-          <ul className="ce-change-list">{build.problems.map(problem => <li key={problem}>{problem}</li>)}</ul>
-          <p>Your edits are still in this editor. Download a draft before comparing with the latest version; no changes have been sent.</p>
-          <button type="button" className="button button-secondary" onClick={() => setAttempt(value => value + 1)}>Check again</button></div>
-        : build.status === 'error' ? <div className="ce-issues"><p className="is-error">Could not get the latest recording file from GitHub. Your edits are still in this editor.</p>
-          <details><summary>Technical details</summary><p>{build.message}</p></details>
-          <button type="button" className="button button-secondary" onClick={() => setAttempt(value => value + 1)}>Try again</button></div>
-        : <>
-          <SendSteps repo={repo} file={fileName} copied={step}
-            onCopy={() => copyFile(build.applied.text)}
-            onOpen={() => window.open(githubEditUrl(repository, SOURCE_BRANCH, filePath), '_blank', 'noopener')}
-            onDownload={() => saveFile(fileName, build.applied.text, 'text/yaml')}
-            onAccount={() => setAccount(true)}
-            finish={<div className="action-row">
-              <a className="button" href={backHref}>Back to the recording</a></div>} />
-        </>}
-    </>}
-    <div className="ce-local-reset">
-      <div className="action-row"><button type="button" className="button button-secondary" onClick={onClose}>Back to editing</button>
-        <button type="button" className="ce-link" onClick={() => saveFile(`${base.id}-draft.json`, JSON.stringify({ recordingId: base.id, state }, null, 2), 'application/json')}>Download draft</button></div>
-      <details><summary>Discard local draft</summary><p>This removes your edits from this browser. It does not change the archive. You can Undo while the editor remains open.</p>
-        <button type="button" className="ce-link" onClick={onClear} disabled={JSON.stringify(state) === JSON.stringify(initialState(base))}>Clear my changes here</button>
-      </details>
-    </div>
-  </Modal>;
-}
-
-function FileDiff({ before, after }: { before: string; after: string }) {
-  const hunks = useMemo(() => diffHunks(before, after), [before, after]);
-  return <div className="ce-diff">{hunks.map((hunk, i) => <pre key={i}>{hunk.lines.map((line, j) =>
-    <span key={j} className={`ce-diff-${line.kind}`}><span className="ce-diff-no">{line.after ?? line.before}</span>{line.kind === 'added' ? '+ ' : line.kind === 'removed' ? '− ' : '  '}{line.text}{'\n'}</span>)}</pre>)}</div>;
 }
