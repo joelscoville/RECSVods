@@ -220,46 +220,85 @@ export function edges(state: EditorState): Edge[] {
     })),
   ].sort((a, b) => a.time - b.time);
 }
-function movement(
-  state: EditorState,
-  edge: Pick<Edge, 'lane' | 'id' | 'edge'>,
-  linked: boolean,
-) {
-  const target = sections(state).find((item) => item.id === edge.id);
-  const old = target?.[edge.edge] ?? NaN;
-  const related = (item: EditorChapter | EditorSubchapter) =>
-    edge.lane === 'chapter' ||
-    (target &&
-      'parentId' in target &&
-      'parentId' in item &&
-      item.parentId === target.parentId);
-  const moves = (
-    item: EditorChapter | EditorSubchapter,
-    which: 'start' | 'end',
-  ) =>
-    (item.id === edge.id && which === edge.edge) ||
-    (linked && related(item) && same(item[which], old));
-  return { target, old, moves };
+type BoundaryTarget = Pick<Edge, 'lane' | 'id' | 'edge'>;
+
+export interface BoundaryMovement {
+  target: BoundaryTarget;
+  previousTime: number | undefined;
+  boundaries: (BoundaryTarget & { reason: 'target' | 'touching' })[];
+  points: { id: string; reason: 'target' | 'follows-owner' }[];
+  limits: [number, number];
 }
-/** All entry methods use the same bounds, including the contents of linked neighbours. */
-export function edgeLimits(
+
+/** Describe the complete edit before applying it. A top-level linked edge can carry
+ * touching edges at either level; a subchapter edge only links siblings of its parent.
+ * Point notes follow their moving owner only when they touch the original boundary. */
+export function describeBoundaryMovement(
   state: EditorState,
   length: number,
-  edge: Pick<Edge, 'lane' | 'id' | 'edge'>,
+  edge: BoundaryTarget,
   linked = true,
-): [number, number] {
+): BoundaryMovement {
+  const allSections = sections(state);
   if (edge.lane === 'point') {
-    const point = state.points.find((point) => point.id === edge.id),
-      owner = sections(state).find((chapter) => chapter.id === point?.parentId);
-    return owner ? [owner.start, owner.end - MIN_SECONDS] : [0, length];
+    const point = state.points.find((point) => point.id === edge.id);
+    const owner = allSections.find((chapter) => chapter.id === point?.parentId);
+    return {
+      target: edge,
+      previousTime: point?.time,
+      boundaries: [],
+      points: [{ id: edge.id, reason: 'target' }],
+      limits: owner ? [owner.start, owner.end - MIN_SECONDS] : [0, length],
+    };
   }
-  const { old, moves } = movement(state, edge, linked);
-  let low = 0,
-    high = length;
-  for (const item of sections(state)) {
-    const start = moves(item, 'start'),
-      end = moves(item, 'end');
-    if (!start && !end) continue;
+
+  const target = allSections.find((item) => item.id === edge.id);
+  const previousTime = target?.[edge.edge];
+  const boundaries: BoundaryMovement['boundaries'] = [];
+  for (const section of allSections) {
+    const sharesParent =
+      target &&
+      'parentId' in target &&
+      'parentId' in section &&
+      section.parentId === target.parentId;
+    const canLink = linked && (edge.lane === 'chapter' || sharesParent);
+    for (const which of ['start', 'end'] as const) {
+      const isTarget = section.id === edge.id && which === edge.edge;
+      const touches = canLink && same(section[which], previousTime ?? NaN);
+      if (isTarget || touches) {
+        boundaries.push({
+          id: section.id,
+          lane: 'parentId' in section ? 'subchapter' : 'chapter',
+          edge: which,
+          reason: isTarget ? 'target' : 'touching',
+        });
+      }
+    }
+  }
+
+  const movedSections = new Set(boundaries.map((boundary) => boundary.id));
+  const points: BoundaryMovement['points'] = state.points
+    .filter(
+      (point) =>
+        linked &&
+        movedSections.has(point.parentId) &&
+        same(point.time, previousTime ?? NaN),
+    )
+    .map((point) => ({ id: point.id, reason: 'follows-owner' }));
+  const movingPointIds = new Set(points.map((point) => point.id));
+  const moves = (id: string, which: 'start' | 'end') =>
+    boundaries.some(
+      (boundary) => boundary.id === id && boundary.edge === which,
+    );
+
+  let low = 0;
+  let high = length;
+  for (const item of allSections) {
+    const movesStart = moves(item.id, 'start');
+    const movesEnd = moves(item.id, 'end');
+    if (!movesStart && !movesEnd) {
+      continue;
+    }
     const parent =
       'parentId' in item
         ? state.chapters.find((parent) => parent.id === item.parentId)
@@ -269,44 +308,61 @@ export function edgeLimits(
         ? state.subchapters.filter((child) => child.parentId === item.parentId)
         : state.chapters,
     );
-    const index = siblings.indexOf(item),
-      previous = siblings[index - 1],
-      next = siblings[index + 1];
+    const index = siblings.indexOf(item);
+    const previous = siblings[index - 1];
+    const next = siblings[index + 1];
     const children = state.subchapters.filter(
       (child) => child.parentId === item.id,
     );
     const notes = state.points.filter(
-      (point) =>
-        point.parentId === item.id && !(linked && same(point.time, old)),
+      (point) => point.parentId === item.id && !movingPointIds.has(point.id),
     );
-    if (start) {
+    if (movesStart) {
       high = Math.min(
         high,
         item.end - MIN_SECONDS,
         ...notes.map((point) => point.time),
         ...children
-          .filter((child) => !moves(child, 'start'))
+          .filter((child) => !moves(child.id, 'start'))
           .map((child) => child.start),
       );
-      if (parent && !moves(parent, 'start')) low = Math.max(low, parent.start);
-      if (previous && !moves(previous, 'end'))
+      if (parent && !moves(parent.id, 'start'))
+        low = Math.max(low, parent.start);
+      if (previous && !moves(previous.id, 'end'))
         low = Math.max(low, previous.end);
     }
-    if (end) {
+    if (movesEnd) {
       low = Math.max(
         low,
         item.start + MIN_SECONDS,
         ...notes.map((point) => point.time + MIN_SECONDS),
         ...children
-          .filter((child) => !moves(child, 'end'))
+          .filter((child) => !moves(child.id, 'end'))
           .map((child) => child.end),
       );
-      if (parent && !moves(parent, 'end')) high = Math.min(high, parent.end);
-      if (next && !moves(next, 'start')) high = Math.min(high, next.start);
+      if (parent && !moves(parent.id, 'end')) high = Math.min(high, parent.end);
+      if (next && !moves(next.id, 'start')) high = Math.min(high, next.start);
     }
   }
-  return [low, high];
+  return {
+    target: edge,
+    previousTime,
+    boundaries,
+    points,
+    limits: [low, high],
+  };
 }
+
+/** All entry methods ask the same movement description for the permitted interval. */
+export function edgeLimits(
+  state: EditorState,
+  length: number,
+  edge: BoundaryTarget,
+  linked = true,
+): [number, number] {
+  return describeBoundaryMovement(state, length, edge, linked).limits;
+}
+
 export function setEdge(
   state: EditorState,
   length: number,
@@ -314,12 +370,9 @@ export function setEdge(
   seconds: number,
   linked = true,
 ): EditorState {
-  const current =
-    edge.lane === 'point'
-      ? state.points.find((point) => point.id === edge.id)?.time
-      : sections(state).find((item) => item.id === edge.id)?.[edge.edge];
-  if (seconds === current) return state;
-  const [low, high] = edgeLimits(state, length, edge, linked);
+  const movement = describeBoundaryMovement(state, length, edge, linked);
+  if (seconds === movement.previousTime) return state;
+  const [low, high] = movement.limits;
   const time = roundTime(seconds);
   if (!Number.isFinite(seconds) || seconds < 0 || time < low || time > high)
     return state;
@@ -330,26 +383,24 @@ export function setEdge(
         point.id === edge.id ? { ...point, time } : point,
       ),
     };
-  const { target: chapter, old, moves } = movement(state, edge, linked);
-  if (!chapter || same(chapter[edge.edge], time)) return state;
+  if (movement.previousTime === undefined || same(movement.previousTime, time))
+    return state;
+  const moves = (id: string, which: 'start' | 'end') =>
+    movement.boundaries.some(
+      (boundary) => boundary.id === id && boundary.edge === which,
+    );
   const update = <T extends EditorChapter>(item: T): T => ({
     ...item,
-    ...(moves(item, 'start') ? { start: time } : {}),
-    ...(moves(item, 'end') ? { end: time } : {}),
+    ...(moves(item.id, 'start') ? { start: time } : {}),
+    ...(moves(item.id, 'end') ? { end: time } : {}),
   });
-  const moved = new Set(
-    sections(state)
-      .filter((item) => moves(item, 'start') || moves(item, 'end'))
-      .map((item) => item.id),
-  );
+  const movingPoints = new Set(movement.points.map((point) => point.id));
   return {
     ...state,
     chapters: state.chapters.map(update),
     subchapters: state.subchapters.map(update),
     points: state.points.map((point) =>
-      linked && moved.has(point.parentId) && same(point.time, old)
-        ? { ...point, time }
-        : point,
+      movingPoints.has(point.id) ? { ...point, time } : point,
     ),
   };
 }
