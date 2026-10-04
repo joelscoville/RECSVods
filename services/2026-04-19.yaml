@@ -1,0 +1,184 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: RECS 19 April 2026
+serviceDate: 2026-04-19
+status: draft
+sermonDescription: The preacher reads Jesus' entry into Jerusalem on a donkey as a revelation of God's humility, love and peace rather than worldly power. Philippians 2 and the fruit of the Spirit connect Christ's example with the character believers should display. Addressing war and public conflict, he argues for discernment and a bias toward gentleness without allowing evil to prosper, trusting Christ's final victory.
+sermonScripture:
+  - John 12:12-19
+  - Philippians 2:5-11
+  - James 4:17
+sermonTopics:
+  - peace
+  - discipleship
+  - discernment
+uploads:
+  - youtubeId: Dv1BhSyziSE
+    uploadDuration: "55:37.752"
+  - youtubeId: seYFMVBSdzc
+    uploadDuration: "55:20.082"
+chapters:
+  - chapterId: c20260419-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "0:08"
+    chapterEnd: "8:14.1"
+    points:
+      - pointTime: "0:08.4"
+        pointText: Personal prayer begins with adoration.
+      - pointTime: "1:30.18"
+        pointText: Confession seeks cleansing through Christ.
+      - pointTime: "2:33.94"
+        pointText: Thanksgiving remembers gratitude in every circumstance.
+      - pointTime: "3:39.72"
+        pointText: Supplication seeks guidance in personal situations.
+      - pointTime: "4:48.56"
+        pointText: The gathering prayer asks for focused worship before Hadi welcomes visitors.
+  - chapterId: c20260419-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "8:14.1"
+    chapterEnd: "34:58.3"
+    chapterScripture:
+      - Psalms 57:1-3
+      - Proverbs 17
+      - John 12:12-26
+      - Philippians 2:5-11
+    points:
+      - pointTime: "8:14.4"
+        pointText: Psalms 57 presents God as refuge and shelter in difficulty.
+      - pointTime: "14:40"
+        pointText: Yet Not I, but Through Christ in Me is introduced through dependence on Christ's strength.
+      - pointTime: "20:58.08"
+        pointText: Proverbs 17 is introduced for alternating reading.
+      - pointTime: "24:16.8"
+        pointText: The responsive reading turns to John 12:12-26.
+      - pointTime: "33:37.52"
+        pointText: Philippians 2:5-11 supplies the supporting reading about Christ's humility and exaltation.
+  - chapterId: c20260419-days-question
+    chapterTitle: Why Three Days and Three Nights?
+    chapterKind: qa
+    chapterStart: "34:58.3"
+    chapterEnd: "39:42.06"
+    chapterScripture:
+      - Matthew 12:40
+    points:
+      - pointTime: "34:58.64"
+        pointText: The preacher introduces continued exposition toward Christ's final suffering.
+      - pointTime: "35:43.26"
+        pointText: A submitted question asks how Friday-to-Sunday fulfils three days and three nights.
+      - pointTime: "36:11.44"
+        pointText: Matthew 12:40 introduces the chronological question.
+      - pointTime: "36:55.96"
+        pointText: The answer appeals to Jewish reckoning and historical context rather than a modern hour count.
+      - pointTime: "38:21.02"
+        pointText: Careful interpretation is urged alongside a warning against arrogance.
+  - chapterId: c20260419-devotion-recap
+    chapterTitle: Recognize the Value of Devotion
+    chapterKind: sermon
+    chapterStart: "39:42.06"
+    chapterEnd: "50:13.9"
+    chapterScripture:
+      - John 12:1-11
+      - Matthew 13
+    points:
+      - pointTime: "39:42.06"
+        pointText: The anointing account is recalled with attention to its historical setting.
+      - pointTime: "41:45.3"
+        pointText: Martha illustrates faithful service in small tasks and ordinary responsibilities.
+      - pointTime: "43:27.56"
+        pointText: Mary and David illustrate devotion that abandons concern for social status.
+      - pointTime: "45:08.86"
+        pointText: Judas' professed concern is contrasted with John's description of theft.
+      - pointTime: "46:56.76"
+        pointText: The treasure, pearl and sower parables ask whether the kingdom's value is truly recognized.
+  - chapterId: c20260419-humble-entry
+    chapterTitle: The Triumphal Entry Reveals a Different King
+    chapterKind: sermon
+    chapterStart: "50:13.9"
+    chapterEnd: "1:24:52.61"
+    chapterScripture:
+      - John 12:12-19
+      - Zechariah 9:9
+      - Philippians 2:5-11
+      - Galatians 5:19-23
+    points:
+      - pointTime: "50:14.06"
+        pointText: Lazarus' resurrection explains the crowd's interest in Jesus' entry into Jerusalem.
+      - pointTime: "58:42.41"
+        pointText: The preacher distinguishes a dramatization's creative additions from the biblical text.
+      - pointTime: "1:02:04.37"
+        pointText: Hosanna is explained as a cry for salvation rather than merely a shout of victory.
+      - pointTime: "1:03:44.75"
+        pointText: Zechariah's donkey prophecy contrasts the crowd's political expectations with Jesus' mission.
+      - pointTime: "1:08:00.55"
+        pointText: Resurrection is presented as the turning point in the disciples' confused understanding.
+    subchapters:
+      - chapterId: s20260419-chosen-clip
+        chapterTitle: The Chosen Illustrates the Entry
+        chapterKind: other
+        chapterStart: "53:00.9"
+        chapterEnd: "58:42.25"
+        points:
+          - pointTime: "53:01.32"
+            pointText: A dramatized entry into Jerusalem illustrates expectations and opposition before the preacher comments on its creative elements.
+      - chapterId: s20260419-character
+        chapterTitle: Humility Expresses God's Character
+        chapterKind: sermon
+        chapterStart: "1:17:23.512"
+        chapterEnd: "1:24:52.61"
+        points:
+          - pointTime: "1:17:51.53"
+            pointText: Jesus' humility is explained through God's nature rather than a tactical choice.
+          - pointTime: "1:19:34.53"
+            pointText: The fruit of the Spirit provides reference points for prayer and character.
+          - pointTime: "1:20:50.43"
+            pointText: Fallen desires are contrasted with God's intended design for human life.
+          - pointTime: "1:22:59.23"
+            pointText: Humility is distinguished from merely forcing oneself to appear humble.
+          - pointTime: "1:24:17.23"
+            pointText: Peace with God is presented as the basis for peace, gentleness and freedom from rivalry.
+  - chapterId: c20260419-peace-responsibility
+    chapterTitle: Seek Peace without Allowing Evil to Prosper
+    chapterKind: sermon
+    chapterStart: "1:24:52.61"
+    chapterEnd: "1:35:43.45"
+    chapterScripture:
+      - James 4:17
+      - Philippians 2:9-11
+      - Revelation 19
+    points:
+      - pointTime: "1:24:52.61"
+        pointText: Contemporary war and political disputes introduce difficult questions about peace.
+      - pointTime: "1:28:09.69"
+        pointText: The preacher distinguishes just-war reasoning from an unconditional pacifist stance.
+      - pointTime: "1:31:20.15"
+        pointText: Fallen biases toward pride and violence call for caution and a preference for peaceful responses.
+      - pointTime: "1:33:30.55"
+        pointText: Philippians 2 connects present humility with Christ's final exaltation.
+      - pointTime: "1:34:27.59"
+        pointText: Revelation 19 is connected with Christ's ultimate victory over unrighteousness.
+  - chapterId: c20260419-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:35:43.45"
+    chapterEnd: "1:50:57.834"
+    points:
+      - pointTime: "1:35:43.69"
+        pointText: Prayer asks for love, patience and wisdom instead of reflexive anger.
+      - pointTime: "1:37:56.53"
+        pointText: The congregation prays for its own response and people who need Christ's peace.
+      - pointTime: "1:41:49.97"
+        pointText: The third-Sunday second offering is designated for cultural mandate work.
+      - pointTime: "1:43:55.03"
+        pointText: Thanks to God introduces gratitude in difficulty as well as comfort.
+      - pointTime: "1:47:40.49"
+        pointText: Historical notices introduce Pistachio Fellowship as a bridging ministry and invite participation.
+markers:
+  - markerTime: "55:37.752"
+    markerNote: "The two uploads continue a dramatized clip across a restart. No repeated speech was found; the missing interval remains unmeasured. Do not append mfiAFUTgOEg, which has a different service opening and sermon."
+  - markerTime: "34:58.3"
+    markerNote: "Working title uses the channel's dated title; confirm the announced sermon title. Durations and anchors are from supplied faster-whisper audio evidence, not fresh video-duration or listening checks."
+  - markerTime: "1:24:52.61"
+    markerNote: "Political, historical and denominational accounts remain the preacher's descriptions, not independently verified claims."
