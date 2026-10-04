@@ -1,0 +1,147 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: RECS 29 March 2026
+serviceDate: 2026-03-29
+status: draft
+sermonDescription: Concluding John 11, the preacher presents Christ as fully divine and human, understanding suffering and extending grace before human faith is complete. Lazarus' resurrection reveals Christ's direct authority, yet the leaders' self-interest and pride lead them to resist. The message urges confidence in prayer, thoughtful conduct and surrender to truth rather than selecting only the parts of Jesus that preserve one's own interests.
+sermonScripture:
+  - John 11:38-57
+  - Hebrews 4:15-16
+  - 3 John 1:2-4
+sermonTopics:
+  - faith
+  - truth
+  - discipleship
+uploads:
+  - youtubeId: _KtjmxoMSrI
+    uploadDuration: "55:31.924"
+  - youtubeId: 1lxZ_CnY8Nk
+    uploadDuration: "49:41.883"
+chapters:
+  - chapterId: c20260329-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "3:07.5"
+    chapterEnd: "10:19.7"
+    points:
+      - pointTime: "3:07.84"
+        pointText: Personal prayer begins with adoration after the prelude.
+      - pointTime: "4:30.12"
+        pointText: Confession seeks cleansing from unrighteousness.
+      - pointTime: "5:35.86"
+        pointText: Thanksgiving recalls gratitude in every circumstance.
+      - pointTime: "6:43.32"
+        pointText: Supplication brings personal needs before God.
+      - pointTime: "7:52.62"
+        pointText: Prayer asks for distraction to be set aside before Patrick welcomes worshippers.
+  - chapterId: c20260329-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "10:19.7"
+    chapterEnd: "32:24.2"
+    chapterScripture:
+      - Psalms 48:1-3
+      - Proverbs 15
+      - John 11:38-57
+      - 3 John 1:2-4
+    points:
+      - pointTime: "10:20.04"
+        pointText: Psalms 48 introduces praise of God's greatness and protection.
+      - pointTime: "13:47.04"
+        pointText: Prayer asks for courage to speak truth and readiness to apply the word.
+      - pointTime: "18:49.62"
+        pointText: Proverbs 15 begins the responsive reading.
+      - pointTime: "22:27.56"
+        pointText: John 11 covers Lazarus' resurrection and the leaders' plan against Jesus.
+      - pointTime: "31:58.38"
+        pointText: The supporting 3 John reading connects discipleship with walking in truth.
+  - chapterId: c20260329-understanding-grace
+    chapterTitle: Jesus Understands and Gives Grace to Weak Faith
+    chapterKind: sermon
+    chapterStart: "32:24.2"
+    chapterEnd: "1:06:15.72"
+    chapterScripture:
+      - John 11:32-40
+      - Hebrews 4:15-16
+      - Mark 9:24
+    points:
+      - pointTime: "32:24.48"
+        pointText: The preacher introduces the final John 11 session and invites participation in the Good Friday rally.
+      - pointTime: "36:12.46"
+        pointText: The Athanasian Creed is used to explain Christ's divinity and humanity.
+      - pointTime: "42:47.46"
+        pointText: Christ's empathy encourages confidence in seeking mercy through prayer.
+      - pointTime: "59:16.2"
+        pointText: Faith in God is distinguished from assuming that sufficient confidence can force any outcome.
+      - pointTime: "1:00:57.5"
+        pointText: God's grace precedes incomplete faith, so believers need not wait for superhuman faith before approaching him.
+    subchapters:
+      - chapterId: s20260329-chosen-clip
+        chapterTitle: The Chosen Illustrates Lazarus' Resurrection
+        chapterKind: other
+        chapterStart: "48:16.8"
+        chapterEnd: "55:15.5"
+        points:
+          - pointTime: "48:17.2"
+            pointText: A dramatization illustrates the tomb, prayer and resurrection, with creative additions distinguished from Scripture afterward.
+  - chapterId: c20260329-direct-authority
+    chapterTitle: Christ's Authority Calls for a Wider View of Life
+    chapterKind: sermon
+    chapterStart: "1:06:15.72"
+    chapterEnd: "1:15:05.02"
+    chapterScripture:
+      - John 11:41-44
+      - 3 John 1:2-4
+    points:
+      - pointTime: "1:06:16.02"
+        pointText: Jesus' public prayer is connected with God's plan and the needs of people around him.
+      - pointTime: "1:08:17.76"
+        pointText: The THINK questions encourage speech that is true, helpful, inspiring, necessary and kind.
+      - pointTime: "1:09:27.72"
+        pointText: The simple command to Lazarus is contrasted with elaborate religious rituals.
+      - pointTime: "1:11:15.2"
+        pointText: Christ is presented as God incarnate rather than merely a wise teacher.
+      - pointTime: "1:12:55.64"
+        pointText: Following Jesus is connected with his comprehensive authority and the truth that guides life.
+  - chapterId: c20260329-self-interest
+    chapterTitle: Surrender Pride and Self-Interest to the Truth
+    chapterKind: sermon
+    chapterStart: "1:15:05.02"
+    chapterEnd: "1:29:15.224"
+    chapterScripture:
+      - John 11:45-57
+    points:
+      - pointTime: "1:15:05.36"
+        pointText: The resurrection leads to belief for some but fear of lost position for the leaders.
+      - pointTime: "1:17:16.18"
+        pointText: Self-interest is contrasted with acknowledging a sign of Christ's divinity.
+      - pointTime: "1:19:48.28"
+        pointText: Caiaphas' proposal is read alongside John's account of Christ dying for God's scattered children.
+      - pointTime: "1:22:59.76"
+        pointText: The preacher applies the leaders' pride to choosing only the parts of Jesus one prefers.
+      - pointTime: "1:26:41.64"
+        pointText: Future accountability calls for courage to do what is right even when preserving a ministry seems easier.
+  - chapterId: c20260329-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:29:15.224"
+    chapterEnd: "1:45:13.807"
+    points:
+      - pointTime: "1:29:15.224"
+        pointText: Prayer asks for surrender despite self-interest and small faith.
+      - pointTime: "1:33:22.66"
+        pointText: Intercession concerns the April 3 Good Friday rally at Singapore Expo.
+      - pointTime: "1:35:36.12"
+        pointText: The offering is introduced with a stated building-fund destination.
+      - pointTime: "1:37:27.08"
+        pointText: Trusting Jesus is introduced as confidence amid life's storms.
+      - pointTime: "1:41:01.26"
+        pointText: Historical notices explain the rally, Wednesday prayer meeting and combined Easter service the following Sunday.
+markers:
+  - markerTime: "1:33:22.66"
+    markerNote: "Working date is 29 March: the service says the coming Friday is 3 April and the next Sunday is Easter. Upload titles say 28 March; thumbnails still show 22 March; the offering's 'fourth Sunday' is inconsistent with the calendar. Confirm the actual dated opening slide before publication."
+  - markerTime: "55:31.924"
+    markerNote: "Restart resumes the preacher's post-clip commentary mid-phrase. Missing time is unmeasured; no upload overlap inferred. Durations and anchors use supplied faster-whisper audio evidence and need fresh video/audio checks."
+  - markerTime: "32:24.2"
+    markerNote: "Working recording title uses the inferred service date; confirm the announced sermon title. Keep Christology explanations and historical claims attributed."
