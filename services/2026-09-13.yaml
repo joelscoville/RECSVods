@@ -24,12 +24,19 @@ chapters:
   - chapterId: c20260913-opening
     chapterTitle: Opening
     chapterKind: opening
-    chapterStart: "0:00"
+    chapterStart: "0:10.8"
     chapterEnd: "7:33.8"
     points:
-      - pointTime: "0:00"
-        pointText: The leader guides adoration, confession, thanksgiving and supplication, then offers a
-          gathering prayer, welcomes worshippers and invites greetings and silence.
+      - pointTime: "0:11.16"
+        pointText: The leader invites personal prayer in adoration to prepare for worship.
+      - pointTime: "1:22.5"
+        pointText: The leader introduces confession and the assurance of forgiveness.
+      - pointTime: "2:33.66"
+        pointText: Worshippers are invited to reflect on their lives with thanksgiving.
+      - pointTime: "3:40.98"
+        pointText: Supplication brings personal circumstances before God for help.
+      - pointTime: "5:42.72"
+        pointText: The worship leader welcomes visitors and invites the congregation to greet one another before quiet reflection.
   - chapterId: c20260913-worship-scripture
     chapterTitle: Worship and Scripture
     chapterKind: opening
@@ -40,6 +47,14 @@ chapters:
         pointText: The congregation’s worship includes the call from Psalms 99, hymns, prayer, readings from
           Proverbs 7 and John 17, a video anthem and Psalms 1 before the preacher is invited to
           speak.
+      - pointTime: "11:40.66"
+        pointText: The leader prays for forgiveness, spiritual maturity and the church's ministry.
+      - pointTime: "19:05.4"
+        pointText: Proverbs 7 is introduced for an alternating congregational reading.
+      - pointTime: "21:51.16"
+        pointText: The New Testament responsive reading turns to John 17.
+      - pointTime: "30:35.48"
+        pointText: Psalms 1 is read before the preacher is invited to speak.
     chapterScripture:
       - Psalms 99:1-5
       - Daniel 7
@@ -56,6 +71,14 @@ chapters:
         pointText: Returning to Jesus’ prayer in John 17, the preacher introduces questions about death and
           cremation and describes eternal life as intimate knowledge of God rather than physical
           duration, illustrated by the fruit of the Spirit.
+      - pointTime: "33:58.32"
+        pointText: Two questions introduce the afterlife and the relationship between cremation and resurrection.
+      - pointTime: "34:37.18"
+        pointText: John 17 gives an unusually intimate view of Jesus' prayer to the Father.
+      - pointTime: "38:00.66"
+        pointText: The preacher looks to John 17:3 to define eternal life rather than relying on popular assumptions.
+      - pointTime: "42:03.62"
+        pointText: The fruit of the Spirit illustrates the richness of life with God.
     chapterScripture:
       - John 17:1-5
       - Psalms 1:1-6
@@ -73,6 +96,14 @@ chapters:
         pointText: The preacher considers mortality, grief, burial and cremation through his account of
           resurrection, acknowledges limited knowledge of the future and returns to eternal life
           beginning with salvation now.
+      - pointTime: "44:06.8"
+        pointText: Recalling his brother's death, the preacher contrasts a known birth date with an uncertain end of life.
+      - pointTime: "48:29.98"
+        pointText: Resurrection and judgment offer hope even though Scripture does not explain every future detail.
+      - pointTime: "55:42.5"
+        pointText: God's ability to reconstitute a body is the basis of the preacher's answer about cremation.
+      - pointTime: "1:01:17.68"
+        pointText: Eternal life begins with salvation even when a believer cannot identify an exact conversion moment.
     subchapters:
       - chapterId: s0913-afterlife
         chapterTitle: Hope in Grief amid Limited Knowledge
@@ -84,39 +115,64 @@ chapters:
             pointText: The preacher distinguishes paradise and Hades from final destinations in his Reformed
               account, connects funeral care with hope and acknowledges limited biblical detail
               about resurrection and judgment.
+          - pointTime: "47:12.58"
+            pointText: Christian grief is distinguished from hopelessness at a funeral.
+          - pointTime: "48:29.98"
+            pointText: The preacher acknowledges the limits of biblical detail about resurrection and judgment.
       - chapterId: s0913-cremation
         chapterTitle: Cremation Need Not Prevent Resurrection
         chapterKind: sermon
         chapterStart: "53:15.46"
-        chapterEnd: "57:31.66"
+        chapterEnd: "57:30.22"
         points:
           - pointTime: "53:15.46"
             pointText: Alongside reported burial preferences and anecdotes, the preacher argues that cremation
               does not prevent God from resurrecting the body while acknowledging practical and
               traditional reasons to prefer burial.
+          - pointTime: "54:24.32"
+            pointText: A conversation about scarce burial space introduces practical questions in Singapore.
+          - pointTime: "55:42.5"
+            pointText: Death in fire and later exhumation challenge the idea that resurrection requires bodily preservation.
+          - pointTime: "56:46.48"
+            pointText: The preacher separates a traditional burial preference from a theological objection to cremation.
     chapterScripture:
       - 1 Corinthians 13:9-12
   - chapterId: c20260913-knowledge-prayer-practice
     chapterTitle: Turn Knowledge into Prayer and Practice
     chapterKind: sermon
     chapterStart: "1:02:04.28"
-    chapterEnd: "1:22:12.54"
+    chapterEnd: "1:22:09.02"
     points:
       - pointTime: "1:02:04.28"
         pointText: Drawing on Packer, Acts 17 and Psalms 1, the preacher treats correct knowledge as a
           starting point for meditation that engages doubt and becomes prayer, praise and care for
-          others, with local meditation alignment still uncertain.
+          others.
+      - pointTime: "1:04:34.16"
+        pointText: Pastors remaining seated on a crowded train illustrate a gap between theological discussion and consideration for others.
+      - pointTime: "1:08:43.72"
+        pointText: Reflecting on learned truth should lead to prayer and praise without dismissing the need for correct knowledge.
+      - pointTime: "1:09:57.72"
+        pointText: Paul's address in Athens supports knowledge of God as the foundation of faith.
+      - pointTime: "1:19:39.56"
+        pointText: Psalms 1 connects meditation with a living response of prayer, praise and action.
     subchapters:
       - chapterId: s0913-meditation
         chapterTitle: Meditation Applies Truth to Relationships
         chapterKind: sermon
         chapterStart: "1:12:27.46"
-        chapterEnd: "1:16:35.94"
+        chapterEnd: "1:17:49.6"
         points:
           - pointTime: "1:12:27.46"
             pointText: The preacher distinguishes his practice of mental rest from Packer’s reflective
-              application to family, colleagues and others; local ASR wording and alignment remain
-              uncertain.
+              application to family, colleagues and others.
+          - pointTime: "1:13:27.02"
+            pointText: The preacher describes his practice of mental rest and responds to criticism of it.
+          - pointTime: "1:14:23.9"
+            pointText: Distracted attention illustrates the difficulty of resting the mind.
+          - pointTime: "1:16:04.5"
+            pointText: Love is applied to a spouse, children, colleagues and other people encountered each day.
+          - pointTime: "1:16:35.94"
+            pointText: Reflective meditation involves consciously thinking before God and reasoning through doubt.
         chapterScripture:
           - Psalms 1:1-2
     chapterScripture:
@@ -127,13 +183,21 @@ chapters:
   - chapterId: c20260913-knowing-god-changes-life
     chapterTitle: Knowing God Changes How We Live
     chapterKind: sermon
-    chapterStart: "1:22:12.54"
+    chapterStart: "1:22:09.02"
     chapterEnd: "1:29:59.46"
     points:
-      - pointTime: "1:22:12.54"
+      - pointTime: "1:22:09.02"
         pointText: The preacher presents energy, a larger worldview, boldness in loving action and
           contentment as directions for growth in knowing God, with room for depression, illness,
           small acts and imperfection.
+      - pointTime: "1:23:18.62"
+        pointText: Energy for God is connected with drawing strength from him amid life's difficulties.
+      - pointTime: "1:24:04.12"
+        pointText: Great thoughts of God should produce a worldview larger than personal comfort or remuneration.
+      - pointTime: "1:26:53.6"
+        pointText: A proposed Christmas outreach illustrates the call for boldness in loving action.
+      - pointTime: "1:28:39.64"
+        pointText: Contentment and deep peace are presented as directions for growth rather than evidence of perfection.
   - chapterId: c20260913-persistent-daily-devotion
     chapterTitle: Grow Through Persistent Daily Devotion
     chapterKind: sermon
@@ -144,6 +208,14 @@ chapters:
         pointText: Using disciplined study as a qualified analogy, the preacher urges sustained devotional
           reading, reflection, prayer and action with fellow believers, and closes in prayer for
           deeper knowledge of God and shared joy.
+      - pointTime: "1:31:05.48"
+        pointText: A focused student illustrates persistence, with a qualification that academic achievement is not the goal of spiritual life.
+      - pointTime: "1:32:05.3"
+        pointText: Daily devotion combines reading with reflection, prayer and action.
+      - pointTime: "1:33:11.24"
+        pointText: The preacher recalls beginning devotional reading as a child and urges continued growth with fellow believers.
+      - pointTime: "1:34:25.04"
+        pointText: The closing prayer asks for knowledge of God that changes daily life rather than preoccupation with lesser concerns.
     chapterScripture:
       - Psalms 1:1-3
   - chapterId: c20260913-response-closing
@@ -156,6 +228,14 @@ chapters:
         pointText: The congregation is invited to affirm the creed, pray and give, then sing Trust and Obey
           and receive the closing blessing before historical anniversary and ministry announcements
           and dismissal.
+      - pointTime: "1:38:18.72"
+        pointText: The congregation prays for the church's ministry and witness as it enters its thirty-eighth year.
+      - pointTime: "1:40:36.4"
+        pointText: The leader explains the offerings and the second Sunday's support for Christian Education Ministries.
+      - pointTime: "1:43:00.22"
+        pointText: Trust and Obey is introduced as a response that moves beyond hearing to obedience.
+      - pointTime: "1:46:53.9"
+        pointText: Historical announcements explain the forthcoming anniversary service and related arrangements.
     chapterScripture:
       - 2 Thessalonians 2
       - 2 Corinthians 13
@@ -168,3 +248,5 @@ markers:
   - markerTime: "1:12:27.46"
     markerNote: "Old review note: Review wording/order around 1:15:18–1:15:44; the source-ASR text and
       word alignment diverge."
+  - markerTime: "1:22:09.02"
+    markerNote: "Boundary moved from the middle of 'being able to identify' to 'and so Packer' using supplied word timestamps. Check the audible transition; no new listening performed."
