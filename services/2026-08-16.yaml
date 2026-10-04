@@ -35,6 +35,14 @@ chapters:
         pointText: The leader guides A.C.T.S. prayer through adoration, confession, thanksgiving and
           supplication, inviting worshippers to entrust joys, burdens and others' needs to God; the
           welcome has no supplied passage summary.
+      - pointTime: "1:52.92"
+        pointText: The leader invites confession and a request for mercy and forgiveness.
+      - pointTime: "3:03.84"
+        pointText: Thanksgiving names life, family, daily provisions, faith and salvation as gifts from God.
+      - pointTime: "4:00"
+        pointText: Supplication brings personal needs and the needs of others before God.
+      - pointTime: "5:37.48"
+        pointText: The gathering prayer asks worshippers to entrust their joys and burdens to God.
   - chapterId: c20260816-p1-worship-scripture
     chapterTitle: Worship and Scripture
     chapterKind: opening
@@ -45,6 +53,10 @@ chapters:
         pointText: The worship leader prays for the preacher, children and an absent pastor, reads Psalms
           95:1-5 and introduces congregational worship and My Labour Is Not In Vain, during which
           this upload ends.
+      - pointTime: "7:56.48"
+        pointText: Psalms 95:1-5 presents God as creator and king before To God Be the Glory.
+      - pointTime: "11:20.52"
+        pointText: My Labour Is Not In Vain is introduced with an invitation to listen first and learn the tune.
     chapterScripture:
       - Psalms 95:1-5
   - chapterId: c20260816-p2-worship-scripture
@@ -57,6 +69,14 @@ chapters:
         pointText: The worship leader reflects on serving beyond online engagement and becoming more
           Christ-like amid songs and responsive readings, followed by the reading of 1 Corinthians
           3:1-9 and presentation setup whose details remain uncertain.
+      - pointTime: "18:30.18"
+        pointText: The congregation begins alternating reading from Proverbs 3:1-35.
+      - pointTime: "21:56"
+        pointText: The responsive reading continues with Ephesians 4:1-16.
+      - pointTime: "23:56.12"
+        pointText: The worship leader connects growth through sermons and daily devotion with becoming more Christ-like.
+      - pointTime: "29:09.5"
+        pointText: The reader introduces 1 Corinthians 3:1-9 before the sermon.
     chapterScripture:
       - Proverbs 3:1-35
       - Ephesians 4:1-16
@@ -71,6 +91,14 @@ chapters:
         pointText: Hadi introduces spiritual maturity through 1 Corinthians 3:1-9, praying for growth and
           using Corinth's context and the infancy analogy to distinguish mature faith from
           persistent immaturity while raising questions about human effort under God's control.
+      - pointTime: "34:21.7"
+        pointText: Hadi introduces questions about growth after conversion, dryness in faith and the purpose of prayer and action.
+      - pointTime: "36:26.7"
+        pointText: The outline links spiritual immaturity, God's role in growth and the privilege of service.
+      - pointTime: "38:50.2"
+        pointText: A baby who fails to grow illustrates the problem of persistent spiritual infancy.
+      - pointTime: "41:59.44"
+        pointText: Hadi distinguishes mature believers, immature believers and unbelievers.
     chapterScripture:
       - Ephesians 2:1-10
       - 1 Corinthians 3:1-9
@@ -88,6 +116,10 @@ chapters:
         pointText: Resuming mid-sentence after an unmeasured recording gap, Hadi identifies pride in
           personality loyalties, resentment and conditional obedience as resistance to spiritual
           growth, citing William Barclay on pride as a source of other sins.
+      - pointTime: "44:12.02"
+        pointText: Resentment of recognition and conditional obedience illustrate pride in daily life.
+      - pointTime: "45:34.84"
+        pointText: Hadi cites William Barclay while describing pride as a source from which other sins grow.
   - chapterId: c20260816-p3-effort-and-divine-growth
     chapterTitle: Work Faithfully and Trust God for Growth
     chapterKind: sermon
@@ -98,6 +130,14 @@ chapters:
         pointText: Hadi argues that human effort matters although God determines growth and its means, using
           Scripture and practical examples to urge diligence, humble trust and worship without
           claiming complete understanding of sovereignty and responsibility.
+      - pointTime: "47:18.86"
+        pointText: Disappointment after helping others illustrates the temptation to expect control over visible results.
+      - pointTime: "49:24.7"
+        pointText: Proverbs distinguishes faithful preparation from control of outcomes.
+      - pointTime: "50:37.16"
+        pointText: Philippians 2:12-13 is used to explain human effort alongside divine enablement.
+      - pointTime: "1:03:28.44"
+        pointText: Reaching the limits of understanding is presented as a reason to worship rather than abandon faith.
     subchapters:
       - chapterId: s0816-p3-sovereignty
         chapterTitle: God Ordains the Means as Well as the Outcome
@@ -108,6 +148,14 @@ chapters:
           - pointTime: "51:55.501"
             pointText: Hadi uses questions about lifespan and an exam illustration to argue that trust in
               ordained outcomes still requires responsible care and diligent preparation.
+          - pointTime: "53:20.5"
+            pointText: A friend's question asks why nutrition and exercise matter if lifespan is already determined.
+          - pointTime: "54:08"
+            pointText: Care for one's life remains a responsibility alongside belief in God's sovereignty.
+          - pointTime: "54:53.32"
+            pointText: An examination example shows that believing in an ordained outcome does not remove the need to prepare.
+          - pointTime: "55:58.84"
+            pointText: Hadi urges diligence alongside trust as he acknowledges the difficulty of the paradox.
       - chapterId: s0816-p3-limits
         chapterTitle: Faith Does Not Require Complete Understanding
         chapterKind: sermon
@@ -118,6 +166,12 @@ chapters:
             pointText: Hadi contrasts human limits with God's perspective and argues, citing Scripture, the
               Westminster Confession and Augustine, that faith can precede fuller understanding
               without abandoning logic.
+          - pointTime: "57:44.66"
+            pointText: Finite human lives and uncertainty about tomorrow are contrasted with God's eternal perspective.
+          - pointTime: "58:36.58"
+            pointText: The Westminster Confession and Hebrews 11:1 support receiving what is needed for faith without understanding everything.
+          - pointTime: "59:35.28"
+            pointText: Hadi attributes to Augustine the thought that faith precedes fuller understanding.
         chapterScripture:
           - Isaiah 55:8-9
           - Hebrews 11:1
@@ -140,6 +194,14 @@ chapters:
         pointText: Hadi presents service under God as a privilege, drawing on Nick Vujicic's recorded
           testimony and his own prison ministry to challenge unwillingness and urge humble, obedient
           use of one's gifts for others.
+      - pointTime: "1:06:01.04"
+        pointText: Nick Vujicic is introduced as an example of finding hope amid disability and bullying.
+      - pointTime: "1:12:22.08"
+        pointText: Hadi distinguishes lacking ability from being unwilling to serve.
+      - pointTime: "1:18:08.08"
+        pointText: The sermon is summarized in humility, trust in God's wisdom and good works as fruit of active faith.
+      - pointTime: "1:20:48.28"
+        pointText: Listeners are asked to consider nearby needs and the gifts or experience they can offer.
     subchapters:
       - chapterId: s0816-p3-testimony
         chapterTitle: Nick Vujicic on Forgiveness and Daily Dependence
@@ -150,6 +212,14 @@ chapters:
           - pointTime: "1:07:55.661"
             pointText: In the recorded clip, Nick Vujicic describes disability, questions about suffering and
               daily dependence on forgiveness; third-party claims remain unverified.
+          - pointTime: "1:08:35.72"
+            pointText: Nick recalls childhood questions about God's love prompted by disability at school.
+          - pointTime: "1:09:11.42"
+            pointText: He asks where the God of miracles is amid suffering.
+          - pointTime: "1:10:06.92"
+            pointText: Forgiveness is described as the greatest miracle he has received.
+          - pointTime: "1:10:58.98"
+            pointText: He describes daily dependence on God and himself as under construction.
       - chapterId: s0816-p3-prison
         chapterTitle: Beginning Prison Ministry With Trust
         chapterKind: other
@@ -160,6 +230,12 @@ chapters:
             pointText: Hadi recounts entering prison ministry despite reluctance, encountering inmates'
               isolation and finding joy in helping them return to society, beginning with trust
               rather than confidence.
+          - pointTime: "1:14:30.58"
+            pointText: Hadi recalls the application and screening required for prison counseling.
+          - pointTime: "1:15:16.5"
+            pointText: Visiting restrictions helped him appreciate the isolation experienced by inmates.
+          - pointTime: "1:16:14.86"
+            pointText: Helping inmates prepare to return to society brought joy to ministry that began with trust.
     chapterScripture:
       - 1 Corinthians 3:9
       - Matthew 28:19
@@ -176,7 +252,17 @@ chapters:
         pointText: Hadi leads prayer, affirmation of faith and pastoral requests, introduces Work for the
           Night Is Coming around the offertory and closing worship, then gives a dismissal prayer
           and church announcements whose lunch date remains uncertain.
+      - pointTime: "1:23:18.52"
+        pointText: The congregation stands to affirm the Apostles' Creed.
+      - pointTime: "1:24:09.48"
+        pointText: Prayer asks for joy, strength, obedience and renewed closeness to God.
+      - pointTime: "1:28:24"
+        pointText: Work for the Night Is Coming connects growth into service with the limited time available to use one's gifts.
+      - pointTime: "1:31:36.02"
+        pointText: Historical announcements ask for prayer for visiting ministry and the church-supported orphanage in Batam.
 markers:
+  - markerTime: "42:59"
+    markerNote: "Part 3 resumes mid-sentence across an unmeasured recording gap. Retain that physical upload boundary; finer internal cuts need source audio because the raw word-timing files are unavailable."
   - markerTime: "33:00.64"
     markerNote: "Also cited in the sermon: 1 Corinthians 3:1-6; 1 Corinthians 3:1-2; 1 Corinthians 3:2;
       1 Corinthians 3:7-9; 1 Corinthians 3:6; Proverbs 21:31; Proverbs 16:9; Proverbs 16:33;
