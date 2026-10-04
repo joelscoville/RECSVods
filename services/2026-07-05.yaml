@@ -24,12 +24,19 @@ chapters:
   - chapterId: c20260705-opening
     chapterTitle: Opening
     chapterKind: opening
-    chapterStart: "0:00"
+    chapterStart: "0:23.6"
     chapterEnd: "8:06.6"
     points:
-      - pointTime: "0:00"
-        pointText: An opening hymn fragment leads into guided preparation for Communion and the leader’s
-          welcome, with some supplication wording still unclear.
+      - pointTime: "0:24"
+        pointText: The leader invites preparation for worship and Communion through personal prayer.
+      - pointTime: "1:38.86"
+        pointText: Confession is introduced with time for personal prayer.
+      - pointTime: "2:49.16"
+        pointText: The congregation gives thanks for the many gifts in their lives.
+      - pointTime: "3:52.86"
+        pointText: Worshippers bring their situations before God and seek help.
+      - pointTime: "5:58.34"
+        pointText: Visitors are welcomed, Communion participation is explained and congregational greetings are invited.
   - chapterId: c20260705-worship-communion
     chapterTitle: Worship and Communion
     chapterKind: opening
@@ -39,6 +46,14 @@ chapters:
       - pointTime: "8:06.6"
         pointText: The congregation shares hymns, prayer, Communion and readings from Psalms, Proverbs, John
           and Deuteronomy, including the anthem identified on screen as Come, Gracious Spirit.
+      - pointTime: "14:40.14"
+        pointText: Communion is introduced with a warning against treating remembrance as a routine observance.
+      - pointTime: "24:01.18"
+        pointText: The Communion prayer connects belonging to Christ with forgiveness, humility and care for others.
+      - pointTime: "25:55.1"
+        pointText: Proverbs 28:1-28 is introduced for alternating congregational reading.
+      - pointTime: "38:10.24"
+        pointText: A reader is invited to announce Deuteronomy 13:1-4 before the sermon.
     subchapters:
       - chapterId: s0705-anthem
         chapterTitle: Come, Gracious Spirit
@@ -67,16 +82,32 @@ chapters:
         pointText: Responding to a question about charismatic churches, the preacher grounds discernment in
           the Spirit’s illumination, peace and continuing presence, while qualifying his recommended
           resources and illustrating his argument about fear.
+      - pointTime: "42:14.26"
+        pointText: The Spirit's role as helper is connected with truth.
+      - pointTime: "46:28.9"
+        pointText: Literary admiration for the Bible is distinguished from assurance through the Spirit's inward work.
+      - pointTime: "52:45.66"
+        pointText: The preacher recommends MacArthur's work while reserving disagreement with cessationism.
+      - pointTime: "57:00.82"
+        pointText: Being filled is explained as living out the Spirit's continuing presence.
     subchapters:
       - chapterId: s0705-spirit
         chapterTitle: Live in the Spirit’s Continuing Presence
         chapterKind: sermon
-        chapterStart: "54:45.32"
+        chapterStart: "54:40.84"
         chapterEnd: "1:01:30.02"
         points:
-          - pointTime: "54:45.32"
+          - pointTime: "54:40.84"
             pointText: The preacher reads John 14 as promising the Spirit’s continuing presence and challenges
               fear and repeated requests for the Spirit to return.
+          - pointTime: "55:47.68"
+            pointText: The Spirit's continuing presence is contrasted with practices associated with local religious mediums.
+          - pointTime: "57:00.82"
+            pointText: Fullness is described as living out an abiding presence rather than receiving a Spirit who repeatedly departs.
+          - pointTime: "59:35.48"
+            pointText: Fearful hotel staff provide an illustration of the preacher's teaching about the Spirit's presence.
+          - pointTime: "1:00:35.02"
+            pointText: The Spirit's help and teaching are presented as consistent with Christ.
         chapterScripture:
           - John 14:16
           - John 14:23
@@ -93,35 +124,59 @@ chapters:
     chapterTitle: Test Spiritual Experience by Scripture
     chapterKind: sermon
     chapterStart: "1:01:30.02"
-    chapterEnd: "1:18:52.9"
+    chapterEnd: "1:18:47.76"
     points:
       - pointTime: "1:01:30.02"
         pointText: Distinguishing extreme charismatic practice from the wider movement, the preacher
           contrasts accounts of outward signs and worship expectations with his emphasis on
           scriptural authority, God’s sovereignty and holy living.
+      - pointTime: "1:03:59.86"
+        pointText: The preacher describes an interpretation of Acts that requires outward signs of a subsequent experience of the Spirit.
+      - pointTime: "1:07:25.38"
+        pointText: Radio, television and social media are discussed as influences on the spread of religious movements.
+      - pointTime: "1:10:55.22"
+        pointText: A teaching called hypergrace is contrasted with the congregation's practice of confession.
+      - pointTime: "1:15:15.02"
+        pointText: Scriptural authority is contrasted with reliance on visions, feelings or tradition.
     chapterScripture:
       - John 14
   - chapterId: c20260705-tongues-and-understanding
     chapterTitle: Tongues Must Build Up the Church
     chapterKind: sermon
-    chapterStart: "1:18:52.9"
+    chapterStart: "1:18:47.76"
     chapterEnd: "1:35:32.5"
     points:
-      - pointTime: "1:18:52.9"
+      - pointTime: "1:18:47.76"
         pointText: The preacher allows private tongues but requires public interpretation and intelligible
           teaching, using Acts to reject tongues as a required sign of a second baptism while an
           audience-wording discrepancy remains unresolved.
+      - pointTime: "1:20:07.42"
+        pointText: Acts 2 emphasizes hearers understanding their own languages.
+      - pointTime: "1:23:38.68"
+        pointText: 1 Corinthians 14:1-2 is used to explain the allowance for private incomprehensible tongues.
+      - pointTime: "1:27:32.8"
+        pointText: A visitor should be able to understand the preaching rather than leave confused.
+      - pointTime: "1:33:04.7"
+        pointText: The preacher rejects a required second baptism and locates baptism in the Spirit at receiving Christ.
     subchapters:
       - chapterId: s0705-worship-order
         chapterTitle: Public Worship Should Build Understanding
         chapterKind: sermon
-        chapterStart: "1:24:12.44"
+        chapterStart: "1:24:52.2"
         chapterEnd: "1:30:15.84"
         points:
-          - pointTime: "1:24:12.44"
+          - pointTime: "1:24:52.44"
             pointText: The preacher prioritizes interpretation and intelligible preaching for members and
               visitors, but the source explanation reverses the audiences on the displayed 1
               Corinthians 14:22 slide.
+          - pointTime: "1:25:24.4"
+            pointText: Paul's numerical comparison is used to prioritize intelligible preaching.
+          - pointTime: "1:27:32.8"
+            pointText: Visitors should be able to understand the message.
+          - pointTime: "1:28:22.28"
+            pointText: Ordered worship is contrasted with practices that create confusion.
+          - pointTime: "1:29:27.72"
+            pointText: Growth in understanding is connected with Christian education.
         chapterScripture:
           - 1 Corinthians 14:5
           - 1 Corinthians 14:18-19
@@ -139,6 +194,10 @@ chapters:
           - pointTime: "1:30:15.84"
             pointText: The preacher uses an interpretation attributed to Stephen Tong and his recollection of
               pressure to follow a manual to question fixed techniques for receiving the Spirit.
+          - pointTime: "1:31:12.42"
+            pointText: Acts accounts are related to the geographical spread of witness in Acts 1:8.
+          - pointTime: "1:32:18.22"
+            pointText: Pressure to follow a manual illustrates the preacher's objection to a fixed receiving technique.
         chapterScripture:
           - Acts 2
           - Acts 1:8
@@ -165,12 +224,20 @@ chapters:
     chapterTitle: Test Wonders and Hold Fast to God’s Word
     chapterKind: sermon
     chapterStart: "1:35:32.5"
-    chapterEnd: "1:44:38.9"
+    chapterEnd: "1:44:35.68"
     points:
       - pointTime: "1:35:32.5"
         pointText: The preacher calls for verifiable evidence of wonders, cites an unsourced medical
           comparison, and urges prayer that trusts God’s sovereignty and obedience to scripture
           rather than impressive signs or popular teaching.
+      - pointTime: "1:36:46.08"
+        pointText: The preacher questions the evidence for longstanding public healing claims while acknowledging concern for sick loved ones.
+      - pointTime: "1:39:30.8"
+        pointText: Claims of raising someone from the dead are said to require verifiable evidence.
+      - pointTime: "1:40:45.88"
+        pointText: Prayer for miracles is encouraged alongside trust in God's sovereign decision.
+      - pointTime: "1:42:03.44"
+        pointText: Deuteronomy 13 calls for obedience to God's word rather than reliance on impressive signs.
     subchapters:
       - chapterId: s0705-conclusion
         chapterTitle: Impressive Signs Do Not Replace Obedience
@@ -190,17 +257,27 @@ chapters:
   - chapterId: c20260705-response-closing
     chapterTitle: Response and Closing
     chapterKind: closing
-    chapterStart: "1:44:38.9"
+    chapterStart: "1:44:35.68"
     chapterEnd: "1:58:29.366"
     points:
-      - pointTime: "1:44:38.9"
+      - pointTime: "1:44:35.68"
         pointText: The congregation affirms its faith and prays for the church, then shares offerings, a
           closing hymn and blessing before the pastor’s outreach invitations and request for prayer
           about possible Boys’ Brigade support.
+      - pointTime: "1:47:19.9"
+        pointText: Prayer asks that church leaders and members remain steadfast in truth.
+      - pointTime: "1:49:11.5"
+        pointText: The first-Sunday second offering is designated for evangelism.
+      - pointTime: "1:51:10.18"
+        pointText: Breathe on Me, Breath of God is connected with living out the Spirit's presence.
+      - pointTime: "1:54:42.3"
+        pointText: Historical notices invite school-outreach participation, including support roles beyond preaching.
     chapterScripture:
       - Romans 15
       - 2 Corinthians 13
 markers:
+  - markerTime: "1:24:52.2"
+    markerNote: "Public worship now begins at 'However, we do draw the line in worship services', rather than mid-quotation. Spirit, tongues and Creed starts also moved to complete transitions using supplied word timings; check audio."
   - markerTime: "39:26.82"
     markerNote: "Also cited in the sermon: John 14:26; John 14:27; John 14:16; John 14:23; John 14; Acts
       2:1-6; Acts 2; 1 Corinthians 14:1-2; 1 Corinthians 14:5; 1 Corinthians 14:18-19; 1 Corinthians
