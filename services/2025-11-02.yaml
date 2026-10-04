@@ -25,12 +25,20 @@ chapters:
     chapterTitle: Sacrifice Begins with Hope and Growing Faith
     chapterKind: sermon
     chapterStart: "0:00"
-    chapterEnd: "7:41.52"
+    chapterEnd: "7:30.5"
     points:
       - pointTime: "0:00"
         pointText: After greeting and prayer, the speaker distinguishes chosen sacrifice from involuntary
           loss and introduces Abraham’s developing faith through imperfect responses to earlier
           tests.
+      - pointTime: "1:26.6"
+        pointText: Involuntary loss is distinguished from chosen sacrifice for something valued more highly.
+      - pointTime: "3:08.8"
+        pointText: Earlier tests begin with Abraham leaving for an unknown destination.
+      - pointTime: "5:46.16"
+        pointText: Impatience in the Hagar episode is contrasted with trust expressed in intercession for Sodom.
+      - pointTime: "6:46.52"
+        pointText: Abraham's faith develops through imperfect responses rather than flawless obedience.
     chapterScripture:
       - Genesis 22:1-19
       - Romans 12:1-2
@@ -43,22 +51,32 @@ chapters:
   - chapterId: c20251102-testing-what-abraham-treasures
     chapterTitle: The Test Concerns What Abraham Treasures
     chapterKind: sermon
-    chapterStart: "7:41.52"
+    chapterStart: "7:30.5"
     chapterEnd: "17:11.56"
     points:
-      - pointTime: "7:41.52"
+      - pointTime: "7:30.68"
         pointText: The speaker presents Isaac as Abraham’s promised heir and greatest delight, interpreting
           the test as a question of allegiance rather than a desire for Isaac’s death.
+      - pointTime: "9:02.22"
+        pointText: Genesis 17 emphasizes the scale of the promise of descendants and nations.
+      - pointTime: "10:09"
+        pointText: The covenant is connected with Isaac rather than Abraham's proposed alternative of Ishmael.
+      - pointTime: "12:55.02"
+        pointText: Isaac is presented as Abraham's greatest delight rather than something easy to spare.
+      - pointTime: "16:16.66"
+        pointText: The test asks whether the gift has become more important than its giver.
     subchapters:
       - chapterId: s1102-moriah
         chapterTitle: God Opposes Child Sacrifice
         chapterKind: sermon
         chapterStart: "14:00.22"
-        chapterEnd: "16:16.66"
+        chapterEnd: "16:13.9"
         points:
           - pointTime: "14:00.22"
             pointText: The speaker connects Moriah with later worship sites and appeals to Leviticus 20 against
               child sacrifice, saying Abraham did not yet have these scriptures.
+          - pointTime: "15:11.16"
+            pointText: Leviticus 20 is read as evidence that God opposes child sacrifice.
         chapterScripture:
           - Genesis 22:2
           - 2 Samuel 24
@@ -83,16 +101,26 @@ chapters:
         pointText: The speaker attributes Abraham’s costly obedience to trust matured through experience,
           imagines the journey’s emotional burden and interprets Isaac’s submission as trust while
           acknowledging uncertainty about his age.
+      - pointTime: "19:11"
+        pointText: Isaac's birth is presented as a decisive experience strengthening trust in the promise.
+      - pointTime: "21:34.9"
+        pointText: The speaker invites fathers to consider the imagined emotional cost of Abraham's journey.
+      - pointTime: "25:28.24"
+        pointText: Isaac's age is explicitly unknown, and the speaker's calculation is offered conditionally.
+      - pointTime: "28:30.4"
+        pointText: Isaac's lack of resistance is interpreted as voluntary trust in his father.
     subchapters:
       - chapterId: s1102-trust
         chapterTitle: Isaac’s Submission as Trust in His Father
         chapterKind: sermon
         chapterStart: "27:20.72"
-        chapterEnd: "29:51.3"
+        chapterEnd: "29:45"
         points:
           - pointTime: "27:20.72"
             pointText: The speaker interprets Isaac’s lack of resistance as voluntary trust in his father and
               compares it with Abraham’s trust in God’s provision.
+          - pointTime: "28:30.4"
+            pointText: Isaac's submission is compared with Abraham's obedience to God.
         chapterScripture:
           - Genesis 22:7-8
           - Genesis 22:9
@@ -110,22 +138,32 @@ chapters:
     chapterTitle: Divided Loyalties Die as Provision Points to Christ
     chapterKind: sermon
     chapterStart: "29:51.3"
-    chapterEnd: "36:05.94"
+    chapterEnd: "36:00.7"
     points:
       - pointTime: "29:51.3"
         pointText: The speaker interprets the mountain episode as the ending of divided allegiance and
           connects the substitute ram and promised offspring with Christ, distinguishing Isaac’s
           spared life from Jesus’ death and resurrection.
+      - pointTime: "31:22.36"
+        pointText: The ram supplied as a substitute is connected with Christ's provision.
+      - pointTime: "32:30.56"
+        pointText: The promised offspring and blessing of the nations are identified with Christ.
+      - pointTime: "33:43.62"
+        pointText: The father-son relationship begins a comparison between Isaac and Christ.
+      - pointTime: "34:37.44"
+        pointText: The comparison distinguishes Isaac's spared life from Jesus' death and resurrection.
     subchapters:
       - chapterId: s1102-christ
         chapterTitle: Isaac Is Spared; Christ Dies and Rises
         chapterKind: sermon
         chapterStart: "33:43.62"
-        chapterEnd: "36:05.94"
+        chapterEnd: "36:00.7"
         points:
           - pointTime: "33:43.62"
             pointText: The speaker compares Isaac and Christ through paternal love, obedience and the carried
               burden while distinguishing their outcomes.
+          - pointTime: "34:37.44"
+            pointText: Obedience, journey and carried burden are compared while their outcomes remain distinct.
         chapterScripture:
           - Genesis 22:2
           - Matthew 3:17
@@ -160,6 +198,14 @@ chapters:
         pointText: Turning to Romans 12, the speaker urges grateful daily surrender through remembered
           mercy, renewed priorities and ordinary obedience, concluding with reflection and prayer
           for growth through trials.
+      - pointTime: "37:04.24"
+        pointText: Remembering mercy through a thanksgiving journal is recommended when facing difficulty.
+      - pointTime: "39:59.24"
+        pointText: Living sacrifice is defined as continual, conscious surrender.
+      - pointTime: "43:36.64"
+        pointText: Renewed priorities are contrasted with pursuing power, money and status.
+      - pointTime: "49:07.64"
+        pointText: Reflection asks what listeners treasure and whether they love the gift more than its giver.
     subchapters:
       - chapterId: s1102-daily
         chapterTitle: Surrender Extends Beyond Sunday Worship
@@ -170,6 +216,12 @@ chapters:
           - pointTime: "39:59.24"
             pointText: The speaker describes daily thoughts and choices as worship and connects self-denial with
               renewed living, sharing the gospel and discipling others.
+          - pointTime: "40:44.22"
+            pointText: Daily thoughts and choices are described as worship.
+          - pointTime: "41:41.16"
+            pointText: Self-denial turns attention from self-gratification toward God and others.
+          - pointTime: "42:29.06"
+            pointText: Galatians 2, Romans 6 and Romans 12 connect trust and surrender with renewed living.
         chapterScripture:
           - Romans 12:1-2
           - Matthew 16
@@ -179,11 +231,15 @@ chapters:
         chapterTitle: Ordinary Obedience Prepares Faith for Trials
         chapterKind: sermon
         chapterStart: "45:13.78"
-        chapterEnd: "49:07.64"
+        chapterEnd: "49:00.5"
         points:
           - pointTime: "45:13.78"
             pointText: The speaker compares faith’s growth with resistance training and recommends forgiving,
               giving, praying, reading scripture and serving as preparation for trials.
+          - pointTime: "46:33.12"
+            pointText: Repeated tests develop faith like muscles strengthened by exercise.
+          - pointTime: "47:42.1"
+            pointText: Ordinary practices of forgiveness, giving, prayer and service prepare for larger trials.
         chapterScripture:
           - Genesis 22
           - Romans 5
@@ -201,6 +257,8 @@ chapters:
       - Genesis 22:1-19
       - John 10:10
 markers:
+  - markerTime: "7:30.5"
+    markerNote: "Test chapter includes the complete introductory clause before 'test of sacrifice'. Short subchapter tails end after their last sentence instead of trailing pauses, based on supplied ASR; check audio."
   - markerTime: "0:00"
     markerNote: "Also cited in the sermon: Genesis 12; Genesis 22:2; Genesis 22; Genesis 22:1; Genesis
       15; Genesis 16; Genesis 20; Genesis 17:1-6; Genesis 17; Genesis 21; 2 Samuel 24; Leviticus
