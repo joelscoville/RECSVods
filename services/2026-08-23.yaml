@@ -30,6 +30,14 @@ chapters:
       - pointTime: "0:08.9"
         pointText: The leaders guide personal prayer through A.C.T.S., welcome worshippers, invite mutual
           encouragement and meditation, and call for praise from Psalms 96.
+      - pointTime: "1:20.56"
+        pointText: The leader directs personal prayer in confession.
+      - pointTime: "2:25.96"
+        pointText: Worshippers are invited to give thanks before bringing their needs to God.
+      - pointTime: "5:23.9"
+        pointText: The congregation is welcomed into greeting and silent meditation after a potentially challenging week.
+      - pointTime: "7:12.62"
+        pointText: Psalms 96:1-4 calls the congregation to respond with joyful praise.
     chapterScripture:
       - Psalms 96:1-4
   - chapterId: c20260823-worship-scripture
@@ -41,6 +49,14 @@ chapters:
       - pointTime: "8:19.38"
         pointText: The congregation sings hymns and joins prayer and readings from Proverbs 4, John 16 and
           Romans 8, with the youth choir's ministry in song.
+      - pointTime: "12:27.24"
+        pointText: The decline of earthly kingdoms is contrasted with Christ's reign before There Is a Higher Throne.
+      - pointTime: "18:22.08"
+        pointText: Proverbs 4 is introduced for responsive reading.
+      - pointTime: "21:13.78"
+        pointText: John 16:16-24 introduces the passage later expounded in the sermon.
+      - pointTime: "31:44.38"
+        pointText: Romans 8:20-23 is read before the sermon.
     subchapters:
       - chapterId: s20260823-choir
         chapterTitle: "Youth Choir: Bound for the Promised Land"
@@ -64,6 +80,8 @@ chapters:
       - pointTime: "32:42.3"
         pointText: Pastor Yong describes learning through sermon preparation and encourages listeners to
           discover their gifts for ministry, with biblical faithfulness as the criterion.
+      - pointTime: "34:05.46"
+        pointText: Listeners are encouraged to seek their gifts and remain open to different callings in ministry.
   - chapterId: c20260823-christian-citizenship
     chapterTitle: Christian Allegiance and Civic Responsibility
     chapterKind: qa
@@ -74,6 +92,14 @@ chapters:
         pointText: Answering a National Day follow-up, Pastor Yong urges civic participation under
           allegiance to God's kingdom, using political examples to distinguish discerning
           citizenship from partisan trust or pulpit mobilization.
+      - pointTime: "36:11.9"
+        pointText: Belonging to God's kingdom is the Christian's primary identity.
+      - pointTime: "39:41.82"
+        pointText: Taxes, voting and conscientious work are named as civic responsibilities.
+      - pointTime: "41:05.18"
+        pointText: Political participation is paired with skepticism about imperfect leaders.
+      - pointTime: "44:25.98"
+        pointText: The pulpit should teach justice and moral principles while leaving individual political choices to citizens.
   - chapterId: c20260823-trust-christs-care
     chapterTitle: Trusting Christ's Care in Uncertainty
     chapterKind: sermon
@@ -84,6 +110,14 @@ chapters:
         pointText: Revisiting the Farewell Discourse and the Spirit's presence, Pastor Yong interprets the
           disciples' confusion in light of Christ's death and resurrection and urges trust despite
           loneliness and anxiety.
+      - pointTime: "46:52.64"
+        pointText: The Spirit's indwelling is presented as assurance that believers are not truly alone.
+      - pointTime: "51:37.04"
+        pointText: The disciples' confusion in John 16:16 is considered in relation to Jesus' death and resurrection.
+      - pointTime: "55:29.4"
+        pointText: Jesus takes the initiative to address his disciples' anxiety.
+      - pointTime: "59:31.36"
+        pointText: Trusting God's care can feel difficult, yet listeners are urged to rely on his promises.
     subchapters:
       - chapterId: s20260823-jesus-cares
         chapterTitle: Jesus Addresses the Disciples' Anxiety
@@ -95,6 +129,14 @@ chapters:
             pointText: Pastor Yong presents a common interpretation of John 16:16, describes Jesus recognizing
               anxiety through discernment or supernatural knowledge, and acknowledges the difficulty
               of trusting God's care.
+          - pointTime: "52:58.8"
+            pointText: Seeing Jesus again is connected with resurrection and the coming of the Spirit.
+          - pointTime: "54:04.26"
+            pointText: The disciples' expectation of an earthly kingdom is contrasted with Jesus' warning about his departure.
+          - pointTime: "56:43.76"
+            pointText: The preacher recalls 1 Peter 5:7 as encouragement to bring anxiety before God.
+          - pointTime: "59:31.36"
+            pointText: Faith in God's promises is encouraged when circumstances make trust difficult.
         chapterScripture:
           - John 16:16
           - John 16:16-18
@@ -120,6 +162,14 @@ chapters:
         pointText: Pastor Yong uses Jesus' childbirth illustration and family memories to discuss sorrow
           before promised joy, acknowledging his lack of maternal experience and cautioning against
           minimizing pain.
+      - pointTime: "1:02:10.44"
+        pointText: Jesus' childbirth illustration gives a place to lamentation before joy.
+      - pointTime: "1:03:33.12"
+        pointText: A family recollection cautions men against minimizing a mother's childbirth experience.
+      - pointTime: "1:05:54.72"
+        pointText: Memories of childhood illness are set beside the lasting joy of family life.
+      - pointTime: "1:07:01.74"
+        pointText: John 16:22 returns attention to the disciples' shock at the crucifixion.
     chapterScripture:
       - John 16:20
       - Revelation 3:14
@@ -135,6 +185,14 @@ chapters:
         pointText: Pastor Yong interprets asking in Jesus' name as seeking Christ's purposes, treasuring
           access to the Father through Christ's death and the Spirit rather than treating prayer as
           a formula for personal gain.
+      - pointTime: "1:09:09.2"
+        pointText: The preacher contrasts direct access to God with religious intermediaries before turning to Hebrews 10.
+      - pointTime: "1:10:21.58"
+        pointText: Prayer is not to be taken for granted because access to the Father came through Christ's death.
+      - pointTime: "1:11:50.74"
+        pointText: Christ's work and the Spirit's presence are connected with access to the Father.
+      - pointTime: "1:12:56.94"
+        pointText: Present readers have the biblical account that the confused disciples did not yet possess.
     chapterScripture:
       - John 16:23
       - Hebrews 10:19-20
@@ -145,23 +203,39 @@ chapters:
     chapterTitle: Serving With Joy While Awaiting Restoration
     chapterKind: sermon
     chapterStart: "1:13:43.34"
-    chapterEnd: "1:32:36.66"
+    chapterEnd: "1:32:38.06"
     points:
       - pointTime: "1:13:43.34"
         pointText: Pastor Yong uses Romans 8 to acknowledge continuing suffering and urges patient hope and
           fulfilment in serving Christ, distinguishing joy from manufactured enthusiasm while
           allowing periods of despair.
+      - pointTime: "1:15:22.3"
+        pointText: Romans 8 explains continuing trouble through the already-and-not-yet framework.
+      - pointTime: "1:19:14.12"
+        pointText: Christians are not exempt from suffering and are called to patient hope.
+      - pointTime: "1:25:42.28"
+        pointText: Joy as fruit of the Spirit is discussed without denying periods of despair.
+      - pointTime: "1:30:06.14"
+        pointText: Third Millennium's support for pastors illustrates joy in participating in Christian service.
     subchapters:
       - chapterId: s20260823-joy
         chapterTitle: Joy Grows Through Serving Christ
         chapterKind: sermon
         chapterStart: "1:20:47.22"
-        chapterEnd: "1:32:36.66"
+        chapterEnd: "1:32:38.06"
         points:
           - pointTime: "1:20:47.22"
             pointText: Pastor Yong connects John 16:24 with joyful participation in God's work, using biblical
               and ministry examples while acknowledging despair and criticizing manufactured
               enthusiasm.
+          - pointTime: "1:22:33.36"
+            pointText: Paul's call to rejoice from prison illustrates joy under difficult conditions.
+          - pointTime: "1:25:42.28"
+            pointText: The preacher allows that believers may experience despair while learning to live with joy.
+          - pointTime: "1:28:24.94"
+            pointText: Repeated prompts to display happiness are criticized as manufactured joy.
+          - pointTime: "1:30:06.14"
+            pointText: Support for online seminary education is presented as an example of fulfilling service.
         chapterScripture:
           - John 16:24
           - 1 Thessalonians 5:16
@@ -186,13 +260,21 @@ chapters:
   - chapterId: c20260823-response-closing
     chapterTitle: Response and Closing
     chapterKind: closing
-    chapterStart: "1:32:36.66"
+    chapterStart: "1:32:38.06"
     chapterEnd: "1:47:07.68"
     points:
-      - pointTime: "1:32:36.66"
+      - pointTime: "1:32:38.06"
         pointText: Pastor Yong leads prayer for trust, joy and theological training, followed by the
           service's offering, closing hymn and blessing, with announcements encouraging community
           lunch, practical ministry and study.
+      - pointTime: "1:34:20.98"
+        pointText: The congregation is invited to affirm the Apostles' Creed.
+      - pointTime: "1:37:02.84"
+        pointText: Intercession asks that Third Millennium equip people to preach and share God's word.
+      - pointTime: "1:39:21.68"
+        pointText: The offertory is introduced before the closing hymn.
+      - pointTime: "1:44:24.34"
+        pointText: Historical notices encourage practical ministry through the community lunch and access to theological study.
     chapterScripture:
       - 1 Peter 5:7
       - Hebrews 10:19-20
@@ -200,6 +282,8 @@ chapters:
       - Romans 15
       - 2 Corinthians 13
 markers:
+  - markerTime: "1:32:38.06"
+    markerNote: "Moved the response start to 'Let us pray' after the preceding sentence, using supplied word timings; check audio."
   - markerTime: "45:30.08"
     markerNote: "Also cited in the sermon: John 16:16-18; Romans 8; John 16:17-18; John 16:19; 1 Peter
       5:7; John 16:20; Revelation 3:14; John 16:22; John 16:23; Hebrews 10:19-20; Hebrews 10:23;
