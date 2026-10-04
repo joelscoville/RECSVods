@@ -13,6 +13,10 @@ sermonScripture:
   - John 15:5
   - John 15
   - John 15:1
+sermonTopics:
+  - discipleship
+  - service
+  - faith
 uploads:
   - youtubeId: D-FyolbxJgk
     uploadDuration: "1:51:16.361"
@@ -20,12 +24,19 @@ chapters:
   - chapterId: c20260712-opening
     chapterTitle: Opening
     chapterKind: opening
-    chapterStart: "0:00"
+    chapterStart: "1:44.7"
     chapterEnd: "9:37.36"
     points:
-      - pointTime: "0:00"
-        pointText: Sanctuary preparation leads into the unidentified leader's ACTS prayers, followed by
-          Belinda's welcome, mutual greetings and silent meditation.
+      - pointTime: "1:45.06"
+        pointText: The leader invites personal prayer beginning with adoration.
+      - pointTime: "2:56.78"
+        pointText: Confession is introduced before a personal prayer interval.
+      - pointTime: "4:00.64"
+        pointText: The congregation gives thanks for God's gracious care.
+      - pointTime: "5:10.28"
+        pointText: Supplication brings personal situations before God.
+      - pointTime: "7:19.42"
+        pointText: Belinda welcomes the congregation and invites thanksgiving for freedom to worship.
   - chapterId: c20260712-worship-and-scripture
     chapterTitle: Worship and Scripture
     chapterKind: opening
@@ -36,6 +47,14 @@ chapters:
         pointText: Belinda leads worship centered on God's faithfulness and dependence on Christ, with
           readings from Psalms, Proverbs and John, the guitar ensemble anthem, and an invitation to
           Jacinta to read Matthew 10:40–42.
+      - pointTime: "13:33.82"
+        pointText: The opening prayer confesses distraction and reliance on personal strength.
+      - pointTime: "19:16.24"
+        pointText: Proverbs 29 is introduced for responsive reading.
+      - pointTime: "22:35.06"
+        pointText: The reading continues with John 15 and a joint reading of the final assigned verses.
+      - pointTime: "33:46.56"
+        pointText: Jacinta is invited to read Matthew 10:40-42 before the sermon.
     subchapters:
       - chapterId: s0712-anthem
         chapterTitle: Guitar Ensemble — There Is a Hope
@@ -46,6 +65,8 @@ chapters:
           - pointTime: "28:39.86"
             pointText: The worship leader and an ensemble representative introduce hope amid suffering and
               beyond this life before the guitar ensemble presents the anthem.
+          - pointTime: "29:38.18"
+            pointText: The guitar ensemble presents There Is a Hope before the scripture reading.
     chapterScripture:
       - Psalms 85:10-13
       - Proverbs 29:1-27
@@ -62,6 +83,14 @@ chapters:
         pointText: After reflections on hope, a recap distinguishing obedience from impressive signs, and
           prayer, Pastor Yong introduces the vine relationship and argues that Christ's identity and
           faithfulness transcend cultural assumptions and special formulas.
+      - pointTime: "39:32.84"
+        pointText: The previous lesson on the Spirit and signs is reviewed.
+      - pointTime: "46:20.42"
+        pointText: The vine introduces a relationship between Christ, the Father and followers.
+      - pointTime: "51:55.1"
+        pointText: A temple vine decoration is contrasted with Jesus' claim to be the true vine.
+      - pointTime: "56:02.36"
+        pointText: The preacher connects errors in understanding God with errors in life.
     subchapters:
       - chapterId: s0712-recap
         chapterTitle: "Recap: Test Signs Against God's Word"
@@ -73,6 +102,14 @@ chapters:
             pointText: Pastor Yong revisits the Spirit's help, intelligible worship and tongues, questioning
               unverified healing claims while affirming prayer and prioritizing obedience over
               signs.
+          - pointTime: "40:43.02"
+            pointText: Humility is connected with understanding Scripture and differing accounts of tongues.
+          - pointTime: "41:51.5"
+            pointText: Public worship should remain intelligible and orderly.
+          - pointTime: "43:55.54"
+            pointText: Belief in miracles is distinguished from accepting unverified healing claims.
+          - pointTime: "45:12.14"
+            pointText: Deuteronomy 13 prioritizes obedience over impressive signs; the preacher explicitly disclaims literal violence.
         chapterScripture:
           - John 14:25-31
           - 1 Corinthians 14
@@ -86,6 +123,10 @@ chapters:
           - pointTime: "46:20.42"
             pointText: Pastor Yong recalls John 13–14 and introduces the grapevine relationship metaphor,
               proposing a setting on the way to Gethsemane rather than establishing it as fact.
+          - pointTime: "47:37.84"
+            pointText: Foot washing, Judas' departure, Peter's denial and the Spirit's promise provide the context of John 15.
+          - pointTime: "48:42.22"
+            pointText: The preacher distinguishes a metaphor using a familiar plant from a crafted parable.
         chapterScripture:
           - John 15:1-17
           - John 13
@@ -112,6 +153,14 @@ chapters:
         pointText: Pastor Yong connects the Father's active care with confidence, mutual dependence and
           abiding through pruning, interpreting removed branches and spiritual fruit without
           promising prosperity or constant happiness.
+      - pointTime: "59:02.1"
+        pointText: Psalms 121 connects confidence in God with the Father's active care.
+      - pointTime: "1:02:14.02"
+        pointText: Interconnected branches illustrate dependence within a community rather than solitary religion.
+      - pointTime: "1:06:24.04"
+        pointText: Fruitfulness is explicitly distinguished from promises of wealth and health.
+      - pointTime: "1:11:52.52"
+        pointText: Abiding is explained as remaining, staying and being united with Christ.
     subchapters:
       - chapterId: s0712-pruning
         chapterTitle: Trials Can Prepare Believers for Fruitfulness
@@ -123,6 +172,12 @@ chapters:
             pointText: Pastor Yong uses gardening and reported remarks about trials to discuss difficult
               preparation, distinguishing consequences of one's actions from suffering while
               following God.
+          - pointTime: "1:08:36.96"
+            pointText: A question about avoiding suffering introduces the paradox of trials in faithful life.
+          - pointTime: "1:09:53.88"
+            pointText: Being used by God is connected with preparation that people may not welcome.
+          - pointTime: "1:11:01.16"
+            pointText: Consequences of personal choices are distinguished from trials encountered while following God.
         chapterScripture:
           - John 15:2
           - 2 Timothy 3
@@ -136,6 +191,8 @@ chapters:
           - pointTime: "1:13:52.08"
             pointText: Pastor Yong uses the fruit of the Spirit as reference points for prayerful
               self-examination and life's direction rather than a demand to feel happy every day.
+          - pointTime: "1:14:49.2"
+            pointText: Fruitfulness concerns the direction and character of life, not happiness every day.
         chapterScripture:
           - Galatians 5:22-23
     chapterScripture:
@@ -159,6 +216,14 @@ chapters:
         pointText: Pastor Yong argues that all truth and goodness belong to God, contrasting wealth and
           Antilia's purported luxuries with small acts of service before warning that what opposes
           God's goodness cannot endure.
+      - pointTime: "1:16:53.82"
+        pointText: James 1:17 connects everyday good experiences with God's gifts.
+      - pointTime: "1:19:12.08"
+        pointText: John 15:5 is identified as the key theme for understanding lasting meaning.
+      - pointTime: "1:22:51.72"
+        pointText: The preacher contrasts Antilia's wealth with poverty encountered in Mumbai.
+      - pointTime: "1:26:23.4"
+        pointText: Matthew 10:42 places lasting value in a small act of service linked with God.
     subchapters:
       - chapterId: s0712-value
         chapterTitle: Small Acts of Service Have Enduring Value
@@ -169,6 +234,8 @@ chapters:
           - pointTime: "1:26:23.4"
             pointText: Pastor Yong uses Matthew 10:42 to place loving service above wealth, donor recognition
               and names on buildings as an expression of eternal goodness.
+          - pointTime: "1:27:28.68"
+            pointText: Donor recognition and building names are contrasted with serving and loving others.
         chapterScripture:
           - Matthew 10:42
     chapterScripture:
@@ -187,14 +254,22 @@ chapters:
         pointText: Pastor Yong connects prayer aligned with God's will, loving obedience and joy amid
           difficulty, then uses his account of Studd and Only One Life to urge lasting service to
           Christ.
+      - pointTime: "1:30:43.6"
+        pointText: Loving conduct identifies a disciple and glorifies God more than buildings or claimed identity.
+      - pointTime: "1:31:59.8"
+        pointText: John 15:10 and 1 Samuel 15:22 connect love with obedience.
+      - pointTime: "1:32:36.54"
+        pointText: John 15:11 describes fullness of joy without denying life's difficulties.
+      - pointTime: "1:34:41.4"
+        pointText: Studd's missionary service introduces the poem Only One Life.
     subchapters:
       - chapterId: s0712-poem
         chapterTitle: "Only One Life: Lasting Service to Christ"
         chapterKind: sermon
-        chapterStart: "1:35:38.96"
+        chapterStart: "1:35:39.6"
         chapterEnd: "1:37:47.32"
         points:
-          - pointTime: "1:35:38.96"
+          - pointTime: "1:35:39.88"
             pointText: Pastor Yong applies selected stanzas of Only One Life as an appeal away from
               self-directed living toward lasting service to Christ.
         chapterScripture:
@@ -216,6 +291,14 @@ chapters:
         pointText: The congregation responds with prayer and the creed, followed by pastoral intercession,
           offertory, closing hymn, doxology, a blessing introduced as from Hebrews 13, tentative
           ministry plans and dismissal with silent meditation.
+      - pointTime: "1:38:55"
+        pointText: The congregation stands to affirm the Apostles' Creed.
+      - pointTime: "1:41:48.98"
+        pointText: Prayer concerns a possible gospel-rally trip and evangelism in the congregation's own lives.
+      - pointTime: "1:44:03.42"
+        pointText: The second-Sunday offering is introduced before collection.
+      - pointTime: "1:49:03.04"
+        pointText: Historical notices describe a planned Jakarta ministry anniversary gathering and correct its proposed January date.
     chapterScripture:
       - John 15:1-11
       - Hebrews 13
@@ -226,5 +309,5 @@ markers:
       Timothy 3; John 15:2-3; John 15:3-5; Galatians 5:22-23; James 1:17; Luke 12; Matthew 10:42;
       John 15:7; John 15:8-9; John 15:10; 1 Samuel 15:22; John 15:11. Keep only the main passages
       above."
-  - markerTime: "35:11.14"
-    markerNote: Needs 1–3 sermonTopics before it can be published.
+  - markerTime: "1:35:39.6"
+    markerNote: "Poem starts before 'Two little lines', after the introduction's final sentence. Opening starts at the spoken ACTS invitation instead of the prelude. Supplied transcript timings only; check audio."
