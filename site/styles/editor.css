@@ -121,6 +121,7 @@
 .ce-segmented { display: inline-flex; gap: 2px; padding: 2px; border-radius: 8px; background: var(--ce-hover); }
 .ce-segmented button { min-height: 30px; padding: 2px 8px; border: 0; border-radius: 6px; background: transparent; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; cursor: pointer; }
 .ce-segmented button[aria-pressed="true"] { background: #fff; box-shadow: 0 1px 2px rgb(30 39 73 / 0.18); }
+.ce-segmented button:disabled { opacity: 0.5; cursor: default; }
 .ce-notice-inline { padding: 4px 10px; border-radius: 6px; background: #fff4d6; font-size: 13px; }
 .ce-root .ce-type-word { background: var(--burgundy); color: var(--surface); }
 .ce-root .ce-type-worship { background: var(--periwinkle); color: var(--ink); }
@@ -426,6 +427,7 @@
 
 /* ---- Narrower screens: one column; the video stays pinned while the timeline and list scroll ---- */
 @media (max-width: 1023px) {
+  .ce-segmented button { min-width: 44px; min-height: 44px; }
   .ce-root { height: auto; }
   .ce-bar { flex-wrap: wrap; }
   .ce-status { order: 5; flex: 1 1 100%; justify-content: flex-start; }
@@ -667,7 +669,9 @@
   .ce-dock-mobile-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 44px; padding: 4px 12px; border-block: 1px solid var(--ce-line); }
   .ce-dock-mobile-head h2 { font-size: 16px; }
   .ce-workspace .ce-dock-panel > :is(.ce-window, .ce-player-pane) { flex: 1; }
-  .ce-workspace .ce-dock-panel-video .ce-player-pane { min-height: 280px; }
+  .ce-workspace .ce-dock-panel-video .ce-player-pane { height: auto; min-height: 0; flex: none; overflow: visible; }
+  .ce-workspace .ce-dock-panel-video .ce-stage-wrap { container-type: normal; display: block; flex: none; }
+  .ce-workspace .ce-dock-panel-video .ce-stage { width: min(100%, 560px); margin-inline: auto; }
   .ce-workspace .ce-dock-panel-readalong, .ce-workspace .ce-dock-panel-markers, .ce-workspace .ce-dock-panel-details { max-height: 65svh; }
   .ce-workspace:has(.ce-dock-main) > .ce-splitter { display: none; }
 }

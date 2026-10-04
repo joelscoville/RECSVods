@@ -22,10 +22,13 @@ export function unavailableAt(uploads: readonly RecordingUpload[], time: number)
  * silently skip them: hold the requested time and wait for explicit navigation. */
 export async function createRecordingPlayer(options: {
   uploads: readonly RecordingUpload[]; start: number;
-  mount: (upload: RecordingUpload, localTime: number, onState: (state: number) => void) => Promise<YouTubePlayer>;
+  mount: (upload: RecordingUpload, localTime: number, onState: (state: number) => void, onRate: (rate: number) => void) => Promise<YouTubePlayer>;
   onError: (message: string) => void;
   onAvailability?: (span: UnavailableSpan | undefined) => void;
   onLoading?: () => void;
+  /** Fired only after the target media is ready and its rate preference was applied. */
+  onPlaybackRateReady?: () => void;
+  onPlaybackRateChange?: (rate: number) => void;
 }): Promise<RecordingAdapter> {
   const { uploads } = options;
   if (!uploads.length) throw new Error('A recording needs at least one upload');
@@ -36,13 +39,26 @@ export async function createRecordingPlayer(options: {
   };
   let current = locate(options.start).index, heldTime = options.start, loadedIndex = -1;
   let player: YouTubePlayer | undefined, pending: Promise<YouTubePlayer> | undefined;
-  let destroyed = false, generation = 0, switching = false, wantsPlay = false, rate = 1;
+  let destroyed = false, generation = 0, switching = false, wantsPlay = false, rate = 1, rateRequested = false;
+  const rateReady = () => !destroyed && !switching && !uploads[current].unavailable && Boolean(player && [1, 2, 5].includes(player.getPlayerState()));
+  const applyRateWhenReady = () => {
+    if (!rateReady() || !player) return;
+    if (rateRequested && player.getPlaybackRate?.() !== rate) player.setPlaybackRate?.(rate);
+    options.onPlaybackRateReady?.();
+  };
+  const rateChanged = (actual: number) => {
+    if (rateReady() && Number.isFinite(actual) && actual > 0) options.onPlaybackRateChange?.(actual);
+  };
   const report = (error: unknown, request: number) => {
     if (!destroyed && request === generation) options.onError(error instanceof Error ? error.message : 'The player could not be loaded.');
   };
   const stateChanged = (state: number) => {
     if (destroyed || !player || uploads[current].unavailable) return;
-    if (state === 1 || state === 2 || state === 5) switching = false;
+    // A paused event from the previous upload must not complete a pending load.
+    if (state === 1 || state === 5) switching = false;
+    // YouTube resets rates while cueing/loading an upload, sometimes after the
+    // initial setter. Apply the preference again when the new media is ready.
+    if (state === 1 || state === 2 || state === 5) applyRateWhenReady();
     if (state === 5 && wantsPlay) player.playVideo();
     if (state === 0 && current < uploads.length - 1) {
       const task = position(uploads[current + 1].start, true, true), request = generation;
@@ -52,7 +68,9 @@ export async function createRecordingPlayer(options: {
   async function position(time: number, play: boolean, allowSeekAhead: boolean) {
     const request = ++generation;
     heldTime = Math.max(0, Math.min(time, uploads.at(-1)!.end));
-    const target = locate(heldTime); current = target.index;
+    const target = locate(heldTime);
+    const awaitingSameUpload = Boolean(player && switching && loadedIndex === target.index);
+    current = target.index;
     wantsPlay = play;
     if (uploads[current].unavailable) {
       wantsPlay = false; switching = false; player?.pauseVideo();
@@ -65,7 +83,7 @@ export async function createRecordingPlayer(options: {
       options.onLoading?.();
       if (!pending) {
         const mountIndex = current;
-        pending = options.mount(uploads[mountIndex], target.local, stateChanged).then(instance => {
+        pending = options.mount(uploads[mountIndex], target.local, stateChanged, rateChanged).then(instance => {
           if (destroyed) { instance.destroy(); return instance; }
           player = instance; loadedIndex = mountIndex;
           if (uploads[current].unavailable) instance.pauseVideo();
@@ -81,10 +99,10 @@ export async function createRecordingPlayer(options: {
       if (wantsPlay) player.loadVideoById(value); else player.cueVideoById(value);
     } else {
       player.seekTo(target.local, allowSeekAhead);
-      switching = false;
-      if (wantsPlay) player.playVideo(); else player.pauseVideo();
+      switching = awaitingSameUpload;
+      if (!switching) { if (wantsPlay) player.playVideo(); else player.pauseVideo(); }
     }
-    if (rate !== 1) player.setPlaybackRate?.(rate);
+    applyRateWhenReady();
     options.onAvailability?.(undefined);
   }
   const adapter: RecordingAdapter = {
@@ -99,7 +117,10 @@ export async function createRecordingPlayer(options: {
     pauseVideo() { wantsPlay = false; player?.pauseVideo(); },
     getCurrentTime() { return !player || switching || uploads[current].unavailable ? heldTime : uploads[current].start + Math.max(0, player.getCurrentTime() - uploads[current].offset); },
     getPlayerState() { return uploads[current].unavailable ? 2 : switching ? 3 : player?.getPlayerState() ?? 2; },
-    setPlaybackRate(value) { rate = value; player?.setPlaybackRate?.(value); },
+    setPlaybackRate(value) { rate = value; rateRequested = true; applyRateWhenReady(); },
+    getPlaybackRate() { return player?.getPlaybackRate?.() ?? rate; },
+    getAvailablePlaybackRates() { return player?.getAvailablePlaybackRates?.() ?? []; },
+    isPlaybackRateReady: rateReady,
     destroy() { destroyed = true; generation++; player?.destroy(); },
   };
   await position(options.start, false, true);

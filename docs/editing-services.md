@@ -150,6 +150,10 @@ scripture references, with BSB enrichment. It never embeds transcripts or marker
 ## Uploads and clocks
 
 All times are quoted clocks (`"42:54"`, `"1:07:02.86"`), on one recording clock.
+Clocks support up to nine fractional digits when representable at that duration.
+Calculated times are normalized to that precision, so millisecond upload lengths
+such as `"30:02.801"` can be added without producing unrenderable floating-point digits.
+Unsupported precision and unsafe combined durations produce file/field validation errors.
 Uploads play back to back. `uploadSkip` subtracts repeated seconds at the start of
 a later upload; it is never used on the first. Upload lengths must be positive.
 `uploadUnavailable: true` records a removed upload; `uploadQuirks` records confirmed
@@ -161,6 +165,13 @@ requesting that upload or silently skipping time. Previous/next available-part
 actions navigate on the same clock, including upload-skip offsets. The editor can
 still inspect and edit metadata in those spans. A recording with no available
 uploads shows that explicitly instead of offering a play action.
+
+Editor speed controls apply the selected rate after loading and after multipart
+upload changes. They reflect the player's reported rate; unsupported rates are
+disabled, and a rejected change is reported instead of shown as successfully applied.
+The requested rate is retained during switching, buffering and unavailable spans.
+Rejection detection starts only once the target media is ready and the preference
+has been reapplied; temporary loading rates do not replace the selection.
 
 ## Drafts, review and markers
 
