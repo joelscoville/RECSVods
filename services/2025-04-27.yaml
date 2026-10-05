@@ -1,0 +1,171 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Transforming Encounter
+serviceDate: 2025-04-27
+status: draft
+sermonDescription: >-
+  Brother Victor asks what difference Christ's resurrection makes beyond attendance at church or religious rules. Mary, the fearful disciples and the hostile Paul become unlikely witnesses whose encounters bring transformation. Their testimony leads to two implications: hope of forgiveness, resurrection and eternal life, and the hardship of submitting daily life to Christ's lordship. Abiding in Christ means bringing Scripture into ordinary decisions, taking steps of faith and acting on what believers already know pleases him.
+sermonScripture:
+  - John 20:1-31
+  - 1 Corinthians 15:1-11
+sermonTopics:
+  - hope
+  - discipleship
+  - eternal-life
+uploads:
+  - youtubeId: vkxRMvoNyr0
+    uploadDuration: "1:38:48.612"
+chapters:
+  - chapterId: c20250427-worship
+    chapterTitle: The Risen Christ Gives Hope beyond Easter Sunday
+    chapterKind: opening
+    chapterStart: "3:23.48"
+    chapterEnd: "39:27.94"
+    chapterScripture:
+      - Psalms 100:1-5
+      - Proverbs 31:1-31
+      - John 20:1-31
+      - 1 Corinthians 15:1-11
+    points:
+      - pointTime: "6:27.1"
+        pointText: The welcome presents resurrection hope as an ongoing reality rather than a celebration left behind after Easter.
+      - pointTime: "15:41.12"
+        pointText: The worship reflection connects Christ's living presence with courage to face an uncertain future.
+      - pointTime: "28:29.14"
+        pointText: Fixing attention on Christ is applied to loss and uncertainty rather than treating worship as an escape from them.
+  - chapterId: c20250427-difference
+    chapterTitle: What Difference Does the Resurrection Make?
+    chapterKind: sermon
+    chapterStart: "39:27.94"
+    chapterEnd: "44:27.68"
+    chapterScripture:
+      - 1 Corinthians 15:5-9
+    points:
+      - pointTime: "40:08.2"
+        pointText: The opening question asks what would change in everyday life if Christ had not risen.
+      - pointTime: "40:36.52"
+        pointText: A former believer's description of religion as rules raises the question of transformation beyond outward practice.
+      - pointTime: "44:23.32"
+        pointText: The witnesses' changed lives become an invitation for listeners to experience transformation as well.
+  - chapterId: c20250427-witnesses
+    chapterTitle: Unlikely Witnesses Encounter the Risen Lord
+    chapterKind: sermon
+    chapterStart: "44:27.68"
+    chapterEnd: "59:18.02"
+    points:
+      - pointTime: "51:55.72"
+        pointText: The reliability question considers the character and situation of witnesses rather than assuming every reported experience is trustworthy.
+      - pointTime: "52:35.08"
+        pointText: Multiple appearances and sustained interactions are distinguished from isolated sightings.
+      - pointTime: "54:17.4"
+        pointText: Possibility of a false account is distinguished from reasons to trust a person's known integrity.
+      - pointTime: "56:01.92"
+        pointText: Costly allegiance to Christ is used to examine the witnesses' motives for their testimony.
+      - pointTime: "57:45.72"
+        pointText: The central testimony concerns bodily resurrection and changed lives rather than speculative details about Christ's appearance.
+    subchapters:
+      - chapterId: c20250427-mary
+        chapterTitle: Hopeless and Self-Reliant Mary
+        chapterKind: sermon
+        chapterStart: "44:27.68"
+        chapterEnd: "48:52.22"
+        chapterScripture:
+          - John 20:1-18
+        points:
+          - pointTime: "45:41.02"
+            pointText: Mary's despair and effort to recover control obscure her recognition of Jesus.
+          - pointTime: "47:21.9"
+            pointText: Christ's commission redirects Mary from holding onto him toward following him and bearing witness.
+      - chapterId: c20250427-disciples
+        chapterTitle: Fearful and Doubtful Disciples
+        chapterKind: sermon
+        chapterStart: "48:52.22"
+        chapterEnd: "51:09.1"
+        chapterScripture:
+          - John 20:19-29
+        points:
+          - pointTime: "49:08.06"
+            pointText: The speaker considers whether the early belief described at the empty tomb still falls short of understanding resurrection.
+          - pointTime: "50:50.38"
+            pointText: Locked doors and Thomas' doubt emphasize the disciples' fear rather than readiness to invent a triumphant account.
+      - chapterId: c20250427-paul
+        chapterTitle: Hostile and Zealous Paul
+        chapterKind: sermon
+        chapterStart: "51:09.1"
+        chapterEnd: "51:50.72"
+        chapterScripture:
+          - 1 Corinthians 15:9
+          - Acts 9:1-2
+        points:
+          - pointTime: "51:09.1"
+            pointText: Paul's initial persecution of the church makes his later witness an example of a transformed opponent.
+  - chapterId: c20250427-implications
+    chapterTitle: "Two Implications: Hope and Hardship"
+    chapterKind: sermon
+    chapterStart: "59:18.02"
+    chapterEnd: "1:23:33.52"
+    subchapters:
+      - chapterId: c20250427-hope
+        chapterTitle: Hope
+        chapterKind: sermon
+        chapterStart: "59:18.02"
+        chapterEnd: "1:03:07.28"
+        chapterScripture:
+          - 1 Corinthians 15:1-4
+          - 1 Corinthians 15:17-19
+          - John 6:40
+          - John 14:2
+        points:
+          - pointTime: "59:30.08"
+            pointText: Resurrection is central to faith's promised future rather than an optional addition to Christian teaching.
+          - pointTime: "1:01:12.58"
+            pointText: Christ's death for sins calls forgiven people to live differently from remaining permanently defined by past guilt.
+          - pointTime: "1:02:58.86"
+            pointText: Assurance of eternal life frames present earthly life as temporary without making it meaningless.
+      - chapterId: c20250427-hardship
+        chapterTitle: Hardship
+        chapterKind: sermon
+        chapterStart: "1:03:07.28"
+        chapterEnd: "1:23:33.52"
+        chapterScripture:
+          - 1 Corinthians 15:58
+          - John 15:4-8
+        points:
+          - pointTime: "1:03:07.28"
+            pointText: Secure hope leads to steadfast work whose value rests in the Lord rather than withdrawing from present responsibility.
+          - pointTime: "1:04:39.98"
+            pointText: Calling Christ Lord entails submitting the whole life rather than following only while his teaching feels comfortable.
+          - pointTime: "1:06:21.9"
+            pointText: Difficult teaching distinguishes a departing crowd from disciples who ask questions while continuing to follow.
+          - pointTime: "1:08:02.4"
+            pointText: Abiding in Christ connects fruitfulness with knowing his will and responding in ordinary life.
+          - pointTime: "1:11:31.08"
+            pointText: The speaker's vocational discernment illustrates taking a step of faith with counsel and opportunity despite uncertainty.
+          - pointTime: "1:15:27.76"
+            pointText: What, so what and now what connect observation, scriptural reflection and practical action.
+          - pointTime: "1:16:35.44"
+            pointText: A small act of care in marriage illustrates turning biblical reflection into concrete obedience.
+          - pointTime: "1:20:01.56"
+            pointText: God's guidance through Scripture and people is distinguished from needing an audible personal message.
+          - pointTime: "1:21:36.66"
+            pointText: Christ's lordship is applied to every sphere, including areas one is reluctant to surrender.
+  - chapterId: c20250427-response
+    chapterTitle: Bring the Living God into Daily Life
+    chapterKind: closing
+    chapterStart: "1:23:33.52"
+    chapterEnd: "1:38:48.612"
+    chapterScripture:
+      - Hebrews 13:20-21
+    points:
+      - pointTime: "1:23:33.52"
+        pointText: Response prayer asks that resurrection knowledge become a habit of following God through uncertainty.
+      - pointTime: "1:28:43.74"
+        pointText: Pastoral prayer brings work, study, financial strain and reconciliation under God's care and practical help from fellow believers.
+markers:
+  - markerTime: "39:35.74"
+    markerNote: "The source title incorrectly says April 13. Verified channel description/release date identifies April 27, corroborated by one week after Easter and the upcoming May 3 election."
+  - markerTime: "44:27.68"
+    markerNote: "Interpretations of Mary's clinging and the disciples' initial belief are the speaker's readings, with the latter explicitly tentative. Title follows source; audio-ASR duration and anchors await fresh media checks."
+  - markerTime: "54:17.4"
+    markerNote: "The hypothetical misconduct comparison is explicitly disclaimed as untrue by the speaker. Historical/news quotations, Greek explanations and quotation attribution require review."
