@@ -1,0 +1,162 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Back and Forth
+serviceDate: 2025-01-05
+status: draft
+sermonDescription: >-
+  At the turning of the year, Philippians 3 directs attention toward the surpassing worth of knowing Christ. Paul's unfinished journey encourages growth grounded in belonging to Jesus rather than visible achievement or present feelings alone. Forgetting what lies behind means learning from history without being trapped by forgiven failures or resting on former successes. Straining forward calls for intentional effort toward Christ, supported by fellow believers and a renewed commitment to use the coming year faithfully.
+sermonScripture:
+  - Philippians 3:7-14
+  - Psalms 90:12
+sermonTopics:
+  - discipleship
+  - forgiveness
+  - responsibility
+uploads:
+  - youtubeId: 5FMW0OuwL1k
+    uploadDuration: "1:52:23.818"
+chapters:
+  - chapterId: c20250105-worship
+    chapterTitle: Trust God's Goodness as a New Year Begins
+    chapterKind: opening
+    chapterStart: "0:32.66"
+    chapterEnd: "35:51.2"
+    chapterScripture:
+      - Psalms 68:32-35
+      - Romans 8:28
+      - Proverbs 19:1-29
+      - Psalms 90:1-17
+      - Philippians 3:12-14
+    points:
+      - pointTime: "11:52.1"
+        pointText: Opening prayer asks for trust while the road ahead and new ministry opportunities remain uncertain.
+      - pointTime: "15:23.06"
+        pointText: The worship reflection grounds confidence in God's goodness and love rather than a predictable year without hardship.
+      - pointTime: "29:59.26"
+        pointText: Daily trust is presented as a response to God's sustaining care through both trials and joys.
+  - chapterId: c20250105-number-days
+    chapterTitle: Give the Passage of Time Meaning through God
+    chapterKind: sermon
+    chapterStart: "35:51.2"
+    chapterEnd: "50:32.66"
+    chapterScripture:
+      - Psalms 90:12
+      - Ecclesiastes 12:13
+      - Proverbs 3:5
+      - 1 Corinthians 3:15
+    points:
+      - pointTime: "38:35.94"
+        pointText: Reflecting on time introduces the question of what makes a year meaningful rather than another routine reset.
+      - pointTime: "41:57.64"
+        pointText: Numbering one's days is connected with wisdom and the limited opportunity to live purposefully.
+      - pointTime: "43:40.84"
+        pointText: Ecclesiastes' conclusion challenges measuring meaning apart from God, regardless of wealth or excitement.
+      - pointTime: "47:06.6"
+        pointText: The sanctification picture allows for failure and renewed effort while affirming Christ's hold on those who belong to him.
+      - pointTime: "48:49.1"
+        pointText: Merely reaching the final destination is distinguished from using the journey faithfully.
+  - chapterId: c20250105-knowing-christ
+    chapterTitle: Press On toward the Surpassing Worth of Knowing Christ
+    chapterKind: sermon
+    chapterStart: "50:32.66"
+    chapterEnd: "1:14:49.94"
+    chapterScripture:
+      - Philippians 3:7-12
+      - Acts 19:11-12
+      - John 4:14
+      - John 10:10
+      - Acts 1:8
+      - Romans 8:37
+    points:
+      - pointTime: "51:46.26"
+        pointText: Knowing Christ is contrasted with the gains Paul formerly treated as central to his life.
+      - pointTime: "55:38.04"
+        pointText: Sharing Christ's suffering and resurrection power reveals a depth beyond merely knowing salvation's theory.
+      - pointTime: "57:21.08"
+        pointText: Paul's extensive ministry makes his acknowledgment of unfinished growth especially significant.
+      - pointTime: "1:02:26.34"
+        pointText: Unfinished knowledge of Christ is presented as a vast opportunity rather than a reason to settle into spiritual boredom.
+      - pointTime: "1:04:09.7"
+        pointText: Living water, abundance and witness are connected with the possibilities Scripture describes for believers.
+      - pointTime: "1:08:56.8"
+        pointText: Biblical truth is proposed as the guide for faith and feelings rather than assuming present discouragement defines identity.
+      - pointTime: "1:13:30.78"
+        pointText: Persistent negativity is acknowledged as a reason to seek wise support and, where needed, medical treatment rather than struggle alone.
+  - chapterId: c20250105-back
+    chapterTitle: Forget What Lies Behind without Losing Its Lessons
+    chapterKind: sermon
+    chapterStart: "1:14:49.94"
+    chapterEnd: "1:28:51.5"
+    subchapters:
+      - chapterId: c20250105-failures
+        chapterTitle: Release Past Failures
+        chapterKind: sermon
+        chapterStart: "1:14:49.94"
+        chapterEnd: "1:25:10"
+        chapterScripture:
+          - Philippians 3:13
+          - Acts 8:1-3
+          - Acts 9:1-2
+          - Acts 26:9-11
+          - John 8:36
+        points:
+          - pointTime: "1:16:05.96"
+            pointText: Forgetting the past is distinguished from refusing to think or learn from history.
+          - pointTime: "1:18:35.64"
+            pointText: Repeated accusations about failure can keep people trapped in a defeated account of their lives.
+          - pointTime: "1:21:09.12"
+            pointText: Paul's former persecution demonstrates the serious past from which forgiveness freed him to serve.
+          - pointTime: "1:23:46.82"
+            pointText: The no-fishing illustration challenges repeatedly retrieving sins already brought to Christ for forgiveness.
+          - pointTime: "1:24:31.78"
+            pointText: Christ's freedom is applied to moving beyond past dysfunction without denying the need for continued growth.
+      - chapterId: c20250105-successes
+        chapterTitle: Release Past Successes
+        chapterKind: sermon
+        chapterStart: "1:25:10"
+        chapterEnd: "1:28:51.5"
+        chapterScripture:
+          - Matthew 3:7-10
+        points:
+          - pointTime: "1:25:10"
+            pointText: Previous achievements and family history can also bind people to a false account of their present responsibility.
+          - pointTime: "1:26:13.02"
+            pointText: John the Baptist's warning about ancestry challenges treating inherited religious standing as a substitute for fruitful repentance.
+          - pointTime: "1:28:38.86"
+            pointText: Past ministry accomplishments are distinguished from today's call to follow God faithfully.
+  - chapterId: c20250105-forth
+    chapterTitle: Strain Forward with Intentional Perseverance
+    chapterKind: sermon
+    chapterStart: "1:28:51.5"
+    chapterEnd: "1:32:47.12"
+    chapterScripture:
+      - Philippians 3:13-14
+    points:
+      - pointTime: "1:29:02.5"
+        pointText: Forward movement is described as active striving rather than a passive hope that the year will improve.
+      - pointTime: "1:29:56.94"
+        pointText: The runner stretching toward the finish illustrates applying one's strength to a spiritual goal.
+      - pointTime: "1:31:31.74"
+        pointText: Knowing Christ remains the prize that gives effort and perseverance their direction.
+  - chapterId: c20250105-response
+    chapterTitle: Commit the Year to Shared Faith and Service
+    chapterKind: closing
+    chapterStart: "1:32:47.12"
+    chapterEnd: "1:52:23.818"
+    chapterScripture:
+      - Hebrews 13:20-21
+    points:
+      - pointTime: "1:33:50.44"
+        pointText: Response prayer asks for help through fellow believers rather than attempting the journey of faith alone.
+      - pointTime: "1:38:52.1"
+        pointText: Pastoral prayer connects encouragement in personal difficulties with becoming ready help for others.
+      - pointTime: "1:46:32.98"
+        pointText: Equipping and shared prayer are presented as preparation for deeper ministry and possible church planting.
+markers:
+  - markerTime: "35:51.2"
+    markerNote: "Back and Forth follows the source title. Supplied faster-whisper audio duration and anchors await fresh media checks."
+  - markerTime: "40:16.16"
+    markerNote: "Astronomical, calendar and species-count explanations are the preacher's illustrations and require factual review."
+  - markerTime: "57:21.08"
+    markerNote: "Paul's proposed modern academic equivalents, miracle comparisons, sporting achievements, quotation attributions and project forecasts require factual/media review."
