@@ -9,8 +9,6 @@ import {
 } from 'react';
 import {
   addMarker,
-  addSubchapterAt,
-  addPointAt,
   chapterAt,
   chapterTitle,
   describeChanges,
@@ -24,14 +22,11 @@ import {
   items,
   lengthOf,
   outline,
-  removeItem,
   removeMarker,
   roundTime,
   setEdge,
-  startChapterAt,
   toggleChecked,
   validateEditor,
-  type AddResult,
   type EditorItem,
   type EditorMarker,
   type EditorRecording,
@@ -49,6 +44,7 @@ import { useEditorSession } from './use-editor-session';
 import { useEditorPlayback } from './use-editor-playback';
 import { useEditorSelection } from './use-editor-selection';
 import { useBoundaryDrag } from './use-boundary-drag';
+import { createEditorCommands } from './editor-commands';
 import UnavailableRecording from './UnavailableRecording';
 import {
   isMac,
@@ -430,8 +426,6 @@ export default function ChapterEditor({
     changeSpeed,
     unavailable,
   } = playback;
-  const isChapter = (id: string) =>
-    state.chapters.some((chapter) => chapter.id === id);
   const [linked, setLinked] = useState(true);
   const [snapping, setSnapping] = useState(true);
   const [view, setView] = useState<TimelineView>(() => fitView(length));
@@ -599,129 +593,28 @@ export default function ChapterEditor({
     if (jump) seekTo(item.start);
   };
 
-  /* ---------- Edits ---------- */
-  /** Both chapter levels have editable bounds. A point has only a time. */
-  const setItemEdge = (
-    edge: 'start' | 'end',
-    seconds: number,
-    id = selectedId,
-    link = linked,
-    key?: string,
-  ) => {
-    const item = rows.find((row) => row.id === id);
-    if (!item) {
-      flash('Select a chapter, subchapter or point first.');
-      return;
-    }
-    const [low, high] = edgeLimits(
-      state,
-      length,
-      { lane: item.lane, id: item.id, edge },
-      link,
-    );
-    const outsideLimits =
-      !Number.isFinite(seconds) || seconds < low || seconds > high;
-    if (outsideLimits) {
-      flash(`Use a time from ${formatClock(low)} to ${formatClock(high)}.`);
-      return;
-    }
-    if (item.lane === 'point') {
-      if (edge === 'end') {
-        flash('A key point is a moment: set its time with Start here.');
-        return;
-      }
-      const next = setEdge(
-        state,
-        length,
-        { lane: 'point', id: item.id, edge: 'start' },
-        seconds,
-      );
-      apply(next, key);
-    } else {
-      const next = setEdge(
-        state,
-        length,
-        { lane: item.lane, id: item.id, edge },
-        seconds,
-        link,
-      );
-      apply(next, key);
-    }
-  };
-  const canSetEdge = (
-    item: EditorItem | undefined,
-    edge: 'start' | 'end',
-    at: number,
-  ) => {
-    if (!item || (item.lane === 'point' && edge === 'end')) return false;
-    const [low, high] = edgeLimits(
-      state,
-      length,
-      { lane: item.lane, id: item.id, edge },
-      linked,
-    );
-    return at >= low && at <= high;
-  };
-  // Each drag on a time field is one undo step.
+  const commands = createEditorCommands(
+    { state, original, apply },
+    selection,
+    { length, playhead, linked, rows },
+    {
+      activateEditor: () => activatePanel('editor'),
+      focusTitle: () => setFocusTitle((value) => value + 1),
+      select,
+      notify: flash,
+    },
+  );
+  const {
+    setItemEdge,
+    canSetEdge,
+    addSubchapter,
+    addPoint,
+    startChapter,
+    removeSelected,
+    confirmAndNext,
+    revertItem,
+  } = commands;
   const scrubSession = useRef(0);
-  function applyCreatedItem(result: AddResult, rename = true) {
-    if (!result.id) {
-      flash(result.reason ?? 'Nothing to add here.');
-      return;
-    }
-    activatePanel('editor');
-    apply(result.state);
-    setSelectedId(result.id);
-    setSelectionRequest({ id: result.id });
-    setActiveBoundary(undefined);
-    revealParents(result.id, outline(result.state, length));
-    setMobileList(false);
-    if (rename) {
-      setFocusTitle((value) => value + 1);
-    }
-  }
-
-  function addSubchapter(seconds = playhead) {
-    applyCreatedItem(addSubchapterAt(state, length, seconds));
-  }
-
-  function addPoint(seconds = playhead) {
-    applyCreatedItem(addPointAt(state, length, seconds), false);
-    setFocusTitle((value) => value + 1);
-  }
-
-  function startChapter(kind: ChapterKind, seconds = playhead) {
-    applyCreatedItem(startChapterAt(state, length, kind, seconds));
-  }
-
-  function removeSelected(id = selectedId) {
-    if (!id) {
-      return;
-    }
-    if (isChapter(id) && state.chapters.length < 2) {
-      flash('A recording keeps at least one chapter.');
-      return;
-    }
-    const index = rows.findIndex((item) => item.id === id);
-    const next = removeItem(state, id);
-    const remaining = outline(next, length);
-    const ids = new Set(remaining.map((item) => item.id));
-    apply(next);
-    setActiveBoundary(undefined);
-
-    const nextId =
-      rows.slice(index + 1).find((item) => ids.has(item.id))?.id ??
-      rows
-        .slice(0, index)
-        .reverse()
-        .find((item) => ids.has(item.id))?.id ??
-      remaining[0]?.id;
-    setSelectedId(nextId);
-    if (nextId) {
-      setSelectionRequest({ id: nextId });
-      revealParents(nextId, remaining);
-    }
-  }
   const jumpBoundary = (step: 1 | -1) => {
     const list = edges(state);
     const found =
@@ -739,31 +632,6 @@ export default function ChapterEditor({
     setSelectedId(target.id);
     revealParents(target.id);
     setSelectionRequest({ id: target.id });
-  };
-  const confirmAndNext = () => {
-    if (!selected) return;
-    if (selected.lane !== 'point')
-      apply(toggleChecked(state, selected.id, true));
-    const sections = rows.filter((item) => item.lane !== 'point');
-    const next =
-      sections[
-        sections.findIndex((item) => item.id === selectedSection?.id) + 1
-      ];
-    if (next) select(next);
-  };
-  const revertItem = (id: string) => {
-    const section = [...original.chapters, ...original.subchapters].find(
-        (item) => item.id === id,
-      ),
-      point = original.points.find((item) => item.id === id);
-    if (section) apply(editChapter(state, id, section));
-    if (point)
-      apply({
-        ...state,
-        points: state.points.map((item) =>
-          item.id === id ? { ...point } : item,
-        ),
-      });
   };
 
   /* ---------- Markers ---------- */
@@ -1355,13 +1223,7 @@ export default function ChapterEditor({
               type="button"
               className="ce-action"
               disabled={playhead < section.start || playhead >= section.end}
-              onClick={() => {
-                applyCreatedItem(
-                  addPointAt(state, length, playhead, section.id),
-                  false,
-                );
-                setFocusTitle((value) => value + 1);
-              }}
+              onClick={() => addPoint(playhead, section.id)}
             >
               <Icon name="plus" />
               Add description at {formatClock(playhead)}
@@ -1450,14 +1312,7 @@ export default function ChapterEditor({
             <button
               type="button"
               className="ce-confirm"
-              onClick={() => {
-                apply(toggleChecked(state, item.id, true));
-                const next =
-                  sectionRows[
-                    sectionRows.findIndex((row) => row.id === item.id) + 1
-                  ];
-                if (next) select(next);
-              }}
+              onClick={() => commands.confirmSection(item.id)}
             >
               <Icon name="check" />
               Mark checked & next
