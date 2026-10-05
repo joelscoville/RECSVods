@@ -1,0 +1,137 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Flesh Eating
+serviceDate: 2025-08-31
+status: draft
+sermonDescription: Jesus' promise of living bread challenges a human-centered, transactional approach to religion. The preacher contrasts consumer expectations with God's initiative in drawing people to Christ and sustaining an eternal community. Romans 12 connects that life with renewed understanding rather than conformity to the fallen world. Eating Christ's flesh and drinking his blood is read as believing his sacrifice and continuing in full commitment, not adding a religious label or occasional contribution to an otherwise unchanged life.
+sermonScripture:
+  - John 6:41-59
+  - Romans 12:1-2
+  - Matthew 7:21
+sermonTopics:
+  - faith
+  - discipleship
+  - salvation
+uploads:
+  - youtubeId: XsQ1Uq8VXII
+    uploadDuration: "1:41:10.857"
+chapters:
+  - chapterId: c20250831-worship
+    chapterTitle: Worship through Christ's Exchange and Our Surrender
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "32:52.65"
+    chapterScripture:
+      - Psalms 138:1-5
+      - Proverbs 18:1-24
+      - John 6:41-59
+      - Romans 12:1-2
+    points:
+      - pointTime: "12:10.18"
+        pointText: Patrick connects atonement with the exchange of Christ's righteousness for human sin.
+      - pointTime: "24:54.34"
+        pointText: Whole-person surrender is introduced as more than seeking peace while retaining control over one's life.
+  - chapterId: c20250831-forgiveness-question
+    chapterTitle: Human Grievance and the Need for Forgiveness
+    chapterKind: qa
+    chapterStart: "32:52.65"
+    chapterEnd: "42:04.18"
+    points:
+      - pointTime: "33:56.08"
+        pointText: A question about continuing anti-Japanese feeling after wartime atrocities introduces inherited grievance.
+      - pointTime: "38:59.64"
+        pointText: The preacher examines cultural stories that preserve vengeance rather than resolve it through forgiveness.
+      - pointTime: "40:42.18"
+        pointText: Group identity and inherited loyalty are connected with difficulty moving beyond reciprocal hostility.
+  - chapterId: c20250831-bread-recap
+    chapterTitle: Seek the Giver rather than Only His Gifts
+    chapterKind: sermon
+    chapterStart: "42:04.18"
+    chapterEnd: "46:34.8"
+    chapterScripture:
+      - John 6:22-40
+    points:
+      - pointTime: "42:53.04"
+        pointText: The recap contrasts seeking truth with following Christ chiefly for the food he provides.
+      - pointTime: "44:04.82"
+        pointText: Faith's simple invitation to believe is held alongside the depth of God's plan across history.
+      - pointTime: "45:06.36"
+        pointText: Perseverance is grounded in Christ's promise to keep those given by the Father rather than personal strength alone.
+  - chapterId: c20250831-human-consumer
+    chapterTitle: Unlearn a Consumer's Approach to God
+    chapterKind: sermon
+    chapterStart: "46:34.8"
+    chapterEnd: "1:09:36.5"
+    chapterScripture:
+      - John 6:41-43
+    points:
+      - pointTime: "49:12.14"
+        pointText: Knowing Jesus' family and ordinary background becomes an obstacle to receiving his unusual claim of heavenly origin.
+      - pointTime: "50:59.42"
+        pointText: Human-based and God-based approaches are distinguished, including within professed Christian faith.
+      - pointTime: "54:56.32"
+        pointText: Transactional religion measures involvement by what one expects to receive.
+      - pointTime: "57:44.94"
+        pointText: The preacher's historical overview connects increased human capability with greater confidence in self-sufficiency.
+      - pointTime: "1:06:22.84"
+        pointText: Consumer-centered church expectations are described as part of wider cultural conditioning rather than isolated individual preference.
+      - pointTime: "1:08:37.44"
+        pointText: God's revealed reality is placed above what people are accustomed to expect or personally prefer.
+  - chapterId: c20250831-god-living-bread
+    chapterTitle: God Draws His People into a Living Community
+    chapterKind: sermon
+    chapterStart: "1:09:36.5"
+    chapterEnd: "1:19:40.75"
+    chapterScripture:
+      - John 6:44-51
+      - 1 Corinthians 3:6-7
+      - Romans 12:1-2
+      - 1 John 2:17
+    points:
+      - pointTime: "1:10:51.56"
+        pointText: The Father's drawing establishes God as the initiator rather than faith as a human product.
+      - pointTime: "1:12:26.5"
+        pointText: Evangelism is understood as faithfully sowing while God gives growth, not manipulating visible results.
+      - pointTime: "1:13:33.92"
+        pointText: Living bread describes continuing life and growth within the community gathered by the Father.
+      - pointTime: "1:14:48.58"
+        pointText: A passing fallen world is distinguished from life aligned with God's enduring will.
+      - pointTime: "1:16:34.28"
+        pointText: Renewal of understanding is connected with recognizing the present fullness of life God gives rather than copying surrounding expectations.
+  - chapterId: c20250831-full-commitment
+    chapterTitle: Eating and Drinking Means Full, Continuing Commitment
+    chapterKind: sermon
+    chapterStart: "1:19:40.75"
+    chapterEnd: "1:27:01.02"
+    chapterScripture:
+      - John 6:53-58
+      - Matthew 7:21
+    points:
+      - pointTime: "1:19:52.18"
+        pointText: Being part of the bread of life is described as full involvement rather than occasional contribution.
+      - pointTime: "1:21:40.92"
+        pointText: Feeding and drinking are read as ongoing actions that make Christ central to life.
+      - pointTime: "1:23:11.62"
+        pointText: Receiving Christ's flesh and blood is explained through believing his body given and blood shed on the cross.
+      - pointTime: "1:23:26.44"
+        pointText: Communion remembers that sacrifice and shared belonging rather than replacing lived commitment.
+      - pointTime: "1:25:27.54"
+        pointText: Christian life is distinguished from adding Jesus or a religious category to an otherwise unchanged identity.
+      - pointTime: "1:26:10.86"
+        pointText: Renouncing a fallen way of life is held alongside celebrating what is good in God's redeemed world.
+  - chapterId: c20250831-response
+    chapterTitle: Live Together from the Living Bread
+    chapterKind: closing
+    chapterStart: "1:27:01.02"
+    chapterEnd: "1:41:10.857"
+    points:
+      - pointTime: "1:27:01.1"
+        pointText: Response prayer joins full commitment with bearing burdens and encouraging one another rather than struggling through faith alone.
+      - pointTime: "1:32:18.9"
+        pointText: Shared prayer asks for patience, assurance and practical service toward people facing challenges.
+markers:
+  - markerTime: "32:52.65"
+    markerNote: "Flesh Eating is explicitly announced. Timings and duration use supplied faster-whisper audio evidence, not fresh media-duration or listening verification."
+  - markerTime: "38:59.64"
+    markerNote: "Cultural, comparative-religion, scientific and historical interpretations are the preacher's claims, not independently verified accounts. The theological speculation about Jesus' physical susceptibility is also attributed."
