@@ -1,0 +1,189 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Core
+serviceDate: 2026-01-11
+status: draft
+sermonDescription: Concluding John 8, the preacher connects Jesus' calm response to insults with his divine identity and complete security. Thomas Harris's transactional analysis and the image of an onion introduce human insecurity and concealed identities. Scripture guides believers toward Christ through sanctification, while religious leaders' failures call for both confidence in God's word and serious accountability. Living well in the truth is urged alongside practical action against injustice.
+sermonScripture:
+  - John 8:48-59
+  - Hebrews 1:1-4
+  - 2 Corinthians 3:16-18
+sermonTopics:
+  - knowing-god
+  - sanctification
+  - peace
+uploads:
+  - youtubeId: UXk2s5qievY
+    uploadDuration: "1:48:24.002"
+chapters:
+  - chapterId: c20260111-opening
+    chapterTitle: ACTS Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "6:27.85"
+    chapterEnd: "13:33.55"
+    points:
+      - pointTime: "6:28.12"
+        pointText: Personal prayer begins with adoration before the service.
+      - pointTime: "7:34.22"
+        pointText: Confession acknowledges sin and Christ's cleansing grace.
+      - pointTime: "8:43.32"
+        pointText: Thanksgiving responds to the call to give thanks in all circumstances.
+      - pointTime: "9:48.64"
+        pointText: Supplication brings personal situations before God.
+      - pointTime: "10:54.86"
+        pointText: Gathering prayer asks for teachability before Belinda's welcome and New Year reflection.
+  - chapterId: c20260111-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "13:33.55"
+    chapterEnd: "35:58.85"
+    chapterScripture:
+      - Psalms 27:1-4
+      - Proverbs 4:1-27
+      - John 8:39-59
+      - Hebrews 1:1-4
+    points:
+      - pointTime: "13:33.8"
+        pointText: Psalms 27 calls the congregation to confidence in the Lord as light and salvation.
+      - pointTime: "22:15.9"
+        pointText: Responsive readings introduce Proverbs 4 and the pursuit of wisdom.
+      - pointTime: "25:24.1"
+        pointText: John 8 continues the confrontation over hearing God's word and Jesus' identity.
+      - pointTime: "30:28.56"
+        pointText: Face to Face with Christ, My Saviour prepares the congregation with hope of seeing Christ.
+      - pointTime: "34:54.6"
+        pointText: Hebrews 1 identifies the Son as God's exact imprint and sustainer of the universe.
+  - chapterId: c20260111-question-recap
+    chapterTitle: Dealing with Nasty People and Recognizing the Father's Voice
+    chapterKind: qa
+    chapterStart: "35:58.85"
+    chapterEnd: "46:10.0"
+    points:
+      - pointTime: "35:59.12"
+        pointText: The preacher introduces the conclusion of John 8 and encourages daily devotion.
+      - pointTime: "38:02.7"
+        pointText: A submitted question asks how to deal with people who are nasty.
+      - pointTime: "39:38.08"
+        pointText: The previous lesson contrasts inherited religious identity with actual faith.
+      - pointTime: "41:06.46"
+        pointText: Personal responsibility for sin remains alongside recognition of Satan's temptations.
+      - pointTime: "43:58.52"
+        pointText: Spiritual struggle can show responsiveness, while the call to holiness remains serious.
+  - chapterId: c20260111-insults
+    chapterTitle: Christ's Calm Response to Insults
+    chapterKind: sermon
+    chapterStart: "46:10.0"
+    chapterEnd: "55:32.4"
+    chapterScripture:
+      - John 8:48-51
+      - Isaiah 42:1-4
+      - Matthew 12:18-21
+    points:
+      - pointTime: "46:10.26"
+        pointText: The opposing religious leaders insult Jesus as a Samaritan and demon-possessed man.
+      - pointTime: "47:06.84"
+        pointText: The cultural force of these insults is explained through the earlier Samaritan encounter.
+      - pointTime: "49:59.66"
+        pointText: Jesus points to the Father's judgment and the promise of life rather than defending his own glory.
+      - pointTime: "50:30.72"
+        pointText: The preacher considers why Jesus does not enter an angry quarrel or retaliate.
+      - pointTime: "53:31.98"
+        pointText: Isaiah's prophecy describes a servant who brings justice without loud quarrelling.
+  - chapterId: c20260111-insecurity
+    chapterTitle: Human Insecurity and the Layers of Identity
+    chapterKind: sermon
+    chapterStart: "55:32.4"
+    chapterEnd: "1:11:32.34"
+    points:
+      - pointTime: "55:53.02"
+        pointText: Thomas Harris's I'm Okay, You're Okay introduces transactional analysis and insecurity.
+      - pointTime: "58:58.28"
+        pointText: Different attitudes toward self and others are connected with hopelessness or aggression.
+      - pointTime: "1:00:32.6"
+        pointText: Being at peace with oneself and accepting others is presented as Harris's desirable outcome.
+      - pointTime: "1:04:13.4"
+        pointText: An onion illustrates the many layers that can conceal a person's core identity.
+      - pointTime: "1:05:41.08"
+        pointText: A reported religious leader's failure illustrates the limits of knowing someone through public work.
+  - chapterId: c20260111-christ-identity
+    chapterTitle: Christ's Divine Identity Is His Ultimate Security
+    chapterKind: sermon
+    chapterStart: "1:11:32.34"
+    chapterEnd: "1:18:36.65"
+    chapterScripture:
+      - John 8:52-59
+      - Hebrews 1:1-4
+    points:
+      - pointTime: "1:11:32.34"
+        pointText: The passage reveals Christ's identity beneath the surface of the argument.
+      - pointTime: "1:11:51.24"
+        pointText: The leaders question Jesus' promise of life by invoking Abraham and the prophets.
+      - pointTime: "1:13:37.32"
+        pointText: Jesus' divine identity explains why he does not need to establish himself through quarrels.
+      - pointTime: "1:16:26.64"
+        pointText: Before Abraham was, I am is considered as a profound declaration of who Jesus is.
+      - pointTime: "1:17:42.34"
+        pointText: Hebrews 1 reinforces Christ's glory, divine nature and sustaining power.
+  - chapterId: c20260111-guided-growth
+    chapterTitle: Guided by Scripture toward Christ's Image
+    chapterKind: sermon
+    chapterStart: "1:18:36.65"
+    chapterEnd: "1:35:45.5"
+    chapterScripture:
+      - 2 Corinthians 3:16-18
+      - 2 Timothy 3:1-5
+      - Matthew 23:1-3
+      - James 3:1
+      - Hebrews 12:28-29
+    points:
+      - pointTime: "1:18:36.9"
+        pointText: Believers' insecurity raises the question of how to move toward Christ's example.
+      - pointTime: "1:20:20.92"
+        pointText: The Westminster Confession describes Scripture's guidance for God's glory, salvation, faith and life.
+      - pointTime: "1:22:01.1"
+        pointText: 2 Corinthians 3 presents transformation into Christ's image from one degree of glory to another.
+      - pointTime: "1:29:06.48"
+        pointText: Matthew 23 distinguishes hearing God's word from copying a teacher's unfaithful conduct.
+      - pointTime: "1:34:08.6"
+        pointText: Living well in the truth is urged alongside appropriate practical action against injustice.
+    subchapters:
+      - chapterId: s20260111-accountability
+        chapterTitle: Leaders' Failures, Faith and Accountability
+        chapterKind: sermon
+        chapterStart: "1:25:58.8"
+        chapterEnd: "1:32:48.8"
+        points:
+          - pointTime: "1:25:58.8"
+            pointText: The preacher returns to religious leaders' failures and how Scripture helps interpret them.
+          - pointTime: "1:26:21.54"
+            pointText: 2 Timothy 3 warns of apparent godliness without its power.
+          - pointTime: "1:29:06.48"
+            pointText: Faith is directed toward God's word rather than the human teacher's personality.
+          - pointTime: "1:31:02.08"
+            pointText: James 3 warns that teachers face stricter judgment.
+          - pointTime: "1:31:17.34"
+            pointText: Hebrews 12 calls for reverent worship rather than treating grace as permission for wrongdoing.
+  - chapterId: c20260111-closing
+    chapterTitle: Prayer, Response and Closing
+    chapterKind: closing
+    chapterStart: "1:35:45.5"
+    chapterEnd: "1:48:24.002"
+    points:
+      - pointTime: "1:35:45.64"
+        pointText: Prayer asks for growth toward the identity of people redeemed by Christ.
+      - pointTime: "1:38:07.04"
+        pointText: Intercession commits the children's Sunday school and its teachers to God.
+      - pointTime: "1:40:47.18"
+        pointText: Shared prayer asks for eyes to recognize God's work and the privilege of participating in it.
+      - pointTime: "1:43:07.5"
+        pointText: Rejoice the Lord Is King supplies the closing response.
+      - pointTime: "1:46:01.88"
+        pointText: Historical notices invite Sunday school service, cell-group participation and practical outreach referrals.
+markers:
+  - markerTime: "6:27.85"
+    markerNote: "The early supplied ASR includes hymn fragments and unreliable incidental speech. The first chapter starts at the clear ACTS prayer invitation. Duration and anchors use supplied audio evidence; video and listening checks remain outstanding."
+  - markerTime: "36:06.9"
+    markerNote: "The announced title is transcribed as 'the call', while the sermon repeatedly develops 'the core' and the following week's recap describes that theme. The Core is provisional pending confirmation of the spoken title or slide."
+  - markerTime: "1:05:41.08"
+    markerNote: "Reported misconduct and psychological, political and historical examples are summarized as the preacher's accounts, not independently verified findings."
