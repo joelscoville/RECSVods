@@ -1,0 +1,162 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Invisible Made Visible
+serviceDate: 2025-07-20
+status: draft
+sermonDescription: Jesus' self-revelation in John 5 is read with Colossians' image of the invisible God. The preacher connects Scripture with Christ's divine identity and preeminence, then follows the themes of life, truth and the way. Life includes present fullness and eternal hope; truth brings freedom and judgment; hearing Christ directs response toward life. Faced with human conflict and unresolved questions, believers are called beyond consumer expectations toward humble obedience and service.
+sermonScripture:
+  - John 5:18-29
+  - Colossians 1:15-20
+  - Hebrews 4:15
+sermonTopics:
+  - knowing-god
+  - eternal-life
+  - truth
+uploads:
+  - youtubeId: NhG9qG2js8Q
+    uploadDuration: "1:43:29.341"
+chapters:
+  - chapterId: c20250720-worship
+    chapterTitle: Worship the Invisible God Revealed through Christ
+    chapterKind: opening
+    chapterStart: "1:37.55"
+    chapterEnd: "31:18.4"
+    chapterScripture:
+      - Psalms 121:1-4
+      - Proverbs 12:1-28
+      - John 5:18-29
+      - Colossians 1:15-20
+    points:
+      - pointTime: "11:25.4"
+        pointText: Opening prayer connects knowing the unseen God with hearing and honoring Jesus Christ.
+  - chapterId: c20250720-conflict-question
+    chapterTitle: Seek Truth within Conflict and Acknowledge What We Do Not Know
+    chapterKind: qa
+    chapterStart: "31:18.4"
+    chapterEnd: "42:24.05"
+    points:
+      - pointTime: "35:00.12"
+        pointText: Truth becoming the first casualty is applied to both large-scale war and ordinary personal conflict.
+      - pointTime: "36:24.64"
+        pointText: Self-interest is distinguished from professed concern for truth in international and personal decisions.
+      - pointTime: "40:32.62"
+        pointText: The preacher acknowledges not having a complete solution to the conflict being discussed.
+      - pointTime: "41:53.9"
+        pointText: Attention returns from unresolved questions toward what God's revelation makes known.
+  - chapterId: c20250720-church-recap
+    chapterTitle: Reform the Church without Abandoning Shared Faith
+    chapterKind: sermon
+    chapterStart: "42:24.05"
+    chapterEnd: "46:42.25"
+    chapterScripture:
+      - John 5:9-18
+      - Hebrews 10:25
+    points:
+      - pointTime: "42:24.26"
+        pointText: The Sabbath-healing recap examines how mistaken readings and misplaced institutional priorities can oppose God's work.
+      - pointTime: "43:58.38"
+        pointText: Order is valued as a tool while sincere error and hypocrisy still require examination.
+      - pointTime: "45:37.26"
+        pointText: Continued gathering and reform are urged rather than treating the church's imperfections as a reason to stop meeting.
+  - chapterId: c20250720-scripture-devotion
+    chapterTitle: God's Word Forms a Life Devoted to Christ
+    chapterKind: sermon
+    chapterStart: "46:42.25"
+    chapterEnd: "1:01:02.3"
+    chapterScripture:
+      - Mark 4:26-29
+      - Luke 24:27
+    points:
+      - pointTime: "49:29.86"
+        pointText: Equipping every believer to act is contrasted with treating the congregation as consumers of a leader's services.
+      - pointTime: "53:13.52"
+        pointText: The minister's work is distinguished from God producing growth, directing glory away from the human worker.
+      - pointTime: "54:19.3"
+        pointText: Faithfulness in sowing is emphasized rather than judging oneself solely through visible impact.
+      - pointTime: "59:19.22"
+        pointText: Scripture is presented as the guiding source for life rather than the competing voices of the world.
+      - pointTime: "1:00:05.4"
+        pointText: The Bible's witness pointing toward Christ explains why receiving its authority directs a person's whole life toward him.
+  - chapterId: c20250720-divine-image
+    chapterTitle: Jesus Makes the Invisible God Visible
+    chapterKind: sermon
+    chapterStart: "1:01:02.3"
+    chapterEnd: "1:09:54.6"
+    chapterScripture:
+      - John 5:18-20
+      - Colossians 1:15-20
+    points:
+      - pointTime: "1:02:19.98"
+        pointText: Jesus' claim is distinguished from being an admirable teacher who merely guides others toward God.
+      - pointTime: "1:05:43.44"
+        pointText: Colossians identifies Christ through the image of God and creation through and for him.
+      - pointTime: "1:06:22.56"
+        pointText: Christ's preeminence is connected with honoring him in every arena, including culture and art.
+      - pointTime: "1:09:07.5"
+        pointText: A saying attributed to Gordon describes Christ as God making himself intelligible to humanity.
+  - chapterId: c20250720-life
+    chapterTitle: Christ Gives Life for the Future and the Present
+    chapterKind: sermon
+    chapterStart: "1:09:54.6"
+    chapterEnd: "1:14:45.4"
+    chapterScripture:
+      - John 5:21-26
+      - John 10:10
+    points:
+      - pointTime: "1:09:54.86"
+        pointText: Christ's declared identity includes life granted through the Father rather than merely another system of religious advice.
+      - pointTime: "1:12:36.98"
+        pointText: Eternal hope is held alongside life here and now rather than making present existence only an endurance test.
+      - pointTime: "1:14:32.94"
+        pointText: Confidence in Christ's promise challenges locating secure, full life solely in financial resources or surrounding approval.
+  - chapterId: c20250720-truth
+    chapterTitle: Christ's Truth Brings Judgment and Freedom from Deception
+    chapterKind: sermon
+    chapterStart: "1:14:45.4"
+    chapterEnd: "1:19:16.9"
+    chapterScripture:
+      - John 5:22-27
+      - John 8:32
+    points:
+      - pointTime: "1:14:45.64"
+        pointText: Authority to judge is connected with the Son of Man's knowledge of human life and its truth.
+      - pointTime: "1:16:13.7"
+        pointText: Truth's freedom extends beyond sin to the mistaken assumptions and deceptions that bind present life.
+      - pointTime: "1:17:56.58"
+        pointText: The casino illustration questions counting visible prosperity without considering the costs borne by other people.
+  - chapterId: c20250720-way
+    chapterTitle: Hearing Christ Calls for a Choice between Life and Judgment
+    chapterKind: sermon
+    chapterStart: "1:19:16.9"
+    chapterEnd: "1:28:41.5"
+    chapterScripture:
+      - John 5:23-29
+    points:
+      - pointTime: "1:19:41.34"
+        pointText: Hearing and believing Christ is connected with passing from death to life.
+      - pointTime: "1:21:22.84"
+        pointText: The resurrection distinction is explained through response to God's definition of good rather than earning life by accumulating deeds.
+      - pointTime: "1:24:03.64"
+        pointText: Congregational life is distinguished from a customer-provider transaction and directed toward serving the Lord.
+      - pointTime: "1:26:32.66"
+        pointText: Lewis's argument challenges placing Christ's divine claims alongside the category of an ordinary moral teacher.
+      - pointTime: "1:28:13.2"
+        pointText: The final appeal asks whether life will be devoted to Christ or remain governed by one's own understanding.
+  - chapterId: c20250720-response
+    chapterTitle: Choose Life and Live as a Channel of Blessing
+    chapterKind: closing
+    chapterStart: "1:28:41.5"
+    chapterEnd: "1:43:29.341"
+    points:
+      - pointTime: "1:28:41.7"
+        pointText: Response prayer asks for faith in the revealed Christ despite unanswered questions and conflicting human voices.
+      - pointTime: "1:34:23.16"
+        pointText: Prayer links perseverance with becoming a practical channel of blessing rather than relying only on personal strength.
+markers:
+  - markerTime: "31:18.4"
+    markerNote: "War-related descriptions, casualty estimates and attributions are the preacher's contemporary reflections, not independently established facts or a complete account of the conflict."
+  - markerTime: "46:42.25"
+    markerNote: "Invisible Made Visible follows the source title. Early ASR is fragmentary before clear confession. Length and anchors use supplied audio evidence and await fresh media checks."
+  - markerTime: "53:35.84"
+    markerNote: "The growing-seed parable is Mark 4:26-29 although speech/ASR gives Mark 6. Historical, legal, statistical, quotation and reported medical claims also need factual review."
