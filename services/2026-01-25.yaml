@@ -1,0 +1,165 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Seeing Blind
+serviceDate: 2026-01-25
+status: draft
+sermonDescription: Concluding John 9, the preacher contrasts the healed man's plain testimony with leaders whose knowledge does not prevent spiritual blindness. Fear and self-preservation can bury truth, while personal relationship with Christ gives lived confidence. Christ seeking the expelled man introduces election and response. The wheat, weeds and net parables address wrongdoing among religious people, and Matthew 7 directs attention to a genuine desire to do God's will rather than impressive religious appearances.
+sermonScripture:
+  - John 9:18-41
+  - Matthew 7:21-23
+sermonTopics:
+  - faith
+  - truth
+  - discernment
+uploads:
+  - youtubeId: J_RxbO_hNr8
+    uploadDuration: "1:48:33.081"
+chapters:
+  - chapterId: c20260125-opening
+    chapterTitle: Gathering Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "1:01.2"
+    chapterEnd: "3:32.8"
+    points:
+      - pointTime: "1:01.54"
+        pointText: Prayer asks for receptive hearts and a worship service that bears fruit.
+      - pointTime: "1:51.08"
+        pointText: The leader invites quiet meditation during the interlude.
+      - pointTime: "2:55.16"
+        pointText: The congregation is welcomed and invited to greet one another.
+  - chapterId: c20260125-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "3:32.8"
+    chapterEnd: "30:13.5"
+    chapterScripture:
+      - Psalms 29:1-4
+      - Proverbs 6:1-35
+      - John 9:18-41
+      - Matthew 7:21-23
+    points:
+      - pointTime: "3:33.12"
+        pointText: Psalms 29 introduces the call to worship through God's majestic voice.
+      - pointTime: "15:47.64"
+        pointText: Proverbs 6 begins the responsive reading.
+      - pointTime: "19:16.32"
+        pointText: John 9 supplies the interrogation of the healed man and the contrast of spiritual sight and blindness.
+      - pointTime: "22:12.9"
+        pointText: The leader reflects on recognizing small signs of God's presence before Turn Your Eyes upon Jesus.
+      - pointTime: "29:09.6"
+        pointText: Matthew 7:21-23 supplies the supporting warning about religious words and God's will.
+  - chapterId: c20260125-questions-recap
+    chapterTitle: Wrongdoing among Christians and the Purpose of Faith
+    chapterKind: qa
+    chapterStart: "30:13.5"
+    chapterEnd: "45:46.2"
+    chapterScripture:
+      - John 9:1-17
+    points:
+      - pointTime: "30:13.82"
+        pointText: The preacher encourages devotional reading and ministry by all believers before introducing submitted questions.
+      - pointTime: "32:35.84"
+        pointText: Historical cruelty and unfaithful conduct in churches raise questions about Christian behavior.
+      - pointTime: "34:18.62"
+        pointText: Imperfect people explain why joining a church does not make it perfect.
+      - pointTime: "38:21.6"
+        pointText: The recap contrasts automatic blame for suffering with Jesus' attention to God's purpose.
+      - pointTime: "41:49.18"
+        pointText: The preacher argues that God often works through people and ordinary means rather than a magic formula.
+  - chapterId: c20260125-courage-witness
+    chapterTitle: Stand for the Truth and Know Christ Personally
+    chapterKind: sermon
+    chapterStart: "45:46.2"
+    chapterEnd: "1:12:52.5"
+    chapterScripture:
+      - John 9:18-34
+    points:
+      - pointTime: "45:46.54"
+        pointText: The healed man provides a living fact that the opposing leaders must eventually acknowledge.
+      - pointTime: "48:38.32"
+        pointText: Joni Tada and Nick Vujicic are cited as examples of faith visible amid severe challenges.
+      - pointTime: "52:01.5"
+        pointText: The man's parents are described as protecting themselves against exclusion rather than proclaiming the miracle.
+      - pointTime: "55:23.86"
+        pointText: A reported organizational cover-up illustrates self-interest suppressing truth.
+      - pointTime: "1:07:24.1"
+        pointText: The Emperor's New Clothes illustrates plain truth breaking through authority and sophisticated explanations.
+    subchapters:
+      - chapterId: s20260125-experiential-faith
+        chapterTitle: Faith Needs a Personal Relationship with Christ
+        chapterKind: sermon
+        chapterStart: "1:00:14.95"
+        chapterEnd: "1:04:06.1"
+        points:
+          - pointTime: "1:00:15.24"
+            pointText: The healed man's testimony introduces experiential faith.
+          - pointTime: "1:00:36.96"
+            pointText: Experiences and feelings are considered alongside the need for biblical grounding.
+          - pointTime: "1:02:17.26"
+            pointText: Each believer is called to know Christ personally rather than depend on a family member's faith.
+          - pointTime: "1:03:03.16"
+            pointText: Daily devotion is compared with keeping contact in an ordinary relationship.
+          - pointTime: "1:03:44.5"
+            pointText: Prayer, meditation and walking through challenges develop lived confidence in Christ.
+  - chapterId: c20260125-response-election
+    chapterTitle: Christ Seeks His People and Calls for Genuine Response
+    chapterKind: sermon
+    chapterStart: "1:12:52.5"
+    chapterEnd: "1:33:04.72"
+    chapterScripture:
+      - John 9:35-41
+      - Matthew 13:24-30
+      - Matthew 13:47-50
+      - Matthew 7:21-23
+    points:
+      - pointTime: "1:12:52.62"
+        pointText: Jesus seeks the expelled man and reveals himself as the Son of Man.
+      - pointTime: "1:15:05.94"
+        pointText: Divine election is considered alongside the call to believe and responsibility for response.
+      - pointTime: "1:18:26.6"
+        pointText: The healed man's sight is contrasted with leaders who remain spiritually blind.
+      - pointTime: "1:21:49.96"
+        pointText: The net, wheat and weeds parables are applied to mixed religious appearances before final judgment.
+      - pointTime: "1:28:39.18"
+        pointText: Matthew 7 directs attention to genuinely seeking God's will rather than impressive religious claims.
+    subchapters:
+      - chapterId: s20260125-do-will
+        chapterTitle: Seek God's Will Rather than Perform Religion
+        chapterKind: sermon
+        chapterStart: "1:25:15.4"
+        chapterEnd: "1:33:04.72"
+        points:
+          - pointTime: "1:25:15.78"
+            pointText: Calling Christ Lord is distinguished from actually entering the kingdom.
+          - pointTime: "1:26:57.16"
+            pointText: Claimed prophecy and mighty works are not treated as automatic proof of belonging to God.
+          - pointTime: "1:28:39.18"
+            pointText: The omitted part of the warning identifies doing the Father's will as the key.
+          - pointTime: "1:30:19.78"
+            pointText: Genuinely seeking God is distinguished from sinless perfection.
+          - pointTime: "1:32:03.18"
+            pointText: Childlike honesty and returning after failure are urged instead of manipulating religious appearances.
+  - chapterId: c20260125-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:33:04.72"
+    chapterEnd: "1:48:33.081"
+    points:
+      - pointTime: "1:33:04.72"
+        pointText: Prayer asks for genuine hearts that follow God's will despite weakness and repeated failure.
+      - pointTime: "1:36:29.98"
+        pointText: Intercession asks for the Batam orphanage's new building and wisdom in supporting it.
+      - pointTime: "1:37:49.2"
+        pointText: Shared prayer encourages patience and regular contact with God.
+      - pointTime: "1:40:18.02"
+        pointText: Trust and Obey is introduced as the closing response.
+      - pointTime: "1:44:18.42"
+        pointText: Historical notices explain Communion, church-planting preparation and orphanage fundraising.
+markers:
+  - markerTime: "1:01.2"
+    markerNote: "The supplied opening begins with a gathered prayer, not a complete ACTS sequence. No earlier prayer movements were invented."
+  - markerTime: "1:19:33.62"
+    markerNote: "Seeing Blind follows the contrast here and the next week's recap; confirm exact announced title wording. Duration and anchors use supplied faster-whisper audio evidence, not fresh video or listening checks."
+  - markerTime: "55:23.86"
+    markerNote: "News, legal, historical and medical accounts remain attributed to the preacher rather than independently verified."
