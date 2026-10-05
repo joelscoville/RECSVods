@@ -30,16 +30,32 @@ chapters:
       - pointTime: "0:00"
         pointText: The leaders guide adoration, confession, thanksgiving and supplication, pray for
           attentive worship, and invite a congregational greeting and meditation.
+      - pointTime: "1:20.92"
+        pointText: Confession is introduced with reference to cleansing through Jesus.
+      - pointTime: "2:29.3"
+        pointText: Worshippers reflect on their lives and give thanks.
+      - pointTime: "3:39.7"
+        pointText: Personal needs are brought before God in supplication.
+      - pointTime: "5:44.3"
+        pointText: The worship leader invites mutual greetings and quiet meditation.
   - chapterId: c20260628-worship-scripture
     chapterTitle: Worship and Scripture
     chapterKind: opening
-    chapterStart: "6:23.28"
+    chapterStart: "7:27.8"
     chapterEnd: "28:35.62"
     points:
-      - pointTime: "6:23.28"
+      - pointTime: "7:28.12"
         pointText: The leaders introduce worship and prayers for peace, responsive readings in Proverbs 27
           and John 14, and Johan Pramono’s reading of 2 Timothy 3:14-17, while introit and hymn
           evidence gaps remain unresolved.
+      - pointTime: "10:39.36"
+        pointText: Prayer asks for a peaceful heart, quiet mind and attention to worship.
+      - pointTime: "15:34.22"
+        pointText: Responsive reading begins with Proverbs 27.
+      - pointTime: "18:50.24"
+        pointText: The congregation continues the reading with John 14:15-31.
+      - pointTime: "27:31.44"
+        pointText: Johan Pramono reads 2 Timothy 3:14-17 before the sermon.
     chapterScripture:
       - Psalms 81:1-3
       - Proverbs 27:1-27
@@ -50,22 +66,38 @@ chapters:
     chapterTitle: "Q&A: Forgiveness Does Not Erase Consequences"
     chapterKind: qa
     chapterStart: "28:35.62"
-    chapterEnd: "42:54.62"
+    chapterEnd: "42:55.18"
     points:
       - pointTime: "28:35.62"
         pointText: Following his greeting and question invitation, the preacher contrasts Peter and Judas,
           challenges transactional views of sin and urges repentance while distinguishing
           forgiveness from recovery and continuing responsibilities.
+      - pointTime: "30:19.58"
+        pointText: A question comparing Peter and Judas introduces repentance and forgiveness.
+      - pointTime: "33:41.68"
+        pointText: Matthew 5 and a speck-in-the-eye illustration explain why even a small sin matters.
+      - pointTime: "35:59.96"
+        pointText: Cynicism after a leader's failure is challenged while consequences of wrongdoing are distinguished.
+      - pointTime: "41:54.72"
+        pointText: Universal sinfulness is not a license; wisdom recognizes consequences early.
     subchapters:
       - chapterId: s0628-consequences
         chapterTitle: Forgiveness Leaves Continuing Responsibilities
         chapterKind: sermon
         chapterStart: "37:34.42"
-        chapterEnd: "42:54.62"
+        chapterEnd: "42:55.18"
         points:
           - pointTime: "37:34.42"
             pointText: The preacher’s seed-to-tree illustration and account of supporting single mothers
               distinguish forgiveness from entrenched habits, recovery and ongoing responsibility.
+          - pointTime: "38:18.54"
+            pointText: A plant taking root illustrates habits that become harder to leave behind.
+          - pointTime: "39:05.02"
+            pointText: Forgiveness does not necessarily remove difficulties left by past wrongdoing.
+          - pointTime: "40:50.64"
+            pointText: Supporting single mothers illustrates continuing practical and emotional responsibilities.
+          - pointTime: "41:54.72"
+            pointText: Understanding consequences early is presented as wisdom rather than permission to sin.
     chapterScripture:
       - John 14:25-31
       - John 13
@@ -73,13 +105,21 @@ chapters:
   - chapterId: c20260628-live-by-truth
     chapterTitle: God’s Truth Must Shape How We Live
     chapterKind: sermon
-    chapterStart: "42:54.62"
+    chapterStart: "42:55.18"
     chapterEnd: "1:07:02.86"
     points:
-      - pointTime: "42:54.62"
+      - pointTime: "42:55.18"
         pointText: Linking restoration and the Spirit of truth, the preacher contrasts evidence and
           subjective judgments with pragmatism and self-justification, arguing that God’s truth
           should govern life even under pressure.
+      - pointTime: "44:56.64"
+        pointText: Sanctification is illustrated through growth toward Christ in everyday marital conflict.
+      - pointTime: "51:50.98"
+        pointText: Repeatable measurements introduce objective truth.
+      - pointTime: "59:12.82"
+        pointText: A thief-and-bell idiom challenges self-justification that ignores reality.
+      - pointTime: "1:04:56.84"
+        pointText: A quotation attributed to Jan Hus urges commitment to truth under persecution.
     subchapters:
       - chapterId: s0628-objective
         chapterTitle: Objective Claims Depend on Repeatable Evidence
@@ -90,6 +130,12 @@ chapters:
           - pointTime: "51:50.98"
             pointText: The preacher uses a hypercar’s performance and price claims, with traffic-light humor, to
               illustrate repeatable evidence rather than independently verified figures.
+          - pointTime: "52:51.6"
+            pointText: Acceleration and price figures illustrate measurable claims.
+          - pointTime: "53:51.62"
+            pointText: Expensive cars still encounter ordinary traffic delays, prompting a question about better uses of money.
+          - pointTime: "54:49.28"
+            pointText: Repeated demonstrations are contrasted with judgments that depend on personal feeling.
       - chapterId: s0628-absolute
         chapterTitle: All Truth Belongs to God
         chapterKind: sermon
@@ -99,6 +145,8 @@ chapters:
           - pointTime: "1:00:44.34"
             pointText: The preacher connects scripture and the Spirit’s teaching with unchanging truth,
               introducing a statement he attributes to Augustine.
+          - pointTime: "1:02:06.72"
+            pointText: The preacher attributes to Augustine the view that every genuinely true claim belongs to God's truth.
         chapterScripture:
           - 2 Timothy 3:16-17
           - John 14:26
@@ -110,22 +158,34 @@ chapters:
     chapterTitle: The Spirit Teaches Through Scripture
     chapterKind: sermon
     chapterStart: "1:07:02.86"
-    chapterEnd: "1:16:06.24"
+    chapterEnd: "1:16:05.32"
     points:
       - pointTime: "1:07:02.86"
         pointText: The preacher connects communal Bible study and church testimony with the Spirit’s inward
           conviction, urging humble, willing reading rather than material expectations or dismissive
           preconceptions.
+      - pointTime: "1:08:52.74"
+        pointText: A church's life can lead others to value Scripture, as discussed through the Westminster Confession.
+      - pointTime: "1:10:35.04"
+        pointText: Coherence and preservation are presented as arguments for Scripture before inward conviction.
+      - pointTime: "1:12:49.4"
+        pointText: The preacher describes his personal conviction while reading as the Spirit's work.
+      - pointTime: "1:13:19.9"
+        pointText: Humility and a genuine desire to learn are encouraged when study does not produce understanding.
     subchapters:
       - chapterId: s0628-humility
         chapterTitle: Understanding Calls for Humility
         chapterKind: sermon
         chapterStart: "1:13:19.9"
-        chapterEnd: "1:16:06.24"
+        chapterEnd: "1:16:05.32"
         points:
           - pointTime: "1:13:19.9"
             pointText: The preacher calls for surrender and willingness to learn, treating Paul’s conversion as
               an exception rather than an experience to demand.
+          - pointTime: "1:14:22.9"
+            pointText: Humble reading is contrasted with dismissive preconceptions.
+          - pointTime: "1:15:36.1"
+            pointText: Surrender and growing love for Christ are encouraged through Scripture.
         chapterScripture:
           - Psalms 138:6
           - Proverbs 3:34
@@ -147,23 +207,33 @@ chapters:
   - chapterId: c20260628-peace-through-hardship
     chapterTitle: Christ’s Peace Sustains Believers Through Hardship
     chapterKind: sermon
-    chapterStart: "1:16:06.24"
-    chapterEnd: "1:24:26.78"
+    chapterStart: "1:16:05.32"
+    chapterEnd: "1:24:25.8"
     points:
-      - pointTime: "1:16:06.24"
+      - pointTime: "1:16:05.32"
         pointText: Contrasting Christ’s peace with material security, the preacher reflects on persecution
           and his Wang Yi recollection before closing John 14 with his account of Christ’s victory
           and a call to live by truth and the Spirit.
+      - pointTime: "1:17:31.32"
+        pointText: Wealth and safety are distinguished from the peace Christ promises.
+      - pointTime: "1:18:16.42"
+        pointText: Open Doors' persecution map introduces peace under pressure.
+      - pointTime: "1:21:18.44"
+        pointText: A prayer metaphor attributed to Wang Yi encourages continued prayer.
+      - pointTime: "1:23:39.74"
+        pointText: The sermon concludes with a call to live by truth and the Holy Spirit.
     subchapters:
       - chapterId: s0628-wang
         chapterTitle: Wang Yi’s Example of Prayer and Peace
         chapterKind: sermon
-        chapterStart: "1:20:12.04"
-        chapterEnd: "1:22:17.74"
+        chapterStart: "1:20:10.62"
+        chapterEnd: "1:22:15.58"
         points:
-          - pointTime: "1:20:12.04"
+          - pointTime: "1:20:10.62"
             pointText: The preacher recalls receiving Wang Yi’s script after his arrest and attributes a prayer
               metaphor to him that encourages his own prayer and understanding of Christ’s peace.
+          - pointTime: "1:21:18.44"
+            pointText: The preacher attributes a prayer metaphor to Wang Yi and relates it to Christ's peace.
     chapterScripture:
       - John 14:27
       - John 14:28-31
@@ -171,13 +241,21 @@ chapters:
   - chapterId: c20260628-response-closing
     chapterTitle: Response and Closing
     chapterKind: closing
-    chapterStart: "1:24:26.78"
+    chapterStart: "1:24:25.8"
     chapterEnd: "1:41:30.1529375"
     points:
-      - pointTime: "1:24:26.78"
+      - pointTime: "1:24:25.9"
         pointText: The leaders guide prayer and the creed, announce offerings, introduce the closing hymn
           through a Spafford account, and offer the doxology, blessing and July notices, with the
           hymn’s missing summary evidence retained.
+      - pointTime: "1:25:51.98"
+        pointText: The congregation stands to affirm the Apostles' Creed.
+      - pointTime: "1:30:53.88"
+        pointText: Prayer asks for practical help for people facing health, financial and relational challenges.
+      - pointTime: "1:33:08.24"
+        pointText: It Is Well With My Soul is introduced through an attributed account of Spafford's losses.
+      - pointTime: "1:38:56.04"
+        pointText: Historical notices announce Communion and invite participation in ministry and July events.
     chapterScripture:
       - Hebrews 13
 markers:
@@ -187,6 +265,8 @@ markers:
       only the main passages above."
   - markerTime: "42:54.62"
     markerNote: "Other topics it touched: service-life, peace."
+  - markerTime: "42:55.18"
+    markerNote: "Recap, peace, Wang Yi and response cuts moved to complete transitions using supplied word timings. Worship begins at the call rather than the preceding meditation gap; check audio."
   - markerTime: "51:50.98"
     markerNote: "Old review note: Check sixteen/sixty million wording; the slide at 55:00 shows S$16 million."
   - markerTime: "1:20:12.04"

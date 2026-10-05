@@ -129,15 +129,15 @@
 
 /* ---- Timeline ---- */
 .tl { --tl-header: 96px; --tl-ruler: 26px; --tl-marks: 34px; --tl-top: 64px; --tl-sub: 46px; flex: 1 1 auto; min-height: 216px; display: flex; flex-direction: column; padding: 0 16px 10px; background: #fff; user-select: none; -webkit-user-select: none; isolation: isolate; }
-.tl-body { flex: 1 1 auto; min-height: 0; }
+.tl-body { flex: 1 1 auto; min-height: calc(var(--tl-ruler) + var(--tl-marks) + var(--tl-top) + var(--tl-sub) + var(--tl-points)); }
 .tl-head, .tl-body { display: grid; grid-template-columns: var(--tl-header) minmax(0, 1fr); }
 .tl-overview { position: relative; height: 16px; margin: 4px 0 6px; border-radius: 4px; background: var(--ce-hover); overflow: hidden; cursor: pointer; touch-action: none; }
 .tl-mini { position: absolute; top: 4px; bottom: 4px; opacity: 0.6; }
 .tl-mini-view { position: absolute; top: 0; bottom: 0; border: 2px solid var(--ink); border-radius: 4px; background: rgb(255 255 255 / 0.3); cursor: grab; }
 .tl-mini-playhead { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--burgundy); }
-.tl-headers { display: grid; grid-template-rows: var(--tl-ruler) var(--tl-marks) var(--tl-top) var(--tl-sub) var(--tl-sub) 1fr; }
+.tl-headers { display: grid; grid-template-rows: var(--tl-ruler) var(--tl-marks) var(--tl-top) var(--tl-sub) var(--tl-points) 1fr; }
 .tl-header { display: flex; align-items: center; font-size: 12px; font-weight: 700; color: var(--ce-muted); }
-.tl-surface { position: relative; display: grid; grid-template-rows: var(--tl-ruler) var(--tl-marks) var(--tl-top) var(--tl-sub) var(--tl-sub) 1fr; overflow: hidden; border-radius: 6px; touch-action: none; }
+.tl-surface { position: relative; display: grid; grid-template-rows: var(--tl-ruler) var(--tl-marks) var(--tl-top) var(--tl-sub) var(--tl-points) 1fr; overflow: hidden; border-radius: 6px; touch-action: none; }
 .tl-ruler { position: relative; border-bottom: 1px solid var(--ce-line); cursor: pointer; }
 .tl-tick { position: absolute; bottom: 0; width: 1px; height: 5px; background: var(--ce-line-strong); }
 .tl-tick.is-major { height: 9px; background: rgb(29 27 32 / 0.45); }
@@ -181,7 +181,7 @@
 .tl-boundary { position: absolute; width: 3px; margin-left: -1.5px; background: var(--ink); pointer-events: none; z-index: 3; }
 .tl-at-chapter { top: calc(var(--tl-ruler) + var(--tl-marks)); height: var(--tl-top); }
 .tl-at-subchapter { top: calc(var(--tl-ruler) + var(--tl-marks) + var(--tl-top)); height: var(--tl-sub); }
-.tl-at-point { top: calc(var(--tl-ruler) + var(--tl-marks) + var(--tl-top) + var(--tl-sub)); height: var(--tl-sub); }
+.tl-at-point { top: calc(var(--tl-ruler) + var(--tl-marks) + var(--tl-top) + var(--tl-sub)); height: var(--tl-points); }
 .tl-boundary.is-active, .tl-boundary.is-snapped { background: var(--gold); box-shadow: 0 0 0 1px var(--ink); }
 .tl-ghost { position: absolute; top: 0; bottom: 0; width: 0; margin-left: -1px; border-left: 2px dashed rgb(108 0 0 / 0.5); pointer-events: none; z-index: 3; }
 .tl-hover { position: absolute; top: 0; bottom: 0; width: 1px; background: rgb(29 27 32 / 0.35); pointer-events: none; z-index: 3; }
@@ -248,7 +248,7 @@
 .ce-title { min-width: 0; padding: 0; line-height: 1.4; border: 0; background: none; font-weight: 700; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
 .ce-chapter[data-lane="point"] .ce-title { font-weight: 400; }
 .ce-section-type { justify-self: start; }
-.tl-point { position: absolute; top: 50%; width: 24px; height: 44px; padding: 4px; transform: translate(-50%, -50%); border: 0; background: transparent; cursor: pointer; }
+.tl-point { position: absolute; width: 24px; height: 24px; padding: 4px; transform: translate(-50%, -50%); border: 0; background: transparent; cursor: pointer; }
 .tl-point svg { width: 16px; height: 16px; fill: var(--indigo); stroke: #fff; stroke-width: 1.5; }
 .tl-point.is-selected svg { fill: var(--burgundy); stroke: var(--ink); }
 .tl-point.is-failing svg { stroke: var(--ce-error); }
@@ -440,7 +440,7 @@
   .ce-stage-wrap { container-type: normal; display: block; }
   .ce-stage { margin-inline: auto; }
   .tl { flex: none; min-height: 0; }
-  .tl-surface, .tl-headers { grid-template-rows: var(--tl-ruler) var(--tl-marks) var(--tl-top) var(--tl-sub) var(--tl-sub); }
+  .tl-surface, .tl-headers { grid-template-rows: var(--tl-ruler) var(--tl-marks) var(--tl-top) var(--tl-sub) var(--tl-points); }
   .tl-filler { display: none; }
   .ce-bar { order: 0; } .ce-player-pane { order: 1; } .ce-toolbar { order: 2; } .tl { order: 3; } .ce-list-pane { order: 4; }
   .ce-player-pane { position: sticky; top: 0; z-index: 4; padding: 8px 12px; background: var(--surface); border: 0; border-bottom: 1px solid var(--ce-line); }

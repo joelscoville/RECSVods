@@ -62,6 +62,11 @@ This is a fictional structural example, not a recording to publish.
 
 ## Titles and types
 
+Use a verified sermon title for `recordingTitle` when available. An unreviewed
+draft may use `RECS <day> <month name> <year>` based on `serviceDate`, with a
+marker asking the reviewer to confirm the sermon title. Replace that placeholder
+before publishing; published titles must not use channel/date-style names.
+
 Both levels use `chapterId`, `chapterTitle`, `chapterKind`, `chapterStart` and
 `chapterEnd`. The eight types are:
 
@@ -110,6 +115,10 @@ without a separate title, type, end time or review checkbox. Click its timestamp
 diamond to go to that moment. Clicking the text edits it without moving playback.
 Choosing a diamond reveals its owner and description. On phones, **Back to chapters**
 returns to navigation; selection opens the editing area immediately.
+
+Crowded diamonds stack vertically so each description has its own click target,
+including parent and subchapter descriptions at the same time. Their horizontal
+positions still show their exact timestamps; zooming in spreads nearby times out.
 
 Timing, type and scripture controls follow the descriptions. **Review & send**
 opens validation and GitHub instructions. Failed sending leaves edits available,

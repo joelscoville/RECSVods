@@ -1,0 +1,174 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: RECS 3 May 2026
+serviceDate: 2026-05-03
+status: draft
+sermonDescription: The preacher reads Jesus' troubled soul and coming death in John 12 as a call to glorify God through grief, obedience and witness. Christian joy does not exclude sorrow over a fallen world. He connects glorification with resisting sin and lifting up Christ, urging listeners to walk in the light while life and opportunity remain, finish faithfully and use their gifts in loving service.
+sermonScripture:
+  - John 12:27-36
+  - Isaiah 53:1-3
+  - 1 Peter 4:7-11
+sermonTopics:
+  - glory
+  - suffering
+  - discipleship
+uploads:
+  - youtubeId: yrLF_Z2Fygs
+    uploadDuration: "1:55:24.562"
+chapters:
+  - chapterId: c20260503-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "4:06.7"
+    chapterEnd: "11:37.3"
+    points:
+      - pointTime: "4:07.02"
+        pointText: The leader invites personal prayer before worship.
+      - pointTime: "5:23.02"
+        pointText: Confession seeks cleansing through Christ.
+      - pointTime: "6:18.54"
+        pointText: Thanksgiving recalls gratitude in every circumstance.
+      - pointTime: "7:42.78"
+        pointText: Supplication brings needs and anxiety before God.
+      - pointTime: "8:52.8"
+        pointText: The gathering prayer asks for humble, teachable hearts before Karen welcomes worshippers.
+  - chapterId: c20260503-worship-scripture
+    chapterTitle: Worship, Communion and Scripture
+    chapterKind: opening
+    chapterStart: "11:37.3"
+    chapterEnd: "42:57"
+    chapterScripture:
+      - Psalms 63:1-4
+      - 1 Corinthians 11:23-26
+      - Proverbs 19:1-29
+      - John 12:27-43
+      - 1 Peter 4:7-11
+    points:
+      - pointTime: "11:37.66"
+        pointText: Psalms 63 introduces praise through God's steadfast love.
+      - pointTime: "18:49.08"
+        pointText: The minister explains the congregation's understanding of Communion and warns against superstition.
+      - pointTime: "28:39.28"
+        pointText: Proverbs 19 is introduced for alternating reading.
+      - pointTime: "32:09.54"
+        pointText: John 12 supplies the reading about Christ's glory, unbelief and light.
+      - pointTime: "41:46.96"
+        pointText: The supporting reading from 1 Peter 4 connects gifts and service with glorifying God.
+    subchapters:
+      - chapterId: s20260503-communion
+        chapterTitle: Communion Reminds Us Whose We Are
+        chapterKind: communion
+        chapterStart: "18:48.7"
+        chapterEnd: "28:18.8"
+        chapterScripture:
+          - 1 Corinthians 11:23-26
+        points:
+          - pointTime: "18:49.08"
+            pointText: The minister distinguishes the congregation's view from other accounts of the elements.
+          - pointTime: "20:09.04"
+            pointText: Communion is described as a commanded reminder of belonging to Christ and his people.
+          - pointTime: "22:45.84"
+            pointText: The congregation prepares for Communion and prays the Lord's Prayer.
+          - pointTime: "23:32.02"
+            pointText: The institution reading precedes distribution to baptized participants.
+          - pointTime: "27:48.26"
+            pointText: Thanksgiving asks that belonging to Christ shape the rest of life.
+  - chapterId: c20260503-recap-timing
+    chapterTitle: God's Timing and the Call to Every Believer
+    chapterKind: sermon
+    chapterStart: "42:57"
+    chapterEnd: "54:32.5"
+    chapterScripture:
+      - John 12:20-26
+      - John 10:10
+    points:
+      - pointTime: "42:57.3"
+        pointText: The preacher introduces continued exposition and invites future questions.
+      - pointTime: "44:13.46"
+        pointText: Greek visitors introduce the recap of Jesus' approaching final mission.
+      - pointTime: "45:15.56"
+        pointText: God's timing calls for patience rather than expecting immediate results.
+      - pointTime: "48:43.56"
+        pointText: Sacrifice is not restricted to saints or a special class of professional Christians.
+      - pointTime: "52:08.96"
+        pointText: Hating a sinful life is distinguished from rejecting the abundant life Christ gives.
+  - chapterId: c20260503-holy-grief
+    chapterTitle: Holy Grief and Christian Joy Belong Together
+    chapterKind: sermon
+    chapterStart: "54:32.5"
+    chapterEnd: "1:06:01.6"
+    chapterScripture:
+      - John 12:27
+      - Isaiah 53:1-3
+      - 2 Corinthians 6
+    points:
+      - pointTime: "54:32.78"
+        pointText: Jesus' troubled soul is considered in the light of his approaching suffering.
+      - pointTime: "59:47.3"
+        pointText: Holy grief is distinguished from sorrow over lost status, possessions or comfort.
+      - pointTime: "1:00:41.9"
+        pointText: Gratitude is presented as an alternative to constant dissatisfaction.
+      - pointTime: "1:02:57.42"
+        pointText: Holy grief mourns what grieves God rather than only personal disappointment.
+      - pointTime: "1:05:16.2"
+        pointText: Paul's paradox of sorrow and rejoicing expresses Christian life amid suffering.
+  - chapterId: c20260503-glorify-name
+    chapterTitle: Glorify God by Resisting Sin and Lifting Up Christ
+    chapterKind: sermon
+    chapterStart: "1:06:01.6"
+    chapterEnd: "1:24:36.2"
+    chapterScripture:
+      - John 12:28-33
+    points:
+      - pointTime: "1:06:01.86"
+        pointText: Jesus faces death with the prayer that the Father's name be glorified.
+      - pointTime: "1:10:45.22"
+        pointText: The Shorter Catechism connects life's purpose with glorifying and enjoying God.
+      - pointTime: "1:14:12.32"
+        pointText: Resisting the fallen world's influence is distinguished from pretending to be sinless.
+      - pointTime: "1:17:42.96"
+        pointText: Christ being lifted up is connected with crucifixion and proclamation of his lordship.
+      - pointTime: "1:19:27.08"
+        pointText: The preacher's family recollection illustrates sustained prayer and opportunities to reach others.
+  - chapterId: c20260503-walk-light
+    chapterTitle: Walk in the Light While Opportunity Remains
+    chapterKind: sermon
+    chapterStart: "1:24:36.2"
+    chapterEnd: "1:42:00"
+    chapterScripture:
+      - John 12:34-36
+      - 2 Peter 3:8-10
+      - 1 Peter 4:7-11
+    points:
+      - pointTime: "1:24:36.48"
+        pointText: Cultural Christian habits are challenged by the deeper meaning of believing in Christ.
+      - pointTime: "1:30:24.62"
+        pointText: Passing time makes present opportunity to lift up Jesus precious.
+      - pointTime: "1:33:07.1"
+        pointText: Future accountability is urged as a reason for truthful living now.
+      - pointTime: "1:36:33.1"
+        pointText: A marathon illustrates finishing faithfully rather than appearing impressive at the start.
+      - pointTime: "1:40:49.58"
+        pointText: The conclusion calls for sober prayer, hospitality and using gifts in service.
+  - chapterId: c20260503-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:42:00"
+    chapterEnd: "1:55:24.562"
+    points:
+      - pointTime: "1:42:00.18"
+        pointText: Prayer asks for illumination, obedience and joy through lifting up Jesus.
+      - pointTime: "1:46:10.58"
+        pointText: Intercession asks for strength for Christian education teachers and seminaries.
+      - pointTime: "1:48:30.66"
+        pointText: The first-Sunday second offering is designated for evangelism.
+      - pointTime: "1:50:35.74"
+        pointText: Take My Life and Let It Be is introduced as dedication of every part of life to God.
+      - pointTime: "1:53:22.26"
+        pointText: Historical notices explain catechism classes, baptism preparation and ministry opportunities.
+markers:
+  - markerTime: "42:57"
+    markerNote: "Working title uses the channel's dated title; confirm the announced sermon title. Duration and chapter/point anchors come from supplied faster-whisper audio evidence and need video/audio verification."
+  - markerTime: "1:31:25.12"
+    markerNote: "ASR calls the quotation '1 Peter 3'; its wording matches 2 Peter 3:8-10. Check the source slide or audio. Keep personal and historical examples attributed."

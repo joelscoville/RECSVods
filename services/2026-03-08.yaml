@@ -1,0 +1,163 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: A Glimpse
+serviceDate: 2026-03-08
+status: draft
+sermonDescription: Beginning John 11, the preacher considers suffering through Jesus' deliberate delay before visiting Lazarus. The account offers a glimpse of God's knowledge, purpose and timing beyond the disciples' limited perspective. Scripture does not answer every painful why, yet gives sufficient truth for faith and life. He urges honest compassion, walking in the light and trust in God's goodness, freedom from error and love while the future remains unclear.
+sermonScripture:
+  - John 11:1-16
+  - Isaiah 55:6-9
+sermonTopics:
+  - suffering
+  - faith
+  - prayer
+uploads:
+  - youtubeId: l4HTt6LZQMA
+    uploadDuration: "1:52:17.781"
+chapters:
+  - chapterId: c20260308-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "0:06.1"
+    chapterEnd: "7:35.2"
+    points:
+      - pointTime: "0:06.46"
+        pointText: The leader invites adoration before worship.
+      - pointTime: "1:22.74"
+        pointText: Confession acknowledges distance from God and dependence on his grace.
+      - pointTime: "2:40.6"
+        pointText: Thanksgiving recalls gratitude in every circumstance.
+      - pointTime: "3:47.88"
+        pointText: Supplication brings personal needs before God.
+      - pointTime: "4:54.3"
+        pointText: Prayer asks for receptive hearts before Belinda welcomes the congregation.
+  - chapterId: c20260308-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "7:35.2"
+    chapterEnd: "33:39.4"
+    chapterScripture:
+      - Psalms 40:1-4
+      - Proverbs 12
+      - John 11:1-16
+      - Isaiah 55:6-9
+    points:
+      - pointTime: "7:35.52"
+        pointText: Psalms 40 connects waiting on God with security in his care.
+      - pointTime: "12:48.22"
+        pointText: Show Us Christ is introduced as a prayer to see Christ through the preached word.
+      - pointTime: "20:30.74"
+        pointText: Proverbs 12 supplies the first responsive reading.
+      - pointTime: "23:30.88"
+        pointText: John 11 introduces Lazarus' illness and Jesus' response.
+      - pointTime: "32:45.49"
+        pointText: Isaiah 55:6-9 supplies the supporting reading about God's higher ways.
+  - chapterId: c20260308-questions-recap
+    chapterTitle: Suffering, Belonging and Christ's Authority
+    chapterKind: sermon
+    chapterStart: "33:39.4"
+    chapterEnd: "46:22.7"
+    chapterScripture:
+      - John 10:22-42
+      - 1 Corinthians 15
+    points:
+      - pointTime: "33:39.73"
+        pointText: A hospice visit introduces the personal question of why suffering occurs.
+      - pointTime: "36:39.41"
+        pointText: The previous lesson's claim about belonging to Christ's flock is recalled.
+      - pointTime: "38:19.85"
+        pointText: Pride is presented as resistance to seeking God humbly.
+      - pointTime: "40:02.29"
+        pointText: Christ's unity with the Father introduces the declaration of his divinity.
+      - pointTime: "43:28.03"
+        pointText: Resurrection is presented as the turning point in the apostles' commitment.
+  - chapterId: c20260308-sufficient-glimpse
+    chapterTitle: Scripture Gives a Sufficient Glimpse of God's Truth
+    chapterKind: sermon
+    chapterStart: "46:22.7"
+    chapterEnd: "1:04:12.3"
+    points:
+      - pointTime: "46:23.01"
+        pointText: John's detailed Lazarus narrative is introduced with proposed reasons for its distinctive account.
+      - pointTime: "50:18.33"
+        pointText: Pastoral care and funerals expose the repeated difficulty of answering why people suffer.
+      - pointTime: "55:25.43"
+        pointText: The preacher contrasts Dawkins' account of suffering with his Christian understanding.
+      - pointTime: "59:16.41"
+        pointText: Reincarnation is discussed as another proposed explanation before the limits of biblical revelation are acknowledged.
+      - pointTime: "1:02:14.37"
+        pointText: Scripture is described as sufficient for God, salvation, faith and life without explaining everything.
+  - chapterId: c20260308-delay-purpose
+    chapterTitle: Christ's Love Works through Knowledge and Perfect Timing
+    chapterKind: sermon
+    chapterStart: "1:04:12.3"
+    chapterEnd: "1:27:05.25"
+    chapterScripture:
+      - John 11:1-16
+      - Isaiah 55:8-9
+    points:
+      - pointTime: "1:04:12.57"
+        pointText: Lazarus' illness begins the account of Christ's personal relationship with the family.
+      - pointTime: "1:07:18.59"
+        pointText: The deliberate delay reveals a perspective different from ordinary human expectations.
+      - pointTime: "1:12:22.23"
+        pointText: God's attributes are used to explain knowledge, purpose and timing beyond the disciples' view.
+      - pointTime: "1:20:07.37"
+        pointText: Walking in Christ's light is connected with freedom from fear and avoiding deliberate darkness.
+      - pointTime: "1:23:29.41"
+        pointText: Thomas' willingness to go with Jesus is considered despite his limited understanding.
+  - chapterId: c20260308-trust-darkness
+    chapterTitle: Trust What Is Revealed amid the Darkness
+    chapterKind: sermon
+    chapterStart: "1:27:05.25"
+    chapterEnd: "1:35:38.7"
+    points:
+      - pointTime: "1:27:05.53"
+        pointText: Present readers know the completed account that the confused disciples were still experiencing.
+      - pointTime: "1:28:35.65"
+        pointText: Knowing a story's ending illustrates confidence in God's promised outcome without knowing tomorrow.
+      - pointTime: "1:30:17.71"
+        pointText: Honest compassion can acknowledge not knowing why a particular person suffers.
+      - pointTime: "1:31:03.79"
+        pointText: The preacher describes trust in God's goodness, freedom from error and love.
+      - pointTime: "1:35:32.53"
+        pointText: A saying attributed to Spurgeon contrasts easy confidence with trusting God in darkness.
+    subchapters:
+      - chapterId: s20260308-three-certainties
+        chapterTitle: Hold to God's Goodness, Wisdom and Love
+        chapterKind: sermon
+        chapterStart: "1:30:58.8"
+        chapterEnd: "1:35:38.5"
+        points:
+          - pointTime: "1:31:03.79"
+            pointText: God's goodness is the first conviction held amid difficulty.
+          - pointTime: "1:32:10.67"
+            pointText: The preacher expresses trust that God cannot make a mistake even when events are not understood.
+          - pointTime: "1:33:04.33"
+            pointText: God's love provides the third conviction.
+          - pointTime: "1:33:46.07"
+            pointText: A saying attributed to Barth illustrates the depth of the simple assurance that Jesus loves his people.
+          - pointTime: "1:35:32.53"
+            pointText: Spurgeon's reported saying connects faith with trust in darkness.
+  - chapterId: c20260308-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:35:38.7"
+    chapterEnd: "1:52:17.781"
+    points:
+      - pointTime: "1:35:38.97"
+        pointText: Prayer asks for trust in revealed truth despite human weakness and unanswered questions.
+      - pointTime: "1:41:26.37"
+        pointText: Shared prayer asks for comfort and strength for people facing challenges.
+      - pointTime: "1:42:29.35"
+        pointText: The offering is introduced before the closing hymn.
+      - pointTime: "1:43:53.89"
+        pointText: The preacher introduces the closing hymn through his account of Fanny Crosby and trust despite darkness.
+      - pointTime: "1:48:28.91"
+        pointText: Historical notices encourage fellowship lunch, community outreach and gospel-rally participation.
+markers:
+  - markerTime: "46:22.7"
+    markerNote: "Keep proposed Gospel-writing dates and reasons, historical claims and descriptions of other worldviews attributed; do not turn them into independently verified facts."
+  - markerTime: "1:01:29.93"
+    markerNote: "A Glimpse is explicitly announced here. Duration and anchors use supplied faster-whisper audio evidence, not fresh video-duration or listening checks."

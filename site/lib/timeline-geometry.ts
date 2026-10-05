@@ -74,8 +74,12 @@ export function hitBoundary(
   pixel: number,
   lane: TimelineLane,
   geometry: TimelineGeometry,
+  pointId?: string,
 ): Edge | undefined {
   if (lane === 'ruler' || lane === 'marks') return;
+  // Stacked diamonds can share a time: the DOM target identifies their row.
+  if (lane === 'point')
+    return edges.find((edge) => edge.lane === 'point' && edge.id === pointId);
   return edges
     .filter(
       (edge) =>
@@ -93,21 +97,12 @@ export function hitItem(
   items: readonly EditorItem[],
   seconds: number,
   lane: TimelineLane,
-  geometry: TimelineGeometry,
+  pointId?: string,
 ): EditorItem | undefined {
   if (lane === 'ruler' || lane === 'marks') return;
   const candidates = items.filter((item) => item.lane === lane);
   if (lane === 'point') {
-    return candidates
-      .filter(
-        (item) =>
-          Math.abs(
-            timeToPixel(item.start, geometry) - timeToPixel(seconds, geometry),
-          ) <= 9,
-      )
-      .sort(
-        (a, b) => Math.abs(a.start - seconds) - Math.abs(b.start - seconds),
-      )[0];
+    return candidates.find((item) => item.id === pointId);
   }
   return candidates
     .filter((item) => item.start <= seconds && seconds < item.end)

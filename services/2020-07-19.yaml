@@ -24,21 +24,37 @@ chapters:
   - chapterId: c20200719-opening
     chapterTitle: Opening
     chapterKind: opening
-    chapterStart: "0:00"
-    chapterEnd: "4:51.72"
+    chapterStart: "0:01.5"
+    chapterEnd: "4:50.06"
     points:
-      - pointTime: "0:00"
+      - pointTime: "0:01.84"
         pointText: Rev. Yong Teck Meng welcomes online participants and reflects on pandemic worship
           restrictions through a wedding account and Yancey’s account of a silent retreat.
+      - pointTime: "0:58.94"
+        pointText: A wedding illustrates pandemic restrictions on masks and singing.
+      - pointTime: "1:55.6"
+        pointText: Worship restrictions introduce reflection on unfamiliar forms of meditation.
+      - pointTime: "3:06.12"
+        pointText: Yancey's account of a silent retreat illustrates learning from other worship traditions.
+      - pointTime: "3:59"
+        pointText: Learning not to need things is connected with meditation during restricted worship.
   - chapterId: c20200719-scripture-warnings
     chapterTitle: Take Scripture’s Warnings Seriously
     chapterKind: sermon
-    chapterStart: "4:51.72"
-    chapterEnd: "20:57.06"
+    chapterStart: "4:50.06"
+    chapterEnd: "20:53.46"
     points:
-      - pointTime: "4:51.72"
+      - pointTime: "4:50.06"
         pointText: The preacher uses Lazarus and judgment to warn against neglect, prays for teachability
           and argues that faith in Scripture reveals coherence in Luke’s teachings.
+      - pointTime: "7:25.22"
+        pointText: The rich man and Lazarus introduce the preacher's account of judgment.
+      - pointTime: "11:06.56"
+        pointText: Sins of omission connect neglect of Lazarus with Matthew 25.
+      - pointTime: "13:15.6"
+        pointText: The account's conclusion supports the central place of Scripture over impressive signs.
+      - pointTime: "19:48.76"
+        pointText: Reading in faith is presented as revealing a coherent line through Luke's apparently fragmentary teachings.
     subchapters:
       - chapterId: s0719-recap-judgment
         chapterTitle: Neglect Has Eternal Consequences
@@ -49,6 +65,12 @@ chapters:
           - pointTime: "8:36.76"
             pointText: The preacher connects common grace, judgment and sins of omission with his warning that
               present choices have irreversible eternal consequences.
+          - pointTime: "9:50.2"
+            pointText: Ordinary comforts and relationships illustrate common grace.
+          - pointTime: "11:06.56"
+            pointText: Failing to do what one ought is distinguished from actively doing wrong.
+          - pointTime: "12:25"
+            pointText: Present choices are connected with eternal consequences.
         chapterScripture:
           - Luke 16:19-31
           - Matthew 25
@@ -62,13 +84,21 @@ chapters:
   - chapterId: c20200719-trials-and-growth
     chapterTitle: Expect Trials and Learn Through Them
     chapterKind: sermon
-    chapterStart: "20:57.06"
-    chapterEnd: "39:52.88"
+    chapterStart: "20:53.46"
+    chapterEnd: "39:53.36"
     points:
-      - pointTime: "20:57.06"
+      - pointTime: "20:53.46"
         pointText: Reading Luke 17 as a continuation of Lazarus, the preacher uses marriage and the debated
           marshmallow findings to discuss temptation in a fallen world and attributes to Stephen
           Tong the paradox that trials are necessary for growth.
+      - pointTime: "22:07.86"
+        pointText: Luke 17 is read as preparing disciples for trials and temptations.
+      - pointTime: "26:12.16"
+        pointText: The marshmallow test introduces delayed gratification as an illustration.
+      - pointTime: "34:20.94"
+        pointText: Fallen humanity and a fallen earth are presented as reasons for trial and temptation.
+      - pointTime: "38:26.54"
+        pointText: Marital conflict can reveal differences and provide opportunities to learn forgiveness.
     subchapters:
       - chapterId: s0719-test-discussion
         chapterTitle: Delayed Gratification and Competing Explanations
@@ -80,6 +110,8 @@ chapters:
             pointText: The preacher favors delayed gratification’s practical value while acknowledging family
               background and trust as competing explanations for the apparent link between waiting
               and later success.
+          - pointTime: "33:26.42"
+            pointText: Studying rather than playing illustrates delayed gratification's practical value.
     chapterScripture:
       - Luke 16:19-31
       - Luke 17:1-9
@@ -88,22 +120,36 @@ chapters:
   - chapterId: c20200719-resist-through-truth
     chapterTitle: Resist Temptation by Believing the Truth
     chapterKind: sermon
-    chapterStart: "39:52.88"
+    chapterStart: "39:53.36"
     chapterEnd: "48:08.84"
     points:
-      - pointTime: "39:52.88"
+      - pointTime: "39:53.36"
         pointText: The preacher distinguishes encountering temptation from dwelling on it and argues that
           believing God’s Word and recognizing harmful consequences underlie practical safeguards.
+      - pointTime: "42:17.06"
+        pointText: John 8 calls for abiding in the Word rather than merely claiming Christian identity.
+      - pointTime: "44:10.92"
+        pointText: Counseling families affected by adultery illustrates the harm of yielding to temptation.
+      - pointTime: "45:55.74"
+        pointText: Not handling offering money personally is described as a practical safeguard.
+      - pointTime: "47:14.56"
+        pointText: Listeners are urged to take the truth they profess seriously.
     subchapters:
       - chapterId: s0719-truth
         chapterTitle: Recognize the Cost of Giving In
         chapterKind: sermon
-        chapterStart: "42:17.06"
-        chapterEnd: "45:55.74"
+        chapterStart: "42:14.98"
+        chapterEnd: "45:55.24"
         points:
-          - pointTime: "42:17.06"
+          - pointTime: "42:14.98"
             pointText: Applying John 8 to everyday temptation, the preacher draws on adultery counseling and
               harmful habits while acknowledging the difficulty of stopping smoking.
+          - pointTime: "43:31.84"
+            pointText: John 8:32 is applied to recognizing temptation and everyday mistakes.
+          - pointTime: "44:10.92"
+            pointText: The consequences of adultery strengthen the preacher's resolve not to dwell on temptation.
+          - pointTime: "45:19.04"
+            pointText: Witnessing the consequences of harmful habits can undermine their appeal, while quitting remains difficult.
         chapterScripture:
           - John 8:31-32
           - Psalms 119
@@ -114,12 +160,20 @@ chapters:
     chapterTitle: Do Not Become a Stumbling Block
     chapterKind: sermon
     chapterStart: "48:08.84"
-    chapterEnd: "1:00:39.54"
+    chapterEnd: "1:00:40.58"
     points:
       - pointTime: "48:08.84"
         pointText: The preacher applies Luke 17 and Matthew 18 to harmful work, hypocrisy and personal
           rights, also presenting disputed dress/assault reasoning and an unverified Gandhi anecdote
           in his warning against damaging others’ faith.
+      - pointTime: "49:44.46"
+        pointText: Listeners are asked whether their work directly promotes harm or causes others to fall.
+      - pointTime: "55:17.48"
+        pointText: Financial abuse and ostentatious pastoral lifestyles are discussed as causes of rejection of Christianity.
+      - pointTime: "56:03.8"
+        pointText: Hypocrisy, hurtful conduct and neglect can drive others away despite religious appearances.
+      - pointTime: "59:46.02"
+        pointText: Paul's willingness to forgo meat illustrates considering others before insisting on personal rights.
     subchapters:
       - chapterId: s0719-industry
         chapterTitle: Jobs Do Not Justify Gambling Harm
@@ -130,18 +184,22 @@ chapters:
           - pointTime: "49:44.46"
             pointText: The preacher rejects job creation as sufficient justification for casinos, citing
               ministry encounters with gambling debt when asking whether work harms others.
+          - pointTime: "50:55.92"
+            pointText: Job creation is rejected as sufficient justification for gambling harm.
         chapterScripture:
           - Luke 17:1-9
           - Matthew 18:5-7
       - chapterId: s0719-rights
         chapterTitle: Consider Others Rather Than Insist on Rights
         chapterKind: sermon
-        chapterStart: "58:41.68"
-        chapterEnd: "1:00:39.54"
+        chapterStart: "58:39.08"
+        chapterEnd: "1:00:40.58"
         points:
-          - pointTime: "58:41.68"
+          - pointTime: "58:39.08"
             pointText: The preacher applies Paul’s willingness to forgo meat to urge caution when exercising a
               legitimate right could harm another believer’s faith.
+          - pointTime: "59:46.02"
+            pointText: Exercising a legitimate right is weighed against its impact on a weaker believer.
         chapterScripture:
           - 1 Corinthians 8:8-9
           - Luke 17:1-9
@@ -156,23 +214,35 @@ chapters:
   - chapterId: c20200719-faith-and-forgiveness
     chapterTitle: Practice Faith by Restoring and Forgiving
     chapterKind: sermon
-    chapterStart: "1:00:39.54"
-    chapterEnd: "1:05:37"
+    chapterStart: "1:00:40.58"
+    chapterEnd: "1:05:36.42"
     points:
-      - pointTime: "1:00:39.54"
+      - pointTime: "1:00:40.58"
         pointText: The preacher links restoration and forgiveness with the apostles’ request for faith,
           interprets the mustard-seed imagery as exposing small faith and urges listeners to
           practice the Word without causing others to fall.
+      - pointTime: "1:01:36.88"
+        pointText: The apostles' request for faith is linked with the difficulty of forgiveness and avoiding harm.
+      - pointTime: "1:02:36.96"
+        pointText: Mustard-seed imagery is interpreted as exposing small faith rather than a technique for moving trees.
+      - pointTime: "1:03:50.96"
+        pointText: The preacher includes himself among those whose faith needs growth.
+      - pointTime: "1:04:43.92"
+        pointText: The conclusion calls for knowing and practising the Word so as not to cause others to fall.
     subchapters:
       - chapterId: s0719-faith
         chapterTitle: Small Faith and the Call to Forgive
         chapterKind: sermon
-        chapterStart: "1:01:36.88"
+        chapterStart: "1:01:38.12"
         chapterEnd: "1:04:43.92"
         points:
-          - pointTime: "1:01:36.88"
+          - pointTime: "1:01:38.12"
             pointText: The preacher includes himself among those with small faith and reads the mustard-seed
               saying as hyperbole tied to resisting temptation, loving and forgiving.
+          - pointTime: "1:02:36.96"
+            pointText: Luke 17:6 is interpreted through extreme imagery that exposes the disciples' small faith.
+          - pointTime: "1:03:50.96"
+            pointText: Growing faith is connected with resisting temptation, love and forgiveness.
         chapterScripture:
           - Luke 17:1-9
           - Luke 17:5-6
@@ -188,15 +258,15 @@ chapters:
   - chapterId: c20200719-closing-prayer
     chapterTitle: Closing Prayer
     chapterKind: closing
-    chapterStart: "1:05:37"
+    chapterStart: "1:05:36.42"
     chapterEnd: "1:06:45.801"
     points:
-      - pointTime: "1:05:37"
+      - pointTime: "1:05:36.42"
         pointText: The preacher prays for care in conduct, humility and genuine faith so that listeners will
           not become a source of temptation to others.
 markers:
-  - markerTime: "0:00"
-    markerNote: "Older recording: check this opening really is the ACTS prayer."
+  - markerTime: "4:50.06"
+    markerNote: "Opening is an online welcome and pandemic reflection, not ACTS prayer. Recap, trials, truth, rights, forgiveness and prayer starts moved to complete clauses using supplied word timings; check audio."
   - markerTime: "4:51.72"
     markerNote: "Also cited in the sermon: Matthew 8:11-12; Matthew 25; Romans 1:17; Romans 1:16-17;
       Genesis 3:17-18; 1 Peter 5:8; Psalms 119; Matthew 18:5-7; 1 Corinthians 8:8-9; 1 Corinthians

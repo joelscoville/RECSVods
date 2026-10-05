@@ -24,12 +24,20 @@ chapters:
   - chapterId: c20260607-opening
     chapterTitle: Opening
     chapterKind: opening
-    chapterStart: "0:00"
+    chapterStart: "0:04.6"
     chapterEnd: "11:31"
     points:
-      - pointTime: "0:00"
+      - pointTime: "0:05.02"
         pointText: The leaders guide ACTS prayer, greetings, silent preparation, the introit, Psalm 69 and
           How Great Thou Art, then pray for the Holy Spirit's work and introduce Communion.
+      - pointTime: "1:20.34"
+        pointText: Personal prayer turns to confession.
+      - pointTime: "2:30"
+        pointText: Thanksgiving recognizes the goodness received in life.
+      - pointTime: "3:34.1"
+        pointText: Worshippers pray in supplication for God's intervention in their circumstances.
+      - pointTime: "7:28.54"
+        pointText: Psalms 69:30-34 introduces How Great Thou Art.
     chapterScripture:
       - Psalms 69:30-34
   - chapterId: c20260607-communion-worship-scripture
@@ -42,6 +50,14 @@ chapters:
         pointText: The pastor leads Communion as remembrance of belonging to Christ, followed by responsive
           readings from Proverbs and John, Jesus, I Come, the video anthem Without the Cross and the
           Acts 4 reading introducing the sermon.
+      - pointTime: "14:49.68"
+        pointText: The Lord's Prayer and 1 Corinthians 11 precede distribution of Communion.
+      - pointTime: "20:52.44"
+        pointText: Proverbs 24:1-34 is introduced for responsive reading.
+      - pointTime: "24:33.34"
+        pointText: John 14:1-14 is read, covering a wider range than the sermon-title passage.
+      - pointTime: "33:32.98"
+        pointText: Acts 4:8-12 is read before the sermon.
     chapterScripture:
       - John 13-15
       - John 13:34-35
@@ -59,6 +75,14 @@ chapters:
         pointText: Introducing the question of Christian exclusivity, the pastor recaps glory, childlike
           worship and Jesus' command to love beyond social boundaries, presenting shared life rather
           than isolation as the mark of belonging to Christ.
+      - pointTime: "36:18"
+        pointText: Jesus' glory is considered in relation to coming suffering and a life aligned with God's will.
+      - pointTime: "39:22.84"
+        pointText: Childlikeness is distinguished from childishness through humility and wonder in worship.
+      - pointTime: "42:34.28"
+        pointText: The new commandment contrasts identity marked by love with ethnicity and nationality.
+      - pointTime: "46:58.64"
+        pointText: Loving one another is presented as a command rather than an option.
     chapterScripture:
       - John 14:1-7
       - Acts 4:8-12
@@ -78,6 +102,14 @@ chapters:
         pointText: The pastor relates the disciples' uncertainty to human suffering, contrasts his account
           of Buddhist self-effort with trust in Christ, and reads John 14 as promising both a
           lasting home with the Father and the Spirit's sustaining presence now.
+      - pointTime: "50:19.98"
+        pointText: The disciples' expectation of triumph is contrasted with readers who know the outcome.
+      - pointTime: "53:01.72"
+        pointText: The preacher's account of Buddhist suffering categories begins a comparison with trust in Christ.
+      - pointTime: "58:59.72"
+        pointText: John 14:1 directs troubled disciples toward trust in God and Jesus.
+      - pointTime: "1:06:07.8"
+        pointText: The Spirit's sustaining presence provides help now as well as future hope.
     subchapters:
       - chapterId: s20260607-sermon-hope
         chapterTitle: Hope for the Future and Help Now
@@ -89,6 +121,14 @@ chapters:
             pointText: The pastor interprets the Father's house as an intimate, permanent home and Christ's
               promise as both future presence with him and the Holy Spirit's help amid present
               worries.
+          - pointTime: "1:00:29.5"
+            pointText: Contemporary worries are considered through the promise of an ultimate destiny.
+          - pointTime: "1:01:23.84"
+            pointText: Calling God Father expresses an intimate relationship.
+          - pointTime: "1:02:45.22"
+            pointText: A permanent home is contrasted with an impersonal hotel to explain the Father's house.
+          - pointTime: "1:06:07.8"
+            pointText: An additional present-tense reading connects Christ's promise with the Holy Spirit's help.
         chapterScripture:
           - John 14:1
           - John 14:1-2
@@ -107,12 +147,20 @@ chapters:
     chapterTitle: Christ Is the Only Way to the Father
     chapterKind: sermon
     chapterStart: "1:07:04.74"
-    chapterEnd: "1:21:50.88"
+    chapterEnd: "1:21:47.9"
     points:
       - pointTime: "1:07:04.74"
         pointText: Addressing objections and religious inclusivity, the pastor argues from John 14 and Acts
           4 that salvation depends on God's revelation in Christ rather than human self-sufficiency,
           while allowing some knowledge through general grace.
+      - pointTime: "1:09:22.54"
+        pointText: The exclusive clause in John 14:6 is identified as the most difficult claim for hearers.
+      - pointTime: "1:13:15.38"
+        pointText: The preacher contrasts his account of Baha'i religious inclusivity with Christian exclusivity.
+      - pointTime: "1:14:23.46"
+        pointText: God revealing truth is distinguished from people finding salvation through self-help.
+      - pointTime: "1:18:21.92"
+        pointText: An air-for-life analogy is used to argue that a necessity claim is not merely arrogance.
     chapterScripture:
       - John 14:4-6
       - John 14:6
@@ -121,27 +169,43 @@ chapters:
   - chapterId: c20260607-loving-witness-without-judgment
     chapterTitle: Share Christ's Love and Leave Judgment to God
     chapterKind: sermon
-    chapterStart: "1:21:50.88"
-    chapterEnd: "1:36:02.32"
+    chapterStart: "1:21:47.9"
+    chapterEnd: "1:36:01.7"
     points:
-      - pointTime: "1:21:50.88"
+      - pointTime: "1:21:47.9"
         pointText: Affirming Christ as the only way, the pastor urges loving evangelism and help regardless
           of conversion, leaves individuals' salvation to God and allows possible exceptions to the
           usual model, explicitly treating his imagined deathbed encounter as unsupported by
           scripture rather than a method to preach.
+      - pointTime: "1:24:36.2"
+        pointText: Questions about loved ones challenge evangelism motivated by superiority and certainty about others' final destiny.
+      - pointTime: "1:26:54.84"
+        pointText: The pastor says he does not know his grandmother's final destiny and trusts God's just judgment.
+      - pointTime: "1:29:34.12"
+        pointText: Lewis is cited to distinguish salvation through Christ from knowing the full limits of whom Christ may save.
+      - pointTime: "1:34:46"
+        pointText: Listeners are urged to continue evangelism and treat nonbelievers with love rather than unkindness.
     chapterScripture:
       - John 14:6
       - Philippians 2:9-11
   - chapterId: c20260607-response-closing
     chapterTitle: Response and Closing
     chapterKind: closing
-    chapterStart: "1:36:02.32"
+    chapterStart: "1:36:01.7"
     chapterEnd: "1:49:50.661"
     points:
-      - pointTime: "1:36:02.32"
+      - pointTime: "1:36:01.78"
         pointText: The pastor leads prayer for patient, loving witness, with the Apostles' Creed, an
           evangelism offering, All the Way My Saviour Leads Me, doxology, a blessing from Jude and
           community notices completing the service.
+      - pointTime: "1:37:31.02"
+        pointText: The congregation stands to recite the Apostles' Creed.
+      - pointTime: "1:40:01.2"
+        pointText: Sustained prayer is encouraged for loved ones who do not know Jesus.
+      - pointTime: "1:42:25.58"
+        pointText: The first-Sunday second offering is designated for evangelism.
+      - pointTime: "1:47:57.7"
+        pointText: Historical notices announce the catechism class and invite consideration of gospel-rally participation.
     chapterScripture:
       - Jude 1:24-25
 markers:
@@ -153,3 +217,5 @@ markers:
   - markerTime: "34:52.98"
     markerNote: "Other topics it touched: knowing-god, truth, mission, prayer, eternal-life, salvation,
       glory, worship, service-life, communion, meditation, holy-spirit, service."
+  - markerTime: "1:21:47.9"
+    markerNote: "Loving-witness chapter begins at 'But of course' after the preceding quotation; response includes 'Let us pray'. Opening begins before the first greeting. Supplied word timings only; check audio."

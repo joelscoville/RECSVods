@@ -1,0 +1,152 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: RECS 22 March 2026
+serviceDate: 2026-03-22
+status: draft
+sermonDescription: Reading Jesus' tears in John 11 alongside Hebrews 4, the preacher presents Christ as fully divine and human, the perfect example who understands suffering without sin. He acknowledges the mystery of Christ's knowledge and the paradoxes of trials, discipline and grief. Rather than promise answers to every painful question, he urges shared compassion and confidence in approaching Christ's throne of grace for help.
+sermonScripture:
+  - John 11:28-37
+  - Hebrews 4:14-16
+  - Philippians 2:6-7
+sermonTopics:
+  - suffering
+  - faith
+  - prayer
+uploads:
+  - youtubeId: d-MgHgUiBis
+    uploadDuration: "1:47:37.214"
+chapters:
+  - chapterId: c20260322-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "1:29.6"
+    chapterEnd: "8:22.9"
+    points:
+      - pointTime: "1:30"
+        pointText: The leader invites adoration before worship.
+      - pointTime: "2:49.68"
+        pointText: Confession seeks cleansing through Christ.
+      - pointTime: "3:57.32"
+        pointText: Thanksgiving recalls God's goodness in life.
+      - pointTime: "5:02.9"
+        pointText: Supplication seeks intervention in personal situations.
+      - pointTime: "6:13.18"
+        pointText: Prayer gives thanks for gathering in safety before the welcome and greetings.
+  - chapterId: c20260322-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "8:22.9"
+    chapterEnd: "30:55.1"
+    chapterScripture:
+      - Psalms 47:1-4
+      - Proverbs 14:1-35
+      - John 11:28-37
+      - Hebrews 4:14-16
+    points:
+      - pointTime: "8:23.3"
+        pointText: The call to worship praises God as king over the earth.
+      - pointTime: "11:53.82"
+        pointText: Prayer asks for focused worship and transformation through the word.
+      - pointTime: "17:00.46"
+        pointText: Proverbs 14 supplies the first responsive reading.
+      - pointTime: "20:40.82"
+        pointText: John 11 introduces Mary meeting Jesus in grief.
+      - pointTime: "30:01.18"
+        pointText: Hebrews 4:14-16 supplies the supporting passage about Christ's sympathy and help.
+  - chapterId: c20260322-faith-recap
+    chapterTitle: Respond to Christ amid Questions and Weak Faith
+    chapterKind: sermon
+    chapterStart: "30:55.1"
+    chapterEnd: "44:27.4"
+    chapterScripture:
+      - John 11:17-27
+      - Romans 10:9
+    points:
+      - pointTime: "30:55.4"
+        pointText: The preacher welcomes holiday visitors and encourages ministry across congregations.
+      - pointTime: "33:27.76"
+        pointText: Questions about fallen angels and permitted evil introduce difficult limits of understanding.
+      - pointTime: "36:49.02"
+        pointText: Martha's mixed strength and weakness encourage growth without despair over imperfect faith.
+      - pointTime: "40:16"
+        pointText: Receiving salvation is connected with response to God's gracious invitation.
+      - pointTime: "41:58.14"
+        pointText: Romans 10:9 is interpreted as costly commitment rather than words alone.
+  - chapterId: c20260322-christology
+    chapterTitle: Christ Is Fully Divine and Fully Human
+    chapterKind: sermon
+    chapterStart: "44:27.4"
+    chapterEnd: "1:09:16.6"
+    chapterScripture:
+      - John 11:28-34
+      - Philippians 2:6-7
+      - Hebrews 4:14-15
+    points:
+      - pointTime: "44:27.78"
+        pointText: Mary's approach to Jesus continues the narrative after Martha's confession.
+      - pointTime: "48:51.36"
+        pointText: Jesus' emotion and question about the tomb introduce the mystery of Christology.
+      - pointTime: "55:35.48"
+        pointText: The Athanasian Creed affirms complete divinity and humanity.
+      - pointTime: "59:04.8"
+        pointText: The preacher describes voluntary limits without making Christ's divinity lesser than the Father's.
+      - pointTime: "1:05:51.32"
+        pointText: Jesus' perfect humanity makes him the ultimate model rather than fallible human heroes.
+  - chapterId: c20260322-trials-empathy
+    chapterTitle: Jesus Understands the Painful Process of Life
+    chapterKind: sermon
+    chapterStart: "1:09:16.6"
+    chapterEnd: "1:32:51.4"
+    chapterScripture:
+      - John 11:35-37
+      - Hebrews 4:14-16
+    points:
+      - pointTime: "1:09:16.84"
+        pointText: Human life includes paradoxes and processes that cannot always be made painless.
+      - pointTime: "1:17:45.58"
+        pointText: Trials and difficulties are presented as occasions for growth rather than things to avoid at any cost.
+      - pointTime: "1:21:12.82"
+        pointText: The Serenity Prayer introduces acceptance, courage and discernment.
+      - pointTime: "1:26:19.34"
+        pointText: Jesus' tears are connected with identifying with human pain even when future hope is certain.
+      - pointTime: "1:31:23.62"
+        pointText: Hebrews 4 encourages approaching Christ confidently for mercy when answers remain unknown.
+    subchapters:
+      - chapterId: s20260322-serenity
+        chapterTitle: Acceptance, Courage and Hardship as a Pathway to Peace
+        chapterKind: sermon
+        chapterStart: "1:21:20.98"
+        chapterEnd: "1:24:34.8"
+        points:
+          - pointTime: "1:21:24.56"
+            pointText: Acceptance is encouraged for circumstances that cannot be changed.
+          - pointTime: "1:21:58.66"
+            pointText: Courage is urged for changes that can make the world better.
+          - pointTime: "1:22:30.68"
+            pointText: Wisdom is needed to distinguish the changeable from the unchangeable.
+          - pointTime: "1:23:20.24"
+            pointText: Living one day and one moment at a time is connected with attentiveness to present life.
+          - pointTime: "1:23:39.84"
+            pointText: Hardship is presented as part of the pathway to peace and trust in Christ.
+  - chapterId: c20260322-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:32:51.4"
+    chapterEnd: "1:47:37.214"
+    points:
+      - pointTime: "1:32:51.66"
+        pointText: Prayer focuses on what is known of Christ's goodness and understanding rather than unanswered questions.
+      - pointTime: "1:37:32.96"
+        pointText: Intercession asks for a smooth path through gospel-rally logistics and administrative needs.
+      - pointTime: "1:38:41.4"
+        pointText: Shared prayer asks for strength and practical help for those facing challenges.
+      - pointTime: "1:41:07.14"
+        pointText: What a Friend We Have in Jesus is introduced through the importance of bringing burdens to God.
+      - pointTime: "1:44:44.8"
+        pointText: Historical notices encourage gospel-rally invitations and preparations for Easter.
+markers:
+  - markerTime: "30:55.1"
+    markerNote: "Working title uses the channel's dated title; confirm the announced sermon title. Duration and anchors use supplied faster-whisper audio evidence, not fresh video-duration or listening checks."
+  - markerTime: "59:04.8"
+    markerNote: "Keep explanations of Christ's knowledge, divinity and humanity attributed to the preacher rather than treating his analogies as independently established doctrine."

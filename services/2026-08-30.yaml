@@ -29,6 +29,14 @@ chapters:
       - pointTime: "0:05.1"
         pointText: The leaders guide ACTS prayer, welcome and meditation, the call to worship from Psalms
           97, an opening hymn and prayer for the service and preacher.
+      - pointTime: "1:25.66"
+        pointText: The leader invites confession followed by personal prayer.
+      - pointTime: "3:47.62"
+        pointText: Worshippers bring their needs to God in supplication.
+      - pointTime: "5:47.92"
+        pointText: The worship leader welcomes the congregation and invites mutual greetings.
+      - pointTime: "8:28.26"
+        pointText: Psalms 97:1-5 calls the congregation to worship before the opening hymn.
     chapterScripture:
       - Psalms 97:1-5
   - chapterId: c20260830-worship-and-scripture
@@ -41,6 +49,14 @@ chapters:
         pointText: The worship leader invites relational trust in Jesus through song, the congregation joins
           hymns and responsive readings from Proverbs 5 and John 16, and a reader known only by a
           partial name reads Hebrews 11:13-16.
+      - pointTime: "15:20.68"
+        pointText: The leader distinguishes belief in a historical fact from relational trust in Jesus.
+      - pointTime: "21:14.78"
+        pointText: Proverbs 5 is introduced for alternating congregational reading.
+      - pointTime: "24:06.1"
+        pointText: The congregation reads John 16:25-33 and repeats its final three verses.
+      - pointTime: "31:51.86"
+        pointText: Hebrews 11:13-16 is read before the sermon.
     chapterScripture:
       - Proverbs 5
       - John 16:25-33
@@ -55,6 +71,14 @@ chapters:
         pointText: Pastor Yong connects Jesus' departure and the indwelling Spirit with joy and direct
           prayer in God's will, urging personal prayer without treating prominent Christians as
           necessary intermediaries or requiring constant happiness.
+      - pointTime: "35:49.24"
+        pointText: Jesus' departure and return are reviewed in relation to the cross, resurrection, ascension and Spirit.
+      - pointTime: "39:12.06"
+        pointText: Joy in the Spirit does not require believers to feel happy at every moment.
+      - pointTime: "46:27.5"
+        pointText: John 16:25-26 is connected with Pentecost and direct prayer to the Father.
+      - pointTime: "52:54.66"
+        pointText: Believers are urged to pray personally rather than treating prominent Christians as necessary intermediaries.
     subchapters:
       - chapterId: s20260830-access
         chapterTitle: Prayer Needs No Human Intermediary
@@ -66,6 +90,14 @@ chapters:
             pointText: Pastor Yong urges regular prayer aligned with God's will, using his Reformed
               understanding and prayer anecdotes to deny that a pastor's prayer is automatically
               better.
+          - pointTime: "44:00.2"
+            pointText: The Spirit living in believers changes how they experience Christ's presence.
+          - pointTime: "46:27.5"
+            pointText: The preacher connects Jesus' promise with direct access to the Father through the Spirit.
+          - pointTime: "49:25.2"
+            pointText: A pastoral prayer visit illustrates why a minister's prayer is not automatically better.
+          - pointTime: "52:54.66"
+            pointText: Personal, regular prayer is encouraged instead of dependence on human intermediaries.
         chapterScripture:
           - John 13
           - John 16
@@ -87,12 +119,20 @@ chapters:
     chapterTitle: Shared Joy Does Not Remove Suffering
     chapterKind: sermon
     chapterStart: "55:07.62"
-    chapterEnd: "1:15:09.94"
+    chapterEnd: "1:15:07.2"
     points:
       - pointTime: "55:07.62"
         pointText: Pastor Yong commends voluntary mutual care through Acts 2 while acknowledging
           self-interest, unreliable relationships, persecution, disappointment and the emotional
           cost of empathy rather than promising uninterrupted peace.
+      - pointTime: "57:59.78"
+        pointText: Amish mutual support illustrates practical care, with reservations about separation from outsiders.
+      - pointTime: "1:00:49.7"
+        pointText: Work incentives and economic changes illustrate the difficulty of sustaining selfless sharing.
+      - pointTime: "1:04:08.58"
+        pointText: Cell groups and practical help are commended without guaranteeing trustworthy relationships.
+      - pointTime: "1:13:25.2"
+        pointText: Becoming involved in people's lives carries an emotional cost for pastoral care.
     chapterScripture:
       - Acts 2:1-3
       - Acts 2:44-47
@@ -102,13 +142,21 @@ chapters:
   - chapterId: c20260830-love-and-growing-faith
     chapterTitle: Remember God's Love and Seek Stronger Faith
     chapterKind: sermon
-    chapterStart: "1:15:09.94"
+    chapterStart: "1:15:07.2"
     chapterEnd: "1:30:55.66"
     points:
-      - pointTime: "1:15:09.94"
+      - pointTime: "1:15:07.38"
         pointText: Pastor Yong counters insecurity with God's love and forgiveness, encourages imperfect
           obedience, and presents the disciples' failures, Hebrews 11 and examples of perseverance
           as encouragement for faith that grows through trials.
+      - pointTime: "1:16:45.68"
+        pointText: Listeners facing trials are urged to remember God's love.
+      - pointTime: "1:20:02.72"
+        pointText: Relational, financial and health worries are considered in light of God's care.
+      - pointTime: "1:24:04.16"
+        pointText: Mark 9:24 and the disciples' failures illustrate faith that needs help and growth.
+      - pointTime: "1:29:36.62"
+        pointText: Nick Vujicic and Kanae Miyahara are presented as examples of faith and joy amid difficulty.
     subchapters:
       - chapterId: s20260830-faith
         chapterTitle: Weak Faith Can Grow Through Trials
@@ -120,6 +168,14 @@ chapters:
             pointText: Pastor Yong says God understands weak faith, drawing encouragement from Mark 9:24,
               Hebrews 11 and examples he attributes to Stephen Tong, Nick Vujicic and Kanae
               Miyahara.
+          - pointTime: "1:24:04.16"
+            pointText: The disciples' failures are connected with the request for help with unbelief in Mark 9:24.
+          - pointTime: "1:25:36.06"
+            pointText: Hebrews 11 describes trust that looks beyond a person's own lifetime.
+          - pointTime: "1:27:14.72"
+            pointText: The preacher recalls being encouraged by Stephen Tong's resolve while working on his autobiography.
+          - pointTime: "1:29:36.62"
+            pointText: The displayed example of Nick Vujicic and his wife encourages faith despite hardship.
         chapterScripture:
           - John 16:29-32
           - Mark 9:24
@@ -142,6 +198,12 @@ chapters:
         pointText: Pastor Yong grounds courage in Christ's death, resurrection and ascension, interpreting
           hope as patient assurance amid difficulty rather than wishful thinking or empty
           reassurance.
+      - pointTime: "1:32:08.86"
+        pointText: Christian hope is grounded in Jesus' victory, death, resurrection and ascension.
+      - pointTime: "1:33:14.16"
+        pointText: Romans 8:24-25 distinguishes patient assurance from wishful thinking.
+      - pointTime: "1:34:34.32"
+        pointText: The preacher applies the hymn's theme of trust to difficult circumstances and a secure destination.
     chapterScripture:
       - John 16:33
       - Romans 8:24-25
@@ -155,9 +217,19 @@ chapters:
         pointText: Pastor Yong leads response and prayer for young people, with the Creed incompletely
           captured in ASR, followed by the charitable offering, closing hymn, doxology, blessing
           from Jude, church notices and dismissal.
+      - pointTime: "1:37:32"
+        pointText: The congregation stands to affirm the Apostles' Creed.
+      - pointTime: "1:40:03.84"
+        pointText: Prayer asks for protection and guidance for the church's young people.
+      - pointTime: "1:42:34.08"
+        pointText: The fifth Sunday's second offering is designated for charitable work.
+      - pointTime: "1:47:05.08"
+        pointText: Historical notices introduce talks on church counsel and personal financial stewardship.
     chapterScripture:
       - Jude 1:24-25
 markers:
+  - markerTime: "33:05"
+    markerNote: "Supplied raw ASR has no opening sermon words until 33:26.48, which begins mid-sentence. Retained the prior 33:05 start rather than treating the transcription gap as silence; check audio."
   - markerTime: "33:05"
     markerNote: "Also cited in the sermon: John 16; 1 Peter 5:7; John 13; 1 Corinthians 2:6-7; John
       16:25-26; James 5; John 16:23-24; Acts 2:1-3; Acts 2:44-47; John 16:24; Acts 2; 1 Corinthians
@@ -166,3 +238,5 @@ markers:
   - markerTime: "33:05"
     markerNote: "Other topics it touched: service, peace, service-life, knowing-god, prayer,
       forgiveness, stewardship, joy, politics, suffering, love, temptation, hope."
+  - markerTime: "1:15:07.2"
+    markerNote: "Moved the love/faith chapter from mid-sentence to 'In today's passage' using supplied word timings. Audio verification remains outstanding."

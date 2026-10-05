@@ -24,12 +24,19 @@ chapters:
   - chapterId: c20260726-opening
     chapterTitle: Opening
     chapterKind: opening
-    chapterStart: "0:00"
+    chapterStart: "1:38.7"
     chapterEnd: "9:55.52"
     points:
-      - pointTime: "0:00"
-        pointText: Unidentified opening music leads into the leaders' guided adoration, confession,
-          thanksgiving and supplication, welcome and silent meditation.
+      - pointTime: "1:39.1"
+        pointText: The leader invites personal prayer beginning with adoration.
+      - pointTime: "2:58.9"
+        pointText: Confession is introduced with a biblical reminder and quiet prayer.
+      - pointTime: "4:06.36"
+        pointText: Worshippers reflect on their lives and give thanks.
+      - pointTime: "5:16.4"
+        pointText: Supplication brings personal circumstances before God.
+      - pointTime: "7:01.9"
+        pointText: The worship leader welcomes those who came through heavy rain and invites greetings.
   - chapterId: c20260726-worship-scripture
     chapterTitle: Worship and Scripture
     chapterKind: opening
@@ -40,6 +47,14 @@ chapters:
         pointText: The worship leader guides the congregation through a Psalms 91 call, hymns and prayers of
           trust, responsive Proverbs and John readings, Rock of Ages, 2 Timothy and an anthem whose
           title remains unverified.
+      - pointTime: "15:58.7"
+        pointText: Stress over personal plans is contrasted with looking to Jesus as shepherd.
+      - pointTime: "21:18.08"
+        pointText: Proverbs 31 is introduced for responsive reading.
+      - pointTime: "24:40.98"
+        pointText: The responsive reading continues with the day's John passage.
+      - pointTime: "30:33.98"
+        pointText: 2 Timothy 3:12-15 is read before the remaining anthem.
     chapterScripture:
       - Psalms 91:1-6
       - Isaiah 55
@@ -51,12 +66,20 @@ chapters:
     chapterTitle: Let Scripture Challenge Comfortable Assumptions
     chapterKind: sermon
     chapterStart: "34:22.98"
-    chapterEnd: "48:27.54"
+    chapterEnd: "48:26.84"
     points:
       - pointTime: "34:22.98"
         pointText: Pastor Yong moves from voluntary family service and the question of an easy life to
           challenging cultural churchgoing, placing Scripture above inherited assumptions and
           recalling dependence on Christ's love.
+      - pointTime: "36:50.92"
+        pointText: A submitted question asks whether few difficulties indicate God's blessing.
+      - pointTime: "40:07.86"
+        pointText: An ethnic Christian conference illustrates inherited cultural assumptions about church.
+      - pointTime: "41:46.18"
+        pointText: Scripture is placed above personal, cultural and pastoral opinions.
+      - pointTime: "45:59.44"
+        pointText: MacArthur's account of belonging to Christ challenges churchgoing understood merely as comfort.
     chapterScripture:
       - John 15:18-27
       - 2 Timothy 3:12-15
@@ -66,24 +89,40 @@ chapters:
   - chapterId: c20260726-hostility-common-grace
     chapterTitle: Recognize Goodness Amid the World's Hostility
     chapterKind: sermon
-    chapterStart: "48:27.54"
+    chapterStart: "48:26.84"
     chapterEnd: "1:07:31.66"
     points:
-      - pointTime: "48:27.54"
+      - pointTime: "48:26.84"
         pointText: Pastor Yong questions sweeping condemnation through attributed MacArthur accounts, then
           uses the Good Samaritan, common grace and interfaith service to distinguish the fallen
           world's hostility from recognizable goodness without making a salvation claim.
+      - pointTime: "49:23.32"
+        pointText: The Farewell Discourse shifts from mutual love toward hostility from the world.
+      - pointTime: "54:56.18"
+        pointText: The preacher questions sweeping religious condemnation through language he attributes to MacArthur.
+      - pointTime: "59:15.12"
+        pointText: Common grace is distinguished from special grace while recognizing goodness outside Christian communities.
+      - pointTime: "1:05:53.82"
+        pointText: The fallen world's opposition is distinguished from goodness among people of other faiths.
     subchapters:
       - chapterId: s20260726-common-good
         chapterTitle: Common Grace Makes Goodness Recognizable
         chapterKind: sermon
-        chapterStart: "57:47"
+        chapterStart: "57:42.36"
         chapterEnd: "1:07:31.66"
         points:
-          - pointTime: "57:47"
+          - pointTime: "57:42.36"
             pointText: Pastor Yong distinguishes common from special grace and uses Habitat volunteers and an
               atheist musician to recognize goodness outside Christianity without equating it with
               salvation.
+          - pointTime: "59:15.12"
+            pointText: Common grace allows recognition of good beyond Christian communities.
+          - pointTime: "1:00:41.48"
+            pointText: Habitat for Humanity's housing work adapts to a different local context in Singapore.
+          - pointTime: "1:03:39"
+            pointText: Volunteers of different religions and backgrounds can work together while the preacher retains a Christian motivation.
+          - pointTime: "1:06:53.84"
+            pointText: An atheist musician illustrates appreciation of beauty without making a claim about salvation.
         chapterScripture:
           - Luke 10
           - John 15:18-19
@@ -96,24 +135,40 @@ chapters:
     chapterTitle: Following Christ Brings Opposition and Responsibility
     chapterKind: sermon
     chapterStart: "1:07:31.66"
-    chapterEnd: "1:27:29.72"
+    chapterEnd: "1:27:22.95"
     points:
       - pointTime: "1:07:31.66"
         pointText: Pastor Yong presents reported persecution, conflicting values and spiritual conflict as
           challenges of following Jesus, recounts allegations denied by Habitat's founder, and
           explores greater knowledge's accountability while rejecting ignorance as guaranteed
           exemption.
+      - pointTime: "1:11:55.08"
+        pointText: An architect refusing bribes illustrates everyday opposition for conscientious choices.
+      - pointTime: "1:13:17.5"
+        pointText: 2 Timothy 3 and an attribution to John Stott connect opposition with clashing values.
+      - pointTime: "1:19:22.86"
+        pointText: Spiritual opposition is discussed as something that can be either neglected or overemphasized.
+      - pointTime: "1:24:04.92"
+        pointText: John 15 and Acts 17 introduce the relationship between knowledge and accountability.
     subchapters:
       - chapterId: s20260726-traps
         chapterTitle: Spiritual Conflict and Greater Accountability
         chapterKind: sermon
         chapterStart: "1:20:46.8"
-        chapterEnd: "1:27:29.72"
+        chapterEnd: "1:27:22.95"
         points:
           - pointTime: "1:20:46.8"
             pointText: Pastor Yong recounts a disputed allegation and the Habitat founder's denial before
               advocating precautions and discussing knowledge's accountability with acknowledged
               theological difficulty, rejecting ignorance as guaranteed exemption.
+          - pointTime: "1:22:09.04"
+            pointText: The preacher recalls withholding advice because he believed either response to the conflict could cause harm.
+          - pointTime: "1:23:03"
+            pointText: Precautions associated with Billy Graham are advocated through a personal transport example.
+          - pointTime: "1:24:04.92"
+            pointText: Greater knowledge is connected with accountability while acknowledging theological difficulty.
+          - pointTime: "1:25:42.12"
+            pointText: A comedy illustration is followed by explicit rejection of ignorance as guaranteed exemption.
         chapterScripture:
           - John 15:22-24
           - Acts 17:30-31
@@ -131,13 +186,21 @@ chapters:
   - chapterId: c20260726-persevering-witness
     chapterTitle: Persevere as Active Witnesses
     chapterKind: sermon
-    chapterStart: "1:27:29.72"
+    chapterStart: "1:27:22.95"
     chapterEnd: "1:36:34.6"
     points:
-      - pointTime: "1:27:29.72"
+      - pointTime: "1:27:23.08"
         pointText: Pastor Yong connects the Spirit's witness with lifelong salt-and-light service, urging
           contribution despite limitations and perseverance in Scripture rather than passive
           comfort.
+      - pointTime: "1:28:45"
+        pointText: A dead fish drifting with the tide illustrates the easy life of avoiding witness and injustice.
+      - pointTime: "1:30:15.54"
+        pointText: Salt and light describe Christian identity without a retirement limit.
+      - pointTime: "1:32:00.62"
+        pointText: A wheelchair-using couple illustrates continuing contribution despite limitations.
+      - pointTime: "1:34:59.1"
+        pointText: The sermon closes with perseverance grounded in Scripture rather than measuring blessing by ease.
     chapterScripture:
       - John 15:25-27
       - Psalms 35
@@ -156,6 +219,14 @@ chapters:
         pointText: Pastor Yong leads prayer for perseverance, members and the Batam orphanage alongside the
           congregation's creed, followed by offertory with an unclear second destination, the
           closing hymn, doxology, blessing and Communion, orphanage and lunch announcements.
+      - pointTime: "1:38:04.38"
+        pointText: The congregation affirms the Apostles' Creed.
+      - pointTime: "1:40:40.28"
+        pointText: Prayer asks for the Batam orphanage's expanded work with street children.
+      - pointTime: "1:44:55.48"
+        pointText: Onward, Christian Soldiers is introduced as a response to the sermon.
+      - pointTime: "1:48:43.14"
+        pointText: Historical notices announce Communion and progress with orphanage space and repairs.
     chapterScripture:
       - 1 Thessalonians 5
       - 2 Corinthians 13
@@ -169,3 +240,5 @@ markers:
     markerNote: "Other topics it touched: discernment, truth, peace, mission, responsibility, worship,
       prayer, government, stewardship, justice, service-life, persecution, temptation, repentance,
       holy-spirit, glory."
+  - markerTime: "1:27:22.95"
+    markerNote: "Moved active witness to the complete 'The third is' transition; prayer and common-grace starts also moved to complete clauses. All changes use supplied word timing, without fresh audio verification."

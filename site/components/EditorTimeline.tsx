@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, type CSSProperties } from 'react';
 import {
   formatClock,
   isFileMarker,
@@ -8,7 +8,7 @@ import {
   type EditorState,
   type Lane,
 } from '../lib/recording-editor';
-import type { TimelineView } from '../lib/timeline-view';
+import { pointRows, POINT_ROW, type TimelineView } from '../lib/timeline-view';
 import {
   useTimelineInteraction,
   type TimelineEvents,
@@ -80,6 +80,10 @@ export default function EditorTimeline({
       ) as Record<Lane, EditorItem[]>,
     [all],
   );
+  const pointLayout = useMemo(
+    () => pointRows(lanes.point, view, width),
+    [lanes.point, view, width],
+  );
   const markers = state.markers;
   const markerClass = (marker: EditorMarker) =>
     [
@@ -140,17 +144,22 @@ export default function EditorTimeline({
     );
   };
   const diamond = (item: EditorItem) => {
-    const left = x(item.start);
-    if (left < -12 || left > width + 12) return null;
+    const left = x(item.start),
+      row = pointLayout.rows.get(item.id);
+    if (row === undefined) return null;
+    const top =
+      (pointLayout.height - pointLayout.count * POINT_ROW) / 2 +
+      (row + 0.5) * POINT_ROW;
+    const owner = all.find((parent) => parent.id === item.parentId)?.title;
     return (
       <button
         key={item.id}
         data-point={item.id}
         type="button"
         className={`tl-point${item.id === selectedId ? ' is-selected' : ''}${failing.has(item.id) ? ' is-failing' : ''}`}
-        style={{ left }}
-        aria-label={`Description at ${formatClock(item.start)}`}
-        title={`Go to ${formatClock(item.start)}. Drag to move the description's time.`}
+        style={{ left, top }}
+        aria-label={`Description at ${formatClock(item.start)} in ${owner}`}
+        title={`${owner}: ${item.title}\nGo to ${formatClock(item.start)}. Drag to move the description's time.`}
         onClick={(event) => {
           if (event.detail === 0) events.onSelect(item);
         }}
@@ -172,7 +181,7 @@ export default function EditorTimeline({
     hover && !drag ? Math.min(Math.max(0, at(hover.x)), duration) : undefined;
   const hoverItem =
     hoverTime !== undefined && hover
-      ? underPointer(hoverTime, hover.lane)
+      ? underPointer(hoverTime, hover.lane, hover.pointId)
       : undefined;
   const dragBoundary = drag?.kind === 'boundary' ? drag : undefined;
   const hoverMarker =
@@ -186,7 +195,11 @@ export default function EditorTimeline({
   const whole = (seconds: number) => (seconds / duration) * width;
 
   return (
-    <div className="tl" aria-label="Timeline">
+    <div
+      className="tl"
+      aria-label="Timeline"
+      style={{ '--tl-points': `${pointLayout.height}px` } as CSSProperties}
+    >
       <div className="tl-head">
         <span />
         <div

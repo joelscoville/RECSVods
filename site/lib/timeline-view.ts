@@ -4,6 +4,20 @@
  * always room to scroll the start and end of the video towards the middle). */
 export interface TimelineView { from: number; span: number }
 export const MIN_SPAN = 10;
+export const POINT_TARGET = 24, POINT_ROW = 28;
+/** Stack overlapping hit targets vertically; their horizontal position remains the exact time. */
+export function pointRows(points: { id: string; start: number }[], view: TimelineView, width: number) {
+  const ends: number[] = [], rows = new Map<string, number>();
+  for (const point of [...points].sort((a, b) => a.start - b.start)) {
+    const left = (point.start - view.from) * width / view.span;
+    if (left < -POINT_TARGET / 2 || left > width + POINT_TARGET / 2) continue;
+    let row = ends.findIndex(end => left - end >= POINT_TARGET + 2);
+    if (row === -1) row = ends.length;
+    ends[row] = left;
+    rows.set(point.id, row);
+  }
+  return { rows, height: Math.max(46, ends.length * POINT_ROW + 8), count: ends.length };
+}
 export function fitView(duration: number): TimelineView { return { from: -duration * 0.015, span: duration * 1.03 }; }
 export function clampView(view: TimelineView, duration: number): TimelineView {
   const span = Math.min(Math.max(view.span, MIN_SPAN), duration * 1.5 + MIN_SPAN);

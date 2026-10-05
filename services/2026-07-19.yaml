@@ -30,6 +30,14 @@ chapters:
       - pointTime: "0:00"
         pointText: An unnamed leader guides the recorded thanksgiving and supplication before Derrick
           welcomes the congregation to meditation and a call to worship from Psalms 89.
+      - pointTime: "1:52.2"
+        pointText: Personal supplication brings the congregation's needs before God.
+      - pointTime: "3:01.84"
+        pointText: The leader prays for burdens to be set aside and for receptive hearing.
+      - pointTime: "3:48.9"
+        pointText: Derrick welcomes the English morning congregation and invites mutual greetings.
+      - pointTime: "4:45"
+        pointText: Silent preparation leads to the call to worship from Psalms 89.
     chapterScripture:
       - Psalms 89
   - chapterId: c20260719-worship-scripture
@@ -41,6 +49,14 @@ chapters:
       - pointTime: "6:10"
         pointText: Derrick leads hymns, prayer and readings from Proverbs 30, John 15 and 1 Corinthians 13,
           with a youth choir presentation of The Lord Is My Shepherd.
+      - pointTime: "8:17.74"
+        pointText: Prayer asks for attention, understanding and transformation through worship.
+      - pointTime: "12:53"
+        pointText: The congregation reads Proverbs 30:1-33 responsively.
+      - pointTime: "16:42.18"
+        pointText: John 15:1-17 supplies the wider context for the sermon.
+      - pointTime: "25:32.18"
+        pointText: 1 Corinthians 13:8-13 is announced as the supporting sermon passage.
     subchapters:
       - chapterId: s20260719-youth-choir
         chapterTitle: "Youth Choir: The Lord Is My Shepherd"
@@ -68,6 +84,14 @@ chapters:
         pointText: Following his welcome and invitation to questions, the preacher urges discerning,
           accountable charitable action rather than paralysis over exploitation, drawing on his
           welfare views and an unverified crime anecdote.
+      - pointTime: "28:40"
+        pointText: A question about exploitation when helping others introduces the need for wisdom.
+      - pointTime: "29:51.18"
+        pointText: Matthew 10 is used to balance gentleness with discernment and accountability.
+      - pointTime: "34:10.18"
+        pointText: Sustained involvement with a monitored charitable group is recommended.
+      - pointTime: "35:35.94"
+        pointText: James 2:17 calls listeners to act rather than discuss charitable work endlessly.
     chapterScripture:
       - John 15:12-17
       - 1 Corinthians 13:8-13
@@ -77,12 +101,20 @@ chapters:
     chapterTitle: Scripture Challenges Self-Directed Faith
     chapterKind: sermon
     chapterStart: "36:42"
-    chapterEnd: "54:49"
+    chapterEnd: "54:45"
     points:
       - pointTime: "36:42"
         pointText: Recalling dependence on the true vine and praying for humility, the preacher questions
           transactional friendship and religious self-selection, urging Scripture rather than
           inherited culture or status to govern belief and conduct.
+      - pointTime: "38:06.46"
+        pointText: Dependence on Christ includes relationships with believers and accepting pruning.
+      - pointTime: "43:01.28"
+        pointText: A child paying classmates to become friends illustrates transactional relationships.
+      - pointTime: "48:31.06"
+        pointText: Worship conventions and clothing are considered as inherited forms rather than unquestionable prescriptions.
+      - pointTime: "53:59"
+        pointText: Scripture should direct choices instead of background, ethnicity or personal philosophy.
     subchapters:
       - chapterId: s20260719-difficulties
         chapterTitle: Why Does Friendship Involve Commandments?
@@ -93,6 +125,14 @@ chapters:
           - pointTime: "41:30"
             pointText: The preacher uses transactional friendship stories to explore the difficulty of love
               linked with obedience and divine choosing rather than personal religious selection.
+          - pointTime: "43:01.28"
+            pointText: Buying classmates' friendship illustrates a transactional understanding of relationship.
+          - pointTime: "44:05.98"
+            pointText: A lending and repayment story continues the contrast between transaction and friendship.
+          - pointTime: "45:03.2"
+            pointText: Divine choosing is contrasted with assuming that faith is entirely a personal selection.
+          - pointTime: "46:21.14"
+            pointText: Mixed religious practices illustrate an approach in which the worshipper remains in control.
         chapterScripture:
           - John 15:12-17
           - John 14:15
@@ -106,13 +146,21 @@ chapters:
   - chapterId: c20260719-glory-joy-in-christ
     chapterTitle: True Glory and Joy Depend on Christ
     chapterKind: sermon
-    chapterStart: "54:49"
+    chapterStart: "54:45"
     chapterEnd: "1:05:37.42"
     points:
-      - pointTime: "54:49"
+      - pointTime: "54:45.08"
         pointText: Through disputed sporting examples and a hypothetical purchased team, the preacher argues
           that glory requires truth and goodness, connecting dependence on Christ with full joy
           rather than religion used for personal benefit.
+      - pointTime: "56:16.36"
+        pointText: Sporting ambition introduces a question about authentic achievement.
+      - pointTime: "58:46.2"
+        pointText: A hypothetical purchased national team contrasts eligibility with meaningful shared achievement.
+      - pointTime: "1:01:58.34"
+        pointText: A wordplay on Christian stresses dependence on Christ instead of self-directed identity.
+      - pointTime: "1:02:59"
+        pointText: Fullness of joy is contrasted with using religion as a small source of comfort.
     chapterScripture:
       - John 15:5
       - John 15:11
@@ -120,22 +168,36 @@ chapters:
     chapterTitle: Belonging to a Perfect Master Brings Freedom
     chapterKind: sermon
     chapterStart: "1:05:37.42"
-    chapterEnd: "1:19:59"
+    chapterEnd: "1:19:58.5"
     points:
       - pointTime: "1:05:37.42"
         pointText: Drawing on redemption, divine choosing and MacArthur’s account of doulos, the preacher
           locates freedom in belonging to a perfectly good God, distinguishing this from racist
           enslavement and the use of marital submission to excuse bullying.
+      - pointTime: "1:06:44.98"
+        pointText: Galatians 2:20 contrasts belonging to Christ with complete self-ownership.
+      - pointTime: "1:13:24.46"
+        pointText: Ephesians 1:3-5 connects divine choosing with belonging to Christ.
+      - pointTime: "1:15:54.44"
+        pointText: The preacher condemns racist uses of Scripture to justify historical enslavement.
+      - pointTime: "1:18:22.56"
+        pointText: A husband's appeal to submission is challenged by the corresponding demand for self-giving love.
     subchapters:
       - chapterId: s20260719-doulos
         chapterTitle: Doulos Challenges Voluntary Service
         chapterKind: sermon
         chapterStart: "1:07:53"
-        chapterEnd: "1:12:21"
+        chapterEnd: "1:12:21.35"
         points:
           - pointTime: "1:07:53"
             pointText: Presenting MacArthur’s argument, the preacher says servant softens doulos and contrasts
               slavery with voluntary bondservice as a way of understanding belonging to Christ.
+          - pointTime: "1:09:01.56"
+            pointText: Roman slavery and early Christian communities provide context for the preacher's translation argument.
+          - pointTime: "1:10:09.26"
+            pointText: MacArthur's book is introduced as the source of the claim that translators softened slavery language.
+          - pointTime: "1:10:57.9"
+            pointText: Slave and voluntary bondservant are contrasted before the paradox of freedom in Christ.
         chapterScripture:
           - John 15:15
     chapterScripture:
@@ -147,13 +209,21 @@ chapters:
   - chapterId: c20260719-love-shaped-obedience
     chapterTitle: Christ’s Love Calls for Obedience
     chapterKind: sermon
-    chapterStart: "1:19:59"
+    chapterStart: "1:19:58.5"
     chapterEnd: "1:29:16.8"
     points:
-      - pointTime: "1:19:59"
+      - pointTime: "1:19:58.82"
         pointText: Humbled by a remembered prayer partner’s challenge, the preacher presents Christ’s
           self-giving love as the basis for friendship and obedience, applying it to everyday
           relationships and praying for changed responses under pressure.
+      - pointTime: "1:21:10"
+        pointText: The preacher admits being humbled by a prayer partner he had initially judged by appearance.
+      - pointTime: "1:22:15.26"
+        pointText: Calling Jesus Lord is examined alongside everyday refusals of his direction.
+      - pointTime: "1:24:28"
+        pointText: John 15 connects the cross, commands and friendship with Christ.
+      - pointTime: "1:26:48.1"
+        pointText: Love for Christ is applied to responses toward spouses, relatives, colleagues and friends.
     subchapters:
       - chapterId: s20260719-greatest-love
         chapterTitle: Love Shapes Everyday Relationships
@@ -165,6 +235,12 @@ chapters:
             pointText: Returning to John 15 and 1 Corinthians 13, the preacher connects the cross with
               friendship and commands, urging love for Christ to reshape responses to family,
               colleagues and friends.
+          - pointTime: "1:24:28"
+            pointText: Christ's self-giving love provides the framework for understanding friendship and commands.
+          - pointTime: "1:26:04.62"
+            pointText: The cross reminds Christians that received love is to be shared with others.
+          - pointTime: "1:26:48.1"
+            pointText: Everyday relationships are opportunities to respond in love rather than revert to old habits.
         chapterScripture:
           - 1 Corinthians 13:13
           - John 15:12-17
@@ -181,6 +257,14 @@ chapters:
         pointText: The congregation is invited into creed, intercession, offering and song before the
           blessing, notices about cancelled evening preaching and a possible school brigade
           partnership, and dismissal with silent meditation.
+      - pointTime: "1:30:02"
+        pointText: Prayer is introduced for personal response and youth ministry.
+      - pointTime: "1:34:12.88"
+        pointText: The third-Sunday second offering is designated for social causes.
+      - pointTime: "1:38:29.6"
+        pointText: The announced blessing from Jude is pronounced before the congregation sits.
+      - pointTime: "1:39:39.9"
+        pointText: Historical notices describe a possible school brigade partnership and ways to support young people.
     chapterScripture:
       - James 2:17
       - Jude 1
@@ -193,3 +277,5 @@ markers:
   - markerTime: "36:42"
     markerNote: "Other topics it touched: faith, authority, prayer, discernment, sacrifice,
       responsibility, worship, glory, repentance, love."
+  - markerTime: "54:45"
+    markerNote: "Glory/joy now starts at 'And so when we are studying John 15'; love/obedience starts at 'But we don't understand this'. Doulos end extended through its last complete sentence. Supplied word timing only; check audio."

@@ -30,6 +30,14 @@ chapters:
       - pointTime: "0:04.76"
         pointText: The leaders prepare the congregation through adoration, confession, thanksgiving,
           personal requests, welcome and silent meditation.
+      - pointTime: "1:21.98"
+        pointText: Confession is introduced with quiet prayer.
+      - pointTime: "2:34.28"
+        pointText: Thanksgiving turns attention to God's gifts.
+      - pointTime: "3:42.42"
+        pointText: Supplication brings personal needs before God.
+      - pointTime: "5:40.9"
+        pointText: Jason welcomes the first English service and invites greetings and quiet preparation.
   - chapterId: c20260621-worship-scripture
     chapterTitle: Worship and Scripture
     chapterKind: opening
@@ -40,6 +48,14 @@ chapters:
         pointText: The congregation joins the call to worship, hymns, prayer, a source-interrupted Ancient
           of Days video, Proverbs and John readings, and The Lord is My Shepherd anthem before the
           reader corrects the final reading announcement to Romans 8:26-30.
+      - pointTime: "12:55.76"
+        pointText: Daniel 7 introduces Ancient of Days and God's authority over earthly empires.
+      - pointTime: "21:14.98"
+        pointText: Proverbs 26 is introduced for responsive reading.
+      - pointTime: "24:41.92"
+        pointText: The congregation reads John 14:15-31 in alternate verses.
+      - pointTime: "34:17.84"
+        pointText: The reader corrects the announcement and reads Romans 8:26-30.
     chapterScripture:
       - Psalms 75:1-3
       - Daniel 7
@@ -56,6 +72,14 @@ chapters:
         pointText: Introducing the Spirit's promise, Yong recaps Greater Works as wider ministry reach,
           urging humble lifelong learning, service by every believer and prayer for God's purposes
           rather than wealth-based aspirations or formulas.
+      - pointTime: "38:14.3"
+        pointText: Philip's question about the Father illustrates the need for lifelong humility.
+      - pointTime: "41:14.86"
+        pointText: Asking what Jesus would do is offered as an imperfect but useful reminder at life's crossroads.
+      - pointTime: "43:24.04"
+        pointText: Every believer is entrusted with work, beyond those specifically called as pastors.
+      - pointTime: "46:34.6"
+        pointText: Starting with available resources leads to a cycle of service, learning and joy.
     chapterScripture:
       - John 14:15-24
       - Romans 8:26-30
@@ -66,12 +90,20 @@ chapters:
     chapterTitle: Love for Christ Changes How We Live
     chapterKind: sermon
     chapterStart: "48:18.92"
-    chapterEnd: "1:11:21.02"
+    chapterEnd: "1:11:21.7"
     points:
       - pointTime: "48:18.92"
         pointText: Yong argues that love for Christ produces repentant action and lifelong restoration
           beyond rule-keeping or religious transactions, using kindness and marriage illustrations
           while acknowledging continuing failure and temptation.
+      - pointTime: "50:00.32"
+        pointText: Kindness among people of different beliefs shows why doing good alone does not establish Christian identity.
+      - pointTime: "54:03.08"
+        pointText: A believer's failures are distinguished from persistent harm through grief over sin and a desire to repent.
+      - pointTime: "1:00:26"
+        pointText: Redemption is presented as rescue and restoration of life, with lifelong sanctification.
+      - pointTime: "1:07:49.84"
+        pointText: Marriage vows illustrate commitment that endures changes in health and wealth.
     subchapters:
       - chapterId: s20260621-restoration
         chapterTitle: Christ Restores Life Beyond Rule-Keeping
@@ -82,6 +114,14 @@ chapters:
           - pointTime: "55:07.78"
             pointText: Yong distinguishes redemption from lifelong restoration, presenting Christ's commandments
               as pointing to Christ himself and a changed identity rather than a checklist.
+          - pointTime: "55:59.92"
+            pointText: John 14:6 directs attention to Christ himself rather than a list of rules.
+          - pointTime: "58:01.36"
+            pointText: The rich young man's encounter shows why following Christ goes beyond a checklist.
+          - pointTime: "1:00:26"
+            pointText: Rescue from condemnation is distinguished from lifelong restoration of life.
+          - pointTime: "1:02:43.3"
+            pointText: A changed-identity metaphor illustrates a renewed desire for Christ and the life God intends.
         chapterScripture:
           - John 14:6
           - John 10:10
@@ -90,12 +130,20 @@ chapters:
         chapterTitle: Faithful Love Goes Beyond Transactions
         chapterKind: sermon
         chapterStart: "1:03:53.96"
-        chapterEnd: "1:11:21.02"
+        chapterEnd: "1:11:21.7"
         points:
           - pointTime: "1:03:53.96"
             pointText: Yong challenges religious bargaining and consumer expectations through enduring marriage
               vows, including an unverified account attributed to Pat Robertson, before returning to
               transformation amid temptation.
+          - pointTime: "1:05:16.7"
+            pointText: Treating a talisman or Bible as a charm illustrates bargaining for divine favor.
+          - pointTime: "1:06:41.36"
+            pointText: Questions about amenities and school connections illustrate consumer expectations of church.
+          - pointTime: "1:07:49.84"
+            pointText: Enduring marriage vows illustrate love that is not conditional on health or wealth.
+          - pointTime: "1:10:31.04"
+            pointText: Changed identity does not eliminate temptation, introducing the need for a helper.
     chapterScripture:
       - John 14:15
       - John 14:21
@@ -109,24 +157,36 @@ chapters:
   - chapterId: c20260621-knowing-spirit-scripture
     chapterTitle: Knowing the Spirit Begins With Scripture
     chapterKind: sermon
-    chapterStart: "1:11:21.02"
+    chapterStart: "1:11:21.7"
     chapterEnd: "1:28:23.86"
     points:
-      - pointTime: "1:11:21.02"
+      - pointTime: "1:11:21.92"
         pointText: Yong uses qualified church-size estimates, his account of charismatic history and
           unverified recollections to frame the congregation's position, grounding knowledge of the
           Spirit in Scripture while acknowledging the Trinity's mystery.
+      - pointTime: "1:15:13.82"
+        pointText: The preacher presents an account of charismatic history beginning with Azusa Street while acknowledging earlier phenomena.
+      - pointTime: "1:17:59.22"
+        pointText: The congregation's position is distinguished from cessationism and extreme charismatic practices.
+      - pointTime: "1:20:06.9"
+        pointText: Army-fellowship experiences illustrate the preacher's skepticism toward extraordinary spiritual claims.
+      - pointTime: "1:24:08.46"
+        pointText: Scripture and the Westminster Confession provide the basis for understanding the Trinity.
     subchapters:
       - chapterId: s20260621-scripture-trinity
         chapterTitle: Scripture Guides Understanding of the Trinity
         chapterKind: sermon
-        chapterStart: "1:24:08.46"
+        chapterStart: "1:24:02.94"
         chapterEnd: "1:28:23.86"
         points:
-          - pointTime: "1:24:08.46"
+          - pointTime: "1:24:02.94"
             pointText: Yong appeals to Scripture and the Westminster Confession while recognizing limits of
               comprehension and translation, contrasting biblical inquiry with reliance on
               impressions or visions.
+          - pointTime: "1:25:35.66"
+            pointText: Biblical teaching about the Trinity is affirmed while complete understanding and translation remain limited.
+          - pointTime: "1:26:56.18"
+            pointText: Biblical inquiry is contrasted with relying on impressions, visions or perceived signs.
         chapterScripture:
           - John 17:17
           - John 14:15-16
@@ -145,6 +205,14 @@ chapters:
         pointText: Yong presents the divine Spirit's intercession and abiding presence with the Father and
           Son as help in weakness and loneliness, including practical support through believers and
           differing readings of 'that day'.
+      - pointTime: "1:29:51.64"
+        pointText: Romans 8:26-27 explains the Spirit's help and intercession in weakness.
+      - pointTime: "1:31:11.6"
+        pointText: Different interpretations of 'that day' are considered without claiming unanimous agreement.
+      - pointTime: "1:32:18"
+        pointText: John 14:21-24 connects indwelling with the promised presence of Father and Son.
+      - pointTime: "1:33:10.7"
+        pointText: The Spirit's lasting presence is joined with practical help from fellow believers.
     chapterScripture:
       - John 14:16
       - Romans 8:26-27
@@ -161,6 +229,14 @@ chapters:
         pointText: Yong applies the Spirit of truth to engineering, online opinion and qualified court
           commentary, urging objective and theological testing of claims before praying for truthful
           living through the Spirit's help.
+      - pointTime: "1:36:12.22"
+        pointText: Blurred boundaries between opinion and fact are applied to online reactions and algorithmic reinforcement.
+      - pointTime: "1:37:29.24"
+        pointText: Court decisions illustrate the difficulty of seeking truth, while the system is called the best available.
+      - pointTime: "1:38:59.76"
+        pointText: The preacher asks whether claims are objectively and theologically true.
+      - pointTime: "1:40:32.12"
+        pointText: Prayer asks for truthful living in both large and small matters.
     chapterScripture:
       - John 14:16-17
       - Romans 8:26-27
@@ -174,6 +250,14 @@ chapters:
         pointText: The congregation affirms the Apostles' Creed before an unidentified speaker reflects on
           enduring fatherhood and makes gender-role claims, followed by children's gifts and prayer
           for fathers and families.
+      - pointTime: "1:42:08.22"
+        pointText: The speaker recalls the change in identity at the birth of his first daughter.
+      - pointTime: "1:43:19.68"
+        pointText: Parenthood is described as enduring before the Father's Day appreciation.
+      - pointTime: "1:44:38"
+        pointText: Children distribute tokens of appreciation while fathers stand.
+      - pointTime: "1:47:35.78"
+        pointText: Prayer asks for fathers' physical, emotional and spiritual health and their care for children.
   - chapterId: c20260621-offertory-closing
     chapterTitle: Offertory and Closing
     chapterKind: closing
@@ -184,6 +268,12 @@ chapters:
         pointText: The leaders announce an offering for cultural mandate work, guide an unfamiliar hymn with
           unverified Haven of Rest title wording, and lead doxology, blessing and ministry
           invitations before dismissal to silent meditation.
+      - pointTime: "1:50:39.62"
+        pointText: The pianist demonstrates an unfamiliar closing hymn before the congregation sings.
+      - pointTime: "1:55:18.24"
+        pointText: The doxology leads to a blessing from 1 Thessalonians 5 and 2 Corinthians 13.
+      - pointTime: "1:56:34.16"
+        pointText: Historical notices invite ministry participation and prayer for gospel-rally opportunities.
     chapterScripture:
       - 1 Thessalonians 5
       - 2 Corinthians 13
@@ -196,5 +286,5 @@ markers:
   - markerTime: "36:13.72"
     markerNote: "Other topics it touched: discernment, prayer, truth, discipleship, service,
       responsibility, faith, mission, hypocrisy, repentance, temptation, trinity, justice."
-  - markerTime: "1:34:40.56"
-    markerNote: Point title shortened from "The Spirit of Truth Calls Us to Truthful Living" to fit 3–8 words.
+  - markerTime: "1:11:21.7"
+    markerNote: "Spirit chapter starts before 'When Jesus Christ' after 'difficulties'; Scripture/Trinity starts at the complete explanatory question. Supplied word timings only; check audio."

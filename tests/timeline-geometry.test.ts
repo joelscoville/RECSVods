@@ -96,17 +96,34 @@ describe('timeline geometry', () => {
       hitBoundary(edges(state), 507.01, 'chapter', geometry),
     ).toBeUndefined();
     expect(hitBoundary(edges(state), 500, 'ruler', geometry)).toBeUndefined();
-    expect(hitItem(items(state, 120), 50, 'chapter', geometry)?.id).toBe(
-      'sermon',
-    );
-    expect(
-      hitItem(items(state, 120), 120, 'chapter', geometry),
-    ).toBeUndefined();
-    expect(hitItem(items(state, 120), 20.5, 'point', geometry)?.id).toBe(
+    expect(hitItem(items(state, 120), 50, 'chapter')?.id).toBe('sermon');
+    expect(hitItem(items(state, 120), 120, 'chapter')).toBeUndefined();
+    expect(hitItem(items(state, 120), 20.5, 'point', 'song-note')?.id).toBe(
       'song-note',
     );
     const marker = { id: 'marker', at: 30, note: 'Check', include: false };
     expect(hitMarker([marker], 310, geometry)).toBe(marker);
     expect(hitMarker([marker], 310.1, geometry)).toBeUndefined();
+  });
+
+  it('uses the targeted diamond to distinguish coincident owners and nearby points', () => {
+    const state = boundaryState();
+    state.points.push(
+      { id: 'parent-note', parentId: 'opening', time: 20, text: 'Parent note.' },
+      { id: 'nearby-note', parentId: 'song', time: 20.1, text: 'Nearby note.' },
+    );
+    const all = items(state, 120),
+      boundaries = edges(state);
+    for (const id of ['song-note', 'parent-note', 'nearby-note']) {
+      expect(hitItem(all, 20, 'point', id)?.id).toBe(id);
+      expect(hitBoundary(boundaries, 200, 'point', geometry, id)?.id).toBe(id);
+    }
+    // Empty space in the stacked lane must not pick another row by time alone.
+    expect(hitItem(all, 20, 'point')).toBeUndefined();
+    expect(hitBoundary(boundaries, 200, 'point', geometry)).toBeUndefined();
+    expect(hitItem(all, 20, 'point', 'opening')).toBeUndefined();
+    expect(
+      hitBoundary(boundaries, 200, 'point', geometry, 'opening'),
+    ).toBeUndefined();
   });
 });

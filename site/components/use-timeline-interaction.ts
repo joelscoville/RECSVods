@@ -78,6 +78,7 @@ export function useTimelineInteraction({
     x: number;
     lane: TimelineLane;
     boundary?: Edge;
+    pointId?: string;
   }>();
   const [drag, setDrag] = useState<Drag>();
   const dragRef = useRef<Drag>(undefined);
@@ -94,10 +95,10 @@ export function useTimelineInteraction({
   const x = (seconds: number) => timeToPixel(seconds, geometry);
   const at = (pixel: number) => pixelToTime(pixel, geometry);
   const markerAt = (pixel: number) => hitMarker(state.markers, pixel, geometry);
-  const nearBoundary = (pixel: number, lane: TimelineLane) =>
-    hitBoundary(edges, pixel, lane, geometry);
-  const underPointer = (seconds: number, lane: TimelineLane) =>
-    hitItem(all, seconds, lane, geometry);
+  const nearBoundary = (pixel: number, lane: TimelineLane, pointId?: string) =>
+    hitBoundary(edges, pixel, lane, geometry, pointId);
+  const underPointer = (seconds: number, lane: TimelineLane, pointId?: string) =>
+    hitItem(all, seconds, lane, pointId);
 
   useEffect(() => {
     const element = surface.current;
@@ -232,6 +233,12 @@ export function useTimelineInteraction({
     );
   }
 
+  function pointOf(target: EventTarget | null): string | undefined {
+    return target instanceof Element
+      ? target.closest<HTMLElement>('[data-point]')?.dataset.point
+      : undefined;
+  }
+
   function onPointerDown(event: PointerEvent<HTMLDivElement>) {
     if (event.button !== 0) return;
     const pixel =
@@ -249,7 +256,8 @@ export function useTimelineInteraction({
       events.onSelectMarker(marker);
       return;
     }
-    const boundary = nearBoundary(pixel, lane);
+    const pointId = pointOf(event.target);
+    const boundary = nearBoundary(pixel, lane, pointId);
     if (boundary) {
       const item = all.find((item) => item.id === boundary.id);
       if (item) events.onSelect(item);
@@ -267,7 +275,7 @@ export function useTimelineInteraction({
       return;
     }
     const seconds = Math.min(Math.max(0, at(pixel)), duration);
-    const item = underPointer(seconds, lane);
+    const item = underPointer(seconds, lane, pointId);
     if (item) {
       events.onSelect(item);
       return;
@@ -288,7 +296,13 @@ export function useTimelineInteraction({
       return;
     }
     const lane = laneOf(event.clientY);
-    setHover({ x: pixel, lane, boundary: nearBoundary(pixel, lane) });
+    const pointId = pointOf(event.target);
+    setHover({
+      x: pixel,
+      lane,
+      pointId,
+      boundary: nearBoundary(pixel, lane, pointId),
+    });
   }
   function onPointerUp(event: PointerEvent<HTMLDivElement>) {
     const active = dragRef.current;
@@ -322,7 +336,11 @@ export function useTimelineInteraction({
       return;
     }
     if (lane === 'point') {
-      const point = underPointer(at(pixel), lane);
+      // Pointer capture retargets clicks to the surface; recover the diamond at the click.
+      const pointId = pointOf(
+        document.elementFromPoint(event.clientX, event.clientY),
+      );
+      const point = underPointer(at(pixel), lane, pointId);
       if (point) events.onRename(point);
       return;
     }
@@ -339,8 +357,9 @@ export function useTimelineInteraction({
       event.clientX - event.currentTarget.getBoundingClientRect().left;
     const lane = laneOf(event.clientY);
     const seconds = Math.min(Math.max(0, at(pixel)), duration);
-    const boundary = nearBoundary(pixel, lane);
-    const item = underPointer(seconds, lane);
+    const pointId = pointOf(event.target);
+    const boundary = nearBoundary(pixel, lane, pointId);
+    const item = underPointer(seconds, lane, pointId);
     setHover(undefined);
     events.onContextMenu({
       x: event.clientX,

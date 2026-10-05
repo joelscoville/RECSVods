@@ -31,6 +31,14 @@ chapters:
         pointText: With ACTS preparation already underway, the leaders guide confession, thanksgiving and
           personal prayer, introduce Sister Catherine and welcome the congregation after a
           meditative interlude credited to Brother Joshua.
+      - pointTime: "0:49.68"
+        pointText: The leader invites confession while acknowledging believers' imperfection.
+      - pointTime: "2:03.74"
+        pointText: Thanksgiving is introduced with time for personal prayer.
+      - pointTime: "3:09.36"
+        pointText: Worshippers are invited to bring their concerns to God in supplication.
+      - pointTime: "6:12.26"
+        pointText: The worship leader welcomes the congregation and invites mutual greetings.
   - chapterId: c20260802-worship-communion-scripture
     chapterTitle: Worship, Communion and Scripture
     chapterKind: opening
@@ -41,6 +49,14 @@ chapters:
         pointText: The leaders guide hymns, prayer, Communion and readings from Psalms, Proverbs, John and
           Ephesians, reflecting on belonging to Christ’s community and his care for the disciples
           alongside the video anthem This World Is Not My Home.
+      - pointTime: "9:42.72"
+        pointText: The opening prayer contrasts pride and insecurity with security in God.
+      - pointTime: "21:22.64"
+        pointText: Proverbs 1:1-33 is introduced for alternating reading.
+      - pointTime: "24:58.06"
+        pointText: The congregation reads John 16:1-15 responsively.
+      - pointTime: "34:32.32"
+        pointText: Ephesians 5:15-17 is read before the sermon.
     subchapters:
       - chapterId: s20260802-communion
         chapterTitle: Communion Expresses Belonging to Christ’s Community
@@ -52,6 +68,14 @@ chapters:
             pointText: Recalling pandemic disagreements about Communion at home, the minister presents
               participation as belonging to Christ’s community rather than mere ritual and leads the
               congregation in receiving together.
+          - pointTime: "13:46"
+            pointText: Communion is described as belonging to Christ's community rather than merely completing a ritual.
+          - pointTime: "15:02.74"
+            pointText: The Lord's Prayer is followed by the institution reading from 1 Corinthians 11.
+          - pointTime: "16:17.9"
+            pointText: Baptized Christians are invited to receive the elements and wait to partake together.
+          - pointTime: "19:04.34"
+            pointText: The minister invites the congregation to stand and partake before asking Brother Hadi to pray.
         chapterScripture:
           - 1 Corinthians 11:23-26
     chapterScripture:
@@ -71,6 +95,14 @@ chapters:
           paranormal claims, mysticism and vaccination disagreements, urging objective inquiry while
           allowing that a medical dissenter could be right and describing Scripture’s sufficiency
           for faith and life.
+      - pointTime: "36:11.92"
+        pointText: The preacher appreciates co-workers who improve the livestream without needing micromanagement.
+      - pointTime: "37:13.96"
+        pointText: Questions about reincarnation, qigong and out-of-body experiences are introduced.
+      - pointTime: "39:14.28"
+        pointText: A doctors illustration retains the qualification that a dissenter could be right.
+      - pointTime: "40:46.56"
+        pointText: Objective evidence and reasonable inquiry are encouraged alongside Scripture's sufficiency for faith and life.
     chapterScripture:
       - John 16:1-15
       - Ephesians 5:15-17
@@ -84,6 +116,14 @@ chapters:
         pointText: Pastor Yong introduces John 16’s warnings through the cost of witness, criticizes
           segregation and uses his unverified Coptic-martyr account to illustrate faith amid
           opposition, with prayer for receptive hearing.
+      - pointTime: "43:31.88"
+        pointText: Goodness among nonbelievers is distinguished from the fallen world's opposition to faith.
+      - pointTime: "44:50.58"
+        pointText: 2 Timothy 3:12 is connected with differences in worldview and spiritual allegiance.
+      - pointTime: "47:59.5"
+        pointText: John 16:1-3 introduces warnings about religiously motivated persecution.
+      - pointTime: "50:28.38"
+        pointText: The preacher recounts a worker joining others in professing Christ, while saying he has not watched the violent recording.
     chapterScripture:
       - John 7:7
       - 2 Timothy 3:12
@@ -100,27 +140,49 @@ chapters:
         pointText: Pastor Yong moves from unfolding revelation and human limits to a critique of future-only
           religion, using his Cambodia recollection and its correction to argue for sanctification
           and purposeful use of present time.
+      - pointTime: "55:15.44"
+        pointText: Progressive learning becomes a call for understanding of God to mature with age.
+      - pointTime: "59:29.78"
+        pointText: Future hope should not be interpreted as making present life meaningless.
+      - pointTime: "1:07:40.72"
+        pointText: The preacher admits shame at his earlier judgment of a Cambodian woman after learning of her wartime suffering.
+      - pointTime: "1:11:38.6"
+        pointText: Ephesians 5 and the talents illustration call for purposeful use of time.
     subchapters:
       - chapterId: s20260802-cambodia
         chapterTitle: Future Hope and a Mistaken Judgment in Cambodia
         chapterKind: sermon
         chapterStart: "1:00:36.94"
-        chapterEnd: "1:08:52.82"
+        chapterEnd: "1:08:49.14"
         points:
           - pointTime: "1:00:36.94"
             pointText: In his unverified Cambodia recollection, Pastor Yong connects a woman’s wish to give
               money to a temple for a better next life with his criticism of future-only religion,
               admitting shame at judging her after learning she had been raped during war.
+          - pointTime: "1:01:56.46"
+            pointText: The preacher describes his initial judgment, which he later explicitly withdraws.
+          - pointTime: "1:05:34.12"
+            pointText: Local staff buy the woman's vegetables, sparing her a walk to market.
+          - pointTime: "1:06:41.38"
+            pointText: Her wish to give the proceeds to a temple is explained through fear of another life in hardship.
+          - pointTime: "1:07:40.72"
+            pointText: Learning of the woman's wartime suffering causes the preacher to correct his assumption and express shame.
       - chapterId: s20260802-sanctification
         chapterTitle: Redemption Includes Lifelong Growth
         chapterKind: sermon
-        chapterStart: "1:08:52.82"
+        chapterStart: "1:08:49.14"
         chapterEnd: "1:13:22.64"
         points:
           - pointTime: "1:08:52.82"
             pointText: Pastor Yong presents sanctification as lifelong growth toward Christ and uses Ephesians 5
               and the talents and rich-man illustrations to urge purposeful stewardship of time
               rather than passive waiting for heaven.
+          - pointTime: "1:10:24.8"
+            pointText: The preacher argues against treating faith simply as a ticket to heaven.
+          - pointTime: "1:11:38.6"
+            pointText: Ephesians 5 is connected with stewardship of time and the talents illustration.
+          - pointTime: "1:12:51.64"
+            pointText: A rich-man illustration warns against foolish use of time.
         chapterScripture:
           - Ephesians 5:15-17
           - Matthew 25
@@ -140,6 +202,14 @@ chapters:
         pointText: Expounding John 16 and John 14, Pastor Yong presents the Spirit’s worldwide indwelling,
           conviction and remembrance of Christ’s teaching as the basis of believers’ confidence
           rather than reliance on persuasive arguments or human effort alone.
+      - pointTime: "1:14:36.26"
+        pointText: A relay-race analogy illustrates the Spirit's presence beyond Jesus' earthly location.
+      - pointTime: "1:16:48.4"
+        pointText: Divine conviction is distinguished from winning a human argument.
+      - pointTime: "1:18:43.96"
+        pointText: Conviction is summarized in relation to rejection of Christ, righteousness and Satan's defeat.
+      - pointTime: "1:21:10.2"
+        pointText: John 16:12-15 and John 14:26 explain the Spirit affirming truth and recalling Christ's teaching.
     chapterScripture:
       - John 16:7-11
       - John 14:15-17
@@ -156,6 +226,14 @@ chapters:
         pointText: Pastor Yong applies the Spirit’s help to changing habits in marriage, regular Scripture
           reading and prayer, and joyful, willing service in a loving community, concluding with
           prayer for active obedience rather than passive waiting.
+      - pointTime: "1:23:59.48"
+        pointText: Different preferences about making a bed illustrate changing habits out of love for a spouse.
+      - pointTime: "1:26:17.76"
+        pointText: Forgetting a reading becomes a reason for regular Scripture reading, prayer and consistency.
+      - pointTime: "1:27:43.72"
+        pointText: John 13:34-35 connects spiritual growth with shared, loving community rather than bitter service.
+      - pointTime: "1:30:49.98"
+        pointText: Gifted people are urged to respond willingly to opportunities for service.
     subchapters:
       - chapterId: s20260802-marriage
         chapterTitle: Serving a Spouse Through the Spirit’s Help
@@ -167,6 +245,10 @@ chapters:
             pointText: Drawing on a cell-group study of Timothy Keller’s The Meaning of Marriage, Pastor Yong
               uses differing preferences about making the bed to explore changed habits, love for a
               spouse and dependence on the Spirit.
+          - pointTime: "1:23:59.48"
+            pointText: Making the bed illustrates changing a personal preference out of love for a spouse.
+          - pointTime: "1:25:09.14"
+            pointText: The preacher asks whether changed behavior comes through isolated effort or the Spirit's help.
     chapterScripture:
       - John 13:34-35
   - chapterId: c20260802-response-closing
@@ -180,6 +262,14 @@ chapters:
           an encouragement to pray often, the closing hymn and blessing, then invite fellowship and
           ministry participation through photo-directory, refreshments and community-lunch
           announcements.
+      - pointTime: "1:35:55.56"
+        pointText: Prayer asks for cell leaders and a community that serves one another in love.
+      - pointTime: "1:38:03.52"
+        pointText: The first-Sunday second offering is designated for evangelism.
+      - pointTime: "1:39:27.64"
+        pointText: What a Friend We Have in Jesus is introduced with encouragement to pray often.
+      - pointTime: "1:44:21.78"
+        pointText: Photo-directory updates and shared refreshments are encouraged as ways to build warmer fellowship.
     chapterScripture:
       - Hebrews 13
 markers:
@@ -193,3 +283,5 @@ markers:
   - markerTime: "1:00:36.94"
     markerNote: "Old review note: Keep the initial assumption together with the later correction; retain
       attribution for personal and medical claims."
+  - markerTime: "1:08:49.14"
+    markerNote: "The sanctification subchapter now starts with 'But my dear brothers and sisters' instead of mid-phrase after 'whole', using supplied word timings; check audio."

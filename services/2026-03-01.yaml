@@ -1,0 +1,169 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: One
+serviceDate: 2026-03-01
+status: draft
+sermonDescription: Concluding John 10, the preacher connects belonging to Christ's flock with humble response, lasting assurance and an intimate relationship with the shepherd. Jesus' declaration of unity with the Father introduces the Trinity and Christ's divinity. His works, especially resurrection, are presented as confirming his identity and transforming the apostles' commitment, calling believers to follow truth rather than treat religion as a transaction.
+sermonScripture:
+  - John 10:22-42
+  - Colossians 1:15-20
+sermonTopics:
+  - faith
+  - knowing-god
+  - trinity
+uploads:
+  - youtubeId: 9wJkduAgkEU
+    uploadDuration: "1:54:28.021"
+chapters:
+  - chapterId: c20260301-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "3:12.9"
+    chapterEnd: "10:32.7"
+    points:
+      - pointTime: "3:13.24"
+        pointText: The leader invites personal prayer and reflection during Lent.
+      - pointTime: "4:25.14"
+        pointText: Confession seeks cleansing through Christ.
+      - pointTime: "5:43.84"
+        pointText: Thanksgiving recalls gratitude in every circumstance.
+      - pointTime: "6:53.8"
+        pointText: Supplication brings personal needs before God.
+      - pointTime: "7:58.32"
+        pointText: Prayer gives thanks for safe worship before Patrick welcomes the congregation.
+  - chapterId: c20260301-worship-communion
+    chapterTitle: Worship, Communion and Scripture
+    chapterKind: opening
+    chapterStart: "10:32.7"
+    chapterEnd: "37:46.05"
+    chapterScripture:
+      - Psalms 37:1-4
+      - 1 Corinthians 11:23-26
+      - Proverbs 11:1-31
+      - John 10:22-42
+      - Colossians 1:15-20
+    points:
+      - pointTime: "10:33"
+        pointText: Psalms 37 calls for trust and doing good rather than envy of wrongdoing.
+      - pointTime: "15:59.88"
+        pointText: Communion reminds the congregation of belonging to Christ during Lent.
+      - pointTime: "24:29.58"
+        pointText: Proverbs 11 is introduced for responsive reading.
+      - pointTime: "28:20.6"
+        pointText: John 10 supplies the reading about Christ's sheep and unity with the Father.
+      - pointTime: "36:42.36"
+        pointText: Colossians 1:15-20 supplies the supporting reading about Christ's preeminence.
+    subchapters:
+      - chapterId: s20260301-communion
+        chapterTitle: Communion Reminds Us of Belonging
+        chapterKind: communion
+        chapterStart: "15:59.5"
+        chapterEnd: "24:08.5"
+        points:
+          - pointTime: "15:59.88"
+            pointText: Belonging to Christ is recalled amid worldwide conflict and local comfort.
+          - pointTime: "17:26.34"
+            pointText: The congregation is invited to pray the Lord's Prayer.
+          - pointTime: "18:02.86"
+            pointText: The institution reading from 1 Corinthians 11 precedes distribution.
+          - pointTime: "21:59.56"
+            pointText: Recipients stand and partake together with thanksgiving.
+          - pointTime: "23:19.28"
+            pointText: Prayer asks that kingdom priorities shape life beyond the Communion observance.
+  - chapterId: c20260301-shepherd-recap
+    chapterTitle: Know the Shepherd and Belong to His One Flock
+    chapterKind: sermon
+    chapterStart: "37:46.05"
+    chapterEnd: "50:15.5"
+    chapterScripture:
+      - John 10:11-21
+    points:
+      - pointTime: "37:46.36"
+        pointText: The preacher reflects on conflict and encourages practical love and ministry involvement.
+      - pointTime: "43:03.04"
+        pointText: The shepherd's goodness is expressed through giving his life rather than treating leadership as a transaction.
+      - pointTime: "44:44.86"
+        pointText: Knowing Christ requires contact through Scripture, devotion and prayer.
+      - pointTime: "46:24.88"
+        pointText: The universal church is distinguished from insisting that only one's denomination has true believers.
+      - pointTime: "48:11.14"
+        pointText: Faith is described as accepting God's acceptance when its reason is beyond comprehension.
+  - chapterId: c20260301-belonging-assurance
+    chapterTitle: Humble Response and Lasting Assurance
+    chapterKind: sermon
+    chapterStart: "50:15.5"
+    chapterEnd: "1:12:43.6"
+    chapterScripture:
+      - John 10:22-29
+    points:
+      - pointTime: "50:15.8"
+        pointText: The Feast of Dedication and Solomon's colonnade establish the passage's historical setting.
+      - pointTime: "54:59.04"
+        pointText: Jesus' repeated declarations and works are contrasted with the leaders' refusal to believe.
+      - pointTime: "58:20.92"
+        pointText: Election is examined through questions about belonging to Christ's sheep.
+      - pointTime: "1:03:28.08"
+        pointText: Divine calling is presented alongside responsibility and the danger of pride.
+      - pointTime: "1:10:20.1"
+        pointText: Continuing confession and getting up after failure are connected with confidence in Christ's promise.
+  - chapterId: c20260301-trinity
+    chapterTitle: Christ Is One with the Father
+    chapterKind: sermon
+    chapterStart: "1:12:43.6"
+    chapterEnd: "1:24:17.84"
+    chapterScripture:
+      - John 10:30
+      - Colossians 1:15-20
+    points:
+      - pointTime: "1:12:43.86"
+        pointText: Jesus' declaration of unity with the Father is interpreted as a clear declaration of divinity.
+      - pointTime: "1:13:44.9"
+        pointText: A Trinity diagram distinguishes one divine essence from Father, Son and Spirit as persons.
+      - pointTime: "1:15:26.24"
+        pointText: Colossians 1 supports Christ's role in creation and the fullness of God dwelling in him.
+      - pointTime: "1:17:41.36"
+        pointText: The preacher contrasts his understanding with Jehovah's Witness teaching while discussing their persistence.
+      - pointTime: "1:21:05.34"
+        pointText: Mormon and oneness accounts are contrasted with the confession presented by the preacher.
+  - chapterId: c20260301-works-resurrection
+    chapterTitle: Christ's Works Confirm His Identity
+    chapterKind: sermon
+    chapterStart: "1:24:17.84"
+    chapterEnd: "1:37:01.3"
+    chapterScripture:
+      - John 10:31-42
+      - Psalms 82:6-7
+      - John 21:24-25
+    points:
+      - pointTime: "1:24:17.84"
+        pointText: The opposition's accusation of blasphemy introduces Jesus' response from Psalms 82.
+      - pointTime: "1:26:12.2"
+        pointText: Jesus asks his opponents to consider his works even when they reject his words.
+      - pointTime: "1:31:20.46"
+        pointText: Earlier miracles are contrasted with the apostles' fear at the crucifixion.
+      - pointTime: "1:33:01.98"
+        pointText: Church traditions about the apostles' deaths illustrate the preacher's argument for resurrection conviction.
+      - pointTime: "1:35:55.3"
+        pointText: John the Baptist's witness and later ministry point people toward Jesus rather than requiring signs from every servant.
+  - chapterId: c20260301-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:37:01.3"
+    chapterEnd: "1:54:28.021"
+    points:
+      - pointTime: "1:37:01.62"
+        pointText: Prayer asks for appreciation of belonging to Christ and serious commitment to following him.
+      - pointTime: "1:41:09.84"
+        pointText: Intercession concerns the Good Friday rally, invitees and strength for Stephen Tong.
+      - pointTime: "1:42:44.76"
+        pointText: Shared prayer asks for practical help and comfort for people facing challenges.
+      - pointTime: "1:44:58.76"
+        pointText: Turn Your Eyes upon Jesus introduces focused trust rather than discouragement over others' opinions.
+      - pointTime: "1:49:36.02"
+        pointText: Historical notices explain fellowship lunch, rally prayer meetings and opportunities for youth ministry.
+markers:
+  - markerTime: "1:12:43.86"
+    markerNote: "One is drawn from the sermon theme at John 10:30 and corroborated by the next week's recap; confirm the announced title slide. Duration and anchors use supplied faster-whisper audio evidence, not fresh video or listening checks."
+  - markerTime: "1:17:41.36"
+    markerNote: "Keep denominational descriptions, legal history and traditions about apostolic deaths attributed rather than independently verified."

@@ -31,6 +31,14 @@ chapters:
         pointText: The leaders guide personal adoration, confession, thanksgiving and supplication, welcome
           visitors and call the congregation to a joyful response to God's faithfulness through
           Psalms 71.
+      - pointTime: "1:52.32"
+        pointText: The opening leader invites confession.
+      - pointTime: "3:06.42"
+        pointText: Thanksgiving recognizes God's goodness in the congregation's lives.
+      - pointTime: "4:11.28"
+        pointText: Worshippers pray in supplication for individual circumstances.
+      - pointTime: "8:20.32"
+        pointText: Psalms 71 calls for a joyful response to God's faithfulness.
     chapterScripture:
       - Psalms 71
   - chapterId: c20260614-worship-and-scripture
@@ -43,6 +51,14 @@ chapters:
         pointText: The congregation joins songs and prayer for faithful living, hears readings from Proverbs
           25, John 14 and Hebrews 1, and receives the anthem Wonderful Savior Redeemer; the precise
           title of O Hover Me Holy Spirit remains for review.
+      - pointTime: "14:10.22"
+        pointText: Known and Loved is introduced through security in Christ rather than possessions or achievement.
+      - pointTime: "21:29.9"
+        pointText: Proverbs 25:1-28 is announced for alternating reading.
+      - pointTime: "24:50.04"
+        pointText: The responsive reading continues with John 14:8-31.
+      - pointTime: "34:15.68"
+        pointText: Hebrews 1:1-4 is read before the pulpit is handed to Pastor Yong.
     subchapters:
       - chapterId: s20260614-08
         chapterTitle: Wonderful Savior Redeemer
@@ -61,23 +77,39 @@ chapters:
     chapterTitle: Knowing Jesus Shapes Our Lives
     chapterKind: sermon
     chapterStart: "35:42.12"
-    chapterEnd: "1:11:06.1"
+    chapterEnd: "1:11:03.35"
     points:
       - pointTime: "35:42.12"
         pointText: Recapping trust in Christ and the Spirit's present help, Pastor Yong urges humble
           learning from Jesus as the Father's revelation and a Bible-grounded pattern for
           forgiveness and daily life rather than self-sufficiency or celebrity imitation.
+      - pointTime: "43:54.16"
+        pointText: Reformed convictions are paired with a warning against self-righteous speculation about others' salvation.
+      - pointTime: "51:43.02"
+        pointText: The disciples' years with Jesus illustrate how much humility human understanding requires.
+      - pointTime: "1:00:49.7"
+        pointText: Hebrews 1 and Colossians 1 are used to explain Jesus' unique revelation of God.
+      - pointTime: "1:03:53.24"
+        pointText: Asking what Jesus would do requires first knowing him through the Bible.
     subchapters:
       - chapterId: s20260614-11
         chapterTitle: Jesus Reveals the Father
         chapterKind: sermon
         chapterStart: "47:09.26"
-        chapterEnd: "1:11:06.1"
+        chapterEnd: "1:11:03.35"
         points:
           - pointTime: "47:09.26"
             pointText: Beginning with Philip's request, Pastor Yong develops Jesus' revelation of the Father
               into a call for lifelong learning, discernment about signs and following Christ's
               example.
+          - pointTime: "51:43.02"
+            pointText: The disciples' continuing confusion challenges assumptions of spiritual mastery.
+          - pointTime: "54:32.08"
+            pointText: Sermon preparation combines earlier exposition, other preachers and prayer for enlightenment.
+          - pointTime: "1:00:49.7"
+            pointText: Hebrews 1 and Colossians 1 affirm Christ's revelation of God and place over creation.
+          - pointTime: "1:03:53.24"
+            pointText: A Bible-grounded knowledge of Jesus is necessary for using him as a pattern in daily decisions.
         chapterScripture:
           - John 14:8-9
           - John 14:9
@@ -117,25 +149,41 @@ chapters:
   - chapterId: c20260614-christs-work-belongs-to-every-believer
     chapterTitle: Christ's Work Is Entrusted to Every Believer
     chapterKind: sermon
-    chapterStart: "1:11:06.1"
-    chapterEnd: "1:28:10.38"
+    chapterStart: "1:11:03.35"
+    chapterEnd: "1:28:07.78"
     points:
-      - pointTime: "1:11:06.1"
+      - pointTime: "1:11:03.42"
         pointText: Pastor Yong reads John 14:12 as a call for ordinary believers to use their gifts in
           compassionate service, interpreting greater works as wider reach through evangelism,
           travel and communication rather than surpassing Christ's work in quality.
+      - pointTime: "1:12:26.96"
+        pointText: God's work is not restricted to pastors, unusually talented people or those with abundant resources.
+      - pointTime: "1:17:38.26"
+        pointText: A hungry person at the door illustrates action rather than waiting for a miracle to replace responsibility.
+      - pointTime: "1:22:44.72"
+        pointText: The preacher connects varied gifts with living beyond personal interests.
+      - pointTime: "1:26:23.32"
+        pointText: Travel and remote communication illustrate greater reach rather than greater quality than Christ's work.
     chapterScripture:
       - John 14:12
   - chapterId: c20260614-pray-and-serve-as-christs-representatives
     chapterTitle: Pray and Serve as Christ's Representatives
     chapterKind: sermon
-    chapterStart: "1:28:10.38"
-    chapterEnd: "1:37:48.72"
+    chapterStart: "1:28:07.78"
+    chapterEnd: "1:37:47.92"
     points:
-      - pointTime: "1:28:10.38"
+      - pointTime: "1:28:07.78"
         pointText: Pastor Yong explains prayer in Christ's name as representing his cause, using accounts of
           failed declarations and disappointment to affirm Christ's support without guaranteed
           outcomes and urge small acts of service.
+      - pointTime: "1:29:29.54"
+        pointText: World Cup wishes challenge the idea that prayer guarantees a preferred result.
+      - pointTime: "1:32:32.72"
+        pointText: Prayer in Jesus' name is explained as representing Christ's cause rather than using a formula.
+      - pointTime: "1:34:56.46"
+        pointText: A failed site acquisition illustrates disappointment despite confidence and preparation.
+      - pointTime: "1:36:38.16"
+        pointText: Listeners are urged to begin practical kindness in ordinary work and daily encounters.
     chapterScripture:
       - John 14:13-14
       - John 14:12-14
@@ -143,16 +191,26 @@ chapters:
   - chapterId: c20260614-response-and-closing
     chapterTitle: Response and Closing
     chapterKind: closing
-    chapterStart: "1:37:48.72"
+    chapterStart: "1:37:47.92"
     chapterEnd: "1:51:43.86"
     points:
       - pointTime: "1:37:48.72"
         pointText: Pastor Yong leads prayer for active service and seminary students as the congregation
           responds with the creed, an offering whose destination remains unclear, Trust and Obey,
           doxology and blessing, followed by ministry invitations and dismissal.
+      - pointTime: "1:39:18.04"
+        pointText: The congregation stands to affirm the Apostles' Creed.
+      - pointTime: "1:42:04.82"
+        pointText: Prayer asks for resolve among students coming to the Jakarta seminary.
+      - pointTime: "1:45:53.64"
+        pointText: Trust and Obey is connected with the preacher's explanation of service.
+      - pointTime: "1:50:15.1"
+        pointText: Historical notices invite scripture reading, worship leading and audiovisual service.
     chapterScripture:
       - Hebrews 13
 markers:
+  - markerTime: "35:42.12"
+    markerNote: "Raw ASR begins mid-sentence at this sermon start; retain the existing start pending audio. Greater works, prayer and response cuts now include their complete transition clauses, based on supplied word timings."
   - markerTime: "35:42.12"
     markerNote: "Also cited in the sermon: John 14:6; Acts 4:12; John 14:8-9; John 14:9; John 8; Luke
       6:46; Mark 4:40; Matthew 17:17; Mark 8:17-18; Matthew 26:40; Luke 18:8; Acts 1:6; John

@@ -1,0 +1,197 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Press On and Live Forward
+serviceDate: 2026-01-04
+status: draft
+sermonDescription: This New Year sermon contrasts life's recurring seasons with the unfolding of God's plan in time. Christ's coming brings adoption as God's children, changing how believers face an uncertain future. Paul's account of inner renewal and unseen eternal glory encourages hope amid physical decline. Philippians 3 calls for deliberate growth, release from past failures and pressing forward in obedience, illustrated through a husband's faithful care for his wife.
+sermonScripture:
+  - Ecclesiastes 3:1-22
+  - Galatians 4:4-7
+  - Philippians 3:12-14
+sermonTopics:
+  - hope
+  - discipleship
+  - faith
+uploads:
+  - youtubeId: 0gTOEitpkjg
+    uploadDuration: "1:48:03.383"
+chapters:
+  - chapterId: c20260104-opening
+    chapterTitle: ACTS Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "1:40.25"
+    chapterEnd: "9:10.8"
+    points:
+      - pointTime: "1:40.52"
+        pointText: Preparation on the first Sunday of the year begins with personal prayer and adoration.
+      - pointTime: "3:05.18"
+        pointText: Confession acknowledges sin and trusts Christ's cleansing.
+      - pointTime: "4:11.14"
+        pointText: Thanksgiving reflects on the past year and the year ahead.
+      - pointTime: "5:15.22"
+        pointText: Supplication asks for God's help and guidance.
+      - pointTime: "6:15.64"
+        pointText: Gathering prayer asks for gratitude and obedience before Hadi welcomes the congregation.
+  - chapterId: c20260104-worship
+    chapterTitle: Worship on Firm Ground
+    chapterKind: opening
+    chapterStart: "9:10.8"
+    chapterEnd: "16:12.9"
+    chapterScripture:
+      - Psalms 26:8-12
+    points:
+      - pointTime: "9:11.08"
+        pointText: Psalms 26 supplies the call to worship and an image of standing on level ground.
+      - pointTime: "10:52.76"
+        pointText: The leader urges confidence in God's stability through changing circumstances.
+      - pointTime: "13:35.54"
+        pointText: Opening prayer gives thanks for God's care and asks for fruitful reception of the word.
+  - chapterId: c20260104-communion
+    chapterTitle: Holy Communion and Belonging to Christ's Body
+    chapterKind: communion
+    chapterStart: "16:12.9"
+    chapterEnd: "29:26.9"
+    chapterScripture:
+      - 1 Corinthians 11:23-26
+    points:
+      - pointTime: "16:13.18"
+        pointText: The preacher explains the move to Communion on the first Sunday of each month.
+      - pointTime: "19:24.76"
+        pointText: Communion reminds believers that they belong to Christ and share one body with the saints.
+      - pointTime: "20:58.92"
+        pointText: Lead Me to Calvary invites remembrance of Christ's suffering and love.
+      - pointTime: "24:05.6"
+        pointText: The Lord's Prayer precedes distribution of the bread and cup.
+      - pointTime: "27:07.36"
+        pointText: 1 Corinthians 11 introduces receiving the bread and cup in remembrance of Christ.
+  - chapterId: c20260104-scripture
+    chapterTitle: Scripture and Preparation for the New Year Sermon
+    chapterKind: opening
+    chapterStart: "29:26.9"
+    chapterEnd: "43:13.8"
+    chapterScripture:
+      - Proverbs 3:1-35
+      - Ecclesiastes 3:1-22
+      - Philippians 3:12-14
+    points:
+      - pointTime: "29:27.16"
+        pointText: Worship resumes after Communion with responsive reading from Proverbs 3.
+      - pointTime: "33:27.92"
+        pointText: Ecclesiastes 3 reflects on times and seasons under heaven.
+      - pointTime: "36:46.78"
+        pointText: Day by Day is introduced as a prayer for daily strength, grace and guidance.
+      - pointTime: "39:25.26"
+        pointText: O God, Our Help in Ages Past prepares the congregation for the sermon.
+      - pointTime: "42:19.04"
+        pointText: Philippians 3 calls for pressing forward toward the goal in Christ.
+  - chapterId: c20260104-introduction
+    chapterTitle: New Year Reflection and Daily Devotion
+    chapterKind: other
+    chapterStart: "43:13.8"
+    chapterEnd: "49:04.04"
+    points:
+      - pointTime: "43:14.06"
+        pointText: The preacher introduces a New Year sermon apart from the usual John exposition.
+      - pointTime: "43:47.54"
+        pointText: An account of illness during travel introduces the unpredictability of plans.
+      - pointTime: "48:08.5"
+        pointText: A daily devotional habit is encouraged for the beginning of the year.
+      - pointTime: "48:22.96"
+        pointText: Prayer asks for humility and attention to God's word amid a troubled world.
+  - chapterId: c20260104-seasons-time
+    chapterTitle: Life's Seasons and God's Unfolding Plan
+    chapterKind: sermon
+    chapterStart: "49:04.04"
+    chapterEnd: "1:09:09.15"
+    chapterScripture:
+      - Ecclesiastes 3:1-22
+      - Galatians 4:4
+    points:
+      - pointTime: "49:04.04"
+        pointText: Kierkegaard's reflection introduces understanding life backward while living it forward.
+      - pointTime: "50:50.9"
+        pointText: Human physical life is described as constrained by the progression of time and space.
+      - pointTime: "52:22.68"
+        pointText: Ecclesiastes 3 expresses the contrasting seasons everyone experiences.
+      - pointTime: "1:02:06.36"
+        pointText: The preacher contrasts cyclical reincarnation with the Bible's linear account of God's plan.
+      - pointTime: "1:05:44.18"
+        pointText: Being made in God's image introduces the capacity to face the future beyond the constraints of the past.
+  - chapterId: c20260104-adoption-renewal
+    chapterTitle: Adopted by God and Renewed within
+    chapterKind: sermon
+    chapterStart: "1:09:09.15"
+    chapterEnd: "1:24:01.07"
+    chapterScripture:
+      - Galatians 4:4-7
+      - 2 Corinthians 4:16-18
+    points:
+      - pointTime: "1:09:09.41"
+        pointText: Christ's coming in the fullness of time supplies God's answer for his people.
+      - pointTime: "1:09:59.85"
+        pointText: Salvation includes adoption and a transformed status as God's children.
+      - pointTime: "1:12:56.93"
+        pointText: Knowing God is a lifelong journey requiring childlike humility.
+      - pointTime: "1:15:42.11"
+        pointText: 2 Corinthians 4 distinguishes physical wasting away from daily renewal within.
+      - pointTime: "1:20:09.95"
+        pointText: Attention is directed toward unseen eternal realities rather than transient visible success.
+  - chapterId: c20260104-press-on
+    chapterTitle: Press On in Deliberate Obedience
+    chapterKind: sermon
+    chapterStart: "1:24:01.07"
+    chapterEnd: "1:35:29.55"
+    chapterScripture:
+      - Philippians 3:12-14
+    points:
+      - pointTime: "1:24:01.07"
+        pointText: Paul's forward movement flows from belonging to Christ rather than already being perfect.
+      - pointTime: "1:24:41.05"
+        pointText: Spiritual growth requires deliberate decision and action rather than waiting for a magical solution.
+      - pointTime: "1:26:01.55"
+        pointText: A Christian leader's care for his wife illustrates ordinary, costly obedience.
+      - pointTime: "1:32:16.37"
+        pointText: Forgetting what lies behind means refusing captivity to past failures rather than erasing memory.
+      - pointTime: "1:35:12.83"
+        pointText: The congregation is urged to act faithfully and make a life-long commitment beyond annual resolutions.
+    subchapters:
+      - chapterId: s20260104-faithful-care
+        chapterTitle: Faithful Care and Accepting God's Assignment
+        chapterKind: sermon
+        chapterStart: "1:26:01.3"
+        chapterEnd: "1:31:22.0"
+        points:
+          - pointTime: "1:26:01.55"
+            pointText: The preacher introduces a Christian leader who stepped down from public work to care for his wife.
+          - pointTime: "1:27:34.33"
+            pointText: The wife's dependence and vulnerability explain the costly decision to become her caregiver.
+          - pointTime: "1:28:32.75"
+            pointText: Marriage vows are presented as sufficient reason for faithful care in sickness.
+          - pointTime: "1:29:06.27"
+            pointText: Accepting an assignment from God is contrasted with dwelling on alternative achievements.
+          - pointTime: "1:29:36.65"
+            pointText: Acceptance and simple obedience are described as a source of peace.
+  - chapterId: c20260104-closing
+    chapterTitle: Commit the Year to God and Respond
+    chapterKind: closing
+    chapterStart: "1:35:29.55"
+    chapterEnd: "1:48:03.383"
+    points:
+      - pointTime: "1:35:29.69"
+        pointText: Response prayer asks for transformed lives and eyes to value what is eternal.
+      - pointTime: "1:37:40.23"
+        pointText: Personal prayer commits the new year and, if needed, one's entire life to God.
+      - pointTime: "1:39:07.77"
+        pointText: Shared prayer asks for obedience, joy and inner renewal through God's word.
+      - pointTime: "1:42:30.47"
+        pointText: Saviour, Like a Shepherd Lead Us introduces the closing hymn.
+      - pointTime: "1:45:36.39"
+        pointText: Historical notices encourage equipping for Johor church planting and cell-group service.
+markers:
+  - markerTime: "1:40.25"
+    markerNote: "The opening contains isolated ASR 'Thank you' fragments before clear prayer preparation. Anchors and duration use supplied faster-whisper audio evidence; fresh video duration and boundary listening remain outstanding."
+  - markerTime: "49:04.04"
+    markerNote: "Press On and Live Forward is a descriptive working title, not a confirmed announced title."
+  - markerTime: "1:26:01.55"
+    markerNote: "ASR renders the caregiver's name inconsistently. The draft summarizes the account without resolving proper-name spellings or independently verifying medical, historical and cultural claims."
