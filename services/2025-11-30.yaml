@@ -1,0 +1,137 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Truth
+serviceDate: 2025-11-30
+status: draft
+sermonDescription: John 8's promise of freedom is connected with abiding in Christ's word rather than merely possessing information. The preacher contrasts truth with power, self-interest and material rewards, arguing that technical achievement cannot supply moral meaning. Amos's plumb line illustrates God's unchanging standard. Patience and kindness make truth concrete in daily relationships, while personally knowing Christ is distinguished from expertise about him. Such lived understanding brings freedom from sin's bondage as well as eternal hope.
+sermonScripture:
+  - John 8:31-32
+  - 1 John 5:18-21
+  - Amos 7:7-8
+sermonTopics:
+  - truth
+  - knowing-god
+  - discernment
+uploads:
+  - youtubeId: YuQ4KSSmYQY
+    uploadDuration: "1:49:07.052"
+chapters:
+  - chapterId: c20251130-worship
+    chapterTitle: Worship and the Challenge of Abiding in Truth
+    chapterKind: opening
+    chapterStart: "1:40.0"
+    chapterEnd: "32:43.4"
+    chapterScripture:
+      - Psalms 18:1-3
+      - Proverbs 29:1-27
+      - John 8:31-47
+      - 1 John 5:18-21
+    points:
+      - pointTime: "23:55.38"
+        pointText: The promise that truth sets people free is read with its preceding condition of abiding in Christ's word.
+      - pointTime: "25:23.52"
+        pointText: Damawan's reflection identifies the temptation to reject truths that are difficult to obey.
+  - chapterId: c20251130-question-recap
+    chapterTitle: Which Truth Claims Can We Trust?
+    chapterKind: qa
+    chapterStart: "32:43.4"
+    chapterEnd: "47:41.42"
+    points:
+      - pointTime: "33:51.52"
+        pointText: Conflicting religious and denominational claims introduce the question of how to recognize truth.
+      - pointTime: "36:59.18"
+        pointText: The recap warns against assuming that an opportunity to respond to grace lasts indefinitely.
+      - pointTime: "38:52.9"
+        pointText: Measurable achievements are distinguished from the quality and essence of a person's life.
+      - pointTime: "43:55.44"
+        pointText: Impressive generated words are contrasted with worship whose heart is actually directed toward God.
+      - pointTime: "45:24.02"
+        pointText: Salvation is grounded in Christ's identity as light and life rather than a consumer's choice among options.
+  - chapterId: c20251130-power-interest
+    chapterTitle: Power and Self-Interest Can Displace Truth
+    chapterKind: sermon
+    chapterStart: "47:41.42"
+    chapterEnd: "1:04:08.3"
+    points:
+      - pointTime: "50:13.36"
+        pointText: Seeking truth is described as a qualitative pursuit beyond simply moving through everyday routines.
+      - pointTime: "54:14.12"
+        pointText: The preacher distinguishes a biological survival theory from the moral claim that might makes right.
+      - pointTime: "57:15.32"
+        pointText: International self-interest illustrates how power can replace concern for what is true or just.
+      - pointTime: "1:01:35.32"
+        pointText: Ignoring inconvenient practical evidence illustrates how self-interest can override even measurable truth.
+      - pointTime: "1:01:53.48"
+        pointText: The loss of truth in conflict is extended from war to ordinary family arguments.
+  - chapterId: c20251130-moral-longing
+    chapterTitle: Honesty Has Value beyond Its Rewards
+    chapterKind: sermon
+    chapterStart: "1:04:08.3"
+    chapterEnd: "1:15:40.96"
+    points:
+      - pointTime: "1:04:31.04"
+        pointText: The honest woodcutter story introduces tension between valuing honesty and rewarding it chiefly with wealth.
+      - pointTime: "1:06:11.18"
+        pointText: A material payoff can obscure the worth of honesty itself.
+      - pointTime: "1:07:27.58"
+        pointText: Technical progress is distinguished from discovering moral purpose and the meaning of life unaided.
+      - pointTime: "1:08:43.36"
+        pointText: Repeated claims can become accepted convictions without becoming true.
+      - pointTime: "1:13:38.98"
+        pointText: Lewis's crooked-line illustration asks what standard makes a judgment of injustice possible.
+  - chapterId: c20251130-scripture-standard
+    chapterTitle: God's Word Is the Plumb Line for Life
+    chapterKind: sermon
+    chapterStart: "1:15:40.96"
+    chapterEnd: "1:27:47.34"
+    chapterScripture:
+      - Amos 7:7-8
+      - John 8:31-32
+      - John 17:17
+      - 1 Corinthians 13:4
+    points:
+      - pointTime: "1:17:54.4"
+        pointText: Amos's vision introduces the plumb line as an image of a dependable standard.
+      - pointTime: "1:19:42.26"
+        pointText: Rightness is presented as independent of location, time and culture rather than negotiated by preference.
+      - pointTime: "1:21:53.74"
+        pointText: Jesus defines disciples through abiding in his word rather than religious family background.
+      - pointTime: "1:24:32.02"
+        pointText: Patience and kindness test whether claims of love are embodied in a marriage.
+      - pointTime: "1:27:21.96"
+        pointText: The promise of freedom is distinguished from academic achievement or information alone.
+  - chapterId: c20251130-lived-knowledge
+    chapterTitle: Know the Truth through a Life That Abides in It
+    chapterKind: sermon
+    chapterStart: "1:27:47.34"
+    chapterEnd: "1:34:49.9"
+    chapterScripture:
+      - John 8:31-32
+      - 1 John 5:19-20
+    points:
+      - pointTime: "1:27:50.04"
+        pointText: Knowing about Christ or truth is distinguished from knowing personally through abiding.
+      - pointTime: "1:28:39.0"
+        pointText: The biblical word for knowing is explained as intimate, experienced knowledge rather than facts alone.
+      - pointTime: "1:29:30.88"
+        pointText: Knowing love requires patience and kindness to become part of life, not merely correct definitions.
+      - pointTime: "1:31:36.3"
+        pointText: Truth's freedom includes present release from sin's bondage and mistaken ways of living as well as eternal hope.
+      - pointTime: "1:32:56.9"
+        pointText: Christ's revelation gives understanding that calls for humble reception and lived response.
+  - chapterId: c20251130-response
+    chapterTitle: Live Truthfully as a Light in the World
+    chapterKind: closing
+    chapterStart: "1:34:49.9"
+    chapterEnd: "1:49:07.052"
+    points:
+      - pointTime: "1:34:49.9"
+        pointText: Response prayer asks for grace to move from distracted familiarity toward truth lived in daily conduct.
+      - pointTime: "1:40:10.22"
+        pointText: Prayer frames service as the privilege of participating in God's work rather than a self-absorbed life.
+markers:
+  - markerTime: "47:41.42"
+    markerNote: "The Truth is a working title supported by the theme and following week's recap; exact announced wording needs confirmation. Supplied audio timings and duration await fresh video and listening checks."
+  - markerTime: "54:14.12"
+    markerNote: "Scientific, historical, political and comparative-religion claims and quotations remain attributed to the preacher. Do not treat illustrative accounts as independently verified facts."
