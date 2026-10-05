@@ -282,8 +282,6 @@ chapters:
       - Romans 15
       - 2 Corinthians 13
 markers:
-  - markerTime: "1:32:38.06"
-    markerNote: "Moved the response start to 'Let us pray' after the preceding sentence, using supplied word timings; check audio."
   - markerTime: "45:30.08"
     markerNote: "Also cited in the sermon: John 16:16-18; Romans 8; John 16:17-18; John 16:19; 1 Peter
       5:7; John 16:20; Revelation 3:14; John 16:22; John 16:23; Hebrews 10:19-20; Hebrews 10:23;
@@ -293,3 +291,5 @@ markers:
   - markerTime: "45:30.08"
     markerNote: "Other topics it touched: prayer, discipleship, worship, politics, authority, sacrifice,
       service, service-life, responsibility, eternal-life, suffering, joy, mission."
+  - markerTime: "1:32:38.06"
+    markerNote: "Moved the response start to 'Let us pray' after the preceding sentence, using supplied word timings; check audio."

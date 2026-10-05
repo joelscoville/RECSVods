@@ -270,8 +270,6 @@ chapters:
       - Jude 1
       - Jude 1:24-25
 markers:
-  - markerTime: "54:45"
-    markerNote: "Glory/joy now starts at 'And so when we are studying John 15'; love/obedience starts at 'But we don't understand this'. Doulos end extended through its last complete sentence. Supplied word timing only; check audio."
   - markerTime: "36:42"
     markerNote: "Also cited in the sermon: John 15:16; John 17:17; John 15:5; John 15:11; 1 Corinthians
       6:19-20; Galatians 2:20; John 15:15; John 15:15-16; Ephesians 1:3-5; 1 Corinthians 13:13. Keep
@@ -279,3 +277,5 @@ markers:
   - markerTime: "36:42"
     markerNote: "Other topics it touched: faith, authority, prayer, discernment, sacrifice,
       responsibility, worship, glory, repentance, love."
+  - markerTime: "54:45"
+    markerNote: "Glory/joy now starts at 'And so when we are studying John 15'; love/obedience starts at 'But we don't understand this'. Doulos end extended through its last complete sentence. Supplied word timing only; check audio."

@@ -273,6 +273,63 @@ test('a timestamped description goes to its own time and never selects its paren
   await expect(selected(page).locator('.ce-title, .ce-check, .ce-row, select')).toHaveCount(0);
 });
 
+test('coincident and nearby descriptions select their own owners at fit and zoom @responsive', async ({ page }) => {
+  await openEditor(page);
+  const parent = recording.chapters.find(chapter => chapter.subchapters?.some(item => item.chapterId === child.chapterId))!;
+  const sameTime = parent.points!.findIndex(point => point.pointTime === child.points![0].pointTime);
+  expect(sameTime).toBeGreaterThanOrEqual(0);
+  const targets = [
+    { id: `${parent.chapterId}/point-${sameTime + 1}`, owner: parent.chapterId, point: parent.points![sameTime] },
+    { id: `${child.chapterId}/point-1`, owner: child.chapterId, point: child.points![0] },
+    { id: `${child.chapterId}/point-2`, owner: child.chapterId, point: child.points![1] },
+  ];
+  for (const zoomed of [false, true]) {
+    if (zoomed) {
+      // The compact toolbar hides zoom buttons; its documented shortcut works at every size.
+      await page.locator('.ce-root').focus();
+      for (let i = 0; i < 3; i++) await page.keyboard.press('=');
+    }
+    for (const target of targets) {
+      const diamond = page.locator(`.tl-point[data-point="${target.id}"]`);
+      await diamond.click();
+      await expect(selected(page)).toHaveAttribute('data-entry', target.id);
+      await expect(page.locator('.ce-section-editor')).toHaveAttribute('data-entry', target.owner);
+      await expect(selected(page).getByRole('textbox', { name: /^Description at/ })).toHaveValue(target.point.pointText);
+      await expect(page.getByLabel('Playhead', { exact: true })).toHaveText(clock(parseTimecode(target.point.pointTime)));
+    }
+  }
+  // Keyboard activation must use the focused point rather than an equal-time neighbour, too.
+  await page.locator(`.tl-point[data-point="${targets[0].id}"]`).focus();
+  await page.keyboard.press('Enter');
+  await expect(selected(page)).toHaveAttribute('data-entry', targets[0].id);
+  expect(await page.evaluate(key => localStorage.getItem(key), draftKey)).toBeNull();
+});
+
+test('editing and dragging a coincident diamond affect only that description', async ({ page }) => {
+  await openEditor(page);
+  const pointId = `${child.chapterId}/point-1`, diamond = page.locator(`.tl-point[data-point="${pointId}"]`);
+  await diamond.dblclick();
+  await expect(selected(page)).toHaveAttribute('data-entry', pointId);
+  await expect(selected(page).getByRole('textbox', { name: /^Description at/ })).toBeFocused();
+  await diamond.click({ button: 'right' });
+  await expect(selected(page)).toHaveAttribute('data-entry', pointId);
+  await expect(page.getByRole('menu')).toContainText('Hear this edge');
+  await page.keyboard.press('Escape');
+  await page.locator('.ce-root').focus();
+  await page.keyboard.press('n');
+  const box = (await diamond.boundingBox())!;
+  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(box.x + box.width / 2 + 20, box.y + box.height / 2, { steps: 5 });
+  await page.mouse.up();
+  const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).state, draftKey);
+  for (const entry of entries) for (const [i, point] of (entry.points ?? []).entries()) {
+    const time = state.points.find((item: { id: string }) => item.id === `${entry.chapterId}/point-${i + 1}`).time;
+    if (`${entry.chapterId}/point-${i + 1}` === pointId) expect(time).toBeGreaterThan(parseTimecode(point.pointTime));
+    else expect(time).toBe(parseTimecode(point.pointTime));
+  }
+});
+
 test('a small hand movement while clicking a diamond does not move the description', async ({ page }) => {
   await openEditor(page);
   const diamond = page.locator('.tl-point').nth(3), before = await diamond.getAttribute('aria-label');

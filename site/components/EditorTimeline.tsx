@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react';
 import { edgeLimits, edges as edgesOf, formatClock, isFileMarker, items as itemsOf, snapTime, type Edge, type EditorItem, type EditorMarker, type EditorState, type Lane as ItemLane } from '../lib/recording-editor';
 import { isMac } from '../lib/editor-keys';
 
-import { clampView, zoomView, type TimelineView } from '../lib/timeline-view';
+import { clampView, pointRows, POINT_ROW, zoomView, type TimelineView } from '../lib/timeline-view';
 
 const STEPS = [0.1, 0.2, 0.5, 1, 2, 5, 10, 15, 30, 60, 120, 300, 600, 900, 1800, 3600];
 const GRAB_PX = 7, SNAP_PX = 9, EDGE_SCROLL_PX = 28, MARKER_HALF = 8;
@@ -32,7 +32,7 @@ export default function EditorTimeline({ state, duration, time, view, onView, sn
 }) {
   const surface = useRef<HTMLDivElement>(null), overview = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(800);
-  const [hover, setHover] = useState<{ x: number; lane: Lane; boundary?: Edge }>();
+  const [hover, setHover] = useState<{ x: number; lane: Lane; boundary?: Edge; pointId?: string }>();
   const [drag, setDrag] = useState<Drag>();
   const dragRef = useRef<Drag>(undefined);
   const pointer = useRef({ x: 0, alt: false, mod: false });
@@ -54,6 +54,7 @@ export default function EditorTimeline({ state, duration, time, view, onView, sn
   const all = useMemo(() => itemsOf(state, duration), [state, duration]);
   const lanes = useMemo(() => Object.fromEntries(LANES.map(lane => [lane, all.filter(item => item.lane === lane)])) as Record<ItemLane, EditorItem[]>, [all]);
   const edges = useMemo(() => edgesOf(state), [state]);
+  const pointLayout = useMemo(() => pointRows(lanes.point, view, width), [lanes.point, view, width]);
   const markers = state.markers;
   // A marker is a tab centred on its time; anywhere on the tab picks it.
   const markerAt = (px: number) => markers.map(marker => ({ marker, distance: Math.abs(px - x(marker.at)) }))
@@ -106,11 +107,13 @@ export default function EditorTimeline({ state, duration, time, view, onView, sn
     const target = document.elementsFromPoint(surface.current!.getBoundingClientRect().left + 1, clientY).find(element => (element as HTMLElement).dataset?.lane);
     return ((target as HTMLElement | undefined)?.dataset.lane as Lane) ?? 'ruler';
   };
-  const nearBoundary = (px: number, lane: Lane) => lane === 'ruler' || lane === 'marks' ? undefined : edges
+  const pointOf = (target: EventTarget | null) => target instanceof Element ? target.closest<HTMLElement>('[data-point]')?.dataset.point : undefined;
+  const nearBoundary = (px: number, lane: Lane, pointId?: string) => lane === 'ruler' || lane === 'marks' ? undefined
+    : lane === 'point' ? edges.find(edge => edge.id === pointId) : edges
     .filter(edge => edge.lane === lane && Math.abs(x(edge.time) - px) <= GRAB_PX)
     .sort((a, b) => Math.abs(x(a.time) - px) - Math.abs(x(b.time) - px))[0];
-  const underPointer = (seconds: number, lane: Lane) => lane === 'ruler' || lane === 'marks' ? undefined
-    : lane === 'point' ? lanes.point.filter(item => Math.abs(x(item.start) - x(seconds)) <= 9).sort((a, b) => Math.abs(a.start - seconds) - Math.abs(b.start - seconds))[0]
+  const underPointer = (seconds: number, lane: Lane, pointId?: string) => lane === 'ruler' || lane === 'marks' ? undefined
+    : lane === 'point' ? lanes.point.find(item => item.id === pointId)
       : lanes[lane].filter(item => item.start <= seconds && seconds < item.end).at(-1);
   const nameOf = (edge: Edge) => all.find(item => item.id === edge.id)?.title ?? edge.id;
 
@@ -142,14 +145,14 @@ export default function EditorTimeline({ state, duration, time, view, onView, sn
     const marker = lane === 'marks' ? markerAt(px) : undefined;
     // Opening the Markers window can move the timeline under a still pointer; drop the stale hover.
     if (marker) { setHover(undefined); onSelectMarker(marker); return; }
-    const boundary = nearBoundary(px, lane);
+    const pointId = pointOf(event.target), boundary = nearBoundary(px, lane, pointId);
     if (boundary) {
       const item = all.find(item => item.id === boundary.id);
       if (item) onSelect(item);
       setDragState({ kind: 'boundary', boundary, origin: boundary.time, pointerStart: px, grab: at(px) - boundary.time, moved: false, playhead: time, time: boundary.time, label: '' });
       return;
     }
-    const seconds = Math.min(Math.max(0, at(px)), duration), item = underPointer(seconds, lane);
+    const seconds = Math.min(Math.max(0, at(px)), duration), item = underPointer(seconds, lane, pointId);
     // Clicking an item selects it; only empty space (and the ruler) moves the playhead.
     if (item) { onSelect(item); return; }
     setDragState({ kind: 'scrub' });
@@ -159,8 +162,8 @@ export default function EditorTimeline({ state, duration, time, view, onView, sn
     const box = event.currentTarget.getBoundingClientRect(), px = event.clientX - box.left;
     pointer.current = { x: px, alt: event.altKey, mod: isMac() ? event.metaKey : event.ctrlKey };
     if (dragRef.current) { move(px); return; }
-    const lane = laneOf(event.clientY);
-    setHover({ x: px, lane, boundary: nearBoundary(px, lane) });
+    const lane = laneOf(event.clientY), pointId = pointOf(event.target);
+    setHover({ x: px, lane, pointId, boundary: nearBoundary(px, lane, pointId) });
   };
   const onPointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
     const active = dragRef.current;
@@ -171,7 +174,8 @@ export default function EditorTimeline({ state, duration, time, view, onView, sn
   const onDoubleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const box = event.currentTarget.getBoundingClientRect(), px = event.clientX - box.left, lane = laneOf(event.clientY);
     if (lane === 'marks') { if (!markerAt(px)) onAddMarker(Math.min(Math.max(0, at(px)), duration)); return; }
-    if (lane === 'point') { const point = underPointer(at(px), lane); if (point) onRename(point); return; }
+    // Pointer capture retargets clicks to the surface, so resolve the diamond at the click position.
+    if (lane === 'point') { const point = underPointer(at(px), lane, pointOf(document.elementFromPoint(event.clientX, event.clientY))); if (point) onRename(point); return; }
     if (lane === 'ruler' || nearBoundary(px, lane)) return;
     const seconds = at(px), exact = underPointer(seconds, lane);
     if (exact) onRename(exact); else onAdd(lane, seconds);
@@ -200,17 +204,19 @@ export default function EditorTimeline({ state, duration, time, view, onView, sn
     </div>;
   };
   const diamond = (item: EditorItem) => {
-    const left = x(item.start);
-    if (left < -12 || left > width + 12) return null;
+    const left = x(item.start), row = pointLayout.rows.get(item.id);
+    if (row === undefined) return null;
+    const top = (pointLayout.height - pointLayout.count * POINT_ROW) / 2 + (row + 0.5) * POINT_ROW;
+    const owner = all.find(parent => parent.id === item.parentId)?.title;
     return <button key={item.id} data-point={item.id} type="button" className={`tl-point${item.id === selectedId ? ' is-selected' : ''}${failing.has(item.id) ? ' is-failing' : ''}`}
-      style={{ left }} aria-label={`Description at ${formatClock(item.start)}`} title={`Go to ${formatClock(item.start)}. Drag to move the description's time.`}
+      style={{ left, top }} aria-label={`Description at ${formatClock(item.start)} in ${owner}`} title={`${owner}: ${item.title}\nGo to ${formatClock(item.start)}. Drag to move the description's time.`}
       onClick={event => { if (event.detail === 0) onSelect(item); }} onKeyDown={event => { if (event.key === 'F2') { event.preventDefault(); onRename(item); } }}>
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 15 8 8 15 1 8Z" /></svg>
     </button>;
   };
 
   const hoverTime = hover && !drag ? Math.min(Math.max(0, at(hover.x)), duration) : undefined;
-  const hoverItem = hoverTime !== undefined && hover ? underPointer(hoverTime, hover.lane) : undefined;
+  const hoverItem = hoverTime !== undefined && hover ? underPointer(hoverTime, hover.lane, hover.pointId) : undefined;
   const dragBoundary = drag?.kind === 'boundary' ? drag : undefined;
   const hoverMarker = hover && !drag && hover.lane === 'marks' ? markerAt(hover.x) : undefined;
   const cursor = dragBoundary?.moved || hover?.boundary && hover.lane !== 'point' ? 'ew-resize' : hoverItem || hoverMarker ? 'pointer' : 'default';
@@ -235,7 +241,7 @@ export default function EditorTimeline({ state, duration, time, view, onView, sn
     }
   };
 
-  return <div className="tl" aria-label="Timeline">
+  return <div className="tl" aria-label="Timeline" style={{ '--tl-points': `${pointLayout.height}px` } as CSSProperties}>
     <div className="tl-head">
       <span />
       <div className="tl-overview" ref={overview} onPointerDown={onOverviewDown} onPointerMove={onOverviewMove} onPointerUp={() => setDragState(undefined)}
@@ -260,8 +266,8 @@ export default function EditorTimeline({ state, duration, time, view, onView, sn
           event.preventDefault();
           if (dragRef.current) return;
           const box = event.currentTarget.getBoundingClientRect(), px = event.clientX - box.left, lane = laneOf(event.clientY);
-          const seconds = Math.min(Math.max(0, at(px)), duration), boundary = nearBoundary(px, lane);
-          const item = underPointer(seconds, lane);
+          const pointId = pointOf(event.target), seconds = Math.min(Math.max(0, at(px)), duration), boundary = nearBoundary(px, lane, pointId);
+          const item = underPointer(seconds, lane, pointId);
           setHover(undefined);
           onContextMenu({ x: event.clientX, y: event.clientY, time: seconds, lane, item, boundary, marker: lane === 'marks' ? markerAt(px) : undefined });
         }}>

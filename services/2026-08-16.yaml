@@ -261,13 +261,13 @@ chapters:
       - pointTime: "1:31:36.02"
         pointText: Historical announcements ask for prayer for visiting ministry and the church-supported orphanage in Batam.
 markers:
-  - markerTime: "42:59"
-    markerNote: "Part 3 resumes mid-sentence across an unmeasured recording gap. Retain that physical upload boundary; finer internal cuts need source audio because the raw word-timing files are unavailable."
   - markerTime: "33:00.64"
     markerNote: "Also cited in the sermon: 1 Corinthians 3:1-6; 1 Corinthians 3:1-2; 1 Corinthians 3:2;
       1 Corinthians 3:7-9; 1 Corinthians 3:6; Proverbs 21:31; Proverbs 16:9; Proverbs 16:33;
       Philippians 2:12-13; Hebrews 11:1; 1 Corinthians 3:9; Matthew 28:19; Matthew 7:21. Keep only
       the main passages above."
+  - markerTime: "42:59"
+    markerNote: "Part 3 resumes mid-sentence across an unmeasured recording gap. Retain that physical upload boundary; finer internal cuts need source audio because the raw word-timing files are unavailable."
   - markerTime: "1:07:55.66"
     markerNote: "Old review note: In Part 3, review the allegations at 26:12–27:05; do not fill the
       retained source-ASR gap by guessing."

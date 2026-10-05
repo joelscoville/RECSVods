@@ -230,8 +230,6 @@ chapters:
 markers:
   - markerTime: "33:05"
     markerNote: "Supplied raw ASR has no opening sermon words until 33:26.48, which begins mid-sentence. Retained the prior 33:05 start rather than treating the transcription gap as silence; check audio."
-  - markerTime: "1:15:07.2"
-    markerNote: "Moved the love/faith chapter from mid-sentence to 'In today's passage' using supplied word timings. Audio verification remains outstanding."
   - markerTime: "33:05"
     markerNote: "Also cited in the sermon: John 16; 1 Peter 5:7; John 13; 1 Corinthians 2:6-7; John
       16:25-26; James 5; John 16:23-24; Acts 2:1-3; Acts 2:44-47; John 16:24; Acts 2; 1 Corinthians
@@ -240,3 +238,5 @@ markers:
   - markerTime: "33:05"
     markerNote: "Other topics it touched: service, peace, service-life, knowing-god, prayer,
       forgiveness, stewardship, joy, politics, suffering, love, temptation, hope."
+  - markerTime: "1:15:07.2"
+    markerNote: "Moved the love/faith chapter from mid-sentence to 'In today's passage' using supplied word timings. Audio verification remains outstanding."

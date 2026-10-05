@@ -264,11 +264,11 @@ chapters:
       - 1 Thessalonians 5
       - 2 Corinthians 13
 markers:
-  - markerTime: "1:35:28.3"
-    markerNote: "Response now includes the complete 'Let us pray' invitation, with a short lead-in based on supplied ASR; audio verification remains outstanding."
   - markerTime: "35:04.7"
     markerNote: "Also cited in the sermon: Romans 13:1-2; Romans 13:3-4; Romans 13:5-7; Jeremiah 29:7; 1
       Peter 2:13-17; Romans 13; 1 Timothy 2. Keep only the main passages above."
   - markerTime: "35:04.7"
     markerNote: "Other topics it touched: faith, discipleship, politics, justice, authority,
       service-life, prayer, truth, worship."
+  - markerTime: "1:35:28.3"
+    markerNote: "Response now includes the complete 'Let us pray' invitation, with a short lead-in based on supplied ASR; audio verification remains outstanding."

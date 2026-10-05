@@ -234,8 +234,6 @@ chapters:
       - John 13
       - Hebrews 13
 markers:
-  - markerTime: "1:23:06.58"
-    markerNote: "Love-as-command starts at the complete 'But the third thing' transition instead of its later recap. Supplied word timing only; check audio."
   - markerTime: "19:38.28"
     markerNote: "Old review note: Ensemble names are unclear; do not assign performer identities without
       confirmation."
@@ -249,3 +247,5 @@ markers:
   - markerTime: "58:35.4"
     markerNote: "Old review note: Check Greek terminology and the brief Chinese quotation. Keep medical
       anecdotes attributed to the speaker."
+  - markerTime: "1:23:06.58"
+    markerNote: "Love-as-command starts at the complete 'But the third thing' transition instead of its later recap. Supplied word timing only; check audio."

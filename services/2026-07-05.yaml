@@ -276,8 +276,6 @@ chapters:
       - Romans 15
       - 2 Corinthians 13
 markers:
-  - markerTime: "1:24:52.2"
-    markerNote: "Public worship now begins at 'However, we do draw the line in worship services', rather than mid-quotation. Spirit, tongues and Creed starts also moved to complete transitions using supplied word timings; check audio."
   - markerTime: "39:26.82"
     markerNote: "Also cited in the sermon: John 14:26; John 14:27; John 14:16; John 14:23; John 14; Acts
       2:1-6; Acts 2; 1 Corinthians 14:1-2; 1 Corinthians 14:5; 1 Corinthians 14:18-19; 1 Corinthians
@@ -289,3 +287,5 @@ markers:
   - markerTime: "1:24:12.44"
     markerNote: "Old review note: Listen at 1:26:32.90–1:26:47: ASR reverses the audience in the
       displayed 1 Corinthians 14:22 quotation."
+  - markerTime: "1:24:52.2"
+    markerNote: "Public worship now begins at 'However, we do draw the line in worship services', rather than mid-quotation. Spirit, tongues and Creed starts also moved to complete transitions using supplied word timings; check audio."

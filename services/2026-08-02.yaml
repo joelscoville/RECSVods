@@ -273,8 +273,6 @@ chapters:
     chapterScripture:
       - Hebrews 13
 markers:
-  - markerTime: "1:08:49.14"
-    markerNote: "The sanctification subchapter now starts with 'But my dear brothers and sisters' instead of mid-phrase after 'whole', using supplied word timings; check audio."
   - markerTime: "42:11.76"
     markerNote: "Also cited in the sermon: John 16:1-3; John 16:2; John 16:4-6; Ephesians 5:15-17;
       Matthew 25; Ephesians 5:17; John 16:7-11; John 14:15-17; John 16:8-11; John 16:12-15; John
@@ -285,3 +283,5 @@ markers:
   - markerTime: "1:00:36.94"
     markerNote: "Old review note: Keep the initial assumption together with the later correction; retain
       attribution for personal and medical claims."
+  - markerTime: "1:08:49.14"
+    markerNote: "The sanctification subchapter now starts with 'But my dear brothers and sisters' instead of mid-phrase after 'whole', using supplied word timings; check audio."

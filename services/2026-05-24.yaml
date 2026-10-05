@@ -259,8 +259,6 @@ chapters:
       - Ephesians 3
       - 2 Corinthians 13
 markers:
-  - markerTime: "36:40.86"
-    markerNote: "Recap, denial, repentance and response cuts moved out of sentences to complete transitions using supplied word timings. Reflection ends before the next hymn invitation; check audio."
   - markerTime: "36:39.56"
     markerNote: "Also cited in the sermon: John 13:3-9; John 13:6-10; John 13:10; John 13:14-16; Matthew
       11:26; Genesis 1; Genesis 4; John 13:21-30; Matthew 26:14-16; Matthew 27:9-10; John 13:21-25;
@@ -270,3 +268,5 @@ markers:
   - markerTime: "36:39.56"
     markerNote: "Other topics it touched: responsibility, sacrifice, temptation, forgiveness, hypocrisy,
       service, prayer, discernment, stewardship, authority, truth, service-life."
+  - markerTime: "36:40.86"
+    markerNote: "Recap, denial, repentance and response cuts moved out of sentences to complete transitions using supplied word timings. Reflection ends before the next hymn invitation; check audio."

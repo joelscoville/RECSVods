@@ -165,7 +165,7 @@ chapters:
       - pointTime: "1:42:03.78"
         pointText: Historical notices announce the following week's first-May Communion and May 31 baptism preparations.
 markers:
-  - markerTime: "1:42:03.78"
-    markerNote: "YouTube title and thumbnail incorrectly say 19 April. The recording states this is the fourth Sunday and next week is the first Sunday of May, identifying 26 April 2026. It also refers to the previous week's entry-into-Jerusalem clip; do not concatenate it with the April 19 restarts."
   - markerTime: "27:26.1"
     markerNote: "Working title uses the established service date; confirm the announced sermon title. Duration and anchors use supplied faster-whisper audio evidence, not freshly checked video duration or listening."
+  - markerTime: "1:42:03.78"
+    markerNote: "YouTube title and thumbnail incorrectly say 19 April. The recording states this is the fourth Sunday and next week is the first Sunday of May, identifying 26 April 2026. It also refers to the previous week's entry-into-Jerusalem clip; do not concatenate it with the April 19 restarts."

@@ -176,9 +176,9 @@ chapters:
       - pointTime: "1:47:40.49"
         pointText: Historical notices introduce Pistachio Fellowship as a bridging ministry and invite participation.
 markers:
-  - markerTime: "55:37.752"
-    markerNote: "The two uploads continue a dramatized clip across a restart. No repeated speech was found; the missing interval remains unmeasured. Do not append mfiAFUTgOEg, which has a different service opening and sermon."
   - markerTime: "34:58.3"
     markerNote: "Working title uses the channel's dated title; confirm the announced sermon title. Durations and anchors are from supplied faster-whisper audio evidence, not fresh video-duration or listening checks."
+  - markerTime: "55:37.752"
+    markerNote: "The two uploads continue a dramatized clip across a restart. No repeated speech was found; the missing interval remains unmeasured. Do not append mfiAFUTgOEg, which has a different service opening and sermon."
   - markerTime: "1:24:52.61"
     markerNote: "Political, historical and denominational accounts remain the preacher's descriptions, not independently verified claims."

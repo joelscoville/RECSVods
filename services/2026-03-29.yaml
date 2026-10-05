@@ -139,9 +139,9 @@ chapters:
       - pointTime: "1:41:01.26"
         pointText: Historical notices explain the rally, Wednesday prayer meeting and combined Easter service the following Sunday.
 markers:
-  - markerTime: "1:33:22.66"
-    markerNote: "Working date is 29 March: the service says the coming Friday is 3 April and the next Sunday is Easter. Upload titles say 28 March; thumbnails still show 22 March; the offering's 'fourth Sunday' is inconsistent with the calendar. Confirm the actual dated opening slide before publication."
-  - markerTime: "55:31.924"
-    markerNote: "Restart resumes the preacher's post-clip commentary mid-phrase. Missing time is unmeasured; no upload overlap inferred. Durations and anchors use supplied faster-whisper audio evidence and need fresh video/audio checks."
   - markerTime: "32:24.2"
     markerNote: "Working recording title uses the inferred service date; confirm the announced sermon title. Keep Christology explanations and historical claims attributed."
+  - markerTime: "55:31.924"
+    markerNote: "Restart resumes the preacher's post-clip commentary mid-phrase. Missing time is unmeasured; no upload overlap inferred. Durations and anchors use supplied faster-whisper audio evidence and need fresh video/audio checks."
+  - markerTime: "1:33:22.66"
+    markerNote: "Working date is 29 March: the service says the coming Friday is 3 April and the next Sunday is Easter. Upload titles say 28 March; thumbnails still show 22 March; the offering's 'fourth Sunday' is inconsistent with the calendar. Confirm the actual dated opening slide before publication."

@@ -20,7 +20,13 @@ describe('consistent public recording titles', () => {
       expect(recording.title).toBe(file.recordingTitle);
       expect(cards.find(card => card.recordingId === recording.id)?.title).toBe(recording.title);
       expect(searchUnits([recording]).every(unit => unit.recordingTitle === recording.title)).toBe(true);
-      expect(recording.title).not.toMatch(/\bRECS\b|\b20\d{2}\b/);
+      // Unreviewed drafts may keep the dated source title until the sermon title is verified.
+      // Published recordings must always use a sermon title.
+      if (file.status === 'draft' && recording.title === `RECS ${formatDate(file.serviceDate)}`) {
+        expect(file.markers?.some(marker => /confirm.*title/i.test(marker.markerNote ?? ''))).toBe(true);
+      } else {
+        expect(recording.title, `${recording.id} (${file.status})`).not.toMatch(/\bRECS\b|\b20\d{2}\b/);
+      }
     }
     for (const [id, title] of [['2026-06-21', 'The Third Person'], ['2026-08-09', 'We, the Citizens…'], ['2026-07-12', 'To Be Nothing']]) {
       expect(recordings.find(item => item.id === id)?.title).toBe(title);

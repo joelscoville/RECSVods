@@ -239,6 +239,8 @@ chapters:
     chapterScripture:
       - Hebrews 13
 markers:
+  - markerTime: "31:59.2"
+    markerNote: "Supplied ASR and local YouTube captions disagree by several seconds at the sermon and Creed introductions. Preserve the human-edited boundaries until checked against audio; captions alone are not a reliable retiming source."
   - markerTime: "32:00.54"
     markerNote: "Also cited in the sermon: John 16:25-33; James 5; Acts 2; Mark 9; John 13-16; Matthew
       6; Hebrews 7:25; John 17:1; Psalms 19:1; John 17:2; John 17:3; Luke 1:34; John 17:4-5; 1 John
@@ -247,5 +249,3 @@ markers:
     markerNote: "Other topics it touched: knowing-god, glory, eternal-life."
   - markerTime: "1:19:16.04"
     markerNote: "Old review note: Keep linguistic and doctrinal claims attributed to the preacher."
-  - markerTime: "31:59.2"
-    markerNote: "Supplied ASR and local YouTube captions disagree by several seconds at the sermon and Creed introductions. Preserve the human-edited boundaries until checked against audio; captions alone are not a reliable retiming source."

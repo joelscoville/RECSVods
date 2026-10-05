@@ -257,8 +257,6 @@ chapters:
       - Genesis 22:1-19
       - John 10:10
 markers:
-  - markerTime: "7:30.5"
-    markerNote: "Test chapter includes the complete introductory clause before 'test of sacrifice'. Short subchapter tails end after their last sentence instead of trailing pauses, based on supplied ASR; check audio."
   - markerTime: "0:00"
     markerNote: "Also cited in the sermon: Genesis 12; Genesis 22:2; Genesis 22; Genesis 22:1; Genesis
       15; Genesis 16; Genesis 20; Genesis 17:1-6; Genesis 17; Genesis 21; 2 Samuel 24; Leviticus
@@ -269,3 +267,5 @@ markers:
       Romans 5; John 10:10. Keep only the main passages above."
   - markerTime: "0:00"
     markerNote: "Other topics it touched: discipleship."
+  - markerTime: "7:30.5"
+    markerNote: "Test chapter includes the complete introductory clause before 'test of sacrifice'. Short subchapter tails end after their last sentence instead of trailing pauses, based on supplied ASR; check audio."
