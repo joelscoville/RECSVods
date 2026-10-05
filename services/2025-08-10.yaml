@@ -1,0 +1,163 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Art of the Impossible
+serviceDate: 2025-08-10
+status: draft
+sermonDescription: Christ walking on water reveals divine freedom beyond human expectations and prompts three responses of unbelief, fear and faith. His withdrawal to pray models dependence, while his divinity challenges treating God as dependent on religious transactions. Peter's step from the boat encourages active faith beyond safety, yet his sinking exposes the danger of looking away from Christ. Grace reaches those who falter, calling believers to use their gifts and keep their focus on Jesus rather than approval or circumstances.
+sermonScripture:
+  - John 6:16-21
+  - Matthew 14:22-33
+  - Hebrews 12:2
+sermonTopics:
+  - faith
+  - prayer
+  - knowing-god
+uploads:
+  - youtubeId: RFws3xIW92Q
+    uploadDuration: "1:55:37.867"
+chapters:
+  - chapterId: c20250810-worship
+    chapterTitle: Trust Christ within Our Temporary Earthly Home
+    chapterKind: opening
+    chapterStart: "0:37.1"
+    chapterEnd: "36:28.1"
+    chapterScripture:
+      - Psalms 134:1-3
+      - Proverbs 15:1-33
+      - Matthew 14:22-33
+      - John 6:16-21
+    points:
+      - pointTime: "8:25.84"
+        pointText: Belinda's reflection connects longing for home with heavenly citizenship and responsibility during a temporary earthly life.
+      - pointTime: "28:03.18"
+        pointText: Confident faith is grounded in whom a person knows rather than having an answer to every question.
+  - chapterId: c20250810-prayer-walk-question
+    chapterTitle: Prayer Is Not a Technique for Controlling God
+    chapterKind: qa
+    chapterStart: "36:28.1"
+    chapterEnd: "43:58.45"
+    points:
+      - pointTime: "39:01.7"
+        pointText: A question asks whether a prayer walk has a biblical foundation.
+      - pointTime: "41:31.3"
+        pointText: A transactional view of prayer is distinguished from worshiping God through his revealed truth.
+      - pointTime: "42:27.1"
+        pointText: The preacher questions treating prayer as a way to seal or protect a territory through a ritual.
+      - pointTime: "43:33.3"
+        pointText: Scripture is made the test of a practice rather than an impression that it feels spiritually effective.
+  - chapterId: c20250810-gifts-recap
+    chapterTitle: Put What We Have into Christ's Hands
+    chapterKind: sermon
+    chapterStart: "43:58.45"
+    chapterEnd: "49:33.4"
+    chapterScripture:
+      - John 6:1-15
+    points:
+      - pointTime: "45:15.86"
+        pointText: The feeding recap connects God's compassion with using people as channels of his help.
+      - pointTime: "46:57.54"
+        pointText: Unwillingness is distinguished from inability when people decline to offer their gifts.
+      - pointTime: "47:27.86"
+        pointText: The boy's contribution illustrates resources becoming a blessing beyond their initial size when surrendered to Christ.
+  - chapterId: c20250810-prayer-divinity
+    chapterTitle: Christ Prays Often and Is Not Dependent on Us
+    chapterKind: sermon
+    chapterStart: "49:33.4"
+    chapterEnd: "1:08:20.7"
+    chapterScripture:
+      - Matthew 14:22-23
+      - Mark 6:45-48
+      - Isaiah 55:9
+    points:
+      - pointTime: "54:30.56"
+        pointText: Jesus deliberately leaving the crowd to pray challenges the disciple to make room for prayer too.
+      - pointTime: "59:01.36"
+        pointText: Perseverance in prayer is urged even when an outcome appears impossible or takes many years.
+      - pointTime: "1:02:01.76"
+        pointText: God is not contingent on human attention, offerings or religious activity.
+      - pointTime: "1:04:11.0"
+        pointText: Human dependence on the Creator reverses the assumption that worshippers are God's benefactors.
+      - pointTime: "1:05:51.66"
+        pointText: God's higher ways are contrasted with projecting ordinary human constraints onto Christ's actions.
+  - chapterId: c20250810-three-responses
+    chapterTitle: Respond to Christ's Divinity in Unbelief, Fear or Faith
+    chapterKind: sermon
+    chapterStart: "1:08:20.7"
+    chapterEnd: "1:36:44.48"
+    points:
+      - pointTime: "1:08:27.3"
+        pointText: Unbelief is the first named response when divine action is treated as impossible.
+      - pointTime: "1:16:09.2"
+        pointText: Fear is the second named response when creatures encounter the Creator's presence.
+      - pointTime: "1:20:45.72"
+        pointText: Faith is the third named response, demonstrated by Peter asking to step toward Christ.
+      - pointTime: "1:26:20.58"
+        pointText: Active faith can still falter when circumstances replace Christ as its focus.
+      - pointTime: "1:34:33.14"
+        pointText: The rescue leads to worship of the Son of God rather than admiration of an unusually gifted person.
+    subchapters:
+      - chapterId: s20250810-unbelief
+        chapterTitle: Unbelief Reduces Divine Action to Human Explanation
+        chapterKind: sermon
+        chapterStart: "1:08:27.2"
+        chapterEnd: "1:16:06.04"
+        points:
+          - pointTime: "1:09:13.94"
+            pointText: The phrase walking on water illustrates how easily Christ's divinity is dismissed as impossible.
+          - pointTime: "1:12:43.74"
+            pointText: Proposed natural explanations of miracles are contrasted with receiving the narrative's declaration of divine action.
+          - pointTime: "1:14:26.2"
+            pointText: Treating Jesus as only a good teacher is distinguished from believing that he is God.
+      - chapterId: s20250810-fear-grace
+        chapterTitle: Fear before God Is Answered by Grace
+        chapterKind: sermon
+        chapterStart: "1:16:06.04"
+        chapterEnd: "1:20:43.1"
+        chapterScripture:
+          - Isaiah 6:5-7
+          - Revelation 1:17-18
+        points:
+          - pointTime: "1:16:09.2"
+            pointText: The disciples' fear is linked with the distance between finite creatures and their infinite Creator.
+          - pointTime: "1:17:54.22"
+            pointText: Isaiah and John illustrate that longstanding service does not remove awe before God's presence.
+          - pointTime: "1:19:36.0"
+            pointText: Recovery begins through God's initiative in reassurance, cleansing and grace rather than deserved confidence.
+      - chapterId: s20250810-faith-focus
+        chapterTitle: Step Out in Faith and Keep Your Eyes on Christ
+        chapterKind: sermon
+        chapterStart: "1:20:43.1"
+        chapterEnd: "1:36:44.48"
+        chapterScripture:
+          - Matthew 14:28-33
+          - Matthew 25:14-30
+          - Hebrews 12:2
+        points:
+          - pointTime: "1:22:29.78"
+            pointText: Peter steps beyond safety and comfort to attempt what seems impossible in response to Christ.
+          - pointTime: "1:24:39.08"
+            pointText: Attempting a large task is framed as a way for others to recognize God's help rather than personal self-sufficiency.
+          - pointTime: "1:25:33.52"
+            pointText: The talents parable challenges doing nothing as an apparently safe way to avoid mistakes.
+          - pointTime: "1:26:20.58"
+            pointText: Peter's fear of the wind shows why people who waver should not be treated as uniquely deficient.
+          - pointTime: "1:30:11.26"
+            pointText: Fixing attention on Jesus is offered as the key to perseverance rather than seeking constant approval.
+          - pointTime: "1:34:48.94"
+            pointText: Calling for help brings Christ's rescuing grace even after the initial step of faith falters.
+  - chapterId: c20250810-response
+    chapterTitle: Put Faith into Action through the Gifts God Gives
+    chapterKind: closing
+    chapterStart: "1:36:44.48"
+    chapterEnd: "1:55:37.867"
+    points:
+      - pointTime: "1:36:44.48"
+        pointText: Response prayer asks for active use of gifts and resources rather than preserving them unused out of fear.
+      - pointTime: "1:42:43.8"
+        pointText: Shared prayer connects gratitude for the nation with a supportive community that serves beyond words.
+markers:
+  - markerTime: "49:33.4"
+    markerNote: "The Art of the Impossible is explicitly announced. Anchors and duration use supplied faster-whisper audio evidence and await fresh video and listening checks."
+  - markerTime: "1:00:46.82"
+    markerNote: "The preacher notes a missing Mark verse on a slide. Gospel emphases, timelines, medical examples, statistics and quotation attributions are his account and need review rather than independent factual endorsement."
