@@ -1,0 +1,153 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Christ
+serviceDate: 2025-10-12
+status: draft
+sermonDescription: Christ means God's anointed one, not a surname or merely a familiar human teacher. The preacher contrasts prevailing expectations of the Messiah with Jesus' revelation of his origin and divine identity. Biblical friendship and love are held alongside reverence for the Lord rather than making God contingent on human calculation. Colossians affirms Christ's preeminence, while signs, costly witnesses and ordinary conduct encourage persevering faith despite mockery and call listeners to recognize Jesus as God, Savior and Lord.
+sermonScripture:
+  - John 7:25-36
+  - Colossians 1:15-20
+  - Hebrews 12:1
+sermonTopics:
+  - knowing-god
+  - faith
+  - persecution
+uploads:
+  - youtubeId: 4S8CLdMaaBw
+    uploadDuration: "1:51:01.317"
+chapters:
+  - chapterId: c20251012-worship
+    chapterTitle: Worship Christ as Our Lasting Satisfaction
+    chapterKind: opening
+    chapterStart: "1:55.85"
+    chapterEnd: "31:56.05"
+    chapterScripture:
+      - Psalms 147:1-6
+      - Proverbs 22:1-29
+      - John 7:25-36
+      - Colossians 1:15-20
+    points:
+      - pointTime: "21:50.04"
+        pointText: Patrick connects living water with a thirst for meaning and joy that earthly pleasures cannot finally satisfy.
+      - pointTime: "25:26.2"
+        pointText: The ensemble's introduction presents music and art as a way of exploring feeling and preparing to receive God's word.
+  - chapterId: c20251012-shared-anniversary
+    chapterTitle: Use Our Limited Time in a Shared Journey of Faith
+    chapterKind: other
+    chapterStart: "31:56.05"
+    chapterEnd: "39:20.46"
+    points:
+      - pointTime: "34:01.02"
+        pointText: The service's anniversary prompts reflection on finite time and choosing what is worth doing.
+      - pointTime: "35:57.54"
+        pointText: Encountering Christians under pressure challenges advice offered from comfortable circumstances without comparable experience.
+      - pointTime: "37:39.42"
+        pointText: Connection with other believers can bring prayer, care and support to people facing difficulty rather than leaving them isolated.
+  - chapterId: c20251012-training-recap
+    chapterTitle: Education Is a Tool, and Truth Is the Standard
+    chapterKind: sermon
+    chapterStart: "39:20.46"
+    chapterEnd: "48:26.5"
+    chapterScripture:
+      - John 7:14-24
+    points:
+      - pointTime: "40:23.54"
+        pointText: The recap asks whether formal qualifications establish the right to speak or success in a rapidly changing field.
+      - pointTime: "42:42.86"
+        pointText: Formal theological training is valued as a way of learning what one does not yet understand.
+      - pointTime: "45:34.32"
+        pointText: Education is distinguished from the task it serves, avoiding both worship of credentials and dismissal of useful training.
+      - pointTime: "46:08.1"
+        pointText: A teacher's claim must be evaluated through truth rather than accepted or rejected by academic status alone.
+  - chapterId: c20251012-anointed-one
+    chapterTitle: Recognize Jesus as God's Anointed One
+    chapterKind: sermon
+    chapterStart: "48:26.5"
+    chapterEnd: "1:01:20.5"
+    chapterScripture:
+      - John 7:25-27
+      - Malachi 3:1
+    points:
+      - pointTime: "50:34.48"
+        pointText: The sermon title introduces how existing knowledge and expectations can obstruct recognizing the Christ.
+      - pointTime: "51:30.84"
+        pointText: Christ and Messiah identify the anointed one rather than Jesus' surname or a generic label for savior.
+      - pointTime: "52:52.68"
+        pointText: The distinction matters because Jesus Christ asserts God's chosen deliverer rather than merely another historical person.
+      - pointTime: "56:15.16"
+        pointText: Political, military and human expectations are contrasted with the identity Jesus actually reveals.
+      - pointTime: "59:59.54"
+        pointText: Human-shaped assumptions about the divine are identified as a recurring obstacle beyond the original crowd.
+  - chapterId: c20251012-human-calculation
+    chapterTitle: Christ's Love Does Not Make Him Subject to Our Calculations
+    chapterKind: sermon
+    chapterStart: "1:01:20.5"
+    chapterEnd: "1:13:29.45"
+    chapterScripture:
+      - John 13:34
+      - John 15:15
+      - Hebrews 2:11
+    points:
+      - pointTime: "1:03:06.46"
+        pointText: Beloved of God is presented as a believer's fundamental identity.
+      - pointTime: "1:03:21.12"
+        pointText: Biblical friendship and brotherhood explain genuine closeness to Christ without settling the full question of his identity.
+      - pointTime: "1:09:03.68"
+        pointText: Pascal's wager introduces an approach that calculates potential gains and losses from belief.
+      - pointTime: "1:12:07.2"
+        pointText: The preacher critiques a human-centered approach that treats the believer as in control of God's existence or relevance.
+  - chapterId: c20251012-divine-lord
+    chapterTitle: Receive Christ as God, Savior and Lord
+    chapterKind: sermon
+    chapterStart: "1:13:29.45"
+    chapterEnd: "1:21:49.24"
+    chapterScripture:
+      - John 7:28-31
+      - Isaiah 55:8-9
+      - Colossians 1:15-20
+    points:
+      - pointTime: "1:14:01.16"
+        pointText: Christ is not made contingent on human reasoning, preference or permission.
+      - pointTime: "1:14:58.7"
+        pointText: God's higher ways preserve a distinction that remains even when Christ calls people friends or brothers.
+      - pointTime: "1:16:44.92"
+        pointText: Colossians connects Christ's preeminence with creation, the church and reconciliation through his cross.
+      - pointTime: "1:20:00.76"
+        pointText: Universal unworthiness is held alongside the call to pursue holy living, rather than making imperfection an excuse.
+      - pointTime: "1:21:25.22"
+        pointText: People still believe through Christ's signs despite opposition from established authorities.
+  - chapterId: c20251012-witness-mockery
+    chapterTitle: Draw Strength from Witnesses and Persevere through Mockery
+    chapterKind: sermon
+    chapterStart: "1:21:49.24"
+    chapterEnd: "1:33:52.74"
+    chapterScripture:
+      - Hebrews 12:1
+      - 1 Corinthians 1:18-19
+    points:
+      - pointTime: "1:22:26.48"
+        pointText: A cloud of witnesses supports shared faith through concrete signs of God's work in other lives.
+      - pointTime: "1:25:17.12"
+        pointText: Returning to costly missionary service illustrates faith that exceeds ordinary self-protective expectations.
+      - pointTime: "1:28:08.2"
+        pointText: Hebrews calls believers to lay aside weights and sin and run with endurance.
+      - pointTime: "1:29:10.42"
+        pointText: Ordinary dealings with neighbors, colleagues and family may be another person's only encounter with biblical faith.
+      - pointTime: "1:32:24.4"
+        pointText: The cross being seen as folly is distinguished from its power for those who receive it.
+  - chapterId: c20251012-response
+    chapterTitle: Commit Our Life to the Christ Who Reigns
+    chapterKind: closing
+    chapterStart: "1:33:52.74"
+    chapterEnd: "1:51:01.317"
+    points:
+      - pointTime: "1:33:52.94"
+        pointText: Response prayer asks for correction of human measures of God and renewed commitment to Christ as Lord.
+      - pointTime: "1:39:06.7"
+        pointText: Anniversary prayer joins gratitude for the past with a desire for Christ's presence to remain real in daily life.
+markers:
+  - markerTime: "1:55.85"
+    markerNote: "The early ASR contains an extended repetitive fragment and merged prayer speech. The opening starts at the clear confession invitation rather than reconstructing the earlier material. Length and timings use supplied audio evidence and await fresh media checks."
+  - markerTime: "50:34.48"
+    markerNote: "The Christ is explicitly announced. Historical, philosophical and comparative claims, attributed quotations and reported missionary accounts are summarized as presented rather than independently verified."
