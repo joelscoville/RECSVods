@@ -1,0 +1,135 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Most Famous Verse
+serviceDate: 2025-05-11
+status: draft
+sermonDescription: John 3:16 is placed within Jesus' conversation with Nicodemus rather than treated as an isolated slogan. Religious achievement and organized worship cannot substitute for being born again through God's Spirit. The preacher contrasts human self-help with God's initiative, considers the priesthood of all believers and connects Christ's saving mission with Old Testament imagery. A Reformed reading of grace and election leads to an invitation to trust Christ, whose revelation answers why Christians continue to share the gospel.
+sermonScripture:
+  - John 3:1-18
+  - Acts 4:12
+sermonTopics:
+  - salvation
+  - faith
+  - knowing-god
+uploads:
+  - youtubeId: 8ZGAmuRte8c
+    uploadDuration: "57:44.167"
+chapters:
+  - chapterId: c20250511-visitor-question
+    chapterTitle: Why Do Christians Say Christ Died for Me?
+    chapterKind: qa
+    chapterStart: "0:01.2"
+    chapterEnd: "7:35.48"
+    points:
+      - pointTime: "0:01.2"
+        pointText: The opening reflection holds grace alongside justice instead of treating forgiveness as unconditional approval of every action.
+      - pointTime: "1:43.44"
+        pointText: A visitor's question asks why Christians invite people to trust someone who lived two thousand years ago.
+      - pointTime: "5:12.42"
+        pointText: Familiar church language is acknowledged as strange and difficult for someone outside the faith.
+  - chapterId: c20250511-signs-recap
+    chapterTitle: Test Claims and Trust God's Sovereign Wisdom
+    chapterKind: sermon
+    chapterStart: "7:35.48"
+    chapterEnd: "15:15.38"
+    chapterScripture:
+      - John 2:23-25
+    points:
+      - pointTime: "8:39.08"
+        pointText: Claims about miraculous signs are examined through the question of whether they are objectively true.
+      - pointTime: "11:46.44"
+        pointText: The completed biblical revelation is distinguished from the early signs authenticating Christ and the apostles.
+      - pointTime: "12:05.4"
+        pointText: God's power to work miracles remains affirmed without assuming healing must occur on demand.
+      - pointTime: "13:49.16"
+        pointText: Human fallenness directs trust toward Christ's perfection rather than relying ultimately on religious leaders.
+  - chapterId: c20250511-known-verse
+    chapterTitle: Know the Verse and Seek Its Meaning
+    chapterKind: sermon
+    chapterStart: "15:15.38"
+    chapterEnd: "19:59.94"
+    chapterScripture:
+      - John 3:16
+    points:
+      - pointTime: "15:30.02"
+        pointText: Memorizing Scripture is encouraged as a source of direction and strength, beginning with John 3:16.
+      - pointTime: "18:58.12"
+        pointText: Public displays of the verse illustrate its familiarity before attention turns to the conversation that gives it context.
+  - chapterId: c20250511-religious-order
+    chapterTitle: Religious Order Cannot Substitute for Knowing God
+    chapterKind: sermon
+    chapterStart: "19:59.94"
+    chapterEnd: "31:47.92"
+    chapterScripture:
+      - John 3:1-2
+    points:
+      - pointTime: "20:41.34"
+        pointText: Nicodemus' encounter sets respected religious status beside recognition of something unusual in Jesus.
+      - pointTime: "25:52.6"
+        pointText: The papal comparison explores how entrenched cultural expectations can outlast attempts to simplify religious practice.
+      - pointTime: "27:37.12"
+        pointText: Nicodemus' position within an established system illustrates that outward authority can coexist with uncertainty about faith.
+      - pointTime: "31:00.3"
+        pointText: Order is affirmed as a useful tool while cautioning against mistaking familiarity with ritual for understanding God.
+  - chapterId: c20250511-born-again
+    chapterTitle: God's Spirit Transforms People beyond Self-Help
+    chapterKind: sermon
+    chapterStart: "31:47.92"
+    chapterEnd: "45:31.74"
+    chapterScripture:
+      - John 3:3-12
+      - Proverbs 3:5
+      - James 1:17
+    points:
+      - pointTime: "31:47.92"
+        pointText: Being born again is presented as necessary to see and enter God's kingdom.
+      - pointTime: "33:08.18"
+        pointText: A merit-based approach that tries to achieve God is contrasted with receiving God's initiative and revelation.
+      - pointTime: "37:18.26"
+        pointText: The Spirit's transforming action is distinguished from a process human beings can completely control or explain.
+      - pointTime: "39:22.94"
+        pointText: The priesthood of all believers challenges assuming only formal religious experts can know or communicate God's word.
+      - pointTime: "41:19.1"
+        pointText: Ordinary believers are encouraged to discern and use God's calling rather than merely follow leaders blindly.
+      - pointTime: "43:05.12"
+        pointText: Seeing signs and hearing teaching do not guarantee a person's willingness to believe.
+  - chapterId: c20250511-saving-plan
+    chapterTitle: Receive Christ within God's Saving Plan
+    chapterKind: sermon
+    chapterStart: "45:31.74"
+    chapterEnd: "56:04.94"
+    chapterScripture:
+      - John 3:13-18
+      - Genesis 28:11-12
+      - Numbers 21:7-9
+      - Acts 4:12
+      - John 14:6
+    points:
+      - pointTime: "46:27.12"
+        pointText: Jacob's ladder is used to portray Christ as the bridge between heaven and earth within a plan transcending human time.
+      - pointTime: "47:17.56"
+        pointText: The lifted bronze serpent anticipates the Son of Man being lifted up for those who believe.
+      - pointTime: "49:53.58"
+        pointText: The preacher explains the congregation's Calvinist reading of election, atonement and the meaning of world in John 3:16.
+      - pointTime: "51:37.38"
+        pointText: Nicodemus' religious effort is contrasted with receiving grace and an inwardly changed life.
+      - pointTime: "54:26.8"
+        pointText: Christ's unique saving role answers the visitor's question about why Christians keep sharing the message.
+  - chapterId: c20250511-response
+    chapterTitle: Receive Revelation with Humility and Trust
+    chapterKind: closing
+    chapterStart: "56:04.94"
+    chapterEnd: "57:44.167"
+    points:
+      - pointTime: "56:04.94"
+        pointText: Closing prayer asks for release from self-reliance and faith in God's revealed plan of salvation.
+markers:
+  - markerTime: "0:01.2"
+    markerNote: "The upload contains sermon/Q&A rather than the preceding worship or later Mother's Day activities. Title is explicitly announced. Audio-ASR duration and anchors await media checks."
+  - markerTime: "3:25.76"
+    markerNote: "The Moscow detention account includes uncertain causal explanations; the preacher says further confirmation is expected."
+  - markerTime: "25:52.6"
+    markerNote: "Papal biography, religious-order identification, garment costs and other historical claims in the comparison require factual review."
+  - markerTime: "49:53.58"
+    markerNote: "The account of Calvinist and Arminian readings is the preacher's theological exposition; Greek-word explanations and denominational generalizations need review."
