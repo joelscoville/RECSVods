@@ -137,7 +137,6 @@ export default function ChapterEditor({
   const windowsButton = useRef<HTMLButtonElement>(null);
   const focusedRequest = useRef(0);
   const userViewAt = useRef(0);
-  const scrubSession = useRef(0);
 
   const shown = preview ?? state;
   const rows = useMemo(() => outline(shown, length), [shown, length]);
@@ -926,7 +925,6 @@ export default function ChapterEditor({
                 titleRef={titleInput}
                 pointRef={pointInput}
                 paneRef={editPane}
-                scrubSession={scrubSession}
                 onSelect={(item, jump) => select(item, jump, 'sidebar')}
                 onSeek={seekTo}
                 onContextMenu={openItemMenu}
@@ -936,7 +934,26 @@ export default function ChapterEditor({
                 }}
               />
             ),
-            video: <EditorVideoPanel playback={playback} onSeek={seekTo} />,
+            video: (
+              <EditorVideoPanel
+                playback={{
+                  host: playback.host,
+                  player: playback.player,
+                  unavailable: playback.unavailable,
+                  playing: playback.playing,
+                  file: playback.file,
+                  time: playback.time,
+                  playerError: playback.playerError,
+                  uploadCount: playback.uploads.length,
+                  fileWarning: playback.fileWarning,
+                  togglePlay: playback.togglePlay,
+                  load: playback.load,
+                  useYouTube: playback.useYouTube,
+                  useFile: playback.useFile,
+                }}
+                onSeek={seekTo}
+              />
+            ),
             details: (
               <EditorRecordingDetails
                 state={state}

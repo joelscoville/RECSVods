@@ -53,6 +53,11 @@ export interface EditorState {
   markers: EditorMarker[];
   checked: string[];
 }
+/** The geometry/editing rules need section structure, not recording metadata or drafts. */
+export type EditorStructure = Pick<
+  EditorState,
+  'chapters' | 'subchapters' | 'points'
+>;
 export type Lane = 'chapter' | 'subchapter' | 'point';
 /** For layout a point has zero width; it is never serialized as a range. */
 export interface EditorItem {
@@ -88,7 +93,7 @@ const nextId = (prefix: string, taken: { id: string }[]) => {
   while (taken.some((item) => item.id === `${prefix}-${n}`)) n++;
   return `${prefix}-${n}`;
 };
-const sections = (state: EditorState) => [
+const sections = (state: EditorStructure) => [
   ...state.chapters,
   ...state.subchapters,
 ];
@@ -234,7 +239,7 @@ export interface BoundaryMovement {
  * touching edges at either level; a subchapter edge only links siblings of its parent.
  * Point notes follow their moving owner only when they touch the original boundary. */
 export function describeBoundaryMovement(
-  state: EditorState,
+  state: EditorStructure,
   length: number,
   edge: BoundaryTarget,
   linked = true,
@@ -355,7 +360,7 @@ export function describeBoundaryMovement(
 
 /** All entry methods ask the same movement description for the permitted interval. */
 export function edgeLimits(
-  state: EditorState,
+  state: EditorStructure,
   length: number,
   edge: BoundaryTarget,
   linked = true,

@@ -3,16 +3,21 @@ import type { Topic } from '../lib/recording-schema';
 import { parseScriptureReference } from '../lib/scripture';
 import { ChipList, WordCount } from './editor-fields';
 
+type RecordingMetadata = Pick<
+  EditorState,
+  'title' | 'description' | 'scripture' | 'topics'
+>;
+
 export default function EditorRecordingDetails({
   state,
   topics,
   issues,
   onChange,
 }: {
-  state: EditorState;
+  state: RecordingMetadata;
   topics: Topic[];
   issues: EditorIssue[];
-  onChange: (change: Partial<EditorState>, key?: string) => void;
+  onChange: (change: Partial<RecordingMetadata>, key?: string) => void;
 }) {
   return (
     <div className="ce-window-body ce-details-window">

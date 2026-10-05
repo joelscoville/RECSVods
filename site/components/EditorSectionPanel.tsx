@@ -1,10 +1,10 @@
-import type { MouseEvent, RefObject } from 'react';
+import { useRef, type MouseEvent, type RefObject } from 'react';
 import {
   edgeLimits,
   formatClock,
   type EditorIssue,
   type EditorItem,
-  type EditorState,
+  type EditorStructure,
 } from '../lib/recording-editor';
 import {
   CHAPTER_KINDS,
@@ -19,7 +19,7 @@ import EditorTitleField from './EditorTitleField';
 import Icon from './Icon';
 
 interface SectionPanelProps {
-  state: EditorState;
+  state: EditorStructure;
   rows: EditorItem[];
   selectedId?: string;
   selectedSection?: EditorItem;
@@ -29,11 +29,21 @@ interface SectionPanelProps {
   length: number;
   linked: boolean;
   playhead: number;
-  commands: EditorCommands;
+  commands: Pick<
+    EditorCommands,
+    | 'editPoint'
+    | 'setItemEdge'
+    | 'removeSelected'
+    | 'editSection'
+    | 'addPoint'
+    | 'addSubchapter'
+    | 'revertItem'
+    | 'confirmSection'
+  >;
+  // Workspace-owned refs let focus follow the selection/reveal layout effects.
   titleRef: RefObject<HTMLTextAreaElement | null>;
   pointRef: RefObject<HTMLTextAreaElement | null>;
   paneRef: RefObject<HTMLDivElement | null>;
-  scrubSession: RefObject<number>;
   onSelect: (item: EditorItem, jump?: boolean) => void;
   onSeek: (seconds: number, options?: { live?: boolean }) => void;
   onContextMenu: (event: MouseEvent<HTMLElement>, item: EditorItem) => void;
@@ -41,6 +51,7 @@ interface SectionPanelProps {
 }
 
 export default function EditorSectionPanel(props: SectionPanelProps) {
+  const scrubSession = useRef(0);
   const {
     state,
     rows,
@@ -111,12 +122,12 @@ export default function EditorSectionPanel(props: SectionPanelProps) {
             seconds,
             item!.id,
             linked,
-            `scrub-${props.scrubSession.current}`,
+            `scrub-${scrubSession.current}`,
           );
           props.onSeek(seconds, { live: true });
         }}
         onScrubEnd={() => {
-          props.scrubSession.current++;
+          scrubSession.current++;
         }}
       />
     );

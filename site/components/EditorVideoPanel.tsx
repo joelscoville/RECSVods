@@ -1,13 +1,31 @@
-import { useRef } from 'react';
-import type { useEditorPlayback } from './use-editor-playback';
+import { useRef, type Ref } from 'react';
+import type { UnavailableSpan } from '../lib/recording-player';
 import UnavailableRecording from './UnavailableRecording';
 import Icon from './Icon';
+
+/** The video pane can display media and request playback; it cannot manage seeks,
+ * preview stops, speed confirmation, or the playback owner's internal state. */
+interface VideoPanelPlayback {
+  host: Ref<HTMLDivElement>;
+  player: 'idle' | 'loading' | 'ready' | 'error';
+  unavailable?: UnavailableSpan;
+  playing: boolean;
+  file?: { name: string };
+  time: number;
+  playerError: string;
+  uploadCount: number;
+  fileWarning?: string;
+  togglePlay: () => void;
+  load: (start: number) => Promise<void>;
+  useYouTube: () => void;
+  useFile: (file: File) => void;
+}
 
 export default function EditorVideoPanel({
   playback,
   onSeek,
 }: {
-  playback: ReturnType<typeof useEditorPlayback>;
+  playback: VideoPanelPlayback;
   onSeek: (seconds: number) => void;
 }) {
   const {
@@ -20,7 +38,7 @@ export default function EditorVideoPanel({
     time,
     load,
     playerError,
-    uploads,
+    uploadCount,
     useYouTube,
     useFile,
     fileWarning,
@@ -95,10 +113,8 @@ export default function EditorVideoPanel({
         ) : (
           <>
             Source: YouTube
-            {uploads.length > 1 &&
-              ` (${uploads.length} uploads, played as one)`}
-            .{' '}
-            {uploads.length === 1 && (
+            {uploadCount > 1 && ` (${uploadCount} uploads, played as one)`}.{' '}
+            {uploadCount === 1 && (
               <button
                 type="button"
                 className="ce-link"
