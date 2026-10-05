@@ -1,0 +1,130 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Word
+serviceDate: 2025-01-26
+status: draft
+sermonDescription: >-
+  John's Logos is explored beyond the everyday English sense of a word. The preacher draws three implications: God exceeds human comprehension, reaches out personally and makes himself known in Christ. Humility and childlike wonder open a lifelong exploration rather than a claim to have mastered God. The Word's action challenges a detached-watchmaker view of creation, while Christ's divine identity directs listeners beyond treating him merely as an admirable teacher toward trusting and enjoying the God he reveals.
+sermonScripture:
+  - John 1:1-2
+  - Colossians 1:15-20
+sermonTopics:
+  - knowing-god
+  - faith
+  - joy
+uploads:
+  - youtubeId: 6CWyAxDFlbE
+    uploadDuration: "59:14"
+chapters:
+  - chapterId: c20250126-beginning-recap
+    chapterTitle: Seek Meaning and Use God's Gifts Faithfully
+    chapterKind: sermon
+    chapterStart: "0:01.92"
+    chapterEnd: "8:40.72"
+    chapterScripture:
+      - John 1:1
+      - Colossians 1:16
+    points:
+      - pointTime: "1:43.36"
+        pointText: Faithful use of musical gifts is encouraged without assuming creativity requires elaborate additions.
+      - pointTime: "5:06.56"
+        pointText: The recap distinguishes general awareness of life's meaning from God's specific revelation of it.
+      - pointTime: "6:48.32"
+        pointText: Meaning is grounded in the one before the beginning rather than treating life as aimless passage through time.
+  - chapterId: c20250126-logos
+    chapterTitle: The Logos Is More than an Ordinary Word
+    chapterKind: sermon
+    chapterStart: "8:40.72"
+    chapterEnd: "19:08.8"
+    chapterScripture:
+      - John 1:1
+    points:
+      - pointTime: "10:14.16"
+        pointText: Translation is distinguished from the full range of meaning available in the original language.
+      - pointTime: "11:57.2"
+        pointText: Logos is explored through speech, reason, doctrine and account rather than a single narrow definition.
+      - pointTime: "13:39.92"
+        pointText: The Tao comparison examines similarities within general revelation while retaining the need for God's specific disclosure.
+  - chapterId: c20250126-implications
+    chapterTitle: Three Implications of the Word
+    chapterKind: sermon
+    chapterStart: "19:08.8"
+    chapterEnd: "57:44.64"
+    subchapters:
+      - chapterId: c20250126-incomprehensible
+        chapterTitle: God Is beyond Comprehension
+        chapterKind: sermon
+        chapterStart: "19:08.8"
+        chapterEnd: "41:46.8"
+        chapterScripture:
+          - Exodus 3:14
+          - Matthew 18:1-4
+        points:
+          - pointTime: "19:18.88"
+            pointText: The Word's multifaceted meaning reminds listeners that God exceeds their descriptions and understanding.
+          - pointTime: "20:30.56"
+            pointText: God's infinite attributes distinguish the Creator from creatures who cannot claim exhaustive knowledge of him.
+          - pointTime: "22:12.72"
+            pointText: The preacher's authority is located in communicating God's word rather than personal superiority.
+          - pointTime: "28:58.64"
+            pointText: Pride can appear in wealth or poverty and can obstruct receiving what God makes known.
+          - pointTime: "30:41.2"
+            pointText: Christ's call to childlikeness is distinguished from childishness and grounded in humility before God.
+          - pointTime: "34:06.64"
+            pointText: Enjoying God is presented as continued wonder and discovery rather than settling into spiritual boredom.
+          - pointTime: "40:56.16"
+            pointText: Lifelong learning challenges the assumption that years of listening mean one has nothing more to receive.
+      - chapterId: c20250126-reaching-out
+        chapterTitle: God Reaches Out Personally
+        chapterKind: sermon
+        chapterStart: "41:46.8"
+        chapterEnd: "49:30.4"
+        chapterScripture:
+          - Genesis 1:3
+          - Psalms 33:6
+          - Matthew 10:28-31
+        points:
+          - pointTime: "43:19.04"
+            pointText: God's spoken word in creation connects Logos with active purpose and communication.
+          - pointTime: "44:21.2"
+            pointText: God's expression of his will is distinguished from the mixed motives and ambiguity of human communication.
+          - pointTime: "46:03.12"
+            pointText: The involved God is contrasted with a watchmaker who creates and then withdraws.
+          - pointTime: "47:45.44"
+            pointText: Christ's attention to sparrows and numbered hairs supplies assurance of personal care rather than anonymous existence.
+      - chapterId: c20250126-visible-god
+        chapterTitle: Christ Makes the Invisible God Visible
+        chapterKind: sermon
+        chapterStart: "49:30.4"
+        chapterEnd: "57:44.64"
+        chapterScripture:
+          - John 1:1-2
+          - Colossians 1:15-20
+          - Matthew 16:16
+        points:
+          - pointTime: "49:30.4"
+            pointText: The Word with God and the Word as God establishes Christ's divine identity and role in reaching humanity.
+          - pointTime: "51:13.52"
+            pointText: Christ's preeminence extends to creation, the church and every arena of cultural life.
+          - pointTime: "52:56"
+            pointText: Reconciliation through the cross explains the purpose of God's movement toward a broken world.
+          - pointTime: "53:27.2"
+            pointText: Lewis's argument challenges treating Christ's divine claims as those of only another moral teacher.
+          - pointTime: "56:23.12"
+            pointText: The concluding question asks who Jesus is to the listener and how that answer shapes life.
+  - chapterId: c20250126-response
+    chapterTitle: Confess Christ and Receive Him with Humility
+    chapterKind: closing
+    chapterStart: "57:44.64"
+    chapterEnd: "59:14"
+    points:
+      - pointTime: "57:44.64"
+        pointText: The final appeal and prayer ask for faith in Christ that removes pride and opens a life of glorifying and enjoying God.
+markers:
+  - markerTime: "0:01.92"
+    markerNote: "Verified channel metadata dates the undated source to January 26. Supplied auto-caption boundaries and duration await fresh media checks."
+  - markerTime: "13:39.92"
+    markerNote: "Greek/Chinese linguistic comparisons, numerical claims about grammar, religious comparisons and quotation attributions require factual review."
+  - markerTime: "30:41.2"
+    markerNote: "The childlikeness passage is Matthew 18:1-4 despite captions/announcement giving 18:23. The all-things-created reference in the recap is Colossians 1:16, not 1:15."
