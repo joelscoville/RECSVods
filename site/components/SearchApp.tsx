@@ -1,27 +1,14 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { SearchUnit } from '../lib/display';
-import { prepareSearchIndex, type DecodedChapterVectors } from '../lib/search';
+import { prepareSearchIndex } from '../lib/search';
 import { prepareVerseSelection } from '../lib/verse-selection';
-import {
-  enrichUnits,
-  loadChapterMetadata,
-  loadChapterVectors,
-  loadScriptureIndex,
-  type ChapterMetadata,
-  type ScriptureIndex,
-} from '../lib/chapter-index';
-import {
-  createSemanticClient,
-  type SemanticClient,
-  type SemanticStatus,
-} from '../lib/semantic';
-import {
-  clearSearchHistory,
-  getSearchHistory,
-  saveSearch,
-} from '../lib/local-state';
 import { searchUrl, siteUrl } from '../lib/urls';
 import { availableBrowseCategories, suggestedTopics } from '../lib/browse';
+import { usePerformanceMode } from '../lib/use-performance-mode';
+import { canRunSemantic } from '../lib/performance-mode';
+import { useSearchNavigation } from './use-search-navigation';
+import { useSearchResources } from './use-search-resources';
+import { useSemanticSearch } from './use-semantic-search';
 import BrowseNavigation from './BrowseNavigation';
 import Header from './Header';
 import SearchField from './SearchField';
@@ -29,14 +16,10 @@ import Icon from './Icon';
 import RecordingResult from './RecordingResult';
 import { groupByRecording, type HomeItem } from './archive-display';
 import CopyLink from './CopyLink';
-import { usePerformanceMode } from '../lib/use-performance-mode';
-import { canRunSemantic } from '../lib/performance-mode';
 
 const RESULTS_PER_PAGE = 20;
-const MAX_QUERY_LENGTH = 300;
-const SEMANTIC_QUERY_DELAY_MS = 175;
-const QUERY_EDIT_SESSION_MS = 900;
 
+/** Composes independent navigation, archive-resource and semantic-search owners. */
 export default function SearchApp({
   base,
   initialUnits,
@@ -50,302 +33,57 @@ export default function SearchApp({
   const semanticAllowed = mode.ready && canRunSemantic(mode, mode.cached);
   const enrichAllowed =
     mode.ready && mode.data === 'normal' && mode.compute === 'normal';
-  const [visiblePages, setVisiblePages] = useState(1);
-  const visibleResults = visiblePages * RESULTS_PER_PAGE;
-  const submitted = useRef(false);
-  const [query, setQuery] = useState('');
-  const [metadata, setMetadata] = useState<{
-    base: string;
-    index: ChapterMetadata;
-  } | null>(null);
-  const [scripture, setScripture] = useState<{
-    base: string;
-    index: ScriptureIndex;
-  } | null>(null);
-  const [scriptureStatus, setScriptureStatus] = useState<
-    'idle' | 'loading' | 'ready' | 'error'
-  >('idle');
-  const [scriptureAttempt, setScriptureAttempt] = useState(0);
-  const currentMetadata = metadata?.base === base ? metadata.index : undefined;
-  const units = useMemo(() => {
-    const available = currentMetadata?.units ?? initialUnits;
-    return scripture?.base === base
-      ? enrichUnits(available, scripture.index)
-      : available;
-  }, [currentMetadata, initialUnits, scripture, base]);
-  const [history, setHistory] = useState<string[]>([]);
-  const [historyStatus, setHistoryStatus] = useState('');
-  const [indexStatus, setIndexStatus] = useState<
-    'idle' | 'loading' | 'ready' | 'error'
-  >('idle');
-  const [indexAttempt, setIndexAttempt] = useState(0);
-  const [semanticStatus, setSemanticStatus] = useState<SemanticStatus>({
-    state: 'idle',
-  });
-  const [semanticError, setSemanticError] = useState(false);
-  const [semanticAttempt, setSemanticAttempt] = useState(0);
-  const [vectors, setVectors] = useState<{
-    metadata: ChapterMetadata;
-    index: DecodedChapterVectors;
-  } | null>(null);
-  const [hybrid, setHybrid] = useState<{
-    query: string;
-    queryVector: number[];
-    metadata: ChapterMetadata;
-    base: string;
-  } | null>(null);
-  const lexical = useMemo(() => prepareSearchIndex(units), [units]);
-  const prepared = useMemo(
-    () =>
-      lexical.withVectors(
-        vectors?.metadata === currentMetadata ? vectors?.index : undefined,
-      ),
-    [lexical, vectors, currentMetadata],
-  );
-  const hasUnavailableRows = useMemo(() => {
-    if (!vectors || vectors.metadata !== currentMetadata) return false;
-    const { values, dimension } = vectors.index;
-    for (let offset = 0; offset < values.length; offset += dimension) {
-      if (
-        values
-          .subarray(offset, offset + dimension)
-          .every((value) => value === 0)
-      )
-        return true;
-    }
-    return false;
-  }, [vectors, currentMetadata]);
-  const client = useRef<SemanticClient | null>(null);
-  const vectorCache = useRef<{
-    metadata: ChapterMetadata;
-    promise: Promise<DecodedChapterVectors>;
-  } | null>(null);
-  const generation = useRef(0);
-  const editing = useRef(false);
-  const editTimer = useRef<ReturnType<typeof setTimeout> | undefined>(
-    undefined,
-  );
-
-  useEffect(() => {
-    vectorCache.current = null;
-    setVectors(null);
-
-    function syncQueryFromUrl() {
-      const queryFromUrl = new URLSearchParams(window.location.search).get('q');
-      generation.current++;
-      setQuery(queryFromUrl?.slice(0, MAX_QUERY_LENGTH) ?? '');
-      setSemanticAttempt((attempt) => attempt + 1);
-      setHybrid(null);
-      editing.current = false;
-    }
-
-    function refreshHistory() {
-      setHistory(getSearchHistory());
-    }
-
-    syncQueryFromUrl();
-    const initialQuery = new URLSearchParams(window.location.search).get('q');
-    setHistory(
-      initialQuery?.trim() ? saveSearch(initialQuery) : getSearchHistory(),
-    );
-    client.current = createSemanticClient(base, setSemanticStatus, true);
-
-    window.addEventListener('popstate', syncQueryFromUrl);
-    window.addEventListener('storage', refreshHistory);
-    window.addEventListener('recs-local-state-cleared', refreshHistory);
-    window.addEventListener('recs-search-history-cleared', refreshHistory);
-
-    return () => {
-      generation.current++;
-      client.current?.dispose();
-      window.removeEventListener('popstate', syncQueryFromUrl);
-      window.removeEventListener('storage', refreshHistory);
-      window.removeEventListener('recs-local-state-cleared', refreshHistory);
-      window.removeEventListener('recs-search-history-cleared', refreshHistory);
-      clearTimeout(editTimer.current);
-    };
-  }, [base]);
-
-  useEffect(() => {
-    if (!semanticAllowed) {
-      client.current?.dispose();
-      client.current = null;
-      setHybrid(null);
-      return;
-    }
-    client.current ??= createSemanticClient(base, setSemanticStatus, true);
-    void client.current.prepare().catch(() => setSemanticError(true));
-    return () => {
-      client.current?.cancel();
-    };
-  }, [base, semanticAllowed]);
-
-  useEffect(() => {
-    if (
-      (!semanticAllowed && !enrichAllowed) ||
-      !query.trim() ||
-      currentMetadata
-    ) {
-      return;
-    }
-    const abort = new AbortController();
-    setIndexStatus('loading');
-
-    async function refreshMetadata() {
-      try {
-        const data = await loadChapterMetadata(base, abort.signal);
-        // Filtering mixed-mode metadata would shift the corresponding binary rows.
-        if (
-          import.meta.env.ARCHIVE_MODE !== 'preview' &&
-          data.units.some((unit) => unit.preview)
-        ) {
-          throw new Error('Ineligible archive index');
-        }
-        if (abort.signal.aborted) {
-          return;
-        }
-        setMetadata({ base, index: data });
-        setIndexStatus('ready');
-      } catch {
-        if (!abort.signal.aborted) {
-          setIndexStatus('error');
-        }
-      }
-    }
-
-    void refreshMetadata();
-    return () => abort.abort();
-  }, [
-    base,
-    indexAttempt,
+  const navigation = useSearchNavigation(base);
+  const query = navigation.request.text;
+  const { history, historyStatus } = navigation;
+  const resources = useSearchResources(base, query, initialUnits, {
     semanticAllowed,
     enrichAllowed,
-    Boolean(query.trim()),
-    currentMetadata,
-  ]);
+  });
+  const { units, metadata, scripture, indexStatus, scriptureStatus } =
+    resources;
+  const semantic = useSemanticSearch(
+    base,
+    navigation.request,
+    metadata,
+    semanticAllowed,
+  );
+  const {
+    status: semanticStatus,
+    error: semanticError,
+    hasUnavailableRows,
+  } = semantic;
+  const [visiblePages, setVisiblePages] = useState(1);
+  const visibleResults = visiblePages * RESULTS_PER_PAGE;
 
-  useEffect(() => {
-    if (!enrichAllowed || !query.trim() || scripture?.base === base) {
-      return;
-    }
-    const abort = new AbortController();
-    setScriptureStatus('loading');
-
-    async function loadVerseText() {
-      try {
-        const index = await loadScriptureIndex(base, abort.signal);
-        if (abort.signal.aborted) {
-          return;
-        }
-        setScripture({ base, index });
-        setScriptureStatus('ready');
-      } catch {
-        if (!abort.signal.aborted) {
-          setScriptureStatus('error');
-        }
-      }
-    }
-
-    void loadVerseText();
-    return () => abort.abort();
-  }, [base, scriptureAttempt, enrichAllowed, Boolean(query.trim()), scripture]);
-
-  useEffect(() => {
-    const version = ++generation.current;
-    client.current?.cancel();
-    setSemanticError(false);
-    if (!semanticAllowed || !query.trim() || !currentMetadata?.units.length) {
-      return;
-    }
-    const queryMetadata = currentMetadata;
-
-    function vectorsFor(
-      metadata: ChapterMetadata,
-    ): Promise<DecodedChapterVectors> {
-      if (vectorCache.current?.metadata === metadata) {
-        return vectorCache.current.promise;
-      }
-
-      const promise = loadChapterVectors(base, metadata).then((index) => {
-        if (index.rowCount !== metadata.units.length) {
-          throw new Error('Search vector row mismatch');
-        }
-        if (!index.values.some((value) => value !== 0)) {
-          throw new Error('No usable search vectors');
-        }
-        return index;
-      });
-      const entry = { metadata, promise };
-      vectorCache.current = entry;
-      void promise.catch(() => {
-        if (vectorCache.current === entry) {
-          vectorCache.current = null;
-        }
-      });
-      return promise;
-    }
-
-    async function searchByMeaning() {
-      try {
-        if (!client.current) {
-          return;
-        }
-        const [index, queryVector] = await Promise.all([
-          vectorsFor(queryMetadata),
-          client.current.embed(query),
-        ]);
-        if (generation.current === version) {
-          setVectors((current) =>
-            current?.metadata === queryMetadata && current.index === index
-              ? current
-              : { metadata: queryMetadata, index },
-          );
-          setHybrid({ query, queryVector, metadata: queryMetadata, base });
-        }
-      } catch {
-        if (generation.current === version) {
-          setSemanticError(true);
-          setHybrid(null);
-        }
-      }
-    }
-
-    const delay = submitted.current ? 0 : SEMANTIC_QUERY_DELAY_MS;
-    const timer = setTimeout(searchByMeaning, delay);
-    return () => {
-      clearTimeout(timer);
-      generation.current++;
-    };
-  }, [base, query, currentMetadata, semanticAttempt, semanticAllowed]);
-
+  const lexical = useMemo(() => prepareSearchIndex(units), [units]);
+  const prepared = useMemo(
+    () => lexical.withVectors(semantic.vectors),
+    [lexical, semantic.vectors],
+  );
   const exact = useMemo(() => prepared.search(query), [prepared, query]);
   const hybridResults = useMemo(
     () =>
-      hybrid?.query === query &&
-      hybrid.metadata === currentMetadata &&
-      hybrid.base === base
-        ? prepared.search(query, { queryVector: hybrid.queryVector })
+      semantic.queryVector
+        ? prepared.search(query, { queryVector: semantic.queryVector })
         : null,
-    [prepared, hybrid, query, currentMetadata, base],
+    [prepared, query, semantic.queryVector],
   );
-  // Results are recordings, ranked by their best match; a matched point or part is offered under the player.
+  // A recording is ranked by its best matching unit; the unit supplies its playback destination.
   const results = useMemo(
     () => groupByRecording(hybridResults ?? exact, recordings, base),
     [hybridResults, exact, recordings, base],
   );
-  // Which verse of each cited passage the search's words best match (BSB text; never displayed).
+  // BSB is retrieval evidence; the visible links lead to the corresponding ESV verses.
   const verseSelection = useMemo(
-    () =>
-      scripture?.base === base
-        ? prepareVerseSelection(scripture.index)
-        : undefined,
-    [scripture, base],
+    () => (scripture ? prepareVerseSelection(scripture) : undefined),
+    [scripture],
   );
   const findBestVerse = useMemo(
     () => (query.trim() ? verseSelection?.(query) : undefined),
     [verseSelection, query],
   );
-  // Loading/progress messages must not rerender every recording and reparse its references.
+  // Loading progress must not rerender every card and reparse its references.
   const resultItems = useMemo(
     () =>
       results.slice(0, visibleResults).map(({ recording, unit, reasons }) => (
@@ -368,27 +106,8 @@ export default function SearchApp({
   const topics = useMemo(() => suggestedTopics(units), [units]);
 
   function changeQuery(value: string, commit = false) {
-    submitted.current = commit;
-    client.current?.cancel();
     setVisiblePages(1);
-    generation.current++;
-    setQuery(value);
-    setSemanticAttempt((attempt) => attempt + 1);
-    setHybrid(null);
-    const url = searchUrl(base, value);
-    if (window.location.pathname + window.location.search !== url) {
-      if (commit || !editing.current) window.history.pushState({}, '', url);
-      else window.history.replaceState({}, '', url);
-    }
-    editing.current = !commit;
-    clearTimeout(editTimer.current);
-    editTimer.current = setTimeout(() => {
-      editing.current = false;
-    }, QUERY_EDIT_SESSION_MS);
-    if (commit && value.trim()) {
-      setHistory(saveSearch(value));
-      setHistoryStatus('');
-    }
+    navigation.changeQuery(value, commit);
   }
   const field = (id: string) => (
     <SearchField
@@ -504,7 +223,7 @@ export default function SearchApp({
           <button
             className="button button-secondary"
             type="button"
-            onClick={() => setIndexAttempt((attempt) => attempt + 1)}
+            onClick={resources.retryMetadata}
           >
             Retry loading the archive
           </button>
@@ -513,7 +232,7 @@ export default function SearchApp({
           <button
             className="button button-secondary"
             type="button"
-            onClick={() => setScriptureAttempt((attempt) => attempt + 1)}
+            onClick={resources.retryScripture}
           >
             Retry Bible verse search
           </button>
@@ -522,7 +241,7 @@ export default function SearchApp({
           <button
             className="button button-secondary"
             type="button"
-            onClick={() => setSemanticAttempt((attempt) => attempt + 1)}
+            onClick={semantic.retry}
           >
             Retry meaning-based search
           </button>
@@ -592,15 +311,7 @@ export default function SearchApp({
                 <button
                   className="button button-secondary"
                   type="button"
-                  onClick={() => {
-                    const cleared = clearSearchHistory();
-                    if (cleared) setHistory([]);
-                    setHistoryStatus(
-                      cleared
-                        ? 'Search history cleared on this device. Playback progress is kept.'
-                        : 'Search history could not be cleared. Check your browser storage settings and try again.',
-                    );
-                  }}
+                  onClick={navigation.clearHistory}
                 >
                   Clear search history
                 </button>

@@ -17,6 +17,8 @@ export interface SearchOptions {
   queryVector?: number[]; vectors?: DecodedChapterVectors; limit?: number; semanticThreshold?: number;
 }
 export interface SearchResult { unit: SearchUnit; score: number; reasons: string[] }
+/** A distinct navigation/edit/submit intent, even when its text is unchanged. */
+export interface SearchQuery { readonly text: string; readonly immediate: boolean }
 export type PreparedSearchOptions = Omit<SearchOptions, 'vectors'>;
 export interface PreparedSearchIndex {
   search(query: string, options?: PreparedSearchOptions): SearchResult[];
