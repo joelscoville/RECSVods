@@ -1,0 +1,184 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Growing in Faith through John 9
+serviceDate: 2026-01-18
+status: draft
+sermonDescription: Jesus' healing of the man born blind challenges automatic blame for suffering and formulaic promises of healing. The preacher distinguishes confidence in God's purpose from claiming to explain another person's pain, urging compassionate presence and practical community support. The healed man's growing recognition of Jesus, together with 2 Peter's call to increasing virtue and love, encourages a faith that matures beyond dependence on crisis or comfortable routines.
+sermonScripture:
+  - John 9:1-17
+  - 2 Peter 1:3-9
+sermonTopics:
+  - suffering
+  - faith
+  - sanctification
+uploads:
+  - youtubeId: MIMlkbo_pRM
+    uploadDuration: "1:38:35.562"
+chapters:
+  - chapterId: c20260118-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "0:47.65"
+    chapterEnd: "5:34.75"
+    points:
+      - pointTime: "0:47.92"
+        pointText: The supplied recording's first substantive prayer invitation is thanksgiving.
+      - pointTime: "1:51.58"
+        pointText: Supplication brings personal situations before God.
+      - pointTime: "2:54.28"
+        pointText: Gathering prayer asks for humble, teachable hearts and worship that honors the Creator.
+      - pointTime: "3:35.16"
+        pointText: Patrick is introduced before welcoming the congregation and inviting mutual greetings.
+      - pointTime: "4:20.34"
+        pointText: Visitors are welcomed before silent meditation.
+  - chapterId: c20260118-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "5:34.75"
+    chapterEnd: "25:24.5"
+    chapterScripture:
+      - Psalms 28:6-9
+      - Proverbs 5:1-23
+      - John 9:1-17
+      - 2 Peter 1:5-9
+    points:
+      - pointTime: "5:35.04"
+        pointText: Psalms 28 calls the congregation to praise God as strength, refuge and shepherd.
+      - pointTime: "13:29.94"
+        pointText: Responsive reading begins with Proverbs 5's warning against adultery.
+      - pointTime: "16:13.32"
+        pointText: John 9 recounts the man born blind receiving sight and facing questions about Jesus.
+      - pointTime: "20:31.2"
+        pointText: Be Thou My Vision prepares the congregation for the sermon.
+      - pointTime: "24:19.72"
+        pointText: 2 Peter 1 calls for faith that grows in virtue, knowledge, self-control and love.
+  - chapterId: c20260118-question-recap
+    chapterTitle: Why Suffering, and Where Is Our Security?
+    chapterKind: qa
+    chapterStart: "25:24.5"
+    chapterEnd: "36:17.95"
+    points:
+      - pointTime: "25:24.78"
+        pointText: The preacher introduces John 9 and encourages daily devotional discipline.
+      - pointTime: "27:41.44"
+        pointText: A prayer-group question asks why God allows children to suffer.
+      - pointTime: "28:29.0"
+        pointText: The previous lesson's recap considers Jesus' calm response to hostile insults.
+      - pointTime: "32:56.92"
+        pointText: Human leaders' failures reinforce the call to place ultimate trust in Christ.
+      - pointTime: "34:27.92"
+        pointText: Transformation from one degree of glory to another supplies hope for increasing spiritual security.
+  - chapterId: c20260118-healing
+    chapterTitle: The Man Born Blind and Healing without a Formula
+    chapterKind: sermon
+    chapterStart: "36:17.95"
+    chapterEnd: "49:00.3"
+    chapterScripture:
+      - John 9:1-17
+    points:
+      - pointTime: "36:18.22"
+        pointText: John 9's detailed account of one healing contains several layers of belief and unbelief.
+      - pointTime: "37:29.56"
+        pointText: The man's blindness from birth introduces the difficulty of congenital illness.
+      - pointTime: "42:10.26"
+        pointText: Jesus initiates healing without the man requesting it, challenging a fixed healing formula.
+      - pointTime: "43:28.0"
+        pointText: The preacher's experience of serious eye injury makes the passage personally significant.
+      - pointTime: "48:15.52"
+        pointText: Practical cataract treatment and Christian charity illustrate opportunities to restore sight.
+  - chapterId: c20260118-suffering-purpose
+    chapterTitle: Beyond Blame to Compassionate Support
+    chapterKind: sermon
+    chapterStart: "49:00.3"
+    chapterEnd: "1:09:11.6"
+    chapterScripture:
+      - John 9:2-5
+    points:
+      - pointTime: "49:00.44"
+        pointText: The disciples' question introduces moral causality and the assumption that suffering must identify someone's sin.
+      - pointTime: "55:06.04"
+        pointText: The problem of evil raises questions about God's power, goodness and knowledge.
+      - pointTime: "1:00:46.88"
+        pointText: Jesus rejects blame for this man's blindness and identifies God's works being displayed in him.
+      - pointTime: "1:04:07.3"
+        pointText: The preacher warns against imposing that explanation on every grieving person or suffering child.
+      - pointTime: "1:06:50.96"
+        pointText: Shared practical support can lessen the burden of facing uncertainty alone.
+    subchapters:
+      - chapterId: s20260118-accompany
+        chapterTitle: Walk with People through Questions We Cannot Answer
+        chapterKind: sermon
+        chapterStart: "1:04:07.1"
+        chapterEnd: "1:09:11.6"
+        points:
+          - pointTime: "1:04:07.3"
+            pointText: One particular healing is not a ready-made explanation for every difficult situation.
+          - pointTime: "1:04:38.36"
+            pointText: Compassion includes crying and walking with people rather than offering detached religious explanations.
+          - pointTime: "1:05:13.64"
+            pointText: Admitting that we do not know is compatible with trusting God's purpose.
+          - pointTime: "1:06:50.96"
+            pointText: The preacher urges a shared journey of faith instead of isolated struggle.
+          - pointTime: "1:08:55.32"
+            pointText: Loving one another in deeds gives substance to community support.
+  - chapterId: c20260118-progressive-faith
+    chapterTitle: From Receiving Sight to Worshiping Christ
+    chapterKind: sermon
+    chapterStart: "1:09:11.6"
+    chapterEnd: "1:24:25.8"
+    chapterScripture:
+      - John 9:6-38
+      - 2 Peter 1:3-9
+      - 2 Corinthians 3:18
+    points:
+      - pointTime: "1:09:11.92"
+        pointText: Jesus' use of mud and the pool illustrates healing through a process rather than a prescribed technique.
+      - pointTime: "1:11:12.4"
+        pointText: The healed man's account begins a progression in his understanding of Jesus.
+      - pointTime: "1:15:19.0"
+        pointText: A hymn's warning about comfortable routines illustrates how prosperity can accompany spiritual forgetfulness.
+      - pointTime: "1:18:43.04"
+        pointText: 2 Peter describes forgotten grace and absent growth as a form of spiritual blindness.
+      - pointTime: "1:22:38.44"
+        pointText: The congregation is asked who Jesus is to them and urged to grow toward wholehearted worship.
+    subchapters:
+      - chapterId: s20260118-growth
+        chapterTitle: Increasing Faith Rather than Crisis-Only Faith
+        chapterKind: sermon
+        chapterStart: "1:11:07.75"
+        chapterEnd: "1:24:25.8"
+        points:
+          - pointTime: "1:11:12.4"
+            pointText: The man first knows Jesus simply as the man who healed him.
+          - pointTime: "1:12:12.76"
+            pointText: Desperation can prompt obedience while comfortable circumstances can encourage self-reliance.
+          - pointTime: "1:17:34.02"
+            pointText: Peter calls for virtue, knowledge, self-control, steadfastness, godliness and love.
+          - pointTime: "1:20:25.44"
+            pointText: The man's recognition grows from prophet to one sent by God and finally to believing worship.
+          - pointTime: "1:22:19.32"
+            pointText: This progression challenges believers to keep growing throughout their lives.
+  - chapterId: c20260118-closing
+    chapterTitle: Prayer, Response and Closing
+    chapterKind: closing
+    chapterStart: "1:24:25.8"
+    chapterEnd: "1:38:35.562"
+    points:
+      - pointTime: "1:24:25.94"
+        pointText: Response prayer asks for faithfulness without waiting for a crisis to turn toward God.
+      - pointTime: "1:28:17.96"
+        pointText: Intercession commits the Johor church-planting project to God's guidance.
+      - pointTime: "1:29:42.78"
+        pointText: Shared prayer asks for practical service as God's hands and feet among those facing challenges.
+      - pointTime: "1:32:38.92"
+        pointText: I Know Whom I Have Believed is introduced as an expression of personally known faith.
+      - pointTime: "1:36:20.92"
+        pointText: Historical notices encourage training, cell groups, prayer and referrals for practical social assistance.
+markers:
+  - markerTime: "0:47.65"
+    markerNote: "The supplied transcript starts during prayer preparation; earlier ACTS prayer movements are not established. The isolated opening 'Thank you' was not treated as a substantive anchor."
+  - markerTime: "36:17.95"
+    markerNote: "Growing in Faith through John 9 is a descriptive working title, not a confirmed announced title. Anchors and duration use supplied faster-whisper audio evidence; fresh video duration and boundary listening remain outstanding."
+  - markerTime: "43:28.0"
+    markerNote: "Medical, cultural, historical and reported personal examples are attributed to the preacher and have not been independently verified."
