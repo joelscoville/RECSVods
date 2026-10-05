@@ -1,0 +1,139 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Undeserved
+serviceDate: 2025-03-09
+status: draft
+sermonDescription: >-
+  The Word becoming flesh reveals God coming to humanity, known through the apostles' lived encounter with Christ. John describes his glory through grace and truth. The preacher explores grace as undeserved, unceasing and unmistakable in Jesus. Undeserved favor calls for humility and service without entitlement; grace upon grace calls for gratitude amid life's difficulties. Christ's example holds grace and truth together, inviting believers to know the Jesus of Scripture and reflect him in daily relationships.
+sermonScripture:
+  - John 1:14-18
+  - 1 John 1:1
+sermonTopics:
+  - salvation
+  - knowing-god
+  - service
+uploads:
+  - youtubeId: 7MRZkBOD6k0
+    uploadDuration: "56:04"
+chapters:
+  - chapterId: c20250309-equipped
+    chapterTitle: Use Gifts to Encourage and Care for Others
+    chapterKind: other
+    chapterStart: "0:01.76"
+    chapterEnd: "4:37.12"
+    points:
+      - pointTime: "1:43.56"
+        pointText: Children's storytelling and counseling are presented as opportunities for members' gifts to serve others.
+      - pointTime: "3:26"
+        pointText: Biblical counseling is distinguished through its grounding in God's revealed truth rather than personal preference alone.
+  - chapterId: c20250309-truth-recap
+    chapterTitle: Receive Truth Even When It Challenges Us
+    chapterKind: sermon
+    chapterStart: "4:37.12"
+    chapterEnd: "12:28.72"
+    chapterScripture:
+      - John 1:9-13
+    points:
+      - pointTime: "5:08"
+        pointText: The recap contrasts changing cultural understandings with truth presented as God's timeless revelation.
+      - pointTime: "8:31.92"
+        pointText: Conflict illustrates people's tendency to defend their position at the expense of truth.
+      - pointTime: "10:16.12"
+        pointText: Receiving Christ is connected with becoming God's child despite human resistance to truth.
+  - chapterId: c20250309-incarnation
+    chapterTitle: God Comes to Us in the Historical Christ
+    chapterKind: sermon
+    chapterStart: "12:28.72"
+    chapterEnd: "25:34.76"
+    chapterScripture:
+      - John 1:14
+      - Isaiah 7:14
+      - Matthew 1:23
+      - 1 John 1:1
+    points:
+      - pointTime: "12:28.72"
+        pointText: The Word becoming flesh is explained through Emmanuel, God with us.
+      - pointTime: "15:22.88"
+        pointText: Divine initiative is contrasted with humanity's attempts to reach God through religious effort.
+      - pointTime: "16:46.68"
+        pointText: John's appeal to hearing, seeing and touching emphasizes a lived encounter rather than a theory alone.
+      - pointTime: "18:50.44"
+        pointText: The preacher distinguishes claims about the historical Jesus from mythological depictions of religious figures.
+      - pointTime: "20:33.68"
+        pointText: Grace and truth summarize the glory John recognizes in Christ.
+  - chapterId: c20250309-grace
+    chapterTitle: Undeserved, Unceasing and Unmistakable Grace
+    chapterKind: sermon
+    chapterStart: "25:34.76"
+    chapterEnd: "54:47"
+    subchapters:
+      - chapterId: c20250309-undeserved
+        chapterTitle: Undeserved Grace Calls for Humility
+        chapterKind: sermon
+        chapterStart: "25:34.76"
+        chapterEnd: "35:11.52"
+        chapterScripture:
+          - Romans 11:6
+          - Luke 17:7-10
+        points:
+          - pointTime: "26:17.28"
+            pointText: Grace is distinguished from a transaction in which a benefit is earned by the recipient.
+          - pointTime: "29:10.2"
+            pointText: Understanding acceptance as undeserved makes humility a natural response rather than a performance of manners.
+          - pointTime: "32:38.24"
+            pointText: The unworthy-servant teaching challenges demanding special recognition for fulfilling one's responsibility.
+          - pointTime: "34:20.08"
+            pointText: Comparing ministry gifts and rewards illustrates how entitlement can displace the joy of serving.
+      - chapterId: c20250309-unceasing
+        chapterTitle: Unceasing Grace Calls for Gratitude
+        chapterKind: sermon
+        chapterStart: "35:11.52"
+        chapterEnd: "48:03.56"
+        chapterScripture:
+          - John 1:16
+          - John 10:10
+        points:
+          - pointTime: "36:15.16"
+            pointText: Grace upon grace is presented as gift and blessing overflowing from Christ's fullness.
+          - pointTime: "37:47.8"
+            pointText: Eternal life is held alongside abundant life here and now.
+          - pointTime: "40:30.68"
+            pointText: Gratitude changes one's relation to what has been received rather than guaranteeing greater wealth.
+          - pointTime: "43:37.56"
+            pointText: Encounters with poverty challenge habits of comparison, dissatisfaction and taking existing gifts for granted.
+          - pointTime: "46:21.12"
+            pointText: The appeal redirects attention from constantly pursuing what is absent toward recognizing grace already present.
+      - chapterId: c20250309-unmistakable
+        chapterTitle: Christ Makes Grace and Truth Known
+        chapterKind: sermon
+        chapterStart: "48:03.56"
+        chapterEnd: "54:47"
+        chapterScripture:
+          - John 1:17-18
+          - Colossians 1:15
+          - Colossians 1:19
+        points:
+          - pointTime: "48:03.56"
+            pointText: The law exposing humanity's inability is distinguished from the grace and truth brought through Christ.
+          - pointTime: "49:47.44"
+            pointText: Parenting illustrates why indulgence without truth or strictness without grace is incomplete.
+          - pointTime: "51:29.92"
+            pointText: Christ as the image of the invisible God provides a personal focus amid theological complexity.
+          - pointTime: "53:34.32"
+            pointText: What would Jesus do requires knowing the Jesus of Scripture rather than inventing a preferred version of him.
+  - chapterId: c20250309-response
+    chapterTitle: Receive Grace Humbly and Reflect Christ to Others
+    chapterKind: closing
+    chapterStart: "54:47"
+    chapterEnd: "56:04"
+    points:
+      - pointTime: "54:57.64"
+        pointText: Closing prayer asks for recognition of grace upon grace and a life that makes Christ's grace and truth visible.
+markers:
+  - markerTime: "0:01.76"
+    markerNote: "Verified channel metadata dates the undated source to March 9. Supplied auto-caption timings are coarse and await media checks."
+  - markerTime: "20:33.68"
+    markerNote: "Historical-source descriptions and attributed quotations require factual review. Captions confuse John with Paul and Philip Yancey with Philippians in places."
+  - markerTime: "44:38.32"
+    markerNote: "The reported nutrition illustration is an attributed poverty anecdote, not independently verified dietary guidance."
