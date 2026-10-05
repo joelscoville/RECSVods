@@ -75,7 +75,7 @@ chapters:
     chapterTitle: Worship, Religious Difference and Experiential Faith
     chapterKind: qa
     chapterStart: "45:44.15"
-    chapterEnd: "1:12:45.6"
+    chapterEnd: "1:12:45.15"
     chapterScripture:
       - John 9
       - Matthew 7:21
@@ -110,13 +110,13 @@ chapters:
   - chapterId: c20260201-sheepfold-context
     chapterTitle: Read the Sheepfold Picture in Its Context
     chapterKind: sermon
-    chapterStart: "1:12:45.6"
+    chapterStart: "1:12:45.15"
     chapterEnd: "1:29:49.65"
     chapterScripture:
       - John 9:39-41
       - John 10:1-6
     points:
-      - pointTime: "1:12:45.91"
+      - pointTime: "1:12:45.15"
         pointText: John 10 is linked with the same confrontation that ended John 9.
       - pointTime: "1:17:38.81"
         pointText: False religious appearances are considered as something Scripture already anticipates.

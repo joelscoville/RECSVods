@@ -91,7 +91,7 @@ chapters:
     chapterTitle: Beyond Blame to Compassionate Support
     chapterKind: sermon
     chapterStart: "49:00.3"
-    chapterEnd: "1:09:11.6"
+    chapterEnd: "1:09:11.14"
     chapterScripture:
       - John 9:2-5
     points:
@@ -110,7 +110,7 @@ chapters:
         chapterTitle: Walk with People through Questions We Cannot Answer
         chapterKind: sermon
         chapterStart: "1:04:07.1"
-        chapterEnd: "1:09:11.6"
+        chapterEnd: "1:09:11.14"
         points:
           - pointTime: "1:04:07.3"
             pointText: One particular healing is not a ready-made explanation for every difficult situation.
@@ -125,14 +125,14 @@ chapters:
   - chapterId: c20260118-progressive-faith
     chapterTitle: From Receiving Sight to Worshiping Christ
     chapterKind: sermon
-    chapterStart: "1:09:11.6"
+    chapterStart: "1:09:11.14"
     chapterEnd: "1:24:25.8"
     chapterScripture:
       - John 9:6-38
       - 2 Peter 1:3-9
       - 2 Corinthians 3:18
     points:
-      - pointTime: "1:09:11.92"
+      - pointTime: "1:09:11.14"
         pointText: Jesus' use of mud and the pool illustrates healing through a process rather than a prescribed technique.
       - pointTime: "1:11:12.4"
         pointText: The healed man's account begins a progression in his understanding of Jesus.
