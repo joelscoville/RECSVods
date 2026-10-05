@@ -1,0 +1,146 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: In Spirit and Truth
+serviceDate: 2025-06-01
+status: draft
+sermonDescription: Jesus' encounter with the Samaritan woman is organized around breakthroughs of grace, ignorance, truth and mission. Grace crosses barriers of ethnicity, gender and social standing, while the woman's limited understanding mirrors believers who underestimate Christ's gift. Worship in spirit and truth requires living relationship and truthful practice rather than ritual alone or untested spiritual claims. Christ's revelation transforms an unlikely recipient into a witness, calling listeners toward serious faith, abundant life and practical influence on others.
+sermonScripture:
+  - John 4:1-30
+sermonTopics:
+  - worship
+  - knowing-god
+  - mission
+uploads:
+  - youtubeId: vBpOFF-_wms
+    uploadDuration: "58:50.717"
+chapters:
+  - chapterId: c20250601-rapture-question
+    chapterTitle: Hope in Christ's Return and Live Faithfully Now
+    chapterKind: qa
+    chapterStart: "0:03"
+    chapterEnd: "9:52.76"
+    chapterScripture:
+      - 1 Thessalonians 4:16-17
+      - Matthew 24:40-41
+    points:
+      - pointTime: "1:44.14"
+        pointText: The rapture question introduces different interpretations of passages about believers being gathered to the Lord.
+      - pointTime: "5:07.94"
+        pointText: Several millennial positions are distinguished, with the preacher identifying a broadly amillennial Reformed position.
+      - pointTime: "6:48.4"
+        pointText: Attention is directed toward present gospel work and alleviating suffering alongside hope in Christ's return.
+      - pointTime: "8:29.34"
+        pointText: Living in God's will is emphasized over trying to identify current events with every eschatological symbol.
+  - chapterId: c20250601-humility-recap
+    chapterTitle: Lift Up Christ and Refuse to Sow Division
+    chapterKind: sermon
+    chapterStart: "9:52.76"
+    chapterEnd: "16:45.34"
+    chapterScripture:
+      - John 3:22-36
+      - Proverbs 6:16-19
+    points:
+      - pointTime: "11:58.18"
+        pointText: Stirring discord is treated as serious, and truthful, helpful, necessary and kind speech is encouraged.
+      - pointTime: "13:38.3"
+        pointText: John the Baptist's desire for Christ to increase challenges religious rivalry and self-promotion.
+      - pointTime: "14:42.58"
+        pointText: Genuine humility is grounded in recognizing gifts from God rather than merely practicing cultural deference.
+  - chapterId: c20250601-four-breakthroughs
+    chapterTitle: Four Breakthroughs at the Well
+    chapterKind: sermon
+    chapterStart: "16:45.34"
+    chapterEnd: "56:53.76"
+    subchapters:
+      - chapterId: c20250601-grace
+        chapterTitle: Grace Breaks Through
+        chapterKind: sermon
+        chapterStart: "16:45.34"
+        chapterEnd: "27:52.64"
+        chapterScripture:
+          - John 4:1-9
+          - Romans 1:16
+          - Genesis 1:27
+        points:
+          - pointTime: "17:07.92"
+            pointText: John's place and time details situate the encounter in the journey through Samaria.
+          - pointTime: "18:54.22"
+            pointText: The woman's surprise reveals the social barriers Jesus crosses by speaking with her.
+          - pointTime: "22:15.92"
+            pointText: Her perceived moral standing adds another barrier to ethnicity and gender in the preacher's account.
+          - pointTime: "23:58.16"
+            pointText: The encounter is interpreted as a significant extension of salvation's message beyond the Jewish community.
+          - pointTime: "26:16.96"
+            pointText: Being made in God's image grounds equal dignity and challenges mistreatment across race, religion and social background.
+      - chapterId: c20250601-ignorance
+        chapterTitle: Ignorance Breaks Through
+        chapterKind: sermon
+        chapterStart: "27:52.64"
+        chapterEnd: "42:44.52"
+        chapterScripture:
+          - John 4:10-18
+          - John 10:10
+          - Proverbs 3:5
+        points:
+          - pointTime: "28:50.7"
+            pointText: Not recognizing Christ's identity limits the woman's understanding of the gift she could receive.
+          - pointTime: "30:44.12"
+            pointText: Living water is connected with enduring growth and discovery rather than only immediate material needs.
+          - pointTime: "35:47.14"
+            pointText: The preacher asks believers to examine what blocks abundant life while acknowledging the burden of illness and mental-health struggles.
+          - pointTime: "38:11.64"
+            pointText: Serious spiritual growth is compared with the sustained work required in marriage rather than waiting for a simple happiness formula.
+          - pointTime: "41:18.66"
+            pointText: Technical loopholes and carefully phrased answers cannot conceal the reality of one's life before God.
+      - chapterId: c20250601-truth
+        chapterTitle: Truth Breaks Through
+        chapterKind: sermon
+        chapterStart: "42:44.52"
+        chapterEnd: "52:49.68"
+        chapterScripture:
+          - John 4:19-26
+          - John 3:3-6
+          - John 17:17
+        points:
+          - pointTime: "43:39.26"
+            pointText: Worship in spirit and truth redirects the question from competing sacred locations toward a transformed relationship with God.
+          - pointTime: "46:22.04"
+            pointText: Lifelong participation in ritual is distinguished from being born again and living in relationship with God.
+          - pointTime: "49:23.16"
+            pointText: God's word as truth requires worship's claims, conduct and teaching to be truthful as well as emotionally engaged.
+          - pointTime: "51:06.92"
+            pointText: Neither untested excitement nor rigid rule-following alone satisfies the call to worship in both spirit and truth.
+          - pointTime: "52:01.32"
+            pointText: Christ's self-revelation grounds the woman's expectation that the Messiah will make God's truth known.
+      - chapterId: c20250601-missions
+        chapterTitle: Missions Break Through
+        chapterKind: sermon
+        chapterStart: "52:49.68"
+        chapterEnd: "56:53.76"
+        chapterScripture:
+          - John 4:27-30
+        points:
+          - pointTime: "53:16.82"
+            pointText: The woman's response moves from receiving revelation to sharing it with the people of her town.
+          - pointTime: "53:52.92"
+            pointText: Her immediate witness is presented as an example of mission arising through an unlikely recipient of grace.
+          - pointTime: "54:29.88"
+            pointText: The recap links grace overcoming barriers, limited understanding, revealed truth and transformed mission.
+          - pointTime: "56:35.26"
+            pointText: The final appeal asks listeners to take faith seriously and influence others through the life Christ gives.
+  - chapterId: c20250601-response
+    chapterTitle: Let Christ's Life Become Blessing to Others
+    chapterKind: closing
+    chapterStart: "56:53.76"
+    chapterEnd: "58:50.717"
+    points:
+      - pointTime: "56:53.76"
+        pointText: Closing prayer asks for faith in Christ's abundant life and for practical acts of care and witness beyond personal advantage.
+markers:
+  - markerTime: "0:03"
+    markerNote: "This upload begins at sermon/Q&A. Title follows the source. Duration and anchors use supplied audio ASR and await fresh media checks."
+  - markerTime: "5:07.94"
+    markerNote: "Eschatological positions and their historical prevalence are the preacher's overview; ASR garbles amillennialism and several names."
+  - markerTime: "18:54.22"
+    markerNote: "Descriptions of Jewish/Samaritan identity, religious practices and historical firsts are the preacher's interpretive account and require factual review."
