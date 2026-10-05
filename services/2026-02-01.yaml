@@ -1,0 +1,190 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: RECS 1 February 2026
+serviceDate: 2026-02-01
+status: draft
+sermonDescription: Beginning John 10, the preacher places the sheepfold illustration in continuity with Jesus' confrontation with the religious leaders after healing the blind man. Christ's claim to be the door is presented as exclusive access with a universal invitation. The shepherd knowing and calling his sheep by name grounds identity as God's beloved, urging personal relationship rather than a transactional approach to worship or a search for agreeable advice.
+sermonScripture:
+  - John 10:1-10
+  - Acts 4:9-12
+sermonTopics:
+  - knowing-god
+  - faith
+  - discipleship
+uploads:
+  - youtubeId: 8Qn4Mz94d6Q
+    uploadDuration: "2:04:40.517"
+chapters:
+  - chapterId: c20260201-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "3:29.22"
+    chapterEnd: "11:30.6"
+    points:
+      - pointTime: "3:29.22"
+        pointText: The leader invites personal prayer to prepare for worship and Communion.
+      - pointTime: "4:43.18"
+        pointText: Confession seeks cleansing through Christ rather than personal perfection.
+      - pointTime: "6:03.3"
+        pointText: Thanksgiving counts God's gifts in every circumstance.
+      - pointTime: "7:18.5"
+        pointText: Supplication seeks guidance and help for personal needs.
+      - pointTime: "8:30.44"
+        pointText: Prayer asks for prepared hearts before Jason welcomes the congregation.
+  - chapterId: c20260201-worship-communion
+    chapterTitle: Worship, Communion and Scripture
+    chapterKind: opening
+    chapterStart: "11:30.6"
+    chapterEnd: "45:44.15"
+    chapterScripture:
+      - Psalms 30:1-4
+      - 1 Corinthians 11:23-26
+      - Proverbs 7
+      - John 10:1-21
+      - Acts 4:9-12
+    points:
+      - pointTime: "11:30.9"
+        pointText: Psalms 30 introduces praise for rescue and restored life.
+      - pointTime: "17:40.98"
+        pointText: Communion recalls belonging to Christ and the need for humble confession.
+      - pointTime: "27:11.6"
+        pointText: Proverbs 7 is introduced for responsive reading.
+      - pointTime: "30:30.1"
+        pointText: The congregation turns to John 10 and the sheepfold illustration.
+      - pointTime: "44:42.73"
+        pointText: Acts 4:9-12 supplies the supporting passage about salvation in Christ's name.
+    subchapters:
+      - chapterId: s20260201-communion
+        chapterTitle: Communion Reminds Us We Belong to Christ
+        chapterKind: communion
+        chapterStart: "17:40.6"
+        chapterEnd: "26:08.7"
+        points:
+          - pointTime: "17:40.98"
+            pointText: Participation is introduced through confession and cleansing by Christ's blood.
+          - pointTime: "18:28.14"
+            pointText: The congregation is invited to pray the Lord's Prayer.
+          - pointTime: "19:02.32"
+            pointText: The institution reading precedes distribution of bread and cup.
+          - pointTime: "23:00.22"
+            pointText: Participants stand and partake with thanksgiving.
+          - pointTime: "24:04.66"
+            pointText: Prayer recalls the cost of redemption and following Christ rather than living for oneself.
+  - chapterId: c20260201-worship-question-recap
+    chapterTitle: Worship, Religious Difference and Experiential Faith
+    chapterKind: qa
+    chapterStart: "45:44.15"
+    chapterEnd: "1:12:45.6"
+    chapterScripture:
+      - John 9
+      - Matthew 7:21
+    points:
+      - pointTime: "45:44.47"
+        pointText: The preacher argues that worship is a whole experience rather than only the sermon.
+      - pointTime: "48:49.53"
+        pointText: Reverence in worship introduces reflection on different church practices.
+      - pointTime: "51:41.25"
+        pointText: A question asks why Christ is the only way when religions are described as different paths to God.
+      - pointTime: "1:07:44.29"
+        pointText: The blind man's experience illustrates personal faith grounded in what Christ has done.
+      - pointTime: "1:11:13.81"
+        pointText: A heart directed toward God's will is distinguished from perfection or simply using religious language.
+    subchapters:
+      - chapterId: s20260201-chosen-clip
+        chapterTitle: The Chosen Illustrates the Blind Man's Encounter
+        chapterKind: other
+        chapterStart: "59:02.7"
+        chapterEnd: "1:06:14.6"
+        points:
+          - pointTime: "59:03.07"
+            pointText: A dramatization introduces a man blind from birth and Jesus' encounter with him.
+          - pointTime: "1:00:00.73"
+            pointText: Characters ask about the cause of blindness as Jesus directs attention to God's works.
+          - pointTime: "1:01:16.97"
+            pointText: The dramatized healing uses mud and washing, with creative differences discussed afterward.
+          - pointTime: "1:04:14.01"
+            pointText: Religious leaders question the healed man and his parents.
+          - pointTime: "1:05:59.03"
+            pointText: The man is expelled after affirming the healing.
+  - chapterId: c20260201-sheepfold-context
+    chapterTitle: Read the Sheepfold Picture in Its Context
+    chapterKind: sermon
+    chapterStart: "1:12:45.6"
+    chapterEnd: "1:29:49.65"
+    chapterScripture:
+      - John 9:39-41
+      - John 10:1-6
+    points:
+      - pointTime: "1:12:45.91"
+        pointText: John 10 is linked with the same confrontation that ended John 9.
+      - pointTime: "1:17:38.81"
+        pointText: False religious appearances are considered as something Scripture already anticipates.
+      - pointTime: "1:19:22.21"
+        pointText: A sheepfold shared by several shepherds explains the gatekeeper and recognition of each voice.
+      - pointTime: "1:22:49.17"
+        pointText: The word picture is distinguished from a constructed parable and from condemning everyone of another faith.
+      - pointTime: "1:26:12.17"
+        pointText: Respect for other people's religious freedom is held alongside the claim of complete access through Christ.
+  - chapterId: c20260201-called-by-name
+    chapterTitle: The Shepherd Knows and Calls His People by Name
+    chapterKind: sermon
+    chapterStart: "1:29:49.65"
+    chapterEnd: "1:39:53.1"
+    chapterScripture:
+      - John 10:3-6
+      - Ephesians 1:6
+      - Isaiah 49:16
+      - 1 John 3:1
+    points:
+      - pointTime: "1:29:49.65"
+        pointText: The shepherd calling his own by name introduces the value of personal identity.
+      - pointTime: "1:31:22.63"
+        pointText: Naming is connected with being known as a person rather than remaining anonymous.
+      - pointTime: "1:33:07.41"
+        pointText: God's beloved is presented as an identity deeper than worldly achievement or insecurity.
+      - pointTime: "1:34:48.35"
+        pointText: Scriptural images of God knowing his children are contrasted with seeking one's name on earthly honors.
+      - pointTime: "1:36:29.45"
+        pointText: Recognizing and following Christ's voice is contrasted with a relationship based on what one gets from church.
+  - chapterId: c20260201-only-door
+    chapterTitle: Christ's Door Is Exclusive and Open to Anyone
+    chapterKind: sermon
+    chapterStart: "1:39:53.1"
+    chapterEnd: "1:47:07.15"
+    chapterScripture:
+      - John 10:7-10
+    points:
+      - pointTime: "1:39:53.29"
+        pointText: Jesus' door declaration is read against the leaders' claim to control access to God.
+      - pointTime: "1:41:36.53"
+        pointText: John 10:9 is presented as an exclusive way with an invitation for anyone to enter.
+      - pointTime: "1:43:18.43"
+        pointText: Going in and out is connected with protection, nurture and pasture.
+      - pointTime: "1:44:58.47"
+        pointText: Lewis is cited to argue that Christ's claims require a response beyond calling him a good teacher.
+      - pointTime: "1:46:38.87"
+        pointText: The conclusion connects response to Christ with receiving life and abundance.
+  - chapterId: c20260201-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:47:07.15"
+    chapterEnd: "2:04:40.517"
+    points:
+      - pointTime: "1:47:07.47"
+        pointText: Prayer asks for appreciation of being known by God and following the shepherd rather than living transactionally.
+      - pointTime: "1:52:19.35"
+        pointText: Intercession asks for wisdom and direction for church planting beyond the present congregation.
+      - pointTime: "1:54:48.39"
+        pointText: The first-Sunday second offering is designated for evangelism.
+      - pointTime: "1:56:18.49"
+        pointText: Saviour, Like a Shepherd Lead Us is introduced before the closing hymn.
+      - pointTime: "1:59:22.71"
+        pointText: Historical notices invite practical ministry, orphanage fundraising, guitar classes and elderly outreach.
+markers:
+  - markerTime: "3:29.22"
+    markerNote: "Supplied ASR begins the welcome mid-phrase; the click target is the first complete prayer invitation. The separate 2:04 upload LhJ2EiI9m5I has only unusable repeated ASR fragments and was not appended to this complete recording."
+  - markerTime: "45:44.15"
+    markerNote: "Working title uses the channel's dated title; confirm the announced sermon title. Duration and anchors use supplied faster-whisper audio evidence, not fresh video-duration or listening checks."
+  - markerTime: "59:02.7"
+    markerNote: "The dramatization includes creative additions; keep its dialogue separate from claims about the biblical account."
