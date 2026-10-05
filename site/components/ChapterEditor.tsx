@@ -8,26 +8,20 @@ import {
   type MouseEvent,
 } from 'react';
 import {
-  chapterTitle,
   describeChanges,
   edges,
-  formatClock,
-  isFileMarker,
   items,
   lengthOf,
   outline,
   roundTime,
   validateEditor,
   type EditorItem,
-  type EditorMarker,
   type EditorRecording,
   type EditorState,
 } from '../lib/recording-editor';
-import { CHAPTER_KINDS, locate, recordingTime } from '../lib/recording-schema';
+import { locate, recordingTime } from '../lib/recording-schema';
 import {
-  keyText,
   matchShortcut,
-  SHORTCUTS,
   shortcutHint,
   type EditorAction,
 } from '../lib/editor-keys';
@@ -44,6 +38,7 @@ import { useEditorPlayback } from './use-editor-playback';
 import { useEditorSelection } from './use-editor-selection';
 import { useBoundaryDrag } from './use-boundary-drag';
 import { createEditorCommands } from './editor-commands';
+import { createEditorMenus } from './editor-menus';
 import { useEditorMarkers } from './use-editor-markers';
 import EditorOutlinePanel from './EditorOutlinePanel';
 import EditorSectionPanel from './EditorSectionPanel';
@@ -54,11 +49,7 @@ import EditorHelpDialog from './EditorHelpDialog';
 import EditorDialog from './EditorDialog';
 import EditorSubmissionDialog from './EditorSubmissionDialog';
 import EditorTimeline, { type TimelineContext } from './EditorTimeline';
-import {
-  ContextMenu,
-  type MenuItem,
-  type MenuRequest,
-} from './editor-controls';
+import { ContextMenu, type MenuRequest } from './editor-controls';
 import EditorDock from './EditorDock';
 import Icon from './Icon';
 import {
@@ -288,13 +279,10 @@ export default function ChapterEditor({
   );
   const {
     setItemEdge,
-    canSetEdge,
     addSubchapter,
     addPoint,
-    startChapter,
     removeSelected,
     confirmAndNext,
-    revertItem,
   } = commands;
 
   function jumpBoundary(step: 1 | -1) {
@@ -504,221 +492,49 @@ export default function ChapterEditor({
     closeDialog();
   }
 
-  const keyOf = (action: EditorAction) => {
-    const label = SHORTCUTS.find((item) => item.action === action)?.label;
-    return label && keyText(label);
-  };
   function rename(item: EditorItem) {
     select(item);
     setFocusTitle((value) => value + 1);
   }
-  const chapterItems = (at: number): MenuItem[] =>
-    CHAPTER_KINDS.map((kind) => ({
-      label: `Add ${chapterTitle(kind)} chapter at ${formatClock(at)}`,
-      onSelect: () => startChapter(kind, at),
-    }));
-  function markerMenu(marker: EditorMarker): MenuItem[] {
-    const mine = !isFileMarker(marker);
-    return [
-      {
-        label: `Go to ${formatClock(marker.at)}`,
-        onSelect: () => seekTo(marker.at),
+  const menus = createEditorMenus(
+    {
+      playhead,
+      rows,
+      checked: state.checked,
+      chapterCount: state.chapters.length,
+      changed,
+      originalIds: before,
+    },
+    commands,
+    {
+      seek: seekTo,
+      hear,
+      mark: markAt,
+      editMarker: markerActions.edit,
+      focusMarker: (marker) => {
+        selectMarker(marker);
+        setFocusMarker(marker.id);
       },
-      {
-        label: `Move it to the playhead (${formatClock(playhead)})`,
-        disabled: Math.abs(playhead - marker.at) < 0.01,
-        onSelect: () => markerActions.edit(marker.id, { at: playhead }),
-      },
-      {
-        label: 'Edit the note',
-        onSelect: () => {
-          selectMarker(marker);
-          setFocusMarker(marker.id);
-        },
-      },
-      ...(mine
-        ? [
-            {
-              label: 'Send with my changes',
-              checked: marker.include,
-              onSelect: () =>
-                markerActions.edit(marker.id, { include: !marker.include }),
-            },
-          ]
-        : []),
-      { separator: true, label: '' },
-      {
-        label: mine ? 'Delete marker' : 'Remove from the file (resolved)',
-        onSelect: () => dropMarker(marker.id),
-      },
-    ];
-  }
-  function itemMenu(item: EditorItem, at: number): MenuItem[] {
-    const checked = state.checked.includes(item.id);
-    const inside = at > item.start + 0.5 && at < item.end - 0.5;
-    const entries: (MenuItem | false | undefined)[] = [
-      {
-        label: `Play from ${formatClock(at)}`,
-        onSelect: () => seekTo(at, { play: true }),
-      },
-      {
-        label: 'Play from its start',
-        onSelect: () => seekTo(item.start, { play: true }),
-      },
-      item.lane !== 'point' && {
-        label: 'Play up to its end (from 5 s before)',
-        onSelect: () => hear(item.end, 5),
-      },
-      {
-        label: 'Hear its start (3 s before to 2 s after)',
-        onSelect: () => hear(item.start),
-      },
-      {
-        label: `Mark ${formatClock(at)}`,
-        hint: at === playhead ? keyOf('mark') : undefined,
-        onSelect: () => markAt(at),
-      },
-      { separator: true, label: '' },
-      {
-        label:
-          item.lane === 'point'
-            ? `Move it to ${formatClock(at)}`
-            : `Start here (${formatClock(at)})`,
-        hint: at === playhead ? keyOf('setStart') : undefined,
-        disabled: !canSetEdge(item, 'start', at),
-        onSelect: () => setItemEdge('start', at, item.id),
-      },
-      item.lane !== 'point' && {
-        label: `End here (${formatClock(at)})`,
-        hint: at === playhead ? keyOf('setEnd') : undefined,
-        disabled: !canSetEdge(item, 'end', at),
-        onSelect: () => setItemEdge('end', at, item.id),
-      },
-      item.lane === 'chapter' && {
-        label: `Add a subchapter at ${formatClock(at)}`,
-        hint: at === playhead ? keyOf('addSubchapter') : undefined,
-        disabled: !inside,
-        onSelect: () => addSubchapter(at),
-      },
-      item.lane !== 'point' && {
-        label: `Add a point at ${formatClock(at)}`,
-        hint: at === playhead ? keyOf('addPoint') : undefined,
-        disabled: at < item.start || at >= item.end,
-        onSelect: () => addPoint(at),
-      },
-      { separator: true, label: '' },
-      {
-        label: item.lane === 'point' ? 'Edit point text' : 'Rename',
-        onSelect: () => rename(item),
-      },
-      item.lane !== 'point' && {
-        label: checked ? 'Mark as not checked' : 'Mark as checked',
-        onSelect: () => commands.toggleChecked(item.id),
-      },
-      { separator: true, label: '' },
-      {
-        label:
-          item.lane === 'chapter'
-            ? 'Remove chapter and its contents'
-            : item.lane === 'subchapter'
-              ? 'Remove subchapter and its points'
-              : 'Remove point',
-        hint: keyOf('delete'),
-        disabled: item.lane === 'chapter' && state.chapters.length < 2,
-        onSelect: () => removeSelected(item.id),
-      },
-      changed.has(item.id) &&
-        before.has(item.id) && {
-          label: 'Undo my edits to this',
-          onSelect: () => revertItem(item.id),
-        },
-    ];
-    return entries.filter((entry): entry is MenuItem => Boolean(entry));
-  }
+      removeMarker: dropMarker,
+      rename,
+      zoomAt: (at) => viewByUser(zoomView(view, 0.4, at, length)),
+      fit: () => viewByUser(fitView(length)),
+    },
+  );
+  const chapterItems = menus.chapters;
   function timelineMenu(context: TimelineContext) {
-    const at = roundTime(context.time);
-    let entries: MenuItem[];
-    if (context.marker) {
-      entries = markerMenu(context.marker);
-      setSelectedMarkerId(context.marker.id);
-    } else if (context.lane === 'marks') {
-      entries = [
-        {
-          label: `Mark ${formatClock(at)}`,
-          hint: at === playhead ? keyOf('mark') : undefined,
-          onSelect: () => markAt(at),
-        },
-        {
-          label: `Play from ${formatClock(at)}`,
-          onSelect: () => seekTo(at, { play: true }),
-        },
-      ];
-    } else if (context.boundary) {
-      const boundary = context.boundary;
-      const item = rows.find((item) => item.id === boundary.id);
-      entries = [
-        {
-          label: `Hear this edge (${formatClock(boundary.time)})`,
-          hint: keyOf('hear'),
-          onSelect: () => hear(boundary.time),
-        },
-        {
-          label: `Move it to the playhead (${formatClock(playhead)})`,
-          disabled:
-            Math.abs(playhead - boundary.time) < 0.01 ||
-            !canSetEdge(item, boundary.edge, playhead),
-          onSelect: () => setItemEdge(boundary.edge, playhead, boundary.id),
-        },
-      ];
-      setActiveBoundary(boundary);
-      setSelectedId(boundary.id);
-    } else if (context.item) {
-      entries = itemMenu(context.item, at);
-      setSelectedId(context.item.id);
+    const description = menus.timeline(context);
+    const intent = description.selection;
+    if (intent?.kind === 'marker') {
+      setSelectedMarkerId(intent.id);
+    } else if (intent?.kind === 'boundary') {
+      setActiveBoundary(intent.boundary);
+      setSelectedId(intent.boundary.id);
+    } else if (intent?.kind === 'item') {
+      setSelectedId(intent.id);
       setActiveBoundary(undefined);
-    } else if (context.lane === 'ruler') {
-      entries = [
-        {
-          label: `Play from ${formatClock(at)}`,
-          onSelect: () => seekTo(at, { play: true }),
-        },
-        { label: 'Move the playhead here', onSelect: () => seekTo(at) },
-        { label: `Mark ${formatClock(at)}`, onSelect: () => markAt(at) },
-        { separator: true, label: '' },
-        {
-          label: 'Zoom in here',
-          onSelect: () => viewByUser(zoomView(view, 0.4, at, length)),
-        },
-        {
-          label: 'Show the whole recording',
-          hint: keyOf('zoomFit'),
-          onSelect: () => viewByUser(fitView(length)),
-        },
-      ];
-    } else {
-      entries = [
-        ...(context.lane === 'subchapter'
-          ? [
-              {
-                label: `Add a subchapter at ${formatClock(at)}`,
-                onSelect: () => addSubchapter(at),
-              },
-            ]
-          : context.lane === 'point'
-            ? [
-                {
-                  label: `Add a key point at ${formatClock(at)}`,
-                  onSelect: () => addPoint(at),
-                },
-              ]
-            : chapterItems(at)),
-        {
-          label: `Play from ${formatClock(at)}`,
-          onSelect: () => seekTo(at, { play: true }),
-        },
-      ];
     }
-    setMenu({ x: context.x, y: context.y, items: entries });
+    setMenu({ x: context.x, y: context.y, items: description.items });
   }
   function openItemMenu(event: MouseEvent<HTMLElement>, item: EditorItem) {
     const target = event.target as HTMLElement;
@@ -739,7 +555,7 @@ export default function ChapterEditor({
     setMenu({
       x: event.clientX,
       y: event.clientY,
-      items: itemMenu(item, playhead),
+      items: menus.item(item, playhead),
       trigger,
     });
   }
