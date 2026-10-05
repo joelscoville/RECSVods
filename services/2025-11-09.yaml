@@ -1,0 +1,146 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: To Be a Holy Servant
+serviceDate: 2025-11-09
+status: draft
+sermonDescription: A replay of Stephen Tong's preaching in Seoul calls gospel messengers to holiness, repentance and single-hearted service. God's kingdom and witness to Christ's death and resurrection are distinguished from institutional or national agendas. Yong applies the message to every believer rather than clergy alone. Baptism, membership and Communion then express belonging to Christ and a community responsible for mutual care, while warning that outward participation is not automatic salvation.
+sermonScripture:
+  - 1 Peter 1:13-16
+  - Romans 12:1-21
+  - 2 Timothy 2:21
+sermonTopics:
+  - sanctification
+  - repentance
+  - service
+uploads:
+  - youtubeId: jx_q_qz_tnk
+    uploadDuration: "1:50:23.771"
+chapters:
+  - chapterId: c20251109-worship
+    chapterTitle: Worship the Holy God and Receive His Call
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "30:13.6"
+    chapterScripture:
+      - Psalms 1:1-6
+      - Proverbs 26:1-28
+      - Romans 12:1-21
+      - 1 Peter 1:13-16
+    points:
+      - pointTime: "25:38.62"
+        pointText: Belinda connects surrender with treasuring God rather than seeking lasting peace through possessions or power.
+  - chapterId: c20251109-holy-messenger
+    chapterTitle: Gospel Messengers Must Live the Message
+    chapterKind: sermon
+    chapterStart: "30:13.6"
+    chapterEnd: "1:10:55.0"
+    chapterScripture:
+      - 1 Peter 1:15-16
+      - Acts 1:3-8
+      - 2 Timothy 2:21
+    points:
+      - pointTime: "35:23.12"
+        pointText: In the replay, Stephen Tong applies God's holiness to the messenger's thought, speech and conduct.
+      - pointTime: "39:57.46"
+        pointText: God's kingdom is identified as the center of Jesus' preaching rather than merely a religious activity or technique.
+      - pointTime: "43:02.48"
+        pointText: The disciples' focus on Israel's restoration illustrates confusing God's kingdom with a national agenda.
+      - pointTime: "46:11.76"
+        pointText: The Spirit's power is directed toward being Christ's witnesses.
+      - pointTime: "50:43.14"
+        pointText: Teaching grounded in Scripture and a holy life are presented as evidence of the Spirit's work.
+      - pointTime: "1:04:44.72"
+        pointText: Holiness is connected with sensitivity to small sins rather than pretending to be without failure.
+    subchapters:
+      - chapterId: s20251109-repentance
+        chapterTitle: Repentance Is Turning from Sin toward God
+        chapterKind: sermon
+        chapterStart: "53:25.3"
+        chapterEnd: "1:00:15.1"
+        chapterScripture:
+          - 2 Timothy 2:21
+        points:
+          - pointTime: "53:51.64"
+            pointText: Repentance is distinguished from regret alone.
+          - pointTime: "55:54.74"
+            pointText: Turning away from wrongdoing is joined with returning to Christ's mercy and forgiveness.
+          - pointTime: "57:09.12"
+            pointText: A messenger's life is described as continually repentant rather than relying on a past event.
+      - chapterId: s20251109-single-heart
+        chapterTitle: Serve God with One Undivided Purpose
+        chapterKind: sermon
+        chapterStart: "1:00:15.1"
+        chapterEnd: "1:07:10.8"
+        points:
+          - pointTime: "1:01:25.84"
+            pointText: Purity of heart is described through one direction and purpose.
+          - pointTime: "1:01:57.24"
+            pointText: Loving God while valuing money or power more exposes divided allegiance.
+          - pointTime: "1:04:44.72"
+            pointText: Sensitivity to wrongdoing calls for removing it rather than tolerating it under a religious appearance.
+  - chapterId: c20251109-every-believer
+    chapterTitle: Every Believer Has a Part in God's Service
+    chapterKind: sermon
+    chapterStart: "1:10:55.0"
+    chapterEnd: "1:19:21.95"
+    points:
+      - pointTime: "1:12:47.38"
+        pointText: Yong draws lessons from the replay's tenacity and focus on communicating the gospel.
+      - pointTime: "1:14:52.76"
+        pointText: Delivering the gospel message is distinguished from making flawless grammar the ultimate goal.
+      - pointTime: "1:15:53.72"
+        pointText: The holiness message is applied to all believers rather than reserved for pastors or missionaries.
+      - pointTime: "1:16:57.1"
+        pointText: The priesthood of believers is connected with equipping lay people to serve meaningfully.
+      - pointTime: "1:17:41.32"
+        pointText: Shared responsibility for the congregation includes ordinary practical work rather than dependence on pastoral micromanagement.
+  - chapterId: c20251109-baptism
+    chapterTitle: Baptism and Membership Express Covenant Community
+    chapterKind: other
+    chapterStart: "1:19:21.95"
+    chapterEnd: "1:33:27.85"
+    points:
+      - pointTime: "1:19:22.22"
+        pointText: Baptism is explained as a command of Christ and a sign of belonging rather than guaranteed salvation.
+      - pointTime: "1:21:16.4"
+        pointText: Baptism is explicitly distinguished from magical cleansing or automatic proof of personal faith.
+      - pointTime: "1:21:51.46"
+        pointText: The congregation undertakes responsibility for receiving and nurturing the child within the community.
+      - pointTime: "1:22:46.92"
+        pointText: Adult baptism and membership transfer likewise join personal profession with communal acceptance.
+      - pointTime: "1:30:00.08"
+        pointText: Shared affirmation and prayer connect belonging to God with belonging to people who care for one another in deeds.
+  - chapterId: c20251109-communion
+    chapterTitle: Communion Remembers Christ and Our Shared Belonging
+    chapterKind: communion
+    chapterStart: "1:33:27.85"
+    chapterEnd: "1:40:24.7"
+    chapterScripture:
+      - 1 Corinthians 11:23-26
+    points:
+      - pointTime: "1:33:33.7"
+        pointText: Communion is presented as remembrance that believers belong to Christ's body rather than themselves alone.
+      - pointTime: "1:38:01.8"
+        pointText: Receiving the bread and cup with thanksgiving recalls Christ's broken body and redeeming blood.
+  - chapterId: c20251109-outreach-closing
+    chapterTitle: Put Shared Faith into Practical Outreach
+    chapterKind: closing
+    chapterStart: "1:40:24.7"
+    chapterEnd: "1:50:23.771"
+    points:
+      - pointTime: "1:40:24.96"
+        pointText: Ministry invitations emphasize ownership of the church's practical work by the whole community.
+      - pointTime: "1:46:32.32"
+        pointText: The orphanage presentation connects giving with children's concrete needs and a proposed larger home.
+      - pointTime: "1:49:59.08"
+        pointText: Prayer cards are described as a way to bring other people's concerns before God, including people not personally known.
+markers:
+  - markerTime: "0:00"
+    markerNote: "The supplied recording starts during confession. Timing and length use supplied faster-whisper audio evidence, not fresh video-duration or listening verification."
+  - markerTime: "32:34.74"
+    markerNote: "The main sermon is a replay with English preaching and Korean interpretation. ASR has repetitive and missing stretches; points use intelligible supported claims rather than reconstructing every translated sentence. Confirm the exact displayed title To Be a Holy Servant."
+  - markerTime: "1:10:55.0"
+    markerNote: "The replay-to-commentary transition is imperfectly transcribed and resumes commentary mid-phrase; check the actual media boundary."
+  - markerTime: "1:24:05.36"
+    markerNote: "Baptismal participant names and clip names are not resolved from ASR. Scripture references retain the intended reading range; the responsive reading announcement and spoken ending differ for Proverbs 26."
