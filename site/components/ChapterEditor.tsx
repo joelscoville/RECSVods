@@ -48,6 +48,7 @@ import {
 import { useEditorSession } from './use-editor-session';
 import { useEditorPlayback } from './use-editor-playback';
 import { useEditorSelection } from './use-editor-selection';
+import { useBoundaryDrag } from './use-boundary-drag';
 import UnavailableRecording from './UnavailableRecording';
 import {
   isMac,
@@ -59,10 +60,7 @@ import {
 } from '../lib/editor-keys';
 import Modal from './EditorDialog';
 import EditorSubmissionDialog from './EditorSubmissionDialog';
-import EditorTimeline, {
-  type BoundaryMove,
-  type TimelineContext,
-} from './EditorTimeline';
+import EditorTimeline, { type TimelineContext } from './EditorTimeline';
 import {
   ContextMenu,
   TimeInput,
@@ -476,8 +474,6 @@ export default function ChapterEditor({
   const focusedRequest = useRef(0);
   const fileInput = useRef<HTMLInputElement>(null);
   const userViewAt = useRef(0);
-  const dragBase = useRef<EditorState>(undefined);
-  const previewRef = useRef<EditorState>(undefined);
 
   const shown = preview ?? state;
   const rows = useMemo(() => outline(shown, length), [shown, length]);
@@ -826,37 +822,23 @@ export default function ChapterEditor({
     ];
   };
 
-  /* Dragging an edge on the timeline previews live and becomes one undo step on release. */
-  const onBoundaryMove = useCallback(
-    ({ boundary, time: seconds, unlinked }: BoundaryMove) => {
-      const from = (dragBase.current ??= state);
-      const next = setEdge(
-        from,
-        length,
-        boundary,
-        seconds,
-        linked && !unlinked,
-      );
-      previewRef.current = next;
-      setPreview(next);
-      setSelectedId(boundary.id);
+  const followBoundaryPreview = useCallback(
+    (id: string, seconds: number) => {
+      setSelectedId(id);
       setActiveBoundary(undefined);
       seekTo(seconds, { live: true });
     },
-    [state, length, linked, seekTo],
+    [setSelectedId, setActiveBoundary, seekTo],
   );
-  const onBoundaryCommit = useCallback(() => {
-    if (previewRef.current) apply(previewRef.current);
-    previewRef.current = undefined;
-    dragBase.current = undefined;
-    setPreview(undefined);
-    playback.commitSeek();
-  }, [apply, playback.commitSeek]);
-  const onBoundaryCancel = useCallback(() => {
-    previewRef.current = undefined;
-    dragBase.current = undefined;
-    setPreview(undefined);
-  }, []);
+  const boundaryDrag = useBoundaryDrag({
+    state,
+    length,
+    linked,
+    showPreview: setPreview,
+    apply,
+    followPreview: followBoundaryPreview,
+    finishSeek: playback.commitSeek,
+  });
 
   /* ---------- Keyboard: one table (lib/editor-keys) ---------- */
   const run = (action: EditorAction) => {
@@ -2223,9 +2205,9 @@ export default function ChapterEditor({
           select(item, item.lane === 'point');
           setSelectedMarkerId(undefined);
         }}
-        onBoundaryMove={onBoundaryMove}
-        onBoundaryCommit={onBoundaryCommit}
-        onBoundaryCancel={onBoundaryCancel}
+        onBoundaryMove={boundaryDrag.move}
+        onBoundaryCommit={boundaryDrag.commit}
+        onBoundaryCancel={boundaryDrag.cancel}
         onAdd={(lane, seconds) => {
           seekTo(seconds, { reveal: false });
           if (lane === 'subchapter') addSubchapter(roundTime(seconds));
