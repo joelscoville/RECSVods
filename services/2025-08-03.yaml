@@ -1,0 +1,154 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Multiplication
+serviceDate: 2025-08-03
+status: draft
+sermonDescription: The feeding of the multitude reveals Christ's compassion and his use of ordinary people as channels of blessing. The preacher contrasts witnessed miracles with the disciples' continued lack of awareness, then presents Andrew and the boy as examples of bringing people and available resources to Jesus. Pursuing worldly glory and confusing unwillingness with inability can prevent surrender. God-given gifts are for the common good, and their faithful use can make life a blessing beyond minimal participation or self-preservation.
+sermonScripture:
+  - John 6:1-15
+  - 2 Corinthians 9:8-11
+  - 1 Corinthians 12:7-11
+sermonTopics:
+  - service
+  - stewardship
+  - discipleship
+uploads:
+  - youtubeId: 8d8XD26ncxM
+    uploadDuration: "1:52:45.320"
+chapters:
+  - chapterId: c20250803-worship
+    chapterTitle: Receive Grace and Offer What We Already Have
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "36:54.8"
+    chapterScripture:
+      - Psalms 127:1-5
+      - Proverbs 14:1-35
+      - John 6:1-15
+      - 2 Corinthians 9:8-11
+    points:
+      - pointTime: "9:39.92"
+        pointText: Hadi connects ability, time and resources with God's gifts rather than self-sufficient achievement.
+      - pointTime: "14:34.32"
+        pointText: Grace includes present strength and help, not merely a future destination after death.
+      - pointTime: "27:21.3"
+        pointText: Surrender is framed as trusting Christ with available resources rather than producing what one does not have.
+  - chapterId: c20250803-life-counts
+    chapterTitle: Ask How Life Can Count before Time Is Gone
+    chapterKind: qa
+    chapterStart: "36:54.8"
+    chapterEnd: "46:04.28"
+    points:
+      - pointTime: "38:40.72"
+        pointText: The question of making life count introduces purpose beyond simply passing through daily routines.
+      - pointTime: "39:01.32"
+        pointText: Asking early is distinguished from waiting for a crisis before deciding to use life meaningfully.
+      - pointTime: "41:19.48"
+        pointText: Scripture is offered as the guide to what makes life valuable rather than relying on surrounding measures of success.
+      - pointTime: "45:12.2"
+        pointText: The orphanage project connects meaningful life with practical responsibility beyond the safety of one's immediate surroundings.
+  - chapterId: c20250803-witness-recap
+    chapterTitle: Bear Witness through a Life That Looks Redeemed
+    chapterKind: sermon
+    chapterStart: "46:04.28"
+    chapterEnd: "50:50.34"
+    chapterScripture:
+      - John 5:30-47
+      - Acts 1:8
+    points:
+      - pointTime: "46:53.82"
+        pointText: Christ's witnesses are recapped through the Father, John the Baptist, his works and Scripture.
+      - pointTime: "48:38.32"
+        pointText: Worldly glory is contrasted with seeking God's glory in the direction of a person's life.
+      - pointTime: "49:54.8"
+        pointText: Believers are challenged to be good witnesses rather than become the reason another person rejects the faith.
+  - chapterId: c20250803-compassion
+    chapterTitle: Everything Begins with God's Compassion
+    chapterKind: sermon
+    chapterStart: "50:50.34"
+    chapterEnd: "1:04:02.1"
+    chapterScripture:
+      - John 6:1-4
+      - Matthew 9:35-38
+      - Mark 6:30-34
+    points:
+      - pointTime: "53:49.91"
+        pointText: Jesus' attempt to rest is overtaken by the crowd, setting the contrast between interruption and compassionate response.
+      - pointTime: "57:26.31"
+        pointText: Compassion is identified as a mark of Christian ministry rather than treating care as an optional extra.
+      - pointTime: "1:00:35.97"
+        pointText: The preacher's call to service begins with seeing the harassed and helpless people behind a familiar ministry verse.
+      - pointTime: "1:01:41.51"
+        pointText: God's prior love is presented as the beginning of redemption and the ground for believers' response.
+  - chapterId: c20250803-human-channels
+    chapterTitle: God's Method Makes People Channels of Blessing
+    chapterKind: sermon
+    chapterStart: "1:04:02.1"
+    chapterEnd: "1:10:54.5"
+    chapterScripture:
+      - John 6:5-7
+    points:
+      - pointTime: "1:04:40.27"
+        pointText: Christ's test of Philip introduces the choice to work through people despite their limitations.
+      - pointTime: "1:04:59.21"
+        pointText: God using human channels is distinguished from an inability to act directly himself.
+      - pointTime: "1:07:28.19"
+        pointText: Refusing to provide help is considered as a failure of responsibility rather than proof that God lacks compassion.
+      - pointTime: "1:09:11.95"
+        pointText: Remembering earlier miracles does not guarantee awareness of God's presence in the next difficult situation.
+  - chapterId: c20250803-bring-surrender
+    chapterTitle: Bring People and Their Gifts to Jesus
+    chapterKind: sermon
+    chapterStart: "1:10:54.5"
+    chapterEnd: "1:26:19.2"
+    chapterScripture:
+      - John 6:8-9
+      - 1 Corinthians 12:7-11
+    points:
+      - pointTime: "1:10:54.73"
+        pointText: A boy's modest food supply introduces the possibility that a small gift can matter.
+      - pointTime: "1:14:19.01"
+        pointText: Andrew's role shows that bringing someone to Christ does not require being the expert preacher oneself.
+      - pointTime: "1:19:29.09"
+        pointText: The boy's surrender prompts the preacher to ask why so many other people hesitate to offer what they have.
+      - pointTime: "1:21:14.95"
+        pointText: God's quieter and delayed glory is contrasted with the immediate attraction of visible worldly success.
+      - pointTime: "1:25:04.51"
+        pointText: The Spirit's gifts are given for the common good, challenging claims that there is nothing one can contribute.
+  - chapterId: c20250803-willing-multiplication
+    chapterTitle: Willing Surrender Makes a Life of Multiplication Possible
+    chapterKind: sermon
+    chapterStart: "1:26:19.2"
+    chapterEnd: "1:37:59.37"
+    chapterScripture:
+      - John 6:10-15
+      - 2 Corinthians 9:8-11
+    points:
+      - pointTime: "1:26:19.49"
+        pointText: Possessing gifts is distinguished from deciding to use them.
+      - pointTime: "1:28:13.65"
+        pointText: The Mencius illustration separates genuine inability from unwillingness to take a possible action.
+      - pointTime: "1:29:13.35"
+        pointText: Multiplication describes resources becoming a wider blessing rather than only adding one small contribution.
+      - pointTime: "1:31:25.03"
+        pointText: The boy's experience is used to connect surrendered gifts with a life made fuller through service.
+      - pointTime: "1:35:34.21"
+        pointText: Minimal participation aimed only at remaining acceptable is contrasted with pursuing life's central purpose.
+      - pointTime: "1:36:34.95"
+        pointText: Paul connects God's sufficient provision with generosity and a harvest of good work.
+  - chapterId: c20250803-response
+    chapterTitle: Put Our Gifts into Christ's Hands
+    chapterKind: closing
+    chapterStart: "1:37:59.37"
+    chapterEnd: "1:52:45.320"
+    points:
+      - pointTime: "1:37:59.37"
+        pointText: Response prayer asks for faith to release worldly attachments and let God's gifts become a blessing beyond oneself.
+      - pointTime: "1:43:33.21"
+        pointText: Prayer asks for the privilege of providing ready help rather than caring only through words.
+markers:
+  - markerTime: "50:50.34"
+    markerNote: "Multiplication follows the source upload title. Length and anchors use supplied faster-whisper audio evidence and await fresh video and boundary listening checks."
+  - markerTime: "1:19:29.09"
+    markerNote: "The suggestion that many others had food but withheld it is the preacher's inference, not an explicit detail of John 6. Psychological, historical and numerical claims are also attributed and unverified."
