@@ -1,5 +1,6 @@
 import { useCallback, useRef } from 'react';
-import { setEdge, type EditorState } from '../lib/recording-editor';
+import type { EditorState } from '../lib/recording-editor';
+import { createBoundaryDragTransaction } from '../lib/boundary-drag-transaction';
 import type { BoundaryMove } from '../lib/timeline-geometry';
 
 interface BoundaryDragOptions {
@@ -24,37 +25,32 @@ export function useBoundaryDrag({
   followPreview,
   finishSeek,
 }: BoundaryDragOptions) {
-  const transaction = useRef<{ snapshot: EditorState; preview?: EditorState }>(
-    undefined,
-  );
+  const transaction =
+    useRef<ReturnType<typeof createBoundaryDragTransaction>>(undefined);
+  transaction.current ??= createBoundaryDragTransaction();
 
   const move = useCallback(
     ({ boundary, time, unlinked }: BoundaryMove) => {
-      const active = (transaction.current ??= { snapshot: state });
-      active.preview = setEdge(
-        active.snapshot,
+      const preview = transaction.current!.preview(
+        state,
         length,
-        boundary,
-        time,
-        linked && !unlinked,
+        { boundary, time, unlinked },
+        linked,
       );
-      showPreview(active.preview);
+      showPreview(preview);
       followPreview(boundary.id, time);
     },
     [state, length, linked, showPreview, followPreview],
   );
 
   const commit = useCallback(() => {
-    if (transaction.current?.preview) {
-      apply(transaction.current.preview);
-    }
-    transaction.current = undefined;
+    transaction.current!.commit(apply);
     showPreview(undefined);
     finishSeek();
   }, [apply, showPreview, finishSeek]);
 
   const cancel = useCallback(() => {
-    transaction.current = undefined;
+    transaction.current!.cancel();
     showPreview(undefined);
   }, [showPreview]);
 
