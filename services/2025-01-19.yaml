@@ -1,0 +1,142 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Beginning
+serviceDate: 2025-01-19
+status: draft
+sermonDescription: >-
+  Beginning the Gospel of John, the preacher introduces its distinctive witness to Christ and emphasizes a humble, childlike approach to Scripture. The opening phrase leads from human ideas of origins and general revelation to the need for God's special revelation. A beginning implies meaning, but fallen humanity cannot define that meaning independently. God, who stands beyond the beginning, reveals life through and for Christ, calling believers to pursue their purpose with endurance rather than drift through surrounding expectations.
+sermonScripture:
+  - John 1:1
+  - Colossians 1:15-16
+  - Hebrews 12:1-2
+sermonTopics:
+  - knowing-god
+  - discipleship
+  - responsibility
+uploads:
+  - youtubeId: YTIWyeAGat0
+    uploadDuration: "57:32"
+chapters:
+  - chapterId: c20250119-shared-ministry
+    chapterTitle: Share Christ's Love through Practical Ministry
+    chapterKind: other
+    chapterStart: "0:07.12"
+    chapterEnd: "8:44.6"
+    points:
+      - pointTime: "3:33.2"
+        pointText: Scripture reflection and patient visits illustrate different ways members can participate in shared ministry.
+      - pointTime: "5:17.88"
+        pointText: Time spent with people who need relief from their routine is presented as a practical expression of care.
+  - chapterId: c20250119-gospel-background
+    chapterTitle: Receive John's Distinctive Witness with Childlike Humility
+    chapterKind: sermon
+    chapterStart: "8:44.6"
+    chapterEnd: "22:24.76"
+    chapterScripture:
+      - Mark 10:13-15
+      - Matthew 18:3
+    points:
+      - pointTime: "8:54.72"
+        pointText: The introduction challenges assuming familiarity means one has exhausted Scripture's depth.
+      - pointTime: "10:37.76"
+        pointText: The fourth Gospel's distinctive style is set beside the shared witness of Matthew, Mark and Luke.
+      - pointTime: "12:19.8"
+        pointText: John's emphasis on Christ's divine identity is interpreted in relation to challenges facing the early church.
+      - pointTime: "15:44.68"
+        pointText: The Spirit's inspiration is distinguished from limiting an author's capacity by occupation or social standing.
+      - pointTime: "19:29.56"
+        pointText: Childlike intimacy is distinguished from childishness in approaching God.
+      - pointTime: "20:51.32"
+        pointText: Humility and continued wonder are encouraged regardless of intellectual achievement or age.
+  - chapterId: c20250119-origins
+    chapterTitle: Human Questions about Beginnings Need God's Revelation
+    chapterKind: sermon
+    chapterStart: "22:24.76"
+    chapterEnd: "38:29.76"
+    chapterScripture:
+      - John 1:1
+      - 1 John 1:1
+      - Genesis 1:1
+      - Romans 1:19-20
+    points:
+      - pointTime: "22:56.64"
+        pointText: John's opening is connected with Genesis and his later testimony about the Word of life.
+      - pointTime: "24:18"
+        pointText: Human reflection on time and origins introduces general revelation accessible beyond the Christian community.
+      - pointTime: "27:41.96"
+        pointText: Several cultural creation accounts illustrate different attempts to explain life's beginning.
+      - pointTime: "31:06.96"
+        pointText: Laozi's Tao is considered as a sophisticated attempt to understand the source of existence.
+      - pointTime: "35:11.32"
+        pointText: General revelation is distinguished from sufficient knowledge of God and salvation.
+      - pointTime: "37:58.6"
+        pointText: Written special revelation is presented as preserving God's will against human misunderstanding.
+  - chapterId: c20250119-meaning
+    chapterTitle: Three Implications of the Beginning
+    chapterKind: sermon
+    chapterStart: "38:29.76"
+    chapterEnd: "55:39.08"
+    subchapters:
+      - chapterId: c20250119-meaning-exists
+        chapterTitle: There Is Meaning
+        chapterKind: sermon
+        chapterStart: "38:29.76"
+        chapterEnd: "45:46.04"
+        chapterScripture:
+          - John 1:1
+        points:
+          - pointTime: "39:11.6"
+            pointText: A beginning is understood as evidence of purpose rather than a meaningless cycle.
+          - pointTime: "39:43.32"
+            pointText: Individual life is situated within God's larger plan for the world and history.
+          - pointTime: "43:09.48"
+            pointText: Competing pursuits can obscure meaning and make privileged circumstances a source of dissatisfaction.
+      - chapterId: c20250119-human-limits
+        chapterTitle: We Cannot Find Meaning by Ourselves
+        chapterKind: sermon
+        chapterStart: "45:46.04"
+        chapterEnd: "47:18.2"
+        chapterScripture:
+          - Isaiah 53:6
+        points:
+          - pointTime: "45:46.04"
+            pointText: Going astray like sheep illustrates the limits of defining life's purpose through one's own direction.
+      - chapterId: c20250119-god-defines
+        chapterTitle: God beyond the Beginning Defines Meaning
+        chapterKind: sermon
+        chapterStart: "47:18.2"
+        chapterEnd: "55:39.08"
+        chapterScripture:
+          - Exodus 3:13-14
+          - Revelation 1:8
+          - Revelation 1:17-18
+          - Colossians 1:15-16
+          - John 15:5
+          - Hebrews 12:1-2
+        points:
+          - pointTime: "47:18.2"
+            pointText: The one beyond the beginning can define meaning without being limited to the process creatures inhabit.
+          - pointTime: "48:20.44"
+            pointText: God's self-disclosure and reassurance are distinguished from human ability to master the divine.
+          - pointTime: "51:03.96"
+            pointText: Creation through and for Christ supplies the message's central account of life's purpose.
+          - pointTime: "51:44.32"
+            pointText: Hebrews' race of endurance directs attention away from sin and distractions toward Christ.
+          - pointTime: "53:26.6"
+            pointText: Purpose is connected with service to others and using one's resources faithfully despite the world's measures of success.
+  - chapterId: c20250119-response
+    chapterTitle: Return to Christ and Live with Purpose
+    chapterKind: closing
+    chapterStart: "55:39.08"
+    chapterEnd: "57:32"
+    points:
+      - pointTime: "55:39.08"
+        pointText: Closing prayer asks for faith in God's purpose and a life redirected from competing voices toward Christ.
+markers:
+  - markerTime: "0:07.12"
+    markerNote: "Verified channel metadata dates the undated source to January 19. Supplied auto-caption timings await media checks. This sermon launches John after the prior week's guest sermon."
+  - markerTime: "14:02.56"
+    markerNote: "Apostolic authorship, family relationships, ages and martyrdom details are the preacher's account of history/tradition, with some uncertainty explicitly acknowledged."
+  - markerTime: "27:41.96"
+    markerNote: "Comparative religious accounts, quotations and historical/scientific generalizations require factual review."
