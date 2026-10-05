@@ -34,7 +34,7 @@ chapters:
     chapterTitle: Gospel Messengers Must Live the Message
     chapterKind: sermon
     chapterStart: "30:13.6"
-    chapterEnd: "1:10:55.0"
+    chapterEnd: "1:11:19.1"
     chapterScripture:
       - 1 Peter 1:15-16
       - Acts 1:3-8
@@ -82,7 +82,7 @@ chapters:
   - chapterId: c20251109-every-believer
     chapterTitle: Every Believer Has a Part in God's Service
     chapterKind: sermon
-    chapterStart: "1:10:55.0"
+    chapterStart: "1:11:19.1"
     chapterEnd: "1:19:21.95"
     points:
       - pointTime: "1:12:47.38"
@@ -140,7 +140,7 @@ markers:
     markerNote: "The supplied recording starts during confession. Timing and length use supplied faster-whisper audio evidence, not fresh video-duration or listening verification."
   - markerTime: "32:34.74"
     markerNote: "The main sermon is a replay with English preaching and Korean interpretation. ASR has repetitive and missing stretches; points use intelligible supported claims rather than reconstructing every translated sentence. Confirm the exact displayed title To Be a Holy Servant."
-  - markerTime: "1:10:55.0"
+  - markerTime: "1:11:19.1"
     markerNote: "The replay-to-commentary transition is imperfectly transcribed and resumes commentary mid-phrase; check the actual media boundary."
   - markerTime: "1:24:05.36"
     markerNote: "Baptismal participant names and clip names are not resolved from ASR. Scripture references retain the intended reading range; the responsive reading announcement and spoken ending differ for Proverbs 26."
