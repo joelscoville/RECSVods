@@ -1,0 +1,169 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: One Flock, One Shepherd
+serviceDate: 2026-02-22
+status: draft
+sermonDescription: The preacher reads John 10 as a declaration that Christ's people belong to one flock led by one shepherd. His goodness is expressed in laying down his life, unlike leadership driven by transaction or self-interest. Knowing the shepherd involves intimate relationship rather than head knowledge alone. Belonging to God, not success or popularity, grounds identity and calls believers to faithful service despite disagreement and obstacles around them.
+sermonScripture:
+  - John 10:11-21
+  - Matthew 9:35-38
+  - 2 Timothy 1:12
+sermonTopics:
+  - knowing-god
+  - service
+  - faith
+uploads:
+  - youtubeId: yEPyTmswKLY
+    uploadDuration: "1:48:02.338"
+chapters:
+  - chapterId: c20260222-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "2:19.5"
+    chapterEnd: "9:38.5"
+    points:
+      - pointTime: "2:19.9"
+        pointText: The leader invites personal prayer in adoration.
+      - pointTime: "3:32.96"
+        pointText: Confession seeks God's faithful forgiveness.
+      - pointTime: "4:25.36"
+        pointText: Thanksgiving reflects on grace in every circumstance.
+      - pointTime: "5:56.9"
+        pointText: Supplication brings needs before God.
+      - pointTime: "7:02.1"
+        pointText: Prayer asks for prepared hearts before Karen's welcome and New Year greetings.
+  - chapterId: c20260222-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "9:38.5"
+    chapterEnd: "31:40.55"
+    chapterScripture:
+      - Psalms 34:1-4
+      - Proverbs 10:1-32
+      - John 10:1-21
+      - Matthew 9:35-38
+    points:
+      - pointTime: "9:38.82"
+        pointText: Psalms 34 introduces praise even in David's dark circumstances.
+      - pointTime: "13:11"
+        pointText: Prayer asks for the word to rebuke, revive and deepen love for God.
+      - pointTime: "18:57.84"
+        pointText: Proverbs 10 is introduced for responsive reading.
+      - pointTime: "22:13.06"
+        pointText: John 10 supplies the passage about the shepherd and the door.
+      - pointTime: "30:35.54"
+        pointText: Matthew 9 introduces Christ's compassion for people without a shepherd.
+  - chapterId: c20260222-abundance-question
+    chapterTitle: Why Does Abundant Life Still Feel Difficult?
+    chapterKind: qa
+    chapterStart: "31:40.55"
+    chapterEnd: "49:26.04"
+    chapterScripture:
+      - John 10:10
+    points:
+      - pointTime: "31:40.9"
+        pointText: The preacher welcomes New Year worshippers and encourages service across congregations.
+      - pointTime: "33:23.3"
+        pointText: A question asks why even loved ones can disagree with pursuing abundant life.
+      - pointTime: "39:57.24"
+        pointText: Sanctification and joy are connected with choices at life's many crossroads.
+      - pointTime: "43:25.56"
+        pointText: Giving and service are presented as ways to receive multiplied joy.
+      - pointTime: "45:05.8"
+        pointText: Simplicity, gratitude, childlikeness and care for health are recalled as practical principles.
+  - chapterId: c20260222-good-shepherd
+    chapterTitle: The Shepherd's Goodness Is Shown in Sacrifice
+    chapterKind: sermon
+    chapterStart: "49:26.04"
+    chapterEnd: "1:00:44.9"
+    chapterScripture:
+      - John 10:11
+      - Mark 10:17-18
+      - 1 Timothy 3:16
+    points:
+      - pointTime: "49:26.08"
+        pointText: The fourth I Am declaration introduces Christ as the good shepherd.
+      - pointTime: "51:53.38"
+        pointText: Everyday ideas of good are contrasted with the goodness Jesus connects with God.
+      - pointTime: "53:34.94"
+        pointText: The preacher explains the shepherd's goodness through perfection beyond superficial approval.
+      - pointTime: "54:55.26"
+        pointText: Laying down his life is presented as the defining expression of the shepherd's goodness.
+      - pointTime: "58:39.14"
+        pointText: Lent and the mystery of godliness invite deeper reflection on Christ's sacrifice.
+  - chapterId: c20260222-hired-hands
+    chapterTitle: Discern Care from Transactional Leadership
+    chapterKind: sermon
+    chapterStart: "1:00:44.9"
+    chapterEnd: "1:14:13.42"
+    chapterScripture:
+      - John 10:12-13
+    points:
+      - pointTime: "1:00:45.16"
+        pointText: The hired hand is contrasted with the shepherd who cares for the sheep.
+      - pointTime: "1:02:02.3"
+        pointText: A payslip recollection illustrates loyalty that depends on payment.
+      - pointTime: "1:05:29.98"
+        pointText: Retrenchment challenges corporate language about being a family.
+      - pointTime: "1:07:15.28"
+        pointText: Pastoral recruitment questions introduce concern about employment terms displacing care for a congregation.
+      - pointTime: "1:10:37.64"
+        pointText: Corporate-training theories illustrate the danger of following a marketable guru rather than the good shepherd.
+  - chapterId: c20260222-know-belong
+    chapterTitle: Know the Shepherd and Live as God's Child
+    chapterKind: sermon
+    chapterStart: "1:14:13.42"
+    chapterEnd: "1:33:21.95"
+    chapterScripture:
+      - John 10:14-21
+      - 2 Timothy 1:12
+      - Matthew 9:35-38
+      - Romans 5:8
+    points:
+      - pointTime: "1:14:13.5"
+        pointText: Mutual knowing is described as an intimate, experiential relationship with Christ.
+      - pointTime: "1:18:00.02"
+        pointText: One flock and one shepherd identify faith as belonging rather than a consumer choice of religion.
+      - pointTime: "1:23:45.12"
+        pointText: The universal church is distinguished from confining God's people to one's own denomination.
+      - pointTime: "1:28:52.04"
+        pointText: Christ's compassion for helpless people is connected with the call for more laborers.
+      - pointTime: "1:30:33.36"
+        pointText: Christ's authority over laying down and taking up his life grounds the flock's salvation.
+    subchapters:
+      - chapterId: s20260222-relationship
+        chapterTitle: Knowing Christ Requires Living Contact
+        chapterKind: sermon
+        chapterStart: "1:14:13.42"
+        chapterEnd: "1:17:42.9"
+        points:
+          - pointTime: "1:14:13.5"
+            pointText: Christ knows his people and they know him in return.
+          - pointTime: "1:15:29.7"
+            pointText: Paul's confidence in the one he believes illustrates personal rather than merely intellectual faith.
+          - pointTime: "1:16:41.42"
+            pointText: Drawing near through prayer and devotion is compared with maintaining human relationships.
+          - pointTime: "1:16:56.92"
+            pointText: A relationship without contact illustrates why neglecting God leaves intimacy undeveloped.
+  - chapterId: c20260222-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:33:21.95"
+    chapterEnd: "1:48:02.338"
+    points:
+      - pointTime: "1:33:22.24"
+        pointText: Prayer asks for understanding of belonging to Christ rather than following hired hands.
+      - pointTime: "1:38:09.8"
+        pointText: Intercession commits people who do not yet know Christ to God's mercy.
+      - pointTime: "1:39:22.54"
+        pointText: Shared prayer asks for patience, faith and growth that others can recognize.
+      - pointTime: "1:41:34.82"
+        pointText: All the Way My Saviour Leads Me is introduced before the closing hymn.
+      - pointTime: "1:44:56.6"
+        pointText: Historical notices invite guitar classes, service to elderly people, fellowship lunch and rally preparation.
+markers:
+  - markerTime: "1:18:00.02"
+    markerNote: "Title follows the preacher's explanation that he named this passage from one flock and one shepherd; confirm the exact slide wording. Duration and anchors use supplied faster-whisper audio evidence, not fresh video or listening checks."
+  - markerTime: "1:40:20"
+    markerNote: "Second-offering destination is unclear in the supplied ASR; do not infer it from a calendar rule."
