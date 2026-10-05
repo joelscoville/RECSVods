@@ -1,0 +1,167 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The First of Seven
+serviceDate: 2025-08-17
+status: draft
+sermonDescription: Jesus' first I Am declaration redirects the crowd from seeking gifts toward receiving the giver. Enduring life is distinguished from temporary benefits and a merit-based exchange with God. The manna account reveals dependence on God's word within hunger and testing. Christ is the bread himself rather than merely a source of solutions, while human glory can obstruct belief. His promise to keep those given by the Father grounds assurance beyond personal achievement and asks what listeners actually believe.
+sermonScripture:
+  - John 6:22-40
+  - Deuteronomy 8:1-3
+  - Ephesians 2:8-9
+sermonTopics:
+  - faith
+  - salvation
+  - eternal-life
+uploads:
+  - youtubeId: _749Bnyuk8U
+    uploadDuration: "1:44:03.289"
+chapters:
+  - chapterId: c20250817-worship
+    chapterTitle: Worship and Hold to God's Goodness amid Difficulty
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "30:07.55"
+    chapterScripture:
+      - Proverbs 16:1-33
+      - John 6:22-40
+      - Deuteronomy 8:1-3
+    points:
+      - pointTime: "18:42.08"
+        pointText: Jason's reflection turns the problem of evil toward the question of God's continuing goodness and pursuit of fallen people.
+  - chapterId: c20250817-evil-question
+    chapterTitle: Understand Evil without Reducing the Mystery of God
+    chapterKind: qa
+    chapterStart: "30:07.55"
+    chapterEnd: "35:54.55"
+    points:
+      - pointTime: "33:36.58"
+        pointText: The question of evil is acknowledged as too large for a quick, complete answer.
+      - pointTime: "33:53.82"
+        pointText: Evil is explained through absence of God, extending from warfare to harmful everyday conduct.
+      - pointTime: "35:36.46"
+        pointText: Continued learning is urged rather than assuming that a lifetime of study exhausts the subject.
+  - chapterId: c20250817-focus-recap
+    chapterTitle: Learn Prayer by Praying and Keep Christ in Focus
+    chapterKind: sermon
+    chapterStart: "35:54.55"
+    chapterEnd: "42:47.7"
+    chapterScripture:
+      - John 6:16-21
+      - Matthew 14:28-33
+      - Mark 6:48
+    points:
+      - pointTime: "36:49.5"
+        pointText: Prayer is learned through praying rather than through reading or hearing about it alone.
+      - pointTime: "39:02.94"
+        pointText: Christ's divinity is described as independent of human need rather than contingent on teaching a lesson at every moment.
+      - pointTime: "40:45.52"
+        pointText: Peter's sinking connects growth beyond a comfort zone with the danger of shifting attention away from Christ.
+  - chapterId: c20250817-gifts-giver
+    chapterTitle: Seek the Giver rather than Only His Gifts
+    chapterKind: sermon
+    chapterStart: "42:47.7"
+    chapterEnd: "55:47.0"
+    chapterScripture:
+      - John 6:22-26
+    points:
+      - pointTime: "44:12.84"
+        pointText: Crowds attracted by signs and benefits introduce the difference between popularity and seeking truth.
+      - pointTime: "48:20.62"
+        pointText: Jesus answers the root of the crowd's hunger rather than turning walking on water into self-promotion.
+      - pointTime: "49:22.42"
+        pointText: Seeking gifts without the giver is identified as the central mistake of transactional religion.
+      - pointTime: "52:52.08"
+        pointText: Blessing through Christ is distinguished from a formula promising multiplied money in return for giving.
+      - pointTime: "54:32.98"
+        pointText: Impressive promises and preferred facilities are questioned as insufficient grounds for choosing a faith community.
+  - chapterId: c20250817-grace-faith
+    chapterTitle: Receive Enduring Life through Faith rather than Merit
+    chapterKind: sermon
+    chapterStart: "55:47.0"
+    chapterEnd: "1:04:37.05"
+    chapterScripture:
+      - John 6:27-34
+      - Matthew 6:19-21
+      - Ephesians 2:8-9
+    points:
+      - pointTime: "57:00.14"
+        pointText: Enduring life is distinguished from treasures that pass away.
+      - pointTime: "57:46.86"
+        pointText: The location of one's treasure exposes what the heart is actually seeking.
+      - pointTime: "59:20.2"
+        pointText: The crowd's request for work to perform is read through an assumption of merit and exchange.
+      - pointTime: "1:00:43.94"
+        pointText: Christ directs the response toward believing in the one sent by God rather than balancing achievements.
+      - pointTime: "1:01:31.72"
+        pointText: Accepting that God has accepted a person is distinguished from insisting on being one's own savior.
+  - chapterId: c20250817-manna-dependence
+    chapterTitle: Manna Teaches Dependence through Hunger and Testing
+    chapterKind: sermon
+    chapterStart: "1:04:37.05"
+    chapterEnd: "1:10:44.42"
+    chapterScripture:
+      - Deuteronomy 8:1-3
+      - Exodus 16
+    points:
+      - pointTime: "1:04:44.76"
+        pointText: Manna's role is described as more than meeting an immediate need for food.
+      - pointTime: "1:06:37.34"
+        pointText: Life depending on God's word rather than bread alone supplies the purpose of hunger and provision.
+      - pointTime: "1:08:11.08"
+        pointText: Daily provision trains renewed dependence rather than treating God as a supply available on demand.
+      - pointTime: "1:09:53.4"
+        pointText: A tapestry illustrates how intertwined experiences can appear confused from one side while belonging to a larger purpose.
+  - chapterId: c20250817-i-am-bread
+    chapterTitle: Christ Is the Bread Himself
+    chapterKind: sermon
+    chapterStart: "1:10:44.42"
+    chapterEnd: "1:17:55.58"
+    chapterScripture:
+      - John 6:35
+      - Exodus 3:13-14
+    points:
+      - pointTime: "1:11:03.96"
+        pointText: Christ's first I Am declaration identifies the enduring source that answers hunger and thirst.
+      - pointTime: "1:11:34.88"
+        pointText: Bread expresses the most basic sustenance of life rather than an optional religious addition.
+      - pointTime: "1:13:16.64"
+        pointText: The I Am language connects Christ's revelation with Moses' encounter in Exodus.
+      - pointTime: "1:15:59.64"
+        pointText: Giving bread is distinguished from being bread, challenging a view of Christ limited to solving temporary problems.
+  - chapterId: c20250817-belief-assurance
+    chapterTitle: Believe the Giver and Rest in His Promise to Keep Us
+    chapterKind: sermon
+    chapterStart: "1:17:55.58"
+    chapterEnd: "1:27:38.08"
+    chapterScripture:
+      - John 6:36-40
+      - John 5:44
+    points:
+      - pointTime: "1:17:59.62"
+        pointText: Seeing Christ is distinguished from actually believing in him.
+      - pointTime: "1:19:08.26"
+        pointText: Seeking glory from other people can obstruct reception of God's quieter, humbling truth.
+      - pointTime: "1:20:22.26"
+        pointText: Being informed about Jesus is distinguished from allowing faith to transform life.
+      - pointTime: "1:23:10.28"
+        pointText: Christ's promise not to cast out those who come grounds assurance in the Father's will.
+      - pointTime: "1:25:26.24"
+        pointText: Perseverance is attributed to who Christ is rather than the disciple's independent ability to remain faithful.
+      - pointTime: "1:26:49.58"
+        pointText: The final question distinguishes belief in a giver of preferred benefits from belief in the source of life himself.
+  - chapterId: c20250817-response
+    chapterTitle: Draw Sustenance from the Eternal Source of Life
+    chapterKind: closing
+    chapterStart: "1:27:38.08"
+    chapterEnd: "1:44:03.289"
+    points:
+      - pointTime: "1:27:38.08"
+        pointText: Response prayer asks for satisfaction in Christ himself rather than a faith shaped chiefly by material requests.
+      - pointTime: "1:33:33.66"
+        pointText: Shared prayer asks for perseverance and the ability to become practical help for people facing difficulty.
+markers:
+  - markerTime: "0:00"
+    markerNote: "The supplied recording begins during a hymn; no earlier ACTS or call to worship was reconstructed. The First of Seven is explicitly announced at 1:11:18.46. Length and timings use supplied audio evidence and await fresh media checks."
+  - markerTime: "31:46.34"
+    markerNote: "Historical, comparative-religion and reported medical or prosperity-ministry examples are the preacher's claims, not independently verified explanations. Translation and quotation attributions also need review."
