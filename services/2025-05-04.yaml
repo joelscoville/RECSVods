@@ -1,0 +1,118 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Knowing Me, Knowing You
+serviceDate: 2025-05-04
+status: draft
+sermonDescription: John 2's closing verses contrast people impressed by Jesus' signs with Christ's complete knowledge of human nature. The preacher considers signs as witnesses to divine authority, tests contemporary miracle claims and affirms God's sovereign freedom without promising relief on demand. Jesus does not depend on human enthusiasm or perfect institutions. Recognizing human fallenness calls believers to keep biblical ideals while placing ultimate confidence in Christ, the sympathetic and sinless high priest who welcomes them to the throne of grace.
+sermonScripture:
+  - John 2:23-25
+  - Hebrews 4:15-16
+sermonTopics:
+  - knowing-god
+  - discernment
+  - faith
+uploads:
+  - youtubeId: nwEj4sZyxCQ
+    uploadDuration: "53:03"
+chapters:
+  - chapterId: c20250504-youth-question
+    chapterTitle: Raise the Next Generation to Know and Trust God
+    chapterKind: qa
+    chapterStart: "0:01.68"
+    chapterEnd: "18:20.6"
+    chapterScripture:
+      - Proverbs 3:5-6
+      - 2 Timothy 3:1-5
+      - John 2:13-22
+    points:
+      - pointTime: "1:43.84"
+        pointText: The question about youth introduces unusually rapid technological and social change.
+      - pointTime: "6:53.84"
+        pointText: Convenient virtual companionship is contrasted with the compromise and sacrifice involved in actual relationships.
+      - pointTime: "8:54.96"
+        pointText: Trusting God's word is presented as a guide through changing values rather than relying on one's understanding alone.
+      - pointTime: "10:17.08"
+        pointText: Raising children in faith remains a deliberate responsibility despite difficult educational and social conditions.
+      - pointTime: "13:43.52"
+        pointText: Parents' lived values and participation are distinguished from outsourcing children's faith entirely to Sunday school.
+      - pointTime: "15:26.4"
+        pointText: The temple-cleansing recap holds God's justice and mercy together rather than choosing only one attribute.
+  - chapterId: c20250504-three-verses
+    chapterTitle: Signs, Trust and Christ's Knowledge of Humanity
+    chapterKind: sermon
+    chapterStart: "18:20.6"
+    chapterEnd: "52:14.68"
+    subchapters:
+      - chapterId: c20250504-signs
+        chapterTitle: Signs Bear Witness to Christ's Identity
+        chapterKind: sermon
+        chapterStart: "18:20.6"
+        chapterEnd: "33:53.72"
+        chapterScripture:
+          - John 2:23
+          - Mark 6:2
+          - John 10:37-38
+          - Acts 19:11-12
+        points:
+          - pointTime: "18:51.36"
+            pointText: The first verse introduces signs as a reason the crowds believe in Jesus' name.
+          - pointTime: "23:58.64"
+            pointText: Jesus' works are treated as witnesses to his unity with the Father rather than entertainment.
+          - pointTime: "25:41.4"
+            pointText: The apostles' extraordinary signs are connected with authenticating the early gospel mission.
+          - pointTime: "29:57"
+            pointText: Contemporary healing claims are examined through asking for concrete evidence that they are true.
+          - pointTime: "32:41"
+            pointText: God's sovereignty allows miracles while resisting attempts to prescribe when or how they must occur.
+      - chapterId: c20250504-not-entrusted
+        chapterTitle: God's Work Does Not Depend on Human Enthusiasm
+        chapterKind: sermon
+        chapterStart: "33:53.72"
+        chapterEnd: "42:46.16"
+        chapterScripture:
+          - John 2:24
+        points:
+          - pointTime: "35:57.08"
+            pointText: A reported healing illustrates how crowds can gather around expectations of a healer rather than the gospel itself.
+          - pointTime: "37:39.12"
+            pointText: Jesus' refusal to entrust himself to the crowds is contrasted with leaders building their authority around devoted supporters.
+          - pointTime: "40:33.8"
+            pointText: God's use of human agents is distinguished from his being dependent on them to accomplish his plan.
+          - pointTime: "41:04.4"
+            pointText: Religious declarations about ensuring God's will raise questions about confusing human agency with divine sovereignty.
+      - chapterId: c20250504-humanity
+        chapterTitle: Know Human Limits and Draw Near to the Perfect Christ
+        chapterKind: sermon
+        chapterStart: "42:46.16"
+        chapterEnd: "52:14.68"
+        chapterScripture:
+          - John 2:25
+          - Mark 7:20-23
+          - Hebrews 4:15-16
+        points:
+          - pointTime: "42:46.16"
+            pointText: Jesus' knowledge of people requires no outside witness to reveal their fallenness.
+          - pointTime: "43:16.36"
+            pointText: Total depravity challenges expecting any human person or institution to be perfect.
+          - pointTime: "47:46.96"
+            pointText: Keeping ideals high and expectations low is proposed as a way to face human failure without abandoning biblical standards.
+          - pointTime: "49:08.88"
+            pointText: Christ is presented as the exception to human sinfulness and the proper focus of lasting trust.
+          - pointTime: "51:22.28"
+            pointText: Christ's sympathy and sinlessness ground confident prayer for mercy and help in need.
+  - chapterId: c20250504-response
+    chapterTitle: Entrust Our Needs to Christ's Throne of Grace
+    chapterKind: closing
+    chapterStart: "52:14.68"
+    chapterEnd: "53:03"
+    points:
+      - pointTime: "52:24.96"
+        pointText: Closing prayer joins acknowledgment of weakness with confidence in Christ's mercy and guidance.
+markers:
+  - markerTime: "0:01.68"
+    markerNote: "Verified channel metadata dates this undated title to May 4; its description incorrectly repeats The Other Track. The supplied evidence is YouTube auto-captions with coarse segment timing, so seams and points are provisional pending media checks."
+  - markerTime: "5:08.64"
+    markerNote: "Population figures, generational predictions, education-policy descriptions and technical comparisons are the preacher's attributed account and require factual review."
+  - markerTime: "27:22.88"
+    markerNote: "HIV/AIDS, reported healings, movement history and miracle claims in the illustrations need factual/media review and are not independently established health guidance."
