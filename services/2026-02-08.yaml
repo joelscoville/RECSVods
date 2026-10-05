@@ -1,0 +1,175 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Joie de vivre
+serviceDate: 2026-02-08
+status: draft
+sermonDescription: Pausing on John 10:10, the preacher describes abundant life as beginning now rather than only after death. Joy is distinguished from manufactured feelings and presented as a deliberate response within lifelong spiritual growth. Drawing on Scripture and personal experience, he recommends service, simplicity, gratitude, childlikeness, creativity and physical stewardship, calling listeners to shape their worldview and choices around Christ's promise.
+sermonScripture:
+  - John 10:10
+  - Psalms 16:7-11
+  - Ephesians 6:11-13
+sermonTopics:
+  - joy
+  - discipleship
+  - service
+uploads:
+  - youtubeId: kTWdKIWorOs
+    uploadDuration: "25:06.232"
+  - youtubeId: kDy1MPwbhTk
+    uploadDuration: "1:28:15.38"
+chapters:
+  - chapterId: c20260208-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "1:34.5"
+    chapterEnd: "9:50.1"
+    points:
+      - pointTime: "1:34.88"
+        pointText: The leader invites personal prayer in adoration.
+      - pointTime: "2:56.64"
+        pointText: Confession seeks cleansing through repentance and Christ's blood.
+      - pointTime: "4:05.82"
+        pointText: Thanksgiving recalls gratitude in every circumstance.
+      - pointTime: "5:11.18"
+        pointText: Supplication brings individual needs before God.
+      - pointTime: "6:21.56"
+        pointText: Prayer asks for humble, teachable hearts before Hadi's welcome and greetings.
+  - chapterId: c20260208-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "9:50.1"
+    chapterEnd: "37:54.382"
+    chapterScripture:
+      - Psalms 31:1-5
+      - Proverbs 8
+      - John 10:1-21
+      - Psalms 16:7-11
+    points:
+      - pointTime: "9:50.42"
+        pointText: Psalms 31 introduces committing one's life to God's faithful care.
+      - pointTime: "15:04.19"
+        pointText: Prayer asks for hidden sins to be cleansed and faith to be lived in daily callings.
+      - pointTime: "24:17.83"
+        pointText: Proverbs 8 begins the responsive reading that continues across the restart.
+      - pointTime: "27:38.39"
+        pointText: John 10 supplies the passage about the door and the shepherd.
+      - pointTime: "36:47.13"
+        pointText: The leader takes over the supporting Psalms 16 reading after the scheduled reader has an emergency.
+  - chapterId: c20260208-experiential-question
+    chapterTitle: Experience, Worship and the Only Door
+    chapterKind: qa
+    chapterStart: "37:54.382"
+    chapterEnd: "48:44.272"
+    chapterScripture:
+      - John 10:1-9
+    points:
+      - pointTime: "37:54.69"
+        pointText: The French title introduces the sermon focus on zest for life.
+      - pointTime: "38:29.91"
+        pointText: A question contrasts experiential faith with different worship styles.
+      - pointTime: "40:57.39"
+        pointText: John 10 is placed in continuity with the confrontation of religious leaders in John 9.
+      - pointTime: "43:36.85"
+        pointText: Respect for religious freedom is distinguished from Christ's claim to be the only door.
+      - pointTime: "45:19.41"
+        pointText: The shepherd calling his sheep personally introduces recognition, following and response.
+  - chapterId: c20260208-abundant-now
+    chapterTitle: Abundant Life Begins Here and Now
+    chapterKind: sermon
+    chapterStart: "48:44.272"
+    chapterEnd: "1:04:40.392"
+    chapterScripture:
+      - John 10:10
+      - Psalms 16:7-11
+    points:
+      - pointTime: "48:44.53"
+        pointText: Christ's promise is contrasted with voices that cannot give an ultimate solution.
+      - pointTime: "50:26.99"
+        pointText: Abundance is presented as present life with Christ, not only a future consolation.
+      - pointTime: "52:09.89"
+        pointText: Different translations illustrate abundance in quantity and quality beyond a narrow reading.
+      - pointTime: "58:47.81"
+        pointText: The preacher distinguishes genuine joy from performed happiness in worship settings.
+      - pointTime: "1:02:11.91"
+        pointText: Psalms 16's fullness of joy leads to examining one's own response rather than assuming God's promise is mistaken.
+  - chapterId: c20260208-lifelong-choices
+    chapterTitle: Joy Grows through a Lifelong Journey of Choices
+    chapterKind: sermon
+    chapterStart: "1:04:40.392"
+    chapterEnd: "1:19:23.392"
+    chapterScripture:
+      - Ephesians 6:11-13
+    points:
+      - pointTime: "1:04:40.69"
+        pointText: Faith is described as a lifelong physical, emotional and spiritual journey rather than having already arrived.
+      - pointTime: "1:09:03.37"
+        pointText: The armor of God supports active growth rather than expecting every difficulty to disappear.
+      - pointTime: "1:10:47.13"
+        pointText: Nouwen is cited to distinguish choosing joy from manufacturing happy feelings.
+      - pointTime: "1:14:17.51"
+        pointText: An account of an aging couple illustrates asking what to do next rather than only why hardship occurs.
+      - pointTime: "1:17:41.61"
+        pointText: A wholly biblical worldview is presented as the basis for everyday decisions.
+  - chapterId: c20260208-practical-abundance
+    chapterTitle: Practice Service, Simplicity, Gratitude and Childlikeness
+    chapterKind: sermon
+    chapterStart: "1:19:23.392"
+    chapterEnd: "1:41:15.392"
+    chapterScripture:
+      - Acts 20:35
+      - Matthew 6:28-29
+      - 1 Thessalonians 5:16-18
+      - Matthew 18:1-4
+      - 1 Corinthians 6:19-20
+    points:
+      - pointTime: "1:20:04.43"
+        pointText: Giving and service are connected with receiving multiplied blessing and joy.
+      - pointTime: "1:24:28.21"
+        pointText: The lilies of the field illustrate simplicity rather than anxiety over status and possessions.
+      - pointTime: "1:29:06.97"
+        pointText: Gratitude is presented as making what is already received enough.
+      - pointTime: "1:31:28.09"
+        pointText: Childlikeness and creativity are distinguished from childishness and bitterness.
+      - pointTime: "1:37:24.17"
+        pointText: The body as God's temple motivates physical stewardship without assuming all illness can be prevented.
+    subchapters:
+      - chapterId: s20260208-childlikeness
+        chapterTitle: Preserve Childlike Wonder and Creativity
+        chapterKind: sermon
+        chapterStart: "1:31:27.732"
+        chapterEnd: "1:36:41.5"
+        points:
+          - pointTime: "1:31:28.09"
+            pointText: Childlikeness is introduced as a stance before God rather than immature behavior.
+          - pointTime: "1:31:50.15"
+            pointText: Matthew 18 connects humility like a child with the kingdom.
+          - pointTime: "1:33:32.65"
+            pointText: Older creative workers illustrate that wonder need not disappear with age.
+          - pointTime: "1:35:13.99"
+            pointText: Chesterton's account of repetition illustrates the vitality of childlike delight.
+          - pointTime: "1:36:00.39"
+            pointText: The preacher applies Chesterton's image of God's delight to resisting bitterness and premature inner aging.
+  - chapterId: c20260208-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:41:15.392"
+    chapterEnd: "1:53:21.612"
+    points:
+      - pointTime: "1:41:15.392"
+        pointText: The congregation stands to affirm the Apostles' Creed after the sermon prayer.
+      - pointTime: "1:43:56.75"
+        pointText: Intercession asks for the church's university-building effort and its many challenges.
+      - pointTime: "1:45:08.49"
+        pointText: Shared prayer connects watching God at work with becoming practical help for others.
+      - pointTime: "1:48:06.45"
+        pointText: Burdens Are Lifted at Calvary is introduced through casting care on Christ.
+      - pointTime: "1:51:47.57"
+        pointText: Historical notices invite elderly visitation, Sunday school service and equipping for possible church planting.
+markers:
+  - markerTime: "25:06.232"
+    markerNote: "The restart continues Proverbs 8 without repeated speech in the supplied transcripts. Do not invent an uploadSkip; any missing interval is unmeasured."
+  - markerTime: "37:54.382"
+    markerNote: "The preacher explicitly explains the French title as zest for life; spelling normalized to Joie de vivre. Durations and anchors use supplied faster-whisper audio evidence, not fresh video or listening checks."
+  - markerTime: "1:37:24.17"
+    markerNote: "Keep health, age-monitoring and historical illustrations attributed to the preacher rather than independently established measurements."
