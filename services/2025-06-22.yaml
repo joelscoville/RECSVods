@@ -1,0 +1,167 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Food For Life
+serviceDate: 2025-06-22
+status: draft
+sermonDescription: Jesus' food is doing the Father's will and accomplishing his work. His encounter with the Samaritans invites believers to ask what sustains and defines their own lives. The preacher connects glorifying and enjoying God with Christ's larger work in history, then contrasts God's timing and ways with human expectations. Every believer receives gifts and a role in that work; faithful obedience means sowing the gospel and serving in ordinary life while leaving growth to God.
+sermonScripture:
+  - John 4:31-45
+  - 2 Peter 3:8
+sermonTopics:
+  - mission
+  - service
+  - discipleship
+uploads:
+  - youtubeId: InD0vJfOm4k
+    uploadDuration: "58:44.017"
+chapters:
+  - chapterId: c20250622-ai-question
+    chapterTitle: AI Raises the Question of Genuine Relationship
+    chapterKind: qa
+    chapterStart: "0:00.56"
+    chapterEnd: "15:17.08"
+    points:
+      - pointTime: "2:19.78"
+        pointText: An account of long-term prayer encourages perseverance before the discussion turns to technology and faith.
+      - pointTime: "5:29.12"
+        pointText: AI's ability to gather and analyze information is acknowledged as a powerful tool.
+      - pointTime: "6:57.74"
+        pointText: The preacher distinguishes algorithmic simulation from genuine human presence and relationship.
+      - pointTime: "11:10.62"
+        pointText: The contrast between originals and imitations introduces a question about superficial and genuine faith.
+      - pointTime: "14:37.96"
+        pointText: Relationship with Christ is distinguished from religious knowledge alone in considering what technology can imitate.
+  - chapterId: c20250622-samaritan-recap
+    chapterTitle: Grace Crosses Barriers and Truth Transforms a Witness
+    chapterKind: sermon
+    chapterStart: "15:17.08"
+    chapterEnd: "20:51.8"
+    chapterScripture:
+      - John 4:1-30
+    points:
+      - pointTime: "15:29.96"
+        pointText: The woman's marginalization frames Christ's grace reaching across ethnic, social and moral barriers.
+      - pointTime: "16:01.54"
+        pointText: The encounter is recalled as grace extending beyond the Jewish community and challenging prejudice.
+      - pointTime: "16:57.68"
+        pointText: Jesus' offer of living water reveals how limited assumptions can obscure the richness of God's gift.
+      - pointTime: "18:55.2"
+        pointText: Claiming God's authority while holding onto falsehood is distinguished from worshiping in spirit and truth.
+      - pointTime: "19:44.2"
+        pointText: The woman's testimony illustrates the gospel transforming someone regarded as a sinner into a witness to others.
+  - chapterId: c20250622-christs-food
+    chapterTitle: Christ Is Sustained by Accomplishing the Father's Work
+    chapterKind: sermon
+    chapterStart: "20:51.8"
+    chapterEnd: "28:57.78"
+    chapterScripture:
+      - John 4:31-34
+      - Hebrews 2:17-18
+      - Hebrews 4:15
+      - John 19:30
+    points:
+      - pointTime: "20:51.8"
+        pointText: Jesus' weariness and the disciples bringing food establish his real human experience rather than a mythical portrayal.
+      - pointTime: "22:19.4"
+        pointText: Hebrews connects Christ's shared humanity and suffering with his ability to help those who are tempted.
+      - pointTime: "23:09.12"
+        pointText: Christ's sympathy with human weakness is held together with his being without sin.
+      - pointTime: "25:08.98"
+        pointText: Doing the Father's will is described as what energizes Jesus, without denying his bodily need for food.
+      - pointTime: "27:40.8"
+        pointText: The finished work on the cross is interpreted as accomplishing the mission the Father gave Christ.
+  - chapterId: c20250622-human-purpose
+    chapterTitle: Find Life's Purpose within Christ's Larger Work
+    chapterKind: sermon
+    chapterStart: "28:57.78"
+    chapterEnd: "38:26.82"
+    points:
+      - pointTime: "28:57.78"
+        pointText: The question of one's food for life asks what truly defines and renews daily existence.
+      - pointTime: "32:10.04"
+        pointText: The catechism's chief end of humanity connects glorifying God with enjoying him.
+      - pointTime: "32:20.46"
+        pointText: Enjoying God's goodness is applied to life now as well as future eternity.
+      - pointTime: "33:28.18"
+        pointText: God's will is distinguished from a merely comfortable private life with occasional religious activity.
+      - pointTime: "35:38.02"
+        pointText: A quotation associated with Wang Yi frames history around Christ rather than only individual routines and preferences.
+  - chapterId: c20250622-timing-way-role
+    chapterTitle: God's Timing, God's Ways and Our Role
+    chapterKind: sermon
+    chapterStart: "38:26.82"
+    chapterEnd: "57:30.48"
+    subchapters:
+      - chapterId: c20250622-timing
+        chapterTitle: God's Timing Is Not Our Timing
+        chapterKind: sermon
+        chapterStart: "38:26.82"
+        chapterEnd: "44:11.2"
+        chapterScripture:
+          - John 4:35-36
+          - Luke 3:7-9
+          - 2 Peter 3:8
+        points:
+          - pointTime: "38:26.82"
+            pointText: Jesus' declaration that the harvest is already ready challenges the disciples' apparent timetable.
+          - pointTime: "40:28.02"
+            pointText: John the Baptist's warning challenges relying on family ancestry or inherited religious standing.
+          - pointTime: "42:24.48"
+            pointText: Peter's description of God's relation to time explains why biblical urgency is not measured by human expectations alone.
+          - pointTime: "43:48.04"
+            pointText: The application urges treasuring time with loved ones instead of indefinitely postponing what matters.
+      - chapterId: c20250622-ways
+        chapterTitle: God's Ways Are Not Our Ways
+        chapterKind: sermon
+        chapterStart: "44:11.2"
+        chapterEnd: "48:18.9"
+        chapterScripture:
+          - John 4:37-38
+          - 1 Corinthians 12:4-7
+          - Matthew 25:14-30
+        points:
+          - pointTime: "44:14.02"
+            pointText: Different people's actions combine in God's work, exceeding any one person's view of how the gospel reaches someone.
+          - pointTime: "45:54.3"
+            pointText: An ordinary encounter with a displayed verse illustrates how small contributions can begin a larger journey toward faith.
+          - pointTime: "46:54.36"
+            pointText: The Spirit giving to each believer for the common good challenges saying one has nothing to contribute.
+          - pointTime: "47:49.8"
+            pointText: The talents parable connects received gifts with responsibility to use them.
+      - chapterId: c20250622-obey
+        chapterTitle: Our Role Is Simply to Obey
+        chapterKind: sermon
+        chapterStart: "48:18.9"
+        chapterEnd: "57:30.48"
+        chapterScripture:
+          - Proverbs 3:5
+          - John 4:39-45
+          - 1 Corinthians 3:5-7
+          - Matthew 28:19-20
+        points:
+          - pointTime: "48:20.04"
+            pointText: Obedience is presented as the believer's role within God's much larger and more complex work.
+          - pointTime: "49:32.68"
+            pointText: Sharing the gospel is compared to sowing seed rather than personally controlling conversion.
+          - pointTime: "53:22.14"
+            pointText: The preacher's experience of altar-call pressure illustrates learning not to measure faithfulness solely by immediate responses.
+          - pointTime: "54:04.04"
+            pointText: The Samaritans' movement from the woman's testimony to hearing Christ themselves shows the growth of a planted seed.
+          - pointTime: "56:46.3"
+            pointText: Caring faithfully for one's household is included among meaningful work God gives, alongside opportunities in the church.
+  - chapterId: c20250622-response
+    chapterTitle: Receive Joy through Trust and Obedience
+    chapterKind: closing
+    chapterStart: "57:30.48"
+    chapterEnd: "58:44.017"
+    points:
+      - pointTime: "57:30.48"
+        pointText: Closing prayer asks for understanding and obedience that make God's work a source of joy and a visible witness to others.
+markers:
+  - markerTime: "0:00.56"
+    markerNote: "The supplied upload begins at sermon/Q&A. Food For Life follows the source title. Duration and anchors use audio ASR and await fresh media checks."
+  - markerTime: "3:24.24"
+    markerNote: "AI predictions, limitations and attributed comments are the preacher's contemporary assessment, not independently verified technical claims."
+  - markerTime: "35:18.48"
+    markerNote: "The attributed History is Christ Written Large quotation, Wang Yi chronology, proper names and historical anecdotes require factual/media review."
