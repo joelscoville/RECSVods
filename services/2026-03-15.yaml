@@ -1,0 +1,168 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: RECS 15 March 2026
+serviceDate: 2026-03-15
+status: draft
+sermonDescription: Jesus' conversation with Martha in John 11 raises the question of believing in the resurrection and the life. The preacher acknowledges mixed strength and weakness in faith, distinguishes Christ's independent truth from human response, and rejects faith as a technique for obtaining desired outcomes. Romans 10 and James 2 connect confession with costly, practical commitment, while an introductory discussion of AI stresses real relationships rather than a consumer approach to faith.
+sermonScripture:
+  - John 11:17-27
+  - Romans 10:9-13
+  - James 2:17
+sermonTopics:
+  - faith
+  - discipleship
+  - knowing-god
+uploads:
+  - youtubeId: do7TYs3oy-k
+    uploadDuration: "1:50:43.113"
+chapters:
+  - chapterId: c20260315-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "0:10.2"
+    chapterEnd: "8:28.4"
+    points:
+      - pointTime: "0:10.52"
+        pointText: The leader invites adoration and a calm heart before worship.
+      - pointTime: "1:37.04"
+        pointText: Confession seeks cleansing through Christ.
+      - pointTime: "2:48.82"
+        pointText: Thanksgiving recalls God's goodness.
+      - pointTime: "3:54.98"
+        pointText: Supplication brings personal needs before God.
+      - pointTime: "5:03.24"
+        pointText: Prayer asks for barriers to worship to be removed before Hadi's welcome.
+  - chapterId: c20260315-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "8:28.4"
+    chapterEnd: "34:59.5"
+    chapterScripture:
+      - Psalms 46:1-3
+      - Proverbs 13
+      - John 11:17-27
+      - Romans 10:9-13
+    points:
+      - pointTime: "8:28.72"
+        pointText: Psalms 46 introduces God as refuge amid a fragile and troubled world.
+      - pointTime: "14:14.96"
+        pointText: A family reminder about God willing introduces surrender of personal plans.
+      - pointTime: "23:12.44"
+        pointText: Proverbs 13 is introduced for responsive reading.
+      - pointTime: "25:49.76"
+        pointText: John 11 supplies the conversation between Jesus and Martha.
+      - pointTime: "34:02.42"
+        pointText: Romans 10:9-13 supplies the supporting reading about confession and belief.
+  - chapterId: c20260315-ai-question
+    chapterTitle: Can AI Replace Spiritual Relationships?
+    chapterKind: qa
+    chapterStart: "34:59.5"
+    chapterEnd: "50:24.04"
+    points:
+      - pointTime: "34:59.86"
+        pointText: The preacher introduces the John 11 session and a question about AI as a spiritual tool.
+      - pointTime: "36:19.98"
+        pointText: Printing, radio, television and the internet provide context for rapid technological change.
+      - pointTime: "39:47.16"
+        pointText: Workplace disruption and translation research illustrate AI's practical impact.
+      - pointTime: "43:13.8"
+        pointText: A companion that always agrees can become an attractive substitute for challenging real relationships.
+      - pointTime: "46:39.44"
+        pointText: Faith is presented as real relationship rather than a consumer service that says what one wants to hear.
+    subchapters:
+      - chapterId: s20260315-real-relationships
+        chapterTitle: Real Faith Requires More than Fantasy
+        chapterKind: other
+        chapterStart: "41:28.4"
+        chapterEnd: "50:24.04"
+        points:
+          - pointTime: "41:28.56"
+            pointText: AI counseling and companionship are considered through loneliness and standardized advice.
+          - pointTime: "43:13.8"
+            pointText: Constant affirmation is contrasted with the disagreements of an actual relationship.
+          - pointTime: "44:56.36"
+            pointText: Celebrity attachment illustrates that unreal relationships can already feel powerful.
+          - pointTime: "46:39.44"
+            pointText: Online access should not replace human community when physical participation is possible.
+          - pointTime: "48:21.38"
+            pointText: Showing up and accepting relational difficulty are presented as part of growth toward Christ.
+  - chapterId: c20260315-recap-trust
+    chapterTitle: Trust What Is Known amid Unanswered Questions
+    chapterKind: sermon
+    chapterStart: "50:24.04"
+    chapterEnd: "56:35.4"
+    chapterScripture:
+      - John 11:1-16
+    points:
+      - pointTime: "50:24.04"
+        pointText: The Lazarus account is reviewed as an encounter between temporal human life and Christ's divinity.
+      - pointTime: "51:44.1"
+        pointText: A childhood recollection introduces the challenge of realizing that one's own life is finite.
+      - pointTime: "52:33.54"
+        pointText: Competing explanations of suffering are contrasted with the Bible's limited but sufficient revelation.
+      - pointTime: "53:26.42"
+        pointText: Scripture is described as sufficient for understanding God, salvation, faith and life.
+      - pointTime: "55:40.26"
+        pointText: The recap urges trust in God's goodness, freedom from error and love despite human limits.
+  - chapterId: c20260315-martha
+    chapterTitle: Christ Reveals the Resurrection and the Life
+    chapterKind: sermon
+    chapterStart: "56:35.4"
+    chapterEnd: "1:13:30.8"
+    chapterScripture:
+      - John 11:17-26
+    points:
+      - pointTime: "56:35.8"
+        pointText: The four-day delay and the gathering at Bethany provide the setting for Martha's encounter.
+      - pointTime: "1:00:08.88"
+        pointText: The sisters' different responses are considered through their earlier meeting with Jesus.
+      - pointTime: "1:03:30.38"
+        pointText: Martha's faith displays confidence in Jesus alongside limits in what she expects him to do.
+      - pointTime: "1:06:59.2"
+        pointText: The fifth I Am declaration identifies Jesus with resurrection and life.
+      - pointTime: "1:08:47.98"
+        pointText: Christ's authority is connected with a deliberate mission rather than defeat by his opponents.
+  - chapterId: c20260315-belief-action
+    chapterTitle: Belief Must Become Real Commitment
+    chapterKind: sermon
+    chapterStart: "1:13:30.8"
+    chapterEnd: "1:36:28.5"
+    chapterScripture:
+      - John 11:25-27
+      - Romans 10:9-13
+      - James 2:17
+    points:
+      - pointTime: "1:13:31.12"
+        pointText: Jesus' question Do you believe this is presented as essential to receiving the promise.
+      - pointTime: "1:17:33.8"
+        pointText: Calvin is cited to describe an open invitation to salvation and the obstacle of unbelief.
+      - pointTime: "1:22:12.38"
+        pointText: Christ remains resurrection and life independently of whether people believe him.
+      - pointTime: "1:29:02.18"
+        pointText: Faith in faith is rejected as a technique for obtaining a preferred result.
+      - pointTime: "1:30:42.5"
+        pointText: Historical persecution gives context to confessing Jesus as Lord in Romans 10.
+      - pointTime: "1:35:32.42"
+        pointText: James 2:17 calls for actions that demonstrate belief rather than words or credentials alone.
+  - chapterId: c20260315-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:36:28.5"
+    chapterEnd: "1:50:43.113"
+    points:
+      - pointTime: "1:36:28.5"
+        pointText: Prayer asks that belief become visible action despite mixed strength and weakness.
+      - pointTime: "1:40:41.56"
+        pointText: Intercession asks for opportunities to invite loved ones to the Good Friday rally.
+      - pointTime: "1:42:06.92"
+        pointText: Shared prayer asks for strength and practical care for people facing challenges.
+      - pointTime: "1:44:42.62"
+        pointText: Amazing Grace is introduced before the closing hymn.
+      - pointTime: "1:49:06.12"
+        pointText: Historical notices encourage community lunch, prayer requests and gospel-rally invitations.
+markers:
+  - markerTime: "34:59.5"
+    markerNote: "Working title uses the channel's dated title; confirm the announced sermon title. Duration and all anchors come from supplied faster-whisper audio evidence, not fresh video-duration or listening checks."
+  - markerTime: "36:19.98"
+    markerNote: "AI forecasts and historical, medical and personal illustrations remain attributed to the preacher."
