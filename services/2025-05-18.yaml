@@ -1,0 +1,150 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Times of Difficulty
+serviceDate: 2025-05-18
+status: draft
+sermonDescription: Following John 3's good news of salvation, the preacher considers its stark contrast between light and darkness and the reality of judgment. God's grace does not remove accountability, and outward religious appearance does not guarantee genuine faith. Contemporary patterns of isolation, self-centeredness and persuasive cultural messages illustrate the difficulties described in 2 Timothy. The appeal is to stop testing the margins of faith, follow Christ's light and live seriously through discernment, obedience and continuing growth.
+sermonScripture:
+  - John 3:19-21
+  - 2 Timothy 3:1-7
+sermonTopics:
+  - discernment
+  - responsibility
+  - sanctification
+uploads:
+  - youtubeId: Bamdx0c7akw
+    uploadDuration: "1:03:48.667"
+chapters:
+  - chapterId: c20250518-knowing-god-question
+    chapterTitle: Knowing God Requires More than Information or Religious Routine
+    chapterKind: qa
+    chapterStart: "3:32.1"
+    chapterEnd: "16:10.18"
+    chapterScripture:
+      - John 3:1-18
+    points:
+      - pointTime: "4:46.28"
+        pointText: The question about recognizing the true God introduces faith as more than a self-evident technical deduction.
+      - pointTime: "6:58.96"
+        pointText: Nicodemus' religious status illustrates organized worship without necessarily understanding or engaging with God.
+      - pointTime: "9:57.14"
+        pointText: Being born again is described as the Spirit's transforming work rather than completing a prescribed series of steps.
+      - pointTime: "10:22.56"
+        pointText: A God-centered revelation faith is distinguished from treating God as a problem human effort alone can solve.
+      - pointTime: "13:22.5"
+        pointText: AI-assisted information is treated as a tool while living faith involves more than receiving correct answers.
+  - chapterId: c20250518-good-news-judgment
+    chapterTitle: Salvation's Good News Is Held beside Judgment
+    chapterKind: sermon
+    chapterStart: "16:10.18"
+    chapterEnd: "23:59.12"
+    chapterScripture:
+      - John 3:16-19
+      - Acts 4:12
+      - John 14:6
+    points:
+      - pointTime: "16:10.18"
+        pointText: Christ's mission to save is presented as the gospel's good news following the call to spiritual rebirth.
+      - pointTime: "17:14.26"
+        pointText: The following verses place condemnation alongside the promise of eternal life rather than omitting judgment.
+      - pointTime: "18:56.28"
+        pointText: The preacher's Reformed reading connects salvation with Christ rather than treating all religions as interchangeable routes.
+      - pointTime: "22:17.92"
+        pointText: Comparing judgment, condemnation and verdict across translations clarifies the force of John 3:19.
+      - pointTime: "23:28.26"
+        pointText: Christ's relation to time is used to explain judgment described as already settled.
+  - chapterId: c20250518-accountability
+    chapterTitle: Grace Does Not Cancel Thorough Accountability
+    chapterKind: sermon
+    chapterStart: "23:59.12"
+    chapterEnd: "34:17.76"
+    chapterScripture:
+      - Revelation 20:11-12
+      - Matthew 12:36
+    points:
+      - pointTime: "23:59.12"
+        pointText: Death and facing God are presented as realities that ignoring them cannot remove.
+      - pointTime: "28:11.28"
+        pointText: The great white throne introduces accountability beyond social status or apparent achievement.
+      - pointTime: "29:08.88"
+        pointText: Accountability for even careless words conveys the thoroughness of God's justice.
+      - pointTime: "30:57.12"
+        pointText: Grace and justice are held together, including wrongs suffered and wrongs done to others.
+      - pointTime: "32:37.38"
+        pointText: The preacher acknowledges uncertainty and personal speculation about how redeemed believers experience accountability.
+  - chapterId: c20250518-darkness
+    chapterTitle: Life without God Is More than Harmless Private Preference
+    chapterKind: sermon
+    chapterStart: "34:17.76"
+    chapterEnd: "46:23"
+    chapterScripture:
+      - John 3:19-20
+      - Mark 7:20-23
+    points:
+      - pointTime: "34:17.76"
+        pointText: John's contrast between light and darkness challenges an unexamined, day-by-day approach to life.
+      - pointTime: "37:44.44"
+        pointText: The discussion of withdrawn lifestyles asks whether avoiding obvious harm fulfills God's purpose for human life.
+      - pointTime: "42:54.92"
+        pointText: Jesus' teaching about the heart locates sin within thought and desire as well as visible acts.
+      - pointTime: "43:48.74"
+        pointText: The preacher defines evil through absence of God rather than only unusually destructive behavior.
+      - pointTime: "44:41.14"
+        pointText: Withdrawal from the light can develop into actively resisting exposure and correction.
+  - chapterId: c20250518-difficulty
+    chapterTitle: Discern Deception beneath Appealing Appearances
+    chapterKind: sermon
+    chapterStart: "46:23"
+    chapterEnd: "54:51.4"
+    chapterScripture:
+      - 2 Timothy 3:1-7
+    points:
+      - pointTime: "46:23"
+        pointText: The last days are understood as the present period between Christ's ascension and return.
+      - pointTime: "48:05.9"
+        pointText: Technological progress and comfortable surroundings are distinguished from the moral condition of the world.
+      - pointTime: "49:50.68"
+        pointText: Public glamour is contrasted with hidden harm and exploitation in the preacher's contemporary examples.
+      - pointTime: "50:34.72"
+        pointText: An appearance of godliness without its power introduces the danger of religiously persuasive deception.
+      - pointTime: "51:35.5"
+        pointText: Celebrity communities are considered as carriers of life philosophies, not only entertainment.
+  - chapterId: c20250518-follow-light
+    chapterTitle: Follow the Light instead of Testing Faith's Margins
+    chapterKind: sermon
+    chapterStart: "54:51.4"
+    chapterEnd: "1:01:35.32"
+    chapterScripture:
+      - John 3:21
+      - Matthew 7:21-23
+      - 1 Corinthians 3:13-15
+      - John 8:12
+    points:
+      - pointTime: "54:57.34"
+        pointText: Practicing truth and coming to the light are connected with work accomplished through God's help.
+      - pointTime: "56:41.64"
+        pointText: The preacher declines to make final declarations about another person's salvation, locating judgment with God.
+      - pointTime: "58:26.74"
+        pointText: Visible religious works alone are distinguished from genuinely belonging to Christ.
+      - pointTime: "1:00:07.22"
+        pointText: The possibility of barely escaping loss becomes a challenge not to waste the life and grace already received.
+      - pointTime: "1:01:06.7"
+        pointText: Continuing weakness is acknowledged while the appeal urges serious faith that seeks to sin less and follow Christ.
+  - chapterId: c20250518-response
+    chapterTitle: Receive Discernment and Live Faithfully in Christ's Light
+    chapterKind: closing
+    chapterStart: "1:01:35.32"
+    chapterEnd: "1:03:48.667"
+    points:
+      - pointTime: "1:01:35.32"
+        pointText: Closing prayer asks for wisdom and determination to move beyond divided loyalties and live as a faithful servant.
+markers:
+  - markerTime: "3:32.1"
+    markerNote: "The supplied upload begins at sermon-time remarks; the outline starts at the relevant question. Title follows source. Audio-ASR duration and anchors await fresh media checks."
+  - markerTime: "32:37.38"
+    markerNote: "The discussion of temporary shame at Christian judgment is explicitly personal speculation, not a settled biblical description."
+  - markerTime: "37:44.44"
+    markerNote: "Social trends, medical/environmental claims and celebrity/legal examples are attributed contemporary illustrations and require factual review."
+  - markerTime: "54:57.34"
+    markerNote: "The final light verse is John 3:21 despite speech/ASR announcing verse 22. The salvation reference earlier is Acts 4:12 despite a tangled announcement."
