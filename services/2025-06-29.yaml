@@ -1,0 +1,170 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: To Be Foolish
+serviceDate: 2025-06-29
+status: draft
+sermonDescription: The official seeking healing for his son reveals how limited assumptions about Jesus can shape faith. The preacher considers the purpose of signs, the responsibility to test claims made in God's name and Christ's blessing on those who believe his word. Against demands for miracles or human wisdom, Christ crucified remains the gospel's center. Jesus' grace leads the official and his household toward growing faith, inviting believers to keep learning and trust beyond their own understanding.
+sermonScripture:
+  - John 4:46-54
+  - 1 Corinthians 1:22-25
+sermonTopics:
+  - knowing-god
+  - discernment
+  - faith
+uploads:
+  - youtubeId: J0LSyK4Y6z4
+    uploadDuration: "1:01:15.767"
+chapters:
+  - chapterId: c20250629-intercession-question
+    chapterTitle: Ask What Grounds Our Practice of Prayer
+    chapterKind: qa
+    chapterStart: "0:01.88"
+    chapterEnd: "10:27.22"
+    points:
+      - pointTime: "1:46.48"
+        pointText: The question compares asking living people to pray with asking Mary or the saints to intercede.
+      - pointTime: "3:29.48"
+        pointText: Respect for Catholic service is distinguished from agreement about the sources of religious authority.
+      - pointTime: "4:12"
+        pointText: Sola Scriptura is presented as the basis for evaluating Christian teaching and practice.
+      - pointTime: "6:59.42"
+        pointText: The preacher distinguishes Catholics' stated understanding of intercession from a simple claim that they worship Mary.
+      - pointTime: "9:16.86"
+        pointText: The Reformed answer emphasizes direct prayer to God rather than a required intermediary among the saints.
+  - chapterId: c20250629-mission-recap
+    chapterTitle: Obey God's Call and Leave Growth to Him
+    chapterKind: sermon
+    chapterStart: "10:27.22"
+    chapterEnd: "15:29.76"
+    chapterScripture:
+      - John 4:31-45
+    points:
+      - pointTime: "10:30.1"
+        pointText: Jesus' food is recalled as doing the Father's will rather than pursuing a merely comfortable life.
+      - pointTime: "12:02.28"
+        pointText: Glorifying and enjoying God frames human purpose while God's larger work exceeds individual expectations.
+      - pointTime: "13:57.14"
+        pointText: Believers are encouraged to sow the gospel faithfully without claiming responsibility for making it grow.
+  - chapterId: c20250629-assumptions
+    chapterTitle: Know Christ beyond Our Limited Assumptions
+    chapterKind: sermon
+    chapterStart: "15:29.76"
+    chapterEnd: "27:25.94"
+    chapterScripture:
+      - John 4:46-48
+      - John 4:10
+      - Luke 6:46
+    points:
+      - pointTime: "16:29.86"
+        pointText: Illness striking regardless of status brings the official's need into the shared vulnerability of human life.
+      - pointTime: "17:56.86"
+        pointText: Empathy is distinguished from claiming to know exactly how another person's suffering feels.
+      - pointTime: "18:16.34"
+        pointText: Physical suffering can affect faith and should not be underestimated in caring for others.
+      - pointTime: "21:31.98"
+        pointText: The official's assumptions introduce the recurring theme that a mistaken doctrine of God produces mistaken responses.
+      - pointTime: "22:28.82"
+        pointText: Lifelong theological learning still leaves much to discover about God's depth and generosity.
+      - pointTime: "24:05.84"
+        pointText: The Samaritans believing Christ's word contrast with the official's initial demand for a visible sign.
+  - chapterId: c20250629-signs
+    chapterTitle: Signs Have a Purpose, but Claims Must Be Tested
+    chapterKind: sermon
+    chapterStart: "27:25.94"
+    chapterEnd: "41:00.74"
+    chapterScripture:
+      - 1 Corinthians 1:22
+      - John 2:23
+      - John 3:2
+      - John 10:37-38
+      - Mark 16:17-18
+    points:
+      - pointTime: "27:36.16"
+        pointText: Paul's contrast between demands for signs and demands for wisdom frames different obstacles to receiving the gospel.
+      - pointTime: "29:09.48"
+        pointText: Jesus' signs are understood as witnesses to his identity rather than spectacle for its own sake.
+      - pointTime: "30:32.74"
+        pointText: Signs also authenticate the early apostles' gospel mission in the preacher's account.
+      - pointTime: "32:35.48"
+        pointText: The discussion of Wimber's movement examines expectations that miraculous phenomena should regularly accompany believers.
+      - pointTime: "35:26.52"
+        pointText: Asking whether a claimed healing is actually true is proposed as a necessary question alongside theological debate.
+      - pointTime: "37:43.96"
+        pointText: Failed predictions raise accountability questions about attributing a message to God.
+      - pointTime: "39:13.04"
+        pointText: God's ability to work miracles is affirmed while his sovereignty is distinguished from guaranteed relief on demand.
+      - pointTime: "40:22.56"
+        pointText: A quotation attributed to Wimber acknowledges tension between healing expectations and suffering that remains.
+  - chapterId: c20250629-word-first
+    chapterTitle: Honor God's Name and Trust His Word before Signs
+    chapterKind: sermon
+    chapterStart: "41:00.74"
+    chapterEnd: "47:58.42"
+    chapterScripture:
+      - Exodus 20:7
+      - Deuteronomy 18:20-22
+      - Deuteronomy 13:1-3
+      - John 20:24-29
+    points:
+      - pointTime: "41:12.58"
+        pointText: The command against taking God's name in vain calls for care when presenting personal claims as divine messages.
+      - pointTime: "42:48.68"
+        pointText: A prediction failing to occur is distinguished from a word genuinely spoken by the Lord.
+      - pointTime: "43:31.04"
+        pointText: The preacher emphasizes the seriousness of false prophecy while distinguishing Old Testament penalties from present practice.
+      - pointTime: "44:48.76"
+        pointText: Even a sign that occurs does not authorize teaching that draws people away from God's revealed truth.
+      - pointTime: "47:09.64"
+        pointText: Jesus' blessing on those who believe without seeing places trust in his word above demands for personal proof.
+  - chapterId: c20250629-crucified
+    chapterTitle: Christ Crucified Challenges the World's Measures of Wisdom
+    chapterKind: sermon
+    chapterStart: "47:58.42"
+    chapterEnd: "56:21.06"
+    chapterScripture:
+      - 1 Corinthians 1:22-25
+      - John 8:40
+      - Proverbs 3:5
+    points:
+      - pointTime: "47:58.42"
+        pointText: Human philosophy and persuasive argument are considered alongside the competing appeal of dramatic religious phenomena.
+      - pointTime: "50:40.88"
+        pointText: Christ crucified is presented as a stumbling block or foolishness when judged through those competing expectations.
+      - pointTime: "53:09.94"
+        pointText: The gospel's center is distinguished from a promise of entertainment, impressive signs or material success.
+      - pointTime: "53:58.9"
+        pointText: For those called by God, Christ is identified as God's power and wisdom rather than fitting the world's categories.
+      - pointTime: "55:16.02"
+        pointText: Trusting the Lord challenges allowing cultural assumptions and one's own reasoning to govern every decision.
+  - chapterId: c20250629-growing-faith
+    chapterTitle: Grace Leads Limited Faith toward Deeper Trust
+    chapterKind: sermon
+    chapterStart: "56:21.06"
+    chapterEnd: "59:35.02"
+    chapterScripture:
+      - John 4:49-54
+    points:
+      - pointTime: "56:26.82"
+        pointText: Jesus answers the official with grace despite his initially limited understanding.
+      - pointTime: "56:54.26"
+        pointText: Believing Jesus' word and leaving for home marks progressive growth in the man's faith.
+      - pointTime: "57:42"
+        pointText: The timing of the son's recovery strengthens the official's belief and extends it to his household.
+      - pointTime: "59:08.22"
+        pointText: The final appeal encourages ongoing learning and willing use of God's gifts rather than settling for superficial faith.
+  - chapterId: c20250629-response
+    chapterTitle: Step beyond Comfort into God's Larger Work
+    chapterKind: closing
+    chapterStart: "59:35.02"
+    chapterEnd: "1:01:15.767"
+    points:
+      - pointTime: "59:35.02"
+        pointText: Closing prayer asks for trust, willingness and recognition that life belongs within God's larger work rather than a transaction for relief.
+markers:
+  - markerTime: "0:01.88"
+    markerNote: "The upload begins at sermon/Q&A and does not contain the preceding service. To Be Foolish follows the source title. Audio-ASR duration and anchors await fresh media checks."
+  - markerTime: "1:46.48"
+    markerNote: "Descriptions of Catholic authority and Marian doctrine are the preacher's comparative account, not an independently verified statement of Catholic teaching."
+  - markerTime: "32:35.48"
+    markerNote: "Movement history, attributed quotations, reported healings, illnesses and legal outcomes need factual/media review; ASR frequently substitutes science for signs and kill for heal."
