@@ -1,0 +1,165 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: RECS 15 February 2026
+serviceDate: 2026-02-15
+status: draft
+sermonDescription: The guest preacher reads Malachi's confrontation with Israel's priests as a challenge to worship that gives God leftovers while protecting self-interest. Honoring the Father and master requires honesty, respect for his word and greater concern for him than for human approval. Christ is presented as the perfect priest, obedient Son and sufficient sacrifice, whose prior love changes worship from mere duty into a willing response.
+sermonScripture:
+  - Malachi 1:6-8
+  - Leviticus 22:21
+  - Luke 12:4-5
+sermonTopics:
+  - worship
+  - repentance
+  - sacrifice
+uploads:
+  - youtubeId: VNMbrIlbj0Q
+    uploadDuration: "1:33:09.252"
+chapters:
+  - chapterId: c20260215-opening
+    chapterTitle: Prayer and Welcome
+    chapterKind: opening
+    chapterStart: "4:21.6"
+    chapterEnd: "9:11.5"
+    points:
+      - pointTime: "4:21.92"
+        pointText: The leader introduces ACTS prayer beginning with adoration.
+      - pointTime: "5:26.4"
+        pointText: Confession calls for humble hearts.
+      - pointTime: "6:06.26"
+        pointText: Worshippers are invited to give thanks.
+      - pointTime: "6:32.36"
+        pointText: Supplication brings the preparation prayer to its final movement.
+      - pointTime: "7:12.36"
+        pointText: Prayer recalls God's presence and answers in his own wisdom and time before mutual greetings.
+  - chapterId: c20260215-worship-scripture
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "9:11.5"
+    chapterEnd: "34:06.15"
+    chapterScripture:
+      - Psalms 33:1-5
+      - Proverbs 9
+      - Malachi 1:1-14
+      - Malachi 1:6-8
+    points:
+      - pointTime: "9:11.9"
+        pointText: Psalms 33 introduces joyful praise of God's faithful work.
+      - pointTime: "12:37"
+        pointText: By Faith is introduced with a demonstration before congregational singing.
+      - pointTime: "19:57.02"
+        pointText: Proverbs 9 supplies the first responsive reading.
+      - pointTime: "22:12.9"
+        pointText: The congregation turns to Malachi 1 for the second reading.
+      - pointTime: "33:03.76"
+        pointText: Malachi 1:6-8 supplies the supporting passage about honor and unacceptable offerings.
+  - chapterId: c20260215-honor-name
+    chapterTitle: Honor God's Name beyond Religious Activity
+    chapterKind: sermon
+    chapterStart: "34:06.15"
+    chapterEnd: "1:05:25.7"
+    chapterScripture:
+      - Malachi 1:6-8
+      - Leviticus 22:21
+    points:
+      - pointTime: "34:06.5"
+        pointText: The guest preacher introduces the Malachi passage and the disappointment behind Israel's disrespect.
+      - pointTime: "44:57.6"
+        pointText: Biblical guidance for marriage and honest business is contrasted with rewriting God's authority for personal convenience.
+      - pointTime: "47:08.18"
+        pointText: Sons and servants are called to honor the Father and master rather than treat him as a consultant.
+      - pointTime: "53:29.58"
+        pointText: Defensive claims of innocence are contrasted with admitting a heart far from God.
+      - pointTime: "59:48.66"
+        pointText: Defective offerings are interpreted as giving leftovers and dishonoring the perfect sacrifice they foreshadow.
+    subchapters:
+      - chapterId: s20260215-honesty
+        chapterTitle: Religious Duties Cannot Replace Honesty
+        chapterKind: sermon
+        chapterStart: "53:21.8"
+        chapterEnd: "58:49.7"
+        points:
+          - pointTime: "53:22.1"
+            pointText: The priests' defensive questions introduce the danger of claiming innocence while guilty.
+          - pointTime: "55:09.82"
+            pointText: A marriage illustration distinguishes fulfilling duties from giving love and attention.
+          - pointTime: "56:53.36"
+            pointText: Tithing and attendance are questioned as substitutes for genuine spiritual maturity.
+          - pointTime: "57:42.34"
+            pointText: A broken-window illustration depicts denying an obvious wrong.
+          - pointTime: "58:01.64"
+            pointText: Admitting sin is presented as necessary for receiving help and change.
+  - chapterId: c20260215-fear-god
+    chapterTitle: Fear God More than Visible Human Power
+    chapterKind: sermon
+    chapterStart: "1:05:25.7"
+    chapterEnd: "1:11:43.2"
+    chapterScripture:
+      - Malachi 1:8
+      - Luke 12:4-5
+    points:
+      - pointTime: "1:05:25.94"
+        pointText: Presenting the same poor gift to a governor exposes differing standards of respect.
+      - pointTime: "1:07:09.96"
+        pointText: Preparation for a powerful official is contrasted with inattentive worship.
+      - pointTime: "1:08:51.9"
+        pointText: Visible human authority is contrasted with treating God as an optional idea.
+      - pointTime: "1:10:58.38"
+        pointText: Losing the sense of God's greatness is described as leaving worship religious in appearance but lifeless.
+      - pointTime: "1:11:24.48"
+        pointText: The preacher includes the congregation among those who have given God less than wholehearted honor.
+  - chapterId: c20260215-perfect-christ
+    chapterTitle: Christ Is the Perfect Priest, Son and Sacrifice
+    chapterKind: sermon
+    chapterStart: "1:11:43.2"
+    chapterEnd: "1:18:36.6"
+    points:
+      - pointTime: "1:11:43.46"
+        pointText: Malachi's failed priests point toward the need for Christ's perfect service.
+      - pointTime: "1:13:24.8"
+        pointText: Christ's obedience in Gethsemane is contrasted with following personal feelings and seeking an easier path.
+      - pointTime: "1:14:31.6"
+        pointText: Christ is presented as the perfect sacrifice rather than another defective offering.
+      - pointTime: "1:15:08.26"
+        pointText: Religious activities cannot pay for sin or add to Christ's sufficient work.
+      - pointTime: "1:16:54.16"
+        pointText: Seeing Christ's love changes giving from an imposed duty into a willing response.
+  - chapterId: c20260215-return-crown
+    chapterTitle: Return the Crown to the King
+    chapterKind: sermon
+    chapterStart: "1:18:36.6"
+    chapterEnd: "1:21:07.95"
+    points:
+      - pointTime: "1:18:40.62"
+        pointText: The conclusion asks who occupies the throne of one's life.
+      - pointTime: "1:19:10.82"
+        pointText: Honest prayer replaces excuses and admits giving God leftovers.
+      - pointTime: "1:19:49.18"
+        pointText: The preacher urges prioritizing time with God rather than fitting him into the remains of a schedule.
+      - pointTime: "1:20:07.9"
+        pointText: Fear of God is contrasted with fear of relatives' or colleagues' opinions.
+      - pointTime: "1:20:47.12"
+        pointText: Response is grounded in God's prior love rather than an attempt to earn it.
+  - chapterId: c20260215-response-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:21:07.95"
+    chapterEnd: "1:33:09.252"
+    points:
+      - pointTime: "1:21:08.2"
+        pointText: Prayer confesses neglect and asks for a life changed by the perfect sacrifice of Christ.
+      - pointTime: "1:23:39.34"
+        pointText: The congregation is invited to pray in response to the sermon.
+      - pointTime: "1:24:03.08"
+        pointText: Intercession concerns Stephen Tong's ministry.
+      - pointTime: "1:26:38.94"
+        pointText: I Am Thine, O Lord is introduced as a response of dedication.
+      - pointTime: "1:30:45.28"
+        pointText: Historical notices invite church service, guitar lessons, elderly visitation and gospel-rally participation.
+markers:
+  - markerTime: "34:06.15"
+    markerNote: "Guest preacher identifies himself as Lu Ting Sun from the Chinese congregation; do not attribute this sermon to Pastor Yong. Working title uses the dated recording title; confirm the sermon title. Durations and anchors use supplied faster-whisper audio evidence, not fresh video or listening checks."
+  - markerTime: "37:24.2"
+    markerEnd: "44:57.6"
+    markerNote: "Supplied ASR reduces this span to repeated Thank you fragments. No content was reconstructed from it; check captions/audio for the first movement's missing details. This is not proof of silence in the recording."
