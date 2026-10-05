@@ -1,0 +1,151 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: That Piece of Paper
+serviceDate: 2025-09-28
+status: draft
+sermonDescription: Jesus teaching without conventional rabbinical credentials introduces the value and limits of formal qualifications. The preacher describes differing church recognition systems, respects disciplined education and warns against turning it into an end in itself. Training should serve the task of approaching truth and living faithfully. John 7 connects discernment with seeking God's will rather than personal glory, while Christ's Sabbath argument calls for right judgment beyond appearances, titles or the authority of a favored teacher.
+sermonScripture:
+  - John 7:14-24
+  - 1 John 5:19-21
+  - John 17:17
+sermonTopics:
+  - discernment
+  - truth
+  - discipleship
+uploads:
+  - youtubeId: na6aHnDyMMA
+    uploadDuration: "1:55:17.619"
+chapters:
+  - chapterId: c20250928-worship
+    chapterTitle: Trust God through Surrender and Active Participation
+    chapterKind: opening
+    chapterStart: "0:17.35"
+    chapterEnd: "36:54.8"
+    chapterScripture:
+      - Psalms 146:1-5
+      - Proverbs 21:1-31
+      - John 7:14-24
+      - 1 John 5:19-21
+    points:
+      - pointTime: "20:08.42"
+        pointText: Damawan's reflection makes trust a shift from personal ambitions toward God as the center of life.
+      - pointTime: "20:27.34"
+        pointText: Trust includes surrendering control rather than retaining a guarantee that life follows one's preferred plan.
+      - pointTime: "20:40.9"
+        pointText: Trust grows through a process that may include hardship and release of self-reliance.
+      - pointTime: "21:00.7"
+        pointText: Trusting is distinguished from spectating through active participation in God's work.
+  - chapterId: c20250928-endtimes-question
+    chapterTitle: End-Time Debates Should Not Replace Faithfulness Now
+    chapterKind: qa
+    chapterStart: "36:54.8"
+    chapterEnd: "47:59.8"
+    points:
+      - pointTime: "39:07.04"
+        pointText: Dispensational schemes are contrasted with the preacher's covenantal understanding of one consistent redemptive plan.
+      - pointTime: "44:19.32"
+        pointText: Competing millennium schemes are acknowledged while present obedience remains the congregation's emphasis.
+      - pointTime: "46:01.14"
+        pointText: Expected suffering is treated as part of growing faith rather than a reason to construct a guaranteed escape timeline.
+      - pointTime: "47:45.76"
+        pointText: Theological positioning can produce hostility and division when treated as the overriding concern.
+  - chapterId: c20250928-timing-recap
+    chapterTitle: Exercise Wisdom within God's Revealed Principles
+    chapterKind: sermon
+    chapterStart: "47:59.8"
+    chapterEnd: "54:10.6"
+    chapterScripture:
+      - John 7:1-13
+    points:
+      - pointTime: "48:00.04"
+        pointText: The previous lesson's recap considers Christ's timing in a world that can oppose truth violently.
+      - pointTime: "52:54.44"
+        pointText: Humble, shared prayer and cautious steps are offered as a way to exercise wisdom through the principles of Scripture.
+  - chapterId: c20250928-uncredentialed-christ
+    chapterTitle: Christ and His Witnesses Are Not Products of an Institution
+    chapterKind: sermon
+    chapterStart: "54:10.6"
+    chapterEnd: "1:04:57.8"
+    chapterScripture:
+      - John 7:14-15
+      - Acts 4:5-13
+    points:
+      - pointTime: "54:54.34"
+        pointText: The crowd's response to Jesus asks whether the sought-after credential should determine the right to teach.
+      - pointTime: "56:47.56"
+        pointText: Peter and John's boldness challenges expectations attached to common, formally untrained people.
+      - pointTime: "1:00:07.12"
+        pointText: Rapid change in education and work raises the question of what a qualification actually establishes.
+      - pointTime: "1:03:17.9"
+        pointText: Successful people without degrees illustrate why qualifications cannot function as a universal measure of ability.
+  - chapterId: c20250928-church-recognition
+    chapterTitle: Church Qualifications and Recognition Differ across Systems
+    chapterKind: sermon
+    chapterStart: "1:04:57.8"
+    chapterEnd: "1:18:33.14"
+    chapterScripture:
+      - Acts 22:3
+    points:
+      - pointTime: "1:04:58.06"
+        pointText: Paul's intensive training illustrates the strong expectations that existed alongside the ordinary apostles' backgrounds.
+      - pointTime: "1:07:52.16"
+        pointText: A centralized recognition system is contrasted with the varying structures of Protestant churches.
+      - pointTime: "1:09:45.82"
+        pointText: Ordination within one church does not automatically confer authority within another.
+      - pointTime: "1:16:53.34"
+        pointText: The congregation's synod-based process is described as evaluating a person's life and teaching rather than one fixed degree alone.
+  - chapterId: c20250928-training-limits
+    chapterTitle: Value Training without Letting It Become the Goal
+    chapterKind: sermon
+    chapterStart: "1:18:33.14"
+    chapterEnd: "1:26:38.18"
+    points:
+      - pointTime: "1:19:03.9"
+        pointText: Formal education can provide coverage, standards and recognized preparation for a field.
+      - pointTime: "1:20:00.16"
+        pointText: Training also develops critical skills such as organization, time management and working with people.
+      - pointTime: "1:21:25.32"
+        pointText: Education can consume time and money without serving an actual task or addressing current needs.
+      - pointTime: "1:21:55.2"
+        pointText: Academic systems may become detached from reality or conceal conduct inconsistent with Christian faith.
+      - pointTime: "1:23:36.64"
+        pointText: A denominational joke exposes how increasingly narrow distinctions can displace care for another person.
+  - chapterId: c20250928-truth-glory
+    chapterTitle: Seek God's Truth and Glory beyond Appearances
+    chapterKind: sermon
+    chapterStart: "1:26:38.18"
+    chapterEnd: "1:38:05.0"
+    chapterScripture:
+      - John 7:16-24
+      - 1 John 5:20
+      - John 17:17
+      - John 5:39-44
+    points:
+      - pointTime: "1:26:38.18"
+        pointText: Training is a tool for a task, so worshiping the tool mistakes its purpose.
+      - pointTime: "1:28:46.54"
+        pointText: The decisive question is whether a teaching is true rather than the number of degrees held by its speaker.
+      - pointTime: "1:30:27.1"
+        pointText: Recognizing the limits of one's own knowledge can create a healthy appreciation for systematic learning.
+      - pointTime: "1:32:41.72"
+        pointText: Jesus connects recognizing his teaching with a will directed toward doing God's will.
+      - pointTime: "1:35:07.58"
+        pointText: Seeking personal glory explains why extensive study can coexist with being far from God.
+      - pointTime: "1:37:08.74"
+        pointText: Christ's Sabbath example concludes with right judgment rather than judgment by appearances.
+  - chapterId: c20250928-response
+    chapterTitle: Learn with Humility and Put Truth into Service
+    chapterKind: closing
+    chapterStart: "1:38:05.0"
+    chapterEnd: "1:55:17.619"
+    points:
+      - pointTime: "1:38:05.0"
+        pointText: Response prayer asks for a heart seeking God's will and glory so that learning equips faithful life.
+      - pointTime: "1:42:33.92"
+        pointText: Prayer connects genuine mutual love with being ready to provide practical help.
+markers:
+  - markerTime: "54:10.6"
+    markerNote: "That Piece of Paper follows the source title and the preacher's explicit topic. Timings and duration use supplied faster-whisper audio evidence and await fresh media verification."
+  - markerTime: "39:07.04"
+    markerNote: "End-time positions and church-recognition requirements are summarized as the preacher's account, not exhaustive descriptions of every tradition. Quoted numbers, historical and academic claims are not independently verified."
