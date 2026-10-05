@@ -1,0 +1,143 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Hard Sayings
+serviceDate: 2025-09-07
+status: draft
+sermonDescription: Christ's hard sayings are presented as difficult to accept rather than always difficult to understand. His words give spirit and life, including present fullness as well as eternal hope, yet require commitment that a consumer approach to faith resists. Disciples leaving and Peter remaining challenge reliance on popularity or attendance as measures of truth. Peter's movement from belief toward knowing Christ encourages receiving the whole word, trusting grace after failure and continuing in costly obedience.
+sermonScripture:
+  - John 6:60-71
+  - Luke 9:57-62
+  - Matthew 7:13-14
+sermonTopics:
+  - discipleship
+  - faith
+  - eternal-life
+uploads:
+  - youtubeId: flxmtgBEo6g
+    uploadDuration: "1:47:05.310"
+chapters:
+  - chapterId: c20250907-worship
+    chapterTitle: Receive the Word That Sustains the Daily Battle
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "34:14.86"
+    chapterScripture:
+      - Psalms 144:1-2
+      - Proverbs 19:1-29
+      - John 6:60-71
+      - Luke 9:57-62
+    points:
+      - pointTime: "9:40.42"
+        pointText: Hadi connects the daily struggle against sin with Christ's leadership and the promised end of the battle.
+      - pointTime: "14:50.26"
+        pointText: God's word is framed as living light, nourishment and strength rather than a text to know at a distance.
+  - chapterId: c20250907-judgment-question
+    chapterTitle: Trust God's Justice without Claiming His Final Judgment
+    chapterKind: qa
+    chapterStart: "36:25.1"
+    chapterEnd: "49:20.56"
+    points:
+      - pointTime: "36:30.54"
+        pointText: A question asks how God judges people who have not heard the gospel.
+      - pointTime: "39:48.82"
+        pointText: Conscience and responsibility under Romans 2 are considered alongside debated interpretations of salvation.
+      - pointTime: "44:06.62"
+        pointText: God's justice is identified as a certainty to hold despite unanswered questions about particular cases.
+      - pointTime: "45:06.66"
+        pointText: Salvation through Christ is affirmed while the preacher declines to claim knowledge of every individual's final destiny.
+      - pointTime: "48:32.72"
+        pointText: Surprise at final judgment is used to challenge confident condemnation of other people.
+  - chapterId: c20250907-commitment-recap
+    chapterTitle: Christ Calls for a Changed Life, Not an Added Benefit
+    chapterKind: sermon
+    chapterStart: "49:20.56"
+    chapterEnd: "53:41.5"
+    chapterScripture:
+      - John 6:41-59
+    points:
+      - pointTime: "50:02.0"
+        pointText: Consumer expectations of faith are contrasted with reality grounded in God rather than preference.
+      - pointTime: "51:44.94"
+        pointText: Eating Christ's flesh and drinking his blood is recapped as trusting his cross and entering a living relationship of commitment.
+      - pointTime: "52:42.1"
+        pointText: Belief is distinguished from simply adding Jesus to an otherwise unchanged life.
+  - chapterId: c20250907-life-demand
+    chapterTitle: Receive Christ's Life and His Uncomfortable Demands
+    chapterKind: sermon
+    chapterStart: "53:41.5"
+    chapterEnd: "1:12:19.0"
+    chapterScripture:
+      - John 6:60-65
+      - John 10:10
+      - John 15:16
+      - Luke 9:57-62
+    points:
+      - pointTime: "55:49.12"
+        pointText: Hard sayings can be clear in meaning while difficult to accept and put into practice.
+      - pointTime: "58:30.42"
+        pointText: Christ's words are described as spirit and life rather than merely another human account of religion.
+      - pointTime: "1:01:09.32"
+        pointText: Abundant life includes the present, not only struggling through earth in hope of a distant future.
+      - pointTime: "1:03:48.08"
+        pointText: Wholesome creativity and enjoyment are claimed as God's gifts rather than assuming that only wrongdoing makes life lively.
+      - pointTime: "1:05:12.4"
+        pointText: The Father's drawing challenges an account of faith centered entirely on personal self-determination.
+      - pointTime: "1:06:40.66"
+        pointText: Christ's choosing is considered alongside the disciple's assumption of being the one in control.
+      - pointTime: "1:08:54.0"
+        pointText: Luke's costly calls to follow challenge postponing discipleship until other priorities have been settled.
+  - chapterId: c20250907-whole-word
+    chapterTitle: Do Not Cut Difficult Teachings out of Faith
+    chapterKind: sermon
+    chapterStart: "1:12:19.0"
+    chapterEnd: "1:21:05.68"
+    chapterScripture:
+      - John 6:66-67
+      - Matthew 7:13-14
+    points:
+      - pointTime: "1:12:23.36"
+        pointText: A Bible with holes illustrates keeping preferred teachings while discarding the ones that offend.
+      - pointTime: "1:12:56.26"
+        pointText: Disciples leaving shows that receiving Christ's benefits does not guarantee willingness to follow his words.
+      - pointTime: "1:14:00.48"
+        pointText: Rejection of corrective counsel illustrates the difference between wanting sympathy and accepting repentance.
+      - pointTime: "1:17:21.16"
+        pointText: Dramatic loss of followers challenges audience growth as a sufficient test of faithful ministry.
+      - pointTime: "1:19:07.5"
+        pointText: The narrow gate directs self-examination rather than resting confidence in being among the many.
+  - chapterId: c20250907-believe-know
+    chapterTitle: Remain with Christ and Grow from Belief toward Knowing
+    chapterKind: sermon
+    chapterStart: "1:21:05.68"
+    chapterEnd: "1:31:30.66"
+    chapterScripture:
+      - John 6:68-71
+    points:
+      - pointTime: "1:21:16.0"
+        pointText: Peter's response asks where else to go when Christ alone has the words of eternal life.
+      - pointTime: "1:22:02.3"
+        pointText: The congregation is invited to examine other accounts of life honestly rather than rely on unconsidered inherited confidence.
+      - pointTime: "1:25:52.4"
+        pointText: Peter's confession describes belief developing into knowledge of Christ as the Holy One of God.
+      - pointTime: "1:27:34.06"
+        pointText: Following Christ's word in lived experience is presented as reinforcing confidence beyond merely repeating beliefs.
+      - pointTime: "1:30:59.06"
+        pointText: Imperfect disciples are encouraged to return after falling and continue through grace rather than discard the hard words.
+  - chapterId: c20250907-response-teachers
+    chapterTitle: Continue in Grace and Build Up the Next Generation
+    chapterKind: closing
+    chapterStart: "1:31:30.66"
+    chapterEnd: "1:47:05.310"
+    points:
+      - pointTime: "1:31:30.66"
+        pointText: Response prayer asks for humility to receive Christ's teaching even when many other people leave it behind.
+      - pointTime: "1:35:40.06"
+        pointText: Prayer for teachers connects patience and perseverance with building up the body of Christ and equipping the next generation.
+markers:
+  - markerTime: "34:14.86"
+    markerNote: "Technical setup and introductory banter precede the substantive question; that interval is outside the navigable chapter ranges. Anchors and duration use supplied faster-whisper audio evidence and await fresh media checks."
+  - markerTime: "45:06.66"
+    markerNote: "Possible salvation mechanisms for people who have not heard are explicitly the preacher's opinion or speculation, not presented as a settled doctrine or a documented scriptural sequence."
+  - markerTime: "55:49.12"
+    markerNote: "Hard Sayings comes from the source title and announced topic. Reported misconduct, quotation attributions, population estimates and historical or medical examples have not been independently verified."
