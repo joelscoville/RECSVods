@@ -1,0 +1,140 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The First
+serviceDate: 2025-04-06
+status: draft
+sermonDescription: Jesus' first sign at Cana reveals divine purpose through a quiet miracle at a joyful occasion. The preacher considers Mary's response, the servants' obedience and God's goodness beyond the idea of saving the best only for later. Joy belongs within Christian life rather than exclusively to secular pleasure. Acknowledging suffering and the need for empathy, the message calls believers to choose joy daily on the secure foundation of belonging to God and to discover delight through faithful service.
+sermonScripture:
+  - John 2:1-12
+  - Philippians 4:4
+sermonTopics:
+  - joy
+  - discipleship
+  - service
+uploads:
+  - youtubeId: IexHaZ1R03M
+    uploadDuration: "1:04:47"
+chapters:
+  - chapterId: c20250406-everyday-question
+    chapterTitle: Glorify and Enjoy God beyond Church Activities
+    chapterKind: qa
+    chapterStart: "0:00.8"
+    chapterEnd: "15:51.8"
+    chapterScripture:
+      - Matthew 5:16
+      - John 1:35-51
+      - 1 Corinthians 1:26-29
+    points:
+      - pointTime: "5:09.88"
+        pointText: The question challenges separating glorifying God inside church from the rest of ordinary life.
+      - pointTime: "8:32.84"
+        pointText: Faithful work and conduct allow others to see good deeds and give glory to God.
+      - pointTime: "11:56.64"
+        pointText: The disciples' call is recalled as God's work through flawed people who become channels of practical blessing.
+      - pointTime: "13:39.12"
+        pointText: All believers are called into Christ's body even while some receive a particular pastoral vocation.
+  - chapterId: c20250406-cana
+    chapterTitle: Receive Christ's Purpose and Mary's Example of Trust
+    chapterKind: sermon
+    chapterStart: "15:51.8"
+    chapterEnd: "29:03.6"
+    chapterScripture:
+      - John 2:1-5
+      - John 19:26
+      - John 20:15
+      - Luke 2:48-51
+    points:
+      - pointTime: "17:03.44"
+        pointText: Artistic depictions of Cana illustrate how cultural assumptions can shape readers' imagination of biblical events.
+      - pointTime: "20:27.12"
+        pointText: Historical and linguistic context is used to distinguish Jesus' address to Mary from a modern expression of disrespect.
+      - pointTime: "23:55.12"
+        pointText: Christ's hour and the childhood temple account place his mission within the Father's purpose and timing.
+      - pointTime: "27:20.56"
+        pointText: Mary's submission and instruction to the servants illustrate trusting Christ without knowing precisely what he will do.
+  - chapterId: c20250406-obedience
+    chapterTitle: Obey Christ When His Way Seems Unusual
+    chapterKind: sermon
+    chapterStart: "29:03.6"
+    chapterEnd: "35:54.76"
+    chapterScripture:
+      - John 2:6-9
+      - Proverbs 3:5
+    points:
+      - pointTime: "29:03.6"
+        pointText: The servants act on instructions about ordinary purification jars without receiving a detailed explanation of the coming miracle.
+      - pointTime: "31:16.28"
+        pointText: Trusting Christ is contrasted with accepting only directions that fit one's prior understanding.
+      - pointTime: "34:12.72"
+        pointText: Increasing cultural disagreement raises the question of continued obedience when Christian convictions appear unusual to others.
+  - chapterId: c20250406-goodness
+    chapterTitle: God's Goodness Calls for Faith and Empathy in Suffering
+    chapterKind: sermon
+    chapterStart: "35:54.76"
+    chapterEnd: "42:25.04"
+    chapterScripture:
+      - John 2:10
+    points:
+      - pointTime: "35:54.76"
+        pointText: The quiet sign is distinguished from a spectacle designed merely to attract attention.
+      - pointTime: "37:37.6"
+        pointText: God's goodness is affirmed while acknowledging that people facing grief or illness may struggle to understand it.
+      - pointTime: "38:49.88"
+        pointText: Accompanying and grieving with sufferers is distinguished from immediately pressing theological explanations upon them.
+      - pointTime: "42:14.12"
+        pointText: Empathy and mutual encouragement are urged when faith's convictions are difficult to experience in present circumstances.
+  - chapterId: c20250406-joyful-sign
+    chapterTitle: Christ's First Sign Affirms Joy in the Lord
+    chapterKind: sermon
+    chapterStart: "42:25.04"
+    chapterEnd: "58:16.72"
+    chapterScripture:
+      - John 2:11-12
+      - Luke 7:34
+      - Philippians 4:4
+      - Galatians 5:22-23
+    points:
+      - pointTime: "43:37"
+        pointText: Choosing a wedding for the first sign is read as a deliberate affirmation of joy.
+      - pointTime: "47:54.48"
+        pointText: Traditional solemn images of Christ are distinguished from evidence of his participation in human celebration.
+      - pointTime: "51:18.6"
+        pointText: Rejoicing in the Lord and the Spirit's fruit place joy within Christian identity.
+      - pointTime: "53:04.64"
+        pointText: The appeal of sinful pleasure is acknowledged while rejecting the idea that wrongdoing is the only source of enjoyment.
+      - pointTime: "54:48.68"
+        pointText: Piper's Christian hedonism is discussed as delight in God rather than pleasure detached from him.
+      - pointTime: "56:33.6"
+        pointText: Musical gifts and resources for small churches illustrate joy found in creative service to others.
+  - chapterId: c20250406-choose-joy
+    chapterTitle: Choose Joy Daily because We Belong to God
+    chapterKind: sermon
+    chapterStart: "58:16.72"
+    chapterEnd: "1:03:17.04"
+    chapterScripture:
+      - Luke 10:17-20
+    points:
+      - pointTime: "58:49.12"
+        pointText: A saying attributed to Nouwen presents joy as a repeated choice rather than a feeling one passively waits to receive.
+      - pointTime: "1:00:20.6"
+        pointText: Choosing joy is grounded in belonging to God, not merely generating cheerful thoughts.
+      - pointTime: "1:01:43.84"
+        pointText: Christian bereavement is described through quiet assurance of reunion rather than denial of sadness.
+      - pointTime: "1:02:56.72"
+        pointText: The final appeal locates lasting joy in God's claim on a person's life beyond visible ministry success.
+  - chapterId: c20250406-response
+    chapterTitle: Let Truth Free Us to Rejoice and Serve
+    chapterKind: closing
+    chapterStart: "1:03:17.04"
+    chapterEnd: "1:04:47"
+    points:
+      - pointTime: "1:03:58.68"
+        pointText: Closing prayer asks for the courage and wisdom to choose joy through trust at life's daily crossroads.
+markers:
+  - markerTime: "0:00.8"
+    markerNote: "Verified channel metadata dates the undated source to April 6. The supplied evidence is YouTube auto-captions, so section seams and points remain coarse/provisional pending media checks."
+  - markerTime: "22:31.2"
+    markerNote: "Greek explanations, Mary's possible family connection, depictions of Catholic doctrine, historical claims and quotation attributions require review."
+  - markerTime: "1:01:43.84"
+    markerNote: "The returning seventy-two and joy in names written in heaven are Luke 10:17-20, despite the speaker tentatively saying Luke 11."
