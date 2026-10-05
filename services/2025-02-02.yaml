@@ -1,0 +1,139 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Life-Light
+serviceDate: 2025-02-02
+status: draft
+sermonDescription: >-
+  John's declaration of creation through Christ leads to God as the uncreated source of all things, then to Christ as life and light. Eternal life is held alongside present abundance, which is distinguished from accumulating money and possessions. The light calls believers into practical witness rather than withdrawing from the world's needs. Though that work involves struggle, Christ's victory grounds perseverance and a humble, joyful life that trusts his word beyond the surrounding culture's promises.
+sermonScripture:
+  - John 1:3-5
+  - Colossians 1:15-16
+  - John 10:10
+sermonTopics:
+  - knowing-god
+  - eternal-life
+  - joy
+uploads:
+  - youtubeId: fHtGJndznYk
+    uploadDuration: "1:00:34"
+chapters:
+  - chapterId: c20250202-word-recap
+    chapterTitle: Approach the God Who Cares with Childlike Trust
+    chapterKind: sermon
+    chapterStart: "0:06.56"
+    chapterEnd: "9:08.32"
+    chapterScripture:
+      - John 1:1-2
+      - Matthew 18:3
+    points:
+      - pointTime: "3:31.28"
+        pointText: Childlike humility opens a lifelong exploration of God rather than assuming age or achievement removes the need to learn.
+      - pointTime: "5:15.04"
+        pointText: The Word's active involvement is distinguished from a creator who abandons the universe after making it.
+      - pointTime: "6:56.88"
+        pointText: Recognizing Christ as God and oneself as beloved changes the meaning of faith beyond following a moral teacher.
+  - chapterId: c20250202-creator
+    chapterTitle: Christ Is the Uncreated Source of All Things
+    chapterKind: sermon
+    chapterStart: "9:08.32"
+    chapterEnd: "26:22.48"
+    chapterScripture:
+      - John 1:3
+      - Colossians 1:15-16
+      - Exodus 3:13-14
+    points:
+      - pointTime: "11:11.12"
+        pointText: Creation through Christ is connected with his preexistence rather than interpreting firstborn as the first created being.
+      - pointTime: "14:43.76"
+        pointText: Creating all that is made is used to distinguish Christ from the category of created things.
+      - pointTime: "17:16.48"
+        pointText: I am who I am introduces God's self-existence beyond the ordinary cause-and-effect questions asked of creatures.
+      - pointTime: "18:49.44"
+        pointText: Creation out of nothing is distinguished from shaping an existing material.
+      - pointTime: "22:14.08"
+        pointText: Human modification and breeding do not establish another independent creator in the preacher's argument.
+      - pointTime: "25:41.84"
+        pointText: Recognition of the Creator's difference calls for humility rather than confidence based on wealth, knowledge or even personal suffering.
+  - chapterId: c20250202-life
+    chapterTitle: Christ Gives Eternal and Abundant Life
+    chapterKind: sermon
+    chapterStart: "26:22.48"
+    chapterEnd: "46:15.52"
+    subchapters:
+      - chapterId: c20250202-eternal
+        chapterTitle: Eternal Life in the Son
+        chapterKind: sermon
+        chapterStart: "26:22.48"
+        chapterEnd: "33:31.76"
+        chapterScripture:
+          - John 1:4
+          - John 14:6
+          - 1 John 5:11-12
+        points:
+          - pointTime: "28:04.88"
+            pointText: Life is presented as central to Christ's identity alongside the way and the truth.
+          - pointTime: "29:07.04"
+            pointText: The Son's gift of eternal life is distinguished from religious systems that treat all paths as interchangeable.
+          - pointTime: "33:01.12"
+            pointText: Christ's unique saving role supplies the reason for evangelism rather than merely preference for a particular tradition.
+      - chapterId: c20250202-abundant
+        chapterTitle: Abundant Life Here and Now
+        chapterKind: sermon
+        chapterStart: "33:31.76"
+        chapterEnd: "46:15.52"
+        chapterScripture:
+          - John 10:10
+          - Proverbs 3:5
+          - Matthew 7:7-8
+        points:
+          - pointTime: "33:31.76"
+            pointText: Christ's promise of abundance applies to present life as well as the life to come.
+          - pointTime: "35:05.44"
+            pointText: Enjoying God becomes a question about how believers understand their actual daily existence.
+          - pointTime: "35:57.2"
+            pointText: The consumerist equation between more possessions and fuller life is challenged.
+          - pointTime: "41:02.8"
+            pointText: Survival needs are acknowledged while additional wealth is distinguished from guaranteed additional joy.
+          - pointTime: "42:48.24"
+            pointText: Lewis's contrasting wills illustrate the daily choice between trusting God and insisting on one's own way.
+          - pointTime: "44:31.36"
+            pointText: Seeking joy in God challenges transactional promises that giving money guarantees health or wealth.
+  - chapterId: c20250202-light
+    chapterTitle: Shine into Darkness with Confidence in Christ's Victory
+    chapterKind: sermon
+    chapterStart: "46:15.52"
+    chapterEnd: "59:08"
+    chapterScripture:
+      - John 1:4-5
+      - Matthew 5:14-16
+      - Ephesians 6:11-17
+      - 1 Peter 5:8
+    points:
+      - pointTime: "46:25.68"
+        pointText: The light's presence presupposes darkness and a need beyond unaided human solutions.
+      - pointTime: "51:23.2"
+        pointText: Missionary service and good works illustrate faith's outward influence rather than private withdrawal.
+      - pointTime: "53:27.76"
+        pointText: The lighthouse illustration calls for conduct that shines without constant self-advertisement.
+      - pointTime: "54:50.16"
+        pointText: Biblical armor imagery acknowledges the difficulty of faithful service and spiritual opposition.
+      - pointTime: "57:34.4"
+        pointText: The darkness not overcoming Christ's light grounds perseverance amid struggle.
+      - pointTime: "58:16.32"
+        pointText: Choosing trust is distinguished from judging the final outcome through how a difficult moment feels.
+  - chapterId: c20250202-response
+    chapterTitle: Receive Life and Become a Bearer of Light
+    chapterKind: closing
+    chapterStart: "59:08"
+    chapterEnd: "1:00:34"
+    points:
+      - pointTime: "59:08"
+        pointText: Closing prayer asks for freedom from pride and worldly distractions so believers can receive Christ's abundance and help others.
+markers:
+  - markerTime: "0:06.56"
+    markerNote: "Verified channel metadata dates the undated upload to February 2. The announcement redirects February 9 worship to the mother church during renovation, possibly for additional Sundays; March 2 later confirms the return."
+  - markerTime: "9:08.32"
+    markerNote: "Supplied evidence is YouTube auto-captions; timings await media checks. Creation comparisons, Greek explanations, quotation attributions and historical/medical/legal generalizations need factual review."
+  - markerTime: "29:07.04"
+    markerNote: "The eternal-life passage is 1 John 5:11-12 despite speech/captions giving 5:1."
