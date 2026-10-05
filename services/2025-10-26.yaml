@@ -1,0 +1,156 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: That First Stone
+serviceDate: 2025-10-26
+status: draft
+sermonDescription: The woman-caught-in-adultery account challenges selective accusation, self-righteousness and hypocrisy. Acknowledging the passage's manuscript uncertainty, the preacher reads its principles alongside Scripture's wider witness. Jesus' challenge exposes shared sin, while Romans 8 illuminates freedom from condemnation. Mercy is not permission to continue wrongdoing; present grace and final accountability are held together. Listeners are urged to correct their natural bias toward judgment by leading with grace and returning to Christ after failure.
+sermonScripture:
+  - John 8:1-11
+  - Romans 8:1-4
+  - 1 Corinthians 6:15-20
+sermonTopics:
+  - forgiveness
+  - hypocrisy
+  - repentance
+uploads:
+  - youtubeId: 7CHtvV2wQZw
+    uploadDuration: "1:51:17.153"
+chapters:
+  - chapterId: c20251026-worship
+    chapterTitle: Worship and Our Responsibility in the Father's World
+    chapterKind: opening
+    chapterStart: "0:00"
+    chapterEnd: "31:32.65"
+    chapterScripture:
+      - Psalms 149:1-5
+      - Proverbs 24:1-34
+      - John 8:1-11
+      - Romans 8:1-4
+    points:
+      - pointTime: "8:11.44"
+        pointText: Samantha distinguishes praise of creation from escaping the responsibility to be salt and light in the world.
+      - pointTime: "22:57.7"
+        pointText: The accusers' stepping back gives a small sign that they recognize their own sin rather than condemning another without reflection.
+  - chapterId: c20251026-receptive-service
+    chapterTitle: Receive God's Word and Notice Service beyond Our Comfort
+    chapterKind: other
+    chapterStart: "31:32.65"
+    chapterEnd: "44:35.4"
+    points:
+      - pointTime: "32:22.82"
+        pointText: A capped bottle beneath a waterfall illustrates how a closed heart can resist even abundant teaching.
+      - pointTime: "33:08.52"
+        pointText: An open heart is presented as more important for receiving God's word than an impressive setting.
+      - pointTime: "35:09.32"
+        pointText: An impractical chicken project illustrates the need to understand real local conditions rather than assume a distant solution works.
+      - pointTime: "37:17.78"
+        pointText: A missionary teacher's tribute presents costly educational service as a witness beyond the congregation's comfortable surroundings.
+  - chapterId: c20251026-recap
+    chapterTitle: Receive the Life Christ Offers without Blocking Its Work
+    chapterKind: sermon
+    chapterStart: "44:35.4"
+    chapterEnd: "49:34.62"
+    chapterScripture:
+      - John 7:37-39
+    points:
+      - pointTime: "45:36.02"
+        pointText: Christ's invitation to the thirsty links spiritual need with coming to him for life.
+      - pointTime: "46:00.64"
+        pointText: Receiving the indwelling Spirit is connected with rivers of life that should reach beyond oneself.
+      - pointTime: "47:25.68"
+        pointText: The gap between that promise and ordinary conduct is examined through the choice to resist transformation.
+  - chapterId: c20251026-text-law
+    chapterTitle: Read the Account with Its Textual and Legal Context
+    chapterKind: sermon
+    chapterStart: "49:34.62"
+    chapterEnd: "1:01:52.1"
+    chapterScripture:
+      - John 7:53-8:11
+      - Leviticus 20:10
+      - Deuteronomy 22:22
+    points:
+      - pointTime: "50:02.04"
+        pointText: The manuscript note introduces uncertainty about the account's place in John's original Gospel.
+      - pointTime: "51:11.56"
+        pointText: The preacher distinguishes textual debate from the account's consistency with wider biblical principles.
+      - pointTime: "54:21.02"
+        pointText: Israel's civil and ceremonial laws are distinguished from continuing moral obligations.
+      - pointTime: "55:35.52"
+        pointText: Old Testament law is understood as pointing toward Christ's fuller revelation rather than functioning independently of him.
+  - chapterId: c20251026-trap-hypocrisy
+    chapterTitle: Expose Selective Accusation and Hypocrisy
+    chapterKind: sermon
+    chapterStart: "1:01:52.1"
+    chapterEnd: "1:16:28.4"
+    chapterScripture:
+      - John 8:3-6
+      - 1 Corinthians 6:15-20
+      - Matthew 23
+    points:
+      - pointTime: "1:02:13.72"
+        pointText: Scripture, rather than a film's creative details, establishes that the accusation was intended to test Jesus.
+      - pointTime: "1:04:13.24"
+        pointText: The absent man exposes a selective application of a law directed toward both participants.
+      - pointTime: "1:07:02.8"
+        pointText: Paul's account of the body as God's temple connects sexual conduct with belonging and responsibility.
+      - pointTime: "1:09:37.28"
+        pointText: Fleeing temptation challenges the assumption that strength, wisdom or spiritual reputation make someone immune.
+      - pointTime: "1:11:02.94"
+        pointText: Self-righteousness is distinguished from hypocrisy, while both damage how people respond to sin.
+  - chapterId: c20251026-first-stone
+    chapterTitle: Shared Sin Removes the Claim to Throw the First Stone
+    chapterKind: sermon
+    chapterStart: "1:16:28.4"
+    chapterEnd: "1:23:28.04"
+    chapterScripture:
+      - John 8:7-9
+      - Matthew 5:27-28
+    points:
+      - pointTime: "1:16:34.52"
+        pointText: The preacher directs attention back to the shared condition of sin rather than superiority over the accused.
+      - pointTime: "1:18:05.46"
+        pointText: Jesus' challenge prompts the accusers to examine themselves, with the oldest leaving first.
+      - pointTime: "1:19:47.64"
+        pointText: Truth exposes the mob's excitement and the false comfort of condemning another without facing oneself.
+      - pointTime: "1:21:27.94"
+        pointText: Living in truth can release people from damaging choices, while pride can still resist what is plain.
+  - chapterId: c20251026-grace-accountability
+    chapterTitle: Lead with Grace without Taking Mercy for Granted
+    chapterKind: sermon
+    chapterStart: "1:23:28.04"
+    chapterEnd: "1:33:37.38"
+    chapterScripture:
+      - John 8:10-11
+      - Romans 8:1-4
+      - John 9:4
+    points:
+      - pointTime: "1:23:41.58"
+        pointText: Condemnation is explained as judging someone beyond recovery, against Christ's offer of release.
+      - pointTime: "1:25:58.24"
+        pointText: Romans 8 grounds freedom from condemnation in Christ rather than innocence established by personal effort.
+      - pointTime: "1:26:36.98"
+        pointText: The instruction to sin no more prevents interpreting mercy as approval of continuing wrongdoing.
+      - pointTime: "1:29:26.48"
+        pointText: Present grace calls for a gracious response to other people rather than self-appointed condemnation.
+      - pointTime: "1:32:26.6"
+        pointText: Correcting a natural navigation bias illustrates deliberately correcting the tendency toward harsh judgment.
+      - pointTime: "1:32:37.02"
+        pointText: Final accountability remains real, so mercy should not be treated as indefinite permission to ignore sin.
+  - chapterId: c20251026-response
+    chapterTitle: Return to Christ and Extend His Grace
+    chapterKind: closing
+    chapterStart: "1:33:37.38"
+    chapterEnd: "1:51:17.153"
+    points:
+      - pointTime: "1:34:31.42"
+        pointText: Prayer asks for repentance after failure and freedom from condemning oneself or other people.
+      - pointTime: "1:39:34.68"
+        pointText: Shared prayer connects comfortable circumstances with responsibility to become part of God's help for the surrounding world.
+markers:
+  - markerTime: "49:34.62"
+    markerNote: "That First Stone comes from the source upload title. The sermon explicitly discusses manuscript uncertainty around John 7:53-8:11. Timing and duration use supplied audio evidence and await fresh media checks."
+  - markerTime: "40:55.42"
+    markerNote: "The tribute's English framing is intelligible, but the subsequent teacher interview has mixed-language and repetitive ASR. Do not reconstruct uncertain names or exact translated claims."
+  - markerTime: "1:02:36.72"
+    markerNote: "Speculations about the woman's identity, what Jesus wrote, and historical or reported misconduct examples remain attributed. The Jesus of Nazareth dramatization is explicitly distinguished from Scripture."
