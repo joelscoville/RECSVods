@@ -1,0 +1,157 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Created for Good Works
+serviceDate: 2025-06-08
+status: draft
+sermonDescription: Brother Hadi reads Ephesians 2 as a movement from salvation by grace through faith to a life of good works. God's work in us gives new life and identity; his work for us gives purpose; his work through us empowers faithful action. Faith is the root and works its fruit, not a competing way to earn salvation. Ordinary gifts, daily responsibilities and service to others become opportunities to live as God's workmanship and trust his continuing work.
+sermonScripture:
+  - Ephesians 2:1-10
+  - 2 Corinthians 5:16-19
+sermonTopics:
+  - salvation
+  - service
+  - sanctification
+uploads:
+  - youtubeId: YNr2pPrxorA
+    uploadDuration: "1:47:50.403"
+chapters:
+  - chapterId: c20250608-worship
+    chapterTitle: Give Thanks and Become Instruments of Peace
+    chapterKind: opening
+    chapterStart: "1:06.3"
+    chapterEnd: "32:46.64"
+    chapterScripture:
+      - Psalms 108:1-4
+      - Proverbs 6:1-35
+      - Ephesians 2:1-22
+      - 2 Corinthians 5:16-19
+    points:
+      - pointTime: "8:52.74"
+        pointText: Thanksgiving is grounded in God's constant faithfulness rather than assuming life must first become calm.
+      - pointTime: "25:34.36"
+        pointText: Spiritual courage is distinguished from force and pride, directing worship toward faithful obedience.
+      - pointTime: "29:07.78"
+        pointText: The worship reflection asks for changed lives sent as instruments of peace rather than passive listening alone.
+  - chapterId: c20250608-grace-through-faith
+    chapterTitle: By Grace through Faith
+    chapterKind: sermon
+    chapterStart: "32:46.64"
+    chapterEnd: "40:54.04"
+    chapterScripture:
+      - Ephesians 2:1-10
+    points:
+      - pointTime: "37:02.14"
+        pointText: The announced outline distinguishes the background of salvation by grace from the purpose of being created for good works.
+      - pointTime: "38:42.44"
+        pointText: God's mercy changes those dead in sin into people made alive with Christ.
+      - pointTime: "39:31.36"
+        pointText: Salvation is received as God's gift through faith rather than a human achievement that permits boasting.
+      - pointTime: "40:25.62"
+        pointText: The change in spiritual nature and identity is connected with walking with God in purpose and meaning.
+  - chapterId: c20250608-created-for-good
+    chapterTitle: Created for Good
+    chapterKind: sermon
+    chapterStart: "40:54.04"
+    chapterEnd: "1:32:08.86"
+    subchapters:
+      - chapterId: c20250608-work-in-us
+        chapterTitle: God's Work in Us
+        chapterKind: sermon
+        chapterStart: "40:54.04"
+        chapterEnd: "51:38.3"
+        chapterScripture:
+          - Ephesians 2:10
+          - 2 Corinthians 5:17
+          - John 3:3
+        points:
+          - pointTime: "42:16.68"
+            pointText: God's initiative within people precedes their ability to serve him or produce good works.
+          - pointTime: "43:50.06"
+            pointText: A severed branch illustrates outward activity without connection to the source of spiritual life.
+          - pointTime: "46:17.94"
+            pointText: Union with Christ is described as new creation, bringing renewed mind, heart and will.
+          - pointTime: "48:02.8"
+            pointText: The workmanship image portrays a life intentionally shaped by God as a developing work of art.
+          - pointTime: "49:48.74"
+            pointText: The reflection asks about actual spiritual rebirth rather than relying on a nominal Christian identity.
+      - chapterId: c20250608-work-for-us
+        chapterTitle: God's Work for Us
+        chapterKind: sermon
+        chapterStart: "51:38.3"
+        chapterEnd: "1:08:49.84"
+        chapterScripture:
+          - Ephesians 2:10
+          - Matthew 5:16
+          - John 4:34
+          - Matthew 7:19-21
+        points:
+          - pointTime: "52:19.96"
+            pointText: Good works are defined through God's character, benefit to others and effort empowered by God.
+          - pointTime: "53:40.68"
+            pointText: Service is presented as an active lifestyle responding to grace rather than a one-off activity.
+          - pointTime: "54:07.1"
+            pointText: Good works are connected with spiritual nourishment, evidence of faith and the mission of growing in Christlikeness.
+          - pointTime: "57:30.36"
+            pointText: The apparent conflict between faith alone and the importance of works becomes the focus of the congregation's poll.
+          - pointTime: "1:06:58.58"
+            pointText: The tree illustration distinguishes faith as the root of justification from works as its living fruit.
+          - pointTime: "1:08:19.32"
+            pointText: A saying attributed to Calvin expresses that justifying faith is accompanied by works without making them the basis of salvation.
+      - chapterId: c20250608-work-through-us
+        chapterTitle: God's Work through Us
+        chapterKind: sermon
+        chapterStart: "1:08:49.84"
+        chapterEnd: "1:32:08.86"
+        chapterScripture:
+          - Ephesians 1:4
+          - Philippians 2:12-13
+          - Matthew 25:14-30
+          - Matthew 7:13-14
+          - Philippians 1:6
+        points:
+          - pointTime: "1:08:49.84"
+            pointText: God's prepared purpose includes empowering people to live the good works to which he calls them.
+          - pointTime: "1:10:39.46"
+            pointText: Working out salvation is held together with God producing both the desire and strength to act.
+          - pointTime: "1:12:23.78"
+            pointText: The talents parable connects different gifts with accountability for time, treasure and abilities.
+          - pointTime: "1:14:04.32"
+            pointText: Sanctification is described as lifelong formation rather than an instantaneous finished transformation.
+          - pointTime: "1:14:54.96"
+            pointText: Identity as God's child is presented as the source of action rather than actions earning that identity.
+          - pointTime: "1:18:44.1"
+            pointText: The narrow way challenges equating an easy or popular path with the life Christ calls people to receive.
+          - pointTime: "1:21:12.26"
+            pointText: Guidelines attributed to Keller connect good work with serving people, community and one's field with competence, ethics and witness to Christ.
+          - pointTime: "1:27:54.44"
+            pointText: Children's books, patient visits and mentoring illustrate different ordinary gifts becoming practical service.
+          - pointTime: "1:29:59.96"
+            pointText: God's enabling and promise to complete his work answer feelings of being unqualified for service.
+  - chapterId: c20250608-final-invitation
+    chapterTitle: Live Your Identity, Walk in the Light and Rest in God
+    chapterKind: sermon
+    chapterStart: "1:32:08.86"
+    chapterEnd: "1:35:11.9"
+    points:
+      - pointTime: "1:32:29.94"
+        pointText: The first closing invitation is to let identity as God's child shape daily choices and behavior.
+      - pointTime: "1:33:11.86"
+        pointText: The second invitation is to begin wholeheartedly with one's present gifts rather than waiting for ideal conditions or human approval.
+      - pointTime: "1:33:48.98"
+        pointText: The third invitation is to rest in God's knowledge and shaping purpose amid life's unanswered questions.
+  - chapterId: c20250608-response
+    chapterTitle: Walk Faithfully in the Good Works Prepared for Us
+    chapterKind: closing
+    chapterStart: "1:35:11.9"
+    chapterEnd: "1:47:50.403"
+    points:
+      - pointTime: "1:35:11.9"
+        pointText: Response prayer asks for forgiveness, renewed direction and faithful living as God's workmanship.
+      - pointTime: "1:42:48.72"
+        pointText: The final worship reflection connects the journey of workmanship with continued growth rather than standing still.
+markers:
+  - markerTime: "32:46.64"
+    markerNote: "The source title cites John 4:1-26, but Hadi explicitly bases this sermon on Ephesians 2:1-10; overall links follow the actual preaching and supplemental reading. Source title supplies Created for Good Works where the spoken introduction is clipped."
+  - markerTime: "47:11.88"
+    markerNote: "Greek-word explanations, quotations attributed to Stott, Calvin and Keller, and proper names need factual/media review. Audio-ASR duration and anchors await fresh media checks."
