@@ -1,0 +1,119 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Agnus Dei
+serviceDate: 2025-03-23
+status: draft
+sermonDescription: >-
+  John the Baptist's identification of Jesus as the Lamb of God connects Christ with the Passover and God's plan across history. The preacher contrasts sacrificial humility with familiar symbols of power, then follows three movements: the plan transcends time and space, must be revealed and must be shared. Believers receive purpose within that plan and become witnesses who prepare others to receive Christ through truthful proclamation, kindness and ordinary service rather than claiming to control conversion.
+sermonScripture:
+  - John 1:29-34
+  - Exodus 12:1-13
+  - Philippians 2:5-8
+sermonTopics:
+  - salvation
+  - knowing-god
+  - mission
+uploads:
+  - youtubeId: TzCVHH_SLSI
+    uploadDuration: "1:01:16"
+chapters:
+  - chapterId: c20250323-example-recap
+    chapterTitle: Learn Christlikeness without Exalting Human Leaders
+    chapterKind: sermon
+    chapterStart: "0:00.24"
+    chapterEnd: "11:10.48"
+    chapterScripture:
+      - John 1:19-28
+    points:
+      - pointTime: "5:04.72"
+        pointText: John's refusal to claim Christ's place challenges treating admired leaders as beyond human fallenness.
+      - pointTime: "6:15.6"
+        pointText: Learning Christlikeness from a living example is distinguished from copying or venerating everything about that person.
+      - pointTime: "9:59.44"
+        pointText: Small acts performed with great love make faithful service possible without extraordinary status.
+  - chapterId: c20250323-plan
+    chapterTitle: The Lamb of God Reveals an Overarching Plan
+    chapterKind: sermon
+    chapterStart: "11:10.48"
+    chapterEnd: "58:49.12"
+    subchapters:
+      - chapterId: c20250323-transcends
+        chapterTitle: God's Plan Transcends Time and Space
+        chapterKind: sermon
+        chapterStart: "11:10.48"
+        chapterEnd: "36:24.88"
+        chapterScripture:
+          - John 1:29
+          - Exodus 12:1-13
+          - 1 Corinthians 5:7
+          - Isaiah 53:7
+          - Proverbs 3:5-6
+        points:
+          - pointTime: "14:05.28"
+            pointText: The Lamb of God title is connected with John's overarching presentation of Christ rather than merely an isolated image.
+          - pointTime: "17:00.4"
+            pointText: The unblemished Passover lamb anticipates Christ and challenges offering God only what one no longer wants.
+          - pointTime: "22:16.16"
+            pointText: Paul's Passover language connects Israel's deliverance with Christ's sacrifice across history.
+          - pointTime: "27:13.84"
+            pointText: The lamb led to slaughter contrasts with the world's usual symbols of dominance and strength.
+          - pointTime: "30:48.24"
+            pointText: Trusting God's ways challenges assuming familiar cultural solutions must define faithful action.
+          - pointTime: "31:18.64"
+            pointText: Belonging within God's eternal plan gives purpose beyond wealth, power or others' judgments of personal worth.
+      - chapterId: c20250323-revealed
+        chapterTitle: God's Plan Must Be Revealed
+        chapterKind: sermon
+        chapterStart: "36:24.88"
+        chapterEnd: "49:36.16"
+        chapterScripture:
+          - John 1:30-33
+          - Matthew 3:13-15
+          - Luke 3:21-22
+          - Philippians 2:5-8
+        points:
+          - pointTime: "37:25.76"
+            pointText: Jesus' baptism expresses humility and identification with sinners rather than his own need for repentance.
+          - pointTime: "40:52.72"
+            pointText: Philippians frames Christ's humility through servanthood and obedience even to death.
+          - pointTime: "43:05.44"
+            pointText: The baptism account brings the Father, Son and Spirit together in the revelation of Christ's identity.
+          - pointTime: "45:08.96"
+            pointText: John's recognition of Christ depends on God's disclosure rather than personal ability to discover him unaided.
+          - pointTime: "47:43.92"
+            pointText: Believers' empowerment is distinguished from declarations that imply humans control whether God can accomplish his will.
+      - chapterId: c20250323-shared
+        chapterTitle: God's Plan Must Be Shared
+        chapterKind: sermon
+        chapterStart: "49:36.16"
+        chapterEnd: "58:49.12"
+        chapterScripture:
+          - John 1:34
+          - 1 Corinthians 3:5-7
+        points:
+          - pointTime: "49:36.16"
+            pointText: Receiving grace includes becoming a participant who bears witness to Christ.
+          - pointTime: "51:07.84"
+            pointText: Evangelism is described as preparing hearts and sowing rather than personally producing belief.
+          - pointTime: "52:51.36"
+            pointText: The three humiliations attributed to Sayers connect incarnation, crucifixion and representation by imperfect believers.
+          - pointTime: "56:16.64"
+            pointText: God's choice to be represented through ordinary flawed people makes their daily conduct consequential.
+          - pointTime: "58:18.64"
+            pointText: The appeal urges using one's place in God's plan for his glory instead of dismissing one's contribution as insignificant.
+  - chapterId: c20250323-response
+    chapterTitle: Prepare the Way through Kindness and Witness
+    chapterKind: closing
+    chapterStart: "58:49.12"
+    chapterEnd: "1:01:16"
+    points:
+      - pointTime: "59:40.24"
+        pointText: Closing prayer connects daily kindness, encouragement and gospel sharing with preparing others to receive Christ.
+markers:
+  - markerTime: "0:00.24"
+    markerNote: "Verified channel metadata dates this undated title to March 23. Evidence is supplied YouTube auto-captions with coarse segment timing; boundaries await fresh media checks."
+  - markerTime: "18:42.08"
+    markerNote: "Passover details are interpreted typologically by the preacher; the eat-in-haste command is Exodus 12:11 despite captions giving 12:1."
+  - markerTime: "52:51.36"
+    markerNote: "Quotation attribution, Latin pronunciation, historical figures, national-symbol claims and speculative descriptions of Christ require factual/media review."
