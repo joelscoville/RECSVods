@@ -1,0 +1,110 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Problem of Truth
+serviceDate: 2025-03-02
+status: draft
+sermonDescription: >-
+  John's true light challenges a world of competing voices and relative claims. The preacher considers God's truth as encompassing scientific, moral and biblical understanding, and connects freedom with abiding in Christ's word. Yet truth is resisted in public conflicts and personal relationships because human beings suppress what challenges them. Receiving Christ brings the right to become God's children through faith and grace, calling believers toward truthful conduct, humble communication and discernment about what they can change.
+sermonScripture:
+  - John 1:9-13
+  - John 8:31-32
+  - Romans 1:18-21
+sermonTopics:
+  - truth
+  - discernment
+  - faith
+uploads:
+  - youtubeId: c2ZHT-rF_U0
+    uploadDuration: "52:15"
+chapters:
+  - chapterId: c20250302-life-recap
+    chapterTitle: Let Christ's Life Shine beyond Private Comfort
+    chapterKind: sermon
+    chapterStart: "0:01.52"
+    chapterEnd: "7:23.44"
+    chapterScripture:
+      - John 1:3-5
+    points:
+      - pointTime: "3:26.16"
+        pointText: Christ's life is recalled as eternal hope and present abundance rather than only a future promise.
+      - pointTime: "5:08.24"
+        pointText: The light's encounter with darkness directs believers toward influencing and helping others, not merely enjoying life within their own circle.
+  - chapterId: c20250302-true-light
+    chapterTitle: God's Truth Gives Light and Freedom
+    chapterKind: sermon
+    chapterStart: "7:23.44"
+    chapterEnd: "28:20.52"
+    chapterScripture:
+      - John 1:6-9
+      - John 17:17
+      - John 8:31-32
+      - Isaiah 9:6
+    points:
+      - pointTime: "10:17.28"
+        pointText: A broad comparison of modern and postmodern thinking introduces conflicting expectations about truth and authority.
+      - pointTime: "16:58.2"
+        pointText: The true light is presented as an affirmation that truth exists beyond personal preference.
+      - pointTime: "19:43.84"
+        pointText: God's truth is described as applying across cultures, generations and locations.
+      - pointTime: "20:34.64"
+        pointText: All truth is God's truth connects moral and scientific understanding with God's larger reality.
+      - pointTime: "24:01"
+        pointText: Human knowledge is acknowledged as limited within a much greater truth that cannot be fully comprehended.
+      - pointTime: "26:05.72"
+        pointText: Christ's promise of freedom is connected with knowing truth and abiding in his word.
+  - chapterId: c20250302-resisted-truth
+    chapterTitle: Truth Is Resisted in Conflict and in Our Hearts
+    chapterKind: sermon
+    chapterStart: "28:20.52"
+    chapterEnd: "41:46.76"
+    chapterScripture:
+      - John 1:10-11
+      - Romans 1:18-21
+      - John 8:40
+      - John 16:2
+    points:
+      - pointTime: "28:20.52"
+        pointText: The world's failure to recognize its creator introduces the problem of rejecting truth even when it comes near.
+      - pointTime: "29:21.48"
+        pointText: International conflict illustrates competing claims of truth shaped by self-interest.
+      - pointTime: "32:37.56"
+        pointText: Personal disputes reveal how insistence on one's own story can obscure truth.
+      - pointTime: "36:03.8"
+        pointText: Presentation and communication are examined with attention to both truth and the other person's ability to receive it.
+      - pointTime: "38:27.48"
+        pointText: Romans' diagnosis of suppressing truth is applied to the congregation rather than only to outsiders.
+      - pointTime: "41:15.56"
+        pointText: Opposition to truthful witness can be religiously justified by people who mistake harm for service to God.
+  - chapterId: c20250302-children-of-god
+    chapterTitle: Receive Christ and Become Followers of Truth
+    chapterKind: sermon
+    chapterStart: "41:46.76"
+    chapterEnd: "50:43.68"
+    chapterScripture:
+      - John 1:12-13
+      - Romans 10:9
+    points:
+      - pointTime: "42:58.12"
+        pointText: Faith alone and Christ alone frame receiving the right to become God's children.
+      - pointTime: "44:42.08"
+        pointText: Confession and belief are distinguished from repeating words without genuine commitment.
+      - pointTime: "46:26.6"
+        pointText: True belief directs conduct toward following Christ while allowing for weakness and renewed effort after failure.
+      - pointTime: "48:07.84"
+        pointText: Being born of God grounds gratitude rather than claiming salvation through appearance, achievement or merit.
+      - pointTime: "49:31.52"
+        pointText: The Serenity Prayer joins truthful action with acceptance of human limitations and wisdom about what can be changed.
+  - chapterId: c20250302-response
+    chapterTitle: Pursue Truth with Childlike Humility
+    chapterKind: closing
+    chapterStart: "50:43.68"
+    chapterEnd: "52:15"
+    points:
+      - pointTime: "50:43.68"
+        pointText: Closing prayer asks for lifelong pursuit of truth that frees people from sin and the mistaken assumptions shaping daily life.
+markers:
+  - markerTime: "0:01.52"
+    markerNote: "Verified channel metadata dates this undated source to March 2. The welcome confirms return after approximately a month of building disruption. Supplied auto-caption boundaries await media checks."
+  - markerTime: "10:17.28"
+    markerNote: "The modern/postmodern timeline is explicitly a broad generalization. Cultural, historical, political and legal-case descriptions and quotation attributions require factual review."

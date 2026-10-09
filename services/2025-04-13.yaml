@@ -1,0 +1,160 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Other Track
+serviceDate: 2025-04-13
+status: draft
+sermonDescription: Jesus cleansing the temple reveals righteous anger alongside mercy, challenging a picture of Christ that includes gentleness but overlooks justice. The preacher describes grace and justice as parallel attributes, considers Christ's restraint in accepting suffering and looks toward his victorious return. Neither compassion nor order should become an excuse for taking God lightly. The promise of rebuilding the temple through Christ's resurrection leads to grateful worship marked by reverence, awe and a life that honors the grace received.
+sermonScripture:
+  - John 2:13-22
+  - Revelation 19:11-16
+  - Hebrews 12:28-29
+sermonTopics:
+  - justice
+  - knowing-god
+  - worship
+uploads:
+  - youtubeId: 1MEvB7eD5Vs
+    uploadDuration: "1:00:57"
+chapters:
+  - chapterId: c20250413-love-question
+    chapterTitle: Apply God's Love with Discernment
+    chapterKind: qa
+    chapterStart: "0:07.6"
+    chapterEnd: "12:01.92"
+    points:
+      - pointTime: "2:40.64"
+        pointText: The question connects unconditional or unfailing love with wisdom in interpersonal dealings.
+      - pointTime: "4:12.48"
+        pointText: The preacher distinguishes his Reformed account of God's love from universal salvation.
+      - pointTime: "5:33.92"
+        pointText: Unconditional election is explained as God's gracious initiative rather than a reward for personal merit.
+      - pointTime: "7:26.24"
+        pointText: A saying attributed to Packer distinguishes common gifts to humanity from the saving love described toward the elect.
+      - pointTime: "8:37.28"
+        pointText: Trust and obedience to what Scripture makes known are encouraged over constant speculation about personal election.
+      - pointTime: "11:11.44"
+        pointText: Love does not eliminate caution about human fallenness or the need to respond wisely to harmful behavior.
+  - chapterId: c20250413-joy-recap
+    chapterTitle: Choose Joy and Obedience at Life's Crossroads
+    chapterKind: sermon
+    chapterStart: "12:01.92"
+    chapterEnd: "20:00.56"
+    chapterScripture:
+      - John 2:1-12
+    points:
+      - pointTime: "13:43.28"
+        pointText: The servants' response at Cana illustrates obeying Christ even when his instructions seem unusual.
+      - pointTime: "15:25.2"
+        pointText: The wedding sign is interpreted as affirming joy within God's good design rather than a joyless religious life.
+      - pointTime: "17:07.92"
+        pointText: Choosing joy and asking how to glorify God redirects attention from questions one may not be able to answer.
+  - chapterId: c20250413-cleansing
+    chapterTitle: Zeal for God's House Holds Anger beside Mercy
+    chapterKind: sermon
+    chapterStart: "20:00.56"
+    chapterEnd: "30:24.8"
+    chapterScripture:
+      - John 2:13-17
+      - Leviticus 5:7-11
+      - Leviticus 12:8
+      - Psalms 69:9
+    points:
+      - pointTime: "20:31.92"
+        pointText: Different gospel placements introduce the possibility of two temple cleansings without presenting it as settled chronology.
+      - pointTime: "22:13.52"
+        pointText: Sacrificial provisions for people with fewer resources frame the temple's intended purpose beyond commercial activity.
+      - pointTime: "23:56.16"
+        pointText: Church merchandising is used to question the relationship between worship and commercial incentives.
+      - pointTime: "29:24.08"
+        pointText: The preacher interprets the handling of pigeon sellers as consideration for loss even amid righteous anger.
+      - pointTime: "30:04.48"
+        pointText: Zeal for God's house explains Christ's opposition to its misuse rather than anger for personal advantage.
+  - chapterId: c20250413-parallel-tracks
+    chapterTitle: God's Grace and Justice Run Together
+    chapterKind: sermon
+    chapterStart: "30:24.8"
+    chapterEnd: "38:39.44"
+    chapterScripture:
+      - Psalms 90:13
+      - Genesis 6:6
+      - Isaiah 53:2
+    points:
+      - pointTime: "30:45.04"
+        pointText: Grace and justice are described as parallel attributes rather than mutually exclusive aspects of God.
+      - pointTime: "32:27.68"
+        pointText: Erring toward grace in relationships is distinguished from ignoring the reality of wrongdoing.
+      - pointTime: "34:09.84"
+        pointText: A teaching that eliminates confession is challenged as an incomplete account of grace.
+      - pointTime: "35:53.2"
+        pointText: Romanticized images of a merely gentle Jesus are compared with the broader gospel presentation.
+  - chapterId: c20250413-restraint
+    chapterTitle: Christ's Restraint Is Strength, Not Weakness
+    chapterKind: sermon
+    chapterStart: "38:39.44"
+    chapterEnd: "46:12.56"
+    chapterScripture:
+      - Matthew 26:51-54
+      - John 18:10
+      - 2 Kings 19:35
+    points:
+      - pointTime: "39:00.32"
+        pointText: Gethsemane illustrates Christ choosing the Father's purpose over using available power to escape suffering.
+      - pointTime: "39:21.04"
+        pointText: Peter's violent defense is distinguished from the way Christ intends Scripture to be fulfilled.
+      - pointTime: "41:03.2"
+        pointText: The angelic-power illustration underscores the extent of Christ's restraint rather than lack of ability.
+      - pointTime: "44:40.32"
+        pointText: Christ's example is applied to controlling anger instead of allowing emotion to govern harmful action.
+  - chapterId: c20250413-triumphant-return
+    chapterTitle: Remember Christ's Victorious Return and Revere God
+    chapterKind: sermon
+    chapterStart: "46:12.56"
+    chapterEnd: "56:06.8"
+    chapterScripture:
+      - Revelation 19:11-16
+      - Hebrews 10:31
+      - Isaiah 57:11
+    points:
+      - pointTime: "47:43.92"
+        pointText: Revelation's returning King presents divine power and justice in contrast with their present restraint.
+      - pointTime: "47:54.16"
+        pointText: The imagery is interpreted through its message of Christ's triumph rather than insisting every depicted detail is literal.
+      - pointTime: "49:37.28"
+        pointText: Lack of immediate consequence is distinguished from proof that God is absent or can be treated lightly.
+      - pointTime: "51:20"
+        pointText: Financial pressure presented as divine instruction raises a question about reverence and accountability in ministry.
+      - pointTime: "53:01.2"
+        pointText: Isaiah's warning challenges assuming God's silence permits living without reference to him.
+  - chapterId: c20250413-resurrection-reverence
+    chapterTitle: Receive Grace with Gratitude, Reverence and Awe
+    chapterKind: sermon
+    chapterStart: "56:06.8"
+    chapterEnd: "59:21.2"
+    chapterScripture:
+      - John 2:18-22
+      - Hebrews 12:28-29
+    points:
+      - pointTime: "56:27.44"
+        pointText: Christ's temple saying directs attention from the building to his death and resurrection.
+      - pointTime: "57:59.84"
+        pointText: Receiving an unshakable kingdom calls for grateful worship with reverence and awe.
+      - pointTime: "58:30.48"
+        pointText: God as a consuming fire completes the message that grace and justice belong together.
+  - chapterId: c20250413-response
+    chapterTitle: Let God's Word Take Root in a Reverent Life
+    chapterKind: closing
+    chapterStart: "59:21.2"
+    chapterEnd: "1:00:56.799"
+    points:
+      - pointTime: "59:21.2"
+        pointText: Closing prayer asks for a life that appreciates salvation's cost and honors both God's grace and justice.
+markers:
+  - markerTime: "0:07.6"
+    markerNote: "Verified channel metadata dates the undated source to April 13, corroborated by Palm Sunday and upcoming Good Friday/Easter. The supplied evidence is YouTube auto-captions; seams are coarse and provisional pending media checks."
+  - markerTime: "20:31.92"
+    markerNote: "Two temple cleansings and details of the pigeons' treatment are the preacher's interpretive proposals. Quotations, historical claims and the angelic-power arithmetic need review."
+  - markerTime: "53:01.2"
+    markerNote: "The passage quoted is Isaiah 57:11, despite the caption/announcement giving Isaiah 57:1."
+  - markerTime: "1:00:56.799"
+    markerNote: "The caption tail extends about 0.3 seconds beyond the supplied upload length. Closing ends before the trailing Come fragment; confirm the exact media duration."

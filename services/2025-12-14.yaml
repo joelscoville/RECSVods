@@ -1,0 +1,172 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Our Father
+serviceDate: 2025-12-14
+status: draft
+sermonDescription: Jesus' contrast between two fathers challenges inherited religious identity that resists God's word. The preacher locates sin in fallen desire while distinguishing personal responsibility from Satan's influence. Belonging to God is a change of status rather than a balance of good and bad deeds, yet believers still face temptation. Hearing unwelcome truth, repenting after failure and growing in genuine holiness are presented as signs of living faith rather than complacent religious appearance.
+sermonScripture:
+  - John 8:37-47
+  - 1 John 5:18-21
+  - James 1:13-15
+sermonTopics:
+  - repentance
+  - truth
+  - discernment
+uploads:
+  - youtubeId: 2me1nJUIPb0
+    uploadDuration: "1:51:51.983"
+chapters:
+  - chapterId: c20251214-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
+    chapterStart: "0:12.45"
+    chapterEnd: "4:22.24"
+    points:
+      - pointTime: "0:12.45"
+        pointText: The recorded ACTS prayer starts at confession and continues with thanksgiving, supplication and gathered prayer.
+  - chapterId: c20251214-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "4:22.24"
+    chapterEnd: "32:15.1"
+    chapterScripture:
+      - Psalms 24:1-6
+      - Proverbs 31:1-31
+      - John 8:31-47
+      - 1 John 5:18-21
+    points:
+      - pointTime: "4:22.24"
+        pointText: Jason welcomes the congregation before greetings and silent meditation.
+      - pointTime: "6:19.62"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
+      - pointTime: "23:14.64"
+        pointText: Reflection asks what being a Christian means in the present world.
+      - pointTime: "23:22.58"
+        pointText: Jason connects Christian identity with proclaiming God's present reign rather than merely observing ancient customs.
+      - pointTime: "31:00.44"
+        pointText: 1 John 5:18-21 is read before the sermon.
+  - chapterId: c20251214-question-recap
+    chapterTitle: Why Do Christians Still Struggle with Sin?
+    chapterKind: qa
+    chapterStart: "32:15.1"
+    chapterEnd: "43:04.15"
+    points:
+      - pointTime: "33:21.5"
+        pointText: A longstanding believer's continued struggle introduces the question of sin after conversion.
+      - pointTime: "34:50.78"
+        pointText: Self-deception can make fallen people confident that nothing is wrong.
+      - pointTime: "36:31.88"
+        pointText: Spiritual, temporal and eternal misery are distinguished rather than judged solely by visible prosperity.
+      - pointTime: "38:15.54"
+        pointText: Final accountability extends beyond this lifetime, challenging the impression that wrongdoing escapes justice.
+      - pointTime: "39:59.86"
+        pointText: Freedom is grounded in belonging to Christ as truth and light, not simply in choosing preferred ideas.
+  - chapterId: c20251214-identity-father
+    chapterTitle: Religious Identity Does Not Establish Which Father We Follow
+    chapterKind: sermon
+    chapterStart: "43:04.15"
+    chapterEnd: "51:53.92"
+    chapterScripture:
+      - John 8:37-38
+    points:
+      - pointTime: "43:04.42"
+        pointText: Jesus' opponents claim Abrahamic descent while making no room for his word.
+      - pointTime: "45:04.44"
+        pointText: Religious belonging inherited through race or family is distinguished from personal allegiance to truth.
+      - pointTime: "46:46.52"
+        pointText: Confrontation with Christ exposes whether a professed religious identity is real.
+      - pointTime: "50:13.14"
+        pointText: The contrast between the heavenly Father and the opposing father introduces two directions of allegiance.
+  - chapterId: c20251214-sin-responsibility
+    chapterTitle: Own Responsibility for Sin while Resisting Temptation
+    chapterKind: sermon
+    chapterStart: "51:53.92"
+    chapterEnd: "1:09:04.5"
+    chapterScripture:
+      - James 1:13-15
+      - 1 John 5:19
+      - Hebrews 2:14
+      - John 8:34-36
+    points:
+      - pointTime: "52:42.72"
+        pointText: James excludes God as the source of temptation and traces sin through personal desire.
+      - pointTime: "54:18.4"
+        pointText: Fallen desire is identified as the source of sin rather than grounds for blaming God.
+      - pointTime: "1:02:15.4"
+        pointText: Being under Satan's influence is distinguished from complete control, preserving responsibility for choices.
+      - pointTime: "1:05:37.2"
+        pointText: The birds-and-nest illustration distinguishes encountering temptation from allowing it to take root.
+      - pointTime: "1:07:22.98"
+        pointText: Becoming God's child is a qualitative change rather than calculating a balance of good deeds and sins.
+      - pointTime: "1:08:49.28"
+        pointText: A child briefly holding the wrong parent's hand illustrates returning to God after failure without redefining belonging.
+  - chapterId: c20251214-hear-truth
+    chapterTitle: Hear Unwelcome Truth and Keep Growing
+    chapterKind: sermon
+    chapterStart: "1:09:43.2"
+    chapterEnd: "1:23:13.5"
+    chapterScripture:
+      - John 8:39-43
+    points:
+      - pointTime: "1:09:43.46"
+        pointText: Claiming Abraham as father is tested against actions that oppose the truth Abraham received.
+      - pointTime: "1:10:45.26"
+        pointText: People may resent truth when it challenges their chosen way of life.
+      - pointTime: "1:14:17.4"
+        pointText: Treating Scripture as a buffet allows preferred verses to replace surrender to its challenging words.
+      - pointTime: "1:17:58.94"
+        pointText: Struggling with sin can show awareness of its severity; indifference is presented as the greater danger.
+      - pointTime: "1:21:46.94"
+        pointText: A fish swimming against the stream illustrates living faith that resists and grows rather than drifting complacently.
+  - chapterId: c20251214-discern-holiness
+    chapterTitle: Discern Deception through Christ's Truth and Genuine Holiness
+    chapterKind: sermon
+    chapterStart: "1:23:13.5"
+    chapterEnd: "1:31:55.78"
+    chapterScripture:
+      - John 8:44-47
+      - 2 Corinthians 11:14
+      - 1 Thessalonians 4:7
+    points:
+      - pointTime: "1:23:13.76"
+        pointText: Jesus identifies deception and opposition to truth with the devil's character.
+      - pointTime: "1:26:41.06"
+        pointText: Satan's disguise as an angel of light warns against assuming attractive appearances are trustworthy.
+      - pointTime: "1:27:13.18"
+        pointText: Christ's truth is presented as the answer to deception rather than fascination with supernatural speculation.
+      - pointTime: "1:28:29.88"
+        pointText: Hearing God's word is applied as a test of belonging, while imperfection is distinguished from rejecting its authority.
+      - pointTime: "1:30:31.74"
+        pointText: Genuine holiness is distinguished from its imitation and made the goal of growing life in God.
+  - chapterId: c20251214-response
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:31:55.78"
+    chapterEnd: "1:51:51.983"
+    chapterScripture:
+      - Hebrews 13:20-21
+    points:
+      - pointTime: "1:31:55.78"
+        pointText: Response prayer asks for strength to return after failure and increasingly live in Christ's freedom.
+      - pointTime: "1:33:30.54"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
+      - pointTime: "1:37:25.16"
+        pointText: Intercession joins spiritual comfort with practical help, expressing love through deeds rather than words alone.
+      - pointTime: "1:38:32.98"
+        pointText: The offertory includes instructions for the second offering designated for churches and seminaries.
+      - pointTime: "1:40:34.56"
+        pointText: Stand Up, Stand Up for Jesus is introduced as the closing hymn.
+      - pointTime: "1:42:59.1"
+        pointText: Doxology is followed by the blessing from Hebrews 13:20-21.
+      - pointTime: "1:44:13.44"
+        pointText: Announcements explain the monthly Communion schedule planned for 2026 and invite ministry participation.
+      - pointTime: "1:51:45.7"
+        pointText: The congregation is dismissed with silent meditation after the notices.
+markers:
+  - markerTime: "0:12.45"
+    markerNote: "The supplied recording begins during confession; earlier prayer movements were not reconstructed. Timing and duration use supplied faster-whisper audio evidence and await media verification."
+  - markerTime: "50:13.14"
+    markerNote: "Our Father is announced in the sermon. Greek capitalization, accounts of religious traditions and reported misconduct or historical violence remain the preacher's claims, not independently verified findings."
+  - markerTime: "1:09:04.5"
+    markerNote: "A technical interruption precedes the return to the argument at 1:09:43.46; the gap is deliberately outside the navigable sermon sections."

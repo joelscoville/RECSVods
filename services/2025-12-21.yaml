@@ -1,0 +1,150 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: BC and AD
+serviceDate: 2025-12-21
+status: draft
+sermonDescription: Christmas is presented as more than cultural goodwill or a familiar annual story. Immanuel identifies God's initiative in coming to humanity, while prophecy, the manger and the announcement to shepherds reveal divine action beyond ordinary expectations of grandeur. The preacher connects Christ's historical influence with the shepherds' immediate transformation, asking whether knowing God with us has produced a meaningful before-and-after in each believer's life.
+sermonScripture:
+  - Matthew 1:18-23
+  - Luke 2:1-21
+sermonTopics:
+  - knowing-god
+  - faith
+  - salvation
+uploads:
+  - youtubeId: c6dia2oZkB4
+    uploadDuration: "26:56.713"
+  - youtubeId: HXgqjFmnerE
+    uploadDuration: "1:22:41.315"
+chapters:
+  - chapterId: c20251221-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
+    chapterStart: "3:11.05"
+    chapterEnd: "8:36.3"
+    points:
+      - pointTime: "3:11.05"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20251221-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "8:36.3"
+    chapterEnd: "39:29.5"
+    chapterScripture:
+      - Isaiah 9:6-7
+      - Proverbs 1:1-33
+      - Luke 2:1-21
+      - Matthew 1:18-23
+    points:
+      - pointTime: "8:36.3"
+        pointText: Hadi welcomes the congregation before greetings and quiet preparation for worship.
+      - pointTime: "11:11.18"
+        pointText: The call to worship from Isaiah introduces the promised child as God entering human history; hymns, opening prayer and responsive readings follow.
+      - pointTime: "13:00.3"
+        pointText: The royal names connect divine power with faithful, personal presence and peace.
+      - pointTime: "18:12.62"
+        pointText: Being known and loved in weakness is grounded in God's choice to dwell among his people.
+      - pointTime: "37:56.233"
+        pointText: Matthew 1:18-23 is read before the sermon on the continuous multipart recording clock.
+  - chapterId: c20251221-remember-christmas
+    chapterTitle: Remember Christ amid the Christmas Celebrations
+    chapterKind: sermon
+    chapterStart: "39:29.5"
+    chapterEnd: "1:00:13.633"
+    points:
+      - pointTime: "49:05.653"
+        pointText: A Christmas picture filled with seasonal imagery but lacking Christ illustrates celebration detached from its central message.
+      - pointTime: "53:09.233"
+        pointText: The preacher interprets persistent desires for love, peace and harmony as God-given instincts.
+      - pointTime: "55:23.813"
+        pointText: Human religious longing is presented as resistant to attempts to remove it through education or ideology.
+      - pointTime: "57:53.233"
+        pointText: Festivals can remind forgetful believers of truth without treating Christ's birth, death or resurrection as recurring events.
+      - pointTime: "1:00:02.233"
+        pointText: God's truth is described as inexhaustible, allowing new understanding each time the Christmas message is considered.
+  - chapterId: c20251221-immanuel
+    chapterTitle: Immanuel Is God's Initiative toward Humanity
+    chapterKind: sermon
+    chapterStart: "1:00:13.633"
+    chapterEnd: "1:07:19.773"
+    chapterScripture:
+      - Matthew 1:18-23
+    points:
+      - pointTime: "1:00:19.713"
+        pointText: Matthew identifies Christ's conception with the Holy Spirit and his coming with salvation from sin.
+      - pointTime: "1:01:51.853"
+        pointText: Immanuel is singled out as an especially profound statement of God's presence with humanity.
+      - pointTime: "1:02:05.853"
+        pointText: God with us is distinguished from treating incarnation as an ordinary religious idea.
+      - pointTime: "1:05:29.693"
+        pointText: Accounts of arduous religious pilgrimage highlight the contrast with God coming to people in Christ.
+  - chapterId: c20251221-divine-humility
+    chapterTitle: God's Timeless Plan Comes in Unexpected Humility
+    chapterKind: sermon
+    chapterStart: "1:07:19.773"
+    chapterEnd: "1:27:23.5"
+    chapterScripture:
+      - Isaiah 7:14
+      - Luke 2:4-16
+    points:
+      - pointTime: "1:07:56.793"
+        pointText: Isaiah's prophecy is connected with God's perspective beyond human time and space.
+      - pointTime: "1:10:47.293"
+        pointText: The thousand-years-as-a-day comparison expresses timelessness rather than a formula for calculating dates.
+      - pointTime: "1:13:41.433"
+        pointText: A manger is a feeding trough, challenging sanitized or grand portrayals of Christ's birth.
+      - pointTime: "1:18:24.773"
+        pointText: The divine character of Christmas is distinguished from human expectations of prestigious birth and spectacle.
+      - pointTime: "1:23:13.073"
+        pointText: Shepherds' receiving the announcement first connects God's grace with humility rather than social standing.
+      - pointTime: "1:25:16.373"
+        pointText: Lewis's reported image of a stable containing more than the world expresses the magnitude of incarnation.
+  - chapterId: c20251221-before-after
+    chapterTitle: Has Christ Made a Before-and-After in Your Life?
+    chapterKind: sermon
+    chapterStart: "1:27:23.5"
+    chapterEnd: "1:34:35.953"
+    chapterScripture:
+      - Luke 2:17-20
+    points:
+      - pointTime: "1:27:23.773"
+        pointText: BC and AD introduce the sermon title and the claim that Christ's birth changed history.
+      - pointTime: "1:28:46.353"
+        pointText: The significance of Christ's actual birth is distinguished from uncertainty about its exact calendar date.
+      - pointTime: "1:31:26.613"
+        pointText: The preacher argues that incarnation is meant to transform individual life as well as history.
+      - pointTime: "1:32:38.653"
+        pointText: The shepherds' witness and praise demonstrate a changed response to encountering Christ.
+      - pointTime: "1:34:01.713"
+        pointText: Whether conversion was sudden or gradual, Christ's presence should make a recognizable difference.
+  - chapterId: c20251221-response
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:34:35.953"
+    chapterEnd: "1:49:38.028"
+    chapterScripture:
+      - Romans 15:13
+      - 2 Corinthians 13:14
+    points:
+      - pointTime: "1:34:35.953"
+        pointText: Response prayer contrasts childlike surrender with approaching God through pride, bitterness or demands.
+      - pointTime: "1:36:09.353"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
+      - pointTime: "1:39:52.253"
+        pointText: Shared prayer asks that comfort for people in difficulty include believers acting as God's hands and feet.
+      - pointTime: "1:40:44.333"
+        pointText: The offertory follows pastoral prayer, with giving instructions for the congregation.
+      - pointTime: "1:42:42.393"
+        pointText: Lead On, O King Eternal is introduced as the closing hymn.
+      - pointTime: "1:44:09.893"
+        pointText: Doxology is followed by the blessing using Romans 15:13 and 2 Corinthians 13:14.
+      - pointTime: "1:45:25.413"
+        pointText: Announcements explain the monthly Communion schedule for 2026 and invite ministry participation.
+      - pointTime: "1:49:32.993"
+        pointText: The congregation is dismissed with silent meditation after the notices.
+markers:
+  - markerTime: "26:56.713"
+    markerNote: "The first upload ends during Proverbs 1 and the second resumes the reading mid-verse. No overlap was established; any missing time is unmeasured. Continuous offsets and lengths use supplied faster-whisper audio evidence and need media confirmation."
+  - markerTime: "41:20.653"
+    markerNote: "BC and AD is announced in the sermon. Historical, political and comparative-religion examples remain attributed to the preacher; this draft is not an independent fact-check."

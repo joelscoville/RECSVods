@@ -1,0 +1,143 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Call
+serviceDate: 2025-03-30
+status: draft
+sermonDescription: The call of Jesus' disciples reveals God's chosen means of making his word and will known through people. Comparing the gospel accounts challenges treating discipleship as a single unexplained impulse. God calls flawed instruments so that glory rests with him rather than human status or capability. Particular pastoral vocations are distinguished from the call shared by all believers to belong to God's household, serve as channels of blessing and live toward hearing Christ's welcome to a faithful servant.
+sermonScripture:
+  - John 1:35-51
+  - Ephesians 2:19-22
+  - 1 Peter 2:9-10
+sermonTopics:
+  - discipleship
+  - mission
+  - service
+uploads:
+  - youtubeId: QpwHrFPszdk
+    uploadDuration: "1:04:54.72"
+chapters:
+  - chapterId: c20250330-equipping
+    chapterTitle: Be Equipped to Serve with Perseverance
+    chapterKind: other
+    chapterStart: "0:00"
+    chapterEnd: "6:31.74"
+    points:
+      - pointTime: "3:21.88"
+        pointText: The visiting senior pastor's perseverance becomes an encouragement to equip members for deeper ministry.
+      - pointTime: "5:03.58"
+        pointText: Lay participation and ongoing learning are encouraged rather than reserving gospel work for ordained specialists alone.
+  - chapterId: c20250330-lamb-recap
+    chapterTitle: Receive and Share God's Revealed Plan
+    chapterKind: sermon
+    chapterStart: "6:31.74"
+    chapterEnd: "11:23.68"
+    chapterScripture:
+      - John 1:29-34
+    points:
+      - pointTime: "8:26.2"
+        pointText: The Lamb's sacrificial way challenges the world's expectation that divine power must appear through domination.
+      - pointTime: "10:07.52"
+        pointText: Preparing others to receive Christ is distinguished from personally controlling their conversion.
+  - chapterId: c20250330-first-encounters
+    chapterTitle: Come, See and Bring Others to Christ
+    chapterKind: sermon
+    chapterStart: "11:23.68"
+    chapterEnd: "18:07.56"
+    chapterScripture:
+      - John 1:35-51
+      - Matthew 4:18-22
+      - Luke 5:1-11
+    points:
+      - pointTime: "11:53.9"
+        pointText: John directs his own disciples toward Christ rather than retaining them for his ministry.
+      - pointTime: "13:35.26"
+        pointText: Andrew introducing Peter becomes a model for bringing family and friends to Jesus.
+      - pointTime: "15:17.26"
+        pointText: Comparing gospel accounts distinguishes first meetings with Christ from the later call to leave one's occupation.
+      - pointTime: "16:58.06"
+        pointText: Reading the whole biblical account is urged over constructing a complete doctrine from an isolated verse.
+  - chapterId: c20250330-chosen-instruments
+    chapterTitle: God's Chosen Instruments and the Call to All His People
+    chapterKind: sermon
+    chapterStart: "18:07.56"
+    chapterEnd: "1:03:08"
+    subchapters:
+      - chapterId: c20250330-human-channel
+        chapterTitle: God Chooses People as His Primary Channel
+        chapterKind: sermon
+        chapterStart: "18:07.56"
+        chapterEnd: "30:19.28"
+        chapterScripture:
+          - Ephesians 2:10
+          - Romans 10:13-17
+        points:
+          - pointTime: "18:39.66"
+            pointText: Written revelation is treated as the primary standard for testing dreams, feelings and claimed divine messages.
+          - pointTime: "20:38.72"
+            pointText: God's choice of human language and witnesses makes people participants in communicating his word.
+          - pointTime: "23:45.78"
+            pointText: Hearing through someone preaching connects belief with the responsibility to share the gospel.
+          - pointTime: "25:35.8"
+            pointText: God's work through people includes practical responses to suffering as well as verbal evangelism.
+          - pointTime: "28:51.74"
+            pointText: The hands-and-feet illustration directs attention to members becoming tangible channels of God's compassion.
+      - chapterId: c20250330-flawed-people
+        chapterTitle: God Calls Flawed People for His Glory
+        chapterKind: sermon
+        chapterStart: "30:19.28"
+        chapterEnd: "46:35.24"
+        chapterScripture:
+          - Mark 9:14-29
+          - 1 Corinthians 1:26-29
+        points:
+          - pointTime: "30:23.4"
+            pointText: The apostles' weaknesses challenge the expectation that God must choose the most impressive candidates.
+          - pointTime: "33:59.54"
+            pointText: Ambition, failed faith and inability among the disciples expose limits even within Christ's chosen group.
+          - pointTime: "35:41.94"
+            pointText: Elite educational and social measures are contrasted with the people God calls.
+          - pointTime: "40:45.32"
+            pointText: Choosing the weak prevents human boasting and makes glory to God alone more than a slogan.
+          - pointTime: "42:26.46"
+            pointText: Ambitious ministry projects illustrate dependence on God beyond confidence in available resources.
+      - chapterId: c20250330-all-called
+        chapterTitle: All Believers Are Called into God's Household
+        chapterKind: sermon
+        chapterStart: "46:35.24"
+        chapterEnd: "1:03:08"
+        chapterScripture:
+          - Ephesians 2:19-22
+          - Ephesians 4:11
+          - 1 Peter 1:14-16
+          - 1 Peter 2:9-10
+          - Matthew 25:23
+          - 1 Corinthians 3:15
+        points:
+          - pointTime: "49:10.92"
+            pointText: Particular gifts and callings are affirmed without treating any human leader as beyond error.
+          - pointTime: "52:32.12"
+            pointText: The preacher distinguishes a particular full-time pastoral calling from belonging to the shared body of believers.
+          - pointTime: "55:54.5"
+            pointText: Apostles, prophets, shepherds and teachers are situated within Christ's larger work of building his household.
+          - pointTime: "58:14.7"
+            pointText: Being fellow citizens and household members gives every believer a place and responsibility within God's plan.
+          - pointTime: "59:55.92"
+            pointText: The royal priesthood is called from darkness to proclaim God's excellencies through holy conduct.
+          - pointTime: "1:01:52.38"
+            pointText: Hearing Christ's welcome to a faithful servant is presented as life's aim beyond merely escaping final loss.
+  - chapterId: c20250330-response
+    chapterTitle: Live as God's Hands and Feet
+    chapterKind: closing
+    chapterStart: "1:03:08"
+    chapterEnd: "1:04:54.72"
+    points:
+      - pointTime: "1:03:08"
+        pointText: Closing prayer asks for a living identity that serves God's purpose through weak but willing people.
+markers:
+  - markerTime: "0:00"
+    markerNote: "The upload starts with Yong reflecting on Stephen Tong's visit; the preceding talk and Q&A are not included here. Source title, supplied audio duration and anchors await fresh media checks."
+  - markerTime: "15:17.26"
+    markerNote: "The reconciled chronology and identification of John's unnamed disciple are interpretive proposals, not independently established historical details."
+  - markerTime: "28:51.74"
+    markerNote: "The Teresa of Avila and Dorothy Sayers quotations, proper names, project forecasts and accounts of other denominations require factual/media review."

@@ -1,0 +1,142 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Locust Eater
+serviceDate: 2025-03-16
+status: draft
+sermonDescription: >-
+  John the Baptist's unusual calling and immense popularity frame a lesson in faithful witness. Filled with the Spirit, he prepares people for Christ through repentance rather than cultivating a following around himself. The preacher draws three applications: never equate a human leader with Christ, learn from Christlikeness in others and become such an example oneself. Humility and ordinary service matter more than extraordinary status, allowing every believer to do small things with great love.
+sermonScripture:
+  - John 1:19-28
+  - Luke 3:7-14
+  - 1 Corinthians 11:1
+sermonTopics:
+  - discipleship
+  - service
+  - holy-spirit
+uploads:
+  - youtubeId: oQjJC2LYg8I
+    uploadDuration: "1:02:46"
+chapters:
+  - chapterId: c20250316-ministry-example
+    chapterTitle: Receive the Privilege of Serving across Life's Arenas
+    chapterKind: other
+    chapterStart: "0:04.24"
+    chapterEnd: "11:20.72"
+    points:
+      - pointTime: "1:45.44"
+        pointText: The Kuyper Prize presentation introduces faith lived across theology, culture and public life.
+      - pointTime: "9:59.44"
+        pointText: Behind-the-scenes volunteers illustrate ministry as a shared privilege rather than a contribution that makes God indebted to its giver.
+  - chapterId: c20250316-grace-recap
+    chapterTitle: Grace Produces Humility and Gratitude
+    chapterKind: sermon
+    chapterStart: "11:20.72"
+    chapterEnd: "16:26"
+    chapterScripture:
+      - John 1:14-18
+    points:
+      - pointTime: "11:40.8"
+        pointText: God coming to humanity in Christ is distinguished from a religious technique for reaching him.
+      - pointTime: "13:23.12"
+        pointText: Grace upon grace calls for gratitude rather than treating life's gifts as earned entitlement.
+      - pointTime: "15:04.88"
+        pointText: Christ makes God's grace and truth known, directing everyday decisions toward his example.
+  - chapterId: c20250316-portrait
+    chapterTitle: A Spirit-Filled Prophet Prepares People for Christ
+    chapterKind: sermon
+    chapterStart: "16:26"
+    chapterEnd: "34:33.6"
+    chapterScripture:
+      - Luke 1:8-17
+      - Matthew 3:4-6
+      - Matthew 11:11
+      - Luke 3:3-14
+      - John 10:41
+    points:
+      - pointTime: "17:06.8"
+        pointText: John is introduced as a prophet bridging the Old Testament era and the coming of Christ.
+      - pointTime: "20:19.6"
+        pointText: The birth announcement connects his Spirit-filled calling with preparing the Lord's people.
+      - pointTime: "22:52.24"
+        pointText: John's lack of miracles challenges treating spectacular signs or tongues as compulsory evidence of the Spirit.
+      - pointTime: "23:32.88"
+        pointText: His ascetic life is contrasted with Christ's participation in ordinary social life.
+      - pointTime: "29:48.64"
+        pointText: What then shall we do directs repentance toward a concrete response rather than admiration for a powerful sermon.
+      - pointTime: "30:18.8"
+        pointText: Sharing with those in need and refusing extortion exemplify the practical fruit John calls for.
+  - chapterId: c20250316-lessons
+    chapterTitle: Three Lessons from John the Baptist
+    chapterKind: sermon
+    chapterStart: "34:33.6"
+    chapterEnd: "1:01:30.72"
+    subchapters:
+      - chapterId: c20250316-not-christ
+        chapterTitle: No Human Leader Is Christ
+        chapterKind: sermon
+        chapterStart: "34:33.6"
+        chapterEnd: "45:45.04"
+        chapterScripture:
+          - John 1:6-8
+          - John 1:15
+          - John 1:19-20
+        points:
+          - pointTime: "36:16.32"
+            pointText: John's explicit denial of being the Christ prevents confusing his popularity with divine identity.
+          - pointTime: "37:08"
+            pointText: Growth in holiness is distinguished from becoming an infallible human person.
+          - pointTime: "38:54.88"
+            pointText: The speaker distinguishes Catholics' stated intercessory practice before presenting his Reformed objections to it.
+          - pointTime: "43:42.56"
+            pointText: Acton's warning about power challenges exempting influential religious leaders from ordinary accountability.
+          - pointTime: "44:02.72"
+            pointText: Even an admired senior pastor must be tested against Scripture rather than assumed incapable of error.
+      - chapterId: c20250316-learn-christlikeness
+        chapterTitle: Learn from Christlikeness in Others
+        chapterKind: sermon
+        chapterStart: "45:45.04"
+        chapterEnd: "51:47.12"
+        chapterScripture:
+          - 1 Corinthians 11:1
+          - John 1:21-28
+        points:
+          - pointTime: "46:25.2"
+            pointText: Paul's invitation to imitate him is qualified by his imitation of Christ.
+          - pointTime: "47:26.4"
+            pointText: Living examples of perseverance can encourage faith without authorizing uncritical imitation.
+          - pointTime: "49:14.24"
+            pointText: John's willingness to be only a preparing voice demonstrates humility amid widespread admiration.
+          - pointTime: "50:56.08"
+            pointText: Ministry close to God is distinguished from an enterprise centered on personal ego.
+      - chapterId: c20250316-be-example
+        chapterTitle: Be the Example through Small Acts of Great Love
+        chapterKind: sermon
+        chapterStart: "51:47.12"
+        chapterEnd: "1:01:30.72"
+        points:
+          - pointTime: "52:37.84"
+            pointText: Believers' conduct becomes the visible account of Christianity for people who may never read Scripture themselves.
+          - pointTime: "56:55.2"
+            pointText: Young listeners are encouraged to give their opportunities and energy a purpose that benefits others.
+          - pointTime: "58:06.56"
+            pointText: A saying attributed to Teresa opens service to people who cannot perform history-changing achievements.
+          - pointTime: "59:29.36"
+            pointText: Ordinary faithful tasks are presented as building the kingdom through small people and small acts of love.
+          - pointTime: "1:01:10.64"
+            pointText: John's humility frames even accomplished service as doing what an unworthy servant ought to do.
+  - chapterId: c20250316-response
+    chapterTitle: Be Faithful to the Task God Gives
+    chapterKind: closing
+    chapterStart: "1:01:30.72"
+    chapterEnd: "1:02:46"
+    points:
+      - pointTime: "1:01:30.72"
+        pointText: Closing prayer asks for a purposeful life of faithful service, whether the task is large or small.
+markers:
+  - markerTime: "0:04.24"
+    markerNote: "Verified channel metadata dates the undated title to March 16. Supplied YouTube auto-captions include replayed prize footage; segment timings are coarse and await fresh media checks."
+  - markerTime: "20:19.6"
+    markerNote: "John's ascetic lifestyle and uniqueness are interpreted by the preacher; captions frequently render ascetic as aesthetic."
+  - markerTime: "37:08"
+    markerNote: "Comparative descriptions of Methodist/Catholic doctrine, saint counts, biography statistics and attributed quotations require factual review."

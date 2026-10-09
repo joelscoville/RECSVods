@@ -1,0 +1,173 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Dreaming of Swimming in Icy Water
+serviceDate: 2025-12-07
+status: draft
+sermonDescription: Jesus' promise of freedom exposes religious identity that fails to recognize slavery to sin. A burning house mistaken for refreshing water illustrates self-deception and the Spirit's awakening work. The preacher distinguishes spiritual, temporal and eternal consequences from visible success, then presents salvation as a transformation from slave to beloved child. Freedom in Christ enables fruitful life rooted in God's word rather than merely escape from punishment or accumulation of religious effort.
+sermonScripture:
+  - John 8:31-36
+  - Jeremiah 17:5-10
+  - 1 John 3:1
+sermonTopics:
+  - truth
+  - salvation
+  - discernment
+uploads:
+  - youtubeId: JkWUxoV_xtQ
+    uploadDuration: "1:49:56.952"
+chapters:
+  - chapterId: c20251207-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
+    chapterStart: "0:18.25"
+    chapterEnd: "4:31.62"
+    points:
+      - pointTime: "0:18.25"
+        pointText: The recorded ACTS prayer starts at confession and continues through the remaining personal prayer and gathered prayer before worship.
+  - chapterId: c20251207-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "4:31.62"
+    chapterEnd: "30:56.85"
+    chapterScripture:
+      - Psalms 19:1-5
+      - Proverbs 30:1-33
+      - John 8:31-47
+      - Jeremiah 17:5-10
+    points:
+      - pointTime: "4:31.62"
+        pointText: Belinda welcomes the congregation before greetings and quiet preparation for worship.
+      - pointTime: "6:26.52"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
+      - pointTime: "7:07.18"
+        pointText: Belinda connects creation's witness with general revelation and God's continuing sovereignty.
+      - pointTime: "11:41.24"
+        pointText: Christ's lowly birth contrasts a kingdom of grace with earthly expectations of royal power.
+      - pointTime: "23:04.92"
+        pointText: Dependence on Christ is distinguished from trying to free oneself through self-reliance.
+      - pointTime: "29:50.9"
+        pointText: Jeremiah 17:5-10 is read before the sermon.
+  - chapterId: c20251207-question-truth
+    chapterTitle: Why Does Christian Faith Challenge How We Live?
+    chapterKind: qa
+    chapterStart: "30:56.85"
+    chapterEnd: "43:18.8"
+    points:
+      - pointTime: "31:42.76"
+        pointText: A question asks why Christianity insists on proper conduct instead of leaving everyone to choose freely.
+      - pointTime: "35:21.32"
+        pointText: Power overriding truth is applied to both large-scale conflict and ordinary personal arguments.
+      - pointTime: "37:02.22"
+        pointText: The preacher grounds persistent desires for truth and justice in humanity's creation in God's image.
+      - pointTime: "39:59.8"
+        pointText: Abiding in God's word supplies the standard of truth rather than whichever claim happens to succeed.
+      - pointTime: "41:22.5"
+        pointText: Knowing truth intimately is distinguished from merely knowing information about it.
+  - chapterId: c20251207-enslaved-unaware
+    chapterTitle: Religious Confidence Can Conceal Enslavement
+    chapterKind: sermon
+    chapterStart: "43:18.8"
+    chapterEnd: "59:23.7"
+    chapterScripture:
+      - John 8:31-34
+      - Genesis 22:17-18
+      - Exodus 16:2-3
+    points:
+      - pointTime: "45:47.06"
+        pointText: Claiming descent from Abraham does not establish the freedom Christ is describing.
+      - pointTime: "48:57.34"
+        pointText: Abraham's promised blessing is connected with obedience rather than inherited privilege alone.
+      - pointTime: "51:31.62"
+        pointText: Jesus identifies persistent sin as slavery, moving beyond a merely political or social definition of freedom.
+      - pointTime: "53:59.28"
+        pointText: Israel's longing for Egypt illustrates missing the value of deliverance and preferring familiar bondage.
+      - pointTime: "57:22.58"
+        pointText: Conviction that one's conduct is right is not itself proof of truth or freedom from deception.
+  - chapterId: c20251207-awakening
+    chapterTitle: Awaken from a Comfortable but False Life
+    chapterKind: sermon
+    chapterStart: "59:23.7"
+    chapterEnd: "1:09:15.0"
+    chapterScripture:
+      - Jeremiah 17:5-9
+    points:
+      - pointTime: "59:23.82"
+        pointText: Jeremiah exposes the danger of placing ultimate confidence in human strength and self-justification.
+      - pointTime: "1:04:29.36"
+        pointText: Dreaming of icy water in a burning house illustrates comfort produced by an inaccurate view of reality.
+      - pointTime: "1:05:53.52"
+        pointText: The Spirit's awakening is described as making people aware of danger and able to respond to it.
+      - pointTime: "1:07:34.26"
+        pointText: The apparent prosperity of wrongdoers raises the question of whether comfortable circumstances mean life is sound.
+  - chapterId: c20251207-consequences
+    chapterTitle: Visible Success Does Not Remove Sin's Consequences
+    chapterKind: sermon
+    chapterStart: "1:09:15.0"
+    chapterEnd: "1:19:19.7"
+    chapterScripture:
+      - Matthew 12:36
+    points:
+      - pointTime: "1:09:20.44"
+        pointText: The Westminster Confession distinguishes spiritual, temporal and eternal misery resulting from sin.
+      - pointTime: "1:11:10.42"
+        pointText: Separation from God's presence means missing the life he designed even when circumstances appear prosperous.
+      - pointTime: "1:12:20.62"
+        pointText: Lifelong faithfulness illustrates a qualitative good that a purely self-serving account of pleasure overlooks.
+      - pointTime: "1:14:20.22"
+        pointText: Escaping visible consequences during one's lifetime does not remove final accountability.
+      - pointTime: "1:16:04.46"
+        pointText: Awareness of complete accountability changes present choices and offers hope that unresolved injustice will be addressed.
+  - chapterId: c20251207-free-child
+    chapterTitle: Freedom Changes Our Status and Enables Fruitfulness
+    chapterKind: sermon
+    chapterStart: "1:19:19.7"
+    chapterEnd: "1:30:25.9"
+    chapterScripture:
+      - John 8:35-36
+      - 1 John 3:1
+      - Jeremiah 17:7-8
+      - Genesis 1:28
+    points:
+      - pointTime: "1:19:33.48"
+        pointText: Christ's solution changes a slave's status into lasting belonging as God's child.
+      - pointTime: "1:20:10.28"
+        pointText: Salvation is distinguished from balancing wrong deeds with more good deeds.
+      - pointTime: "1:24:44.04"
+        pointText: A demanding religious pilgrimage is contrasted with the freedom Christ gives rather than earned enlightenment.
+      - pointTime: "1:26:09.0"
+        pointText: The Son's freedom is presented as real and complete rather than another form of self-generated confidence.
+      - pointTime: "1:28:39.02"
+        pointText: Freedom is also for bearing fruit, pictured by a tree sustained through heat and drought.
+      - pointTime: "1:29:50.12"
+        pointText: God's word supplies purpose and nourishment for a life that witnesses through fruitfulness.
+  - chapterId: c20251207-response
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:30:25.9"
+    chapterEnd: "1:49:56.952"
+    chapterScripture:
+      - Romans 15:13
+      - 2 Corinthians 13:14
+    points:
+      - pointTime: "1:30:25.9"
+        pointText: Response prayer asks for release from ignorance and a fruitful witness rather than returning to old bondage.
+      - pointTime: "1:32:35.74"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
+      - pointTime: "1:36:26.34"
+        pointText: Prayer connects persevering faith with walking together and serving people facing difficulty.
+      - pointTime: "1:37:37.7"
+        pointText: The offertory includes instructions for the second offering designated for evangelism.
+      - pointTime: "1:38:53.92"
+        pointText: Standing on the Promises is introduced as the closing hymn.
+      - pointTime: "1:41:42.68"
+        pointText: Doxology is followed by the blessing using Romans 15:13 and 2 Corinthians 13:14.
+      - pointTime: "1:42:53.44"
+        pointText: Announcements center on the gospel rally, prayer meeting and ministry participation.
+      - pointTime: "1:49:54.36"
+        pointText: A final notice about membership transfer follows the initial dismissal; the congregation is then dismissed again.
+markers:
+  - markerTime: "0:18.25"
+    markerNote: "The supplied transcript begins at confession, not a complete earlier prayer sequence. Anchors and length use supplied faster-whisper audio evidence; fresh media verification remains outstanding."
+  - markerTime: "1:04:29.36"
+    markerNote: "Title discrepancy for editorial resolution: the slide reads Swimming in icy waters, while the preacher explicitly calls the title Dreaming of Swimming in Icy Water. The draft retains the spoken version provisionally; neither source supersedes the other without review. Political, historical, comparative-religion and reported misconduct examples remain attributed to the preacher."

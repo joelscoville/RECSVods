@@ -1,0 +1,173 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Out of the World
+serviceDate: 2025-11-23
+status: draft
+sermonDescription: Jesus' claim to be from above exposes the distance between divine reality and fallen human assumptions. His warning that the opportunity to respond will end introduces urgency. Quantitative success is distinguished from essential worth through education, possessions, natural beauty and AI-generated worship. Salvation is grounded in belonging to the great I Am rather than balancing deeds, while Christ's faithful life and John's testimony invite personal knowledge, transformed fellowship and fuller joy.
+sermonScripture:
+  - John 8:21-30
+  - Matthew 6:28-29
+  - 1 John 1:1-4
+sermonTopics:
+  - knowing-god
+  - discernment
+  - salvation
+uploads:
+  - youtubeId: pwORPRWgtr4
+    uploadDuration: "1:41:39.812"
+chapters:
+  - chapterId: c20251123-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
+    chapterStart: "2:26.15"
+    chapterEnd: "7:30.14"
+    points:
+      - pointTime: "2:26.15"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20251123-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "7:30.14"
+    chapterEnd: "28:20.6"
+    chapterScripture:
+      - Psalms 9:1-4
+      - Proverbs 28:1-28
+      - John 8:21-30
+      - John 1:1-4
+    points:
+      - pointTime: "7:30.14"
+        pointText: Patrick welcomes the congregation before greetings and silent meditation.
+      - pointTime: "9:09.54"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
+      - pointTime: "12:30.22"
+        pointText: Patrick connects comfort for God's suffering people with Isaiah's account of God's overwhelming power and glory.
+      - pointTime: "27:26.28"
+        pointText: The reader announces 1 John but reads John 1:1-4 before the sermon; the links retain the passage actually read.
+  - chapterId: c20251123-ai-question
+    chapterTitle: AI Progress Does Not Resolve the Human Heart
+    chapterKind: qa
+    chapterStart: "28:20.6"
+    chapterEnd: "43:09.4"
+    points:
+      - pointTime: "29:28.4"
+        pointText: AI's role in church and sermon preparation introduces the distinction between capable output and authentic worship.
+      - pointTime: "32:39.54"
+        pointText: Greater productivity is not assumed to produce generous sharing, because technological change does not remove fallenness.
+      - pointTime: "33:47.74"
+        pointText: The preacher connects failed visions of human progress with mistaken understanding of God and humanity.
+      - pointTime: "36:04.0"
+        pointText: Darkness is described as absence of light rather than a rival power equal to God.
+      - pointTime: "39:28.42"
+        pointText: Knowing Christ personally is distinguished from merely knowing information about him.
+  - chapterId: c20251123-time-grace
+    chapterTitle: The Opportunity to Respond Will Not Last Forever
+    chapterKind: sermon
+    chapterStart: "43:09.4"
+    chapterEnd: "55:03.22"
+    chapterScripture:
+      - John 8:21-22
+      - Genesis 7:21
+    points:
+      - pointTime: "43:09.66"
+        pointText: The encounter is framed as God revealing himself to people who struggle to understand.
+      - pointTime: "47:07.68"
+        pointText: Jesus' departure is read as more than a farewell, including a warning about seeking him too late.
+      - pointTime: "47:54.92"
+        pointText: Taking Christ's return seriously changes how present choices are evaluated.
+      - pointTime: "49:36.14"
+        pointText: The closing of Noah's ark illustrates an opportunity ending despite a long period of warning.
+      - pointTime: "52:16.04"
+        pointText: Present mercy is distinguished from a guarantee that accountability can be postponed indefinitely.
+  - chapterId: c20251123-above-below
+    chapterTitle: Christ Is from Above and We Are from Below
+    chapterKind: sermon
+    chapterStart: "55:03.22"
+    chapterEnd: "1:02:56.12"
+    chapterScripture:
+      - John 8:23
+    points:
+      - pointTime: "55:13.0"
+        pointText: Christ's declaration identifies a difference of origin and nature rather than merely superior achievement.
+      - pointTime: "56:20.06"
+        pointText: The Creator-creature distinction is described as enduring even beyond this lifetime.
+      - pointTime: "58:38.5"
+        pointText: Qualitative difference concerns essence rather than size, speed or other measurable comparisons.
+      - pointTime: "1:00:43.82"
+        pointText: Humanity's creation in God's image is presented as a distinction that a DNA percentage cannot settle.
+  - chapterId: c20251123-worth-praise
+    chapterTitle: Recognize Worth beyond Price and Impressive Words
+    chapterKind: sermon
+    chapterStart: "1:02:56.12"
+    chapterEnd: "1:17:18.9"
+    chapterScripture:
+      - Matthew 6:28-29
+      - Isaiah 29:13
+      - Matthew 15:8
+    points:
+      - pointTime: "1:04:09.48"
+        pointText: Knowing the price of things is contrasted with recognizing their actual worth.
+      - pointTime: "1:05:01.14"
+        pointText: Concern for school scores is contrasted with concern that children become upright people.
+      - pointTime: "1:08:30.14"
+        pointText: Jesus' lilies-and-Solomon comparison challenges the assumption that cost determines beauty or glory.
+      - pointTime: "1:12:32.26"
+        pointText: A watch's price and timekeeping illustrate the confusion between quantitative function and perceived value.
+      - pointTime: "1:13:52.14"
+        pointText: A John Piper clip asks whether eloquent machine-generated prayer constitutes actual praise.
+      - pointTime: "1:16:04.7"
+        pointText: The discussion connects worship with a heart that values God's grace rather than words that merely sound convincing.
+  - chapterId: c20251123-great-i-am
+    chapterTitle: Belong to the Great I Am and Know Him Personally
+    chapterKind: sermon
+    chapterStart: "1:17:18.9"
+    chapterEnd: "1:26:41.26"
+    chapterScripture:
+      - John 8:24-30
+      - Hebrews 4:15
+      - 1 John 1:1-4
+    points:
+      - pointTime: "1:17:18.9"
+        pointText: God's truth requires revelation rather than confidence that fallen reasoning can grasp it completely.
+      - pointTime: "1:18:53.28"
+        pointText: Sin as a condition of separation is distinguished from counting individual wrong deeds.
+      - pointTime: "1:19:09.42"
+        pointText: Believing in the I Am is presented as returning to the source of light and life.
+      - pointTime: "1:22:51.18"
+        pointText: Christ's life pleasing to the Father challenges listeners to examine the direction of their own choices.
+      - pointTime: "1:24:24.24"
+        pointText: Cognitive agreement is distinguished from faith that knows Christ and transforms life.
+      - pointTime: "1:25:54.7"
+        pointText: John's testimony directs attention toward fellowship and joy rather than spending life on superficial measures of success.
+  - chapterId: c20251123-response
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:26:41.26"
+    chapterEnd: "1:41:39.812"
+    chapterScripture:
+      - Romans 15:13
+      - 2 Corinthians 13:14
+    points:
+      - pointTime: "1:26:41.26"
+        pointText: Response prayer asks for humility to receive Christ's revelation and act toward fuller joy.
+      - pointTime: "1:27:56.32"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
+      - pointTime: "1:31:56.94"
+        pointText: Shared prayer connects living faith with transformed relationships, mutual support and service beyond isolation.
+      - pointTime: "1:32:54.26"
+        pointText: The offertory follows pastoral prayer.
+      - pointTime: "1:34:44.6"
+        pointText: I Know Whom I Have Believed is introduced as the closing hymn.
+      - pointTime: "1:37:16.44"
+        pointText: Doxology is followed by the blessing using Romans 15:13 and 2 Corinthians 13:14.
+      - pointTime: "1:38:28.48"
+        pointText: Announcements explain gospel-rally prayer, invitation cards and other ministry opportunities.
+      - pointTime: "1:41:29.14"
+        pointText: The final notices lead into dismissal with silent meditation.
+markers:
+  - markerTime: "27:26.28"
+    markerNote: "The reader announces 1 John but reads John 1:1-4; the preacher notes the mismatch. Section links retain the actual reading; the sermon separately uses 1 John 1:1-4."
+  - markerTime: "43:09.4"
+    markerNote: "Out of the World follows the next week's recap; confirm exact announced title. Supplied faster-whisper audio timings and length await fresh media verification."
+  - markerTime: "1:13:52.14"
+    markerNote: "The Piper clip and scientific, historical or comparative examples are summarized as presented; proper names and factual claims have not been independently verified."

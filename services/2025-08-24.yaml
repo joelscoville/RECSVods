@@ -1,0 +1,165 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Unchanging Love of God
+serviceDate: 2025-08-24
+status: draft
+sermonDescription: Malachi's disappointed audience is called to remember God's love rather than use difficult circumstances as the measure of his faithfulness. The guest preacher follows three movements in which love is revealed through covenant, election and righteousness. Grace precedes performance and should produce humble trust, while love and justice remain inseparable. Christ's cross supplies the concrete answer to doubt, calling the congregation toward repentance and faithful service rather than religious bargaining or a softened gospel.
+sermonScripture:
+  - Malachi 1:1-5
+  - Romans 5:8
+  - Jeremiah 31:3
+sermonTopics:
+  - love
+  - repentance
+  - salvation
+uploads:
+  - youtubeId: BasPKaWT4Ao
+    uploadDuration: "1:39:16.638"
+chapters:
+  - chapterId: c20250824-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
+    chapterStart: "0:10.75"
+    chapterEnd: "3:25.7"
+    points:
+      - pointTime: "0:37.32"
+        pointText: The leader guides personal prayer through adoration, confession, thanksgiving and supplication before worship begins.
+  - chapterId: c20250824-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "3:25.7"
+    chapterEnd: "31:08.1"
+    chapterScripture:
+      - Psalms 136:1-4
+      - Proverbs 17:1-28
+      - Romans 5:1-21
+      - Malachi 1:1-5
+    points:
+      - pointTime: "3:25.7"
+        pointText: The welcome leads into greetings, silent meditation and the call to worship.
+      - pointTime: "5:39.76"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
+      - pointTime: "6:23.84"
+        pointText: God's faithfulness is affirmed through both good and difficult circumstances, preparing the question explored in Malachi.
+      - pointTime: "30:06.5"
+        pointText: Malachi 1:1-5 is read before the guest sermon.
+  - chapterId: c20250824-burden-doubt
+    chapterTitle: God's Faithful Message Addresses Disappointed People
+    chapterKind: sermon
+    chapterStart: "31:08.1"
+    chapterEnd: "46:03.95"
+    chapterScripture:
+      - Malachi 1:1-5
+    points:
+      - pointTime: "34:15.34"
+        pointText: The message's source is distinguished from the messenger who delivers it.
+      - pointTime: "37:16.7"
+        pointText: Faithfully delivering an unwelcome warning is explained as the prophet's burden.
+      - pointTime: "42:07.44"
+        pointText: Disappointed expectations lead the returned people to question God's love and promises.
+      - pointTime: "42:47.08"
+        pointText: Doubt becomes especially damaging when outward worship continues while the heart moves away from God.
+      - pointTime: "44:59.86"
+        pointText: Love is proclaimed through a call to repentance and covenant faithfulness rather than a promise of easy circumstances.
+  - chapterId: c20250824-covenant-love
+    chapterTitle: God's Love Is Revealed in His Covenant
+    chapterKind: sermon
+    chapterStart: "46:03.95"
+    chapterEnd: "59:46.55"
+    chapterScripture:
+      - Malachi 1:2
+      - Jeremiah 31:3
+    points:
+      - pointTime: "46:04.18"
+        pointText: The first named movement grounds God's love in covenant rather than a changing feeling.
+      - pointTime: "49:01.62"
+        pointText: Covenant love is described as a commitment God has made to his people.
+      - pointTime: "51:23.74"
+        pointText: The name Israel recalls the people's heritage and promises despite their reduced circumstances.
+      - pointTime: "56:51.76"
+        pointText: Grace is grounded in what God has already done rather than what people imagine they can do to earn more love.
+      - pointTime: "58:25.96"
+        pointText: The question of self-centeredness is applied to the whole church, not only individual believers.
+      - pointTime: "59:29.54"
+        pointText: Trust and obedience are responses to love already given rather than a transaction to obtain it.
+  - chapterId: c20250824-electing-love
+    chapterTitle: God's Love Is Revealed in His Election
+    chapterKind: sermon
+    chapterStart: "59:46.55"
+    chapterEnd: "1:08:05.12"
+    chapterScripture:
+      - Malachi 1:2-3
+    points:
+      - pointTime: "59:52.04"
+        pointText: The second named movement turns toward God's choosing rather than Israel's accomplishments.
+      - pointTime: "1:01:22.68"
+        pointText: Jacob's selection is explained through love and grace rather than superior personal merit.
+      - pointTime: "1:03:22.54"
+        pointText: Unconditional choosing is connected with belonging and confidence that God keeps his people.
+      - pointTime: "1:04:48.42"
+        pointText: Election is meant to produce humility because it removes the basis for boasting in personal achievement.
+      - pointTime: "1:06:44.6"
+        pointText: Entertaining people is distinguished from centering ministry on God's word and the recognition of his voice.
+  - chapterId: c20250824-righteous-love
+    chapterTitle: God's Love Is Revealed in His Righteousness
+    chapterKind: sermon
+    chapterStart: "1:08:05.12"
+    chapterEnd: "1:18:41.6"
+    chapterScripture:
+      - Malachi 1:3-5
+    points:
+      - pointTime: "1:08:05.36"
+        pointText: The third named movement refuses to portray love as God overlooking wrongdoing.
+      - pointTime: "1:10:58.8"
+        pointText: Responsibility for Edom's sin is distinguished from blaming God for forcing it to do evil.
+      - pointTime: "1:12:56.54"
+        pointText: God's authority is declared beyond Israel's borders rather than restricted to the congregation's own group.
+      - pointTime: "1:14:12.76"
+        pointText: Removing judgment and sin to make teaching more comfortable is criticized as weakening the gospel's meaning.
+      - pointTime: "1:17:04.56"
+        pointText: Reconciliation and peace become unclear if the message leaves out the sin that separates people from God.
+  - chapterId: c20250824-cross-response
+    chapterTitle: Remember Unchanging Love by Looking to Christ's Cross
+    chapterKind: sermon
+    chapterStart: "1:18:41.6"
+    chapterEnd: "1:22:23.3"
+    chapterScripture:
+      - Romans 5:8
+      - Matthew 26:27-28
+    points:
+      - pointTime: "1:18:41.84"
+        pointText: God's warning and correction are presented as help for discouraged people rather than abandonment.
+      - pointTime: "1:20:22.32"
+        pointText: The cross is identified as the historical revelation of both love and righteous judgment.
+      - pointTime: "1:22:13.76"
+        pointText: Remembering love calls for repentance and turning toward Christ rather than remaining trapped in doubt.
+  - chapterId: c20250824-closing
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:22:23.3"
+    chapterEnd: "1:39:16.638"
+    chapterScripture:
+      - Jude 1:24-25
+    points:
+      - pointTime: "1:22:23.34"
+        pointText: Response prayer asks that difficult circumstances direct the heart back toward Christ and his love.
+      - pointTime: "1:22:51.24"
+        pointText: The congregation recites the Apostles' Creed before prayer in thanksgiving for God's love.
+      - pointTime: "1:26:37.34"
+        pointText: Shared prayer joins confidence in God's unchanging love with becoming ready help for others.
+      - pointTime: "1:27:37.24"
+        pointText: The offertory follows pastoral prayer, with giving instructions for the congregation.
+      - pointTime: "1:29:25.4"
+        pointText: Like a River Glorious is introduced as the closing hymn.
+      - pointTime: "1:32:36.98"
+        pointText: Doxology is followed by the blessing from Jude 1:24-25.
+      - pointTime: "1:33:45.34"
+        pointText: The guest preacher is thanked before notices about offerings and other ministry opportunities.
+      - pointTime: "1:39:12.24"
+        pointText: Dismissal follows the notices, with silent meditation.
+markers:
+  - markerTime: "31:08.1"
+    markerNote: "The guest introduces himself as Ting Sun; ASR varies the full name. The title follows the source upload. Timings and length use supplied faster-whisper audio evidence and await fresh media checks."
+  - markerTime: "34:15.34"
+    markerNote: "Historical and Hebrew-language explanations contain uncertain ASR, including a proposed identity for Malachi. Preserve the preacher's argument without resolving uncertain names or treating dates as independently verified."

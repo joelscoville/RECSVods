@@ -1,0 +1,146 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: He Must Increase
+serviceDate: 2025-05-25
+status: draft
+sermonDescription: >-
+  John the Baptist answers ministry rivalry with joy that Christ must increase while he decreases. His humility is grounded in truth rather than manners alone: every gift comes from God, and Christ's heavenly authority exceeds human achievement. The preacher challenges gossip, jealousy and service driven by recognition, then calls believers to testify through ordinary life that God is true. Grateful obedience and a clear identity in Christ replace measuring ministry only through numbers, status or thanks.
+sermonScripture:
+  - John 3:22-36
+  - 1 John 2:15-17
+sermonTopics:
+  - discipleship
+  - knowing-god
+  - service
+uploads:
+  - youtubeId: _simV7DWnZs
+    uploadDuration: "1:02:59.7"
+chapters:
+  - chapterId: c20250525-control-question
+    chapterTitle: Evaluate Pride and Control through Truth, Not Labels Alone
+    chapterKind: qa
+    chapterStart: "0:00.74"
+    chapterEnd: "5:53.02"
+    points:
+      - pointTime: "1:42.06"
+        pointText: Emotional reactions can override intellectual ability in relationships and disputes.
+      - pointTime: "3:22.48"
+        pointText: Pride in a child's achievement and responsible parental control illustrate why blanket labels can obscure the real question.
+      - pointTime: "5:03.3"
+        pointText: Motive, purpose and God's truth are proposed as the basis for judging whether control is appropriate.
+  - chapterId: c20250525-light-recap
+    chapterTitle: Take Faith Seriously and Live in the Light
+    chapterKind: sermon
+    chapterStart: "5:53.02"
+    chapterEnd: "15:02.36"
+    chapterScripture:
+      - John 3:16-21
+      - James 3:1
+      - 2 Timothy 3:1-7
+    points:
+      - pointTime: "6:44.02"
+        pointText: The recap holds gospel grace alongside judgment and accountability.
+      - pointTime: "10:08.64"
+        pointText: Religious purpose does not make dishonest or harmful action good.
+      - pointTime: "11:50.72"
+        pointText: Attractive cultural presentation is distinguished from the truth of its message.
+      - pointTime: "14:06.68"
+        pointText: Serious faith aims to sin less rather than claiming sinlessness or testing how far one can stay in darkness.
+  - chapterId: c20250525-rivalry
+    chapterTitle: Refuse Gossip and Rivalry in God's Work
+    chapterKind: sermon
+    chapterStart: "15:02.36"
+    chapterEnd: "31:37.04"
+    chapterScripture:
+      - John 3:22-26
+      - John 4:1-2
+      - Proverbs 16:28
+      - Proverbs 18:8
+      - Proverbs 26:20
+      - James 1:26
+      - Proverbs 6:16-19
+      - Acts 15:39-40
+    points:
+      - pointTime: "16:22.2"
+        pointText: Comparing John 3 with John 4 clarifies that Jesus authorized his disciples to baptize rather than personally performing the baptisms.
+      - pointTime: "18:48.72"
+        pointText: A purification dispute becomes a complaint that Jesus' growing ministry threatens John's following.
+      - pointTime: "20:29.84"
+        pointText: Proverbs' warnings connect gossip with damaged friendships and sustained conflict.
+      - pointTime: "22:11.04"
+        pointText: Forwarding unsubstantiated news is included among ways people can sow discord.
+      - pointTime: "24:14.66"
+        pointText: The THINK test asks whether speech is true, helpful, important or inspiring, necessary and kind.
+      - pointTime: "25:41.38"
+        pointText: Rivalry can exist even among respected leaders, making discernment about one's own contribution to conflict necessary.
+  - chapterId: c20250525-humility
+    chapterTitle: Let Christ Increase through Humility Rooted in Grace
+    chapterKind: sermon
+    chapterStart: "31:37.04"
+    chapterEnd: "46:05.58"
+    chapterScripture:
+      - John 3:27-30
+      - James 1:17
+      - Acts 17:25
+    points:
+      - pointTime: "32:31.64"
+        pointText: The friend of the bridegroom rejoices in another's central role rather than resenting it.
+      - pointTime: "33:25.18"
+        pointText: Christ increasing while John decreases expresses joyful acceptance of his preparatory mission.
+      - pointTime: "34:09.84"
+        pointText: The preacher's responsibility is to lift up Christ rather than leave listeners impressed only with the preacher.
+      - pointTime: "36:47.22"
+        pointText: Cultural manners and enforced deference are distinguished from genuine spiritual humility.
+      - pointTime: "42:07.9"
+        pointText: Truth liberates humility by locating every gift, including life and breath, in God's grace.
+      - pointTime: "43:49.16"
+        pointText: Gratitude challenges comparison and discontent by recognizing what has already been received.
+  - chapterId: c20250525-heavenly-authority
+    chapterTitle: Christ's Heavenly Authority Exceeds Human Achievement
+    chapterKind: sermon
+    chapterStart: "46:05.58"
+    chapterEnd: "52:49"
+    chapterScripture:
+      - John 3:31-32
+      - 1 John 2:15-17
+    points:
+      - pointTime: "46:05.58"
+        pointText: John's distinction between earth and heaven places Christ above the successful ministry of any human leader.
+      - pointTime: "49:47.74"
+        pointText: Christ's revelation is presented as qualitatively different from human teachings rather than simply a greater quantity of wisdom.
+      - pointTime: "51:15.36"
+        pointText: What belongs to the fallen world passes away while doing God's will has lasting significance.
+      - pointTime: "51:44.98"
+        pointText: Opposition to the light helps explain why ministry difficulty is not automatically a sign of failure.
+  - chapterId: c20250525-testimony
+    chapterTitle: Live to Testify That God Is True
+    chapterKind: sermon
+    chapterStart: "52:49"
+    chapterEnd: "1:01:53.42"
+    chapterScripture:
+      - John 3:33-36
+    points:
+      - pointTime: "53:56.48"
+        pointText: Receiving Christ's testimony is connected with a life that demonstrates confidence in God's truth.
+      - pointTime: "54:38.8"
+        pointText: Ordinary work, marriage and family life can witness to God's goodness regardless of social status.
+      - pointTime: "56:49.9"
+        pointText: Christian action is grounded in belonging to God rather than ministry's visible profit or numerical success.
+      - pointTime: "1:00:23"
+        pointText: Serving without expecting thanks challenges recognition as the primary motivation for ministry.
+      - pointTime: "1:00:58.66"
+        pointText: John's final warning connects eternal life with believing and obeying the Son.
+  - chapterId: c20250525-response
+    chapterTitle: Grow in Humility, Gratitude and Faithful Obedience
+    chapterKind: closing
+    chapterStart: "1:01:53.42"
+    chapterEnd: "1:02:59.7"
+    points:
+      - pointTime: "1:01:53.42"
+        pointText: Closing prayer asks for deeper knowledge of God, perseverance after failure and a life increasingly close to the light.
+markers:
+  - markerTime: "0:00.74"
+    markerNote: "The upload begins at sermon/Q&A. The preacher corrects the supplemental reading to 1 John 2:15-17. Title follows the source; supplied audio duration and anchors await media checks."
+  - markerTime: "36:47.22"
+    markerNote: "Cultural generalizations, historical anecdotes, attributed quotations and the political salary/tenure illustration require factual/media review. They are the preacher's account."

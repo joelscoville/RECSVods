@@ -1,0 +1,201 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: The Law & The Righteousness
+serviceDate: 2025-01-12
+status: draft
+sermonDescription: >-
+  Pastor Adrian reads Christ's fulfillment of the law as an invitation to receive God's righteousness through the whole Bible. Moral, civil and ceremonial laws are considered through their purpose and fulfillment in Jesus rather than discarded as irrelevant. Grace brings a changed heart that desires righteousness, not freedom to abandon it. The message challenges both rejection of God's law and a merely measurable, outward obedience, calling believers to meditate, examine themselves and live its spirit with humility.
+sermonScripture:
+  - Matthew 5:17-20
+  - Romans 6:5-14
+  - Exodus 22:1
+sermonTopics:
+  - authority
+  - discipleship
+  - sanctification
+uploads:
+  - youtubeId: voiLZXvhZ7Q
+    uploadDuration: "1:44:49.775"
+chapters:
+  - chapterId: c20250112-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
+    chapterStart: "3:32"
+    chapterEnd: "7:56.56"
+    points:
+      - pointTime: "3:32"
+        pointText: The leader introduces the guest preacher and leads personal prayer in adoration, confession, thanksgiving and supplication.
+  - chapterId: c20250112-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "7:56.56"
+    chapterEnd: "33:39.96"
+    chapterScripture:
+      - Psalms 81:1-4
+      - Psalms 119:105
+      - Proverbs 20:1-30
+      - John 1:1-18
+      - Matthew 5:17-20
+    points:
+      - pointTime: "7:56.56"
+        pointText: The welcome leads into the call to worship, hymns, opening prayer and responsive Bible readings.
+      - pointTime: "12:20.56"
+        pointText: The lamp-and-path reflection connects Scripture with direction amid an abundance of choices and uncertainty.
+      - pointTime: "29:48.98"
+        pointText: Matthew 5:17-20 is read before the guest preacher's introduction and prayer.
+      - pointTime: "32:07.8"
+        pointText: The guest preacher acknowledges the preparation required for preaching while responding to the congregation's need for spiritual nourishment.
+  - chapterId: c20250112-whole-counsel
+    chapterTitle: Christ Fulfills the Law and Calls Us to the Whole Counsel of God
+    chapterKind: sermon
+    chapterStart: "33:39.96"
+    chapterEnd: "45:02.74"
+    chapterScripture:
+      - Matthew 5:17-20
+    points:
+      - pointTime: "35:04.44"
+        pointText: Christ's opposition to some teachers is distinguished from a mission to abolish Scripture itself.
+      - pointTime: "36:45.44"
+        pointText: The law and prophets are explained as the Old Testament rather than a set of teachings Christians can simply leave behind.
+      - pointTime: "40:07.8"
+        pointText: The detective comparison encourages receiving the whole biblical witness rather than drawing conclusions from isolated evidence.
+      - pointTime: "41:53.14"
+        pointText: The wedding-cake comparison depicts New Testament understanding as standing upon the Old Testament.
+      - pointTime: "43:37.98"
+        pointText: Salvation begins a life learning God's righteousness rather than only waiting to enter heaven.
+  - chapterId: c20250112-law-categories
+    chapterTitle: Moral, Civil and Ceremonial Law Fulfilled in Christ
+    chapterKind: sermon
+    chapterStart: "45:02.74"
+    chapterEnd: "1:04:13.32"
+    subchapters:
+      - chapterId: c20250112-moral
+        chapterTitle: Moral Law
+        chapterKind: sermon
+        chapterStart: "45:02.74"
+        chapterEnd: "48:50.84"
+        points:
+          - pointTime: "45:38.96"
+            pointText: The three categories are acknowledged as an interpretive aid rather than headings explicitly supplied by the biblical text.
+          - pointTime: "46:08.04"
+            pointText: Moral law is connected with God's character and the conditions for people to live together.
+          - pointTime: "47:05.02"
+            pointText: Christ's fulfillment opens renewed participation in righteousness rather than permission to despise it.
+      - chapterId: c20250112-civil
+        chapterTitle: Civil Law
+        chapterKind: sermon
+        chapterStart: "48:50.84"
+        chapterEnd: "1:02:24.9"
+        chapterScripture:
+          - Exodus 22:1
+          - Luke 19:8-9
+        points:
+          - pointTime: "49:03.38"
+            pointText: Civil law's historical setting is distinguished from its continuing value for understanding God's purposes.
+          - pointTime: "50:29.2"
+            pointText: Restitution for stolen livestock introduces interpreting the spirit of a law beyond copying its wording into a different society.
+          - pointTime: "53:55.86"
+            pointText: Upholding righteousness is distinguished from forgiving wrongdoing without addressing the loss it creates.
+          - pointTime: "55:38.9"
+            pointText: Restitution also opens the possibility of restored relationships instead of permanently defining someone by theft.
+          - pointTime: "57:22.66"
+            pointText: Zacchaeus' repayment is interpreted as a response to received restoration rather than a payment that earns salvation.
+          - pointTime: "59:06.02"
+            pointText: The cross is presented as upholding God's righteousness while making reconciliation possible.
+      - chapterId: c20250112-ceremonial
+        chapterTitle: Ceremonial Law
+        chapterKind: sermon
+        chapterStart: "1:02:24.9"
+        chapterEnd: "1:04:13.32"
+        points:
+          - pointTime: "1:02:34.2"
+            pointText: Sacrifices cease to be repeated because Christ fulfills their purpose, not because approaching God requires no remedy for sin.
+          - pointTime: "1:04:05.46"
+            pointText: God's love and righteousness are held together rather than treated as competing goals.
+  - chapterId: c20250112-new-heart
+    chapterTitle: Grace Places Righteousness within a New Heart
+    chapterKind: sermon
+    chapterStart: "1:04:13.32"
+    chapterEnd: "1:09:24.4"
+    chapterScripture:
+      - Romans 6:5-14
+    points:
+      - pointTime: "1:04:23.4"
+        pointText: Paul's statement about being under grace is read with his call not to offer oneself as an instrument of unrighteousness.
+      - pointTime: "1:06:00.92"
+        pointText: The law-as-prison image describes resistance to righteousness rather than its moral purpose becoming obsolete.
+      - pointTime: "1:07:42.9"
+        pointText: A changed heart desires obedience while still struggling with former patterns.
+  - chapterId: c20250112-quality
+    chapterTitle: Seek Righteousness of the Heart, Not Only Measurable Performance
+    chapterKind: sermon
+    chapterStart: "1:09:24.4"
+    chapterEnd: "1:28:21.58"
+    chapterScripture:
+      - Matthew 5:20
+      - Genesis 2:17
+      - Genesis 3:3
+      - Mark 7:9-13
+    points:
+      - pointTime: "1:09:24.4"
+        pointText: Rejecting the law and copying Pharisaic righteousness are distinguished as opposite errors.
+      - pointTime: "1:14:26.78"
+        pointText: Exceeding the Pharisees is explained through the quality of the heart rather than adding more measurable religious acts.
+      - pointTime: "1:16:19.2"
+        pointText: Protective rules can become a substitute for understanding the purpose of the law they were meant to guard.
+      - pointTime: "1:18:02.84"
+        pointText: Weekly attendance is contrasted with genuinely desiring shared worship and formation through God's word.
+      - pointTime: "1:21:28.28"
+        pointText: Eve's wording illustrates the danger of adding restrictions while losing sight of the original command's meaning.
+      - pointTime: "1:24:08.62"
+        pointText: A quotation attributed to Lloyd-Jones directs attention toward what one is within when nobody is watching.
+      - pointTime: "1:26:38.48"
+        pointText: Family and ministry responsibilities call for heartfelt discernment rather than using religious rules to excuse neglect.
+  - chapterId: c20250112-meditation
+    chapterTitle: Meditate on God's Law and Examine Yourself
+    chapterKind: sermon
+    chapterStart: "1:28:21.58"
+    chapterEnd: "1:32:15.82"
+    chapterScripture:
+      - Psalms 1:1-2
+    points:
+      - pointTime: "1:28:48"
+        pointText: Delighting in the law involves meditation that seeks God's wisdom, love and righteousness.
+      - pointTime: "1:30:11.88"
+        pointText: Examining oneself is distinguished from turning a visible standard into a tool for judging others.
+      - pointTime: "1:30:47.38"
+        pointText: Treating a sermon only as a message for someone else misses its call to personal reflection.
+  - chapterId: c20250112-response
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:32:15.82"
+    chapterEnd: "1:44:49.775"
+    chapterScripture:
+      - Numbers 6:24-26
+    points:
+      - pointTime: "1:32:15.82"
+        pointText: Response prayer asks for a community that neither judges self-righteously nor abandons God's righteousness.
+      - pointTime: "1:33:44.72"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
+      - pointTime: "1:34:45.42"
+        pointText: Pastoral prayer connects received salvation with resisting complacency and acting on God's word.
+      - pointTime: "1:38:17.06"
+        pointText: The offertory follows the pastoral prayer, with QR-code and offering-box instructions.
+      - pointTime: "1:39:42.6"
+        pointText: How Firm a Foundation is introduced as the closing hymn.
+      - pointTime: "1:40:01.4"
+        pointText: The foundation reflection asks whether faith rooted in God's word can withstand real crises.
+      - pointTime: "1:43:20.3"
+        pointText: Doxology is followed by Adrian's exhortation and the blessing from Numbers 6:24-26.
+      - pointTime: "1:44:42.58"
+        pointText: The service ends with dismissal after the blessing.
+markers:
+  - markerTime: "12:12.64"
+    markerNote: "The lamp-and-path verse is Psalms 119:105 despite speech/ASR giving 119:1-5. Responsive reading is Proverbs 20:1-30 after a tangled first announcement."
+  - markerTime: "30:57.08"
+    markerNote: "Adrian is the announced guest preacher. Title follows the source. Supplied faster-whisper audio length and anchors await fresh media checks."
+  - markerTime: "45:38.96"
+    markerNote: "The speaker explicitly identifies the moral/civil/ceremonial distinction as a framework for interpretation, not a classification the Bible itself labels."
+  - markerTime: "1:21:28.28"
+    markerNote: "The Genesis transmission explanation is explicitly tentative; legal illustrations, historical claims and quotation attribution require factual review."

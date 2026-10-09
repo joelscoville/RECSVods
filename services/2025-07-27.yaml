@@ -1,0 +1,194 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Witnesses
+serviceDate: 2025-07-27
+status: draft
+sermonDescription: Christ's judgment is grounded in the Father's will and gives both accountability and hope for unresolved injustice. His appeal to witnesses reflects identifying with human life rather than demanding belief by force. The Father, John the Baptist, Christ's works and Scripture testify to him, yet seeking worldly glory can obstruct recognition. The preacher connects genuine faith with shared community and calls every believer to become a credible witness whose conduct, rather than titles or knowledge alone, points others toward Christ.
+sermonScripture:
+  - John 5:30-47
+  - Hebrews 12:1-3
+  - Deuteronomy 19:15
+sermonTopics:
+  - truth
+  - justice
+  - church-life
+uploads:
+  - youtubeId: oE2Afabow78
+    uploadDuration: "1:53:00.018"
+chapters:
+  - chapterId: c20250727-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
+    chapterStart: "5:00.75"
+    chapterEnd: "10:27.16"
+    points:
+      - pointTime: "5:00.75"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+      - pointTime: "7:12.1"
+        pointText: Gratitude is presented as a foundation for a joyous and contented life.
+  - chapterId: c20250727-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "10:27.16"
+    chapterEnd: "35:47.9"
+    chapterScripture:
+      - Psalms 125:1-5
+      - Proverbs 13:1-25
+      - John 5:30-47
+      - Hebrews 12:1-3
+    points:
+      - pointTime: "10:27.16"
+        pointText: The welcome leads into quiet preparation, the call to worship, hymns and responsive Bible readings.
+      - pointTime: "34:44.58"
+        pointText: Hebrews 12:1-3 is read before the sermon.
+  - chapterId: c20250727-creation-question
+    chapterTitle: Why Create People If God Is Already Sufficient?
+    chapterKind: qa
+    chapterStart: "35:47.9"
+    chapterEnd: "46:20.4"
+    points:
+      - pointTime: "37:27.72"
+        pointText: An existential question asks why God creates people and calls them to multiply.
+      - pointTime: "38:10.58"
+        pointText: The limits of a creature's understanding are acknowledged while attention returns to what is already known.
+      - pointTime: "40:10.06"
+        pointText: God's sufficiency excludes creating people because he needs their company or provision.
+      - pointTime: "45:05.48"
+        pointText: Creation is considered as an extension of God's love, connecting love for God with love for other people.
+  - chapterId: c20250727-identity-recap
+    chapterTitle: Christ Reveals the Invisible God and Gives Life
+    chapterKind: sermon
+    chapterStart: "46:20.4"
+    chapterEnd: "51:47.85"
+    chapterScripture:
+      - John 5:18-29
+    points:
+      - pointTime: "46:39.16"
+        pointText: The recap ties a God-directed life to receiving Scripture as revelation rather than merely another opinion.
+      - pointTime: "48:22.22"
+        pointText: Christ's claim is distinguished from a teacher who only offers a route toward God.
+      - pointTime: "50:04.38"
+        pointText: The question of Christ's identity is framed as life and death rather than moral advice alone.
+  - chapterId: c20250727-just-judgment
+    chapterTitle: God's Just Judgment Changes How We Live Now
+    chapterKind: sermon
+    chapterStart: "51:47.85"
+    chapterEnd: "1:06:30.05"
+    chapterScripture:
+      - John 5:30
+      - Philippians 2:10-11
+    points:
+      - pointTime: "52:00.36"
+        pointText: Christ's judgment is just because it serves the Father's will rather than a private agenda.
+      - pointTime: "59:27.08"
+        pointText: Final judgment is grounded in God's truth rather than the uncertainty of human systems.
+      - pointTime: "1:01:06.78"
+        pointText: Belief that truth will be exposed calls for ordering present conduct in light of accountability.
+      - pointTime: "1:04:16.2"
+        pointText: Confidence in final justice also offers peace when wrongs done to a person are not resolved in this life.
+      - pointTime: "1:05:28.7"
+        pointText: Insisting on a minor point of correctness is distinguished from wisely pursuing truth within a relationship.
+  - chapterId: c20250727-human-community
+    chapterTitle: God Identifies with Us and Works through Shared Community
+    chapterKind: sermon
+    chapterStart: "1:06:30.05"
+    chapterEnd: "1:17:29.9"
+    chapterScripture:
+      - John 5:31
+      - Deuteronomy 19:15
+      - Hebrews 4:15-16
+      - Hebrews 10:25
+    points:
+      - pointTime: "1:06:30.14"
+        pointText: Christ's appeal to testimony introduces his choice to meet people within their recognized witness framework.
+      - pointTime: "1:09:42.62"
+        pointText: Having enough information to describe Christ is distinguished from faith that transforms life.
+      - pointTime: "1:11:12.22"
+        pointText: Christ identifies with human weakness rather than arriving simply as an overpowering conqueror.
+      - pointTime: "1:13:57.1"
+        pointText: The ordinary church's representing God is presented as a profound responsibility rather than a mere organizational detail.
+      - pointTime: "1:17:12.38"
+        pointText: Faith lived in community requires loving and forgiving people rather than remaining a purely intellectual private belief.
+  - chapterId: c20250727-four-witnesses
+    chapterTitle: Four Witnesses Testify to the Son
+    chapterKind: sermon
+    chapterStart: "1:17:29.9"
+    chapterEnd: "1:20:50.95"
+    chapterScripture:
+      - John 5:32-40
+    points:
+      - pointTime: "1:17:36.08"
+        pointText: The Father is named as the primary witness to Christ.
+      - pointTime: "1:17:59.12"
+        pointText: John the Baptist's testimony points people toward the truth and the Lamb of God.
+      - pointTime: "1:18:42.34"
+        pointText: Christ's works testify that the Father sent him.
+      - pointTime: "1:19:21.14"
+        pointText: Scripture bears witness to Christ, while reading it does not guarantee willingness to come to him.
+  - chapterId: c20250727-two-glories
+    chapterTitle: Seeking Worldly Glory Can Obstruct Recognition of Christ
+    chapterKind: sermon
+    chapterStart: "1:20:50.95"
+    chapterEnd: "1:29:16.8"
+    chapterScripture:
+      - John 5:41-44
+      - Matthew 10:42
+    points:
+      - pointTime: "1:21:38.54"
+        pointText: Receiving glory from one another is contrasted with seeking the glory that comes from God.
+      - pointTime: "1:24:33.48"
+        pointText: Immediate, loud recognition is contrasted with God's often delayed and less visible reward.
+      - pointTime: "1:24:59.62"
+        pointText: Quiet humility is distinguished from the attention-grabbing signs of worldly prestige.
+      - pointTime: "1:26:51.62"
+        pointText: Spiritual worth is contrasted with sensory excitement and transient satisfaction.
+      - pointTime: "1:27:36.42"
+        pointText: An ordinary glass of water given for Christ's sake illustrates a lasting value unlike public grandeur.
+  - chapterId: c20250727-personal-witness
+    chapterTitle: Become a Credible Witness in Everyday Conduct
+    chapterKind: sermon
+    chapterStart: "1:29:16.8"
+    chapterEnd: "1:35:56.0"
+    chapterScripture:
+      - John 5:45-47
+      - Acts 1:8
+      - Hebrews 12:1-3
+    points:
+      - pointTime: "1:30:59.86"
+        pointText: Being a witness is an identity already given, while the question is whether one's conduct represents Christ well.
+      - pointTime: "1:31:27.54"
+        pointText: Other believers, Scripture and conscience before God are considered as tests of the credibility of a person's life.
+      - pointTime: "1:34:24.96"
+        pointText: Harmful conduct by Christians can become a barrier to another person's receiving the gospel.
+      - pointTime: "1:34:52.16"
+        pointText: The cloud of witnesses and focus on Christ encourage endurance rather than weariness in the calling to represent him.
+  - chapterId: c20250727-response
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:35:56.0"
+    chapterEnd: "1:53:00.018"
+    chapterScripture:
+      - Jude 1:24-25
+    points:
+      - pointTime: "1:35:56.08"
+        pointText: Response prayer asks that Christ's humility, love and mercy become visible in the community's life.
+      - pointTime: "1:37:12.06"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
+      - pointTime: "1:40:45.84"
+        pointText: Shared prayer connects witness with patient submission and practical love toward neighbors.
+      - pointTime: "1:42:01.4"
+        pointText: The offertory follows pastoral prayer, with QR-code and offering-box instructions.
+      - pointTime: "1:43:27.32"
+        pointText: The Old Rugged Cross is introduced as the closing hymn.
+      - pointTime: "1:48:14.4"
+        pointText: Doxology is followed by the blessing from Jude 1:24-25.
+      - pointTime: "1:49:30.38"
+        pointText: Announcements invite ministry participation and introduce upcoming events.
+      - pointTime: "1:52:52.22"
+        pointText: The congregation is dismissed with silent meditation after the notices.
+markers:
+  - markerTime: "5:00.75"
+    markerNote: "The supplied opening includes hymn fragments before the clear ACTS invitation. Timings and length use supplied faster-whisper audio evidence and await fresh media checks. Witnesses is explicitly announced."
+  - markerTime: "1:07:18.86"
+    markerNote: "The witness-law reference has its chapter and verse reversed in speech/ASR; the passage is Deuteronomy 19:15. Historical, legal, comparative and quotation claims remain attributed rather than independently verified."

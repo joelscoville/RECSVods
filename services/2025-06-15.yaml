@@ -1,0 +1,172 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: "Stand Firm: Ready to Defend"
+serviceDate: 2025-06-15
+status: draft
+sermonDescription: Brother Patrick considers whether Jonah should be read as history or fiction, calling Christians to defend their hope with gentleness and respect. He examines literary objections, distinguishes biblical scholarship from personal faith and grounds his answer in Scripture, God's power and Jesus' reference to Jonah. The message moves from defending biblical truth to living its implications through obedience, repentance and compassion for people believers may wrongly regard as beyond God's grace.
+sermonScripture:
+  - 1 Peter 3:13-17
+  - Matthew 12:38-41
+  - Jonah 1:1-4:11
+sermonTopics:
+  - truth
+  - discernment
+  - discipleship
+uploads:
+  - youtubeId: tR_ACmnR3Vw
+    uploadDuration: "1:14:04.601"
+chapters:
+  - chapterId: c20250615-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
+    chapterStart: "0:47.08"
+    chapterEnd: "2:48.88"
+    points:
+      - pointTime: "0:47.08"
+        pointText: The intelligible preparatory prayer resumes at thanksgiving, followed by supplication and gathered prayer; earlier prayer is not reconstructed.
+  - chapterId: c20250615-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "2:48.88"
+    chapterEnd: "24:47.58"
+    chapterScripture:
+      - Psalms 111:1-4
+      - Proverbs 7:1-27
+      - Matthew 12:38-41
+      - 1 Peter 3:13-17
+    points:
+      - pointTime: "2:48.88"
+        pointText: Catherine prepares the congregation with silent meditation before the welcome and call to worship.
+      - pointTime: "4:44.4"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
+      - pointTime: "15:28.44"
+        pointText: The Father's Day reflection honors quiet care and sacrifice while recognizing both parents' contribution to children's growth.
+      - pointTime: "21:42.8"
+        pointText: 1 Peter 3:13-17 is read before Patrick's sermon introduction and prayer.
+      - pointTime: "22:08.22"
+        pointText: Defending the reason for Christian hope is joined to gentleness, respect and a good conscience.
+  - chapterId: c20250615-historicity-question
+    chapterTitle: Is Jonah History or Fiction?
+    chapterKind: qa
+    chapterStart: "24:47.58"
+    chapterEnd: "28:10.1"
+    points:
+      - pointTime: "24:47.58"
+        pointText: The question distinguishes historical events from fictional narratives and introduces debates over biblical books.
+      - pointTime: "27:45.7"
+        pointText: The speaker states the congregation's Reformed position that Jonah is real and historical.
+  - chapterId: c20250615-jonah-story
+    chapterTitle: Jonah's Story Reveals Mercy beyond the Reluctant Prophet
+    chapterKind: sermon
+    chapterStart: "28:10.1"
+    chapterEnd: "34:56.52"
+    chapterScripture:
+      - 1 Peter 3:15
+      - Jonah 1:1-4:11
+    points:
+      - pointTime: "28:10.1"
+        pointText: Prepared defense is presented as service to confused believers and people seeking an explanation of Christian faith.
+      - pointTime: "29:50.16"
+        pointText: Jonah's rescue and renewed commission frame repentance, second chances and God's mercy toward Nineveh.
+      - pointTime: "31:39.04"
+        pointText: God's concern for Nineveh challenges Jonah's narrower concern for his own comfort.
+      - pointTime: "33:13.8"
+        pointText: The Pinocchio comparison examines how familiar fictional stories may shape assumptions before readers encounter Jonah.
+  - chapterId: c20250615-scholarship
+    chapterTitle: Academic Expertise and Confessional Faith Are Distinct
+    chapterKind: sermon
+    chapterStart: "34:56.52"
+    chapterEnd: "40:22.3"
+    points:
+      - pointTime: "34:56.52"
+        pointText: Studying the Bible academically is distinguished from personally believing its Christian claims.
+      - pointTime: "38:33.76"
+        pointText: Historical, linguistic, literary and archaeological study can be pursued for cultural or intellectual reasons as well as faith.
+      - pointTime: "39:04.7"
+        pointText: The speaker urges discernment about an author's standpoint rather than assuming biblical scholarship is always confessional.
+  - chapterId: c20250615-literary-objections
+    chapterTitle: Literary Artistry Does Not by Itself Settle Historicity
+    chapterKind: sermon
+    chapterStart: "40:22.3"
+    chapterEnd: "47:02.92"
+    chapterScripture:
+      - Mark 4:2
+      - Mark 4:34
+    points:
+      - pointTime: "40:51"
+        pointText: The speaker groups objections around Jonah's literary structure and its extraordinary events.
+      - pointTime: "41:49.46"
+        pointText: Parallels between Jonah's encounters with sailors and Nineveh are interpreted as purposeful artistry rather than proof of fiction.
+      - pointTime: "43:52.72"
+        pointText: Chiastic and acrostic writing elsewhere in Scripture illustrates structured literary expression.
+      - pointTime: "45:16.4"
+        pointText: Jesus' parables are discussed as relatable teaching stories before comparison with Jonah's named prophet and places.
+  - chapterId: c20250615-defense
+    chapterTitle: Scripture, God's Power and Christ Ground the Defense of Jonah
+    chapterKind: sermon
+    chapterStart: "47:02.92"
+    chapterEnd: "55:31.82"
+    chapterScripture:
+      - 2 Kings 14:25
+      - Deuteronomy 18:20
+      - Matthew 12:38-41
+    points:
+      - pointTime: "47:02.92"
+        pointText: Jonah's mention in Kings and the named geographical settings form the first part of the speaker's historical argument.
+      - pointTime: "47:56.44"
+        pointText: The book's claims about God's speech and actions are connected with the responsibility of a prophet to speak truthfully.
+      - pointTime: "50:25.64"
+        pointText: Belief in the Creator's power is distinguished from restricting every event to what current human understanding can explain.
+      - pointTime: "52:10.88"
+        pointText: Jesus' comparison with Jonah is presented as the strongest ground for the speaker's Christian reading of the account.
+      - pointTime: "53:51.2"
+        pointText: Nineveh's repentance contrasts with the religious leaders refusing the one greater than Jonah.
+  - chapterId: c20250615-application
+    chapterTitle: Obey the Call and Do Not Set Limits on God's Grace
+    chapterKind: sermon
+    chapterStart: "55:31.82"
+    chapterEnd: "1:03:20.8"
+    chapterScripture:
+      - Jonah 4:11
+      - Romans 5:8-10
+    points:
+      - pointTime: "56:31.84"
+        pointText: The book's theological center is described as God's heart for people, including enemies, rather than fascination with the fish.
+      - pointTime: "57:31.12"
+        pointText: The first reflection asks whether listeners are resisting a call they already recognize.
+      - pointTime: "58:55.06"
+        pointText: Willing obedience is linked with experiencing God personally rather than accumulating knowledge alone.
+      - pointTime: "59:14.92"
+        pointText: The second reflection questions writing people off as beyond God's grace and encourages continued prayer and witness.
+      - pointTime: "1:01:07.44"
+        pointText: The final reflection calls for standing firm in biblical truth while acknowledging that believers do not possess every answer.
+  - chapterId: c20250615-response
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:03:20.8"
+    chapterEnd: "1:14:04.601"
+    points:
+      - pointTime: "1:03:20.8"
+        pointText: Response prayer asks for courage without pride, discernment and gentleness toward others.
+      - pointTime: "1:04:31.26"
+        pointText: The congregation recites the Apostles' Creed before the Father's Day recognition and prayer.
+      - pointTime: "1:07:30.76"
+        pointText: Prayer for fathers joins righteous courage with humility, kindness and passing on a legacy of faith.
+      - pointTime: "1:08:12.7"
+        pointText: The offertory follows the prayer for fathers.
+      - pointTime: "1:09:31.96"
+        pointText: Stand Up, Stand Up for Jesus is sung as the response hymn.
+      - pointTime: "1:11:47.92"
+        pointText: Doxology is followed by a closing prayer for wisdom, boldness and love; no specific biblical benediction is announced.
+      - pointTime: "1:13:13.66"
+        pointText: Announcements invite help with the English autobiography and attendance at the mental-health seminar.
+      - pointTime: "1:13:52.74"
+        pointText: The congregation is dismissed after a time of silent meditation.
+markers:
+  - markerTime: "0:47.08"
+    markerNote: "Initial confession is not intelligible in the supplied ASR. Title follows the source. Upload duration and anchors use supplied audio evidence and await fresh media checks."
+  - markerTime: "34:56.52"
+    markerNote: "Descriptions of scholars, their beliefs and the prevalence of scholarly positions are the speaker's account; quotations, names and consensus claims require verification."
+  - markerTime: "49:44.84"
+    markerNote: "The reported modern whale encounter is an illustration in the speaker's argument, not independent evidence for three-day survival in Jonah's account."

@@ -1,0 +1,183 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: Timing
+serviceDate: 2025-09-14
+status: draft
+sermonDescription: Jesus' delayed and private journey to the Feast of Booths illustrates decisions governed by God's will and timing rather than popularity, fear or pressure from others. Reflecting on a recent assassination, the preacher rejects violence over disagreement while acknowledging evil and opposition to truth. Faithful life includes persecution and practical wisdom, not passive exposure to harm. Scripture and prayerful counsel test whether an unusual course serves God or merely disguises self-interest.
+sermonScripture:
+  - John 7:1-13
+  - Matthew 10:16-23
+  - 2 Timothy 3:12-13
+sermonTopics:
+  - discernment
+  - persecution
+  - truth
+uploads:
+  - youtubeId: hPOgPobN1dU
+    uploadDuration: "1:46:50.356"
+chapters:
+  - chapterId: c20250914-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
+    chapterStart: "0:26.6"
+    chapterEnd: "5:51.42"
+    points:
+      - pointTime: "0:26.6"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20250914-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "5:51.42"
+    chapterEnd: "31:27.4"
+    chapterScripture:
+      - Psalms 145:1-3
+      - Proverbs 20:1-30
+      - John 7:1-24
+      - Matthew 10:16-18
+    points:
+      - pointTime: "5:51.42"
+        pointText: Belinda welcomes the congregation before greetings and silent meditation.
+      - pointTime: "7:56.62"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
+      - pointTime: "13:30.62"
+        pointText: Belinda connects the Spirit's work with recognizing Christ rather than simply experiencing heightened emotions.
+      - pointTime: "25:21.82"
+        pointText: The cross is presented as an event within the Father's timing rather than an accident or delayed plan.
+      - pointTime: "30:42.42"
+        pointText: Matthew 10:16-18 is read before the sermon.
+  - chapterId: c20250914-assassination-question
+    chapterTitle: Reject Violence over Disagreement and Recognize Evil
+    chapterKind: qa
+    chapterStart: "31:27.4"
+    chapterEnd: "59:43.0"
+    points:
+      - pointTime: "38:47.16"
+        pointText: The preacher distinguishes blended political and religious convictions from positions held uniformly by all Christians.
+      - pointTime: "43:07.16"
+        pointText: Initial assumptions about a violent event are questioned as new information emerges.
+      - pointTime: "44:18.82"
+        pointText: Physical and emotional harm over disagreement is rejected in favor of confronting ideas without attacking people.
+      - pointTime: "48:43.12"
+        pointText: Treating one's own camp as always right and an opposing camp as always wrong is challenged through allegiance to truth.
+      - pointTime: "50:59.88"
+        pointText: Reactions celebrating harm are used to argue that evil cannot be explained away as harmless disagreement.
+      - pointTime: "56:14.14"
+        pointText: Social outcomes involve active forces and choices, so remaining uninvolved does not guarantee that truth prevails.
+    subchapters:
+      - chapterId: s20250914-disagree-peacefully
+        chapterTitle: Disagree without Physical or Emotional Harm
+        chapterKind: qa
+        chapterStart: "44:18.6"
+        chapterEnd: "50:59.65"
+        points:
+          - pointTime: "44:18.82"
+            pointText: The rejection of violence applies whether or not one agrees with the person being attacked.
+          - pointTime: "48:20.74"
+            pointText: The principle is extended to family life, including silent or emotional punishment rather than only physical harm.
+          - pointTime: "49:07.12"
+            pointText: Truth is placed above partisan loyalty while legal limits on speech are also acknowledged.
+  - chapterId: c20250914-hard-sayings-recap
+    chapterTitle: Follow the Whole Word rather than a Consumer Faith
+    chapterKind: sermon
+    chapterStart: "59:43.0"
+    chapterEnd: "1:05:32.78"
+    chapterScripture:
+      - John 6:60-71
+      - Luke 9:62
+    points:
+      - pointTime: "1:00:08.92"
+        pointText: Eating Christ's flesh and drinking his blood is recapped as devoted involvement rather than selecting convenient benefits.
+      - pointTime: "1:01:04.16"
+        pointText: Cutting hard teachings out of Scripture produces a faith shaped by preference rather than receiving its whole message.
+      - pointTime: "1:03:26.46"
+        pointText: Peter's response looks to Christ's words of eternal life rather than another destination when discipleship becomes difficult.
+  - chapterId: c20250914-family-expectations
+    chapterTitle: Faithfulness May Conflict with Familiar Expectations
+    chapterKind: sermon
+    chapterStart: "1:05:32.78"
+    chapterEnd: "1:14:47.0"
+    chapterScripture:
+      - John 7:1-5
+      - Leviticus 23:34
+      - Matthew 13:55-57
+    points:
+      - pointTime: "1:06:12.4"
+        pointText: Jesus avoids Judea in the face of opposition, rather than treating hostile conditions as irrelevant.
+      - pointTime: "1:07:52.7"
+        pointText: The festival's remembrance of provision and liberation supplies the setting for the proposed public appearance.
+      - pointTime: "1:11:39.28"
+        pointText: Jesus' brothers urge prominence while not believing in him themselves.
+      - pointTime: "1:12:57.02"
+        pointText: Opposition within one's household is considered alongside Christ's warning about a prophet lacking honor at home.
+  - chapterId: c20250914-god-centered-timing
+    chapterTitle: Make God-Centered Decisions amid Opposition
+    chapterKind: sermon
+    chapterStart: "1:14:47.0"
+    chapterEnd: "1:23:14.76"
+    chapterScripture:
+      - John 7:6-9
+      - John 3:19
+      - 2 Timothy 3:12-13
+    points:
+      - pointTime: "1:14:48.76"
+        pointText: Christ's timing is directed by his mission rather than whatever opportunity other people prefer.
+      - pointTime: "1:16:21.1"
+        pointText: A naive assumption that everyone is naturally trustworthy is challenged by the reality of evil.
+      - pointTime: "1:18:19.8"
+        pointText: Opposition is expected for people pursuing godly life rather than taken as automatic evidence that they chose wrongly.
+      - pointTime: "1:20:36.82"
+        pointText: Jesus' decision is explained through God's timing rather than fear of death or concern about audience size.
+      - pointTime: "1:22:14.64"
+        pointText: Listeners are asked whether their decisions are God-based or driven chiefly by human preference and approval.
+  - chapterId: c20250914-wise-innocent
+    chapterTitle: Exercise Wisdom without Disguising Self-Interest
+    chapterKind: sermon
+    chapterStart: "1:23:14.76"
+    chapterEnd: "1:33:17.04"
+    chapterScripture:
+      - John 7:10-13
+      - Matthew 10:16-23
+    points:
+      - pointTime: "1:23:22.44"
+        pointText: Jesus' private journey demonstrates practical wisdom rather than robotic adherence to a visible formula.
+      - pointTime: "1:26:50.58"
+        pointText: Being wise as serpents and innocent as doves holds practical caution together with integrity.
+      - pointTime: "1:28:01.0"
+        pointText: Godly wisdom cannot justify a course that contradicts God's revealed principles.
+      - pointTime: "1:31:19.86"
+        pointText: Unusual decisions are tested by whether they serve God or provide cover for personal interest.
+      - pointTime: "1:31:45.96"
+        pointText: Prayerful consultation with honest believers is offered as a safeguard for difficult decisions.
+  - chapterId: c20250914-response
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:33:17.04"
+    chapterEnd: "1:46:50.356"
+    chapterScripture:
+      - Romans 15:13
+      - 2 Corinthians 13:14
+    points:
+      - pointTime: "1:33:17.04"
+        pointText: Response prayer asks for decisions shaped by Scripture and wisdom while recognizing opposition from the surrounding world.
+      - pointTime: "1:34:35.96"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
+      - pointTime: "1:38:17.32"
+        pointText: Prayer connects reliance on God with becoming practical comfort for people facing challenges.
+      - pointTime: "1:39:00.44"
+        pointText: The offertory follows pastoral prayer, with instructions for the second offering.
+      - pointTime: "1:41:20.22"
+        pointText: Crown Him with Many Crowns is introduced as the closing hymn.
+      - pointTime: "1:43:51.72"
+        pointText: Doxology is followed by the blessing using Romans 15:13 and 2 Corinthians 13:14.
+      - pointTime: "1:45:07.56"
+        pointText: Notices explain the following week's combined Jakarta anniversary broadcast and upcoming patient visit.
+      - pointTime: "1:46:31.36"
+        pointText: Dismissal follows the notices, with silent meditation.
+markers:
+  - markerTime: "31:27.4"
+    markerNote: "The extended question concerns a very recent assassination; initial reports, political descriptions, legal claims and predictions are the preacher's reflections at that time, not verified final accounts."
+  - markerTime: "1:05:32.78"
+    markerNote: "Timing follows the source upload title. Durations and anchors use supplied faster-whisper audio evidence and await fresh video and boundary listening checks."
+  - markerTime: "1:23:14.76"
+    markerNote: "The claimed route through Samaria is attributed to the preacher; confirm the cross-Gospel chronology and passage linkage rather than treating it as established by John 7 alone."

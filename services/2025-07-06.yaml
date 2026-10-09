@@ -1,0 +1,178 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: To Be Sick
+serviceDate: 2025-07-06
+status: draft
+sermonDescription: >-
+  The healing at Bethesda opens a candid reflection on illness, shaken faith and the burden of accompanying people through suffering. Jesus' varied healings challenge formulas promising guaranteed relief. The preacher names three paradoxes of life: God allows suffering temporarily, works primarily through his people and gives a real hope beyond present pain. Romans 8 frames that hope as assurance of redemption, calling believers to patient, practical involvement rather than isolation or a merely theoretical faith.
+sermonScripture:
+  - John 5:1-18
+  - Romans 8:18-25
+sermonTopics:
+  - suffering
+  - hope
+  - church-life
+uploads:
+  - youtubeId: 3QA06JBY3pc
+    uploadDuration: "1:08:54.433"
+chapters:
+  - chapterId: c20250706-online-question
+    chapterTitle: Worship Is Shared Human Life, Not a Transaction
+    chapterKind: qa
+    chapterStart: "0:01"
+    chapterEnd: "8:37.72"
+    points:
+      - pointTime: "4:03.7"
+        pointText: Online worship's reach and assistance for geographically isolated people are acknowledged before its limitations are considered.
+      - pointTime: "5:06.12"
+        pointText: The chatbot comparison questions replacing demanding relationships with convenient interactions that always satisfy the user.
+      - pointTime: "7:32.7"
+        pointText: Vulnerability, forgiveness and learning to love difficult people are presented as essential to shared faith.
+  - chapterId: c20250706-signs-recap
+    chapterTitle: Receive Christ's Word beyond Demands for Signs
+    chapterKind: sermon
+    chapterStart: "8:37.72"
+    chapterEnd: "15:25.5"
+    chapterScripture:
+      - John 4:46-54
+      - John 20:24-29
+      - 1 Corinthians 1:22-25
+    points:
+      - pointTime: "8:39.1"
+        pointText: The official's mistaken assumptions about Jesus introduce the need to grow in understanding who Christ is.
+      - pointTime: "11:19.74"
+        pointText: Claims made in God's name are treated as serious rather than being accepted because they sound spiritually impressive.
+      - pointTime: "12:02.12"
+        pointText: Signs and wonders are distinguished from the higher calling of trusting Christ's word.
+      - pointTime: "13:41.08"
+        pointText: Christ's grace toward the official is recalled despite the man's initially shallow understanding.
+  - chapterId: c20250706-bethesda
+    chapterTitle: Christ Meets a Man without Anyone to Help
+    chapterKind: sermon
+    chapterStart: "15:25.5"
+    chapterEnd: "23:49.92"
+    chapterScripture:
+      - John 5:1-9
+    points:
+      - pointTime: "15:25.5"
+        pointText: John's geographical and historical detail grounds the account in a particular place and human situation.
+      - pointTime: "17:10.18"
+        pointText: The congregation's visits to people with severe disabilities illustrate practical relief and involvement rather than distant concern.
+      - pointTime: "19:37.04"
+        pointText: The manuscript note about John 5:4 distinguishes a reported belief about the pool from an assured biblical explanation of healing.
+      - pointTime: "22:17.96"
+        pointText: The man's lack of help exposes the relational isolation accompanying his long illness.
+      - pointTime: "22:47.9"
+        pointText: Jesus heals by declaration even though the man does not yet know who he is.
+  - chapterId: c20250706-pastoral-burden
+    chapterTitle: Suffering Can Shake Faith and Calls for Empathy
+    chapterKind: sermon
+    chapterStart: "23:49.92"
+    chapterEnd: "35:14.92"
+    points:
+      - pointTime: "24:00.4"
+        pointText: Illness and bereavement are presented as difficult realities people encounter rather than problems others can simply avoid.
+      - pointTime: "25:42.28"
+        pointText: Pastoral care entails accompanying people through pain instead of treating them as appointments to finish.
+      - pointTime: "27:51.26"
+        pointText: Avoiding people's struggles is contrasted with the responsibility of shepherding them.
+      - pointTime: "29:55.36"
+        pointText: The preacher acknowledges that severe illness can unsettle faith and urges sufferers not to condemn themselves for struggling.
+      - pointTime: "34:09.4"
+        pointText: Unanswered prayer and the immediacy of pain complicate reassuring statements that suffering will eventually pass.
+  - chapterId: c20250706-fallen-world
+    chapterTitle: Fallen Creation Defies Simple Health-and-Wealth Formulas
+    chapterKind: sermon
+    chapterStart: "35:14.92"
+    chapterEnd: "38:50.14"
+    chapterScripture:
+      - Romans 5:12
+    points:
+      - pointTime: "36:28.12"
+        pointText: Romans 5 connects death and decay with humanity's fall rather than treating present imperfection as God's perfect design.
+      - pointTime: "37:13.2"
+        pointText: The paradoxes of life include learning love through relationships that are inconvenient and imperfect.
+      - pointTime: "38:19.88"
+        pointText: Simple equations between goodness, prosperity and health are challenged by the complexities of actual human life.
+  - chapterId: c20250706-paradoxes
+    chapterTitle: Three Paradoxes of Life
+    chapterKind: sermon
+    chapterStart: "38:50.14"
+    chapterEnd: "1:07:32.26"
+    subchapters:
+      - chapterId: c20250706-suffering-temporarily
+        chapterTitle: God Allows Suffering to Exist Temporarily
+        chapterKind: sermon
+        chapterStart: "38:50.14"
+        chapterEnd: "46:50.76"
+        chapterScripture:
+          - John 5:1-9
+          - Luke 5:15-16
+          - John 4:34
+        points:
+          - pointTime: "38:54.9"
+            pointText: The first paradox recognizes suffering as a present reality God has temporarily allowed.
+          - pointTime: "39:36.22"
+            pointText: Christ's mission is distinguished from eradicating every form of temporal suffering during his earthly ministry.
+          - pointTime: "41:30.1"
+            pointText: Different modes of healing challenge reducing Jesus' actions to a single reproducible method.
+          - pointTime: "42:07.82"
+            pointText: Healing one man among many at Bethesda raises the unresolved question of why others were not healed.
+          - pointTime: "43:38.02"
+            pointText: Jesus withdrawing to pray shows that even urgent demands for healing did not determine his mission.
+          - pointTime: "43:55.14"
+            pointText: Prescribed steps guaranteeing divine healing are questioned against the variety and purposes of Jesus' signs.
+      - chapterId: c20250706-through-people
+        chapterTitle: God Works Primarily through His People
+        chapterKind: sermon
+        chapterStart: "46:50.76"
+        chapterEnd: "53:00.28"
+        chapterScripture:
+          - James 2:17
+        points:
+          - pointTime: "46:52.02"
+            pointText: The second paradox directs attention toward God's work through people who participate in one another's lives.
+          - pointTime: "47:50.62"
+            pointText: Following Christ together includes practical support, shared grief and shared rejoicing.
+          - pointTime: "48:31.36"
+            pointText: Correct doctrines alone are distinguished from a lived relationship with God and people made in his image.
+          - pointTime: "49:30.64"
+            pointText: James 2:17 is applied to the whole manner of life rather than charity work alone.
+          - pointTime: "52:54.1"
+            pointText: Hardship creates occasions to live faith with one another in tangible ways rather than retreating into isolation.
+      - chapterId: c20250706-real-hope
+        chapterTitle: We Have a Very Real Hope
+        chapterKind: sermon
+        chapterStart: "53:00.28"
+        chapterEnd: "1:07:32.26"
+        chapterScripture:
+          - Romans 8:18-25
+        points:
+          - pointTime: "53:37.64"
+            pointText: Biblical hope is explained as assurance rather than a wish that circumstances might improve.
+          - pointTime: "54:14.22"
+            pointText: Present suffering is set beside the future glory promised in Romans 8.
+          - pointTime: "56:16.62"
+            pointText: Groaning with creation is held together with expectation of the redemption of the body.
+          - pointTime: "56:50.56"
+            pointText: Hope in what is not yet seen calls for patience amid unanswered questions.
+          - pointTime: "58:45.12"
+            pointText: The song reflection values honest acknowledgment of pain and fear rather than promises that believers never struggle.
+          - pointTime: "1:02:01.06"
+            pointText: The reflection emphasizes courage through suffering and ultimate restoration rather than immediate removal of every problem.
+  - chapterId: c20250706-response
+    chapterTitle: Pray for Patience and Courage in Present Suffering
+    chapterKind: closing
+    chapterStart: "1:07:32.26"
+    chapterEnd: "1:08:54.433"
+    points:
+      - pointTime: "1:07:32.26"
+        pointText: Closing prayer asks for endurance grounded in assurance of Christ's final restoration.
+markers:
+  - markerTime: "0:01"
+    markerNote: "The supplied upload begins at the sermon/Q&A, not the opening service. To Be Sick follows the source title. Duration and anchors use supplied audio ASR and await fresh media checks."
+  - markerTime: "19:37.04"
+    markerNote: "John 5:4 is discussed as a manuscript/footnote issue, not treated as a verified explanation of the pool's healing mechanism."
+  - markerTime: "42:44.3"
+    markerNote: "The withdrawal-to-pray passage is Luke 5:15-16; speech/ASR gives a tangled chapter/verse announcement. Personal names, quotations and historical anecdotes need media/factual review."

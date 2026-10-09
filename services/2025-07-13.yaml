@@ -1,0 +1,202 @@
+# yaml-language-server: $schema=../schema/recording.schema.json
+# Format and rules: ../docs/editing-services.md
+
+recordingTitle: To Be Organized
+serviceDate: 2025-07-13
+status: draft
+sermonDescription: Jesus' healing on the Sabbath exposes religious priorities that value rules over human good. The preacher distinguishes hypocrisy, deception and sincere error, then considers how useful church structures can become ends in themselves. Disappointment with organized worship calls for reform and practical service rather than abandoning community. Hebrews' call to gather, John's call to love and Romans' living sacrifice direct believers toward a renewed, relational faith that serves God through serving people.
+sermonScripture:
+  - John 5:9-17
+  - Romans 12:1-2
+sermonTopics:
+  - church-life
+  - discernment
+  - service
+uploads:
+  - youtubeId: Yk1i8SgY5hM
+    uploadDuration: "1:44:41.88"
+chapters:
+  - chapterId: c20250713-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
+    chapterStart: "0:03.28"
+    chapterEnd: "4:11.3"
+    points:
+      - pointTime: "0:03.28"
+        pointText: The recorded ACTS prayer begins at confession and continues with thanksgiving, supplication and gathered prayer.
+      - pointTime: "3:29.22"
+        pointText: Gathered prayer asks for childlike attentiveness that recognizes God's voice and responds by following him.
+  - chapterId: c20250713-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "4:11.3"
+    chapterEnd: "30:30.78"
+    chapterScripture:
+      - Psalms 118:26-29
+      - Proverbs 11:1-31
+      - John 5:1-18
+      - Romans 12:1-2
+    points:
+      - pointTime: "4:11.3"
+        pointText: Silent meditation precedes the welcome, greetings and call to worship led by Catherine.
+      - pointTime: "6:20.5"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
+      - pointTime: "22:56.78"
+        pointText: The worship reflection distinguishes shared discernment from isolated certainty that can become delusion.
+      - pointTime: "29:40.82"
+        pointText: Romans 12:1-2 is read before the sermon.
+  - chapterId: c20250713-scripture-question
+    chapterTitle: Scriptural Authority Does Not Excuse Legalism
+    chapterKind: qa
+    chapterStart: "30:30.78"
+    chapterEnd: "37:21.98"
+    points:
+      - pointTime: "33:27.8"
+        pointText: The question asks whether Reformed emphasis on biblical accuracy resembles the Pharisees' judgmental religion.
+      - pointTime: "34:34.96"
+        pointText: The preacher locates ultimate authority in God's revealed word rather than majority opinion or changing social expectations.
+      - pointTime: "37:01.62"
+        pointText: Commitment to Scripture is distinguished from legalistic execution that shifts attention away from its truth.
+  - chapterId: c20250713-healing-recap
+    chapterTitle: Hope in Suffering Is Not a Formula for Healing
+    chapterKind: sermon
+    chapterStart: "37:21.98"
+    chapterEnd: "42:25.92"
+    chapterScripture:
+      - John 5:1-9
+    points:
+      - pointTime: "38:43.16"
+        pointText: The previous sermon connects suffering with fallen creation while acknowledging the paradox of hardship forming character.
+      - pointTime: "39:27.9"
+        pointText: Jesus' varied healings and his not healing everyone challenge prescribed steps promising health or prosperity.
+      - pointTime: "40:30.42"
+        pointText: God's work through his people and the hope of Christ's return frame practical help alongside unresolved suffering.
+  - chapterId: c20250713-sabbath
+    chapterTitle: The Sabbath Serves Human Good
+    chapterKind: sermon
+    chapterStart: "42:25.92"
+    chapterEnd: "57:50.34"
+    chapterScripture:
+      - John 5:9-16
+      - Mark 2:23-28
+      - Matthew 12:11-12
+    points:
+      - pointTime: "44:00.32"
+        pointText: The preacher interprets John's reference to the Jews here as opposing religious authorities, rejecting blame against an entire people.
+      - pointTime: "48:53.62"
+        pointText: The healed man's not knowing Jesus' identity reinforces that this encounter does not follow a universal healing formula.
+      - pointTime: "52:36.14"
+        pointText: Opposition over Sabbath rules is contrasted with the joy of a man restored after thirty-eight years of illness.
+      - pointTime: "55:55.3"
+        pointText: Jesus' teaching that the Sabbath is made for people places religious order in service of human needs.
+      - pointTime: "56:08.36"
+        pointText: Rest before God and doing good are distinguished from using rules to constrain others or oppose mercy.
+  - chapterId: c20250713-opposition
+    chapterTitle: Hypocrisy, Deception and Sincere Error Can Oppose God's Work
+    chapterKind: sermon
+    chapterStart: "57:50.34"
+    chapterEnd: "1:09:20.34"
+    chapterScripture:
+      - Matthew 23:13-15
+      - Matthew 13:24-30
+      - John 16:2-3
+      - 1 Timothy 1:13
+    points:
+      - pointTime: "57:50.34"
+        pointText: The first category is hypocrisy that protects religious position and livelihood against Christ's challenge.
+      - pointTime: "1:03:35.16"
+        pointText: The wheat-and-weeds parable cautions that apparent religious belonging does not establish genuine faith.
+      - pointTime: "1:05:43.22"
+        pointText: The second category is deception or ignorance that can mistake persecution for service to God.
+      - pointTime: "1:08:35.7"
+        pointText: The third and especially difficult category is sincere error; good intentions do not guarantee faithful judgment.
+  - chapterId: c20250713-order
+    chapterTitle: Order Is a Tool, Not the Purpose of Faith
+    chapterKind: sermon
+    chapterStart: "1:09:20.34"
+    chapterEnd: "1:14:17.72"
+    points:
+      - pointTime: "1:09:20.34"
+        pointText: Predictable systems offer security and can improve cooperation and efficiency.
+      - pointTime: "1:11:03.2"
+        pointText: Useful organization is affirmed while merit-based religion can exploit human fallenness and become judgmental.
+      - pointTime: "1:11:51.44"
+        pointText: The spirit of the law is distinguished from treating its letter as the overriding concern.
+      - pointTime: "1:12:42.28"
+        pointText: Wedding conventions illustrate how insisting on local tradition can replace attention to the relationship the ceremony serves.
+  - chapterId: c20250713-reform
+    chapterTitle: Reform Organized Worship through Actual Service
+    chapterKind: sermon
+    chapterStart: "1:14:17.72"
+    chapterEnd: "1:23:20.78"
+    chapterScripture:
+      - John 13:1-17
+    points:
+      - pointTime: "1:15:32.7"
+        pointText: A saying attributed to Millard Fuller questions whether organized worship can give an illusion of worship without its reality.
+      - pointTime: "1:16:50.16"
+        pointText: Francis Chan's critique of pulpit-centered participation asks how every believer's gifts become service to others.
+      - pointTime: "1:19:37.62"
+        pointText: Alternative church structures can still gather around gifted leaders, complicating the hope that reorganization alone solves the problem.
+      - pointTime: "1:21:30.78"
+        pointText: Jesus washing the disciples' feet becomes the practical model for church work beyond discussion of hierarchy and organization.
+      - pointTime: "1:23:01.78"
+        pointText: Christian action is grounded in identity as God's people rather than meeting numerical targets or earning a satisfactory result.
+  - chapterId: c20250713-relationship
+    chapterTitle: Gather, Love and Keep Reforming Together
+    chapterKind: sermon
+    chapterStart: "1:23:20.78"
+    chapterEnd: "1:31:23.4"
+    chapterScripture:
+      - Hebrews 10:24-25
+      - 1 John 4:7-8
+      - John 5:16-17
+      - Romans 12:1-2
+    points:
+      - pointTime: "1:23:34.44"
+        pointText: Gathering is presented as a scriptural command whose purpose is stirring one another toward love and good works.
+      - pointTime: "1:25:39.82"
+        pointText: Faith is distinguished from a transaction for personal benefits and described as relationship with God through people made in his image.
+      - pointTime: "1:26:59.64"
+        pointText: John's connection between love and knowing God challenges professing love for God while rejecting people.
+      - pointTime: "1:28:10.14"
+        pointText: Yancey's family comparison encourages forgiveness and continued relationship rather than expecting a perfect church.
+      - pointTime: "1:30:00.66"
+        pointText: Living sacrifice and renewal of the mind direct reform away from rigid routines toward discerning God's will.
+      - pointTime: "1:30:44.52"
+        pointText: Always reforming is applied to shared life, mutual support and resisting judgmental legalism.
+  - chapterId: c20250713-response
+    chapterTitle: Response and Closing
+    chapterKind: closing
+    chapterStart: "1:31:23.4"
+    chapterEnd: "1:44:41.88"
+    chapterScripture:
+      - Hebrews 13:20-21
+    points:
+      - pointTime: "1:31:23.4"
+        pointText: Response prayer asks for living faith expressed through loving, forgiving and serving imperfect people.
+      - pointTime: "1:32:40.26"
+        pointText: The congregation recites the Apostles' Creed before prayer in response to the sermon and for Sunday school.
+      - pointTime: "1:35:05.08"
+        pointText: Prayer for the next generation connects the sermon with members taking responsibility in children's ministry.
+      - pointTime: "1:37:26.78"
+        pointText: The offertory follows pastoral prayer, with giving by QR code or the offering box.
+      - pointTime: "1:38:52.44"
+        pointText: Stand Up, Stand Up for Jesus is introduced as the closing hymn.
+      - pointTime: "1:41:06.14"
+        pointText: Doxology is followed by the blessing from Hebrews 13:20-21.
+      - pointTime: "1:42:21.02"
+        pointText: Announcements explain possible electrical-maintenance disruption and invite participation in ministry.
+      - pointTime: "1:44:01.86"
+        pointText: The final appeal reinforces that ministry must arise from the people rather than the pulpit alone.
+      - pointTime: "1:44:33.02"
+        pointText: Dismissal follows the notices, with silent meditation.
+markers:
+  - markerTime: "15:01.66"
+    markerNote: "The reader corrects a slide/reference mix-up before reading Proverbs 11:1-31; links follow the corrected passage. Responsive reading contains only alternating verses in the supplied ASR."
+  - markerTime: "42:25.92"
+    markerNote: "To Be Organized follows the source title. Duration and anchors use supplied faster-whisper audio evidence and await fresh media checks. Quotations and historical anecdotes are attributed, not independently verified."
+  - markerTime: "44:00.32"
+    markerNote: "Holocaust, Israel/Gaza and contemporary political descriptions and casualty figures are the preacher's attributed discussion and require factual review."
+  - markerTime: "50:35.12"
+    markerNote: "Medical and research-spending claims in the HIV illustration are the preacher's assertions, not independently verified health guidance."
