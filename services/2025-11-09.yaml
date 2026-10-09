@@ -17,10 +17,18 @@ uploads:
   - youtubeId: jx_q_qz_tnk
     uploadDuration: "1:50:23.771"
 chapters:
-  - chapterId: c20251109-worship
-    chapterTitle: Worship the Holy God and Receive His Call
-    chapterKind: opening
+  - chapterId: c20251109-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
     chapterStart: "0:00"
+    chapterEnd: "4:25.18"
+    points:
+      - pointTime: "0:00"
+        pointText: The upload starts during confession and continues with thanksgiving, supplication and gathered prayer before worship.
+  - chapterId: c20251109-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "4:25.18"
     chapterEnd: "30:13.6"
     chapterScripture:
       - Psalms 1:1-6
@@ -28,8 +36,14 @@ chapters:
       - Romans 12:1-21
       - 1 Peter 1:13-16
     points:
+      - pointTime: "4:25.18"
+        pointText: Belinda welcomes the congregation before quiet preparation and the call to worship.
+      - pointTime: "6:13.74"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "25:38.62"
         pointText: Belinda connects surrender with treasuring God rather than seeking lasting peace through possessions or power.
+      - pointTime: "29:33.72"
+        pointText: 1 Peter 1:13-16 is read before the sermon replay and introduction.
   - chapterId: c20251109-holy-messenger
     chapterTitle: Gospel Messengers Must Live the Message
     chapterKind: sermon
@@ -111,11 +125,15 @@ chapters:
         pointText: Adult baptism and membership transfer likewise join personal profession with communal acceptance.
       - pointTime: "1:30:00.08"
         pointText: Shared affirmation and prayer connect belonging to God with belonging to people who care for one another in deeds.
+      - pointTime: "1:30:37.42"
+        pointText: The profession of faith concludes with the Apostles' Creed before prayer for the baptized and received members.
+      - pointTime: "1:31:36.54"
+        pointText: The offertory follows the baptism and membership prayer, before Communion begins.
   - chapterId: c20251109-communion
     chapterTitle: Communion Remembers Christ and Our Shared Belonging
     chapterKind: communion
     chapterStart: "1:33:27.85"
-    chapterEnd: "1:40:24.7"
+    chapterEnd: "1:39:02.74"
     chapterScripture:
       - 1 Corinthians 11:23-26
     points:
@@ -124,17 +142,23 @@ chapters:
       - pointTime: "1:38:01.8"
         pointText: Receiving the bread and cup with thanksgiving recalls Christ's broken body and redeeming blood.
   - chapterId: c20251109-outreach-closing
-    chapterTitle: Put Shared Faith into Practical Outreach
+    chapterTitle: Doxology, Blessing and Announcements
     chapterKind: closing
-    chapterStart: "1:40:24.7"
+    chapterStart: "1:39:02.74"
     chapterEnd: "1:50:23.771"
+    chapterScripture:
+      - Hebrews 13:20-21
     points:
+      - pointTime: "1:39:02.74"
+        pointText: After Communion, the rest of the congregation is invited to stand for doxology and the blessing announced from Hebrews 13.
       - pointTime: "1:40:24.96"
-        pointText: Ministry invitations emphasize ownership of the church's practical work by the whole community.
+        pointText: Announcements follow the blessing; ministry invitations emphasize ownership of the church's practical work by the whole community.
       - pointTime: "1:46:32.32"
         pointText: The orphanage presentation connects giving with children's concrete needs and a proposed larger home.
       - pointTime: "1:49:59.08"
         pointText: Prayer cards are described as a way to bring other people's concerns before God, including people not personally known.
+      - pointTime: "1:50:17.88"
+        pointText: The congregation is dismissed with silent meditation after the notices.
 markers:
   - markerTime: "0:00"
     markerNote: "The supplied recording starts during confession. Timing and length use supplied faster-whisper audio evidence, not fresh video-duration or listening verification."
@@ -144,3 +168,5 @@ markers:
     markerNote: "The replay-to-commentary transition is imperfectly transcribed and resumes commentary mid-phrase; check the actual media boundary."
   - markerTime: "1:24:05.36"
     markerNote: "Baptismal participant names and clip names are not resolved from ASR. Scripture references retain the intended reading range; the responsive reading announcement and spoken ending differ for Proverbs 26."
+  - markerTime: "1:39:02.74"
+    markerNote: "The closing transition is placed at the invitation to stand, before the explicit doxology/blessing cue at 1:39:06.56. This is supported by supplied word timing and the reviewer’s playback observation. Exact sentence-safe playback confirmation remains outstanding; ASR omits much of the sung doxology and blessing."

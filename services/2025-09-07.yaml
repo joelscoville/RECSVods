@@ -17,10 +17,18 @@ uploads:
   - youtubeId: flxmtgBEo6g
     uploadDuration: "1:47:05.310"
 chapters:
-  - chapterId: c20250907-worship
-    chapterTitle: Receive the Word That Sustains the Daily Battle
-    chapterKind: opening
+  - chapterId: c20250907-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:00"
+    chapterEnd: "5:59.56"
+    points:
+      - pointTime: "0:23"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20250907-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "5:59.56"
     chapterEnd: "34:14.86"
     chapterScripture:
       - Psalms 144:1-2
@@ -28,10 +36,16 @@ chapters:
       - John 6:60-71
       - Luke 9:57-62
     points:
+      - pointTime: "5:59.56"
+        pointText: Hadi welcomes the congregation before quiet preparation and the call to worship.
+      - pointTime: "7:54.4"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "9:40.42"
         pointText: Hadi connects the daily struggle against sin with Christ's leadership and the promised end of the battle.
       - pointTime: "14:50.26"
         pointText: God's word is framed as living light, nourishment and strength rather than a text to know at a distance.
+      - pointTime: "33:16.42"
+        pointText: Luke 9:57-62 is read before the sermon.
   - chapterId: c20250907-judgment-question
     chapterTitle: Trust God's Justice without Claiming His Final Judgment
     chapterKind: qa
@@ -125,15 +139,29 @@ chapters:
       - pointTime: "1:30:59.06"
         pointText: Imperfect disciples are encouraged to return after falling and continue through grace rather than discard the hard words.
   - chapterId: c20250907-response-teachers
-    chapterTitle: Continue in Grace and Build Up the Next Generation
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:31:30.66"
     chapterEnd: "1:47:05.310"
+    chapterScripture:
+      - Hebrews 13:20-21
     points:
       - pointTime: "1:31:30.66"
         pointText: Response prayer asks for humility to receive Christ's teaching even when many other people leave it behind.
+      - pointTime: "1:32:54.24"
+        pointText: The congregation recites the Apostles' Creed before prayer, including prayer for teachers.
       - pointTime: "1:35:40.06"
         pointText: Prayer for teachers connects patience and perseverance with building up the body of Christ and equipping the next generation.
+      - pointTime: "1:37:06.3"
+        pointText: The offertory includes instructions for the second offering designated for evangelism.
+      - pointTime: "1:39:10.46"
+        pointText: Be Thou My Vision is introduced as the closing hymn.
+      - pointTime: "1:41:35.26"
+        pointText: Doxology is followed by the blessing from Hebrews 13:20-21.
+      - pointTime: "1:42:49.1"
+        pointText: Appreciation of teachers and invitations to serve lead into the closing announcements.
+      - pointTime: "1:46:57.88"
+        pointText: Dismissal follows the notices, with silent meditation.
 markers:
   - markerTime: "34:14.86"
     markerNote: "Technical setup and introductory banter precede the substantive question; that interval is outside the navigable chapter ranges. Anchors and duration use supplied faster-whisper audio evidence and await fresh media checks."

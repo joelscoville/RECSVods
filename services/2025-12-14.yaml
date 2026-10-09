@@ -17,10 +17,18 @@ uploads:
   - youtubeId: 2me1nJUIPb0
     uploadDuration: "1:51:51.983"
 chapters:
-  - chapterId: c20251214-worship
-    chapterTitle: Worship and Dependence on God
-    chapterKind: opening
+  - chapterId: c20251214-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
     chapterStart: "0:12.45"
+    chapterEnd: "4:22.24"
+    points:
+      - pointTime: "0:12.45"
+        pointText: The recorded ACTS prayer starts at confession and continues with thanksgiving, supplication and gathered prayer.
+  - chapterId: c20251214-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "4:22.24"
     chapterEnd: "32:15.1"
     chapterScripture:
       - Psalms 24:1-6
@@ -28,10 +36,16 @@ chapters:
       - John 8:31-47
       - 1 John 5:18-21
     points:
+      - pointTime: "4:22.24"
+        pointText: Jason welcomes the congregation before greetings and silent meditation.
+      - pointTime: "6:19.62"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "23:14.64"
         pointText: Reflection asks what being a Christian means in the present world.
       - pointTime: "23:22.58"
         pointText: Jason connects Christian identity with proclaiming God's present reign rather than merely observing ancient customs.
+      - pointTime: "31:00.44"
+        pointText: 1 John 5:18-21 is read before the sermon.
   - chapterId: c20251214-question-recap
     chapterTitle: Why Do Christians Still Struggle with Sin?
     chapterKind: qa
@@ -126,19 +140,33 @@ chapters:
       - pointTime: "1:30:31.74"
         pointText: Genuine holiness is distinguished from its imitation and made the goal of growing life in God.
   - chapterId: c20251214-response
-    chapterTitle: Return to the Father and Put Faith into Practice
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:31:55.78"
     chapterEnd: "1:51:51.983"
+    chapterScripture:
+      - Hebrews 13:20-21
     points:
       - pointTime: "1:31:55.78"
         pointText: Response prayer asks for strength to return after failure and increasingly live in Christ's freedom.
+      - pointTime: "1:33:30.54"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:37:25.16"
         pointText: Intercession joins spiritual comfort with practical help, expressing love through deeds rather than words alone.
+      - pointTime: "1:38:32.98"
+        pointText: The offertory includes instructions for the second offering designated for churches and seminaries.
+      - pointTime: "1:40:34.56"
+        pointText: Stand Up, Stand Up for Jesus is introduced as the closing hymn.
+      - pointTime: "1:42:59.1"
+        pointText: Doxology is followed by the blessing from Hebrews 13:20-21.
+      - pointTime: "1:44:13.44"
+        pointText: Announcements explain the monthly Communion schedule planned for 2026 and invite ministry participation.
+      - pointTime: "1:51:45.7"
+        pointText: The congregation is dismissed with silent meditation after the notices.
 markers:
   - markerTime: "0:12.45"
     markerNote: "The supplied recording begins during confession; earlier prayer movements were not reconstructed. Timing and duration use supplied faster-whisper audio evidence and await media verification."
-  - markerTime: "1:09:04.5"
-    markerNote: "A technical interruption precedes the return to the argument at 1:09:43.46; the gap is deliberately outside the navigable sermon sections."
   - markerTime: "50:13.14"
     markerNote: "Our Father is announced in the sermon. Greek capitalization, accounts of religious traditions and reported misconduct or historical violence remain the preacher's claims, not independently verified findings."
+  - markerTime: "1:09:04.5"
+    markerNote: "A technical interruption precedes the return to the argument at 1:09:43.46; the gap is deliberately outside the navigable sermon sections."

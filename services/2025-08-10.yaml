@@ -17,10 +17,18 @@ uploads:
   - youtubeId: RFws3xIW92Q
     uploadDuration: "1:55:37.867"
 chapters:
-  - chapterId: c20250810-worship
-    chapterTitle: Trust Christ within Our Temporary Earthly Home
-    chapterKind: opening
+  - chapterId: c20250810-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:37.1"
+    chapterEnd: "6:33.32"
+    points:
+      - pointTime: "0:37.1"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20250810-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "6:33.32"
     chapterEnd: "36:28.1"
     chapterScripture:
       - Psalms 134:1-3
@@ -28,10 +36,16 @@ chapters:
       - Matthew 14:22-33
       - John 6:16-21
     points:
+      - pointTime: "6:33.32"
+        pointText: Belinda welcomes the congregation before greetings and quiet preparation for worship.
       - pointTime: "8:25.84"
         pointText: Belinda's reflection connects longing for home with heavenly citizenship and responsibility during a temporary earthly life.
+      - pointTime: "10:21.46"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "28:03.18"
         pointText: Confident faith is grounded in whom a person knows rather than having an answer to every question.
+      - pointTime: "35:38.66"
+        pointText: John 6:16-21 is read before the sermon.
   - chapterId: c20250810-prayer-walk-question
     chapterTitle: Prayer Is Not a Technique for Controlling God
     chapterKind: qa
@@ -147,15 +161,30 @@ chapters:
           - pointTime: "1:34:48.94"
             pointText: Calling for help brings Christ's rescuing grace even after the initial step of faith falters.
   - chapterId: c20250810-response
-    chapterTitle: Put Faith into Action through the Gifts God Gives
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:36:44.48"
     chapterEnd: "1:55:37.867"
+    chapterScripture:
+      - Ephesians 3:20-21
+      - 2 Corinthians 13:14
     points:
       - pointTime: "1:36:44.48"
         pointText: Response prayer asks for active use of gifts and resources rather than preserving them unused out of fear.
+      - pointTime: "1:38:28.32"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:42:43.8"
         pointText: Shared prayer connects gratitude for the nation with a supportive community that serves beyond words.
+      - pointTime: "1:43:50.22"
+        pointText: The offertory follows pastoral prayer, with explanation of the two-offering practice.
+      - pointTime: "1:46:19.16"
+        pointText: Trust and Obey is introduced as the closing hymn.
+      - pointTime: "1:48:51.4"
+        pointText: Doxology is followed by the blessing using Ephesians 3:20-21 and 2 Corinthians 13:14.
+      - pointTime: "1:50:15.98"
+        pointText: Announcements invite ministry participation and introduce upcoming events.
+      - pointTime: "1:55:28.7"
+        pointText: Dismissal follows the notices, with silent meditation.
 markers:
   - markerTime: "49:33.4"
     markerNote: "The Art of the Impossible is explicitly announced. Anchors and duration use supplied faster-whisper audio evidence and await fresh video and listening checks."

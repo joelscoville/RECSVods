@@ -17,10 +17,18 @@ uploads:
   - youtubeId: 7CHtvV2wQZw
     uploadDuration: "1:51:17.153"
 chapters:
-  - chapterId: c20251026-worship
-    chapterTitle: Worship and Our Responsibility in the Father's World
-    chapterKind: opening
+  - chapterId: c20251026-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:00"
+    chapterEnd: "5:18.54"
+    points:
+      - pointTime: "0:00"
+        pointText: The recorded ACTS introduction leads into adoration, confession, thanksgiving, supplication and gathered prayer.
+  - chapterId: c20251026-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "5:18.54"
     chapterEnd: "31:32.65"
     chapterScripture:
       - Psalms 149:1-5
@@ -28,10 +36,16 @@ chapters:
       - John 8:1-11
       - Romans 8:1-4
     points:
+      - pointTime: "5:18.54"
+        pointText: Samantha welcomes the congregation before greetings and silent meditation.
+      - pointTime: "7:02.86"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "8:11.44"
         pointText: Samantha distinguishes praise of creation from escaping the responsibility to be salt and light in the world.
       - pointTime: "22:57.7"
         pointText: The accusers' stepping back gives a small sign that they recognize their own sin rather than condemning another without reflection.
+      - pointTime: "30:26.86"
+        pointText: Romans 8:1-4 is read before the sermon.
   - chapterId: c20251026-receptive-service
     chapterTitle: Receive God's Word and Notice Service beyond Our Comfort
     chapterKind: other
@@ -138,19 +152,33 @@ chapters:
       - pointTime: "1:32:37.02"
         pointText: Final accountability remains real, so mercy should not be treated as indefinite permission to ignore sin.
   - chapterId: c20251026-response
-    chapterTitle: Return to Christ and Extend His Grace
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:33:37.38"
     chapterEnd: "1:51:17.153"
+    chapterScripture:
+      - Hebrews 13:20-21
     points:
       - pointTime: "1:34:31.42"
         pointText: Prayer asks for repentance after failure and freedom from condemning oneself or other people.
+      - pointTime: "1:35:25.66"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:39:34.68"
         pointText: Shared prayer connects comfortable circumstances with responsibility to become part of God's help for the surrounding world.
+      - pointTime: "1:40:29.28"
+        pointText: The offertory includes instructions for the second offering designated for Christian education.
+      - pointTime: "1:42:00.98"
+        pointText: Jesus Paid It All is introduced as the closing hymn.
+      - pointTime: "1:44:24.78"
+        pointText: Doxology is followed by the blessing from Hebrews 13:20-21.
+      - pointTime: "1:45:40"
+        pointText: Announcements explain baptism dates, membership preparation and other events.
+      - pointTime: "1:51:07.94"
+        pointText: The congregation is dismissed with silent meditation after the notices.
 markers:
-  - markerTime: "49:34.62"
-    markerNote: "That First Stone comes from the source upload title. The sermon explicitly discusses manuscript uncertainty around John 7:53-8:11. Timing and duration use supplied audio evidence and await fresh media checks."
   - markerTime: "40:55.42"
     markerNote: "The tribute's English framing is intelligible, but the subsequent teacher interview has mixed-language and repetitive ASR. Do not reconstruct uncertain names or exact translated claims."
+  - markerTime: "49:34.62"
+    markerNote: "That First Stone comes from the source upload title. The sermon explicitly discusses manuscript uncertainty around John 7:53-8:11. Timing and duration use supplied audio evidence and await fresh media checks."
   - markerTime: "1:02:36.72"
     markerNote: "Speculations about the woman's identity, what Jesus wrote, and historical or reported misconduct examples remain attributed. The Jesus of Nazareth dramatization is explicitly distinguished from Scripture."

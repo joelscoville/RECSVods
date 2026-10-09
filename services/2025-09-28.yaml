@@ -17,10 +17,18 @@ uploads:
   - youtubeId: na6aHnDyMMA
     uploadDuration: "1:55:17.619"
 chapters:
-  - chapterId: c20250928-worship
-    chapterTitle: Trust God through Surrender and Active Participation
-    chapterKind: opening
+  - chapterId: c20250928-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:17.35"
+    chapterEnd: "6:18.96"
+    points:
+      - pointTime: "0:17.35"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20250928-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "6:18.96"
     chapterEnd: "36:54.8"
     chapterScripture:
       - Psalms 146:1-5
@@ -28,6 +36,8 @@ chapters:
       - John 7:14-24
       - 1 John 5:19-21
     points:
+      - pointTime: "6:18.96"
+        pointText: The welcome leads into quiet preparation, the call to worship, hymns and responsive Bible readings.
       - pointTime: "20:08.42"
         pointText: Damawan's reflection makes trust a shift from personal ambitions toward God as the center of life.
       - pointTime: "20:27.34"
@@ -36,6 +46,8 @@ chapters:
         pointText: Trust grows through a process that may include hardship and release of self-reliance.
       - pointTime: "21:00.7"
         pointText: Trusting is distinguished from spectating through active participation in God's work.
+      - pointTime: "35:59.62"
+        pointText: 1 John 5:19-21 is read before the sermon.
   - chapterId: c20250928-endtimes-question
     chapterTitle: End-Time Debates Should Not Replace Faithfulness Now
     chapterKind: qa
@@ -135,17 +147,32 @@ chapters:
       - pointTime: "1:37:08.74"
         pointText: Christ's Sabbath example concludes with right judgment rather than judgment by appearances.
   - chapterId: c20250928-response
-    chapterTitle: Learn with Humility and Put Truth into Service
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:38:05.0"
     chapterEnd: "1:55:17.619"
+    chapterScripture:
+      - Romans 15:13
+      - 2 Corinthians 13:14
     points:
       - pointTime: "1:38:05.0"
         pointText: Response prayer asks for a heart seeking God's will and glory so that learning equips faithful life.
+      - pointTime: "1:39:09.78"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:42:33.92"
         pointText: Prayer connects genuine mutual love with being ready to provide practical help.
+      - pointTime: "1:43:22.74"
+        pointText: The offertory includes instructions for the second offering designated for cultural-mandate work.
+      - pointTime: "1:45:13.62"
+        pointText: Turn Your Eyes upon Jesus is introduced as the closing hymn.
+      - pointTime: "1:48:02.62"
+        pointText: Doxology is followed by the blessing using Romans 15:13 and 2 Corinthians 13:14.
+      - pointTime: "1:49:12.76"
+        pointText: Announcements explain the upcoming Faith Conference broadcast and other ministry events.
+      - pointTime: "1:55:10.3"
+        pointText: Dismissal follows the notices, with silent meditation.
 markers:
-  - markerTime: "54:10.6"
-    markerNote: "That Piece of Paper follows the source title and the preacher's explicit topic. Timings and duration use supplied faster-whisper audio evidence and await fresh media verification."
   - markerTime: "39:07.04"
     markerNote: "End-time positions and church-recognition requirements are summarized as the preacher's account, not exhaustive descriptions of every tradition. Quoted numbers, historical and academic claims are not independently verified."
+  - markerTime: "54:10.6"
+    markerNote: "That Piece of Paper follows the source title and the preacher's explicit topic. Timings and duration use supplied faster-whisper audio evidence and await fresh media verification."

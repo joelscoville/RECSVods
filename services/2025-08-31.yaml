@@ -17,10 +17,18 @@ uploads:
   - youtubeId: XsQ1Uq8VXII
     uploadDuration: "1:41:10.857"
 chapters:
-  - chapterId: c20250831-worship
-    chapterTitle: Worship through Christ's Exchange and Our Surrender
-    chapterKind: opening
+  - chapterId: c20250831-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:00"
+    chapterEnd: "5:09.88"
+    points:
+      - pointTime: "0:00"
+        pointText: The recording begins at the invitation to adoration and continues with confession, thanksgiving, supplication and gathered prayer.
+  - chapterId: c20250831-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "5:09.88"
     chapterEnd: "32:52.65"
     chapterScripture:
       - Psalms 138:1-5
@@ -28,10 +36,16 @@ chapters:
       - John 6:41-59
       - Romans 12:1-2
     points:
+      - pointTime: "5:09.88"
+        pointText: Patrick welcomes the congregation before greetings and silent meditation.
+      - pointTime: "6:53.92"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "12:10.18"
         pointText: Patrick connects atonement with the exchange of Christ's righteousness for human sin.
       - pointTime: "24:54.34"
         pointText: Whole-person surrender is introduced as more than seeking peace while retaining control over one's life.
+      - pointTime: "32:09.76"
+        pointText: Romans 12:1-2 is read before the sermon.
   - chapterId: c20250831-forgiveness-question
     chapterTitle: Human Grievance and the Need for Forgiveness
     chapterKind: qa
@@ -121,15 +135,30 @@ chapters:
       - pointTime: "1:26:10.86"
         pointText: Renouncing a fallen way of life is held alongside celebrating what is good in God's redeemed world.
   - chapterId: c20250831-response
-    chapterTitle: Live Together from the Living Bread
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:27:01.02"
     chapterEnd: "1:41:10.857"
+    chapterScripture:
+      - Romans 15:13
+      - 2 Corinthians 13:14
     points:
       - pointTime: "1:27:01.1"
         pointText: Response prayer joins full commitment with bearing burdens and encouraging one another rather than struggling through faith alone.
+      - pointTime: "1:28:39.12"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:32:18.9"
         pointText: Shared prayer asks for patience, assurance and practical service toward people facing challenges.
+      - pointTime: "1:33:11.24"
+        pointText: The offertory follows pastoral prayer.
+      - pointTime: "1:34:33.38"
+        pointText: Give of Your Best to the Master is introduced as the closing hymn.
+      - pointTime: "1:38:36.22"
+        pointText: Doxology is followed by the blessing using Romans 15:13 and 2 Corinthians 13:14.
+      - pointTime: "1:39:54.6"
+        pointText: Announcements cover fellowship lunch, preparation for Communion and the second-offering schedule.
+      - pointTime: "1:41:01.38"
+        pointText: Dismissal follows the notices, with silent meditation.
 markers:
   - markerTime: "32:52.65"
     markerNote: "Flesh Eating is explicitly announced. Timings and duration use supplied faster-whisper audio evidence, not fresh media-duration or listening verification."

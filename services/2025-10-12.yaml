@@ -17,10 +17,18 @@ uploads:
   - youtubeId: 4S8CLdMaaBw
     uploadDuration: "1:51:01.317"
 chapters:
+  - chapterId: c20251012-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
+    chapterStart: "0:38.38"
+    chapterEnd: "6:03.8"
+    points:
+      - pointTime: "0:38.38"
+        pointText: The recorded preparatory prayer includes adoration before confession, then thanksgiving, supplication and gathered prayer.
   - chapterId: c20251012-worship
-    chapterTitle: Worship Christ as Our Lasting Satisfaction
+    chapterTitle: Worship and Scripture
     chapterKind: opening
-    chapterStart: "1:55.85"
+    chapterStart: "6:03.8"
     chapterEnd: "31:56.05"
     chapterScripture:
       - Psalms 147:1-6
@@ -28,10 +36,16 @@ chapters:
       - John 7:25-36
       - Colossians 1:15-20
     points:
+      - pointTime: "6:03.8"
+        pointText: Patrick welcomes the congregation before greetings and silent meditation.
+      - pointTime: "7:36.48"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "21:50.04"
         pointText: Patrick connects living water with a thirst for meaning and joy that earthly pleasures cannot finally satisfy.
       - pointTime: "25:26.2"
         pointText: The ensemble's introduction presents music and art as a way of exploring feeling and preparing to receive God's word.
+      - pointTime: "30:49.16"
+        pointText: Colossians 1:15-20 is read before the sermon.
   - chapterId: c20251012-shared-anniversary
     chapterTitle: Use Our Limited Time in a Shared Journey of Faith
     chapterKind: other
@@ -137,17 +151,31 @@ chapters:
       - pointTime: "1:32:24.4"
         pointText: The cross being seen as folly is distinguished from its power for those who receive it.
   - chapterId: c20251012-response
-    chapterTitle: Commit Our Life to the Christ Who Reigns
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:33:52.74"
     chapterEnd: "1:51:01.317"
+    chapterScripture:
+      - Romans 16:25-27
     points:
       - pointTime: "1:33:52.94"
         pointText: Response prayer asks for correction of human measures of God and renewed commitment to Christ as Lord.
+      - pointTime: "1:35:22.48"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:39:06.7"
         pointText: Anniversary prayer joins gratitude for the past with a desire for Christ's presence to remain real in daily life.
+      - pointTime: "1:39:58.6"
+        pointText: The offertory follows pastoral prayer, with second-offering instructions.
+      - pointTime: "1:41:34.58"
+        pointText: Send the Light is introduced as the closing hymn.
+      - pointTime: "1:43:57.64"
+        pointText: Doxology is followed by the blessing from Romans 16:25-27.
+      - pointTime: "1:45:18.18"
+        pointText: The church-anniversary cake presentation precedes the final announcements.
+      - pointTime: "1:50:51.1"
+        pointText: Dismissal follows the notices, with silent meditation.
 markers:
-  - markerTime: "1:55.85"
-    markerNote: "The early ASR contains an extended repetitive fragment and merged prayer speech. The opening starts at the clear confession invitation rather than reconstructing the earlier material. Length and timings use supplied audio evidence and await fresh media checks."
+  - markerTime: "0:38.38"
+    markerNote: "The early ASR contains an extended repetitive fragment. ACTS prayer now starts at the clear recorded invitation naming adoration, confession, thanksgiving and supplication at 0:38.38; material before that cue is not reconstructed. Length and timings use supplied audio evidence and await fresh media checks."
   - markerTime: "50:34.48"
     markerNote: "The Christ is explicitly announced. Historical, philosophical and comparative claims, attributed quotations and reported missionary accounts are summarized as presented rather than independently verified."

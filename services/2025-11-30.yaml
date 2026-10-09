@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../schema/recording.schema.json
 # Format and rules: ../docs/editing-services.md
 
-recordingTitle: The Truth
+recordingTitle: Truth
 serviceDate: 2025-11-30
 status: draft
 sermonDescription: John 8's promise of freedom is connected with abiding in Christ's word rather than merely possessing information. The preacher contrasts truth with power, self-interest and material rewards, arguing that technical achievement cannot supply moral meaning. Amos's plumb line illustrates God's unchanging standard. Patience and kindness make truth concrete in daily relationships, while personally knowing Christ is distinguished from expertise about him. Such lived understanding brings freedom from sin's bondage as well as eternal hope.
@@ -17,10 +17,18 @@ uploads:
   - youtubeId: YuQ4KSSmYQY
     uploadDuration: "1:49:07.052"
 chapters:
-  - chapterId: c20251130-worship
-    chapterTitle: Worship and the Challenge of Abiding in Truth
-    chapterKind: opening
+  - chapterId: c20251130-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "1:40.0"
+    chapterEnd: "7:18.12"
+    points:
+      - pointTime: "1:40.0"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20251130-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "7:18.12"
     chapterEnd: "32:43.4"
     chapterScripture:
       - Psalms 18:1-3
@@ -28,10 +36,14 @@ chapters:
       - John 8:31-47
       - 1 John 5:18-21
     points:
+      - pointTime: "7:18.12"
+        pointText: The welcome leads into quiet preparation, the call to worship, hymns and responsive Bible readings.
       - pointTime: "23:55.38"
         pointText: The promise that truth sets people free is read with its preceding condition of abiding in Christ's word.
       - pointTime: "25:23.52"
         pointText: Damawan's reflection identifies the temptation to reject truths that are difficult to obey.
+      - pointTime: "31:34.46"
+        pointText: 1 John 5:18-21 is read before the sermon.
   - chapterId: c20251130-question-recap
     chapterTitle: Which Truth Claims Can We Trust?
     chapterKind: qa
@@ -121,17 +133,31 @@ chapters:
       - pointTime: "1:32:56.9"
         pointText: Christ's revelation gives understanding that calls for humble reception and lived response.
   - chapterId: c20251130-response
-    chapterTitle: Live Truthfully as a Light in the World
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:34:49.9"
     chapterEnd: "1:49:07.052"
+    chapterScripture:
+      - Hebrews 13:20-21
     points:
       - pointTime: "1:34:49.9"
         pointText: Response prayer asks for grace to move from distracted familiarity toward truth lived in daily conduct.
+      - pointTime: "1:36:48.24"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:40:10.22"
         pointText: Prayer frames service as the privilege of participating in God's work rather than a self-absorbed life.
+      - pointTime: "1:40:56.72"
+        pointText: The offertory includes instructions for the second offering designated for charitable work.
+      - pointTime: "1:42:19.74"
+        pointText: I Love to Tell the Story is introduced as the closing hymn.
+      - pointTime: "1:45:16.94"
+        pointText: Doxology is followed by the blessing from Hebrews 13:20-21.
+      - pointTime: "1:46:30.72"
+        pointText: Announcements encourage prayer, invitations and service for the Christmas gospel rally.
+      - pointTime: "1:49:01.56"
+        pointText: The congregation is dismissed with silent meditation after the notices.
 markers:
   - markerTime: "47:41.42"
-    markerNote: "The Truth is a working title supported by the theme and following week's recap; exact announced wording needs confirmation. Supplied audio timings and duration await fresh video and listening checks."
+    markerNote: "Truth follows the exact sermon-slide title confirmed in the reviewer’s visual check. Supplied audio timings and duration await precise video and listening checks."
   - markerTime: "54:14.12"
     markerNote: "Scientific, historical, political and comparative-religion claims and quotations remain attributed to the preacher. Do not treat illustrative accounts as independently verified facts."

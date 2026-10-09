@@ -17,10 +17,18 @@ uploads:
   - youtubeId: 5FMW0OuwL1k
     uploadDuration: "1:52:23.818"
 chapters:
-  - chapterId: c20250105-worship
-    chapterTitle: Trust God's Goodness as a New Year Begins
-    chapterKind: opening
+  - chapterId: c20250105-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:32.66"
+    chapterEnd: "6:10.78"
+    points:
+      - pointTime: "0:32.66"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, with personal quiet prayer and a gathered prayer before worship.
+  - chapterId: c20250105-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "6:10.78"
     chapterEnd: "35:51.2"
     chapterScripture:
       - Psalms 68:32-35
@@ -29,12 +37,18 @@ chapters:
       - Psalms 90:1-17
       - Philippians 3:12-14
     points:
+      - pointTime: "6:10.78"
+        pointText: Welcome, greetings and quiet preparation begin the worship led by Hadi.
+      - pointTime: "8:16.98"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "11:52.1"
         pointText: Opening prayer asks for trust while the road ahead and new ministry opportunities remain uncertain.
       - pointTime: "15:23.06"
         pointText: The worship reflection grounds confidence in God's goodness and love rather than a predictable year without hardship.
       - pointTime: "29:59.26"
         pointText: Daily trust is presented as a response to God's sustaining care through both trials and joys.
+      - pointTime: "35:11.22"
+        pointText: Philippians 3:12-14 is read before the sermon, following the hymns and responsive readings.
   - chapterId: c20250105-number-days
     chapterTitle: Give the Passage of Time Meaning through God
     chapterKind: sermon
@@ -140,7 +154,7 @@ chapters:
       - pointTime: "1:31:31.74"
         pointText: Knowing Christ remains the prize that gives effort and perseverance their direction.
   - chapterId: c20250105-response
-    chapterTitle: Commit the Year to Shared Faith and Service
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:32:47.12"
     chapterEnd: "1:52:23.818"
@@ -149,10 +163,22 @@ chapters:
     points:
       - pointTime: "1:33:50.44"
         pointText: Response prayer asks for help through fellow believers rather than attempting the journey of faith alone.
+      - pointTime: "1:34:47.06"
+        pointText: The congregation affirms its faith with the Apostles' Creed before intercessory prayer.
       - pointTime: "1:38:52.1"
         pointText: Pastoral prayer connects encouragement in personal difficulties with becoming ready help for others.
+      - pointTime: "1:39:41.9"
+        pointText: The offertory follows pastoral prayer, with giving by QR code or the offering box.
+      - pointTime: "1:42:17.4"
+        pointText: Another Year Is Dawning is introduced as the closing hymn.
+      - pointTime: "1:44:20.72"
+        pointText: Doxology is followed by the blessing from Hebrews 13:20-21.
+      - pointTime: "1:45:33.48"
+        pointText: Announcements invite ministry participation and explain the year's plans for equipping and church planting.
       - pointTime: "1:46:32.98"
         pointText: Equipping and shared prayer are presented as preparation for deeper ministry and possible church planting.
+      - pointTime: "1:52:18.3"
+        pointText: The congregation is dismissed with silent meditation after the notices.
 markers:
   - markerTime: "35:51.2"
     markerNote: "Back and Forth follows the source title. Supplied faster-whisper audio duration and anchors await fresh media checks."

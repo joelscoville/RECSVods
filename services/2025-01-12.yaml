@@ -18,10 +18,18 @@ uploads:
   - youtubeId: voiLZXvhZ7Q
     uploadDuration: "1:44:49.775"
 chapters:
-  - chapterId: c20250112-worship
-    chapterTitle: God's Word Illuminates the Path We Walk
-    chapterKind: opening
+  - chapterId: c20250112-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "3:32"
+    chapterEnd: "7:56.56"
+    points:
+      - pointTime: "3:32"
+        pointText: The leader introduces the guest preacher and leads personal prayer in adoration, confession, thanksgiving and supplication.
+  - chapterId: c20250112-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "7:56.56"
     chapterEnd: "33:39.96"
     chapterScripture:
       - Psalms 81:1-4
@@ -30,8 +38,12 @@ chapters:
       - John 1:1-18
       - Matthew 5:17-20
     points:
+      - pointTime: "7:56.56"
+        pointText: The welcome leads into the call to worship, hymns, opening prayer and responsive Bible readings.
       - pointTime: "12:20.56"
         pointText: The lamp-and-path reflection connects Scripture with direction amid an abundance of choices and uncertainty.
+      - pointTime: "29:48.98"
+        pointText: Matthew 5:17-20 is read before the guest preacher's introduction and prayer.
       - pointTime: "32:07.8"
         pointText: The guest preacher acknowledges the preparation required for preaching while responding to the congregation's need for spiritual nourishment.
   - chapterId: c20250112-whole-counsel
@@ -155,7 +167,7 @@ chapters:
       - pointTime: "1:30:47.38"
         pointText: Treating a sermon only as a message for someone else misses its call to personal reflection.
   - chapterId: c20250112-response
-    chapterTitle: Live from a Firm Foundation with Humility
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:32:15.82"
     chapterEnd: "1:44:49.775"
@@ -164,10 +176,20 @@ chapters:
     points:
       - pointTime: "1:32:15.82"
         pointText: Response prayer asks for a community that neither judges self-righteously nor abandons God's righteousness.
+      - pointTime: "1:33:44.72"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:34:45.42"
         pointText: Pastoral prayer connects received salvation with resisting complacency and acting on God's word.
+      - pointTime: "1:38:17.06"
+        pointText: The offertory follows the pastoral prayer, with QR-code and offering-box instructions.
+      - pointTime: "1:39:42.6"
+        pointText: How Firm a Foundation is introduced as the closing hymn.
       - pointTime: "1:40:01.4"
         pointText: The foundation reflection asks whether faith rooted in God's word can withstand real crises.
+      - pointTime: "1:43:20.3"
+        pointText: Doxology is followed by Adrian's exhortation and the blessing from Numbers 6:24-26.
+      - pointTime: "1:44:42.58"
+        pointText: The service ends with dismissal after the blessing.
 markers:
   - markerTime: "12:12.64"
     markerNote: "The lamp-and-path verse is Psalms 119:105 despite speech/ASR giving 119:1-5. Responsive reading is Proverbs 20:1-30 after a tangled first announcement."

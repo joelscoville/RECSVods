@@ -16,10 +16,18 @@ uploads:
   - youtubeId: YNr2pPrxorA
     uploadDuration: "1:47:50.403"
 chapters:
-  - chapterId: c20250608-worship
-    chapterTitle: Give Thanks and Become Instruments of Peace
-    chapterKind: opening
+  - chapterId: c20250608-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "1:06.3"
+    chapterEnd: "6:09.48"
+    points:
+      - pointTime: "1:06.3"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20250608-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "6:09.48"
     chapterEnd: "32:46.64"
     chapterScripture:
       - Psalms 108:1-4
@@ -27,12 +35,18 @@ chapters:
       - Ephesians 2:1-22
       - 2 Corinthians 5:16-19
     points:
+      - pointTime: "6:09.48"
+        pointText: Belinda welcomes the congregation before greetings and silent meditation.
+      - pointTime: "8:17.1"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "8:52.74"
         pointText: Thanksgiving is grounded in God's constant faithfulness rather than assuming life must first become calm.
       - pointTime: "25:34.36"
         pointText: Spiritual courage is distinguished from force and pride, directing worship toward faithful obedience.
       - pointTime: "29:07.78"
         pointText: The worship reflection asks for changed lives sent as instruments of peace rather than passive listening alone.
+      - pointTime: "31:46.72"
+        pointText: 2 Corinthians 5:16-19 is read before Hadi takes the pulpit.
   - chapterId: c20250608-grace-through-faith
     chapterTitle: By Grace through Faith
     chapterKind: sermon
@@ -141,15 +155,25 @@ chapters:
       - pointTime: "1:33:48.98"
         pointText: The third invitation is to rest in God's knowledge and shaping purpose amid life's unanswered questions.
   - chapterId: c20250608-response
-    chapterTitle: Walk Faithfully in the Good Works Prepared for Us
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:35:11.9"
     chapterEnd: "1:47:50.403"
     points:
       - pointTime: "1:35:11.9"
         pointText: Response prayer asks for forgiveness, renewed direction and faithful living as God's workmanship.
+      - pointTime: "1:36:30.16"
+        pointText: The congregation recites the Apostles' Creed before prayer for members and ministry needs.
+      - pointTime: "1:40:31.06"
+        pointText: The offertory follows the pastoral prayer, with QR-code and offering-box instructions.
       - pointTime: "1:42:48.72"
-        pointText: The final worship reflection connects the journey of workmanship with continued growth rather than standing still.
+        pointText: Higher Ground is introduced as the closing hymn, connecting God's workmanship with continued growth rather than standing still.
+      - pointTime: "1:46:43.62"
+        pointText: After the closing prayer, the leader confirms there are no announcements, then remembers the doxology.
+      - pointTime: "1:46:54.02"
+        pointText: The congregation sings doxology after the closing prayer and the announcement that there are no notices.
+      - pointTime: "1:47:34.54"
+        pointText: The leader announces the end of the worship service.
 markers:
   - markerTime: "32:46.64"
     markerNote: "The source title cites John 4:1-26, but Hadi explicitly bases this sermon on Ephesians 2:1-10; overall links follow the actual preaching and supplemental reading. Source title supplies Created for Good Works where the spoken introduction is clipped."

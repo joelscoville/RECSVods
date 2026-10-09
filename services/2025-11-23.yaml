@@ -17,10 +17,18 @@ uploads:
   - youtubeId: pwORPRWgtr4
     uploadDuration: "1:41:39.812"
 chapters:
-  - chapterId: c20251123-worship
-    chapterTitle: Worship the God Who Reveals Himself
-    chapterKind: opening
+  - chapterId: c20251123-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "2:26.15"
+    chapterEnd: "7:30.14"
+    points:
+      - pointTime: "2:26.15"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20251123-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "7:30.14"
     chapterEnd: "28:20.6"
     chapterScripture:
       - Psalms 9:1-4
@@ -28,8 +36,14 @@ chapters:
       - John 8:21-30
       - John 1:1-4
     points:
+      - pointTime: "7:30.14"
+        pointText: Patrick welcomes the congregation before greetings and silent meditation.
+      - pointTime: "9:09.54"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "12:30.22"
         pointText: Patrick connects comfort for God's suffering people with Isaiah's account of God's overwhelming power and glory.
+      - pointTime: "27:26.28"
+        pointText: The reader announces 1 John but reads John 1:1-4 before the sermon; the links retain the passage actually read.
   - chapterId: c20251123-ai-question
     chapterTitle: AI Progress Does Not Resolve the Human Heart
     chapterKind: qa
@@ -126,15 +140,30 @@ chapters:
       - pointTime: "1:25:54.7"
         pointText: John's testimony directs attention toward fellowship and joy rather than spending life on superficial measures of success.
   - chapterId: c20251123-response
-    chapterTitle: Move from Familiar Religion toward Living Fellowship
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:26:41.26"
     chapterEnd: "1:41:39.812"
+    chapterScripture:
+      - Romans 15:13
+      - 2 Corinthians 13:14
     points:
       - pointTime: "1:26:41.26"
         pointText: Response prayer asks for humility to receive Christ's revelation and act toward fuller joy.
+      - pointTime: "1:27:56.32"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:31:56.94"
         pointText: Shared prayer connects living faith with transformed relationships, mutual support and service beyond isolation.
+      - pointTime: "1:32:54.26"
+        pointText: The offertory follows pastoral prayer.
+      - pointTime: "1:34:44.6"
+        pointText: I Know Whom I Have Believed is introduced as the closing hymn.
+      - pointTime: "1:37:16.44"
+        pointText: Doxology is followed by the blessing using Romans 15:13 and 2 Corinthians 13:14.
+      - pointTime: "1:38:28.48"
+        pointText: Announcements explain gospel-rally prayer, invitation cards and other ministry opportunities.
+      - pointTime: "1:41:29.14"
+        pointText: The final notices lead into dismissal with silent meditation.
 markers:
   - markerTime: "27:26.28"
     markerNote: "The reader announces 1 John but reads John 1:1-4; the preacher notes the mismatch. Section links retain the actual reading; the sermon separately uses 1 John 1:1-4."

@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../schema/recording.schema.json
 # Format and rules: ../docs/editing-services.md
 
-recordingTitle: The Light of the World
+recordingTitle: Light of the World
 serviceDate: 2025-11-16
 status: draft
 sermonDescription: Jesus' declaration as the light of the world is distinguished from a contest between equally powerful light and darkness. Darkness and sin are explained through absence, rejection and falling short of God's good design. Christ is the I Am himself rather than a teacher who discovered light. Following him calls for present obedience, visible witness and shared fellowship. His exchange with the Pharisees exposes superficial judgment and distinguishes knowing Christ personally from knowing facts about him.
@@ -17,10 +17,20 @@ uploads:
   - youtubeId: A_u0S2yNzNM
     uploadDuration: "1:45:16.339"
 chapters:
-  - chapterId: c20251116-worship
-    chapterTitle: Worship and Prepare to Receive the Light
-    chapterKind: opening
+  - chapterId: c20251116-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:46.05"
+    chapterEnd: "6:07.7"
+    points:
+      - pointTime: "0:54.68"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+      - pointTime: "2:02.0"
+        pointText: Confession is presented as a continuing practice rather than a one-time religious event.
+  - chapterId: c20251116-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "6:07.7"
     chapterEnd: "29:41.55"
     chapterScripture:
       - Psalms 8:1-5
@@ -28,10 +38,14 @@ chapters:
       - John 8:12-20
       - 1 John 1:5-7
     points:
-      - pointTime: "2:02.0"
-        pointText: Confession is presented as a continuing practice rather than a one-time religious event.
+      - pointTime: "6:07.7"
+        pointText: Karen welcomes the congregation before greetings and silent meditation.
+      - pointTime: "8:05.16"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "25:40.92"
         pointText: Karen connects walking in light with exposing sin and discerning truth rather than remaining in concealment.
+      - pointTime: "28:45.96"
+        pointText: 1 John 1:5-7 is read before the sermon.
   - chapterId: c20251116-practical-service
     chapterTitle: Every Believer Is Called to Practical Service
     chapterKind: other
@@ -129,18 +143,33 @@ chapters:
       - pointTime: "1:28:07.74"
         pointText: Christ's hour not yet coming reinforces the claim that he remains in control.
   - chapterId: c20251116-response
-    chapterTitle: Display the Light through a Shared Life
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:29:10.56"
     chapterEnd: "1:45:16.339"
+    chapterScripture:
+      - Ephesians 3:20-21
+      - 2 Corinthians 13:14
     points:
       - pointTime: "1:29:10.56"
         pointText: Response prayer asks for a life that displays Christ's light rather than hiding it or escaping back into darkness.
+      - pointTime: "1:31:10.36"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:34:46.6"
         pointText: Shared prayer connects trust in God's goodness with reaching out to trusted believers for support.
+      - pointTime: "1:35:41.7"
+        pointText: The offertory follows pastoral prayer, with giving instructions for the congregation.
+      - pointTime: "1:37:57.04"
+        pointText: Come, Thou Fount of Every Blessing is introduced as the closing hymn.
+      - pointTime: "1:40:01.28"
+        pointText: Doxology is followed by the blessing using Ephesians 3:20-21 and 2 Corinthians 13:14.
+      - pointTime: "1:41:18.48"
+        pointText: Announcements invite prayer, service and participation in the upcoming Christmas gospel rally.
+      - pointTime: "1:45:10.76"
+        pointText: The congregation is dismissed with silent meditation after the notices.
 markers:
   - markerTime: "29:41.55"
-    markerNote: "The Light of the World is a descriptive working title supported by the passage and following week's recap. Supplied faster-whisper audio timings and length await fresh media checks."
+    markerNote: "Light of the World follows the exact sermon-slide title confirmed in the reviewer’s visual check. Supplied faster-whisper audio timings and length await precise media checks."
   - markerTime: "32:01.9"
     markerNote: "The Papua clip contains mixed-language and repetitive ASR; summarize the preacher's framing rather than reconstructing the boy's exact account or uncertain name."
   - markerTime: "1:21:23.36"

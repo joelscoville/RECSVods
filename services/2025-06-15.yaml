@@ -17,10 +17,18 @@ uploads:
   - youtubeId: tR_ACmnR3Vw
     uploadDuration: "1:14:04.601"
 chapters:
-  - chapterId: c20250615-worship
-    chapterTitle: Receive Truth and Model the Father's Steadfast Love
-    chapterKind: opening
+  - chapterId: c20250615-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
     chapterStart: "0:47.08"
+    chapterEnd: "2:48.88"
+    points:
+      - pointTime: "0:47.08"
+        pointText: The intelligible preparatory prayer resumes at thanksgiving, followed by supplication and gathered prayer; earlier prayer is not reconstructed.
+  - chapterId: c20250615-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "2:48.88"
     chapterEnd: "24:47.58"
     chapterScripture:
       - Psalms 111:1-4
@@ -28,8 +36,14 @@ chapters:
       - Matthew 12:38-41
       - 1 Peter 3:13-17
     points:
+      - pointTime: "2:48.88"
+        pointText: Catherine prepares the congregation with silent meditation before the welcome and call to worship.
+      - pointTime: "4:44.4"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "15:28.44"
         pointText: The Father's Day reflection honors quiet care and sacrifice while recognizing both parents' contribution to children's growth.
+      - pointTime: "21:42.8"
+        pointText: 1 Peter 3:13-17 is read before Patrick's sermon introduction and prayer.
       - pointTime: "22:08.22"
         pointText: Defending the reason for Christian hope is joined to gentleness, respect and a good conscience.
   - chapterId: c20250615-historicity-question
@@ -128,15 +142,27 @@ chapters:
       - pointTime: "1:01:07.44"
         pointText: The final reflection calls for standing firm in biblical truth while acknowledging that believers do not possess every answer.
   - chapterId: c20250615-response
-    chapterTitle: Defend Truth with Humility and Lead with Gentle Strength
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:03:20.8"
     chapterEnd: "1:14:04.601"
     points:
       - pointTime: "1:03:20.8"
         pointText: Response prayer asks for courage without pride, discernment and gentleness toward others.
+      - pointTime: "1:04:31.26"
+        pointText: The congregation recites the Apostles' Creed before the Father's Day recognition and prayer.
       - pointTime: "1:07:30.76"
         pointText: Prayer for fathers joins righteous courage with humility, kindness and passing on a legacy of faith.
+      - pointTime: "1:08:12.7"
+        pointText: The offertory follows the prayer for fathers.
+      - pointTime: "1:09:31.96"
+        pointText: Stand Up, Stand Up for Jesus is sung as the response hymn.
+      - pointTime: "1:11:47.92"
+        pointText: Doxology is followed by a closing prayer for wisdom, boldness and love; no specific biblical benediction is announced.
+      - pointTime: "1:13:13.66"
+        pointText: Announcements invite help with the English autobiography and attendance at the mental-health seminar.
+      - pointTime: "1:13:52.74"
+        pointText: The congregation is dismissed after a time of silent meditation.
 markers:
   - markerTime: "0:47.08"
     markerNote: "Initial confession is not intelligible in the supplied ASR. Title follows the source. Upload duration and anchors use supplied audio evidence and await fresh media checks."

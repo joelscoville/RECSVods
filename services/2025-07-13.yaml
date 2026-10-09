@@ -16,10 +16,20 @@ uploads:
   - youtubeId: Yk1i8SgY5hM
     uploadDuration: "1:44:41.88"
 chapters:
-  - chapterId: c20250713-worship
-    chapterTitle: Discern God's Voice Together
-    chapterKind: opening
+  - chapterId: c20250713-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
     chapterStart: "0:03.28"
+    chapterEnd: "4:11.3"
+    points:
+      - pointTime: "0:03.28"
+        pointText: The recorded ACTS prayer begins at confession and continues with thanksgiving, supplication and gathered prayer.
+      - pointTime: "3:29.22"
+        pointText: Gathered prayer asks for childlike attentiveness that recognizes God's voice and responds by following him.
+  - chapterId: c20250713-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "4:11.3"
     chapterEnd: "30:30.78"
     chapterScripture:
       - Psalms 118:26-29
@@ -27,10 +37,14 @@ chapters:
       - John 5:1-18
       - Romans 12:1-2
     points:
-      - pointTime: "3:29.22"
-        pointText: Opening prayer asks for childlike attentiveness that recognizes God's voice and responds by following him.
+      - pointTime: "4:11.3"
+        pointText: Silent meditation precedes the welcome, greetings and call to worship led by Catherine.
+      - pointTime: "6:20.5"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "22:56.78"
         pointText: The worship reflection distinguishes shared discernment from isolated certainty that can become delusion.
+      - pointTime: "29:40.82"
+        pointText: Romans 12:1-2 is read before the sermon.
   - chapterId: c20250713-scripture-question
     chapterTitle: Scriptural Authority Does Not Excuse Legalism
     chapterKind: qa
@@ -152,7 +166,7 @@ chapters:
       - pointTime: "1:30:44.52"
         pointText: Always reforming is applied to shared life, mutual support and resisting judgmental legalism.
   - chapterId: c20250713-response
-    chapterTitle: Put Shared Faith into Practice
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:31:23.4"
     chapterEnd: "1:44:41.88"
@@ -161,10 +175,22 @@ chapters:
     points:
       - pointTime: "1:31:23.4"
         pointText: Response prayer asks for living faith expressed through loving, forgiving and serving imperfect people.
+      - pointTime: "1:32:40.26"
+        pointText: The congregation recites the Apostles' Creed before prayer in response to the sermon and for Sunday school.
       - pointTime: "1:35:05.08"
         pointText: Prayer for the next generation connects the sermon with members taking responsibility in children's ministry.
+      - pointTime: "1:37:26.78"
+        pointText: The offertory follows pastoral prayer, with giving by QR code or the offering box.
+      - pointTime: "1:38:52.44"
+        pointText: Stand Up, Stand Up for Jesus is introduced as the closing hymn.
+      - pointTime: "1:41:06.14"
+        pointText: Doxology is followed by the blessing from Hebrews 13:20-21.
+      - pointTime: "1:42:21.02"
+        pointText: Announcements explain possible electrical-maintenance disruption and invite participation in ministry.
       - pointTime: "1:44:01.86"
         pointText: The final appeal reinforces that ministry must arise from the people rather than the pulpit alone.
+      - pointTime: "1:44:33.02"
+        pointText: Dismissal follows the notices, with silent meditation.
 markers:
   - markerTime: "15:01.66"
     markerNote: "The reader corrects a slide/reference mix-up before reading Proverbs 11:1-31; links follow the corrected passage. Responsive reading contains only alternating verses in the supplied ASR."

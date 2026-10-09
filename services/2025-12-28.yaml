@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../schema/recording.schema.json
 # Format and rules: ../docs/editing-services.md
 
-recordingTitle: Number Our Days
+recordingTitle: Tick-Tocking
 serviceDate: 2025-12-28
 status: draft
 sermonDescription: Reflecting on the year's end through Psalm 90, the preacher contrasts passing human life with God's unchanging nature. Looking backward can bring understanding, but living in regret cannot recover the past. Quiet reflection, daily devotion and journaling help recognize God's work amid distraction. Wisdom numbers finite days and connects ordinary acts of service with the Eternal One, rather than measuring significance by wealth, recognition or public achievement.
@@ -17,10 +17,20 @@ uploads:
   - youtubeId: kqTn6rXWXfs
     uploadDuration: "1:42:14.433"
 chapters:
-  - chapterId: c20251228-prayer-worship
-    chapterTitle: Prayer and Worship at the Year's End
-    chapterKind: opening
+  - chapterId: c20251228-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:26.85"
+    chapterEnd: "5:51.38"
+    points:
+      - pointTime: "0:26.85"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+      - pointTime: "2:55.44"
+        pointText: Year-end thanksgiving deliberately looks backward to recognize God's gifts.
+  - chapterId: c20251228-prayer-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "5:51.38"
     chapterEnd: "27:30.0"
     chapterScripture:
       - Psalms 25:1-5
@@ -28,12 +38,16 @@ chapters:
       - Psalms 90:1-17
       - 1 John 2:15-17
     points:
-      - pointTime: "2:55.44"
-        pointText: Year-end thanksgiving deliberately looks backward to recognize God's gifts.
+      - pointTime: "5:51.38"
+        pointText: Winston welcomes the congregation before greetings and silent meditation.
+      - pointTime: "7:27.38"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "19:44.96"
         pointText: Winston's reflection uses gratitude, answered prayer, beauty and an anchoring Bible verse to examine the year.
       - pointTime: "20:38.44"
         pointText: Difficulty identifying an anchoring verse prompts a resolve to read and meditate on Scripture more regularly.
+      - pointTime: "26:40.34"
+        pointText: 1 John 2:15-17 is read before the sermon.
   - chapterId: c20251228-reflect-forward
     chapterTitle: Understand the Past without Living in It
     chapterKind: sermon
@@ -114,17 +128,31 @@ chapters:
       - pointTime: "1:27:06.02"
         pointText: C. T. Studd's reported saying gathers the conclusion around one finite life and lasting work for Christ.
   - chapterId: c20251228-response
-    chapterTitle: Reorder the Coming Year around What Lasts
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:27:38.62"
     chapterEnd: "1:42:14.433"
+    chapterScripture:
+      - Hebrews 13:20-21
     points:
       - pointTime: "1:27:38.62"
         pointText: Response prayer asks for reflective wisdom and priorities directed toward eternal rather than transient things.
+      - pointTime: "1:29:21.16"
+        pointText: The congregation recites the Apostles' Creed before prayer in gratitude for the past year.
       - pointTime: "1:32:55.34"
         pointText: Shared prayer connects learning from the past year with obedient, joyful life in the years ahead.
+      - pointTime: "1:33:57.82"
+        pointText: The offertory follows pastoral prayer, with instructions for the second offering.
+      - pointTime: "1:36:18.3"
+        pointText: Another Year Is Dawning is introduced as the closing hymn.
+      - pointTime: "1:38:46.78"
+        pointText: Doxology is followed by the blessing from Hebrews 13:20-21.
+      - pointTime: "1:40:04.4"
+        pointText: Announcements explain the new Communion schedule and the coming synod meeting.
+      - pointTime: "1:42:10.88"
+        pointText: The congregation is dismissed with silent meditation after the notices.
 markers:
   - markerTime: "27:30.0"
-    markerNote: "Number Our Days is a descriptive working title; no announced title was established. Draft timing and upload length use supplied faster-whisper audio evidence, not fresh video-duration or listening verification."
+    markerNote: "Tick-Tocking is confirmed by the handoff card and the sermon slide visible around 27:30 in the reviewer’s visual check. Draft timing and upload length use supplied faster-whisper audio evidence and still await precise media-duration and listening verification."
   - markerTime: "1:08:05.71"
     markerNote: "Proper names, quotations and medical, cultural or historical examples are the preacher's accounts and have not been independently verified."

@@ -17,10 +17,18 @@ uploads:
   - youtubeId: hPOgPobN1dU
     uploadDuration: "1:46:50.356"
 chapters:
-  - chapterId: c20250914-worship
-    chapterTitle: Worship and Receive the Father's Timing
-    chapterKind: opening
+  - chapterId: c20250914-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:26.6"
+    chapterEnd: "5:51.42"
+    points:
+      - pointTime: "0:26.6"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20250914-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "5:51.42"
     chapterEnd: "31:27.4"
     chapterScripture:
       - Psalms 145:1-3
@@ -28,10 +36,16 @@ chapters:
       - John 7:1-24
       - Matthew 10:16-18
     points:
+      - pointTime: "5:51.42"
+        pointText: Belinda welcomes the congregation before greetings and silent meditation.
+      - pointTime: "7:56.62"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "13:30.62"
         pointText: Belinda connects the Spirit's work with recognizing Christ rather than simply experiencing heightened emotions.
       - pointTime: "25:21.82"
         pointText: The cross is presented as an event within the Father's timing rather than an accident or delayed plan.
+      - pointTime: "30:42.42"
+        pointText: Matthew 10:16-18 is read before the sermon.
   - chapterId: c20250914-assassination-question
     chapterTitle: Reject Violence over Disagreement and Recognize Evil
     chapterKind: qa
@@ -136,15 +150,30 @@ chapters:
       - pointTime: "1:31:45.96"
         pointText: Prayerful consultation with honest believers is offered as a safeguard for difficult decisions.
   - chapterId: c20250914-response
-    chapterTitle: Align Daily Decisions with God's Will
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:33:17.04"
     chapterEnd: "1:46:50.356"
+    chapterScripture:
+      - Romans 15:13
+      - 2 Corinthians 13:14
     points:
       - pointTime: "1:33:17.04"
         pointText: Response prayer asks for decisions shaped by Scripture and wisdom while recognizing opposition from the surrounding world.
+      - pointTime: "1:34:35.96"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:38:17.32"
         pointText: Prayer connects reliance on God with becoming practical comfort for people facing challenges.
+      - pointTime: "1:39:00.44"
+        pointText: The offertory follows pastoral prayer, with instructions for the second offering.
+      - pointTime: "1:41:20.22"
+        pointText: Crown Him with Many Crowns is introduced as the closing hymn.
+      - pointTime: "1:43:51.72"
+        pointText: Doxology is followed by the blessing using Romans 15:13 and 2 Corinthians 13:14.
+      - pointTime: "1:45:07.56"
+        pointText: Notices explain the following week's combined Jakarta anniversary broadcast and upcoming patient visit.
+      - pointTime: "1:46:31.36"
+        pointText: Dismissal follows the notices, with silent meditation.
 markers:
   - markerTime: "31:27.4"
     markerNote: "The extended question concerns a very recent assassination; initial reports, political descriptions, legal claims and predictions are the preacher's reflections at that time, not verified final accounts."

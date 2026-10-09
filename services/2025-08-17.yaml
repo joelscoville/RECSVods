@@ -18,7 +18,7 @@ uploads:
     uploadDuration: "1:44:03.289"
 chapters:
   - chapterId: c20250817-worship
-    chapterTitle: Worship and Hold to God's Goodness amid Difficulty
+    chapterTitle: Worship and Scripture (Recorded Remainder)
     chapterKind: opening
     chapterStart: "0:00"
     chapterEnd: "30:07.55"
@@ -27,8 +27,12 @@ chapters:
       - John 6:22-40
       - Deuteronomy 8:1-3
     points:
+      - pointTime: "0:00"
+        pointText: The upload begins during a hymn and continues with worship, prayer and Scripture; no earlier ACTS prayer is reconstructed.
       - pointTime: "18:42.08"
         pointText: Jason's reflection turns the problem of evil toward the question of God's continuing goodness and pursuit of fallen people.
+      - pointTime: "28:41.78"
+        pointText: Deuteronomy 8:1-3 is read before the sermon, following the recorded hymns and responsive readings.
   - chapterId: c20250817-evil-question
     chapterTitle: Understand Evil without Reducing the Mystery of God
     chapterKind: qa
@@ -151,15 +155,30 @@ chapters:
       - pointTime: "1:26:49.58"
         pointText: The final question distinguishes belief in a giver of preferred benefits from belief in the source of life himself.
   - chapterId: c20250817-response
-    chapterTitle: Draw Sustenance from the Eternal Source of Life
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:27:38.08"
     chapterEnd: "1:44:03.289"
+    chapterScripture:
+      - 1 Thessalonians 5:23
+      - 2 Corinthians 13:14
     points:
       - pointTime: "1:27:38.08"
         pointText: Response prayer asks for satisfaction in Christ himself rather than a faith shaped chiefly by material requests.
+      - pointTime: "1:29:40.6"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:33:33.66"
         pointText: Shared prayer asks for perseverance and the ability to become practical help for people facing difficulty.
+      - pointTime: "1:34:42.5"
+        pointText: The offertory follows pastoral prayer, with giving by QR code or the offering box.
+      - pointTime: "1:36:34.96"
+        pointText: Guide Me, O Thou Great Jehovah is introduced as the closing hymn.
+      - pointTime: "1:38:40.3"
+        pointText: Doxology is followed by the blessing using 1 Thessalonians 5:23 and 2 Corinthians 13:14.
+      - pointTime: "1:40:00.42"
+        pointText: Announcements explain the return to two offerings and invite participation in upcoming events.
+      - pointTime: "1:43:53.96"
+        pointText: Dismissal follows the notices, with silent meditation.
 markers:
   - markerTime: "0:00"
     markerNote: "The supplied recording begins during a hymn; no earlier ACTS or call to worship was reconstructed. The First of Seven is explicitly announced at 1:11:18.46. Length and timings use supplied audio evidence and await fresh media checks."

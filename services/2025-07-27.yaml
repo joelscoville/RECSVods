@@ -17,10 +17,20 @@ uploads:
   - youtubeId: oE2Afabow78
     uploadDuration: "1:53:00.018"
 chapters:
-  - chapterId: c20250727-worship
-    chapterTitle: Worship and Receive the Cloud of Witnesses
-    chapterKind: opening
+  - chapterId: c20250727-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "5:00.75"
+    chapterEnd: "10:27.16"
+    points:
+      - pointTime: "5:00.75"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+      - pointTime: "7:12.1"
+        pointText: Gratitude is presented as a foundation for a joyous and contented life.
+  - chapterId: c20250727-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "10:27.16"
     chapterEnd: "35:47.9"
     chapterScripture:
       - Psalms 125:1-5
@@ -28,8 +38,10 @@ chapters:
       - John 5:30-47
       - Hebrews 12:1-3
     points:
-      - pointTime: "7:12.1"
-        pointText: Gratitude is presented as a foundation for a joyous and contented life.
+      - pointTime: "10:27.16"
+        pointText: The welcome leads into quiet preparation, the call to worship, hymns and responsive Bible readings.
+      - pointTime: "34:44.58"
+        pointText: Hebrews 12:1-3 is read before the sermon.
   - chapterId: c20250727-creation-question
     chapterTitle: Why Create People If God Is Already Sufficient?
     chapterKind: qa
@@ -152,15 +164,29 @@ chapters:
       - pointTime: "1:34:52.16"
         pointText: The cloud of witnesses and focus on Christ encourage endurance rather than weariness in the calling to represent him.
   - chapterId: c20250727-response
-    chapterTitle: Reflect Christ's Life through Truthful Service
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:35:56.0"
     chapterEnd: "1:53:00.018"
+    chapterScripture:
+      - Jude 1:24-25
     points:
       - pointTime: "1:35:56.08"
         pointText: Response prayer asks that Christ's humility, love and mercy become visible in the community's life.
+      - pointTime: "1:37:12.06"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:40:45.84"
         pointText: Shared prayer connects witness with patient submission and practical love toward neighbors.
+      - pointTime: "1:42:01.4"
+        pointText: The offertory follows pastoral prayer, with QR-code and offering-box instructions.
+      - pointTime: "1:43:27.32"
+        pointText: The Old Rugged Cross is introduced as the closing hymn.
+      - pointTime: "1:48:14.4"
+        pointText: Doxology is followed by the blessing from Jude 1:24-25.
+      - pointTime: "1:49:30.38"
+        pointText: Announcements invite ministry participation and introduce upcoming events.
+      - pointTime: "1:52:52.22"
+        pointText: The congregation is dismissed with silent meditation after the notices.
 markers:
   - markerTime: "5:00.75"
     markerNote: "The supplied opening includes hymn fragments before the clear ACTS invitation. Timings and length use supplied faster-whisper audio evidence and await fresh media checks. Witnesses is explicitly announced."

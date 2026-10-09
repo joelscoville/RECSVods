@@ -17,10 +17,18 @@ uploads:
   - youtubeId: ejbeFoJcwLA
     uploadDuration: "1:43:42.669"
 chapters:
-  - chapterId: c20251019-worship
-    chapterTitle: Worship and Receive the Life Christ Offers
-    chapterKind: opening
+  - chapterId: c20251019-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
     chapterStart: "0:07.7"
+    chapterEnd: "2:10.62"
+    points:
+      - pointTime: "0:07.7"
+        pointText: The recording begins at supplication, followed by gathered prayer; earlier ACTS movements are not present in this upload.
+  - chapterId: c20251019-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "2:10.62"
     chapterEnd: "30:41.3"
     chapterScripture:
       - Psalms 148:1-4
@@ -28,8 +36,14 @@ chapters:
       - John 7:37-53
       - Galatians 5:19-24
     points:
+      - pointTime: "2:10.62"
+        pointText: Jason welcomes the congregation before quiet preparation and the call to worship.
+      - pointTime: "4:14.26"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "20:34.32"
         pointText: Jason contrasts competing modern voices with Christ's direct invitation to receive living water.
+      - pointTime: "29:08.36"
+        pointText: The Scripture reading prepares the congregation for the sermon, following the recorded hymns and responsive readings.
   - chapterId: c20251019-guidance
     chapterTitle: Discern Guidance without Demanding a Guaranteed Outcome
     chapterKind: qa
@@ -140,17 +154,34 @@ chapters:
       - pointTime: "1:28:50.18"
         pointText: Small acts of care and the widow's gift show that meaningful service need not resemble a famous preacher's work.
   - chapterId: c20251019-response
-    chapterTitle: Become a Blessing through God's Strength
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:29:35.2"
     chapterEnd: "1:43:42.669"
+    chapterScripture:
+      - Romans 15:13
+      - 2 Corinthians 13:14
     points:
       - pointTime: "1:29:35.44"
         pointText: Response prayer asks for obedience that allows the Spirit's work to make life a blessing beyond oneself.
+      - pointTime: "1:31:05.62"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:34:27.32"
         pointText: Prayer joins reliance on God with practical help and love expressed in deeds.
+      - pointTime: "1:35:29.64"
+        pointText: The congregation is seated after pastoral prayer, before the instrumental interval and closing hymn.
+      - pointTime: "1:37:06.96"
+        pointText: Stand Up, Stand Up for Jesus is introduced as the closing hymn.
+      - pointTime: "1:39:26.34"
+        pointText: Doxology is followed by the blessing using Romans 15:13 and 2 Corinthians 13:14.
+      - pointTime: "1:40:36.74"
+        pointText: Announcements invite ministry participation and explain baptism arrangements and other events.
+      - pointTime: "1:43:28.32"
+        pointText: Dismissal follows the notices, with silent meditation.
 markers:
   - markerTime: "0:07.7"
     markerNote: "The supplied recording begins during supplication. Length and anchors use supplied faster-whisper audio evidence; exact media duration and listening checks remain outstanding."
   - markerTime: "1:17:09.9"
     markerNote: "Lewis and Nouwen quotations and the claim about human resistance to sanctification are summarized as the preacher presents them. Comparative-religion and historical claims are not independently verified."
+  - markerTime: "1:35:29.64"
+    markerNote: "The offertory transition after pastoral prayer is not intelligible in the supplied ASR. The seated congregation and instrumental interval are recorded; confirm the precise offertory cue in playback."

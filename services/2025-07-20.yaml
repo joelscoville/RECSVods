@@ -17,10 +17,18 @@ uploads:
   - youtubeId: NhG9qG2js8Q
     uploadDuration: "1:43:29.341"
 chapters:
-  - chapterId: c20250720-worship
-    chapterTitle: Worship the Invisible God Revealed through Christ
-    chapterKind: opening
+  - chapterId: c20250720-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
     chapterStart: "1:37.55"
+    chapterEnd: "5:58.46"
+    points:
+      - pointTime: "1:37.55"
+        pointText: The intelligible preparatory prayer begins at confession and continues through the recorded remainder of ACTS and gathered prayer.
+  - chapterId: c20250720-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "5:58.46"
     chapterEnd: "31:18.4"
     chapterScripture:
       - Psalms 121:1-4
@@ -28,8 +36,14 @@ chapters:
       - John 5:18-29
       - Colossians 1:15-20
     points:
+      - pointTime: "5:58.46"
+        pointText: Patrick welcomes the congregation before greetings, silent meditation and the call to worship.
+      - pointTime: "7:58.62"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "11:25.4"
         pointText: Opening prayer connects knowing the unseen God with hearing and honoring Jesus Christ.
+      - pointTime: "30:14.2"
+        pointText: Colossians 1:15-20 is read before the sermon.
   - chapterId: c20250720-conflict-question
     chapterTitle: Seek Truth within Conflict and Acknowledge What We Do Not Know
     chapterKind: qa
@@ -144,15 +158,29 @@ chapters:
       - pointTime: "1:28:13.2"
         pointText: The final appeal asks whether life will be devoted to Christ or remain governed by one's own understanding.
   - chapterId: c20250720-response
-    chapterTitle: Choose Life and Live as a Channel of Blessing
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:28:41.5"
     chapterEnd: "1:43:29.341"
+    chapterScripture:
+      - Romans 16:25-27
     points:
       - pointTime: "1:28:41.7"
         pointText: Response prayer asks for faith in the revealed Christ despite unanswered questions and conflicting human voices.
+      - pointTime: "1:30:28.18"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:34:23.16"
         pointText: Prayer links perseverance with becoming a practical channel of blessing rather than relying only on personal strength.
+      - pointTime: "1:35:05.64"
+        pointText: The offertory follows pastoral prayer, with giving instructions for the congregation.
+      - pointTime: "1:36:28.56"
+        pointText: How Great Thou Art is introduced as the closing hymn.
+      - pointTime: "1:39:25.54"
+        pointText: Doxology is followed by the benediction from Romans 16:25-27.
+      - pointTime: "1:40:47.16"
+        pointText: Announcements address the orphanage situation and other ministry opportunities.
+      - pointTime: "1:43:23.48"
+        pointText: The congregation is dismissed with silent meditation after the notices.
 markers:
   - markerTime: "31:18.4"
     markerNote: "War-related descriptions, casualty estimates and attributions are the preacher's contemporary reflections, not independently established facts or a complete account of the conflict."

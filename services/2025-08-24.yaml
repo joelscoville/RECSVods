@@ -17,10 +17,18 @@ uploads:
   - youtubeId: BasPKaWT4Ao
     uploadDuration: "1:39:16.638"
 chapters:
-  - chapterId: c20250824-worship
-    chapterTitle: Worship the God Whose Steadfast Love Endures
-    chapterKind: opening
+  - chapterId: c20250824-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:10.75"
+    chapterEnd: "3:25.7"
+    points:
+      - pointTime: "0:37.32"
+        pointText: The leader guides personal prayer through adoration, confession, thanksgiving and supplication before worship begins.
+  - chapterId: c20250824-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "3:25.7"
     chapterEnd: "31:08.1"
     chapterScripture:
       - Psalms 136:1-4
@@ -28,8 +36,14 @@ chapters:
       - Romans 5:1-21
       - Malachi 1:1-5
     points:
+      - pointTime: "3:25.7"
+        pointText: The welcome leads into greetings, silent meditation and the call to worship.
+      - pointTime: "5:39.76"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "6:23.84"
         pointText: God's faithfulness is affirmed through both good and difficult circumstances, preparing the question explored in Malachi.
+      - pointTime: "30:06.5"
+        pointText: Malachi 1:1-5 is read before the guest sermon.
   - chapterId: c20250824-burden-doubt
     chapterTitle: God's Faithful Message Addresses Disappointed People
     chapterKind: sermon
@@ -121,15 +135,29 @@ chapters:
       - pointTime: "1:22:13.76"
         pointText: Remembering love calls for repentance and turning toward Christ rather than remaining trapped in doubt.
   - chapterId: c20250824-closing
-    chapterTitle: Give Thanks and Respond with Faithful Care
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:22:23.3"
     chapterEnd: "1:39:16.638"
+    chapterScripture:
+      - Jude 1:24-25
     points:
       - pointTime: "1:22:23.34"
         pointText: Response prayer asks that difficult circumstances direct the heart back toward Christ and his love.
+      - pointTime: "1:22:51.24"
+        pointText: The congregation recites the Apostles' Creed before prayer in thanksgiving for God's love.
       - pointTime: "1:26:37.34"
         pointText: Shared prayer joins confidence in God's unchanging love with becoming ready help for others.
+      - pointTime: "1:27:37.24"
+        pointText: The offertory follows pastoral prayer, with giving instructions for the congregation.
+      - pointTime: "1:29:25.4"
+        pointText: Like a River Glorious is introduced as the closing hymn.
+      - pointTime: "1:32:36.98"
+        pointText: Doxology is followed by the blessing from Jude 1:24-25.
+      - pointTime: "1:33:45.34"
+        pointText: The guest preacher is thanked before notices about offerings and other ministry opportunities.
+      - pointTime: "1:39:12.24"
+        pointText: Dismissal follows the notices, with silent meditation.
 markers:
   - markerTime: "31:08.1"
     markerNote: "The guest introduces himself as Ting Sun; ASR varies the full name. The title follows the source upload. Timings and length use supplied faster-whisper audio evidence and await fresh media checks."

@@ -17,10 +17,18 @@ uploads:
   - youtubeId: JkWUxoV_xtQ
     uploadDuration: "1:49:56.952"
 chapters:
-  - chapterId: c20251207-worship
-    chapterTitle: Worship the Creator and Receive Christ's Grace
-    chapterKind: opening
+  - chapterId: c20251207-acts
+    chapterTitle: ACTS Prayer (Recorded Remainder)
+    chapterKind: acts
     chapterStart: "0:18.25"
+    chapterEnd: "4:31.62"
+    points:
+      - pointTime: "0:18.25"
+        pointText: The recorded ACTS prayer starts at confession and continues through the remaining personal prayer and gathered prayer before worship.
+  - chapterId: c20251207-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "4:31.62"
     chapterEnd: "30:56.85"
     chapterScripture:
       - Psalms 19:1-5
@@ -28,12 +36,18 @@ chapters:
       - John 8:31-47
       - Jeremiah 17:5-10
     points:
+      - pointTime: "4:31.62"
+        pointText: Belinda welcomes the congregation before greetings and quiet preparation for worship.
+      - pointTime: "6:26.52"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "7:07.18"
         pointText: Belinda connects creation's witness with general revelation and God's continuing sovereignty.
       - pointTime: "11:41.24"
         pointText: Christ's lowly birth contrasts a kingdom of grace with earthly expectations of royal power.
       - pointTime: "23:04.92"
         pointText: Dependence on Christ is distinguished from trying to free oneself through self-reliance.
+      - pointTime: "29:50.9"
+        pointText: Jeremiah 17:5-10 is read before the sermon.
   - chapterId: c20251207-question-truth
     chapterTitle: Why Does Christian Faith Challenge How We Live?
     chapterKind: qa
@@ -128,17 +142,32 @@ chapters:
       - pointTime: "1:29:50.12"
         pointText: God's word supplies purpose and nourishment for a life that witnesses through fruitfulness.
   - chapterId: c20251207-response
-    chapterTitle: Leave the Old Ways and Live from Christ's Freedom
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:30:25.9"
     chapterEnd: "1:49:56.952"
+    chapterScripture:
+      - Romans 15:13
+      - 2 Corinthians 13:14
     points:
       - pointTime: "1:30:25.9"
         pointText: Response prayer asks for release from ignorance and a fruitful witness rather than returning to old bondage.
+      - pointTime: "1:32:35.74"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:36:26.34"
         pointText: Prayer connects persevering faith with walking together and serving people facing difficulty.
+      - pointTime: "1:37:37.7"
+        pointText: The offertory includes instructions for the second offering designated for evangelism.
+      - pointTime: "1:38:53.92"
+        pointText: Standing on the Promises is introduced as the closing hymn.
+      - pointTime: "1:41:42.68"
+        pointText: Doxology is followed by the blessing using Romans 15:13 and 2 Corinthians 13:14.
+      - pointTime: "1:42:53.44"
+        pointText: Announcements center on the gospel rally, prayer meeting and ministry participation.
+      - pointTime: "1:49:54.36"
+        pointText: A final notice about membership transfer follows the initial dismissal; the congregation is then dismissed again.
 markers:
   - markerTime: "0:18.25"
     markerNote: "The supplied transcript begins at confession, not a complete earlier prayer sequence. Anchors and length use supplied faster-whisper audio evidence; fresh media verification remains outstanding."
   - markerTime: "1:04:29.36"
-    markerNote: "Dreaming of Swimming in Icy Water is explicitly announced. Political, historical, comparative-religion and reported misconduct examples remain attributed to the preacher."
+    markerNote: "Title discrepancy for editorial resolution: the slide reads Swimming in icy waters, while the preacher explicitly calls the title Dreaming of Swimming in Icy Water. The draft retains the spoken version provisionally; neither source supersedes the other without review. Political, historical, comparative-religion and reported misconduct examples remain attributed to the preacher."

@@ -17,10 +17,18 @@ uploads:
   - youtubeId: vkxRMvoNyr0
     uploadDuration: "1:38:48.612"
 chapters:
-  - chapterId: c20250427-worship
-    chapterTitle: The Risen Christ Gives Hope beyond Easter Sunday
-    chapterKind: opening
+  - chapterId: c20250427-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "3:23.48"
+    chapterEnd: "6:55.66"
+    points:
+      - pointTime: "3:23.48"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20250427-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "6:55.66"
     chapterEnd: "39:27.94"
     chapterScripture:
       - Psalms 100:1-5
@@ -28,12 +36,16 @@ chapters:
       - John 20:1-31
       - 1 Corinthians 15:1-11
     points:
-      - pointTime: "6:27.1"
+      - pointTime: "6:55.66"
         pointText: The welcome presents resurrection hope as an ongoing reality rather than a celebration left behind after Easter.
+      - pointTime: "8:57.02"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "15:41.12"
         pointText: The worship reflection connects Christ's living presence with courage to face an uncertain future.
       - pointTime: "28:29.14"
         pointText: Fixing attention on Christ is applied to loss and uncertainty rather than treating worship as an escape from them.
+      - pointTime: "37:14.28"
+        pointText: 1 Corinthians 15:1-11 is read before Victor's sermon and opening prayer.
   - chapterId: c20250427-difference
     chapterTitle: What Difference Does the Resurrection Make?
     chapterKind: sermon
@@ -151,7 +163,7 @@ chapters:
           - pointTime: "1:21:36.66"
             pointText: Christ's lordship is applied to every sphere, including areas one is reluctant to surrender.
   - chapterId: c20250427-response
-    chapterTitle: Bring the Living God into Daily Life
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:23:33.52"
     chapterEnd: "1:38:48.612"
@@ -160,8 +172,20 @@ chapters:
     points:
       - pointTime: "1:23:33.52"
         pointText: Response prayer asks that resurrection knowledge become a habit of following God through uncertainty.
+      - pointTime: "1:24:54.34"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:28:43.74"
         pointText: Pastoral prayer brings work, study, financial strain and reconciliation under God's care and practical help from fellow believers.
+      - pointTime: "1:30:38.14"
+        pointText: The offertory follows the prayer, with giving instructions for the congregation.
+      - pointTime: "1:32:13.48"
+        pointText: The worship leader introduces the closing hymn, I Serve a Risen Savior, following the resurrection message.
+      - pointTime: "1:35:18.6"
+        pointText: Doxology is followed by a blessing prayer using Hebrews 13:20-21.
+      - pointTime: "1:36:49.86"
+        pointText: Announcements cover ministry participation, fellowship lunch, patient visits and vacation Bible school.
+      - pointTime: "1:38:34.7"
+        pointText: Dismissal follows the notices, with a final time of meditation.
 markers:
   - markerTime: "39:35.74"
     markerNote: "The source title incorrectly says April 13. Verified channel description/release date identifies April 27, corroborated by one week after Easter and the upcoming May 3 election."

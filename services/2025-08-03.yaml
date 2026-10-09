@@ -17,10 +17,18 @@ uploads:
   - youtubeId: 8d8XD26ncxM
     uploadDuration: "1:52:45.320"
 chapters:
-  - chapterId: c20250803-worship
-    chapterTitle: Receive Grace and Offer What We Already Have
-    chapterKind: opening
+  - chapterId: c20250803-acts
+    chapterTitle: ACTS Prayer
+    chapterKind: acts
     chapterStart: "0:00"
+    chapterEnd: "5:54.74"
+    points:
+      - pointTime: "0:06.48"
+        pointText: Preparatory prayer follows adoration, confession, thanksgiving and supplication, ending in gathered prayer before worship.
+  - chapterId: c20250803-worship
+    chapterTitle: Worship and Scripture
+    chapterKind: opening
+    chapterStart: "5:54.74"
     chapterEnd: "36:54.8"
     chapterScripture:
       - Psalms 127:1-5
@@ -28,12 +36,18 @@ chapters:
       - John 6:1-15
       - 2 Corinthians 9:8-11
     points:
+      - pointTime: "5:54.74"
+        pointText: Hadi welcomes the congregation before greetings and quiet preparation for worship.
+      - pointTime: "7:45.78"
+        pointText: The call to worship leads into hymns, opening prayer and responsive Bible readings.
       - pointTime: "9:39.92"
         pointText: Hadi connects ability, time and resources with God's gifts rather than self-sufficient achievement.
       - pointTime: "14:34.32"
         pointText: Grace includes present strength and help, not merely a future destination after death.
       - pointTime: "27:21.3"
         pointText: Surrender is framed as trusting Christ with available resources rather than producing what one does not have.
+      - pointTime: "35:49.98"
+        pointText: 2 Corinthians 9:8-11 is read before the sermon.
   - chapterId: c20250803-life-counts
     chapterTitle: Ask How Life Can Count before Time Is Gone
     chapterKind: qa
@@ -138,15 +152,29 @@ chapters:
       - pointTime: "1:36:34.95"
         pointText: Paul connects God's sufficient provision with generosity and a harvest of good work.
   - chapterId: c20250803-response
-    chapterTitle: Put Our Gifts into Christ's Hands
+    chapterTitle: Response and Closing
     chapterKind: closing
     chapterStart: "1:37:59.37"
     chapterEnd: "1:52:45.320"
+    chapterScripture:
+      - Hebrews 13:20-21
     points:
       - pointTime: "1:37:59.37"
         pointText: Response prayer asks for faith to release worldly attachments and let God's gifts become a blessing beyond oneself.
+      - pointTime: "1:39:29.37"
+        pointText: The congregation recites the Apostles' Creed before pastoral prayer.
       - pointTime: "1:43:33.21"
         pointText: Prayer asks for the privilege of providing ready help rather than caring only through words.
+      - pointTime: "1:44:26.15"
+        pointText: The offertory follows pastoral prayer, with giving instructions for the congregation.
+      - pointTime: "1:46:18.63"
+        pointText: More Like the Master is introduced as the closing hymn.
+      - pointTime: "1:48:35.03"
+        pointText: Doxology is followed by the blessing from Hebrews 13:20-21.
+      - pointTime: "1:49:48.29"
+        pointText: Announcements invite members to volunteer and explain upcoming events.
+      - pointTime: "1:52:36.91"
+        pointText: The congregation is dismissed with silent meditation after the notices.
 markers:
   - markerTime: "50:50.34"
     markerNote: "Multiplication follows the source upload title. Length and anchors use supplied faster-whisper audio evidence and await fresh video and boundary listening checks."
