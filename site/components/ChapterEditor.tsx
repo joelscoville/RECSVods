@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
   addMarker, addSubchapterAt, addPointAt, chapterAt, chapterTitle, describeChanges, edgeLimits, editMarker, editChapter, editPoint, edges,
-  formatClock, githubEditUrl, githubRawUrl, initialState, isFileMarker, items, lengthOf, outline, recordingFilePath, removeItem, removeMarker, roundTime,
+  formatClock, githubEditUrl, githubRawUrl, initialState, isFileMarker, items, lengthOf, outline, placePoints, recordingFilePath, removeItem, removeMarker, roundTime,
   setEdge, SOURCE_BRANCH, startChapterAt, toggleChecked, toRecording, validateEditor,
   type AddResult, type EditorIssue, type EditorItem, type EditorMarker, type EditorRecording, type EditorState,
 } from '../lib/recording-editor';
@@ -258,8 +258,8 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
   };
   const revertItem = (id: string) => {
     const section = [...original.chapters, ...original.subchapters].find(item => item.id === id), point = original.points.find(item => item.id === id);
-    if (section) apply(editChapter(state, id, section));
-    if (point) apply({ ...state, points: state.points.map(item => item.id === id ? { ...point } : item) });
+    if (section) apply(placePoints(editChapter(state, id, section)));
+    if (point) apply(placePoints({ ...state, points: state.points.map(item => item.id === id ? { ...point } : item) }));
   };
 
   /* ---------- Markers ---------- */
@@ -568,7 +568,8 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
         titles={{ editor: selectedSection?.lane === 'subchapter' ? 'Edit subchapter' : 'Edit chapter' }} panels={{
         chapters: <section className="ce-window ce-list-pane" aria-label="Chapter navigation">
         <div className="ce-nav-caption"><span>Choose a section to edit</span><span>Checked</span></div>
-        <ol className="ce-list" ref={list}>{rows.filter(item => item.lane === 'chapter').map(item => rowFor(item))}</ol>
+        <ol className="ce-list" ref={list}>{rows.filter(item => item.lane === 'chapter').map(item => rowFor(item))}
+          {rows.filter(item => item.lane === 'point' && !item.parentId).map(item => rowFor(item))}</ol>
       </section>,
       editor: <section className="ce-window ce-editor-pane" aria-label="Selected section">
         <div className="ce-list-head ce-mobile-editor-head">
@@ -646,7 +647,7 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
       </div>
       <div className="ce-tool-group">
         {notice && <span className="ce-notice-inline" role="status">{notice}</span>}
-        <label className="ce-toggle" title="Move touching chapter boundaries and points together. Hold Alt (Option) while dragging to move only one edge.">
+        <label className="ce-toggle" title="Move touching chapter and subchapter boundaries together. Descriptions keep their times. Hold Alt (Option) while dragging to move only one edge.">
           <input type="checkbox" checked={linked} onChange={event => setLinked(event.target.checked)} /> Move touching edges together</label>
         <button type="button" className="ce-tool" aria-pressed={snapping} onClick={() => setSnapping(value => !value)} aria-label="Snapping" title={`Snapping: edges stick to the playhead and other edges${shortcutHint('snapping')}`}><Icon name="magnet" />Snap</button>
         <button type="button" className="ce-tool ce-icon-tool" onClick={() => viewByUser(zoomView(view, 2, time, length))} aria-label="Zoom out" title={`Zoom out${shortcutHint('zoomOut')}`}><Icon name="minus" /></button>

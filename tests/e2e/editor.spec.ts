@@ -197,7 +197,7 @@ test('a reviewer can add a named subchapter inside a sermon and undo it', async 
   await expect(page.locator('.ce-chapter[data-lane="subchapter"]')).toHaveCount(entries.length - recording.chapters.length);
 });
 
-test('moving a chapter start also moves its touching neighbour and first note', async ({ page }) => {
+test('moving a chapter start moves its touching neighbour but leaves its descriptions at their times', async ({ page }) => {
   await openEditor(page); await loadVideo(page);
   const start = parseTimecode(sermon.chapterStart); await setPlayerTime(page, start + 2);
   await expect(page.getByLabel('Playhead', { exact: true })).not.toHaveText('0:00');
@@ -205,7 +205,7 @@ test('moving a chapter start also moves its touching neighbour and first note', 
   await selected(page).getByRole('group', { name: 'Start', exact: true }).getByRole('button', { name: /^Set to/ }).click();
   const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).state, draftKey);
   expect(state.chapters.find((chapter: { id: string }) => chapter.id === sermon.chapterId).start).toBe(start + 2);
-  expect(state.points.find((point: { parentId: string }) => point.parentId === sermon.chapterId).time).toBe(start + 2);
+  expect(state.points.find((point: { id: string }) => point.id === `${sermon.chapterId}/point-1`).time).toBe(parseTimecode(sermon.points![0].pointTime));
 });
 
 test('selecting a row does not move playback; clicking its time does', async ({ page }) => {

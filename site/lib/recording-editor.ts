@@ -8,7 +8,8 @@ import { formatTimecode } from './timecode';
 export interface EditorRecording { id: string; recording: Recording; topics: Topic[] }
 export interface EditorChapter { id: string; kind: ChapterKind; title: string; start: number; end: number; scripture: string[] }
 export interface EditorSubchapter extends EditorChapter { parentId: string }
-export interface EditorPoint { id: string; parentId: string; time: number; text: string }
+/** `parentId` is the section holding the point's time (see `placePoints`); absent when no section holds it. */
+export interface EditorPoint { id: string; parentId?: string; time: number; text: string }
 export interface EditorMarker { id: string; at: number; end?: number; note: string; include: boolean }
 export interface EditorState {
   title: string; description: string; scripture: string[]; topics: string[];
@@ -47,6 +48,12 @@ export function initialState({ recording }: EditorRecording): EditorState {
 export function chapterEndOf(state: EditorState, _length: number, id: string): number { return sections(state).find(chapter => chapter.id === id)?.end ?? 0; }
 export const sermonOf = (state: EditorState) => state.chapters.find(chapter => chapter.kind === 'sermon');
 export const chapterAt = (state: EditorState, time: number) => state.chapters.find(chapter => time >= chapter.start && time < chapter.end);
+/** The section a moment belongs to: its subchapter if one holds it, otherwise its chapter. */
+export const ownerAt = (state: EditorState, time: number) => state.subchapters.find(child => time >= child.start && time < child.end) ?? chapterAt(state, time);
+/** Points are timestamps. Moving sections never moves them, so after any edit each point is refiled under whichever
+ * section now holds its time, or under none if no section does (validation then asks for a fix before saving). */
+export const placePoints = (state: EditorState): EditorState => ({ ...state,
+  points: state.points.map(point => ({ ...point, parentId: ownerAt(state, point.time)?.id })) });
 const groupOf = (kind: ChapterKind) => kind === 'sermon' || kind === 'qa' ? 'word' as const : kind === 'music' || kind === 'communion' ? 'worship' as const : 'frame' as const;
 export function items(state: EditorState, _length: number): EditorItem[] {
   return [
@@ -59,7 +66,8 @@ export function items(state: EditorState, _length: number): EditorItem[] {
 export function outline(state: EditorState, length: number): EditorItem[] {
   const all = items(state, length);
   const children = (id: string): EditorItem[] => all.filter(item => item.parentId === id).sort((a, b) => a.start - b.start || (a.lane === 'point' ? 1 : -1)).flatMap(item => [item, ...children(item.id)]);
-  return all.filter(item => item.lane === 'chapter').flatMap(item => [item, ...children(item.id)]);
+  // A point no section holds yet is listed last, so it can still be found and fixed.
+  return [...all.filter(item => item.lane === 'chapter').flatMap(item => [item, ...children(item.id)]), ...all.filter(item => item.lane === 'point' && !item.parentId)];
 }
 export const MIN_SECONDS = 0.01;
 export interface Edge { lane: Lane; id: string; edge: 'start' | 'end'; time: number }
@@ -77,13 +85,11 @@ function movement(state: EditorState, edge: Pick<Edge, 'lane' | 'id' | 'edge'>, 
     item.id === edge.id && which === edge.edge || linked && related(item) && same(item[which], old);
   return { target, old, moves };
 }
-/** All entry methods use the same bounds, including the contents of linked neighbours. */
+/** All entry methods use the same bounds, including the contents of linked neighbours. Points are never bounded by
+ * sections, and sections are never bounded by points: a point can be anywhere in the recording. */
 export function edgeLimits(state: EditorState, length: number, edge: Pick<Edge, 'lane' | 'id' | 'edge'>, linked = true): [number, number] {
-  if (edge.lane === 'point') {
-    const point = state.points.find(point => point.id === edge.id), owner = sections(state).find(chapter => chapter.id === point?.parentId);
-    return owner ? [owner.start, owner.end - MIN_SECONDS] : [0, length];
-  }
-  const { old, moves } = movement(state, edge, linked);
+  if (edge.lane === 'point') return [0, length];
+  const { moves } = movement(state, edge, linked);
   let low = 0, high = length;
   for (const item of sections(state)) {
     const start = moves(item, 'start'), end = moves(item, 'end');
@@ -92,14 +98,13 @@ export function edgeLimits(state: EditorState, length: number, edge: Pick<Edge, 
     const siblings = byStart('parentId' in item ? state.subchapters.filter(child => child.parentId === item.parentId) : state.chapters);
     const index = siblings.indexOf(item), previous = siblings[index - 1], next = siblings[index + 1];
     const children = state.subchapters.filter(child => child.parentId === item.id);
-    const notes = state.points.filter(point => point.parentId === item.id && !(linked && same(point.time, old)));
     if (start) {
-      high = Math.min(high, item.end - MIN_SECONDS, ...notes.map(point => point.time), ...children.filter(child => !moves(child, 'start')).map(child => child.start));
+      high = Math.min(high, item.end - MIN_SECONDS, ...children.filter(child => !moves(child, 'start')).map(child => child.start));
       if (parent && !moves(parent, 'start')) low = Math.max(low, parent.start);
       if (previous && !moves(previous, 'end')) low = Math.max(low, previous.end);
     }
     if (end) {
-      low = Math.max(low, item.start + MIN_SECONDS, ...notes.map(point => point.time + MIN_SECONDS), ...children.filter(child => !moves(child, 'end')).map(child => child.end));
+      low = Math.max(low, item.start + MIN_SECONDS, ...children.filter(child => !moves(child, 'end')).map(child => child.end));
       if (parent && !moves(parent, 'end')) high = Math.min(high, parent.end);
       if (next && !moves(next, 'start')) high = Math.min(high, next.start);
     }
@@ -112,13 +117,11 @@ export function setEdge(state: EditorState, length: number, edge: Pick<Edge, 'la
   const [low, high] = edgeLimits(state, length, edge, linked);
   const time = roundTime(seconds);
   if (!Number.isFinite(seconds) || seconds < 0 || time < low || time > high) return state;
-  if (edge.lane === 'point') return { ...state, points: state.points.map(point => point.id === edge.id ? { ...point, time } : point) };
-  const { target: chapter, old, moves } = movement(state, edge, linked);
+  if (edge.lane === 'point') return placePoints({ ...state, points: state.points.map(point => point.id === edge.id ? { ...point, time } : point) });
+  const { target: chapter, moves } = movement(state, edge, linked);
   if (!chapter || same(chapter[edge.edge], time)) return state;
   const update = <T extends EditorChapter>(item: T): T => ({ ...item, ...(moves(item, 'start') ? { start: time } : {}), ...(moves(item, 'end') ? { end: time } : {}) });
-  const moved = new Set(sections(state).filter(item => moves(item, 'start') || moves(item, 'end')).map(item => item.id));
-  return { ...state, chapters: state.chapters.map(update), subchapters: state.subchapters.map(update),
-    points: state.points.map(point => linked && moved.has(point.parentId) && same(point.time, old) ? { ...point, time } : point) };
+  return placePoints({ ...state, chapters: state.chapters.map(update), subchapters: state.subchapters.map(update) });
 }
 export function snapTime(time: number, candidates: readonly number[], tolerance: number): { time: number; snapped?: number } {
   let best: number | undefined;
@@ -133,9 +136,8 @@ export function startChapterAt(state: EditorState, length: number, kind: Chapter
   const id = nextId('chapter', sections(state));
   const end = owner?.end ?? Math.min(length, ...state.chapters.filter(chapter => chapter.start > time).map(chapter => chapter.start));
   const reparent = owner ? state.subchapters.filter(child => child.parentId === owner.id && child.start >= time) : [];
-  return { id, state: { ...state, chapters: byStart([...state.chapters.map(chapter => chapter === owner ? { ...chapter, end: time } : chapter), { id, kind, title: '', start: time, end, scripture: [] }]),
-    subchapters: state.subchapters.map(child => reparent.includes(child) ? { ...child, parentId: id } : child),
-    points: state.points.map(point => owner && point.parentId === owner.id && point.time >= time ? { ...point, parentId: id } : point) } };
+  return { id, state: placePoints({ ...state, chapters: byStart([...state.chapters.map(chapter => chapter === owner ? { ...chapter, end: time } : chapter), { id, kind, title: '', start: time, end, scripture: [] }]),
+    subchapters: state.subchapters.map(child => reparent.includes(child) ? { ...child, parentId: id } : child) }) };
 }
 export function addSubchapterAt(state: EditorState, length: number, seconds: number): AddResult {
   const time = roundTime(seconds), owner = chapterAt(state, time);
@@ -145,12 +147,11 @@ export function addSubchapterAt(state: EditorState, length: number, seconds: num
   const end = Math.min(owner.end, ...siblings.filter(child => child.start > time).map(child => child.start));
   if (end - time < MIN_SECONDS || time >= length) return { state, reason: 'There is no room for a subchapter here.' };
   const id = nextId('subchapter', sections(state));
-  return { id, state: { ...state, subchapters: byStart([...state.subchapters, { id, parentId: owner.id, kind: owner.kind, title: '', start: time, end, scripture: [] }]) } };
+  return { id, state: placePoints({ ...state, subchapters: byStart([...state.subchapters, { id, parentId: owner.id, kind: owner.kind, title: '', start: time, end, scripture: [] }]) }) };
 }
 export function addPointAt(state: EditorState, _length: number, seconds: number, parentId?: string): AddResult {
   const time = roundTime(seconds);
-  const owner = parentId ? sections(state).find(chapter => chapter.id === parentId && time >= chapter.start && time < chapter.end)
-    : state.subchapters.find(child => time >= child.start && time < child.end) ?? chapterAt(state, time);
+  const owner = parentId ? sections(state).find(chapter => chapter.id === parentId && time >= chapter.start && time < chapter.end) : ownerAt(state, time);
   if (!owner) return { state, reason: 'Move the playhead inside the chapter or subchapter first.' };
   const id = nextId('point', [...state.points, ...sections(state)]);
   return { id, state: { ...state, points: [...state.points, { id, parentId: owner.id, time, text: '' }] } };
@@ -158,14 +159,15 @@ export function addPointAt(state: EditorState, _length: number, seconds: number,
 export function removeItem(state: EditorState, id: string): EditorState {
   if (state.chapters.length === 1 && state.chapters[0].id === id) return state;
   const removed = new Set([id, ...state.subchapters.filter(child => child.parentId === id).map(child => child.id)]);
-  state.points.filter(point => removed.has(point.parentId)).forEach(point => removed.add(point.id));
-  return { ...state, chapters: state.chapters.filter(item => !removed.has(item.id)), subchapters: state.subchapters.filter(item => !removed.has(item.id)),
-    points: state.points.filter(item => !removed.has(item.id)), checked: state.checked.filter(item => !removed.has(item)) };
+  // Removing a section removes the points filed under it, as shown before the removal.
+  state.points.filter(point => point.parentId !== undefined && removed.has(point.parentId)).forEach(point => removed.add(point.id));
+  return placePoints({ ...state, chapters: state.chapters.filter(item => !removed.has(item.id)), subchapters: state.subchapters.filter(item => !removed.has(item.id)),
+    points: state.points.filter(item => !removed.has(item.id)), checked: state.checked.filter(item => !removed.has(item)) });
 }
 export const editChapter = (state: EditorState, id: string, change: Partial<Omit<EditorChapter, 'id'>>): EditorState => ({ ...state,
   chapters: state.chapters.map(item => item.id === id ? { ...item, ...change } : item), subchapters: state.subchapters.map(item => item.id === id ? { ...item, ...change } : item) });
 export const editPoint = (state: EditorState, id: string, change: Partial<Omit<EditorPoint, 'id'>>): EditorState =>
-  ({ ...state, points: state.points.map(point => point.id === id ? { ...point, ...change } : point) });
+  placePoints({ ...state, points: state.points.map(point => point.id === id ? { ...point, ...change } : point) });
 export function toggleChecked(state: EditorState, id: string, value = !state.checked.includes(id)): EditorState {
   return { ...state, checked: value ? [...new Set([...state.checked, id])] : state.checked.filter(item => item !== id) };
 }
@@ -203,7 +205,7 @@ export function toRecording(base: EditorRecording, state: EditorState): { source
 export function validateEditor(base: EditorRecording, state: EditorState): EditorIssue[] {
   const issues: EditorIssue[] = [], { source, placement } = toRecording(base, state);
   for (const child of state.subchapters) if (!state.chapters.some(chapter => chapter.id === child.parentId)) issues.push({ level: 'error', itemId: child.id, message: 'Choose a parent chapter.' });
-  for (const point of state.points) if (!sections(state).some(chapter => chapter.id === point.parentId)) issues.push({ level: 'error', itemId: point.id, message: 'Choose a chapter or subchapter for this point.' });
+  for (const point of state.points) if (!sections(state).some(chapter => chapter.id === point.parentId)) issues.push({ level: 'error', itemId: point.id, message: 'Move this description inside a chapter or subchapter, or remove it.' });
   for (const topic of state.topics) if (!base.topics.some(item => item.topicId === topic)) issues.push({ level: 'error', message: `Topics: “${topic}” is not in the topic list.` });
   const result = RecordingSchema.safeParse(source);
   if (!result.success) for (const issue of result.error.issues) {
@@ -247,15 +249,15 @@ const LocalChapter = z.object({ id: z.string(), kind: z.enum(CHAPTER_KINDS), tit
 export const DraftStateSchema = z.object({
   title: z.string(), description: z.string(), scripture: z.array(z.string()), topics: z.array(z.string()),
   chapters: z.array(LocalChapter).min(1), subchapters: z.array(LocalChapter.extend({ parentId: z.string() })),
-  points: z.array(z.object({ id: z.string(), parentId: z.string(), time: Seconds, text: z.string() })),
+  points: z.array(z.object({ id: z.string(), parentId: z.string().optional(), time: Seconds, text: z.string() })),
   markers: z.array(z.object({ id: z.string(), at: Seconds, end: Seconds.optional(), note: z.string(), include: z.boolean() })), checked: z.array(z.string()),
 }).superRefine((state, ctx) => {
   const ids = [...state.chapters, ...state.subchapters, ...state.points].map(item => item.id);
   if (new Set(ids).size !== ids.length || state.subchapters.some(child => !state.chapters.some(parent => parent.id === child.parentId))
-    || state.points.some(point => !sections(state).some(owner => owner.id === point.parentId))) {
+    || state.points.some(point => point.parentId !== undefined && !sections(state).some(owner => owner.id === point.parentId))) {
     ctx.addIssue({ code: 'custom', message: 'Draft section identities or parents are invalid' });
   }
-});
+}).transform(state => placePoints(state as EditorState)); // drafts saved before points were independent may be filed wrongly
 export const SOURCE_BRANCH = 'main';
 export const recordingFilePath = (id: string) => `services/${id}.yaml`;
 const pathOf = (value: string) => value.split('/').map(encodeURIComponent).join('/');

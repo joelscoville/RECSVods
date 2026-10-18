@@ -57,7 +57,8 @@ export function useEditorSelection({ original, rows, length, hydrated, root }: {
     const container = list.current;
     if (!container) { setSelectionRequest(undefined); return; }
     const target = rows.find(item => item.id === selectionRequest.id);
-    const header = container.querySelector<HTMLElement>(`[data-entry="${target?.lane === 'point' ? target.parentId : selectionRequest.id}"] > [data-entry-header]`);
+    const headerId = target?.lane === 'point' && target.parentId ? target.parentId : selectionRequest.id;
+    const header = container.querySelector<HTMLElement>(`[data-entry="${headerId}"] > [data-entry-header]`);
     if (!header?.getClientRects().length) return;
     if (container.scrollHeight > container.clientHeight + 1) {
       const box = container.getBoundingClientRect(), row = header.getBoundingClientRect();

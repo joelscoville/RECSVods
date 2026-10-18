@@ -54,14 +54,14 @@ describe('named editor sections', () => {
     const state = initialState(base()), edge = { lane: 'chapter' as const, id: 'sermon', edge: 'start' as const };
     const moved = setEdge(state, LENGTH, edge, 1790);
     expect(moved.chapters[1].end).toBe(1790); expect(moved.chapters[2].start).toBe(1790);
-    expect(moved.points[0].time).toBe(1790);
+    expect(moved.points[0]).toMatchObject({ time: 1800, parentId: 'sermon' });
     expect(setEdge(state, LENGTH, edge, 1790, false).chapters[1].end).toBe(1800);
     expect(validateEditor(base(), moved)).toEqual([]);
   });
   it('refuses inverted, overlapping, or out-of-parent boundaries from any command path', () => {
     const state = initialState(base());
     expect(setEdge(state, LENGTH, { lane: 'chapter', id: 'sermon', edge: 'end' }, 0)).toBe(state);
-    expect(setEdge(state, LENGTH, { lane: 'point', id: 'sermon/point-1', edge: 'start' }, 100)).toBe(state);
+    expect(setEdge(state, LENGTH, { lane: 'point', id: 'sermon/point-1', edge: 'start' }, LENGTH + 1)).toBe(state);
     expect(setEdge(state, LENGTH, { lane: 'subchapter', id: 'hospitality', edge: 'end' }, 5000)).toBe(state);
     expect(setEdge(state, LENGTH, { lane: 'chapter', id: 'sermon', edge: 'start' }, 1790, false)).toBe(state);
     expect(setEdge(state, LENGTH, { lane: 'chapter', id: 'sermon', edge: 'end' }, 4000)).not.toBe(state);
@@ -92,8 +92,25 @@ describe('named editor sections', () => {
   it('points out invalid notes and titles on the right row', () => {
     let state = editChapter(initialState(base()), 'hospitality', { title: '' });
     state = editPoint(state, 'sermon/point-1', { time: 100 });
-    expect(validateEditor(base(), state)).toContainEqual(expect.objectContaining({ itemId: 'hospitality', message: 'Title: required text' }));
-    expect(validateEditor(base(), state)).toContainEqual(expect.objectContaining({ itemId: 'sermon/point-1', message: 'Time: inside this chapter' }));
+    expect(validateEditor(base(), state)).toEqual([expect.objectContaining({ itemId: 'hospitality', message: 'Title: required text' })]);
+  });
+  it('keeps a description at its time when sections move, refiling it under whichever section now holds that time', () => {
+    const state = initialState(base());
+    const moved = setEdge(state, LENGTH, { lane: 'point', id: 'sermon/point-1', edge: 'start' }, 100);
+    expect(moved.points.find(point => point.id === 'sermon/point-1')).toMatchObject({ time: 100, parentId: 'acts' });
+    expect(toRecording(base(), moved).source.chapters[0].points).toEqual([{ pointTime: '1:40', pointText: moved.points[0].text }]);
+    const shifted = setEdge(state, LENGTH, { lane: 'chapter', id: 'sermon', edge: 'start' }, 1790);
+    expect(shifted.points.find(point => point.id === 'sermon/point-2')?.time).toBe(2700);
+  });
+  it('leaves a description uncovered when its section moves away, and recovers it when a section covers it again', () => {
+    const state = setEdge(initialState(base()), LENGTH, { lane: 'point', id: 'sermon/point-1', edge: 'start' }, 1750);
+    const gap = setEdge(state, LENGTH, { lane: 'chapter', id: 'opening', edge: 'end' }, 1700, false);
+    expect(gap.points.find(point => point.id === 'sermon/point-1')).toMatchObject({ time: 1750, parentId: undefined });
+    expect(validateEditor(base(), gap)).toContainEqual(expect.objectContaining({ itemId: 'sermon/point-1', message: 'Move this description inside a chapter or subchapter, or remove it.' }));
+    expect(outline(gap, LENGTH).at(-1)).toMatchObject({ id: 'sermon/point-1', lane: 'point' });
+    const restored = setEdge(gap, LENGTH, { lane: 'chapter', id: 'opening', edge: 'end' }, 1800, false);
+    expect(restored.points.find(point => point.id === 'sermon/point-1')?.parentId).toBe('opening');
+    expect(validateEditor(base(), restored)).toEqual([]);
   });
   it('restores only structurally valid drafts and snaps only within tolerance', () => {
     expect(DraftStateSchema.safeParse(initialState(base())).success).toBe(true);
