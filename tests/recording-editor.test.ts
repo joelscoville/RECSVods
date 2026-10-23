@@ -112,6 +112,17 @@ describe('named editor sections', () => {
     expect(restored.points.find(point => point.id === 'sermon/point-1')?.parentId).toBe('opening');
     expect(validateEditor(base(), restored)).toEqual([]);
   });
+  it('does not refile a description on a text edit while its filed section still holds its time', () => {
+    const split = addSubchapterAt(initialState(base()), LENGTH, 2700);
+    expect(split.state.points.find(point => point.id === 'sermon/point-2')?.parentId).toBe('sermon');
+    const edited = editPoint(split.state, 'sermon/point-2', { text: 'Edited.' });
+    expect(edited.points.find(point => point.id === 'sermon/point-2')?.parentId).toBe('sermon');
+    expect(toRecording(base(), edited).source.chapters[2].points?.[1]?.pointText).toBe('Edited.');
+  });
+  it('files a description added from a chapter but inside a subchapter under that subchapter', () => {
+    const added = addPointAt(initialState(base()), LENGTH, 3700, 'sermon');
+    expect(added.state.points.find(point => point.id === added.id)?.parentId).toBe('hospitality');
+  });
   it('restores only structurally valid drafts and snaps only within tolerance', () => {
     expect(DraftStateSchema.safeParse(initialState(base())).success).toBe(true);
     expect(DraftStateSchema.safeParse({ ...initialState(base()), chapters: [] }).success).toBe(false);

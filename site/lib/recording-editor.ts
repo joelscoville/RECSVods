@@ -50,10 +50,13 @@ export const sermonOf = (state: EditorState) => state.chapters.find(chapter => c
 export const chapterAt = (state: EditorState, time: number) => state.chapters.find(chapter => time >= chapter.start && time < chapter.end);
 /** The section a moment belongs to: its subchapter if one holds it, otherwise its chapter. */
 export const ownerAt = (state: EditorState, time: number) => state.subchapters.find(child => time >= child.start && time < child.end) ?? chapterAt(state, time);
-/** Points are timestamps. Moving sections never moves them, so after any edit each point is refiled under whichever
- * section now holds its time, or under none if no section does (validation then asks for a fix before saving). */
-export const placePoints = (state: EditorState): EditorState => ({ ...state,
-  points: state.points.map(point => ({ ...point, parentId: ownerAt(state, point.time)?.id })) });
+/** Points are timestamps. Moving sections never moves them. A point keeps its section while that section still holds
+ * its time; otherwise it is refiled under whichever section holds the time now, or under none (validation then asks
+ * for a fix before saving). Keeping a valid filing means saved descriptions and text edits never change section. */
+export const placePoints = (state: EditorState): EditorState => ({ ...state, points: state.points.map(point => {
+  const held = sections(state).some(section => section.id === point.parentId && point.time >= section.start && point.time < section.end);
+  return held ? point : { ...point, parentId: ownerAt(state, point.time)?.id };
+}) });
 const groupOf = (kind: ChapterKind) => kind === 'sermon' || kind === 'qa' ? 'word' as const : kind === 'music' || kind === 'communion' ? 'worship' as const : 'frame' as const;
 export function items(state: EditorState, _length: number): EditorItem[] {
   return [
@@ -154,7 +157,8 @@ export function addPointAt(state: EditorState, _length: number, seconds: number,
   const owner = parentId ? sections(state).find(chapter => chapter.id === parentId && time >= chapter.start && time < chapter.end) : ownerAt(state, time);
   if (!owner) return { state, reason: 'Move the playhead inside the chapter or subchapter first.' };
   const id = nextId('point', [...state.points, ...sections(state)]);
-  return { id, state: { ...state, points: [...state.points, { id, parentId: owner.id, time, text: '' }] } };
+  // Filed under the section that holds the moment, so a description added from a chapter inside a subchapter is not refiled on its first edit.
+  return { id, state: { ...state, points: [...state.points, { id, parentId: (ownerAt(state, time) ?? owner).id, time, text: '' }] } };
 }
 export function removeItem(state: EditorState, id: string): EditorState {
   if (state.chapters.length === 1 && state.chapters[0].id === id) return state;

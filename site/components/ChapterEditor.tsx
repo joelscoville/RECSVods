@@ -574,10 +574,13 @@ export default function ChapterEditor({ base, siteBase, backHref }: { base: Edit
       editor: <section className="ce-window ce-editor-pane" aria-label="Selected section">
         <div className="ce-list-head ce-mobile-editor-head">
           <button type="button" className="ce-link ce-back-to-list" onClick={() => { setWindow('chapters', true); setMobileList(true); }}>Back to chapters</button>
-          <h2>Edit {selectedSection?.lane === 'subchapter' ? 'subchapter' : 'chapter'}</h2>
+          <h2>Edit {selectedSection?.lane === 'subchapter' ? 'subchapter' : selected?.lane === 'point' ? 'description' : 'chapter'}</h2>
         </div>
         <div className="ce-editor-body" ref={editPane} tabIndex={-1}>
-          {selectedSection ? rowFor(selectedSection, true) : <p className="ce-muted">Choose a chapter or subchapter to edit its title and descriptions.</p>}
+          {selectedSection ? rowFor(selectedSection, true)
+            // A description no section holds has nowhere else to show its text, so it is edited here too.
+            : selected?.lane === 'point' ? <ol className="ce-list">{rowFor(selected)}</ol>
+            : <p className="ce-muted">Choose a chapter or subchapter to edit its title and descriptions.</p>}
         </div>
       </section>,
       video: <section className="ce-player-pane" aria-label="Video player">
